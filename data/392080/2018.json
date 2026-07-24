@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "392080",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-c6b37e5 2018-12-23 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Instant crash.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545612778,
+    "title": "Wayward Terran Frontier: Zero Falls",
+    "source": "protondb"
+  }
+]

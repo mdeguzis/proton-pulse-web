@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "335840",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Steam virtual pad is recognized correctly",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552217308,
+    "title": "Goats on a Bridge",
+    "source": "protondb"
+  }
+]

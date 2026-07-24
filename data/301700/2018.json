@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "301700",
+    "title": "Numba Deluxe",
+    "timestamp": 1535052600,
+    "rating": "Borked",
+    "notes": "It starts in a resolution so low you cant see the menu items to start the game or change options etc. Only option is to kill the process.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "301700",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "It starts in a resolution so low you cant see the menu items to start the game or change options etc. Only option is to kill the process.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543340027,
+    "title": "Numba Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "301700",
+    "title": "Numba Deluxe",
+    "timestamp": 1535038200,
+    "rating": "Borked",
+    "notes": "It starts in a resolution so low you cant see the menu items to start the game or change options etc. Only option is to kill the process.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

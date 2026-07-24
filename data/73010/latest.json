@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "73010",
+    "title": "Cities in Motion",
+    "timestamp": 1535232214,
+    "rating": "Borked",
+    "notes": "Game launches and some of the intro video plays but then goes to black screen and hangs",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "73010",
+    "title": "Cities in Motion",
+    "timestamp": 1535217814,
+    "rating": "Borked",
+    "notes": "Game launches and some of the intro video plays but then goes to black screen and hangs",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

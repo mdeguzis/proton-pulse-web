@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2928330",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.59, 6.11.3-1-default)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.11.3-1-default",
+    "notes": "Ran out of the box without any tinkering. Played for about an hour without encountering any significant issues. No input lag felt.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1729268215,
+    "title": "",
+    "source": "protondb"
+  }
+]

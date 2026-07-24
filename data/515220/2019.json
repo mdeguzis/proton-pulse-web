@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "515220",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555982172,
+    "title": "F1\u2122 2017",
+    "source": "protondb"
+  },
+  {
+    "appId": "515220",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "notes": "I have no issue's running this game with proton. I posted a steamcommunity video at: https://www.youtube.com/watch?v=7JQIJ8fPGEQ&feature=youtu.be",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570554212,
+    "title": "F1\u2122 2017",
+    "source": "protondb"
+  }
+]

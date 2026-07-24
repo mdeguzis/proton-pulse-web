@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "742480",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Crashes on startup with message \"Failed to initalize graphics. Make sure you have DirectX 11 installed [...]\" with both Mesa on IntelHD and Nouveau on Nvidia (using Bumblebee). Using Wine D3D11 doesn't help.",
+    "os": "Linux 4.x (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542544189,
+    "title": "The Big Journey",
+    "source": "protondb"
+  }
+]

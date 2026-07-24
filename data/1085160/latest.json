@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1085160",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "ATI Technologies Inc. Radeon RX 570",
+    "gpuDriver": "4.6.13564 Compatibility Profile Context",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Played through the full game. Performance is quite a bit better under Windows, but it's generally playable. Only the FPS-Limiter (the one with 4 digits behind the comma) in the settings is crashing the game when I try to adjust it. But alternative you can limit the FPS with Vsync.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566590404,
+    "title": "Palmyra Orphanage",
+    "source": "protondb"
+  }
+]

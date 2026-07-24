@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "299360",
+    "cpu": "Intel Core i7         970  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "The game starts, but I am not able to play due to Easy Anti Cheat. Not sure if the 3D graphics works as intended.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1551731473,
+    "title": "Block N Load",
+    "source": "protondb"
+  }
+]

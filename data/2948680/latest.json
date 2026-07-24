@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2948680",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.1-cachyos1.fc44.x86_64",
+    "notes": "Works OOTB",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777566359,
+    "title": "Outlive 25",
+    "source": "protondb"
+  }
+]

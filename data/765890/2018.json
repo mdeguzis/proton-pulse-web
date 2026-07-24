@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "765890",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.0-3-amd64",
+    "notes": "Game crashes sometimes and audio and video is stuttering often.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15983 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536689646,
+    "title": "Leisure Suit Larry 7 - Love for Sail",
+    "source": "protondb"
+  }
+]

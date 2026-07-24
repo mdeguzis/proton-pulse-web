@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "581730",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Autumn Night 3D Shooter straddles the line between 'bronze' & 'silver', but ultimately I settle on rating it 'bronze' because it's just not very comfortable to play. My main problem is with the mouse movement, it's a bit stuttery & when pressing down on fire\u2013for very useful automatic firing\u2013it can become very jagged, so I foresee this being very bad for players as difficulty increases. Also, during in-game menus & prompts the game can occasionally hang up until you use the Super key to get an Activities overview & click back into the game window. Proton version doesn't seem to make much of a difference.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568195426,
+    "title": "Autumn Night 3D Shooter",
+    "source": "protondb"
+  }
+]

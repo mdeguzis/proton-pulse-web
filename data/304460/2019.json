@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "304460",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game ran perfectly with no tweaks. Used an Xbox 360 controller and the accept/action was mapped to X, and back/menu was mapped to L3. Not sure if that's an error or intentional, but it's workable and doesn't inhibit the gameplay.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559954493,
+    "title": "Qora",
+    "source": "protondb"
+  }
+]

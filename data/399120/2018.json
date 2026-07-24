@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "399120",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The mouse sensitivity was very strange (way too much even after adjustment down to ~0.2), and the mouse movement has some delay which makes it rather unplayable. Not sure if it\u2019s due to my laptop setup, but this even happened with the lowest resolution setting \u2013 and other games like Half-Life 2 and CS:GO work without issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543221867,
+    "title": "Prospekt",
+    "source": "protondb"
+  }
+]

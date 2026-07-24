@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "893470",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.8-300.fc30.x86_64",
+    "notes": "Need to exit and relaunch once.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562364695,
+    "title": "Salary Man Escape",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "434510",
+    "cpu": "Intel(R) Core(TM) i7 CPU         920  @ 2.67GHz",
+    "gpu": "X.Org AMD CYPRESS (DRM 2.50.0 / 4.18.7-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.2.0",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Fails on launch",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5953 Mb",
+    "rating": "Borked",
+    "timestamp": 1537707764,
+    "title": "Formicide",
+    "source": "protondb"
+  },
+  {
+    "appId": "434510",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game won't start",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542020770,
+    "title": "Formicide",
+    "source": "protondb"
+  },
+  {
+    "appId": "434510",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game doesn't start",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542022000,
+    "title": "Formicide",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3876460",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1781351932,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3399950",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT (radeonsi, navi10, LLVM 18.1.8, DRM 3.59, 6.11.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.4-arch1.1",
+    "kernel": "6.11.2-arch1-1",
+    "notes": "Just like others desktop mates runner trough proton: doesn't work as expected",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1740926169,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3399950",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.3-zen1",
+    "notes": "You can't play this as intended on Linux. You can still 100% it, but it won't be the background desktop experience.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1747364823,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3399950",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.1-2-cachyos",
+    "notes": "You can play the game, but not as intended",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1757202880,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1706870",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.10.79",
+    "notes": "",
+    "os": "NixOS 21.05 (Okapi)",
+    "protonVersion": "experimental",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1637956481,
+    "title": "",
+    "source": "protondb"
+  }
+]

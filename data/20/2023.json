@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "20",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (renoir, LLVM 17.0.0, DRM 3.49, 6.1.40-1-cachyos-lts-lto)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.1.40-1-cachyos-lts-lto",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1693779887,
+    "title": "Team Fortress Classic",
+    "source": "protondb"
+  }
+]

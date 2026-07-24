@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1610900",
+    "cpu": "Intel Core i5-14400F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.2-2-cachyos",
+    "notes": "game still kinda sucks right now but thats not a linux issue",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771391903,
+    "title": "The Genesis Project",
+    "source": "protondb"
+  }
+]

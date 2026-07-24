@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "613210",
+    "title": "BlobCat",
+    "timestamp": 1536426683,
+    "rating": "Silver",
+    "notes": "There are minor Graphical glitches and it doesn't quit properly",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-30)",
+    "gpuDriver": "NVIDIA 390",
+    "specs": "i5-6600K/GTX160",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "613210",
+    "title": "Divinity Original Sin 2 Definitive Edition",
+    "timestamp": 1536676568,
+    "rating": "Gold",
+    "notes": "1. Install through Steam\n\n2. Make a seperate wineprefix with DXVK 71 and xaudio2_7 (native, builtin) and \n\n3. run EoCApp.exe directly without Steam (GameFolder/DefEd/EoCApp.exe)\n\nDO NOT ALT+TAB",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700k / GTX 1080",
+    "protonVersion": "Wine 3.15 staging",
+    "source": "protondb"
+  },
+  {
+    "appId": "613210",
+    "title": "BlobCat",
+    "timestamp": 1536412283,
+    "rating": "Silver",
+    "notes": "There are minor Graphical glitches and it doesn't quit properly",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-30)",
+    "gpuDriver": "NVIDIA 390",
+    "specs": "i5-6600K/GTX160",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "613210",
+    "title": "Divinity Original Sin 2 Definitive Edition",
+    "timestamp": 1536662168,
+    "rating": "Gold",
+    "notes": "1. Install through Steam\n\n2. Make a seperate wineprefix with DXVK 71 and xaudio2_7 (native, builtin) and \n\n3. run EoCApp.exe directly without Steam (GameFolder/DefEd/EoCApp.exe)\n\nDO NOT ALT+TAB",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700k / GTX 1080",
+    "protonVersion": "Wine 3.15 staging",
+    "source": "protondb"
+  }
+]

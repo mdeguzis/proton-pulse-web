@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "354380",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't run because of the Uplay error. As it's impossible to play it without Uplay, it's currently unplayable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1536618395,
+    "title": "Assassin\u2019s Creed\u00ae Chronicles: China",
+    "source": "protondb"
+  },
+  {
+    "appId": "354380",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Unplayable because the Uplay client is unable to connect to the server",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541268087,
+    "title": "Assassin\u2019s Creed\u00ae Chronicles: China",
+    "source": "protondb"
+  }
+]

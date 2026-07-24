@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "380020",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Crashes with PhysX error.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1557579675,
+    "title": "Three Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "380020",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-zen1-1-zen",
+    "notes": "Before launching the game for the first time, rename or remove \"PhysX\" directory located in \"$HOME/.steam/steam/steamapps/common/Steamworks Shared/_CommonRedist/\". If you have launched the game before and now got PhysX SDK error, remove broken prefix first: \"$HOME/.steam/steam/steamapps/compatdata/380020/pfx\". Then install PhysX using winetricks or protontricks.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1572172585,
+    "title": "Three Heroes",
+    "source": "protondb"
+  }
+]

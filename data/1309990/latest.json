@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1309990",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.3-3-cachyos",
+    "notes": "Game runs but at 27fps and stutters crazy",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1760924238,
+    "title": "",
+    "source": "protondb"
+  }
+]

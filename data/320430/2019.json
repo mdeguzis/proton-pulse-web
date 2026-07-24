@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "320430",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Played many games both offline and online. Sometimes hangs on exiting but has no impact on gameplay.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1548486287,
+    "title": "Ascension: Deckbuilding Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "320430",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549797392,
+    "title": "Ascension: Deckbuilding Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "320430",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works perfectly, though it doesn't like to be alt+tabbed out of when in fullscreen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554027840,
+    "title": "Ascension: Deckbuilding Game",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1121780",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 16.0.6, DRM 3.54, 6.6.18)",
+    "gpuDriver": "4.6 Mesa 24.0.1",
+    "kernel": "6.6.18",
+    "notes": "Do not recommend even playing",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1709597147,
+    "title": "",
+    "source": "protondb"
+  }
+]

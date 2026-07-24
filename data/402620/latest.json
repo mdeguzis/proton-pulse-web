@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "402620",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Load screen crashes the game instead of loading a save file. Issues with fullscreen mode, but works okay in windowed mode. I only have a fully completed game file, so can't say how it performs for those who still need to progress but, the \"Open Planner\" option from the title screen seems to still work okay at least, which is more or less like a \"Continue\" feature. So if you only have a single file going, it might be possible to play through the game still. It lets you create new save files, though I am seeing the issue where it shows strange boxes instead of the text that normally should appear on the save file. Every great once in awhile I heard a really minor sound glitch in the audio but it seemed infrequent enough to be tolerable. Also seeing the issue where the background of the text boxes is missing, so text can be difficult to read at times.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546475371,
+    "title": "Kindred Spirits on the Roof",
+    "source": "protondb"
+  }
+]

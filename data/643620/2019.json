@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "643620",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-7-generic",
+    "notes": "I had two separate problems to overcome, before I could launch the game.\n\n1. Problem:\nI had some issues with Vulkan (I have integrated video card, maybe that's relevant). Logs:\n\n```\nGfxDevice: creating device client; threaded=1\ninfo:  Game: NT25.exe\ninfo:  DXVK: v0.94-18-g3b3ccc8\nwarn:  OpenVR: Failed to initialize OpenVR\ninfo:  Required Vulkan extension VK_KHR_get_physical_device_properties2 not supported\ninfo:  Required Vulkan extension VK_KHR_surface not supported\ninfo:  Required Vulkan extension VK_KHR_win32_surface not supported\nerr:   DxvkInstance: Failed to create instance\nCrash!!!\n```\n\nFix:\n That was fixed by setting PROTON_USE_WINED3D=1\n\n2. Problem:\nAfter selecting control layout screen goes black and nothing happens. This situation is exactly the same as described in https://github.com/ValveSoftware/Proton/issues/1102 .\n\nFix:\nI followed steps described in comment https://github.com/ValveSoftware/Proton/issues/1102#issuecomment-419678627 .\nI had to use my Windows 7 installation to:\n\n1) Copy required Windows Media Foundations dlls (I've copied them directly into ~/.steam/steam/steamapps/compatdata/643620/pfx/drive_c/windows/system32/ overwriting dummy dlls that were there)\n\n2) Copy all registry keys under \"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Media Foundation\".\nI used hivexregedit to export registry so I don't have to boot Windows (but original Windows's regedit should work too). For the reference shell command is: `hivexregedit --export --prefix 'HKEY_LOCAL_MACHINE\\Software' SOFTWARE 'Microsoft\\Windows Media Foundation' > wmf.reg`, where SOFTWARE is the file from Windows/System32/config/SOFTWARE.\n\n\nResult:\nEverything seems to work smoothly so far: graphic, sound, controls. No performance issues. All game mechanics works as it should. No glitches or artifacts found so far. \n",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1546442623,
+    "title": "Night Trap - 25th Anniversary Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "337350",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "4.19.42-1-MANJARO",
+    "notes": "Everything works flawlessly with no apparent glitches, including Workshop levels.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1558231475,
+    "title": "Flywrench",
+    "source": "protondb"
+  },
+  {
+    "appId": "337350",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.12-300.fc30.x86_64",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562284222,
+    "title": "Flywrench",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "573320",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Played from a new file, up to unlocking and entering the Moth Tree in World 1 (~10-15 minutes of play) and saved there. Saw some screen tearing (Windows screen tears too) that was different than how it looks in Windows, but was perfectly acceptable. Was able to save and reload no problem. Everything else was exactly as if running on Windows.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571719920,
+    "title": "Underhero",
+    "source": "protondb"
+  }
+]

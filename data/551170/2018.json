@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "551170",
+    "title": "Onmyoji",
+    "timestamp": 1535483683,
+    "rating": "Silver",
+    "notes": "Team chat font has aliasing issues, After few hours of inactivity sound might get crunchy, probably related to pulse audio, also sometimes fails at displaying graphics when that happens. Might crash sometimes, usually after hours of gameplay in this case it but might be game issue rather than proton. Nothing game breaking or even annoying.",
+    "os": "Antergos (kernel 4.18.5-arch1-1-ARCH )",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5 3570k / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "551170",
+    "cpu": "Intel(R) Core(TM) i7-3630QM CPU @ 2.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 680M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "notes": "playable, but sometimes crash",
+    "os": "\"Manjaro Linux\" (64-bit)",
+    "protonVersion": "Beta",
+    "ram": "15941 Mb",
+    "rating": "Silver",
+    "timestamp": 1537819002,
+    "title": "Onmyoji",
+    "source": "protondb"
+  },
+  {
+    "appId": "551170",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-54c823ec79)",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "Generally works but some parts of the game need a web browser (For videos) and font scaling is bad if game not run in full-screen. Font aliasing is better after switching to steam with native libraries.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1540308428,
+    "title": "Onmyoji",
+    "source": "protondb"
+  },
+  {
+    "appId": "551170",
+    "title": "Onmyoji",
+    "timestamp": 1535469283,
+    "rating": "Silver",
+    "notes": "Team chat font has aliasing issues, After few hours of inactivity sound might get crunchy, probably related to pulse audio, also sometimes fails at displaying graphics when that happens. Might crash sometimes, usually after hours of gameplay in this case it but might be game issue rather than proton. Nothing game breaking or even annoying.",
+    "os": "Antergos (kernel 4.18.5-arch1-1-ARCH )",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5 3570k / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

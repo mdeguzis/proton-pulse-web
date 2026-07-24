@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1050370",
+    "cpu": "Intel Core i3-5010U @ 2.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R7 M360 (ICELAND, DRM 3.40.0, 5.10.13-arch1-1, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.13-arch1-1",
+    "notes": "Played the whole demo without any major issue",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "5.13-5",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1612571239,
+    "title": "LUNARK",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "807920",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game runs perfect but you need to play in full-screen. In window mode the game image stutters a lot.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1558393479,
+    "title": "Onii-Chan",
+    "source": "protondb"
+  }
+]

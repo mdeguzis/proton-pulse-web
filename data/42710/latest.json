@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "42710",
+    "title": "Call of Duty: Black Ops Multiplayer",
+    "timestamp": 1535943749,
+    "rating": "Borked",
+    "notes": "Doesn't work for probably the same reason it's singleplayer doesn't work.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "42710",
+    "title": "Call of Duty: Black Ops Multiplayer",
+    "timestamp": 1535929349,
+    "rating": "Borked",
+    "notes": "Doesn't work for probably the same reason it's singleplayer doesn't work.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "880580",
+    "cpu": "AMD A10-7890K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Played for 5 hours without an issue.",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559003375,
+    "title": "YORG.io",
+    "source": "protondb"
+  },
+  {
+    "appId": "880580",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Works perfectly right from the get-go!",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564891367,
+    "title": "YORG.io",
+    "source": "protondb"
+  },
+  {
+    "appId": "880580",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Performance is not perfect.\nIt must be \"PROTON_LOG\" enabled for it to work.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569749831,
+    "title": "YORG.io",
+    "source": "protondb"
+  }
+]

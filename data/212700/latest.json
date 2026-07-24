@@ -1,0 +1,67 @@
+[
+  {
+    "appId": "212700",
+    "title": "Party of Sin",
+    "timestamp": 1535053812,
+    "rating": "Borked",
+    "notes": "Won't run",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "212700",
+    "title": "Party of Sin",
+    "timestamp": 1535155149,
+    "rating": "Borked",
+    "notes": "Appears to be missing DLLs from Microsoft Visual Studio.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "212700",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "does not start",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541414154,
+    "title": "Party of Sin",
+    "source": "protondb"
+  },
+  {
+    "appId": "212700",
+    "title": "Party of Sin",
+    "timestamp": 1535039412,
+    "rating": "Borked",
+    "notes": "Won't run",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "212700",
+    "title": "Party of Sin",
+    "timestamp": 1535140749,
+    "rating": "Borked",
+    "notes": "Appears to be missing DLLs from Microsoft Visual Studio.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

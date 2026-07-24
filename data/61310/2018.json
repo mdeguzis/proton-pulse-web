@@ -1,0 +1,113 @@
+[
+  {
+    "appId": "61310",
+    "title": "Fractal: Make Blooms Not War",
+    "timestamp": 1534985130,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Fedora 28",
+    "gpuDriver": "MESA 18.0.5-3",
+    "specs": "i5-4690K, AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "title": "Fractal: Make Blooms Not War",
+    "timestamp": 1535058520,
+    "rating": "Platinum",
+    "notes": "Launched with no issues",
+    "os": "Kubuntu 18.04 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537793538,
+    "title": "Fractal: Make Blooms Not War",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541267660,
+    "title": "Fractal: Make Blooms Not War",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542843039,
+    "title": "Fractal: Make Blooms Not War",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-139-generic",
+    "notes": "It crashes OOB. But will run perfectly when using \"PROTON_NO_D3D11=1 %command%\" as the launch option.",
+    "os": "Linux Mint 17.3 Rosa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1544243376,
+    "title": "Fractal: Make Blooms Not War",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "title": "Fractal: Make Blooms Not War",
+    "timestamp": 1534970730,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Fedora 28",
+    "gpuDriver": "MESA 18.0.5-3",
+    "specs": "i5-4690K, AMD RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "title": "Fractal: Make Blooms Not War",
+    "timestamp": 1535044120,
+    "rating": "Platinum",
+    "notes": "Launched with no issues",
+    "os": "Kubuntu 18.04 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1668190",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.10.0-0.bpo.7-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster) (64\u00a0bits)",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1677090886,
+    "title": "Once Upon a Jester",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "259190",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game launches with the screen flickering between black and the game, different Proton launch options and disabling overlays made no difference.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552341775,
+    "title": "Alone in the Dark: The New Nightmare",
+    "source": "protondb"
+  },
+  {
+    "appId": "259190",
+    "cpu": "Intel Core i5-7Y54 @ 1.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 615 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works fine in windowed mode. Add in the launch options \"STENCIL x=1280 y=960 -windowed\" (or another 4:3 resolution).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562508681,
+    "title": "Alone in the Dark: The New Nightmare",
+    "source": "protondb"
+  },
+  {
+    "appId": "259190",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.2.10-050210-lowlatency",
+    "notes": "Video flickers between black and the game, tried running it windowed with a set resolution like previous reports suggested but it made no difference. Also tried with D9VK.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567205470,
+    "title": "Alone in the Dark: The New Nightmare",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3239770",
+    "cpu": "AMD Ryzen 7 7840U w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.7, DRM 3.60, 6.13.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.4-arch1-1",
+    "notes": "Crashes on startup with an \"Unhandled exception: page fault on read access.\" error.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1740476020,
+    "title": "",
+    "source": "protondb"
+  }
+]

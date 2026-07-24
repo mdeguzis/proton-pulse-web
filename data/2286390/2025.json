@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2286390",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.59, 6.13.0-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.0-2-cachyos",
+    "notes": "Use the proton version, no wayland problems and way less stuttering",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739672796,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2286390",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.7, DRM 3.63, 6.15.1)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.15.1",
+    "notes": "As others pointed out, run this on X11 if you're on wayland.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1751193700,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2286390",
+    "cpu": "AMD Ryzen 7 7730U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.16.11-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.16.11-200.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1760720976,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "415170",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "Does not remember fullscreen settings in Gnome 3 either, but runs flawlessly otherwise",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563049205,
+    "title": "Engare",
+    "source": "protondb"
+  },
+  {
+    "appId": "415170",
+    "cpu": "Intel Core i7-4750HQ @ 2.00GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Finished the entire game multiple times. Everything works. Doesn't remember fullscreen, unless you are running in Big Picture mode.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568456831,
+    "title": "Engare",
+    "source": "protondb"
+  }
+]

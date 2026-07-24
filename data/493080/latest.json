@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "493080",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Working fine. No tweaks needed.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555025077,
+    "title": "Card Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "493080",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.14",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557925142,
+    "title": "Card Quest",
+    "source": "protondb"
+  }
+]

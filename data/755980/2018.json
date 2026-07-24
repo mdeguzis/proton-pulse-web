@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "755980",
+    "cpu": "Intel Xeon E5-1650 v2 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.14.65-gentoo",
+    "notes": "Unity game. Tested tutorial. It went fine.",
+    "os": "Gentoo Base System release 2.4.1",
+    "protonVersion": "Beta (3.16-3)",
+    "protonVersionManual": "3.16-2",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1540671137,
+    "title": "Deployment",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "347660",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Something is running invisible and unplayable in background and has to be forced to kill.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548180183,
+    "title": "Caromble!",
+    "source": "protondb"
+  }
+]

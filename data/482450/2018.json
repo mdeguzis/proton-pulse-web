@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "482450",
+    "title": "Nitroplus Blasterz: Heroines Infinite Duel",
+    "timestamp": 1535088230,
+    "rating": "Platinum",
+    "notes": "Nope.",
+    "os": "Steam OS Brewmaster beta.",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "AMD A8-6410 with R5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "482450",
+    "title": "Nitroplus Blasterz: Heroines Infinite Duel",
+    "timestamp": 1535088426,
+    "rating": "Gold",
+    "notes": "First launch was a white screen with sound. After relaunching, everything works. Complete playthrough tested.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "482450",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Runs perfect. Versus, Story and training tested. Turn off Steam generic controller support so the game detects your generic controllers out of the box.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "5 GB",
+    "rating": "Platinum",
+    "timestamp": 1541094712,
+    "title": "Nitroplus Blasterz: Heroines Infinite Duel",
+    "source": "protondb"
+  },
+  {
+    "appId": "482450",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-11-generic",
+    "notes": "1440p with a xbox 360 arcade stick. works perfectly out of the box. (didn't test multiplayer since no one was on)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542467879,
+    "title": "Nitroplus Blasterz: Heroines Infinite Duel",
+    "source": "protondb"
+  },
+  {
+    "appId": "482450",
+    "title": "Nitroplus Blasterz: Heroines Infinite Duel",
+    "timestamp": 1535073830,
+    "rating": "Platinum",
+    "notes": "Nope.",
+    "os": "Steam OS Brewmaster beta.",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "AMD A8-6410 with R5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "482450",
+    "title": "Nitroplus Blasterz: Heroines Infinite Duel",
+    "timestamp": 1535074026,
+    "rating": "Gold",
+    "notes": "First launch was a white screen with sound. After relaunching, everything works. Complete playthrough tested.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

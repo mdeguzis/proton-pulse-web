@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "250070",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537534358,
+    "title": "TorqueL",
+    "source": "protondb"
+  },
+  {
+    "appId": "250070",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Crashes on startup with the error: \"The game crashed. The crash report named folder * next to game executable. It would be great if you'd send it to the developer of the game!\". In the crash report, the file \"error.log\" lists: \"TorqueL.exe caused an Access Violation (0xc0000005) in module TorqueL.exe at 0023:0042dd89.\". I think this issue is common for all Unity games because I have experienced a very similar behavior with two other Unity games (Stick Fight and 80 Days).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544088062,
+    "title": "TorqueL",
+    "source": "protondb"
+  }
+]

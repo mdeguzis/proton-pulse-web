@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "593730",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.4, DRM 3.64, 6.18.0-rc3-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 26.0.0-devel (git-45a762727c)",
+    "kernel": "6.18.0-rc3-1-MANJARO",
+    "notes": "Works but is a buggy early access",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "bronze",
+    "timestamp": 1761820291,
+    "title": "",
+    "source": "protondb"
+  }
+]

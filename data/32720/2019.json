@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "32720",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.3-1-MANJARO",
+    "notes": "Minor graphical glitches when toggling the HUD (HUD area appears solid green until view is switched). Otherwise plays as expected with gamepad (Xbox One controller) support out of the box. Game uses the software renderer and does not seem to detect hardware acceleration - May need a Glide wrapper as the game does have 3dfx support.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553839649,
+    "title": "F-16 Multirole Fighter",
+    "source": "protondb"
+  }
+]

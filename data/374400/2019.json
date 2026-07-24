@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "374400",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.0-19.1-liquorix-amd64",
+    "notes": "Doesn\u00b4t start at all.",
+    "os": "elementary OS 5.0 Juno (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1564331278,
+    "title": "VoiceBot",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "675680",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX TITAN Black",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1548058331,
+    "title": "ShineG In The Zombies",
+    "source": "protondb"
+  },
+  {
+    "appId": "675680",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "does not start",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555661959,
+    "title": "ShineG In The Zombies",
+    "source": "protondb"
+  },
+  {
+    "appId": "675680",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "runs perfectly after using launch options: \"STEAM_COMPAT_CONFIG=nod3d11 %command%\"",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1556006338,
+    "title": "ShineG In The Zombies",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

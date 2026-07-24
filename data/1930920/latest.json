@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1930920",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.10-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.10-273-tkg-bore",
+    "notes": "Opened a compatibility report at https://github.com/ValveSoftware/Proton/issues/7629",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1712122871,
+    "title": "Warplanes: Battles over Pacific",
+    "source": "protondb"
+  }
+]

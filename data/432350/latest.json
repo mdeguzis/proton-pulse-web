@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "432350",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.20-1-MANJARO",
+    "notes": "Game Runs successfully, however experiences severe performance degradation during playthroughs longer than 30 min.  It is not due to CPU/GPU Throttling (stable 40/50 during playthrough), and doesn't appear to be memory.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1549957255,
+    "title": "Epic Battle Fantasy 5",
+    "source": "protondb"
+  },
+  {
+    "appId": "432350",
+    "cpu": "Intel Core i3-8350K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Starts to lag a lot after about an hour or so of playing, but is easily fixed by just quitting and starting the game again.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "3.16-9 Beta",
+    "protonVersionManual": "3.16-9 Beta",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555876918,
+    "title": "Epic Battle Fantasy 5",
+    "source": "protondb"
+  }
+]

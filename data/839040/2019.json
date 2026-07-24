@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839040",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.4-rc4-fsync",
+    "notes": "Works perfectly with this setup, on older laptop had to use Protontricks to set \"direct draw renderer = opengl\", Server also starts fine, the actual instructions are an exe that won't run in Wine (complains about being in a debugger). Simply put it's a POS realmcrafter game, but it does run, just as bad as always",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1572121437,
+    "title": "Fasaria World: Ancients of Moons",
+    "source": "protondb"
+  }
+]

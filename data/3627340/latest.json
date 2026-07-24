@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3627340",
+    "cpu": "13th Gen Intel Core i5-13400",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "Might work with some tinkering but i really have no idea.",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1750490306,
+    "title": "",
+    "source": "protondb"
+  }
+]

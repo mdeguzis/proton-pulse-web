@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "811240",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.16.3-041603-generic",
+    "notes": "Launch menu takes up to a minute to load, but eventually does and gameplay is great. Had to paste launch option \"PROTON_USE_WINED3D11=1 %command%\" to 'Launch Options' under 'Preferences' when right clicking on game in 'Library'",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1558839161,
+    "title": "Don't Stand Out",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

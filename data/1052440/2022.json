@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1052440",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.44.0, 5.16.15-zen1-1-zen, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.15-zen1-1-zen",
+    "notes": "Game works perfectly with older Proton version.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1649493796,
+    "title": "Croixleur Sigma - Deluxe Edition",
+    "source": "protondb"
+  }
+]

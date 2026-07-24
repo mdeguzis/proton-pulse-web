@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "11590",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.7-arch1-1-ARCH",
+    "notes": "works perfectly, no problems",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "native",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550087963,
+    "title": "Hospital Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "11590",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Works perfectly.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552764500,
+    "title": "Hospital Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "11590",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-15-generic",
+    "notes": "strange mouse bounds on splash screen. won't display properly, quits.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559373017,
+    "title": "Hospital Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "11590",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Not working, none of the tweaks heloed. It starts with a background music, and a mouse cursor, but nothing can be seen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1561293397,
+    "title": "Hospital Tycoon",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

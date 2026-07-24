@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "302010",
+    "title": "The Blue Flamingo",
+    "timestamp": 1535138257,
+    "rating": "Borked",
+    "notes": "Crashes on startup",
+    "os": "elementary 0.4.1 (x64, v4.15.0)",
+    "gpuDriver": "MESA 18.0.5",
+    "specs": "P6200 / Intel Integrated",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "302010",
+    "title": "The Blue Flamingo",
+    "timestamp": 1535462499,
+    "rating": "Borked",
+    "notes": "Shows error regarding missing xvid codec",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "302010",
+    "cpu": "Intel(R) Core(TM) i5-2500K CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "shows an error about a missing codec",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7926 Mb",
+    "rating": "Borked",
+    "timestamp": 1537325945,
+    "title": "The Blue Flamingo",
+    "source": "protondb"
+  },
+  {
+    "appId": "302010",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It says it misses Xvid video codec",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542675594,
+    "title": "The Blue Flamingo",
+    "source": "protondb"
+  },
+  {
+    "appId": "302010",
+    "title": "The Blue Flamingo",
+    "timestamp": 1535123857,
+    "rating": "Borked",
+    "notes": "Crashes on startup",
+    "os": "elementary 0.4.1 (x64, v4.15.0)",
+    "gpuDriver": "MESA 18.0.5",
+    "specs": "P6200 / Intel Integrated",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "302010",
+    "title": "The Blue Flamingo",
+    "timestamp": 1535448099,
+    "rating": "Borked",
+    "notes": "Shows error regarding missing xvid codec",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

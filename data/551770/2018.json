@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "551770",
+    "title": "ECHO",
+    "timestamp": 1535015973,
+    "rating": "Borked",
+    "notes": "The graphics are perfect, runs just as well as on Windows 10, but the audio is completely broken, the settings have no effect at all, sounds that should be quiet hums or footsteps are extremely loud, while speech and music seems to be fine.",
+    "os": "ArchLinux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8320 / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "551770",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-99.current",
+    "notes": "Sound volume is borked thus difficult to understand voices and sound settings don't have any effect. Otherwise runs great out of the box.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543342688,
+    "title": "ECHO",
+    "source": "protondb"
+  },
+  {
+    "appId": "551770",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0",
+    "kernel": "4.20.0-rc5-2595646791c319cadfdbf271563aac97d0843dc7+",
+    "os": "Fedora release 30 (Rawhide)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544545678,
+    "title": "ECHO",
+    "source": "protondb"
+  },
+  {
+    "appId": "551770",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.7-103.current",
+    "notes": "sound issues are fixed with the new audio system in beta3.16-5",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544633464,
+    "title": "ECHO",
+    "source": "protondb"
+  },
+  {
+    "appId": "551770",
+    "title": "ECHO",
+    "timestamp": 1535001573,
+    "rating": "Borked",
+    "notes": "The graphics are perfect, runs just as well as on Windows 10, but the audio is completely broken, the settings have no effect at all, sounds that should be quiet hums or footsteps are extremely loud, while speech and music seems to be fine.",
+    "os": "ArchLinux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8320 / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1092730",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.9-arch1-1",
+    "notes": "Relatively fine despite some issues",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1755455778,
+    "title": "",
+    "source": "protondb"
+  }
+]

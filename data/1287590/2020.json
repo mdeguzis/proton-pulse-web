@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1287590",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.0-54-generic",
+    "notes": "Ne fonctionne pas non plus avec Lutris et PlayOnLinux.",
+    "os": "Linux Mint 19.3 Tricia (64\u00a0bits)",
+    "protonVersion": "5.13-2",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1606472260,
+    "title": "Tour de France 2020",
+    "source": "protondb"
+  }
+]

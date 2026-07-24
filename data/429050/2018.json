@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "429050",
+    "cpu": "i7-3770K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "needs to use PROTON_USE_WINED3D11=1 %command% in launch options",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5",
+    "ram": "32110 Mb",
+    "rating": "Silver",
+    "timestamp": 1536874818,
+    "title": "Feed and Grow: Fish",
+    "source": "protondb"
+  }
+]

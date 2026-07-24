@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1058330",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-lowlatency",
+    "notes": "Works perfectly after applying the mf-install tweak : https://github.com/z0z0z/mf-install -- black screen otherwise. Seems to apply to all recent Microids games. (French company)",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570280885,
+    "title": "Fort Boyard",
+    "source": "protondb"
+  }
+]

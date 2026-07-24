@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "49470",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "No additional notes, runs fine out of the box.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547254557,
+    "title": "Magic: The Gathering - Duels of the Planeswalkers 2012",
+    "source": "protondb"
+  },
+  {
+    "appId": "49470",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Played some games on Archenemy: it even worked bettter than Windows. Didn't play the intro video.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1550003321,
+    "title": "Magic: The Gathering - Duels of the Planeswalkers 2012",
+    "source": "protondb"
+  },
+  {
+    "appId": "49470",
+    "cpu": "Pentium Dual-Core       E5300  @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Some framerates droping, game freezes and you have to wait to play. Can't change the resolution.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1560478770,
+    "title": "Magic: The Gathering - Duels of the Planeswalkers 2012",
+    "source": "protondb"
+  }
+]

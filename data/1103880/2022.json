@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1103880",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.12-arch1-1",
+    "notes": "I was able to play. No audio, jittery players. It took a really long time to launch.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1658813113,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "566090",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-16-generic",
+    "notes": "Vanilla install, no tweaks or settings changes. Performance is a bit worse than running on Windows which isn't great either. Cutscenes and transition videos are black screens. Those can be skipped by pressing escape. The inventory panel had a black screen display issue after around an hour of play. Overall the game is playable, but the performance is annoying. The game crashed on exit with a D3D11 error but that didn't appear to affect the save.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560664860,
+    "title": "The Bard's Tale IV: Barrows Deep",
+    "source": "protondb"
+  },
+  {
+    "appId": "566090",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Videos are still black but the game is actually playable now.\n\n\nThe game does require some time in all of the assets even after the initial loading screen but after a good minute or so of single digit frame rate it seems to stay stable at 60 for me.\nEvery time a new asset has to be loaded in (like when you explode a pathway for the first time and the explosion has to be loaded) there is that mini freeze for a second but after that the game seems to run quite smoothly.\n\n\nPerhaps the black video issue can be fixed by installing the proper windows video codecs but I couldn't figure it out at least",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564104656,
+    "title": "The Bard's Tale IV: Barrows Deep",
+    "source": "protondb"
+  }
+]

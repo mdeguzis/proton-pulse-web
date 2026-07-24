@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "223630",
+    "title": "AirBuccaneers",
+    "timestamp": 1535395486,
+    "rating": "Borked",
+    "notes": "Crashes completely but locks steam into still running",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223630",
+    "cpu": "AMD Athlon II X3 445",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD7750 1GB",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Crashes on start and goes zombie",
+    "os": "Debian unstable (sid) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7978 Mb",
+    "rating": "Borked",
+    "timestamp": 1538123123,
+    "title": "AirBuccaneers",
+    "source": "protondb"
+  },
+  {
+    "appId": "223630",
+    "title": "AirBuccaneers",
+    "timestamp": 1535381086,
+    "rating": "Borked",
+    "notes": "Crashes completely but locks steam into still running",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

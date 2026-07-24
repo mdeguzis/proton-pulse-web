@@ -1,0 +1,43 @@
+[
+  {
+    "appId": "312650",
+    "title": "Battlezone Gold Edition",
+    "timestamp": 1535873485,
+    "rating": "Borked",
+    "notes": "No sound at all. Runs fine in Classic mode. Starting a new campaign in regular mode, enemies do not spawn in, therefore making the game unplayable. Able to use Ultra graphics mode for my hardware while playing offline.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "312650",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works perfectly as of Proton 3.16-6 with Nvidia 415.25 drivers; did not test VR mode",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1545452725,
+    "title": "Battlezone Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "312650",
+    "title": "Battlezone Gold Edition",
+    "timestamp": 1535859085,
+    "rating": "Borked",
+    "notes": "No sound at all. Runs fine in Classic mode. Starting a new campaign in regular mode, enemies do not spawn in, therefore making the game unplayable. Able to use Ultra graphics mode for my hardware while playing offline.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

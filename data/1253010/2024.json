@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1253010",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 16.0.6, DRM 3.57, 6.7.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.1-arch1.1",
+    "kernel": "6.7.5-arch1-1",
+    "notes": "I've tried many Proton versions for this game, the single error the game throw out was, it needed to be run as a normal user. I've tried Wine as well, but with no success. \nI don't think the game has EAC or something similar, it's too small.\nI've also tried to run the game in a Virtualbox Windows environment, but it didn't work as well.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1710707711,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "617730",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Unable to start. Error appears upon starting it.\n\n\nCouldn't start: \"Z:\\home\\username\\.local\\share\\Steam\\steamapps\\common\\Home Sweet Home Demo\\HomeSweetHome\\Binaries\\Win32\\HomeSweetHome\\Home-Win32-Shipping.exe\" CreateProcess() returned 2.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562323102,
+    "title": "Home Sweet Home Demo",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

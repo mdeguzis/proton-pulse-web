@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "206420",
+    "cpu": "Intel Core i7-3632QM @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 635M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.18.0-18-generic",
+    "notes": "The game crashes on start with the message \"Failed to create graphics device\" and three buttons: \"Yes\", \"No\" and \"Cancel\". Pressing any of them just closes the dialogue.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557225105,
+    "title": "Saints Row IV",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "206420",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "Better performance than the \"native\" eON port, straight out of the box.  \n\nWhat was tested:\nSingle player campaign.\n\nWhat was NOT tested:\nMultiplayer",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1559281980,
+    "title": "Saints Row IV",
+    "source": "protondb"
+  },
+  {
+    "appId": "206420",
+    "cpu": "AMD A10-5800K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Cutscenes and gameplay were completely blank unless wine D3D option is set.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1568779712,
+    "title": "Saints Row IV",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

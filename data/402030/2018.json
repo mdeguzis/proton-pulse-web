@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "402030",
+    "title": "Zenohell",
+    "timestamp": 1535098376,
+    "rating": "Borked",
+    "notes": "Game runs but does not seem to recognize any inputs, controller or KB",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "402030",
+    "title": "Zenohell",
+    "timestamp": 1535083976,
+    "rating": "Borked",
+    "notes": "Game runs but does not seem to recognize any inputs, controller or KB",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

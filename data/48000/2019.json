@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "48000",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux and on Proton out of the box. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557438680,
+    "title": "LIMBO",
+    "source": "protondb"
+  },
+  {
+    "appId": "48000",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.2-arch1-1-ARCH",
+    "notes": "runs native out of the box, no decrease in performance in any way",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558264203,
+    "title": "LIMBO",
+    "source": "protondb"
+  }
+]

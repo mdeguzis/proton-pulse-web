@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "402880",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Significant slowdown at points, but still mostly playable.  Windows original wasn't exactly well-optimized either, but this is worse.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Gold",
+    "timestamp": "1536343600",
+    "title": "Age of Barbarian Extended Cut",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "38430",
+    "title": "Kingpin \u2014 Life of Crime",
+    "timestamp": 1536184563,
+    "rating": "Borked",
+    "notes": "loads a brown/black screen then crashes",
+    "os": "Debian Stretch(Kernel 4.17.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD 860k/AMD 380X",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "38430",
+    "title": "Kingpin \u2014 Life of Crime",
+    "timestamp": 1536170163,
+    "rating": "Borked",
+    "notes": "loads a brown/black screen then crashes",
+    "os": "Debian Stretch(Kernel 4.17.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD 860k/AMD 380X",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

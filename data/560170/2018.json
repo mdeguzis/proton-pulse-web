@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "560170",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q9550  @ 2.83GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX 550 Series (POLARIS12 / DRM 3.23.0 / 4.15.0-36-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Only issue encountered was creation of a player profile in the setup window.  Needed to move windows to continue through the save dialog.  Played at 1280x1024.  Played through first level (Hoth speeder), and part of second (inside the base).  No issues noticed for gameplay.  Played at full screen.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3943 Mb",
+    "rating": "Gold",
+    "timestamp": 1539367370,
+    "title": "STAR WARS\u2122 SHADOWS OF THE EMPIRE\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "560170",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "Fails to launch, even after a fresh reinstall.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541717531,
+    "title": "STAR WARS\u2122 SHADOWS OF THE EMPIRE\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "9810",
+    "title": "The Witcher: Enhanced Edition",
+    "timestamp": 1535217761,
+    "rating": "Gold",
+    "notes": "Had to run it with virtual desktop first time to set proper resolution.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4770K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9810",
+    "title": "The Witcher: Enhanced Edition",
+    "timestamp": 1535483164,
+    "rating": "Silver",
+    "notes": "Turn off after first mission",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15-33)\"",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Intel(R) Core(TM) i5-6200U CPU @ ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9810",
+    "title": "The Witcher: Enhanced Edition",
+    "timestamp": 1535203361,
+    "rating": "Gold",
+    "notes": "Had to run it with virtual desktop first time to set proper resolution.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4770K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9810",
+    "title": "The Witcher: Enhanced Edition",
+    "timestamp": 1535468764,
+    "rating": "Silver",
+    "notes": "Turn off after first mission",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15-33)\"",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Intel(R) Core(TM) i5-6200U CPU @ ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

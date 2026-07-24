@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "804490",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Black screen and than exits without error",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15902 MB",
+    "rating": "Borked",
+    "timestamp": 1537912190,
+    "title": "Creed: Rise to Glory\u2122",
+    "source": "protondb"
+  }
+]

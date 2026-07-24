@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1041840",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.12-arch1-1",
+    "notes": "Juego completado al 100% y todo a funcionado perfectamente.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624186782,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1041840",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 21.1.4 - kisak-mesa PPA",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Works well with keyboard, gamepad, or fight stick",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1625344615,
+    "title": "",
+    "source": "protondb"
+  }
+]

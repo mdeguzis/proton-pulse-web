@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "508980",
+    "cpu": "Intel(R) Xeon(R) CPU E5-1620 0 @ 3.60GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.45",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I beat the whole game but had to perform a simple tweak. Instruction below:\n\nIf after the first installation the game starts with a black screen and just sound,\nOpen in your text editor of choice the following file: \"steamapps/compatdata/508980/pfx/drive_c/users/steamuser/Local Settings/Application Data/Crashday/config/graphics.config\"\nChange the value of \"FSAA\" from 2 to 0\n\nAfter that, the game should run fine. It can sometimes crash during startup or while loading a level but I've only experienced such a crash once and I've beat the entire campaign. The initial startup screen shows 2 buttons with no text, select the left one to play. The second button opens a steam workshop mod manager which sadly crashes when you have any mods installed, so mods don't work.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "ram": "32122 Mb",
+    "rating": "Silver",
+    "timestamp": 1537035503,
+    "title": "Crashday Redline Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "508980",
+    "cpu": "i5-4690 CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Works perfectly.\n1) To fix black screen at launch open path_to_Steam_library/Steam/steamapps/compatdata/508980/pfx/drive_c/users/steamuser/Local Settings/Application Data/Crashday/config/graphics.config and change the value of \"FSAA\" from 2 to 0\n\n2) The text on the buttons in the launcher (PLAY and MODS) doesn't appear.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7913 Mb",
+    "rating": "Gold",
+    "timestamp": 1537050283,
+    "title": "Crashday Redline Edition",
+    "source": "protondb"
+  }
+]

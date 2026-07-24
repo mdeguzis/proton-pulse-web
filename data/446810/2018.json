@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446810",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Doesnt launch sadly",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543278638,
+    "title": "Blossom Tales: The Sleeping King",
+    "source": "protondb"
+  }
+]

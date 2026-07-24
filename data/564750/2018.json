@@ -1,0 +1,77 @@
+[
+  {
+    "appId": "564750",
+    "title": "Dimension Jump",
+    "timestamp": 1535148259,
+    "rating": "Bronze",
+    "notes": "Plays nice, but crashes frequently",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7-4770 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "564750",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "No more crashes (see previous report) with PROTON_NO_ESYNC.",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1540595231,
+    "title": "Dimension Jump",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "564750",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541700483,
+    "title": "Dimension Jump",
+    "source": "protondb"
+  },
+  {
+    "appId": "564750",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Nothing happens when I try to start the game",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546177372,
+    "title": "Dimension Jump",
+    "source": "protondb"
+  },
+  {
+    "appId": "564750",
+    "title": "Dimension Jump",
+    "timestamp": 1535133859,
+    "rating": "Bronze",
+    "notes": "Plays nice, but crashes frequently",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7-4770 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

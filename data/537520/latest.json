@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "537520",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.1-050301-lowlatency",
+    "notes": "Game works perfectly, but alt+tab between the game and desktop is glitchy (sometimes it does not work). ",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1570287905,
+    "title": "SYMMETRY",
+    "source": "protondb"
+  }
+]

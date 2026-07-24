@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "37350",
+    "title": "Parking Dash",
+    "timestamp": 1535398523,
+    "rating": "Borked",
+    "notes": "Start the game from Steam -> a (black) screen is made, like the game is starting up -> screen goes back to desktop. There was no game splash screen or any graphics, or any sound during \"start up\". So the game just won't start.",
+    "os": "Fedora 28 Stable 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4770K / GTX 780 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "37350",
+    "title": "Parking Dash",
+    "timestamp": 1535384123,
+    "rating": "Borked",
+    "notes": "Start the game from Steam -> a (black) screen is made, like the game is starting up -> screen goes back to desktop. There was no game splash screen or any graphics, or any sound during \"start up\". So the game just won't start.",
+    "os": "Fedora 28 Stable 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4770K / GTX 780 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

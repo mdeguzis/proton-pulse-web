@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1755300",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.4.0-90-generic",
+    "notes": "Runs without any problems.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1648647110,
+    "title": "Smart Factory Tycoon",
+    "source": "protondb"
+  }
+]

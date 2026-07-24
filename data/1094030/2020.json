@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1094030",
+    "cpu": "Intel Core i7-3940XM @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "4.15.0-76-generic",
+    "notes": "id like to play more, but it crashes..",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1582439501,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1094030",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.12-arch1-1",
+    "notes": "Make sure to have right H/W for playing.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1597332501,
+    "title": "",
+    "source": "protondb"
+  }
+]

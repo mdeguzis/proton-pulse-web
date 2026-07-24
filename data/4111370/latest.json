@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4111370",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.3-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.1",
+    "kernel": "6.18.3-zen1-1-zen",
+    "notes": "\u80fd\u591f\u6b63\u5e38\u6e38\u73a9\uff0c\u4f46\u662f\u6e38\u620f\u4f1a\u906e\u6321\u6240\u6709\u5e94\u7528\u7a97\u53e3",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1768459698,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "4111370",
+    "cpu": "11th Gen Intel Core i7-11800H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "7.0.0-1-cachyos-bore",
+    "notes": "The floating widget/transparent issue.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1779159041,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "300610",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.15.0-45-generic",
+    "notes": "crypto.cpp (1879) : Assertion Failed: rsaKey.IsValid()",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "11 GB",
+    "rating": "Borked",
+    "timestamp": 1550529034,
+    "title": "Pure Pool",
+    "source": "protondb"
+  },
+  {
+    "appId": "300610",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.15.0-45-generic",
+    "notes": "https://paste.ubuntu.com/p/SdSyxrfds7/",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "11 GB",
+    "rating": "Borked",
+    "timestamp": 1550678002,
+    "title": "Pure Pool",
+    "source": "protondb"
+  },
+  {
+    "appId": "300610",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Doesn't start.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558846279,
+    "title": "Pure Pool",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1602560",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.60-1-MANJARO",
+    "notes": "I tried using several versions of Proton; none helped. Tried Big Picture Mode, didn't help. Game is currently unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1694344457,
+    "title": "The Many Pieces of Mr. Coo",
+    "source": "protondb"
+  }
+]

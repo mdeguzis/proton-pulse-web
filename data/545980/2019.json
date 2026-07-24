@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "545980",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Runs perfectly without tweaks.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1554680426,
+    "title": "Voodoo Vince: Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "545980",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Smooth 60FPS, all good",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556041050,
+    "title": "Voodoo Vince: Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "545980",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "Needs PROTON_FORCE_LARGE_ADDRESS_AWARE=1 to launch, works great other than mouse being sluggish but upping the sensitivity fixes that.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565206218,
+    "title": "Voodoo Vince: Remastered",
+    "source": "protondb"
+  }
+]

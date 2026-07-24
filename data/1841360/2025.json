@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1841360",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Game runs out of the box. Performance is okay except the huge stuttering in the fortress, but as I said that might not be because of proton.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1766273259,
+    "title": "",
+    "source": "protondb"
+  }
+]

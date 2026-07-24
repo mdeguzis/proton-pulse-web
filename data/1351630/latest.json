@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1351630",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.4",
+    "notes": "Ran great, occasional rubber banding on some play sessions but not on restart",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1751572817,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1351630",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-71-generic",
+    "notes": "Works fine on Linux Desktop and Steam Deck with out any issues during testing.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1760827509,
+    "title": "",
+    "source": "protondb"
+  }
+]

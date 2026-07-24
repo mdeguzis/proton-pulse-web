@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "538060",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Native depot is empty. Works flawlessly with proton 3.16-6",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547842180,
+    "title": "Doodle God: 8-bit Mania - Collector's Item",
+    "source": "protondb"
+  }
+]

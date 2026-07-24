@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "252150",
+    "title": "Grimm",
+    "timestamp": 1535069200,
+    "rating": "Platinum",
+    "notes": "Just really weird game.",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252150",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "True, it is a strange game.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536946844,
+    "title": "Grimm",
+    "source": "protondb"
+  },
+  {
+    "appId": "252150",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The game works perfectly",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543333323,
+    "title": "Grimm",
+    "source": "protondb"
+  },
+  {
+    "appId": "252150",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "All runs smothly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545821953,
+    "title": "Grimm",
+    "source": "protondb"
+  },
+  {
+    "appId": "252150",
+    "title": "Grimm",
+    "timestamp": 1535054800,
+    "rating": "Platinum",
+    "notes": "Just really weird game.",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

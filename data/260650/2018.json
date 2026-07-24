@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "260650",
+    "title": "Cold War",
+    "timestamp": 1535214733,
+    "rating": "Platinum",
+    "notes": "Used Generic Software for sound option. Did not try generic hardware. Played through the first level and no glitches no slowdowns. ",
+    "os": "Manjaro Stable 64-bit (4.14.66)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3820 / GTX 1050ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "260650",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537266188,
+    "title": "Cold War",
+    "source": "protondb"
+  },
+  {
+    "appId": "260650",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Good",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542412947,
+    "title": "Cold War",
+    "source": "protondb"
+  },
+  {
+    "appId": "260650",
+    "title": "Cold War",
+    "timestamp": 1535200333,
+    "rating": "Platinum",
+    "notes": "Used Generic Software for sound option. Did not try generic hardware. Played through the first level and no glitches no slowdowns. ",
+    "os": "Manjaro Stable 64-bit (4.14.66)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3820 / GTX 1050ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

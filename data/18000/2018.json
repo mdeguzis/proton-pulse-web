@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "18000",
+    "title": "On the Rain-Slick Precipice of Darkness, Episode One",
+    "timestamp": 1535035945,
+    "rating": "Platinum",
+    "notes": "Works Perfectly",
+    "os": "KDE Neon (Ubuntu 18.04)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-7700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "18000",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Had to set the resolution to something my monitor supported in the first screen, but I imagine that might happen to Windows as well.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541760711,
+    "title": "Precipice of Darkness, Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "18000",
+    "title": "On the Rain-Slick Precipice of Darkness, Episode One",
+    "timestamp": 1535021545,
+    "rating": "Platinum",
+    "notes": "Works Perfectly",
+    "os": "KDE Neon (Ubuntu 18.04)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-7700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

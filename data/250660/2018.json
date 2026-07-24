@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "250660",
+    "title": "Bunny Must Die! Chelsea and the 7 devils",
+    "timestamp": 1535782224,
+    "rating": "Silver",
+    "notes": "The game window in windowed mode cannot be resized properly. Might need increased file descriptor limit.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "250660",
+    "title": "Bunny Must Die! Chelsea and the 7 Devils",
+    "timestamp": 1534996085,
+    "rating": "Borked",
+    "notes": "crashes with error:0128",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "\tGeforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "250660",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542581730,
+    "title": "Bunny Must Die! Chelsea and the 7 Devils",
+    "source": "protondb"
+  },
+  {
+    "appId": "250660",
+    "title": "Bunny Must Die! Chelsea and the 7 devils",
+    "timestamp": 1535767824,
+    "rating": "Silver",
+    "notes": "The game window in windowed mode cannot be resized properly. Might need increased file descriptor limit.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "250660",
+    "title": "Bunny Must Die! Chelsea and the 7 Devils",
+    "timestamp": 1534981685,
+    "rating": "Borked",
+    "notes": "crashes with error:0128",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "\tGeforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

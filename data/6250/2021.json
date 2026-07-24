@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "6250",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-14-amd64",
+    "notes": "Could not open game",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-6",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1615724022,
+    "title": "Making History: The Calm & the Storm",
+    "source": "protondb"
+  },
+  {
+    "appId": "6250",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-37-generic",
+    "notes": "Game wants a valid licence key.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1633352237,
+    "title": "Making History: The Calm & the Storm",
+    "source": "protondb"
+  }
+]

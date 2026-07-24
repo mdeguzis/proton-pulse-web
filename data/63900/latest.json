@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "63900",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-42-generic",
+    "notes": "One time the game window minimized, but the rest was perfect",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546346351,
+    "title": "Fantasy Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "63900",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546427875,
+    "title": "Fantasy Wars",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "640120",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX TITAN Black",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "notes": "runs perfectly, but:\n- Options Menu crashes game\n- character colors do not work",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1548104544,
+    "title": "Youropa",
+    "source": "protondb"
+  }
+]

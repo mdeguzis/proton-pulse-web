@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "692100",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Loading Time is kinda long. https://www.youtube.com/watch?v=ceJvG5oRntY",
+    "os": "Kubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540774211,
+    "title": "Infliction",
+    "source": "protondb"
+  }
+]

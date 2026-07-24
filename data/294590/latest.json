@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "294590",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "5.0.0-050000-lowlatency",
+    "notes": "There are no cutscenes and there is no background music. Every couple of seconds an error dialogue appears informing that the cutscenes and the background music are unavailable due to the lack of the Windows Media Player 9 libraries.\n----------------\nThe game requires WMP9 to be installed using winetricks BUT it's impossible in Proton as it always defaults to the 64 bit arch. This is not the the first time this puzzling decision affects games that depend on older libraries. There is a simple solution for this: allow the steam user the choice to switch over to the 32bit arch. The same problem affects many well known games like Darksiders and Resident Evil 1 Remake Remastered.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2 and 3.16.4",
+    "protonVersionManual": "4.2 and 3.16.4",
+    "ram": "14 GB",
+    "rating": "Bronze",
+    "timestamp": 1553787395,
+    "title": "Wars and Warriors: Joan of Arc",
+    "source": "protondb"
+  },
+  {
+    "appId": "294590",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Just left click on the black screen and enjoy",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565567723,
+    "title": "Wars and Warriors: Joan of Arc",
+    "source": "protondb"
+  }
+]

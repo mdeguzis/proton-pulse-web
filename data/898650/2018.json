@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "898650",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Game shows a black screen upon startup. I tried disabling esync and using wine's d3d11 but neither seemed to have an effect. Disabling d3d11 causing the game to error out as it requires direct x 11. Game is completely unplayable.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542392224,
+    "title": "The Shapeshifting Detective",
+    "source": "protondb"
+  }
+]

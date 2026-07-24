@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "65900",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "A dialog to select DirectX version is displayed, but nothing launches after that. There does not seem to be a linux native version of the Demo. None of the recommended tweaks were effective.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551056604,
+    "title": "Sid Meier's Civilization\u00ae V: Demo",
+    "source": "protondb"
+  }
+]

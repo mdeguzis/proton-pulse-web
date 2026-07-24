@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "635850",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.19-100.fc27.x86_64",
+    "notes": "Launching the game opens an empty black window. Closing the window leaves some zombie processes. With all Proton tweaks enabled, Steam's stdout shows \"[1215/214759.400:ERROR:main_dll_loader_win.cc(148)] Failed to load NW DLL (...)\" on launch, and the game crashes without leaving zombies.",
+    "os": "Fedora release 27 (Twenty Seven)",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544910127,
+    "title": "Sentience: The Android's Tale",
+    "source": "protondb"
+  }
+]

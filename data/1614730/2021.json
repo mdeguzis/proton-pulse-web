@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1614730",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1625950230,
+    "title": "TM - Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "1614730",
+    "cpu": "Intel Core i9-10850K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.10.0-0.bpo.5-amd64",
+    "notes": "Works great, no problems.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1637257061,
+    "title": "TM - Prologue",
+    "source": "protondb"
+  }
+]

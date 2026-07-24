@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "435840",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.11-arch2-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.3",
+    "kernel": "5.15.11-arch2-1",
+    "notes": "Worked preposterously fine.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1641610832,
+    "title": "The Preposterous Awesomeness of Everything",
+    "source": "protondb"
+  }
+]

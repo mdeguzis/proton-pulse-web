@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "466560",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Proton over DX11 runs a lot better than native OpenGL. No tweaks needed.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553718047,
+    "title": "Northgard",
+    "source": "protondb"
+  },
+  {
+    "appId": "466560",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-15012077bc)",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Works great with DXVK on Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554024836,
+    "title": "Northgard",
+    "source": "protondb"
+  },
+  {
+    "appId": "466560",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.1.18-gentoo",
+    "notes": "Runs perfectly with Proton (DXVK). Native version is linked against wayland, which is not available on my system. After figuring out to delete all libSDL2.so files shipped with the game everything works also fine with native.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564329466,
+    "title": "Northgard",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "41060",
+    "title": "Serious Sam Classic: The Second Encounter",
+    "timestamp": 1535045044,
+    "rating": "Gold",
+    "notes": "Same fix for depth buffer as TFE.",
+    "os": "Fedora Workstation 28 64-bit (Kernel 4.17.14-202)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-7400 / iGPU HD 630",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "41060",
+    "title": "Serious Sam Classic: The Second Encounter",
+    "timestamp": 1535775172,
+    "rating": "Silver",
+    "notes": "only works on OpenGL with graphical bugs, directx shows an black screen. run smooth",
+    "os": "LXLE OS 16.04.4 64-bit (Kernel 4.4.0-134-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel Pentium CPU B960 / Mesa DRI Intel(R) Sandybridge Mobile",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "41060",
+    "cpu": "i7-4710MQ CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-haswell",
+    "notes": "some objects are transperant",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5 beta",
+    "ram": "7872 Mb",
+    "rating": "Bronze",
+    "timestamp": "1536336475",
+    "title": "Serious Sam Classic: The Second Encounter",
+    "source": "protondb"
+  },
+  {
+    "appId": "41060",
+    "title": "Serious Sam Classic: The Second Encounter",
+    "timestamp": 1535030644,
+    "rating": "Gold",
+    "notes": "Same fix for depth buffer as TFE.",
+    "os": "Fedora Workstation 28 64-bit (Kernel 4.17.14-202)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-7400 / iGPU HD 630",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "41060",
+    "title": "Serious Sam Classic: The Second Encounter",
+    "timestamp": 1535760772,
+    "rating": "Silver",
+    "notes": "only works on OpenGL with graphical bugs, directx shows an black screen. run smooth",
+    "os": "LXLE OS 16.04.4 64-bit (Kernel 4.4.0-134-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel Pentium CPU B960 / Mesa DRI Intel(R) Sandybridge Mobile",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

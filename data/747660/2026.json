@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "747660",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 590.44.01",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "Game works like expected when using proton-GE",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1768438108,
+    "title": "",
+    "source": "protondb"
+  }
+]

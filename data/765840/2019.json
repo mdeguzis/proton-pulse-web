@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "765840",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-300.fc30.x86_64",
+    "notes": "Starts fine and seems to be working fine. You can't go properly fullscreen (use alt+enter to switch to window).",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1561851861,
+    "title": "Leisure Suit Larry 2 Looking For Love (In Several Wrong Places)",
+    "source": "protondb"
+  },
+  {
+    "appId": "765840",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-200.fc30.x86_64",
+    "notes": "Use either Boxtron 0.5.1 to play through DOSBox: https://github.com/dreamer/boxtron or Roberta 0.1.0 to play through ScummVM: https://github.com/dreamer/roberta - both work great.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567408780,
+    "title": "Leisure Suit Larry 2 Looking For Love (In Several Wrong Places)",
+    "source": "protondb"
+  }
+]

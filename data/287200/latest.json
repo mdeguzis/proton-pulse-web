@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "287200",
+    "cpu": "AMD Athlon(tm) II X3 445 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD CAPE VERDE (DRM 2.50.0, 4.18.0-1-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Runs somewhat slow. Shadows are borked.",
+    "os": "Debian GNU/Linux unstable (sid) (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "7978 \u041c\u0411",
+    "rating": "Silver",
+    "timestamp": 1538068701,
+    "title": "Wildlife Park 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "287200",
+    "cpu": "AMD FX-8120 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.4.0-138-generic",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542173983,
+    "title": "Wildlife Park 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "287200",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543358585,
+    "title": "Wildlife Park 3",
+    "source": "protondb"
+  }
+]

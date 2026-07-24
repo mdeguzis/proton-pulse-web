@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "649810",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.14.65-gentoo",
+    "notes": "Works well. Sound problems fixed after:  WINEPREFIX=~/.steam/steam/steamapps/compatdata/649810/pfx winecfg\nand set xaudio2_7, xaudio2_7 to native,builtin",
+    "os": "Gentoo Base System release 2.4.1",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543004717,
+    "title": "Ostwind/Windstorm",
+    "source": "protondb"
+  }
+]

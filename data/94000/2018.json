@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "94000",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Couldn't make it run windowed but ran at 2000+FPS on EXORBITANT texture quality. Note: she didn't come..",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541512465,
+    "title": "Dinner Date",
+    "source": "protondb"
+  }
+]

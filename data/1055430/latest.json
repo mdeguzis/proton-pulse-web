@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1055430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.3-1-default",
+    "notes": "Works wonders. It froze once during S&S 3, but it wasn't too bad since S&S 3 has autosaves.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555889689,
+    "title": "Swords and Sandals Classic Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "1055430",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Proton cannot find Adobe Air even though there is a sub folder in the game folder",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1568648468,
+    "title": "Swords and Sandals Classic Collection",
+    "source": "protondb"
+  }
+]

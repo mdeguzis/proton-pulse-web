@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1118040",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.7-200.fc42.x86_64",
+    "notes": "works just fine.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1758723926,
+    "title": "",
+    "source": "protondb"
+  }
+]

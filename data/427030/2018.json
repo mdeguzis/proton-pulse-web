@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "427030",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No opening video; controllers don't work. Game play is fine with keyboard and mouse.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32113 Mb",
+    "rating": "Silver",
+    "timestamp": 1537895002,
+    "title": "\u8ed2\u8f45\u528d\u5916\u50b3\u7a79\u4e4b\u6249(The Gate of Firmament)",
+    "source": "protondb"
+  },
+  {
+    "appId": "427030",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS\uff0864 \u4f4d\uff09",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545702313,
+    "title": "\u8ed2\u8f45\u528d\u5916\u50b3\u7a79\u4e4b\u6249(The Gate of Firmament)",
+    "source": "protondb"
+  }
+]

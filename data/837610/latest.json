@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "837610",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "5.0.3-050003-generic",
+    "notes": "Games no longer functions properly and instantly crashes even when doing the movie fix. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553652025,
+    "title": "Mary Skelter: Nightmares",
+    "source": "protondb"
+  },
+  {
+    "appId": "837610",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-1-MANJARO",
+    "notes": "Crashes to desktop when playing the opening movie. Fixed by renaming the \"MOVIE\" folder . Game runs perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563274876,
+    "title": "Mary Skelter: Nightmares",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

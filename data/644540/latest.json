@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "644540",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Works without any tweaks. Only once experienced a crash when alt tabbing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569662844,
+    "title": "Dies irae ~Amantes amentes~",
+    "source": "protondb"
+  },
+  {
+    "appId": "644540",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "The game simply doesn't start.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569856862,
+    "title": "Dies irae ~Amantes amentes~",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "appId": "449540",
+    "title": "There's Poop In My Soup",
+    "timestamp": 1534954954,
+    "rating": "Platinum",
+    "notes": "No",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "AMGPU Mesa 18.3.0-devel",
+    "specs": "AMD A10-7870K / AMD R7 370",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "449540",
+    "title": "There's Poop In My Soup",
+    "timestamp": 1535068269,
+    "rating": "Platinum",
+    "notes": "Everything fast and stable",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / GTX 1060 Max-Q",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "449540",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16004 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537841331,
+    "title": "There's Poop In My Soup",
+    "source": "protondb"
+  },
+  {
+    "appId": "449540",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-97.current",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542398658,
+    "title": "There's Poop In My Soup",
+    "source": "protondb"
+  },
+  {
+    "appId": "449540",
+    "title": "There's Poop In My Soup",
+    "timestamp": 1534940554,
+    "rating": "Platinum",
+    "notes": "No",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "AMGPU Mesa 18.3.0-devel",
+    "specs": "AMD A10-7870K / AMD R7 370",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "449540",
+    "title": "There's Poop In My Soup",
+    "timestamp": 1535053869,
+    "rating": "Platinum",
+    "notes": "Everything fast and stable",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / GTX 1060 Max-Q",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

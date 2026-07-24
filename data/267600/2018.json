@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "267600",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-vfio",
+    "notes": "Crashes without any error messages.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Borked",
+    "timestamp": 1537835897,
+    "title": "Airport Simulator 2014",
+    "source": "protondb"
+  }
+]

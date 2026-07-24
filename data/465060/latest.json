@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "465060",
+    "title": "EXZEAL",
+    "timestamp": 1535241636,
+    "rating": "Platinum",
+    "notes": "Runs without any problems.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "465060",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q6600  @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 750/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.11-1-default",
+    "notes": "No issues so far",
+    "os": "\"openSUSE Tumbleweed\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5884 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539458434,
+    "title": "EXZEAL",
+    "source": "protondb"
+  },
+  {
+    "appId": "465060",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Going to the resolution settings and cycling through the next two available options resulted in extreme CPU burn, rendering the entire desktop (Gnome) unresponsive. I had to reboot in order to resolve the issue. Aside from that, the game runs too slowly to be playable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546294201,
+    "title": "EXZEAL",
+    "source": "protondb"
+  },
+  {
+    "appId": "465060",
+    "title": "EXZEAL",
+    "timestamp": 1535227236,
+    "rating": "Platinum",
+    "notes": "Runs without any problems.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

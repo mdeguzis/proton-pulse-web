@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "341020",
+    "title": "Chronicles of Teddy",
+    "timestamp": 1535189038,
+    "rating": "Platinum",
+    "notes": "Xbox 360 controllers works fine. Stable 60 FPS.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 3550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "341020",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works like on Windows, including controller support",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537212816,
+    "title": "Chronicles of Teddy",
+    "source": "protondb"
+  },
+  {
+    "appId": "341020",
+    "title": "Chronicles of Teddy",
+    "timestamp": 1535174638,
+    "rating": "Platinum",
+    "notes": "Xbox 360 controllers works fine. Stable 60 FPS.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 3550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "appId": "736190",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "notes": "Runs OK except cranky sound and missing fonts",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1553182932,
+    "title": "\u4e2d\u56fd\u5f0f\u5bb6\u957f / Chinese Parents",
+    "source": "protondb"
+  },
+  {
+    "appId": "736190",
+    "cpu": "AMD Athlon 200GE with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Works just fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1559059767,
+    "title": "\u4e2d\u56fd\u5f0f\u5bb6\u957f / Chinese Parents",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "736190",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.11-300.fc30.x86_64",
+    "notes": "Almost perfect except missing some texts, maybe missing some fonts",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "ram": "20 GB",
+    "rating": "Silver",
+    "timestamp": 1559798785,
+    "title": "\u4e2d\u56fd\u5f0f\u5bb6\u957f / Chinese Parents",
+    "source": "protondb"
+  },
+  {
+    "appId": "736190",
+    "cpu": "Intel Xeon E31280 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.0-2-amd64",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-5",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1568956530,
+    "title": "\u4e2d\u56fd\u5f0f\u5bb6\u957f / Chinese Parents",
+    "source": "protondb"
+  }
+]

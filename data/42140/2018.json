@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "42140",
+    "title": "Hamilton's Great Adventure",
+    "timestamp": 1534947284,
+    "rating": "Silver",
+    "notes": "No Vsync enabled and no option in the settings",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Ryzen 1700 / Nvidia GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "42140",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-18.1-liquorix-amd64",
+    "notes": "The game works out of the box, including Gamepad. Vsync isn't enabled, this is an issue with the game, not Proton. Here is how to fix it: https://steamcommunity.com/app/42140/discussions/0/619574421305834465/",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542944752,
+    "title": "Hamilton's Great Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "42140",
+    "title": "Hamilton's Great Adventure",
+    "timestamp": 1534932884,
+    "rating": "Silver",
+    "notes": "No Vsync enabled and no option in the settings",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Ryzen 1700 / Nvidia GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

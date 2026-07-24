@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "352400",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.22.05",
+    "kernel": "4.20.7-zen1-1-zen",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549980781,
+    "title": "LEGO\u00ae Jurassic World",
+    "source": "protondb"
+  },
+  {
+    "appId": "352400",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.6-300.fc30.x86_64",
+    "notes": "I loaded a saved game from Windows and everything loaded fine, there was audio, controller mapping was recognised, etc. I did not bother to play a level from beginning to end, but jumped around the map to different islands and places, checked DX9 / DX11, UHD resolution and many other settings. No problems anywhere. Performance seems to be better in 3.16-8 of Proton, there was stutter in 4K on 4.2-2, but that's on a weak APU, so could have been anything. But if you notice it, just go back to 3.16-8 and try again. Hope that helps.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "14 GB",
+    "rating": "Platinum",
+    "timestamp": 1554597380,
+    "title": "LEGO\u00ae Jurassic World",
+    "source": "protondb"
+  },
+  {
+    "appId": "352400",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Plays perfect with two Steam controllers. The dynamic split screen mode for two players works well. The only \"gotcha\" was making sure both controllers are turned on before opening \"Big Screen\" mode",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1554648353,
+    "title": "LEGO\u00ae Jurassic World",
+    "source": "protondb"
+  }
+]

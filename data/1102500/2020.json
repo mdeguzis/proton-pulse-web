@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1102500",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Installed and played just over 2 hours. Haven't compared it, but seems 100% identical to the windows counterpart, based on video's.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1579605501,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1102500",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.3.18-1-MANJARO",
+    "notes": "Ran with Proton from day one. No issues this whole time. Super smooth performance. Both mouse and controller input are supported.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1582358273,
+    "title": "",
+    "source": "protondb"
+  }
+]

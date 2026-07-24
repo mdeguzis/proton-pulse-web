@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1789470",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.64, 6.17.13+deb14-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.8-2+b2",
+    "kernel": "6.17.13+deb14-amd64",
+    "notes": "I was personally able to beat this (short) game fine, but I believe the flicker may be too distracting for most people",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1767932162,
+    "title": "Monster Girl's Labyrinth",
+    "source": "protondb"
+  }
+]

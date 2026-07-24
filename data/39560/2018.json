@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "39560",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Solid white-list candidate. No noticeable performance hit",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536781443,
+    "title": "Painkiller: Resurrection",
+    "source": "protondb"
+  },
+  {
+    "appId": "39560",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Plays great",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540932959,
+    "title": "Painkiller: Resurrection",
+    "source": "protondb"
+  },
+  {
+    "appId": "39560",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.2-300.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1543017752,
+    "title": "Painkiller: Resurrection",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "42990",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.14.52-gentoo",
+    "notes": "The game does not start; after a moment, the status goes from \"Running\" to \"Ready to play.\"  Esync and both D3d11 options had no effect.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560006586,
+    "title": "Sword of the Stars II: Enhanced Edition",
+    "source": "protondb"
+  }
+]

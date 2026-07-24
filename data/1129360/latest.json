@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1129360",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 20.1.8, DRM 3.64, 6.16.1-1-default)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.16.1-1-default",
+    "notes": "Tested the demo, which works fine, including changing the button layout as shown ingame",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757236835,
+    "title": "",
+    "source": "protondb"
+  }
+]

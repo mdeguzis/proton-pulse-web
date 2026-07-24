@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "681240",
+    "cpu": "Intel Core i7-4712HQ @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "It starts and I was able to play some of the game, but it crashes unpredictably but very frequently (e.g. every 15 seconds or every 5 minutes).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553650624,
+    "title": "Dujanah",
+    "source": "protondb"
+  }
+]

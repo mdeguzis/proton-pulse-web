@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1707650",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.63, 6.15.9-201.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.15.9-201.fc42.x86_64",
+    "notes": "Generally good - 6/10, as part of the game content is not accessible.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1764455316,
+    "title": "",
+    "source": "protondb"
+  }
+]

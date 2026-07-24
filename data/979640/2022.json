@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "979640",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.12-200.fc35.x86_64",
+    "notes": "Particularly poor performance.",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1641528731,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "979640",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.1-zen1-1-zen",
+    "notes": "Decent performance since recent update",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1660921621,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "979640",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 14.0.0, DRM 3.47, 5.19.16-200.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.16-200.fc36.x86_64",
+    "notes": "Way better performance on the experimental branch.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1666490073,
+    "title": "",
+    "source": "protondb"
+  }
+]

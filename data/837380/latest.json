@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "837380",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.7-114.current",
+    "notes": "Requires VP9 libraries like from LAVFilters to play any video. Tried the graphical installer, which had a failure during registration of the codecs. Tried running the .bat files from the ZIP, which didn't report any failure, but the game failed to launch anymore after this. See more here: reddit.com/r/SteamPlay/comments/b62pai/",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556240864,
+    "title": "DeoVR Video Player",
+    "source": "protondb"
+  }
+]

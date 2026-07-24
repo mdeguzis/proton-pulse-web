@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "299110",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-ck-skylake",
+    "notes": "Only started when I disabled D3d11. This worked for me: PROTON_NO_D3D11=1 STEAM_COMPAT_DATA_PATH=~/.steam/steam/steamapps/compatdata/299110 ~/.steam/steam/steamapps/common/Proton\\ 3.16\\ Beta/proton run ~/.steam/steam/steamapps/common/Theatre\\ Of\\ The\\ Absurd/Theatre\\ of\\ the\\ Absurd\\ CE.exe",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552342695,
+    "title": "Theatre Of The Absurd",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "299110",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559455799,
+    "title": "Theatre Of The Absurd",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "533010",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "5.15.0-87-generic",
+    "notes": "Works well out of the box. No issues experienced.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1697880257,
+    "title": "",
+    "source": "protondb"
+  }
+]

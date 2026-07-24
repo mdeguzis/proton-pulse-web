@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "249190",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Works very well. From time to time the game crashes (3 times in 6 hours).",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562691696,
+    "title": "Ancient Space",
+    "source": "protondb"
+  }
+]

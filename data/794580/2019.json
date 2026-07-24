@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "794580",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-1fb6630 2019-04-30 disco-oibaf-ppa)",
+    "kernel": "5.1.0-050100rc6-generic",
+    "notes": "No tweaks required. Works perfectly fine. No glitches, no crashes.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2.3",
+    "protonVersionManual": "4.2.3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556618758,
+    "title": "SNK HEROINES Tag Team Frenzy",
+    "source": "protondb"
+  }
+]

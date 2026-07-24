@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "45750",
+    "title": "Lost Planet 2",
+    "timestamp": 1535384332,
+    "rating": "Borked",
+    "notes": "dx9 and dx11 selection instantly closes the launcher",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "45750",
+    "cpu": "i5-4590 CPU @ 3.30GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Cannot get past DX9/DX11 selection screen. Might have something to do with Games for Windows Live.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "24010 Mb",
+    "rating": "Borked",
+    "timestamp": 1536895984,
+    "title": "Lost Planet\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "45750",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0 AMD 18.30 , 4.15.0-34-generic, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-34-generic",
+    "notes": "doesnt go past the DX9 DX11 selection screen, my bet it is because of windows live",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7941 Mb",
+    "rating": "Borked",
+    "timestamp": 1537812099,
+    "title": "Lost Planet\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "45750",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Can use xliveless dll to launch, but the game is unable to load anything past the title screen. (https://gtaforums.com/topic/388658-relgtaiv-xliveless/)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "24010 Mb",
+    "rating": "Borked",
+    "timestamp": 1540213504,
+    "title": "Lost Planet\u00ae 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "45750",
+    "title": "Lost Planet 2",
+    "timestamp": 1535369932,
+    "rating": "Borked",
+    "notes": "dx9 and dx11 selection instantly closes the launcher",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

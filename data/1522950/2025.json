@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1522950",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.8-201.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.8-201.nobara.fc41.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743100717,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1522950",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.16.12-200.fc42.x86_64",
+    "notes": "Works fine",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1760921570,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1522950",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "Games works fine and runs fine, minus random, brief, audio problems that fix themselves but do keep reappearing.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1765577351,
+    "title": "",
+    "source": "protondb"
+  }
+]

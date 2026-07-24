@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1174400",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-24db276d11)",
+    "kernel": "5.5.8-zen1-1-zen",
+    "notes": "Small fixes resolve the issue. It's using a similar engine like Saya No Uta.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1584005778,
+    "title": "",
+    "source": "protondb"
+  }
+]

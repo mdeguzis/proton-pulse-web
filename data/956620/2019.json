@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "956620",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.10-050110-generic",
+    "notes": "Even though the game is marked as \"Native\", there's no audio though the gameplay, even if you force Proton.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1563682444,
+    "title": "Talk to Yuno",
+    "source": "protondb"
+  }
+]

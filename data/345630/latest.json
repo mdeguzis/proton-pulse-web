@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "345630",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Unlike Fruit or Labyrinth, which will play videos fine with LAVFilters (dl .exe and run in wine prefix), and quartz.dll from winetricks, Videos in Eden do not work AFAIK :/ \n\nWhen Videos start playing, the window is black and starts behaving weirdly. I was tempted to force quit the program since i had thought it was just broken.\n\nLuckily if you just wait for the video to finish (you can hear the  audio from whatever video is playing fine) , the game will work again and play like Fruit or Labyrinth do. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1556893263,
+    "title": "The Eden of Grisaia",
+    "source": "protondb"
+  }
+]

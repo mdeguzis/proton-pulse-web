@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3005640",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Like many RPGmaker games, needs an older Proton version, but otherwise is perfectly stable.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1727683487,
+    "title": "",
+    "source": "protondb"
+  }
+]

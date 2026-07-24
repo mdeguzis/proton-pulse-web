@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "34420",
+    "cpu": "AMD FX(tm)-6350 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works just fine. If you encounter black ground texture problem, don't worry because this problem happens on Windows OS as well. All you have to do is set Shader Mode to \"Standard\" in video options menu. Otherwise, works just fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7995 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537522938,
+    "title": "XIII Century \u2013 Gold Edition",
+    "source": "protondb"
+  }
+]

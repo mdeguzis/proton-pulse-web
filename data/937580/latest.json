@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "937580",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "More or less run perfectly out of the box with a 60Hz display. If running on a non-60Hz setup, input method (\u5165\u529b\u306e\u30ec\u30a4\u30c6\u30f3\u30b7) needs to be set to \"Fast\" (\u9ad8\u901f) or the game will run at the wrong speed. Mojibake can be fixed by running the game with the Steam launch options \"LC_ALL=ja_JP.UTF-8 %command%\", assuming you have the locale on your machine. ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1554233143,
+    "title": "\u6771\u65b9\u7d3a\u73e0\u4f1d \uff5e Legacy of Lunatic Kingdom.",
+    "source": "protondb"
+  },
+  {
+    "appId": "937580",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Runs perfectly out of the box, no stuttering or input lag. Set launch option to \"LANG=ja_JP.utf8 %command%\" to fix gibberish in config menu dialoge.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558570847,
+    "title": "\u6771\u65b9\u7d3a\u73e0\u4f1d \uff5e Legacy of Lunatic Kingdom.",
+    "source": "protondb"
+  },
+  {
+    "appId": "937580",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "works perfectly but only in window mode",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562941794,
+    "title": "\u6771\u65b9\u7d3a\u73e0\u4f1d \uff5e Legacy of Lunatic Kingdom.",
+    "source": "protondb"
+  }
+]

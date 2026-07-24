@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "10500",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton the game crashed after starting a new campaign, in the main menu there was some flickering. I installed manually D9VK, the game crashed as well but at least in the main menu was no flickering.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557562208,
+    "title": "Total War: EMPIRE \u2013 Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "10500",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-fed6aa2fec)",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "Started a new campaign game, changed graphics settings, though anti-aliasing gets rid of all graphics except for the skybox and a few other graphics (as seen here https://imgur.com/a/iUXxlkb), I ran the game at ultra, everything worked perfectly out of the box, including in game battles",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564914998,
+    "title": "Total War: EMPIRE \u2013 Definitive Edition",
+    "source": "protondb"
+  }
+]

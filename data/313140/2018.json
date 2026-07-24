@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "313140",
+    "cpu": "Intel(R) Core(TM) i7-4771 CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "The intro cinematic, parts of the UI, fonts, certain textures, and character animations are not working.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32087 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537249886,
+    "title": "Blackbay Asylum",
+    "source": "protondb"
+  },
+  {
+    "appId": "313140",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Missing fonts, start screen fades into complete white screen and can't continue from there. PROTON_USE_WINED3D11, PROTON_NO_D3D11, PROTON_NO_ESYNC have no effect. Can get it running correctly only with Wine Staging.",
+    "os": "Debian GNU/Linux stable-updates (sid) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16011 Mb",
+    "rating": "Borked",
+    "timestamp": 1539535999,
+    "title": "Blackbay Asylum",
+    "source": "protondb"
+  },
+  {
+    "appId": "313140",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-42-generic",
+    "notes": "A lot of message boxes appear about D3D errors",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545351416,
+    "title": "Blackbay Asylum",
+    "source": "protondb"
+  }
+]

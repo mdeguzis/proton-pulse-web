@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1202970",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.12-200.fc38.x86_64",
+    "notes": "It's good",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1689283889,
+    "title": "",
+    "source": "protondb"
+  }
+]

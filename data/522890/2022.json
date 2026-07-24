@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "522890",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Runs perfectly with proton, key rebind working as well",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1647138264,
+    "title": "Ant-gravity: Tiny's Adventure",
+    "source": "protondb"
+  }
+]

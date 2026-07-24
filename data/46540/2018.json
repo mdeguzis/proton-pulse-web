@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "46540",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Played it for a while, Everything seemed to work fine.  The game was able to maintain a constant frame rate of 75 FPS.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545261943,
+    "title": "Trapped Dead",
+    "source": "protondb"
+  }
+]

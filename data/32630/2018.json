@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "32630",
+    "title": "Delta Force 2",
+    "timestamp": 1535241901,
+    "rating": "Silver",
+    "notes": "If graphics driver is set to Hardware, objects become visible through the ground, so make sure you select Software. Performance is the same (capped at 62 FPS).",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "32630",
+    "title": "Delta Force 2",
+    "timestamp": 1535227501,
+    "rating": "Silver",
+    "notes": "If graphics driver is set to Hardware, objects become visible through the ground, so make sure you select Software. Performance is the same (capped at 62 FPS).",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1112340",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "    The game seems to run smoothly once Wine D3D is enabled, whereas without it enabled, it crashes immediately on startup. However, once the \"intro\" to the game is played through and one is brought to the main menu, the one with \"New Game\"; \"Continue\"; and \"Options\", pressing \"New Game\" or \"Continue\" brings the user to a black screen. The music immediately goes silent, and all than can be seen is an eye-like cursor as seen in the intro. Closing the game raises it to max CPU usage, freezes the cursor, and the \"kill\" command is required to close the process, although this problem appears to be common to Unity games and not really my main issue.\n\n    I have experimented with all of Proton's options to no avail. My last resort was using PROTON_DUMP_DEBUG_COMMANDS, which resulted in a segfault while debugging at the section where the screen goes black.\n\n    To sum, it runs fine until the main menu is reached, but crashes if you try to truly start the game",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1567829277,
+    "title": "The Dreadful Whispers",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

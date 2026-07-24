@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "392070",
+    "title": "Pumped BMX +",
+    "timestamp": 1535906979,
+    "rating": "Platinum",
+    "notes": "Played perfectly, even at 1440p.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "392070",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Feels native",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536614395,
+    "title": "Pumped BMX +",
+    "source": "protondb"
+  },
+  {
+    "appId": "392070",
+    "title": "Pumped BMX +",
+    "timestamp": 1535892579,
+    "rating": "Platinum",
+    "notes": "Played perfectly, even at 1440p.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

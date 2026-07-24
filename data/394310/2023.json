@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "394310",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Great!",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1681633188,
+    "title": "Punch Club",
+    "source": "protondb"
+  },
+  {
+    "appId": "394310",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 16.0.6, DRM 3.54, 6.5.9-arch2-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.9-arch2-1",
+    "notes": "N\u00e3o sei o que pode ser, o jogo abre no menu de configura\u00e7\u00e3o, com tamanho de tela, constraste lingua... Por\u00e9m n\u00e3o consigo clicar em nada",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1699304514,
+    "title": "Punch Club",
+    "source": "protondb"
+  },
+  {
+    "appId": "394310",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "severalHours",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.42.0, 5.15.0-88-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-88-generic",
+    "notes": "Native works great out of the box. No problems",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1700896481,
+    "title": "Punch Club",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "839910",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Works perfectly without tweaking anything. Finished first few chapters in campaign and bought a few packs in the in game store.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569008857,
+    "title": "Mythgard",
+    "source": "protondb"
+  },
+  {
+    "appId": "839910",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.15-200.fc30.x86_64",
+    "notes": "Everything seems to work perfectly.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569141416,
+    "title": "Mythgard",
+    "source": "protondb"
+  },
+  {
+    "appId": "839910",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Perfect.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571213130,
+    "title": "Mythgard",
+    "source": "protondb"
+  }
+]

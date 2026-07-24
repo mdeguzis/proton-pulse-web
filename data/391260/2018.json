@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "391260",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.69-1-lts",
+    "notes": "The game runs perfect out of the box. The only problem is that you have to press alt+enter to enter fullscreen, but the same is true for the windows version of the game.",
+    "os": "Arch Linux (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15974 MB",
+    "rating": "Platinum",
+    "timestamp": 1536955108,
+    "title": "Labyronia RPG",
+    "source": "protondb"
+  }
+]

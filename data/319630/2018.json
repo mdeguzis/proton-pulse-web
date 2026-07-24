@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "319630",
+    "title": "Life is Strange\u2122",
+    "timestamp": 1534946373,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Ubuntu Budgie 18.04",
+    "gpuDriver": "NVIDIA driver 396.51",
+    "specs": "i5-5200U / Nvidia Geforce 930M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "319630",
+    "title": "Life is Strange\u2122",
+    "timestamp": 1535119419,
+    "rating": "Platinum",
+    "notes": "Flawless gameplay.",
+    "os": "Arch Linux (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1060 6G",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "319630",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "duration": "moreThanTenHours",
+    "gpu": "X.Org Radeon RX 570 Series (POLARIS10, DRM 3.26.0, 4.18.12-94.current, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.12-94.current",
+    "notes": "If this game start & stops on Arch use steam-runtime.",
+    "os": "\"Solus\" (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15997 MB",
+    "rating": "Platinum",
+    "timestamp": 1539759837,
+    "title": "Life is Strange - Episode 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "319630",
+    "title": "Life is Strange\u2122",
+    "timestamp": 1534931973,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Ubuntu Budgie 18.04",
+    "gpuDriver": "NVIDIA driver 396.51",
+    "specs": "i5-5200U / Nvidia Geforce 930M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "319630",
+    "title": "Life is Strange\u2122",
+    "timestamp": 1535105019,
+    "rating": "Platinum",
+    "notes": "Flawless gameplay.",
+    "os": "Arch Linux (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1060 6G",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

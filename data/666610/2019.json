@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "666610",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.15.0-58-generic",
+    "notes": "All working out of the box except voice synthesis. I installed speechsdk with winetricks https://forum.winehq.org/viewtopic.php?f=8&t=28677.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567899714,
+    "title": "Endless ATC",
+    "source": "protondb"
+  }
+]

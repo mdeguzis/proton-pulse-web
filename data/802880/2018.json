@@ -1,0 +1,76 @@
+[
+  {
+    "appId": "802880",
+    "title": "Muv-Luv",
+    "timestamp": 1535590842,
+    "rating": "Borked",
+    "notes": "Have tried the launch options \"PROTON_NO_D3D11=1 %command%\",\"PROTON_USE_WINED3D11=1 %command%\" and \"PROTON_NO_ESYNC=1 %command%\" in different arrangements and the best I could get was a small box saying \"File Not Found\" and then nothing happens.",
+    "os": "Fedora 28 KDE 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4590 / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "802880",
+    "cpu": "Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-zen1-1-zen",
+    "notes": "Won't start.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7916 Mb",
+    "rating": "Borked",
+    "timestamp": 1537421357,
+    "title": "Muv-Luv",
+    "source": "protondb"
+  },
+  {
+    "appId": "802880",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "you really should try to read log and install missing DLLs before marking it as borked... again just install 2015 redistribuables, vcrun2015",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542449238,
+    "title": "Muv-Luv",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "802880",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "works out of box in latest beta!",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542450241,
+    "title": "Muv-Luv",
+    "source": "protondb"
+  },
+  {
+    "appId": "802880",
+    "title": "Muv-Luv",
+    "timestamp": 1535576442,
+    "rating": "Borked",
+    "notes": "Have tried the launch options \"PROTON_NO_D3D11=1 %command%\",\"PROTON_USE_WINED3D11=1 %command%\" and \"PROTON_NO_ESYNC=1 %command%\" in different arrangements and the best I could get was a small box saying \"File Not Found\" and then nothing happens.",
+    "os": "Fedora 28 KDE 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4590 / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

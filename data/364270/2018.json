@@ -1,0 +1,44 @@
+[
+  {
+    "appId": "364270",
+    "cpu": "Pentium(R) Dual-Core  CPU      E5300  @ 2.60GHz",
+    "gpu": "GeForce GT 240/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "notes": "",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Lilly and Sasha: Curse of the Immortals",
+    "source": "protondb"
+  },
+  {
+    "appId": "364270",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537859250,
+    "title": "Lilly and Sasha: Curse of the Immortals",
+    "source": "protondb"
+  },
+  {
+    "appId": "364270",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542629237,
+    "title": "Lilly and Sasha: Curse of the Immortals",
+    "source": "protondb"
+  }
+]

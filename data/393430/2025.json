@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "393430",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.2-2-cachyos",
+    "notes": "Switch to a proton version such as Proton-GE to run the game.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757994681,
+    "title": "Ice Lakes",
+    "source": "protondb"
+  }
+]

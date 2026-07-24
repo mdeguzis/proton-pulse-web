@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "344760",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 750M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Error at launch. I suspect EasyAntiCheat",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1555973431,
+    "title": "Reign Of Kings",
+    "source": "protondb"
+  },
+  {
+    "appId": "344760",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "I made it to the homescreen, I can change the options, the controls, but there is an error message on the screen \"Please run the game from Reign Of Rings.exe\" and it crashes when you try to join a server.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565958103,
+    "title": "Reign Of Kings",
+    "source": "protondb"
+  }
+]

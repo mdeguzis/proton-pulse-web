@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "729580",
+    "cpu": "AMD A10-6800K APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Works great after setting PROTON_USE_WINED3D=1",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "14 GB",
+    "rating": "Gold",
+    "timestamp": 1572150116,
+    "title": "Malzbie's Pinball Collection",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

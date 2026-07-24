@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "293520",
+    "title": "Carnivores: Dinosaur Hunter Reborn",
+    "timestamp": 1535482300,
+    "rating": "Platinum",
+    "notes": "Works good.",
+    "os": "KDE neon User Edition 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-920 / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "293520",
+    "title": "Carnivores: Dinosaur Hunter Reborn",
+    "timestamp": 1535504222,
+    "rating": "Borked",
+    "notes": "Flickering along bottom and right edges. Crashes after 1 min.",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "293520",
+    "cpu": "Intel(R) Core(TM) i7 CPU         920  @ 2.67GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.26.0, 4.18.8-041808-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2 - padoka PPA",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Works Great! (The game crashes sometimes, but those same crashes also happen on Windows)",
+    "os": "Kubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "5950 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539521936,
+    "title": "Carnivores: Dinosaur Hunter Reborn",
+    "source": "protondb"
+  },
+  {
+    "appId": "293520",
+    "title": "Carnivores: Dinosaur Hunter Reborn",
+    "timestamp": 1535467900,
+    "rating": "Platinum",
+    "notes": "Works good.",
+    "os": "KDE neon User Edition 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-920 / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "293520",
+    "title": "Carnivores: Dinosaur Hunter Reborn",
+    "timestamp": 1535489822,
+    "rating": "Borked",
+    "notes": "Flickering along bottom and right edges. Crashes after 1 min.",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

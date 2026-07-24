@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "251630",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 20.1.8, DRM 3.63, 6.15.8-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 25.1.6",
+    "kernel": "6.15.8-gentoo-dist",
+    "notes": "In-game VSync/FPS limiter is insufficient.",
+    "os": "Gentoo Linux\uff08",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1753933083,
+    "title": "",
+    "source": "protondb"
+  }
+]

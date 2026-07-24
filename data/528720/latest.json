@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "528720",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game would not get passed the flickering intro video. So I renamed the Intro.mp4 file in the games directory /Shu_Data/StreamingAssets/Video/. Once the game logos faded I pressed enter and the main menu appeared. After that all gameplay was smooth. Adjusting resolution and graphics seem to work and playing in windowed mode was fine. After restarting the game in windowed mode, the graphics menu reported different settings than were actually in use.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559476426,
+    "title": "Shu",
+    "source": "protondb"
+  }
+]

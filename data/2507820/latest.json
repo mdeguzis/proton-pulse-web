@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2507820",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, ACO, DRM 3.64, 6.19.14-ogc2.1.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "6.19.14-ogc2.1.fc44.x86_64",
+    "notes": "Tout fonctionne tr\u00e8s bien nativement, j'utilise Bazzite qui configure tout automatiquement donc pas eu de soucis et de bidouillages \u00e0 faire.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1778429586,
+    "title": "Bloodgrounds",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "800190",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Finished game with xbox one controller. No issues.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567232011,
+    "title": "The Adventures of Elena Temple",
+    "source": "protondb"
+  }
+]

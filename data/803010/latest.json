@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "803010",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Does not run out of the box. Desktop window with blue topbar openes, it attaches to steamvr, but then it closes. did not try any tweaks yet.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555763144,
+    "title": "Supermedium - Virtual Reality Browser",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "409320",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Won't start nothing happens, different Proton launch options and disabling Steam overlays made no difference.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552841755,
+    "title": "Syndrome",
+    "source": "protondb"
+  },
+  {
+    "appId": "409320",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.1-050301-lowlatency",
+    "notes": "Game won't start.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569433661,
+    "title": "Syndrome",
+    "source": "protondb"
+  }
+]

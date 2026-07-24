@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "524580",
+    "title": "Fairy Fencer F Advent Dark Force",
+    "timestamp": 1535081992,
+    "rating": "Borked",
+    "notes": "Game won't start. No visual indicators of a launch.",
+    "os": "Manjaro 17.1.12 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "524580",
+    "cpu": "Intel(R) Core(TM) i5-4670 CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.65-gentoo",
+    "notes": "Not Tested with a SSD\nBy Default: Black Window\nUsing WineD3D11: Black Window with some glitches from my desktop (duplicated down bar)\nDisabling D3D11: Fail to execute (No Window,  Close Process immediately)\nDisabling ESync: Fail to execute (No Window,  Close Process immediately)",
+    "os": "\"Gentoo Base System release 2.4.1\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7904 Mb",
+    "rating": "Borked",
+    "timestamp": 1539511792,
+    "title": "Fairy Fencer F Advent Dark Force | \u30d5\u30a7\u30a2\u30ea\u30fc\u30d5\u30a7\u30f3\u30b5\u30fc \u30a8\u30d5 ADVENT DARK FORCE | \u5996\u7cbe\u528d\u58eb F ADVENT DARK FORCE",
+    "source": "protondb"
+  },
+  {
+    "appId": "524580",
+    "cpu": "AMD Phenom II X6 1055T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Game hangs on black window. No sound.",
+    "os": "Arch Linux x86_64",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542926270,
+    "title": "Fairy Fencer F Advent Dark Force | \u30d5\u30a7\u30a2\u30ea\u30fc\u30d5\u30a7\u30f3\u30b5\u30fc \u30a8\u30d5 ADVENT DARK FORCE | \u5996\u7cbe\u528d\u58eb F ADVENT DARK FORCE",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "524580",
+    "title": "Fairy Fencer F Advent Dark Force",
+    "timestamp": 1535067592,
+    "rating": "Borked",
+    "notes": "Game won't start. No visual indicators of a launch.",
+    "os": "Manjaro 17.1.12 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

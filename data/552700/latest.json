@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "552700",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Gives garbled directx11 error",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1551128389,
+    "title": "WORLD OF FINAL FANTASY\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "552700",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.30-1-MANJARO",
+    "notes": "DirectX11 error",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1553815876,
+    "title": "WORLD OF FINAL FANTASY\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "552700",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "The game will crash with default settings (windowed). In order to change settings, dotnet40 is required (protontricks 552700 dotnet40) to launch settings. Switch game to fullscreen mode. The game should be running. However, there is an issue with graphics rendering in game.  The screen is splitted in multiple horizontal bands with some offset.",
+    "os": "Linux (64\u00a0bits)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1555362491,
+    "title": "WORLD OF FINAL FANTASY\u00ae",
+    "source": "protondb"
+  }
+]

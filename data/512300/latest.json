@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "512300",
+    "title": "Unbox",
+    "timestamp": 1535406401,
+    "rating": "Borked",
+    "notes": "Crashes X.  Ouch!",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX8350",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "512300",
+    "title": "Unbox",
+    "timestamp": 1535623436,
+    "rating": "Silver",
+    "notes": "Appears to crash between levels, but still playable, for example, crashes after end of tutorial but starts at next level when reloaded. Local multiplayer game play seems okay.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "512300",
+    "title": "Unbox",
+    "timestamp": 1535704329,
+    "rating": "Platinum",
+    "notes": "Great compatibility with Photon 3.7-5 Beta!",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "512300",
+    "cpu": "Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "works fine after a few minutes for cache building",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7.6 beta",
+    "ram": "15979 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537109382,
+    "title": "Unbox: Newbie's Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "512300",
+    "title": "Unbox",
+    "timestamp": 1535392001,
+    "rating": "Borked",
+    "notes": "Crashes X.  Ouch!",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX8350",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "512300",
+    "title": "Unbox",
+    "timestamp": 1535609036,
+    "rating": "Silver",
+    "notes": "Appears to crash between levels, but still playable, for example, crashes after end of tutorial but starts at next level when reloaded. Local multiplayer game play seems okay.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "512300",
+    "title": "Unbox",
+    "timestamp": 1535689929,
+    "rating": "Platinum",
+    "notes": "Great compatibility with Photon 3.7-5 Beta!",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

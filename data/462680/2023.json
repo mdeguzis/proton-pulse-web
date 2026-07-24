@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "462680",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.6, DRM 3.49, 6.2.6-76060206-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Black screen when experimental, doesn't open with native version",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1685139944,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "462680",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Experimental proton got be a blck screen and backgrpund music.  Mouse was visible when moved.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1694288103,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "462680",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.2.0-33-generic",
+    "notes": "Game does not launch on my system regardless of Proton version.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1696468753,
+    "title": "",
+    "source": "protondb"
+  }
+]

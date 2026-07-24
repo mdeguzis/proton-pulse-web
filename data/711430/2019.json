@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "711430",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-050009-generic",
+    "notes": "The game is working perfectly fine for me without any tweaks being required.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1556948060,
+    "title": "Miss Fisher and the Deathly Maze",
+    "source": "protondb"
+  }
+]

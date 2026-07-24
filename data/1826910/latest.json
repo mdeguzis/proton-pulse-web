@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1826910",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (LLVM 13.0.1, DRM 3.47, 5.19.0-76051900-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "Works out of the box, without any tweaking needed.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1661377193,
+    "title": "",
+    "source": "protondb"
+  }
+]

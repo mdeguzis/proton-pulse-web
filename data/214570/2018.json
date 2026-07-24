@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "214570",
+    "title": "Ether Vapor Remaster",
+    "timestamp": 1535470199,
+    "rating": "Bronze",
+    "notes": "Graphical glitches on menu (no text) and projectiles (white blocks instead of projectiles from your main gun). You can kind of guess/stumble your way through the menus and the game is playable otherwise. ",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "214570",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No text in menus",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537742937,
+    "title": "ETHER VAPOR Remaster",
+    "source": "protondb"
+  },
+  {
+    "appId": "214570",
+    "title": "Ether Vapor Remaster",
+    "timestamp": 1535455799,
+    "rating": "Bronze",
+    "notes": "Graphical glitches on menu (no text) and projectiles (white blocks instead of projectiles from your main gun). You can kind of guess/stumble your way through the menus and the game is playable otherwise. ",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

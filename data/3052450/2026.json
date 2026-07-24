@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3052450",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.6, DRM 3.57, 6.10.9-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.10.9-200.fc40.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1775481903,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3052450",
+    "cpu": "AMD Ryzen 5 5600GT with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 7.0.1-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch2.2",
+    "kernel": "7.0.1-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777251046,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3052450",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.2, DRM 3.64, 6.17.0-29-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-29-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1779430588,
+    "title": "",
+    "source": "protondb"
+  }
+]

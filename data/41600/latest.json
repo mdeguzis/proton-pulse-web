@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "41600",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-ck-skylake",
+    "notes": "Jim's eyes and other textures are black and text is not showing (I ran the GOG version in both Wine and Proton with the same result). Alt-tabbing breaks the game too. When you change the focus back it's just black.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1553773939,
+    "title": "Earthworm Jim 3D",
+    "source": "protondb"
+  }
+]

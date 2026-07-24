@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "400330",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "try't forcing 32bit but no change. craches at launch",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568451060,
+    "title": "rFactor 2 Demo",
+    "source": "protondb"
+  }
+]

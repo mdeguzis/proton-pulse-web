@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "9000",
+    "title": "Wolfenstein 3D: Spear of Destiny",
+    "timestamp": 1535941309,
+    "rating": "Platinum",
+    "notes": "your typical steam dosbox experience",
+    "os": "Linux Mind Debian Edition 3 64-bit (Kernel 4.9.0-8)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4670k / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9000",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10 / DRM 3.23.0 / 4.15.0-36-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "works like native",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539252913,
+    "title": "Spear of Destiny",
+    "source": "protondb"
+  },
+  {
+    "appId": "9000",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs on DOSBox through Proton flawlessly. There are better ways to play this game, however. See Lutris for a native port that uses Steam data.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541385935,
+    "title": "Spear of Destiny",
+    "source": "protondb"
+  },
+  {
+    "appId": "9000",
+    "title": "Wolfenstein 3D: Spear of Destiny",
+    "timestamp": 1535926909,
+    "rating": "Platinum",
+    "notes": "your typical steam dosbox experience",
+    "os": "Linux Mind Debian Edition 3 64-bit (Kernel 4.9.0-8)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-4670k / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

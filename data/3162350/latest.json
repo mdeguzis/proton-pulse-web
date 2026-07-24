@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3162350",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.59, 6.12.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "perfectly playable without any major tinkering required",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1734037549,
+    "title": "",
+    "source": "protondb"
+  }
+]

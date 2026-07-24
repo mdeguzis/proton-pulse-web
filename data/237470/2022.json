@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "237470",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.19.7-arch1-1",
+    "notes": "Runs out of the box.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1662741831,
+    "title": "",
+    "source": "protondb"
+  }
+]

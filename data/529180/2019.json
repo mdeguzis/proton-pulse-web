@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "529180",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Attempted with and without ansel, the d3d11 tweaks, no success. Can get the splash screen (briefly), when the game switches to fullscreen, nada. Have to switch out and kill the process.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546550954,
+    "title": "Dark and Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "529180",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Messy UE crash",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566675348,
+    "title": "Dark and Light",
+    "source": "protondb"
+  }
+]

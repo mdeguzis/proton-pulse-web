@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "687920",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Everything works perfectly out of the box. Played through one character's ending, tested that new game after that continues from the save, tested gallery & h-scene functionality. Alt tabbing from full screen might cause the game to crash, and it can happen after continuing the game for a while.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567566115,
+    "title": "Tropical Liquor",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "775430",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "This is a small tour for AC:O. The tour guide's voice-over is perfect and does not have any playback / sync / artifact issues.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1584374491,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "775430",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-42-generic",
+    "notes": "Runs well, nice tours, I did 2, So Far ...",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1589533100,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "775430",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Very close to working. Main issue is overlay won't close to let you back to game",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1605011286,
+    "title": "",
+    "source": "protondb"
+  }
+]

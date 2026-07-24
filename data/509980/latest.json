@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "509980",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.15-200.fc29.x86_64",
+    "notes": "Comes up with an error message immediately.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552944991,
+    "title": "BIGFOOT",
+    "source": "protondb"
+  },
+  {
+    "appId": "509980",
+    "cpu": "Intel Core i3-3217U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Don't work (display an error window at startup).",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1555602577,
+    "title": "BIGFOOT",
+    "source": "protondb"
+  },
+  {
+    "appId": "509980",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "The game does sadly not work properly.\nIt can be installed, but if you try to start it, you get the error message: \"Fatal Error!\".",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1566036376,
+    "title": "BIGFOOT",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4351960",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.64, 7.0.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.5-2-cachyos",
+    "notes": "Got this game free from Epic Games and haven't seen anyone tried played this game in linux.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "7 GB",
+    "rating": "platinum",
+    "timestamp": 1778345495,
+    "title": "Typers Combat",
+    "source": "protondb"
+  }
+]

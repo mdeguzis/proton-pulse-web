@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "310510",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Played a bit of single player.  No issues.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563169659,
+    "title": "Deathtrap",
+    "source": "protondb"
+  },
+  {
+    "appId": "310510",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-21-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563480214,
+    "title": "Deathtrap",
+    "source": "protondb"
+  },
+  {
+    "appId": "310510",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.1.1-gentoo",
+    "notes": "With Esync, menu textures are missing in game, playing is impossible.\nWithout Esync, menu textures are back, I noticed no other graphical glitches. FPS are not great but largely sufficient to enjoy playing.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1564419967,
+    "title": "Deathtrap",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "310510",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Runs perfectly out of the box",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1571062947,
+    "title": "Deathtrap",
+    "source": "protondb"
+  }
+]

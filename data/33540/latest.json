@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "33540",
+    "title": "Dawn of Magic 2",
+    "timestamp": 1535034961,
+    "rating": "Borked",
+    "notes": "runs fine but doesnt load characters' models",
+    "os": "ubuntu 16.04 64-bit (kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i7-3610QM / nvidia 650m 2gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33540",
+    "title": "Dawn of Magic 2",
+    "timestamp": 1535020561,
+    "rating": "Borked",
+    "notes": "runs fine but doesnt load characters' models",
+    "os": "ubuntu 16.04 64-bit (kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i7-3610QM / nvidia 650m 2gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "211580",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Played the tutorial. Audio not working.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1552134758,
+    "title": "Wanderlust: Rebirth",
+    "source": "protondb"
+  },
+  {
+    "appId": "211580",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Runs but fullscreen messes up graphics.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559391956,
+    "title": "Wanderlust: Rebirth",
+    "source": "protondb"
+  },
+  {
+    "appId": "211580",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-30deepin-generic",
+    "notes": "audio doesn't work",
+    "os": "Deepin 15.10.1",
+    "protonVersion": "4.2-7",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1560652171,
+    "title": "Wanderlust: Rebirth",
+    "source": "protondb"
+  }
+]

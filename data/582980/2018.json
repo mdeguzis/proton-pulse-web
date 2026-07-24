@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "582980",
+    "title": "Castle of Shikigami \u5f0f\u795e\u306e\u57ce",
+    "timestamp": 1536264938,
+    "rating": "Gold",
+    "notes": "Works fine. Very Smooth. No music until changing \"audio device\" in game. Crashed when changing from keyboard to controller in game.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "582980",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540452914,
+    "title": "Castle of Shikigami \u5f0f\u795e\u306e\u57ce",
+    "source": "protondb"
+  },
+  {
+    "appId": "582980",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-11-generic",
+    "notes": "No music until device change in options.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543143594,
+    "title": "Castle of Shikigami \u5f0f\u795e\u306e\u57ce",
+    "source": "protondb"
+  },
+  {
+    "appId": "582980",
+    "title": "Castle of Shikigami \u5f0f\u795e\u306e\u57ce",
+    "timestamp": 1536250538,
+    "rating": "Gold",
+    "notes": "Works fine. Very Smooth. No music until changing \"audio device\" in game. Crashed when changing from keyboard to controller in game.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

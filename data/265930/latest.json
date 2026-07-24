@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "265930",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux and on Proton out of the box. I installed manually D9VK and it worked as well with this DX9 to Vulkan translation, there are only some minor graphical glitches.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557429242,
+    "title": "Goat Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "265930",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it works out of the box, but performance was bad. I installed manually D9VK and it worked great without any issue with this DX9 to Vulkan translation, no graphical glitches anymore!",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559984025,
+    "title": "Goat Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "265930",
+    "cpu": "Intel Core i7-4960X @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.52.10",
+    "kernel": "4.18.0-22-generic",
+    "notes": "D9VK 0.12 broke the game. May be a Nvidia issue or a D9VK 0.12 issue. Tested on 4.2-7 and GloriousEggroll Proton 4.11-1.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561376525,
+    "title": "Goat Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "265930",
+    "cpu": "Intel Core i7-4960X @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.52.05",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Everything works EXCEPT the Payday DLC. Payday DLC instantly crashes upon loading the level with D9VK 0.20. Memory issues also cause crashes when playing for an extended period of time. When the game is working though, performance on the base game, Goat City Bay, the MMO DLC, and the Zombie DLC is much better than native. Waste of Space DLC still has performance issues at 4K, but it isn't as bad as native OpenGL.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566898774,
+    "title": "Goat Simulator",
+    "tweaks": {
+      "largeAddressAware": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

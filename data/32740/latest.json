@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "32740",
+    "title": "MiG-29 Fulcrum",
+    "timestamp": 1535205407,
+    "rating": "Silver",
+    "notes": "Started two quick missions, flew around and game looked very stable. There is no hardware rendered (requires 3DFX's glide), so software rendered only. Windowed and full screen mode worked. Did not try multiplayer.",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "32740",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs using default graphics settings at 1024x768; played with Xbox 360 wired controller & keyboard; did not play online missions.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "32113 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539585825,
+    "title": "MiG-29 Fulcrum",
+    "source": "protondb"
+  },
+  {
+    "appId": "32740",
+    "title": "MiG-29 Fulcrum",
+    "timestamp": 1535191007,
+    "rating": "Silver",
+    "notes": "Started two quick missions, flew around and game looked very stable. There is no hardware rendered (requires 3DFX's glide), so software rendered only. Windowed and full screen mode worked. Did not try multiplayer.",
+    "os": "Linux Mint 19 64-Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

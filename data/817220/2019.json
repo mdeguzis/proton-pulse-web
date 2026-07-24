@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "817220",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Seems to work ok, had to alt-f4 to close the window after quitting. Uses the GZDoom engine so the .iwad file could be used by native Linux GZDoom.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566485789,
+    "title": "The Forestale",
+    "source": "protondb"
+  }
+]

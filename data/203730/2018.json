@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "203730",
+    "title": "Q.U.B.E.",
+    "timestamp": 1535134213,
+    "rating": "Borked",
+    "notes": "Original game edition. Unreasonably long installation time of .NET Framework prerequisite",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "203730",
+    "title": "Q.U.B.E.",
+    "timestamp": 1535119813,
+    "rating": "Borked",
+    "notes": "Original game edition. Unreasonably long installation time of .NET Framework prerequisite",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

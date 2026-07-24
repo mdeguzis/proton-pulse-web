@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "636570",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game runs, tried it 5 minutes and is working, further testing needs to be done",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1559148616,
+    "title": "Nights of Azure 2: Bride of the New Moon / \u3088\u308b\u306e\u306a\u3044\u304f\u306b\uff12 \uff5e\u65b0\u6708\u306e\u82b1\u5ac1\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "636570",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "DS4 borked, strafes indefinitely",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1559402737,
+    "title": "Nights of Azure 2: Bride of the New Moon / \u3088\u308b\u306e\u306a\u3044\u304f\u306b\uff12 \uff5e\u65b0\u6708\u306e\u82b1\u5ac1\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "636570",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "The realtime aspects work perfectly well, but the pre-rendered cutscenes do not. Upon encountering them, the game will either crash or get stuck on a white screen(if you use native quartz). The Bronze rating here is technically accurate, but you simply cannot complete the game on Linux. You can't even see it in action unless you have a save fom after the intro cutscenes...",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1561716183,
+    "title": "Nights of Azure 2: Bride of the New Moon / \u3088\u308b\u306e\u306a\u3044\u304f\u306b\uff12 \uff5e\u65b0\u6708\u306e\u82b1\u5ac1\uff5e",
+    "source": "protondb"
+  }
+]

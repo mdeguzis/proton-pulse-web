@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "306670",
+    "cpu": "Intel Xeon E5-2630 v4 @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Running this without any tweaks results in the playable ground being nothing but hot pink, which doesn't work for game play.  Enabling all the tweaks makes the game render normally, and seems generally playable via keyboard now that the ground is viewable.  \n\nAttempting to use my logitech F310 controller, the menus began randomly going in different directions on their own, and forcing through that to gameplay results in the character running around wildly, so gamepad/joystick function seems broken.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "129 GB",
+    "rating": "Bronze",
+    "timestamp": 1549402077,
+    "title": "Overlord: Fellowship of Evil",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

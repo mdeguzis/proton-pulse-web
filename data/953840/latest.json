@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "953840",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.0-1-MANJARO",
+    "notes": "Some scenes simply crash the game, but a good chunk of them work. Also the video at the start is missing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1563396993,
+    "title": "Apollo 11 VR HD",
+    "source": "protondb"
+  }
+]

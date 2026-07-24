@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "385360",
+    "title": "Super Trench Attack 2",
+    "timestamp": 1535568214,
+    "rating": "Platinum",
+    "notes": "works out of the box",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E 8400/GT 8500 512Mb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "385360",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Like native",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536914893,
+    "title": "Super Trench Attack 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "385360",
+    "title": "Super Trench Attack 2",
+    "timestamp": 1535553814,
+    "rating": "Platinum",
+    "notes": "works out of the box",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E 8400/GT 8500 512Mb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

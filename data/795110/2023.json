@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "795110",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 14.0.0, DRM 3.48, 6.0.12-76060006-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "puzzles interessantes",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688182329,
+    "title": "IIN",
+    "source": "protondb"
+  }
+]

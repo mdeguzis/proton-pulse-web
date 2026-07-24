@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "664000",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Only bug was when menu items did not align with on-screen icons.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1582416899,
+    "title": "",
+    "source": "protondb"
+  }
+]

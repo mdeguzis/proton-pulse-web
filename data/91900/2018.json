@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "91900",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.3-1-MANJARO",
+    "notes": "Will open window, crashes to desktop.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32162 Mb",
+    "rating": "Borked",
+    "timestamp": 1536550572,
+    "title": "Post Apocalyptic Mayhem",
+    "source": "protondb"
+  },
+  {
+    "appId": "91900",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-c6b37e5 2018-12-23 bionic-oibaf-ppa)",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Sound is crackling, xbox 360 controller not work",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545793020,
+    "title": "Post Apocalyptic Mayhem",
+    "source": "protondb"
+  }
+]

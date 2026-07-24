@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "414550",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.7-zen1-1-zen",
+    "notes": "Game launches, logo appears, then gets stuck in a black screen. Have to close the game after this.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1594438425,
+    "title": "Death Toll",
+    "source": "protondb"
+  }
+]

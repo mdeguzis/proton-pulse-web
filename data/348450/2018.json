@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "348450",
+    "title": "Lex Mortis",
+    "timestamp": 1535872670,
+    "rating": "Borked",
+    "notes": "Cryengine error ",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "348450",
+    "title": "Lex Mortis",
+    "timestamp": 1535858270,
+    "rating": "Borked",
+    "notes": "Cryengine error ",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "395830",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.10.1-103-tkg-bmq, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.1-103-tkg-bmq",
+    "notes": "Got it from itch, game runs perfectly on Valve Index. Excellent performence too.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1611349417,
+    "title": "LOW-FI",
+    "source": "protondb"
+  }
+]

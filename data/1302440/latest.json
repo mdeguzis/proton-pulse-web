@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1302440",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Game launches, but mouse cursor movement is extremely slow and cannot get past initial screen",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1590625307,
+    "title": "RogueJack: Roguelike Blackjack",
+    "source": "protondb"
+  }
+]

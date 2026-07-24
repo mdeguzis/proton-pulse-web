@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "281820",
+    "title": "Explodemon",
+    "timestamp": 1535547349,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "281820",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.0-1-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.0-1-amd64",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "16054 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536973311,
+    "title": "Explodemon",
+    "source": "protondb"
+  },
+  {
+    "appId": "281820",
+    "cpu": "Intel Core i7-6770HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Iris Pro 580 (Skylake GT4e)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541830406,
+    "title": "Explodemon",
+    "source": "protondb"
+  },
+  {
+    "appId": "281820",
+    "title": "Explodemon",
+    "timestamp": 1535532949,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

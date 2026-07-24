@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "287100",
+    "title": "Chaos Domain",
+    "timestamp": 1535504898,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "287100",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-zen1-1-zen",
+    "notes": "Refuses to launch.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11884 Mb",
+    "rating": "Borked",
+    "timestamp": 1537087308,
+    "title": "Chaos Domain",
+    "source": "protondb"
+  },
+  {
+    "appId": "287100",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Doesn't launch.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541387658,
+    "title": "Chaos Domain",
+    "source": "protondb"
+  },
+  {
+    "appId": "287100",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel",
+    "kernel": "4.15.0-39-generic",
+    "notes": "1.- Run 2.-  WINEPREFIX=~/.steam/steam/steamapps/compatdata/287100/pfx winetricks -q corefonts dotnet40 tahoma\n3.- Enjoy the game",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542991777,
+    "title": "Chaos Domain",
+    "source": "protondb"
+  },
+  {
+    "appId": "287100",
+    "title": "Chaos Domain",
+    "timestamp": 1535490498,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "310390",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Managed to start the game itself (beyond the annoying Slitherine Launcher) by tweaking config files, but game crashes immediately. No Proton tricks worked (Same unsuccessful attempts in pure WINE).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550937920,
+    "title": "Advanced Tactics Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "310390",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.12.14-lp151.28.13-default",
+    "notes": "2 failures - launch black background, but the larger one is unhandled exception.... not sure where its located, just says n/n object unhandled.",
+    "os": "openSUSE Leap 15.1",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566175189,
+    "title": "Advanced Tactics Gold",
+    "source": "protondb"
+  }
+]

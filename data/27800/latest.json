@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "27800",
+    "cpu": "Intel Core i5-3340M @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Tested on keyboard and wired XBox 360 gamepad - working perfectly without tweaks.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548356650,
+    "title": "Space Giraffe",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game works perfectly out of the box, tried both the normal and acid game mode. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552221828,
+    "title": "Space Giraffe",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "Everything works, tried both game modes, fullscreen and windowed. Switching between desktop and the game. Nintendo Switch Pro controller over bluetooth was also tested. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556552347,
+    "title": "Space Giraffe",
+    "source": "protondb"
+  }
+]

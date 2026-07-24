@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1282590",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Game is plagued by issues that appear even on Windows. It works but is an aggravating experience.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1725178769,
+    "title": "",
+    "source": "protondb"
+  }
+]

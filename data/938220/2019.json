@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "938220",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Game game-play runs perfectly, unfortunately the visual effects videos on the background don't load. So you can play the game without the visual effects and music videos that appear on the background of the main menu and songs.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1563550075,
+    "title": "TAPSONIC BOLD",
+    "source": "protondb"
+  },
+  {
+    "appId": "938220",
+    "cpu": "Intel Core i5-6600K @ 4.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "notes": "Fresh install, game boots but you need to spam esc to reach the menu. All background animations don't work. Until upstream wine mf support matures, just use this janky fix https://github.com/z0z0z/mf-install | BGAs should now display properly but are glitchy and slow. Use WINETRICKS and install quartz to fix that and the game should function properly like windows. Still crashes every few songs but turning off the steam overlay and your compositor seems to make crashes more rare.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563883481,
+    "title": "TAPSONIC BOLD",
+    "source": "protondb"
+  }
+]

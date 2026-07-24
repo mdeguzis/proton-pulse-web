@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "720380",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.14.2-gentoo-x86_64",
+    "notes": "Splash screen appears, switches to full screen, it turns black and dies after second.",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-6",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1631503449,
+    "title": "",
+    "source": "protondb"
+  }
+]

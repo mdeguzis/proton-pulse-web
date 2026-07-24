@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "34500",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Seems to run perfectly out of the box. It did lose focus when I changed the graphics settings, but other than that no noticeable issues or glitches. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1548918818,
+    "title": "Light of Altair",
+    "source": "protondb"
+  },
+  {
+    "appId": "34500",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560614606,
+    "title": "Light of Altair",
+    "source": "protondb"
+  }
+]

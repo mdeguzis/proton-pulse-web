@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "643620",
+    "title": "Night Trap - 25th Anniversary Edition",
+    "timestamp": 1535397240,
+    "rating": "Borked",
+    "notes": "Loads, allows you to choose the control type, then goes to a black screen",
+    "os": "Linux Mint 19 64 bit Kernel 4.15",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "643620",
+    "cpu": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "won't go past control screen",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15968 Mb",
+    "rating": "Borked",
+    "timestamp": 1537672680,
+    "title": "Night Trap - 25th Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "643620",
+    "title": "Night Trap - 25th Anniversary Edition",
+    "timestamp": 1535382840,
+    "rating": "Borked",
+    "notes": "Loads, allows you to choose the control type, then goes to a black screen",
+    "os": "Linux Mint 19 64 bit Kernel 4.15",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

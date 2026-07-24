@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "557750",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Completed the game. Small issues: Some lagging in the last few missions if there were to many enemies on the screen at once. Since you are supposed to kill them anyway, it lagged only shortly. Crashed after completing the very last mission, but worked fine on retry.\n\nUnsure whether these are due to Proton or due to it being an old game on a custom engine. Didn\u2019t impede gameplay either way.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554373337,
+    "title": "Giants: Citizen Kabuto",
+    "source": "protondb"
+  }
+]

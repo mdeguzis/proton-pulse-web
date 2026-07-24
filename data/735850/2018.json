@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "735850",
+    "title": "Trailer Park Boys: Greasy Money",
+    "timestamp": 1535707413,
+    "rating": "Platinum",
+    "notes": "Logged 8hrs so far no problems",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0.33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "735850",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "with the latest update to the game itself it will crash if you alt-tab out of it. other than it, it runs perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15989 Mb",
+    "rating": "Silver",
+    "timestamp": 1536953930,
+    "title": "Trailer Park Boys: Greasy Money",
+    "source": "protondb"
+  },
+  {
+    "appId": "735850",
+    "title": "Trailer Park Boys: Greasy Money",
+    "timestamp": 1535693013,
+    "rating": "Platinum",
+    "notes": "Logged 8hrs so far no problems",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0.33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

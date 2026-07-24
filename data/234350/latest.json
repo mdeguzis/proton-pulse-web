@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "234350",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Ran with no issues in the game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558572106,
+    "title": "Luxor 2 HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "234350",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly; no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558986597,
+    "title": "Luxor 2 HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "234350",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed. Completed most of campaign with no issues.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561389616,
+    "title": "Luxor 2 HD",
+    "source": "protondb"
+  }
+]

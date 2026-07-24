@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "529660",
+    "cpu": "i5-4590 CPU @ 3.30GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game launches and is playable, but characters are either bald floating heads or entirely invisible.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "24010 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536892987,
+    "title": "Mages of Mystralia",
+    "source": "protondb"
+  },
+  {
+    "appId": "529660",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Add \"PROTON_USE_WINED3D11=1 %command%\" to fix invisible characters. SSAO seems overblown/bugged during cut scenes and close ups, but gameplay looks fine. Game will crash and spit out an error message while quitting.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "24010 Mb",
+    "rating": "Silver",
+    "timestamp": 1537413216,
+    "title": "Mages of Mystralia",
+    "source": "protondb"
+  },
+  {
+    "appId": "529660",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Invisible character bug has been fixed as of Proton 3.16-3 beta and no tweaking is necessary to run and play the game. I would have rated it Platinum if it weren't for the game throwing up an error screen when quitting.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "24010 Mb",
+    "rating": "Gold",
+    "timestamp": 1539905115,
+    "title": "Mages of Mystralia",
+    "source": "protondb"
+  }
+]

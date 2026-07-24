@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3653260",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.17.0-35-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-35-generic",
+    "notes": "Perfect out of the box experience.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1781331012,
+    "title": "",
+    "source": "protondb"
+  }
+]

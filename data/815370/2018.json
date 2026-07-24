@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "815370",
+    "title": "Green Hell",
+    "timestamp": 1536758359,
+    "rating": "Silver",
+    "notes": "Game shows an error when started saying that DirectX 11 is missing. After putting \"PROTON_USE_WINED3D11=1 %command%\" to launch options game starts without the error. It is very playable, graphics renders without any glitches. \n\nThe only problem I see is that the player's wristwatch's screen is black. That means you can see some vital information about the game. Played for a few hours without it and survived. :)",
+    "os": "Ubuntu 16.04.4 LTS (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Xeon E5-2637v3 / GeForce GTX 960 ",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "815370",
+    "title": "NieR: Automata",
+    "timestamp": 1536715190,
+    "rating": "Platinum",
+    "notes": "Stable 30 fps in high settings.",
+    "os": "Ubuntu 16.04 64 bit (Kermel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 970",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "815370",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2637 v3 @ 3.50GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "notes": "It plays without major issues after putting \"PROTON_USE_WINED3D11=1 %command% \" to the launch options. \n\nOnly problem is the screen of the character's wristwatch does not render, it's black.",
+    "os": "Ubuntu 16.04.4 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "96572 Mb",
+    "rating": "Silver",
+    "timestamp": 1536787448,
+    "title": "Green Hell",
+    "source": "protondb"
+  },
+  {
+    "appId": "815370",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.17.19-1-MANJARO",
+    "notes": "all fine but the mouse pointer works 20 minutes than stands still .....save and restart game",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541808696,
+    "title": "Green Hell",
+    "source": "protondb"
+  },
+  {
+    "appId": "815370",
+    "title": "Green Hell",
+    "timestamp": 1536743959,
+    "rating": "Silver",
+    "notes": "Game shows an error when started saying that DirectX 11 is missing. After putting \"PROTON_USE_WINED3D11=1 %command%\" to launch options game starts without the error. It is very playable, graphics renders without any glitches. \n\nThe only problem I see is that the player's wristwatch's screen is black. That means you can see some vital information about the game. Played for a few hours without it and survived. :)",
+    "os": "Ubuntu 16.04.4 LTS (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Xeon E5-2637v3 / GeForce GTX 960 ",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "815370",
+    "title": "NieR: Automata",
+    "timestamp": 1536700790,
+    "rating": "Platinum",
+    "notes": "Stable 30 fps in high settings.",
+    "os": "Ubuntu 16.04 64 bit (Kermel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 970",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  }
+]

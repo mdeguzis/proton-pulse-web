@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "217270",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Shows splash screen and then exits",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557233368,
+    "title": "Karateka",
+    "source": "protondb"
+  },
+  {
+    "appId": "217270",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 645",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.5-arch1-2-ARCH",
+    "notes": "loading screen shows. that's it.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1559515326,
+    "title": "Karateka",
+    "source": "protondb"
+  },
+  {
+    "appId": "217270",
+    "cpu": "AMD Phenom II X4 955",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.12.14-lp151.27-default",
+    "notes": "starting the game installs UE3 runtime and then shows splash screen. then crashes..",
+    "os": "openSUSE Leap 15.1",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562098787,
+    "title": "Karateka",
+    "source": "protondb"
+  }
+]

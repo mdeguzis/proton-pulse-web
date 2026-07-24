@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "402570",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553209024,
+    "title": "Atlas Reactor",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,88 @@
+[
+  {
+    "appId": "1018010",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.11-300.fc30.x86_64",
+    "notes": "The menus start up and run fine. But all the games seem to run at over 3X speed. The menu to quit a game and go back to the selection also doesn't show fully, only a box header in Japanese.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558039794,
+    "title": "Castlevania Anniversary Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "1018010",
+    "cpu": "AMD Phenom II X2 B53",
+    "duration": "aboutAnHour",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Game runs totally fine bar two issues; saving crashes the game and occasionally you get locked into an infinite repeating textbox appropos of nothing",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Bronze",
+    "timestamp": 1560704892,
+    "title": "Castlevania Anniversary Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "1018010",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.11-300.fc30.x86_64",
+    "notes": "On 4.11-1, the games run at normal speed and are playable...but it seems like any sort of writing to disk such as replays and save states will crash. Playable otherwise.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564568013,
+    "title": "Castlevania Anniversary Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "1018010",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Initially, I kept getting a Japanese error message sporadically, which image-translated to \"F?\". Otherwise it ran great.\n\nThis sounded suspiciously similar to \"file\", so I enabled \"Large Address Aware\" and have successfully completed the first level of Castlevania I without issue. If I run into the problem again in the future, (since I'm planning on barn-storming all of these classics), I'll update this review.\n\nIt's also worth metnioning that I could barely start the game and get past the menu with Proton 4.2-9 before getting that message; 4.11-6 is much more agreeable. For those not yet in the know, the launch options are \"PROTON_FORCE_LARGE_ADDRESS_AWARE=1 %command%\".",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569816457,
+    "title": "Castlevania Anniversary Collection",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1018010",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Initially I had a number issues with getting spammed by a Japanese error message, but this seemed to be resolved with Large Address Aware. However, the game cannot save to disk without crashing, and I'm not sure how to fix it. If you were willing to play without saving, it works perfectly well.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1569828790,
+    "title": "Castlevania Anniversary Collection",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  }
+]

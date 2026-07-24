@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "298900",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Absolutely fine just like the enhanced version, on a GTX 980 and maximum settings I was getting around 70fps.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555601785,
+    "title": "Space Hulk: Deathwing",
+    "source": "protondb"
+  },
+  {
+    "appId": "298900",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Works perfectly on my machine without any issues.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559761722,
+    "title": "Space Hulk: Deathwing",
+    "source": "protondb"
+  },
+  {
+    "appId": "298900",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.7-1-default",
+    "notes": "Completed the game several times, played multiplayer and had zero issues.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561269446,
+    "title": "Space Hulk: Deathwing",
+    "source": "protondb"
+  }
+]

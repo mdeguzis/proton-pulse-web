@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "725270",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.41.0, 5.13.5-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.5-arch1-1",
+    "notes": "Cutscene videos do not play, which as a game centered on story, makes it unplayable.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1632098095,
+    "title": "",
+    "source": "protondb"
+  }
+]

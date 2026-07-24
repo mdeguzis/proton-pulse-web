@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1044620",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R7 M340",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Everything seems to be working with no issues as of now",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1570201885,
+    "title": "Aokana - Four Rhythms Across the Blue",
+    "source": "protondb"
+  },
+  {
+    "appId": "1044620",
+    "cpu": "Intel Core i5         650  @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.2.0",
+    "kernel": "5.3.5-zen1-1-zen",
+    "notes": "Install https://github.com/z0z0z/mf-instal to play the videos.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1570578496,
+    "title": "Aokana - Four Rhythms Across the Blue",
+    "source": "protondb"
+  }
+]

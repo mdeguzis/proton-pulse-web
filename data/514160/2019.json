@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "514160",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Works perfect...just choose directX drivers and not opengl (opengl have some artifects)...",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567179844,
+    "title": "18 Wheels of Steel: Across America",
+    "source": "protondb"
+  }
+]

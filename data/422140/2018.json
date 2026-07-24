@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "422140",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "Fails to run and no windows appear",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537568372,
+    "title": "Wrestling Spirit 3",
+    "source": "protondb"
+  }
+]

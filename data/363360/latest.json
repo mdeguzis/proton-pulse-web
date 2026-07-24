@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "363360",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.15-041915-generic",
+    "notes": "The application will start if dotnet472 is installed using winetricks, but the application will hang at or before the start menu, while the music plays int eh background, and will display an error message reading \"The drivers for your (INSERT GRAPHICS CARD) are over a year old, consider updating them. It might fix crashes like this one.)\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547856913,
+    "title": "Interstellar Rift",
+    "source": "protondb"
+  },
+  {
+    "appId": "363360",
+    "cpu": "Intel Core i7-4770K @ OC 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.9-042009-generic",
+    "notes": "The application will now run on an nvidia graphics card. I can get it to run on my gtx 960 after using winetricks to install vcrun2015 and dotnet472, but using an AMD rx580 on my other system will not allow the application to run, it still pops up with the graphics driver error. As far as i can tell most of the features in the game will work. I have built a couple ships and have been able to use all of the ship components so far. I also was able to host a  multiplayer game and connect to it using the GTX 960 computer, but since the RX 580 system did not work i could not confirm if i could connect to it with another computer.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1550426096,
+    "title": "Interstellar Rift",
+    "source": "protondb"
+  },
+  {
+    "appId": "363360",
+    "cpu": "Intel Xeon E5-2687W v2 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-trunk-amd64",
+    "notes": "As suggested I have installed vcrun2015 and dotnet472, the game seem to run fine. I didn't have time for the moment to play more to test, but I was able to start a solo game without problem.",
+    "os": "Debian GNU/Linux bullseye/sid (64\u00a0bits)",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1570606806,
+    "title": "Interstellar Rift",
+    "source": "protondb"
+  }
+]

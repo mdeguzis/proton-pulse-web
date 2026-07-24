@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "240620",
+    "cpu": "Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Wouldn't even start up",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15929 Mb",
+    "rating": "Borked",
+    "timestamp": 1537663497,
+    "title": "Wanderlust Adventures",
+    "source": "protondb"
+  },
+  {
+    "appId": "240620",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not start at all, after pressing play it says running then syncing",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7894 Mb",
+    "rating": "Borked",
+    "timestamp": 1537759273,
+    "title": "Wanderlust Adventures",
+    "source": "protondb"
+  }
+]

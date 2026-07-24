@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574310",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.13.6-200.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.6-200.nobara.fc41.x86_64",
+    "notes": "Great OOTB",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1744792812,
+    "title": "",
+    "source": "protondb"
+  }
+]

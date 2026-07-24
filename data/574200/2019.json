@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "574200",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-2-MANJARO",
+    "notes": "As many games that runs over wine/proton has problems when minimizes or lose focus, try to avoid fullscreen, with a good window manager (like Kwin) that can remove decorations can mimic \"borderless fullscreen\" using windowed in game, but in this case try to avoid window size change, it has weird behaviors.\n\nIf i want to use controller, after press any key keeps returning to first item of menu, please avoid DS4, idk how behaves the rest of controllers.\n\nAs mentioned in other reports, game get frozen when you exit the game, you must kill that window.\n\nAfter this little issues, the game behaves normal, no input lag, no shuttering, everything seems smooth.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547163694,
+    "title": "EARTH DEFENSE FORCE 4.1 WINGDIVER THE SHOOTER",
+    "source": "protondb"
+  },
+  {
+    "appId": "574200",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-200.fc30.x86_64",
+    "os": "Fedora",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568744871,
+    "title": "EARTH DEFENSE FORCE 4.1 WINGDIVER THE SHOOTER",
+    "source": "protondb"
+  }
+]

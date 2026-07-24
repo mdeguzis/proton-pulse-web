@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "15190",
+    "title": "Brothers in Arms: Road to Hill 30",
+    "timestamp": 1535411824,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.1.6 - Padoka PPA",
+    "specs": "i5-2500K / R9 380",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "15190",
+    "cpu": "Intel(R) Core(TM) i3-8350K CPU @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Everything seems to be running smooth. Only thing I noticed is that the grass was flickering at some occasions. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7886 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538490036,
+    "title": "Brothers in Arms: Road to Hill 30\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "15190",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Seems absolutely flawless. No slowdowns or  anything I could see",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542929016,
+    "title": "Brothers in Arms: Road to Hill 30\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "15190",
+    "title": "Brothers in Arms: Road to Hill 30",
+    "timestamp": 1535397424,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.1.6 - Padoka PPA",
+    "specs": "i5-2500K / R9 380",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "899930",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "Just a black screen",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1598532783,
+    "title": "",
+    "source": "protondb"
+  }
+]

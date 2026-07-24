@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1119730",
+    "cpu": "Intel Core i7-9700KF @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "Game runs good without any compatibility tools, I set the graphics settings to high and DLSS to quality. The game runs at 50-60 FPS.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767950930,
+    "title": "",
+    "source": "protondb"
+  }
+]

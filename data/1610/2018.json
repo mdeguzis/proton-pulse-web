@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1610",
+    "cpu": "AMD Phenom 9750 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "I didn't test multiplayer, but I can verify that single player works without issues. There's an old issue from Wine where the background music can't properly initialize & throws errors everywhere since it expects a physical CD in the drive for that, but it can be solved by navigating to where the game was installed, opening \"./se4/Data/Settings.txt\" and changing \"Allow CD Music\" to \"FALSE\". Save it, then you can start the game normally without any issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541525892,
+    "title": "Space Empires IV Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "1610",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 17.2.8",
+    "kernel": "4.13.0-46-generic",
+    "notes": "(With outdated Video Drivers) Tends to freeze (Between 5-15 min), and break the Desktop environment in a way that requires me to go down to a lower run level, and kill the process to use my computer again.",
+    "os": "Pop!_OS 17.10 (Artful Aardvark)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542555864,
+    "title": "Space Empires IV Deluxe",
+    "source": "protondb"
+  }
+]

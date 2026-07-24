@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "799640",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.0-41-generic",
+    "notes": "Works great without any modification using M+KB",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1659027787,
+    "title": "Dungeon Munchies",
+    "source": "protondb"
+  }
+]

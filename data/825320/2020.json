@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "825320",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD CYPRESS",
+    "gpuDriver": "3.1 Mesa 20.0.6",
+    "kernel": "5.6.7-arch1-1",
+    "notes": "missing executable",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1600195561,
+    "title": "CyberRebeat -The Fifth Domain of Warfare-",
+    "source": "protondb"
+  }
+]

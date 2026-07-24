@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "19030",
+    "title": "Rocket Knight",
+    "timestamp": 1534981635,
+    "rating": "Borked",
+    "notes": "Crashes immediately upon launch",
+    "os": "Void Linux x86_64 (Kernel 4.9.119)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-2670QM / GT 525M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "19030",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.11-1-MANJARO",
+    "notes": "The game try to install a .net dependency and crash soon after",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15981 Mb",
+    "rating": "Borked",
+    "timestamp": 1538535400,
+    "title": "Rocket Knight",
+    "source": "protondb"
+  },
+  {
+    "appId": "19030",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "The game doen't start",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541555991,
+    "title": "Rocket Knight",
+    "source": "protondb"
+  },
+  {
+    "appId": "19030",
+    "cpu": "Intel Core i7-6770HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Iris Pro 580 (Skylake GT4e)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541843165,
+    "title": "Rocket Knight",
+    "source": "protondb"
+  },
+  {
+    "appId": "19030",
+    "title": "Rocket Knight",
+    "timestamp": 1534967235,
+    "rating": "Borked",
+    "notes": "Crashes immediately upon launch",
+    "os": "Void Linux x86_64 (Kernel 4.9.119)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-2670QM / GT 525M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

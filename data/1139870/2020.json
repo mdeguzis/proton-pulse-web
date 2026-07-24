@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1139870",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.3.0-53-generic",
+    "notes": "Very few technical issues with Proton 5.0.8",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-8",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1591817020,
+    "title": "",
+    "source": "protondb"
+  }
+]

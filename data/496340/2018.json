@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "496340",
+    "cpu": "AMD FX(tm)-4100 Quad-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 580/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.18.5-041805-generic",
+    "notes": "Played a bit less than an hour, no issues at all.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7974 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539820863,
+    "title": "Fighting Fantasy Legends",
+    "source": "protondb"
+  },
+  {
+    "appId": "496340",
+    "cpu": "AMD Athlon 64 X2 Dual Core 5000+",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1543373454,
+    "title": "Fighting Fantasy Legends",
+    "source": "protondb"
+  }
+]

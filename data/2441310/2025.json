@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2441310",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 17.0.1, DRM 3.54, 6.5.4-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.4-1-default",
+    "notes": "game runs awful even on lowest settings but i dont think this is a linux problem just poor optimization",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743691692,
+    "title": "",
+    "source": "protondb"
+  }
+]

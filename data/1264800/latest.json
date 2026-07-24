@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1264800",
+    "cpu": "Intel Core2 Quad    Q8400  @ 2.66GHz",
+    "duration": "unreported",
+    "gpu": "AMD CYPRESS",
+    "gpuDriver": "3.1 Mesa 18.3.6",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "Fine if you're OK with playing it in a small window.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-5",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1585487789,
+    "title": "",
+    "source": "protondb"
+  }
+]

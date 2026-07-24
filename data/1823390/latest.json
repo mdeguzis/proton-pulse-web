@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1823390",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.2-arch1-1",
+    "notes": "Proton 9.0-4 Works Fine",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1745351553,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1823390",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.11.0-24-generic",
+    "notes": "Works like a charm. With latest proton there are no problems",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1746014454,
+    "title": "",
+    "source": "protondb"
+  }
+]

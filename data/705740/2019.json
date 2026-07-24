@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "705740",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "The game starts (sometimes with missing textures) but has massive lag spikes on the title screen, wasn't able to launch a new game",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1566754784,
+    "title": "Car Demolition Clicker",
+    "source": "protondb"
+  },
+  {
+    "appId": "705740",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Game ran perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570376590,
+    "title": "Car Demolition Clicker",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "346940",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Played about a dozen hours, almost all on Proton, with no issues.  Works better than native - no issues exiting the game or setting resolution to 3440x1440, both of which I had issues with on native.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1548739193,
+    "title": "Shadowrun: Hong Kong - Extended Edition",
+    "source": "protondb"
+  }
+]

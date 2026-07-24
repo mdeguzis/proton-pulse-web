@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2109060",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 14.0.6, DRM 3.49, 6.1.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.1.0-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1710869287,
+    "title": "",
+    "source": "protondb"
+  }
+]

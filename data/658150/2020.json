@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "658150",
+    "cpu": "Intel Core i7-4850HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 750M",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.8.14-artix1-1",
+    "notes": "Crashes when starting a new game",
+    "os": "Artix Linux",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1604786046,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "658150",
+    "cpu": "Intel Core i3-3240 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.11-3-MANJARO",
+    "notes": "Crashes when choosing to begin the game",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1607900226,
+    "title": "",
+    "source": "protondb"
+  }
+]

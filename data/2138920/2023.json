@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2138920",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon HD 7800 (pitcairn, LLVM 16.0.6, DRM 3.49, 6.1.0-13-amd64)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1699490741,
+    "title": "Budgie Genetics Simulator",
+    "source": "protondb"
+  }
+]

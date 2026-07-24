@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1057640",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.14-arch2-1-ARCH",
+    "notes": "Usually hangs pre-title screen, but sometimes makes it that far and hangs in the options screen.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1569401020,
+    "title": "Onirism",
+    "source": "protondb"
+  },
+  {
+    "appId": "1057640",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "I've installed the game and it work perfectly fine out of the box, even with the xbox controller.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569792958,
+    "title": "Onirism",
+    "source": "protondb"
+  }
+]

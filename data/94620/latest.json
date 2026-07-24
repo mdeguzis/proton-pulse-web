@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "94620",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-0206ffc28d)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Works as intended",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548355765,
+    "title": "Hector: Badge of Carnage - Full Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "94620",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.3-108.current",
+    "notes": "Working great out of the box, no glitches, no errors, can alt-tab without problems.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548601530,
+    "title": "Hector: Badge of Carnage - Full Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "94620",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.9-041909-generic",
+    "notes": "No problems at all. Works straight out the box.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555147238,
+    "title": "Hector: Badge of Carnage - Full Series",
+    "source": "protondb"
+  }
+]

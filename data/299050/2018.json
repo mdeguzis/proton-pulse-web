@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "299050",
+    "title": "Blood 2 : The Chosen",
+    "timestamp": 1535477597,
+    "rating": "Platinum",
+    "notes": "Stable performance 60 FPS",
+    "os": "Arch Linux (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "specs": "Intel Sandybridge Mobile x86 / Intel HD Graphics 3000",
+    "protonVersion": "3-7-2003",
+    "source": "protondb"
+  },
+  {
+    "appId": "299050",
+    "title": "Blood II: The Chosen + Expansion",
+    "timestamp": 1535071324,
+    "rating": "Borked",
+    "notes": "Launcher works, no configuration stops the game from crashing immediately however. Technically works better than it does on Windows 7 which doesn't even show the launcher.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.13)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Core 2 Duo T9600 /  Quadro FX 770M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "299050",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 750M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.20-aniquila",
+    "notes": "Works. Sound works including the music. Stutters here and there but not unplayable.",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1544906310,
+    "title": "Blood II: The Chosen + Expansion",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "299050",
+    "title": "Blood 2 : The Chosen",
+    "timestamp": 1535463197,
+    "rating": "Platinum",
+    "notes": "Stable performance 60 FPS",
+    "os": "Arch Linux (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "specs": "Intel Sandybridge Mobile x86 / Intel HD Graphics 3000",
+    "protonVersion": "3-7-2003",
+    "source": "protondb"
+  },
+  {
+    "appId": "299050",
+    "title": "Blood II: The Chosen + Expansion",
+    "timestamp": 1535056924,
+    "rating": "Borked",
+    "notes": "Launcher works, no configuration stops the game from crashing immediately however. Technically works better than it does on Windows 7 which doesn't even show the launcher.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.13)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Core 2 Duo T9600 /  Quadro FX 770M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

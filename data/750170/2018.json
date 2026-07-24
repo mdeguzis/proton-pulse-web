@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "750170",
+    "cpu": "Intel(R) Core(TM) i7-4720HQ CPU @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 960M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15963 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539111903,
+    "title": "Diesel Railcar Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "750170",
+    "cpu": "AMD Phenom II X4 830",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Failed to initialize graphics error at game start. Tried tweaking proton settings, no luck.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545112615,
+    "title": "Diesel Railcar Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "750170",
+    "cpu": "AMD Phenom II X4 830",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545113579,
+    "title": "Diesel Railcar Simulator",
+    "source": "protondb"
+  }
+]

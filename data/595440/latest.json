@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "595440",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556493050,
+    "title": "CPU Invaders",
+    "source": "protondb"
+  },
+  {
+    "appId": "595440",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-16-generic",
+    "notes": "The game run really well, but it doesn't show the desktop as it should do. But all the functionalities runs fine and the game runs really well",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560161099,
+    "title": "CPU Invaders",
+    "source": "protondb"
+  },
+  {
+    "appId": "595440",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "it works, but there is no transparency like on windows :( but the game works fine",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565956476,
+    "title": "CPU Invaders",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "772480",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-70bb3c0bec)",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "Game works native on Linux (OpenGL). On Proton it works out of the box with DXVK (D3D11 to Vulkan translation). Tested with the new Mesa ACO compiler on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565287650,
+    "title": "Super Inefficient Golf",
+    "source": "protondb"
+  }
+]

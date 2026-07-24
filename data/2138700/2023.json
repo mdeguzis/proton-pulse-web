@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2138700",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 16.0.6, DRM 3.54, 6.6.7-lqx1-1-lqx)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.7-lqx1-1-lqx",
+    "notes": "Too scary",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703497738,
+    "title": "Crypt",
+    "source": "protondb"
+  }
+]

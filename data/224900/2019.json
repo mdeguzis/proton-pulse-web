@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "224900",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "Flawless, as it should be, given that the \"native\" port is just the Windows version wrapped in vanilla Wine.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1563615559,
+    "title": "Iron Sky: Invasion",
+    "source": "protondb"
+  }
+]

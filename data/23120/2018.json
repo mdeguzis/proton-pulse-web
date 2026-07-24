@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "23120",
+    "title": "Droplitz",
+    "timestamp": 1534961068,
+    "rating": "Borked",
+    "notes": "Game launches, but at an extremely low FPS, like at only 1 frame per second. This is unplayable. No sound, no music.",
+    "os": "Fedora 28, 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K / Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23120",
+    "title": "Droplitz",
+    "timestamp": 1535410571,
+    "rating": "Borked",
+    "notes": "Launches, but game is very, very slow with frame rate to the point it is literally like a slide show.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23120",
+    "title": "Droplitz",
+    "timestamp": 1534946668,
+    "rating": "Borked",
+    "notes": "Game launches, but at an extremely low FPS, like at only 1 frame per second. This is unplayable. No sound, no music.",
+    "os": "Fedora 28, 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K / Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23120",
+    "title": "Droplitz",
+    "timestamp": 1535396171,
+    "rating": "Borked",
+    "notes": "Launches, but game is very, very slow with frame rate to the point it is literally like a slide show.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

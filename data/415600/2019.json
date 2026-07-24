@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "415600",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0",
+    "kernel": "5.1.14-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561384751,
+    "title": "Kart Racing Pro",
+    "source": "protondb"
+  },
+  {
+    "appId": "415600",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0",
+    "kernel": "5.1.14-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567760187,
+    "title": "Kart Racing Pro",
+    "source": "protondb"
+  }
+]

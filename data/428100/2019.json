@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "428100",
+    "cpu": "Intel Core i5-2467M @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Game works until resolution selection (i.e., the first dialog window). After that it's nothing but sounds and a black screen.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1565890937,
+    "title": "Beyond Reality",
+    "source": "protondb"
+  }
+]

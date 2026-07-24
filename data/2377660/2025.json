@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2377660",
+    "cpu": "12th Gen Intel Core i5-12600KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 15.0.7, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-51-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735781681,
+    "title": "Jane Austen's 8-bit Adventure",
+    "source": "protondb"
+  }
+]

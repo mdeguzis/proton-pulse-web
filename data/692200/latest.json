@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "692200",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.12-3-MANJARO",
+    "notes": "Works well out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1659159184,
+    "title": "aMAZE Dark Times",
+    "source": "protondb"
+  }
+]

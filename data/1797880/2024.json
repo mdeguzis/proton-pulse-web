@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1797880",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.6, DRM 3.57, 6.8.12-200.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.0",
+    "kernel": "6.8.12-200.fsync.fc40.x86_64",
+    "notes": "Open main menu crash game.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1718706623,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1797880",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-35-generic",
+    "notes": "it will let u run then gives u a error before the game even starts \nFix Error at Hooking API 'NtProtectVirtualMemory' Dumping First 32 \ni have tried everything its seems pretty fucked",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1720475804,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1797880",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Something with the Anti-Cheat if I had to guess but no clue.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1724036752,
+    "title": "",
+    "source": "protondb"
+  }
+]

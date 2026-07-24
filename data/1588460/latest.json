@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1588460",
+    "cpu": "AMD Ryzen 5 5560U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (renoir, LLVM 16.0.6, DRM 3.49, 6.1.80)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.1.80",
+    "notes": "",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-5",
+    "ram": "13 GB",
+    "rating": "gold",
+    "timestamp": 1710149529,
+    "title": "",
+    "source": "protondb"
+  }
+]

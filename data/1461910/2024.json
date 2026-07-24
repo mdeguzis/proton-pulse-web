@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1461910",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.9-303.bazzite.fc41.x86_64",
+    "notes": "Installed and played fine on Bazzite.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1732743456,
+    "title": "Rogue Command",
+    "source": "protondb"
+  },
+  {
+    "appId": "1461910",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.12.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Smooth, no issues noticed.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1733604055,
+    "title": "Rogue Command",
+    "source": "protondb"
+  }
+]

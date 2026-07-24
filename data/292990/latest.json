@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "292990",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555506543,
+    "title": "NOBUNAGA'S AMBITION: Souzou (Traditional Chinese version)",
+    "source": "protondb"
+  },
+  {
+    "appId": "292990",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1560849823,
+    "title": "NOBUNAGA'S AMBITION: Souzou (Traditional Chinese version)",
+    "source": "protondb"
+  }
+]

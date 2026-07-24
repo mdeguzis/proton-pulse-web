@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "22120",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.6",
+    "kernel": "5.4.40-1-MANJARO",
+    "notes": "Works on NVIDIA but not AMD.  https://www.frictionalgames.com/forum/thread-54134.html",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590549047,
+    "title": "Penumbra: Black Plague Gold Edition",
+    "source": "protondb"
+  }
+]

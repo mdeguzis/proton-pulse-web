@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "39520",
+    "title": "The Guild Gold Edition",
+    "timestamp": 1535903308,
+    "rating": "Gold",
+    "notes": "A few colors are off, otherwise runs perfectly.",
+    "os": "Kubuntu 18.04.1 64-Bit (4.15.0-33-generic)",
+    "gpuDriver": "Intel Device",
+    "specs": "Intel i3-4012Y",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "39520",
+    "title": "The Guild Gold Edition",
+    "timestamp": 1535965254,
+    "rating": "Silver",
+    "notes": "When playing \"Play with newer graphics cards\", I couldn't change my resolution without a crash. Playing regular mode allowed me to change resolution (not as high as other option though) and game worked perfectly fine.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54 ",
+    "specs": "i7-4790 / Nvidia GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "39520",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game does not start in any way.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540750644,
+    "title": "The Guild Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "39520",
+    "title": "The Guild Gold Edition",
+    "timestamp": 1535888908,
+    "rating": "Gold",
+    "notes": "A few colors are off, otherwise runs perfectly.",
+    "os": "Kubuntu 18.04.1 64-Bit (4.15.0-33-generic)",
+    "gpuDriver": "Intel Device",
+    "specs": "Intel i3-4012Y",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "39520",
+    "title": "The Guild Gold Edition",
+    "timestamp": 1535950854,
+    "rating": "Silver",
+    "notes": "When playing \"Play with newer graphics cards\", I couldn't change my resolution without a crash. Playing regular mode allowed me to change resolution (not as high as other option though) and game worked perfectly fine.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54 ",
+    "specs": "i7-4790 / Nvidia GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "610460",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Slight stutter during the initial cutscene on first run, then everything runs clean and smooth.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543906696,
+    "title": "Rise of Balloons",
+    "source": "protondb"
+  }
+]

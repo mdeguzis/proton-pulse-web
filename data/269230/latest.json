@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "269230",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game crashes on startup",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549243950,
+    "title": "Aces Wild: Manic Brawling Action!",
+    "source": "protondb"
+  },
+  {
+    "appId": "269230",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "No issues. Fullscreen 1080",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563992334,
+    "title": "Aces Wild: Manic Brawling Action!",
+    "source": "protondb"
+  }
+]

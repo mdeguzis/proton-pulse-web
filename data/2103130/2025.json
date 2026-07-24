@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2103130",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u76ee\u524d\u6e38\u620f\u5728Steam\u5b98\u65b9\u867d\u7136\u6ca1\u6709\u6807\u6ce8Deck\u652f\u6301\uff0c\u4f46\u6e38\u620f\u5df2\u6709Linux\u539f\u751f\u7248\u672c\u5e76\u6709Deck\u539f\u751f\u64cd\u4f5c\u652f\u6301\uff0c\u4e14\u5e27\u7387\u548c\u8fd0\u884c\u975e\u5e38\u7a33\u5b9a\uff0c\u76ee\u524d\u6e38\u620f\u4ecd\u6709\u90e8\u5206bug\uff0c\u6bd4\u5982\u6e38\u620f\u5728\u8bbe\u7f6e\u540e\u5206\u8fa8\u7387\u5f02\u5e38\uff0c\u91cd\u542f\u6e38\u620f\u53ef\u89e3\u51b3",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1745515738,
+    "title": "",
+    "source": "protondb"
+  }
+]

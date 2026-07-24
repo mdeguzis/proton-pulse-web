@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2719060",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 21.1.4, DRM 3.64, 6.17.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.6-cachyos1.2",
+    "kernel": "6.17.6-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1774780892,
+    "title": "Mirage Feathers",
+    "source": "protondb"
+  }
+]

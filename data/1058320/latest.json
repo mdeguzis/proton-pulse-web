@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1058320",
+    "cpu": "Intel Xeon E5-2690 0 @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Game only provides a black screen",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567519731,
+    "title": "Toki",
+    "source": "protondb"
+  },
+  {
+    "appId": "1058320",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "per default the game gets stuck with a black screen directly after loading. the reason for this is the intro video Bumper.mp4 which is supposed to be played. renaming it doesn't help (maybe converting or replacing with a compatible dummy file?) but installing  Media Foundation stuff using https://github.com/z0z0z/mf-install fixes this issue. only played some minutes, but looks like the game works perfectly with that workaround! :)",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569056070,
+    "title": "Toki",
+    "source": "protondb"
+  }
+]

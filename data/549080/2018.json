@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "549080",
+    "title": "Tank Warfare: Tunisia 1943",
+    "timestamp": 1535119976,
+    "rating": "Borked",
+    "notes": "Initial menu, sounds, configuration menu, ok. The game crash after a few minutes of starting the action. The message is \"001 Program initialization error\". It leaves a error dump in a zip file.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA GeForce GTX750",
+    "specs": " i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "549080",
+    "title": "Tank Warfare: Tunisia 1943",
+    "timestamp": 1535105576,
+    "rating": "Borked",
+    "notes": "Initial menu, sounds, configuration menu, ok. The game crash after a few minutes of starting the action. The message is \"001 Program initialization error\". It leaves a error dump in a zip file.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA GeForce GTX750",
+    "specs": " i7-4790",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

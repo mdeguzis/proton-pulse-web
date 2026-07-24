@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1163600",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.38-gentoo-x86_64",
+    "notes": "It shows a black window. But I can close it just fine.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1600187140,
+    "title": "",
+    "source": "protondb"
+  }
+]

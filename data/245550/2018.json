@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "245550",
+    "title": "Free to Play",
+    "timestamp": 1535923003,
+    "rating": "Platinum",
+    "notes": "Doesn't claim to run with Steam Play. Native support? Listed on Needs Testing page.",
+    "os": "Debian Testing 64-bit (Kernel 4.16)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "R7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "245550",
+    "title": "Free To Play",
+    "timestamp": 1535923199,
+    "rating": "Platinum",
+    "notes": "Its actually a video but its appearing in the \"most wanted\" section :D",
+    "os": "Linux Mint 19",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "245550",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "It's a video",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537333074,
+    "title": "Free to Play",
+    "source": "protondb"
+  },
+  {
+    "appId": "245550",
+    "title": "Free to Play",
+    "timestamp": 1535908603,
+    "rating": "Platinum",
+    "notes": "Doesn't claim to run with Steam Play. Native support? Listed on Needs Testing page.",
+    "os": "Debian Testing 64-bit (Kernel 4.16)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "R7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "245550",
+    "title": "Free To Play",
+    "timestamp": 1535908799,
+    "rating": "Platinum",
+    "notes": "Its actually a video but its appearing in the \"most wanted\" section :D",
+    "os": "Linux Mint 19",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

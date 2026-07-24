@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "46260",
+    "title": "Star Wolves 3: Civil War",
+    "timestamp": 1535166792,
+    "rating": "Silver",
+    "notes": "Fps drops when it loads in ships/stations and has problem when running at x8 speed other than that playable.",
+    "os": "Manjaro Stable (Kernel 4.17.17)",
+    "gpuDriver": "mesa 18.1.6",
+    "specs": "Phenom IIx4 965 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "46260",
+    "title": "Star Wolves 3: Civil War",
+    "timestamp": 1535202212,
+    "rating": "Silver",
+    "notes": "small freezes",
+    "os": "Gentoo (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.2.0-rc4 (LLVM 7.0.0)",
+    "specs": "i7-4771/R9 280X",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "46260",
+    "title": "Star Wolves 3: Civil War",
+    "timestamp": 1535152392,
+    "rating": "Silver",
+    "notes": "Fps drops when it loads in ships/stations and has problem when running at x8 speed other than that playable.",
+    "os": "Manjaro Stable (Kernel 4.17.17)",
+    "gpuDriver": "mesa 18.1.6",
+    "specs": "Phenom IIx4 965 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "46260",
+    "title": "Star Wolves 3: Civil War",
+    "timestamp": 1535187812,
+    "rating": "Silver",
+    "notes": "small freezes",
+    "os": "Gentoo (Kernel 4.18.3)",
+    "gpuDriver": "Mesa 18.2.0-rc4 (LLVM 7.0.0)",
+    "specs": "i7-4771/R9 280X",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

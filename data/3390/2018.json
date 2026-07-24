@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "3390",
+    "title": "Feeding Frenzy 2 Deluxe",
+    "timestamp": 1535750576,
+    "rating": "Platinum",
+    "notes": "Smooth",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "3390",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537743146,
+    "title": "Feeding Frenzy 2 Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3390",
+    "cpu": "Intel(R) Atom(TM) CPU  330   @ 1.60GHz",
+    "gpu": "NVIDIA Corporation ION/integrated/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Using Alt+Tab or the Super causes the game to freeze. Otherwise the game is perfectly playable using all modes with 100% performance in full screen and window mode on a 2010 Intel Atom CPU. Given the above, there are no graphical or audio issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "2749 Mb",
+    "rating": "Silver",
+    "timestamp": 1537749332,
+    "title": "Feeding Frenzy 2 Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3390",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "perfect",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538168016,
+    "title": "Feeding Frenzy 2 Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3390",
+    "title": "Feeding Frenzy 2 Deluxe",
+    "timestamp": 1535736176,
+    "rating": "Platinum",
+    "notes": "Smooth",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

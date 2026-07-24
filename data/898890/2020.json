@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "898890",
+    "cpu": "Intel Xeon E3-1230 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.0-1-MANJARO",
+    "notes": "Everything works",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1599391048,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "762190",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works perfectly but crashes when exiting the game.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541957815,
+    "title": "Epic Loon",
+    "source": "protondb"
+  }
+]

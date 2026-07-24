@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1259440",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.11.0-46-generic",
+    "notes": "J'ai test\u00e9 toutes les versions de Proton et je ne vais pas plus loin que l'\u00e9cran d'accueil du jeu.",
+    "os": "Ubuntu 20.04.3 LTS (64\u00a0bits)",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1642074759,
+    "title": "",
+    "source": "protondb"
+  }
+]

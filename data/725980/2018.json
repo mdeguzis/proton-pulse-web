@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "725980",
+    "cpu": "i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "wont start, dll errors in log file..",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1537019870,
+    "title": "Path Out",
+    "source": "protondb"
+  }
+]

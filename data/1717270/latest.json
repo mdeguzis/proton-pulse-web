@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1717270",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.18.9-201.nobara.fc43.x86_64",
+    "notes": "Works better vs Windows.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771839870,
+    "title": "",
+    "source": "protondb"
+  }
+]

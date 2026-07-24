@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "216110",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.0.16-300.fc30.x86_64",
+    "notes": "Works perfectly.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559349583,
+    "title": "Tiny Troopers",
+    "source": "protondb"
+  },
+  {
+    "appId": "216110",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-fe930ad92a)",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1572119800,
+    "title": "Tiny Troopers",
+    "source": "protondb"
+  }
+]

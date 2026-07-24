@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "521920",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "notes": "It runs through OpenGL, so works perfectly (why the hell this is not native game?!). I did not test controller support. It's more fun than I anticipated :)",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536680136,
+    "title": "Death's Hangover",
+    "source": "protondb"
+  },
+  {
+    "appId": "521920",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Played the game start-to-end without any problem.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541424016,
+    "title": "Death's Hangover",
+    "source": "protondb"
+  },
+  {
+    "appId": "521920",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Everything works perfectly out of the box.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544095106,
+    "title": "Death's Hangover",
+    "source": "protondb"
+  }
+]

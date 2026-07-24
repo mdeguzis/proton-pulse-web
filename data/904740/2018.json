@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "904740",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.2-300.fc29.x86_64",
+    "notes": "It opens a black window and then crashes/freezes my computer.",
+    "os": "Fedora 29",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543366590,
+    "title": "\u4e1c\u65b9\u8bd5\u95fb\u5e7f\u7eaa ~ Perfect Memento of Touhou Question",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

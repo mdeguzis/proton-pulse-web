@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1011630",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.15.0-27-generic",
+    "notes": "I was able to click and start a campaign, but after clicking through 3-4 boxes of text the game simply freezes. The multiplayer option in the menu was greyed out, so online functionality might be broken as well.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1652110398,
+    "title": "",
+    "source": "protondb"
+  }
+]

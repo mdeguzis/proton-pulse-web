@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "846820",
+    "cpu": "Intel Xeon E5-2689 0 @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 16.0.6, DRM 3.57, 6.7.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.0.1-arch1.1",
+    "kernel": "6.7.5-zen1-1-zen",
+    "notes": "On native for some reason the game requieres to connect to the dev server, that seems to be down for a while, on proton you can kinda start a case but I couldn't figure it out how to get to the next dialogue and the game just freeze there. Seems like it's not a proton issue but if you gonna buy the game saddly is not playable at all.",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1708631032,
+    "title": "",
+    "source": "protondb"
+  }
+]

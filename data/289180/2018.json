@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "289180",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Game works well. However, decent cpu (like what I am using) is requred to play 4k on ultra, if you want to get at least 60fps.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544306013,
+    "title": "A.I.M.2 Clan Wars",
+    "source": "protondb"
+  }
+]

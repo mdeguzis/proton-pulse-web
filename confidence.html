@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidence Breakdown - Proton Pulse</title>
+<meta name="description" content="Per-report and per-game confidence breakdown showing exactly how Proton Pulse computed its trust score.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
+<link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
+<link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
+<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
+<link rel="stylesheet" href="css/app/game-header.css?v=1ae5af52">
+<link rel="stylesheet" href="css/app/configs.css?v=90d5bed5">
+<link rel="stylesheet" href="css/app/reports.css?v=dd4b044e">
+<link rel="stylesheet" href="css/app/modals.css?v=5e3db937">
+<link rel="stylesheet" href="css/app/home.css?v=3b655a71">
+<style>
+h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3em;
+}
+.meta {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8em;
+}
+.lede {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 75ch;
+  margin-bottom: 1.2em;
+}
+.lede a { color: var(--accent); }
+.cb-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+.cb-header-game { flex: 1; min-width: 0; }
+.cb-header-game .name { font-family: var(--font-display); font-size: 1.05rem; color: var(--text); }
+.cb-header-game .sub  { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); letter-spacing: 0.04em; margin-top: 2px; }
+.cb-total {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 14px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.cb-total .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.8; }
+
+/* Factor rows - one per contributing weight */
+.cb-factors {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin: 18px 0;
+}
+.cb-factor {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  background: var(--s1);
+  padding: 10px 14px;
+  align-items: center;
+}
+.cb-factor:hover { background: var(--s2); }
+.cb-factor .cb-factor-label {
+  font-weight: 600;
+  color: var(--text);
+}
+.cb-factor .cb-factor-detail {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+.cb-factor .cb-factor-value {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+.cb-factor-value.cb-positive { color: #66c0f4; }
+.cb-factor-value.cb-negative { color: #ff8a7a; }
+.cb-factor-value.cb-neutral  { color: var(--muted); }
+.cb-formula {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(11,17,22,0.5);
+  border: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+.cb-formula strong { color: var(--accent-hi); }
+.cb-disclaimer {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: rgba(255, 200, 61, 0.08);
+  border-left: 3px solid var(--gold);
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.cb-back {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.cb-back:hover { color: var(--accent-hi); text-decoration: underline; }
+/* Section headings with a bold white-outlined icon on the left. Each SVG
+   is stroke-only (no fill) so it reads as a clean line-art glyph */
+.cb-section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 12px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--strong);
+}
+.cb-section-head svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  stroke: var(--accent);
+  stroke-width: 1.8;
+}
+
+.loading-state, .error-state {
+  padding: 60px 24px;
+  text-align: center;
+  font-family: var(--mono);
+  color: var(--muted);
+}
+
+/* Interactive chart pieces, shared with game-stats.html via
+   app-chart-interactions.js. ci- prefix = chart-interactions.
+   Hover targets are full-height invisible rects so hovering anywhere
+   over a column triggers the data-point lookup */
+.cb-history-chart { position: relative; }
+/* pointer-events:all forces SVG rect to capture mousemove even when the
+   fill is "transparent". Without it, browsers default to visiblePainted
+   which can drop events on transparent fills */
+.ci-hover-target  { cursor: pointer; pointer-events: all; }
+.ci-hover-guide   { opacity: 0; stroke: rgba(255,255,255,0.22); stroke-dasharray: 3 3; pointer-events: none; transition: opacity 0.1s; }
+.ci-hover-dot     { opacity: 0; pointer-events: none; transition: opacity 0.1s; }
+.is-hovered .ci-hover-guide,
+.is-hovered .ci-hover-dot { opacity: 1; }
+.ci-tooltip {
+  position: absolute;
+  top: 6px;
+  padding: 6px 10px;
+  background: rgba(8, 14, 22, 0.92);
+  border: 1px solid rgba(110, 180, 240, 0.28);
+  border-radius: 3px;
+  font-size: 0.78rem;
+  color: var(--text);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.08s;
+  white-space: nowrap;
+  font-family: var(--mono);
+  z-index: 5;
+}
+.ci-tooltip .ci-tip-month { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.05em; }
+.ci-tooltip .ci-tip-row   { margin-top: 3px; display: flex; gap: 8px; align-items: center; }
+.ci-tooltip .ci-tip-dot   { display: inline-block; width: 8px; height: 8px; border-radius: 2px; }
+.ci-tooltip .ci-tip-val   { margin-left: auto; font-weight: 700; }
+.is-hovered .ci-tooltip   { opacity: 1; }
+</style>
+</head>
+<body>
+<script src="js/lib/topbar.js?v=21a7ccea"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+
+<div class="main-content"><div class="main-inner">
+
+<h1>Confidence breakdown</h1>
+<p class="meta" id="cb-meta">// Live computation from the same scoring code the page uses everywhere</p>
+
+<p class="lede">
+  This page shows exactly how Proton Pulse arrived at a confidence number,
+  factor by factor. The math is identical to what powers the badges on the
+  game page - just laid out so you can see each component's contribution.
+  Read more about the model on the <a href="scoring.html">scoring page</a>.
+</p>
+
+<div id="cb-root">
+  <div class="loading-state">Computing breakdown...</div>
+</div>
+
+</div></div>
+
+<!-- Reuses the same modules the main app uses so the math stays in lockstep -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=ad8d89f5"></script>
+
+<script type="module" src="js/confidence/main.js?v=8a7e10c7"></script>
+</body>
+</html>

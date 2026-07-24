@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "321360",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD R9 M265X",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Doesn't even start.",
+    "os": "MX 18.1 Continuum",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551639311,
+    "title": "Primal Carnage: Extinction",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "321360",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Doesn't start.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560217450,
+    "title": "Primal Carnage: Extinction",
+    "source": "protondb"
+  }
+]

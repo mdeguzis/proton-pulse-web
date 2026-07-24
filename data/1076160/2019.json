@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1076160",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 435.27.06",
+    "kernel": "5.3.11-1-MANJARO",
+    "notes": "Out of the box, can run launcher but can get no further",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1574041588,
+    "title": "",
+    "source": "protondb"
+  }
+]

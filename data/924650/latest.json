@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "924650",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "5.0.0-050000rc5-generic",
+    "notes": "Works perfectly except that the game always launches minimized, so you have to bring up the screen/window. Note the games launcher does display Japanese characters, that is to be expected as it is the same on Windows unless your system is set to Japanese locale.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1549735511,
+    "title": "\u79d8\u5c01\u30ca\u30a4\u30c8\u30e1\u30a2\u30c0\u30a4\u30a2\u30ea\u30fc \uff5e Violet Detector.",
+    "source": "protondb"
+  },
+  {
+    "appId": "924650",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Perfect except that game always launches minimized.The launcher does not display Japanese character, this is the same as on Windows unless you have Japanese locale. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552246611,
+    "title": "\u79d8\u5c01\u30ca\u30a4\u30c8\u30e1\u30a2\u30c0\u30a4\u30a2\u30ea\u30fc \uff5e Violet Detector.",
+    "source": "protondb"
+  },
+  {
+    "appId": "924650",
+    "cpu": "Intel Celeron        E3400  @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel G41",
+    "gpuDriver": "2.1 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "run without any problem",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1560541115,
+    "title": "\u79d8\u5c01\u30ca\u30a4\u30c8\u30e1\u30a2\u30c0\u30a4\u30a2\u30ea\u30fc \uff5e Violet Detector.",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2392520",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.8.0-88-generic",
+    "notes": "runs pretty much the same as it does on windows",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1770414981,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2013360",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Zero issues to note in 2025.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1740037033,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2013360",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.16.8-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.16.8-200.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1759069057,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2013360",
+    "cpu": "AMD Ryzen 7 7840U w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 21.1.4, DRM 3.64, 6.17.7-ba14.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.17.7-ba14.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "13 GB",
+    "rating": "gold",
+    "timestamp": 1764789346,
+    "title": "",
+    "source": "protondb"
+  }
+]

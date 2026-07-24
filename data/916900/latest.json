@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "916900",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 Nano",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.10-1-default",
+    "notes": "Everything runs great, no tweaks were needed. Tested resolution: 3840 x 2160.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562282224,
+    "title": "Paperbark",
+    "source": "protondb"
+  },
+  {
+    "appId": "916900",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "No issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564323669,
+    "title": "Paperbark",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "418370",
+    "title": "RESIDENT EVIL 7 biohazard / BIOHAZARD 7 resident evil",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Doesn't even start, I assume due to Denuvo? This was an issue with wine and this game in general.",
+    "os": "Lubuntu 17.10",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418370",
+    "title": "RESIDENT EVIL 7 biohazard / BIOHAZARD 7 resident evil",
+    "timestamp": 1535284197,
+    "rating": "Borked",
+    "notes": "-",
+    "os": "Arch Linux 4.18.4",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418370",
+    "cpu": "i5-7600K CPU @ 3.80GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-zen1-1-zen",
+    "notes": "Does nothing",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15984 Mb",
+    "rating": "Borked",
+    "timestamp": 1536791284,
+    "title": "RESIDENT EVIL 7 biohazard / BIOHAZARD 7 resident evil",
+    "source": "protondb"
+  },
+  {
+    "appId": "418370",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA TITAN V",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "doesn't start",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540935325,
+    "title": "RESIDENT EVIL 7 biohazard / BIOHAZARD 7 resident evil",
+    "source": "protondb"
+  },
+  {
+    "appId": "418370",
+    "title": "RESIDENT EVIL 7 biohazard / BIOHAZARD 7 resident evil",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Doesn't even start, I assume due to Denuvo? This was an issue with wine and this game in general.",
+    "os": "Lubuntu 17.10",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418370",
+    "title": "RESIDENT EVIL 7 biohazard / BIOHAZARD 7 resident evil",
+    "timestamp": 1535269797,
+    "rating": "Borked",
+    "notes": "-",
+    "os": "Arch Linux 4.18.4",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

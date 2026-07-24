@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "428110",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Suffers from the same gameplay choppiness issue as on Windows in later levels. It runs fine until you hit that point. It's an issue with the game, not Proton compatibility.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1551878578,
+    "title": "Save Halloween: City of Witches",
+    "source": "protondb"
+  }
+]

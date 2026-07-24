@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "200370",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32104 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539040850,
+    "title": "A Game of Dwarves",
+    "source": "protondb"
+  },
+  {
+    "appId": "200370",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Platinum",
+    "timestamp": 1539723261,
+    "title": "A Game of Dwarves",
+    "source": "protondb"
+  },
+  {
+    "appId": "200370",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Game seems to run well, with only some small stuttering that was only a minor distraction. I only tested the tutorial but it took about 2.5 hours.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542409734,
+    "title": "A Game of Dwarves",
+    "source": "protondb"
+  }
+]

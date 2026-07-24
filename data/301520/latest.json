@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "301520",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-zen1-1-zen",
+    "notes": "I don t know when i enter the game it freezes for no reason .",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1566237189,
+    "title": "Robocraft",
+    "source": "protondb"
+  }
+]

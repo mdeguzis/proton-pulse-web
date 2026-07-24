@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1083760",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.4-arch1-1",
+    "notes": "I have beaten the game years ago on stock Wine so it should be playable with Proton as well aside from the problems mentioned.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1637835908,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1262540",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Vega 11 (raven, LLVM 15.0.6, DRM 3.48, 6.0.16-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.2",
+    "kernel": "6.0.16-300.fc37.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "14 GB",
+    "rating": "bronze",
+    "timestamp": 1674746511,
+    "title": "",
+    "source": "protondb"
+  }
+]

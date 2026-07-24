@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "406090",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "No matter what, I just can't get the Steam overlay working. Otherwise perfect, tho'.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568206032,
+    "title": "Lost Moon",
+    "source": "protondb"
+  }
+]

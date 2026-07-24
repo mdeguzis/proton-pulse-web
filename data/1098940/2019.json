@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1098940",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Just install and play. The controller (wireless xbox 360) works out of the box too.\nThe only problem I've encounter is with \"cinematics\" not displaying (tv news in some part and some scenes related with shadows) probably related to mfplat., the fix related to it doesn't make any difference.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571606138,
+    "title": "Home Sweet Home EP2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1098940",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Objects are not displayed correctly. Most textures are not visible at all. Flashlight won't illuminate most objects, due to wrong rendering.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1572219262,
+    "title": "Home Sweet Home EP2",
+    "source": "protondb"
+  }
+]

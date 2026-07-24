@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "444250",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-56-generic",
+    "notes": "You must check the 'Force use Steam Play' option in Game Properties.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1566830341,
+    "title": "Crown and Council",
+    "source": "protondb"
+  },
+  {
+    "appId": "444250",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "It needs to be forced steam compability tool in general option. Run like windows version.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570556901,
+    "title": "Crown and Council",
+    "source": "protondb"
+  }
+]

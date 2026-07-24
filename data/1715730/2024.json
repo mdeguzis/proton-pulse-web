@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1715730",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 535.154.05",
+    "kernel": "6.5.0-18-generic",
+    "notes": "Ran just fine.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1708472532,
+    "title": "",
+    "source": "protondb"
+  }
+]

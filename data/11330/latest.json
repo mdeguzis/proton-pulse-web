@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "11330",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.9-041909-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549750623,
+    "title": "Obulis",
+    "source": "protondb"
+  },
+  {
+    "appId": "11330",
+    "cpu": "Intel Core i7-3610QM @ 2.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-10-lowlatency",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553561935,
+    "title": "Obulis",
+    "source": "protondb"
+  }
+]

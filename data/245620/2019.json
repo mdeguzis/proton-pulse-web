@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "245620",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "There are no sound issues to express characters and no sound when it comes to radio.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1548704824,
+    "title": "Tropico 5",
+    "source": "protondb"
+  },
+  {
+    "appId": "245620",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Native linux support, all works fine out of the box. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555098309,
+    "title": "Tropico 5",
+    "source": "protondb"
+  },
+  {
+    "appId": "245620",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it doesn't work for me, it crashes only.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557565329,
+    "title": "Tropico 5",
+    "source": "protondb"
+  }
+]

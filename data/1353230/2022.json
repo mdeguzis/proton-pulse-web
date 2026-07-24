@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1353230",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.5",
+    "kernel": "4.15.0-166-generic",
+    "notes": "works fine without tweaking anything",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1660662348,
+    "title": "",
+    "source": "protondb"
+  }
+]

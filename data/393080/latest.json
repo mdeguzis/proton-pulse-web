@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "393080",
+    "cpu": "Intel Core i7         930  @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Crashed immediately after saying there is no space on the hard drive.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "18 GB",
+    "rating": "Borked",
+    "timestamp": 1547172754,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "393080",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.19.20-1-MANJARO",
+    "notes": "Game is crashing on intro, had to create folder 'players2' and insert config_mp.cfg from internet in order to bypass 'memory error'. Still not working at all, sadly. Can't fix intro/game crash on start. Unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549914394,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "393080",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Throws out of memory error 'You are probably low on hard disk space'. (12).",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1554083674,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae Remastered",
+    "source": "protondb"
+  }
+]

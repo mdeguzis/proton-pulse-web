@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "412150",
+    "title": "Midsummer Night",
+    "timestamp": 1535064879,
+    "rating": "Borked",
+    "notes": "A message says that there is a shader problem and that Direct X may need to be upgraded.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "412150",
+    "title": "Midsummer Night",
+    "timestamp": 1535050479,
+    "rating": "Borked",
+    "notes": "A message says that there is a shader problem and that Direct X may need to be upgraded.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

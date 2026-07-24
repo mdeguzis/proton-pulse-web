@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "22120",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.6, DRM 3.63, 6.15.9-201.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.9-201.fc42.x86_64",
+    "notes": "Fully playable as of August 2025 using Steam Linux Runtime 1.0 (scout)",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1755204466,
+    "title": "Penumbra: Black Plague Gold Edition",
+    "source": "protondb"
+  }
+]

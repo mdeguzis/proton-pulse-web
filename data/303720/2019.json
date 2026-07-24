@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "303720",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Glitchy audio. BGM is fine, but weapon and zombie sounds buggy.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1569452054,
+    "title": "#KILLALLZOMBIES",
+    "source": "protondb"
+  },
+  {
+    "appId": "303720",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-f2bed9b344)",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Runs smoothly, but has audio issues. Background music plays fine, but weapon and zombie sounds are a bit glitchy.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1569484819,
+    "title": "#KILLALLZOMBIES",
+    "source": "protondb"
+  }
+]

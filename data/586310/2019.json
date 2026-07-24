@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "586310",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Running Gunman Taco Truck under the default version of Proton (4.11-3 at the time of typing this report) meant the game could not even reach its title screen. Using versions 4.2-9, 3.16-9, or 3.7-8\u2013the alternatives available to me\u2013all allowed the game to run to/beyond this point & into actual gameplay. However, music & most sound effects (SFX) did not play no matter how much I toyed with the in-game audio settings, which could only lower the volume of or mute the few remaining SFX. I do not know how to fix this, so I need to rate this game 'bronze'.\n\nLess importantly, this game appears to use borderless windowed mode for its fullscreen implementation & so for some reason the GNOME Shell top bar would not go away. The top bar did not overlap with & cover any bit of the game, but this meant the game had tiny black bars on the left & right. I was able to fix this by installing the extension 'Hide Top Bar' from GNOME Extensions. I do hope more people test Gunman Taco Truck, particularly people with more troubleshooting knowledge than myself.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1567811805,
+    "title": "Gunman Taco Truck",
+    "source": "protondb"
+  },
+  {
+    "appId": "586310",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "This is the first reporter again. I did some further testing of Gunman Taco Truck on Proton & compared against it running on Windows 7. From that, another Proton-specific issue I was able to confirm is that if you're outputting at an ultrawide resolution (e.g. 3440\u00d71440) the game will unintentionally fill the screen via severely cropping off the top & bottom. To fix this, you'll need to manually change your desktop resolution to your screen resolution's 16:9 equivalent (e.g. 2560\u00d71440) in order to force the game to display properly i.e. with big black bars on the left & right.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568188967,
+    "title": "Gunman Taco Truck",
+    "source": "protondb"
+  }
+]

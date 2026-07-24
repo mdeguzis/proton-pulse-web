@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3809740",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.8-2-cachyos",
+    "notes": "Fun 2 players coop game that natively runs on \"linux\"- CachyOS",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1763932736,
+    "title": "",
+    "source": "protondb"
+  }
+]

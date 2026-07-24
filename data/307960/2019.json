@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "307960",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Black window flashing, doesn't start",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552820995,
+    "title": "IL-2 Sturmovik: Battle of Stalingrad",
+    "source": "protondb"
+  },
+  {
+    "appId": "307960",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.6-050006-generic",
+    "notes": "The game starts now, but crashes as soon as you try and fly a mission. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1565343248,
+    "title": "IL-2 Sturmovik: Battle of Stalingrad",
+    "source": "protondb"
+  },
+  {
+    "appId": "307960",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-34-generic",
+    "notes": "At first, menus worked fine, but launching a mission always resulted in a crash. \nReinstalling visual c++ 2015 redistributable after trying to run the game helped, easiest way is by entering the following in your terminal: \"WINEPREFIX=$PATH-TO-YOUR-STEAM-INSTALLATION/steamapps/compatdata/307960/pfx/ winetricks vcrun2015\" (without the quotes) . Of course, you have to substitute $PATH-TO-YOUR-STEAM-INSTALLATION for what it says. Also I wasn't sure from the folder structure whether .../307960/pfx/ or just ...307960/ was the actual prefix folder, so I ran it on both, too lazy to check it in the run script.\n\nThe game now runs fine, including actual gameplay. Menus become unresponsive after alt-tabbing, but pressing alt once back in the game fixes this.",
+    "os": "Xubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565465517,
+    "title": "IL-2 Sturmovik: Battle of Stalingrad",
+    "source": "protondb"
+  }
+]

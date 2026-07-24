@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "696360",
+    "title": "\u4ed9\u528d\u5947\u4fe0\u50b3\u516d (Chinese Paladin\uff1aSword and Fairy 6)",
+    "timestamp": 1535575943,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. Similar as native in performance, including the occasional stutters in framerate.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "696360",
+    "title": "\u4ed9\u528d\u5947\u4fe0\u50b3\u516d (Chinese Paladin\uff1aSword and Fairy 6)",
+    "timestamp": 1535561543,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. Similar as native in performance, including the occasional stutters in framerate.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

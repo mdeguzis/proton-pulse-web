@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "286940",
+    "cpu": "i7-8650U CPU @ 1.90GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) UHD Graphics 620 (Kabylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "XignCode error prevents starting the game (AntiCheat software)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7857 Mb",
+    "rating": "Borked",
+    "timestamp": 1537090447,
+    "title": "S.K.I.L.L. - Special Force 2 (Shooter)",
+    "source": "protondb"
+  }
+]

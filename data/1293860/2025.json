@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1293860",
+    "cpu": "QEMU Virtual version 2.5+",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.1, DRM 3.59, 6.11.0-24-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.11.0-24-generic",
+    "notes": "Plays perfectly on Proton 9.0-4 with no tweaks.",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1745388402,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1293860",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.12.46)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.12.46",
+    "notes": "Fonctionnement du jeu via Steam :",
+    "os": "GLF-OS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1758235219,
+    "title": "",
+    "source": "protondb"
+  }
+]

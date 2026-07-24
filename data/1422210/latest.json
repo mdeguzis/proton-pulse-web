@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1422210",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.10.15-1-MANJARO, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.15-1-MANJARO",
+    "notes": "Ran great no issues. Used Proton 5.13-6",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1613430430,
+    "title": "Throw Me in the River",
+    "source": "protondb"
+  }
+]

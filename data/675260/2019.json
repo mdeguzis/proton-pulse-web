@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "675260",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "Playable from start to finish.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554194183,
+    "title": "Batman: The Enemy Within - The Telltale Series",
+    "source": "protondb"
+  }
+]

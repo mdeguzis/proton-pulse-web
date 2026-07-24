@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "24420",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.3-arch1-1",
+    "notes": "A few insignificant problems (see below) but otherwise, it worked great from start to finish.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1729263257,
+    "title": "Aquaria",
+    "source": "protondb"
+  }
+]

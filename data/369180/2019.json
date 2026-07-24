@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "369180",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Runs out of the box. However, for quitting, game process has to be quit manually.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1557681604,
+    "title": "SoulCraft",
+    "source": "protondb"
+  },
+  {
+    "appId": "369180",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.19.55-041955-generic",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1562526007,
+    "title": "SoulCraft",
+    "source": "protondb"
+  }
+]

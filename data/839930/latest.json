@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "839930",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Only run with Screen windowed(1680x1050) and graphics in fastest.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1553426646,
+    "title": "My Car",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

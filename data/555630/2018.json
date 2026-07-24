@@ -1,0 +1,61 @@
+[
+  {
+    "appId": "555630",
+    "title": "A Magical High School Girl / \u9b54\u6cd5\u306e\u5973\u5b50\u9ad8\u751f",
+    "timestamp": 1535514832,
+    "rating": "Borked",
+    "notes": "majo.exe caused an Access Violation (0xc0000005) in module majo.exe at 0023:00c1b149. Crash Dump: https://a.pomf.cat/xwbxju.zip",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "555630",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Ran as expected including functional controller support. Does seem to fail to close on a force quit.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24032 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538460088,
+    "title": "A Magical High School Girl / \u9b54\u6cd5\u306e\u5973\u5b50\u9ad8\u751f",
+    "source": "protondb"
+  },
+  {
+    "appId": "555630",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Performs well when WineD3D11 is enabled. Crashes on closing the game. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545831076,
+    "title": "A Magical High School Girl / \u9b54\u6cd5\u306e\u5973\u5b50\u9ad8\u751f",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "555630",
+    "title": "A Magical High School Girl / \u9b54\u6cd5\u306e\u5973\u5b50\u9ad8\u751f",
+    "timestamp": 1535500432,
+    "rating": "Borked",
+    "notes": "majo.exe caused an Access Violation (0xc0000005) in module majo.exe at 0023:00c1b149. Crash Dump: https://a.pomf.cat/xwbxju.zip",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

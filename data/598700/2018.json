@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "598700",
+    "title": "The Vagrant",
+    "timestamp": 1535566662,
+    "rating": "Borked",
+    "notes": "Music and background sound effects annoyingly glitchy, but otherwise somewhat playable. Takes a long time to start. Not extremely smooth performance. UE4 game.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "598700",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0 AMD 18.30 , 4.15.0-34-generic, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7941 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537819240,
+    "title": "The Vagrant",
+    "source": "protondb"
+  },
+  {
+    "appId": "598700",
+    "cpu": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The audio glitches out after a while. Xbox controller works. Performance was good in my case.",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15835 Mb",
+    "rating": "Silver",
+    "timestamp": 1538866733,
+    "title": "The Vagrant",
+    "source": "protondb"
+  },
+  {
+    "appId": "598700",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "launched with PROTON_USE_WINED3D11=1 %command%. audio is loud and stutters. screen flashes frequently.",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7926 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539632660,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "The Vagrant",
+    "source": "protondb"
+  },
+  {
+    "appId": "598700",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540453371,
+    "title": "The Vagrant",
+    "source": "protondb"
+  },
+  {
+    "appId": "598700",
+    "title": "The Vagrant",
+    "timestamp": 1535552262,
+    "rating": "Borked",
+    "notes": "Music and background sound effects annoyingly glitchy, but otherwise somewhat playable. Takes a long time to start. Not extremely smooth performance. UE4 game.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

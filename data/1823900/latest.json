@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1823900",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.5, DRM 3.61, 6.14.6-106.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.1",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "It might be an older version of the Evolution Engine, so user.cfg doesn't take on this. Either way, it's borked until someone can figure out how to fix it.",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1750112664,
+    "title": "",
+    "source": "protondb"
+  }
+]

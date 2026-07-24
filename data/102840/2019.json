@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "102840",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "This is a NATIVE Linux game, AND runs flawlessly through Proton too.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560217562,
+    "title": "Shank 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "102840",
+    "cpu": "Intel Xeon E5-1650 v2 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "No bugs or performance issues at all.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561534637,
+    "title": "Shank 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "102840",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Native, and Proton work.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570950880,
+    "title": "Shank 2",
+    "source": "protondb"
+  }
+]

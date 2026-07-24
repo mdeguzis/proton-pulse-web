@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "381050",
+    "title": "The Ritual on Weylyn Island",
+    "timestamp": 1535171472,
+    "rating": "Borked",
+    "notes": "Requires Steam Launch option \"PROTON_NO_D3D11=1 %command%\" to start, but can't get past the first menu screen because it does not respond to input.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "381050",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc5-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc5-generic",
+    "notes": "Game launches without any proton launch options, but you can't get past the initial setting screen. Because when clicking \"apply\" nothing happens. Tried windowed and fullscreen, and with different Proton options. Also tried with KB+M and a xbone controller.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15960 Mb",
+    "rating": "Borked",
+    "timestamp": 1537997309,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "The Ritual on Weylyn Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "381050",
+    "title": "The Ritual on Weylyn Island",
+    "timestamp": 1535157072,
+    "rating": "Borked",
+    "notes": "Requires Steam Launch option \"PROTON_NO_D3D11=1 %command%\" to start, but can't get past the first menu screen because it does not respond to input.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

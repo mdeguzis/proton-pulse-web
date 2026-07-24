@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1014550",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "4.15.0-101-generic",
+    "notes": "After launching game, unity window shows up, and game crashes while loading.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1592347949,
+    "title": "",
+    "source": "protondb"
+  }
+]

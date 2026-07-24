@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1361920",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Most of the game pad controls don't work, and if you try to bind keyboard buttons to the game pad, some buttons will stop working when you tab out of the game. Able to launch the game and tutorial, but freezes permanently on the game's first (mandatory) rewind. Tried running with forced experimental Proton and the problem persisted. Refunded and bought on iOS instead.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1672234462,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1142480",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.2.0-39-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1703735599,
+    "title": "",
+    "source": "protondb"
+  }
+]

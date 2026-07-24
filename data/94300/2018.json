@@ -1,0 +1,93 @@
+[
+  {
+    "appId": "94300",
+    "title": "The Dream Machine",
+    "timestamp": 1535369768,
+    "rating": "Platinum",
+    "notes": "Runs fine",
+    "os": "Pop!_OS 18.04 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "i7-8700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "94300",
+    "title": "The Dream Machine: Chapter 1 & 2",
+    "timestamp": 1535748338,
+    "rating": "Gold",
+    "notes": "Runs OK. Seems to run best with 'PROTON_NO_D3D11=1 %command%' in steam launch options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "94300",
+    "cpu": "i7-4710MQ CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-haswell",
+    "notes": "Simply does not start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5 beta",
+    "ram": "7872 Mb",
+    "rating": "Borked",
+    "timestamp": "1536334590",
+    "title": "The Dream Machine: Chapter 1 & 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "94300",
+    "cpu": "Intel(R) Core(TM) i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-ext73-58.8-kabylake",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7911 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537423061,
+    "title": "The Dream Machine: Chapter 1 & 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "94300",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537792549,
+    "title": "The Dream Machine: Chapter 1 & 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "94300",
+    "title": "The Dream Machine",
+    "timestamp": 1535355368,
+    "rating": "Platinum",
+    "notes": "Runs fine",
+    "os": "Pop!_OS 18.04 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "i7-8700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "94300",
+    "title": "The Dream Machine: Chapter 1 & 2",
+    "timestamp": 1535733938,
+    "rating": "Gold",
+    "notes": "Runs OK. Seems to run best with 'PROTON_NO_D3D11=1 %command%' in steam launch options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

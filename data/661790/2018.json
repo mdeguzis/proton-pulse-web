@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "661790",
+    "title": "Witch Hunt",
+    "timestamp": 1535223964,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to run. Game is playable but loading/introduction screen is black, if you just wait for the game to load and then click left mouse button you get into the game. Game is still in early access, but have not experienced this problem in Windows.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "661790",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Everything works out of the box, the text that was missing on previous Proton versions is now displayed properly.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541099969,
+    "title": "Witch Hunt",
+    "source": "protondb"
+  },
+  {
+    "appId": "661790",
+    "title": "Witch Hunt",
+    "timestamp": 1535209564,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to run. Game is playable but loading/introduction screen is black, if you just wait for the game to load and then click left mouse button you get into the game. Game is still in early access, but have not experienced this problem in Windows.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

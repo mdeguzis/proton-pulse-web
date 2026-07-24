@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "9710",
+    "title": "Desperados 2: Cooper\u2019s Revenge",
+    "timestamp": 1535046321,
+    "rating": "Silver",
+    "notes": "Some minor graphic bugs.",
+    "os": "Linux Mint 19 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "18.3.0-devel",
+    "specs": " i5-7Y54 / iGPU HD 615",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9710",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537483460,
+    "title": "Desperados 2: Cooper's Revenge",
+    "source": "protondb"
+  },
+  {
+    "appId": "9710",
+    "title": "Desperados 2: Cooper\u2019s Revenge",
+    "timestamp": 1535031921,
+    "rating": "Silver",
+    "notes": "Some minor graphic bugs.",
+    "os": "Linux Mint 19 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "18.3.0-devel",
+    "specs": " i5-7Y54 / iGPU HD 615",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

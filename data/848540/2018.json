@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "848540",
+    "cpu": "Intel(R) Pentium(R) CPU G4400 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 375.66",
+    "kernel": "4.4.0-21-generic",
+    "notes": "Fairly basic game, so it's expeced that it had good performance",
+    "os": "Linux Mint 18 Sarah (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7924 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538464216,
+    "title": "Arctic Cave",
+    "source": "protondb"
+  }
+]

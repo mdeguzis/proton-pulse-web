@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1008920",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game won't start, instantly crashes",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559210556,
+    "title": "Photographs",
+    "source": "protondb"
+  }
+]

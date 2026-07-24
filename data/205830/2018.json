@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "205830",
+    "title": "Luxor Evolved",
+    "timestamp": 1535873507,
+    "rating": "Platinum",
+    "notes": "no messing at all",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K /GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "205830",
+    "cpu": "Intel Core i3-3225 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "No issues",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1540644106,
+    "title": "Luxor Evolved",
+    "source": "protondb"
+  },
+  {
+    "appId": "205830",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "notes": "Works out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541229733,
+    "title": "Luxor Evolved",
+    "source": "protondb"
+  },
+  {
+    "appId": "205830",
+    "title": "Luxor Evolved",
+    "timestamp": 1535859107,
+    "rating": "Platinum",
+    "notes": "no messing at all",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K /GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

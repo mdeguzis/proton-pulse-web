@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "341870",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "The game is rendering perfectly but runs in a extremely low frame rate. 9 - 15 fps, unplayable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "15978 Mb",
+    "rating": "Borked",
+    "timestamp": 1537154923,
+    "title": "TEMBO THE BADASS ELEPHANT",
+    "source": "protondb"
+  },
+  {
+    "appId": "341870",
+    "cpu": "Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "kernel": "4.18.8-2-MANJARO",
+    "notes": "Runs great and renders perfect",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "7840 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537381451,
+    "title": "TEMBO THE BADASS ELEPHANT",
+    "source": "protondb"
+  },
+  {
+    "appId": "341870",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.11-1-MANJARO",
+    "notes": "The game runs smoothly and with perfect graphics but the joystick doesn't work, only able to play with the keyboard.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15981 Mb",
+    "rating": "Silver",
+    "timestamp": 1538533531,
+    "title": "TEMBO THE BADASS ELEPHANT",
+    "source": "protondb"
+  }
+]

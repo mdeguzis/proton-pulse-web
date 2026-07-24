@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "820460",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-742dace825)",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Network play and solo play works as expected no graphics glitches. Runs out of the box no mods.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541160103,
+    "title": "Hero Academy 2",
+    "source": "protondb"
+  }
+]

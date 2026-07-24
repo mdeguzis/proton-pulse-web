@@ -1,0 +1,104 @@
+[
+  {
+    "appId": "228260",
+    "title": "Fallen Enchantress: Legendary Heroes",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Launches to title screen then crashes",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa ?",
+    "specs": "i5-4590s / Intel HD4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "228260",
+    "title": "Fallen Enchantress: Legendary Heroes",
+    "timestamp": 1535245758,
+    "rating": "Borked",
+    "notes": "Crashes steam client and game on start",
+    "os": "Gentoo 64-bit (Kernel 4.18.5-gentoo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i9-7940X / GTX 1070 TI",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "228260",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Have to set PROTON_NO_ESYNC=1 PROTON_USE_WINED3D11=1 %command% launch options to get it to work. Even then the text in the game is hit or miss if it will show up or not. Especially in menus. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "24004 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537537472,
+    "title": "Fallen Enchantress: Legendary Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "228260",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Launches with WINED3D11 option, but most fonts are invisible.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1540334930,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Fallen Enchantress: Legendary Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "228260",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Fonts and some graphics are missing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545054642,
+    "title": "Fallen Enchantress: Legendary Heroes",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "228260",
+    "title": "Fallen Enchantress: Legendary Heroes",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Launches to title screen then crashes",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa ?",
+    "specs": "i5-4590s / Intel HD4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "228260",
+    "title": "Fallen Enchantress: Legendary Heroes",
+    "timestamp": 1535231358,
+    "rating": "Borked",
+    "notes": "Crashes steam client and game on start",
+    "os": "Gentoo 64-bit (Kernel 4.18.5-gentoo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i9-7940X / GTX 1070 TI",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

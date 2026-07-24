@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "697580",
+    "cpu": "Intel Core i5-3340S @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Does NOT launch on the currently latest Proton 4.11-4 for some reason, so use the one specified here. Otherwise, all good!",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568497318,
+    "title": "Screamer",
+    "source": "protondb"
+  }
+]

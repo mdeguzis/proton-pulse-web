@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1127110",
+    "cpu": "Intel Core i5       M 520  @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD (ILK)",
+    "gpuDriver": "2.1 Mesa 20.0.7",
+    "kernel": "5.5.0-kali2-amd64",
+    "notes": "I installed the game on my kali linux pc but when i try to play it ,nothing happens",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1592479514,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1127110",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 20.3.0-devel (git-cde5b86 2020-09-18 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-117-generic",
+    "notes": "Everything is black",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1600454823,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1127110",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 20.3.0-devel (git-7b4eaac 2020-09-18 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-117-generic",
+    "notes": "Around 60 FPS",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600484076,
+    "title": "",
+    "source": "protondb"
+  }
+]

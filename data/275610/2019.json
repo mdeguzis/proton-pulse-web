@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "275610",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Screen goes black for a second then the game immediately closes.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547230762,
+    "title": "Warhammer 40,000: Kill Team",
+    "source": "protondb"
+  },
+  {
+    "appId": "275610",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Only played a few minutes as I did not have my controller nearby. Used keyboard to navigate. But all seemed to work ok, no tweaking or modifying needed.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565813017,
+    "title": "Warhammer 40,000: Kill Team",
+    "source": "protondb"
+  },
+  {
+    "appId": "275610",
+    "cpu": "AMD A10-6800K APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "OK",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-2",
+    "ram": "11 GB",
+    "rating": "Platinum",
+    "timestamp": 1566142486,
+    "title": "Warhammer 40,000: Kill Team",
+    "source": "protondb"
+  }
+]

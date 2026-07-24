@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "253430",
+    "title": "CastleMiner Z",
+    "timestamp": 1535149055,
+    "rating": "Borked",
+    "notes": "It installs",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "253430",
+    "cpu": "Intel(R) Pentium(R) CPU  N3540  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.5",
+    "notes": "Launched the game, and it closed in a second.",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "CastleMiner Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "253430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org AMD HAWAII (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0) R9 290",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No launch",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7970 Mb",
+    "rating": "Borked",
+    "timestamp": 1537311837,
+    "title": "CastleMiner Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "253430",
+    "title": "CastleMiner Z",
+    "timestamp": 1535134655,
+    "rating": "Borked",
+    "notes": "It installs",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

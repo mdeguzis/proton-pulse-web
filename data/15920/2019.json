@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "15920",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0 - padoka PPA",
+    "kernel": "5.1.0-050100-generic",
+    "notes": "Application Error. This application requires \"Windows 98 SE\" or later to execute. Please ensure that the minimum software and hardware requirements are met, before attempting to run this application again. The application will terminate now. OK",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561870024,
+    "title": "Luxor 2",
+    "source": "protondb"
+  }
+]

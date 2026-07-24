@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "391260",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Works perfectly out of the box.",
+    "os": "MX 18.2 Continuum",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558326474,
+    "title": "Labyronia RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "391260",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.3-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561344175,
+    "title": "Labyronia RPG",
+    "source": "protondb"
+  }
+]

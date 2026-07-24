@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "224040",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-106.current",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547320902,
+    "title": "LocoCycle",
+    "source": "protondb"
+  }
+]

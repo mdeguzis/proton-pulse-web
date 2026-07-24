@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "433320",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-16-generic",
+    "notes": "It works, however my controller buttons are swapped and I can't change them, witch is akward",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554333463,
+    "title": "Marvel: Ultimate Alliance 2",
+    "source": "protondb"
+  }
+]

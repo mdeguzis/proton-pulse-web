@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "346490",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Did not start.  PROTON_NO_D3D11=1 %command% allowed the exe show up in system Monitor but nothing displayed  and it still crashed after a while.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541533863,
+    "title": "Toy Wars Invasion",
+    "source": "protondb"
+  }
+]

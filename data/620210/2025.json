@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "620210",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.7, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "Works perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1750194163,
+    "title": "",
+    "source": "protondb"
+  }
+]

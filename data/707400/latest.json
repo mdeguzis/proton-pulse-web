@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "707400",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Le jeux ne se lance pas",
+    "os": "Freedesktop.org 20.08.3 (Flatpak runtime) (64\u00a0bits)",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612517220,
+    "title": "Attack Of Insects",
+    "source": "protondb"
+  }
+]

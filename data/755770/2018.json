@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "755770",
+    "cpu": "Intel(R) Xeon(R) CPU E5-1650 v2 @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.06",
+    "kernel": "4.14.65-gentoo",
+    "notes": "Missing api-ms-win-core-memory-l1-1-5.dll",
+    "os": "\"Gentoo Base System release 2.4.1\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "64299 Mb",
+    "rating": "Borked",
+    "timestamp": 1537492799,
+    "title": "YouTube VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "755770",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Fails to launch.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542643872,
+    "title": "YouTube VR",
+    "source": "protondb"
+  }
+]

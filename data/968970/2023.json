@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "968970",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.15.0-58-generic",
+    "notes": "I never tested a game controller, but everything else seems to work out of the box.",
+    "os": "Zorin OS 16.2",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1676320634,
+    "title": "Lumberjack's Dynasty",
+    "source": "protondb"
+  }
+]

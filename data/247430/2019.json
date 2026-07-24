@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "247430",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Works perfectly!",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553513951,
+    "title": "Hitman: Contracts",
+    "source": "protondb"
+  },
+  {
+    "appId": "247430",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.12.14-lp150.12.48-default",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553987491,
+    "title": "Hitman: Contracts",
+    "source": "protondb"
+  },
+  {
+    "appId": "247430",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-30574bba37)",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "On Proton it works out of the box, except that mouse input is often uncontrollable, but when restarting it, the game works. If I switch to Proton 4.11-2, the game doesn't start anymore, only with 4.2-9 it works fine!",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565903314,
+    "title": "Hitman: Contracts",
+    "source": "protondb"
+  }
+]

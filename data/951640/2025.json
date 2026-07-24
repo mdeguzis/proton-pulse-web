@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "951640",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.2-200.nobara.fc41.x86_64",
+    "notes": "it works, but why would you",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1754780733,
+    "title": "Gangsta Sniper",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "611160",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "In motion the area isn't sharp but besides that it seems to work flawlessly",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "15902 MB",
+    "rating": "Silver",
+    "timestamp": 1539117831,
+    "title": "Karnage Chronicles",
+    "source": "protondb"
+  }
+]

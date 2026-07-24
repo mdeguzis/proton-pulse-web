@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "328760",
+    "cpu": "Intel Core i3-3227U @ 1.90GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Absolute perfection",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565131567,
+    "title": "SanctuaryRPG: Black Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "328760",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "I had a minor problem with the fullscreen being confined to the top left corner and the mouse not leaving that area even in windowed mode, but that may be an issue on my end with i3wm. Appart from that, it works flawlessly! ",
+    "os": "ArchLinux",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565602483,
+    "title": "SanctuaryRPG: Black Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "328760",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Though it's not Linux related issue but still wanted to share. For the game being stuck on top left corner and cannot go fullscreen correctly, you can do this (directly from SanctuaryRPG Wiki):\n\nOpen gamefolder\\terminal\\720p\\terminal.png in paint (or similar) and resize.\n\nFor 1080p resize to 150%. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568246232,
+    "title": "SanctuaryRPG: Black Edition",
+    "source": "protondb"
+  }
+]

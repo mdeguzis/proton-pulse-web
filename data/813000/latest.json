@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "813000",
+    "title": "PUBG: Experimental Server",
+    "timestamp": 1535572590,
+    "rating": "Borked",
+    "notes": "BattlEye...",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "813000",
+    "title": "PUBG: Experimental Server",
+    "timestamp": 1535558190,
+    "rating": "Borked",
+    "notes": "BattlEye...",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

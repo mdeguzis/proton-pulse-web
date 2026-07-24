@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "356670",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Sound effects don't work so can't progress in section where a bell tells you where to go",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554022238,
+    "title": "Spooky's Jump Scare Mansion",
+    "source": "protondb"
+  }
+]

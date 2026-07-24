@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1900",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-zen1-1-zen",
+    "notes": "Native version wasn't working, seems to work fine in Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569171439,
+    "title": "Earth 2160",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "385330",
+    "title": "Stray Cat Crossing",
+    "timestamp": 1535702936,
+    "rating": "Platinum",
+    "notes": "Works as expected.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "385330",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5 - SteamVR PPA",
+    "kernel": "4.20.0-042000rc4-generic",
+    "notes": "Game is playable but if you switch to fullscreen, you can't go back to windowed mode (you get no video, just a black screen). Different launch options and disabling overlays made no difference.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543609235,
+    "title": "Stray Cat Crossing",
+    "source": "protondb"
+  },
+  {
+    "appId": "385330",
+    "title": "Stray Cat Crossing",
+    "timestamp": 1535688536,
+    "rating": "Platinum",
+    "notes": "Works as expected.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

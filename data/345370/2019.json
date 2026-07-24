@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "345370",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Out of the box opens to a window that is blank and unresponsive. There are dropdowns for \"File\" and \"Help\" but nothing opens when menu options are selected. ",
+    "os": "MX 18.2 Continuum",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558417405,
+    "title": "TyranoBuilder Visual Novel Studio",
+    "source": "protondb"
+  }
+]

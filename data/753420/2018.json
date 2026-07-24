@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "753420",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "I was unable to change the resolution or switch to windowed mode, and it crashed when I tried to exit the game, but it was perfectly playable.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541636118,
+    "title": "Dungreed",
+    "source": "protondb"
+  }
+]

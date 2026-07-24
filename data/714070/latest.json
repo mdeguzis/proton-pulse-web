@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "714070",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "In order to get the game started correctly, pass your screen resolution through the launch options as follows: \"%command% -w WIDTH -h HEIGHT\" (without the quotes).\n\nLoading times can be very long (up to several minutes). Also, clicking \"Options\" in the main menu crashes the game. Other than that, the game runs perfectly.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557265854,
+    "title": "Entropy : Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "714070",
+    "cpu": "Intel Core i5-5575R @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Iris Pro 6200 (Broadwell GT3e)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-25-generic",
+    "notes": "On starting the game, nothing renders at all. The only way to exit the black screen is to enter the console and use the quit command. Sounds are working just fine, but without visual, getting the game to even start is a challenge.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569198914,
+    "title": "Entropy : Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "714070",
+    "cpu": "AMD Athlon II X2 250",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTS 450",
+    "gpuDriver": "NVIDIA 390.129",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "The game has big problems with framerate.\nNo matter how much the various settings have been set to \"low\" the game continues to go from 60 fps to 15 as soon as there are more than three enemies.\nThe core problem is that the game is aimed to HL2 veterans looking for a good challenge and without fluidity in the movement I've got stuck in a difficult part of it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1569664071,
+    "title": "Entropy : Zero",
+    "source": "protondb"
+  },
+  {
+    "appId": "714070",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.3.4-9.4-tkg-pds",
+    "notes": "PROTON_USE_D9VK=1 %command% -w 1920 -h 1080\nuse d9vk for better performance\nuse second launch option to make it work\nfonts are a bit weird but it's very playable and there is no performance issues",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1570463046,
+    "title": "Entropy : Zero",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

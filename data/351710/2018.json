@@ -1,0 +1,92 @@
+[
+  {
+    "appId": "351710",
+    "title": "Hyperdimension Neptunia Re;Birth2 Deluxe Pack",
+    "timestamp": 1535021782,
+    "rating": "Platinum",
+    "notes": "No noticeable issues. 60fps gameplay.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351710",
+    "title": "Hyperdimension Neptunia Re;Birth2 Sisters Generation",
+    "timestamp": 1535184005,
+    "rating": "Platinum",
+    "notes": "Works just fine. ",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-6100",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351710",
+    "cpu": "Intel(R) Xeon(R) CPU           X5470  @ 3.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.18.12-200.fc28.x86_64, LLVM 6.0.1)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.12-200.fc28.x86_64",
+    "notes": "Launch and running smoothly, but no sound in game, only in opening. Tried beta and stable proton releases (3.16-1 and 3.7-8)",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7975 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539522128,
+    "title": "Hyperdimension Neptunia Re;Birth2: Sisters Generation / \u8d85\u6b21\u6b21\u5143\u30b2\u30a4\u30e0 \u30cd\u30d7\u30c6\u30e5\u30fc\u30ccRe;Birth2 / \u8d85\u6b21\u6b21\u5143\u904a\u6232 \u6230\u6a5f\u5c11\u5973 \u91cd\u751f2",
+    "source": "protondb"
+  },
+  {
+    "appId": "351710",
+    "cpu": "AMD Phenom(tm) II X6 1055T Processor",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Playing/moving to another steam library drive may requires you to delete the Proton Folders on both drives and revalidate.\n\nNeptools DLL mods do not work, the \"retranslation\" patch will not work.",
+    "os": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7974 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540184613,
+    "title": "Hyperdimension Neptunia Re;Birth2: Sisters Generation / \u8d85\u6b21\u6b21\u5143\u30b2\u30a4\u30e0 \u30cd\u30d7\u30c6\u30e5\u30fc\u30ccRe;Birth2 / \u8d85\u6b21\u6b21\u5143\u904a\u6232 \u6230\u6a5f\u5c11\u5973 \u91cd\u751f2",
+    "source": "protondb"
+  },
+  {
+    "appId": "351710",
+    "duration": "lessThanAnHour",
+    "notes": "Just works.",
+    "protonVersion": "Default",
+    "rating": "Platinum",
+    "timestamp": 1540405314,
+    "title": "Hyperdimension Neptunia Re;Birth2: Sisters Generation / \u8d85\u6b21\u6b21\u5143\u30b2\u30a4\u30e0 \u30cd\u30d7\u30c6\u30e5\u30fc\u30ccRe;Birth2 / \u8d85\u6b21\u6b21\u5143\u904a\u6232 \u6230\u6a5f\u5c11\u5973 \u91cd\u751f2",
+    "source": "protondb"
+  },
+  {
+    "appId": "351710",
+    "title": "Hyperdimension Neptunia Re;Birth2 Deluxe Pack",
+    "timestamp": 1535007382,
+    "rating": "Platinum",
+    "notes": "No noticeable issues. 60fps gameplay.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "351710",
+    "title": "Hyperdimension Neptunia Re;Birth2 Sisters Generation",
+    "timestamp": 1535169605,
+    "rating": "Platinum",
+    "notes": "Works just fine. ",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-6100",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

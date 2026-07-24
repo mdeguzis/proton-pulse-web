@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "225260",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "I played for about 4 hours using proton ran fine for me out of the box, no tweaks requiered",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541177992,
+    "title": "Brutal Legend",
+    "source": "protondb"
+  }
+]

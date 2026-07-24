@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "7510",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.1-arch1-1-ARCH",
+    "notes": "Forced usage of Windows version; Game runs in slow motion and is therefore unplayable; Skip broken launcher with this: mv launcher.exe launcher.exe.bak; ln xblades.exe launcher.exe; ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547803607,
+    "title": "X-Blades",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "7510",
+    "cpu": "Intel Xeon E5-2670 0 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "The \"native\" version is just the Windows game prepackaged with an old version of Wine that doesn't work anymore (crashes after opening cutscene). Install with proton and the game launcher doesn't work. Force launch the game without the launcher and the game runs at a couple fps and slowed to an unplayable rate.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552790184,
+    "title": "X-Blades",
+    "source": "protondb"
+  },
+  {
+    "appId": "7510",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "As others have said I needed to rename the old launcher.exe to something else then create a link to xblades.exe and name it launcher.exe.\nI then had to set the following launch options otherwise the game runs at 5fps - \n(while ! ps -A | grep 'launcher.exe'; do sleep 1; done; sleep 1; taskset -p 2 \"$(ps -A | grep 'launcher.exe' | awk '{print $1}')\") & %command% - \nNow cutscenes are in excess of 2000fps and gameplay is above 175fps. \nHad no issues playing. The game sound, graphics and gameplay all fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559329785,
+    "title": "X-Blades",
+    "source": "protondb"
+  },
+  {
+    "appId": "7510",
+    "cpu": "Intel Core i5-2300 @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Change the launch options to:\n\n (while ! ps -A | grep 'launcher.exe'; do sleep 1; done; sleep 1; taskset -p 2 \"$(ps -A | grep 'launcher.exe' | awk '{print $1}')\") & %command%\n\nrename \"xblades.exe\" to launcher.exe\n\nEnjoy",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562619024,
+    "title": "X-Blades",
+    "source": "protondb"
+  }
+]

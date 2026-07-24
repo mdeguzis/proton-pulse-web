@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "402170",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.2-ck",
+    "notes": "Launched & played 2-player perfectly. Appeared to hang at exit, so I switched to another VT (ctrl+alt+F2), looked for the process with htop, didn't find it, switched back to X VT (ctrl+alt+F7) and the game had exited & everything was fine, so perhaps I was just impatient (:",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548608567,
+    "title": "Puzzle Ball",
+    "source": "protondb"
+  }
+]

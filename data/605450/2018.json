@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "605450",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-7e9fc11 2018-11-17 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Starts up a bit laggy like all Unreal Engine games but works perfectly after a while",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542562645,
+    "title": "In Death",
+    "source": "protondb"
+  },
+  {
+    "appId": "605450",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "no tweakes required, it works very smooth here ootb without any glitches.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545399972,
+    "title": "In Death",
+    "source": "protondb"
+  }
+]

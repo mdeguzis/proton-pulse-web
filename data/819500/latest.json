@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "819500",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549567443,
+    "title": "Fear The Wolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "819500",
+    "cpu": "Intel Core i3-2120 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "It's just displaying a black screen.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550341512,
+    "title": "Fear The Wolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "819500",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Only a black screen. Disable Esync, Disable D3d11 and use Wine D3d11 all doesn't work",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558042509,
+    "title": "Fear The Wolves",
+    "source": "protondb"
+  }
+]

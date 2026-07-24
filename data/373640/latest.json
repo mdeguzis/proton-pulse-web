@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "373640",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-0dff1533f2)",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Worked fine with Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554639941,
+    "title": "Splotches",
+    "source": "protondb"
+  },
+  {
+    "appId": "373640",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-8f5ac45a1a)",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "Works out of the box on Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564953654,
+    "title": "Splotches",
+    "source": "protondb"
+  }
+]

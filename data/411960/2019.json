@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "411960",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "notes": "Rock solid 60fps no worries",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556040055,
+    "title": "TY the Tasmanian Tiger",
+    "source": "protondb"
+  },
+  {
+    "appId": "411960",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-629806b55b)",
+    "kernel": "5.1.3-arch1-1-ARCH",
+    "notes": "60 fps, controller, sound, it all works",
+    "os": "ArcoLinux",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558251030,
+    "title": "TY the Tasmanian Tiger",
+    "source": "protondb"
+  }
+]

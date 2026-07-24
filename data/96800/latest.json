@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "96800",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD R9 M265X",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Runs perfect but mouse movement is allowed only in a 90 degree.... and that is a weird issue.",
+    "os": "MX 18.1 Continuum",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1551641634,
+    "title": "Nexuiz",
+    "source": "protondb"
+  },
+  {
+    "appId": "96800",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Freezes completely at the main menu.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557313812,
+    "title": "Nexuiz",
+    "source": "protondb"
+  },
+  {
+    "appId": "96800",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Heavily corrupted visuals in the main menu combined with a freeze in a way that is hard to get out from",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1566840066,
+    "title": "Nexuiz",
+    "source": "protondb"
+  }
+]

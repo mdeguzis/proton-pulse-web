@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "795100",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Runs as well as on Windows. No issues like described in the other reports. Perfect",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556882309,
+    "title": "Friday the 13th: Killer Puzzle",
+    "source": "protondb"
+  },
+  {
+    "appId": "795100",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Works great",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-4",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1568981262,
+    "title": "Friday the 13th: Killer Puzzle",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1475380",
+    "cpu": "AMD Phenom II X6 1075T",
+    "duration": "unreported",
+    "gpu": "AMD HAWAII (DRM 2.50.0, 5.9.16-1-MANJARO, LLVM 11.0.1)",
+    "gpuDriver": "4.5 Mesa 20.3.4",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "It ran with no issues at all but the game it self doesnt have the option to change the graphics but that is the game not proton.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1613049170,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1475380",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.5-arch1-1",
+    "notes": "Runs pretty smooth in general",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1615794243,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1475380",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.52-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1629238410,
+    "title": "",
+    "source": "protondb"
+  }
+]

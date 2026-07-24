@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "551450",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "The game didn't launch until I set \"PROTON_USE_WINED3D11=1 %command%\" in launch options.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551713762,
+    "title": "Furious Angels",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

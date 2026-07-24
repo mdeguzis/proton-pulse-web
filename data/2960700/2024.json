@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2960700",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-122-generic",
+    "notes": "I tried a variety of Proton versions and none of them opened the game.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1727870024,
+    "title": "",
+    "source": "protondb"
+  }
+]

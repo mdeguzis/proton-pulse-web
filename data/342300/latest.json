@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "342300",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553533589,
+    "title": "Zombie Kill of the Week - Reborn",
+    "source": "protondb"
+  },
+  {
+    "appId": "342300",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Works very well with keyboard and mouse",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554399822,
+    "title": "Zombie Kill of the Week - Reborn",
+    "source": "protondb"
+  },
+  {
+    "appId": "342300",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Perfect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570950301,
+    "title": "Zombie Kill of the Week - Reborn",
+    "source": "protondb"
+  }
+]

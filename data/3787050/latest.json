@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3787050",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 7.0.1-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.1.0",
+    "kernel": "7.0.1-200.nobara.fc43.x86_64",
+    "notes": "Everything is fine.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1782806892,
+    "title": "It Works: Electronics Repair Simulator",
+    "source": "protondb"
+  }
+]

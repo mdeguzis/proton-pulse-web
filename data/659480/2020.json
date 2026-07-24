@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "659480",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-7642-generic",
+    "notes": "Completed game from start to finish. Some minor issues that I believe are due to the game itself, and not due to Proton.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1586309876,
+    "title": "",
+    "source": "protondb"
+  }
+]

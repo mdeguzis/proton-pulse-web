@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "211580",
+    "title": "Wanderlust: Rebirth",
+    "timestamp": 1535392855,
+    "rating": "Borked",
+    "notes": "Crashes immediately",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 1080Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "211580",
+    "title": "Wanderlust: Rebirth",
+    "timestamp": 1535378455,
+    "rating": "Borked",
+    "notes": "Crashes immediately",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 1080Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "205810",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R7 200",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Standard cursor was not visible. Player movement cursor was and when hovering over UI Buttons it was visible. The game is playable, but it is annoying to guess where the cursor is.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1558476112,
+    "title": "Jagged Alliance: Crossfire",
+    "source": "protondb"
+  },
+  {
+    "appId": "205810",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-15-generic",
+    "notes": "This game works but the cursor becomes invisible when you have a player selected. This is highly annoying and prevents me from playing comfortably. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559669193,
+    "title": "Jagged Alliance: Crossfire",
+    "source": "protondb"
+  },
+  {
+    "appId": "205810",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Don't know whether the issues are from Proton/Wine, or just that the game sucks. The mouse cursor disappears when you select a character, which makes it difficult to control where you're going.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560221277,
+    "title": "Jagged Alliance: Crossfire",
+    "source": "protondb"
+  }
+]

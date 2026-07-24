@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2070550",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.6, DRM 3.49, 6.1.0-1-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.2",
+    "kernel": "6.1.0-1-amd64",
+    "notes": "Native version runs absolutly fine",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1673704354,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2070550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1692819633,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2070550",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 15.0.7, DRM 3.42, 5.15.0-87-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-87-generic",
+    "notes": "works great out of the box",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1698577344,
+    "title": "",
+    "source": "protondb"
+  }
+]

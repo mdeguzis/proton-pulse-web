@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "15910",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.17.11-259-tkg-pds",
+    "notes": "Requires forcing a Proton version as Steam doesn't use one by default for this game. Any recent version should work.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1689050826,
+    "title": "Luxor Amun Rising",
+    "source": "protondb"
+  }
+]

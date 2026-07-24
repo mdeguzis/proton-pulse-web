@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "895670",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Only tested changing vsync option, but all game related menus worked, gameplay is flawless.  Saw no differences from the mobile version I have played before.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "64282 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537734429,
+    "title": "Armajet",
+    "source": "protondb"
+  }
+]

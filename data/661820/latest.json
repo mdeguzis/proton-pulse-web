@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "661820",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game runs perfectly, but if you switch to windowed mode and then try to switch back to fullscreen again, the screen is off-center and only partially visible.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552584390,
+    "title": "I.F.O",
+    "source": "protondb"
+  }
+]

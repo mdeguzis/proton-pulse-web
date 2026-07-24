@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "337490",
+    "cpu": "i3-3110M CPU @ 2.40GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.6-041806-generic",
+    "notes": "Crashes upon starting (haven't checked the full error log yet)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "3799 Mb",
+    "rating": "Borked",
+    "timestamp": "1536312449",
+    "title": "Four Sided Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "337490",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No tweaks. Didn't encounter any problems.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543005828,
+    "title": "Four Sided Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "337490",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Everything seems to work except controls with Xbox 360 controller. Game receives constant up/down movement. Force off controller from game properties and you can play with keyboard.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544095680,
+    "title": "Four Sided Fantasy",
+    "source": "protondb"
+  }
+]

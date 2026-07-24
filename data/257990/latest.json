@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "257990",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6-300.fc30.x86_64",
+    "notes": "On startup an error message appears, and after closing it the game does too.",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1559908471,
+    "title": "Oozi: Earth Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "257990",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "All right, this game can run almost perfectly without any .NET or other rubbish, there's just one quirk (at least in my case): you need to convert the WMA/WMV files to Vorbis and Theora. Thanks to the FNA creator flibitijibibo, there is a script that does this for you (as long as it is run in the right location, in the case of this game the game's \"Content\" directory). It can be found here: https://gist.github.com/flibitijibibo/c97bc14aab04b1277d8ef5e97fc9aeff\n\nNote that this script assumes that you have ffmpeg compiled with WMA/WMV support (which it is on many distributions) and bash installed on your system.\n\nNow, does it run flawlessly after this is done? Actually, mostly yes. I played the first two levels and challenge levels. The audio right at the start of each level sounds a bit off to my ears (that might just be how the game is set up however), but aside from that I noticed no audio nor video issues whatsoever. The fullscreen toggle seems to be inverted, that is, ticking the fullscreen box disables fullscreen and unticking it enables it, and for me there is a tiny black bar at the top of the screen when in fullscreen, but the issues end there.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1563970015,
+    "title": "Oozi: Earth Adventure",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "21970",
+    "title": "R.U.S.E",
+    "timestamp": 1534954254,
+    "rating": "Borked",
+    "notes": "Crashes at start",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8350 / NVIDIA GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21970",
+    "title": "R.U.S.E",
+    "timestamp": 1535014043,
+    "rating": "Borked",
+    "notes": "Cresh is about core dump",
+    "os": "Linux Mint Tara",
+    "gpuDriver": "NVIDIA 550 ti",
+    "specs": "amd athlon x 2245",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21970",
+    "title": "R.U.S.E",
+    "timestamp": 1534939854,
+    "rating": "Borked",
+    "notes": "Crashes at start",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8350 / NVIDIA GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21970",
+    "title": "R.U.S.E",
+    "timestamp": 1534999643,
+    "rating": "Borked",
+    "notes": "Cresh is about core dump",
+    "os": "Linux Mint Tara",
+    "gpuDriver": "NVIDIA 550 ti",
+    "specs": "amd athlon x 2245",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

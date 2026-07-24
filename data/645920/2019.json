@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "645920",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 630",
+    "gpuDriver": "NVIDIA 418.88",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "It's playable over all, but freaks out when changing between fullscreen and windowed mode - it either gets really glitchy, or outright crashes. Luckily, it remembers which setting you picked when you start it again and runs well afterwards. Other than that, some fonts look a bit off.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1566777468,
+    "title": "Dreamstones",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3115530",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-33-generic",
+    "notes": "Once performance is fixed then should be ok, will probably always be jank just by game design.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779996865,
+    "title": "",
+    "source": "protondb"
+  }
+]

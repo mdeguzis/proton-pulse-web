@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "348200",
+    "cpu": "i7-8700K CPU @ 3.70GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.24",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Fails to start.",
+    "os": "Pop!_OS 18.04 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32112 Mb",
+    "rating": "Borked",
+    "timestamp": 1536979899,
+    "title": "Nimble Writer",
+    "source": "protondb"
+  },
+  {
+    "appId": "348200",
+    "cpu": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.24",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Attempts to perform first time setup, then exits before launch is complete.",
+    "os": "Pop!_OS 18.04 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32112 Mb",
+    "rating": "Borked",
+    "timestamp": 1538337360,
+    "title": "Nimble Writer",
+    "source": "protondb"
+  },
+  {
+    "appId": "348200",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Worked perfectly after installing \"dotnet40\" package on the Wine prefix for Nimble Writer (SteamApp ID 348200). This can be accomplished several different ways, but the way I did so was thusly...\n\nSTEP 1: Install \"protontricks\" from https://github.com/Sirmentio/protontricks.\nSTEP 2: After installing Nimble Writer via Steam Play, search for the application's wine prefix using the command \"protontricks -s Nimble\" from a Terminal.\nNote: This should yield an APPID (likely 348200).\nSTEP 3: After verifying the APPID, install the \"dotnet40\" package using protontricks\n(e.g. \"protontricks 348200 dotnet40\")\nSTEP 4: Follow the onscreen prompts to \"Repair\" the Microsoft .NET 4.0 Installation.\nSTEP 5: After installation is complete, run Nimble Writer from Steam.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1543967967,
+    "title": "Nimble Writer",
+    "source": "protondb"
+  }
+]

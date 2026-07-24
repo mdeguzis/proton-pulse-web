@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "498340",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Working great out of the box, completed the basic crafting tutorial. Don't alt-tab or it'll crash when you try to switch back to the game (no tweaks helped) ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1562188910,
+    "title": "Shards of Azuria",
+    "source": "protondb"
+  }
+]

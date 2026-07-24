@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1785980",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-37-generic",
+    "notes": "Due to the game locking up the cimputer their is no way to continue playing the game",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1722143087,
+    "title": "Car Manufacture: Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "1785980",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.5.0-10043-tuxedo",
+    "notes": "",
+    "os": "TUXEDO OS 3",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1722668249,
+    "title": "Car Manufacture: Prologue",
+    "source": "protondb"
+  }
+]

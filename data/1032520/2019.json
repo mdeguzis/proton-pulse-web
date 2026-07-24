@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1032520",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.4-artix1-1-ARTIX",
+    "notes": "Tried starting normally, with no esync, no d3d11, and/or wined3d11. Nothing worked.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554670221,
+    "title": "JermaSlots",
+    "source": "protondb"
+  },
+  {
+    "appId": "1032520",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "After clicking on the play button on stream, the game opens in a maximized window. A \"Please Read!\" screen appears with a face to click on to continue. Clicking the face plays the \"byeah\" sound and a sound snippet of Jerma saying something about David Bowie. At the same time, the window cuts to black. Nothing else happens.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554852254,
+    "title": "JermaSlots",
+    "source": "protondb"
+  }
+]

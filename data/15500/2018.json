@@ -1,0 +1,79 @@
+[
+  {
+    "appId": "15500",
+    "title": "The Wonderful End of the World",
+    "timestamp": 1535127010,
+    "rating": "Platinum",
+    "notes": "No obvious issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "AMD A8-7410 APU with AMD Radeon R5 Graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "15500",
+    "title": "The Wonderful End of the World",
+    "timestamp": 1535397485,
+    "rating": "Platinum",
+    "notes": "Everything works",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Core2 Duo E8200 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "15500",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32105 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537147660,
+    "title": "The Wonderful End of the World",
+    "source": "protondb"
+  },
+  {
+    "appId": "15500",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541950547,
+    "title": "The Wonderful End of the World",
+    "source": "protondb"
+  },
+  {
+    "appId": "15500",
+    "title": "The Wonderful End of the World",
+    "timestamp": 1535112610,
+    "rating": "Platinum",
+    "notes": "No obvious issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "AMD A8-7410 APU with AMD Radeon R5 Graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "15500",
+    "title": "The Wonderful End of the World",
+    "timestamp": 1535383085,
+    "rating": "Platinum",
+    "notes": "Everything works",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Core2 Duo E8200 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

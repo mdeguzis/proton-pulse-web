@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "452440",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.2.0-rc4-mainline",
+    "notes": "So running this Visual Novel was flawlessly using proton, all text was where it should be all images are shown properly. Install and launch work fine. \n\nThe only reason this isn't platinum for are basically 2 things: \nThe font isn't rendered properly as it is wine, where the font is working correctly. The font looks best on Proton 3.7.8 which is the reason I submitted this report with 3.7.8. The font looks best on 3.7.8 out of the box though it isn't as good as in wine. The Game will run fine using anything 3.14+ but the font will look horrible (Monospace font) for later versions of proton fonts need to be fixed I didn't test that though. \n\nI would recommend using either wine (best fonts) or Proton 3.7.8 (good fonts)\n\nThe other problem is that the game will lock up in a white screen and wont go fuhrter. To this go in the games config (ingame in the main menu) and disable movie playback. Other than that the game runs really fine. ",
+    "os": "Linux",
+    "protonVersion": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560875917,
+    "title": "Flowers -Le volume sur printemps-",
+    "source": "protondb"
+  }
+]

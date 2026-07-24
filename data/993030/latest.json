@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "993030",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.59, 6.12.5)",
+    "gpuDriver": "4.6 Mesa 24.2.6",
+    "kernel": "6.12.5",
+    "notes": "Works just like you'd expect.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1735548682,
+    "title": "",
+    "source": "protondb"
+  }
+]

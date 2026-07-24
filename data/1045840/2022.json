@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1045840",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.5-76051505-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641526486,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1045840",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.14-300.fc36.x86_64",
+    "notes": "Crashes out of the box.  With GE, opens to a black screen and freezes",
+    "os": "Fedora Linux 36 (MATE-Compiz)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1656250591,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1045840",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.13-200.fc36.x86_64",
+    "notes": "The performance issues are too annoying",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1665061032,
+    "title": "",
+    "source": "protondb"
+  }
+]

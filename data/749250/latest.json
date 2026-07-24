@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "749250",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Runs perfectly, great performance.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562021540,
+    "title": "7th Sector",
+    "source": "protondb"
+  },
+  {
+    "appId": "749250",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Haven't finished the game yet but played for 3 hours without issue. Performance was normal. (Aka, terrible, but that's because my laptop sucks, performance was normal as per what I would get on Windows or Linux however.)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1563176856,
+    "title": "7th Sector",
+    "source": "protondb"
+  },
+  {
+    "appId": "749250",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.6-arch1-1-ARCH",
+    "notes": "Runs perfectly with SSAO on (minor graphical issues with some distant lights with it off, which I think was the default). Controller worked fine too.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565440783,
+    "title": "7th Sector",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "441830",
+    "title": "I am Setsuna",
+    "timestamp": 1535003928,
+    "rating": "Bronze",
+    "notes": "Character models are not rendered",
+    "os": "Archlinux (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51-5",
+    "specs": "Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "441830",
+    "title": "I am Setsuna",
+    "timestamp": 1535039254,
+    "rating": "Silver",
+    "notes": "Character models are transparent, controllers don't work (Logitech F310)",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Intel HD Graphics 520",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "441830",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "No character models are rendered at all. Not for NPCs, not for main character.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1541858223,
+    "title": "I am Setsuna",
+    "source": "protondb"
+  },
+  {
+    "appId": "441830",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game run flawlessly using mouse/keyboard BUT keys are set for QWERTY keyboard (can't switch to another setting). Require to switch off all gamepad before launch, otherwise some keys aren't  detected or cursor goes crazy.",
+    "os": "Ubuntu 18.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545759995,
+    "title": "I am Setsuna",
+    "source": "protondb"
+  },
+  {
+    "appId": "441830",
+    "title": "I am Setsuna",
+    "timestamp": 1534989528,
+    "rating": "Bronze",
+    "notes": "Character models are not rendered",
+    "os": "Archlinux (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51-5",
+    "specs": "Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "441830",
+    "title": "I am Setsuna",
+    "timestamp": 1535024854,
+    "rating": "Silver",
+    "notes": "Character models are transparent, controllers don't work (Logitech F310)",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Intel HD Graphics 520",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

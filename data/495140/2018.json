@@ -1,0 +1,109 @@
+[
+  {
+    "appId": "495140",
+    "title": "NARUTO: Ultimate Ninja Storm",
+    "timestamp": 1535018897,
+    "rating": "Borked",
+    "notes": "It runs without controller connected but with keyboard input not working it is unplayable. Detailed test at https://github.com/ValveSoftware/Proton/issues/103",
+    "os": "Arch Linux 4.17.14-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-6700HQ / Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495140",
+    "title": "NARUTO: Ultimate Ninja STORM",
+    "timestamp": 1535018981,
+    "rating": "Borked",
+    "notes": "With controller attached game crashes at startup with page fault error. Detailed log at https://github.com/ValveSoftware/Proton/issues/103",
+    "os": "Arch Linux 4.17.14-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-6700HQ / Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495140",
+    "title": "NARUTO: Ultimate Ninja STORM",
+    "timestamp": 1535163135,
+    "rating": "Borked",
+    "notes": "Error: dx11 device creation fail",
+    "os": "SteamOS 2.0 update 1:2.154",
+    "gpuDriver": "Mesa 17.2.4",
+    "specs": "AMD A10-7870K / Radeon R7",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495140",
+    "cpu": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "dx11 device creation fail:0x80010010",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7863 Mb",
+    "rating": "Borked",
+    "timestamp": 1540112051,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "NARUTO: Ultimate Ninja STORM",
+    "source": "protondb"
+  },
+  {
+    "appId": "495140",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "The game starts well, loads a saved game, but when you enter to \"Ultimate mission mode\" or \"Free battle mode\" game crashes, in last mode you can choose characters and details without problem, but when try to load level, crashes.\n\n- Tested in low and high quality settings windowed and fullscreen. \n- Controller is detected (Steam controller)\n- Game stops (black screen) after restore from minimize, so avoid minimize the game or alt+tab, run in windowed mode to avoid that issue.\n\nIf you have issues with current video configuration you can edit config located in <gamefolder>/config.ini.\n\nKeep in mind that this game has two different game options (weird), one outside game and one inside, so if you want to change video options is the options that are when you choose new or load game.\n\n\n\n",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541319350,
+    "title": "NARUTO: Ultimate Ninja STORM",
+    "source": "protondb"
+  },
+  {
+    "appId": "495140",
+    "title": "NARUTO: Ultimate Ninja Storm",
+    "timestamp": 1535004497,
+    "rating": "Borked",
+    "notes": "It runs without controller connected but with keyboard input not working it is unplayable. Detailed test at https://github.com/ValveSoftware/Proton/issues/103",
+    "os": "Arch Linux 4.17.14-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-6700HQ / Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495140",
+    "title": "NARUTO: Ultimate Ninja STORM",
+    "timestamp": 1535004581,
+    "rating": "Borked",
+    "notes": "With controller attached game crashes at startup with page fault error. Detailed log at https://github.com/ValveSoftware/Proton/issues/103",
+    "os": "Arch Linux 4.17.14-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-6700HQ / Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495140",
+    "title": "NARUTO: Ultimate Ninja STORM",
+    "timestamp": 1535148735,
+    "rating": "Borked",
+    "notes": "Error: dx11 device creation fail",
+    "os": "SteamOS 2.0 update 1:2.154",
+    "gpuDriver": "Mesa 17.2.4",
+    "specs": "AMD A10-7870K / Radeon R7",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "658620",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.14-1-MANJARO",
+    "notes": "Out of the box font looks bad, I had to install MS Gothic. After that everything was good.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1548261110,
+    "title": "Wonderful Everyday Down the Rabbit-Hole",
+    "source": "protondb"
+  },
+  {
+    "appId": "658620",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-1-ck-zen",
+    "notes": "Worked flawlessly for the entire game (all endings). No issues whatsoever.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552848941,
+    "title": "Wonderful Everyday Down the Rabbit-Hole",
+    "source": "protondb"
+  }
+]

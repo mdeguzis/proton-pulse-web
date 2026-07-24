@@ -1,0 +1,122 @@
+[
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "No issues so far, time will tell if I missed something.",
+    "os": "Solus (rolling)",
+    "gpuDriver": "",
+    "specs": "Intel i5-7200U, no dGPU installed",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1534946601,
+    "rating": "Platinum",
+    "notes": "A native Linux version is planned. No issues so far. Time will tell if I missed something.",
+    "os": "Solus (rolling)",
+    "gpuDriver": "Intel iGPU ?",
+    "specs": "i5-7200U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1534950471,
+    "rating": "Platinum",
+    "notes": "Please edit the entry I already filled in the form, I left a typo in the title of the game. I wrote: \"Objectfs in space\"",
+    "os": "Solus 3.9999",
+    "gpuDriver": "?",
+    "specs": "i5-7200U + iGPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1535175625,
+    "rating": "Silver",
+    "notes": "Crashes occasionally. Always crashes when going back to ship at 'Zaragoza Orbital Shipyard' if having accepted contracts or bought something (tested on two different savefiles)",
+    "os": "Arch Linux x86_64 (kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 7 1700 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1535849295,
+    "rating": "Platinum",
+    "notes": "No issues. 60 FPS.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX-8320 / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "No issues so far, time will tell if I missed something.",
+    "os": "Solus (rolling)",
+    "gpuDriver": "",
+    "specs": "Intel i5-7200U, no dGPU installed",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1534932201,
+    "rating": "Platinum",
+    "notes": "A native Linux version is planned. No issues so far. Time will tell if I missed something.",
+    "os": "Solus (rolling)",
+    "gpuDriver": "Intel iGPU ?",
+    "specs": "i5-7200U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1534936071,
+    "rating": "Platinum",
+    "notes": "Please edit the entry I already filled in the form, I left a typo in the title of the game. I wrote: \"Objectfs in space\"",
+    "os": "Solus 3.9999",
+    "gpuDriver": "?",
+    "specs": "i5-7200U + iGPU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1535161225,
+    "rating": "Silver",
+    "notes": "Crashes occasionally. Always crashes when going back to ship at 'Zaragoza Orbital Shipyard' if having accepted contracts or bought something (tested on two different savefiles)",
+    "os": "Arch Linux x86_64 (kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 7 1700 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "824070",
+    "title": "Objects in Space",
+    "timestamp": 1535834895,
+    "rating": "Platinum",
+    "notes": "No issues. 60 FPS.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX-8320 / GTX 1060",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "269490",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Runs and drives, but with very low FPS. You may be able to squeeze more FPS by changing the resolution to a small window, but it still wasn't good enough for me to play comfortably. The controls are sticky, sometimes continuing to move despite letting go of the key. The control issue may be a side effect of the framerate.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556472203,
+    "title": "Bardbarian",
+    "source": "protondb"
+  }
+]

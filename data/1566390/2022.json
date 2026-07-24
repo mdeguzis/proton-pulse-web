@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1566390",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.12-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.12-1-MANJARO",
+    "notes": "Flawless and smooth running out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1642781829,
+    "title": "",
+    "source": "protondb"
+  }
+]

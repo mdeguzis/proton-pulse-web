@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "333930",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.13-041813-generic",
+    "notes": "Game doesn't run at all, likely due to its anticheat. The game is however without developer support now, and will likely have its servers taken offline some time in the near future once the playerbase drops even further. It would be a wasted effort to imbue this game with functionality under Proton.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1547108568,
+    "title": "Dirty Bomb\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "333930",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Instant Crash, lets you send a crash report (which i did)",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563023097,
+    "title": "Dirty Bomb\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "333930",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "Doesn't even launch.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564099819,
+    "title": "Dirty Bomb\u00ae",
+    "source": "protondb"
+  }
+]

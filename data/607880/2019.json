@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "607880",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Most likely the same as the previous report. .Net issue.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561890989,
+    "title": "Accel World VS. Sword Art Online Deluxe Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "607880",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.6-1-MANJARO",
+    "notes": "Requires DotNet, but dotnet doesnt fully support 64-bit Wine bottles which is used by default by proton. I might attempt to install in a 32-bit prefix in Lutris. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571530653,
+    "title": "Accel World VS. Sword Art Online Deluxe Edition",
+    "source": "protondb"
+  }
+]

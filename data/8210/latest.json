@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "8210",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Finished Game. No problem",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1551474487,
+    "title": "Sam & Max 102: Situation: Comedy",
+    "source": "protondb"
+  },
+  {
+    "appId": "8210",
+    "cpu": "AMD FX-7500 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.0-kali2-amd64",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "3.7-8",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1568035851,
+    "title": "Sam & Max 102: Situation: Comedy",
+    "source": "protondb"
+  }
+]

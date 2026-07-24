@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "286460",
+    "title": "Black Mirror 2",
+    "timestamp": 1535575468,
+    "rating": "Silver",
+    "notes": "ALT+TAB seems to crash the game, apart from that it runs without any problems",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "286460",
+    "title": "Black Mirror II",
+    "timestamp": 1535724540,
+    "rating": "Platinum",
+    "notes": "Seems to run perfectly, no problems with alt-tabbing for me.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "286460",
+    "title": "Black Mirror II",
+    "timestamp": 1535882621,
+    "rating": "Borked",
+    "notes": "Starts fine. Graphics are fine ....switching back to main menu ...could not select any entrie (mouse or keyboard)",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "286460",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "gpu": "X.Org AMD RAVEN (DRM 3.26.0, 4.18.7-041807-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "runs perfectly, also no issues with Alt+Tab",
+    "os": "Ubuntu 18.04.1 LTS (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "14016 MB",
+    "rating": "Platinum",
+    "timestamp": 1537040278,
+    "title": "Black Mirror II",
+    "source": "protondb"
+  },
+  {
+    "appId": "286460",
+    "title": "Black Mirror 2",
+    "timestamp": 1535561068,
+    "rating": "Silver",
+    "notes": "ALT+TAB seems to crash the game, apart from that it runs without any problems",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "286460",
+    "title": "Black Mirror II",
+    "timestamp": 1535710140,
+    "rating": "Platinum",
+    "notes": "Seems to run perfectly, no problems with alt-tabbing for me.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "286460",
+    "title": "Black Mirror II",
+    "timestamp": 1535868221,
+    "rating": "Borked",
+    "notes": "Starts fine. Graphics are fine ....switching back to main menu ...could not select any entrie (mouse or keyboard)",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

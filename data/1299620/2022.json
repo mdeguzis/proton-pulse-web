@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1299620",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR (LLVM 13.0.1, DRM 3.44, 5.17.5-76051705-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Worked flawlessly, was able to install->start->play and save game with no issues!",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1653606112,
+    "title": "",
+    "source": "protondb"
+  }
+]

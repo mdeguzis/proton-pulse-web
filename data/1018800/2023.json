@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1018800",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.6, DRM 3.42, 5.15.80-gentoo)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.15.80-gentoo",
+    "notes": "",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1674390070,
+    "title": "",
+    "source": "protondb"
+  }
+]

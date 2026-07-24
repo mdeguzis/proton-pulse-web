@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "286790",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554568391,
+    "title": "Falcon A.T.",
+    "source": "protondb"
+  },
+  {
+    "appId": "286790",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Crashed on me once, but generally worked fine. (DOSBOX)",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556492070,
+    "title": "Falcon A.T.",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "439250",
+    "title": "Space Pilgrim Episode III: Delta Pavonis",
+    "timestamp": 1536046311,
+    "rating": "Platinum",
+    "notes": "no problems",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "439250",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540433065,
+    "title": "Space Pilgrim Episode III: Delta Pavonis",
+    "source": "protondb"
+  },
+  {
+    "appId": "439250",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544622055,
+    "title": "Space Pilgrim Episode III: Delta Pavonis",
+    "source": "protondb"
+  },
+  {
+    "appId": "439250",
+    "title": "Space Pilgrim Episode III: Delta Pavonis",
+    "timestamp": 1536031911,
+    "rating": "Platinum",
+    "notes": "no problems",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

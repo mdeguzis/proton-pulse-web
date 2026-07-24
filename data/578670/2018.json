@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "578670",
+    "cpu": "Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Doesn't work out of the box, possible to get working mostly fine with workarounds (you need to run the game from a terminal rather than the Steam client). Campaign/quick battle work well. Multiplayer untested.\nSteps taken to get working:\nCreate 32-bit WINE prefix to install icodecs to (and to ensure sound works correctly):\n$> WINEPREFIX=\"$HOME/wine32\" WINEARCH=win32 wine wineboot\n\nWith 32-bit prefix set as default prefix, install icodecs:\n$> winetricks icodecs\n\nThe intro movies do not work on Linux, run the game from terminal using wine (rather than Steam client) like so:\n$> wine Conquest.exe /skipmovies\n\nUncheck \"Enable DirectInput\" option in game to fix slow mouse issue and game is now fully playable for me with full sound and graphics.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15970 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537339587,
+    "title": "Conquest: Frontier Wars",
+    "source": "protondb"
+  }
+]

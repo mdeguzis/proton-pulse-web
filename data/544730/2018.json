@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "544730",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-200.fc28.x86_64",
+    "notes": "Default settings result in really low FPS - change resolution to any you like, Quality to Fastest and turn off Antialiasing, and game will have 60+ FPS.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Gold",
+    "timestamp": 1537272719,
+    "title": "Catan Universe",
+    "source": "protondb"
+  }
+]

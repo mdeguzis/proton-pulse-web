@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "315650",
+    "title": "Deep Under the Sky",
+    "timestamp": 1535567611,
+    "rating": "Borked",
+    "notes": "Launches to start screen with graphics and sound. Hangs during \"loading textures...\". Failed to initialize the game. , Error: Error #3694 in blue window.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": " i5  M 460  @ 2.53GHz / Mobilty Radeon HD 5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "315650",
+    "title": "Deep Under the Sky",
+    "timestamp": 1535553211,
+    "rating": "Borked",
+    "notes": "Launches to start screen with graphics and sound. Hangs during \"loading textures...\". Failed to initialize the game. , Error: Error #3694 in blue window.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": " i5  M 460  @ 2.53GHz / Mobilty Radeon HD 5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

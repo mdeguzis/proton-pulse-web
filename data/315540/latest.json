@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "315540",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "5.0.0-29-generic",
+    "notes": "This game don't start.  Open a windows of \"Code Error\", it says:\n\n\n___________________________________________\n############################################################################################\nFATAL ERROR in Vertex Shader compilation\nShaderName: shd_pal_swapper\n\nmemory:67:22: error: syntax error, unexpected NEW_IDENTIFIER\n\nat gml_Script_pal_swap_set\n############################################################################################\n--------------------------------------------------------------------------------------------\nstack frame is\ngml_Script_pal_swap_set (line 0)\ngml_Script_scr_palsys_setup\ngml_Object_obj_tileset_shader_Draw_0\n",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569199704,
+    "title": "The Joylancer: Legendary Motor Knight",
+    "source": "protondb"
+  }
+]

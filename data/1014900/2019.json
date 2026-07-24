@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1014900",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch1-1-ARCH",
+    "notes": "Game starts and looks ok graphically. The VR Game controllers do not appear to be detected and you are unable to interact with any menus in game. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550946746,
+    "title": "Hex Defense - VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "1014900",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Runs perfectly with the latest version of proton (4.2)",
+    "os": "Linux",
+    "protonVersion": "4.2.1",
+    "protonVersionManual": "4.2.1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553916575,
+    "title": "Hex Defense",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "614250",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-16-generic",
+    "notes": "Game Loads with a black screen and crashes under Proton 6.3-3",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1620740417,
+    "title": "",
+    "source": "protondb"
+  }
+]

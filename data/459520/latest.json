@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "459520",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "What was tested: Game functionality. Performance: Solid.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1541215304,
+    "title": "Kinacoustic",
+    "source": "protondb"
+  },
+  {
+    "appId": "459520",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.4.166-1-MANJARO",
+    "notes": "Type in command into launch options \"PROTON_USE_WINED3D11=1 %command%\" to fix Getthreadcontext error.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1544084637,
+    "title": "Kinacoustic",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

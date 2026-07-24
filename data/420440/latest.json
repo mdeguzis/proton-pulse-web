@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "420440",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.11-300.fc30.x86_64",
+    "notes": "Works betters than on windows",
+    "os": "Fedora release 30 (Thirty) (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561127631,
+    "title": "Atlantic Fleet",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "420440",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-52-generic",
+    "notes": "Game runs absolute flawlessly. No performance lacks or other issues.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561632712,
+    "title": "Atlantic Fleet",
+    "source": "protondb"
+  },
+  {
+    "appId": "420440",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Seems to work perfectly, no notable issues. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561935875,
+    "title": "Atlantic Fleet",
+    "source": "protondb"
+  },
+  {
+    "appId": "420440",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.6-1-MANJARO",
+    "notes": "Runs better than on Windows 7, all graphical features seem to work well.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572139040,
+    "title": "Atlantic Fleet",
+    "source": "protondb"
+  }
+]

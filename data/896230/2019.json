@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "896230",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-default",
+    "notes": "Runs perfectly",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566774758,
+    "title": "Picross Bonbon - Nonogram",
+    "source": "protondb"
+  },
+  {
+    "appId": "896230",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Ran perfectly, no issues at all.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569663490,
+    "title": "Picross Bonbon - Nonogram",
+    "source": "protondb"
+  }
+]

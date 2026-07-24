@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "727640",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-1.el7.elrepo.x86_64",
+    "notes": "None of the options (play various versions, view manual etc.) worked at all. .Net runtime is installed, but no window appears and the binary immediately crashes.",
+    "os": "CentOS Linux release 7.5.1804 (Core)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1541924916,
+    "title": "\u0428\u041f - ShP",
+    "source": "protondb"
+  }
+]

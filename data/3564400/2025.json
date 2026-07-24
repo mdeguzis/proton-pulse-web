@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3564400",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.6, DRM 3.63, 6.15.3-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.15.3-200.fc42.x86_64",
+    "notes": "Runs fine, although the game WILL NOT LAUNCH without some tinkering due to anti cheat incompatibility",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "96 GB",
+    "rating": "gold",
+    "timestamp": 1762348785,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3564400",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "All of them only shows the steam logo load screen",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1764780502,
+    "title": "",
+    "source": "protondb"
+  }
+]

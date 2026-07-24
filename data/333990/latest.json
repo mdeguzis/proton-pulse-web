@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "333990",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon Vega Frontier Edition (VEGA10, DRM 3.26.0, 4.18.12-041812-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.12-041812-generic",
+    "notes": "Game Opens to a white screen in a window.",
+    "os": "Ubuntu 18.10 (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32161 Mb",
+    "rating": "Borked",
+    "timestamp": 1540151446,
+    "title": "Conclave",
+    "source": "protondb"
+  }
+]

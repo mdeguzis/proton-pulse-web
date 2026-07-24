@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3952070",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.8-300.fc43.x86_64",
+    "notes": "Native linux build",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773453105,
+    "title": "",
+    "source": "protondb"
+  }
+]

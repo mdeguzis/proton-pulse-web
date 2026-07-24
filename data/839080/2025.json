@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839080",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.54, 6.6.107-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.6.107-1-MANJARO",
+    "notes": "It just works",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1760989863,
+    "title": "",
+    "source": "protondb"
+  }
+]

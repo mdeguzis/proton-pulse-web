@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "418040",
+    "title": "hocus",
+    "timestamp": 1535078736,
+    "rating": "Platinum",
+    "notes": "Performance is as expected, perfect",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418040",
+    "title": "hocus",
+    "timestamp": 1535287991,
+    "rating": "Silver",
+    "notes": "exiting with ESC doesn't work, need to alt-tab out of the game and close its window",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418040",
+    "title": "hocus",
+    "timestamp": 1535064336,
+    "rating": "Platinum",
+    "notes": "Performance is as expected, perfect",
+    "os": "Arch Linux 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "amdgpu 18.0.1-2",
+    "specs": "i5-4670S / RX 460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418040",
+    "title": "hocus",
+    "timestamp": 1535273591,
+    "rating": "Silver",
+    "notes": "exiting with ESC doesn't work, need to alt-tab out of the game and close its window",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "600420",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559453636,
+    "title": "Mob Rule Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "600420",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.0 - padoka PPA",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Crashes specifically seem to be associated with the tenant menu",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1562635063,
+    "title": "Mob Rule Classic",
+    "source": "protondb"
+  }
+]

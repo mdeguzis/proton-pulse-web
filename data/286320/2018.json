@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "286320",
+    "title": "Oknytt",
+    "timestamp": 1535443924,
+    "rating": "Platinum",
+    "notes": "Stable 60fps",
+    "os": "Manjaro (4.18.4-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "286320",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540658038,
+    "title": "Oknytt",
+    "source": "protondb"
+  },
+  {
+    "appId": "286320",
+    "title": "Oknytt",
+    "timestamp": 1535429524,
+    "rating": "Platinum",
+    "notes": "Stable 60fps",
+    "os": "Manjaro (4.18.4-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

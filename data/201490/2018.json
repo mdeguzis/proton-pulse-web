@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "201490",
+    "title": "Airline Tycoon 2",
+    "timestamp": 1535700444,
+    "rating": "Borked",
+    "notes": "Crashes with segmentation fault immediately upon launching",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "201490",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.19.9-gentoo",
+    "os": "Linux 4.x",
+    "protonVersion": "3.16-6",
+    "protonVersionManual": "3.16-6",
+    "ram": "20 GB",
+    "rating": "Borked",
+    "timestamp": 1545487475,
+    "title": "Airline Tycoon 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "201490",
+    "title": "Airline Tycoon 2",
+    "timestamp": 1535686044,
+    "rating": "Borked",
+    "notes": "Crashes with segmentation fault immediately upon launching",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

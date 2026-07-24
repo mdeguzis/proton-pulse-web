@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "420210",
+    "cpu": "AMD FX-4300 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Comes with AutoIT Line 1304 The Requested Action with this Object has failed",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555255473,
+    "title": "KRUM - Edge Of Darkness",
+    "source": "protondb"
+  },
+  {
+    "appId": "420210",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Error on launch.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558833403,
+    "title": "KRUM - Edge Of Darkness",
+    "source": "protondb"
+  }
+]

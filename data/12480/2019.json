@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "12480",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Everything works, incl. the embedded Russian war-movie clips. Game engine renders all effects on max settings (Deph of Field, volumetric fog). Changed the resolution to 1920x1080 (widescreen). At least as fast and fluid (framerate) as on Windows (on same hardware). ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548535036,
+    "title": "9th Company: Roots Of Terror",
+    "source": "protondb"
+  },
+  {
+    "appId": "12480",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550294373,
+    "title": "9th Company: Roots Of Terror",
+    "source": "protondb"
+  }
+]

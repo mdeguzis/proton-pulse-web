@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "416380",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-arch1-1-ARCH",
+    "notes": "Game runs but only displays a black screen",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561484388,
+    "title": "The Hurricane of the Varstray -Collateral hazard-",
+    "source": "protondb"
+  },
+  {
+    "appId": "416380",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Draws a black window that hides the mouse cursor when hovered over it. Menu noises can be heard. Tweaks have no effect.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1561719591,
+    "title": "The Hurricane of the Varstray -Collateral hazard-",
+    "source": "protondb"
+  }
+]

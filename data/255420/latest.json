@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "255420",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "I previously reported this as Borked. Since applying the DLL override, it works perfectly. Played about 8 hours & tested some DLC.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1550083675,
+    "title": "Magic 2015 - Duels of the Planeswalkers",
+    "source": "protondb"
+  }
+]

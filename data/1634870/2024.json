@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1634870",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.54, 6.5.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Black screen. Sometimes needs to be killed. Maybe because it is using OpenXR? \ud83e\udd37\u200d\u2640\ufe0f",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1705543545,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "341890",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "There's no public game servers but same issue on windows. LAN vs Bots works great",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541553306,
+    "title": "HitBox",
+    "source": "protondb"
+  }
+]

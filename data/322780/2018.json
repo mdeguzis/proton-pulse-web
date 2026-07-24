@@ -1,0 +1,79 @@
+[
+  {
+    "appId": "322780",
+    "title": "Worlds Adrift",
+    "timestamp": 1534985684,
+    "rating": "Silver",
+    "notes": "Can play the game. Only performance issue is that only the character's head and feet load. Everything is otherwise normal",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-7400 / GeForce 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "322780",
+    "title": "Worlds Adrift",
+    "timestamp": 1535533942,
+    "rating": "Bronze",
+    "notes": "The body and the legs somehow are not rendered. Other than that it works quite good.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GeForce GTX 1070 (8GB)",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "322780",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "notes": "EasyAntiCheat makes this unplayable (best guess at least, most likely cause). Game starts with 'UI creation error', stays at black screen. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Worlds Adrift - Early Access MMO",
+    "source": "protondb"
+  },
+  {
+    "appId": "322780",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Game runs but hangs at a screen full of clouds. Audio is fine. I was unable to progress past this point.",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7971 Mb",
+    "rating": "Borked",
+    "timestamp": 1539114991,
+    "title": "Worlds Adrift",
+    "source": "protondb"
+  },
+  {
+    "appId": "322780",
+    "title": "Worlds Adrift",
+    "timestamp": 1534971284,
+    "rating": "Silver",
+    "notes": "Can play the game. Only performance issue is that only the character's head and feet load. Everything is otherwise normal",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-7400 / GeForce 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "322780",
+    "title": "Worlds Adrift",
+    "timestamp": 1535519542,
+    "rating": "Bronze",
+    "notes": "The body and the legs somehow are not rendered. Other than that it works quite good.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GeForce GTX 1070 (8GB)",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

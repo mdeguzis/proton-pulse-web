@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "796290",
+    "cpu": "AMD E-450 APU with Radeon(tm) HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD PALM (DRM 2.43.0 / 4.4.0-130-generic, LLVM 8.0.0)",
+    "gpuDriver": "3.1 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.4.0-130-generic",
+    "notes": "Using PROTON_USE_WINED3D11=1 %command% got as far as loading screen, but then crashed. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7580 Mb",
+    "rating": "Borked",
+    "timestamp": 1539981914,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "World of Tennis: Roaring \u201920s",
+    "source": "protondb"
+  }
+]

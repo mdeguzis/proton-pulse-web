@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "71240",
+    "title": "SEGA Bass Fishing",
+    "timestamp": 1535197667,
+    "rating": "Platinum",
+    "notes": "Seems to work perfectly",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7820HQ / 940 MX",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "71240",
+    "title": "SEGA Bass Fishing",
+    "timestamp": 1535718060,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD-FX 6100 / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "71240",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No tweaks needed, performance is as expected.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540571574,
+    "title": "SEGA Bass Fishing",
+    "source": "protondb"
+  },
+  {
+    "appId": "71240",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Quick test, seems to work great",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541265593,
+    "title": "SEGA Bass Fishing",
+    "source": "protondb"
+  },
+  {
+    "appId": "71240",
+    "title": "SEGA Bass Fishing",
+    "timestamp": 1535183267,
+    "rating": "Platinum",
+    "notes": "Seems to work perfectly",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7820HQ / 940 MX",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "71240",
+    "title": "SEGA Bass Fishing",
+    "timestamp": 1535703660,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD-FX 6100 / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

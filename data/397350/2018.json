@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "397350",
+    "title": "Lords of the Realm II",
+    "timestamp": 1535563082,
+    "rating": "Gold",
+    "notes": "Minor texture error in launcher still shows play button but behind it is white. In game works better then windows as you don't have to go through compatibility errors",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Xeon w3565",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "397350",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Launcher has no CSS styles and images, only bare links. I was unable to scroll map down and right with my mouse (game map, battle and editor), which was a major inconvenience. Otherwise works flawlessly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546122577,
+    "title": "Lords of the Realm II",
+    "source": "protondb"
+  },
+  {
+    "appId": "397350",
+    "title": "Lords of the Realm II",
+    "timestamp": 1535548682,
+    "rating": "Gold",
+    "notes": "Minor texture error in launcher still shows play button but behind it is white. In game works better then windows as you don't have to go through compatibility errors",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Xeon w3565",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

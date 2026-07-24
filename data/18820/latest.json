@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "18820",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Haven't tested multiplayer but everything else seems to work now out of the box with Proton 3.16-7",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.16-7",
+    "protonVersionManual": "3.16-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550326110,
+    "title": "Zero Gear",
+    "source": "protondb"
+  },
+  {
+    "appId": "18820",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-2-amd64",
+    "notes": "The steering seems a bit delayed, but I'm not sure if that is part of the game. Otherwise it seems to work perfectly.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1553795473,
+    "title": "Zero Gear",
+    "source": "protondb"
+  },
+  {
+    "appId": "18820",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556576044,
+    "title": "Zero Gear",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "414120",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.9.0-7-amd64",
+    "notes": "Works great, no tweaks required",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551788908,
+    "title": "Modbox",
+    "source": "protondb"
+  }
+]

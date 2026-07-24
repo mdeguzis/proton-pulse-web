@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "553480",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Showed a black screen for several minutes and never loaded the game. You can run it in Firefox using the index.html file in the install folder, but the engine still has some issues with lag and long loading times.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Borked",
+    "timestamp": 1537243950,
+    "title": "The Pirate's Fate",
+    "source": "protondb"
+  }
+]

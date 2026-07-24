@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "337720",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.16-gentoo",
+    "notes": "works great. no tweaks required. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546933589,
+    "title": "The Sea Will Claim Everything",
+    "source": "protondb"
+  },
+  {
+    "appId": "337720",
+    "cpu": "Intel Pentium 3550M @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Excellent and very original point and click, runs perfectly ! Give it a try",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1548889903,
+    "title": "The Sea Will Claim Everything",
+    "source": "protondb"
+  },
+  {
+    "appId": "337720",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "When fullscreened, the game was cropped at the bottom so some text was unreadable. It crashed a few screens in. Restarted the game in windowed mode and it worked perfectly.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559483558,
+    "title": "The Sea Will Claim Everything",
+    "source": "protondb"
+  }
+]

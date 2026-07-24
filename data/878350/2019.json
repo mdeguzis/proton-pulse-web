@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "878350",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Needs: PROTON_USE_WINED3D11=1 %command%",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562431015,
+    "title": "TAVERN GUARDIANS: BANQUET",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

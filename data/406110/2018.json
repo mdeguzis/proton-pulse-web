@@ -1,0 +1,64 @@
+[
+  {
+    "appId": "406110",
+    "title": "Asdivine Hearts",
+    "timestamp": 1535378648,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "406110",
+    "title": "Asdivine Hearts",
+    "timestamp": 1535489147,
+    "rating": "Platinum",
+    "notes": "Minor screen tearing when moving around map, otherwise fine.",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "406110",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537787778,
+    "title": "Asdivine Hearts",
+    "source": "protondb"
+  },
+  {
+    "appId": "406110",
+    "title": "Asdivine Hearts",
+    "timestamp": 1535364248,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "406110",
+    "title": "Asdivine Hearts",
+    "timestamp": 1535474747,
+    "rating": "Platinum",
+    "notes": "Minor screen tearing when moving around map, otherwise fine.",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

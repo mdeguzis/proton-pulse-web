@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1395560",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1615596405,
+    "title": "Kandidatos",
+    "source": "protondb"
+  },
+  {
+    "appId": "1395560",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega 8",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 540X",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-36-generic",
+    "notes": "Runs out of the box.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1620862945,
+    "title": "Kandidatos",
+    "source": "protondb"
+  },
+  {
+    "appId": "1395560",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1623294445,
+    "title": "Kandidatos",
+    "source": "protondb"
+  }
+]

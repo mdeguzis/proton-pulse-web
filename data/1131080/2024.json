@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1131080",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 16.0.6, DRM 3.56, 6.7.0-zen3-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "Perfect! faster than windows once again!",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1705800210,
+    "title": "",
+    "source": "protondb"
+  }
+]

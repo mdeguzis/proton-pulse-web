@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "491530",
+    "title": "Notruf 112",
+    "timestamp": 1535222671,
+    "rating": "Silver",
+    "notes": "Some missing textures (players / some parts of vehicles) but working",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-4300 / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "491530",
+    "cpu": "AMD A8-3870 APU with Radeon(tm) HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTS 450/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Missing doors and other textures, including player and NPC characters, making it hard to play the game. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "9467 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538402071,
+    "title": "Notruf 112 | Emergency Call 112",
+    "source": "protondb"
+  },
+  {
+    "appId": "491530",
+    "title": "Notruf 112",
+    "timestamp": 1535208271,
+    "rating": "Silver",
+    "notes": "Some missing textures (players / some parts of vehicles) but working",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-4300 / GTX 1050 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

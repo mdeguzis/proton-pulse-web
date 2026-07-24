@@ -1,0 +1,167 @@
+[
+  {
+    "appId": "296910",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-1-MANJARO",
+    "notes": "Runs great without any tweak for me (30 fps on average but it's playable)",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546382185,
+    "title": "8BitBoy\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-1-MANJARO",
+    "notes": "black screen on start and just the sound aprear ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547853019,
+    "title": "8BitBoy\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.1-arch1-1-ARCH",
+    "notes": "Only starts with Wine D3d11 but performance is underwhelming (~10-20 fps)",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1552559858,
+    "title": "8BitBoy\u2122",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "Intel Xeon E31280 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Used PROTON_USE_WINED3D=1 %command% in launch options",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1554656493,
+    "title": "8BitBoy\u2122",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Need to use \"PROTON_USE_WINED3D=1 %command%\" and even the fps is rather low",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554766956,
+    "title": "8BitBoy\u2122",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro K1200",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555652911,
+    "title": "8BitBoy\u2122",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Only gets around 30FPS",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556403778,
+    "title": "8BitBoy\u2122",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "AMD A6-7310 APU with AMD Radeon R4 Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "FPS was poor and got slightly better by using WineD3d11 (not comfortable to play)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1563295828,
+    "title": "8BitBoy\u2122",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "296910",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-aa7ac32 2019-09-21 bionic-oibaf-ppa)",
+    "kernel": "5.3.1-050301-generic",
+    "notes": "It works very well, the Xbox 360 game controller works. Set launcher \" PROTON_USE_WINED3D=1 %command% \" without quotes.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-6",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1569593901,
+    "title": "8BitBoy\u2122",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

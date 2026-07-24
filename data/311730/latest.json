@@ -1,0 +1,95 @@
+[
+  {
+    "appId": "311730",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Add \"PROTON_NO_ESYNC=1 %command%\" as a launch option in Steam. Open up the config when Steam prompts you to. Set it to fullscreen. It will then launch with the Tecmo logo. Press a button on your controller to get to the game menu.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1547055954,
+    "title": "DEAD OR ALIVE 5 Last Round: Core Fighters",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "311730",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Must set the settings using the config options available to your before you go into the game to make it fullscreen.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552106419,
+    "title": "DEAD OR ALIVE 5 Last Round: Core Fighters",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "311730",
+    "cpu": "AMD Athlon 200GE with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Game runs great with the launch command \"PROTON_NO_ESYNC=1 %command%\".  If you run this game on a IGPU/APU you have to make sure that it has more than 1 GB of VRAM to prevent slowdowns.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta 3.16.8",
+    "protonVersionManual": "Beta 3.16.8",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1552147459,
+    "title": "DEAD OR ALIVE 5 Last Round: Core Fighters",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "311730",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Run with \"PROTON_NO_ESYNC=1 %command%\" otherwise white screen. 2D movies do not work (screensaver, story mode) black screen with sound and subtitles.",
+    "os": "Debian GNU/Linux 9.8 (stretch) (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1555044069,
+    "title": "DEAD OR ALIVE 5 Last Round: Core Fighters",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "311730",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.14-200.fc30.x86_64",
+    "notes": "Game shows white screen and fails. Disable Esync do not help.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1568849448,
+    "title": "DEAD OR ALIVE 5 Last Round: Core Fighters",
+    "source": "protondb"
+  }
+]

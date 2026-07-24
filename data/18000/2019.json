@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "18000",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "SteamOS mouse issue and problem to accept the agreement to play the game as just short flickering and then disappears until you end the game",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554469495,
+    "title": "Precipice of Darkness, Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "18000",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Works perfect in desktop mode. SteamOS bigpicture creates mouse issue.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554542800,
+    "title": "Precipice of Darkness, Episode One",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "380560",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.10.59-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.10.59-1-MANJARO",
+    "notes": "Game runs - black display",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1629654025,
+    "title": "Spandex Force: Champion Rising",
+    "source": "protondb"
+  },
+  {
+    "appId": "380560",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.41.0, 5.13.0-21-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-21-generic",
+    "notes": "Music plays, the screen is black",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-7",
+    "ram": "11 GB",
+    "rating": "borked",
+    "timestamp": 1637492715,
+    "title": "Spandex Force: Champion Rising",
+    "source": "protondb"
+  }
+]

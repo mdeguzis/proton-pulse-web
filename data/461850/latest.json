@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "461850",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Shows only a blank blue screen with the mouse cursor. (Alt-F4 to exit)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563863144,
+    "title": "Abrix 2 - Gold version",
+    "source": "protondb"
+  }
+]

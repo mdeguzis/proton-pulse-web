@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "486290",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.0-rc3",
+    "kernel": "4.15.0-47-generic",
+    "notes": "The game seems to only be able to run with Wine D3d11 - and no other tweaks.\nAny further tweaks would prevent the game from launching entirely",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1555544930,
+    "title": "Waddle Home",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

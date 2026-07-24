@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1146100",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.9.16-xanmod1",
+    "notes": "Cannot load library nw_elf.dll",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1610075753,
+    "title": "The Rising of the Shield Hero : Relive The Animation",
+    "source": "protondb"
+  }
+]

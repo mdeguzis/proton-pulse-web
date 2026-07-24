@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17530",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-50-generic",
+    "notes": "Source SDK2007 no longer compatible with proton, and the newer the release the more broken it is.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1628813759,
+    "title": "D.I.P.R.I.P. Warm Up",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "664830",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "The game starts up and plays quite well. The PS4 controller also integrates right from the start.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555977465,
+    "title": "Zombotron",
+    "source": "protondb"
+  },
+  {
+    "appId": "664830",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Works great right out of the box on steam; there's some weird framerate jitters occasionally - not sure if this is baked into the game, or if proton specific, but it's intermittent and the game is totally playable. ",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556054091,
+    "title": "Zombotron",
+    "source": "protondb"
+  },
+  {
+    "appId": "664830",
+    "cpu": "Intel Celeron  N2840  @ 2.16GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-48-generic",
+    "notes": "I only had to restart my PC to get it to work",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1557085917,
+    "title": "Zombotron",
+    "source": "protondb"
+  }
+]

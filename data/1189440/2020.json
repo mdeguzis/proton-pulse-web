@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1189440",
+    "cpu": "AMD Ryzen 5 3500X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.3.3",
+    "kernel": "5.5.4-xanmod3",
+    "notes": "I'm using Proton-5.1-GE-1 from https://github.com/GloriousEggroll/proton-ge-custom/releases",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1581791737,
+    "title": "",
+    "source": "protondb"
+  }
+]

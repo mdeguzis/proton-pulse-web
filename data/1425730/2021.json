@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1425730",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-43-generic",
+    "notes": "Runs fine right out of the box.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613437441,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1425730",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.12.1-xanmod2-cacule-2-cacule",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1620514949,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1425730",
+    "cpu": "Intel Xeon E5-1620 v2 @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.16-200.fc34.x86_64",
+    "notes": "works perfectly out of the box",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1632074839,
+    "title": "",
+    "source": "protondb"
+  }
+]

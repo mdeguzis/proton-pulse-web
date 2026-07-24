@@ -1,0 +1,94 @@
+[
+  {
+    "appId": "218740",
+    "title": "Pid",
+    "timestamp": 1535360559,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "KDE Neon",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670k / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "218740",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs fine. Keyboard controls work. Have not tried a controller. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "11957 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538195108,
+    "title": "Pid",
+    "source": "protondb"
+  },
+  {
+    "appId": "218740",
+    "cpu": "Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 with Max-Q Design/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7842 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538433375,
+    "title": "Pid",
+    "source": "protondb"
+  },
+  {
+    "appId": "218740",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541304603,
+    "title": "Pid",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "218740",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.17-300.fc29.x86_64",
+    "notes": "Played for 10 minutes, so far everything works perfectly (keyboard input, sound, etc.), 60-ish FPS on lowest settings.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1542208470,
+    "title": "Pid",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "218740",
+    "title": "Pid",
+    "timestamp": 1535346159,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "KDE Neon",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670k / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

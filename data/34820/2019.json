@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "34820",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Following other people's reports, here's how I got this game working on Ubuntu, terminal commands are in quotes:\n1. 'sudo apt install winetricks'.\n2. 'wget https://raw.githubusercontent.com/Sirmentio/protontricks/master/protontricks && chmod +x protontricks'.\n3. 'sudo mv protontricks /usr/bin/protontricks'.\n4. cd to game folder, usually under .steam/steam/steamapps/common/Combat\\ Wings\\ Battle\\ of\\ Britain.\n5. 'protontricks 34820 corefonts'.\n\nGame was perfectly fine after this, originally it was giving a missing font error. Only issue after these fixes is that the intro screen is black but that is the only error I found. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547083437,
+    "title": "Combat Wings: Battle of Britain",
+    "source": "protondb"
+  },
+  {
+    "appId": "34820",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Worked for me WITHOUT installing winetricks & corefonts on my latest Ubuntu build (you have to 'run' the game once for it to create the folders/environment, before winetricks/protontricks can install the fonts). I only did that after the fact - made no difference. Also, only running the 64-bit version of wineprefix now (see terminal info about 32-bit verbs).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548533751,
+    "title": "Combat Wings: Battle of Britain",
+    "source": "protondb"
+  },
+  {
+    "appId": "34820",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "The intro video is a black screen, but if you click past it the rest of the game seems to work fine without any tweaking required.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1561566341,
+    "title": "Combat Wings: Battle of Britain",
+    "source": "protondb"
+  }
+]

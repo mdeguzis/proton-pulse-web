@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "33390",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.2",
+    "kernel": "4.20.7-arch1-1-ARCH",
+    "notes": "Tried to use protontricks and this guide (https://www.reddit.com/r/wine_gaming/comments/8r6low/guide_how_to_install_net_45_on_64bit_prefixes/) to get dotnet35 installed. Didn't work. Game doesn't start at all.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1549830706,
+    "title": "Zeit\u00b2",
+    "source": "protondb"
+  }
+]

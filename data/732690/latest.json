@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "732690",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Game just Lock up upon starting. Just a black screen. I waited about 10 minutes to see if anything would happen, but nothing.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1571070921,
+    "title": "FIVE NIGHTS AT FREDDY'S VR: HELP WANTED",
+    "source": "protondb"
+  }
+]

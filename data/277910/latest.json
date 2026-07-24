@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "277910",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Main menu opens correctly, but attempting to enter a mission crashes the game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1561979618,
+    "title": "Mars Colony:Challenger",
+    "source": "protondb"
+  }
+]

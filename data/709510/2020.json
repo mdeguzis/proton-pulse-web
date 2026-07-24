@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "709510",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.9.8-arch1-1",
+    "notes": "Runs very slow. Technically playable but enjoyable at that speed",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1605534284,
+    "title": "Towards The Pantheon",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "321560",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 750M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Everything runs perfectly, no performance hit noticeable, and no tweaks required. So far I've played levels 1-40 and special levels 1 and 2.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1541117520,
+    "title": "The Sun and Moon",
+    "source": "protondb"
+  }
+]

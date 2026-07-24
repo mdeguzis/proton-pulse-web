@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "38720",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.1, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Runs perfectly without Proton. It's a pretty simple game so I'd expect that from it.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1739343531,
+    "title": "RUSH",
+    "source": "protondb"
+  }
+]

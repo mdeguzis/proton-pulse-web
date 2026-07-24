@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "323850",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I had no sound but after\n   sudo apt-get install libpulse0:i386\nit ran perfectly",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1549198049,
+    "title": "Move or Die",
+    "source": "protondb"
+  },
+  {
+    "appId": "323850",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "Better than native - no crashes, no audio bugs. Perfect playability",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559930566,
+    "title": "Move or Die",
+    "source": "protondb"
+  },
+  {
+    "appId": "323850",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Runs better than the native version. With the native I can't enable full screen, one game has a really bad frame rate and another simply makes the game crash every time it's played. Not a single issue with the Proton version.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564663627,
+    "title": "Move or Die",
+    "source": "protondb"
+  }
+]

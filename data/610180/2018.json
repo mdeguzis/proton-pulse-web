@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "610180",
+    "title": "The Jackbox Party Pack 4",
+    "timestamp": 1535506325,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E5 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "610180",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541624717,
+    "title": "The Jackbox Party Pack 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "610180",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD8800",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-16f1023 2018-11-07 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Turns off secondary monitor (if any) on startup",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542515156,
+    "title": "The Jackbox Party Pack 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "610180",
+    "title": "The Jackbox Party Pack 4",
+    "timestamp": 1535491925,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E5 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

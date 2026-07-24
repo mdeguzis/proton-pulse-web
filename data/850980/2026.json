@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "850980",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.5, DRM 3.61, 6.12.60-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.12.60-1-lts",
+    "notes": "I've completed the arcade mode without issues with Proton 10.0-4. Local multiplayer is also working fine.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767444044,
+    "title": "",
+    "source": "protondb"
+  }
+]

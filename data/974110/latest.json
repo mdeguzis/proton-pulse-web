@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "974110",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.1-1-MANJARO",
+    "notes": "With native version I got \"an error occurred while updating (missing executable)\" but proton works perfect.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564018410,
+    "title": "Zeroptian Invasion",
+    "source": "protondb"
+  }
+]

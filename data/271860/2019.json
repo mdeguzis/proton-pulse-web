@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "271860",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.1-arch1-1-ARCH",
+    "notes": "Doesn't seem to start",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552558121,
+    "title": "Super Killer Hornet: Resurrection",
+    "source": "protondb"
+  },
+  {
+    "appId": "271860",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558716928,
+    "title": "Super Killer Hornet: Resurrection",
+    "source": "protondb"
+  },
+  {
+    "appId": "271860",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Doesn't start. Looking at the logs, it has something to do with XNA.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571675692,
+    "title": "Super Killer Hornet: Resurrection",
+    "source": "protondb"
+  }
+]

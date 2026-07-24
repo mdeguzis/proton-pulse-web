@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "673850",
+    "cpu": "Intel Xeon E5-2609 0 @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD CAYMAN",
+    "gpuDriver": "3.1 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "I have tested this one a couple linux systems all running either Ubuntu or MX with no issues so far. ",
+    "os": "MX 18.3 Continuum",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1563905663,
+    "title": "Neofeud",
+    "source": "protondb"
+  }
+]

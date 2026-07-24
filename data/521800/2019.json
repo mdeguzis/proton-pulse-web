@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "521800",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game is working perfectly however it has a problem with the LOS and LOS AREA tools, more info here \nhttps://steamcommunity.com/app/521800/discussions/0/1735462352492629085/\nThis problem can be reduced including in the parameters steam launcher of the game the option \nPROTON_USE_WINED3D=1 %command%\nHowever although the tools work the map remains black.\nIt's a pity because the game looks great.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1550602786,
+    "title": "Command Ops 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "521800",
+    "cpu": "Intel Core i7-4790S @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-15-generic",
+    "notes": "When launching, \"Match screen resolution\" does not work; choose wide screen 1920x1080 in my case. Tool \"Line of Sight\" and \"LOS Area\" does not work. When game launch with parameter \"PROTON_USE_WINED3D11=1 %command%\" LOS does work but we loose the map; map turns black; so LOS is worth nothing. Bombarb order took a couple of seconds before to show the reticle. Other than that, it works and we can play.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1550960224,
+    "title": "Command Ops 2",
+    "source": "protondb"
+  }
+]

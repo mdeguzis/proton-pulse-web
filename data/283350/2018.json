@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "283350",
+    "title": "Eurofighter Typhoon",
+    "timestamp": 1534964073,
+    "rating": "Borked",
+    "notes": "Doesn't work with steam, only works if you use it outside steam with wine. It's a known problem that also happens under windows",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "283350",
+    "title": "Eurofighter Typhoon",
+    "timestamp": 1534949673,
+    "rating": "Borked",
+    "notes": "Doesn't work with steam, only works if you use it outside steam with wine. It's a known problem that also happens under windows",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

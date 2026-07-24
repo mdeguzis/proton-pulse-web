@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "375910",
+    "cpu": "Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Uplay Account Login failed. No Connection to Uplay Server",
+    "os": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) x86/MMX/SSE2",
+    "protonVersion": "Proton 3.7.6",
+    "ram": "7837 MB",
+    "rating": "Borked",
+    "timestamp": 1537437824,
+    "title": "Anno 2205\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "375910",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Error Message:\n'Uplay has detected an unrecoverable error and must shutdown. Crash dump created at \"C:/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/crashes\"'\nThe crash log in that folder is a .dmp file and couldn't find a Windows program to read it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542294241,
+    "title": "Anno 2205\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "375910",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Uplay running via newer version installed via protontricks and related workaround (https://github.com/ValveSoftware/Proton/issues/162 and https://github.com/ValveSoftware/Proton/issues/1735). Specific ANNO 2205 workaround also added via system variables PYTHONIOENCODING=utf-8 (https://bugs.winehq.org/show_bug.cgi?id=44929) DXVK_STATE_CACHE=0 (https://github.com/doitsujin/dxvk/issues/686). Game starts a black screen, but crashes due to a Python networks socket error. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1542384746,
+    "title": "Anno 2205\u2122",
+    "source": "protondb"
+  }
+]

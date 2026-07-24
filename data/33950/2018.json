@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "33950",
+    "title": "The Fish Fillets 2",
+    "timestamp": 1535277603,
+    "rating": "Platinum",
+    "notes": "Work perfectly.",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-3520M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33950",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 550 Ti/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.13.0-46-generic",
+    "notes": "played tutorial + first few missions, no issue.",
+    "os": "Ubuntu 17.10 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32131 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536757620,
+    "title": "Fish Fillets 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "33950",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs out of the Box. No Issues.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Platinum",
+    "timestamp": 1539451456,
+    "title": "Fish Fillets 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "33950",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542414882,
+    "title": "Fish Fillets 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "33950",
+    "title": "The Fish Fillets 2",
+    "timestamp": 1535263203,
+    "rating": "Platinum",
+    "notes": "Work perfectly.",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-3520M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

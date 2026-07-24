@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "744810",
+    "title": "A Raven Monologue",
+    "timestamp": 1535442833,
+    "rating": "Platinum",
+    "notes": "No issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD FX-8320",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "744810",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-200.fc28.x86_64",
+    "notes": "It's rather small art-piece then a game, but works well :)",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537289065,
+    "title": "A Raven Monologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "744810",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543519525,
+    "title": "A Raven Monologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "744810",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "finished the \u201cgame\u201d",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544572065,
+    "title": "A Raven Monologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "744810",
+    "title": "A Raven Monologue",
+    "timestamp": 1535428433,
+    "rating": "Platinum",
+    "notes": "No issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "AMD FX-8320",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

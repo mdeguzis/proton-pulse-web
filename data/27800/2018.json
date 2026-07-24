@@ -1,0 +1,103 @@
+[
+  {
+    "appId": "27800",
+    "title": "Space Giraffe",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Slackware 14.2",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "AMD 8340 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "title": "Space Giraffe",
+    "timestamp": 1535412796,
+    "rating": "Borked",
+    "notes": "Game crashes with error message \"Can't initialise XACT engine\" after selecting language and flavour. Tried different launch options and disabling overlays.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "title": "Space Giraffe",
+    "timestamp": 1535417762,
+    "rating": "Silver",
+    "notes": "Audio is distorted but game works well otherwise.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "cpu": "i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "notes": "Everything works flawlessly, played for about 30 minutes in full screen.  ",
+    "os": "Solus (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Space Giraffe",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "cpu": "Intel(R) Core(TM) i7-4930K CPU @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation TITAN V/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs perfectly out of the box.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64362 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539045526,
+    "title": "Space Giraffe",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "title": "Space Giraffe",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Slackware 14.2",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "AMD 8340 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "title": "Space Giraffe",
+    "timestamp": 1535398396,
+    "rating": "Borked",
+    "notes": "Game crashes with error message \"Can't initialise XACT engine\" after selecting language and flavour. Tried different launch options and disabling overlays.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "27800",
+    "title": "Space Giraffe",
+    "timestamp": 1535403362,
+    "rating": "Silver",
+    "notes": "Audio is distorted but game works well otherwise.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

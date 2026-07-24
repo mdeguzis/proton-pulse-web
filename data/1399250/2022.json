@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1399250",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.35.0, 5.4.148-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.4.148-1-MANJARO",
+    "notes": "Game runs perfectly on Proton 6.3-8. Gameplay video: https://www.youtube.com/watch?v=LcK-SW3HVVA",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1641061079,
+    "title": "Red Cap Zombie Hunter",
+    "source": "protondb"
+  }
+]

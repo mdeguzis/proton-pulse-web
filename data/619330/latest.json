@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "619330",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.3.11",
+    "notes": "Ignores certain clicks in the menu",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1574189829,
+    "title": "",
+    "source": "protondb"
+  }
+]

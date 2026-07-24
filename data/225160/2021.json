@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "225160",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "ATI Technologies Inc. Radeon RX 580",
+    "gpuDriver": "4.6.14736 Compatibility Profile Context",
+    "kernel": "5.4.0-74-generic",
+    "notes": "Works flawlessly",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1626742894,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "225160",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.14.2-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631856725,
+    "title": "",
+    "source": "protondb"
+  }
+]

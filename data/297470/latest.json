@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "297470",
+    "cpu": "AMD Phenom II X4 820",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Installed and run out of the box. No issues as of yet. Will update as i put in more time.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567391422,
+    "title": "Xsyon - Prelude",
+    "source": "protondb"
+  },
+  {
+    "appId": "297470",
+    "cpu": "AMD Phenom II X4 820",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-23-generic",
+    "notes": "No issues at all.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568807675,
+    "title": "Xsyon - Prelude",
+    "source": "protondb"
+  }
+]

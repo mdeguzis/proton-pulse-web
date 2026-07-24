@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "746400",
+    "title": "Speed Dating for Ghosts",
+    "timestamp": 1535661264,
+    "rating": "Silver",
+    "notes": "Occasional audio hiccups.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3-3240 / NVIDIA GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "746400",
+    "cpu": "Intel Core i3-3240 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.13-041813-generic",
+    "notes": "Runs perfectly from start to finish.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542508352,
+    "title": "Speed Dating for Ghosts",
+    "source": "protondb"
+  },
+  {
+    "appId": "746400",
+    "title": "Speed Dating for Ghosts",
+    "timestamp": 1535646864,
+    "rating": "Silver",
+    "notes": "Occasional audio hiccups.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3-3240 / NVIDIA GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "893390",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Game is unplayable cause of blinking problems on the game and interface windows. The problems appear immediatly after connection.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554382094,
+    "title": "Meridian 59",
+    "source": "protondb"
+  },
+  {
+    "appId": "893390",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.10-200.fc29.x86_64",
+    "notes": "As the previous post states, after character creation, the interface is very flickery and a good portion of the time you cannot see the text window, your inventory, etc.\n\nTo fix:\nAt the top left of the window, go to Game, then Configuration, then check the box for Software Renderer and restart the game.  After this, the game seems to run well including adjustments to the interface including background and text colors. ",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-4",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1558191416,
+    "title": "Meridian 59",
+    "source": "protondb"
+  }
+]

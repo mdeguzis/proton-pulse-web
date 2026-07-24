@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "400160",
+    "title": "Concrete Jungle",
+    "timestamp": 1535223898,
+    "rating": "Platinum",
+    "notes": "Game works fine.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "400160",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537276622,
+    "title": "Concrete Jungle",
+    "source": "protondb"
+  },
+  {
+    "appId": "400160",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Played with max settings at 1440p, ran perfectly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543366196,
+    "title": "Concrete Jungle",
+    "source": "protondb"
+  },
+  {
+    "appId": "400160",
+    "title": "Concrete Jungle",
+    "timestamp": 1535209498,
+    "rating": "Platinum",
+    "notes": "Game works fine.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "2330",
+    "title": "Quake II: The Reckoning",
+    "timestamp": 1535385208,
+    "rating": "Borked",
+    "notes": "Application Load Error 5:0000065434",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2330",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Application Load Error 5:0000065434",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541952207,
+    "title": "QUAKE II Mission Pack: The Reckoning",
+    "source": "protondb"
+  },
+  {
+    "appId": "2330",
+    "title": "Quake II: The Reckoning",
+    "timestamp": 1535370808,
+    "rating": "Borked",
+    "notes": "Application Load Error 5:0000065434",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

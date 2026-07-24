@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "25700",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-2-amd64",
+    "notes": "Doesn't launch",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553729467,
+    "title": "Madballs in Babo:Invasion ",
+    "source": "protondb"
+  }
+]

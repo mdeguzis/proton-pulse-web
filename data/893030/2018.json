@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "893030",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Shows Unity logo, then goes unresponsive on a black screen.  No error message; has to be killed manually.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "Music Racer",
+    "source": "protondb"
+  },
+  {
+    "appId": "893030",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.12-1-MANJARO, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.12-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16053 Mb",
+    "rating": "Borked",
+    "timestamp": 1539812015,
+    "title": "Music Racer",
+    "source": "protondb"
+  },
+  {
+    "appId": "893030",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Launches, shows \"Unity\" logo, then just black and silent.\n\nEventually xorg says that it's not responding.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541132689,
+    "title": "Music Racer",
+    "source": "protondb"
+  }
+]

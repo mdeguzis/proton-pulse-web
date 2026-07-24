@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "505640",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "When launching it puts a launch window onto the desktop, and immediately after that it tries to run in full-screen mode, and gives an error message: Error: Error # 3780",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555025737,
+    "title": "Antihero",
+    "source": "protondb"
+  },
+  {
+    "appId": "505640",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Ran through skirmish without any problems",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560763629,
+    "title": "Antihero",
+    "source": "protondb"
+  }
+]

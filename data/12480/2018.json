@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12480",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 580",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.18.5-041805-generic",
+    "notes": "All seems to work without any issues, no tweaks needed. Multiplayer not tested.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541107361,
+    "title": "9th Company: Roots Of Terror",
+    "source": "protondb"
+  }
+]

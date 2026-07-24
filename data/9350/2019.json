@@ -1,0 +1,165 @@
+[
+  {
+    "appId": "9350",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ICELAND",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Black screen, with audio in the background.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546719487,
+    "title": "Supreme Commander",
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Tried disabling esync and changing bloom as a previous user said, neither of these options worked. Game still booted to a black screen, although audio worked",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547055142,
+    "title": "Supreme Commander",
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4a131a1330)",
+    "kernel": "5.0.0-rc3-mainline",
+    "notes": "Doesn't work with unpatched proton, you have to use Gallium Nine Extras patch",
+    "os": "Arch Linux",
+    "protonVersion": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "protonVersionManual": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1550050228,
+    "title": "Supreme Commander",
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "I've followed the previous Silver guide. Steps:  \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n- Disable Esync  \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n- Launch game. You'll get a black screen. Kill the process.  \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n- Open ~/.steam/steam/SteamApps/compatdata/9350/pfx/drive_c/users/steamuser/Local Settings/Application Data/Gas Powered Games/SupremeCommander/Game.prefs  \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n- Add \" , bloom_render = { default = 0 } \" (without the quotes) at the bottom before the last curly brace  \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n- Find the \"primary_adapter\" section and change the value to \"1920,1080,60\". Do NOT use 1440p or any higher resolution, your game will not render correctly.  \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n- Save the file and quit.  \n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n- Launch the game. Everything should work fine after this.  ",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1552598344,
+    "title": "Supreme Commander",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-46-generic",
+    "notes": "After the steps already mentioned (esynch + edit config file) it is perfectly playable. No issues in single player at all. Multiplayer not tested. Sometimes frozen black screen after changing settings and quitting game, just kill it then.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554046151,
+    "title": "Supreme Commander",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Had to disable ESYNC otherwise would boot to a black screen. Didn't need to perform the config file modifications as mentioned here. Could alter graphics settings within the game without any crashing or problems.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554853604,
+    "title": "Supreme Commander",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Movies do not work with e-sync and it loads slowly with esync. Disabled esync, and then had to change to windowed mode, which is no problem, as I prefer windowed mode. When in fullscreen, it cuts off most of the screen, however, there is just enough to create profile and change to windowed mode--in options, when you click on resolution for the primary display, You should see windowed as the first option.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-4",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1558831980,
+    "title": "Supreme Commander",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-zen1-1-zen",
+    "notes": "I recently bought the \"Supreme Commander Collection\" on Steam, which comes with SC1, SC1: Forged Alliance, and SC2. They all seemed unplayable at first, but after following these steps (essentially the same steps for each game) they run perfectly. No crashes and very performant.\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\nTL;DR: you really only need to setup the video settings and you're good to go.\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n 1. Disable Esync (if not, you'll get <1 fps in game and in menu) ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n2. Change your primary display to 1024x768 (temporarily): `xrandr --output YOUR_PRIMARY_DISPLAY --mode 1024x768`. By default, it will try to run in 1024x768, and if your screen's resolution is higher, you'll only see the top-left corner of the screen.\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n 3. Run the game once\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n 4. Go to the Video Settings and change the \"primary adapter\" to \"windowed\" (temporarily). Currently, the only options should be \"windowed\" and \"1024x768\".\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n 5. Quit the game\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n 6. Set your primary display's resolution back to it's native res: `xrandr --output YOUR_PRIMARY_DISPLAY --auto`\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n 7. Start the game again.\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n 8. Go back to the video settings. The \"primary adapter\" dropdown should now list all the modes available for your display. Select your native resolution (2560x1440 was listed for my display and works great). Note: when I tried keeping it on \"windowed\", the in-game hud was too small for the screen.\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n 9. [optional] Set all the graphical options to max!\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\nThe only thing that doesn't work is the option to use a second display in game. I have multiple screens, but that option is disabled.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1563080727,
+    "title": "Supreme Commander",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9350",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1567475975,
+    "title": "Supreme Commander",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

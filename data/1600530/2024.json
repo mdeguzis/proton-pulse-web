@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1600530",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 550.40.07",
+    "kernel": "6.7.0-204.fsync.fc39.x86_64",
+    "notes": "No issues here",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1707951017,
+    "title": "3D Aim Trainer",
+    "source": "protondb"
+  },
+  {
+    "appId": "1600530",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.182.03",
+    "kernel": "5.4.0-150-generic",
+    "notes": "Can't run",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1714376845,
+    "title": "3D Aim Trainer",
+    "source": "protondb"
+  },
+  {
+    "appId": "1600530",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.58, 6.11.0-rc1-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.1.5-manjaro1.1",
+    "kernel": "6.11.0-rc1-1-MANJARO",
+    "notes": "Well two reasons, it's an aim trainer, and 2 the windowing switching issues, occasional lag, and other stuff mostly would keep one away.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "bronze",
+    "timestamp": 1724104138,
+    "title": "3D Aim Trainer",
+    "source": "protondb"
+  }
+]

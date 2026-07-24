@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1937900",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "5.15.0-101-generic",
+    "notes": "It seems to be working",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1721068785,
+    "title": "",
+    "source": "protondb"
+  }
+]

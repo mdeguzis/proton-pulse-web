@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "420",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.6-200.fc29.x86_64",
+    "notes": "Opening the options menu either in the main menu or in the exit menu in a loaded level immediately crashes the game. This occurs when no command line options are supplied to the game. This was also tested with the -novid -windowed launch options.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1555741389,
+    "title": "Half-Life 2: Episode Two",
+    "source": "protondb"
+  },
+  {
+    "appId": "420",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton the game works too out of the box, only if you click on options the game crashes, but I changed the resolution with the parameter -w 3840 -h 2160. I installed manually D9VK and it worked without graphical glitches too with this DX9 to Vulkan translation!",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1560691943,
+    "title": "Half-Life 2: Episode Two",
+    "source": "protondb"
+  }
+]

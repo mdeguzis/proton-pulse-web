@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3564440",
+    "cpu": "Intel Celeron N5100 @ 1.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (JSL)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.11.0-29-generic",
+    "notes": "se instala \"correctamente\" desde steam pero a la hora de ejecutarlo aparece un aviso de \"fatal error!\" en una ventana y el juego no abre",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1752136079,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "appId": "314150",
+    "title": "Double Dragon Trilogy",
+    "timestamp": 1534993271,
+    "rating": "Borked",
+    "notes": "Nothing when trying to launch the game, tried also disabling Steam overlay",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "314150",
+    "title": "Double Dragon Trilogy",
+    "timestamp": 1536011892,
+    "rating": "Gold",
+    "notes": "Pops up assert error dialog, runs perfectly after clicking ignore a few times",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "314150",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc4-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc4-generic",
+    "notes": "\"Microsoft Visual C++ Runtime Library\" error message on launch, clicking ignore a few time the game launches and runs fine.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15961 Mb",
+    "rating": "Silver",
+    "timestamp": 1538222077,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Double Dragon Trilogy",
+    "source": "protondb"
+  },
+  {
+    "appId": "314150",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs perfect after ignore warnings, including Xbox 360 Controller. https://www.youtube.com/watch?v=KTF-RaDcjqk",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543920408,
+    "title": "Double Dragon Trilogy",
+    "source": "protondb"
+  },
+  {
+    "appId": "314150",
+    "title": "Double Dragon Trilogy",
+    "timestamp": 1534978871,
+    "rating": "Borked",
+    "notes": "Nothing when trying to launch the game, tried also disabling Steam overlay",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "314150",
+    "title": "Double Dragon Trilogy",
+    "timestamp": 1535997492,
+    "rating": "Gold",
+    "notes": "Pops up assert error dialog, runs perfectly after clicking ignore a few times",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

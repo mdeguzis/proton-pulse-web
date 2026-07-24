@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "935640",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.14",
+    "notes": "Disable Esync and the game mostly works, with a few exceptions. Creating a workshop item in the editor can be buggy and cause the game to crash. Completing a game with a workshop item can cause the game to freeze on a white screen.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557916950,
+    "title": "Pixelarium",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3402720",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.10-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.1-arch2.1",
+    "kernel": "7.0.10-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1780159019,
+    "title": "",
+    "source": "protondb"
+  }
+]

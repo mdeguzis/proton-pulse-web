@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "275510",
+    "title": "Z Steel Soldiers",
+    "timestamp": 1535755184,
+    "rating": "Silver",
+    "notes": "Menus look great. Tutorial works but graphics are grey with some corruption. ",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "275510",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.8-041908-lowlatency",
+    "notes": "Runs perfect out of the box (video, sound and input).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Platinum",
+    "timestamp": 1545165368,
+    "title": "Z Steel Soldiers",
+    "source": "protondb"
+  },
+  {
+    "appId": "275510",
+    "title": "Z Steel Soldiers",
+    "timestamp": 1535740784,
+    "rating": "Silver",
+    "notes": "Menus look great. Tutorial works but graphics are grey with some corruption. ",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "204140",
+    "title": "All Zombies Must Die!",
+    "timestamp": 1535704484,
+    "rating": "Borked",
+    "notes": "Crashes on startup. Pastebin of steam output: https://pastebin.com/QEG7q2JB",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "204140",
+    "title": "All Zombies Must Die!",
+    "timestamp": 1535690084,
+    "rating": "Borked",
+    "notes": "Crashes on startup. Pastebin of steam output: https://pastebin.com/QEG7q2JB",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

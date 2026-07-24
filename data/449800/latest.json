@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "449800",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Only played the first levels of Attack Mode. \nApart from the main menu background not loading and the game occasionally becoming unresponsive when minimizing the window it seems to be perfectly playable. At max settings the FPS appeared to dip into the 40-50s at times but performance was otherwise good too.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560503879,
+    "title": "Attack on Titan / A.O.T. Wings of Freedom",
+    "source": "protondb"
+  }
+]

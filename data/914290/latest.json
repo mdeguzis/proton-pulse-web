@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "914290",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "Game starts, but hangs after the loading screen. Music is playing but does not respond to any keys.",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564301686,
+    "title": "Welcome to Princeland",
+    "source": "protondb"
+  }
+]

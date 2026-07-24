@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "431560",
+    "cpu": "Intel(R) Pentium(R) CPU  N3540  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.5",
+    "kernel": "4.18.0-7-generic",
+    "notes": "Works better than Windows",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "3831 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536689510,
+    "title": "Hard Room",
+    "source": "protondb"
+  }
+]

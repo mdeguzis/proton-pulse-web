@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "700480",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "On Windows the throttle axis on my Thrustmaster TWCS was working but not on Linux, Proton could do with some HOTAS compatibility.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.16-4",
+    "protonVersionManual": "4.16-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556353431,
+    "title": "Microsoft Allegiance",
+    "source": "protondb"
+  },
+  {
+    "appId": "700480",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-200.fc29.x86_64",
+    "notes": "Crashes when opening server lobby.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556677170,
+    "title": "Microsoft Allegiance",
+    "source": "protondb"
+  }
+]

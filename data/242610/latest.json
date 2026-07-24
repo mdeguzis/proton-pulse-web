@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "242610",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD R9 M265X",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Runs just fine. But as previous mentioned, no one else seems to play.",
+    "os": "MX 18.1 Continuum",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551643388,
+    "title": "Grappledrome",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "321610",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game crashes at 1280x960 resolution and it doesn't support widescreen at all. In-Game, most objects are untextured.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1557597693,
+    "title": "Demonlisher",
+    "source": "protondb"
+  }
+]

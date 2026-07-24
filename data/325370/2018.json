@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "325370",
+    "title": "Nova-111",
+    "timestamp": 1535436266,
+    "rating": "Platinum",
+    "notes": "Works like native",
+    "os": "Arch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX-1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "325370",
+    "cpu": "Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Flawless. Perfect whitelist candidate. BTW really good game",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "5928 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537548022,
+    "title": "Nova-111",
+    "source": "protondb"
+  },
+  {
+    "appId": "325370",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542540041,
+    "title": "Nova-111",
+    "source": "protondb"
+  },
+  {
+    "appId": "325370",
+    "title": "Nova-111",
+    "timestamp": 1535421866,
+    "rating": "Platinum",
+    "notes": "Works like native",
+    "os": "Arch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX-1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

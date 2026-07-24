@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1534996409,
+    "rating": "Borked",
+    "notes": "Does not launch in either mode.",
+    "os": "Linux Mint 18.1 64-bit (Kernel 4.4.0-21)",
+    "gpuDriver": "NVIDIA 370.28",
+    "specs": "i5-4460 / NVIDIA GTX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1535012568,
+    "rating": "Borked",
+    "notes": "Works, but gameplay is extremely slow.",
+    "os": "Pop-OS",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Ryzen 5 1600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1535049011,
+    "rating": "Silver",
+    "notes": "Perfomance is worse than Max Damage, averaging at 20 fps. Too bad since I like this version more that the updated one",
+    "os": "Manjaro Stable 64-bit (4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel\u00a9 Core\u2122 i7-4790 CPU @ 3.60GHz \u00d7 4/ GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1535068463,
+    "rating": "Borked",
+    "notes": "Splash screen displays for about a minute, then closes.",
+    "os": "Linux Mint 18.1 Cinnamon 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4460 / NVIDIA GTX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1534982009,
+    "rating": "Borked",
+    "notes": "Does not launch in either mode.",
+    "os": "Linux Mint 18.1 64-bit (Kernel 4.4.0-21)",
+    "gpuDriver": "NVIDIA 370.28",
+    "specs": "i5-4460 / NVIDIA GTX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1534998168,
+    "rating": "Borked",
+    "notes": "Works, but gameplay is extremely slow.",
+    "os": "Pop-OS",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "Ryzen 5 1600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1535034611,
+    "rating": "Silver",
+    "notes": "Perfomance is worse than Max Damage, averaging at 20 fps. Too bad since I like this version more that the updated one",
+    "os": "Manjaro Stable 64-bit (4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel\u00a9 Core\u2122 i7-4790 CPU @ 3.60GHz \u00d7 4/ GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "249380",
+    "title": "Carmageddon: Reincarnation",
+    "timestamp": 1535054063,
+    "rating": "Borked",
+    "notes": "Splash screen displays for about a minute, then closes.",
+    "os": "Linux Mint 18.1 Cinnamon 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4460 / NVIDIA GTX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

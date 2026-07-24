@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "383150",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "Native version seems to be borked on AMD cards, even with MESA_GL_VERSION_OVERRIDE and MESA_GLSL_VERSION_OVERRIDE (it used to work on my old GTX 960 4GB, although with half the frame rate compared to on windows).\n\nRunning through proton with my current setup (RX480, r5 2600) out of the box results in 60 to 80 fps most of the time, with default detail settings (high) and vsync disabled. The game stutters quite a bit when just loaded, but seems to improve over time.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569217402,
+    "title": "Dead Island Definitive Edition",
+    "source": "protondb"
+  }
+]

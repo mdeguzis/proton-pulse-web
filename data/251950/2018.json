@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "251950",
+    "title": "WWII Online",
+    "timestamp": 1535462113,
+    "rating": "Bronze",
+    "notes": "Wont connect to network, runs and plays absolutely fine but won't connect to servers. ",
+    "os": "Manjaro Stable 64 Bit Kernel 4.18.4",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7 4770K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251950",
+    "title": "WWII Online",
+    "timestamp": 1535745616,
+    "rating": "Borked",
+    "notes": "Offline works, but online mode is unavailable",
+    "os": "Arch (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i7-4710HQ / GTX 850M",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "251950",
+    "cpu": "Intel(R) Core(TM) i5-2430M CPU @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Sandybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Cannot play online / network issues",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7870 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538178317,
+    "title": "WWII Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "251950",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.8.0-53-generic",
+    "notes": "Worked perfectly with Proton 3.16-4. Only issue was that you aren't able to alt-tab out of the game, but that might be a Desktop Environment issue.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543514099,
+    "title": "WWII Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "251950",
+    "title": "WWII Online",
+    "timestamp": 1535447713,
+    "rating": "Bronze",
+    "notes": "Wont connect to network, runs and plays absolutely fine but won't connect to servers. ",
+    "os": "Manjaro Stable 64 Bit Kernel 4.18.4",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7 4770K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251950",
+    "title": "WWII Online",
+    "timestamp": 1535731216,
+    "rating": "Borked",
+    "notes": "Offline works, but online mode is unavailable",
+    "os": "Arch (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i7-4710HQ / GTX 850M",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

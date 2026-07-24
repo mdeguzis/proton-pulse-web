@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461940",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.14.83-gentoo",
+    "notes": "Crashes at start.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546277857,
+    "title": "Plancon: Space Conflict",
+    "source": "protondb"
+  }
+]

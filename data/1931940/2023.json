@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1931940",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.54, 6.6.8-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.8-200.fc39.x86_64",
+    "notes": "Other functions are normal except that the videos of OP and ED cannot be played.",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703779260,
+    "title": "",
+    "source": "protondb"
+  }
+]

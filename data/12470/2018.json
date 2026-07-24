@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "12470",
+    "title": "Port Royale 2",
+    "timestamp": 1535129860,
+    "rating": "Silver",
+    "notes": "Loading is a little bit slow and also opening some menus can make the game freeze for a fraction of a second.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Phenom IIx4 965 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12470",
+    "cpu": "AMD Phenom(tm) II X4 B97 Processor",
+    "gpu": "GeForce GT 710/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-0.bpo.1-amd64",
+    "notes": "Experienced no problems.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7976 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536851058,
+    "title": "Port Royale 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "12470",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Runs perfectly",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543046572,
+    "title": "Port Royale 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "12470",
+    "title": "Port Royale 2",
+    "timestamp": 1535115460,
+    "rating": "Silver",
+    "notes": "Loading is a little bit slow and also opening some menus can make the game freeze for a fraction of a second.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Phenom IIx4 965 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

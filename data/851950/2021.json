@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "851950",
+    "cpu": "Intel Core i5-8600 @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.8.0-53-generic",
+    "notes": "Ran the same as it would in Windows10",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1621335050,
+    "title": "",
+    "source": "protondb"
+  }
+]

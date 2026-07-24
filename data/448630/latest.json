@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "448630",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.8-zen1-1-zen",
+    "os": "Arch Linux (Flatpak)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1556031886,
+    "title": "Rabiez: Epidemic",
+    "source": "protondb"
+  },
+  {
+    "appId": "448630",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "Config launcher appears, but game will not start past this point.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561261268,
+    "title": "Rabiez: Epidemic",
+    "source": "protondb"
+  }
+]

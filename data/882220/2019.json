@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "882220",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-arch2-1-ARCH",
+    "notes": "Framerate feels inconsistent even though steam overlay says stable 30fps. Sometimes crashes when fiddling about in menus",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550912046,
+    "title": "Mecha-Tokyo Rush",
+    "source": "protondb"
+  }
+]

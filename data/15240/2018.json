@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "15240",
+    "cpu": "AMD A8-3870 APU with Radeon(tm) HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTS 450/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "notes": "As with the main game, this addon won't start. Steam changes to running for a couple of seconds, but then the game just crashes. No warning, no error message, no hint, nothing. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15515 Mb",
+    "rating": "Borked",
+    "timestamp": 1539737830,
+    "title": "Silent Hunter\u00ae: Wolves of the Pacific U-Boat Missions",
+    "source": "protondb"
+  }
+]

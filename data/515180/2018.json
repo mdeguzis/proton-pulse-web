@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "515180",
+    "title": "Bus Simulator 18",
+    "timestamp": 1535375343,
+    "rating": "Borked",
+    "notes": "Error: DX11 feature level 10.0 is required to run the engine",
+    "os": "Ubuntu 18.04.1 LTS 64-bit",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Athlon II x4 760k / RX570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "515180",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Game starts, but has extreme sound glitches. (Sound stutters and random sounds are playing all the time)",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15991 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537901401,
+    "title": "Bus Simulator 18",
+    "source": "protondb"
+  },
+  {
+    "appId": "515180",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Game's framerate is very poor (and the same no matter the graphical settings). Changing the audio levels in the settings seems to make no difference to the actual audio levels, and audio is crackly. Unfortunately not playable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7970 Mb",
+    "rating": "Borked",
+    "timestamp": 1538830593,
+    "title": "Bus Simulator 18",
+    "source": "protondb"
+  },
+  {
+    "appId": "515180",
+    "cpu": "Intel(R) Core(TM)2 Quad  CPU   Q9450  @ 2.66GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-36-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "After installing Vulkan (terminal -> Vulkaninfo) it started without problems. Had to reduce the graphic quality from high to medium for acceptable Fps. Just the train sound sometimes starts without any reason.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7975 MB",
+    "rating": "Gold",
+    "timestamp": 1540114494,
+    "title": "Bus Simulator 18",
+    "source": "protondb"
+  },
+  {
+    "appId": "515180",
+    "title": "Bus Simulator 18",
+    "timestamp": 1535360943,
+    "rating": "Borked",
+    "notes": "Error: DX11 feature level 10.0 is required to run the engine",
+    "os": "Ubuntu 18.04.1 LTS 64-bit",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Athlon II x4 760k / RX570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

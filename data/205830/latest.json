@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "205830",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.10-111.current",
+    "notes": "Works without issues",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552216860,
+    "title": "Luxor Evolved",
+    "source": "protondb"
+  },
+  {
+    "appId": "205830",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-50-generic",
+    "notes": "it runs perfectly",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562256028,
+    "title": "Luxor Evolved",
+    "source": "protondb"
+  },
+  {
+    "appId": "205830",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571042438,
+    "title": "Luxor Evolved",
+    "source": "protondb"
+  }
+]

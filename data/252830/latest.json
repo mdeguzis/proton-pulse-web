@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "252830",
+    "title": "Claire",
+    "timestamp": 1535528219,
+    "rating": "Gold",
+    "notes": "Needed PROTON_USE_WINED3D11=1 %command% in launch options to run",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.2",
+    "specs": "i5-5200u",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "252830",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540601471,
+    "title": "Claire",
+    "source": "protondb"
+  },
+  {
+    "appId": "252830",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "Required no tweaks. Worked perfectly out of the box.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541562139,
+    "title": "Claire",
+    "source": "protondb"
+  },
+  {
+    "appId": "252830",
+    "title": "Claire",
+    "timestamp": 1535513819,
+    "rating": "Gold",
+    "notes": "Needed PROTON_USE_WINED3D11=1 %command% in launch options to run",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.2",
+    "specs": "i5-5200u",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

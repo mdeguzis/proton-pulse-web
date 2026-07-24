@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4207270",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.17.0-8-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-8-generic",
+    "notes": "Tried other versions of Proton as well as GE, same result. Completely unplayable.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1768313644,
+    "title": "",
+    "source": "protondb"
+  }
+]

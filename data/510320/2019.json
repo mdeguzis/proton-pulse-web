@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "510320",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.0",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Launcher Starts, but trying to run game or editor fails and returns to launcher. Log says, \"System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.Xna.Framework.Game, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d' or one of its dependencies.\"",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558453225,
+    "title": "Conflict of Heroes: Awakening the Bear",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "690830",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-16f1023 2018-11-07 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541697910,
+    "title": "Foundation",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "943390",
+    "cpu": "Intel(R) Celeron(R) CPU  N2840  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.11-zen1-1-zen",
+    "notes": "Generally works, but there are blue boxes instead of text (propably BayTrail's Vulkan fault, because Intel didn't contribute full vulkan support for Gen7)",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "7861 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539592076,
+    "title": "Pan Panda",
+    "source": "protondb"
+  }
+]

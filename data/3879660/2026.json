@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3879660",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.4-116.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Worked OOTB, Random Crashing issue when closing the game",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1767443024,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3879660",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.7, DRM 3.64, 6.18.13)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.18.13",
+    "notes": "Marche sur steam par defaut, aucun probleme rencontre.",
+    "os": "GLF-OS (Phoenix_Pulsar) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772748554,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3879660",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.18.15+deb13-amd64",
+    "notes": "Make sure to use a GPU that supports Vulkan , You can OpenGL, but don't play for too long. restart the game before the ram is full",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1777178346,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "211010",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Running the game at the maximum resolution of 1280x800 causes it to crash at the main menu. Using D9VK solves the issue and the game runs flawlessly.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1568762141,
+    "title": "Alien Shooter 2 Conscription",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "452970",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Tested with the ACO mesa stack, game ran almost 100% flawless, i had one large hang at the very beginning of the game. Be patient, as the game runs without any issue afterwards it likely is compiling all the shaders for the entire game at once during that freeze.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566841577,
+    "title": "Asemblance",
+    "source": "protondb"
+  },
+  {
+    "appId": "452970",
+    "cpu": "AMD A8-7670K Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Beat the game and got all the achievements (minus the last one cause its hard and I'm lazy), with no problems what-so-ever. Did have a moment where the mouse locked up after a zoom but that went away after a second and may have been an issue with the game and not proton. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1570423562,
+    "title": "Asemblance",
+    "source": "protondb"
+  }
+]

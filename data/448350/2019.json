@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "448350",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Error. Runtime Error 3002 - Could not load sound at line 41004.\nAll tweaks can't help",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1557859742,
+    "title": "Case #8",
+    "source": "protondb"
+  },
+  {
+    "appId": "448350",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Crash on launch.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558733464,
+    "title": "Case #8",
+    "source": "protondb"
+  }
+]

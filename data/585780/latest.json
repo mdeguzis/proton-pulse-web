@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "585780",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.14.65-gentoo",
+    "notes": "Runs perfectly well, but with no audio. My system only have ALSA, no Pulseaudio.",
+    "os": "Gentoo Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16GB",
+    "rating": "Bronze",
+    "timestamp": 1540484124,
+    "title": "Miner Ultra Adventures",
+    "source": "protondb"
+  }
+]

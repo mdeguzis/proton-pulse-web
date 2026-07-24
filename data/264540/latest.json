@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "264540",
+    "cpu": "Intel Core i7-4600U @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.20.14-200.fc29.x86_64",
+    "notes": "The game doesn't start at all right out-of-the box. By nuking the default wineprefix[0] and reinstalling .NET and XNA[1], you can get the game running, however, without any sound. For sound you need to install WMP9, which works only in 32-bit wine prefixes (the default Proton's one is 64-bit). Unfortunately, Proton doesn't like 32-bit prefixes, so the game won't start after switching to 32-bit one (see https://github.com/ValveSoftware/Proton/issues/449).\n\n[0] WINEPREFIX=\"/home/$USER/.steam/steam/steamapps/compatdata/264540/pfx\" winetricks annihilate\n[1] WINEPREFIX=\"/home/$USER/.steam/steam/steamapps/compatdata/264540/pfx\" winetricks dotnet40 xna40",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1554652856,
+    "title": "Platformines",
+    "source": "protondb"
+  }
+]

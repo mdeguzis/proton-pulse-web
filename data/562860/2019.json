@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "562860",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.11_1",
+    "notes": "Native runs perfectly fine in X11, but if you're using Wayland you will need to set SDL_VIDEODRIVER=x11 as a launch option if you have SDL_VIDEODRIVER=wayland set as a global environment variable, otherwise it refuses to run.",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "30 GB",
+    "rating": "Platinum",
+    "timestamp": 1567566256,
+    "title": "Ion Fury",
+    "source": "protondb"
+  },
+  {
+    "appId": "562860",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.13_1",
+    "notes": "Quick follow-up on my previous report - after a bit of searching, the proper solution is to add LD_PRELOAD=\"/usr/lib/libSDL2.so:/usr/lib32/libSDL2.so:$LD_PRELOAD\" as a launch option, as the built-in SDL library for Ion Fury does not support SDL_VIDEODRIVER=wayland. No issues whatsoever.",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "30 GB",
+    "rating": "Platinum",
+    "timestamp": 1567818911,
+    "title": "Ion Fury",
+    "source": "protondb"
+  }
+]

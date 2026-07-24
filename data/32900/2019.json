@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32900",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Main menu and first cut scene working with no issues. Crash when starting a game",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552820808,
+    "title": "Restaurant Empire II",
+    "source": "protondb"
+  }
+]

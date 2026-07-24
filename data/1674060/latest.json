@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1674060",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.0-204.fsync.fc39.x86_64",
+    "notes": "the game didn't display anything no matter what Proton version I used",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1718139411,
+    "title": "The Search For Fran",
+    "source": "protondb"
+  }
+]

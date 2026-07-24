@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "675890",
+    "title": "Within a Rose",
+    "timestamp": 1535311069,
+    "rating": "Silver",
+    "notes": "Graphics are broken when launching in or switching to windowed mode. To fix, press F to switch to fullscreen mode or double-click the title bar to auto resize the window. Opening video has a terrible framerate, but the actual game seems to run great.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "675890",
+    "title": "Within a Rose",
+    "timestamp": 1535296669,
+    "rating": "Silver",
+    "notes": "Graphics are broken when launching in or switching to windowed mode. To fix, press F to switch to fullscreen mode or double-click the title bar to auto resize the window. Opening video has a terrible framerate, but the actual game seems to run great.",
+    "os": "Ubuntu 17.10 64-bit",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

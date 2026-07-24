@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "454070",
+    "title": "Boundel",
+    "timestamp": 1535086995,
+    "rating": "Borked",
+    "notes": "Game crashes during loading screen, cant load all objects etc..",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "454070",
+    "title": "Boundel",
+    "timestamp": 1535072595,
+    "rating": "Borked",
+    "notes": "Game crashes during loading screen, cant load all objects etc..",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Intel i5-7200U / HD Graphics 620 (Kaby Lake GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

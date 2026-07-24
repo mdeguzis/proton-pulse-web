@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "444690",
+    "cpu": "AMD Phenom II X4 B55",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "1. Running game. If you have a Black Screen Issue, press [Space] buttone. After loading offline mission do the same, if problem repits.\n2. Ingame problems: Lags, Freezes, Graphics issues (see screenshot: https://clck.ru/HJpSE) and bad Russian Localization.",
+    "os": "Linux Mint 19 Tara (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1564214319,
+    "title": "TRAPPED",
+    "source": "protondb"
+  }
+]

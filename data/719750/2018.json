@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "719750",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.9-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Doesn't progress beyond epilepsy warning",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "7940 Mb",
+    "rating": "Borked",
+    "timestamp": 1539620031,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "PUSS!",
+    "source": "protondb"
+  }
+]

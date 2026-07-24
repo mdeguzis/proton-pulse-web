@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2340130",
+    "cpu": "Intel Core i7-14700KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "no issues",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776977587,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2340130",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, ACO, DRM 3.64, 6.19.12-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.2.0-devel",
+    "kernel": "6.19.12-200.fc43.x86_64",
+    "notes": "Works well out of the box, did not experience any issues",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777590944,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2340130",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs out of the box at 60 FPS. Crazy improvement from the 13 the pre-release demo had!",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777671105,
+    "title": "",
+    "source": "protondb"
+  }
+]

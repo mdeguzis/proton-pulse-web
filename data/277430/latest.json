@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "277430",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553713654,
+    "title": "Halo: Spartan Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0 - padoka PPA",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Game crashes before launch with wined3d. With wined3d the game loads, gets to the main menu, but I can no longer interact with anything due a error dialog appearing in the background. Have to SUPER+D to hide the window. Error dialog says : \"Unable to resize swapchainbuffers.. DXError: D3DERR_INVALIDCALL.\" Also, after this error, if I try to relaunch the game, the steam says running, but nothing happens and I have to force close the game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1562151901,
+    "title": "Halo: Spartan Assault",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563022936,
+    "title": "Halo: Spartan Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "No issues encountered when doing a test run through the tutorial mission.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567689288,
+    "title": "Halo: Spartan Assault",
+    "source": "protondb"
+  }
+]

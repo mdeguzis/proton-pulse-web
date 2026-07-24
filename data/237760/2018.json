@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "237760",
+    "title": "Intake",
+    "timestamp": 1535015838,
+    "rating": "Borked",
+    "notes": "Game reaches title screen, no sound, mouse is randomly jittery and unusable, game is unresponsive. Have to tab out and force quit.\nLinux port was planned in 2013 but never happened due to bugs.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "237760",
+    "title": "Intake",
+    "timestamp": 1535067931,
+    "rating": "Silver",
+    "notes": "Vsync mandatory to prevent mouse issues.\nPerformance is subpar (pep rally graphic complexity recommended)",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "237760",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541020035,
+    "title": "Intake",
+    "source": "protondb"
+  },
+  {
+    "appId": "237760",
+    "title": "Intake",
+    "timestamp": 1535001438,
+    "rating": "Borked",
+    "notes": "Game reaches title screen, no sound, mouse is randomly jittery and unusable, game is unresponsive. Have to tab out and force quit.\nLinux port was planned in 2013 but never happened due to bugs.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "237760",
+    "title": "Intake",
+    "timestamp": 1535053531,
+    "rating": "Silver",
+    "notes": "Vsync mandatory to prevent mouse issues.\nPerformance is subpar (pep rally graphic complexity recommended)",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

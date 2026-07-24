@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "6040",
+    "title": "The Dig",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "Windowed",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX970m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6040",
+    "title": "The Dig",
+    "timestamp": 1535186157,
+    "rating": "Silver",
+    "notes": "Game only launches in Windowed mode. Using Alt + Enter for fullscreen mode works, but leaves remnant image of whatever was on screen when fullscreen mode was entered on borders of screen.",
+    "os": "Antergos 64-Bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7-1",
+    "specs": "i5-3320M / iGPU HD 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6040",
+    "cpu": "Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Game and cutscenes all work nicely!\nHint with Alt+Enter for fullscreen is great! If you do that right before or after the \"The DIG\" title shows during the intro (ca. 1 minute in) when the screen is black, no remnants will show on the side.\nYou can then also safely Alt+Tab out and back in.\nBring up the settings dialog (with Save & Load as well) with Ctrl+F1.\n(In case you can not type anything in the save dialog, you unfortunately need to Alt+Enter out of fullscreen again.)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539253802,
+    "title": "The Dig\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "6040",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "severalHours",
+    "gpu": "X.Org AMD MULLINS (DRM 2.50.0, 4.18.0-1-amd64, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "runs perfectly windowed and fullscreen. use Alt+Enter to switch.",
+    "os": "Debian GNU/Linux testing (buster) (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "10970 MB",
+    "rating": "Platinum",
+    "timestamp": 1539297189,
+    "title": "The Dig\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "6040",
+    "title": "The Dig",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "Windowed",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX970m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6040",
+    "title": "The Dig",
+    "timestamp": 1535171757,
+    "rating": "Silver",
+    "notes": "Game only launches in Windowed mode. Using Alt + Enter for fullscreen mode works, but leaves remnant image of whatever was on screen when fullscreen mode was entered on borders of screen.",
+    "os": "Antergos 64-Bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7-1",
+    "specs": "i5-3320M / iGPU HD 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

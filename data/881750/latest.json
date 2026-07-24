@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "881750",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, ACO, DRM 3.64, 6.18.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.0-devel (git-6d07a56c6a)",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "It works flawlessly",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1776799413,
+    "title": "Furwind",
+    "source": "protondb"
+  }
+]

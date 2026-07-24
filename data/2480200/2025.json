@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2480200",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.8.0-64-generic",
+    "notes": "Works out of the box with default proton.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1753714477,
+    "title": "Sex of Thrones \ud83d\udc51",
+    "source": "protondb"
+  }
+]

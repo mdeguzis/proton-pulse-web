@@ -1,0 +1,67 @@
+[
+  {
+    "appId": "871420",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Without tweaks, the game screen seems to shrink down tiny into a corner. Couldn't get it to recognize my game controller, but kb+mouse works just fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1549079967,
+    "title": "Lovecraft's Untold Stories",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "871420",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-16-generic",
+    "notes": "It works perfect using: \nPROTON_USE_WINED3D=1 %command%",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559925226,
+    "title": "Lovecraft's Untold Stories",
+    "source": "protondb"
+  },
+  {
+    "appId": "871420",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-55-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564632624,
+    "title": "Lovecraft's Untold Stories",
+    "source": "protondb"
+  },
+  {
+    "appId": "871420",
+    "cpu": "AMD Phenom 9550 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-25-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567470136,
+    "title": "Lovecraft's Untold Stories",
+    "source": "protondb"
+  }
+]

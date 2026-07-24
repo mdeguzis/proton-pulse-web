@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "5488",
+    "title": "Devil May Cry 4",
+    "timestamp": 1534991624,
+    "rating": "Borked",
+    "notes": "Nothing happens on launch, tried forcing fullscreen, windowed and without overlay.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "5488",
+    "title": "Devil May Cry 4",
+    "timestamp": 1535198538,
+    "rating": "Silver",
+    "notes": "Works flawlessly in DX9 mode, fails to launch in DX10.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570k / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "5488",
+    "title": "Devil May Cry 4",
+    "timestamp": 1534977224,
+    "rating": "Borked",
+    "notes": "Nothing happens on launch, tried forcing fullscreen, windowed and without overlay.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "5488",
+    "title": "Devil May Cry 4",
+    "timestamp": 1535184138,
+    "rating": "Silver",
+    "notes": "Works flawlessly in DX9 mode, fails to launch in DX10.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570k / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

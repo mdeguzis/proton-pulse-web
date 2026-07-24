@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "524600",
+    "cpu": "AMD A10-7850K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD KAVERI (DRM 3.25.0, 4.17.14-arch1-1-ARCH, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.17.14-arch1-1-ARCH",
+    "notes": "Starts, shows black screen - exits. ",
+    "os": "Linux 4.x (64 biter)",
+    "protonVersion": "Beta",
+    "ram": "13966 MB",
+    "rating": "Borked",
+    "systemInfoNotes": "using AMDGPU driver with amdgpu.cik_support=1",
+    "timestamp": 1539358162,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "title": "Dark Parables: Curse of Briar Rose Collector's Edition",
+    "source": "protondb"
+  }
+]

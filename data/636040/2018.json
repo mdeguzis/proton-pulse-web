@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "636040",
+    "title": "Pixel Worlds",
+    "timestamp": 1535827212,
+    "rating": "Borked",
+    "notes": "Only this message appear :\n\n\"Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed\"",
+    "os": "Xubuntu 16.04 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA GTX 1050Ti",
+    "specs": "Intel i5 7300HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "636040",
+    "title": "Pixel Worlds",
+    "timestamp": 1535812812,
+    "rating": "Borked",
+    "notes": "Only this message appear :\n\n\"Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed\"",
+    "os": "Xubuntu 16.04 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA GTX 1050Ti",
+    "specs": "Intel i5 7300HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "412740",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.19.9-arch1-1-ARCH",
+    "notes": "Runs smoothly on my Vive. Game stops tracking controllers if you enter the Steam overlay. I am picky about audio latency for these types of games, so I configured pulseaudio to disable timer based scheduling (tsched=0 in /etc/pulse/daemon.conf) and set up the fragment configuration (default-fragments=2 and default-fragment-size-msec=4 in /etc/pulse/daemon.conf). The optimal fragment configuration will depend on your hardware. I also found that I was unable to get the latency down to a reasonable level with a bluetooth headset, but that may be more an issue with bluetooth headsets themselves than anything to do with playing this game in Proton. Using a 2.4Ghz wireless headset (G930) I was able to get latency down to under 11 ms, which is excellent.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546445631,
+    "title": "Audioshield",
+    "source": "protondb"
+  },
+  {
+    "appId": "412740",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "vive controllers are not recognized by the game so it's unplayable",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1563111572,
+    "title": "Audioshield",
+    "source": "protondb"
+  }
+]

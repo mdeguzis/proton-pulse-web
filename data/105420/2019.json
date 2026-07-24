@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "105420",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 Mesa 18.2.0-rc3",
+    "kernel": "5.0.5-050005-generic",
+    "notes": "I keep getting an error that says \"Failed to request product key from steam. Please try again in a few minutes.\"",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555513268,
+    "title": "Ms. Splosion Man",
+    "source": "protondb"
+  },
+  {
+    "appId": "105420",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-17-generic",
+    "notes": "The only problem right now is that the game doesn't download properly when trying to install from proton. It does in windows from a NTFS drive, but the key error still occurs in linux.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1556150116,
+    "title": "Ms. Splosion Man",
+    "source": "protondb"
+  },
+  {
+    "appId": "105420",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "The files download, but the install window hangs on \"creating local game files...\", and clicking cancel uninstalls the game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1557940920,
+    "title": "Ms. Splosion Man",
+    "source": "protondb"
+  }
+]

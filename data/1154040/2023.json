@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1154040",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.8-arch1-1",
+    "notes": "If you ONLY want to play the campaign and don't mind looking at god awful text, then it runs great and is enjoyable.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1675144674,
+    "title": "SpellForce 3 Fallen God",
+    "source": "protondb"
+  },
+  {
+    "appId": "1154040",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "Just like the other games of the trilogy, it works great. Though the perfomance is better with GE.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1681394027,
+    "title": "SpellForce 3 Fallen God",
+    "source": "protondb"
+  }
+]

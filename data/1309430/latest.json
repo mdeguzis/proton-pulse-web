@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1309430",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Das Spiel l\u00e4sst sich zwar installieren, nach dem Starten erscheint jedoch eine lange Fehlermeldung, welche man zwar mit ok best\u00e4tigen kann, jedoch wirft das Spiel einen direkt zur\u00fcck in den Gaming Mode, ebenfalls kein Starten m\u00f6glich unter Desktop Mode.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1682001372,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "appId": "734750",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Will only run with DX11, you'll need to install relevant components",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1549452559,
+    "title": "PickCrafter",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "734750",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552234945,
+    "title": "PickCrafter",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "734750",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues related to text not displaying correctly and some graphical stuff not displaying at all, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1557065167,
+    "title": "PickCrafter",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "734750",
+    "cpu": "AMD A8-6500 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Game ran perfectly with no issues. I did not experience the rendering issue discussed in the other ProtonDB reports.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559498270,
+    "title": "PickCrafter",
+    "source": "protondb"
+  },
+  {
+    "appId": "734750",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-64-generic",
+    "notes": "works OTB with no problems!",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569064168,
+    "title": "PickCrafter",
+    "source": "protondb"
+  }
+]

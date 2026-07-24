@@ -1,0 +1,61 @@
+[
+  {
+    "appId": "225360",
+    "cpu": "i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "notes": "Doesn't start.",
+    "os": "Manjaro Linux (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "DARK",
+    "source": "protondb"
+  },
+  {
+    "appId": "225360",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.5-90.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.5-90.current",
+    "notes": "Crashes at Launch",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16052 Mb",
+    "rating": "Borked",
+    "timestamp": 1536611483,
+    "title": "DARK",
+    "source": "protondb"
+  },
+  {
+    "appId": "225360",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "doesn't start",
+    "os": "Zorin OS 12.4 (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15977 Mb",
+    "rating": "Borked",
+    "timestamp": 1536853838,
+    "title": "DARK",
+    "source": "protondb"
+  },
+  {
+    "appId": "225360",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.14-95.current",
+    "notes": "Crashes at Launch",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540475504,
+    "title": "DARK",
+    "source": "protondb"
+  }
+]

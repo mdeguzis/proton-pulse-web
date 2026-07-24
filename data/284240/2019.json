@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "284240",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-106.current",
+    "notes": "The game starts and plays very well except the end movie.  The movie should begin after a certain triggering event but it doesn't and instead you are subjected to a blank screen although you can hear movement of the character if pressing the forward control.  But the game should be over apart from the running of an ending movie.  \n\nIn the Windows troubleshoot guide on Steam the creators mention this error (last error listed in Steam discussion \"FAQ: Known Issues\") and say the remedy is to install Media Feature Pack for your version of Windows.\n\nhttps://steamcommunity.com/app/284240/discussions/1/133256240740443856/\n\nBut I don't know how that translates to a Wine/Proton environment.  So disappointingly I had to switch the Windows, but only for the viewing of the ending movie.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1547578195,
+    "title": "Maize",
+    "source": "protondb"
+  }
+]

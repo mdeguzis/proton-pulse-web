@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1120420",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 16.0.6, DRM 3.49, 6.1.58-1-lts)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.1.58-1-lts",
+    "notes": "Linux version crashes on start. With Proton the menu works but the game cannot be played (crashes).",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1707158644,
+    "title": "",
+    "source": "protondb"
+  }
+]

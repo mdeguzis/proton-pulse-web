@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "697550",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-lowlatency",
+    "notes": "Black screen on start, doesn't work.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15977 Mb",
+    "rating": "Borked",
+    "timestamp": 1537226403,
+    "title": "It Lurks Below",
+    "source": "protondb"
+  },
+  {
+    "appId": "697550",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.10-zen1-1-zen",
+    "notes": "Black screen and sometimes chunk of music start playing.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16035 Mb",
+    "rating": "Borked",
+    "timestamp": 1538247577,
+    "title": "It Lurks Below",
+    "source": "protondb"
+  }
+]

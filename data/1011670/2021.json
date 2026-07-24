@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1011670",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.12.1-2-MANJARO",
+    "notes": "Slowdowns, lower graphics quality, and some input glitches, but for the most part playable for a goofy game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1620703292,
+    "title": "",
+    "source": "protondb"
+  }
+]

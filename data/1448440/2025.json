@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1448440",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.6-200.fc41.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1749971658,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1448440",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.1-cachyos1.2",
+    "kernel": "6.16.3-2-cachyos",
+    "notes": "Apart from the controller issues, the game seems to run perfectly fine.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1758191855,
+    "title": "",
+    "source": "protondb"
+  }
+]

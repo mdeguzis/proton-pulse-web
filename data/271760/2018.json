@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "271760",
+    "title": "Dungeon Lords Steam Edition",
+    "timestamp": 1535458471,
+    "rating": "Silver",
+    "notes": "Appears to work fine on second run (silently crashed the first time), though extensive testing was hampered by my poor hardware.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "271760",
+    "cpu": "Intel Xeon           X5550  @ 2.67GHz",
+    "duration": "severalHours",
+    "gpu": "AMD RV730",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "1st start installed direct x and game never started, second start game loaded perfectly, played through arrindale no issues other than lag as the grass/tree and view distance sliders aren't doing anything. all other settings seem to work fine.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541162550,
+    "title": "Dungeon Lords Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "271760",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.1.9",
+    "kernel": "4.16.0-2-amd64",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541554066,
+    "title": "Dungeon Lords Steam Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "271760",
+    "title": "Dungeon Lords Steam Edition",
+    "timestamp": 1535444071,
+    "rating": "Silver",
+    "notes": "Appears to work fine on second run (silently crashed the first time), though extensive testing was hampered by my poor hardware.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

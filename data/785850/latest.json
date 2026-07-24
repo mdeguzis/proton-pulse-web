@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "785850",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Runs fine out of the box, but i had to reduce resolution to 720p to get 55- fps. Everything seems to work",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1546828251,
+    "title": "Valthirian Arc: Hero School Story",
+    "source": "protondb"
+  }
+]

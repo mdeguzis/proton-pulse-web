@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "726590",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "The game itself runs perfectly. I'm using 4k resolution and its all working nicely without any tweaks.\n\nBut the menu background is missing something. Its just white.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546366417,
+    "title": "NBA 2K Playgrounds 2",
+    "source": "protondb"
+  }
+]

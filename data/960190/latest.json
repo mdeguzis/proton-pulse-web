@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "960190",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7700",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-fc0139d 2018-12-02 xenial-oibaf-ppa)",
+    "kernel": "4.15.0-43-generic",
+    "notes": "On launch, only a Chromium window running nw.js shows up; game itself doesn't load at all.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1549381715,
+    "title": "Maytroid. I swear it's a nice game too",
+    "source": "protondb"
+  }
+]

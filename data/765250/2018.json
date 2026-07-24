@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "765250",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-20-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "7988 MB",
+    "rating": "Borked",
+    "timestamp": 1538526891,
+    "title": "Mind the Vikings",
+    "source": "protondb"
+  }
+]

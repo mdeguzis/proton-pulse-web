@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "934410",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.15-194.current",
+    "notes": "It just works - a 20-30% performance hit vs native Windows but it works and is fully playable.",
+    "os": "Solus",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1631697303,
+    "title": "ReThink 2",
+    "source": "protondb"
+  }
+]

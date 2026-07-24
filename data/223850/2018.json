@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "223850",
+    "title": "3DMark",
+    "timestamp": 1534973665,
+    "rating": "Borked",
+    "notes": "After initial logo, terminal window opens for a brief time and then closes the game on steam, but leaves logo shown permanently.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223850",
+    "title": "3DMark",
+    "timestamp": 1534997571,
+    "rating": "Borked",
+    "notes": "starting normally: nothing opens at all (javaw.exe process keeps running in background); force 64 bit: white empty window opens and immediately closes again; force 32 bit: white empty window opens and just stays like this",
+    "os": "Manjaro Stable (Kernel 4.14)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223850",
+    "title": "3DMark",
+    "timestamp": 1535079764,
+    "rating": "Borked",
+    "notes": "No test Controller",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6500 / GeForce GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223850",
+    "title": "3DMark",
+    "timestamp": 1534959265,
+    "rating": "Borked",
+    "notes": "After initial logo, terminal window opens for a brief time and then closes the game on steam, but leaves logo shown permanently.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223850",
+    "title": "3DMark",
+    "timestamp": 1534983171,
+    "rating": "Borked",
+    "notes": "starting normally: nothing opens at all (javaw.exe process keeps running in background); force 64 bit: white empty window opens and immediately closes again; force 32 bit: white empty window opens and just stays like this",
+    "os": "Manjaro Stable (Kernel 4.14)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "223850",
+    "title": "3DMark",
+    "timestamp": 1535065364,
+    "rating": "Borked",
+    "notes": "No test Controller",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6500 / GeForce GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

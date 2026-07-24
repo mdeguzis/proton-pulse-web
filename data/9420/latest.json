@@ -1,0 +1,329 @@
+[
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Runs solid once Esync is disabled. With Esync enabled the game lags and stutters all over the place while managing to pump out a massive 1fps every 10 seconds. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546718037,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ICELAND",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Without disabling esync, the game is extremely slow to the point you can't even select anything from the main menu, including freezing. However, it works fine when disabled, albeit slightly sluggish.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546720108,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Game runs well after disabling Esync, but there are no explosion graphics of any kind. They seem to be missing or broken entirely.\n\nFAF even works if you follow tatsu's video.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1549044520,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.14.98-1-MANJARO",
+    "notes": "Takes forever to load and unplayable until adding \"PROTON_NO_ESYNC=1 %command%\" to the Launch options. After that it is no noticeable issues although I have not tested MP or played a long match yet.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1550747410,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "Everything runs perfectly after disabling Esync.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1552505501,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Runs excellently with Esync disabled. At some point, explosions will just stop showing for some reason, but doesn't effect gameplay at all.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553562889,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "The game freezes in pause in the third part of the first mission. Don't understand why...",
+    "os": "Linux Mint 19.1 Tessa (64\u00a0bits)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554854168,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Esync has to be disabled, otherwise won't start. Unfortunately explosion effects are missing completely. Otherwise fully playable.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556339527,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Games loads, sound playback starts but UI is not visible.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556702870,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Explosions and many effects do not show up for some reason.\n\nSometimes sound effects will only play once, and then never again for the entire game.\n\nLong games will eventually crash with memory access errors. This seems to be tied to the size of the map, larger maps crash faster than smaller maps.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557777018,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-zen1-1-zen",
+    "notes": "I recently bought the \"Supreme Commander Collection\" on Steam, which comes with SC1, SC1: Forged Alliance, and SC2. They all seemed unplayable at first, but after following these steps (essentially the same steps for each game) they run perfectly. No crashes and very performant. --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- TL;DR: you really only need to setup the video settings and you're good to go. --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 1. Disable Esync (if not, you'll get <1 fps in game and in menu) --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 2. Change your primary display to 1024x768 (temporarily): `xrandr --output YOUR_PRIMARY_DISPLAY --mode 1024x768`. By default, it will try to run in 1024x768, and if your screen's resolution is higher, you'll only see the top-left corner of the screen. --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 3. Run the game once --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 4. Go to the Video Settings and change the \"primary adapter\" to \"windowed\" (temporarily). Currently, the only options should be \"windowed\" and \"1024x768\". --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 5. Quit the game --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 6. Set your primary display's resolution back to it's native res: `xrandr --output YOUR_PRIMARY_DISPLAY --auto` --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 7. Start the game again. --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 8. Go back to the video settings. The \"primary adapter\" dropdown should now list all the modes available for your display. Select your native resolution (2560x1440 was listed for my display and works great). Note: when I tried keeping it on \"windowed\", the in-game hud was too small for the screen. --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 9. [optional] Set all the graphical options to max! --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- The only thing that doesn't work is the option to use a second display in game. I have multiple screens, but that option is disabled.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1563093722,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-7740X @ 4.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.17-300.fc30.x86_64",
+    "notes": "no bugs or issues after using fix mentioned previously",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563484551,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "First launch requires manually adjusting resolution in Game.prefs: \nprimary_adapter = '2560,1440,144'.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567338594,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Campaign gameplay, several hours. Works and performance both ok.\n\nLaunch Options: PROTON_NO_ESYNC=1 %command%",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1567670158,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.21-1-MANJARO",
+    "notes": "Others have stated you need to alter resolution to fix the default 1024x768 leaving you with a black screen, for me I simply updated it in the Game.prefs file. Mine was located: ~/.local/share/Steam/steamapps/compatdata/9420/pfx/drive_c/users/steamuser/Local Settings/Application Data/Gas Powered Games/Supreme Commander Forged Alliance/Game.prefs",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1571084635,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Works perfectly after disabling Esync and fixing screen resolution in Game.prefs",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571240086,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "9420",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-66-generic",
+    "notes": "Disabling ESYNC and manually changing resolution get the game working. Sadly, as other reviews say, explosions and bullet FX are missing.  Supreme Commander with out explosions is like a taco with out salsa, even if it's a full meal, there's no flavor.\n\n(If anyone get the FX fully working, please share workaround, I'm still tweaking proton to see if I can fix it)",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.",
+    "ram": "64 GB",
+    "rating": "Bronze",
+    "timestamp": 1571975021,
+    "title": "Supreme Commander: Forged Alliance",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

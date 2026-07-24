@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "397210",
+    "cpu": "AMD A10-4600M APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game runs great with either disabling Proton D3d11 or using Wine's instead. However the kanji, hiragana and katakana characters are not visibly rendered, making running the program useless.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1552399529,
+    "title": "Kanji Training Game",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "397210",
+    "cpu": "AMD A10-4600M APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 19.0.8",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Added PROTON_NO_D3D11=1 %command% to launch options, and runs great in windowed mode, with all characters properly rendered.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-5",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1568916398,
+    "title": "Kanji Training Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

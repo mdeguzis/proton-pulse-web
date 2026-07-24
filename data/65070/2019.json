@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "65070",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game worked for a bit. Got stuck in a repeated loop of floating point errors after buying a car.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560121249,
+    "title": "Ride 'em Low",
+    "source": "protondb"
+  }
+]

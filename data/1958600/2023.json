@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1958600",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "5.15.128-1-MANJARO",
+    "notes": "The game tiself can run well but it struggles from regular frame rate drop, which stops the game from being fun",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1701522439,
+    "title": "",
+    "source": "protondb"
+  }
+]

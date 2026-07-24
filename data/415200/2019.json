@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "415200",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Using Proton 4.11-3 and DXVK, much better performance than the native port with highest gfx settings playable on low end GPU.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567352497,
+    "title": "Motorsport Manager",
+    "source": "protondb"
+  }
+]

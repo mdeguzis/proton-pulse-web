@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "204180",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.1, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Started up windowed, causing some of the program to be pushed off the screen, but I was able to switch to fullscreen and fix that.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1739187272,
+    "title": "Waveform",
+    "source": "protondb"
+  }
+]

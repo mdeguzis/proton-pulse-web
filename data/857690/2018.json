@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "857690",
+    "title": "Lagoon Lounge : The Poisonous Fountain",
+    "timestamp": 1535229886,
+    "rating": "Borked",
+    "notes": "Crashes on startup (according to error log, UnityPlayer.dll caused an Access Violation (0xc0000005) in module UnityPlayer.dll at 0033:8097ad03). After closing the error message, shows as playing in the Steam client until process is killed. Works pretty well for me in normal Wine, though.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "857690",
+    "title": "Lagoon Lounge : The Poisonous Fountain",
+    "timestamp": 1535215486,
+    "rating": "Borked",
+    "notes": "Crashes on startup (according to error log, UnityPlayer.dll caused an Access Violation (0xc0000005) in module UnityPlayer.dll at 0033:8097ad03). After closing the error message, shows as playing in the Steam client until process is killed. Works pretty well for me in normal Wine, though.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

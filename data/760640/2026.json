@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "760640",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 20.1.2, DRM 3.57, 6.8.0-110-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-110-generic",
+    "notes": "Runs out of the box with no problems. XKT Mod installed, also no problems.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776428363,
+    "title": "",
+    "source": "protondb"
+  }
+]

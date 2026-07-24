@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1022310",
+    "cpu": "Intel Xeon W-1250 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD P630 (CML GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "5.19.0-42-generic",
+    "notes": "",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1685115291,
+    "title": "",
+    "source": "protondb"
+  }
+]

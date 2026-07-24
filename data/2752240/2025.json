@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2752240",
+    "cpu": "AMD Ryzen 7 5700",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.4, DRM 3.64, 6.17.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.6-arch1.1",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "Game works perfect out the box, only issue is the frame rate cap in game doesn't work. Unsure if this is the game or proton.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1765029756,
+    "title": "Fine Work: Act I",
+    "source": "protondb"
+  }
+]

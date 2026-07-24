@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "340270",
+    "title": "TIMEframe",
+    "timestamp": 1534973126,
+    "rating": "Gold",
+    "notes": "Ran though the game loop a couple times. Appears to run pretty well.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA-driver-390",
+    "specs": "Ryzen 7 / EGVA GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "340270",
+    "title": "TIMEframe",
+    "timestamp": 1535035726,
+    "rating": "Silver",
+    "notes": "I don't know if the sound wasn't working, or if there just wasn't any sound in the part I tested.",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "340270",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540434619,
+    "title": "TIMEframe",
+    "source": "protondb"
+  },
+  {
+    "appId": "340270",
+    "title": "TIMEframe",
+    "timestamp": 1534958726,
+    "rating": "Gold",
+    "notes": "Ran though the game loop a couple times. Appears to run pretty well.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA-driver-390",
+    "specs": "Ryzen 7 / EGVA GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "340270",
+    "title": "TIMEframe",
+    "timestamp": 1535021326,
+    "rating": "Silver",
+    "notes": "I don't know if the sound wasn't working, or if there just wasn't any sound in the part I tested.",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-2500K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "898430",
+    "cpu": "AMD Ryzen 5 8600G w/ Radeon 760M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 20.1.8, DRM 3.61, 6.12.48-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1764469499,
+    "title": "",
+    "source": "protondb"
+  }
+]

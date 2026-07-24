@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "22600",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon HD 7700",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.12-arch2-1-ARCH",
+    "notes": "Use protontricks to get audio working",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1557510536,
+    "title": "Worms Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "22600",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "I run this through proton as my friends use windows and there is no cross-platform multiplayer. It runs almost flawlessly through proton with just one small issue that I have noticed in probably 100 hours of game time. Whenever you or another player uses the ninja rope there is a low chance that the game de-syncs. It seems to have a higher chance the more erratic your movement with it is. The de-sync will usually correct itself after the turn is taken and all worms go back to their correct positions and correct damage is applied, however on rare occasions it can completely freeze gameplay resulting in endless \"waiting for other players\" messages on other players screens. I couldn't find a way to continue the current game and the only option was to exit and restart.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1563641163,
+    "title": "Worms Reloaded",
+    "source": "protondb"
+  }
+]

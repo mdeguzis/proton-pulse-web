@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "211360",
+    "cpu": "Intel Core i7-3960X @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX TITAN Black",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "notes": "Runs just as well as the Windows version (which had controller problems).  You need to disable the controller (check out the readme) and then get a program like antimicro (it's in the AUR) to map the keyboard and mouse to a gamepad.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555822689,
+    "title": "Offspring Fling!",
+    "source": "protondb"
+  },
+  {
+    "appId": "211360",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.1-arch1-1-ARCH",
+    "notes": "Seems to work perfectly with xbox one controller",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557944471,
+    "title": "Offspring Fling!",
+    "source": "protondb"
+  },
+  {
+    "appId": "211360",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.14-200.fc30.x86_64",
+    "notes": "I can't assign my Dualshock 4 d-pad and sticks in the game settings. Steam controller configuration is ignored. If I disable gamepad support in the game's config file and configure a gamepad as keyboard via Steam it just do not work.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Bronze",
+    "timestamp": 1568911498,
+    "title": "Offspring Fling!",
+    "source": "protondb"
+  }
+]

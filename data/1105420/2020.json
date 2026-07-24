@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1105420",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.2",
+    "kernel": "5.5.13-arch1-1",
+    "notes": "Unity 2018 game also available on browser but you can't use the same char on Steam. Only DX11 (default) and DX12 renderers are available",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1587909937,
+    "title": "",
+    "source": "protondb"
+  }
+]

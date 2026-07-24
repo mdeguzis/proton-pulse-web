@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1141050",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.6.21_1",
+    "notes": "This is great food simulator. Just play with your food and relax.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1710124574,
+    "title": "",
+    "source": "protondb"
+  }
+]

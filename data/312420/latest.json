@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312420",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA NVS 5400M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Just after game launch, laptop freeze and keyboard unresponsive (black screen, but cursor is moveable)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541690233,
+    "title": "Hell",
+    "source": "protondb"
+  }
+]

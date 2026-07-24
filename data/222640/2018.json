@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "222640",
+    "title": "Aarklash: Legacy",
+    "timestamp": 1535982091,
+    "rating": "Platinum",
+    "notes": "Norm",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA  390.87",
+    "specs": " i5-3330 3.00GHz /gt 610",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "222640",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Ran straight out-of-box with no issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542486809,
+    "title": "Aarklash: Legacy",
+    "source": "protondb"
+  },
+  {
+    "appId": "222640",
+    "title": "Aarklash: Legacy",
+    "timestamp": 1535967691,
+    "rating": "Platinum",
+    "notes": "Norm",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA  390.87",
+    "specs": " i5-3330 3.00GHz /gt 610",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

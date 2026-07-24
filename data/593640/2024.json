@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "593640",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.1.67-gentoo",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720902500,
+    "title": "",
+    "source": "protondb"
+  }
+]

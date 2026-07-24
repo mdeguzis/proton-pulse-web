@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "694720",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Runs perfectly OOTB, around 50fps with medium to high settings",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554506440,
+    "title": "notmycar",
+    "source": "protondb"
+  },
+  {
+    "appId": "694720",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.18.0-3-amd64",
+    "notes": "Runs out of the box",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554642367,
+    "title": "notmycar",
+    "source": "protondb"
+  }
+]

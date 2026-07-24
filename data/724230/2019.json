@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "724230",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.0-6.1-liquorix-amd64",
+    "notes": "Runs almost stutterfree on mesa-aco branch: backend_issue_70 . Master branch does not work yet.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565298681,
+    "title": "INTERSTELLAR PRIME Demo",
+    "source": "protondb"
+  }
+]

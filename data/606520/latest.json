@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "606520",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.11-1-default",
+    "notes": "Game works perfectly. Japanese language not working.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557682761,
+    "title": "Grisaia Phantom Trigger Vol.2",
+    "source": "protondb"
+  }
+]

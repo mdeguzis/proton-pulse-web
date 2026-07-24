@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "745330",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Got an Error about the Direct-X11 on my first try. Then used the \u201eWine D3d11\u201c tweak (PROTON_USE_WINED3D=1 %command%) and it runs perfectly fine now.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1561680677,
+    "title": "StrikeForce Kitty",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

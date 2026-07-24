@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "735280",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "I played Emergency 2016 but I can not choose it here anymore...but I think there are no big changes between 2016 and 20 in case of compatibility.\nGame runs out of the Box but to change grafic settings you need to start with  \"PROTON_NO_D3D11=1 %command%\" after then you can remove the command again.\n",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567873239,
+    "title": "EMERGENCY 20",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "735280",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon HD 7700",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Cannot change graphics settings with PROTON_NO_D3D11, but with PROTON_FORCE_LARGE_ADDRESS_AWARE it works. Game runs fine, but crashes here and there. ",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1568144589,
+    "title": "EMERGENCY 20",
+    "tweaks": {
+      "largeAddressAware": true
+    },
+    "source": "protondb"
+  }
+]

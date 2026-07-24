@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "650000",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-23-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565212036,
+    "title": "DOOM VFR",
+    "source": "protondb"
+  },
+  {
+    "appId": "650000",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.8",
+    "notes": "Fog-like artifacts make the game barely playable.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1566334203,
+    "title": "DOOM VFR",
+    "source": "protondb"
+  }
+]

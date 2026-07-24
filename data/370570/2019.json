@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "370570",
+    "cpu": "Intel Core i3-2120 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Does not start. Steam status text turns green, then immediately blue again.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1552240296,
+    "title": "Color Assembler",
+    "source": "protondb"
+  },
+  {
+    "appId": "370570",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "First, you will need to delete this game's prefix if you already have one. With that out of the way, the easiest way to set up this game is with these commands:\n\nWINEARCH=win32 protontricks 370570 wmp10\nprotontricks 370570 xna40\nprotontricks 370570 ogg\n~/.steam/steam/steamapps/compatdata/370570/pfx/drive_c/windows\nmkdir syswow64\n\nThe game needs the Microsoft XNA 4.0 library to run, and that library relies on Windows Media Player for music playback. You will need to click through some graphical installers during the first two commands. If winetricks gets stuck after closing out the media player, use a task manager to kill off wmplayer.exe. WMP will offer to install some codecs, it does not matter what you answer to that. The third command will help get music working as mentioned below. a 32-bit prefix is necessary to get WMP working, but Steam does not support these very well, so you need to create an empty syswow64 folder in the Windows directory of the prefix. The fourth and fifth commands take care of that, and must be done in the correct order so as to not interfere with protontricks.\n\nSo the game runs, but the music does not play because Proton/WINE does not support WMA playback. Searching the internet turns up a disappointing lack of workarounds, so I recommend the next best thing. convert the WMA files to either MP3 or ogg using your medica converter of choice (for example, I did ffmpeg -i Track1.wma Track1.ogg and so forth). Next use a hex editor (I used GNOME hex, refered to the package manager as ghex) to edit the .xna files to open the OGGs instead. if you are not experienced with hex editors, edit carefully; a hex editor may default to insert mode and overwrite things you do not want it to.\n\nIf you really want to convert to MP3 instead of ogg, use \"protontricks 370570 l3codecx\" insetad of ogg. WAV did not play at all, and FLAC crashed the game. Whatever you use, make your decision before creating the dummy syswow64 folder.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "14 GB",
+    "rating": "Gold",
+    "timestamp": 1563929905,
+    "title": "Color Assembler",
+    "source": "protondb"
+  }
+]

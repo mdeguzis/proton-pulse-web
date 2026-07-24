@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "38440",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA, DRM 3.25.0, 4.17.0-0.bpo.3-amd64, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Ran through the first tutorial without any issues runs perfectly.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15987 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537022050,
+    "title": "Sacrifice",
+    "source": "protondb"
+  },
+  {
+    "appId": "38440",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Game runs perfectly. Changed the graphic settings, and played through the tutorial. Wish they would remake this genre-bending game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541387992,
+    "title": "Sacrifice",
+    "source": "protondb"
+  }
+]

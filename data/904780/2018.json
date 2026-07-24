@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "904780",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000rc6-generic",
+    "notes": "The game is playable with a few small barely noticeable audio glitches. However it does crash on exit with a \"LowLevelFatalError\" error message.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545584011,
+    "title": "DeepWeb",
+    "source": "protondb"
+  },
+  {
+    "appId": "904780",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.14.87-1-vfio-lts",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1545755373,
+    "title": "DeepWeb",
+    "source": "protondb"
+  }
+]

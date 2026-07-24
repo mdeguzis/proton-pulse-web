@@ -1,0 +1,87 @@
+[
+  {
+    "appId": "394230",
+    "title": "Battleborn",
+    "timestamp": 1535830461,
+    "rating": "Borked",
+    "notes": "Doesn't start.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-6700K / GeForce GTX 650 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "394230",
+    "title": "Wolfenstein: New Order German Edition",
+    "timestamp": 1536518198,
+    "rating": "Silver",
+    "notes": "Played for 5 hours. Skill menu doesn't load sometimes, frame rate drops sometimes",
+    "os": "Ubuntu Mate 18.04 LTS",
+    "gpuDriver": "Mesa 18.3 padoka ppa 2018/08/28",
+    "specs": "Ryzen 1700, RX480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "394230",
+    "cpu": "AMD Phenom(tm) II X6 1090T Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't start even trying tweaks",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16040 Mb",
+    "rating": "Borked",
+    "timestamp": 1537974998,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Battleborn",
+    "source": "protondb"
+  },
+  {
+    "appId": "394230",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Simply does not launch.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541182367,
+    "title": "Battleborn",
+    "source": "protondb"
+  },
+  {
+    "appId": "394230",
+    "title": "Battleborn",
+    "timestamp": 1535816061,
+    "rating": "Borked",
+    "notes": "Doesn't start.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-6700K / GeForce GTX 650 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "394230",
+    "title": "Wolfenstein: New Order German Edition",
+    "timestamp": 1536503798,
+    "rating": "Silver",
+    "notes": "Played for 5 hours. Skill menu doesn't load sometimes, frame rate drops sometimes",
+    "os": "Ubuntu Mate 18.04 LTS",
+    "gpuDriver": "Mesa 18.3 padoka ppa 2018/08/28",
+    "specs": "Ryzen 1700, RX480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312560",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Game loads and runs but textures are missing",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "10 GB",
+    "rating": "Borked",
+    "timestamp": 1555174023,
+    "title": "Xanadu Next",
+    "source": "protondb"
+  }
+]

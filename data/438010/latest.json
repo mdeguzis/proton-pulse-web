@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "438010",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1566240591,
+    "title": "PulseCharge",
+    "source": "protondb"
+  }
+]

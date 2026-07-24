@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "554570",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Game runs as well as any other Unreal Engine game, such as the intro video not playing. Haven't noticed any performance issues that my Windows partition doesn't have, but it's playable. Only issue I noticed is that occasionally the game window exits full screen and becomes a tiny window. But I was able to fix it by using alt+enter each time.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550948625,
+    "title": "Witanlore: Dreamtime",
+    "source": "protondb"
+  }
+]

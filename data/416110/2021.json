@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "416110",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 965M",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "4.15.0-139-generic",
+    "notes": "Uncaught node.js Error",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1616559068,
+    "title": "Blitz Breaker",
+    "source": "protondb"
+  }
+]

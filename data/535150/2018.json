@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "535150",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Just installed and runned it, everything works fine.",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540898600,
+    "title": "BUSTED!",
+    "source": "protondb"
+  }
+]

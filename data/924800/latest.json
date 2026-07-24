@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "924800",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc3",
+    "kernel": "4.19.2-gentoo",
+    "notes": "The game is playable. Like on House flipper, moving models will be invisible, making it very difficult to interact with them. Luckily the game restrict those to small areas. Game will crash after last mission and will get stuck on a loading screen without saving progress, but that is the last mission (I think), and you have free roaming at that point, so you will be able to experience all of the game.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544538135,
+    "title": "TITANIC Shipwreck Exploration",
+    "source": "protondb"
+  }
+]

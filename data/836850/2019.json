@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "836850",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-200.fc29.x86_64",
+    "notes": "Runs as well as advertised for an early access. Dont get to see the mini videos before each game type and hung when quiting but ran at a high FPS on full for the whole time.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555015136,
+    "title": "Tiny Tanks",
+    "source": "protondb"
+  },
+  {
+    "appId": "836850",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-1-MANJARO",
+    "notes": "Game Mode Preview videos don't play, but it's not a major issue.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555919089,
+    "title": "Tiny Tanks",
+    "source": "protondb"
+  }
+]

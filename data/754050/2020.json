@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "754050",
+    "cpu": "AMD A10-5800K APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.12-zen1-1-zen",
+    "notes": "The game runs just as it would on Windows.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1598242426,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "754050",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.15-arch1-1",
+    "notes": "Huge performance issues. I have not messed with too many settings, just enough to get it to launch.",
+    "os": "Freedesktop.org 19.08.6 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1598664138,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "754050",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.1.8",
+    "kernel": "5.4.72-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604463806,
+    "title": "",
+    "source": "protondb"
+  }
+]

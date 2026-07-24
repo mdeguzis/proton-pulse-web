@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "501930",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "This game fails to start up!",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569682638,
+    "title": "Sig.NULL",
+    "source": "protondb"
+  }
+]

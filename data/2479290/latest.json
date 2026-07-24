@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2479290",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.1-arch1-1",
+    "notes": "Would have a frame drop every 15 seconds or so when running around the city, its a very demanding city though so not terrible",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1706317299,
+    "title": "Computer Repair Shop",
+    "source": "protondb"
+  }
+]

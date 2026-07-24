@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "388320",
+    "title": "1979 Revolution: Black Friday",
+    "timestamp": 1535015148,
+    "rating": "Bronze",
+    "notes": "No Sound",
+    "os": "Manjaro 5.13.4 (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51 / Mesa 18.1.6-1",
+    "specs": "i5-6402P @280GHz / Nvidia GTX 950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "388320",
+    "cpu": "Intel Core i5-6402P @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543089618,
+    "title": "1979 Revolution: Black Friday",
+    "source": "protondb"
+  },
+  {
+    "appId": "388320",
+    "title": "1979 Revolution: Black Friday",
+    "timestamp": 1535000748,
+    "rating": "Bronze",
+    "notes": "No Sound",
+    "os": "Manjaro 5.13.4 (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51 / Mesa 18.1.6-1",
+    "specs": "i5-6402P @280GHz / Nvidia GTX 950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

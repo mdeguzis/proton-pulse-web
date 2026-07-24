@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "280500",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "When controller was plugged in, input was sporadic and I ended up in the same self-destruct loop mentioned by another report. Without the controller the game was playable on keyboard. Does not appear to have a native method of fullscreening, so it runs windowed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560010250,
+    "title": "KRUNCH",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4075080",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 535.230.02",
+    "kernel": "6.8.0-59-generic",
+    "notes": "Windowing issue and in-game video tape mechanic not working",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1762318996,
+    "title": "",
+    "source": "protondb"
+  }
+]

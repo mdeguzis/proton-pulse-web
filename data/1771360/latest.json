@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1771360",
+    "cpu": "AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.61, 6.13.7-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.0.1-arch1.2",
+    "kernel": "6.13.7-zen1-1-zen",
+    "notes": "Works perfectly OOTB",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1743365460,
+    "title": "",
+    "source": "protondb"
+  }
+]

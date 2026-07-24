@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "665330",
+    "title": "Wrestling Revolution 3D",
+    "timestamp": 1535633750,
+    "rating": "Gold",
+    "notes": "Performance was poor, but likely due to the low specs of the test machine.",
+    "os": "Antergos Arch (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD A4-5300 APU / Integrated Radeon Graphics",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "665330",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Runs fine OOTB, including controller support.  Some FPS loss, but the native version is pretty janky too.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536345539",
+    "title": "Wrestling Revolution 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "665330",
+    "title": "Wrestling Revolution 3D",
+    "timestamp": 1535619350,
+    "rating": "Gold",
+    "notes": "Performance was poor, but likely due to the low specs of the test machine.",
+    "os": "Antergos Arch (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD A4-5300 APU / Integrated Radeon Graphics",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

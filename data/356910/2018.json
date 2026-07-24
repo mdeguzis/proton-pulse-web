@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "356910",
+    "title": "Battle Fantasia -Revised Edition-",
+    "timestamp": 1535082215,
+    "rating": "bronze",
+    "notes": "Performance itself is perfect. \n\nThe button mapping options in the configuration options do not work regardless of controller. When double-clicking a button, it puts it as \"Button 10\" no matter what, instead of giving the option to change it.\n\nIn game videos do not work, and when a video is selected in the gallery it crashes the game. The videos are .wmv files.",
+    "os": "Linux Mint 18.3 64-bit (4.10.0-33-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Intel i3-3250 (4) @ 3.500GHz / NVIDIA GeForce GTX 550 Ti ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "356910",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Runs at hyperspeed in fullscreen mode, but is perfect in windowed mode, including controller support.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536345299",
+    "title": "Battle Fantasia -Revised Edition-",
+    "source": "protondb"
+  },
+  {
+    "appId": "356910",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Opening video doesn't play due to lack of .wmv support, but this does not prevent playing the game. Attempting to watch videos in the gallery will cause the game to hang. Most everything else appears to work perfectly including controller support which must be configured from the launcher. Game speed seemed normal in fullscreen mode.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1544772924,
+    "title": "Battle Fantasia -Revised Edition-",
+    "source": "protondb"
+  },
+  {
+    "appId": "356910",
+    "title": "Battle Fantasia -Revised Edition-",
+    "timestamp": 1535067815,
+    "rating": "bronze",
+    "notes": "Performance itself is perfect. \n\nThe button mapping options in the configuration options do not work regardless of controller. When double-clicking a button, it puts it as \"Button 10\" no matter what, instead of giving the option to change it.\n\nIn game videos do not work, and when a video is selected in the gallery it crashes the game. The videos are .wmv files.",
+    "os": "Linux Mint 18.3 64-bit (4.10.0-33-generic)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Intel i3-3250 (4) @ 3.500GHz / NVIDIA GeForce GTX 550 Ti ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

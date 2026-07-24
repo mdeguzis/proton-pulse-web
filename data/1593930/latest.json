@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1593930",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.18.15",
+    "notes": "In the game, you regularly need to use your camera to scan QR codes on the cards. However, the camera doesn't work on Linux.",
+    "os": "NixOS 22.11 (Raccoon)",
+    "protonVersion": "7.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1659813254,
+    "title": "Destinies",
+    "source": "protondb"
+  }
+]

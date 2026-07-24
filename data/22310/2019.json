@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "22310",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.21-1-lts",
+    "notes": "No issues detected while playing.",
+    "os": "Arch Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550326970,
+    "title": "Rogue Warrior",
+    "source": "protondb"
+  },
+  {
+    "appId": "22310",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.0-050100rc2-generic",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.4-3",
+    "protonVersionManual": "4.4-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556630771,
+    "title": "Rogue Warrior",
+    "source": "protondb"
+  },
+  {
+    "appId": "22310",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-6926f56 2019-08-30 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Games runs great. However, there is no dialog which is the best part of this game. I would honestly avoid this game entirely regardless.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567375334,
+    "title": "Rogue Warrior",
+    "source": "protondb"
+  }
+]

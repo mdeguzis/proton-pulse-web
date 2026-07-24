@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "16020",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Starts with small black window. Try to close it you get an error. choose continue. You can see the menu, choose Play, back black screen. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550608600,
+    "title": "Samantha Swift and the Hidden Roses of Athena",
+    "source": "protondb"
+  },
+  {
+    "appId": "16020",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Crashes at startup",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554022873,
+    "title": "Samantha Swift and the Hidden Roses of Athena",
+    "source": "protondb"
+  }
+]

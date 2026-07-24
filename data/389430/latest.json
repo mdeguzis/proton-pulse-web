@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "389430",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "Launcher starts without a problem, but XignCode3 (anti-cheat) still will not run (error code=e0190203)",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1555914580,
+    "title": "Knight Online",
+    "source": "protondb"
+  }
+]

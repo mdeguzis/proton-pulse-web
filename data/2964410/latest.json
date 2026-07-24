@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2964410",
+    "cpu": "Intel Core i5-10600KF @ 4.10GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.61, 6.14.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.1.0-cachyos1.3",
+    "kernel": "6.14.6-2-cachyos",
+    "notes": "Works pretty fine out of the box",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1747581440,
+    "title": "",
+    "source": "protondb"
+  }
+]

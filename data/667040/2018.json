@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "667040",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "The developer has already added an empty Linux repository, they mentioned in Steam forums that a Linux version is coming. Because of that repository, the windows version cannot be downloaded and since the Linux repository is simply empty, the game is currently not playable in Proton.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541103736,
+    "title": "Alicia Quatermain 2: The Stone of Fate",
+    "source": "protondb"
+  }
+]

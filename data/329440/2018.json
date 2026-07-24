@@ -1,0 +1,87 @@
+[
+  {
+    "appId": "329440",
+    "title": "Sonic Lost World",
+    "timestamp": 1535247656,
+    "rating": "Silver",
+    "notes": "Runs without any stability issues or errors, but at a lower framerate than Windows.  Playable.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA 387.22",
+    "specs": "i5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "329440",
+    "title": "Sonic Lost World",
+    "timestamp": 1535254736,
+    "rating": "Silver",
+    "notes": "The game has a poor framerate and it struggles to go near 60 fps.\nThe game's speed is tied to it's framerate, so it will slow down a lot.\nYou can avoid slowdowns by adding --F or --F30 in the Launch Options in the game's properties. Some parts of the game will break because of --F and --F30, so be cautious.",
+    "os": "Ubuntu 18.04.1 LTS 64 bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i5-6500 / RX 460",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "329440",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.10-041810-generic",
+    "notes": "like others it runs out of the box but has very low framerate. Semi playable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15988 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538008899,
+    "title": "Sonic Lost World",
+    "source": "protondb"
+  },
+  {
+    "appId": "329440",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "After latest updates, game still runs extremely slowly and no tweaking seems to change that.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15988 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539989726,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Sonic Lost World",
+    "source": "protondb"
+  },
+  {
+    "appId": "329440",
+    "title": "Sonic Lost World",
+    "timestamp": 1535233256,
+    "rating": "Silver",
+    "notes": "Runs without any stability issues or errors, but at a lower framerate than Windows.  Playable.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA 387.22",
+    "specs": "i5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "329440",
+    "title": "Sonic Lost World",
+    "timestamp": 1535240336,
+    "rating": "Silver",
+    "notes": "The game has a poor framerate and it struggles to go near 60 fps.\nThe game's speed is tied to it's framerate, so it will slow down a lot.\nYou can avoid slowdowns by adding --F or --F30 in the Launch Options in the game's properties. Some parts of the game will break because of --F and --F30, so be cautious.",
+    "os": "Ubuntu 18.04.1 LTS 64 bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i5-6500 / RX 460",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

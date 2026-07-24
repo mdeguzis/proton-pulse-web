@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "585910",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Now the game works again, and the graphic glitches from the 1st level boss are gone. seems perfect!",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548733201,
+    "title": "Wild Guns Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "585910",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.7-050007-generic",
+    "notes": "No tweaks needed, just works.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562443497,
+    "title": "Wild Guns Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "585910",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Need Wine D3d11 to launch in my machine, sometime with failed load I need manually shutdown \"wineserver\" in task manager, then game work like nothing wrong.",
+    "os": "MX 18.1 Continuum",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1567672158,
+    "title": "Wild Guns Reloaded",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

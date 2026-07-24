@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1057180",
+    "cpu": "Intel Core i7-10870H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.3",
+    "kernel": "5.10.10-114-tkg-bmq",
+    "notes": "",
+    "os": "Garuda Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1611762459,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2570160",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.4",
+    "kernel": "5.15.0-117-generic",
+    "notes": "installed just fine after forcing compatablility, but just will not open",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1724671625,
+    "title": "",
+    "source": "protondb"
+  }
+]

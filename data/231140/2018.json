@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "231140",
+    "title": "Cities XL Platinum",
+    "timestamp": 1535138489,
+    "rating": "Silver",
+    "notes": "Fonts seems to be incorrect and audio is a bit distorted",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "231140",
+    "title": "Cities XL Platinum",
+    "timestamp": 1535284449,
+    "rating": "Silver",
+    "notes": "Played through the tutorial no issues of any kind. The game is slow to launch and produces a black square instead of a splash screen. I thought the game was hung but after about 20 seconds it fired right up",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "231140",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game does not start in any way.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540748256,
+    "title": "Cities XL Platinum",
+    "source": "protondb"
+  },
+  {
+    "appId": "231140",
+    "title": "Cities XL Platinum",
+    "timestamp": 1535124089,
+    "rating": "Silver",
+    "notes": "Fonts seems to be incorrect and audio is a bit distorted",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "231140",
+    "title": "Cities XL Platinum",
+    "timestamp": 1535270049,
+    "rating": "Silver",
+    "notes": "Played through the tutorial no issues of any kind. The game is slow to launch and produces a black square instead of a splash screen. I thought the game was hung but after about 20 seconds it fired right up",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

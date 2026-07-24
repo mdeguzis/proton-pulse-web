@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "350070",
+    "title": "Environmental Station Alpha",
+    "timestamp": 1535134788,
+    "rating": "Silver",
+    "notes": "Joypad must be set to \"D-Pad only\" for it to work properly without unintentional directional input, but D-pad doesn't work with it set up this way (DualShock 3)",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "350070",
+    "title": "Environmental Station Alpha",
+    "timestamp": 1536226910,
+    "rating": "Gold",
+    "notes": "It works, although Full-screen just maximizes the window, stretching the content horizontally",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "350070",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Full screen only produces maximized window. If not activated, the mouse clicks in menus are registered in the wrong spots, though. Also, activating gamepad results in constant \"up\" movement (XBOX 360 pad). In maximized window with only keyboard active seems to work ok.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Silver",
+    "timestamp": 1537292158,
+    "title": "Environmental Station Alpha",
+    "source": "protondb"
+  },
+  {
+    "appId": "350070",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Crashes on 3.16 branch",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544974128,
+    "title": "Environmental Station Alpha",
+    "source": "protondb"
+  },
+  {
+    "appId": "350070",
+    "title": "Environmental Station Alpha",
+    "timestamp": 1535120388,
+    "rating": "Silver",
+    "notes": "Joypad must be set to \"D-Pad only\" for it to work properly without unintentional directional input, but D-pad doesn't work with it set up this way (DualShock 3)",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3550 / RX480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "350070",
+    "title": "Environmental Station Alpha",
+    "timestamp": 1536212510,
+    "rating": "Gold",
+    "notes": "It works, although Full-screen just maximizes the window, stretching the content horizontally",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

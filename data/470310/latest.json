@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "470310",
+    "cpu": "Intel Celeron G3930 @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "I've tried each available version of Proton and I've tried disabling esync and d3d11. In every case, it crashes without visibly opening. On first startup it does install needed elements. Either I'm doing something wrong, or it doesn't want to work. On Proton 3.7-8, it will sit there saying it's running for a bit before it stops.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550557498,
+    "title": "Troubleshooter",
+    "source": "protondb"
+  },
+  {
+    "appId": "470310",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "3.16.0-7-amd64",
+    "notes": "Needed to install steamVR even though I don't use steamVR.",
+    "os": "Debian GNU/Linux 8.11 (jessie)",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571533710,
+    "title": "Troubleshooter",
+    "source": "protondb"
+  }
+]

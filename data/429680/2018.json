@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "429680",
+    "title": "Spellweaver",
+    "timestamp": 1535548853,
+    "rating": "Borked",
+    "notes": "Game launches, but crashes with \"error: out of memory\" when starting a round. Works with Wine Staging 2.1 (via PlayOnLinux), see also: https://spellweaver-tcg.com/forum/viewtopic.php?f=6&t=4944",
+    "os": "Debian 9.5",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "FX-6300 / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "429680",
+    "title": "Spellweaver",
+    "timestamp": 1535534453,
+    "rating": "Borked",
+    "notes": "Game launches, but crashes with \"error: out of memory\" when starting a round. Works with Wine Staging 2.1 (via PlayOnLinux), see also: https://spellweaver-tcg.com/forum/viewtopic.php?f=6&t=4944",
+    "os": "Debian 9.5",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "FX-6300 / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

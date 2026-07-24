@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "312610",
+    "cpu": "Intel Core i7-2670QM @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel (git-0a793c7 2019-01-21 cosmic-oibaf-ppa)",
+    "kernel": "4.20.3-042003-generic",
+    "notes": "Ignore the 3 Warnings before start.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1548083014,
+    "title": "METAL SLUG X",
+    "source": "protondb"
+  },
+  {
+    "appId": "312610",
+    "cpu": "Intel Core i7         870  @ 2.93GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "3 Warnings at the beginning. Just click \"Ignore\". Display goes in sleeping mode when u use a controller after a while. I don't know if the problem only occurs with me or with others. Just click a button on the keyboard or move the mouse to fix it. I had framedrops in hectic situations. But playable.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1549508227,
+    "title": "METAL SLUG X",
+    "source": "protondb"
+  },
+  {
+    "appId": "312610",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Skip the errors and the game will run. The game lags when there is too much stuff on the screen. But, it could be my PC, though.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1559622051,
+    "title": "METAL SLUG X",
+    "source": "protondb"
+  }
+]

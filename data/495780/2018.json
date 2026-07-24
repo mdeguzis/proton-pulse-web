@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "495780",
+    "title": "Hexoscope",
+    "timestamp": 1535988340,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "495780",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "All runs smoothly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545825145,
+    "title": "Hexoscope",
+    "source": "protondb"
+  },
+  {
+    "appId": "495780",
+    "title": "Hexoscope",
+    "timestamp": 1535973940,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

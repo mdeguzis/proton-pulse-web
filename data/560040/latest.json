@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "560040",
+    "title": "Minecraft: Story Mode - A Telltale Games Series - Episode 1",
+    "timestamp": 1534981609,
+    "rating": "Bronze",
+    "notes": "Fullscreen works, but cursor can't be moved to another monitor normally, as if that happens or you disable window, the game window shrinks, requiring to close and open the game again and sometimes cursor isn't visible in Steam overlay. Windowed/borderless fullscreen works flawlessly.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "560040",
+    "title": "Minecraft: Story Mode - A Telltale Games Series - Episode 1",
+    "timestamp": 1534967209,
+    "rating": "Bronze",
+    "notes": "Fullscreen works, but cursor can't be moved to another monitor normally, as if that happens or you disable window, the game window shrinks, requiring to close and open the game again and sometimes cursor isn't visible in Steam overlay. Windowed/borderless fullscreen works flawlessly.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa-git 104270.aa79cc2bc8-1",
+    "specs": "i5-4690K / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "988480",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "After the splash screen you need to click a mouse button to get past the black screen. The performance is way better when using Wine D3d11. (Solid 60 frames per second instead of 30 to 40.)",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551130304,
+    "title": "Warhammer Age of Sigmar: Champions",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "988480",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552815677,
+    "title": "Warhammer Age of Sigmar: Champions",
+    "source": "protondb"
+  },
+  {
+    "appId": "988480",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It pretty much works perfectly once loaded. It's just a black screen until you click somewhere when it first loads though.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553151133,
+    "title": "Warhammer Age of Sigmar: Champions",
+    "source": "protondb"
+  }
+]

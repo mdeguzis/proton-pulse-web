@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "344410",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Hangs on minimize.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15988 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538003590,
+    "title": "Magnetic: Cage Closed",
+    "source": "protondb"
+  },
+  {
+    "appId": "344410",
+    "cpu": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Performance is great. Mouse input is weird, moving the mouse in any direction also pulls the camera downwards. Lowering in-game sensitivity somewhat helps but still is noticeable.",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15835 Mb",
+    "rating": "Gold",
+    "timestamp": 1539090476,
+    "title": "Magnetic: Cage Closed",
+    "source": "protondb"
+  },
+  {
+    "appId": "344410",
+    "cpu": "Intel Core i3-3120M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 720M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-13-generic",
+    "notes": "runs with set launch PROTON_NO_D3D11=1 %command%",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545984604,
+    "title": "Magnetic: Cage Closed",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1442450",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.35.0, 5.4.0-91-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-91-generic",
+    "notes": "Crashes with a message of: The following components are required to run this program: Microsoft Visual C++.\nCould be a prerequisite install issue as no prerequisite software was installed on first launch.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1647109445,
+    "title": "",
+    "source": "protondb"
+  }
+]

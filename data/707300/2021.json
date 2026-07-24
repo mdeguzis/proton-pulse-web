@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "707300",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 450.119.03",
+    "kernel": "5.8.0-53-generic",
+    "notes": "Most of the time it works flawlessly out of the box on SteamVR 0.17 and Proton 5 with the Valve Index HMD.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624654563,
+    "title": "Hatsune Miku VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "707300",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.41.0, 5.13.0-22-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-22-generic",
+    "notes": "The only slow down you may experience is when you enter Fever Mode, which  is normal for this game. Completely normal for this game.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639709669,
+    "title": "Hatsune Miku VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "707300",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.41.0, 5.13.0-22-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-22-generic",
+    "notes": "The only slow down you may experience is when you enter Fever Mode, which is normal for this game.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639774267,
+    "title": "Hatsune Miku VR",
+    "source": "protondb"
+  }
+]

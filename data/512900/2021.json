@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "512900",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.8.13",
+    "notes": "Use the native version. It performs just as well and doesn't crash.",
+    "os": "NixOS 21.03 (Okapi)",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1610168556,
+    "title": "Streets of Rogue",
+    "source": "protondb"
+  },
+  {
+    "appId": "512900",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.41.0, 5.13.0-7620-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Game works Perfectly.\nYou can use Steam Remote Play Together and Workshop Contents without any issues!",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1638365444,
+    "title": "Streets of Rogue",
+    "source": "protondb"
+  },
+  {
+    "appId": "512900",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639849148,
+    "title": "Streets of Rogue",
+    "source": "protondb"
+  }
+]

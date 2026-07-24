@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "829110",
+    "cpu": "AMD FX(tm)-9590 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Tried vanilla, PROTON_USE_WINED3D, and PROTON_NO_D3D11, all produce the same result gets through to New Game opening FMV audio plays, video frozen except rain, doesn't continue past FMV.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32064 Mb",
+    "rating": "Borked",
+    "timestamp": 1539747037,
+    "title": "LEGO\u00ae DC Super-Villains",
+    "source": "protondb"
+  },
+  {
+    "appId": "829110",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.12-200.fc28.x86_64",
+    "notes": "Audio is messed up: sometimes you have music with no voice, sometimes voice with no environmental effects.\nBut with subtitles is perfectly playable.\nI had to link my save games from the Windows partition.",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1540634865,
+    "title": "LEGO\u00ae DC Super-Villains",
+    "source": "protondb"
+  },
+  {
+    "appId": "829110",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "After several tests, I discovered the problem with audio and cutscene crash in the last Lego games (Incredibles, Marvel Super Heroes 2 and DC Villains).\nThis related to xaudio2_7, when present \"Builtin\", some sounds work, but there is a crash in cutscenes and the sound effects do not work.\nWhen disable, the game works normally but no sound.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1541997534,
+    "title": "LEGO\u00ae DC Super-Villains",
+    "source": "protondb"
+  }
+]

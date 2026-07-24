@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4195110",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Works well, you might need to switch proton versions. Has some issues when exiting fullscreen.",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1772274329,
+    "title": "",
+    "source": "protondb"
+  }
+]

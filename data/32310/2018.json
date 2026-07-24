@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "32310",
+    "title": "Indiana Jones and the Last Crusade",
+    "timestamp": 1535578305,
+    "rating": "Platinum",
+    "notes": "Works fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460  @ 2.53GHz / Mobility Radeon HD 5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "32310",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Perfect.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537483576,
+    "title": "Indiana Jones\u00ae and the Last Crusade\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "32310",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 10.5.9",
+    "kernel": "4.4.0-137-generic",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 14.04.5 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1540540024,
+    "title": "Indiana Jones\u00ae and the Last Crusade\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "32310",
+    "title": "Indiana Jones and the Last Crusade",
+    "timestamp": 1535563905,
+    "rating": "Platinum",
+    "notes": "Works fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460  @ 2.53GHz / Mobility Radeon HD 5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

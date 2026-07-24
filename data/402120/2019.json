@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "402120",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Sometimes the graphics can glitch out and cause a crash while on the main menu, but it seems fine once you get in game.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556483621,
+    "title": "Deathstate: Abyssal Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "402120",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.62-1-MANJARO",
+    "notes": "Game plays fine, but was unable to get gamepad to work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565321205,
+    "title": "Deathstate: Abyssal Edition",
+    "source": "protondb"
+  }
+]

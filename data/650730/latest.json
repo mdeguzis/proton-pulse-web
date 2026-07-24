@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "650730",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.1",
+    "kernel": "5.0.0-8-generic",
+    "notes": "runs perfectly after using \"STEAM_COMPAT_CONFIG=nod3d11 %command%\"",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1554555122,
+    "title": "Weeping Skies",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

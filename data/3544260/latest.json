@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3544260",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.10-artix1-1)",
+    "gpuDriver": "4.6 Mesa 26.1.1-arch1.1",
+    "kernel": "7.0.10-artix1-1",
+    "notes": "Work perfectly as expected",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1780188175,
+    "title": "",
+    "source": "protondb"
+  }
+]

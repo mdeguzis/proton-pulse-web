@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "581800",
+    "cpu": "AMD A4-7210 APU with AMD Radeon R3 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.0.16-116.current",
+    "notes": "Works perfectly on Solus 4.0.\nPlayed a few levels, made a level, tested workshop levels. Everything was fine.\nWindowed and fullscreen both work perfectly as well.\nUsed Proton 4.2-7.",
+    "os": "Solus",
+    "protonVersion": "4.2-7",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1560404095,
+    "title": "Super Cuber",
+    "source": "protondb"
+  }
+]

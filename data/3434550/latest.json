@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3434550",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.61, 6.14.2-201.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.3",
+    "kernel": "6.14.2-201.nobara.fc41.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779451071,
+    "title": "",
+    "source": "protondb"
+  }
+]

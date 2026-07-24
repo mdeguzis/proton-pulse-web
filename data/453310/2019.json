@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "453310",
+    "cpu": "AMD A10-5700 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-65-generic",
+    "notes": "On selecting \"New Game\", screen stays white, nothing more happens.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571469427,
+    "title": "Blackwood Crossing",
+    "source": "protondb"
+  }
+]

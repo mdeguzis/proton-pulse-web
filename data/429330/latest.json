@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "429330",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Didn't start at first but with PROTON_NO_D3D11=1 %command% as launch parameter seems perfectly playable",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553097593,
+    "title": "Stikbold! A Dodgeball Adventure",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "429330",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-050004-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553937247,
+    "title": "Stikbold! A Dodgeball Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "429330",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Needs Vulkan Drivers to launch, otherweise a Popup error is shown claiming something about \"Display resolution\". If this is the case, force to load Vulkan drivers executing \"sudo vulkaninfo\" before running Steam.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555667875,
+    "title": "Stikbold! A Dodgeball Adventure",
+    "source": "protondb"
+  },
+  {
+    "appId": "429330",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.16-1-MANJARO",
+    "notes": "Doesn't work without launch parameter \"PROTON_NO_D3D11=1 %command%\". With this tweak the game ran flawless. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563154950,
+    "title": "Stikbold! A Dodgeball Adventure",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

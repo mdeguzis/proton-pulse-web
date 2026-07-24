@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "287440",
+    "title": "Ikaruga Demo",
+    "timestamp": 1535176400,
+    "rating": "Gold",
+    "notes": "Steam controller wasn't detected until after a run in BPM. Worked fine thereafter.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "287440",
+    "title": "Ikaruga Demo",
+    "timestamp": 1535162000,
+    "rating": "Gold",
+    "notes": "Steam controller wasn't detected until after a run in BPM. Worked fine thereafter.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

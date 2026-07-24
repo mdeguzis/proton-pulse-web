@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4401660",
+    "cpu": "Intel Core Ultra 7 155H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch2.2",
+    "kernel": "7.0.1-1-cachyos",
+    "notes": "The game itself ran, but atleast when i played it multiplayer didnt work at all regardless of OS, so windows was borked too",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777766961,
+    "title": "Gorilla Simulator",
+    "source": "protondb"
+  }
+]

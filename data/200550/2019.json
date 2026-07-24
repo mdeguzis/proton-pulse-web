@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "200550",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-towo.3-siduction-amd64",
+    "notes": "same as with Dungenos, the game runs flawless even in ultrawide if you uninstall Mono from the Proton prefix & install dotnet40. steps: [1: install Winetricks & Protontricks to your system. google it if you don't know how] [2: uninstall Mono. run: WINEPREFIX=path-to-steam/steamapps/compatdata/200550/pfx/ path-to-steam/steamapps/common/Proton\\ 4.11/dist/bin/wine64 uninstaller] [3: set mscoree.dll to native only. run: protontricks 200550 winecfg] [4: install dotnet40. run: protontricks 200550 dotnet40]",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565729014,
+    "title": "Dungeons - The Dark Lord",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "402560",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't open.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-3",
+    "ram": "32030 Mb",
+    "rating": "Borked",
+    "timestamp": "1536333916",
+    "title": "Tabletopia",
+    "source": "protondb"
+  },
+  {
+    "appId": "402560",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.17-300.fc29.x86_64",
+    "notes": "Game will simply not launch.\nIt appears the game is built using .NET Framework 4.6 and maybe Proton does not have the Mono version for this?",
+    "os": "Fedora 29",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542141926,
+    "title": "Tabletopia",
+    "source": "protondb"
+  },
+  {
+    "appId": "402560",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Would not start at all",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542322780,
+    "title": "Tabletopia",
+    "source": "protondb"
+  }
+]

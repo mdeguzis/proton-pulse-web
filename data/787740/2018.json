@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "787740",
+    "cpu": "Intel(R) Core(TM) i7-3770K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Quick test of my windows game save seemed to work without issues, fps stayed around 55-60fps while driving around and completing a construction stage.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539973181,
+    "title": "Construction Simulator 2 US - Pocket Edition",
+    "source": "protondb"
+  }
+]

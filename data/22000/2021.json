@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "22000",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.18-1-MANJARO",
+    "notes": "Native and works perfect.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1638193191,
+    "title": "World of Goo",
+    "source": "protondb"
+  }
+]

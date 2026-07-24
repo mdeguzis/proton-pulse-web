@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "961010",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I played the \"The Hand of Glory Demo\".  \nIt ran well once I added PROTON_USE_WINED3D to the launch options (without this I got a blank screen).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1562410260,
+    "title": "The Hand of Glory",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "961010",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "ATI Technologies Inc. Radeon RX 570",
+    "gpuDriver": "4.6.13556 Compatibility Profile Context",
+    "kernel": "5.0.0-15-generic",
+    "notes": "The demo did work for me perfectly fine, there was no need for any launch option.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563276355,
+    "title": "The Hand of Glory",
+    "source": "protondb"
+  },
+  {
+    "appId": "961010",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Tried again with Proton 4.2-9 but still required PROTON_USE_WINED3D or else I get blank screen.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1563882327,
+    "title": "The Hand of Glory",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

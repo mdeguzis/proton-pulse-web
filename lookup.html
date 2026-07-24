@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Look up a Steam profile — Proton Pulse</title>
+<meta name="description" content="See any public Steam profile's library compatibility with Proton on Linux without signing in. Paste a Steam URL or Steam ID.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
+<link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
+<link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
+<link rel="stylesheet" href="css/app/home.css?v=3b655a71">
+<link rel="stylesheet" href="css/lookup/lookup.css?v=56d36454">
+</head>
+<body>
+
+<!-- Shared topbar (sprite, banner, nav row, mobile drawer) is injected by topbar.js -->
+
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="page-header">
+      <div class="eyebrow">Public Profile Lookup</div>
+      <div class="page-title">Library</div>
+      <p class="page-lede">
+        Alternatively to signing in with Steam, you may provide an identifier
+        for a Steam account so you can explore its library and wishlist
+        compatibility. <b>Save</b> keeps the identifier in this browser so My
+        Library and My Wishlist load without another sign-in prompt.
+      </p>
+    </div>
+
+    <!-- Lookup form -->
+    <form class="lookup-form" id="lookup-form" novalidate>
+      <label class="lookup-label" for="lookup-input">Steam ID or Profile URL</label>
+      <div class="lookup-row">
+        <input
+          class="lookup-input"
+          id="lookup-input"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Steam ID or Profile URL"
+          required
+        >
+        <button class="lookup-submit lookup-submit--secondary" id="lookup-lookup" type="submit">Look up</button>
+        <button class="lookup-submit" id="lookup-save" type="button">Save</button>
+      </div>
+      <ul class="lookup-examples">
+        <li><b>Examples:</b></li>
+        <li><code>https://steamcommunity.com/id/NAME-IN-URL</code></li>
+        <li><code>76561198#########</code></li>
+      </ul>
+      <div class="lookup-hint">
+        Not sure where to find yours? See Steam's guide to
+        <a href="https://help.steampowered.com/en/faqs/view/2816-BE67-5B69-0FEC" target="_blank" rel="noopener">finding your Steam ID</a>.
+        Library and wishlist visibility must be set to <b>Public</b> under
+        <a href="https://steamcommunity.com/my/edit/settings" target="_blank" rel="noopener">Privacy Settings</a>
+        for them to appear here.
+      </div>
+      <div class="lookup-saved-hint" id="lookup-saved-hint" hidden>
+        Saved for this browser.
+        <button type="button" class="lookup-clear" id="lookup-clear">Clear</button>
+      </div>
+      <div class="lookup-error" id="lookup-error" hidden></div>
+    </form>
+
+    <div class="lookup-loading" id="lookup-loading" hidden>
+      Looking up profile...
+    </div>
+
+    <!-- Result view -->
+    <section class="lookup-result" id="lookup-result" hidden>
+      <div class="lookup-profile-card" id="lookup-profile-card">
+        <img class="lookup-avatar" id="lookup-avatar" src="" alt="" width="72" height="72" hidden>
+        <div class="lookup-profile-body">
+          <div class="lookup-persona" id="lookup-persona"></div>
+          <div class="lookup-steamid" id="lookup-steamid"></div>
+          <a class="lookup-steamlink" id="lookup-steamlink" href="#" target="_blank" rel="noopener" hidden>View on Steam</a>
+        </div>
+      </div>
+
+      <!-- Private / empty profile notice -->
+      <div class="lookup-private" id="lookup-private" hidden>
+        <div class="lookup-private-title">This library is private or empty.</div>
+        <p>
+          Steam only shares owned-games data when the profile's <b>Game Details</b>
+          are set to <b>Public</b>. Open
+          <a href="https://steamcommunity.com/my/edit/settings" target="_blank" rel="noopener">Privacy Settings</a>
+          on Steam and set <b>Game Details</b> to <b>Public</b>, then re-run the
+          lookup.
+        </p>
+      </div>
+
+      <!-- Library at a glance chart. The chart itself is rendered by
+           js/lookup/main.js using the same computeLibraryTierCounts helper
+           that powers the home page chart, so a public lookup and your
+           own signed-in library share the exact same math. -->
+      <div class="lookup-chart-mount" id="lookup-chart-mount"></div>
+
+      <!-- Wishlist at a glance chart. Rendered by the same helper against
+           IWishlistService/GetWishlist output. Wishlist visibility is a
+           separate Steam privacy toggle, so it can appear even when the
+           library is private, or vice versa. -->
+      <div class="lookup-chart-mount" id="lookup-wishlist-mount"></div>
+    </section>
+
+  </div>
+
+  <footer class="sitefooter">
+    GPL-3.0 open source - built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
+    <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">Data repo</a> |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=ad8d89f5"></script>
+<script src="js/lib/topbar.js?v=21a7ccea"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+<script type="module" src="js/lookup/main.js?v=08d48cc1"></script>
+</body>
+</html>

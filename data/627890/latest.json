@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "627890",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Performance was acceptable, but there were still some occasional frame rate drops. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545472400,
+    "title": "Reventa",
+    "source": "protondb"
+  }
+]

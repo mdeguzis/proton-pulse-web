@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "674750",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553459498,
+    "title": "Yet Another Zombie Defense HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "674750",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-edbd2c1 2019-02-21 cosmic-oibaf-ppa)",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "now work with xbox360 controller (using xboxdrv)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1553656523,
+    "title": "Yet Another Zombie Defense HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "674750",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-aa7ac32 2019-09-21 bionic-oibaf-ppa)",
+    "kernel": "5.3.1-050301-generic",
+    "notes": "It works very well, the Xbox 360 game controller works",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "3.16-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1569428702,
+    "title": "Yet Another Zombie Defense HD",
+    "source": "protondb"
+  }
+]

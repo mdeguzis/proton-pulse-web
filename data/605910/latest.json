@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "605910",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It works perfectly. I completed the entire game with all Steam Achievements.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549662687,
+    "title": "Bootombaa",
+    "source": "protondb"
+  },
+  {
+    "appId": "605910",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551164143,
+    "title": "Bootombaa",
+    "source": "protondb"
+  }
+]

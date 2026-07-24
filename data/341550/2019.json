@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "341550",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Perfect",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552331844,
+    "title": "Super Cyborg",
+    "source": "protondb"
+  },
+  {
+    "appId": "341550",
+    "cpu": "Intel Core i7-4770K @ 4.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.19.03",
+    "kernel": "5.2.0-0.bpo.2-amd64",
+    "notes": "Works great in windowed moded but it doesn't at fullscreen which is a minor issue considering the type of game.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570134481,
+    "title": "Super Cyborg",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "516130",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-20-generic",
+    "notes": "No tweaks or fixes needed. Runs great out of the box as if it was running native. No problems as far as I can tell.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541484262,
+    "title": "Runner3",
+    "source": "protondb"
+  },
+  {
+    "appId": "516130",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "1. Had to use the D3d11 tweak when I was using the nvidia 410 non-vulkan drivers, or else character models wouldn't load  \n\n2. Had a bizarre bug once somehow when switching from windowed to fullscreen\n\n3. Steam Controller not detected as gamepad, keyboard + mouse only  \n\n4. PS4 controller detected as expected (in-game option switches the xbox icons to ps4)",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542145025,
+    "title": "Runner3",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "516130",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Had to use Wine d3d11 to make it work. Got an error about not being able to initialize dx11 otherwise. The game works ok, no glitch found so far.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1542434434,
+    "title": "Runner3",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "516130",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.18.0-0.bpo.3-amd64",
+    "notes": "Does not support SDL controllers. Works great, otherwise.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545520685,
+    "title": "Runner3",
+    "source": "protondb"
+  }
+]

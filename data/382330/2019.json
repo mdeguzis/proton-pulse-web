@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "382330",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-25-generic",
+    "notes": "The build version in the main menu displays nonsense, but that is the only issue I could find so far.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566513168,
+    "title": "Killers and Thieves",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1987750",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.49, 6.1.0-16-amd64)",
+    "gpuDriver": "4.6 Mesa 23.3.0 (git-1fbdd37d4c)",
+    "kernel": "6.1.0-16-amd64",
+    "notes": "Stuck on first start screen. Cant play. Cool concept. Hope it works soon. :)",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1702821130,
+    "title": "",
+    "source": "protondb"
+  }
+]

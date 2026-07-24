@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "7220",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.1.14-050114-generic",
+    "notes": "The seems to run fine in general but there is considerable  mouse lag when in menus and inventory. So it is playable but definitely no a comfortable experience. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562413775,
+    "title": "Runaway, The Dream of The Turtle",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "99810",
+    "title": "Bulletstorm",
+    "timestamp": 1535129677,
+    "rating": "Borked",
+    "notes": "shows black screen, not in Steam Store anymore",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX-8350 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "99810",
+    "title": "Bulletstorm",
+    "timestamp": 1535115277,
+    "rating": "Borked",
+    "notes": "shows black screen, not in Steam Store anymore",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "FX-8350 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

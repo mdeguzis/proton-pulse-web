@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "546700",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Not working",
+    "os": "Ubuntu 18.04.5 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1602609630,
+    "title": "The Butterfly Sign",
+    "source": "protondb"
+  }
+]

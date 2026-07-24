@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1991040",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-zen1-2-zen",
+    "notes": "Currently Testing linux to play",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771856695,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "261180",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "I was running the native Linux version first, but for some reason it stopped working randomly (just crashed on startup). I switched to run it with Proton and it works flawlessly, I'm even able to play multiplayer against other players who are on Windows",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558890841,
+    "title": "Lethal League",
+    "source": "protondb"
+  }
+]

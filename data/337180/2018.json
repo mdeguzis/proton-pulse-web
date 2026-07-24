@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "337180",
+    "title": "Velocity 2X",
+    "timestamp": 1535017401,
+    "rating": "Borked",
+    "notes": "All text is missing in game, attempting to blindly start a level results in a hard freeze.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337180",
+    "title": "Velocity 2X",
+    "timestamp": 1535089727,
+    "rating": "Borked",
+    "notes": "Game speed is uncapped, on my system it runs at around 6x normal speed.\nMay be perfectly playable on a slower system or if artificially slowed down.\nCan randomly crash in level select, but this bug is present in Windows as well.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337180",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-43a397c580)",
+    "kernel": "4.17.19-gentoo",
+    "notes": "Didn't have to do any controller configuration in the menu that pops up before the game starts, even though it only listed keyboard mappings. When the game started, the controller worked fine. Game plays at normal speed, and the framerate is acceptable. ",
+    "os": "Gentoo Base System release 2.4.1",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1543175111,
+    "title": "Velocity 2X",
+    "source": "protondb"
+  },
+  {
+    "appId": "337180",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-43a397c580)",
+    "kernel": "4.17.19-gentoo",
+    "notes": "Didn't have to do any controller configuration in the menu that pops up before the game starts, even though it only listed keyboard mappings. When the game started, the controller worked fine. Game plays at normal speed, and the framerate is acceptable.",
+    "os": "Gentoo Base System release 2.4.1",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1543176871,
+    "title": "Velocity 2X",
+    "source": "protondb"
+  },
+  {
+    "appId": "337180",
+    "title": "Velocity 2X",
+    "timestamp": 1535003001,
+    "rating": "Borked",
+    "notes": "All text is missing in game, attempting to blindly start a level results in a hard freeze.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337180",
+    "title": "Velocity 2X",
+    "timestamp": 1535075327,
+    "rating": "Borked",
+    "notes": "Game speed is uncapped, on my system it runs at around 6x normal speed.\nMay be perfectly playable on a slower system or if artificially slowed down.\nCan randomly crash in level select, but this bug is present in Windows as well.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

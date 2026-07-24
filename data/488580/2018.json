@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "488580",
+    "title": "Hover 2030",
+    "timestamp": 1536374482,
+    "rating": "Borked",
+    "notes": "Says running but doesnt start",
+    "os": "Ubuntu 18.04.1 (Kernel 4.18.6)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "488580",
+    "title": "Hover 2030",
+    "timestamp": 1536360082,
+    "rating": "Borked",
+    "notes": "Says running but doesnt start",
+    "os": "Ubuntu 18.04.1 (Kernel 4.18.6)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

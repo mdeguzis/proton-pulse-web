@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "715460",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.23-1-MANJARO",
+    "notes": "Runs perfectly with constant 60fps. No crashes recorded.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551202102,
+    "title": "Disparity",
+    "source": "protondb"
+  }
+]

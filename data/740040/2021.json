@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "740040",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.12.4-zen1-2-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0",
+    "kernel": "5.12.4-zen1-2-zen",
+    "notes": "",
+    "os": "Artix Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1621394424,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1106340",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Seems to work as expected.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613044281,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1106340",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.4.0-81-generic",
+    "notes": "Works if Wine3D3 is specified",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1630763217,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1106340",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.10.60-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.10.60-1-MANJARO",
+    "notes": "It's a fun game.   I've been waiting for years for somebody to come out with a video game just like it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1635040819,
+    "title": "",
+    "source": "protondb"
+  }
+]

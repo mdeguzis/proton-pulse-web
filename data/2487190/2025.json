@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2487190",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.61, 6.12.44-3-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.12.44-3-MANJARO",
+    "notes": "Plays great on older hardware",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1758512405,
+    "title": "Main Sequence",
+    "source": "protondb"
+  }
+]

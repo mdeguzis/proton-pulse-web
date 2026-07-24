@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "232050",
+    "title": "Eador. Masters of the Broken World",
+    "timestamp": 1535941591,
+    "rating": "Borked",
+    "notes": "Missing a runme.sh from the developers trying and failing to make a wine-wrap Linux port at some point in the past.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "232050",
+    "cpu": "i5-7300HQ CPU @ 2.50GHz",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Can't be run through SteamPlay - developers have set up a separate linux download that is still a windows build.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7842 Mb",
+    "rating": "Borked",
+    "timestamp": 1536679948,
+    "title": "Eador. Masters of the Broken World",
+    "source": "protondb"
+  },
+  {
+    "appId": "232050",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541285826,
+    "title": "Eador. Masters of the Broken World",
+    "source": "protondb"
+  },
+  {
+    "appId": "232050",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541286420,
+    "title": "Eador. Masters of the Broken World",
+    "source": "protondb"
+  },
+  {
+    "appId": "232050",
+    "title": "Eador. Masters of the Broken World",
+    "timestamp": 1535927191,
+    "rating": "Borked",
+    "notes": "Missing a runme.sh from the developers trying and failing to make a wine-wrap Linux port at some point in the past.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

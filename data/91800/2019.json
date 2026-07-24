@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "91800",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-21-generic",
+    "notes": "The gameplay works,but theres no audio, even with the Steam Proton commands.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1560286814,
+    "title": "Cloning Clyde",
+    "source": "protondb"
+  }
+]

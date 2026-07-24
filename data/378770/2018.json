@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "378770",
+    "title": "ESCHATOS",
+    "timestamp": 1534969000,
+    "rating": "Platinum",
+    "notes": "Essentially flawless",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-8320 / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "378770",
+    "title": "ESCHATOS",
+    "timestamp": 1535295069,
+    "rating": "Platinum",
+    "notes": "Flawless, did not have to change lauch options or anything.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "378770",
+    "cpu": "Intel(R) Pentium(R) CPU G4620 @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org Radeon RX 550 Series (POLARIS12, DRM 3.23.0, 4.15.0-36-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Perfect. Works out of the box with my arcade controller. Smooth & no input lag.",
+    "os": "KDE neon User Edition 5.14 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16001 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539337903,
+    "title": "ESCHATOS",
+    "source": "protondb"
+  },
+  {
+    "appId": "378770",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "Crashes on the title screen after pressing enter or waiting for it to fade out. Appears to be a regression, since it works fine with 3.7",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1544659619,
+    "title": "ESCHATOS",
+    "source": "protondb"
+  },
+  {
+    "appId": "378770",
+    "title": "ESCHATOS",
+    "timestamp": 1534954600,
+    "rating": "Platinum",
+    "notes": "Essentially flawless",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-8320 / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "378770",
+    "title": "ESCHATOS",
+    "timestamp": 1535280669,
+    "rating": "Platinum",
+    "notes": "Flawless, did not have to change lauch options or anything.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

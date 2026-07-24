@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1026130",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "nouveau NV137",
+    "gpuDriver": "4.3 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "it literally just says no",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558063979,
+    "title": "STAB STAB STAB!",
+    "source": "protondb"
+  }
+]

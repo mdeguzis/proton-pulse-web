@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "232970",
+    "title": "Thunder Wolves",
+    "timestamp": 1534960587,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX 8350/GTX970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "232970",
+    "title": "Thunder Wolves",
+    "timestamp": 1535119922,
+    "rating": "Platinum",
+    "notes": "Good performance",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "232970",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-3-amd64",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16057 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540228553,
+    "title": "Thunder Wolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "232970",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "notes": "Everything works out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541419255,
+    "title": "Thunder Wolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "232970",
+    "title": "Thunder Wolves",
+    "timestamp": 1534946187,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX 8350/GTX970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "232970",
+    "title": "Thunder Wolves",
+    "timestamp": 1535105522,
+    "rating": "Platinum",
+    "notes": "Good performance",
+    "os": "Manjaro Stable 64-bit",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

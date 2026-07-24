@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "633110",
+    "title": "Fast Beat Loop Racer GT",
+    "timestamp": 1535489868,
+    "rating": "Borked",
+    "notes": "Shows error \"Could not find any compatible Direct3d devices\" and then closes.",
+    "os": "Ubuntu 18 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570K / GTX 1050 Ti",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "633110",
+    "title": "Fast Beat Loop Racer GT",
+    "timestamp": 1535475468,
+    "rating": "Borked",
+    "notes": "Shows error \"Could not find any compatible Direct3d devices\" and then closes.",
+    "os": "Ubuntu 18 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570K / GTX 1050 Ti",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

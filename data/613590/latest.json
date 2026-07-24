@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "613590",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.14.65-gentoo",
+    "notes": "Played through one skirmish of the tutorial and it all seemed fine.  Upon trying to exit, the game crashes instead.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1547674035,
+    "title": "Dungeon Of Zaar - Open Beta",
+    "source": "protondb"
+  }
+]

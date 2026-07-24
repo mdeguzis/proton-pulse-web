@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "896030",
+    "cpu": "Intel Xeon E3-1240 v3 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.10.0-rc6",
+    "notes": "",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1633349534,
+    "title": "",
+    "source": "protondb"
+  }
+]

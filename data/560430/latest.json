@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "560430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-02c6cd8 2019-06-29 bionic-oibaf-ppa)",
+    "kernel": "5.1.0-050100-generic",
+    "notes": "(Render) An invalid floating point camera matrix was passed to the D3D driver!\n\nThis shows up immediately after the intro videos play, and the game freezes/crashes after\n",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567045050,
+    "title": "Indiana Jones\u00ae and the Emperor's Tomb\u2122",
+    "source": "protondb"
+  }
+]

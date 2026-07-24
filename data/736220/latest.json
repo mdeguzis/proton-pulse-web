@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "736220",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.8-200.fc29.x86_64",
+    "notes": "Does not work. Will never work in Proton because of EAC. Publisher has no interest in a native port or not using EAC.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1550464090,
+    "title": "Post Scriptum",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "I have some FPS losses but have not figured out which graphics setting is causing it, because it happens quite randomly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560598798,
+    "title": "Post Scriptum",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.5-arch1-2-ARCH",
+    "notes": "EAC IS NOT SUPPORTED\n\nSo playing on official servers with anti-cheat enabled is currently not possible. Performance wise, I loaded training and played around without any issues.\n\n",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564194178,
+    "title": "Post Scriptum",
+    "source": "protondb"
+  }
+]

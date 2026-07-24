@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "38460",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Black screen on left corner. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1537036624,
+    "title": "MDK 2",
+    "source": "protondb"
+  }
+]

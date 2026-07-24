@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2456070",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.8, DRM 3.57, 6.10.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.2",
+    "kernel": "6.10.9-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1726058488,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2456070",
+    "cpu": "Intel Core i3-7100U @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "se puede jugar pero tengo 2 problemas, 1 lag por el servidor del juego la conexi\u00f3n no es muy buena, 2 juego con graficos integrados",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1727475900,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "458890",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-40087ffc5b)",
+    "kernel": "5.3.1-1-MANJARO",
+    "notes": "Starts to a black windows, sound is played but nothing more",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569448683,
+    "title": "WITHIN",
+    "source": "protondb"
+  }
+]

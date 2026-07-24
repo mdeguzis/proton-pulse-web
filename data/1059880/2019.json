@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1059880",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-66-generic",
+    "notes": "Runs as well as a native version would.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1572316369,
+    "title": "Devious Dungeon",
+    "source": "protondb"
+  }
+]

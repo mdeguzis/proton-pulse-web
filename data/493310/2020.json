@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "493310",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX Vega 64",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.2-1-MANJARO",
+    "notes": "Game launches, Audio works fine, only black Screen",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1584523922,
+    "title": "",
+    "source": "protondb"
+  }
+]

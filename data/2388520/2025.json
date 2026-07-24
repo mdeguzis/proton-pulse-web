@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2388520",
+    "cpu": "Intel Xeon E5-2667 v2 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.247.01",
+    "kernel": "6.1.0-37-amd64",
+    "notes": "Didn't launch without tinkering",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1749092293,
+    "title": "",
+    "source": "protondb"
+  }
+]

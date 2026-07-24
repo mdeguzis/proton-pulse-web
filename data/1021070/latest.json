@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "1021070",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-1-default",
+    "notes": "Flawless",
+    "os": "openSuse Tumbleweed",
+    "protonVersion": "4.11-6",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1569866511,
+    "title": "Spaceland",
+    "source": "protondb"
+  },
+  {
+    "appId": "1021070",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-64-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1570480862,
+    "title": "Spaceland",
+    "source": "protondb"
+  }
+]

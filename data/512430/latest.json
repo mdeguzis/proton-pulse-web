@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "512430",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "in i3 had to resize the window to fit what was being displayed, otherwise clicking didn't work. Once resized worked ok.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1542996589,
+    "title": "Make America Great Again",
+    "source": "protondb"
+  }
+]

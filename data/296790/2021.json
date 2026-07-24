@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "296790",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-7d31bc9 2020-06-28 focal-oibaf-ppa)",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "Just Works, No tinkering!",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624889773,
+    "title": "",
+    "source": "protondb"
+  }
+]

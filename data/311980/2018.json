@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "311980",
+    "title": "Isomer",
+    "timestamp": 1535467454,
+    "rating": "Borked",
+    "notes": "Games does not start",
+    "os": "Archlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7 4770s / r9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "311980",
+    "title": "Isomer",
+    "timestamp": 1535453054,
+    "rating": "Borked",
+    "notes": "Games does not start",
+    "os": "Archlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7 4770s / r9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

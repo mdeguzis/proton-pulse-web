@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "269990",
+    "title": "Infinite Space III: Sea of Stars",
+    "timestamp": 1535578940,
+    "rating": "Platinum",
+    "notes": "Runs perfectly. Very Smooth.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460  @ 2.53GHz / Mobility Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "269990",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "No audio",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Bronze",
+    "timestamp": "1536364800",
+    "title": "Infinite Space III: Sea of Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "269990",
+    "title": "Infinite Space III: Sea of Stars",
+    "timestamp": 1535564540,
+    "rating": "Platinum",
+    "notes": "Runs perfectly. Very Smooth.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460  @ 2.53GHz / Mobility Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

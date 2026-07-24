@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "21110",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "Game starts up fine and the first missions are playable. However, as soon as you enter the subway/underground the game starts crashing every few shootings. Usually, if you manage to quicksave right before a point where it crashes you can continue the game after loading that quicksave. This does  not work at a later point (\"The L\") where the game just freezes at a specific point. I tried quicksaving my way around it but it  doesn't work. Also  the freezing happens in a certain area and not a specific point. Guess something scripted is going on in the background that the game doesn't like.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1549210259,
+    "title": "F.E.A.R.: Extraction Point ",
+    "source": "protondb"
+  }
+]

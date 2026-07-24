@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "515570",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.6-2-MANJARO",
+    "notes": "Exits with \"Out of Memory!\" error.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1578678720,
+    "title": "UBERMOSH Vol.3",
+    "source": "protondb"
+  }
+]

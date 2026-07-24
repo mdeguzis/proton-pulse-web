@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "778700",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.25-1-MANJARO",
+    "notes": "Degeneracy now avilable in Linux today!",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1654435552,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "778700",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Mouse heavy game!",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1658809207,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "778700",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.0-41-generic",
+    "notes": "furry dating simulator.",
+    "os": "Ubuntu Core 20",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1660242304,
+    "title": "",
+    "source": "protondb"
+  }
+]

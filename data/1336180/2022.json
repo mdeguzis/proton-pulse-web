@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1336180",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.19.10-zen1-1-zen",
+    "notes": "needs better launch settings to be smoothly playable",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1665215925,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1336180",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.14.8-zen1-1-zen, LLVM 14.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.0-devel (git-a1dea665d0)",
+    "kernel": "5.14.8-zen1-1-zen",
+    "notes": "Extremely poor performance",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1665362891,
+    "title": "",
+    "source": "protondb"
+  }
+]

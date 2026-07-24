@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "202270",
+    "title": "Leviathan: Warships",
+    "timestamp": 1535467025,
+    "rating": "Gold",
+    "notes": "Game removed from store and multiplayer servers offline. Can be played offline with no problem",
+    "os": "Archlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-4770s / R9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202270",
+    "title": "Leviathan: Warships",
+    "timestamp": 1535578396,
+    "rating": "Gold",
+    "notes": "used xrandr to disable my second monitor so it didn't lose focus",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202270",
+    "title": "Leviathan: Warships",
+    "timestamp": 1535452625,
+    "rating": "Gold",
+    "notes": "Game removed from store and multiplayer servers offline. Can be played offline with no problem",
+    "os": "Archlinux (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-4770s / R9 285",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202270",
+    "title": "Leviathan: Warships",
+    "timestamp": 1535563996,
+    "rating": "Gold",
+    "notes": "used xrandr to disable my second monitor so it didn't lose focus",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

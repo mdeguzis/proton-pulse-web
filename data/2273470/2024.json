@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2273470",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX130",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.6.1-arch1-1",
+    "notes": "After getting to the main menu the pc just shuts down",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1714441835,
+    "title": "",
+    "source": "protondb"
+  }
+]

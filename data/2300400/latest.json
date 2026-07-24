@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2300400",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.0-204.fsync.fc39.x86_64",
+    "notes": "works as if it was native",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1708656449,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "355860",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.25",
+    "kernel": "4.13.0-46-generic",
+    "notes": "FPS fluctuates a great deal,  changing from max down to low provided a very small improvement.  Playable, until last third/quarter of the game.  Then it will routinely crash.  ",
+    "os": "Pop!_OS 17.10 (Artful Aardvark) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15902 Mb",
+    "rating": "Borked",
+    "timestamp": 1538837209,
+    "title": "Albino Lullaby: Episode 1",
+    "source": "protondb"
+  }
+]

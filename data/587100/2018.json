@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "587100",
+    "title": "Ys SEVEN",
+    "timestamp": 1535278608,
+    "rating": "Silver",
+    "notes": "Font is way too wide, occasionally overlaps or runs off the edge of the screen. Otherwise no issues found.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 870 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "587100",
+    "title": "Ys SEVEN",
+    "timestamp": 1535874260,
+    "rating": "Gold",
+    "notes": "Button mapping icons for DualShock 4 are incorrect, but can still be configured how you want",
+    "os": "Debian Testing",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4690 / GTX 660OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "587100",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Only issue found is long texts appear outside the dialog box.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541096087,
+    "title": "Ys SEVEN",
+    "source": "protondb"
+  },
+  {
+    "appId": "587100",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.14.90-1-MANJARO",
+    "notes": "The game runs fine until it reaches the part before the final boss fight where the game keeps crashing",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546155684,
+    "title": "Ys SEVEN",
+    "source": "protondb"
+  },
+  {
+    "appId": "587100",
+    "title": "Ys SEVEN",
+    "timestamp": 1535264208,
+    "rating": "Silver",
+    "notes": "Font is way too wide, occasionally overlaps or runs off the edge of the screen. Otherwise no issues found.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 870 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "587100",
+    "title": "Ys SEVEN",
+    "timestamp": 1535859860,
+    "rating": "Gold",
+    "notes": "Button mapping icons for DualShock 4 are incorrect, but can still be configured how you want",
+    "os": "Debian Testing",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4690 / GTX 660OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

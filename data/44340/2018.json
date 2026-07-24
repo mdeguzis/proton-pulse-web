@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "44340",
+    "title": "Operation Flashpoint: Red River",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Does not load at all",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "?",
+    "specs": "Dell Inspiron 3537, i5, 8gb ram, 256gb ssd, Intel HD 4400 integrated graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "44340",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.9.124-3-MANJARO",
+    "notes": "\n\nTake a look at the screenshots to see what's working! The game needs 2 Dlls override to get it not to crash at launch: .NET 4.0 GFWL Steam tries to install them by default but the game won't launch then. To get the game to work: Prevent .NET and GFWL to be installed by renaming them in the game directory: cd *path-to*/SteamLibrary/steamapps/common/Operation\\ Flashpoint\\ Red\\ River/redist/ mv DotNet/dotNetFx40_Full_x86_x64.exe DotNet/dotNetFx40_Full_x86_x64.exe.bak mv GFWL/gfwlivesetup.exe GFWL/gfwlivesetup.exe.bak Now launch the game, it won't even start because it needs xlive.dll but it's going to install dx9 and vcrun2008 just fine. After that run: winetricks -q gfw dotnet40 Before launching the game you can set your resolution here: ~/Documents/My\\ Games/OFRR/hardwaresettings/hardware_settings_config.xml Now start the game and after the intro videos you will end up in the menu, which will be without fonts You will need to press 'ENTER' to get GFWL to open, then press 'ESC' or create an account (r u mad?). Then just randomly press 'ENTER' to get the game to start a new campaign.. After the correctly rendered intro video you will be able to play but with some heavy graphical errors and with no hud! ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "beta 3.7.6",
+    "ram": "7882 Mb",
+    "rating": "Silver",
+    "timestamp": 1537265565,
+    "title": "Operation Flashpoint: Red River",
+    "source": "protondb"
+  },
+  {
+    "appId": "44340",
+    "title": "Operation Flashpoint: Red River",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Does not load at all",
+    "os": "Ubuntu 16.04.5",
+    "gpuDriver": "?",
+    "specs": "Dell Inspiron 3537, i5, 8gb ram, 256gb ssd, Intel HD 4400 integrated graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

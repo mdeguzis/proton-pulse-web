@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "546170",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "No issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558955291,
+    "title": "Gem Forge",
+    "source": "protondb"
+  },
+  {
+    "appId": "546170",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558956461,
+    "title": "Gem Forge",
+    "source": "protondb"
+  }
+]

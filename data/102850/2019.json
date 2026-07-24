@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "102850",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "The Core of the Game works like a charm (Platin) but the Loadingscreens take each several Minutes to complete (loading the Game, dying etc.)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553876323,
+    "title": "Warp",
+    "source": "protondb"
+  },
+  {
+    "appId": "102850",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.42-1-MANJARO",
+    "notes": "Lags sometimes during gameplay but nothing too bad. Screen saver came on dont know if this is because of controller use and not mouse/keyboard.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558695938,
+    "title": "Warp",
+    "source": "protondb"
+  }
+]

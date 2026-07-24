@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "477730",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-cb2898f 2019-03-12 bionic-oibaf-ppa)",
+    "kernel": "5.0.1-050001-generic",
+    "notes": "ALMOST - but not quite. Big blocks of colour blocking most of the screen make it unplayable. The parts of the screen I can see appear to be responding correctly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555710875,
+    "title": "Eador. Imperium",
+    "source": "protondb"
+  },
+  {
+    "appId": "477730",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-d946cbe 2019-04-26 bionic-oibaf-ppa)",
+    "kernel": "5.0.7-050007-generic",
+    "notes": "Works in general, but has the same graphical issues that Eador. Master of the broken world has under wine. Switching the graphic settings after every start/loading to low and than to ultra fixes most graphical issues, but on some maps fog of war or something similar blocks part of the map. Aside from the graphical glitches, game works fine. Played about 100h in wine and proton combined.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Bronze",
+    "timestamp": 1556291833,
+    "title": "Eador. Imperium",
+    "source": "protondb"
+  }
+]

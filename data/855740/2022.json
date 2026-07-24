@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "855740",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.0, DRM 3.44, 5.16.19-76051619-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.2 - kisak-mesa PPA",
+    "kernel": "5.16.19-76051619-generic",
+    "notes": "With the latest update the \"LAUNCH\" button of the game dissapeared and it got replaced with a message saying \"AVAILABLE FOR WINDOWS\". I don't understand the necessity of doing this when the game worked on previous update, I guess this counts as another obstacle for Linux like the anticheat problems on other games.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1666416914,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "855740",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.0, DRM 3.44, 5.16.19-76051619-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.2 - kisak-mesa PPA",
+    "kernel": "5.16.19-76051619-generic",
+    "notes": "Works on Linux but it is bad optimized",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1666505970,
+    "title": "",
+    "source": "protondb"
+  }
+]

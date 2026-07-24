@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1751730",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "6.0.6-76060006-generic",
+    "notes": "Gets stuck in the intro video. Sound cuts out part way. Default Proton, it will be a black screen with subtitles, but Experimental, you get video for around 5 seconds, then the game will completely stop responding.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1748722591,
+    "title": "",
+    "source": "protondb"
+  }
+]

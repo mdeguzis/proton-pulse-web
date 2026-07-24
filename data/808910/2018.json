@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "808910",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-300.fc29.x86_64",
+    "notes": "Sound doesn't play during track intro videos. There are various small graphical issues like flashing surfaces and the street lights on the Malastare 100 track being messed up but the game is completely playable.",
+    "os": "Fedora 29",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543325664,
+    "title": "STAR WARS\u2122 Episode I Racer",
+    "source": "protondb"
+  },
+  {
+    "appId": "808910",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Singleplayer works flawlessly out of the box, even with controller. As for multiplayer, the required IPX protocol is not supported on most Linux distributions, including the IPX Wrapper that is already provided by Valve (\"Error opening IPX socket\"). This prevents any form of multiplayer play.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543350742,
+    "title": "STAR WARS\u2122 Episode I Racer",
+    "source": "protondb"
+  },
+  {
+    "appId": "808910",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.2-300.fc29.x86_64",
+    "notes": "Alt-tabbing crashes the game to a black screen. There is no sound during the cutscenes and there are various minor graphical glitches with shadows and particle effects.",
+    "os": "Fedora 29",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543363396,
+    "title": "STAR WARS\u2122 Episode I Racer",
+    "source": "protondb"
+  }
+]

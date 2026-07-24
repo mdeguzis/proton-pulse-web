@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "595790",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.19.6-arch1-1",
+    "notes": "Gamepad support is completely broken. Works fine with keyboard and mouse.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1771031533,
+    "title": "",
+    "source": "protondb"
+  }
+]

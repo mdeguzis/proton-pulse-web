@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "1700",
+    "title": "Arx Fatalis",
+    "timestamp": 1535055499,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1700",
+    "title": "Arx Fatalis",
+    "timestamp": 1535736505,
+    "rating": "Gold",
+    "notes": "Works perfectly in the first location (15 FPS but it doesn't seem to be a problem)",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "1700",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-121-generic",
+    "os": "Linux Mint 17.3 Rosa (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15974 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538272102,
+    "title": "Arx Fatalis",
+    "source": "protondb"
+  },
+  {
+    "appId": "1700",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.9-92.current",
+    "notes": "Only ran it for about 20 minutes or so, but it ran great, gave me no problems at all. Looking forward to doing a more thorough  test with a full play through.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7977 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538554834,
+    "title": "Arx Fatalis",
+    "source": "protondb"
+  },
+  {
+    "appId": "1700",
+    "title": "Arx Fatalis",
+    "timestamp": 1535041099,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1700",
+    "title": "Arx Fatalis",
+    "timestamp": 1535722105,
+    "rating": "Gold",
+    "notes": "Works perfectly in the first location (15 FPS but it doesn't seem to be a problem)",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

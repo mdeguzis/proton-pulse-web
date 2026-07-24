@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "342510",
+    "title": "Bret Airborne",
+    "timestamp": 1535565762,
+    "rating": "Borked",
+    "notes": "Only shows black windowed screen without sound on start.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mobility Radeon HD 5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "342510",
+    "title": "Bret Airborne",
+    "timestamp": 1535551362,
+    "rating": "Borked",
+    "notes": "Only shows black windowed screen without sound on start.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mobility Radeon HD 5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

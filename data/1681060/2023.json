@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1681060",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.6, DRM 3.49, 6.2.6-76060206-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686373691,
+    "title": "Exogate Initiative",
+    "source": "protondb"
+  },
+  {
+    "appId": "1681060",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.5, DRM 3.49, 6.1.31-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.1.31-gentoo-x86_64",
+    "notes": "Aside from the one crash noted, has been quite stable and smooth.",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1687803592,
+    "title": "Exogate Initiative",
+    "source": "protondb"
+  },
+  {
+    "appId": "1681060",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.42, 5.15.0-89-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1 refresh - kisak-mesa PPA",
+    "kernel": "5.15.0-89-generic",
+    "notes": "Seems to be working just fine",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1700594880,
+    "title": "Exogate Initiative",
+    "source": "protondb"
+  }
+]

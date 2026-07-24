@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2823890",
+    "cpu": "AMD Ryzen 9 4900H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.11-76060111-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1735891730,
+    "title": "",
+    "source": "protondb"
+  }
+]

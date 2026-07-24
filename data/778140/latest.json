@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "778140",
+    "cpu": "11th Gen Intel Core i5-11600K @ 3.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-2-cachyos",
+    "notes": "Functions as it should, just no controller support!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1762433082,
+    "title": "",
+    "source": "protondb"
+  }
+]

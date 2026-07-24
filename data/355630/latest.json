@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "355630",
+    "cpu": "Intel(R) Xeon(R) CPU E3-1230 v3 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Played the intro, works perfect and smooth, missing the intro speech like android has (but do not know if this is a proton or general steam version problem).",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15968 MB",
+    "rating": "Platinum",
+    "timestamp": 1539439683,
+    "title": "Leo\u2019s Fortune - HD Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "355630",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works very decent: framerates are okay, everything looks as crisp as on windows and as far as I can tell everything works...with one exception: Music and all the voice-work (leaving only sound effects as audio). While this game certainly doesn't rely on it too much, it is certainly a miss compared to the windows version.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1540932246,
+    "title": "Leo\u2019s Fortune - HD Edition",
+    "source": "protondb"
+  }
+]

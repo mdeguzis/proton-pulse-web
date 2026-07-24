@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "65600",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Just tested the start of game with default proton DX9 support and it renders everything fine except performance is not very good and gamma cannot be changed. I also tested D9VK but it just renders black screen for the most part, and might even crash your desktop. The game is Dx9.0c so I dunno why D9VK doesn't work (works in Risen 3 btw)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565837690,
+    "title": "Gothic 3: Forsaken Gods Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "65600",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-fc0fdb637b)",
+    "kernel": "5.2.10-arch1-1-ARCH",
+    "notes": "On Proton it works out of the box with WineD3D. If you use PROTON_USE_D9VK=1 %command% as a launch option (available since Proton 4.11) the game works great with D9VK (D3D9 to Vulkan translation). Tested with RADV and the new Mesa ACO compiler on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1566923636,
+    "title": "Gothic 3: Forsaken Gods Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "65600",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "I have tried using dxvk.conf to spoof to AMD but I think this is the way it is by default, also tried nvidia id's and no luck. ATM with this proton version I get 5-6fps and is generally pretty unplayable, something is seriously going wrong for NVIDIA owners with this game. Apparently it works fine with AMD users, however I can't test this as I have no AMD card. There is a github issue report for this game, but no progress there either. Going to label this as borked! ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1570163610,
+    "title": "Gothic 3: Forsaken Gods Enhanced Edition",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

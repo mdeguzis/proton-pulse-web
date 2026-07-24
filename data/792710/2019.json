@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "792710",
+    "cpu": "Intel Core i7-6820HK @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Everything works near-perfectly except for the Internet - it can't connect to the developers' servers.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1559850451,
+    "title": "Levelhead",
+    "source": "protondb"
+  },
+  {
+    "appId": "792710",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-arch1-1-ARCH",
+    "notes": "The whole online part doesn't work, it seems like a network related issue since the solo works, however if you login to their servers, the game will crash on every startup",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561577289,
+    "title": "Levelhead",
+    "source": "protondb"
+  },
+  {
+    "appId": "792710",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "Technically the game runs fine, but the online portion (which is sort of the whole point) does not work at all.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566089258,
+    "title": "Levelhead",
+    "source": "protondb"
+  }
+]

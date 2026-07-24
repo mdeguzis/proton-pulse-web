@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "216260",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Did not require any tweaks, game launched without a problem. Steam controller works. I played some practiced nets and tried the character customisations. I did not try all the various game modes.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1558722746,
+    "title": "Don Bradman Cricket 14",
+    "source": "protondb"
+  }
+]

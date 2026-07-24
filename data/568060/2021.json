@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "568060",
+    "cpu": "Intel Core i3-4160 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.11.0-38-generic",
+    "notes": "Does not boot",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-7",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1634938007,
+    "title": "Hyper Void",
+    "source": "protondb"
+  }
+]

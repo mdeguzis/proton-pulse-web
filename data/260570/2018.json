@@ -1,0 +1,67 @@
+[
+  {
+    "appId": "260570",
+    "title": "Gray Matter",
+    "timestamp": 1535058798,
+    "rating": "Borked",
+    "notes": "After pressing \"Play\" nothing happens :(",
+    "os": "Arch Linux 64-bit",
+    "gpuDriver": "NVIDIA 396.51 ",
+    "specs": "Intel Quad Core Q6600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "260570",
+    "title": "Gray Matter",
+    "timestamp": 1535705082,
+    "rating": "Borked",
+    "notes": "Game won't start and does not show any error message (game runs fine with Wine-3.0)",
+    "os": "Linux Mint 18.3 (Kernel 4.13)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "AMD Phenom II X4 965 / NVIDIA GTX 1050TI",
+    "protonVersion": "3.73-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "260570",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Nothing happens when trying to run the game, tried different launch options and disabling overlays. Also launching the games \"display configuration\" does nothing either.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546021319,
+    "title": "Gray Matter",
+    "source": "protondb"
+  },
+  {
+    "appId": "260570",
+    "title": "Gray Matter",
+    "timestamp": 1535044398,
+    "rating": "Borked",
+    "notes": "After pressing \"Play\" nothing happens :(",
+    "os": "Arch Linux 64-bit",
+    "gpuDriver": "NVIDIA 396.51 ",
+    "specs": "Intel Quad Core Q6600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "260570",
+    "title": "Gray Matter",
+    "timestamp": 1535690682,
+    "rating": "Borked",
+    "notes": "Game won't start and does not show any error message (game runs fine with Wine-3.0)",
+    "os": "Linux Mint 18.3 (Kernel 4.13)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "AMD Phenom II X4 965 / NVIDIA GTX 1050TI",
+    "protonVersion": "3.73-3",
+    "source": "protondb"
+  }
+]

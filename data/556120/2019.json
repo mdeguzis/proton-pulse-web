@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "556120",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Works perfectly with launch option \"PROTON_USE_WINED3D11=1 %command%\". Without the option there is no video only sound.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547854334,
+    "title": "Reptilians Must Die!",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

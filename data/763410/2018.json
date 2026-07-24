@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "763410",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Menu titles does not have text, cannot move player. Works well otherwise. 60fps 4k.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537057278,
+    "title": "Long Live Santa!",
+    "source": "protondb"
+  },
+  {
+    "appId": "763410",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "None of the text shows, and player movement does not work, only jumping",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1540603247,
+    "title": "Long Live Santa!",
+    "source": "protondb"
+  },
+  {
+    "appId": "763410",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Now works great! Text is visible.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541060511,
+    "title": "Long Live Santa!",
+    "source": "protondb"
+  }
+]

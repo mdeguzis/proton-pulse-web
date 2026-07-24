@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "292420",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Starts but is not playable as it has below 5 FPS no matter the graphical settings.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542226263,
+    "title": "Panzer Elite Action Gold Edition",
+    "source": "protondb"
+  }
+]

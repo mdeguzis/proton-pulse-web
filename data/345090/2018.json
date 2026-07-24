@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "345090",
+    "title": "Ancient Planet Tower Defense",
+    "timestamp": 1535982025,
+    "rating": "Silver",
+    "notes": "audio is very glitchy",
+    "os": "Antagros",
+    "gpuDriver": "NVIDIA 396.54.02",
+    "specs": "AMD ryzen 6 1600 Nvidia gtx 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "345090",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.8-041808-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-041808-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16050 Mb",
+    "rating": "Borked",
+    "timestamp": 1537815371,
+    "title": "Ancient Planet Tower Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "345090",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541877873,
+    "title": "Ancient Planet Tower Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "345090",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "There game shows only a loading picture but then nothing happens.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546177224,
+    "title": "Ancient Planet Tower Defense",
+    "source": "protondb"
+  },
+  {
+    "appId": "345090",
+    "title": "Ancient Planet Tower Defense",
+    "timestamp": 1535967625,
+    "rating": "Silver",
+    "notes": "audio is very glitchy",
+    "os": "Antagros",
+    "gpuDriver": "NVIDIA 396.54.02",
+    "specs": "AMD ryzen 6 1600 Nvidia gtx 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

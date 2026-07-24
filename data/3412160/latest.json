@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3412160",
+    "cpu": "Intel Core i7-10700 @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.8-201.fsync.fc40.x86_64",
+    "notes": "game works out of the box, no issues",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1779602415,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3412160",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Plays great once you map controls to your preference.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1780064388,
+    "title": "",
+    "source": "protondb"
+  }
+]

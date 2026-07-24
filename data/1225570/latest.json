@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1225570",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.3-201.nobara.fc43.x86_64",
+    "notes": "EA launcher gives the game a 5-10% chance to load - had to install on Windows",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1768650365,
+    "title": "Unravel Two",
+    "source": "protondb"
+  },
+  {
+    "appId": "1225570",
+    "cpu": "Intel Core Ultra 9 275HX",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1770414057,
+    "title": "Unravel Two",
+    "source": "protondb"
+  },
+  {
+    "appId": "1225570",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.8, DRM 3.64, 6.19.9-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.9-200.fc43.x86_64",
+    "notes": "No issues with 2 controllers",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774817817,
+    "title": "Unravel Two",
+    "source": "protondb"
+  }
+]

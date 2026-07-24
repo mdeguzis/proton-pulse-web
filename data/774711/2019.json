@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "774711",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.0-15.1-liquorix-amd64",
+    "notes": "Game actually runs perfectly fine OOTB, but gamepad is messed up. Always scrolls in one direction and wrong mappings (Xinput)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1547792168,
+    "title": "The Best Of MagiCats",
+    "source": "protondb"
+  },
+  {
+    "appId": "774711",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.0-14.1-liquorix-amd64",
+    "notes": "With Proton 3.16-8 now everything works out of the box, including gamepad.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "3.16-8",
+    "protonVersionManual": "3.16-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552101371,
+    "title": "The Best Of MagiCats",
+    "source": "protondb"
+  },
+  {
+    "appId": "774711",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552798309,
+    "title": "The Best Of MagiCats",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

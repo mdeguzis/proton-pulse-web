@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1996010",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.7, DRM 3.64, 6.17.7-ba22.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.1",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "Smooth as butter",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1769785781,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1996010",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "Excellent",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1776111013,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1996010",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.17.4-76061704-generic",
+    "notes": "Worked perfectly from start to end oob",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1776570900,
+    "title": "",
+    "source": "protondb"
+  }
+]

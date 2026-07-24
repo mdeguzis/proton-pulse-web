@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "809950",
+    "cpu": "Intel(R) Core(TM) i5-3570 CPU @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "installing xact with protontricks fixed music issues\nseems to benefit from some sort of nvapi workaround, such as spoofing an amd card.\nwhole game not tested but the major pieces seem to work. Performance probably near native",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta (3.16-2)",
+    "ram": "7860 Mb",
+    "rating": "Gold",
+    "timestamp": 1539793133,
+    "title": "Asemblance: Oversight",
+    "source": "protondb"
+  }
+]

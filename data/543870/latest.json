@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "543870",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "After the loading screen hits 100% it just crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548376683,
+    "title": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "543870",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Tested Adventure Mode and single player VS Mode. No hiccups or troubles whatsoever.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561588241,
+    "title": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "543870",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Did not work few months ago but now with proton 4.11.2 for my surprise it did and no extra tweaks required. Performance is same as if you played it natively at Windows",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565635393,
+    "title": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 2",
+    "source": "protondb"
+  }
+]

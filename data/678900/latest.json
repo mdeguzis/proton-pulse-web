@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "678900",
+    "cpu": "Intel Core i3-4160 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-23-generic",
+    "notes": "error d3d11 :/",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564787558,
+    "title": "Farmer's Dynasty",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

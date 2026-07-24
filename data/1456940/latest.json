@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1456940",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-zen1-1-zen",
+    "notes": "Game version 1.0. Game launches and can use the menu. When launching match making it loads into the server but kicks me at the start count down.",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1738764464,
+    "title": "Level Zero: Extraction",
+    "source": "protondb"
+  }
+]

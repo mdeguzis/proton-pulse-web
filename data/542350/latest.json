@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "542350",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-1.el7.elrepo.x86_64",
+    "notes": "Worked fine - did once get an alert on startup about a file not being writable, but I clicked on Ignore and the game started up OK.",
+    "os": "CentOS Linux release 7.5.1804 (Core)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1541925915,
+    "title": "Castle of no Escape 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "542350",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Almost fully playable, except I can't get sound effects to work. Music plays fine. No tweaks required to run, d3d11 tweaks don't have any effect on the issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1545954844,
+    "title": "Castle of no Escape 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "411830",
+    "cpu": "Intel Core i5-4690T @ 2.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.42-1-MANJARO",
+    "notes": "Works fine using wined3d, but crashes after any online match.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1566015054,
+    "title": "SENRAN KAGURA SHINOVI VERSUS",
+    "source": "protondb"
+  },
+  {
+    "appId": "411830",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Platinum as a single player game, achievements works, controller works, runs perfect. However crashes right away when you enter a multiplayer game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566141410,
+    "title": "SENRAN KAGURA SHINOVI VERSUS",
+    "source": "protondb"
+  }
+]

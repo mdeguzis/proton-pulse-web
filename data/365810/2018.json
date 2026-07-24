@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "365810",
+    "title": "Flying Tigers: Shadows over China",
+    "timestamp": 1535453618,
+    "rating": "Silver",
+    "notes": "Game plays smoothly but cannot be controlled with mouse / gamepad camera is wonky",
+    "os": "Manjaro (4.18.4-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "365810",
+    "title": "Flying Tigers: Shadows Over China",
+    "timestamp": 1536296971,
+    "rating": "Platinum",
+    "notes": "No issues. Tested with mouse/keyboard and gamepad",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "365810",
+    "title": "Flying Tigers: Shadows over China",
+    "timestamp": 1535439218,
+    "rating": "Silver",
+    "notes": "Game plays smoothly but cannot be controlled with mouse / gamepad camera is wonky",
+    "os": "Manjaro (4.18.4-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "365810",
+    "title": "Flying Tigers: Shadows Over China",
+    "timestamp": 1536282571,
+    "rating": "Platinum",
+    "notes": "No issues. Tested with mouse/keyboard and gamepad",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

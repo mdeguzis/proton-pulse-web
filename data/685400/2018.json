@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "685400",
+    "title": "Skelly Selest",
+    "timestamp": 1535098216,
+    "rating": "Bronze",
+    "notes": "Runs, but there are graphical artifacts all over the screen. Not usuable.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "685400",
+    "title": "Skelly Selest",
+    "timestamp": 1535333940,
+    "rating": "Gold",
+    "notes": "Game speed is tied to FPS. Manually limit FPS to 60 to get the game to run correctly.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "Ryzen 2700X/Vega 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "685400",
+    "title": "Skelly Selest",
+    "timestamp": 1535083816,
+    "rating": "Bronze",
+    "notes": "Runs, but there are graphical artifacts all over the screen. Not usuable.",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "685400",
+    "title": "Skelly Selest",
+    "timestamp": 1535319540,
+    "rating": "Gold",
+    "notes": "Game speed is tied to FPS. Manually limit FPS to 60 to get the game to run correctly.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "Ryzen 2700X/Vega 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

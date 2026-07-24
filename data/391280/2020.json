@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "391280",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.40-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1590270737,
+    "title": "Epic Manager - Create Your Own Adventuring Agency!",
+    "source": "protondb"
+  },
+  {
+    "appId": "391280",
+    "cpu": "Intel Core i7-4771 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602290409,
+    "title": "Epic Manager - Create Your Own Adventuring Agency!",
+    "source": "protondb"
+  }
+]

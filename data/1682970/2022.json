@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1682970",
+    "cpu": "AMD Ryzen 3 PRO 3300U w/ Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 6 (RAVEN, DRM 3.41.0, 5.13.0-19-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-19-generic",
+    "notes": "This is the single worst experience I have had with a game on linux. Crashing, black screens, visual bugs. None were as bad as this. Holy sh",
+    "os": "Ubuntu Jammy Jellyfish (development branch)",
+    "protonVersion": "7.0-1",
+    "ram": "38 GB",
+    "rating": "borked",
+    "timestamp": 1648822493,
+    "title": "Uncrashed : FPV Drone Simulator",
+    "source": "protondb"
+  }
+]

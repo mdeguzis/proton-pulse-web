@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "346610",
+    "cpu": "Intel Core2 Quad    Q9400  @ 2.66GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Launcher starts, crashes when you click \"Play\".",
+    "os": "Ubuntu Gnome 16.04.5",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1542505764,
+    "title": "Racecraft",
+    "source": "protondb"
+  }
+]

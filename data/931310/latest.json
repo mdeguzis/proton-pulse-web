@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "931310",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.9-arch1-1",
+    "notes": "",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1748939696,
+    "title": "",
+    "source": "protondb"
+  }
+]

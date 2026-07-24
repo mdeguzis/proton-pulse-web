@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "453880",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Intermittently missing audio",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553764753,
+    "title": "Ninja Outbreak",
+    "source": "protondb"
+  }
+]

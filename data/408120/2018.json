@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "408120",
+    "title": "Cibele",
+    "timestamp": 1535496998,
+    "rating": "Platinum",
+    "notes": "Worked perfect. Completed game.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i3 4170 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "408120",
+    "title": "Cibele",
+    "timestamp": 1535506942,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "408120",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Frame rate is pretty bad.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Silver",
+    "timestamp": 1539222651,
+    "title": "Cibele",
+    "source": "protondb"
+  },
+  {
+    "appId": "408120",
+    "cpu": "Intel Core i7         920  @ 2.67GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1543810780,
+    "title": "Cibele",
+    "source": "protondb"
+  },
+  {
+    "appId": "408120",
+    "title": "Cibele",
+    "timestamp": 1535482598,
+    "rating": "Platinum",
+    "notes": "Worked perfect. Completed game.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i3 4170 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "408120",
+    "title": "Cibele",
+    "timestamp": 1535492542,
+    "rating": "Platinum",
+    "notes": "No issues observed",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "224500",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.8, DRM 3.57, 6.10.9-amd64)",
+    "gpuDriver": "4.6 Mesa 24.2.2-1",
+    "kernel": "6.10.9-amd64",
+    "notes": "While I've hade some crashes it's still not a horrible experience by any means but YMMV",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "bronze",
+    "timestamp": 1731966488,
+    "title": "",
+    "source": "protondb"
+  }
+]

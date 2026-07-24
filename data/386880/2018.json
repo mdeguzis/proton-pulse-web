@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "386880",
+    "cpu": "i7-7700K CPU @ 4.20GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Menu works and game loads in ultra graphics settings, but text is missing from within the game. (It was created with the Unity engine.)",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "32113 Mb",
+    "rating": "Borked",
+    "timestamp": 1536568136,
+    "title": "Rake",
+    "source": "protondb"
+  },
+  {
+    "appId": "386880",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Text now works within the game; set to Ultra in Unity menu; left game in windowed mode 1920x1080; I have not tested multiplayer extensively.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542076120,
+    "title": "Rake",
+    "source": "protondb"
+  }
+]

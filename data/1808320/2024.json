@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1808320",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Getting some unhandled exception, seems to be missing a dll (maybe?), but I have not had time to tinker any more with it.\n\n1466241.439:0138:013c:fixme:dbghelp:elf_search_auxv can't find symbol in module\nUnhandled exception: page fault on read access to 0x0000000000000010 in 64-bit code (0x006ffffd724b84).",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1732484567,
+    "title": "Lake of Creatures",
+    "source": "protondb"
+  },
+  {
+    "appId": "1808320",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1732575208,
+    "title": "Lake of Creatures",
+    "source": "protondb"
+  }
+]

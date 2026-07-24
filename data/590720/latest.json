@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "590720",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Performance is pretty subpar and mouse tracking has some issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555295872,
+    "title": "Cobalt WASD",
+    "source": "protondb"
+  },
+  {
+    "appId": "590720",
+    "cpu": "Intel Core i5-3475S @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Desktop",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game won't start at all.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557075776,
+    "title": "Cobalt WASD",
+    "source": "protondb"
+  },
+  {
+    "appId": "590720",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.11-arch1-1-ARCH",
+    "notes": "did a bot fight, since no one plays this, so i couldn't test multiplayer",
+    "os": "Antergos Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560971011,
+    "title": "Cobalt WASD",
+    "source": "protondb"
+  }
+]

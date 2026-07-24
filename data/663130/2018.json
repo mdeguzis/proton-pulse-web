@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "663130",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "The game does not start. It doesn't even show up on my system monitor. was not able to get any sort of error message.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543730734,
+    "title": "Game Tengoku CruisinMix Special",
+    "source": "protondb"
+  }
+]

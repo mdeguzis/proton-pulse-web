@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "572520",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.3.4-9.4-tkg-pds",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570462220,
+    "title": "Dropzone",
+    "source": "protondb"
+  }
+]

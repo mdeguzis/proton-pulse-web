@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "12800",
+    "title": "FUEL",
+    "timestamp": 1535549658,
+    "rating": "Borked",
+    "notes": "It install prerequisites, ask for a key (Securom) and activate it, buth then it gets stucked in the FUEL logo screen.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3550 / GTX 1050Ti",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  },
+  {
+    "appId": "12800",
+    "title": "FUEL",
+    "timestamp": 1535535258,
+    "rating": "Borked",
+    "notes": "It install prerequisites, ask for a key (Securom) and activate it, buth then it gets stucked in the FUEL logo screen.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3550 / GTX 1050Ti",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  }
+]

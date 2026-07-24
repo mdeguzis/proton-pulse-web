@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1432860",
+    "cpu": "AMD Ryzen 3 3300X 4-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.14.21-210.current",
+    "notes": "Worked lag-free with specific Proton version",
+    "os": "Solus",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1648874924,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1432860",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.46, 5.18.7-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.2",
+    "kernel": "5.18.7-zen1-1-zen",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1658076007,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1432860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game feels like a fantasy version of Star Dew Valley.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1661173844,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "411330",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.4-zen1-1-zen",
+    "notes": "The game doesn't appear until it is done playing the 5 minute long intro video, you can hear the video but no game window will appear until it's done playing. Characters and enemies don't render properly, they are completely black unless performing certain actions. This is a small improvement over older version of Proton (3.7-8) where besides the characters props wouldn't render properly either showing as black or invisible.  ",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553882768,
+    "title": "Men of Valor",
+    "source": "protondb"
+  }
+]

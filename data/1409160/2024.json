@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1409160",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.1.51-1-MANJARO",
+    "notes": "Couldn't get it to work after a while of not playing. Bummer.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1710733971,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1409160",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1730757233,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1409160",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "El juego es jugable a buen rendimiento.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733089759,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "585630",
+    "cpu": "i7-4790 CPU @ 3.60GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "notes": "The game hangs after start. It shows the message: \"error creating session\" https://imgur.com/a/ncx5Q4b",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "24045 Mb",
+    "rating": "Borked",
+    "timestamp": 1536887254,
+    "title": "Switchblade",
+    "source": "protondb"
+  },
+  {
+    "appId": "585630",
+    "cpu": "AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Worked for me. Got into a game and played with some people. No bugs that I saw.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543895198,
+    "title": "Switchblade",
+    "source": "protondb"
+  },
+  {
+    "appId": "585630",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4b218984d8)",
+    "kernel": "4.19.7-arch1-1-ARCH",
+    "notes": "Works good on DXVK, sometimes there is a stuttering but in total it is playable without real issues.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544129044,
+    "title": "Switchblade",
+    "source": "protondb"
+  }
+]

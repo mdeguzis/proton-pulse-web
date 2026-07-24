@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "102810",
+    "cpu": "i5-4670K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Game loads with rendered scene in background, but menu which should be overlaid, is invisible. Eventually crashes to desktop",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15915 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536780211,
+    "title": "Gatling Gears",
+    "source": "protondb"
+  },
+  {
+    "appId": "102810",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Game starts. The menu background is a real time scene rendered in-engine. That works perfectly in all its complexity. But the menu is completely invisible so I can't actually start the game. I'm sure the 3D part of this game works just fine, but it's completely unusable as long as the 2D overlay is invisible. None of the 3 Proton launch options have any effect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543529834,
+    "title": "Gatling Gears",
+    "source": "protondb"
+  }
+]

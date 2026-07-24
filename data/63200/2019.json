@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "63200",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "Plays pretty well through two exhibition matches.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549069464,
+    "title": "Monday Night Combat",
+    "source": "protondb"
+  },
+  {
+    "appId": "63200",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.2",
+    "kernel": "4.19.16_1",
+    "notes": "Had to turn the graphics way down to make it playable, but played through the tutorial without any issue.",
+    "os": "Void Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1549863095,
+    "title": "Monday Night Combat",
+    "source": "protondb"
+  }
+]

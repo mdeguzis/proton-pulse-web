@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2120060",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs great!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1749676471,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2120060",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.4-108.bazzite.fc42.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1761458200,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2120060",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-300.fc43.x86_64",
+    "notes": "Game works when windowed",
+    "os": "Fedora Linux 43 (Forty Three)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767170710,
+    "title": "",
+    "source": "protondb"
+  }
+]

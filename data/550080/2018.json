@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "550080",
+    "title": "Valkyrie Drive -Bhikkhuni-",
+    "timestamp": 1534944700,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Gentoo",
+    "gpuDriver": "Mesa 18.1.3",
+    "specs": "i7 2600 / R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "550080",
+    "title": "Valkyrie Drive -Bhikkhuni-",
+    "timestamp": 1534954795,
+    "rating": "Silver",
+    "notes": "Before going into story mode, you must visit the cafeteria first. Otherwise the game will hang at a black screen with high CPU. This means you can't start a brand new game on Linux because you don't start out with the cafeteria. Once you're in story mode everything works fine.",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8320E",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "550080",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0 AMD 18.30 , 4.15.0-34-generic, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-34-generic",
+    "notes": "runs using \"PROTON_USE_WINED3D11=1 %command%\" in launch options but controller is really bugged, plays fine with mouse and keyboard though",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7941 Mb",
+    "rating": "Silver",
+    "timestamp": 1537821737,
+    "title": "VALKYRIE DRIVE -BHIKKHUNI-",
+    "source": "protondb"
+  },
+  {
+    "appId": "550080",
+    "title": "Valkyrie Drive -Bhikkhuni-",
+    "timestamp": 1534930300,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Gentoo",
+    "gpuDriver": "Mesa 18.1.3",
+    "specs": "i7 2600 / R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "550080",
+    "title": "Valkyrie Drive -Bhikkhuni-",
+    "timestamp": 1534940395,
+    "rating": "Silver",
+    "notes": "Before going into story mode, you must visit the cafeteria first. Otherwise the game will hang at a black screen with high CPU. This means you can't start a brand new game on Linux because you don't start out with the cafeteria. Once you're in story mode everything works fine.",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8320E",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

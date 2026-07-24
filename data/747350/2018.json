@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "747350",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Crashes at startup",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15981 Mb",
+    "rating": "Borked",
+    "timestamp": 1536784559,
+    "title": "Hellblade: Senua's Sacrifice VR Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "747350",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works but with a lot of stuttering, may be shaders compilation ? ",
+    "os": "Ubuntu 18.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545844929,
+    "title": "Hellblade: Senua's Sacrifice VR Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "747350",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Nvidia: If UE4 engine dies on startup, look in your DXVK configs, if you circumvented the default spoof of an AMD card to the game. If so, the engine will look for NvAPI, what will result in a crash.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546044779,
+    "title": "Hellblade: Senua's Sacrifice VR Edition",
+    "source": "protondb"
+  }
+]

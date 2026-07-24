@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "70",
+    "cpu": "Intel Core i7-3517U @ 1.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Singleplayer works just fine, but when joining a multiplayer server the game crashes with a socket error: NET_QueuePacket: WSAEADDRNOTAVAIL (for slightly more details look here: http://www.sockets.com/err_lst1.htm it's error 10049)\n\nThe sames goes for selfcreated multiplayer servers: It will create the server, but when it reaches the point where it joins the server, it crashes with this error.\n\nThe Motivation for getting Half-Life to work under proton is that it will enable playing many classic Half-Life mods through the Native Steam client, simply by extracting the installers into the Half-Life folder.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "10 GB",
+    "rating": "Bronze",
+    "timestamp": 1554358905,
+    "title": "Half-Life",
+    "source": "protondb"
+  }
+]

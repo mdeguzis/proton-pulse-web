@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1490410",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa zink Vulkan 1.4(AMD Radeon (Driver Unknown))",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.5",
+    "kernel": "6.12.44-1-lts",
+    "notes": "Game works without any noticeable issues, both before and after installing the 1.1 update patch.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1757793972,
+    "title": "",
+    "source": "protondb"
+  }
+]

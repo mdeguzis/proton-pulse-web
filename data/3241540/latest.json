@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3241540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 470 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.16.1-arch1-1",
+    "notes": "Force opengl otherwise it wont launch, game fully works when launched with opengl",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1755734664,
+    "title": "",
+    "source": "protondb"
+  }
+]

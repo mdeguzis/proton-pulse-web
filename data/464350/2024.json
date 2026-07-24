@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "464350",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.8.2-arch2-1)",
+    "gpuDriver": "4.6 Mesa 24.0.4-arch1.2",
+    "kernel": "6.8.2-arch2-1",
+    "notes": "No complaints. Runs perfect.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1712238220,
+    "title": "",
+    "source": "protondb"
+  }
+]

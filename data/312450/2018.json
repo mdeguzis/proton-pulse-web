@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "312450",
+    "title": "Order of Battle: World War II",
+    "timestamp": 1535139346,
+    "rating": "Silver",
+    "notes": "It's obviously missing msttcorefonts, so the tooltips don't show anything (which is almost mandatory in this game). Introvideos don't show, but they can be disabled in the options. Other than that it runs well.",
+    "os": "Debian Stable 64-bit (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 970 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312450",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "tooltips issue present",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32124 Mb",
+    "rating": "Silver",
+    "timestamp": 1537276876,
+    "title": "Order of Battle: World War II",
+    "source": "protondb"
+  },
+  {
+    "appId": "312450",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Tooltips issues fixed installing corefonts with winetricks.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32124 Mb",
+    "rating": "Gold",
+    "timestamp": 1537476440,
+    "title": "Order of Battle: World War II",
+    "source": "protondb"
+  },
+  {
+    "appId": "312450",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "With 3.16 beta no more need to install corefonts with winetricks. Disable play videos at launch for a smoother launch.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542374609,
+    "title": "Order of Battle: World War II",
+    "source": "protondb"
+  },
+  {
+    "appId": "312450",
+    "title": "Order of Battle: World War II",
+    "timestamp": 1535124946,
+    "rating": "Silver",
+    "notes": "It's obviously missing msttcorefonts, so the tooltips don't show anything (which is almost mandatory in this game). Introvideos don't show, but they can be disabled in the options. Other than that it runs well.",
+    "os": "Debian Stable 64-bit (Kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 970 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "454250",
+    "title": "The Eyes of Ara",
+    "timestamp": 1535244920,
+    "rating": "Platinum",
+    "notes": "All good. I only tried the demo but everithing is perfect whit it.",
+    "os": "Linux Mint 18.1 (Serena)",
+    "gpuDriver": "NVIDIA GEFORCE 940mx",
+    "specs": "intel core i5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "454250",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.7",
+    "os": "Debian GNU/Linux unstable (sid) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32129 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536813394,
+    "title": "The Eyes of Ara",
+    "source": "protondb"
+  },
+  {
+    "appId": "454250",
+    "title": "The Eyes of Ara",
+    "timestamp": 1535230520,
+    "rating": "Platinum",
+    "notes": "All good. I only tried the demo but everithing is perfect whit it.",
+    "os": "Linux Mint 18.1 (Serena)",
+    "gpuDriver": "NVIDIA GEFORCE 940mx",
+    "specs": "intel core i5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

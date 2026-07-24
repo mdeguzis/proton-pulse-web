@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "365770",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Initially starts in a small window but can be easily changed to fullscreen. Runs flawlessly on Proton 3.16-9 Beta, including Xbox One controller support. Has major graphics glitches on Proton 4.2-3, even on WineD3D.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-9)",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555832466,
+    "title": "Volume",
+    "source": "protondb"
+  },
+  {
+    "appId": "365770",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558599186,
+    "title": "Volume",
+    "source": "protondb"
+  },
+  {
+    "appId": "365770",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "Intel graphics not good enough to play the game. Requires disabling D3D11 to launch at all, but FPS too low to be useful.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561339902,
+    "title": "Volume",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "365770",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Game started in tiny window, but it's easy to make it fullscreen, which sticks in subsequent play sessions. No tweaks otherwise. Had to wipe the save for a refresher, but played through the first 15 levels without any major issues.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567610881,
+    "title": "Volume",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "400740",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.5-76051505-generic",
+    "notes": "Game does not open",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639345362,
+    "title": "",
+    "source": "protondb"
+  }
+]

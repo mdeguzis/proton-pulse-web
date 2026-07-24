@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "578180",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - SteamVR PPA",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "Minor graphical glitches.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541527035,
+    "title": "Lost Base Escape",
+    "source": "protondb"
+  }
+]

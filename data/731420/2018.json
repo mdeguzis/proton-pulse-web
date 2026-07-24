@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "731420",
+    "title": "Roguebreaker",
+    "timestamp": 1535100522,
+    "rating": "Silver",
+    "notes": "First few games the game looked like it froze when the ball hit the bricks. It was probably due to shader cache. Afterwards it run perfectly",
+    "os": "Ubuntu MATE 14.04.5 (Kernel 4.4.0-131-generic)",
+    "gpuDriver": "Mesa 10.5.9",
+    "specs": "i5-4460 / Intel HD 4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "731420",
+    "title": "Roguebreaker",
+    "timestamp": 1536042981,
+    "rating": "Silver",
+    "notes": "Just like the other submission, freeze for the first few rounds while building the shader cache. After it's done it runs great",
+    "os": "Antergos  64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i5 4690K / R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "731420",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.0-041900-generic",
+    "notes": "Everything runs great. Developer is responsive to feedback and is updating. I've not seen the shader cache issues other people have reported.",
+    "os": "Lubuntu 18.10",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541061294,
+    "title": "Roguebreaker",
+    "source": "protondb"
+  },
+  {
+    "appId": "731420",
+    "title": "Roguebreaker",
+    "timestamp": 1535086122,
+    "rating": "Silver",
+    "notes": "First few games the game looked like it froze when the ball hit the bricks. It was probably due to shader cache. Afterwards it run perfectly",
+    "os": "Ubuntu MATE 14.04.5 (Kernel 4.4.0-131-generic)",
+    "gpuDriver": "Mesa 10.5.9",
+    "specs": "i5-4460 / Intel HD 4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "731420",
+    "title": "Roguebreaker",
+    "timestamp": 1536028581,
+    "rating": "Silver",
+    "notes": "Just like the other submission, freeze for the first few rounds while building the shader cache. After it's done it runs great",
+    "os": "Antergos  64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i5 4690K / R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

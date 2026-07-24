@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1183470",
+    "cpu": "12th Gen Intel Core i5-1240P",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.1",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "It works. Missing UI Scaling option and big problems with GameScope",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1777145945,
+    "title": "",
+    "source": "protondb"
+  }
+]

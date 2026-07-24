@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1288610",
+    "cpu": "AMD Ryzen 7 5700",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Works great. Using GE-Proton by preference, I'd be surprised if this game doesn't work with default Proton.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1697839141,
+    "title": "Wildcat Gun Machine",
+    "source": "protondb"
+  }
+]

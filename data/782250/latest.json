@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "782250",
+    "cpu": "13th Gen Intel Core i5-13400F",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 17.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-35-generic",
+    "notes": "dating sim with consequinces works on linux",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1718329961,
+    "title": "",
+    "source": "protondb"
+  }
+]

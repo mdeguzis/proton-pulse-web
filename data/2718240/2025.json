@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2718240",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.10-arch1-1",
+    "notes": "The game works without any tinkering. Trackpads might have issues.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1760548503,
+    "title": "PolyPine",
+    "source": "protondb"
+  }
+]

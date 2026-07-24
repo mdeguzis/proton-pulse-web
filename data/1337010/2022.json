@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1337010",
+    "cpu": "Intel Xeon Gold 6154 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.42.0, 5.15.0-2-amd64, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.0-2-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-8",
+    "ram": "131 GB",
+    "rating": "silver",
+    "timestamp": 1643823232,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1337010",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Plays perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1665200919,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1337010",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works perfectly OOTB, some occasional FPS drop.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1669906342,
+    "title": "",
+    "source": "protondb"
+  }
+]

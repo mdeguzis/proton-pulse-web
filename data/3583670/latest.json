@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3583670",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.13-arch1-1",
+    "notes": "I tried Cachy 10 and 11, experimental, hotfix, GE 10-34, 14, 04; the game would not launch for me",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1780256091,
+    "title": "",
+    "source": "protondb"
+  }
+]

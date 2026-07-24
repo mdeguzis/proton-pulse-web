@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "916060",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.15.0-55-generic",
+    "notes": "When you run it first time and see Steam game starting window, you have to wait ~5min, because the game is installing necessary programs. After first run, the game will start at normal speed/you don't have to wait that ~5min",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1564983388,
+    "title": "Loca-Love My Cute Roommate",
+    "source": "protondb"
+  }
+]

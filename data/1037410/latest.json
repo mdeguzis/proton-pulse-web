@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1037410",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.4-14-tkg-pds",
+    "notes": "black screen and then fatal error",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564571822,
+    "title": "Captain Starshot",
+    "source": "protondb"
+  },
+  {
+    "appId": "1037410",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.20-300.fc30.x86_64",
+    "notes": "Fatal error just after start.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1564929323,
+    "title": "Captain Starshot",
+    "source": "protondb"
+  }
+]

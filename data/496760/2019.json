@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "496760",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "DOSBox game. Runs fine, though the fading in/out is rather slower than it should be, and the pause before the menu appears is several seconds longer than on Windows",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554762646,
+    "title": "The Beast Within: A Gabriel Knight\u00ae Mystery",
+    "source": "protondb"
+  }
+]

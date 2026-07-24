@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3096370",
+    "cpu": "Intel Xeon W-2155 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "Was able to install, launch and play a game",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1743917382,
+    "title": "",
+    "source": "protondb"
+  }
+]

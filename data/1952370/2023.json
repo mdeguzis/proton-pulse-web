@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1952370",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works fine out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1686897715,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1952370",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-58-generic",
+    "notes": "No documentation online about any potential workarounds (or if there is, its swallowed up in a sea of documentation for TES: Oblivion), and both experimental and latest full versions of Proton do nothing to allow the game to run. Completely understandable due to it being a newly release early access title, but for the time being the game is borked.",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1687024143,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1952370",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.6.1-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1700117094,
+    "title": "",
+    "source": "protondb"
+  }
+]

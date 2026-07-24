@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "552910",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.15.0-43-generic",
+    "notes": "everything works.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546880151,
+    "title": "Tokyo Tattoo Girls / \u523a\u9752\u306e\u56fd",
+    "source": "protondb"
+  },
+  {
+    "appId": "552910",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-58-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567245903,
+    "title": "Tokyo Tattoo Girls",
+    "source": "protondb"
+  }
+]

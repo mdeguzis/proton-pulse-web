@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "283450",
+    "title": "Zooloretto",
+    "timestamp": 1535422731,
+    "rating": "Platinum",
+    "notes": "Runs well.",
+    "os": "Ubuntu 18.04 64-bit (Kernal 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-4690K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "283450",
+    "title": "Zooloretto",
+    "timestamp": 1535408331,
+    "rating": "Platinum",
+    "notes": "Runs well.",
+    "os": "Ubuntu 18.04 64-bit (Kernal 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-4690K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

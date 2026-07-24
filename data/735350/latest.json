@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "735350",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.4.0-142-generic",
+    "notes": "runs pretty well",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1549731834,
+    "title": "Bottle: Pilgrim",
+    "source": "protondb"
+  },
+  {
+    "appId": "735350",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.4.0-142-generic",
+    "notes": "game runs quite well except of the winter level (Interlude Three: Brave Little Soul). This level is hardly playable. Even on low settings it just runs with 5-10 fps).",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1549960394,
+    "title": "Bottle: Pilgrim",
+    "source": "protondb"
+  }
+]

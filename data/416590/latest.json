@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "416590",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-52bdb04 2019-02-16 cosmic-oibaf-ppa)",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "works fine",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1550466135,
+    "title": "Emily Wants To Play",
+    "source": "protondb"
+  }
+]

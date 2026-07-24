@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "562470",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "find not really any gameplay problems it skips opening video. but other then that works fine from my savefile",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1562500591,
+    "title": "\u5929\u4f7f\u5e1d\u570b\u56db\u300aEmpire of Angels IV\u300b",
+    "source": "protondb"
+  },
+  {
+    "appId": "562470",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 850M",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-48-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568533287,
+    "title": "\u5929\u4f7f\u5e1d\u570b\u56db\u300aEmpire of Angels IV\u300b",
+    "source": "protondb"
+  }
+]

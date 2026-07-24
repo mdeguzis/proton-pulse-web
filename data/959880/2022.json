@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "959880",
+    "cpu": "Intel Core i9-10980XE @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.10-zen1-1-zen",
+    "notes": "Very difficult to read due to text scaling issues.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1649286694,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "959880",
+    "cpu": "Intel Core i9-10980XE @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.10-zen1-1-zen",
+    "notes": "Text scaling issue causes text to overlap or go off-screen.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1669587669,
+    "title": "",
+    "source": "protondb"
+  }
+]

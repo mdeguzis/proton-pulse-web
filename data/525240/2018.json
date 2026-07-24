@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "525240",
+    "title": "Lost Sphear",
+    "timestamp": 1535914942,
+    "rating": "Borked",
+    "notes": "No input",
+    "os": "Archlinux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA  396.54",
+    "specs": "i7-6700K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "525240",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "Gamepad does't work, missing characters textures. Disable D3D11 display a pink/purple screen only. Use Wine D3D11 increase the missings textures (almost all of the interface is black). No difference with Esync disabled.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15857 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538329772,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "LOST SPHEAR",
+    "source": "protondb"
+  },
+  {
+    "appId": "525240",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game run flawlessly using mouse/keyboard BUT keys are set for QWERTY keyboard. Require to switch off all gamepad before launch, otherwise some keys aren't  detected.",
+    "os": "Ubuntu 18.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545758266,
+    "title": "LOST SPHEAR",
+    "source": "protondb"
+  },
+  {
+    "appId": "525240",
+    "title": "Lost Sphear",
+    "timestamp": 1535900542,
+    "rating": "Borked",
+    "notes": "No input",
+    "os": "Archlinux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA  396.54",
+    "specs": "i7-6700K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

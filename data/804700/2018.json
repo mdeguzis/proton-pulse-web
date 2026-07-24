@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "804700",
+    "title": "The House in Fata Morgana: A Requiem for Innocence",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "Standalone DLC for The House in Fata Morgana, so no doubt the original runs as well (it does in vanilla Wine)",
+    "os": "Gentoo 4.18.3",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 1600 / Rx 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "804700",
+    "title": "The House in Fata Morgana: A Requiem for Innocence",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "Standalone DLC for The House in Fata Morgana, so no doubt the original runs as well (it does in vanilla Wine)",
+    "os": "Gentoo 4.18.3",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 1600 / Rx 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

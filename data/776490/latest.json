@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "776490",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.1.5-050105-generic",
+    "notes": "Alt tabbing wont work, it will make the game crash/glitch the screen.\nperformance is on par from what i see in Windows",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559248305,
+    "title": "\u6c38\u9060\u6d88\u5931\u7684\u5e7b\u60f3\u9109 \uff5e The Disappearing of Gensokyo",
+    "source": "protondb"
+  },
+  {
+    "appId": "776490",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-25-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565801876,
+    "title": "\u6c38\u9060\u6d88\u5931\u7684\u5e7b\u60f3\u9109 \uff5e The Disappearing of Gensokyo",
+    "source": "protondb"
+  }
+]

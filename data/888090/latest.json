@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "888090",
+    "cpu": "Intel Xeon E5-1620 0 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Game shows message \"DX11 feature level 10.0 is required to run the engine.\" upon startup and does not start. I have attempted NO fixes yet.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547272946,
+    "title": "TREE",
+    "source": "protondb"
+  },
+  {
+    "appId": "888090",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569415779,
+    "title": "TREE",
+    "source": "protondb"
+  }
+]

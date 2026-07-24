@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "904310",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Crashed after playing 5 minutes (with extreme input lag). Crash says \"GetThreadContext failed\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1561947466,
+    "title": "Initial 2 : New Stage",
+    "source": "protondb"
+  },
+  {
+    "appId": "904310",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Game crashes after 5 minutes of gameplay, suffers from severe input lag.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1561947655,
+    "title": "Initial 2 : New Stage",
+    "source": "protondb"
+  }
+]

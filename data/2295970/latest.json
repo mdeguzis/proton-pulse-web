@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2295970",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-59-generic",
+    "notes": "Currently no way to fix, no version of either Proton or Proton-GE work.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1763012504,
+    "title": "",
+    "source": "protondb"
+  }
+]

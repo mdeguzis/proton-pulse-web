@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "692360",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.8-300.fc30.x86_64",
+    "notes": "Tested first half.\nGot around 30 fps initially, but I changed my display setup and got >=120 fps. I un-fullscreened the desktop window and also opened the frame timing console.\nOn the first run, audio and text were missing.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561887424,
+    "title": "Tales of Wedding Rings VR",
+    "source": "protondb"
+  }
+]

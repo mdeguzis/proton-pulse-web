@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "57700",
+    "cpu": "Intel Xeon           X5687  @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.9-105.current",
+    "notes": "Have only played 15 minutes and through the first 2 levels. So far it performs identically to Windows. ",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545808102,
+    "title": "Who's That Flying?!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "388430",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.14.138-1-MANJARO",
+    "notes": "Played through a normal 4vs4 local battle against CPU, no issues. Frame rates at 1080p and high graphics were 60fps+.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571025239,
+    "title": "TankZone Battle",
+    "source": "protondb"
+  },
+  {
+    "appId": "388430",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.14.138-1-MANJARO",
+    "notes": "Played through a normal 4vs4 local battle against CPU, no issues. Frame rates at 1080p and high graphics were 60fps+.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571027218,
+    "title": "TankZone Battle",
+    "source": "protondb"
+  }
+]

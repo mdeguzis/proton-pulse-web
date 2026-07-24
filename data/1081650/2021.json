@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1081650",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Ran just fine using Proton 5.13-6. Got high FPS and didn't lose any frames. Experienced one crash on a Workshop map, none in the campaign.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1613288961,
+    "title": "",
+    "source": "protondb"
+  }
+]

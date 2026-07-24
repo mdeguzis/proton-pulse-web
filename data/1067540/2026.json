@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1067540",
+    "cpu": "Intel Xeon E3-1270 v5 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA RTX A2000 12GB",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.5.0-35-generic",
+    "notes": "Runs fine on version 3.16-9",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "3.16-9",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1767248554,
+    "title": "R\u00f6ki",
+    "source": "protondb"
+  },
+  {
+    "appId": "1067540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Plays great on the deck!",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1768050460,
+    "title": "R\u00f6ki",
+    "source": "protondb"
+  },
+  {
+    "appId": "1067540",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "It doesn't launch with the current version of Proton, but it does launch with an older version : the 3.16-9 version works very well",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1773180688,
+    "title": "R\u00f6ki",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "623080",
+    "title": "Planetarian HD",
+    "timestamp": 1535844001,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "623080",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.14.78-1-lts",
+    "notes": "Achivement also works.",
+    "os": "Linux 4.14",
+    "protonVersion": "Default",
+    "ram": "3 GB",
+    "rating": "Platinum",
+    "timestamp": 1543042240,
+    "title": "planetarian HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "623080",
+    "title": "Planetarian HD",
+    "timestamp": 1535829601,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

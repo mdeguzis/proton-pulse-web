@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "243000",
+    "title": "Omikron - The Nomad Soul",
+    "timestamp": 1535246139,
+    "rating": "Borked",
+    "notes": "Works but at extremely low frame rates",
+    "os": "Arch Linux 64 Bit (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "243000",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Picture is frozen on main menu",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541992842,
+    "title": "Omikron: The Nomad Soul",
+    "source": "protondb"
+  },
+  {
+    "appId": "243000",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.8-041908-lowlatency",
+    "notes": "The game freezes on the start menu (using arrows triggers sound which suggests that the menu is working, but the picture is not working at all). No workaround seems to work. The gog.com version works without problems out of the box on Wine 3.0.3 (default Wine config, no additional installations, fullscreen 1600x1200 res, 2560x1440 res - everything just works). As this is allegedly identical to the GOG version, this behavior is bizarre. What am I missing here?",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1545185004,
+    "title": "Omikron: The Nomad Soul",
+    "source": "protondb"
+  },
+  {
+    "appId": "243000",
+    "title": "Omikron - The Nomad Soul",
+    "timestamp": 1535231739,
+    "rating": "Borked",
+    "notes": "Works but at extremely low frame rates",
+    "os": "Arch Linux 64 Bit (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

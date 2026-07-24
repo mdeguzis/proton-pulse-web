@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "494740",
+    "title": "Police Quest Collection",
+    "timestamp": 1535486996,
+    "rating": "Platinum",
+    "notes": "game launcher is windows application, games are DOSBOX - works flawlessly! ",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "494740",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Launcher works fine, everything else is DOSBox.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536343568",
+    "title": "Police Quest\u2122 Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "494740",
+    "cpu": "AMD A8-3870 APU with Radeon(tm) HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTS 450/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs perfectly fine with sound and everything. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15515 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539217378,
+    "title": "Police Quest\u2122 Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "494740",
+    "title": "Police Quest Collection",
+    "timestamp": 1535472596,
+    "rating": "Platinum",
+    "notes": "game launcher is windows application, games are DOSBOX - works flawlessly! ",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

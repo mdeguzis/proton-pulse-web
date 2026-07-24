@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "589940",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 525.105.17",
+    "kernel": "6.2.0-20-generic",
+    "notes": "Just works",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688130720,
+    "title": "",
+    "source": "protondb"
+  }
+]

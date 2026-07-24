@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "63800",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.3-050003-generic",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554566165,
+    "title": "Delve Deeper",
+    "source": "protondb"
+  },
+  {
+    "appId": "63800",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1558795678,
+    "title": "Delve Deeper",
+    "source": "protondb"
+  }
+]

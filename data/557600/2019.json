@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "557600",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555727858,
+    "title": "Gorogoa",
+    "source": "protondb"
+  },
+  {
+    "appId": "557600",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.12-300.fc30.x86_64",
+    "notes": "Works perfectly from start to finish.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561683603,
+    "title": "Gorogoa",
+    "source": "protondb"
+  },
+  {
+    "appId": "557600",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Initially gave an error window on launch, claiming problems with my graphics card.  After setting PROTON_USE_WINED3D11=1, I was able to play start to finish with no issues.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562434144,
+    "title": "Gorogoa",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "247580",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Shows as running for a few seconds, then stops without launching.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Borked",
+    "timestamp": 1536541492,
+    "title": "Magicka: Wizards of the Square Tablet",
+    "source": "protondb"
+  }
+]

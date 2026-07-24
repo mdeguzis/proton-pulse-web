@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "549040",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.3-arch1-1-ARCH",
+    "notes": "Game started in Windowed Mode. Constant frame rate at 60FPS. Because of triple screen setup I did not test the Fullscreen Mode. Most games do not scale very well on 5760x1080 resolution.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564353358,
+    "title": "Biotope",
+    "source": "protondb"
+  }
+]

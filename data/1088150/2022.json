@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1088150",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.25-1-MANJARO",
+    "notes": "Works like native with proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1646745463,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1088150",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.11-76051611-generic",
+    "notes": "Wont work on anthing, just give a bugged screen and a crash report, for now it dosent really work. Dont waste your time!",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1647042233,
+    "title": "",
+    "source": "protondb"
+  }
+]

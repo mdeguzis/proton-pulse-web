@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "395560",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Played the prologue, tested loading / saving. Everything works out of the box. Average ~150 fps on \"high\" graphics settings.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16068 MB",
+    "rating": "Platinum",
+    "timestamp": 1537171919,
+    "title": "Lost Horizon 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "395560",
+    "cpu": "Intel Xeon E3-1271 v3 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-42-generic",
+    "notes": "works ootb, no tweaks needed, performance the same as Windows",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544705674,
+    "title": "Lost Horizon 2",
+    "source": "protondb"
+  }
+]

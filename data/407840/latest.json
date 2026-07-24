@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "407840",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "No tweaks - Online mode does not work. SIngle player does. FPS is constantly below 20-fps - regardless of Detail settings / Streaming/. Recording.\n\nPlayback is quite choppy - looks like should enable vsync.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15982 Mb",
+    "rating": "Silver",
+    "timestamp": 1537049803,
+    "title": "Guardians of Orion",
+    "source": "protondb"
+  },
+  {
+    "appId": "407840",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "https://www.youtube.com/watch?v=AgsG4P-GMuo&t=4s",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15982 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537050034,
+    "title": "Guardians of Orion",
+    "source": "protondb"
+  }
+]

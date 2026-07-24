@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1552250",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX550/550 (POLARIS12, DRM 3.35.0, 5.4.0-81-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-81-generic",
+    "notes": "Game crashes upon clicking the continue option",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628967533,
+    "title": "Three of Cards",
+    "source": "protondb"
+  },
+  {
+    "appId": "1552250",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.4.0-80-generic",
+    "notes": "Upon clicking start/continue or anything to launch the actual game it hands you a unity error report and closes itself.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1628967826,
+    "title": "Three of Cards",
+    "source": "protondb"
+  }
+]

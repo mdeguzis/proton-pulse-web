@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "47730",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "The launcher works, but the game itself doesn't run. The launcher complains about the DirectX version.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1536670989,
+    "title": "Dragon Age\u2122: Origins Awakening",
+    "source": "protondb"
+  }
+]

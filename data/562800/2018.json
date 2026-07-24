@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "562800",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Around 15 fps",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-5",
+    "ram": "15985 Mb",
+    "rating": "Bronze",
+    "timestamp": "1536339768",
+    "title": "HOUND",
+    "source": "protondb"
+  },
+  {
+    "appId": "562800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541695597,
+    "title": "HOUND",
+    "source": "protondb"
+  }
+]

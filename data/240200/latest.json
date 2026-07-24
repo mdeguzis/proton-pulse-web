@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "240200",
+    "title": "Duke Nukem: Manhattan Project",
+    "timestamp": 1536330201,
+    "rating": "Platinum",
+    "notes": "Game runs flawless\noptional tweaks i did was changing the FoV and the resolution but it is not necessary\n1, open /duke/base/config.cfg \n2, add this line in the config: uset g_cam_fov \"90\"\n3, and change: uset r_mode \"640x480x32\" \n4, save and make it read-only",
+    "os": "Ubuntu 18.04.1 LTS 64-bit / 4.18.6-041806-generic",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i7-6700 / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "240200",
+    "title": "Duke Nukem: Manhattan Project",
+    "timestamp": 1536315801,
+    "rating": "Platinum",
+    "notes": "Game runs flawless\noptional tweaks i did was changing the FoV and the resolution but it is not necessary\n1, open /duke/base/config.cfg \n2, add this line in the config: uset g_cam_fov \"90\"\n3, and change: uset r_mode \"640x480x32\" \n4, save and make it read-only",
+    "os": "Ubuntu 18.04.1 LTS 64-bit / 4.18.6-041806-generic",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i7-6700 / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

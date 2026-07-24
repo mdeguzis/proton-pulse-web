@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1122340",
+    "cpu": "Intel Xeon E5-2696 v3 @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, ACO, DRM 3.64, 7.0.8-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.8-1-cachyos",
+    "notes": "Game runs really bad.60-90fps with cpu bottleneck and stuttering or framepacing issues.Under win10 with same PC i have locked 120fps.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1779040171,
+    "title": "",
+    "source": "protondb"
+  }
+]

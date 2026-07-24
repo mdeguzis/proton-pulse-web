@@ -1,0 +1,79 @@
+[
+  {
+    "appId": "564230",
+    "title": "Fire Pro Wrestling World",
+    "timestamp": 1534947362,
+    "rating": "Silver",
+    "notes": "Can't use Steam Controller, otherwise the singleplayer runs perfectly fine with a keyboard.",
+    "os": "Solus 3.9999",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-6300 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "564230",
+    "title": "Fire Pro Wrestling World",
+    "timestamp": 1535682448,
+    "rating": "Platinum",
+    "notes": "No issues with performance or Steam Workshop",
+    "os": "Manjaro Stable 64 Bit (Kernek 4.17.18-1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "specs": "AMD FX 9590/ RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "564230",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA, DRM 3.26.0, 4.18.0-mainline, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-2c1f249f2b)",
+    "kernel": "4.18.0-mainline",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16025 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536611947,
+    "title": "Fire Pro Wrestling World",
+    "source": "protondb"
+  },
+  {
+    "appId": "564230",
+    "cpu": "Intel(R) Pentium(R) CPU G3258 @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 650 Ti/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works great! Even works In full screen mode, unlike Wine. ",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537393109,
+    "title": "Fire Pro Wrestling World",
+    "source": "protondb"
+  },
+  {
+    "appId": "564230",
+    "title": "Fire Pro Wrestling World",
+    "timestamp": 1534932962,
+    "rating": "Silver",
+    "notes": "Can't use Steam Controller, otherwise the singleplayer runs perfectly fine with a keyboard.",
+    "os": "Solus 3.9999",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-6300 / R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "564230",
+    "title": "Fire Pro Wrestling World",
+    "timestamp": 1535668048,
+    "rating": "Platinum",
+    "notes": "No issues with performance or Steam Workshop",
+    "os": "Manjaro Stable 64 Bit (Kernek 4.17.18-1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "specs": "AMD FX 9590/ RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

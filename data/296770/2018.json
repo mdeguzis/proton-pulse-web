@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "296770",
+    "cpu": "Intel(R) Core(TM) i7-4930K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation TITAN V/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Does not start.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64362 Mb",
+    "rating": "Borked",
+    "timestamp": 1539045848,
+    "title": "Real Boxing\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "296770",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E8600  @ 3.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.10.0-38-generic",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7980 Mb",
+    "rating": "Borked",
+    "timestamp": 1539887386,
+    "title": "Real Boxing\u2122",
+    "source": "protondb"
+  }
+]

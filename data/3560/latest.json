@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3560",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Must add -changedir to the launcher options. This isn't a Proton problem as the switch is needed in Win10 too. The game runs as good or better than Windows.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555817910,
+    "title": "Bejeweled Twist",
+    "source": "protondb"
+  }
+]

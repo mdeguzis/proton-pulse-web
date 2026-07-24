@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "949290",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-050114-generic",
+    "notes": "No audio",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564094258,
+    "title": "Winkeltje: The Little Shop",
+    "source": "protondb"
+  },
+  {
+    "appId": "949290",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-050114-generic",
+    "notes": "Had it hang during startup once, but ran flawless after a kill and restart. Works fine every time now!",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564103125,
+    "title": "Winkeltje: The Little Shop",
+    "source": "protondb"
+  }
+]

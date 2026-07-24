@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3670570",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.13-200.fc43.x86_64",
+    "notes": "Game runs very poorly and is unplayable.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772763373,
+    "title": "",
+    "source": "protondb"
+  }
+]

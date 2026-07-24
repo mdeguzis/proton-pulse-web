@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1146310",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-59-generic",
+    "notes": "Works perfectly out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1750148274,
+    "title": "Beyond a Steel Sky",
+    "source": "protondb"
+  },
+  {
+    "appId": "1146310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1753988426,
+    "title": "Beyond a Steel Sky",
+    "source": "protondb"
+  },
+  {
+    "appId": "1146310",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-6-generic",
+    "notes": "",
+    "os": "Kubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1763209208,
+    "title": "Beyond a Steel Sky",
+    "source": "protondb"
+  }
+]

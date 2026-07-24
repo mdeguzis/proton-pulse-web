@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1106080",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "protontricks 1106080 mfc42 winxp l3codecx corefonts",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-5",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1568938536,
+    "title": "Princess Project",
+    "source": "protondb"
+  },
+  {
+    "appId": "1106080",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch2-1-ARCH",
+    "notes": "Blackscreen at first startup, but runs perfectly after the protontricks command posted by the other guy",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1571491475,
+    "title": "Princess Project",
+    "source": "protondb"
+  }
+]

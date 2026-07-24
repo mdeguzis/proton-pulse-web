@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "404040",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 960M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.4.0-137-generic",
+    "notes": "The game did crash once when using the \"Load Last Save\" button while in game, but that was likely just an issue with the game and not caused by running with Proton.",
+    "os": "Linux Mint 18.1 Serena (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15984 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539552820,
+    "title": "Lords of Magic: Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "404040",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542629759,
+    "title": "Lords of Magic: Special Edition",
+    "source": "protondb"
+  }
+]

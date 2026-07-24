@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "227100",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-1-MANJARO",
+    "notes": "Just like all the other SE games, does not run through proton.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563418513,
+    "title": "Sniper Elite: Nazi Zombie Army",
+    "source": "protondb"
+  },
+  {
+    "appId": "227100",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.2.10-zen1-1-zen",
+    "notes": "it shows running, but nothing to be appear even a window",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567213638,
+    "title": "Sniper Elite: Nazi Zombie Army",
+    "source": "protondb"
+  }
+]

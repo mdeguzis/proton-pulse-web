@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "326460",
+    "cpu": "Intel Core2 Duo     P8700  @ 2.53GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Mobile Intel GM45 Express Chipset",
+    "gpuDriver": "2.1 Mesa 18.2.8",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Error on launch: \"Failed to initialize player\": \"Failed to initialize graphics. Make sure you have DirectX 11 installed, have up to date drivers for your graphics card and have not disabled 3D acceleration in display settings. InitializeEngineGraphics failed\"",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "2 GB",
+    "rating": "Borked",
+    "timestamp": 1557233513,
+    "title": "ShellShock Live",
+    "source": "protondb"
+  }
+]

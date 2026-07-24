@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "768480",
+    "title": "Chamber of the Sci-Mutant Priestess",
+    "timestamp": 1535897747,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially - had to Alt-Tab to it and press a key, then the game goes fullscreen and works perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "768480",
+    "title": "Chamber of the Sci-Mutant Priestess",
+    "timestamp": 1535883347,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially - had to Alt-Tab to it and press a key, then the game goes fullscreen and works perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

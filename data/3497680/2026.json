@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3497680",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.16.3-arch1-1",
+    "notes": "Some tinkering is required to get the game running as intended, mainly protontricks and gamescope. After that it should be smooth sailing.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "94 GB",
+    "rating": "borked",
+    "timestamp": 1774665894,
+    "title": "",
+    "source": "protondb"
+  }
+]

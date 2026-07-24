@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "5152",
+    "title": "Grand Theft Auto IV",
+    "timestamp": 1535381569,
+    "rating": "Borked",
+    "notes": "It shows a window with a \"fatal error\" message",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-4260U / HD Graphics 5000",
+    "protonVersion": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "5152",
+    "title": "Grand Theft Auto IV",
+    "timestamp": 1535367169,
+    "rating": "Borked",
+    "notes": "It shows a window with a \"fatal error\" message",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-4260U / HD Graphics 5000",
+    "protonVersion": "",
+    "source": "protondb"
+  }
+]

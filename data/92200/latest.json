@@ -1,0 +1,93 @@
+[
+  {
+    "appId": "92200",
+    "title": "Gundemonium Recollection",
+    "timestamp": 1534985548,
+    "rating": "Platinum",
+    "notes": "none",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "92200",
+    "title": "Gundemonium Recollection",
+    "timestamp": 1535069325,
+    "rating": "Borked",
+    "notes": "Error:0126",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "92200",
+    "title": "Gundemonium Recollection",
+    "timestamp": 1535783342,
+    "rating": "Silver",
+    "notes": "Game window in windowed mode cannot be resized. Alt-tabbing while in full-screen mode breaks the game.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "92200",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Tried with keyboard and xbox 360 gamepad; fullscreen and windowed mode both work; windowed mode has a fixed window size and when tiling window manager forces a different window size, the rest of the window is filled with black; 60fps",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541342379,
+    "title": "Gundemonium Recollection",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "92200",
+    "title": "Gundemonium Recollection",
+    "timestamp": 1534971148,
+    "rating": "Platinum",
+    "notes": "none",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050 ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "92200",
+    "title": "Gundemonium Recollection",
+    "timestamp": 1535054925,
+    "rating": "Borked",
+    "notes": "Error:0126",
+    "os": "Fedora 28",
+    "gpuDriver": "Mesa 18.0.5-3",
+    "specs": "i5-4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "92200",
+    "title": "Gundemonium Recollection",
+    "timestamp": 1535768942,
+    "rating": "Silver",
+    "notes": "Game window in windowed mode cannot be resized. Alt-tabbing while in full-screen mode breaks the game.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.5-1-default)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "496240",
+    "title": "Onward",
+    "timestamp": 1535210571,
+    "rating": "Borked",
+    "notes": "doesnt start response: CrashID=bp-5862c8c6-6a3e-4cec-9015-173f42180825\n",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "496240",
+    "title": "Onward",
+    "timestamp": 1535221390,
+    "rating": "Borked",
+    "notes": "HTC Vive. Menu area works fine, but unable to get into any game (going into the loading area for a map boots you back into menu)",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "496240",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No change from previous report. Game menu works but boots you back into the game menu whenever you try to start/enter a game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542567389,
+    "title": "Onward",
+    "source": "protondb"
+  },
+  {
+    "appId": "496240",
+    "title": "Onward",
+    "timestamp": 1535196171,
+    "rating": "Borked",
+    "notes": "doesnt start response: CrashID=bp-5862c8c6-6a3e-4cec-9015-173f42180825\n",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "496240",
+    "title": "Onward",
+    "timestamp": 1535206990,
+    "rating": "Borked",
+    "notes": "HTC Vive. Menu area works fine, but unable to get into any game (going into the loading area for a map boots you back into menu)",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

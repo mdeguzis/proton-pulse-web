@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "398680",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1553124834,
+    "title": "Ace Of Words",
+    "source": "protondb"
+  },
+  {
+    "appId": "398680",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box. The online functions are down, nothing to do with Proton.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556602772,
+    "title": "Ace Of Words",
+    "source": "protondb"
+  },
+  {
+    "appId": "398680",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly; no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558984564,
+    "title": "Ace Of Words",
+    "source": "protondb"
+  }
+]

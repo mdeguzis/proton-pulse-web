@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "685310",
+    "title": "Transport Defender",
+    "timestamp": 1536676288,
+    "rating": "Borked",
+    "notes": "after the small settings windows (resulotion and render quality of i think unity) it crushes",
+    "os": "Archlinux 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54-3",
+    "specs": "i5-760 / MSI NVIDIA GTX650 2GB GDDR5",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "685310",
+    "title": "You Have 10 Seconds",
+    "timestamp": 1536627867,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": " Manjaro 17.1.12 Hakoila ",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "specs": "Ryzen 7 1700 / Vega 64",
+    "protonVersion": "3.7-6-",
+    "source": "protondb"
+  },
+  {
+    "appId": "685310",
+    "title": "Transport Defender",
+    "timestamp": 1536661888,
+    "rating": "Borked",
+    "notes": "after the small settings windows (resulotion and render quality of i think unity) it crushes",
+    "os": "Archlinux 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54-3",
+    "specs": "i5-760 / MSI NVIDIA GTX650 2GB GDDR5",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "685310",
+    "title": "You Have 10 Seconds",
+    "timestamp": 1536613467,
+    "rating": "Platinum",
+    "notes": "No issues found",
+    "os": " Manjaro 17.1.12 Hakoila ",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "specs": "Ryzen 7 1700 / Vega 64",
+    "protonVersion": "3.7-6-",
+    "source": "protondb"
+  }
+]

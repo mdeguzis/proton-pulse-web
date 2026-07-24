@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "270950",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "just sound, black screen. the snow is melting",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556980493,
+    "title": "Ski Region Simulator - Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "270950",
+    "cpu": "AMD Phenom II X4 955",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.2.0-1-MANJARO",
+    "notes": "game starts, sound audible, but no picture. Thus unplayable",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1562752145,
+    "title": "Ski Region Simulator - Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "270950",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-arch1-1-ARCH",
+    "notes": "Can interact with game but only black screen, unplayable.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565452652,
+    "title": "Ski Region Simulator - Gold Edition",
+    "source": "protondb"
+  }
+]

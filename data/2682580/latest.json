@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2682580",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.0-15-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.3-1ubuntu2",
+    "kernel": "6.14.0-15-generic",
+    "notes": "The game launches & I can connect to a server no problem, However as soon as I try to fly over water it crashed & then its UE Crash handler",
+    "os": "Ubuntu 25.04",
+    "protonVersion": "9.0-4",
+    "ram": "47 GB",
+    "rating": "borked",
+    "timestamp": 1748500953,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2682580",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.10-arch1-1",
+    "notes": "Can start and fly, pick but also crash a lot",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1759669344,
+    "title": "",
+    "source": "protondb"
+  }
+]

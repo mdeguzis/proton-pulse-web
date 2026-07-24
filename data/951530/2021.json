@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "951530",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.40.0, 5.10.76-gentoo-r1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.10.76-gentoo-r1",
+    "notes": "It doesn't work on Linux, crashes immediately after start",
+    "os": "Linux 5.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640438855,
+    "title": "Alien Shooter - Last Hope",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "345120",
+    "cpu": "AMD A4-5300 APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0 / 4.18.5-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Performance good even on low end hardware. No issues.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7491 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536766813,
+    "title": "Vox Populi Vox Dei 2",
+    "source": "protondb"
+  }
+]

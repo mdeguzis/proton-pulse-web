@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "287390",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.4.0-141-generic",
+    "notes": "Out of the Box experience.... The Windows version of the game running via forced PROTON 3.16-6 works much better than the crappy native version.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548905275,
+    "title": "Metro: Last Light Redux",
+    "source": "protondb"
+  },
+  {
+    "appId": "287390",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. Radeon RX Vega",
+    "gpuDriver": "4.5.13529 Compatibility Profile Context",
+    "kernel": "4.15.0-45-generic",
+    "notes": "(amdgpu-pro 18.20)frame can't load properly in 4K screen , game crashed before going to menu.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549368866,
+    "title": "Metro: Last Light Redux",
+    "source": "protondb"
+  },
+  {
+    "appId": "287390",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "4.19.47_1",
+    "notes": "I played the game through Proton to get better performance and proper graphics settings. The game runs fine mostly, however it's not 100% stable and does sometimes crash or lock up on loading screens.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559513074,
+    "title": "Metro: Last Light Redux",
+    "source": "protondb"
+  }
+]

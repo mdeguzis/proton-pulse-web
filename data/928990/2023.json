@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "928990",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.15-300.fc38.x86_64",
+    "notes": "Worked as expected. Used Proton Experimental but never tried with a different version.",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1685958994,
+    "title": "",
+    "source": "protondb"
+  }
+]

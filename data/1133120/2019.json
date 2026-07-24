@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1133120",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Game seems to run great but it will always freeze after about 10 minutes. Nobody is complaining about this in the forums, so I'm assuming it's a Proton-caused thing.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1569544102,
+    "title": "Ecosystem",
+    "source": "protondb"
+  }
+]

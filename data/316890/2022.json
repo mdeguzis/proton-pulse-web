@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "316890",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon R7 200 (BONAIRE, DRM 3.42.0, 5.14.21-210.current, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.14.21-210.current",
+    "notes": "",
+    "os": "Solus",
+    "protonVersion": "5.0-10",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1641777769,
+    "title": "",
+    "source": "protondb"
+  }
+]

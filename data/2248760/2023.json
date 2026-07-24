@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2248760",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game runs fine with some control input compromises",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1688678534,
+    "title": "Car For Sale Simulator 2023",
+    "source": "protondb"
+  },
+  {
+    "appId": "2248760",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.7, DRM 3.52, 6.4.10-201.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-201.fsync.fc38.x86_64",
+    "notes": "Works out of box.",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1692278109,
+    "title": "Car For Sale Simulator 2023",
+    "source": "protondb"
+  },
+  {
+    "appId": "2248760",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1697929893,
+    "title": "Car For Sale Simulator 2023",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "253860",
+    "title": "Earth 2140 HD",
+    "timestamp": 1535999112,
+    "rating": "Platinum",
+    "notes": "All OK",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3 1,8Ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "253860",
+    "cpu": "i3-3217U CPU @ 1.80GHz",
+    "gpu": "GeForce GT 740M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64-bitowy)",
+    "protonVersion": "3.6.3",
+    "ram": "7858 MB",
+    "rating": "Platinum",
+    "timestamp": 1536917647,
+    "title": "Earth 2140",
+    "source": "protondb"
+  },
+  {
+    "appId": "253860",
+    "cpu": "i7-8700K CPU @ 3.70GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.4-steamvr-generic",
+    "notes": "Works great.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15960 MB",
+    "rating": "Platinum",
+    "timestamp": 1537037066,
+    "title": "Earth 2140",
+    "source": "protondb"
+  },
+  {
+    "appId": "253860",
+    "title": "Earth 2140 HD",
+    "timestamp": 1535984712,
+    "rating": "Platinum",
+    "notes": "All OK",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i3 1,8Ghz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

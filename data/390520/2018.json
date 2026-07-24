@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "390520",
+    "title": "PewDiePie: Legend of the Brofist",
+    "timestamp": 1535396934,
+    "rating": "Borked",
+    "notes": "Error: Failed to initialize player",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "AMD Ryzen 5 2600 / MSI R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "390520",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541995708,
+    "title": "PewDiePie: Legend of the Brofist",
+    "source": "protondb"
+  },
+  {
+    "appId": "390520",
+    "title": "PewDiePie: Legend of the Brofist",
+    "timestamp": 1535382534,
+    "rating": "Borked",
+    "notes": "Error: Failed to initialize player",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "AMD Ryzen 5 2600 / MSI R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

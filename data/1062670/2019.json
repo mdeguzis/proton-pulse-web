@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1062670",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Game runs. When an Xbox 360 controller is plugged in your character will auto-run, probably due to the game not using a deadzone on the analog stick. Unclear whether this and some other bugs (I fell through a platform and walked through a wall) are because of Proton or are native to the game itself. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1570377371,
+    "title": "Blacksmith Run",
+    "source": "protondb"
+  }
+]

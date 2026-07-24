@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "581910",
+    "cpu": "Intel Core i3       M 380  @ 2.53GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ironlake Mobile",
+    "gpuDriver": "2.1 Mesa 18.3.3",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "The game simply crashed. I am not well versed in linux yet, so I tried disabling esync, d3D11 and using wine D3D11 but dont know if I did it right. Got a crashed message which is the following:\n\njava.lang.IllegalArgumentException: no uniform with name 'u_projTrans' in shader\n\tat com.badlogic.gdx.graphics.glutils.ShaderProgram.fetchUniformLocation(ShaderProgram.java:308)\n\tat com.badlogic.gdx.graphics.glutils.ShaderProgram.fetchUniformLocation(ShaderProgram.java:298)\n\tat com.badlogic.gdx.graphics.glutils.ShaderProgram.setUniformMatrix(ShaderProgram.java:528)\n\tat com.badlogic.gdx.graphics.glutils.ShaderProgram.setUniformMatrix(ShaderProgram.java:519)\n\tat com.badlogic.gdx.graphics.g2d.SpriteBatch.setupMatrices(SpriteBatch.java:1067)\n\tat com.badlogic.gdx.graphics.g2d.SpriteBatch.begin(SpriteBatch.java:177)\n\tat com.drakelinglabs.ironarmada.client.screens.LoadingScreen.drawLoadingBar(LoadingScreen.java:86)\n\tat com.drakelinglabs.ironarmada.client.screens.LoadingScreen.onRender(LoadingScreen.java:81)\n\tat com.drakelinglabs.ironarmada.client.screens.IAScreen.render(IAScreen.java:90)\n\tat com.drakelinglabs.ironarmada.client.app.IAGame.render(IAGame.java:214)\n\tat com.badlogic.gdx.backends.lwjgl3.Lwjgl3Window.update(Lwjgl3Window.java:392)\n\tat com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application.loop(Lwjgl3Application.java:137)\n\tat com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application.<init>(Lwjgl3Application.java:111)\n\tat com.drakelinglabs.ironarmada.client.app.GdxAppStarter$tryRunApp$1.<init>(GdxAppStarter.kt:82)\n\tat com.drakelinglabs.ironarmada.client.app.GdxAppStarter.tryRunApp(GdxAppStarter.kt:82)\n\tat com.drakelinglabs.ironarmada.client.app.GdxAppStarter.run(GdxAppStarter.kt:65)\n\tat com.drakelinglabs.ironarmada.client.Main.main(Main.java:125)\n",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1552235861,
+    "title": "Iron Armada",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "380150",
+    "title": "STASIS",
+    "timestamp": 1536240424,
+    "rating": "Platinum",
+    "notes": "By default, Steam downloads an empty folder (as the game is considered as having Linux Native support, although it does not appear as such in the Store). To download the Linux binaries, you need to enroll in the beta by using the password abc123stasis in the \"Betas\" tab of the game properties. It works perfectly well",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "380150",
+    "cpu": "AMD A6-3410MX APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 18.2.5",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Stasis does appear in your library as native, but it downloads an empty file by default. You need to enroll into BETA in the Properties section using the \"abc123stasis\" code.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544558199,
+    "title": "STASIS",
+    "source": "protondb"
+  },
+  {
+    "appId": "380150",
+    "title": "STASIS",
+    "timestamp": 1536226024,
+    "rating": "Platinum",
+    "notes": "By default, Steam downloads an empty folder (as the game is considered as having Linux Native support, although it does not appear as such in the Store). To download the Linux binaries, you need to enroll in the beta by using the password abc123stasis in the \"Betas\" tab of the game properties. It works perfectly well",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

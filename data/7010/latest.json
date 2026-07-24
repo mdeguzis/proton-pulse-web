@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "7010",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-041913-generic",
+    "notes": "89 minutes to be exact, then the game crashed. Seemed to work fine up until then.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "A very old version of Wine.",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1548390290,
+    "title": "Project: Snowblind",
+    "source": "protondb"
+  },
+  {
+    "appId": "7010",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.1.16-050116-generic",
+    "notes": "As above, just works.  Doesnt support anything higher than 1024x768 (but think thats an engine issue, not Steam or Proton).  ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564882456,
+    "title": "Project: Snowblind",
+    "source": "protondb"
+  }
+]

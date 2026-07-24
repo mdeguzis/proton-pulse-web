@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "11900",
+    "title": "Lumines",
+    "timestamp": 1535319149,
+    "rating": "Borked",
+    "notes": "Sound stutters otherwise fine",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "11900",
+    "title": "Lumines",
+    "timestamp": 1535304749,
+    "rating": "Borked",
+    "notes": "Sound stutters otherwise fine",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

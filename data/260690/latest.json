@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "260690",
+    "title": "Dark Fall: The Journal",
+    "timestamp": 1535824869,
+    "rating": "Borked",
+    "notes": "Error message 'Application error: This application cannot start as it cannot create needed files. There may not be enough free disk space.'\nI'm not running from NTFS partition so maybe not compatible with EXT4?",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "260690",
+    "title": "Dark Fall: The Journal",
+    "timestamp": 1535911626,
+    "rating": "Borked",
+    "notes": "Mouse controls are for full screen but only draws gfx in upper left corner",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "260690",
+    "cpu": "i7-4710MQ CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-haswell",
+    "notes": "Crash...says not enough diskspace to create needed files.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.5 beta",
+    "ram": "7872 Mb",
+    "rating": "Borked",
+    "timestamp": "1536330195",
+    "title": "Dark Fall: The Journal",
+    "source": "protondb"
+  },
+  {
+    "appId": "260690",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.17-300.fc29.x86_64",
+    "notes": "Plays well if you change your screen resolution to 640x480.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542015051,
+    "title": "Dark Fall: The Journal",
+    "source": "protondb"
+  },
+  {
+    "appId": "260690",
+    "title": "Dark Fall: The Journal",
+    "timestamp": 1535810469,
+    "rating": "Borked",
+    "notes": "Error message 'Application error: This application cannot start as it cannot create needed files. There may not be enough free disk space.'\nI'm not running from NTFS partition so maybe not compatible with EXT4?",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "260690",
+    "title": "Dark Fall: The Journal",
+    "timestamp": 1535897226,
+    "rating": "Borked",
+    "notes": "Mouse controls are for full screen but only draws gfx in upper left corner",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "15200",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Tutorial and starting main campains work,  only issue is that sound effects are not working.  Other sounds (crew talking) and music are working normally.\n\nGraphics running on high with no visual artifacts etc.   Running really well.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1548490861,
+    "title": "Silent Hunter\u00ae: Wolves of the Pacific",
+    "source": "protondb"
+  },
+  {
+    "appId": "15200",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.12-arch2-1-ARCH",
+    "notes": "Some sound effects are missing, but otherwise the game is perfectly playable.  The game has crashed in very rare cases, but I have yet to determine if this is related to proton.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1557123078,
+    "title": "Silent Hunter\u00ae: Wolves of the Pacific",
+    "source": "protondb"
+  },
+  {
+    "appId": "15200",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "It is essentially the same game than Silent Hunter: Wolves of the pacific U-Boat missions and it platinum rated.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566724439,
+    "title": "Silent Hunter\u00ae: Wolves of the Pacific",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "242130",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.3-1-MANJARO",
+    "notes": "Game fails to load with \"OGRE EXCEPTION(3:RenderingAPIException): Failed to create Direct3D9 Device: Not available in D3D9RenderWindow::createD3DResources at ..\\src\\OgreD3D9RenderWindow.cpp (line 606)\". Proton versions prior to 4.2-1 appear to either also show this message or not launch at all. Tried disabling Esync, D3d11, and using Wine D3d11 to no effect.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1553838861,
+    "title": "Vector Thrust",
+    "source": "protondb"
+  },
+  {
+    "appId": "242130",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Won't start, OGRE error.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "18 GB",
+    "rating": "Borked",
+    "timestamp": 1554684903,
+    "title": "Vector Thrust",
+    "source": "protondb"
+  }
+]

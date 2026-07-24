@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "288120",
+    "title": "Dungeonmans",
+    "timestamp": 1535457266,
+    "rating": "Borked",
+    "notes": "Steams says \"running\" then the game quits. Doesn't write anything to the log. Same problem on both Proton 3.7-3 and 3.7-4 Beta.",
+    "os": "Arch (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-7300U/HD Graphics 620",
+    "protonVersion": "Tried both 3.7-3 and 3.7-4.",
+    "source": "protondb"
+  },
+  {
+    "appId": "288120",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "The game just doesn't start -- nothing seen visually. Loads of log outputs that I've searched for but found no real help (yet)",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32108 Mb",
+    "rating": "Borked",
+    "timestamp": 1537728336,
+    "title": "Dungeonmans",
+    "source": "protondb"
+  },
+  {
+    "appId": "288120",
+    "title": "Dungeonmans",
+    "timestamp": 1535442866,
+    "rating": "Borked",
+    "notes": "Steams says \"running\" then the game quits. Doesn't write anything to the log. Same problem on both Proton 3.7-3 and 3.7-4 Beta.",
+    "os": "Arch (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-7300U/HD Graphics 620",
+    "protonVersion": "Tried both 3.7-3 and 3.7-4.",
+    "source": "protondb"
+  }
+]

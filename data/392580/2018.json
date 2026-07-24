@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "392580",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-33-generic",
+    "notes": "crashes at start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "ram": "15899 Mb",
+    "rating": "Borked",
+    "timestamp": 1536623477,
+    "title": "WARSHIFT",
+    "source": "protondb"
+  },
+  {
+    "appId": "392580",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Tutorial Phase",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543605657,
+    "title": "WARSHIFT",
+    "source": "protondb"
+  }
+]

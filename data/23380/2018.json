@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "23380",
+    "title": "Gyromancer",
+    "timestamp": 1535516690,
+    "rating": "Platinum",
+    "notes": "Works great",
+    "os": "Ubuntu 17.10",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "FX-8350 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23380",
+    "title": "Gyromancer",
+    "timestamp": 1535920679,
+    "rating": "Silver",
+    "notes": "Game visuals, audio & gameplay work fine. However, about half the words (or even letters of it) are hidden...kind of like in the game yosumin. This isn't a game that requires much text input, but still hinders things more than you'd expect.",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23380",
+    "cpu": "i3-3110M CPU @ 2.40GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.6-041806-generic",
+    "notes": "Note: tested on the same computer as the 'silver' mentioning for this game 5 days ago, but with linux mint & kernel updated. This solved that issue (now works perfect)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "3799 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536312091",
+    "title": "Gyromancer",
+    "source": "protondb"
+  },
+  {
+    "appId": "23380",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-lowlatency",
+    "notes": "Install.  Play.  ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541796893,
+    "title": "Gyromancer",
+    "source": "protondb"
+  },
+  {
+    "appId": "23380",
+    "title": "Gyromancer",
+    "timestamp": 1535502290,
+    "rating": "Platinum",
+    "notes": "Works great",
+    "os": "Ubuntu 17.10",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "FX-8350 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23380",
+    "title": "Gyromancer",
+    "timestamp": 1535906279,
+    "rating": "Silver",
+    "notes": "Game visuals, audio & gameplay work fine. However, about half the words (or even letters of it) are hidden...kind of like in the game yosumin. This isn't a game that requires much text input, but still hinders things more than you'd expect.",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

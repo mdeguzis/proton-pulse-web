@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "485420",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "This is a indie Unity powered game, performance was less than 50 FPS average, not sure if poor optimization or to do with the fact its Linux, bottleneck seems to be CPU.\n\nThe game runs on Direct X 9 so you need to disable D3d11.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546700874,
+    "title": "Wolf Simulator",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "485420",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "The controls are all kinds of messed up, but I can't say if they are any better on Windows. Ran at 58FPS.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1553790375,
+    "title": "Wolf Simulator",
+    "source": "protondb"
+  }
+]

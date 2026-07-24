@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "46500",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-34-generic",
+    "notes": "As others have said, it requires a player.ini file to be created, it then runs well but only in a small 800x600 window.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1550013357,
+    "title": "Syberia",
+    "source": "protondb"
+  },
+  {
+    "appId": "46500",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Needs to be run in a window otherwise it's just black screen with sound (known problem with the game). Solution: Making a player.ini file in the game folder, with \"800 600 32 0 BaseCMO.cmo\" inside. Game works well, but the window cannot be maximized!",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1556372109,
+    "title": "Syberia",
+    "source": "protondb"
+  }
+]

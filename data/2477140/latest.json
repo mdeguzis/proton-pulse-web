@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2477140",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.3-arch1-2",
+    "notes": "works didnt really play it much yet though",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1709171489,
+    "title": "Twilight Town: A Cyberpunk FPS",
+    "source": "protondb"
+  },
+  {
+    "appId": "2477140",
+    "cpu": "11th Gen Intel Core i5-11320H @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.6-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1713430062,
+    "title": "Twilight Town: A Cyberpunk FPS",
+    "source": "protondb"
+  },
+  {
+    "appId": "2477140",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.9.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.2",
+    "kernel": "6.9.7-2-cachyos",
+    "notes": "The game runs on GZDoom, GZDoom has a native linux port. Yes, it works.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1719776629,
+    "title": "Twilight Town: A Cyberpunk FPS",
+    "source": "protondb"
+  }
+]

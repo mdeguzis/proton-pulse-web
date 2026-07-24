@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "319140",
+    "title": "Xeodrifter\u2122",
+    "timestamp": 1536226641,
+    "rating": "Bronze",
+    "notes": "The game boots, but there are plenty of missing assets, or it only shows the background, depending on the screen you are in. The window menu offers plenty of graphic options and scaling methods, but non seems to fix it. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "319140",
+    "cpu": "Intel(R) Core(TM) i5-2500 CPU @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Game window opens with black screen, with background music and menu sound, but ever black screen.",
+    "os": "Debian GNU/Linux testing (buster) (64-bit)",
+    "protonVersion": "Beta (3.16-2)",
+    "ram": "7962 Mb",
+    "rating": "Borked",
+    "timestamp": 1539866364,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Xeodrifter\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "319140",
+    "title": "Xeodrifter\u2122",
+    "timestamp": 1536212241,
+    "rating": "Bronze",
+    "notes": "The game boots, but there are plenty of missing assets, or it only shows the background, depending on the screen you are in. The window menu offers plenty of graphic options and scaling methods, but non seems to fix it. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "908360",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-81-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1630189729,
+    "title": "",
+    "source": "protondb"
+  }
+]

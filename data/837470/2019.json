@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "837470",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.2.14-050214-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569500577,
+    "title": "Untitled Goose Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "837470",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-29-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "14 GB",
+    "rating": "Platinum",
+    "timestamp": 1570320012,
+    "title": "Untitled Goose Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "837470",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.8-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571679691,
+    "title": "Untitled Goose Game",
+    "source": "protondb"
+  }
+]

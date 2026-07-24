@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "251230",
+    "title": "Livelock",
+    "timestamp": 1535469379,
+    "rating": "Bronze",
+    "notes": "Can technically be played but player and enemy characters are missing. Usually only legs and guns were visible. Sometimes there would be graphical glitches around where the character models should be.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251230",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "PROTON_USE_WINED3D11=1 %command% fixes missing character models",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Gold",
+    "timestamp": "1536364800",
+    "title": "Livelock",
+    "source": "protondb"
+  },
+  {
+    "appId": "251230",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10 / DRM 3.26.0 / 4.18.12-200.fc28.x86_64, LLVM 6.0.1)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.12-200.fc28.x86_64",
+    "notes": "PROTON_USE_WINED3D11=1 %command% fixes missing character models",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "15980 Mb",
+    "rating": "Gold",
+    "timestamp": 1539630193,
+    "title": "Livelock",
+    "source": "protondb"
+  },
+  {
+    "appId": "251230",
+    "title": "Livelock",
+    "timestamp": 1535454979,
+    "rating": "Bronze",
+    "notes": "Can technically be played but player and enemy characters are missing. Usually only legs and guns were visible. Sometimes there would be graphical glitches around where the character models should be.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

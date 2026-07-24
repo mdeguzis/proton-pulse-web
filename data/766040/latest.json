@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "766040",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-4ec258a 2019-04-23 bionic-oibaf-ppa)",
+    "kernel": "5.0.9-050009-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1556145615,
+    "title": "Gloom: Digital Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "766040",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560863949,
+    "title": "Gloom: Digital Edition",
+    "source": "protondb"
+  }
+]

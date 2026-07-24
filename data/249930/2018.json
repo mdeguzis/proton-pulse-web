@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "249930",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Font is a little messed up, but perfectly playable.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544242620,
+    "title": "A-Train 8",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "226580",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2",
+    "kernel": "5.2.9-200.fc30.x86_64",
+    "notes": "Doesn't work on Fedora.",
+    "os": "Freedesktop.org 18.08.34 (Flatpak runtime)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1566733506,
+    "title": "F1 2014",
+    "source": "protondb"
+  },
+  {
+    "appId": "226580",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.0-3-amd64",
+    "notes": "Does not start... neither does 2013",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1570806020,
+    "title": "F1 2014",
+    "source": "protondb"
+  }
+]

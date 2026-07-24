@@ -1,0 +1,88 @@
+[
+  {
+    "appId": "403430",
+    "title": "Arcade Game Series: Galaga",
+    "timestamp": 1535025859,
+    "rating": "Platinum",
+    "notes": "Works great",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i76700k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403430",
+    "title": "ARCADE GAME SERIES: GALAGA",
+    "timestamp": 1536076720,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403430",
+    "title": "ARCADE GAME SERIES: GALAGA",
+    "timestamp": 1536557765,
+    "rating": "Platinum",
+    "notes": "Working Perfect",
+    "os": "Arch Linux LTS",
+    "gpuDriver": "NVIDIA GeForce 960 4GB",
+    "specs": "Intel i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403430",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537291047,
+    "title": "ARCADE GAME SERIES: GALAGA",
+    "source": "protondb"
+  },
+  {
+    "appId": "403430",
+    "title": "Arcade Game Series: Galaga",
+    "timestamp": 1535011459,
+    "rating": "Platinum",
+    "notes": "Works great",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i76700k / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403430",
+    "title": "ARCADE GAME SERIES: GALAGA",
+    "timestamp": 1536062320,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403430",
+    "title": "ARCADE GAME SERIES: GALAGA",
+    "timestamp": 1536543365,
+    "rating": "Platinum",
+    "notes": "Working Perfect",
+    "os": "Arch Linux LTS",
+    "gpuDriver": "NVIDIA GeForce 960 4GB",
+    "specs": "Intel i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

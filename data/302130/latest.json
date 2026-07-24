@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "302130",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.14.83-gentoo",
+    "notes": "Works flawlessly. (No wide screen support)",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1547888517,
+    "title": "Brink of Consciousness: Dorian Gray Syndrome Collector's Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "302130",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Works mostly fine. However, widescreen mode doesn't work, the game pauses slightly whenever changing scenarios, and sometimes the font doesn't display correctly and the text overlaps itself",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555506740,
+    "title": "Brink of Consciousness: Dorian Gray Syndrome Collector's Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "302130",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557496848,
+    "title": "Brink of Consciousness: Dorian Gray Syndrome Collector's Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "appId": "215630",
+    "title": "Demonicon",
+    "timestamp": 1535407118,
+    "rating": "Borked",
+    "notes": "Didn't start at all",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX8350/1070ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "215630",
+    "title": "Demonicon",
+    "timestamp": 1535453419,
+    "rating": "Borked",
+    "notes": ".NET incompability",
+    "os": "Manjaro (4.18.4-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "215630",
+    "cpu": "i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "notes": "Won't even launch from Steam..",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Demonicon",
+    "source": "protondb"
+  },
+  {
+    "appId": "215630",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "GeForce GT 630/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Won't launch at all",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7945 Mb",
+    "rating": "Borked",
+    "timestamp": 1536923641,
+    "title": "Demonicon",
+    "source": "protondb"
+  },
+  {
+    "appId": "215630",
+    "title": "Demonicon",
+    "timestamp": 1535392718,
+    "rating": "Borked",
+    "notes": "Didn't start at all",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX8350/1070ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "215630",
+    "title": "Demonicon",
+    "timestamp": 1535439019,
+    "rating": "Borked",
+    "notes": ".NET incompability",
+    "os": "Manjaro (4.18.4-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

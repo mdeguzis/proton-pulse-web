@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Scoring Works - Proton Pulse</title>
+<meta name="description" content="Transparent explanation of how Proton Pulse scores compatibility reports against your hardware. Identical algorithm to the Decky Loader plugin - one canonical source of truth, no hidden magic.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
+<link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
+<link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
+<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
+<style>
+h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3em;
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  margin: 2.2em 0 0.8em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h2::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent-glow);
+  flex-shrink: 0;
+}
+h3 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--strong); margin: 1.4em 0 0.6em; }
+.meta { color: var(--muted); font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; margin-bottom: 0.8em; }
+.lede {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.65;
+  /* Use a fluid cap: read like prose on wide monitors without becoming a
+     narrow column on a 1080p screen. ~75ch is the comfortable reading line
+     length while still feeling like the page belongs to the wider layout */
+  max-width: min(75ch, 100%);
+  margin-bottom: 0.6em;
+}
+.lede a { color: var(--accent); }
+
+.card {
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.card.formula {
+  border-left: 3px solid var(--accent);
+}
+.card.formula .formula-line {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--accent-hi);
+  letter-spacing: 0.02em;
+  padding: 12px 0;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.card .body { color: var(--text); line-height: 1.6; font-size: 0.92rem; }
+.card .body p { margin-bottom: 0.5em; }
+.card .body code, code.inline {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  color: var(--accent-hi);
+}
+
+/* tier rows for the rating table */
+.tier-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tier-row:last-child { border-bottom: none; }
+.tier-row .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.tier-row[data-tier="platinum"] .badge { background: #b4c7dc; color: #0a0c10; }
+.tier-row[data-tier="gold"]     .badge { background: #c8a050; color: #0a0c10; }
+.tier-row[data-tier="silver"]   .badge { background: #8fa0b0; color: #0a0c10; }
+.tier-row[data-tier="bronze"]   .badge { background: #b07040; color: #fff; }
+.tier-row[data-tier="borked"]   .badge { background: #c85050; color: #fff; }
+.tier-row .rule { color: var(--text); font-size: 0.92rem; line-height: 1.5; }
+
+/* weights table */
+.weights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 760px) { .weights { grid-template-columns: 1fr; } }
+.weight-group {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+}
+.weight-group h3 { margin-top: 0; color: var(--accent-hi); }
+.weight-group .desc { color: var(--muted); font-size: 0.78rem; margin-bottom: 10px; line-height: 1.5; }
+.weight-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 4px 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+.weight-row .name { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.weight-row .value { color: var(--accent); font-weight: 600; }
+.weight-row .value.negative { color: var(--red); }
+.weight-row .value.multiplier { color: var(--green-hi); }
+
+/* quick reference */
+.quickref { display: flex; flex-direction: column; gap: 6px; font-family: var(--mono); font-size: 0.86rem; }
+.quickref code { background: var(--s1); border: 1px solid var(--border); padding: 6px 12px; color: var(--text); }
+
+/* keyword chips */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips .chip {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  padding: 4px 10px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.chips.positive .chip { color: var(--green-hi); border-color: rgba(190,238,17,0.3); }
+.chips.negative .chip { color: var(--red); border-color: rgba(200,80,80,0.3); }
+
+/* OS family list */
+.os-families { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.os-fam { background: var(--s1); border: 1px solid var(--border); padding: 10px 14px; font-family: var(--mono); font-size: 0.82rem; }
+.os-fam .family-name { color: var(--accent-hi); font-weight: 600; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.74rem; }
+.os-fam .distros { color: var(--text); }
+
+/* rating derivation flow */
+.flow {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.75;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  white-space: pre-wrap;
+}
+.flow .branch { color: var(--accent); }
+.flow .verdict { color: var(--green-hi); }
+.flow .borked { color: var(--red); }
+
+.loading-state, .error-state {
+  padding: 60px 24px;
+  text-align: center;
+  font-family: var(--mono);
+  color: var(--muted);
+}
+.transparency-note {
+  margin-top: 2.4em;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, rgba(102,192,244,0.06), var(--s1));
+  border: 1px solid var(--accent);
+  border-left: 3px solid var(--accent);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+.transparency-note a { color: var(--accent-hi); }
+
+/* 2x2 mental model matrix at the top of the page. Header cells use the
+   color of the column they head; clickable cells link to their detail section */
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr;
+  gap: 6px;
+  margin: 12px 0 1.4em;
+}
+@media (max-width: 760px) {
+  .matrix-grid { grid-template-columns: 1fr; }
+  .matrix-grid .matrix-corner,
+  .matrix-grid .matrix-col-head { display: none; }
+  .matrix-grid .matrix-row-head {
+    text-align: left;
+    padding: 8px 0 2px;
+    border: none;
+    background: none;
+  }
+}
+.matrix-corner {
+  background: transparent;
+}
+.matrix-col-head {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.matrix-col-head small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+.matrix-col-rating {
+  color: var(--accent-hi);
+  border-left: 3px solid var(--accent);
+}
+.matrix-col-confidence {
+  color: var(--green-hi);
+  border-left: 3px solid var(--green-hi);
+}
+.matrix-row-head {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: var(--s1);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.matrix-cell {
+  display: block;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: border-color .12s, background .12s, transform .12s;
+}
+.matrix-cell:hover {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--s3), var(--s2));
+  text-decoration: none;
+}
+.matrix-cell strong {
+  display: block;
+  color: var(--strong);
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+}
+.matrix-cell span { color: var(--muted); font-size: 0.82rem; }
+.matrix-cell-rating { border-left: 3px solid var(--accent); }
+.matrix-cell-confidence { border-left: 3px solid var(--green-hi); }
+
+/* Worked-example scenario cards. Each card shows a real-looking report row
+   with badge + confidence chip + reasoning + a tag explaining the takeaway */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 12px 0 1.6em;
+}
+@media (max-width: 760px) { .scenario-grid { grid-template-columns: 1fr; } }
+.scenario-card {
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scenario-card.scenario-callout {
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(180deg, rgba(255,200,61,0.05), var(--s1));
+}
+.scenario-game {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 8px;
+}
+.scenario-game .game-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.scenario-game .game-appid {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  margin-left: auto;
+}
+.scenario-result {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+/* the rating-badge mimics the same look the plugin/web use for game tier */
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 14px;
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.rating-badge[data-rating="platinum"] { background: #b4c7dc; color: #0a0c10; }
+.rating-badge[data-rating="gold"]     { background: #c8a050; color: #0a0c10; }
+.rating-badge[data-rating="silver"]   { background: #8fa0b0; color: #0a0c10; }
+.rating-badge[data-rating="bronze"]   { background: #b07040; color: #fff; }
+.rating-badge[data-rating="borked"]   { background: #c85050; color: #fff; }
+/* confidence chip is a separate visual layer right next to the badge.
+   Color reflects confidence level so it reads at a glance */
+.confidence-chip {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border: 1px solid;
+  border-radius: 3px;
+  background: var(--s1);
+}
+/* cyan-graded confidence, same palette as app.js confColor() so
+   confidence never collides with the tier badge next to it */
+.confidence-high { color: #0a1a24; background: #66c0f4; border-color: #66c0f4; }
+.confidence-mid  { color: #e8f4ff; background: #3a6680; border-color: #4a90b8; }
+.confidence-low  { color: #e8f4ff; background: #4a5a6a; border-color: #5a6a7a; }
+.scenario-why {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.scenario-tag {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  background: var(--s1);
+  border-left: 2px solid var(--accent);
+  padding: 8px 12px;
+  line-height: 1.55;
+  margin-top: auto;
+}
+
+/* big numbered section heads keep the 4-step narrative visible while scrolling */
+h2 .section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+h2 small {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+/* deprecated two-card model layout kept for any legacy callers (still rendered
+   by the rating/confidence factor cards in section 2) */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+@media (max-width: 760px) { .model-grid { grid-template-columns: 1fr; } }
+.model-card {
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+}
+.model-card.model-rating     { border-left: 3px solid var(--accent); }
+.model-card.model-confidence { border-left: 3px solid var(--green-hi); }
+.model-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.model-rating .model-label     { color: var(--accent-hi); }
+.model-confidence .model-label { color: var(--green-hi); }
+.model-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin: 4px 0 10px;
+}
+.model-body { color: var(--text); line-height: 1.55; font-size: 0.92rem; }
+.model-sub  { color: var(--muted); line-height: 1.55; font-size: 0.84rem; margin-top: 10px; }
+
+.example-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0 1.8em;
+}
+.example-lines code {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green-hi);
+  padding: 10px 14px;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+/* confidence factor groups: similar to old weight-group but with anon tag */
+.confidence-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 760px) { .confidence-groups { grid-template-columns: 1fr; } }
+.confidence-group {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+}
+.cg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.cg-header h3 { margin: 0; color: var(--accent-hi); }
+.cg-desc { color: var(--muted); font-size: 0.82rem; line-height: 1.5; margin-bottom: 10px; }
+.cg-weights { display: flex; flex-direction: column; gap: 2px; }
+.cg-weights .weight-row { padding: 3px 0; }
+.anon-tag, .signedin-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border: 1px solid var(--border2);
+  background: rgba(11,17,22,0.4);
+  white-space: nowrap;
+}
+.anon-tag    { color: var(--green-hi); border-color: rgba(190,238,17,0.3); }
+.signedin-tag { color: var(--muted); }
+</style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=ad8d89f5"></script>
+<script src="js/lib/topbar.js?v=21a7ccea"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+
+<div class="main-content"><div class="main-inner">
+
+<h1>How scoring works</h1>
+<p class="meta" id="scoring-meta">// Loading scoring-info.json...</p>
+
+<p class="lede">
+  Every report and every game in Proton Pulse carries <strong>two numbers</strong>:
+  a <strong>rating</strong> (the badge - platinum/gold/silver/bronze/borked) and a
+  <strong>confidence</strong> (a 0-100% qualifier next to it). The rating comes
+  straight from the yes/no questions on the form - same answers, same badge.
+  Confidence is everything else: how recent the report is, how close the hardware
+  is to yours, how many other reports agree.
+</p>
+<p class="lede">
+  Why split them? Because a four-year-old <em>borked</em> report on a game that
+  has been actively patched should still say <em>borked</em> (that's what the
+  community reported), but the page should also tell you the rating is shaky.
+  Old algorithms quietly auto-bumped stale borked to bronze, which hid the
+  signal. The confidence layer makes the caveat explicit.
+</p>
+
+<div id="scoring-root">
+  <div class="loading-state">Fetching scoring-info.json...</div>
+</div>
+
+</div></div>
+
+<script>
+(function () {
+  const root = document.getElementById('scoring-root');
+  const metaEl = document.getElementById('scoring-meta');
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+  }
+
+  // Bucket the weight keys into thematic groups so users can find what they
+  // care about without scrolling a flat table. Order matters - general first,
+  // hardware multipliers in the middle, edge cases last.
+  function renderTiers(tiers) {
+    return `<div class="card">${tiers.map(t => `
+      <div class="tier-row" data-tier="${esc(t.name)}">
+        <span class="badge">${esc(t.name)}</span>
+        <span class="rule">${esc(t.rule)}</span>
+      </div>
+    `).join('')}</div>`;
+  }
+
+  // Render one confidence-factor group as a card with description + weight rows.
+  // Anonymous-applicable groups get a small "anon" tag so visitors know which
+  // factors affect them when not signed in
+  function renderConfidenceGroup(g, weights) {
+    // Audience (anonymous vs signed-in) is already conveyed by the two section
+    // headers below, so the per-card tag is redundant and just adds noise.
+    const anonTag = '';
+    const rows = (g.weightKeys || []).map(k => {
+      const v = weights[k];
+      if (v == null) return '';
+      const neg = typeof v === 'number' && v < 0;
+      const isMult = typeof v === 'number' && v > 0 && v <= 2 && (k.includes('MATCH') || k.includes('MISMATCH') || k.includes('UNKNOWN') || k.includes('EXACT') || k.includes('CLOSE'));
+      const cls = isMult ? 'multiplier' : (neg ? 'negative' : '');
+      return `<div class="weight-row"><span class="name">${esc(k)}</span><span class="value ${cls}">${v}</span></div>`;
+    }).join('');
+    return `<div class="confidence-group">
+      <div class="cg-header">
+        <h3>${esc(g.label || g.id)}</h3>
+        ${anonTag}
+      </div>
+      <div class="cg-desc">${esc(g.description || '')}</div>
+      ${rows ? `<div class="cg-weights">${rows}</div>` : ''}
+    </div>`;
+  }
+
+  // Pretty-print a recency-bucket key like "oneToTwoYears" -> "1-2 years"
+  function prettyBucket(key) {
+    const map = {
+      lastYear:        'Past year',
+      oneToTwoYears:   '1-2 years',
+      twoToFiveYears:  '2-5 years',
+      fivePlusYears:   '5+ years',
+    };
+    return map[key] || key;
+  }
+
+  function renderQuickRef(items) {
+    if (!items?.length) return '';
+    return `<div class="quickref">${items.map(line => `<code>${esc(line)}</code>`).join('')}</div>`;
+  }
+
+  function renderChips(items, cls) {
+    if (!items?.length) return '<p class="meta">none configured</p>';
+    return `<div class="chips ${cls}">${items.map(k => `<span class="chip">${esc(k)}</span>`).join('')}</div>`;
+  }
+
+  function renderOsFamilies(fams) {
+    return `<div class="os-families">${Object.entries(fams).map(([fam, distros]) => `
+      <div class="os-fam">
+        <div class="family-name">${esc(fam)}</div>
+        <div class="distros">${distros.map(d => esc(d)).join(' / ')}</div>
+      </div>
+    `).join('')}</div>`;
+  }
+
+  function renderRatingDerivation(rd) {
+    if (!rd) return '';
+    const ias = rd.installAndStartup || {};
+    const verdictYes = rd.verdictYes || {};
+    const lines = [
+      '<span class="branch">if</span>  canInstall=no, canStart=no, or canPlay=no:',
+      `   → <span class="borked">borked</span>`,
+      '<span class="branch">elif</span> overall verdict=no:',
+      `   → <span class="borked">borked</span>`,
+      '<span class="branch">elif</span> 3 or more faults:',
+      `   → <span class="verdict">bronze</span>`,
+      '<span class="branch">elif</span> exactly 2 faults:',
+      `   → <span class="verdict">silver</span>`,
+      '<span class="branch">elif</span> exactly 1 fault:',
+      `   → <span class="verdict">gold</span>`,
+      '<span class="branch">elif</span> 0 faults <span class="branch">and</span> "works out of the box"=yes:',
+      `   → <span class="verdict">platinum</span>`,
+      '<span class="branch">else</span> (0 faults, oob no):',
+      `   → <span class="verdict">gold</span>`,
+    ];
+    return `<div class="flow">${lines.join('\n')}</div>
+      <p class="meta" style="margin-top:10px">${esc(rd.tinkeringNote || '')}</p>`;
+  }
+
+  fetch('scoring-info.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(s => {
+      metaEl.textContent = `// Canonical source: ${s._source || 'src/lib/scoring.ts in the plugin repo'}`;
+      const model = s.model || {};
+      const cf = s.confidenceFactors || {};
+      const agg = s.perGameAggregation || {};
+
+      // Anonymous-applicable confidence factor groups are surfaced in the
+      // per-report confidence section; signed-in-only ones get their own
+      // subsection so anonymous visitors aren't confused about what affects
+      // their view
+      const anonGroups = (cf.groups || []).filter(g => g.appliesToAnonymous);
+      const signedinGroups = (cf.groups || []).filter(g => !g.appliesToAnonymous);
+
+      root.innerHTML = `
+        <h2>The mental model: two layers, two numbers</h2>
+        <p class="lede">Every grade you see in Proton Pulse answers one of four questions. The four sections below map directly onto this 2x2 matrix - each section is dedicated to a single question.</p>
+
+        <div class="matrix-grid">
+          <div class="matrix-corner"></div>
+          <div class="matrix-col-head matrix-col-rating">Rating <small>(the grade)</small></div>
+          <div class="matrix-col-head matrix-col-confidence">Confidence <small>(how trustworthy)</small></div>
+
+          <div class="matrix-row-head">Per-report</div>
+          <a href="#per-report-rating" class="matrix-cell matrix-cell-rating">
+            <strong>1. What did this one report say?</strong>
+            <span>Pure function of the user's yes/no answers.</span>
+          </a>
+          <a href="#per-report-confidence" class="matrix-cell matrix-cell-confidence">
+            <strong>2. How much should I trust this report for me?</strong>
+            <span>Recency, hardware match, playtime, notes detail.</span>
+          </a>
+
+          <div class="matrix-row-head">Per-game</div>
+          <a href="#per-game-rating" class="matrix-cell matrix-cell-rating">
+            <strong>3. What's this game's overall grade?</strong>
+            <span>Recency-weighted mean of report ratings. Active games reflect current state.</span>
+          </a>
+          <a href="#per-game-confidence" class="matrix-cell matrix-cell-confidence">
+            <strong>4. How well should this game actually perform for me?</strong>
+            <span>Sample size, freshness of newest report, consensus, hardware match.</span>
+          </a>
+        </div>
+
+        <h3 style="margin-top:1.6em">What it looks like in practice</h3>
+        <p class="lede">Four scenarios. Notice the rating stays honest in every case - it never lies. The confidence is what tells you how much to weight that rating for <em>your</em> decision.</p>
+
+        <div class="scenario-grid">
+
+          <div class="scenario-card">
+            <div class="scenario-game">
+              <span class="game-title">Cyberpunk 2077</span>
+              <span class="game-appid">#1091500</span>
+            </div>
+            <div class="scenario-result">
+              <span class="rating-badge" data-rating="gold">GOLD</span>
+              <span class="confidence-chip confidence-high">92% confidence</span>
+            </div>
+            <div class="scenario-why">
+              Based on <strong>47 reports in the last 12 months</strong>, broad consensus on Gold,
+              hardware closely matches yours.
+            </div>
+            <div class="scenario-tag">Best case: fresh data, strong agreement, your kind of hardware</div>
+          </div>
+
+          <div class="scenario-card scenario-callout">
+            <div class="scenario-game">
+              <span class="game-title">An older game with one stale report</span>
+              <span class="game-appid">#000000</span>
+            </div>
+            <div class="scenario-result">
+              <span class="rating-badge" data-rating="borked">BORKED</span>
+              <span class="confidence-chip confidence-low">14% confidence</span>
+            </div>
+            <div class="scenario-why">
+              Based on <strong>1 report from 4 years ago</strong>. The game has been actively
+              patched since. Worth re-testing on current Proton.
+            </div>
+            <div class="scenario-tag">Why the rating stays Borked: that's what the report said. Why the confidence is low: the data is stale and the game has likely moved on.</div>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-game">
+              <span class="game-title">A divisive title</span>
+              <span class="game-appid">#000001</span>
+            </div>
+            <div class="scenario-result">
+              <span class="rating-badge" data-rating="silver">SILVER</span>
+              <span class="confidence-chip confidence-mid">58% confidence</span>
+            </div>
+            <div class="scenario-why">
+              <strong>12 recent reports</strong>: 7 silver, 3 gold, 2 borked. Mixed signal.
+              Hardware match is partial (NVIDIA reports for an AMD viewer).
+            </div>
+            <div class="scenario-tag">Mid confidence: enough data, but reports don't agree. The badge picks the closest tier; the % tells you not to bet the farm.</div>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-game">
+              <span class="game-title">Same game, anonymous web visitor</span>
+              <span class="game-appid">#1091500</span>
+            </div>
+            <div class="scenario-result">
+              <span class="rating-badge" data-rating="gold">GOLD</span>
+              <span class="confidence-chip confidence-mid">68% confidence</span>
+            </div>
+            <div class="scenario-why">
+              <strong>Same 47 reports</strong>, but no hardware on file. Confidence comes from
+              sample size + freshness + consensus only - hardware-match factors don't apply.
+            </div>
+            <div class="scenario-tag">Anonymous view: rating identical (community truth), confidence lower (no personalization).</div>
+          </div>
+
+        </div>
+
+        ${(model.exampleLines || []).length ? `
+        <h3 style="margin-top:1.6em">Shorthand format you'll see in the UI</h3>
+        <div class="example-lines">
+          ${model.exampleLines.map(line => `<code>${esc(line)}</code>`).join('')}
+        </div>
+        ` : ''}
+
+        <h2 id="per-report-rating"><span class="section-num">1</span> Per-report rating <small>- what did this one report say?</small></h2>
+        <p class="lede">A single report's rating comes directly from the yes/no answers on the submit form. Same answers, same badge - nothing about your hardware or the report's age changes it here. That's covered in section 2.</p>
+
+        <h3>Derivation flow</h3>
+        ${renderRatingDerivation(s.ratingDerivation)}
+
+        <h3>Per-report tiers</h3>
+        ${renderTiers(s.tiers || [])}
+
+        <h3>Quick reference</h3>
+        ${renderQuickRef(s.quickReference)}
+        ${s.outOfBoxNote ? `<p class="meta" style="margin-top:10px">${esc(s.outOfBoxNote)}</p>` : ''}
+
+        <h2 id="per-report-confidence"><span class="section-num">2</span> Per-report confidence <small>- how much should I trust this report for me?</small></h2>
+        <p class="lede">Per-report confidence answers a different question than the rating: <em>given that this report says GOLD, how relevant is it to my situation?</em> A platinum report from 4 years ago on different hardware is less useful than a silver report from last month on a Deck just like yours. The groups below combine into a 0-100% number shown next to the badge.</p>
+
+        <h3>Factors that apply to everyone (including anonymous visitors)</h3>
+        <div class="confidence-groups">
+          ${anonGroups.map(g => renderConfidenceGroup(g, s.weights || {})).join('')}
+        </div>
+
+        ${signedinGroups.length ? `
+        <h3 style="margin-top:1.4em">Factors that need your hardware info (plugin or signed-in webui)</h3>
+        <p class="meta">// These compare the report's hardware to yours. Anonymous webui visitors don't have hardware on file, so these factors drop out and confidence comes from the recency/playtime/notes/source groups above.</p>
+        <div class="confidence-groups">
+          ${signedinGroups.map(g => renderConfidenceGroup(g, s.weights || {})).join('')}
+        </div>
+        ` : ''}
+
+        <h2 id="per-game-rating"><span class="section-num">3</span> Per-game rating <small>- what's this game's overall grade?</small></h2>
+        <p class="lede">The big badge a game gets in search results is a <strong>${esc(agg.rating?.method || 'recency-weighted mean')}</strong> of its per-report ratings. Recent reports weigh more so an actively-patched game reflects its current state, not how it ran years ago.</p>
+
+        <div class="card body">
+          <p>${esc(agg.rating?.description || '')}</p>
+          ${agg.rating?.recencyWeights ? `
+          <ul style="margin: 10px 0 0 16px; line-height: 1.8;">
+            ${Object.entries(agg.rating.recencyWeights).map(([k, v]) => `<li><strong>${esc(prettyBucket(k))}</strong>: ${v}x weight</li>`).join('')}
+          </ul>` : ''}
+          <p class="meta" style="margin-top:12px">Per-report ratings map to numeric scores (platinum=1.0, gold=0.8, silver=0.6, bronze=0.4, borked=0.0) before the weighted average. The result maps back to whichever tier it lands closest to.</p>
+        </div>
+
+        <h2 id="per-game-confidence"><span class="section-num">4</span> Per-game confidence <small>- how well should this game actually perform for me?</small></h2>
+        <p class="lede">The overall game grade is only as trustworthy as the data behind it. Per-game confidence rolls up per-report confidence across the available reports, then adjusts for sample size and how recent the freshest report is.</p>
+
+        <div class="card body">
+          ${agg.confidence?.factors ? `
+          <ul style="margin: 8px 0 0 16px; line-height: 1.8;">
+            ${agg.confidence.factors.map(f => `<li>${esc(f)}</li>`).join('')}
+          </ul>` : '<p>Aggregated from per-report confidence.</p>'}
+        </div>
+
+        <h2 id="compat-trend">Compatibility trend</h2>
+        <p class="lede">Game pages show a short line saying whether compatibility is improving, stable, or declining, and the per-game stats page shows the same direction with a bar chart. Both read from one function so they never disagree.</p>
+        <div class="card body">
+          <p>The trend compares two windows of reports: the last 90 days against the 90 to 270 day window before it. Reports older than 270 days are left out so a years-old rating cannot skew the baseline.</p>
+          <p>It looks at the share of playable reports in each window, not an average of tier numbers. Playable means Platinum, Gold, or Silver. If that share rises by at least 15 points the trend reads improving; if it drops by at least 15 points it reads declining; anything smaller is stable.</p>
+          <p>Two rules keep it honest. A shift between two playable tiers, say Platinum down to Gold, does not count as a decline, because the game still runs. And a direction only appears when both windows have at least 5 reports, so a couple of old reports never drive the verdict. Below that the game page shows no trend line at all.</p>
+        </div>
+
+        <h2>Custom Proton markers</h2>
+        <p class="lede" style="margin-bottom:8px">Any report whose <code class="inline">protonVersion</code> contains one of these tokens gets the <code class="inline">CUSTOM_PROTON</code> confidence bump - credit for going off the official path:</p>
+        ${renderChips(s.customProtonMarkers, 'positive')}
+
+        <h2>OS family groupings</h2>
+        <p class="lede" style="margin-bottom:8px">Used by the OS hardware-match factor. A report from a distro in your family gets <code class="inline">OS_FAMILY_MATCH</code>; an exact distro match (rare) gets <code class="inline">OS_EXACT</code>:</p>
+        ${renderOsFamilies(s.osFamilies || {})}
+
+        <h2>Notes sentiment keywords</h2>
+        <div class="card body">
+          <p>Free-form notes can swing per-report confidence within <code class="inline">+/- NOTES_MAX</code>. Detection is keyword-based, intentionally simple:</p>
+          <h3 style="margin-top:1em">Positive signals</h3>
+          ${renderChips(s.positiveKeywords, 'positive')}
+          <h3 style="margin-top:1em">Negative signals</h3>
+          ${renderChips(s.negativeKeywords, 'negative')}
+        </div>
+
+        ${s.durationAutoFillNote ? `<h2>Duration auto-fill (Decky plugin only)</h2>
+        <div class="card body">
+          <p>${esc(s.durationAutoFillNote)}</p>
+        </div>` : ''}
+
+        <div class="transparency-note">
+          <strong>Transparency:</strong> the rating algorithm is implemented in
+          <a href="https://github.com/mdeguzis/decky-proton-pulse/blob/main/src/lib/scoring.ts" target="_blank" rel="noopener"><code>src/lib/scoring.ts</code></a>
+          in the plugin repo and exported to
+          <a href="scoring-info.json" target="_blank" rel="noopener"><code>scoring-info.json</code></a>,
+          which this page renders directly. The plugin and webui consume the
+          same JSON - no client-side reinterpretation. The confidence formula
+          builds on the same WEIGHTS but groups them by purpose instead of
+          collapsing them into one score-to-rating mapping.
+        </div>
+      `;
+    })
+    .catch(err => {
+      root.innerHTML = `<div class="error-state">
+        <p>scoring-info.json not available (${err}).</p>
+        <p style="margin-top:8px;font-size:0.74rem">In local dev, this file is fetched from the deployed pipeline; refresh after a deploy.</p>
+      </div>`;
+      metaEl.textContent = `// scoring-info.json fetch failed`;
+    });
+})();
+</script>
+</body>
+</html>

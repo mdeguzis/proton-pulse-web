@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "335100",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-145-generic",
+    "notes": "Launches and runs perfectly (Game version1.4.233). Online Game not tested.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556837056,
+    "title": "Dwarf Tower",
+    "source": "protondb"
+  },
+  {
+    "appId": "335100",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Runs out of the box.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567978197,
+    "title": "Dwarf Tower",
+    "source": "protondb"
+  }
+]

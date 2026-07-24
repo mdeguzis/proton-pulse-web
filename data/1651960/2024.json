@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1651960",
+    "cpu": "Intel Core i7-3610QM @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "6.9.3-3-MANJARO",
+    "notes": "Yorumlarda olmu\u015f veren o beyninizi yiyem sizin",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1720723203,
+    "title": "",
+    "source": "protondb"
+  }
+]

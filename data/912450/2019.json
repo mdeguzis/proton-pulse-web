@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "912450",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Tried renaming launcher.exe to boot.bat (same workaround as STEINS;GATE 0) but game crashes immediately due to DirectX 11 error, according to Proton steam-appid.log. Tried \"Use Wine D3d11\" flag to use OpenGL instead of DXVK, which allows a black screen to pop up for a second before crashing. Upstream bug appears to be https://bugs.winehq.org/show_bug.cgi?id=45277",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1570490189,
+    "title": "YU-NO: A girl who chants love at the bound of this world",
+    "source": "protondb"
+  }
+]

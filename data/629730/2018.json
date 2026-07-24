@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "629730",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Unity, Worked out of the box. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544950510,
+    "title": "Blade and Sorcery",
+    "source": "protondb"
+  },
+  {
+    "appId": "629730",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-zen1-1-zen",
+    "notes": "The game runs flawlessly.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546094924,
+    "title": "Blade and Sorcery",
+    "source": "protondb"
+  }
+]

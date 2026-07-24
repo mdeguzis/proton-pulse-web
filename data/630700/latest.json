@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "630700",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Tried disabling esync, d3d11/10, using wined3d and all combination of them. Nothing made it start. The exe is running, but no window ever pops up and all the processes must be killed manually",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558497699,
+    "title": "Rocket Arena Beta",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "767390",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The game basically runs fine, but has noticeable performance issues for me, running at close to half the framerate compared to Windows (45 fps vs 75 fps with the exact same settings at the start of the exact same stage, GPU utilization is reported about the same 94 % vs 99 % with vsync disabled). At random intervals every few seconds, it also seems to freeze for about half a second. I've tested 396.54, 410.66 and 410.73 drivers and it didn't make much difference in performance or the stutter. Also, initially, the sound was kinda distorted/crackling, but that was solved adding the tsched=0 option to pulseaudio config. I've also tried joining a multiplayer session and it seemed to work fine. Hard to decide between silver and bronze rating, but I guess it's closer to silver.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541805374,
+    "title": "Dakar 18",
+    "source": "protondb"
+  },
+  {
+    "appId": "767390",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.18.0-12-generic",
+    "notes": "The game works almost perfect, with some not serious stutterers, but it don't recognize my Logitech G27 Wheel. I try to make the controls assistant, but is impossible that the game detects my wheel.\n\nIf I use my Steam Controller, I don't have any problem",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545342362,
+    "title": "Dakar 18",
+    "source": "protondb"
+  }
+]

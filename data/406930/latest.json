@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "406930",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game was playable for a bit but froze on pause menu. Appeared to still be working in the background, but would not accept any input. Had to be force closed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558918381,
+    "title": "Epic Showdown",
+    "source": "protondb"
+  }
+]

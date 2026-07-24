@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "362410",
+    "title": "Adam's Venture Chronicles",
+    "timestamp": 1535798234,
+    "rating": "Silver",
+    "notes": "Missing Cursor in the Menu; Severall Error Messages during first start /wine dll /ms crap installation stuff like .Net...etc",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "362410",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": ".NET 3.5 SP1 install fails, but you can safely ignore the error. The game runs just perfect.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15979 Mb",
+    "rating": "Gold",
+    "timestamp": 1536951049,
+    "title": "Adam's Venture Chronicles",
+    "source": "protondb"
+  },
+  {
+    "appId": "362410",
+    "cpu": "Intel(R) Core(TM) i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-ext73-58.8-kabylake",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7911 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537519566,
+    "title": "Adam's Venture Chronicles",
+    "source": "protondb"
+  },
+  {
+    "appId": "362410",
+    "title": "Adam's Venture Chronicles",
+    "timestamp": 1535783834,
+    "rating": "Silver",
+    "notes": "Missing Cursor in the Menu; Severall Error Messages during first start /wine dll /ms crap installation stuff like .Net...etc",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

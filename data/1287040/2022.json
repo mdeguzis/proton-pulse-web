@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1287040",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.5-200.fc36.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1659524348,
+    "title": "Gun Devil",
+    "source": "protondb"
+  },
+  {
+    "appId": "1287040",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Full screen does not actually fill the screen, and audio is very quiet despite changing settings.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1661370974,
+    "title": "Gun Devil",
+    "source": "protondb"
+  },
+  {
+    "appId": "1287040",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works well.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1661371328,
+    "title": "Gun Devil",
+    "source": "protondb"
+  }
+]

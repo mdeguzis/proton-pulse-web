@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "287070",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Fullscreen = Black Screen. Running it in Windowed mode (choose in Game Launcher) everything works out of the box. No issues.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548557732,
+    "title": "Battle Academy",
+    "source": "protondb"
+  },
+  {
+    "appId": "287070",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.14.98-1-MANJARO",
+    "notes": "Runs without problems after disabling Fullscreen in game launcher",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1550219174,
+    "title": "Battle Academy",
+    "source": "protondb"
+  },
+  {
+    "appId": "287070",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.10",
+    "notes": "Runs perfectly in windowed mode.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556932853,
+    "title": "Battle Academy",
+    "source": "protondb"
+  }
+]

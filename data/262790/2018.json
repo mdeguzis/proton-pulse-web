@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "262790",
+    "title": "Our Darker Purpose",
+    "timestamp": 1535010842,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Xubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.18",
+    "specs": "i5-3570 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262790",
+    "title": "Our Darker Purpose",
+    "timestamp": 1535044422,
+    "rating": "Borked",
+    "notes": "Does not start at all",
+    "os": "Arch Linux 4.18.3-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "i7-8700k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262790",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Does not work; tweaks unsuccessful",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545614805,
+    "title": "Our Darker Purpose",
+    "source": "protondb"
+  },
+  {
+    "appId": "262790",
+    "title": "Our Darker Purpose",
+    "timestamp": 1534996442,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Xubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.18",
+    "specs": "i5-3570 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262790",
+    "title": "Our Darker Purpose",
+    "timestamp": 1535030022,
+    "rating": "Borked",
+    "notes": "Does not start at all",
+    "os": "Arch Linux 4.18.3-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "i7-8700k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1036740",
+    "cpu": "AMD Ryzen 7 4700U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR (DRM 3.41.0, 5.13.6-xanmod2, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.13.6-xanmod2",
+    "notes": "I works fine without any customization, however, since there are no graphics options besides resolution... (extra notes)",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1630214799,
+    "title": "",
+    "source": "protondb"
+  }
+]

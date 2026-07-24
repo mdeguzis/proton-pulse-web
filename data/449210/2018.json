@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "449210",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Same as native",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5926 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537034192,
+    "title": "Verdict Guilty - \uc720\uc8c4 \ud3c9\uacb0",
+    "source": "protondb"
+  },
+  {
+    "appId": "449210",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.2",
+    "kernel": "4.12.14-lp150.12.22-default",
+    "notes": "It worked like a native title. Had minor controller configuration issue at first and I don't know if it was fault of the game or Proton or unrelated but it was resolved by simply restarting of the Steam client with all the different controllers hooked up to the system.",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540744884,
+    "title": "Verdict Guilty - \uc720\uc8c4 \ud3c9\uacb0",
+    "source": "protondb"
+  }
+]

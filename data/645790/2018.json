@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "645790",
+    "title": "Home Wars",
+    "timestamp": 1536085600,
+    "rating": "Borked",
+    "notes": "game runs in 1080p in window mode (4k or fullscreen -> freeze). every text ingame is missing. everything else seems to work",
+    "os": "Kubuntu 18.04 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 390",
+    "specs": "i5-6600k / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "645790",
+    "title": "Home Wars",
+    "timestamp": 1536071200,
+    "rating": "Borked",
+    "notes": "game runs in 1080p in window mode (4k or fullscreen -> freeze). every text ingame is missing. everything else seems to work",
+    "os": "Kubuntu 18.04 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 390",
+    "specs": "i5-6600k / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

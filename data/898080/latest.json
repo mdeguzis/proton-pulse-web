@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "898080",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "[Index HMD] Can't progress past a certain point, as you need to use your microphone but it doesn't work. Might only be coded for the Vive.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567701639,
+    "title": "everybody's sad",
+    "source": "protondb"
+  }
+]

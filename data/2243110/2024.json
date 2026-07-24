@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2243110",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 6700 XT",
+    "gpuDriver": "4.6.0 Compatibility Profile Context 23.10.230706",
+    "kernel": "6.2.0-31-generic",
+    "notes": "Ran great out of box.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1722197220,
+    "title": "EMPTY SHELL",
+    "source": "protondb"
+  },
+  {
+    "appId": "2243110",
+    "cpu": "12th Gen Intel Core i7-12700F",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-122-generic",
+    "notes": "Switch to borderless and everything runs perfectly",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727933044,
+    "title": "EMPTY SHELL",
+    "source": "protondb"
+  }
+]

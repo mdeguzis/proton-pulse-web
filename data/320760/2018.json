@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "320760",
+    "title": "Tokyo school life",
+    "timestamp": 1535903058,
+    "rating": "Bronze",
+    "notes": "crash after opening",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "320760",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.5-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "notes": "It's work!! no problem detected",
+    "os": "Manjaro Linux (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Tokyo School Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "320760",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "playable but the sound have a little permanent crackling",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1540322156,
+    "title": "Tokyo School Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "320760",
+    "title": "Tokyo school life",
+    "timestamp": 1535888658,
+    "rating": "Bronze",
+    "notes": "crash after opening",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1600 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

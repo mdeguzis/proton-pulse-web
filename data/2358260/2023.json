@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2358260",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1699726596,
+    "title": "Cricket 24",
+    "source": "protondb"
+  },
+  {
+    "appId": "2358260",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.2.0-37-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1700579759,
+    "title": "Cricket 24",
+    "source": "protondb"
+  },
+  {
+    "appId": "2358260",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 16.0.6, DRM 3.54, 6.6.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.7-arch1-1",
+    "notes": "No Problems! Runs flawless.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703437856,
+    "title": "Cricket 24",
+    "source": "protondb"
+  }
+]

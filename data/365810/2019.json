@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "365810",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "4.19.47_1",
+    "notes": "Game crashes on start giving a \"createDXGIFactory: FAILED\" error unless it's run with \"PROTON_USE_WINED3D=1 %command%\". With WINED3D WINE crashes when launching a mission but the main menu works fine although the performance in the main menu isn't all that great.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559509462,
+    "title": "Flying Tigers: Shadows Over China",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "365810",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.11_1",
+    "notes": "The game runs without any tweaks. Performance is great. Scripted story voice lines don't play, you just hear the radio static sound followed by silence. Other voice audio such as the combat chatters works just fine. ",
+    "os": "Void Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1567860649,
+    "title": "Flying Tigers: Shadows Over China",
+    "source": "protondb"
+  }
+]

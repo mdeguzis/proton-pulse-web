@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "292420",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Same issue as previous report with newest Proton. At least unlike Windows 7+, tire animation works.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1557421666,
+    "title": "Panzer Elite Action Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "292420",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Slideshow performance, like previous report. However, unlike Windows 7+ tank belts are rendered correctly.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1557425224,
+    "title": "Panzer Elite Action Gold Edition",
+    "source": "protondb"
+  }
+]

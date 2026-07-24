@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "477770",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.8",
+    "notes": "Game needs this fix/additional files to work https://github.com/doitsujin/dxvk/issues/728#issuecomment-459839962\nPerformance is great but bike textures are broken after several minutes of play.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568658754,
+    "title": "Ride 2",
+    "source": "protondb"
+  }
+]

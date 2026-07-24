@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314420",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-142-generic",
+    "notes": "When i launch it it pops up a terminal and says:\nCant recognize 'Steam.exe -applaunch 228200 -mod tgw -nomovies' as an internal or external command, or batch script.\n\nAnd i am stuck there.",
+    "os": "LXLE Eclectica 16.04.4 (64 bit)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552704256,
+    "title": "The Great War 1918",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936030",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.10-200.fc29.x86_64",
+    "notes": "Won't start. ",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-4",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1558122242,
+    "title": "Nature Relax",
+    "source": "protondb"
+  }
+]

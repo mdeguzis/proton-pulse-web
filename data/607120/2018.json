@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "607120",
+    "cpu": "AMD A8-3870 APU with Radeon(tm) HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTS 450/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs fine, sound and everything working. No issues at all, no tweaks necessary. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15515 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539217411,
+    "title": "Police Quest: SWAT 2",
+    "source": "protondb"
+  }
+]

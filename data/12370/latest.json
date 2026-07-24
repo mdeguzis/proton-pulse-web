@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "12370",
+    "title": "Jagged Alliance 2: Gold Pack",
+    "timestamp": 1535049245,
+    "rating": "Platinum",
+    "notes": "Works flawlessly. Unfinished Business standalone expansion was not tested, but I assume it would be the same.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12370",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537484749,
+    "title": "Jagged Alliance 2 Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "12370",
+    "title": "Jagged Alliance 2: Gold Pack",
+    "timestamp": 1535034845,
+    "rating": "Platinum",
+    "notes": "Works flawlessly. Unfinished Business standalone expansion was not tested, but I assume it would be the same.",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 2520m / Intel HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

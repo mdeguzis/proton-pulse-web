@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "92210",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Started with the screen rotated 90 degrees. Changing rotation in the settings caused menu options to be cut off the bottom of the screen, but after restarting the game everything seems to stay scaled and positioned properly. Runs well after that. Tested with a PS3 controller.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1561715457,
+    "title": "Hitogata Happa",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "224060",
+    "title": "Deadpool",
+    "timestamp": 1534957220,
+    "rating": "Borked",
+    "notes": "The process just freezes without even drawing a window, need to kill it (happens on vanilla wine, too, although it seems to have worked some years ago according to AppDB)",
+    "os": "Manjaro Testing",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700K / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224060",
+    "title": "Deadpool",
+    "timestamp": 1535649291,
+    "rating": "Borked",
+    "notes": "Tried searching for crash information in Steam logs. Using grep to search for the appID in ~/.steam/steam/logs reveals some instances of\n\n[2018-08-30 17:21:56] [AppID 224060] CAPIJobRequestUserStats - no connection to Steam",
+    "os": "Kubuntu 18.04.1 64bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-7500U / Intel HD Graphics 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224060",
+    "title": "Deadpool",
+    "timestamp": 1536176772,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Ubuntu 18.04.1 LTS 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224060",
+    "title": "Deadpool",
+    "timestamp": 1534942820,
+    "rating": "Borked",
+    "notes": "The process just freezes without even drawing a window, need to kill it (happens on vanilla wine, too, although it seems to have worked some years ago according to AppDB)",
+    "os": "Manjaro Testing",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700K / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224060",
+    "title": "Deadpool",
+    "timestamp": 1535634891,
+    "rating": "Borked",
+    "notes": "Tried searching for crash information in Steam logs. Using grep to search for the appID in ~/.steam/steam/logs reveals some instances of\n\n[2018-08-30 17:21:56] [AppID 224060] CAPIJobRequestUserStats - no connection to Steam",
+    "os": "Kubuntu 18.04.1 64bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-7500U / Intel HD Graphics 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "224060",
+    "title": "Deadpool",
+    "timestamp": 1536162372,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Ubuntu 18.04.1 LTS 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

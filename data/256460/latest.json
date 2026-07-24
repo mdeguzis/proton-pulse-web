@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "256460",
+    "cpu": "AMD FX(tm)-6350 Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.5-90.current",
+    "notes": "Everything worked fine. No tweaks necessary.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7916 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538275323,
+    "title": "Cosmic Star Heroine",
+    "source": "protondb"
+  },
+  {
+    "appId": "256460",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Couldn't get controller input to work, otherwise works fine (and achievements work, unlike the native beta).",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1545570211,
+    "title": "Cosmic Star Heroine",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2599300",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.7.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.3-arch1.1",
+    "kernel": "6.7.9-arch1-1",
+    "notes": "Works Well !!",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1710501968,
+    "title": "Dead Signal",
+    "source": "protondb"
+  },
+  {
+    "appId": "2599300",
+    "cpu": "13th Gen Intel Core i9-13900HX",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1711303581,
+    "title": "Dead Signal",
+    "source": "protondb"
+  },
+  {
+    "appId": "2599300",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "Works out of the box just fine",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1734465432,
+    "title": "Dead Signal",
+    "source": "protondb"
+  }
+]

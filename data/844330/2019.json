@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "844330",
+    "cpu": "AMD A8-7410 APU with AMD Radeon R5 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Doesn't work without Wine D3d11. When enabled it launches but performance is horrible. Not sure if that's proton's fault or the game.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1548445760,
+    "title": "The Goatman",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "258090",
+    "title": "99 Spirits",
+    "timestamp": 1535696922,
+    "rating": "Borked",
+    "notes": "Loads of missing textures and animations.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "258090",
+    "title": "99 Spirits",
+    "timestamp": 1535738973,
+    "rating": "Gold",
+    "notes": "Minor window issues, probably also present in windows",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "258090",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game seems playable but a few text and visual glitches.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Silver",
+    "timestamp": 1538065896,
+    "title": "99 Spirits",
+    "source": "protondb"
+  },
+  {
+    "appId": "258090",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Backgrounds are black ; sprites do not show. Unplayable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1540408476,
+    "title": "99 Spirits",
+    "source": "protondb"
+  },
+  {
+    "appId": "258090",
+    "title": "99 Spirits",
+    "timestamp": 1535682522,
+    "rating": "Borked",
+    "notes": "Loads of missing textures and animations.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "258090",
+    "title": "99 Spirits",
+    "timestamp": 1535724573,
+    "rating": "Gold",
+    "notes": "Minor window issues, probably also present in windows",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

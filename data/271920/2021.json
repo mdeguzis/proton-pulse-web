@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "271920",
+    "cpu": "Intel Pentium Dual   T3400  @ 2.16GHz",
+    "duration": "unreported",
+    "gpu": "Mobile Intel GM45 Express Chipset (CTG)",
+    "gpuDriver": "2.1 Mesa 20.2.6",
+    "kernel": "5.8.0-53-generic",
+    "notes": "No change what so ever before i had Protondb. Games wouldn't download.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1622577405,
+    "title": "",
+    "source": "protondb"
+  }
+]

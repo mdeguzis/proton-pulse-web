@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "303260",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Controller (Steam) didnt work. Playing with keyboard did",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1549611821,
+    "title": "TRISTOY",
+    "source": "protondb"
+  }
+]

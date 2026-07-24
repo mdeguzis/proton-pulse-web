@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "495780",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1551784127,
+    "title": "Hexoscope",
+    "source": "protondb"
+  }
+]

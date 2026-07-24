@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "203650",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.14-121.current",
+    "notes": "Install dotnet20 with Winetricks (I also specified a 64-bit Winearch), then select Configure before your first play. Afterwards I could launch with no issue.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562424634,
+    "title": "Sonic the Hedgehog 4 - Episode II",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "203650",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "As someone else stated, this game requires dotnet20 to run and esync to be disabled. On Ubuntu 19.04, I achieved this with by running WINEPREFIX=\"$HOME/.steam/debian-installation/steamapps/compatdata/203650/pfx\" WINEARCH=win64 winetricks dotnet20 -- you may need to adjust this for your distro. The game and config tool run perfectly from Steam after you do this and disable esync.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1562723588,
+    "title": "Sonic the Hedgehog 4 - Episode II",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "203650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Disabling Esync & running 'WINEPREFIX=\"$HOME/.steam/debian-installation/steamapps/compatdata/203650/pfx\" WINEARCH=win64 winetricks dotnet20' by the terminal made the game & its config launcher run perfectly on Pop!_OS 19.04. Well, almost. I have a high-refresh (100 Hz) rate monitor, & unlike on Windows where the game knows to limit itself to 60 FPS, for some reason under Proton it tried 100 FPS & went too . . . fast. This can be fixed by manually changing your desktop refresh rate to 60 Hz or thereabouts.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568300574,
+    "title": "Sonic the Hedgehog 4 - Episode II",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

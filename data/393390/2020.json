@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "393390",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon HD 7800",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-37-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.3 LTS (64\u00a0bits)",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1579106997,
+    "title": "Cat Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "393390",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.4",
+    "kernel": "4.19.102-1-MANJARO",
+    "notes": "runs perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-3",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1582345787,
+    "title": "Cat Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "393390",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "4.15.0-91-generic",
+    "notes": "",
+    "os": "elementary OS 5.1.2 Hera",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1585438124,
+    "title": "Cat Simulator",
+    "source": "protondb"
+  }
+]

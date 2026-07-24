@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "360450",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-117-generic",
+    "notes": "Works well. Not sure about online play as it did not find opponents",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1602321735,
+    "title": "",
+    "source": "protondb"
+  }
+]

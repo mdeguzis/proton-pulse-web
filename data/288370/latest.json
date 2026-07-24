@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "288370",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Made it all the way into part two of the first mission, without any graphical or audio anomalies or signs of issues. Controller worked great, but is best configured either from big picture mode or before starting the game. (Steam overlay behaved strangely, and wouldn't let me access the window that had controller settings until I quit; but this isn't a real issue for the game and might happen anyway.)",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550715919,
+    "title": "Strike Suit Zero: Director's Cut",
+    "source": "protondb"
+  },
+  {
+    "appId": "288370",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Game crashes past the second checkpoint in Mission 5 if you don't use Wine D3d11. Disabling Esync makes Wine D3d11 display all graphics, but for some reason it makes the game crash too if used with Wine D3d11.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1564573107,
+    "title": "Strike Suit Zero: Director's Cut",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

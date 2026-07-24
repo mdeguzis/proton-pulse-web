@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "654050",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Game works native and in Proton out of the box with DX9. DX11 with DXVK will just crash right after launch. ",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1557006846,
+    "title": "JYDGE",
+    "source": "protondb"
+  },
+  {
+    "appId": "654050",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Game works native and in Proton out of the box with DX9. DX11 with DXVK will just crash right after launch. DX9 with D9VK will show a lot of graphical glitches, you can even start a game, but graphics to not work yet good enough.",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1560078999,
+    "title": "JYDGE",
+    "source": "protondb"
+  },
+  {
+    "appId": "654050",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-677bea5144)",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "DX11 with DXVK will just crash right after launch. DX9 works with WineD3D and with D9VK too without graphical glitches now!",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1563093413,
+    "title": "JYDGE",
+    "source": "protondb"
+  }
+]

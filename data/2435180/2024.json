@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2435180",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.6.21-1-lts",
+    "notes": "Works fine.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1709894925,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "575480",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Works completely fine, but there are some issues when switching to full screen mode (It does not crash), but seems that have some problems about detecting the size of the screen. In any case, you can switch back to window mode without problems. ",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1566435463,
+    "title": "WAGAMAMA HIGH SPEC",
+    "source": "protondb"
+  }
+]

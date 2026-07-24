@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "281280",
+    "title": "Mashed",
+    "timestamp": 1535295796,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3570K / GTX 670",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "281280",
+    "cpu": "AMD FX(tm)-8300 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.70-1-MANJARO",
+    "notes": "You do get the 2 menus for control and resolution but once you start the game you get the error \"Could not render source output pin! hr=0x80040218\"",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16026 Mb",
+    "rating": "Borked",
+    "timestamp": 1537402073,
+    "title": "Mashed",
+    "source": "protondb"
+  },
+  {
+    "appId": "281280",
+    "title": "Mashed",
+    "timestamp": 1535281396,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3570K / GTX 670",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

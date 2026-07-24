@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "720010",
+    "title": "Survived By Beta",
+    "timestamp": 1535058170,
+    "rating": "Bronze",
+    "notes": "game does not connect to server",
+    "os": "Antergos (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 3 1200 / GT 1030",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "720010",
+    "title": "Survived By Beta",
+    "timestamp": 1535586864,
+    "rating": "Platinum",
+    "notes": "Works like a charm.",
+    "os": "Linux Mint 19 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel\u00ae Core\u21222 Quad CPU Q9550 / GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "720010",
+    "title": "Survived By Beta",
+    "timestamp": 1535043770,
+    "rating": "Bronze",
+    "notes": "game does not connect to server",
+    "os": "Antergos (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 3 1200 / GT 1030",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "720010",
+    "title": "Survived By Beta",
+    "timestamp": 1535572464,
+    "rating": "Platinum",
+    "notes": "Works like a charm.",
+    "os": "Linux Mint 19 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel\u00ae Core\u21222 Quad CPU Q9550 / GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

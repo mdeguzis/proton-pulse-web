@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "839850",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Randomly crashes. Game window stays open for less than 30 seconds (if it shows up, at all). Unplayable.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569608762,
+    "title": "Lenin - The Lion",
+    "source": "protondb"
+  },
+  {
+    "appId": "839850",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.7",
+    "kernel": "5.2.13-126.current",
+    "notes": "The game doesn't open, there is no error message shown. Seems to run on rpg maker.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570290922,
+    "title": "Lenin - The Lion",
+    "source": "protondb"
+  },
+  {
+    "appId": "839850",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Game doesn't start. Debug log shows errors related to NtSuspendProcess, NtOpenThread, and NtQuerySystemInformation. This bug seems to have been corrected in wine 4.7 (checked via log changes),  so the game situation might change with future releases of proton.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570884858,
+    "title": "Lenin - The Lion",
+    "source": "protondb"
+  }
+]

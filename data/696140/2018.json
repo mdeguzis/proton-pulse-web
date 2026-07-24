@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "696140",
+    "cpu": "Intel Core i3-2100 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Desktop",
+    "gpuDriver": "3.0 Mesa 17.0.7",
+    "kernel": "4.10.0-42-generic",
+    "os": "Ubuntu 17.04",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1545910613,
+    "title": "No Heroes Here",
+    "source": "protondb"
+  }
+]

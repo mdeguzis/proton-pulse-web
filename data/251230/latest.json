@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "251230",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.20.0-rc1-mainline",
+    "notes": "Works out of the box. Previous posters reported characters missing, but must have been fixed in the recent proton versions since it worked amazingly good.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550404526,
+    "title": "Livelock",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "367600",
+    "title": "Skyshine's BEDLAM",
+    "timestamp": 1535585097,
+    "rating": "Platinum",
+    "notes": "Like native, no errors",
+    "os": "Ubuntu 16.04.4 LTS 64 bit (Kernel 4.4.0-130-generic)",
+    "gpuDriver": "Mesa 17.2.8",
+    "specs": "i7-5600U / Intel(R) HD Graphics 5500 (Broadwell GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "367600",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "works out of the box in windowed mode, in fullscreen game is unplayable (artifacts, missing textures)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16035 Mb",
+    "rating": "Silver",
+    "timestamp": 1537560786,
+    "title": "Skyshine's BEDLAM",
+    "source": "protondb"
+  },
+  {
+    "appId": "367600",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "no bugs found. works in fullscreen and in window mode",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541529587,
+    "title": "Skyshine's BEDLAM",
+    "source": "protondb"
+  },
+  {
+    "appId": "367600",
+    "title": "Skyshine's BEDLAM",
+    "timestamp": 1535570697,
+    "rating": "Platinum",
+    "notes": "Like native, no errors",
+    "os": "Ubuntu 16.04.4 LTS 64 bit (Kernel 4.4.0-130-generic)",
+    "gpuDriver": "Mesa 17.2.8",
+    "specs": "i7-5600U / Intel(R) HD Graphics 5500 (Broadwell GT2)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

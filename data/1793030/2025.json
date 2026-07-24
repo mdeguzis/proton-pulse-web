@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1793030",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "Works out of the box on both Nvidia desktop and Steamdeck",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737745575,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2604480",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 19.1.7, DRM 3.63, 6.17.3-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.1.3 (git-ba95e694fe)",
+    "kernel": "6.17.3-arch2-1",
+    "notes": "Funktioniert super unter Linux, hatte nur Probleme mit meinem Lenkrad, kann nicht sagen wie es mit anderen Lenkr\u00e4dern ist.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771105264,
+    "title": "City Transport Simulator\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "2604480",
+    "cpu": "AMD Ryzen 7 7730U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.19.11-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.11-200.fc43.x86_64",
+    "notes": "The game has some bugs, but the most noticable ones at least also happened on Windows",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1775658295,
+    "title": "City Transport Simulator\u00ae",
+    "source": "protondb"
+  }
+]

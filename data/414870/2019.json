@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "414870",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "Works perfectly on the newer proton 3.16 and it properly closes as well as online works out of the box there were issues before 3.16. Have put over 100 hours into this game.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553270164,
+    "title": "Super Mega Baseball 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "414870",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Runs flawlessly with full 360 controller support.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556950547,
+    "title": "Super Mega Baseball 2",
+    "source": "protondb"
+  }
+]

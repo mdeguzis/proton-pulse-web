@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "224740",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel",
+    "kernel": "4.20.6-200.fc29.x86_64",
+    "notes": "After forcing proton to play the Windows build. Rendering in-game is broken, the screen is mostly white.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1549683604,
+    "title": "Clockwork Empires",
+    "source": "protondb"
+  }
+]

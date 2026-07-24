@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "351030",
+    "title": "Pixel Puzzles Ultimate",
+    "timestamp": 1535577638,
+    "rating": "Borked",
+    "notes": "performance = smooth, sometime crashes on interacting",
+    "os": "Archlinux 64-bit 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel Xeon E3-1231 v3 / AMD Radeon R9 290",
+    "protonVersion": "3.7-4-",
+    "source": "protondb"
+  },
+  {
+    "appId": "351030",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537637004,
+    "title": "Pixel Puzzles Ultimate",
+    "source": "protondb"
+  },
+  {
+    "appId": "351030",
+    "cpu": "Intel(R) Core(TM) i5-7300HQ CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-90.current",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7939 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537828800,
+    "title": "Pixel Puzzles Ultimate",
+    "source": "protondb"
+  },
+  {
+    "appId": "351030",
+    "title": "Pixel Puzzles Ultimate",
+    "timestamp": 1535563238,
+    "rating": "Borked",
+    "notes": "performance = smooth, sometime crashes on interacting",
+    "os": "Archlinux 64-bit 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel Xeon E3-1231 v3 / AMD Radeon R9 290",
+    "protonVersion": "3.7-4-",
+    "source": "protondb"
+  }
+]

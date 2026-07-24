@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "420100",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "RELEASE;  LLVM;",
+    "gpuDriver": "3.3 Mesa 19.0.1",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "I Tested Running this in VMware and everything works same as native windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555603687,
+    "title": "CLANNAD Side Stories",
+    "source": "protondb"
+  }
+]

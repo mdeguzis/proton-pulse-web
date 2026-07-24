@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "393820",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Try 1. Crashed after splash screen. (Ureal engine error E_INVALIDARG)  Try 2. Crashed  at menu \"New game\"... LOADING.  Try 3. Game worked.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565071703,
+    "title": "At the Mountains of Madness",
+    "source": "protondb"
+  }
+]

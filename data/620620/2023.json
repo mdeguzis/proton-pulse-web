@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "620620",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.4-x64v3-xanmod1",
+    "notes": "It was fun, however I had to switch to the proton experimental bleeding edge version for proton for me to get past the login window.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1685659578,
+    "title": "",
+    "source": "protondb"
+  }
+]

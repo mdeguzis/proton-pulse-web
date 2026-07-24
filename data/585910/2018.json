@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "585910",
+    "title": "Wild Guns Reloaded",
+    "timestamp": 1535583348,
+    "rating": "Gold",
+    "notes": "xbox controller don't work - some lags",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "585910",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Seems perfect with the exception of heavy graphic glitches on the boss of the first level. ",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1542843950,
+    "title": "Wild Guns Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "585910",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "I dont know what happened, but in the last couple  of days Wild Guns will no longer load. You get an error, and then the game hangs without loading (steam still thinks its loading).  You have to completely shut down steam to get out of it. ",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543847291,
+    "title": "Wild Guns Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "585910",
+    "title": "Wild Guns Reloaded",
+    "timestamp": 1535568948,
+    "rating": "Gold",
+    "notes": "xbox controller don't work - some lags",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "670820",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-46-generic",
+    "notes": "Installs OK, updates Cloud saves OK, then does nothing",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1662734155,
+    "title": "",
+    "source": "protondb"
+  }
+]

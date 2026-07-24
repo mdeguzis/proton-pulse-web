@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "435970",
+    "title": "RefRain - prism memories -",
+    "timestamp": 1535200496,
+    "rating": "Platinum",
+    "notes": "Runs perfect",
+    "os": "Ubuntu Budgie 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7 3770K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "435970",
+    "title": "RefRain - prism memories -",
+    "timestamp": 1535296650,
+    "rating": "Silver",
+    "notes": "The game runs flawlessly, but configuration tool does not launch. You will have to manually edit the config.txt",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "435970",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540452999,
+    "title": "RefRain - prism memories -",
+    "source": "protondb"
+  },
+  {
+    "appId": "435970",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game runs perfectly, however configuration tool does not work. Doesn't hinder the actual gameplay though.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545639925,
+    "title": "RefRain - prism memories -",
+    "source": "protondb"
+  },
+  {
+    "appId": "435970",
+    "title": "RefRain - prism memories -",
+    "timestamp": 1535186096,
+    "rating": "Platinum",
+    "notes": "Runs perfect",
+    "os": "Ubuntu Budgie 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7 3770K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "435970",
+    "title": "RefRain - prism memories -",
+    "timestamp": 1535282250,
+    "rating": "Silver",
+    "notes": "The game runs flawlessly, but configuration tool does not launch. You will have to manually edit the config.txt",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

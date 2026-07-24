@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "346850",
+    "cpu": "Intel Core i5-6500T @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.13-126.current",
+    "notes": "Closes immediately after the \"Preparing to launch\" dialog.  Doesn't even spawn a window.",
+    "os": "Solus",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569259977,
+    "title": "Chip's Challenge 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "346850",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.3.5-arch1-1-fsync",
+    "notes": "Does not start.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1570909788,
+    "title": "Chip's Challenge 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "346850",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.3.5-arch1-1-fsync",
+    "notes": "Does not launch.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1570911083,
+    "title": "Chip's Challenge 1",
+    "source": "protondb"
+  }
+]

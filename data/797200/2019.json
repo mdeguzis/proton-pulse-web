@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "797200",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-steamvr-generic",
+    "notes": "The game runs fine, but every info panel is transparent with no content visible. I did not try any tweaks.",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1569575000,
+    "title": "International Space Station Tour VR",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "836600",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.19",
+    "notes": "Had to disable the steam overlay or else the game would freeze completely whenever there was a achievement pop-up. The game is also hard-coded to 1280x720 resolution and cannot go full-screen, so I had to change the X resolution to match instead.",
+    "os": "Linux 4.14",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1569179726,
+    "title": "Alternate Jake Hunter: DAEDALUS The Awakening of Golden Jazz / \u30c0\u30a4\u30c0\u30ed\u30b9\uff1a\u30b8\u30fb\u30a2\u30a6\u30a7\u30a4\u30af\u30cb\u30f3\u30b0\u30fb\u30aa\u30d6\u30fb\u30b4\u30fc\u30eb\u30c7\u30f3\u30b8\u30e3\u30ba / Prequel Story of Detective Saburo Jinguji Daedalus: The Awakening of Golden Jazz",
+    "source": "protondb"
+  }
+]

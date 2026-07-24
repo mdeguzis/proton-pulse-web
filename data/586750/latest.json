@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "586750",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-9007c0ed26)",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Everything renders and works perfectly as of proton 3.16-4 (added corefront support). If an older proton version is used text won't render properly on spells in combat.\nThere is a short black screen when starting the game for the first time as the assets are cached, and after that every startup will be just as native since everything is cached.",
+    "os": "Linux 4.x",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541069432,
+    "title": "Sonny",
+    "source": "protondb"
+  }
+]

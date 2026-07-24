@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "12330",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Running this on a Thinkpad T580 with an NVIDIA GeForce card using primusrun due Optimus.  Adding \"primusrun %command%\" to make use of the card allowed this game to run flawlessly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546313105,
+    "title": "Darkstar One",
+    "source": "protondb"
+  },
+  {
+    "appId": "12330",
+    "cpu": "AMD EPYC (with IBPB)",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game installs with no issues. however crashes upon start. disabled Esync, D3d11 and use Wine D3d11 from user_settings.py made no change. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546564271,
+    "title": "Darkstar One",
+    "source": "protondb"
+  }
+]

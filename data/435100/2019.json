@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "435100",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Like native ",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552500966,
+    "title": "2Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "435100",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Full disclosure: I played the DRM-free version from IndieGala, but I added it to Steam as a non-Steam game and it worked automatically with SteamPlay. The game played perfectly.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561915840,
+    "title": "2Dark",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "390030",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.7-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Performance seems low but playable (60-80fps at 1080p any settings), mouse input issues after alt-tabbing, can be fixed by pausing and unpausing the game",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16037 Mb",
+    "rating": "Silver",
+    "systemInfoNotes": "GPU (Vega 56)",
+    "timestamp": 1536939586,
+    "title": "DESYNC",
+    "source": "protondb"
+  },
+  {
+    "appId": "390030",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Menu area ran at 10 fps at 4k, had to switch to 1080p to get 30fps, once in game it ran 60+fps at 4k",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16056 Mb",
+    "rating": "Silver",
+    "timestamp": 1538115979,
+    "title": "DESYNC",
+    "source": "protondb"
+  },
+  {
+    "appId": "390030",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game runs without any apparent issues. No tweaking required.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "24010 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538194082,
+    "title": "DESYNC",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "207000",
+    "title": "Alien Spidy",
+    "timestamp": 1535373336,
+    "rating": "Silver",
+    "notes": "Cannot get controller working",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207000",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Worked great with keyboard",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538312295,
+    "title": "Alien Spidy",
+    "source": "protondb"
+  },
+  {
+    "appId": "207000",
+    "title": "Alien Spidy",
+    "timestamp": 1535358936,
+    "rating": "Silver",
+    "notes": "Cannot get controller working",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

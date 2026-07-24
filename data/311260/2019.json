@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "311260",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "notes": "It stutters sometimes. The shuttering is annoying, but you can play it.",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1559387288,
+    "title": "The Guild 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "311260",
+    "cpu": "Intel Core i7-6850K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.7-1-default",
+    "notes": "runs perfectly",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559938470,
+    "title": "The Guild 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "311260",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.5-1-MANJARO",
+    "notes": "Now I have a video card with vulkan support. It launches and seems to work fine except for one visual bug. The water does not show up for me. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1570994308,
+    "title": "The Guild 3",
+    "source": "protondb"
+  }
+]

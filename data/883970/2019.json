@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "883970",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.19.0-5-amd64",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-2",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1568293767,
+    "title": "Little Imps: A Dungeon Builder",
+    "source": "protondb"
+  }
+]

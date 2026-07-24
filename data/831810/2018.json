@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "831810",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "VMware, Inc. llvmpipe (LLVM 7.0, 128 bits)",
+    "gpuDriver": "3.1 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Have to be in full screen for good performance",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542485424,
+    "title": "Bane of Asphodel",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "235400",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Appears to run without any major issues.   The game ran at a solid 75FPS with occasional dips when loading into a battle or exiting a battle.  I did not try linking the game with facebook, as I do not have an account nor did I try to purchase any to make any in game purchases. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559443525,
+    "title": "King\u2019s Bounty: Legions",
+    "source": "protondb"
+  },
+  {
+    "appId": "235400",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc4",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Steam says that game is working, but no window opened.",
+    "os": "Ubuntu 19.04 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564685463,
+    "title": "King\u2019s Bounty: Legions",
+    "source": "protondb"
+  },
+  {
+    "appId": "235400",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 650M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Work fine, but I can't acces Facebook account",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1568925261,
+    "title": "King\u2019s Bounty: Legions",
+    "source": "protondb"
+  }
+]

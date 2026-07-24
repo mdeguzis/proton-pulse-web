@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "21699",
+    "title": "Resident Evil 5",
+    "timestamp": 1534967417,
+    "rating": "Borked",
+    "notes": "crash after GFWL installation",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4200U / GeForce 820M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21699",
+    "title": "Resident Evil 5",
+    "timestamp": 1536018378,
+    "rating": "Borked",
+    "notes": "When installing Games For Windows Live, crash with error. ",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6300HQ / GTX 960 (Dell Notebook 7559)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21699",
+    "title": "Resident Evil 5",
+    "timestamp": 1534953017,
+    "rating": "Borked",
+    "notes": "crash after GFWL installation",
+    "os": "openSUSE Tumbleweed (Kernel 4.18.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4200U / GeForce 820M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21699",
+    "title": "Resident Evil 5",
+    "timestamp": 1536003978,
+    "rating": "Borked",
+    "notes": "When installing Games For Windows Live, crash with error. ",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6300HQ / GTX 960 (Dell Notebook 7559)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

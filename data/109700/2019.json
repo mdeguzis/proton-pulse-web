@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "109700",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Gives error message: 'The Achron directory within the current user's home directory is corrupt or the home directory is unwritable.'",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565200454,
+    "title": "Achron",
+    "source": "protondb"
+  }
+]

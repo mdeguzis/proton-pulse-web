@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "436290",
+    "title": "Children of the Zodiarcs",
+    "timestamp": 1535232052,
+    "rating": "Silver",
+    "notes": "Runs Flawlessly but controller configuration won't work if using steamlink.",
+    "os": "Arch Linux (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 2600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "436290",
+    "title": "Children of Zodiarcs",
+    "timestamp": 1535419442,
+    "rating": "Silver",
+    "notes": "Gamepads don't seem to work. Tested 2 hours and played through the first few story missions",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "436290",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540452286,
+    "title": "Children of Zodiarcs",
+    "source": "protondb"
+  },
+  {
+    "appId": "436290",
+    "title": "Children of the Zodiarcs",
+    "timestamp": 1535217652,
+    "rating": "Silver",
+    "notes": "Runs Flawlessly but controller configuration won't work if using steamlink.",
+    "os": "Arch Linux (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 2600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "436290",
+    "title": "Children of Zodiarcs",
+    "timestamp": 1535405042,
+    "rating": "Silver",
+    "notes": "Gamepads don't seem to work. Tested 2 hours and played through the first few story missions",
+    "os": "SteamOS",
+    "gpuDriver": "NVIDIA",
+    "specs": "FX-8350 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

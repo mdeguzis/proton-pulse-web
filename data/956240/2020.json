@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "956240",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "nouveau NV120",
+    "gpuDriver": "4.3 Mesa 19.3.3",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Does not start at all",
+    "os": "Freedesktop.org 19.08.7 (Flatpak runtime)",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1582145494,
+    "title": "Simson Tuningwerkstatt 3D",
+    "source": "protondb"
+  }
+]

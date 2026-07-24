@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "538840",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1674748118,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "538840",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.8-200.fc37.x86_64",
+    "notes": "Works directly even with a controller.",
+    "os": "Fedora Linux 37 (Workstation Edition) (64\u00a0bits)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1683477110,
+    "title": "",
+    "source": "protondb"
+  }
+]

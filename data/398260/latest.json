@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "398260",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Eyestorm runs perfectly after reinstalling .NET 4.0.  To do this, open winetricks (WINEPREFIX=~/.steam/steamapps/compatdata/398260/pfx winetricks) and install dotnet40.  During installation of .NET, choose the option to \"repair/restore .NET to original settings.\"",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1554579718,
+    "title": "Eyestorm",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "310850",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.7",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "just a brown screen",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1570044877,
+    "title": "Onikira - Demon Killer",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "2130",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Screen only shows top left quadrant of menu/game; the rest of the screen stays stuck on the splash screen. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557967260,
+    "title": "Dark Messiah of Might & Magic",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

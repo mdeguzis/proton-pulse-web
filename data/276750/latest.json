@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "276750",
+    "cpu": "Intel Core i5-2435M @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.1.11-200.fc29.x86_64",
+    "notes": "On Title Screen, selecting Play Fritz or PlayChess.com, game freezes.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562122502,
+    "title": "Fritz Chess 14",
+    "source": "protondb"
+  }
+]

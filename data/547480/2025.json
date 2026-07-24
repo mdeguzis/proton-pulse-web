@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "547480",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.57, 6.9.12-3-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.1.6-arch1.1",
+    "kernel": "6.9.12-3-MANJARO",
+    "notes": "The blinding white square prevents being able to see in VR, so effectively unplayable. \nThe \"How to play\" shows the old HTC vive controls.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "28 GB",
+    "rating": "borked",
+    "timestamp": 1742353911,
+    "title": "Carly and the Reaperman - Escape from the Underworld",
+    "source": "protondb"
+  }
+]

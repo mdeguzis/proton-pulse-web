@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1083190",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.13.0-39-generic",
+    "notes": "I am just running with Glorious Eggroll proton7-10, I have searched for launch commands but no luck. I didn't think it would take much for this game to run. I have tried some of the older versions of Proton as well, but was unsuccessful.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1648773503,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1083190",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.13.0-39-generic",
+    "notes": "unable to progress pass the launch window.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1648796192,
+    "title": "",
+    "source": "protondb"
+  }
+]

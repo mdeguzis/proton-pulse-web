@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "434030",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Crashes at loading scenery",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1595487907,
+    "title": "Aerofly FS 2 Flight Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "434030",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.2-arch1-1",
+    "notes": "",
+    "os": "Unknown",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1604316004,
+    "title": "Aerofly FS 2 Flight Simulator",
+    "source": "protondb"
+  }
+]

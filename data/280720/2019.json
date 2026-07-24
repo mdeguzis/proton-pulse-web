@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "280720",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Does not even start",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547248969,
+    "title": "Imagine Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "280720",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "Doesn't start in WINE nor any version of Proton I have installed. Farthest I made it was to  get the dependencies installed.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549937628,
+    "title": "Imagine Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "280720",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "No way to get it running. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555151190,
+    "title": "Imagine Earth",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "280720",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-6ddfd37 2019-09-13 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Tried many different proton versions didn't get past steam first time setup",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568937625,
+    "title": "Imagine Earth",
+    "source": "protondb"
+  }
+]

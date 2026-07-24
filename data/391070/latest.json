@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "391070",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-rt5-MANJARO",
+    "notes": "Does not start",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555978170,
+    "title": "Stellar 2D",
+    "source": "protondb"
+  },
+  {
+    "appId": "391070",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559134763,
+    "title": "Stellar 2D",
+    "source": "protondb"
+  },
+  {
+    "appId": "391070",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1565722498,
+    "title": "Stellar 2D",
+    "source": "protondb"
+  }
+]

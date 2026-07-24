@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "345220",
+    "title": "Agent Awesome",
+    "timestamp": 1535374876,
+    "rating": "Silver",
+    "notes": "Minor stuttering during cutscenes",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "345220",
+    "title": "Agent Awesome",
+    "timestamp": 1535784310,
+    "rating": "Platinum",
+    "notes": "Like native",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "345220",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "GeForce GT 630/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7945 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536943733,
+    "title": "Agent Awesome",
+    "source": "protondb"
+  },
+  {
+    "appId": "345220",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.18.0-10-generic",
+    "notes": "wont start. crash message. have do kill a zombie process",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541721972,
+    "title": "Agent Awesome",
+    "source": "protondb"
+  },
+  {
+    "appId": "345220",
+    "title": "Agent Awesome",
+    "timestamp": 1535360476,
+    "rating": "Silver",
+    "notes": "Minor stuttering during cutscenes",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "345220",
+    "title": "Agent Awesome",
+    "timestamp": 1535769910,
+    "rating": "Platinum",
+    "notes": "Like native",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

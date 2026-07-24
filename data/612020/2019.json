@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "612020",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549335004,
+    "title": "Zombidle : REMONSTERED",
+    "source": "protondb"
+  },
+  {
+    "appId": "612020",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "It does not always load correctly and restarting fixes it.\nSettings are reset randomly/ on update(?).\nCloud saving and loading works perfectly.\nGame starts lagging after having it open for like 7+ hours in a row, but is fixed with a game restart.\nSpamming inputs makes them queue up and hinders more inputs, but again is a minor issue.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563486896,
+    "title": "Zombidle : REMONSTERED",
+    "source": "protondb"
+  }
+]

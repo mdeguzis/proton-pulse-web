@@ -1,0 +1,92 @@
+[
+  {
+    "appId": "3170",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Occasionally, on entering some combat, I get the error message \"C:\\work\\skyfallen\\tbm\\BMRender\\rmode.cpp(4045): DirectX call failed: 1, 1 code=0x80004001 (-2147467263)\" followed by a total CTD. This happens very occasionally, and it is still playable if I avoid those specific units; but CTDs are quite inconvenient.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554307338,
+    "title": "King's Bounty: Armored Princess",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "3170",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Consistently get a DirectX error in certain parts of the mines, followed by a CTD. Most of the game runs beautifully; but that region effectively needs to be completed on Windows; so for the moment this is game-breaking.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554346378,
+    "title": "King's Bounty: Armored Princess",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "3170",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557917351,
+    "title": "King's Bounty: Armored Princess",
+    "source": "protondb"
+  },
+  {
+    "appId": "3170",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-e8cd7a3 2019-06-18 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Have not seen a CTD during hours of play. Runs out of the box. One strange thing: If tabbed out of the game and back again.. makes keyboard \"shortcuts\" nonresponding. Hitting leftCTRL+leftALT together ONCE solved this for me. So pressing \"h\" will open the hero screen again, no need to use the mouse ;)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560974916,
+    "title": "King's Bounty: Armored Princess",
+    "source": "protondb"
+  },
+  {
+    "appId": "3170",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Played for about an hour out of the box. Install and play. No tweaks. No glitches. Play speed normal.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561183513,
+    "title": "King's Bounty: Armored Princess",
+    "source": "protondb"
+  }
+]

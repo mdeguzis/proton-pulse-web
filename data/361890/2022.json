@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "361890",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.16-zen1-1-zen",
+    "notes": "Testing on proton experimental and proton-ge and it doesn't work.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1659858114,
+    "title": "Chronostorm: Siberian Border",
+    "source": "protondb"
+  }
+]

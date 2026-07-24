@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "252690",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543877992,
+    "title": "Fantasy Grounds",
+    "source": "protondb"
+  },
+  {
+    "appId": "252690",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.19.11-041911-generic",
+    "notes": "After I put my credentials a windows pop up and disappears. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1546288257,
+    "title": "Fantasy Grounds",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1131140",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD NAVI21 (navi21, LLVM 15.0.3, DRM 3.49, 6.2.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.0-devel",
+    "kernel": "6.2.0-33-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1724230159,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1131140",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.10.11-2-MANJARO",
+    "notes": "Works great with experimental",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1732349759,
+    "title": "",
+    "source": "protondb"
+  }
+]

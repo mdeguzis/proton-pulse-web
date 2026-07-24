@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "8200",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1547975947,
+    "title": "Sam & Max 101: Culture Shock",
+    "source": "protondb"
+  },
+  {
+    "appId": "8200",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.15-1-MANJARO",
+    "notes": "I was using 4.2-5 and halfway through I started having unplayable frame rates so I switched to 3.7-8 and it seemed to fix the problem.",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558808801,
+    "title": "Sam & Max 101: Culture Shock",
+    "source": "protondb"
+  },
+  {
+    "appId": "8200",
+    "cpu": "AMD FX-7500 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.0-kali2-amd64",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "3.7-8",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1568035703,
+    "title": "Sam & Max 101: Culture Shock",
+    "source": "protondb"
+  }
+]

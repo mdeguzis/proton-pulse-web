@@ -1,0 +1,102 @@
+[
+  {
+    "appId": "564710",
+    "title": "Soda Dungeon",
+    "timestamp": 1535557374,
+    "rating": "Silver",
+    "notes": "Some weird issues on starting, switch to windowed mode and it works fine - full screen stays windowed / small but is missing window decorations.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD A10-5800K / GTX 660 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "564710",
+    "title": "Soda Dungeon",
+    "timestamp": 1535570411,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Fedora 28 (4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "Ryzen7 1800x / GTX980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "564710",
+    "title": "Soda Dungeon",
+    "timestamp": 1535508110,
+    "rating": "Platinum",
+    "notes": "Loads, plays, all seems fine.. no bugs or glitches",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "3.7.4-",
+    "source": "protondb"
+  },
+  {
+    "appId": "564710",
+    "cpu": "Intel(R) Pentium(R) CPU  N3540  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.5",
+    "notes": "Tested everything, runs perfect. Performance is same as Windows (or maybe even better lmao)",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Soda Dungeon",
+    "source": "protondb"
+  },
+  {
+    "appId": "564710",
+    "cpu": "Intel(R) Pentium(R) D CPU 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Completed game, 35h, 100% achievements.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "2998 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537800729,
+    "title": "Soda Dungeon",
+    "source": "protondb"
+  },
+  {
+    "appId": "564710",
+    "title": "Soda Dungeon",
+    "timestamp": 1535542974,
+    "rating": "Silver",
+    "notes": "Some weird issues on starting, switch to windowed mode and it works fine - full screen stays windowed / small but is missing window decorations.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD A10-5800K / GTX 660 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "564710",
+    "title": "Soda Dungeon",
+    "timestamp": 1535556011,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Fedora 28 (4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "Ryzen7 1800x / GTX980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "564710",
+    "title": "Soda Dungeon",
+    "timestamp": 1535493710,
+    "rating": "Platinum",
+    "notes": "Loads, plays, all seems fine.. no bugs or glitches",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "3.7.4-",
+    "source": "protondb"
+  }
+]

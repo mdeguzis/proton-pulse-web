@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3760100",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 535.309.01",
+    "kernel": "6.17.0-35-generic",
+    "notes": "Didn't launch on proton experimental crashed after a second.\nSwitched to proton 9.0-4 worked out of the box.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1781624189,
+    "title": "",
+    "source": "protondb"
+  }
+]

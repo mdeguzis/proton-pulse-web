@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "726590",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.18041818-generic",
+    "notes": "Just add x_audio 2_7 to Native/Bulletin in Winecfg and it works perfectly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542339806,
+    "title": "NBA 2K Playgrounds 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "726590",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-2b2f790 2018-11-15 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Sounds in Menu are crackling (xaudio2_7 didnt effect), Ingame sound works normally.. the menu also missing background - its just white. gameplay is gold or even platinium",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1542545649,
+    "title": "NBA 2K Playgrounds 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "726590",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.20-1-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546258808,
+    "title": "NBA 2K Playgrounds 2",
+    "source": "protondb"
+  }
+]

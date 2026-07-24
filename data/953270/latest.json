@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "953270",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-97.current",
+    "notes": "works right out of the box",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542942727,
+    "title": "Dominatrix Simulator: Threshold",
+    "source": "protondb"
+  }
+]

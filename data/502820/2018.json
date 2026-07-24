@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "502820",
+    "title": "Batman\u2122: Arkham VR",
+    "timestamp": 1535222990,
+    "rating": "Borked",
+    "notes": "HTC Vive. Crashes with message \"Fatal error!\"",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "502820",
+    "title": "Batman\u2122: Arkham VR",
+    "timestamp": 1535208590,
+    "rating": "Borked",
+    "notes": "HTC Vive. Crashes with message \"Fatal error!\"",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3089420",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.18.21-1-lts)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch1.1",
+    "kernel": "6.18.21-1-lts",
+    "notes": "Works smoothly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1775766488,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3089420",
+    "cpu": "AMD Ryzen 7 260 w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-22-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777660919,
+    "title": "",
+    "source": "protondb"
+  }
+]

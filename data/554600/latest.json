@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "554600",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Everything seems to be working.",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553514775,
+    "title": "Learn Japanese To Survive! Katakana War",
+    "source": "protondb"
+  },
+  {
+    "appId": "554600",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.42.02",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "No problems, works great",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555269834,
+    "title": "Learn Japanese To Survive! Katakana War",
+    "source": "protondb"
+  },
+  {
+    "appId": "554600",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "There are refresh rate issues. Also, Steam overlay doesn't work. Both problems persist across all versions of Proton.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568204024,
+    "title": "Learn Japanese To Survive! Katakana War",
+    "source": "protondb"
+  }
+]

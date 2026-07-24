@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2266780",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, navi22, LLVM 15.0.7, DRM 3.49, 6.2.0-39-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.4 - kisak-mesa PPA",
+    "kernel": "6.2.0-39-generic",
+    "notes": "will try other versions and post again",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1707524968,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "340340",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.0-3-amd64",
+    "notes": "Runs great!\n\nGreetings to my dog Samantha!\nGr\u00fc\u00dfe gehen raus an meine H\u00fcndin Samantha!",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536689257,
+    "title": "Domestic Dog",
+    "source": "protondb"
+  },
+  {
+    "appId": "340340",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Everything works as it does when running in Windows.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24032 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538453638,
+    "title": "Domestic Dog",
+    "source": "protondb"
+  }
+]

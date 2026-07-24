@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "97000",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.1.19-gentoo-x86_64",
+    "notes": "Works perfectly out of the box.",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727768692,
+    "title": "Solar 2",
+    "source": "protondb"
+  }
+]

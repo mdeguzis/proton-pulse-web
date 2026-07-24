@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "313160",
+    "title": "Farming Simulator 15",
+    "timestamp": 1534953653,
+    "rating": "Borked",
+    "notes": "Game installs fine. Game launches from Steam. Goes into black screen right after launch, but I hear sounds/music from the introduction logo's. After logo music, still no menu screen, or other graphics.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K, Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313160",
+    "title": "Farming Simulator 15",
+    "timestamp": 1535053253,
+    "rating": "Gold",
+    "notes": "Runs perfectly, to get around the black screen problem put in the \"set launcher options\" this: \"PROTON_VARIABLE=1 nod3d11\" so the game runs in DirectX 9 Mode.",
+    "os": "Ubuntu 18.04.1 (kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600 / RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313160",
+    "title": "Farming Simulator 15",
+    "timestamp": 1536097428,
+    "rating": "Gold",
+    "notes": "At first blackscreen, after applying the settings described by others here (\"PROTON_VARIABLE=1 nod3d11\" in launcher options and editing the game.xml file to not start in fullscreen) it runs perfectly",
+    "os": "Antergos 64-bit (4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670 / GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313160",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.12-arch1-1-ARCH, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Game performance is great. However, you should use PROTON_USE_WINED3D11 rather than DXVK if running fullscreen. The menu screen is completely black unless you alt-tab out and back in while in full screen mode. If you don't use this option whilst in fullscreen mode, if you alt tab out and back in the game you may encounter a black screen until you restart it. Game appears to work fine windowed mode.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16056 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539531251,
+    "title": "Farming Simulator 15",
+    "source": "protondb"
+  },
+  {
+    "appId": "313160",
+    "title": "Farming Simulator 15",
+    "timestamp": 1534939253,
+    "rating": "Borked",
+    "notes": "Game installs fine. Game launches from Steam. Goes into black screen right after launch, but I hear sounds/music from the introduction logo's. After logo music, still no menu screen, or other graphics.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K, Nvidia GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313160",
+    "title": "Farming Simulator 15",
+    "timestamp": 1535038853,
+    "rating": "Gold",
+    "notes": "Runs perfectly, to get around the black screen problem put in the \"set launcher options\" this: \"PROTON_VARIABLE=1 nod3d11\" so the game runs in DirectX 9 Mode.",
+    "os": "Ubuntu 18.04.1 (kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600 / RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "313160",
+    "title": "Farming Simulator 15",
+    "timestamp": 1536083028,
+    "rating": "Gold",
+    "notes": "At first blackscreen, after applying the settings described by others here (\"PROTON_VARIABLE=1 nod3d11\" in launcher options and editing the game.xml file to not start in fullscreen) it runs perfectly",
+    "os": "Antergos 64-bit (4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670 / GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

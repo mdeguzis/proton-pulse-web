@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "306700",
+    "title": "Iron Fisticle",
+    "timestamp": 1535039726,
+    "rating": "Borked",
+    "notes": "Black screen, no sound.",
+    "os": "Manjaro 17.1.12 64bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "306700",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.16-041816-generic",
+    "notes": "Full local multiplayer game",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540379848,
+    "title": "Iron Fisticle",
+    "source": "protondb"
+  },
+  {
+    "appId": "306700",
+    "title": "Iron Fisticle",
+    "timestamp": 1535025326,
+    "rating": "Borked",
+    "notes": "Black screen, no sound.",
+    "os": "Manjaro 17.1.12 64bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

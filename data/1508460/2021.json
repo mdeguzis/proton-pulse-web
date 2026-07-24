@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1508460",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Does not open",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1614540574,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1508460",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.0.0-32-generic",
+    "notes": "As of v1.2, I don't see any noticeable issues.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1619526596,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1508460",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.1 Mesa 22.0.0-devel (git-68ec867 2021-11-18 focal-oibaf-ppa)",
+    "kernel": "5.11.0-40-generic",
+    "notes": "It's not an out of the box flawless experience, but adding 'PROTON_USE_WINED3D=1 %command%' is all you gotta do. Works great",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-7",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1637269747,
+    "title": "",
+    "source": "protondb"
+  }
+]

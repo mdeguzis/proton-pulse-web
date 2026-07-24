@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "19000",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.19.9-arch1-1-ARCH",
+    "notes": "Brightness slider doesn't work.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547282872,
+    "title": "Silent Hill Homecoming",
+    "source": "protondb"
+  },
+  {
+    "appId": "19000",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-538820f 2019-09-03 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Perfect gameplay, if you use alt tab i gets black screen forever i bet you can play it with a controller",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1568183224,
+    "title": "Silent Hill Homecoming",
+    "source": "protondb"
+  }
+]

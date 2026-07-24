@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "863590",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Runs perfectly. Scrolling is a little slow, but I'm not sure if that's just the game or not.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545005057,
+    "title": "Starcom: Nexus",
+    "source": "protondb"
+  }
+]

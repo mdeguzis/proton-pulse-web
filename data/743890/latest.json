@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "743890",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4a131a1330)",
+    "kernel": "4.20.1-1-MANJARO",
+    "notes": "all but x4 is working",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547949205,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Have to use wined3d command to get best performance. X1-3 works but x4 refuses to play.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1550360041,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-17-generic",
+    "notes": "With the wined3d commmand, the performance is improved and with tinkering in the config ini file and type refresh rate to 60.00Hz, the menu is at perfect speed.with the earlier builds of proton, the menu is white and is now fixed on this release. X1-3 work, but x4 refuses to play.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1554679583,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "743890",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Work very well with PS4 controller",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567895139,
+    "title": "Mega Man X Legacy Collection / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+    "source": "protondb"
+  }
+]

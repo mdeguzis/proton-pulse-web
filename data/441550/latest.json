@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "441550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-141-generic",
+    "notes": "Game defaults to windowed mode which - seeing as the game runs only in 640x480 - is painfully small. This can be remedied by forcing a fixed resolution via winecfg.\n\nDragging elements in the game sometimes causes graphical artifacts which really hinders gameplay",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1549750879,
+    "title": "STAR WARS\u2122 Rebellion",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "441550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-141-generic",
+    "notes": "Dragging items in the game causes graphical artifacts to appear. These can be resolved by forcing a refresh of the area e.g. by closing and opening the window again. Forcing the window to fullscreen via my window manager (which results in the game in the topleft corner and the rest of the screen being black) pretty much 'fixes' this.\n\n3D space battles immediately cause the game to crash.\n\nGame has been completed multiple times with autoresolve of space battles.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1550309995,
+    "title": "STAR WARS\u2122 Rebellion",
+    "source": "protondb"
+  },
+  {
+    "appId": "441550",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game starts out with a small window of 640x480 resolution. Setting your desktop resolution to 800 x 600 or 1024x768 before launching the game is the easiest way to handle this. Using Set Launch Options to change the resolution would help but -fullscreen, -w, or -h did not work!",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557065776,
+    "title": "STAR WARS\u2122 Rebellion",
+    "source": "protondb"
+  },
+  {
+    "appId": "441550",
+    "cpu": "Intel Core i5-3475S @ 2.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "The game is running only in windowed mode.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1571666098,
+    "title": "STAR WARS\u2122 Rebellion",
+    "source": "protondb"
+  }
+]

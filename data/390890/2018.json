@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "390890",
+    "title": "Angry Arrows",
+    "timestamp": 1536049453,
+    "rating": "Platinum",
+    "notes": "Flawless performance",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5 4590k GTX 1060 6GB",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  },
+  {
+    "appId": "390890",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1540735593,
+    "title": "Angry Arrows",
+    "source": "protondb"
+  },
+  {
+    "appId": "390890",
+    "title": "Angry Arrows",
+    "timestamp": 1536035053,
+    "rating": "Platinum",
+    "notes": "Flawless performance",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5 4590k GTX 1060 6GB",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  }
+]

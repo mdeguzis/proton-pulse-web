@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "34600",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.14.98-1-MANJARO",
+    "notes": "Game runs but cannot see cinematics/intro videos and no background menu. Starting a match crashes the game. No commands provided on https://github.com/ValveSoftware/Proton#runtime-config-options helped.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551068182,
+    "title": "Order of War\u2122",
+    "source": "protondb"
+  }
+]

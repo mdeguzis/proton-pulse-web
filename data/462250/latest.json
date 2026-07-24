@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "462250",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs fine and I was able to play through the tutorial and first level. Does not properly fullscreen (runs fine in windowed mode), and does not exit cleanly.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558298670,
+    "title": "Boiling Bolt",
+    "source": "protondb"
+  }
+]

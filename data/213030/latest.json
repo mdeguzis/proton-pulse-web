@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "213030",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Game does not start. Re-installing XNA and .NET with Protontricks (protontricks 213030 xna40 dotnet40) gets the game as far as the \"Zeboyd Games Presents\" screen, after which the game crashes.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546928937,
+    "title": "Penny Arcade's On the Rain-Slick Precipice of Darkness 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "213030",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.18.20-041820-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1547301516,
+    "title": "Penny Arcade's On the Rain-Slick Precipice of Darkness 3",
+    "source": "protondb"
+  }
+]

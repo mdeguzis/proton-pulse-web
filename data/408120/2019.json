@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "408120",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-300.fc30.x86_64",
+    "notes": "Runs flawlessly. Played through entire game. Game requires screen resolution of 1080p or below, probably inherent code limitation.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560626431,
+    "title": "Cibele",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2775180",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.6, DRM 3.63, 6.15.4-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.4-200.fc42.x86_64",
+    "notes": "Overall good experience",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1767003613,
+    "title": "",
+    "source": "protondb"
+  }
+]

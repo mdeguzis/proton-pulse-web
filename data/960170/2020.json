@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "960170",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.3.2",
+    "kernel": "5.4.10_2",
+    "notes": "Game starts up but that's about it, you just see it running as a process",
+    "os": "Void Linux",
+    "protonVersion": "5.0-5",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1586853328,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "960170",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-7629-generic",
+    "notes": "Don't launch at all, crash instantly",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1590230792,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "960170",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Crashing after attempt to load XIGNCODE 3",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1603013927,
+    "title": "",
+    "source": "protondb"
+  }
+]

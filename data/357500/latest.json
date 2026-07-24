@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "357500",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-b6e2a9e 2019-05-17 disco-oibaf-ppa)",
+    "kernel": "5.0.0-15-generic",
+    "notes": "does not run haven't tried anything extra simply does not start out of the box",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558726864,
+    "title": "Rumble Fighter: Unleashed",
+    "source": "protondb"
+  }
+]

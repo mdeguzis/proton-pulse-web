@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "502370",
+    "title": "Warhammer 40,000: Sanctus Reach",
+    "timestamp": 1535059583,
+    "rating": "Borked",
+    "notes": "\"Failed to create device for rendering. Invalid resolution, or cannot run without at least shader model 3.0 (0)\". Works on same system booted to Windows 10",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "502370",
+    "cpu": "i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "kernel": "4.17.17-87.current",
+    "notes": "Crashes while loading, black screen. ",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15467 Mb",
+    "rating": "Borked",
+    "timestamp": 1536745301,
+    "title": "Warhammer 40,000: Sanctus Reach",
+    "source": "protondb"
+  },
+  {
+    "appId": "502370",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Initially game crashed with The launcher starts but the games crashes. \"Failed to create device for rendering. Invalid resolution or cannot run without at least shader model 3.0 (0)'. To fix that one need to apply fix described in https://forum.winehq.org/viewtopic.php?f=8&t=30764 1. Go to <steam-library</steamapps/compatdata/502370/pfx/drive_c/users/steamuser/My Documents/My Games/SANCTUS. Open OPTIONS.TXT. 3. Change RezX to your horizontal resolution (mine is RezX 1920). 4. Change RezY to your vertical resolution (mine is RezX 1080). 5. Change Fullscreen to 0. After that the game can be run. I hadn't observed any issues, although it was my first play ever. If you don't find an OPTIONS.TXT where it should be, just create it and paste in the content from here: https://pastebin.com/RzYeqSCN. This fix seems to work for many Slitherine made wargames.  ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15997 Mb",
+    "rating": "Gold",
+    "timestamp": 1540045285,
+    "title": "Warhammer 40,000: Sanctus Reach",
+    "source": "protondb"
+  },
+  {
+    "appId": "502370",
+    "cpu": "Intel Core i7-4900MQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Crashes after Video. Message: \"\"Failed to create device for rendering. Invalid resolution, or cannot run without at least shader model 3.0 (0)\". Works on same system booted to Windows 10\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1540566416,
+    "title": "Warhammer 40,000: Sanctus Reach",
+    "source": "protondb"
+  },
+  {
+    "appId": "502370",
+    "title": "Warhammer 40,000: Sanctus Reach",
+    "timestamp": 1535045183,
+    "rating": "Borked",
+    "notes": "\"Failed to create device for rendering. Invalid resolution, or cannot run without at least shader model 3.0 (0)\". Works on same system booted to Windows 10",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

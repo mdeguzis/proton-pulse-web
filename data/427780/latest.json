@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "427780",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-1cea762 2019-10-19 eoan-oibaf-ppa)",
+    "kernel": "5.3.6-050306-generic",
+    "notes": "the native version needs a workaround. proton does NOT. works OOTB",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571528753,
+    "title": "PERFECT ANGLE: The puzzle game based on optical illusions",
+    "source": "protondb"
+  }
+]

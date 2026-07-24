@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "666610",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-20-generic",
+    "notes": "All gameplay-relevant features seem to be working without problem, including saving and resuming. Only thing that i noticed not to work is speech synthesis for instruction readback voices",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542684283,
+    "title": "Endless ATC",
+    "source": "protondb"
+  }
+]

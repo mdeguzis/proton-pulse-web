@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "603800",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Ran at 60FPS with the default 'Epic' settings. Solved a few puzzles, no issues from what I could tell.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "3.16-7",
+    "protonVersionManual": "3.16-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550308185,
+    "title": "ReThink",
+    "source": "protondb"
+  }
+]

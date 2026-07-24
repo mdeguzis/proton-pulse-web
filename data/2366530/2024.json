@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2366530",
+    "cpu": "12th Gen Intel Core i5-12500",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.5.0-28-generic",
+    "notes": "This game does not work at all - it even crashes my Xorg server right at the main menu after a couple of seconds (It's the only game that managed to do this so far and I've been playing hundreds of titles via Proton/Wine so far). Tried so many things: installing additional components via ProtonTricks, various GE-Proton versions, exluding/including DLLs. \n\nThis game was built using Delphi and has some fundamental issues that makes it fail to run correctly with Proton/Wine. Alas, this is just completely borked for now.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1714227044,
+    "title": "",
+    "source": "protondb"
+  }
+]

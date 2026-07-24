@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1522080",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 10 (RAVEN, DRM 3.40.0, 5.11.0-46-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-46-generic",
+    "notes": "Run out of the box",
+    "os": "KDE neon User - Plasma 25th Anniversary Edition",
+    "protonVersion": "9.0-3",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1729036488,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "875830",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Main screen shows but game itself shows a blackscreen, don't think the video player works",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1570206041,
+    "title": "Moral King",
+    "source": "protondb"
+  }
+]

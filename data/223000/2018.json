@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "223000",
+    "title": "7 Wonders: Ancient Alien Makeover",
+    "timestamp": 1535971056,
+    "rating": "Platinum",
+    "notes": "no problems at all",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "223000",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Plays great",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538312003,
+    "title": "7 Wonders: Ancient Alien Makeover",
+    "source": "protondb"
+  },
+  {
+    "appId": "223000",
+    "title": "7 Wonders: Ancient Alien Makeover",
+    "timestamp": 1535956656,
+    "rating": "Platinum",
+    "notes": "no problems at all",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

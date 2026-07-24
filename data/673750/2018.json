@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "673750",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.8-300.fc29.x86_64",
+    "notes": "Mouse is hidden but game works perfectly with controllers.\nGame doesn't shutdown properly.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1546105596,
+    "title": "Super Bunny Man",
+    "source": "protondb"
+  }
+]

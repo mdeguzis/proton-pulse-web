@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "6370",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Does not launch",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1553707308,
+    "title": "Bloodline Champions",
+    "source": "protondb"
+  },
+  {
+    "appId": "6370",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "3.0 Mesa 18.0.4",
+    "kernel": "4.15.0-29deepin-generic",
+    "notes": "No tuve exito en hacer que funcione. Me muestra un error con .NET framework  microsoft xna framework redistributable 3.1 requires at least net framework 2.0. \nTurn Windows features on or off\" in the Control Panell to install or configure Microsoft .Net Framework 3.0.",
+    "os": "Deepin 15.9.2",
+    "protonVersion": "3.7",
+    "protonVersionManual": "3.7",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1553818591,
+    "title": "Bloodline Champions",
+    "source": "protondb"
+  }
+]

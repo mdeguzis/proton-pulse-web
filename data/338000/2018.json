@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "338000",
+    "title": "Echoes+",
+    "timestamp": 1535401160,
+    "rating": "Platinum",
+    "notes": "Runs perfectly straight off the bat.. Fast, colourful and fun. ",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "338000",
+    "cpu": "Intel(R) Pentium(R) CPU  N3540  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.5",
+    "notes": "Works perfectly, performance is same as Windows.",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Echoes+",
+    "source": "protondb"
+  },
+  {
+    "appId": "338000",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Great performance and no issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537395662,
+    "title": "Echoes+",
+    "source": "protondb"
+  },
+  {
+    "appId": "338000",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Xbone controller does not work, othertwise perfect",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Silver",
+    "timestamp": 1537515657,
+    "title": "Echoes+",
+    "source": "protondb"
+  },
+  {
+    "appId": "338000",
+    "title": "Echoes+",
+    "timestamp": 1535386760,
+    "rating": "Platinum",
+    "notes": "Runs perfectly straight off the bat.. Fast, colourful and fun. ",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

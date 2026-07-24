@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "746510",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "notes": "Played the game without trying any tweaks. Was very playable, despite minor stuttering at certain times.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564098426,
+    "title": "Duck Season PC",
+    "source": "protondb"
+  }
+]

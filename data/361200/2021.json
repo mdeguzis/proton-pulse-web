@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "361200",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 418.197.02",
+    "kernel": "4.19.0-17-amd64",
+    "notes": "Runs perfect with Proton-GE, crashes with Vanilla Proton",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628534507,
+    "title": "",
+    "source": "protondb"
+  }
+]

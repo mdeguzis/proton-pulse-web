@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "3530",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Starts fine but moving the cursor causes the game to lag considerably",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "16042 Mb",
+    "rating": "Borked",
+    "timestamp": 1536628847,
+    "title": "Amazing Adventures Around the World",
+    "source": "protondb"
+  },
+  {
+    "appId": "3530",
+    "cpu": "i5-2400 CPU @ 3.10GHz",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game can be completed. The mouse movements are a little jerky but not uncontrollable. Some lag goes away if you disable Hardware Acceleration in the options menu.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "11967 Mb",
+    "rating": "Silver",
+    "timestamp": 1536880569,
+    "title": "Amazing Adventures Around the World",
+    "source": "protondb"
+  }
+]

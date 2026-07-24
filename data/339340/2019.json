@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "339340",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.19.9-arch1-1-ARCH",
+    "notes": "I already have a 32-bit wine prefix with wmp10 and some other things that I was using for the remake of the first Resident Evil, as per this guide: https://www.reddit.com/r/linux_gaming/comments/aehhu5/resident_evil_remaster_hd_setup_guide/. I simply pointed this game to that wine prefix, and now the game seems to work perfectly. Cutscenes and all.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1548100066,
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.0-trunk-amd64",
+    "notes": "I had similar success after getting the WMV supported. No issues so far. I did not go through the multiple steps to install WMP10. I used the following basic steps using the x64 version of WMP11 for Windows XP:\n\ncabextract wmp11-windowsxp-x64-enu.exe -d WMP11-x64/ ; cd WMP11-x64 ;\nWINEPREFIX=~/.steam/steam/steamapps/compatdata/339340/pfx/ winetricks winxp ; WINEPREFIX=~/.steam/steam/steamapps/compatdata/339340/pfx/ ~/.steam/steam/steamapps/common/Proton\\ 4.11/dist/bin/wine wmfdist11-64.exe ;\n\nThis will install just enough for the videos to work. The first time the installer crashed but the second time it installed fine. \n\nI used d9vk and LAA but there doesn't appear to be much of a difference and may not be necessary.",
+    "os": "Devuan GNU/Linux 9 (n/a)",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568593081,
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "tweaks": {
+      "largeAddressAware": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "nouveau NVC1",
+    "gpuDriver": "4.3 Mesa 19.1.5",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Black screen but game's mouse pointer is visible.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1571609822,
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 390.129",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Black screen, visible pointer.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1571613992,
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "source": "protondb"
+  }
+]

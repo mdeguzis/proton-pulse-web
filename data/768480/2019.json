@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "768480",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.16-300.fc30.x86_64",
+    "notes": "Proton version works very well, but scaling was not so good out of the box. Works better when using steam-dos (https://github.com/dreamer/steam-dos).",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1562936978,
+    "title": "Chamber of the Sci-Mutant Priestess",
+    "source": "protondb"
+  }
+]

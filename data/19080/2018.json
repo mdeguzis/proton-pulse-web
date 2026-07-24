@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "19080",
+    "cpu": "Intel(R) Pentium(R) CPU G4560 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "The game works perfectly, but only in a window. Fullscreen mode only showed the top-left quarter of the screen. If you try it, Alt-Enter will get you back to windowed mode since you can't operate the settings menu. If you have a 4K screen, windowed mode would be way too small and so this would drop to Bronze level.",
+    "os": "Linux Mint 18 Sarah (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7948 Mb",
+    "rating": "Silver",
+    "timestamp": 1539489627,
+    "title": "Biozone",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "257750",
+    "title": "Bloody Trapland",
+    "timestamp": 1535937114,
+    "rating": "Borked",
+    "notes": "don`t run",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1060 3GB",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "257750",
+    "title": "Bloody Trapland",
+    "timestamp": 1535027782,
+    "rating": "Borked",
+    "notes": "Stops running before anything pops up.",
+    "os": "Ubuntu 18.04.1 (4.15.0)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "257750",
+    "cpu": "Intel(R) Core(TM) i5-6600 CPU @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-1-MANJARO",
+    "notes": "Tried all the tweaks available from Proton, none of them worked too.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "11966 Mb",
+    "rating": "Borked",
+    "timestamp": 1539873461,
+    "title": "Bloody Trapland",
+    "source": "protondb"
+  },
+  {
+    "appId": "257750",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Doesn't launch",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7917 Mb",
+    "rating": "Borked",
+    "timestamp": 1539882036,
+    "title": "Bloody Trapland",
+    "source": "protondb"
+  },
+  {
+    "appId": "257750",
+    "title": "Bloody Trapland",
+    "timestamp": 1535922714,
+    "rating": "Borked",
+    "notes": "don`t run",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1060 3GB",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "257750",
+    "title": "Bloody Trapland",
+    "timestamp": 1535013382,
+    "rating": "Borked",
+    "notes": "Stops running before anything pops up.",
+    "os": "Ubuntu 18.04.1 (4.15.0)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

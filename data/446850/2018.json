@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446850",
+    "cpu": "Intel Xeon E3-1245 v5 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "The lazer map has some fps issues and overall some fps drops involving lazers but that's about it. Average fps on the lazer map is around 80 and others are 100+.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "31 GB",
+    "rating": "Gold",
+    "timestamp": 1543064719,
+    "title": "Mindball Play",
+    "source": "protondb"
+  }
+]

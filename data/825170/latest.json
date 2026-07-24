@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "825170",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.5-200.fc38.x86_64",
+    "notes": "i recomend here to use the Linux version",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-2",
+    "ram": "129 GB",
+    "rating": "silver",
+    "timestamp": 1686517556,
+    "title": "",
+    "source": "protondb"
+  }
+]

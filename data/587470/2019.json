@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "587470",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.2-steamvr-generic",
+    "notes": "Started with an absurd number of particles causing the framerate to drop. Needed to use the physics menu to reduce them to a manageable level.  Particles aren't reacting to sound on my setup.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "64 GB",
+    "rating": "Silver",
+    "timestamp": 1557803343,
+    "title": "Chroma Lab",
+    "source": "protondb"
+  }
+]

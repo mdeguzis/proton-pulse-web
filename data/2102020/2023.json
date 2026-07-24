@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2102020",
+    "cpu": "Intel Core i5-3317U @ 1.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-88-generic",
+    "notes": "runs perfectly fine with some minor fps drops and audio stutters",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "7.0-6",
+    "ram": "4 GB",
+    "rating": "silver",
+    "timestamp": 1701531854,
+    "title": "",
+    "source": "protondb"
+  }
+]

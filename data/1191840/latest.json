@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1191840",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.8.6-1-MANJARO",
+    "notes": "Game crash as soon as the menu appear, i just hear the music.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1638269008,
+    "title": "",
+    "source": "protondb"
+  }
+]

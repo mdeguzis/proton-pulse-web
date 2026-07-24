@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "950620",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.13.9-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.3",
+    "kernel": "6.13.9-103.bazzite.fc41.x86_64",
+    "notes": "Game runs playably although at lower settings than usual for my device.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "silver",
+    "timestamp": 1746576996,
+    "title": "Priest Simulator: Vampire Show",
+    "source": "protondb"
+  }
+]

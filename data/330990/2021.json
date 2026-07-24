@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "330990",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "runs native",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1610922930,
+    "title": "",
+    "source": "protondb"
+  }
+]

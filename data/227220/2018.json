@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "227220",
+    "title": "Sang-Froid - Tales of Werewolves",
+    "timestamp": 1535295904,
+    "rating": "Borked",
+    "notes": "Briefly shows a splash screen, then exits. Log shows an error \"X Error of failed request:  BadWindow (invalid Window parameter)\n  Major opcode of failed request:  12 (X_ConfigureWindow)\". Single-monitor setup. Same with Proton 3.7-3.",
+    "os": "Ubuntu Studio 18.04.01 64-Bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Ryzen 5 1600X / GTX1050Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "227220",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Small black splash screen, game does not start. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1536946218,
+    "title": "Sang-Froid - Tales of Werewolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "227220",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game does not start, displays a black screen then closes.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1538407381,
+    "title": "Sang-Froid - Tales of Werewolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "227220",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game won't start at all and crashes straight to Desktop",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1539544828,
+    "title": "Sang-Froid - Tales of Werewolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "227220",
+    "title": "Sang-Froid - Tales of Werewolves",
+    "timestamp": 1535281504,
+    "rating": "Borked",
+    "notes": "Briefly shows a splash screen, then exits. Log shows an error \"X Error of failed request:  BadWindow (invalid Window parameter)\n  Major opcode of failed request:  12 (X_ConfigureWindow)\". Single-monitor setup. Same with Proton 3.7-3.",
+    "os": "Ubuntu Studio 18.04.01 64-Bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Ryzen 5 1600X / GTX1050Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

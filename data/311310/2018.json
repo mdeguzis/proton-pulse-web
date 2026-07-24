@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "311310",
+    "title": "Naval Action",
+    "timestamp": 1534991600,
+    "rating": "Borked",
+    "notes": "The window that opens is just empty, and eventually a pop-pup says it crashed. There is a crashlogs with several different issues (I think) but I am not skilled to interpret it.",
+    "os": "Solus 3.999",
+    "gpuDriver": "HD 7850, Mesa 18.1.6, radeon drivers",
+    "specs": "i5-3570K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "311310",
+    "title": "Naval Action",
+    "timestamp": 1536404716,
+    "rating": "Bronze",
+    "notes": "Bad performance, from fluid 60fps down to 10fps",
+    "os": "KDE neon User Edition 5.13 (64 Bit)  Kernel-Version: 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600K/GTX970",
+    "protonVersion": "steam-runtime--release_2018-06-14,3.7.6",
+    "source": "protondb"
+  },
+  {
+    "appId": "311310",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "It works perfectly until I enter combat mode. Then the mouse view is unusable because always turning into the sky. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1544617846,
+    "title": "Naval Action",
+    "source": "protondb"
+  },
+  {
+    "appId": "311310",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "I didn't try combat",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1545120093,
+    "title": "Naval Action",
+    "source": "protondb"
+  },
+  {
+    "appId": "311310",
+    "title": "Naval Action",
+    "timestamp": 1534977200,
+    "rating": "Borked",
+    "notes": "The window that opens is just empty, and eventually a pop-pup says it crashed. There is a crashlogs with several different issues (I think) but I am not skilled to interpret it.",
+    "os": "Solus 3.999",
+    "gpuDriver": "HD 7850, Mesa 18.1.6, radeon drivers",
+    "specs": "i5-3570K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "311310",
+    "title": "Naval Action",
+    "timestamp": 1536390316,
+    "rating": "Bronze",
+    "notes": "Bad performance, from fluid 60fps down to 10fps",
+    "os": "KDE neon User Edition 5.13 (64 Bit)  Kernel-Version: 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600K/GTX970",
+    "protonVersion": "steam-runtime--release_2018-06-14,3.7.6",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "4600",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "5.0.9-050009-generic",
+    "notes": "ran \"protontricks 4600 mfc42\" to install a missing DLL, then it ran at least as well as I remember it running on Windows XP back when I bought it in 2008",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556343274,
+    "title": "Full Pipe",
+    "source": "protondb"
+  }
+]

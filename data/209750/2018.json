@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "209750",
+    "title": "Cannon Fodder 3",
+    "timestamp": 1534997408,
+    "rating": "Borked",
+    "notes": "crashes with a black screen as soon as it starts with a lot of error\n",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "209750",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.12-1-MANJARO",
+    "notes": "Some color aberration on tutorial next levels are OK and slow intro movie",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540311134,
+    "title": "Cannon Fodder 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "209750",
+    "title": "Cannon Fodder 3",
+    "timestamp": 1534983008,
+    "rating": "Borked",
+    "notes": "crashes with a black screen as soon as it starts with a lot of error\n",
+    "os": "Kubuntu 18.04.1 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "Geforce GT 240",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

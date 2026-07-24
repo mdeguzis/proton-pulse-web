@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1386890",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.2-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.1",
+    "kernel": "6.18.2-arch2-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1766697896,
+    "title": "Hyper Dash",
+    "source": "protondb"
+  }
+]

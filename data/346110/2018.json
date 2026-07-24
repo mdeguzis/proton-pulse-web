@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "346110",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "[TEST FOR AN ISSUE] [RAN NATIVE] Freezes on boot briefly, as long as you don't minimize / unfocus it will unfreeze eventually. Recommend strongly enabling GALLIUM_HUD.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543477356,
+    "title": "ARK: Survival Evolved",
+    "source": "protondb"
+  },
+  {
+    "appId": "346110",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "[TESTING FOR AN ISSUE, DELETE ON SIGHT]",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543477845,
+    "title": "ARK: Survival Evolved",
+    "source": "protondb"
+  }
+]

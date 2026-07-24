@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "704640",
+    "cpu": "Intel Pentium 3825U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 920MX",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Steam describes game as running, but Task Manager shows zero CPU and RSS for Settlement task. No display window. Terminated via Task Manager",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1565986642,
+    "title": "Evolution of Ages: Settlements",
+    "source": "protondb"
+  }
+]

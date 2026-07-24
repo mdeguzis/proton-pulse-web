@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "31700",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Requires manual font installation: https://steamcommunity.com/sharedfiles/filedetails/?id=1526446284\nAfter that the singleplayer runs well.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1551754659,
+    "title": "Iron Grip: Warlord",
+    "source": "protondb"
+  },
+  {
+    "appId": "31700",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559134929,
+    "title": "Iron Grip: Warlord",
+    "source": "protondb"
+  }
+]

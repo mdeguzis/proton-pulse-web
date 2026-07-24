@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1319420",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.4.0-84-generic",
+    "notes": "Works out of the box (minus achievements)",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1635450314,
+    "title": "",
+    "source": "protondb"
+  }
+]

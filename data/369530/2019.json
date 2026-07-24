@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "369530",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.8-110.current",
+    "notes": "Works great; Weapon sounds can be drowned out by music and I've had a few crashes to desktop, but from reading the steam forums it seems these are issues in windows as well.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552962531,
+    "title": "Void Destroyer 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "369530",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game runs great. I've had 2 crashes and sometimes the audio muzzles itself, but as far as I know those bugs are also present in Windows.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2",
+    "protonVersionManual": "4.2",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1557358799,
+    "title": "Void Destroyer 2",
+    "source": "protondb"
+  }
+]

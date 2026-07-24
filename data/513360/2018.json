@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "513360",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works fine",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537385189,
+    "title": "Mu Cartographer",
+    "source": "protondb"
+  },
+  {
+    "appId": "513360",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.18.19_1",
+    "notes": "Black screen on startup. Only sound and cursor work.",
+    "os": "Void Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542660810,
+    "title": "Mu Cartographer",
+    "source": "protondb"
+  }
+]

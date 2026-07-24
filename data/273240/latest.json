@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "273240",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.62-1-MANJARO",
+    "notes": "Loads a black screen and then does nothing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565476203,
+    "title": "Gunhound EX",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2701410",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.54, 6.6.13-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.2 (git-527d45230f)",
+    "kernel": "6.6.13-200.fc39.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1767468125,
+    "title": "",
+    "source": "protondb"
+  }
+]

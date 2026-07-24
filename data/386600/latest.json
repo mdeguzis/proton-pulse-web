@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "386600",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 650 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-90.current",
+    "notes": "Feels sluggish but everything works",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7.6-Beta",
+    "ram": "12032 Mb",
+    "rating": "Silver",
+    "timestamp": 1537153175,
+    "title": "Pixel Fodder",
+    "source": "protondb"
+  }
+]

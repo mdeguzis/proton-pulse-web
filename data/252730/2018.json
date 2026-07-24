@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "252730",
+    "title": "YOU DON'T KNOW JACK Vol. 1 XL",
+    "timestamp": 1535754033,
+    "rating": "Silver",
+    "notes": "Not full screen, but still playable. Could not see any config options.",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "252730",
+    "cpu": "Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Same here, it\u2019s not fullscreen and quite small. It\u2019s better when you reduce your computer resolution, but on my laptop the lowest was not enough.\n\nSeems to need 640x480 as per the Windows-only tip at https://steamcommunity.com/sharedfiles/filedetails/?id=207020995",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Silver",
+    "timestamp": 1539256801,
+    "title": "YOU DON'T KNOW JACK Vol. 1 XL",
+    "source": "protondb"
+  },
+  {
+    "appId": "252730",
+    "title": "YOU DON'T KNOW JACK Vol. 1 XL",
+    "timestamp": 1535739633,
+    "rating": "Silver",
+    "notes": "Not full screen, but still playable. Could not see any config options.",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

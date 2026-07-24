@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1275550",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.2-cachyos1.3",
+    "kernel": "6.16.7-2-cachyos",
+    "notes": "0 Issues",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1758311374,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1275550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1759095851,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1275550",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.8-2-cachyos",
+    "notes": "Only added proton vars as default due to older nvidia card. Never tried without. Game works 100% as expected",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1763709639,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "238240",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Crashes at startup",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556623095,
+    "title": "Edge of Space",
+    "source": "protondb"
+  },
+  {
+    "appId": "238240",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.7",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560095588,
+    "title": "Edge of Space",
+    "source": "protondb"
+  },
+  {
+    "appId": "238240",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "No tweaks needed, worked fine far as I can tell",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569479513,
+    "title": "Edge of Space",
+    "source": "protondb"
+  }
+]

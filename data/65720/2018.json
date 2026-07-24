@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "65720",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Fails to start with \"Can't find ARMA 2: OA serial number in registry. Please install ARMA 2: OA and the re-run PMC setup again\"",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15991 Mb",
+    "rating": "Borked",
+    "timestamp": 1536786838,
+    "title": "Arma 2: Private Military Company",
+    "source": "protondb"
+  }
+]

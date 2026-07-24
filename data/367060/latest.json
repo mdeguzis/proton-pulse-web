@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "367060",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Actually feels like game found in repository. Capped at 33 FPS (also on Windows).",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1557409990,
+    "title": "Helena The 3rd",
+    "source": "protondb"
+  }
+]

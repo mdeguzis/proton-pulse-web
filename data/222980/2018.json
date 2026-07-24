@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "222980",
+    "title": "Dead Pixels",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Shows \"Running\" next to the game title momentarily before disapearing. Doesn't launch.",
+    "os": "Solus 3.9999 latest sync",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "R7 1700x, RX VEGA 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "222980",
+    "title": "Dead Pixels",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Shows \"Running\" next to the game title momentarily before disapearing. Doesn't launch.",
+    "os": "Solus 3.9999 latest sync",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "R7 1700x, RX VEGA 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

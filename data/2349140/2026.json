@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2349140",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "After installing with default settings, I get an error saying \"Missing game executable: /home/deck/.local/share/Steam/steamapps/common/KonoSuba God's Blessing on this Wonderful World! Love For These Clothes of Desire!/game.exe\". I've tried it with no compatibility option selected and with Proton Experimental, both times getting the same error. I tried making a softlink called game.exe to the executable file that does exist in the game folder, but then it complains about a GameData/ folder being missing instead. The game files don't seem to be arranged/named the way the game expects when running on Steam Deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1767735826,
+    "title": "KONOSUBA - God's Blessing on this Wonderful World! Love For These Clothes Of Desire!",
+    "source": "protondb"
+  },
+  {
+    "appId": "2349140",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.2, DRM 3.61, 6.14.0-37-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Installs and runs without any issues",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767842305,
+    "title": "KONOSUBA - God's Blessing on this Wonderful World! Love For These Clothes Of Desire!",
+    "source": "protondb"
+  }
+]

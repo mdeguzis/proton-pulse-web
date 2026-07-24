@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "227860",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa zink Vulkan 1.4(NVIDIA GeForce RTX 5070 (NVIDIA_PROPRIETARY))",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.1",
+    "kernel": "6.18.3-arch1-1",
+    "notes": "The native version didn't work for me, and Proton has many problems; the game is abandoned and no longer receives maintenance.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767618421,
+    "title": "",
+    "source": "protondb"
+  }
+]

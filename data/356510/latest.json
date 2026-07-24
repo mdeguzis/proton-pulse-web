@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "356510",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Loads a bit slow, but gamepad and general gameplay was working. However the game itself was abandoned during Early Access so there's not much to play.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569492704,
+    "title": "Soccer Rage",
+    "source": "protondb"
+  }
+]

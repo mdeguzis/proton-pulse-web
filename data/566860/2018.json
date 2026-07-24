@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "566860",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.9-92.current",
+    "notes": "Some missing models and textures, into video doesn't play. Probably fixed once stream output lands in Vulkan and DXVK.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32164 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538902755,
+    "title": "VR Dungeon Knight",
+    "source": "protondb"
+  },
+  {
+    "appId": "566860",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.18.14-95.current",
+    "notes": "As expected in my last report, having stream output fixed the issues. Intro video still doesn't play but still platinum as it has 0 bearing on the actual game and doesn't even provide story.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32164 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540032684,
+    "title": "VR Dungeon Knight",
+    "source": "protondb"
+  }
+]

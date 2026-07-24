@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "44620",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Once again, you install the DLC but don't click on the \"Play\" button in the Steam Client for STCC2; instead you start RACE07 (the base game) and it will run and you can see the installed DLC (also visible in the lower left corner inside the game menu screen). Runs great. Works with XInput and DirectInput wheels (also, XBONE/PS gamepads). Does not deserve 'borked' tag, bc of clicking on the wrong 'Play' button.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550107994,
+    "title": "STCC The Game 2 \u2013 Expansion Pack for RACE 07",
+    "source": "protondb"
+  },
+  {
+    "appId": "44620",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "See previous posts how to run it. Just start Race07 instead the STCC Steam button.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550295281,
+    "title": "STCC The Game 2 \u2013 Expansion Pack for RACE 07",
+    "source": "protondb"
+  },
+  {
+    "appId": "44620",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552246774,
+    "title": "STCC The Game 2 \u2013 Expansion Pack for RACE 07",
+    "source": "protondb"
+  }
+]

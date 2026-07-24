@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "727910",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc3",
+    "kernel": "4.19.2-gentoo",
+    "notes": "This \"game\" seems to run. Constant clipping trough objects, but I think this is the game's fault, nothing to do with Proton",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1544539997,
+    "title": "Titanic",
+    "source": "protondb"
+  }
+]

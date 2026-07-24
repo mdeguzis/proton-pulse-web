@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "259760",
+    "title": "Two Brothers",
+    "timestamp": 1535749538,
+    "rating": "Silver",
+    "notes": "Seems to work fine except full screen doesn't hide borders and stuff gets cut off from bottom.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "259760",
+    "title": "Two Brothers",
+    "timestamp": 1535735138,
+    "rating": "Silver",
+    "notes": "Seems to work fine except full screen doesn't hide borders and stuff gets cut off from bottom.",
+    "os": "Debian Buster",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-6600K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

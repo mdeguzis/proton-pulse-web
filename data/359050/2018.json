@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "359050",
+    "title": "Shower With Dad Simulator 2015",
+    "timestamp": 1535683644,
+    "rating": "Platinum",
+    "notes": "Perfection.",
+    "os": "Arch Linux 4.17.14-arch-1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.16",
+    "specs": "i7-6700k",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "359050",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.13-1-default",
+    "notes": "Runs perfectly, just like on windows.",
+    "os": "\"openSUSE Tumbleweed\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7988 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540219223,
+    "title": "Shower With Your Dad Simulator 2015: Do You Still Shower With Your Dad",
+    "source": "protondb"
+  },
+  {
+    "appId": "359050",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Won't run in fullscreen mode (with ALT+ENTER it'll crash) to enjoy the full nudity of your dad. Otherwise runs perfectly.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541513530,
+    "title": "Shower With Your Dad Simulator 2015: Do You Still Shower With Your Dad",
+    "source": "protondb"
+  },
+  {
+    "appId": "359050",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541634726,
+    "title": "Shower With Your Dad Simulator 2015: Do You Still Shower With Your Dad",
+    "source": "protondb"
+  },
+  {
+    "appId": "359050",
+    "title": "Shower With Dad Simulator 2015",
+    "timestamp": 1535669244,
+    "rating": "Platinum",
+    "notes": "Perfection.",
+    "os": "Arch Linux 4.17.14-arch-1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.16",
+    "specs": "i7-6700k",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

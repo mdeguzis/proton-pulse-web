@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "789090",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-88f909e 2019-09-25 disco-oibaf-ppa)",
+    "kernel": "5.3.1-050301-generic",
+    "notes": "Used the Valve Index with Knuckle Controllers. Grabbing the balls via hand movements didn't work and I had to use a button, but the developers very recently added knuckle support, so not sure if its a Proton thing or not.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569530382,
+    "title": "Rainbow Reactor",
+    "source": "protondb"
+  }
+]

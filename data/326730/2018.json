@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "326730",
+    "cpu": "Intel Pentium G3240 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.3-300.fc29.x86_64",
+    "notes": "Dialog boxes and some other text does not render",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1543094952,
+    "title": "Whisper of a Rose",
+    "source": "protondb"
+  }
+]

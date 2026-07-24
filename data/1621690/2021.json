@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1621690",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Briefly shows a black screen, then the unity crash window.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1638916039,
+    "title": "Core Keeper",
+    "source": "protondb"
+  },
+  {
+    "appId": "1621690",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.5-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1639184970,
+    "title": "Core Keeper",
+    "source": "protondb"
+  },
+  {
+    "appId": "1621690",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.10.83-1-MANJARO",
+    "notes": "Game window launches, then crashes with the standard Unity crash modal",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1639458773,
+    "title": "Core Keeper",
+    "source": "protondb"
+  }
+]

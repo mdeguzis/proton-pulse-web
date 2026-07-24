@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "33120",
+    "title": "Alien Shooter 2: Reloaded",
+    "timestamp": 1535038864,
+    "rating": "Platinum",
+    "notes": "No noticeable issues\t",
+    "os": "Manjaro 17.1.12 64bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33120",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Great",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538313028,
+    "title": "Alien Shooter 2: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "33120",
+    "cpu": "Intel Celeron G550 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Desktop",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-138-generic",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "2 GB",
+    "rating": "Silver",
+    "timestamp": 1541155093,
+    "title": "Alien Shooter 2: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "33120",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "All runs smoothly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1545817396,
+    "title": "Alien Shooter 2: Reloaded",
+    "source": "protondb"
+  },
+  {
+    "appId": "33120",
+    "title": "Alien Shooter 2: Reloaded",
+    "timestamp": 1535024464,
+    "rating": "Platinum",
+    "notes": "No noticeable issues\t",
+    "os": "Manjaro 17.1.12 64bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

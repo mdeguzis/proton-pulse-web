@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "21780",
+    "title": "Driver: Parallel Lines",
+    "timestamp": 1535525001,
+    "rating": "Platinum",
+    "notes": "No issues to speak of; menus, FMV cutscenes, and in-game segments functioned flawlessly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 1700 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21780",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Desktop x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-5 Beta",
+    "ram": "32032 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536862233,
+    "title": "Driver\u00ae Parallel Lines",
+    "source": "protondb"
+  },
+  {
+    "appId": "21780",
+    "title": "Driver: Parallel Lines",
+    "timestamp": 1535510601,
+    "rating": "Platinum",
+    "notes": "No issues to speak of; menus, FMV cutscenes, and in-game segments functioned flawlessly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Ryzen 7 1700 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

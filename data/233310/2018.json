@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "233310",
+    "title": "Avadon 2: The Corruption",
+    "timestamp": 1535403152,
+    "rating": "Platinum",
+    "notes": "Runs Great",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "233310",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Runs perfect!",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541997051,
+    "title": "Avadon 2: The Corruption",
+    "source": "protondb"
+  },
+  {
+    "appId": "233310",
+    "title": "Avadon 2: The Corruption",
+    "timestamp": 1535388752,
+    "rating": "Platinum",
+    "notes": "Runs Great",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

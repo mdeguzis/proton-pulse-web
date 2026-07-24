@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1273400",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.54, 6.6.39)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.6.39",
+    "notes": "Runs well",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1721287005,
+    "title": "Construction Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "1273400",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.9.12-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1723735529,
+    "title": "Construction Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "1273400",
+    "cpu": "Intel Core i9-10885H @ 2.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA Quadro RTX 5000 with Max-Q Design",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-40-generic",
+    "notes": "Game works like on windows. Mouse being wierd is a game thing not a linux thing",
+    "os": "KDE neon 6.1",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1725899459,
+    "title": "Construction Simulator",
+    "source": "protondb"
+  }
+]

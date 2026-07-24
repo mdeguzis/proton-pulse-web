@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "29800",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Works just like it does on windows",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552705994,
+    "title": "Caster",
+    "source": "protondb"
+  },
+  {
+    "appId": "29800",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Runs fine, but the game is buggy and has a bunch of weird issues. I'm not sure if this is a problem with Proton or with the game itself.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556491355,
+    "title": "Caster",
+    "source": "protondb"
+  },
+  {
+    "appId": "29800",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Runs, but my cursor always drifts to the right of the screen.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1564586419,
+    "title": "Caster",
+    "source": "protondb"
+  }
+]

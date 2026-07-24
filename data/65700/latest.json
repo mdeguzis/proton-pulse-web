@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "65700",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.16-1-MANJARO",
+    "notes": "By default BAF is using it's own prefix and cannot find Arma 2: Operation Arrowhead, which is required. The A2:OA prefix can be forced with launch options: \"STEAM_COMPAT_DATA_PATH=/home/(USERNAME)/.local/share/Steam/steamapps/compatdata/33930 %command%\". Before running A2:OA needs to be started first, and game key edited manually to registry [Software\\\\Wow6432Node\\\\bohemia interactive studio\\\\arma 2 oa] to work around bug in steam, see https://github.com/ValveSoftware/Proton/issues/1308#issuecomment-481728178 for details. After these steps game works fine when selecting Play in Arma 2:BAF, however starting Arma 2: Operation Arrowhead removes the registry key and it needs to be added again.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1562850890,
+    "title": "Arma 2: British Armed Forces",
+    "source": "protondb"
+  }
+]

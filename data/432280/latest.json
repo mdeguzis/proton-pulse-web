@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "432280",
+    "title": "BattleStorm",
+    "timestamp": 1535482518,
+    "rating": "Bronze",
+    "notes": "Gameplay is fine, changing resolution didn't do anything though.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "432280",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Play until World 2. Everything works, changing resolution worked for me.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541350145,
+    "title": "BattleStorm",
+    "source": "protondb"
+  },
+  {
+    "appId": "432280",
+    "title": "BattleStorm",
+    "timestamp": 1535468118,
+    "rating": "Bronze",
+    "notes": "Gameplay is fine, changing resolution didn't do anything though.",
+    "os": "Ubuntu 18.04.1 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-2400 / GT 730",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

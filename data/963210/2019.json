@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "963210",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Screen stays black until I alt-tab out of the game and back, \"LowLevelFatelError\" on exit. Otherwise fully playable with great performance.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1560718582,
+    "title": "Another Sight - Hodge's Journey",
+    "source": "protondb"
+  },
+  {
+    "appId": "963210",
+    "cpu": "Intel Core i5         760  @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Audio volume settings are not respected.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1569069395,
+    "title": "Another Sight - Hodge's Journey",
+    "source": "protondb"
+  }
+]

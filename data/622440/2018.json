@@ -1,0 +1,106 @@
+[
+  {
+    "appId": "622440",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "No menu or game text. Not sure if the problem is missing fonts or a rendering problem. Tried installing MS corefonts. Works fine otherwise, but it's not really playable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540518550,
+    "title": "Pandemic: The Board Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No text displayed on main menu, just blank boxes.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543354808,
+    "title": "Pandemic: The Board Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "Intel Core i7-4810MQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro K2100M",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No text in menus. ",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543434843,
+    "title": "Pandemic: The Board Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The 'no text' can be fixed by adding \"PROTON_NO_D3D11=1 %command%\" (no parentheses) to the game's launch options. I'm not sure if there are other issues (steam reviews mention it being worse than mobile, but haven't played this on windows).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543748330,
+    "title": "Pandemic: The Board Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Worked perfectly after adding \"PROTON_NO_D3D11=1 %command%\" launch option (without quotation marks).",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1543838954,
+    "title": "Pandemic: The Board Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "622440",
+    "cpu": "Intel Core i7-4600U @ 2.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1544738212,
+    "title": "Pandemic: The Board Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

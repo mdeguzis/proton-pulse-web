@@ -1,0 +1,142 @@
+[
+  {
+    "appId": "323060",
+    "title": "Tharsis",
+    "timestamp": 1534961344,
+    "rating": "Platinum",
+    "notes": "Runs without problems",
+    "os": "openSuse Tumbleweed",
+    "gpuDriver": "AMDGPU Mesa 18.1.5",
+    "specs": "R5 2600 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core Processor",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7994 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536863887,
+    "title": "Tharsis",
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.8-1.el7.elrepo.x86_64",
+    "notes": "No problems at all",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "64419 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537307519,
+    "title": "Tharsis",
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.8-1.el7.elrepo.x86_64",
+    "notes": "No issues at all",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "64419 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537309747,
+    "title": "Tharsis",
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537380132,
+    "title": "Tharsis",
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "works with PROTON_USE_WINED3D11=1 %command%",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "11 GB",
+    "rating": "Gold",
+    "timestamp": 1540750854,
+    "title": "Tharsis",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "notes": "works with PROTON_USE_WINED3D11=1 %command%\nRecommended tweaks: Use Wine D3D11 \nAfter using the D3d11-tweak the game runs at all although there are stronger sound distortions from time to time. Those do add atmosphere (\u2026) but it's probably not how it is meant to be?",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1541955628,
+    "title": "Tharsis",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Works fine, aside from some random crackling audio",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1542829830,
+    "title": "Tharsis",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "323060",
+    "title": "Tharsis",
+    "timestamp": 1534946944,
+    "rating": "Platinum",
+    "notes": "Runs without problems",
+    "os": "openSuse Tumbleweed",
+    "gpuDriver": "AMDGPU Mesa 18.1.5",
+    "specs": "R5 2600 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

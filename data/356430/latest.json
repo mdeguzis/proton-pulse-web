@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "356430",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770M",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "It crashed when I changed the resolution on the first try, but worked afterwards. Does not seem to save in default directory - navigate manually to /home and then save.",
+    "os": "Freedesktop.org 18.08.32 (Flatpak runtime)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561744863,
+    "title": "Chris Sawyer's Locomotion\u2122",
+    "source": "protondb"
+  }
+]

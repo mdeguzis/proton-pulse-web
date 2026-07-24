@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "426310",
+    "title": "Perception",
+    "timestamp": 1535414051,
+    "rating": "Silver",
+    "notes": "Performance is good. The audio has a bit of static/choppiness.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700k / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "426310",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Install xact via winetricks and audio stuttering goes away. Good performance.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1540849902,
+    "title": "Perception",
+    "source": "protondb"
+  },
+  {
+    "appId": "426310",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Getting some weird visual issues such as massive lens flare when looking at something that doesn't seem like a light source. Otherwise seems mostly fine.",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "48 GB",
+    "rating": "Silver",
+    "timestamp": 1541749876,
+    "title": "Perception",
+    "source": "protondb"
+  },
+  {
+    "appId": "426310",
+    "title": "Perception",
+    "timestamp": 1535399651,
+    "rating": "Silver",
+    "notes": "Performance is good. The audio has a bit of static/choppiness.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700k / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

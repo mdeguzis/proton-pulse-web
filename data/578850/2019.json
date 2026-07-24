@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "578850",
+    "cpu": "Intel Pentium G3260 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Gallium 0.4 on AMD BONAIRE (DRM 2.49.0 / 4.9.0-8-amd64, LLVM 3.9.1)",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Don't work on Debian 9.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550390956,
+    "title": "64.0",
+    "source": "protondb"
+  },
+  {
+    "appId": "578850",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.1.3",
+    "kernel": "4.19.62-1-MANJARO",
+    "notes": "Fails to launch properly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "3 GB",
+    "rating": "Borked",
+    "timestamp": 1566010468,
+    "title": "64.0",
+    "source": "protondb"
+  },
+  {
+    "appId": "578850",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "No problems whatsoever.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566673183,
+    "title": "64.0",
+    "source": "protondb"
+  }
+]

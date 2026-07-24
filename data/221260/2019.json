@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "221260",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel (git-2e64afa5e3)",
+    "kernel": "4.19.81-1-MANJARO",
+    "notes": "Native port is great but works just as well under Proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575920612,
+    "title": "",
+    "source": "protondb"
+  }
+]

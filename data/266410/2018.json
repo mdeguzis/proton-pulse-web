@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "266410",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-fcfb7f5 2018-12-19 cosmic-oibaf-ppa)",
+    "kernel": "4.17.0-7-generic",
+    "notes": "Starts if using WineD3D. Crashes with DXVK. Doesn't see any controller.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545679663,
+    "title": "iRacing",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "266410",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-fcfb7f5 2018-12-19 cosmic-oibaf-ppa)",
+    "kernel": "4.17.0-7-generic",
+    "notes": "The game launches StartPlayingNow.bat. Modify that to call iRacingService64.exe and then iRacingSim64DX11.exe and it will run with DXVK. Still sees no controller.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545855808,
+    "title": "iRacing",
+    "source": "protondb"
+  }
+]

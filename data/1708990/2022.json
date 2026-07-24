@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1708990",
+    "cpu": "Intel Celeron N4020 @ 2.8000GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 600 (GLK 2)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.2-artix1-1.1",
+    "notes": "(at least in the demo ver)",
+    "os": "Artix Linux",
+    "protonVersion": "7.0-5",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1672203865,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "573600",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.18.0-13-generic",
+    "notes": "It runs quite well, audio works without any hitches. There are occasional graphical artifacts but I only saw them in the menu, they would flicker and then go away. Xbox 360 controller detected instantly. I played the tutorial without any problems. Last time I tried to run it I couldn't even get it to launch, now works perfectly. Great work Proton!",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552046786,
+    "title": "Think of the Children",
+    "source": "protondb"
+  },
+  {
+    "appId": "573600",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Played 4 players with 4 xbox 360 controllers without problems, but couldn't use the controllers in the main menu.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566620074,
+    "title": "Think of the Children",
+    "source": "protondb"
+  }
+]

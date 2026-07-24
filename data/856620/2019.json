@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "856620",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.3.5-050305-generic",
+    "notes": "The game works and the avatars renders fine, preselected avatar preview can render as white squares but that's the only issue I found",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1572175086,
+    "title": "V\u30ab\u30c4 / V-Katsu",
+    "source": "protondb"
+  }
+]

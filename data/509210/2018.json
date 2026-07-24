@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "509210",
+    "title": "Clockwork",
+    "timestamp": 1535325399,
+    "rating": "Borked",
+    "notes": "error.log\nClockwork.exe caused an Access Violation (0xc0000005)\n  in module Clockwork.exe at 0023:0050cac9.\n---\noutput_log.txt\nd3d11: failed to create D3D11 device (0x80004005)",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "509210",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs and plays (seemingly) exactly as on windows. Sounds, music, levels...it's all there (I fear the bugs steam reviewers mentioned as well, but haven't seen any yet). The only thing missing is controllers: these are simply not found, no matter what I do.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541411712,
+    "title": "Clockwork",
+    "source": "protondb"
+  },
+  {
+    "appId": "509210",
+    "title": "Clockwork",
+    "timestamp": 1535310999,
+    "rating": "Borked",
+    "notes": "error.log\nClockwork.exe caused an Access Violation (0xc0000005)\n  in module Clockwork.exe at 0023:0050cac9.\n---\noutput_log.txt\nd3d11: failed to create D3D11 device (0x80004005)",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "359310",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.20.17-042017-generic",
+    "notes": "Game start with wrong resolution and aspect ratio, menu and controller Xbox 360 working, starting a new game there's only a black screen with version info and no way to exit but a system reset.   ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555870515,
+    "title": "Evoland 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "359310",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Starting a new game results in a black screen.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558732586,
+    "title": "Evoland 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "359310",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "game launches at wrong aspect ratio. starting new game results in black screen",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565427060,
+    "title": "Evoland 2",
+    "source": "protondb"
+  }
+]

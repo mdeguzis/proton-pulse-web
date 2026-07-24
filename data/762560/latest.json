@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "762560",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It had some graphical issues, but everything works perfectly when you use Wine D3d11 with the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1552797597,
+    "title": "ManaRocks",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "762560",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "Running perfectly. There was no need to change anything.",
+    "os": "Debian 9.9",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1561372329,
+    "title": "ManaRocks",
+    "source": "protondb"
+  },
+  {
+    "appId": "762560",
+    "cpu": "Intel Core i3-2310M @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "There's a few glitches and it doesn't run nearly as well as a native build would. The biggest issues were stuttering, audio distortion/crackling, and occasional lock-ups. I tried the game on Windows as well, and none of those issues exist, so I have reason to believe that the issues would not be a problem with a native build.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1568530632,
+    "title": "ManaRocks",
+    "source": "protondb"
+  }
+]

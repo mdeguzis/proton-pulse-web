@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "283430",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Running Proton (Wine) to run DOSBOX to run the game...",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16001 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537132607,
+    "title": "Litil Divil",
+    "source": "protondb"
+  },
+  {
+    "appId": "283430",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "DosBox game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540618165,
+    "title": "Litil Divil",
+    "source": "protondb"
+  }
+]

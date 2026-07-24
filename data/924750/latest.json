@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "924750",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.5-2-cachyos",
+    "notes": "Works out of the box, better experience with minor tweaks",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1779025843,
+    "title": "",
+    "source": "protondb"
+  }
+]

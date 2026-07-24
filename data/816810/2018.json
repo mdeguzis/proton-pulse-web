@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "816810",
+    "cpu": "Intel Core i3-3227U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.0-devel (git-d63a133 2018-12-09 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Unity Error",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "10 GB",
+    "rating": "Borked",
+    "timestamp": 1544410180,
+    "title": "Unlight:SchizoChronicle",
+    "source": "protondb"
+  }
+]

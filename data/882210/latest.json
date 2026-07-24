@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "882210",
+    "cpu": "Intel Core i3-4160 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 535.98",
+    "kernel": "6.4.11-200.fc38.x86_64",
+    "notes": "runs perfectly",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1699155222,
+    "title": "",
+    "source": "protondb"
+  }
+]

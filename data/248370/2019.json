@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "248370",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "The game runs but certain objects don't render at all, making gameplay near impossible. D9VK did not help, and neither did disabling anti-aliasing.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1568763361,
+    "title": "Bridge It +",
+    "source": "protondb"
+  }
+]

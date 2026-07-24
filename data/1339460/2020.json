@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1339460",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 20.3.0-devel (git-acf756a 2020-08-14 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-112-generic",
+    "notes": "Unable to load after 2 minutes; 100% GPU; 60% CPU; 1.7 GB of Requested VRAM",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597545430,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1339460",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-56-generic",
+    "notes": "Playable 50-60 FPS with lowest settings",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1608109334,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "342970",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Doesn't use the correct audio device if multiple exist. Either fully playable or completely broken graphics (roughly 50/50 chance each launch).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1559930636,
+    "title": "Pixel Survivors",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "485030",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-2-MANJARO",
+    "notes": "The game just launch to black screen with the background noise and music.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545361035,
+    "title": "PLANET ALPHA",
+    "source": "protondb"
+  }
+]

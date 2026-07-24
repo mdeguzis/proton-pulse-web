@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1957780",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.12-arch1-1",
+    "notes": "There is no native runtime for EasyAntiCheat in the files so it just doesn't work.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685158659,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1957780",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.12-arch1-1",
+    "notes": "Tried launching in OpenXR, OculusXR, and OpenVR. None worked.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685223800,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1957780",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.2.0-33-generic",
+    "notes": "It does have EAC, but the runtime for that installed fine.",
+    "os": "KDE neon 5.27",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1695514784,
+    "title": "",
+    "source": "protondb"
+  }
+]

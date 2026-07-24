@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "216930",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Very nice",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537040941,
+    "title": "Luxor: Amun Rising HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "216930",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541127601,
+    "title": "Luxor: Amun Rising HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "216930",
+    "cpu": "Intel Core i7-6770HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Iris Pro 580 (Skylake GT4e)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541841433,
+    "title": "Luxor: Amun Rising HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "216930",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "everything works",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1544901793,
+    "title": "Luxor: Amun Rising HD",
+    "source": "protondb"
+  }
+]

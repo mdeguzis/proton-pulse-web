@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "622770",
+    "title": "Hacktag",
+    "timestamp": 1535128801,
+    "rating": "Borked",
+    "notes": "Starts and then blackscreen...",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 4690k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "622770",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Works since beta 3.16",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542233551,
+    "title": "Hacktag",
+    "source": "protondb"
+  },
+  {
+    "appId": "622770",
+    "title": "Hacktag",
+    "timestamp": 1535114401,
+    "rating": "Borked",
+    "notes": "Starts and then blackscreen...",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 4690k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

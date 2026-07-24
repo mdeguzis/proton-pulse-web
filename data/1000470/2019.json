@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1000470",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Works with \"PROTON_USE_WINED3D=1 %command%\". The sound is crackling a bit.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567541666,
+    "title": "Drawngeon: Dungeons of Ink and Paper",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2399180",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 17.0.4, DRM 3.56, 6.7.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.4",
+    "kernel": "6.7.0-1-MANJARO",
+    "notes": "pid 8607 != 8606, skipping destruction (fork without exec?)",
+    "os": "CachyOS",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1701619669,
+    "title": "Oh Satan, I gotta hide",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1791080",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.57, 6.8.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.8.0-40-generic",
+    "notes": "Worked without any noticable issues, but couldnt test much, since the early acess version has only 1 level",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1727123935,
+    "title": "Phantom-OS",
+    "source": "protondb"
+  }
+]

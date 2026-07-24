@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2001070",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 16.0.6, DRM 3.57, 6.7.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.2-arch1.1",
+    "kernel": "6.7.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1718096145,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "412740",
+    "title": "Audioshield",
+    "timestamp": 1535222852,
+    "rating": "Borked",
+    "notes": "HTC Vive. Ran, but crashes when opening Steam overlay (which you WILL end up doing because the game volume is so loud!)",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "412740",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.14.72-1-lts",
+    "notes": "This game boots out of the box. It has several issues:\n* There is a slight noticeable amount of audio latency. This is something which is relatively important since this is a rhythm game. Additionally\n* Any interaction with the Steam overlay while this game is running will cause it to freeze.\n* After completing a song, the game freezes\n\nIt is possible to play this game relatively comfortably for 1 song but then it needs to be restarted.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15969 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539247590,
+    "title": "Audioshield",
+    "source": "protondb"
+  },
+  {
+    "appId": "412740",
+    "cpu": "Intel Core i7-5930K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1540566376,
+    "title": "Audioshield",
+    "source": "protondb"
+  },
+  {
+    "appId": "412740",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Hang after song selection.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541272348,
+    "title": "Audioshield",
+    "source": "protondb"
+  },
+  {
+    "appId": "412740",
+    "title": "Audioshield",
+    "timestamp": 1535208452,
+    "rating": "Borked",
+    "notes": "HTC Vive. Ran, but crashes when opening Steam overlay (which you WILL end up doing because the game volume is so loud!)",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

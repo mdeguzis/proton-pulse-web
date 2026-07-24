@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "15520",
+    "title": "AaAaAA!!! - A Reckless Disregard for Gravity",
+    "timestamp": 1535053058,
+    "rating": "Bronze",
+    "notes": "In-game text is often garbled. Sporadic crashes.",
+    "os": "Manjaro Unstable (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2500k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "15520",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10 / DRM 3.23.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works great. Had zero issues.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16034 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537146405,
+    "title": "AaAaAA!!! - A Reckless Disregard for Gravity",
+    "source": "protondb"
+  },
+  {
+    "appId": "15520",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.26.0, 4.18.5-gentoo, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-2c1f249f2b)",
+    "kernel": "4.18.5-gentoo",
+    "notes": "Everything works as expected (steam overlay, gameplay, graphics)",
+    "os": "\"Gentoo Base System release 2.6\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16010 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537514086,
+    "title": "AaAaAA!!! - A Reckless Disregard for Gravity",
+    "source": "protondb"
+  },
+  {
+    "appId": "15520",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 780 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta",
+    "ram": "7974 \u041c\u0411",
+    "rating": "Platinum",
+    "timestamp": 1538126373,
+    "title": "AaAaAA!!! - A Reckless Disregard for Gravity",
+    "source": "protondb"
+  },
+  {
+    "appId": "15520",
+    "title": "AaAaAA!!! - A Reckless Disregard for Gravity",
+    "timestamp": 1535038658,
+    "rating": "Bronze",
+    "notes": "In-game text is often garbled. Sporadic crashes.",
+    "os": "Manjaro Unstable (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2500k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

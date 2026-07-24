@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2874610",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 15.0.6, DRM 3.49, 6.1.0-21-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-21-amd64",
+    "notes": "Wrong executable Path and missing library (UnityPlayer.so)",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-1",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1716116635,
+    "title": "Impractical Spells",
+    "source": "protondb"
+  }
+]

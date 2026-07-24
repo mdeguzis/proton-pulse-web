@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "319480",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "5.0.0-050000-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551714385,
+    "title": "Odallus: The Dark Call",
+    "source": "protondb"
+  },
+  {
+    "appId": "319480",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "Playable from start to finish.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554194132,
+    "title": "Odallus: The Dark Call",
+    "source": "protondb"
+  },
+  {
+    "appId": "319480",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Works great",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1570856144,
+    "title": "Odallus: The Dark Call",
+    "source": "protondb"
+  }
+]

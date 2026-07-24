@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "416320",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Crashes on tabbing in/out and if you try to put it in windowed mode. Basically unplayable.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555099820,
+    "title": "Rescue Team 5",
+    "source": "protondb"
+  }
+]

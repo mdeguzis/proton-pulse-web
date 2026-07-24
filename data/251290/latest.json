@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "251290",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "notes": "[CUTSCENES WORK]\n\nGame mostly works out of the box. First played on the DX9 branch but had moderate frame lag (same as Windows). Switched to DX8 branch and had no more lag. Startup logos and cutscenes work just fine after installing LAVfilters with WINE while specifying the game's prefix. DS4 gamepad works fine as well.\n\nIf not for having to install LAVfilters, it would be platinum.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565234013,
+    "title": "The Legend of Heroes: Trails in the Sky SC",
+    "source": "protondb"
+  },
+  {
+    "appId": "251290",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "In general the game works fine except for videos. Running `protontricks 251290 directshow` & installing K-Lite Codec Pack Basic into the prefix allowed all videos to work. This worked perfectly for 55 hours, until 2 of the final boss fights caused a CTD \"Unhandled exception: page fault\". I moved past these sections by booting into windows. The final piece of gameplay and video worked fine.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1568043653,
+    "title": "The Legend of Heroes: Trails in the Sky SC",
+    "source": "protondb"
+  }
+]

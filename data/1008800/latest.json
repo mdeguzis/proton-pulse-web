@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1008800",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.7-1-default",
+    "notes": "Title screen loads and music plays but then immediately halts with an assertion in a routine relating to shader imports.  Tried the various tweaks concerning d3d11 and was still unsuccessful in moving past the assertion error.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561333756,
+    "title": "Shards of Infinity",
+    "source": "protondb"
+  },
+  {
+    "appId": "1008800",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-1-default",
+    "notes": "Only shows the title screen before stopping with an exception",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569261529,
+    "title": "Shards of Infinity",
+    "source": "protondb"
+  }
+]

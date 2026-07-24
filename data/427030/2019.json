@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "427030",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.15-200.fc29.x86_64",
+    "notes": "First launch, sound but no cutscenes, at the end of the cutscenes close the game, restarted and everything works perfectly.",
+    "os": "Fedora release 29 (Twenty Nine) (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552705940,
+    "title": "\u8ed2\u8f45\u528d\u5916\u50b3\u7a79\u4e4b\u6249(The Gate of Firmament)",
+    "source": "protondb"
+  },
+  {
+    "appId": "427030",
+    "cpu": "Intel Core i7-4820K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Game runs, however no video cutscenes at all (skipped), randomly getting small black rectangles/artifacts moving around on random occasions",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567264140,
+    "title": "\u8ed2\u8f45\u528d\u5916\u50b3\u7a79\u4e4b\u6249(The Gate of Firmament)",
+    "source": "protondb"
+  }
+]

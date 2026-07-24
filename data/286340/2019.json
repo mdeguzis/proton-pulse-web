@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "286340",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-e8cd7a3 2019-06-18 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-17-generic",
+    "notes": "The *native* version.. opens just an options screen and then exits. Cant launch the game.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560977349,
+    "title": "FarSky",
+    "source": "protondb"
+  }
+]

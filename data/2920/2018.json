@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2920",
+    "cpu": "AMD A8-3870 APU with Radeon(tm) HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTS 450/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs perfectly fine out of box with no changes or adjustments necessary. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15515 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539622084,
+    "title": "Sub Command",
+    "source": "protondb"
+  }
+]

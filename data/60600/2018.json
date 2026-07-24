@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "60600",
+    "cpu": "AMD Athlon X4 760K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-11-generic",
+    "notes": "I haven't tested online play, since there are no other players. The game works like expected.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1544027007,
+    "title": "ProtoGalaxy",
+    "source": "protondb"
+  }
+]

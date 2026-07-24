@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "727040",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.9-041509-generic",
+    "notes": "Loaded and started a game and ran through the first handful of puzzles. Performs extremely well, no bugs or visual issues observed.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567457035,
+    "title": "Alucinod",
+    "source": "protondb"
+  }
+]

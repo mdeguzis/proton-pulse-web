@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "880850",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "EAC (Easy anticheat) error",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552491808,
+    "title": "War Rock",
+    "source": "protondb"
+  },
+  {
+    "appId": "880850",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon",
+    "gpuDriver": "4.5.13540 Compatibility Profile Context 18.40.2.15",
+    "kernel": "4.15.0-47-generic",
+    "notes": "EasyAntiCheat init Error!",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555460091,
+    "title": "War Rock",
+    "source": "protondb"
+  },
+  {
+    "appId": "880850",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.7-1-default",
+    "notes": "EasyAntiCheat Init Error! [Don't start]",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560376467,
+    "title": "War Rock",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

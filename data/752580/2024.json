@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "752580",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "Menu g\u0142owne nie reaguje",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1707889888,
+    "title": "",
+    "source": "protondb"
+  }
+]

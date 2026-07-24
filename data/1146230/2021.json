@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1146230",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD PITCAIRN (DRM 2.50.0, 5.4.0-73-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.5 Mesa 21.2.0-devel (git-f285a12 2021-05-31 focal-oibaf-ppa)",
+    "kernel": "5.4.0-73-generic",
+    "notes": "",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "5.0-10",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1622608920,
+    "title": "DungeonTop",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1008580",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R5 M330",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.5-arch1-1",
+    "notes": "Other than the slight mouse input lag, which I think won't be an issue with better hardware, this game runs perfectly with Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-13",
+    "ram": "4 GB",
+    "rating": "silver",
+    "timestamp": 1583584200,
+    "title": "",
+    "source": "protondb"
+  }
+]

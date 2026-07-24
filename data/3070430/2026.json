@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3070430",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.10",
+    "notes": "Anti-Cheat prevents you from playing on Linux",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1781808968,
+    "title": "Nova Era:Atom \ufeff",
+    "source": "protondb"
+  }
+]

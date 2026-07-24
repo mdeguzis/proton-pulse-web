@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "265890",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.8.0-31-generic",
+    "notes": "No problems, it just works",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1721881265,
+    "title": "",
+    "source": "protondb"
+  }
+]

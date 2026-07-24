@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12310",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Cursor freezes in main menu and in game while gameplay. Everything else works fine. No audio issues. I don't use any tweaks. Clean install. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1556226436,
+    "title": "Culpa Innata",
+    "source": "protondb"
+  }
+]

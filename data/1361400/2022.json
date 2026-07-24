@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1361400",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.0-3-amd64",
+    "notes": "Does not work",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-8",
+    "ram": "11 GB",
+    "rating": "borked",
+    "timestamp": 1643933648,
+    "title": "",
+    "source": "protondb"
+  }
+]

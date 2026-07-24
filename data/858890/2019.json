@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "858890",
+    "cpu": "AMD FX-8370E Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.0.0-rc6",
+    "kernel": "4.20.10-gentoo",
+    "notes": "There are some minor issues, but these might as well related to beta status. Most noticeable was problem with mouse, maybe related to some keys like ctrl being stuck after switching workspaces or alt-tabbing.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551911414,
+    "title": "Tropico 6 - Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "858890",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Crashes on startup",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553124442,
+    "title": "Tropico 6 - Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "858890",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.0-trunk-amd64",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553651920,
+    "title": "Tropico 6 - Beta",
+    "source": "protondb"
+  }
+]

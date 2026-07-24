@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "743900",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Launcher now runs but none of the games function. All sit on blacksreen. Assuming emulators are failing. Also had t o alter config file to run game at native resolution  of 1920 x 1080",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543103979,
+    "title": "Mega Man X Legacy Collection 2 / \u30ed\u30c3\u30af\u30de\u30f3X \u30a2\u30cb\u30d0\u30fc\u30b5\u30ea\u30fc \u30b3\u30ec\u30af\u30b7\u30e7\u30f3 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

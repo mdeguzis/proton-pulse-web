@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "882710",
+    "cpu": "Intel Core i7-4790S @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "Game crashes at launch, even when using a 32 bit prefix. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1555792389,
+    "title": "\u6771\u65b9\u5e55\u83ef\u796d TouHou Makuka Sai ~ Fantastic Danmaku Festival",
+    "source": "protondb"
+  },
+  {
+    "appId": "882710",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "Game won't launch at all",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560869177,
+    "title": "\u6771\u65b9\u5e55\u83ef\u796d TouHou Makuka Sai ~ Fantastic Danmaku Festival",
+    "source": "protondb"
+  }
+]

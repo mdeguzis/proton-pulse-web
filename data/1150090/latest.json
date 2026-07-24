@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1150090",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.13.8-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.0.2-arch1.2",
+    "kernel": "6.13.8-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1744940764,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1150090",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.15.11-2-cachyos-hardened-lto",
+    "notes": "Works flawlessly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1761385712,
+    "title": "",
+    "source": "protondb"
+  }
+]

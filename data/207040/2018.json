@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "207040",
+    "title": "Sine Mora",
+    "timestamp": 1535559028,
+    "rating": "Borked",
+    "notes": "Black screen",
+    "os": "Debian 9.4 (Kernel 4.9.0-6-amd64)",
+    "gpuDriver": "NVIDIA 375.82",
+    "specs": "AMD Ryzen 7 2700x / GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207040",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Black screen. You hear sounds, you seem to be able to \"play\" but don't see anything.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16068 MB",
+    "rating": "Borked",
+    "timestamp": 1537444844,
+    "title": "Sine Mora",
+    "source": "protondb"
+  },
+  {
+    "appId": "207040",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Black screen, sound works, button presses seem to work.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541272270,
+    "title": "Sine Mora",
+    "source": "protondb"
+  },
+  {
+    "appId": "207040",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Completely black fullscreen window. Music plays. Can quit with Alt+F4. Disabling Esync has no effect.",
+    "os": "Ubuntu 18.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546108489,
+    "title": "Sine Mora",
+    "source": "protondb"
+  },
+  {
+    "appId": "207040",
+    "title": "Sine Mora",
+    "timestamp": 1535544628,
+    "rating": "Borked",
+    "notes": "Black screen",
+    "os": "Debian 9.4 (Kernel 4.9.0-6-amd64)",
+    "gpuDriver": "NVIDIA 375.82",
+    "specs": "AMD Ryzen 7 2700x / GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

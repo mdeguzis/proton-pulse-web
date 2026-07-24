@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "987650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-200.fc29.x86_64",
+    "notes": "Past problems seem to be resolved, worked perfectly this time.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548770779,
+    "title": "Loria Demo",
+    "source": "protondb"
+  }
+]

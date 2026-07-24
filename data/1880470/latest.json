@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1880470",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.13.7-3-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1742933565,
+    "title": "",
+    "source": "protondb"
+  }
+]

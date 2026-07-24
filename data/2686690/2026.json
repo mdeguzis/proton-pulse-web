@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2686690",
+    "cpu": "AMD Ryzen AI Z2 Extreme",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1150, LLVM 20.1.8, DRM 3.64, 6.16.12-valve9-1-neptune-616-g08f4ce95895f)",
+    "gpuDriver": "4.6 Mesa 25.3.0 (git-59b552c765)",
+    "kernel": "6.16.12-valve9-1-neptune-616-g08f4ce95895f",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1769639533,
+    "title": "",
+    "source": "protondb"
+  }
+]

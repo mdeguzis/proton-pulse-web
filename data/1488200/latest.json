@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1488200",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.18.10-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 25.3.5 - kisak-mesa PPA",
+    "kernel": "6.18.10-x64v3-xanmod1",
+    "notes": "Worked fine out of the box",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1771454572,
+    "title": "",
+    "source": "protondb"
+  }
+]

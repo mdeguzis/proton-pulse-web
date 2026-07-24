@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "80200",
+    "title": "Fate of the World",
+    "timestamp": 1534824000,
+    "rating": "Silver",
+    "notes": "(except some weird leftovers when shutting down/taking a while to exit properly)",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "Intel HD 4000",
+    "specs": "i5 3320",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "80200",
+    "title": "Fate of the World",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "Seems a bit slow to load before the intro / menu but runs perfectly",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX970m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "80200",
+    "title": "Fate of the World",
+    "timestamp": 1535080578,
+    "rating": "Bronze",
+    "notes": "Cloudsave didnt work",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5-4690K/Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "80200",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 670/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.10-200.fc28.x86_64",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7925 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538567204,
+    "title": "Fate of the World",
+    "source": "protondb"
+  },
+  {
+    "appId": "80200",
+    "title": "Fate of the World",
+    "timestamp": 1534809600,
+    "rating": "Silver",
+    "notes": "(except some weird leftovers when shutting down/taking a while to exit properly)",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "Intel HD 4000",
+    "specs": "i5 3320",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "80200",
+    "title": "Fate of the World",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "Seems a bit slow to load before the intro / menu but runs perfectly",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX970m",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "80200",
+    "title": "Fate of the World",
+    "timestamp": 1535066178,
+    "rating": "Bronze",
+    "notes": "Cloudsave didnt work",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5-4690K/Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

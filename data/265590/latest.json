@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "265590",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Played only the first mission yet. No adjustments needed. Everything runs fine",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556046992,
+    "title": "The Red Solstice",
+    "source": "protondb"
+  },
+  {
+    "appId": "265590",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.14.121-1-MANJARO",
+    "notes": "Everything works great, except that occasionally you need to click multiple times to perform an action. Had the same running the windows steam client under WINE, but not running native on Windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.7-8",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1559457504,
+    "title": "The Red Solstice",
+    "source": "protondb"
+  },
+  {
+    "appId": "265590",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Played the first mission (multiplayer), everything works.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570415138,
+    "title": "The Red Solstice",
+    "source": "protondb"
+  }
+]

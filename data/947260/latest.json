@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "947260",
+    "cpu": "NAME=\"Fedora Linux\"",
+    "duration": "underOneHour",
+    "gpu": "lsusb -t",
+    "gpuDriver": "Dev 001, Class=root_hub, Driver=xhci_hcd/1p, 480M",
+    "kernel": "+-02.0  Intel Corporation TigerLake-LP GT2 [Iris Xe Graphics]",
+    "notes": "Funny Game, a little bit outdated but would reccomend",
+    "os": "lspci -tv",
+    "protonVersion": "8.0-5",
+    "ram": "wpctl status",
+    "rating": "platinum",
+    "timestamp": 1779793997,
+    "title": "Bibi Blocksberg \u2122 - Big Broom Race 3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "914480",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "Runs Fine without any tweaks - FPS are lower than expected. https://www.youtube.com/watch?v=_BTNjo5miYg",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15982 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537386706,
+    "title": "Boom Bits",
+    "source": "protondb"
+  }
+]

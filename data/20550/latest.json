@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "20550",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "would only start after graphical settings were set to medium in the launcher, runs really well.  Singleplayer works right the way through with minor mesh glitches on certain enemies near the end levels. Bot matches work with no issues.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1565121510,
+    "title": "Red Faction II",
+    "source": "protondb"
+  }
+]

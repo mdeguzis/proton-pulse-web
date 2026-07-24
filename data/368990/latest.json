@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "368990",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.0-rc3",
+    "kernel": "4.15.0-47-generic",
+    "notes": "The game is launchable, and you can get through the menus out of the box - but the game is unplayable, and crashes almost immediately\n\nDisabling D3d11, and Esync resulted in being able to play a minute of the game before crashing\n\nmodifying in-game settings did not help at all.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555545821,
+    "title": "Despair",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "368990",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Crashes after it is done loading into the game.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557651681,
+    "title": "Despair",
+    "source": "protondb"
+  }
+]

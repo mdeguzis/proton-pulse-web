@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1132190",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.2.8-124.current",
+    "notes": "Doesn't start.",
+    "os": "Solus",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566020961,
+    "title": "Coloring Game: Little City",
+    "source": "protondb"
+  },
+  {
+    "appId": "1132190",
+    "cpu": "AMD FX-8120 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.3.0-10-generic",
+    "notes": "In the Steam console, download the 32bit client: \n==========================================================================================\ndownload_depot 1132190 1132192\n==========================================================================================\nMove the contents from the download location to the \"Coloring Game The Little City\" folder.",
+    "os": "Ubuntu Eoan Ermine (development branch)",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569079706,
+    "title": "Coloring Game: Little City",
+    "source": "protondb"
+  },
+  {
+    "appId": "1132190",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Followed the Tick posted by the other user it works. Playtime:< 1 hour After install, delete the contents of the \"Coloring Game\" folder. Then, open a terminal window and run the following to open the Console: ======================================================================================== steam steam://nav/console ======================================================================================== In the Steam console enter to download the 32bit client: ======================================================================================== download_depot 1026820 1026821 ======================================================================================== Move the contents from the download location to the \"Coloring Game\" folder. Game updates will require downloading the 32bit client again. it will show the location where it downloaded the file. Depot download complete : \"/home/[name]/.local/share/Steam/ubuntu12_32\\steamapps\\content\\app_1026820\\depot_1026821\" (317 files, manifest 3141282991718447382)",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1569624902,
+    "title": "Coloring Game: Little City",
+    "source": "protondb"
+  }
+]

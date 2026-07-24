@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "431960",
+    "title": "Wallpaper Engine",
+    "timestamp": 1536091352,
+    "rating": "Borked",
+    "notes": "Needs Windows Aero. It does unlock the Pest Achievement.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i5-4690K / RX 480 8 GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "431960",
+    "cpu": "i7-8700K CPU @ 5GHz",
+    "gpu": "GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "For obvious reasons(needs windows aero) this probably will never run.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "64352 Mb",
+    "rating": "Borked",
+    "timestamp": 1536953321,
+    "title": "Wallpaper Engine",
+    "source": "protondb"
+  },
+  {
+    "appId": "431960",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.9-92.current",
+    "notes": "Doesn't start; it requires Aero. It probably won't ever run, unless devs finally cave in and port it.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7977 Mb",
+    "rating": "Borked",
+    "timestamp": 1538548884,
+    "title": "Wallpaper Engine",
+    "source": "protondb"
+  },
+  {
+    "appId": "431960",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Wallpaper Engine doesnt run, as it cannot recognize the Windows Aero Service",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544272334,
+    "title": "Wallpaper Engine",
+    "source": "protondb"
+  },
+  {
+    "appId": "431960",
+    "title": "Wallpaper Engine",
+    "timestamp": 1536076952,
+    "rating": "Borked",
+    "notes": "Needs Windows Aero. It does unlock the Pest Achievement.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i5-4690K / RX 480 8 GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

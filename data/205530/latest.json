@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "205530",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game runs but icons for purchasing units are white boxes, makes it difficult to know which units you are looking for at a glance.  As this is a real-time tower defense, speed is of the essence.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1548495123,
+    "title": "Gratuitous Tank Battles",
+    "source": "protondb"
+  },
+  {
+    "appId": "205530",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-16-generic",
+    "notes": "Playble but unit icons to select from are just white squares.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560891191,
+    "title": "Gratuitous Tank Battles",
+    "source": "protondb"
+  }
+]

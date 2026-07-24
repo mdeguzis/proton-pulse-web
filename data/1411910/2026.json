@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1411910",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.13-200.fc43.x86_64",
+    "notes": "Worked out of the box for me with GE proton.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776484810,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "368500",
+    "cpu": "i7-3930K CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "uplay crash on initialization  ",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32109 Mb",
+    "rating": "Borked",
+    "timestamp": 1536786607,
+    "title": "Assassin's Creed\u00ae Syndicate",
+    "source": "protondb"
+  },
+  {
+    "appId": "368500",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The games launches after installing uplay. The menu is working fine, but the game crashes after loading.,",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541509310,
+    "title": "Assassin's Creed\u00ae Syndicate",
+    "source": "protondb"
+  }
+]

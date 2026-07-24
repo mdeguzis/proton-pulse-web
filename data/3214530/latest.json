@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3214530",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.0-14-generic",
+    "notes": "It seems to work fine out of the box so far.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1782480723,
+    "title": "Treasure 'n Trio",
+    "source": "protondb"
+  }
+]

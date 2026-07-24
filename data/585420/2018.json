@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "585420",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-vfio",
+    "notes": "Game plays fine with no tweaks needed, performance the same as running under VFIO (windows VM with a dedicated GPU); player character is only a floating head (and power tool); ingame workshop browsing never loads, but using workshop from Steam client works fine.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541974097,
+    "title": "Trailmakers",
+    "source": "protondb"
+  },
+  {
+    "appId": "585420",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.20.0-rc1-mainline",
+    "notes": "Works great if you disable esync / use Wine D3d11 (you gotta put \"PROTON_NO_ESYNC=1 PROTON_USE_WINED3D11=1 %command%\" into the launch options)",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542632823,
+    "title": "Trailmakers",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

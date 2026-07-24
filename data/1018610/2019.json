@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1018610",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "I use PROTON_USE_D9VK=1 %command%   \nWorks fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567704724,
+    "title": "Dawn Break -Origin-",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

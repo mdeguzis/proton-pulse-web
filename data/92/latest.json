@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "92",
+    "title": "Codename Gordon",
+    "timestamp": 1534976477,
+    "rating": "Borked",
+    "notes": "Starts but the window becomes invisible. Sound plays but no way to switch to the game",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.0",
+    "specs": "i7 6700k / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "92",
+    "title": "Codename Gordon",
+    "timestamp": 1535289157,
+    "rating": "Borked",
+    "notes": "won't start. steam shows the game as running and I can hear the sound, but it doesn't even open a window",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "92",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "\nWhat works\n- Installation\n- Sound\n\nWhat does not\n- There is no video\n- The game is unplayable\n\nJust like the WineHQ entry says: https://appdb.winehq.org/objectManager.php?sClass=version&iId=8791\n\n(To install, simply go to steam://install/92 in your browser and it will prompt you to open the link with Steam.)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1540822266,
+    "title": "Codename Gordon",
+    "source": "protondb"
+  },
+  {
+    "appId": "92",
+    "title": "Codename Gordon",
+    "timestamp": 1534962077,
+    "rating": "Borked",
+    "notes": "Starts but the window becomes invisible. Sound plays but no way to switch to the game",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.0",
+    "specs": "i7 6700k / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "92",
+    "title": "Codename Gordon",
+    "timestamp": 1535274757,
+    "rating": "Borked",
+    "notes": "won't start. steam shows the game as running and I can hear the sound, but it doesn't even open a window",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

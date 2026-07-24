@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "448980",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "Same issue as previous versions of Proton. Game does not seem to detect my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569632947,
+    "title": "The Divergent Series: Allegiant VR",
+    "source": "protondb"
+  }
+]

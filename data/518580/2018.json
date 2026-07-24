@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "518580",
+    "title": "Accounting",
+    "timestamp": 1535221874,
+    "rating": "Borked",
+    "notes": "HTC Vive. Intro plays, but in-game is black screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "518580",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Sometimes seems like crashed, but just long loading times and some minor things are invisible, the game is still perfectly playable.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16005 Mb",
+    "rating": "Silver",
+    "timestamp": 1537802300,
+    "title": "Accounting",
+    "source": "protondb"
+  },
+  {
+    "appId": "518580",
+    "title": "Accounting",
+    "timestamp": 1535207474,
+    "rating": "Borked",
+    "notes": "HTC Vive. Intro plays, but in-game is black screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

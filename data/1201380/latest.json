@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1201380",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.38.0, 5.8.0-7642-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.2",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "Worked great out of the box w/ proton 5.13-6, didn't try other versions. Picked up PS4 controller, getting 144fps, no issues after 2 games",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624748804,
+    "title": "",
+    "source": "protondb"
+  }
+]

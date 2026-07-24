@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "857060",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel (git-2e64afa5e3)",
+    "kernel": "4.19.81-1-MANJARO",
+    "notes": "Game works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1576014149,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "857060",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel (git-3409c06e26)",
+    "kernel": "5.4.3-arch1-1",
+    "notes": "Works great, choke framerate to save your GPU",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-10",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1576457485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "857060",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD RX 5700XT 8GB",
+    "gpuDriver": "4.5 Mesa 19.3.1",
+    "kernel": "5.4.4-arch1-1",
+    "notes": "Works out of the box, recommend locking to refresh rate with custom dxvk.conf file",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1576965033,
+    "title": "",
+    "source": "protondb"
+  }
+]

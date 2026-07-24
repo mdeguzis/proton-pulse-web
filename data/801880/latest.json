@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "801880",
+    "cpu": "Intel Core i3-4170 @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Works great out of the box with DXVK and E-Sync OFF.",
+    "os": "Linux (64  \u0431\u0438\u0442\u0430)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561707434,
+    "title": "Drift Tuner 2019",
+    "source": "protondb"
+  }
+]

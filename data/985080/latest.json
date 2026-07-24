@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "985080",
+    "cpu": "Intel Core i7-7820HK @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.0-6.4-liquorix-amd64",
+    "notes": "can not display CJK fonts",
+    "os": "Debian GNU/Linux 10 (buster)\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "4.2-6",
+    "ram": "15998Mb",
+    "rating": "Bronze",
+    "timestamp": 1560165873,
+    "title": "\u98df\u7528\u7cfb\u5c11\u5973 Food Girls",
+    "source": "protondb"
+  }
+]

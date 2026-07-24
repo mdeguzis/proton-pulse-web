@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "212110",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Game starts fine but crashes once the first level is selected",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16001 Mb",
+    "rating": "Borked",
+    "timestamp": 1536875776,
+    "title": "Sugar Cube: Bittersweet Factory",
+    "source": "protondb"
+  }
+]

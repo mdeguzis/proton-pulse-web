@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "695960",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.1, DRM 3.57, 6.8.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-56-generic",
+    "notes": "Game breaking bug within the first 10 minutes of gameplay renders game unplayable",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1743561734,
+    "title": "Awakening: The Goblin Kingdom Collector's Edition",
+    "source": "protondb"
+  }
+]

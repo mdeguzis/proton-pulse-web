@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "527190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Installing does not download any files. Works fine with steam for Wine.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta, 3.7-3",
+    "ram": "7975 Mb",
+    "rating": "Borked",
+    "timestamp": 1536546880,
+    "title": "WORLD END ECONOMiCA episode.03",
+    "source": "protondb"
+  },
+  {
+    "appId": "527190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Will not install. The convoluted work around is to install on wine then copy the directory to your native Linux steam install but that's really dumb. ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta, 3.7-3",
+    "ram": "7975 Mb",
+    "rating": "Gold",
+    "timestamp": 1536547297,
+    "title": "WORLD END ECONOMiCA episode.03",
+    "source": "protondb"
+  }
+]

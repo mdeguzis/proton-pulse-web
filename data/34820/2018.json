@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "34820",
+    "title": "Combat Wings: Battle of Britain",
+    "timestamp": 1535032018,
+    "rating": "Borked",
+    "notes": "combat wings-battle of britain critical error: font not found in system fonts (arial.ttf)",
+    "os": "lubuntu 18.04 celeron n2600 2gb ram ",
+    "gpuDriver": "standard on cpu",
+    "specs": "atom n2600 4x1.6 ghtz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34820",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-lowlatency",
+    "notes": "Game runs fine after using winetricks to install the corefonts that it requires\nhttps://github.com/Sirmentio/protontricks - this tool will help to install - just get the gameid folder then do a\nprotontricks 34820 corefonts - on a terminal on your linux host\nIntro screen doesnt show but music comes out then main menu appears",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6-beta",
+    "ram": "24034 Mb",
+    "rating": "Gold",
+    "timestamp": 1537007022,
+    "title": "Combat Wings: Battle of Britain",
+    "source": "protondb"
+  },
+  {
+    "appId": "34820",
+    "cpu": "AMD FX-8370 Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "As other user explained, install wine+winetricks and then install corefonts using tool from github. It take some time to finish installation in terminal. Game will run with black screen and music. After intro is completed, main menu will pop up and game runs just fine. XBOX 360 wireless controller is recognized, but maneuvering is awkward as aiming reticule is jumping around too fast. Playing with mouse is a way to go.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "15988 Mb",
+    "rating": "Gold",
+    "timestamp": 1540013767,
+    "title": "Combat Wings: Battle of Britain",
+    "source": "protondb"
+  },
+  {
+    "appId": "34820",
+    "title": "Combat Wings: Battle of Britain",
+    "timestamp": 1535017618,
+    "rating": "Borked",
+    "notes": "combat wings-battle of britain critical error: font not found in system fonts (arial.ttf)",
+    "os": "lubuntu 18.04 celeron n2600 2gb ram ",
+    "gpuDriver": "standard on cpu",
+    "specs": "atom n2600 4x1.6 ghtz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

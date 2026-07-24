@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1045080",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Runs with no compatibility issues and performance is on par with Windows. I experienced a crash when exiting the game, but I also experienced this on Windows so it appears to be expected behavior.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556368250,
+    "title": "Curious Cases",
+    "source": "protondb"
+  }
+]

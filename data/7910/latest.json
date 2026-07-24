@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "7910",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Game won't start as it is missing a \"Windows Media Component\".",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562358453,
+    "title": "The Movies: Stunts and Effects ",
+    "source": "protondb"
+  }
+]

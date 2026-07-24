@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1955110",
+    "cpu": "AMD Ryzen 9 5900HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.12-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "39 GB",
+    "rating": "gold",
+    "timestamp": 1767394334,
+    "title": "",
+    "source": "protondb"
+  }
+]

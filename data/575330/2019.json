@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "575330",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Disable Esync, then it runs perfectly. No longer crashes on exit. Steam overlay enabled. Properly renders ultrawide resolution in fullscreen (image is not stretched)",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547422444,
+    "title": "Oh...Sir! The Hollywood Roast",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

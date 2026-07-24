@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "569770",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.13.2-180-tkg-bmq",
+    "notes": "Ran fine with a quick test",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1630362521,
+    "title": "StarShip Constructor",
+    "source": "protondb"
+  }
+]

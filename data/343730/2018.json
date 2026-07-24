@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "343730",
+    "title": "Irrational Exuberance: Prologue",
+    "timestamp": 1535224717,
+    "rating": "Platinum",
+    "notes": "HTC Vive. No issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "343730",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Minor performance issues when many objects are visible. Tested with a Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545166674,
+    "title": "Irrational Exuberance: Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "343730",
+    "title": "Irrational Exuberance: Prologue",
+    "timestamp": 1535210317,
+    "rating": "Platinum",
+    "notes": "HTC Vive. No issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

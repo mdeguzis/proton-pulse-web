@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "356820",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.3.0-7642-generic",
+    "notes": "First time the game booted with a dark screen with just audio. Closed it out and ran it again and it worked perfectly.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-4",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1584500091,
+    "title": "",
+    "source": "protondb"
+  }
+]

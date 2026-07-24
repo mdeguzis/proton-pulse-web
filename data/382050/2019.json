@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "382050",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.14.65-gentoo",
+    "notes": "No tweaks, no issues.  Played first couple battles.  Works great out of the box.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1547680748,
+    "title": "Eon Altar",
+    "source": "protondb"
+  },
+  {
+    "appId": "382050",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Only a short test, but everything seems to work flawlessly out of the box.",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549626010,
+    "title": "Eon Altar",
+    "source": "protondb"
+  },
+  {
+    "appId": "382050",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.9",
+    "os": "Sabayon Linux 19.05",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557935068,
+    "title": "Eon Altar",
+    "source": "protondb"
+  }
+]

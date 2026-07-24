@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "640590",
+    "title": "The LEGO\u00ae NINJAGO\u00ae Movie Video Game",
+    "timestamp": 1536159170,
+    "rating": "Bronze",
+    "notes": "Sound Problem better after PROTON_NO_ESYNC=1 %command%, but crashes after the first flight. Play smothly with 2k Resolution",
+    "os": "Debian 4.17.0-3-amd64",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7 2700K, GTX 1070 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "640590",
+    "title": "The LEGO\u00ae NINJAGO\u00ae Movie Video Game",
+    "timestamp": 1536144770,
+    "rating": "Bronze",
+    "notes": "Sound Problem better after PROTON_NO_ESYNC=1 %command%, but crashes after the first flight. Play smothly with 2k Resolution",
+    "os": "Debian 4.17.0-3-amd64",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7 2700K, GTX 1070 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

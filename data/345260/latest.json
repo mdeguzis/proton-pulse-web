@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "345260",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.8.0-53-generic",
+    "notes": "Launcher works, but only displays a white box. Clicking in the correct part of the launcher (the left upper side) will launch the game, and the campaign map, menus, music/sound, and cinematics work without issue. The battle map is however completely broken; units and the cursor are invisible, buttons are templates. Only playable if auto resolving battles.",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1548043865,
+    "title": "Medieval: Total War\u2122 - Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "345260",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel (git-829f278 2019-04-18 bionic-oibaf-ppa)",
+    "kernel": "4.18.0-17-generic",
+    "notes": "You need change your game version, go to properties of the game -> Betas and choose  the \"previous_version\" . With this you can run battle mode without problem.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555632123,
+    "title": "Medieval: Total War\u2122 - Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "345260",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Go into game properties and set it to betas \"previous_version\" otherwise game GUI wont work and units don't render",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569675743,
+    "title": "Medieval: Total War\u2122 - Collection",
+    "source": "protondb"
+  }
+]

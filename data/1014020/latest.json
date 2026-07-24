@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1014020",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.4-arch1-1-ARCH",
+    "notes": "The game does not launch at all using the latest version and older versions of Proton",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564585827,
+    "title": "Successor of the Moon",
+    "source": "protondb"
+  }
+]

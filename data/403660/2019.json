@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "403660",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "5.3.0-22-generic",
+    "notes": "Needs you to install java... IN. PROTON.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577525318,
+    "title": "",
+    "source": "protondb"
+  }
+]

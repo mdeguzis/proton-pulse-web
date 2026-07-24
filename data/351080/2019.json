@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "351080",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works, only issue experienced is it will crash if alt tabbing to a different window.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549628084,
+    "title": "The Corporate Machine",
+    "source": "protondb"
+  }
+]

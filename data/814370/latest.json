@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "814370",
+    "cpu": "Intel Core i7-3517U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Second demo version of the game is displaying an error message and doesn't start at all: \"Failed to initialize graphics. Make sure you have DirectX 11 installed, have up to date drivers for your graphics card and have not disabled 3D acceleration in display settings. InitializeEngineGraphics failed\"",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "9 GB",
+    "rating": "Borked",
+    "timestamp": 1540376609,
+    "title": "Monster Sanctuary",
+    "source": "protondb"
+  }
+]

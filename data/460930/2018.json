@@ -1,0 +1,78 @@
+[
+  {
+    "appId": "460930",
+    "title": "Tom Clancy's Ghost Recon\u00ae Wildlands",
+    "timestamp": 1535313693,
+    "rating": "Borked",
+    "notes": "Error: \"Uplay has detected an unrecoverable error and must shutdown.\nCrash dump crated at \"C:/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/crashes\".",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8750H/ GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460930",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.14-202.fc28.x86_64",
+    "notes": "Uplay has detected an unrecoverable error and must shutdown. Crash dump created at \".... path here ....\"",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15982 Mb",
+    "rating": "Borked",
+    "timestamp": 1537664437,
+    "title": "Tom Clancy's Ghost Recon\u00ae Wildlands",
+    "source": "protondb"
+  },
+  {
+    "appId": "460930",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Installed the game and then I've the error \"uplay has detected an unrecoverable error and must shut down\"",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1545757688,
+    "title": "Tom Clancy's Ghost Recon\u00ae Wildlands",
+    "source": "protondb"
+  },
+  {
+    "appId": "460930",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.5",
+    "kernel": "4.14.78-gentoo",
+    "notes": "Uplay has detected an unrecoverable error and must shutdown.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546018234,
+    "title": "Tom Clancy's Ghost Recon\u00ae Wildlands",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "460930",
+    "title": "Tom Clancy's Ghost Recon\u00ae Wildlands",
+    "timestamp": 1535299293,
+    "rating": "Borked",
+    "notes": "Error: \"Uplay has detected an unrecoverable error and must shutdown.\nCrash dump crated at \"C:/Program Files (x86)/Ubisoft/Ubisoft Game Launcher/crashes\".",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-8750H/ GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

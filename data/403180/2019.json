@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "403180",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1547268642,
+    "title": "Draw a Stickman: EPIC 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "403180",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.10-111.current",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551839942,
+    "title": "Draw a Stickman: EPIC 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "403180",
+    "cpu": "GenuineIntel",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works great. Nothing special done. Just install and play.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555910834,
+    "title": "Draw a Stickman: EPIC 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1490410",
+    "cpu": "Intel Xeon E5-2697A v4 @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "5.15.88-gentoo",
+    "notes": "I tried this with regular Proton 7.0.4 and GE-Proton7-48, both with the `Game.exe` from Steam and the `Game.exe` produced by the 1.1 update patch.\n\nIn all cases, the game takes several minutes to load, spawns 5 `Game.exe` processes (of which 2 disappear after a while), but then only displays an empty black window.",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-6",
+    "ram": "128 GB",
+    "rating": "borked",
+    "timestamp": 1678956985,
+    "title": "",
+    "source": "protondb"
+  }
+]

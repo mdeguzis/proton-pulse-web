@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "251510",
+    "cpu": "AMD Ryzen 5 5600U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 15.0.7, DRM 3.52, 6.3.7-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.0 (git-706ac1d0b9)",
+    "kernel": "6.3.7-zen1-1-zen",
+    "notes": "All possible trick and proton version, GE proton tested, impossible to launch the game.\nIt crash with pop up:\n\nSystem.NullReferenceException: Object reference not\n\nset to an instance of an object\n\nat Microsoft.Xna. Framework.Game.Run() (0x00011] in <2c8c056137044c3e8860d4baa8b94805>:0 at ConstantCP.Program.Main (System.String[] args)",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1709626554,
+    "title": "",
+    "source": "protondb"
+  }
+]

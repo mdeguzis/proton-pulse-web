@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "241720",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.2.0-4.1-liquorix-amd64",
+    "notes": "Game installs, wont run, and an error popped up saying \"GunCraft art or sound assets appear to be corrupted. Please uninstall and reinstall the game.\"",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564438686,
+    "title": "Guncraft",
+    "source": "protondb"
+  }
+]

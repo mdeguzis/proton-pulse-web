@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "689160",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game seems to crash fairly frequently but I am not sure if that's due to the OS or the game itself. When it runs thought, it runs without any issues. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563744294,
+    "title": "Eruption",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "342620",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-54-generic",
+    "notes": "broken model of main hero",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1563180568,
+    "title": "It came from space, and ate our brains",
+    "source": "protondb"
+  }
+]

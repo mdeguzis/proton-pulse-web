@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "580720",
+    "cpu": "Intel Core i7       Q 740  @ 1.73GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTS 350M",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Got a pop-up saying: \"The game crashed. The crash report folder named \"2018-12-12_124348\" next to game executable. It would be great if you'd send it to the developer of the game!\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544618376,
+    "title": "Carrier Deck",
+    "source": "protondb"
+  }
+]

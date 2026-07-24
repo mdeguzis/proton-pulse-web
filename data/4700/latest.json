@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "4700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game works native and on Proton out of the box. I installed manually D9VK , but actually there is just a black screen on launch.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557178527,
+    "title": "Total War: MEDIEVAL II \u2013 Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "4700",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-MANJARO",
+    "notes": "Running it through proton seems to increase the performance quite a bit. Load times are faster and I'm seeing a 60+ fps boost.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565707605,
+    "title": "Total War: MEDIEVAL II \u2013 Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "4700",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "4.5 Mesa 19.1.7",
+    "kernel": "5.3.0-arch1-1-ARCH",
+    "notes": "The game runs flawlessly out of the box with Proton. The performance is actually much better when compared to the native version (smooth 60fps on most battles).\nThe only issues I noticed were some loading screens having no image (black background) and a campaign map lag when moving around.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569087643,
+    "title": "Total War: MEDIEVAL II \u2013 Definitive Edition",
+    "source": "protondb"
+  }
+]

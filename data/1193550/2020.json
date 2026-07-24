@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1193550",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.5-arch1-1",
+    "notes": "Does not start. Installing dotnet48 with winetricks opens a window, but still displays nothing",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593005958,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1193550",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.16-200.fc31.x86_64",
+    "notes": "Opens a black window after installing dotnet48 via protontricks.",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-9",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1593290567,
+    "title": "",
+    "source": "protondb"
+  }
+]

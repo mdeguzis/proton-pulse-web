@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "324160",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "The game is perfectly playable but the OP cinematic does not play. If Windows Media Player is selected the game will either throw a cryptic error or crash. If DirectShow or MCI are selected the game will just throw a cryptic error and continue running normally. Contrary to other reports, the only cinematic in the entire game is the OP so it's not that important, even if you've never played it. Also the cinematic is not encrypted so you can just dig through the game files and watch it with an ordinary media player if you want.",
+    "os": "Antergos Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1557260248,
+    "title": "CLANNAD",
+    "source": "protondb"
+  },
+  {
+    "appId": "324160",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557714598,
+    "title": "CLANNAD",
+    "source": "protondb"
+  },
+  {
+    "appId": "324160",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "ATI Technologies Inc. Radeon RX 590",
+    "gpuDriver": "4.6.13564 Compatibility Profile Context 5.0.19.20.7",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Don't let the \"silver rating\" disappoint you.\n\nIt's silver just because the opening cinematic doesn't play.\n\nAs the other report said; that is the only cinematic in the game, so you are not loosing anything.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565755869,
+    "title": "CLANNAD",
+    "source": "protondb"
+  }
+]

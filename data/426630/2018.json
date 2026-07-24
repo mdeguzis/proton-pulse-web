@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "426630",
+    "cpu": "Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It works, but the audio sounds overblown, probably a mux issue",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5928 Mb",
+    "rating": "Silver",
+    "timestamp": 1537285353,
+    "title": "Bubsy Two-Fur",
+    "source": "protondb"
+  },
+  {
+    "appId": "426630",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-96.current",
+    "notes": "It works... sadly.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541736538,
+    "title": "Bubsy Two-Fur",
+    "source": "protondb"
+  },
+  {
+    "appId": "426630",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-b55af392d9)",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Works well, music is too loud compared to the normal sounds",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542040956,
+    "title": "Bubsy Two-Fur",
+    "source": "protondb"
+  }
+]

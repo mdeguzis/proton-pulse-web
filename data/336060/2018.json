@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "336060",
+    "title": "Raptor: Call of the Shadows (1994 Classic Edition)",
+    "timestamp": 1535421529,
+    "rating": "Borked",
+    "notes": "Fails silently, error in log: err:module:LdrInitializeThunk Main exe initialization for L\"Z:\\\\home\\\\user\\\\.local\\\\share\\\\Steam\\\\steamapps\\\\common\\\\Raptor Call of The Shadows - 2015 Edition\\\\Raptor.exe\" failed, stat$\n",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD A10-5800K / GTX 660 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "336060",
+    "title": "Raptor: Call of the Shadows (1994 Classic Edition)",
+    "timestamp": 1535431936,
+    "rating": "Bronze",
+    "notes": "You need to skip the launcher by starting it like this:\nuser@computer:~/.steam/steam/steamapps/common/Raptor Call of The Shadows - 2015 Edition$ WINEPREFIX=\"/home/user/.local/share/Steam/steamapps/compatdata/336060/pfx\" wine64 ./rapwin.exe\n\nIt works, but only windowed (640x480) and without audio.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD A10-5800K / GTX 660 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "336060",
+    "title": "Raptor: Call of the Shadows (1994 Classic Edition)",
+    "timestamp": 1535407129,
+    "rating": "Borked",
+    "notes": "Fails silently, error in log: err:module:LdrInitializeThunk Main exe initialization for L\"Z:\\\\home\\\\user\\\\.local\\\\share\\\\Steam\\\\steamapps\\\\common\\\\Raptor Call of The Shadows - 2015 Edition\\\\Raptor.exe\" failed, stat$\n",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD A10-5800K / GTX 660 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "336060",
+    "title": "Raptor: Call of the Shadows (1994 Classic Edition)",
+    "timestamp": 1535417536,
+    "rating": "Bronze",
+    "notes": "You need to skip the launcher by starting it like this:\nuser@computer:~/.steam/steam/steamapps/common/Raptor Call of The Shadows - 2015 Edition$ WINEPREFIX=\"/home/user/.local/share/Steam/steamapps/compatdata/336060/pfx\" wine64 ./rapwin.exe\n\nIt works, but only windowed (640x480) and without audio.",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD A10-5800K / GTX 660 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

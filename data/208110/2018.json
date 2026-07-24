@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "208110",
+    "cpu": "i7-8750H CPU @ 2.20GHz",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Most of the game was not tested, but what was tested worked perfectly. I strongly recommend increasing the resolution in the settings.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15888 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536665811,
+    "title": "Myst V",
+    "source": "protondb"
+  },
+  {
+    "appId": "208110",
+    "cpu": "i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-kabylake",
+    "notes": "nice",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "7911 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537089475,
+    "title": "Myst V",
+    "source": "protondb"
+  },
+  {
+    "appId": "208110",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro M1000M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Tested with multiple versions of Proton; only 3.7-8 Beta actually runs past the intro/logo clips. Gameplay seems fine, until reaching the first scripted animation sequence, involving the first character seen face-to-face in the game (guessing Yeesha). At this point, while the character is rendered and the camera pans around as though following a moving target and the music rises and falls seemingly to fit words being spoken at each corresponding point in the script, the character itself doesn't actually move and the voiceover doesn't play. Additionally, the controls are disabled at the start of this sequence, and never reactivate after. Thus, the game is unplayable at this point.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541895498,
+    "title": "Myst V: End of Ages",
+    "source": "protondb"
+  }
+]

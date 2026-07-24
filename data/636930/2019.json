@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "636930",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.4-1-MANJARO",
+    "notes": "Game \"runs\". It renders and all, but is incredibly slow and does not appear in my headset. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564710417,
+    "title": "Soundscape VR",
+    "source": "protondb"
+  }
+]

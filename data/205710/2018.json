@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "205710",
+    "cpu": "AMD A10-4600M APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "notes": "Launcher will not start",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Everquest \u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "205710",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.15-1-MANJARO",
+    "notes": "To work the game requires d3dx9_43. Load times are abysmal (in fact so abysmal that I got a connection timeout before I could finish loading), and so is performance (at least on my high res screen). Supposedly the game also requires wmi to work which is only supported on 32-bit prefixes, and therefore not in proton.\n\nMy first attempt to launch the game also failed, but the launcher worked the second time. I was using native runtimes instead of steams which may have had an impact on this.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541134164,
+    "title": "Everquest \u00ae",
+    "source": "protondb"
+  }
+]

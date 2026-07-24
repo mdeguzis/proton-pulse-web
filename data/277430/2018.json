@@ -1,0 +1,91 @@
+[
+  {
+    "appId": "277430",
+    "title": "Halo: Spartan Assault",
+    "timestamp": 1535056924,
+    "rating": "Platinum",
+    "notes": "Works really well. No issues noticed so far.",
+    "os": "Arch Linux (Kernel 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.19.0, 4.14.65-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.14.65-1-MANJARO",
+    "notes": "Played Mission 3-5, not a single problem!",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16058 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537577534,
+    "title": "Halo: Spartan Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "cpu": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32080 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538606008,
+    "title": "Halo: Spartan Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "cpu": "Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.10-zen1-1-zen",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7932 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538823604,
+    "title": "Halo: Spartan Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "cpu": "Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.23.0, 4.15.0-36-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "https://www.youtube.com/watch?v=fsCi1yIkRvs",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15996 Mb",
+    "rating": "Gold",
+    "systemInfoNotes": "Ubuntu MATE 18.04.1 LTS",
+    "timestamp": 1538884984,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Halo: Spartan Assault",
+    "source": "protondb"
+  },
+  {
+    "appId": "277430",
+    "title": "Halo: Spartan Assault",
+    "timestamp": 1535042524,
+    "rating": "Platinum",
+    "notes": "Works really well. No issues noticed so far.",
+    "os": "Arch Linux (Kernel 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

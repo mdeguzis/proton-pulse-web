@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "3350",
+    "title": "Bejeweled 2 Deluxe",
+    "timestamp": 1535476425,
+    "rating": "Platinum",
+    "notes": "Runs great",
+    "os": "Angtergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6800K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3350",
+    "title": "Bejewled Deluxe",
+    "timestamp": 1535301783,
+    "rating": "Platinum",
+    "notes": "Performance is fine - no bugs",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "3350",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.26.0, 4.18.5-gentoo, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-2c1f249f2b)",
+    "kernel": "4.18.5-gentoo",
+    "notes": "Works as expected (Steam Overlay, Gameplay, Graphics)",
+    "os": "\"Gentoo Base System release 2.6\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16010 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537514869,
+    "title": "Bejeweled Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3350",
+    "cpu": "Intel(R) Atom(TM) CPU  330   @ 1.60GHz",
+    "gpu": "NVIDIA Corporation ION/integrated/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Using Alt+Tab and Super key causes the game to freeze. Otherwise the game is perfectly playable using all modes with 100% performance in full screen and window mode on a 2010 Intel Atom CPU. Given the above, there are no graphical or audio issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "2749 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537652510,
+    "title": "Bejeweled Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3350",
+    "title": "Bejeweled 2 Deluxe",
+    "timestamp": 1535462025,
+    "rating": "Platinum",
+    "notes": "Runs great",
+    "os": "Angtergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6800K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "3350",
+    "title": "Bejewled Deluxe",
+    "timestamp": 1535287383,
+    "rating": "Platinum",
+    "notes": "Performance is fine - no bugs",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

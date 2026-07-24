@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "678800",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.15.0-43-generic",
+    "notes": "crashes after clicking on PLAY",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547686355,
+    "title": "SAS: Zombie Assault 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "678800",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Works perfectly now. Played the first two levels ",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553786232,
+    "title": "SAS: Zombie Assault 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "678800",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "The Game performs good and runs very smooth. The only Problem I've encountered is, that the Game just randomly crashes after some little time of playing. \nNote: The Game will not work properly with older Proton Versions which are below 4.2-2.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1554628575,
+    "title": "SAS: Zombie Assault 4",
+    "source": "protondb"
+  }
+]

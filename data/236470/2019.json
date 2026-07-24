@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "236470",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I found no issues.  The main menu functions correctly.  I played a full game of Pac-Man through 4 or 5 levels.  Then I played a minute of so of Ms Pac-Man.  I reviewed my earned badges and leaderboards.  Everything worked perfectly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548653560,
+    "title": "PAC-MAN MUSEUM\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "236470",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.1.5-050105-generic",
+    "notes": "Runs perfectly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558955948,
+    "title": "PAC-MAN MUSEUM\u2122",
+    "source": "protondb"
+  }
+]

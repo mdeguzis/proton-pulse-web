@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "788630",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 13.0.0, DRM 3.41, 5.13.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1 - kisak-mesa PPA",
+    "kernel": "5.13.0-40-generic",
+    "notes": "Overall good experience.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1651382546,
+    "title": "",
+    "source": "protondb"
+  }
+]

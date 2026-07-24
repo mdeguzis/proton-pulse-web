@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1420300",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.18.9-2-cachyos",
+    "notes": "No issues whatsoever if you include launch options",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1771052431,
+    "title": "No More Heroes 2: Desperate Struggle",
+    "source": "protondb"
+  }
+]

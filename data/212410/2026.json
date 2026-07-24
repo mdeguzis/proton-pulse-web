@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "212410",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.18.9-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771263551,
+    "title": "Inversion\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "934410",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD ICELAND",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-6da0647 2020-06-25 focal-oibaf-ppa)",
+    "kernel": "5.4.0-39-generic",
+    "notes": "If your rig is powerful enough, you won't have any problem I believe.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1596573128,
+    "title": "ReThink 2",
+    "source": "protondb"
+  }
+]

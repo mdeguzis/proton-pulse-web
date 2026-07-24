@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3077190",
+    "cpu": "13th Gen Intel Core i5-1335U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-U)",
+    "gpuDriver": "4.6 Mesa 24.2.5 (git-3b9fcb7e4d)",
+    "kernel": "6.1.0-26-amd64",
+    "notes": "Parfait",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1729786395,
+    "title": "",
+    "source": "protondb"
+  }
+]

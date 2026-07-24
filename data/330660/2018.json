@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "330660",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.0-1-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Fails by default, works with PROTON_USE_WINED3D11. Has some issues with the UI, but I found it buggy on MacOS, so may not be related.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "16054 Mb",
+    "rating": "Silver",
+    "timestamp": 1536915317,
+    "title": "Luna's Wandering Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "330660",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Gold",
+    "timestamp": 1539832973,
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "title": "Luna's Wandering Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "330660",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Plays perfectly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542488516,
+    "title": "Luna's Wandering Stars",
+    "source": "protondb"
+  }
+]

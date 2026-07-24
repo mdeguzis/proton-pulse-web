@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "313980",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.6-arch1-1",
+    "notes": "Pain",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1686762587,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "496690",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "It runs, but barely. There's a fractional pause every time a key is pressed, making the game very awkward and difficult to play. Plus it crashes when you quit.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554769106,
+    "title": "Adventures On The Polluted Islands",
+    "source": "protondb"
+  }
+]

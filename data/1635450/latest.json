@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1635450",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-8-generic",
+    "notes": "Runs on Linux, but heavy engine scripting, anti-cheat, and performance issues make it hard to recommend based on my experience.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1766605454,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "644570",
+    "title": "Material Girl",
+    "timestamp": 1535250526,
+    "rating": "Borked",
+    "notes": "Starts a Wine window that stays black and doesn't respond, after force quiting the game is still shown as running on the steam library, need to kill explorer.exe and game.exe from system monitor for it to fully quit.",
+    "os": "Linux Mint Cinnamon 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Radeon R7",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "644570",
+    "title": "Material Girl",
+    "timestamp": 1535236126,
+    "rating": "Borked",
+    "notes": "Starts a Wine window that stays black and doesn't respond, after force quiting the game is still shown as running on the steam library, need to kill explorer.exe and game.exe from system monitor for it to fully quit.",
+    "os": "Linux Mint Cinnamon 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Radeon R7",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

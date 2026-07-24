@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1007540",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 17.0.7",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Without any setting it crashes with \"Failed to initialize graphics. Make sure you have DirectX 11 installed\" but it works once that \"PROTON_USE_WINED3D=1 %command%\" is set in Launch Options. It then manages to overheat on my setup before I get into the battle,  even on the lowest graphic level, so I haven't seen the game itself.",
+    "os": "Ubuntu 16.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1562789899,
+    "title": "TankDestruction",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

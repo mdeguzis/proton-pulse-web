@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1035850",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "The actual game levels seem to work great with no issues, but the cinematics are just a black screen for me (hold space to skip)",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558915685,
+    "title": "Balancelot",
+    "source": "protondb"
+  }
+]

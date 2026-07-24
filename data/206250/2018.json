@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "206250",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Pops open a tiny window and then promptly crashes. None of the 3 tweaks changes anything.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541968173,
+    "title": "Cladun X2 / \u30af\u30e9\u30b7\u30c3\u30af\u30c0\u30f3\u30b8\u30e7\u30f3X2",
+    "source": "protondb"
+  }
+]

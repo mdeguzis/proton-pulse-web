@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "601770",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-7417b43211)",
+    "kernel": "5.1.18-1-ck-haswell",
+    "notes": "I was able to play, talk to others, etc. It all worked",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1563507358,
+    "title": "Sparc",
+    "source": "protondb"
+  }
+]

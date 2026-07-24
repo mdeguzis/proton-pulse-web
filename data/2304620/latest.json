@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2304620",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "590.48.01",
+    "kernel": "6.18.7-2-cachyos",
+    "notes": "Would not get pasted the menu that states game uses your microphone, could not click continue button.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1769492859,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2304620",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.18.0-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2",
+    "kernel": "6.18.0-cachyos",
+    "notes": "",
+    "os": "NixOS 26.05 (Yarara) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1775076913,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2304620",
+    "cpu": "Intel Core i9-14900KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.3-1-cachyos",
+    "notes": "Worked out of box no problems",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1778451089,
+    "title": "",
+    "source": "protondb"
+  }
+]

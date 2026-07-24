@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "798510",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-16-generic",
+    "notes": "When I try to run it, it runs about a second and then it closes.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2",
+    "protonVersionManual": "4.2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554597612,
+    "title": "SUPER DRAGON BALL HEROES WORLD MISSION",
+    "source": "protondb"
+  },
+  {
+    "appId": "798510",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game launches and then instantly closes before anything else loads",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556259545,
+    "title": "SUPER DRAGON BALL HEROES WORLD MISSION",
+    "source": "protondb"
+  },
+  {
+    "appId": "798510",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Same as last report",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566994487,
+    "title": "SUPER DRAGON BALL HEROES WORLD MISSION",
+    "source": "protondb"
+  }
+]

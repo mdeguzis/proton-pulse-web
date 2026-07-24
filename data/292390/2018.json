@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "292390",
+    "title": "Realms of the Haunting",
+    "timestamp": 1535752517,
+    "rating": "Gold",
+    "notes": "Also runs in DOSBox - Sometimes a slight stutter. ",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "292390",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537371856,
+    "title": "Realms of the Haunting",
+    "source": "protondb"
+  },
+  {
+    "appId": "292390",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "Required no additional configuration. Worked perfectly out of the box.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541562621,
+    "title": "Realms of the Haunting",
+    "source": "protondb"
+  },
+  {
+    "appId": "292390",
+    "title": "Realms of the Haunting",
+    "timestamp": 1535738117,
+    "rating": "Gold",
+    "notes": "Also runs in DOSBox - Sometimes a slight stutter. ",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

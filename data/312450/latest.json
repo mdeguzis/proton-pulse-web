@@ -1,0 +1,76 @@
+[
+  {
+    "appId": "312450",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.15.0-44-generic",
+    "notes": "It is unplayable. Only the first screen to start the game is showing.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1549917684,
+    "title": "Order of Battle: World War II",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "312450",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-d6337b5 2019-02-20 bionic-oibaf-ppa)",
+    "kernel": "4.20.11-042011-generic",
+    "notes": "With a Grafikcard change it works now smoothly. Only the video sequences are not working",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1550872524,
+    "title": "Order of Battle: World War II",
+    "source": "protondb"
+  },
+  {
+    "appId": "312450",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Test without starting option didn't work. \n2nd try was with 'PROTON_USE_WINED3D11=1 %command%' but brought me only to the game launcher, while starting game lead me into a black screen. \nOn 3rd test I used 'PROTON_USE_WINED3D11=1 PROTON_NO_ESYNC=2 %command%' and launcher and game worked. \nThere is one little issue, when I start game from launcher I first get into a black screen, but after a while when I click somewhere the game menue shows up. Rest works as intended. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1555074316,
+    "title": "Order of Battle: World War II",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "312450",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Game runs without major issues out of the box, just the videos are not working. great performance.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "15 GB",
+    "rating": "Gold",
+    "timestamp": 1567674330,
+    "title": "Order of Battle: World War II",
+    "source": "protondb"
+  }
+]

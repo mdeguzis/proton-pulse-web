@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2536670",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.8.0-45-generic",
+    "notes": "It's only a (per Youtube vid) 22 minute demo so far, but it crashes 5 minutes in.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1729579446,
+    "title": "",
+    "source": "protondb"
+  }
+]

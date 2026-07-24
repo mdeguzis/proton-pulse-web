@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1759380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works well and looks good out of box on deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1716851359,
+    "title": "Bandle Tale: A League of Legends Story",
+    "source": "protondb"
+  },
+  {
+    "appId": "1759380",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 18.1.8, DRM 3.57, 6.10.0-arch1-2)",
+    "gpuDriver": "4.6 Mesa 24.1.4-arch1.2",
+    "kernel": "6.10.0-arch1-2",
+    "notes": "GOG Version Runs Great Minus the Controller Issues.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1731787481,
+    "title": "Bandle Tale: A League of Legends Story",
+    "source": "protondb"
+  },
+  {
+    "appId": "1759380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly out of the box, no tinkering or changes needed",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1734984842,
+    "title": "Bandle Tale: A League of Legends Story",
+    "source": "protondb"
+  }
+]

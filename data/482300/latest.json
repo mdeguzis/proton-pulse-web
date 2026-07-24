@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "482300",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.7-050007-generic",
+    "notes": "Game works but launches minimized with mouse pointer captured. Had to alt+tab and switch between workspaces to be able to bring up the game. Game does not exit gracefully, just hangs at a black screen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555854617,
+    "title": "Investigator",
+    "source": "protondb"
+  },
+  {
+    "appId": "482300",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.5-arch1-1-ARCH",
+    "notes": "Just works. Though not tested for long as really not my type of game.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557683347,
+    "title": "Investigator",
+    "source": "protondb"
+  },
+  {
+    "appId": "482300",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.8-050208-lowlatency",
+    "notes": "Playable but launches minimized and captures mouse pointer. Had to alt+tab and switch between workspaces to be able to bring up the game. Game hangs on exit.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566137034,
+    "title": "Investigator",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "300060",
+    "title": "ADR1FT",
+    "timestamp": 1535222895,
+    "rating": "Borked",
+    "notes": "HTC Vive. White screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "300060",
+    "title": "ADR1FT",
+    "timestamp": 1535899198,
+    "rating": "Borked",
+    "notes": "launches into a blank screen",
+    "os": "Ubuntu 18.04.1 LTS (64 bit) - 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-6700HQ / GTX 1070",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "300060",
+    "title": "ADR1FT",
+    "timestamp": 1535208495,
+    "rating": "Borked",
+    "notes": "HTC Vive. White screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "300060",
+    "title": "ADR1FT",
+    "timestamp": 1535884798,
+    "rating": "Borked",
+    "notes": "launches into a blank screen",
+    "os": "Ubuntu 18.04.1 LTS (64 bit) - 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-6700HQ / GTX 1070",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

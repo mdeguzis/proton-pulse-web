@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "543870",
+    "title": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 2",
+    "timestamp": 1535019095,
+    "rating": "Borked",
+    "notes": "Crashes with page fault error with different addresses whether controller is attached or not. Detailed log at https://github.com/ValveSoftware/Proton/issues/103",
+    "os": "Arch Linux 4.17.14-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-6700HQ / Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "543870",
+    "title": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 2",
+    "timestamp": 1535004695,
+    "rating": "Borked",
+    "notes": "Crashes with page fault error with different addresses whether controller is attached or not. Detailed log at https://github.com/ValveSoftware/Proton/issues/103",
+    "os": "Arch Linux 4.17.14-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i7-6700HQ / Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

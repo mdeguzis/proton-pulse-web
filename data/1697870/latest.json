@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1697870",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.13.7-108.bazzite.fc41.x86_64",
+    "notes": "Works out of the box, savings included.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776517138,
+    "title": "",
+    "source": "protondb"
+  }
+]

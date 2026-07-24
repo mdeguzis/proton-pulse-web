@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "862130",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "4.15.0-88-generic",
+    "notes": "With this launch command it plays nicely. Didn't test controllers, though.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1583969841,
+    "title": "",
+    "source": "protondb"
+  }
+]

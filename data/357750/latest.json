@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "357750",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Fails to launch",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "20 GB",
+    "rating": "Borked",
+    "timestamp": 1551783977,
+    "title": "Damn virgins",
+    "source": "protondb"
+  }
+]

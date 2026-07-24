@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "341980",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-21dd881416)",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "The game works fine with Proton and DXVK. In my 4K resolution the game menu was not working ok, seems like a general bug of this game not related to Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561035949,
+    "title": "Dispatcher",
+    "source": "protondb"
+  }
+]

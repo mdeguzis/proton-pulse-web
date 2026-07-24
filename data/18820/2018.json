@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "18820",
+    "title": "Zero Gear",
+    "timestamp": 1535315250,
+    "rating": "Borked",
+    "notes": "Menu loads up fine (with a short delay) but creating a game or looking for games online results in a crash with a log dump window showing up in the background.",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "18820",
+    "title": "Zero Gear",
+    "timestamp": 1536285568,
+    "rating": "Borked",
+    "notes": "Appears to take a while to start a private server, which actually works. I haven't compared to running in Windows. Trying to start or join an online game freezes it, thereby making it unplayable. The process has to be killed to exit.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "18820",
+    "cpu": "i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I get to the title screen but that's as far as it goes, pop error report has to be sent and then it stalls..",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1536963954,
+    "title": "Zero Gear",
+    "source": "protondb"
+  },
+  {
+    "appId": "18820",
+    "cpu": "AMD Athlon X4 760K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-11-generic",
+    "notes": "You get an error which crashes the game if you try to find or create a game.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1543353819,
+    "title": "Zero Gear",
+    "source": "protondb"
+  },
+  {
+    "appId": "18820",
+    "title": "Zero Gear",
+    "timestamp": 1535300850,
+    "rating": "Borked",
+    "notes": "Menu loads up fine (with a short delay) but creating a game or looking for games online results in a crash with a log dump window showing up in the background.",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "18820",
+    "title": "Zero Gear",
+    "timestamp": 1536271168,
+    "rating": "Borked",
+    "notes": "Appears to take a while to start a private server, which actually works. I haven't compared to running in Windows. Trying to start or join an online game freezes it, thereby making it unplayable. The process has to be killed to exit.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

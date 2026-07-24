@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "432770",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.06",
+    "kernel": "4.18.10-1.el7.elrepo.x86_64",
+    "notes": "Black borderless window appears in top-left, but that quickly closes and the game fails to launch afterwards",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1538438516,
+    "title": "Small Town Terrors: Livingston",
+    "source": "protondb"
+  }
+]

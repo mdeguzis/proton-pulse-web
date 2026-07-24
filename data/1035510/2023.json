@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1035510",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 20.0.8",
+    "kernel": "5.4.0-56-generic",
+    "notes": "Unable to launch the game.",
+    "os": "Linux Mint 20",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1703022136,
+    "title": "",
+    "source": "protondb"
+  }
+]

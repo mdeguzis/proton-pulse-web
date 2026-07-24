@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "779990",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.0.0-29-generic",
+    "notes": "runs perfectly.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569770144,
+    "title": "Space Between Worlds",
+    "source": "protondb"
+  }
+]

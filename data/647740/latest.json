@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "647740",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.59_1",
+    "notes": "This game is *not* native anymore as the dev is unable to maintain the linux port of it. The current version for linux is severely out of date. Thankfully it seems to be running flawlessly in proton. I did not observe any noticeable performance or network issues playing on the north american server or doing coop building with one person (untested with multiple people though).",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564903052,
+    "title": "Airmen",
+    "source": "protondb"
+  }
+]

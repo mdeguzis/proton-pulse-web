@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "799960",
+    "cpu": "AMD Athlon(tm) X4 760K Quad Core Processor",
+    "gpu": "GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.6-1-default",
+    "notes": "Had to create an account on a Windows virtual machine in order to login on my Linux system, but surely some tweaks can be made or the Steam client and game can be run under Wine outside of Steam Play to achieve this. The actual game runs flawlessly, but the launcher just barely works.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7977 Mb",
+    "rating": "Gold",
+    "timestamp": 1537030748,
+    "title": "Wizard101",
+    "source": "protondb"
+  },
+  {
+    "appId": "799960",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Tested playing the game. Only issue was that I had to create an account on the Windows then after the account was created, I could log in on Linux through steam play. Other than that, the game ran very smoothly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542900551,
+    "title": "Wizard101",
+    "source": "protondb"
+  }
+]

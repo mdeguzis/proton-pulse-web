@@ -1,0 +1,91 @@
+[
+  {
+    "appId": "812550",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Geforce 710M",
+    "gpuDriver": "Nvidia 418.43",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Stopped crashing after setting PROTON_USE_WINED3D, but FPS is too low to play a fast-paced game, specially considering the minimum specs. The controller seems stuck on walking to the right.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551378958,
+    "title": "The King's Bird",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "812550",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Runs out of the box but with poor performance 35ish FPS at 1080p, with vsync disabled and frameskip 0 it is boarderline tolerable. Controller input is broken, usually stuck in a direction and sometimes does not respond at all except in menues (people have reported similar issues on windows too though). ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1552737964,
+    "title": "The King's Bird",
+    "source": "protondb"
+  },
+  {
+    "appId": "812550",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs, but input is laggy and imprecise to the point that it's not comfortably playable.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559346815,
+    "title": "The King's Bird",
+    "source": "protondb"
+  },
+  {
+    "appId": "812550",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.5-050205-lowlatency",
+    "notes": "Game runs but with poor performance, around 45fps at 2560x1600 resolution with Proton 4.11-1. Performance does not appear to scale with resolutions. Nintendo Switch Pro Controller is not detected. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1564824236,
+    "title": "The King's Bird",
+    "source": "protondb"
+  },
+  {
+    "appId": "812550",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.1-050301-lowlatency",
+    "notes": "With Mesa ACO drivers and with launch option \"PROTON_USE_D9VK=1 %command%\", the performance is still bad (considering the low requirements of the game). Not much difference with any game settings or resolutions, framerate is at best around 50fps.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1569431965,
+    "title": "The King's Bird",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

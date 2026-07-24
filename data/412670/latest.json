@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "412670",
+    "cpu": "Intel Core i9-7980XE @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.4-gentoo",
+    "notes": "uncheck full screen and high definition mode, you will run in software mode, game played great at least with my hardware setup",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1558861249,
+    "title": "Bullet Heaven 2",
+    "source": "protondb"
+  }
+]

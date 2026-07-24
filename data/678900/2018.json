@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "678900",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Copy font Stark.OTF in game folder to ~/.local/share/fonts/stark.otf and execute fc-cache",
+    "os": "Linux 4.x (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-2)",
+    "ram": "15984 Mo",
+    "rating": "Gold",
+    "timestamp": 1539777852,
+    "title": "Farmer's Dynasty",
+    "source": "protondb"
+  }
+]

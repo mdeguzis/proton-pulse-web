@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "384320",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Game don't work, error message : config.cfg don't exist ",
+    "os": "Pop!_OS 19.04 (64\u00a0bits)",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565600990,
+    "title": "Handball 16",
+    "source": "protondb"
+  }
+]

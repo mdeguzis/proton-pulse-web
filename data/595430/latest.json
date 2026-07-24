@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "595430",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Crashes on start.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548367407,
+    "title": "Sky Knights",
+    "source": "protondb"
+  }
+]

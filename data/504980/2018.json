@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "504980",
+    "title": "Elves Adventure",
+    "timestamp": 1535680053,
+    "rating": "Platinum",
+    "notes": "Plays without problems",
+    "os": "18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48 ",
+    "specs": "i7-4700HQ",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "504980",
+    "title": "Elves Adventure",
+    "timestamp": 1535798653,
+    "rating": "Silver",
+    "notes": "Runs without problems, but on 2nd level enemies are invisible, hard to say if this is game bug or Steam Play bug.",
+    "os": "LUbuntu 18.04.1 LTE",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700 HQ / GTX 850m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "504980",
+    "title": "Elves Adventure",
+    "timestamp": 1535665653,
+    "rating": "Platinum",
+    "notes": "Plays without problems",
+    "os": "18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48 ",
+    "specs": "i7-4700HQ",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "504980",
+    "title": "Elves Adventure",
+    "timestamp": 1535784253,
+    "rating": "Silver",
+    "notes": "Runs without problems, but on 2nd level enemies are invisible, hard to say if this is game bug or Steam Play bug.",
+    "os": "LUbuntu 18.04.1 LTE",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700 HQ / GTX 850m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

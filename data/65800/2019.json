@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "65800",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Used the recent Steam beta client to be able to use the Steam Play version over the native port since the native client was not updated to the latest version (8.4).\nUsing Steam Play did not break my save game (from my old windows version). The \"configure\" option when launching the game does not work.\nPerformance is really really great. Sound works. Not tested split screen with an emulator yet. Had a single (non reproducable) crash in the tavern so far. Have not tried any of the tweaks yet.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547805320,
+    "title": "Dungeon Defenders",
+    "source": "protondb"
+  },
+  {
+    "appId": "65800",
+    "cpu": "Intel Core i7-4770S @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "As the native version is out of date, I needed to run the windows version to play with other windows payers. Without disabling Esync the mouse movement is not smooth and sometimes jumps around and the movement keys constantly get stuck. On an average of 2-3 times per map, the game crashes at random without any error. After disabling Esync I had no more problems.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566833765,
+    "title": "Dungeon Defenders",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "65800",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-31-generic",
+    "notes": "As mentioned, the Linux version doesn't work decently any more. Using the \"Force the use of a specific Steam Play compatibility tool\" checkbox made it run the Windows version, and I haven't had any issues whatsoever after 3 hours of play",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571525255,
+    "title": "Dungeon Defenders",
+    "source": "protondb"
+  },
+  {
+    "appId": "65800",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.5-arch1-1-ARCH",
+    "notes": "Works pretty well overall, has crashes every few hours, haven't had one since disabling esync",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571608588,
+    "title": "Dungeon Defenders",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

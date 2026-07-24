@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3674980",
+    "cpu": "11th Gen Intel Core i7-11370H @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch2.2",
+    "kernel": "6.19.12-1-cachyos",
+    "notes": "The game is playable with no significant degredation.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1776226128,
+    "title": "",
+    "source": "protondb"
+  }
+]

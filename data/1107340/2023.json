@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1107340",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.4-arch2-1",
+    "notes": "Sometimes shows publisher logo in VR, but always crashes before the title screen with \"Fatal Error\" (Crash log says EXCEPTION_ACCESS_VIOLATION reading address 0x0000000000000044)",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1696074244,
+    "title": "",
+    "source": "protondb"
+  }
+]

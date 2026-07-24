@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2644170",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 10 (radeonsi, raven, LLVM 19.1.5, DRM 3.59, 6.12.12-203.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.3",
+    "kernel": "6.12.12-203.bazzite.fc41.x86_64",
+    "notes": "Unpleasant experience",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1740453243,
+    "title": "",
+    "source": "protondb"
+  }
+]

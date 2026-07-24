@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "282070",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.5",
+    "notes": "The native version didn't detect my controller and always opened windowed. Forcing Proton fixed both of these issues. Forcing D9VK might improve performance, but I didn't really feel the need to try it.",
+    "os": "NixOS 20.03pre196586.b943338ea58 (Markhor)",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571287649,
+    "title": "This War of Mine",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

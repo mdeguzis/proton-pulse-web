@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "747920",
+    "cpu": "Intel Core i5-2450M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "Launcher starts and upgrades the game, Facebook login not responding, Start button just quits, nothing happens",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561346308,
+    "title": "Hero Plus",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1081510",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.13.0-23-generic",
+    "notes": "",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1644778507,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1081510",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.0-arch1-1",
+    "notes": "Finished game with annoyances",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1666256338,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1081510",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works - but janky",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1667435949,
+    "title": "",
+    "source": "protondb"
+  }
+]

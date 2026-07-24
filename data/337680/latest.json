@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "337680",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc4",
+    "kernel": "4.18.0-21-generic",
+    "notes": "No problems after setting  \"PROTON_USE_WINED3D11=1 %command%\" as launch option!",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560524264,
+    "title": "Star Hammer: The Vanguard Prophecy",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "337680",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-13-generic",
+    "notes": "Works perfectly with Wine D3D11",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566666431,
+    "title": "Star Hammer: The Vanguard Prophecy",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "337680",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.19-041919-generic",
+    "notes": "First mission, typical gameplay, game speed, framerate, weapons, explosion effects, all looks great. Windowed only this time.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572006755,
+    "title": "Star Hammer: The Vanguard Prophecy",
+    "source": "protondb"
+  }
+]

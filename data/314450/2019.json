@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314450",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0f3768b 2019-08-12 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Game starts in general, but crashes after a short while in loading screen. Tried multiple times.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1565698810,
+    "title": "Star Saviors",
+    "source": "protondb"
+  }
+]

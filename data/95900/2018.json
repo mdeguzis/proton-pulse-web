@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "95900",
+    "title": "Air Conflicts - Secret Wars",
+    "timestamp": 1535700248,
+    "rating": "Borked",
+    "notes": "Extremely choppy audio in the menu, but the reason it's unplayable is that when trying to load a map, the game input completely freezes on \"Press any key to continue.\" The notes and background still move, so the game isn't completely frozen itself.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "95900",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 780 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "notes": "I join the previous tester. It's unplayable is that when trying to load a map, the game input completely freezes on \"Press any key to continue.\" The notes and background still move, so the game isn't completely frozen itself. Tweaks don't help.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta",
+    "ram": "7974 \u041c\u0411",
+    "rating": "Bronze",
+    "timestamp": 1538137262,
+    "title": "Air Conflicts: Secret Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "95900",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Loads through the menu just fine, but can't load any maps to actually play the game. Game input seems to be stuck on \"Press any key to continue.\"",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541855022,
+    "title": "Air Conflicts: Secret Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "95900",
+    "title": "Air Conflicts - Secret Wars",
+    "timestamp": 1535685848,
+    "rating": "Borked",
+    "notes": "Extremely choppy audio in the menu, but the reason it's unplayable is that when trying to load a map, the game input completely freezes on \"Press any key to continue.\" The notes and background still move, so the game isn't completely frozen itself.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

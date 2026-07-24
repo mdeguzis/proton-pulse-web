@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "577980",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.10-arch1-1",
+    "notes": "Crashes after title screen",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606563018,
+    "title": "",
+    "source": "protondb"
+  }
+]

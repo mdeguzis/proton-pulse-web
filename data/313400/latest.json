@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "313400",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Won't launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558968788,
+    "title": "REVOLVER360 RE:ACTOR",
+    "source": "protondb"
+  }
+]

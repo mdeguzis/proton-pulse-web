@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "47000",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I also noticed the issues mentioned here previously with the mouse cursor not leaving the borders of the game screen, and windowed mode being visually offset if you switch to it until you restart. For me the mouse cursor limitation was not a concern, and the game seemed to work fine in fullscreen mode without any need for modifications.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546566309,
+    "title": "4 Elements",
+    "source": "protondb"
+  },
+  {
+    "appId": "47000",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "If you switch the game from fullscreen to windowed mode, the screen will be shifted,but that fixes itself after restarting the game.  \nOther than that, runs perfectly.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-6)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1549500527,
+    "title": "4 Elements",
+    "source": "protondb"
+  },
+  {
+    "appId": "47000",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563655108,
+    "title": "4 Elements",
+    "source": "protondb"
+  }
+]

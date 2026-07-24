@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2995940",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.0-29-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.17.0-29-generic",
+    "notes": "works just fine i would say and system requirements are not too much so i would say runs perfectly fine without any tinckering with the it",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1779942196,
+    "title": "",
+    "source": "protondb"
+  }
+]

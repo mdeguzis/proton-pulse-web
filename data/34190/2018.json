@@ -1,0 +1,122 @@
+[
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535107905,
+    "rating": "Silver",
+    "notes": "virtual desktop used - csmt off - config app dont work",
+    "os": "Xubuntu 18.04 x64",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "Core i3 8350K Tri-Core 5.0ghz - Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535160137,
+    "rating": "Borked",
+    "notes": "It fails to install .NET framework",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535179231,
+    "rating": "Silver",
+    "notes": "Very Slow",
+    "os": "Ubuntu Mate 18.0.4.1 LTS",
+    "gpuDriver": "NVIIDIA 390.48",
+    "specs": "Ryzen 5 1600 / Geforce GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535237550,
+    "rating": "Silver",
+    "notes": "The configure window won't start and alt-tab crashes the game",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535467054,
+    "rating": "Platinum",
+    "notes": "Everything runs great, except for the config, Need to manually edit the configuration if you want a proper resolution, after that i have not encountered a single issue",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6800K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535093505,
+    "rating": "Silver",
+    "notes": "virtual desktop used - csmt off - config app dont work",
+    "os": "Xubuntu 18.04 x64",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "Core i3 8350K Tri-Core 5.0ghz - Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535145737,
+    "rating": "Borked",
+    "notes": "It fails to install .NET framework",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535164831,
+    "rating": "Silver",
+    "notes": "Very Slow",
+    "os": "Ubuntu Mate 18.0.4.1 LTS",
+    "gpuDriver": "NVIIDIA 390.48",
+    "specs": "Ryzen 5 1600 / Geforce GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535223150,
+    "rating": "Silver",
+    "notes": "The configure window won't start and alt-tab crashes the game",
+    "os": "Antergos",
+    "gpuDriver": "vulkan-radeon",
+    "specs": "i5-8400, RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34190",
+    "title": "Sonic & SEGA All-Stars Racing",
+    "timestamp": 1535452654,
+    "rating": "Platinum",
+    "notes": "Everything runs great, except for the config, Need to manually edit the configuration if you want a proper resolution, after that i have not encountered a single issue",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6800K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

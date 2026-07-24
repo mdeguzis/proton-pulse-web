@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "305740",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 740",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Runs, but with choppy performance and crashing after a while.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543009495,
+    "title": "Pitiri 1977",
+    "source": "protondb"
+  }
+]

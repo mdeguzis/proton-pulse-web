@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1019250",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-46-generic",
+    "notes": "When the game starts, for a very short moment, a loading screen appears, which is then replaced by a black screen. Nothing else happens.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553625013,
+    "title": "World War II: TCG",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "577530",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.9.0-7-amd64",
+    "notes": "Gamepad doesn't work, but it launches and works fine",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1540999078,
+    "title": "Pixel Ripped 1989",
+    "source": "protondb"
+  }
+]

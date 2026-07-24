@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1780270",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.15.25-1-MANJARO",
+    "notes": "Steam says it has launched but fun fact, it didnt",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1648391002,
+    "title": "",
+    "source": "protondb"
+  }
+]

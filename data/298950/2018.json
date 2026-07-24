@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "298950",
+    "title": "Darkness Within 2: The Dark Lineage Director's Cut Edition",
+    "timestamp": 1534950809,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.03.0",
+    "specs": "I5 3570k / AMD HD 7870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "298950",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Runs fine, however mouse is not visible in Steam overlay, though you can still select things. Antialiasing is greyed out however you can select anisotropic filtering levels from the Advanced tab. This is a game that requires PhysX but it installed and ran fine. Sound and speech work great. All other options seem to work too. \nSo, it's just little things that have minimal effect on gameplay.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541687996,
+    "title": "Darkness Within 2: The Dark Lineage",
+    "source": "protondb"
+  },
+  {
+    "appId": "298950",
+    "title": "Darkness Within 2: The Dark Lineage Director's Cut Edition",
+    "timestamp": 1534936409,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.03.0",
+    "specs": "I5 3570k / AMD HD 7870",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

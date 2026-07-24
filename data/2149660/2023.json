@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2149660",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.15.0-67-generic",
+    "notes": "Just getting a black screen on any Proton compatability layer newer than 5.13",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1679236799,
+    "title": "Personal Chef to the Stars",
+    "source": "protondb"
+  },
+  {
+    "appId": "2149660",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.15.0-67-generic",
+    "notes": "",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1679236983,
+    "title": "Personal Chef to the Stars",
+    "source": "protondb"
+  }
+]

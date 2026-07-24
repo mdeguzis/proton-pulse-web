@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "864060",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "game aggressively captures keyboard and is hard to kill but otherwise plays fine",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542568208,
+    "title": "Marble It Up!",
+    "source": "protondb"
+  },
+  {
+    "appId": "864060",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Had to force close, but played through almost every level without any issues. Works with my Xbox One controller out of the box, runs perfectly.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545765693,
+    "title": "Marble It Up!",
+    "source": "protondb"
+  },
+  {
+    "appId": "864060",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-2-MANJARO",
+    "notes": "Played first few chapters (2-3 hours). Gameplay is flawless. Detects PS4 controller without issue (Steam Input Per-Game Setting: Forced Off). Steam Overlay did not work in-game. Had to manually send term signal (force not required) to close game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546235688,
+    "title": "Marble It Up!",
+    "source": "protondb"
+  }
+]

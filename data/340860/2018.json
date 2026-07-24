@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "340860",
+    "title": "RaidersSphere4th",
+    "timestamp": 1535569468,
+    "rating": "Bronze",
+    "notes": "- The game is unplayable with the \"Shader Settings\" on. It appears an \"Effect error\" message with gibberish text. Otherwise, the game loads well.\n- The game won't show text whatsoever.\n- The 3D effects are unstable, making the gaming very unconfortable. Furthermore, if you minimize, some controls will be disabled, making the game unplayable.",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "340860",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Runs fine. Turning on shader settings causes a crash on start. No text is displayed, making the game effectively unplayable. Controller works.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24032 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538459914,
+    "title": "RaidersSphere4th",
+    "source": "protondb"
+  },
+  {
+    "appId": "340860",
+    "title": "RaidersSphere4th",
+    "timestamp": 1535555068,
+    "rating": "Bronze",
+    "notes": "- The game is unplayable with the \"Shader Settings\" on. It appears an \"Effect error\" message with gibberish text. Otherwise, the game loads well.\n- The game won't show text whatsoever.\n- The 3D effects are unstable, making the gaming very unconfortable. Furthermore, if you minimize, some controls will be disabled, making the game unplayable.",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

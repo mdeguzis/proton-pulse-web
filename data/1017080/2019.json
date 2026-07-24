@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "1017080",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Starts & runs. Window/Fullscreen. Low demand UI based game. High performance, like it's native or a browser game (but uses Proton(WINE).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1550295610,
+    "title": "RWBY Deckbuilding Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "1017080",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.10-200.fc29.x86_64",
+    "notes": "Go to Properties > Set Launch Options > Write:\nPROTON_USE_WINED3D11=1 %command%",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "15 GB",
+    "rating": "Gold",
+    "timestamp": 1551165078,
+    "title": "RWBY Deckbuilding Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1017080",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "runs without any problems",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551290344,
+    "title": "RWBY Deckbuilding Game",
+    "source": "protondb"
+  }
+]

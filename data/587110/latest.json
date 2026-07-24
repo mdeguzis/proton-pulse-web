@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "587110",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Ran perfectly at maximum settings.",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553718095,
+    "title": "Ys: Memories of Celceta",
+    "source": "protondb"
+  },
+  {
+    "appId": "587110",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-07745f9494)",
+    "kernel": "5.1.1-arch1-1-ARCH",
+    "notes": "The game runs perfectly all the way through, but video cutscenes don't play. Common tricks like disabling winegstreamer and installing codecs in the wine prefix directory have no effect. Being unable to play the ending video, the game skips the entirety of the ending and goes right to the clear game save screen.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557704611,
+    "title": "Ys: Memories of Celceta",
+    "source": "protondb"
+  },
+  {
+    "appId": "587110",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "video cutscenes (logos at startup, intro and ending credits) don't play",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1560091862,
+    "title": "Ys: Memories of Celceta",
+    "source": "protondb"
+  }
+]

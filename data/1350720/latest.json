@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1350720",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.10-201.fc44.x86_64",
+    "notes": "Great on Proton 11",
+    "os": "Fedora Linux 44 (Forty Four)",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1781900770,
+    "title": "PaperKlay",
+    "source": "protondb"
+  }
+]

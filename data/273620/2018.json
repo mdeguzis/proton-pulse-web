@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "273620",
+    "cpu": "Intel Core i5-4430 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Manually copy contents of steam/steamapps/common/Freespace 2/Registry/FS2.reg into steam/steamapps/common/Freespace 2/Registry/system.reg.  Make sure to change the key path format from [HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Volition\\FreeSpace2] to match the others already here.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1541424018,
+    "title": "Freespace 2",
+    "source": "protondb"
+  }
+]

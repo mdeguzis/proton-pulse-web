@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "48120",
+    "cpu": "Intel Core i5-2300 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-48-generic",
+    "notes": "The game's performance is poor but it is this way on Windows as well. The updated History version will probably work better since it uses DX11.",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1557339727,
+    "title": "The Settlers 7: Paths to a Kingdom",
+    "source": "protondb"
+  }
+]

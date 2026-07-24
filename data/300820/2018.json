@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "300820",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "no problem(smoother than on windows 10)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537289071,
+    "title": "Disney\u2022Pixar Toy Story 3: The Video Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "300820",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Runs exactly like it does on Windows 10, if not slightly smoother. That means any Windows 10 issues are also present; no Steam Controller support, maximum resolution of 1600x900 (though it can run fullscreen), and a framecap of 50fps.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542218320,
+    "title": "Disney\u2022Pixar Toy Story 3: The Video Game",
+    "source": "protondb"
+  }
+]

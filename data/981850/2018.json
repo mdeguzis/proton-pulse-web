@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "981850",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "The game launches, a splash shows and the cursor changes but the game stays black after that.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544289182,
+    "title": "BATALJ",
+    "source": "protondb"
+  },
+  {
+    "appId": "981850",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Splash and fancy cursor shows, then a black screen.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545175681,
+    "title": "BATALJ",
+    "source": "protondb"
+  },
+  {
+    "appId": "981850",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Unlike the other reports, I see no splash screens either, just the black screen and the fancy cursor.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546159664,
+    "title": "BATALJ",
+    "source": "protondb"
+  }
+]

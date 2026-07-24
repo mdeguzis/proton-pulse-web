@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "603930",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Only issue crashes on exit",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545053093,
+    "title": "Battle Princess Madelyn",
+    "source": "protondb"
+  }
+]

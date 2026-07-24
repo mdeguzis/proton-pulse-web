@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "357330",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Played multiplayer with friends without issue. The only notable problem I had was I seemingly could not join their games. However, I could not isolate this as a Proton issue. Unless mentioned otherwise, I'm assuming it was unrelated to Proton. Worked around at the time by hosting a game myself.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1551461728,
+    "title": "Space Beast Terror Fright",
+    "source": "protondb"
+  }
+]

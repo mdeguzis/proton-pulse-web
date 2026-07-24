@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "254060",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Much better works with disabling ESYNC. If you want play with native resolution, you must edit registry key (this problem in windows too):\n1) protontricks 254060 regedit;\n2) Go to HKEY_CURRENT_USER\\Software\\Reality Pump\\KnightShift\\BaseGame\\Graphics\\Setup and edit string \"ShowAllRefreshRates\" from 0 to 1;\n3) Check your resolution in game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Gold",
+    "timestamp": 1551710002,
+    "title": "KnightShift",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "254060",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "Work well out of the box",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553551237,
+    "title": "KnightShift",
+    "source": "protondb"
+  }
+]

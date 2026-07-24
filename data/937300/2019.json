@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "937300",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570073514,
+    "title": "The Long Return",
+    "source": "protondb"
+  },
+  {
+    "appId": "937300",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Everything works out of the box. Played with mouse + keyboard and xbox one controller. Framerate is limited to 60fps which seems to be the game's limit.",
+    "os": "Antergos Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570131320,
+    "title": "The Long Return",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "732240",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Seems to be a UE4 error or file it's looking for and can't find...",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32123 Mb",
+    "rating": "Borked",
+    "timestamp": 1538928789,
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "title": "SpaceBourne",
+    "source": "protondb"
+  }
+]

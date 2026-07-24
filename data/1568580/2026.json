@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1568580",
+    "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 21.1.8, DRM 3.64, 6.18.13-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.18.13-200.fc43.x86_64",
+    "notes": "Perfeito",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1774131414,
+    "title": "",
+    "source": "protondb"
+  }
+]

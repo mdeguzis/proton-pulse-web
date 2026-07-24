@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2991110",
+    "cpu": "11th Gen Intel Core i5-1145G7 @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "Works, with minor HUD issues",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1773838643,
+    "title": "",
+    "source": "protondb"
+  }
+]

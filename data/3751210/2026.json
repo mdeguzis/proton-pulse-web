@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3751210",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.4-2-cachyos",
+    "notes": "Works OOTB, Protontricks for Steam Workshop",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1771113867,
+    "title": "",
+    "source": "protondb"
+  }
+]

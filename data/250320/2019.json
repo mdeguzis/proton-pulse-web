@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "250320",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "Playable from start to finish.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554194498,
+    "title": "The Wolf Among Us",
+    "source": "protondb"
+  },
+  {
+    "appId": "250320",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Runs perfectly. No issues at all.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-4",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568636407,
+    "title": "The Wolf Among Us",
+    "source": "protondb"
+  },
+  {
+    "appId": "250320",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Runs perfectly.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570874374,
+    "title": "The Wolf Among Us",
+    "source": "protondb"
+  }
+]

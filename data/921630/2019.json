@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "921630",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "Did not do any tweaks or anything, and game basically runs perfectly.  There are very few minor graphical issues that are hard to notice.",
+    "os": "Solus",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554005861,
+    "title": "\u97f3\u7075 INVAXION",
+    "source": "protondb"
+  },
+  {
+    "appId": "921630",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Tried playing Windowed/Fullscreen, with 2D/3D, with Motion Camera On/Off, with Best/Low settings, Track Lane On/Off, Anti-aliasing On/Off, with 4K/6K/8K, swapping characters/spaceship and the game runs smoothly and didn't have any input lag or sound delay, but when you turn off anti-aliasing, the middle line for the track lane got cut off for some reason, not a big issue. There are some issues in Arcade Mode. The issues in Arcade Mode are the chinese and japanese text doesn't appear in the selection menu and when you clear the arcade mode, it ends up stuck on black screen (The animation at the end is probably a video, haven't checked yet).",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1561644931,
+    "title": "\u97f3\u7075 INVAXION",
+    "source": "protondb"
+  },
+  {
+    "appId": "921630",
+    "cpu": "Intel Core i5-6600K @ 4.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Black screen around the start, most likely an animation. Black screen after you finish arcade mode. Everything else seems to function fine.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1561888992,
+    "title": "\u97f3\u7075 INVAXION",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1446480",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.0-70-generic",
+    "notes": "I tried several different revisions of Proton, all to no avail.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1623808399,
+    "title": "",
+    "source": "protondb"
+  }
+]

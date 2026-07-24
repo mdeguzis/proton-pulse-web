@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1028570",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.12.14-lp151.28.10-default",
+    "notes": "Runs perfect after disabling esync. I was able to get to the end of the game with no issue",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1564931730,
+    "title": "Lofi Ping Pong",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

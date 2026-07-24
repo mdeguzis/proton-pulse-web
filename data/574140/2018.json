@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "574140",
+    "cpu": "Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-1-MANJARO",
+    "notes": "Missing models",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "32136 Mb",
+    "rating": "Borked",
+    "timestamp": 1537392437,
+    "title": "Project LUX",
+    "source": "protondb"
+  }
+]

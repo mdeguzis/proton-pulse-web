@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "343840",
+    "title": "Trash TV",
+    "timestamp": 1536176895,
+    "rating": "Borked",
+    "notes": "Fails to launch",
+    "os": "Arch Linux 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "343840",
+    "title": "Trash TV",
+    "timestamp": 1536162495,
+    "rating": "Borked",
+    "notes": "Fails to launch",
+    "os": "Arch Linux 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1149440",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.1.82",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1712828889,
+    "title": "",
+    "source": "protondb"
+  }
+]

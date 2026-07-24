@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1823600",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "5.15.0-101-generic",
+    "notes": "The game lags in the menus and it is impossible to start a new game",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "5.0-10",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1717589821,
+    "title": "",
+    "source": "protondb"
+  }
+]

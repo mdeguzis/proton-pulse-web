@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1643180",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-113-generic",
+    "notes": "It's working without a problem, if you don't mind playing fullscreen only. \nIt is like a board card game that represents the life of artist",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1720365685,
+    "title": "",
+    "source": "protondb"
+  }
+]

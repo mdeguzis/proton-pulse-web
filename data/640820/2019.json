@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "640820",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.7-1-default",
+    "notes": "Game runs very smoothly. Sometimes characters won't load and they appear to be \"black\" textured. But I think it is more likely problem with Unity engine than game itself.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "10 GB",
+    "rating": "Platinum",
+    "timestamp": 1561674494,
+    "title": "Pathfinder: Kingmaker - Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "640820",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-arch1-1-ARCH",
+    "notes": "Played this game to completion with proton 4.11. Worked fine for the most part, though occasionally I would get an error that said \"GetThreadContext failed\" at which point the game would either crash or stop responding to keyboard and mouse inputs and I would need to kill it. A cursory google search suggested it might be a game engine issue rather than a wine / proton problem, and in any event it was rare enough not to hamper the experience any.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568968234,
+    "title": "Pathfinder: Kingmaker - Enhanced Edition",
+    "source": "protondb"
+  }
+]

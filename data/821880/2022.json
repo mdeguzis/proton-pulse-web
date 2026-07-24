@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "821880",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-46-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1661183918,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "821880",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 14.0.6, DRM 3.48, 6.0.2-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.2-zen1-1-zen",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1667757390,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "696360",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "work out of box",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2.4",
+    "protonVersionManual": "4.2.4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558516062,
+    "title": "\u4ed9\u528d\u5947\u4fe0\u50b3\u516d (Chinese Paladin\uff1aSword and Fairy 6)",
+    "source": "protondb"
+  },
+  {
+    "appId": "696360",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 850M",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Platinium gameplay, except two things. First minor: model and video(dark surroundings only) color on characters can go black. Second: the cartoon versions of cut-scenes don't play out (it's only about 5% of all movies, but still).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568532806,
+    "title": "\u4ed9\u528d\u5947\u4fe0\u50b3\u516d (Chinese Paladin\uff1aSword and Fairy 6)",
+    "source": "protondb"
+  }
+]

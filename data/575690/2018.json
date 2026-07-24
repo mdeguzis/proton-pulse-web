@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "575690",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "\"MCICD Error\" on launch. Some untested workarounds here: https://www.gog.com/forum/general/the_judas_does_this_run_in_wine_thread/post762",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545417612,
+    "title": "PARKAN: THE IMPERIAL CHRONICLES",
+    "source": "protondb"
+  }
+]

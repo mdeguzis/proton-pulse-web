@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "524850",
+    "title": "Alicemare",
+    "timestamp": 1534989927,
+    "rating": "Platinum",
+    "notes": "Like One Way Heroics which was made on the same engine, the process needs to be terminated manually on exit.",
+    "os": "Elementary OS 0.4.1 Loki",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-6100 / GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "524850",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-zen1-1-zen",
+    "notes": "I wish I could give it platinum, but you need to kill the game process to truly close it.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7916 Mb",
+    "rating": "Silver",
+    "timestamp": 1536822843,
+    "title": "Alicemare",
+    "source": "protondb"
+  },
+  {
+    "appId": "524850",
+    "title": "Alicemare",
+    "timestamp": 1534975527,
+    "rating": "Platinum",
+    "notes": "Like One Way Heroics which was made on the same engine, the process needs to be terminated manually on exit.",
+    "os": "Elementary OS 0.4.1 Loki",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-6100 / GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

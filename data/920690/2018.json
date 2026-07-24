@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "920690",
+    "cpu": "AMD Ryzen 7 2700U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD RAVEN (DRM 3.25.0, 4.17.19-041719-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel",
+    "kernel": "4.17.19-041719-generic",
+    "notes": "Crashes consistently a couple seconds into the game. For more musically inclined people, crashes on beat 3 of the 2nd measure with the background music.",
+    "os": "Ubuntu Cosmic Cuttlefish (development branch) (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "6987 Mb",
+    "rating": "Borked",
+    "timestamp": 1539094416,
+    "title": "CardLife: Cardboard Survival",
+    "source": "protondb"
+  }
+]

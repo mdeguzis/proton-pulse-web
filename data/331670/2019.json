@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "331670",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.30",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Everything works OOTB in Proton with no discernible difference from Native. Id recommend sticking with the Native version as there is no benefit to running it with Proton.\n\nI've also played several rounds (>1hour) in without Proton and everything was flawless.",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558884513,
+    "title": "The Jackbox Party Pack",
+    "source": "protondb"
+  }
+]

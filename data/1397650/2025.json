@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1397650",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.6, DRM 3.63, 6.15.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.5-arch1.1",
+    "kernel": "6.15.6-arch1-1",
+    "notes": "Overall It is not recommended to play this with an Xbox controller or a HOTAS Due to slow input response and other factors like physics",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1752483499,
+    "title": "Jetborne Racing",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4174160",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 15.0.6, DRM 3.49, 6.1.0-42-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-42-amd64",
+    "notes": "Use DX12 instead of DX11 and use older version of Proton (es. Proton 9.0-4) instead of Hotfix or Experimental.",
+    "os": "LMDE 6 (faye)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1769297114,
+    "title": "",
+    "source": "protondb"
+  }
+]

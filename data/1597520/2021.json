@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1597520",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 21.1.0",
+    "kernel": "5.12.4-arch1-2",
+    "notes": "Not working.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1621517798,
+    "title": "Rounded",
+    "source": "protondb"
+  }
+]

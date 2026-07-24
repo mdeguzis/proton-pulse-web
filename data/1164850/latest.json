@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1164850",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-3ad6154f4e)",
+    "kernel": "5.4.0-1-MANJARO",
+    "notes": "Needs a minute to settle after launch, runs well afterwards - biggest issue is that you can't select other ships",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1572026516,
+    "title": "Sinking Simulator",
+    "source": "protondb"
+  }
+]

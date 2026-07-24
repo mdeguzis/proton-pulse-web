@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "681390",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-3-amd64",
+    "notes": "everything works, with poor performance. Might work with powerful hardware. Note that the last debian needs a manual installation of libva 1.8 to remove warning",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16057 Mb",
+    "rating": "Bronze",
+    "systemInfoNotes": "VR Headset: HTC Vive detected",
+    "timestamp": 1536786674,
+    "title": "ZomDay",
+    "source": "protondb"
+  }
+]

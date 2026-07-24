@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1161490",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "out of box",
+    "os": "Debian GNU/Linux 10 (buster) (64\u00a0bits)",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1588527543,
+    "title": "MotoGP\u212220",
+    "source": "protondb"
+  },
+  {
+    "appId": "1161490",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.11-1-MANJARO",
+    "notes": "Runs out of the box, perfectly. The only strange thing is that in the menus where the background is pinkish, on linux, is white.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589434799,
+    "title": "MotoGP\u212220",
+    "source": "protondb"
+  },
+  {
+    "appId": "1161490",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 450.51",
+    "kernel": "5.7.0-1-amd64",
+    "notes": "Install, select Proton version & play!",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1594676472,
+    "title": "MotoGP\u212220",
+    "source": "protondb"
+  }
+]

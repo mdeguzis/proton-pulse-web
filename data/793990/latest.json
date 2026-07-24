@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "793990",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 14.0.6, DRM 3.48, 6.0.11-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.11-arch1-1",
+    "notes": "Works great on 4.11",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-13",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1670623438,
+    "title": "Dupio",
+    "source": "protondb"
+  }
+]

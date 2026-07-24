@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1112400",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-arch1-1-ARCH",
+    "notes": "Using Proton the game starts but without any menus. The only visible things are 2 dark lines where the login form is supposed to be.\nUsing Wine 4.13 with DLL override (D9VK 0.20) the game starts and everything is visible except for one thing: it has absolutely no text which makes me think the fonts aren't being loaded.",
+    "os": "Unknown (64  \u0431\u0438\u0442\u0430)",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567275721,
+    "title": "Project Torque - Free 2 Play MMO Racing Game",
+    "source": "protondb"
+  }
+]

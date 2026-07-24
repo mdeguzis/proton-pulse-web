@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "245730",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.3-1-default",
+    "notes": "Doesn't go past the intro video",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1553958315,
+    "title": "Flashback",
+    "source": "protondb"
+  },
+  {
+    "appId": "245730",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Uplay works and logs in, a number of game splash screens are displayed. Game quits. You need to exit Uplay.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563255924,
+    "title": "Flashback",
+    "source": "protondb"
+  }
+]

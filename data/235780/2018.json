@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "235780",
+    "title": "MINERVA: Metastasis",
+    "timestamp": 1535894877,
+    "rating": "Silver",
+    "notes": "Works fine so far. Font looks a bit rugged",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "235780",
+    "cpu": "Intel(R) Core(TM) i7 CPU         920  @ 2.67GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org AMD CYPRESS (DRM 2.50.0 / 4.18.9-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.2.1",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Runs like a charm.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5952 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538256021,
+    "title": "MINERVA",
+    "source": "protondb"
+  },
+  {
+    "appId": "235780",
+    "title": "MINERVA: Metastasis",
+    "timestamp": 1535880477,
+    "rating": "Silver",
+    "notes": "Works fine so far. Font looks a bit rugged",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

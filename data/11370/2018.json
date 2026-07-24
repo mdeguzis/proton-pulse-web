@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "11370",
+    "title": "Nikopol: Secrets of the Immortals",
+    "timestamp": 1535609117,
+    "rating": "Platinum",
+    "notes": "Stable 80-100 fps ",
+    "os": "Manjaro (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "11370",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "No issues",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Nikopol: Secrets of the Immortals",
+    "source": "protondb"
+  },
+  {
+    "appId": "11370",
+    "cpu": "Intel(R) Core(TM) i7-4930K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation TITAN V/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs perfectly out of the box.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64362 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539045150,
+    "title": "Nikopol: Secrets of the Immortals",
+    "source": "protondb"
+  },
+  {
+    "appId": "11370",
+    "title": "Nikopol: Secrets of the Immortals",
+    "timestamp": 1535594717,
+    "rating": "Platinum",
+    "notes": "Stable 80-100 fps ",
+    "os": "Manjaro (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3398430",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.59, 6.11.0-24-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.11.0-24-generic",
+    "notes": "Works fine out of box, no tweaks.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1748034311,
+    "title": "",
+    "source": "protondb"
+  }
+]

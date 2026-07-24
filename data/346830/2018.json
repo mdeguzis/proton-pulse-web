@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "346830",
+    "title": "FINAL FANTASY IV: THE AFTER YEARS",
+    "timestamp": 1535802609,
+    "rating": "Gold",
+    "notes": "Works fine",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "346830",
+    "title": "FINAL FANTASY IV: THE AFTER YEARS",
+    "timestamp": 1536354755,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "346830",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32175 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538862407,
+    "title": "FINAL FANTASY IV: THE AFTER YEARS",
+    "source": "protondb"
+  },
+  {
+    "appId": "346830",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542626540,
+    "title": "FINAL FANTASY IV: THE AFTER YEARS",
+    "source": "protondb"
+  },
+  {
+    "appId": "346830",
+    "title": "FINAL FANTASY IV: THE AFTER YEARS",
+    "timestamp": 1535788209,
+    "rating": "Gold",
+    "notes": "Works fine",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ/HD4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "346830",
+    "title": "FINAL FANTASY IV: THE AFTER YEARS",
+    "timestamp": 1536340355,
+    "rating": "Platinum",
+    "notes": "works fine",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "47800",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Cutscenes don't run, but everything else runs fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1557201470,
+    "title": "RISK\u2122: Factions",
+    "source": "protondb"
+  },
+  {
+    "appId": "47800",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-24-generic",
+    "notes": "I play only single player. it works very nice. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561662509,
+    "title": "RISK\u2122: Factions",
+    "source": "protondb"
+  },
+  {
+    "appId": "47800",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Singleplayer games and animations work perfectly, cutscenes do not run, multiplayer was not tested",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1565007583,
+    "title": "RISK\u2122: Factions",
+    "source": "protondb"
+  }
+]

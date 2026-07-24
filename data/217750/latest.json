@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "217750",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Random error messages. Corrupt files. Tried all fixes wont start at all",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556123711,
+    "title": "Age of Conan: Unchained",
+    "source": "protondb"
+  },
+  {
+    "appId": "217750",
+    "cpu": "Intel Core i7-6900K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "Crashes immediately with the message \"The Update Manager has encountered a problem and needs to close\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557677982,
+    "title": "Age of Conan: Unchained",
+    "source": "protondb"
+  },
+  {
+    "appId": "217750",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.11-arch1-1-ARCH",
+    "notes": "Attempts to run ConanPatcher.exe - this is designed to verify game files to prevent hacking and pass a key to the main executable giving it permission to run. There are methods for bypassing this on Windows that I've attempted but ran out of time.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571350030,
+    "title": "Age of Conan: Unchained",
+    "source": "protondb"
+  }
+]

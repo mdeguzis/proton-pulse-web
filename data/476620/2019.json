@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "476620",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-64-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569669802,
+    "title": "Call of Duty\u00ae: WWII",
+    "source": "protondb"
+  }
+]

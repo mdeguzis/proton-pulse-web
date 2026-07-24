@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "253690",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "nouveau NV124",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Same as previous report: doesn't start and no error messages displayed. Not seeing any processes matching 'pgrep -f Tiny' so seems like it just fails to start rather than process freezing before graphics are rendered.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1553917467,
+    "title": "Tiny Brains",
+    "source": "protondb"
+  },
+  {
+    "appId": "253690",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Everything seems to work correctly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563882813,
+    "title": "Tiny Brains",
+    "source": "protondb"
+  },
+  {
+    "appId": "253690",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Working perfectly. Was able to launch and start a game. Played through a few levels without any glitches.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571934186,
+    "title": "Tiny Brains",
+    "source": "protondb"
+  }
+]

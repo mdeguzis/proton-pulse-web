@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1918130",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.16.19-76051619-generic",
+    "notes": "Game does not work under Linux",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1651243289,
+    "title": "Grim Quest - Old School RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "1918130",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.5-arch1-1",
+    "notes": "Black screen",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1662080345,
+    "title": "Grim Quest - Old School RPG",
+    "source": "protondb"
+  }
+]

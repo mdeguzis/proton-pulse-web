@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "575550",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0 AMD 18.30 , 4.15.0-34-generic, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-34-generic",
+    "notes": "works flawlessly by using \"PROTON_NO_D3D11=1 %command%\" in the launch options",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7941 Mb",
+    "rating": "Gold",
+    "timestamp": 1537893439,
+    "title": "Hell Girls",
+    "source": "protondb"
+  },
+  {
+    "appId": "575550",
+    "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 960M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15889 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539109229,
+    "title": "Hell Girls",
+    "source": "protondb"
+  },
+  {
+    "appId": "575550",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Haven't played much but it runs and works fine with good performance at highest settings, 1080p60",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542991638,
+    "title": "Hell Girls",
+    "source": "protondb"
+  }
+]

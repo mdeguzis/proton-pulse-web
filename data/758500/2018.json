@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "758500",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Runs flawlessly, I'll just play for a couple more minutes before testing something else...............",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Loot Box Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "758500",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "runs perfect. completed the game without any bugs",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546023665,
+    "title": "Loot Box Quest",
+    "source": "protondb"
+  }
+]

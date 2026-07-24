@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "485980",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Game runs but crashes after several minutes. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546307194,
+    "title": "Syrian Warfare",
+    "source": "protondb"
+  },
+  {
+    "appId": "485980",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game crashes when boarding the second vehicle, every time.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1550959705,
+    "title": "Syrian Warfare",
+    "source": "protondb"
+  },
+  {
+    "appId": "485980",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "all is well, only there are no sounds.) Only music.",
+    "os": "Ubuntu 18.04.2 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551205526,
+    "title": "Syrian Warfare",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "262470",
+    "title": "Rollers of the Realm",
+    "timestamp": 1535586528,
+    "rating": "Platinum",
+    "notes": "Performance is great",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396",
+    "specs": "i5-4690k",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "262470",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Seems to work exactly as it should. There are a few hiccups when many things are happening, but perhaps this happens in windows version as well (haven't tested win version).",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7933 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539808776,
+    "title": "Rollers of the Realm",
+    "source": "protondb"
+  },
+  {
+    "appId": "262470",
+    "title": "Rollers of the Realm",
+    "timestamp": 1535572128,
+    "rating": "Platinum",
+    "notes": "Performance is great",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396",
+    "specs": "i5-4690k",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

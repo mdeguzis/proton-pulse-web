@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "420210",
+    "cpu": "AMD A8-5550M APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0 / 4.13.0-46-lowlatency, LLVM 5.0.0)",
+    "gpuDriver": "3.0 Mesa 17.2.8",
+    "kernel": "4.13.0-46-lowlatency",
+    "notes": "Doesn't launch",
+    "os": "Ubuntu 17.10 (64 bit)",
+    "protonVersion": "3,7-3",
+    "ram": "7186 Mb",
+    "rating": "Borked",
+    "timestamp": 1536628778,
+    "title": "KRUM - Edge Of Darkness",
+    "source": "protondb"
+  }
+]

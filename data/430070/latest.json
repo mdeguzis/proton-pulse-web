@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "430070",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Flawless out of the box and with good performance. Tested both Windowed and Fullscreen and also Nintendo Switch Pro controller worked.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552751118,
+    "title": "Never Again",
+    "source": "protondb"
+  }
+]

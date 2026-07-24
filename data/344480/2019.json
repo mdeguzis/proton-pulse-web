@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "344480",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556487319,
+    "title": "Quell",
+    "source": "protondb"
+  },
+  {
+    "appId": "344480",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.1.0-1-MANJARO",
+    "notes": "Runs perfectly out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557395385,
+    "title": "Quell",
+    "source": "protondb"
+  },
+  {
+    "appId": "344480",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.9.0-9-amd64",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562479196,
+    "title": "Quell",
+    "source": "protondb"
+  }
+]

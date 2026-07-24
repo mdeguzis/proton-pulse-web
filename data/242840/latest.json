@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "242840",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "I just tried to start it without any special tweaks, but it didn't work. I hope somebody finds a way to play the game on Linux.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547652720,
+    "title": "In Verbis Virtus",
+    "source": "protondb"
+  },
+  {
+    "appId": "242840",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Went to microphone input settings (since a mic is required to play the game). It would not detect my my via the default option and had a pulldown to switch to Pulseaudio. Hard crashed and had to be force killed when I clicked the pulldown.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558927561,
+    "title": "In Verbis Virtus",
+    "source": "protondb"
+  }
+]

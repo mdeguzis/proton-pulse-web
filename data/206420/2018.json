@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "206420",
+    "title": "Saints Row IV",
+    "timestamp": 1535054821,
+    "rating": "Silver",
+    "notes": "Some Framedrops, but still very playable. No steam overlay though",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 2600 / RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "206420",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.51",
+    "kernel": "4.18.0-sabayon",
+    "os": "\"Sabayon Linux amd64 18.10\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15968 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537672224,
+    "title": "Saints Row IV",
+    "source": "protondb"
+  },
+  {
+    "appId": "206420",
+    "title": "Saints Row IV",
+    "timestamp": 1535040421,
+    "rating": "Silver",
+    "notes": "Some Framedrops, but still very playable. No steam overlay though",
+    "os": "Ubuntu 18.04.1 (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 2600 / RX580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

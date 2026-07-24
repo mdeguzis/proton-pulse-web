@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1290330",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 535.146.02",
+    "kernel": "6.5.0-10022-tuxedo",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1708555620,
+    "title": "Time Wasters",
+    "source": "protondb"
+  }
+]

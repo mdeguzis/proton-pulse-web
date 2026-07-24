@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "301910",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-25-generic",
+    "notes": "1) 4.2-9 not start 2)3.16-9 not start 3)3.7-8 not start 4)4.2-9 + different combinations of [PROTON_NO_ESYNC, PROTON_NO_D3D11, PROTON_NO_D3D10, PROTON_USE_WINED3D] not start",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562696578,
+    "title": "Saints Row: Gat out of Hell",
+    "source": "protondb"
+  }
+]

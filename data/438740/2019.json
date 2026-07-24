@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "438740",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I can't play multiplayer, only singleplayer works (nobody plays singleplayer at all) and the audio crackles in menus.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.7-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548424966,
+    "title": "Friday the 13th: The Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "438740",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Sometimes works, but works too poor, it has many fewer fps than his version on Windows. But it crashes frequently, so.\nBesides, you can't still play online.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554565159,
+    "title": "Friday the 13th: The Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "438740",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "runs good but anti-cheat kicks you every time",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1561944616,
+    "title": "Friday the 13th: The Game",
+    "source": "protondb"
+  }
+]

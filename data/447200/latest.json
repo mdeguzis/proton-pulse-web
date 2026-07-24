@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "447200",
+    "title": "The Men of Yoshiwara: Ohgiya",
+    "timestamp": 1535182286,
+    "rating": "Silver",
+    "notes": "Fullscreen works in Light mode but not Standard mode. Minor line break issues; probably present on Windows but might just be a font problem in Wine.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "447200",
+    "title": "The Men of Yoshiwara: Ohgiya",
+    "timestamp": 1535167886,
+    "rating": "Silver",
+    "notes": "Fullscreen works in Light mode but not Standard mode. Minor line break issues; probably present on Windows but might just be a font problem in Wine.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

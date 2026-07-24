@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "364420",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.54, 6.6.28-1-lts)",
+    "gpuDriver": "4.6 Mesa 24.0.7-arch1.3",
+    "kernel": "6.6.28-1-lts",
+    "notes": "enjoyable with some patience, but only playable on keyboard",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1716292496,
+    "title": "Roguelands",
+    "source": "protondb"
+  }
+]

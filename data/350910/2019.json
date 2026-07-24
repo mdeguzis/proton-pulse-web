@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "350910",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 470",
+    "gpuDriver": "4.6.13542 Compatibility Profile Context 18.50.1.418",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Tried both OpenGL and DirectX. Does not launch.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1546939036,
+    "title": "Streets of Fury EX",
+    "source": "protondb"
+  },
+  {
+    "appId": "350910",
+    "cpu": "Intel Core i7-3720QM @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro K4000M",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Does not start at all.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547532471,
+    "title": "Streets of Fury EX",
+    "source": "protondb"
+  },
+  {
+    "appId": "350910",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.7-050007-generic",
+    "notes": "The OpenGL version works perfectly out of the box, tried also with Nintendo Switch Pro controller. DirectX version crashes on launch, therefore putting a Gold rating. But practically the game is Platinum with the default OpenGL version.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555880237,
+    "title": "Streets of Fury EX",
+    "source": "protondb"
+  }
+]

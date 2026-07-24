@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1239320",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.49, 6.1.14-201.fsync.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.1.14-201.fsync.fc37.x86_64",
+    "notes": "Works out of box.",
+    "os": "Nobara Linux 37 (KDE Plasma)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1678800064,
+    "title": "",
+    "source": "protondb"
+  }
+]

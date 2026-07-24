@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "330580",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Mouse is a little flaky, but everything else is fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15989 Mb",
+    "rating": "Silver",
+    "timestamp": 1536688289,
+    "title": "Shark Attack Deathmatch 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "330580",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541916910,
+    "title": "Shark Attack Deathmatch 2",
+    "source": "protondb"
+  }
+]

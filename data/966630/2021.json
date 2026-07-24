@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "966630",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 10 (RAVEN, DRM 3.40.0, 5.11.0-7620-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Game runs pretty well out-of-the-box. No need to tinker anything.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1626527346,
+    "title": "qop 4",
+    "source": "protondb"
+  }
+]

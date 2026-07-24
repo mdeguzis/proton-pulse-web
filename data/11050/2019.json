@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "11050",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Good performance",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Platinum",
+    "timestamp": 1550574740,
+    "title": "Dracula Origin",
+    "source": "protondb"
+  },
+  {
+    "appId": "11050",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Tried the following options: PROTON_USE_WINED3D, PROTON_USE_D9VK, PROTON_NO_D3D10, PROTON_NO_ESYNC, PROTON_NO_FSYNC, PROTON_OLD_GL_STRING.\nGame crashed before even creating a window.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1567894374,
+    "title": "Dracula Origin",
+    "source": "protondb"
+  }
+]

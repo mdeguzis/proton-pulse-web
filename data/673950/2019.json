@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "673950",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Game runs perfectly now. Only the first ime after the (re)installation i had to click apply again on the graphics  in the video settings. The settings are fine it just didn't look correctly. But after clicking Apply again without changing anything it looked and works fine",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554901225,
+    "title": "Farm Together",
+    "source": "protondb"
+  },
+  {
+    "appId": "673950",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "I wanted to try this game with Proton because the native Linux version had a few small issues. The sky is a bit messed up, but otherwise it's working great.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556609105,
+    "title": "Farm Together",
+    "source": "protondb"
+  }
+]

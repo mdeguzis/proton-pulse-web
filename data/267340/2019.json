@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "267340",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559769115,
+    "title": "Beware Planet Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "267340",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Playing through the story and everything is working great so far. A couple of very minor issues I've experienced are that when in full screen the game doesn't like letting me tab out, and very occasionally after using the laser gun there's a weird graphics glitch that goes away after a few seconds by itself. These don't affect gameplay at all.\nWill update when finished the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1560980988,
+    "title": "Beware Planet Earth",
+    "source": "protondb"
+  }
+]

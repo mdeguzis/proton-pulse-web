@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1710620",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Habe alle neueren Proton, GE-Proton und Proton-GE-MF Versionen probiert. Kein Erfolg",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1672438382,
+    "title": "",
+    "source": "protondb"
+  }
+]

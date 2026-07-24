@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "499440",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (AMD 9060XT 16GB, LLVM 20.1.8, DRM 3.64, 6.17.0-8-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-8-generic",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770596130,
+    "title": "",
+    "source": "protondb"
+  }
+]

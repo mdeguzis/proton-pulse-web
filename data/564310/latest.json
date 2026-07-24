@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "564310",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.1-arch1-1",
+    "notes": "Ran just as Windows would",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1767550751,
+    "title": "Serious Sam Fusion 2017 (beta)",
+    "source": "protondb"
+  },
+  {
+    "appId": "564310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Smooth experience on the Deck, the low points are just nitpicks",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1775044064,
+    "title": "Serious Sam Fusion 2017 (beta)",
+    "source": "protondb"
+  }
+]

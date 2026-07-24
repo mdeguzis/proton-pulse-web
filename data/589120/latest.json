@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "589120",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "5.1.11-arch1-1-ARCH",
+    "notes": "Nothing works... Only black screen. The stupid Github Thread won't help, since Valve expects you to own a Windows 7 PC in 32 Bit.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561752290,
+    "title": "Danganronpa V3: Killing Harmony Demo Ver.",
+    "source": "protondb"
+  },
+  {
+    "appId": "589120",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "5.1.11-arch1-1-ARCH",
+    "notes": "Absolutly not possible to get working without access to a 32-bit Windows 7 PC, to copy libraries and register them in Wine manually. So impossible to fix for the majority of Users.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563101753,
+    "title": "Danganronpa V3: Killing Harmony Demo Ver.",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "589120",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "5.1.11-arch1-1-ARCH",
+    "notes": "The Game is running Flawlessly after this simple script. https://github.com/z0z0z/mf-install",
+    "os": "Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565120498,
+    "title": "Danganronpa V3: Killing Harmony Demo Ver.",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "363360",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "The steam \"preparing to launch\" window appears, then closes. The game does not open at all.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15997 Mb",
+    "rating": "Borked",
+    "timestamp": 1536793909,
+    "title": "Interstellar Rift",
+    "source": "protondb"
+  },
+  {
+    "appId": "363360",
+    "cpu": "Intel Core i7-4770K @ OC 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-041816-generic",
+    "notes": "The game does not start.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541339888,
+    "title": "Interstellar Rift",
+    "source": "protondb"
+  },
+  {
+    "appId": "363360",
+    "cpu": "Intel Core i7-4790K @ OC 4.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.20-041820-generic",
+    "notes": "The game fails to launch, and has no error message.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1544142719,
+    "title": "Interstellar Rift",
+    "source": "protondb"
+  }
+]

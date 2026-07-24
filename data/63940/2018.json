@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "63940",
+    "title": "Men of War: Vietnam",
+    "timestamp": 1534824000,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "63940",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "No tweaks needed, ran quite well",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1545382628,
+    "title": "Men of War: Vietnam",
+    "source": "protondb"
+  },
+  {
+    "appId": "63940",
+    "title": "Men of War: Vietnam",
+    "timestamp": 1534809600,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

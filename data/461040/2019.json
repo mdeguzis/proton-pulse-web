@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461040",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "notes": "Game crashes as soon as it is started. Tried disable esync, disable d3d11 and use wine d3d11.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552813832,
+    "title": "PICO PARK",
+    "source": "protondb"
+  }
+]

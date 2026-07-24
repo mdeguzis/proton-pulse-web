@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "102840",
+    "title": "Shank 2",
+    "timestamp": 1536091353,
+    "rating": "Silver",
+    "notes": "Runs fine, but controller is messed up. Seems to not accept controller config.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "102840",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Everything is fine, except for gamepad. Sometimes the gamepad is recognized, sometimes not, and whatever the case the gamepad isn't able to bring up / navigate through the menu.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Silver",
+    "timestamp": 1537457551,
+    "title": "Shank 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "102840",
+    "cpu": "AMD A8-5600K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "This is a NATIVE LINUX GAME.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541213829,
+    "title": "Shank 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "102840",
+    "title": "Shank 2",
+    "timestamp": 1536076953,
+    "rating": "Silver",
+    "notes": "Runs fine, but controller is messed up. Seems to not accept controller config.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

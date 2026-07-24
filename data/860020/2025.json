@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "860020",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "The developer has stated that they plan to support proton and/or linux at some point, and you may be able to work out some fix, similar to Squad, however at this time it will not work out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1738435130,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "860020",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.8-300.fc41.x86_64",
+    "notes": "Could play online without AntiCheat issues.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1749090147,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "860020",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.16.4-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.1 (git-d6e3b017b2)",
+    "kernel": "6.16.4-200.fc42.x86_64",
+    "notes": "No issues, plays better than in windows.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1757300230,
+    "title": "",
+    "source": "protondb"
+  }
+]

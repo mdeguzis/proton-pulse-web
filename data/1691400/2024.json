@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1691400",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 17.0.6, DRM 3.57, 6.8.8-x64v2-xanmod1-1-edge)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.8.8-x64v2-xanmod1-1-edge",
+    "notes": "It has issues with the level of detail of some elements",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1714865025,
+    "title": "",
+    "source": "protondb"
+  }
+]

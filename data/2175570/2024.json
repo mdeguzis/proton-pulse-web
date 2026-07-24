@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2175570",
+    "cpu": "12th Gen Intel Core i5-12600KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.8.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.4-arch1.2",
+    "kernel": "6.8.4-arch1-1",
+    "notes": "Works flawlessly, doesn't need proton.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1712860906,
+    "title": "",
+    "source": "protondb"
+  }
+]

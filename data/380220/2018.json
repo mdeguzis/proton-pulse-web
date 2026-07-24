@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "380220",
+    "title": "Hover Junkers",
+    "timestamp": 1535221650,
+    "rating": "Borked",
+    "notes": "HTC Vive. Black screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "380220",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.16-041816-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.16-041816-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16050 Mb",
+    "rating": "Borked",
+    "timestamp": 1540133709,
+    "title": "Hover Junkers",
+    "source": "protondb"
+  },
+  {
+    "appId": "380220",
+    "title": "Hover Junkers",
+    "timestamp": 1535207250,
+    "rating": "Borked",
+    "notes": "HTC Vive. Black screen",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

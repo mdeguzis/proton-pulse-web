@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "540510",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.4.0-141-generic",
+    "notes": "In Full Screen mode, the only way to close the game is Alt+F4, and it takes awhile for it to respond.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1548491997,
+    "title": "ISLANDS: Non-Places",
+    "source": "protondb"
+  },
+  {
+    "appId": "540510",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "press escape to quit",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1558056459,
+    "title": "ISLANDS: Non-Places",
+    "source": "protondb"
+  }
+]

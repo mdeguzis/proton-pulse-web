@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "521090",
+    "cpu": "Intel Core2 Quad    Q9550  @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.20.0-1-default",
+    "notes": "Seems to not display some of initial dialogues when starting a game, those can be sometimes closed by pressing Enter or Escape, but inconsistently. Sometimes mouse pointer gets trapped inside such invisible dialogue window space. Also, can't select items in stores (but maybe the same behaviour is observable on Windows, not sure).",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548088296,
+    "title": "Industry Giant",
+    "source": "protondb"
+  }
+]

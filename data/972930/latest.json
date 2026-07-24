@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "972930",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-97.current",
+    "notes": "Characters were invisible at first, but it works fine with \"PROTON_USE_WINED3D=1 %command%\" for the whole ten minutes it takes to 100% complete the game.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542439615,
+    "title": "Hentai Horse Riding",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

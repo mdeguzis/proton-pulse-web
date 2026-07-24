@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "436180",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Steam (native) works perfectly now on Antergos.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546805622,
+    "title": "Spacelords",
+    "source": "protondb"
+  },
+  {
+    "appId": "436180",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "This game should be whitelisted, it works like a native game. Played a lot since late 2018.",
+    "os": "Antergos",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557870336,
+    "title": "Spacelords",
+    "source": "protondb"
+  },
+  {
+    "appId": "436180",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Everything works flawlessly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558048227,
+    "title": "Spacelords",
+    "source": "protondb"
+  }
+]

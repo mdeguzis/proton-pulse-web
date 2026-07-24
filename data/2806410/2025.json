@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2806410",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.64, 6.16.3-76061603-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.4 (git-ab462ae6b7)",
+    "kernel": "6.16.3-76061603-generic",
+    "notes": "Launcher starts but when you launch the game Unity crashes.  Older Proton versions will not launch at all they just crash.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1761053816,
+    "title": "",
+    "source": "protondb"
+  }
+]

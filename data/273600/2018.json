@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "273600",
+    "cpu": "AMD FX-8370 Eight-Core Processor",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Game runs flawlessly, no tweaks were used to run it. Hardware acceleration was recognized by the game set up, very high settings used.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15988 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536540711,
+    "title": "Descent: FreeSpace \u2013 The Great War",
+    "source": "protondb"
+  },
+  {
+    "appId": "273600",
+    "cpu": "i5-2520M CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Sandybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "notes": "Runs perfectly, no obvious issues found. Controller not tested.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Descent: FreeSpace \u2013 The Great War",
+    "source": "protondb"
+  },
+  {
+    "appId": "273600",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.18",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs well. No issues noticed.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537659440,
+    "title": "Descent: FreeSpace \u2013 The Great War",
+    "source": "protondb"
+  }
+]

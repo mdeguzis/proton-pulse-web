@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "745920",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Ultra settings 1080P, does take a little bit to actually load up but no performance impact is noticeable with this configuration. Stable at 144FPS.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1548788025,
+    "title": "Temtem",
+    "source": "protondb"
+  },
+  {
+    "appId": "745920",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "The game runs (controllers needed some work/tinkering) but the frame rate is often more reminiscent of a dia show. Tried game mode etc. and system should be able to handle it easily/when I played on windows it was fine. Sometimes textures aren't loaded/temtems are blacked out. But generally \"playable\" - plus it's Alpha.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553887428,
+    "title": "Temtem",
+    "source": "protondb"
+  }
+]

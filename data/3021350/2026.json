@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3021350",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.57+deb13-amd64",
+    "notes": "\u53ea\u80fd\u5168\u5c4f\uff0c\u9664\u975e\u5728\u4e3b\u83dc\u5355\u5426\u5219\u65e0\u6cd5\u8c03\u6574\u8bbe\u7f6e\uff0c\u6e38\u73a9\u65f6\u6709\u5361\u987f\u3002",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1767518541,
+    "title": "\u900f\u660e\u7684\u5979\u4e0e\u771f\u5b9e\u7684\u6211",
+    "source": "protondb"
+  }
+]

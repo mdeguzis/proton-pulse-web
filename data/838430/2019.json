@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "838430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Seems to work fine with no tweaks",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562531528,
+    "title": "Galaxy Ball",
+    "source": "protondb"
+  }
+]

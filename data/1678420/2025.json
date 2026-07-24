@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1678420",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.5-ba07.fc43.x86_64",
+    "notes": "Used the data from the GOG version with the ScummVM flatpak.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763148102,
+    "title": "Blade Runner: Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1678420",
+    "cpu": "Intel Core i7-10700KF @ 3.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-36-generic",
+    "notes": "The game refuses to launch after clicking the play button on Steam.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1763855421,
+    "title": "Blade Runner: Enhanced Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1678420",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.12-200.fc42.x86_64",
+    "notes": "Working perfectly with proton experimental",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1766259889,
+    "title": "Blade Runner: Enhanced Edition",
+    "source": "protondb"
+  }
+]

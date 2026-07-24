@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "408920",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game did not start before enabling D3d11. Game seems to be nicely playable - with some minor flickering on my laptop on some surfaces. Not a game stopper!",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1549835035,
+    "title": "Krai Mira: Extended Cut",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "408920",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 850M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Finished the game and haven't encountered any issues.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552481669,
+    "title": "Krai Mira: Extended Cut",
+    "source": "protondb"
+  }
+]

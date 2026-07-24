@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1969080",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Works okay, hates multi-monitors (might be hyprland related)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725154754,
+    "title": "",
+    "source": "protondb"
+  }
+]

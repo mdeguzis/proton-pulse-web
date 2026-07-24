@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1216320",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Works out of the box",
+    "os": "KDE neon User Edition 5.17",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1620103589,
+    "title": "Shieldwall",
+    "source": "protondb"
+  },
+  {
+    "appId": "1216320",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Couldnt install Viusal C++",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1622043985,
+    "title": "Shieldwall",
+    "source": "protondb"
+  },
+  {
+    "appId": "1216320",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-32-generic",
+    "notes": "",
+    "os": "KDE neon User Edition 5.17",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1622088764,
+    "title": "Shieldwall",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2399060",
+    "cpu": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"",
+    "duration": "oneToFourHours",
+    "gpu": "lsusb -t",
+    "gpuDriver": "Dev 001, Class=root_hub, Driver=xhci_hcd/12p, 480M",
+    "kernel": "+-02.0  Intel Corporation Tiger Lake-LP GT2 [UHD Graphics G4]",
+    "notes": "",
+    "os": "lspci -tv",
+    "protonVersion": "10.0-3",
+    "ram": "wpctl status",
+    "rating": "gold",
+    "timestamp": 1781765200,
+    "title": "Dread Weight",
+    "source": "protondb"
+  }
+]

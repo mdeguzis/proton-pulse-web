@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "268770",
+    "title": "Treasure Adventure World",
+    "timestamp": 1535900100,
+    "rating": "Borked",
+    "notes": "Runtime Error. Failed to load plugin C:\\users\\steamuser\\Temp\\cap4a8f.tmp\\20.csx (126)",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-7700HQ / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "268770",
+    "title": "Treasure Adventure World",
+    "timestamp": 1535885700,
+    "rating": "Borked",
+    "notes": "Runtime Error. Failed to load plugin C:\\users\\steamuser\\Temp\\cap4a8f.tmp\\20.csx (126)",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-7700HQ / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

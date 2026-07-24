@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "265950",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Quits after splash screen with no error. Very annoying as it works fine in WINE.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556145236,
+    "title": "Ether One",
+    "source": "protondb"
+  },
+  {
+    "appId": "265950",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Game boots up and seems to be running fine so far. Minor issue with the mouse movement occasionally limiting how far the player can turn if you use the 'fn' key on the keyboard to increase brightness or sound levels. Seems to fix itself after hitting 'escape' and going into the 'options' menu then resuming the game again.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559740475,
+    "title": "Ether One",
+    "source": "protondb"
+  }
+]

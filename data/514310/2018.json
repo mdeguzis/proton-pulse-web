@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "514310",
+    "title": "SENRAN KAGURA Bon Appetit!",
+    "timestamp": 1535133524,
+    "rating": "Silver",
+    "notes": "Performance issues. Slow Framerate.",
+    "os": "Kubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i3 -7100 / GT 1030",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "514310",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-0.rc7.git1.1.fc30.x86_64",
+    "notes": "On dualshock 4 are messed up buttons ",
+    "os": "Fedora release 30 (Rawhide)",
+    "protonVersion": "3.16-6",
+    "protonVersionManual": "3.16-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1545493756,
+    "title": "SENRAN KAGURA Bon App\u00e9tit! - Full Course",
+    "source": "protondb"
+  },
+  {
+    "appId": "514310",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Everything works, including X360 controller. Performance is good.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545653167,
+    "title": "SENRAN KAGURA Bon App\u00e9tit! - Full Course",
+    "source": "protondb"
+  },
+  {
+    "appId": "514310",
+    "title": "SENRAN KAGURA Bon Appetit!",
+    "timestamp": 1535119124,
+    "rating": "Silver",
+    "notes": "Performance issues. Slow Framerate.",
+    "os": "Kubuntu 18.04 64-bit",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i3 -7100 / GT 1030",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

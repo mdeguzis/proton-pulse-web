@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "257790",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561885683,
+    "title": "Riptide GP2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "257790",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game ran but was hanging every 20-30 minutes. Using WineD3D11 fixed that and I was able to complete most of the campaign (~6 hours of play)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1562376743,
+    "title": "Riptide GP2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "257790",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.2.10-arch1-1-ARCH",
+    "notes": "Perfect after placing the command \"PROTON_USE_WINED3D=1 %command%\" In game startup options.......\n\nProton 4.11-3 Here",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1567121581,
+    "title": "Riptide GP2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

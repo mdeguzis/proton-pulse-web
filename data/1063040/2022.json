@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1063040",
+    "cpu": "Intel Celeron 4205U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 610 (WHL GT1)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-47-generic",
+    "notes": "Save data issues that result in lost progress, the occasional crash and glitchy two-player mode.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1662414384,
+    "title": "Ben 10: Power Trip",
+    "source": "protondb"
+  }
+]

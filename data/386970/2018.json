@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "386970",
+    "title": "Memory's Dogma CODE:01",
+    "timestamp": 1535872523,
+    "rating": "Gold",
+    "notes": "Performance is good and everything works. Though you need to install quartz and ffdshow through winetricks to get the mpeg videos to play.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "386970",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "The game crashes after playing an hour. It doesn't matter if quartz and ffdshow is installed. I think it is because the game wants to play a cute scene.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542488780,
+    "title": "Memory's Dogma CODE:01",
+    "source": "protondb"
+  },
+  {
+    "appId": "386970",
+    "title": "Memory's Dogma CODE:01",
+    "timestamp": 1535858123,
+    "rating": "Gold",
+    "notes": "Performance is good and everything works. Though you need to install quartz and ffdshow through winetricks to get the mpeg videos to play.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

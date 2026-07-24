@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "465200",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-45-generic",
+    "notes": "This cool little sidescrolling shooter/Contra-esque Roguelike runs perfectly out of the box, including with controller support. ",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1558499099,
+    "title": "Fury Unleashed",
+    "source": "protondb"
+  }
+]

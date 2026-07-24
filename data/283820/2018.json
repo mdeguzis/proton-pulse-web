@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "283820",
+    "title": "Kamui",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Elementary OS 5.0",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900x / RX 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "283820",
+    "title": "KAMUI",
+    "timestamp": 1535638167,
+    "rating": "Platinum",
+    "notes": "Stable 60fps through the entire game, screen options are accessed by pressing F1",
+    "os": "Ubuntu MATE 18.04 (Kernal 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570k / GTX 960",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "283820",
+    "cpu": "Intel Core i5-4250U @ 1.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works fine. Press F1 and then F4 and F6 to go fullscreen stretched. It's an old game so the resolution is low.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545824466,
+    "title": "KAMUI",
+    "source": "protondb"
+  },
+  {
+    "appId": "283820",
+    "title": "Kamui",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Elementary OS 5.0",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900x / RX 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "283820",
+    "title": "KAMUI",
+    "timestamp": 1535623767,
+    "rating": "Platinum",
+    "notes": "Stable 60fps through the entire game, screen options are accessed by pressing F1",
+    "os": "Ubuntu MATE 18.04 (Kernal 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570k / GTX 960",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

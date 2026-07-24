@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "487120",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Performance not as good as in Windows, need to reduce quality. Starting my own server needs a lot more resources than in Windows, for me only playable with low fps(worked fine in windows).",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16008 MB",
+    "rating": "Gold",
+    "timestamp": 1539966876,
+    "title": "Citadel: Forged with Fire",
+    "source": "protondb"
+  },
+  {
+    "appId": "487120",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "pop-up note saying \"dx11 feature level 10.0 is required to run the engine\" then won't load anything more. I guess my system is to old or the game isn't compatible enough with proton.?",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1545921373,
+    "title": "Citadel: Forged with Fire",
+    "source": "protondb"
+  }
+]

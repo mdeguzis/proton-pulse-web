@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "696180",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game is playable with good performance, but cut-scene videos are skipped (WMV3/WMAP format). Also Nintendo Switch Pro controller worked fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552773122,
+    "title": "Bullet Witch",
+    "source": "protondb"
+  }
+]

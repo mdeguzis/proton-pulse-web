@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "323220",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.13-xanmod1",
+    "notes": "I had some issues playing online with a friend using windows, so I ran it with proton and everything worked very well.",
+    "os": "Freedesktop.org 19.08.12 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1596760728,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "323220",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.8.1-arch1-1",
+    "notes": "La versi\u00f3n nativa tiene problemas con el mando de XOne, con Proton funciona bien.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598093434,
+    "title": "",
+    "source": "protondb"
+  }
+]

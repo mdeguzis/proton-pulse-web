@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "340050",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.18.0-3-amd64",
+    "notes": "I found a way to get the game working under Proton:\n\n\n1) use protontricks 340050 xna31 to install XNA Redist 3.1<br>\n2) this will automatically install dotnet20sp2\n3) now running the game will tell you .NET Client Profile 4.0 is missing\n4) run protontricks 340050 uninstaller and repair .NET Client Profile 4.0, this may take a good while\n5) now running the game will tell you Windows Media Player is missing\n6) run protontricks 340050 uninstaller and install wmp11-windowsxp-x64-enu.exe since wmp9 will not work on a 64-bit proton prefix\n7) run the game, go to settings, set the fullscreen and your native resolution\n8) start a new game",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "11 GB",
+    "rating": "Gold",
+    "timestamp": 1549883594,
+    "title": "Survivalist",
+    "source": "protondb"
+  },
+  {
+    "appId": "340050",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-48-generic",
+    "notes": "starts, shows loading screen for a few seconds and then crashes.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1560346013,
+    "title": "Survivalist",
+    "source": "protondb"
+  }
+]

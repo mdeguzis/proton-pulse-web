@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "871310",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-towo.2-siduction-amd64",
+    "notes": "currently no ultrawide support. Logitech F710 works well but the game really plays best with mouse/keyboard. the game hangs silently on exit, must manually kill leftover processes. tried many other Proton versions and options, always hangs on exit. otherwise perfect.",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "Beta (3.16-9)",
+    "protonVersionManual": "4.14-GE-1",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566671204,
+    "title": "Arc Savior",
+    "source": "protondb"
+  }
+]

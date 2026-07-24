@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "955560",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-3b2ad8b290)",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Tested:\n\n- Normal gameplay up to the first fight. Including 1 movie, a visual novel sequence and a battle.\n\n- Options menu.\n\n- Saving the game.\n\nGlitches:\n\n- Major graphical glitches, to fix: go to settings, enable compatibility mode. \n\n- Movies don't work.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1544242288,
+    "title": "Evenicle",
+    "source": "protondb"
+  },
+  {
+    "appId": "955560",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-3b2ad8b290)",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Tested: - Normal gameplay up to the first fight. Including 1 movie, a visual novel sequence and a battle. - Options menu. - Saving the game. Glitches: - Major graphical glitches, to fix: go to settings, enable compatibility mode. - Movies don't work. - Very occasional crashes. Save often.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1544256517,
+    "title": "Evenicle",
+    "source": "protondb"
+  },
+  {
+    "appId": "955560",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Runs nearly perfectly out of the box. Cannot play movies, but doesn't crash on the playback error message (look up the video elsewhere if you really need to see it). Watching terminal window if running through a script, you will see what seem to be overflow errors after a length of time spent in the game which will eventually lead to a crash, but this takes place after about 2+ hours of play. Save often if you're paranoid.\n\nAlso tested on a tablet using a Core m7 with an Intel 515 graphics chip running Arch, also no problems.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544714049,
+    "title": "Evenicle",
+    "source": "protondb"
+  }
+]

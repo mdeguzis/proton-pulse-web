@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "381640",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.8.0-40-generic",
+    "notes": "\u041d\u0435 \u0443\u0434\u0430\u0435\u0442\u0441\u044f \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c my.games \u043b\u0430\u0443\u043d\u0447\u0435\u0440. \u0417\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u0447\u0435\u0440\u0435\u0437 lutris, \u0447\u0435\u0440\u0435\u0437 \u043d\u0435\u0433\u043e \u0441\u043c\u043e\u0433 \u043e\u0442\u043b\u0438\u0447\u043d\u043e \u043f\u043e\u0438\u0433\u0440\u0430\u0442\u044c.",
+    "os": "Ubuntu 20.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1611854965,
+    "title": "Allods Online RU",
+    "source": "protondb"
+  }
+]

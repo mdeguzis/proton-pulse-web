@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "17500",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "The native version of this game has never worked for me, but thankfully the Windows version is working almost perfectly for me out of the box including multiplayer. Custom maps via HTTP/FastDL don't appear to download, but you can download them manually. Run \"sv_downloadurl\" and it will return the map download server. Manually download the map through your web browser and place the .bsp file in your /Steam/steamapps/common/Zombie Panic Source/zps/maps/ directory. If the map file ends with .bz2 you must extract it first. Here's an additional collection of maps: https://www.dropbox.com/sh/ytx34q83c9awxk6/AAD7MO3qSgHw0I_3TFsV0jfFa",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556474426,
+    "title": "Zombie Panic! Source",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "526370",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "notes": "All 3 game modes of the game work fine. Performance is smooth and the music sounds good.\n\nOne complaint is it's impossible to return to the main menu in-game (escpae doesn't work) so I need to alt+tab away and kill the process to go back and select a different game mode. I think that is enough to dock down from platinum to silver.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1551856886,
+    "title": "SUPER KINKY",
+    "source": "protondb"
+  },
+  {
+    "appId": "526370",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.9-301.fc30.x86_64",
+    "notes": "Runs PERFECTLY. The mouse doesn't work upon launch, just disconnect and reconnect it. There is no use for the Escape button in this game. If you want to exit this mode, die and look behind you, you will see a \"Exit the Arena\" prompt.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1563008809,
+    "title": "SUPER KINKY",
+    "source": "protondb"
+  }
+]

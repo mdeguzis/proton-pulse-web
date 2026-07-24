@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "989550",
+    "cpu": "AMD Ryzen Threadripper 2920X 12-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.1.18-1-MANJARO",
+    "notes": "Opening is not working. One error is popping up over and over in the main menu that prevents me from playing in fullscreen. I have to click it away every time and it shows up behind the game in fullscreen, the game freezes until i press \"ok\". Game does crash sometimes. The gameplay and performance has no issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "48 GB",
+    "rating": "Bronze",
+    "timestamp": 1564950740,
+    "title": "Million Arthur: Arcana Blood",
+    "source": "protondb"
+  }
+]

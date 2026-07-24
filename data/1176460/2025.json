@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1176460",
+    "cpu": "Intel Core i5-8365U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.13.10-100.fc40.x86_64",
+    "notes": "Playable. Unsure how much to blame the game over my setup.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1745547433,
+    "title": "",
+    "source": "protondb"
+  }
+]

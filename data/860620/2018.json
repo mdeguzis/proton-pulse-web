@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "860620",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game runs, but has not a good performance and some little graphic glitches.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541813243,
+    "title": "KURSK",
+    "source": "protondb"
+  },
+  {
+    "appId": "860620",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.18.16-arch1-1-vfio",
+    "notes": "It runs normally",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545753022,
+    "title": "KURSK",
+    "source": "protondb"
+  }
+]

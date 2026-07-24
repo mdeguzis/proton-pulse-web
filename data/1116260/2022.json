@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1116260",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.44, 5.17.3-302.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.3-302.fc36.x86_64",
+    "notes": "Purple screen",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1653492580,
+    "title": "",
+    "source": "protondb"
+  }
+]

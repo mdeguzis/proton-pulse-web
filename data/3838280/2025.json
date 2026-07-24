@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3838280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1760860485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3838280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "**\u4ec5\u9488\u5bf9\u6e38\u620f\u5b89\u88c5\u4e86h\u8865\u4e01\u7684\u8bf4\u660e\uff1a**\nGE-Proton10-20\u3001GE-Proton8-11\u53ef\u4ee5\u64ad\u653eop\u5e76\u6709\u58f0\u97f3\uff0c\u540c\u65f6\u53ef\u4ee5\u663e\u793a\u8fdb\u7ebf\u540e\u7684hscene\u7684\u52a8\u6001CG\u90e8\u5206\uff0c\u4f46\u662f\u65e0\u8bba\u80fd\u4e0d\u80fd\u663e\u793a\u52a8\u6001CG\u5728\u8fd9\u90e8\u5206\u90fd\u4f1a\u5bfc\u81f4\u6e38\u620f\u5361\u6b7b\uff0c\u5728windows\u4e0a\u4e0d\u4f1a\u5361\u6b7b\u3002",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1761781298,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3838280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u9700\u8981\u5b89\u88c5wmp11\u3001directshow\u4f7f\u6e38\u620f\u6b63\u5e38\u8fd0\u884c",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1761811557,
+    "title": "",
+    "source": "protondb"
+  }
+]

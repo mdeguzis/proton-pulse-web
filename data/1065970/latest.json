@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "1065970",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.1.4-1-default",
+    "notes": "Game works perfectly.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559565016,
+    "title": "\u72fc\u3068\u9999\u8f9b\u6599VR/Spice&WolfVR",
+    "source": "protondb"
+  },
+  {
+    "appId": "1065970",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "Later will try with VR headset, but for this moment runs perfectly. MAX settings, tesselation, 2x resolution.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559719886,
+    "title": "\u72fc\u3068\u9999\u8f9b\u6599VR/Spice&WolfVR",
+    "source": "protondb"
+  },
+  {
+    "appId": "1065970",
+    "cpu": "AMD Turion II P520 Dual-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD REDWOOD",
+    "gpuDriver": "3.1 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Wont start. Always the same error: \n\nFailed to initalize player: \n\nFailed to initialize graphics. \nMake sure you have DirectX 11 installed, have up to date drivers for your graphics card and have not disabled 3D acceleration in display settings. \nInitializeEngineGraphics failed\n\n\n\n\n",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1562255793,
+    "title": "\u72fc\u3068\u9999\u8f9b\u6599VR/Spice&WolfVR",
+    "source": "protondb"
+  }
+]

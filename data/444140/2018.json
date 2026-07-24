@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "444140",
+    "title": "Sonicomi",
+    "timestamp": 1535379469,
+    "rating": "Borked",
+    "notes": "show the intro in 720p and medium setting but any higher than that its will show nothing",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "ryzen 5 1600 / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "444140",
+    "title": "Sonicomi",
+    "timestamp": 1535365069,
+    "rating": "Borked",
+    "notes": "show the intro in 720p and medium setting but any higher than that its will show nothing",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "ryzen 5 1600 / gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

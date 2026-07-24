@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2764370",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (radeonsi, vangogh, LLVM 18.1.1, DRM 3.57, 6.8.9-301.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.5",
+    "kernel": "6.8.9-301.fsync.fc40.x86_64",
+    "notes": "Unity Crash Handler popup appears right after launching the game, and closes quickly",
+    "os": "Fedora Linux 40.20240510.0 (Bazzite GNOME)",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1715440863,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2764370",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u554f\u984c\u306a\u304f\u52d5\u4f5c\u3057\u305f",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1718803162,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2764370",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.74-3-MANJARO",
+    "notes": "Runs without any problems after switchting to GE Proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1728642556,
+    "title": "",
+    "source": "protondb"
+  }
+]

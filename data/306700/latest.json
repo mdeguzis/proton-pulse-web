@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "306700",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game worked perfectly with Xbox 360 controller with no tweaks needed. Note: game speed is tied to framerate, so enabling vsync with 144hz will make it run too fast. Disable vsync to make it playable again. This exists on the Windows native version as well.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558939777,
+    "title": "Iron Fisticle",
+    "source": "protondb"
+  },
+  {
+    "appId": "306700",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-towo.3-siduction-amd64",
+    "notes": "Logitech F710 gamepad works ",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565702737,
+    "title": "Iron Fisticle",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "15190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-11e1fa1 2019-04-03 bionic-oibaf-ppa)",
+    "kernel": "4.18.0-17-generic",
+    "notes": "runs out of the box , no issues.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554409626,
+    "title": "Brothers in Arms: Road to Hill 30\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "15190",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.9_1",
+    "notes": "The game runs flawless and without any issues. i highly recommend increasing the FOV via the game's config files to make the game more playable on modern wide and ultra wide screens (Check for a guide online, user game config is located in steamapps/compatdata/15190/drive_c/users/steamuser/applicationdata/Gearbox software).",
+    "os": "Void Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561056639,
+    "title": "Brothers in Arms: Road to Hill 30\u2122",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2825600",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Le message d'erreur dit :\nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Zorin OS 17.3",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1767285086,
+    "title": "",
+    "source": "protondb"
+  }
+]

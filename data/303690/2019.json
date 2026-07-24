@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "303690",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "No issues running through a couple dungeons for almost an hour.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549934943,
+    "title": "FATE: The Cursed King",
+    "source": "protondb"
+  },
+  {
+    "appId": "303690",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-200.fc29.x86_64",
+    "notes": "Everything works perfectly out of the box.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554743180,
+    "title": "FATE: The Cursed King",
+    "source": "protondb"
+  },
+  {
+    "appId": "303690",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly; no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558986094,
+    "title": "FATE: The Cursed King",
+    "source": "protondb"
+  }
+]

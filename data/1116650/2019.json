@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1116650",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Runs without crashing, but the trailer (mp4 asset) doesn't play. Logically the paid dlc feature film isn't going to work either. There's a few other neat things to do, but since the main appeal of this game is the VR360 film I think it deserves a bronze rating.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1567471382,
+    "title": "CAPCOM GO! Apollo VR Planetarium",
+    "source": "protondb"
+  }
+]

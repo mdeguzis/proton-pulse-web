@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "60800",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "\"Cannot initialize windows media video playback. Please reinstall game.\"",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1537604351,
+    "title": "Numen: Contest of Heroes",
+    "source": "protondb"
+  }
+]

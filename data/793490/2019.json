@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "793490",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.0.0",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Playable with \"PROTON_USE_WINED3D11=1 PROTON_NO_ESYNC=1 %command%\"",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553394245,
+    "title": "Exocraft",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "793490",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.0.0",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Barely works with \"PROTON_USE_WINED3D=1 %command%\"(WebGL is required. Click here to check your browser.)",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1553395013,
+    "title": "Exocraft",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "793490",
+    "cpu": "AMD FX-8120 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Launcher opens fine, but unable to play the game (\"WebGL is required. Click here to check your browser\")",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564201985,
+    "title": "Exocraft",
+    "source": "protondb"
+  }
+]

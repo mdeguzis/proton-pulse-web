@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "209670",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-300.fc29.x86_64",
+    "notes": "This game advertises native Linux support, but it does not work (developer did not upload Linux binaries to Steam and lied on Linux support to get his game into original Humble Bundle). Thanks to new Steam update it is now possible to run this game on Linux through Proton - I tried it and it works perfectly.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547799471,
+    "title": "Cortex Command",
+    "source": "protondb"
+  },
+  {
+    "appId": "209670",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Just runs.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1555129754,
+    "title": "Cortex Command",
+    "source": "protondb"
+  },
+  {
+    "appId": "209670",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Cortex Command had Linux support, but the dev abandoned it. Still, if you choose to Force use Proton in the Properties window, it's install and run Ok.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1555129853,
+    "title": "Cortex Command",
+    "source": "protondb"
+  }
+]

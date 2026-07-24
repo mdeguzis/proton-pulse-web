@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "368640",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Completed the game even with secret ending, everything worked fine.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554499545,
+    "title": "htoL#NiQ: The Firefly Diary / htoL#NiQ-\u30db\u30bf\u30eb\u30ce\u30cb\u30c3\u30ad-",
+    "source": "protondb"
+  },
+  {
+    "appId": "368640",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Just Runs Perfectly - played from beginning to stage 4-4",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555676338,
+    "title": "htoL#NiQ: The Firefly Diary / htoL#NiQ-\u30db\u30bf\u30eb\u30ce\u30cb\u30c3\u30ad-",
+    "source": "protondb"
+  },
+  {
+    "appId": "368640",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-arch1-1-ARCH",
+    "notes": "Completed including chapter X without any problems. Do not set in game resolution above 1920x1080 or some parts will not render correctly (not a proton problem, reported by windows players too).",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559604127,
+    "title": "htoL#NiQ: The Firefly Diary / htoL#NiQ-\u30db\u30bf\u30eb\u30ce\u30cb\u30c3\u30ad-",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "205190",
+    "title": "Rocksmith",
+    "timestamp": 1535543062,
+    "rating": "Borked",
+    "notes": "Game runs perfectly. But it does not recognize the Real Tone Cable.",
+    "os": "Arch LInux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51-5",
+    "specs": "i7-7740X / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "205190",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "So here's the thing, the game runs perfectly. It's a matter of getting the real tone cable to show up in game. I've tried switching around the sound drivers to no avail. My guess is that if you could add the real tone cable to the list of devices in the winecfg, you might be able to work. I spent some time trying but didn't have any luck.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543104019,
+    "title": "Rocksmith\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "205190",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.9-300.fc29.x86_64",
+    "notes": "does not start - game crashes with a message \"something went wrong\" ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545238030,
+    "title": "Rocksmith\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "205190",
+    "title": "Rocksmith",
+    "timestamp": 1535528662,
+    "rating": "Borked",
+    "notes": "Game runs perfectly. But it does not recognize the Real Tone Cable.",
+    "os": "Arch LInux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51-5",
+    "specs": "i7-7740X / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

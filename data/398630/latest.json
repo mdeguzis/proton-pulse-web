@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "398630",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "All three games are unplayably laggy.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536541874,
+    "title": "Twisted Lands Trilogy: Collector's Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "398630",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works without any  adjustments, though mouse input is very laggy. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7874 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537369604,
+    "title": "Twisted Lands Trilogy: Collector's Edition",
+    "source": "protondb"
+  }
+]

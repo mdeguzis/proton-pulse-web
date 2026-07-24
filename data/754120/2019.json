@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "754120",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "The game will not launch. Disable D3d11 or use wine D3d11 and it runs perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557556880,
+    "title": "Ninja Stealth 3",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

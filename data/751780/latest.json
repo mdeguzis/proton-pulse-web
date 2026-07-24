@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "751780",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "If you're having issues with the native version not working like I did, give Proton a shot. It works without any issues and runs smooth as butter for me. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556836137,
+    "title": "Forager",
+    "source": "protondb"
+  },
+  {
+    "appId": "751780",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.6-arch1-1-ARCH",
+    "notes": "This game was once native to Linux, but Linux support was removed after the fact.  When I start the game the window opens up with half of it on one monitor and half on the other for a second or two and then closes.  I tried all of the runtime config options listed on the Proton GitHub page, but nothing changed the result at all.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571366503,
+    "title": "Forager",
+    "source": "protondb"
+  },
+  {
+    "appId": "751780",
+    "cpu": "AMD A8-7410 APU with AMD Radeon R5 Graphics",
+    "duration": "severalHours",
+    "gpu": "X.Org Gallium 0.4 on AMD MULLINS (DRM 2.49.0 / 4.9.0-9-amd64, LLVM 3.9.1)",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "Set Launch Options to: PROTON_USE_WINED3D11=1 %command%\n\nI've also read that you can install the mesa vulkan driver and that it may work, but that is untested by me. \n\nThe Linux native version is locked at 2.0.4, under the General tab in the app properties, I forced compatibility to the newest Proton to play the newest windows version. (3.0.3 when I tested).\n\nEverything works great, even with outdated drivers (Debian Stretch). ",
+    "os": "Debian GNU/Linux 9.11 (stretch)",
+    "protonVersion": "4.11-7",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1571675758,
+    "title": "Forager",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

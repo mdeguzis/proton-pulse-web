@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "247120",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "5.0.0-050000rc6-generic",
+    "notes": "After intros it quits.\n\nDebug log shows it tries to load DLL file named \".dll\"\n\n\n\n630.308:0008:003c:trace:module:MODULE_InitDLL (0xd5f0000,THREAD_ATTACH,(nil)) - RETURN 1\n630.308:0008:0009:trace:module:load_dll looking for L\"\" in L\"Z:\\\\home\\\\mikk\\\\.steam\\\\steam\\\\steamapps\\\\common\\\\Portal 2 Sixense Perceptual Pack;portal2_sixense\\\\bin\\\\;C:\\\\Program Files (x86)\\\\Steam;C:\\\\windows\\\\system32;C:\\\\windows\\\\system;C:\\\\windows;Z:\\\\home\\\\mikk\\\\.steam\\\\steam\\\\steamapps\\\\common\\\\Portal 2 Sixense Perceptual Pack\\\\bin\\\\;C:\\\\windows\\\\system3\"...\n630.310:0008:0009:trace:module:get_load_order looking for L\".dll\"\n630.310:0008:0009:trace:module:get_load_order got hardcoded default for L\".dll\"\n630.310:0008:0009:trace:module:load_builtin_dll Trying built-in L\".dll\"\n630.310:0008:0009:warn:module:load_builtin_dll cannot open .so lib for builtin L\".dll\": /home/mikk/.steam/steam/steamapps/common/Proton 3.16 Beta/dist/lib/wine/.dll.so: cannot open shared object file: No such file or directory\n630.310:0008:0009:warn:module:load_dll Failed to load module L\"\"; status=c0000135\n630.310:0008:0009:trace:seh:raise_exception code=c0000005 flags=0 addr=0xd9f2b87 ip=0d9f2b87 tid=0009\n630.310:0008:0009:trace:seh:raise_exception  info[0]=00000000\n630.310:0008:0009:trace:seh:raise_exception  info[1]=00000000\n630.310:0008:0009:trace:seh:raise_exception  eax=00000000 ebx=00000000 ecx=0000003c edx=0de5d864 esi=0e052a78 edi=0e052a78\n630.310:0008:0009:trace:seh:raise_exception  ebp=0033e59c esp=0033e48c cs=0023 ds=002b es=002b fs=0063 gs=006b flags=00210246\n630.310:0008:0009:trace:seh:call_stack_handlers calling handler at 0x9a16200 code=c0000005 flags=0\n630.310:0008:0009:trace:seh:call_stack_handlers handler at 0x9a16200 returned 1\n630.310:0008:0009:trace:seh:call_stack_handlers calling handler at 0x9a16308 code=c0000005 flags=0\n630.310:0008:0009:trace:seh:call_stack_handlers handler at 0x9a16308 returned 1\n630.310:0008:0009:trace:seh:call_stack_handlers calling handler at 0x9a16320 code=c0000005 flags=0",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550094983,
+    "title": "Portal 2 Sixense Perceptual Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "247120",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Intro screen, and then just close, no way to play it, might be because of the hardware required, not supported i guess",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565642746,
+    "title": "Portal 2 Sixense Perceptual Pack",
+    "source": "protondb"
+  },
+  {
+    "appId": "247120",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.3.6-200.fc30.x86_64",
+    "notes": "totally borked",
+    "os": "Unknown",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571759984,
+    "title": "Portal 2 Sixense Perceptual Pack",
+    "source": "protondb"
+  }
+]

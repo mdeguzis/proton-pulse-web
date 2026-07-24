@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "914800",
+    "cpu": "Intel Xeon E31270 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "This error has something to do with DirectX Video Acceleration. This is a windows API and atm im not sure how to fix it.\n\n\nWindowsVideoMedia error 0x80004001 while reading Z:/home/user/.local/share/Steam/steamapps/common/Coffee Talk Demo/CoffeeTalk_Data/sharedassets1.resource\n\nContext: Turning DXVA off\nError details: <Empty>\nTrack types:",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556374530,
+    "title": "Coffee Talk",
+    "source": "protondb"
+  },
+  {
+    "appId": "914800",
+    "cpu": "Intel Xeon E31270 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.21-1-MANJARO",
+    "notes": "Now works perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571872194,
+    "title": "Coffee Talk",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "970500",
+    "cpu": "AMD Ryzen 7 8845H w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 17.0.6, DRM 3.57, 6.9.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.3-arch1-1",
+    "notes": "However, the movie files do not work as mentioned by others",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1718554947,
+    "title": "\u79e6\u6b87 (Prince of Qin)",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "46560",
+    "cpu": "i5 CPU         650  @ 3.20GHz",
+    "gpu": "GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Input lags after closing menus or text-popups. Wine bug 39513.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Bronze",
+    "timestamp": "1536451200",
+    "title": "Robin Hood: The Legend of Sherwood",
+    "source": "protondb"
+  },
+  {
+    "appId": "46560",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The lags after messages are there but small. The game is quite playable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541364733,
+    "title": "Robin Hood: The Legend of Sherwood",
+    "source": "protondb"
+  },
+  {
+    "appId": "46560",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs perfect without tweaks.\nhttps://www.youtube.com/watch?v=PrvMvAuyUcE\n",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543865548,
+    "title": "Robin Hood: The Legend of Sherwood",
+    "source": "protondb"
+  }
+]

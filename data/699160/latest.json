@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "699160",
+    "cpu": "Intel Xeon E5-2650L v3 @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "No problems",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1561084068,
+    "title": "A Plot Story",
+    "source": "protondb"
+  }
+]

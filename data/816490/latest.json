@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "816490",
+    "cpu": "Intel Core i7-4600U @ 2.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.20.14-200.fc29.x86_64",
+    "notes": "Works out of the box without any tweaking.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1554647901,
+    "title": "Hidden Paws",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "305940",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs smoothly and OOB w/o tweaks. The text has some minor issues but it's completely readable.\n\nLuckily for me also completely in german except for the audio voice. But that's fine. :-)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559217415,
+    "title": "Project AURA",
+    "source": "protondb"
+  }
+]

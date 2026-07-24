@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "345240",
+    "title": "Grand Theft Auto V",
+    "timestamp": 1536417160,
+    "rating": "Gold",
+    "notes": "Follow the dxvk config explained in other posts but as of september 8 you also need to disable esync, your launch options should look like following:\nDXVK_CONFIG_FILE=/home/user/gta_dxvk.conf PROTON_NO_ESYNC=1 %command%",
+    "os": "Manjaro latest",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 3570k gtx 970",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  },
+  {
+    "appId": "345240",
+    "title": "SHOGUN: Total War - Collection",
+    "timestamp": 1535544945,
+    "rating": "Borked",
+    "notes": "A totally blank launcher screen; after leaving it the game crashed",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.3-devel",
+    "specs": "i5-3210/HD 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "345240",
+    "title": "SHOGUN: Total War\u2122 - Gold Edition",
+    "timestamp": 1535345458,
+    "rating": "Borked",
+    "notes": "Launcher screen is completely blank, but areas are clickable. ",
+    "os": "Arch Linux 64bit (Kernel 4.14)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i3-4000M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "345240",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.11-041911-lowlatency",
+    "notes": "The launcher added to all Total War games is broken under Proton/WINE. It appears completelly white BUT the buttons actually work (to start the game you have to click somewhere on the top right region). The game works great from that point, although setting anything above 1920x1080 drastically drops the FPS (probably a problem with the old engine). The most serious issue is not related to gameplay - after quitting the game it is still running untill you kill every process related to it manually (all \".exe\", all wine related, and the \"steam web helper\" group).",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Silver",
+    "timestamp": 1545607129,
+    "title": "SHOGUN: Total War\u2122 - Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "345240",
+    "title": "Grand Theft Auto V",
+    "timestamp": 1536402760,
+    "rating": "Gold",
+    "notes": "Follow the dxvk config explained in other posts but as of september 8 you also need to disable esync, your launch options should look like following:\nDXVK_CONFIG_FILE=/home/user/gta_dxvk.conf PROTON_NO_ESYNC=1 %command%",
+    "os": "Manjaro latest",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 3570k gtx 970",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  },
+  {
+    "appId": "345240",
+    "title": "SHOGUN: Total War - Collection",
+    "timestamp": 1535530545,
+    "rating": "Borked",
+    "notes": "A totally blank launcher screen; after leaving it the game crashed",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.3-devel",
+    "specs": "i5-3210/HD 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "345240",
+    "title": "SHOGUN: Total War\u2122 - Gold Edition",
+    "timestamp": 1535331058,
+    "rating": "Borked",
+    "notes": "Launcher screen is completely blank, but areas are clickable. ",
+    "os": "Arch Linux 64bit (Kernel 4.14)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i3-4000M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

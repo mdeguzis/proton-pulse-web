@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "823730",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.10-200.fc29.x86_64",
+    "notes": "Seems to work well :)",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-4",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1558203066,
+    "title": "Oscillatron: Alien Frequency",
+    "source": "protondb"
+  }
+]

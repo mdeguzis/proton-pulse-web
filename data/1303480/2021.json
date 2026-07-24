@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1303480",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Menu sounds, and cursor shape-change, but black screen",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1626131490,
+    "title": "Radio Viscera",
+    "source": "protondb"
+  }
+]

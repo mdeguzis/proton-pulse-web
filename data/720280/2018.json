@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "720280",
+    "title": "Fox Hime",
+    "timestamp": 1535566191,
+    "rating": "Borked",
+    "notes": "Game runs but there is no text in-game or in options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "720280",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E7500  @ 2.93GHz",
+    "gpu": "NVIDIA Corporation GeForce 8400GS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.14.69-1-MANJARO",
+    "notes": "fox hime, opens and can acess everything, like cosplay dlc, configurations, but when click on start game we receive a black screen, I instaled core_fonts with 'protontricks 720280 corefonts' and the fonts worked, and I tried add the command 'PROTON_NO_D3D11=1 %command%' because they crash at boot. I think I receved de black screen because of my weak hardware, I do not know",
+    "os": "\"Manjaro Linux\" (64-bit)",
+    "protonVersion": "Beta",
+    "ram": "3882 Mb",
+    "rating": "Borked",
+    "timestamp": 1537627655,
+    "title": "Fox Hime",
+    "source": "protondb"
+  },
+  {
+    "appId": "720280",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "The game runs fine but the background music isn't looped correctly so it crackles randomly. Turn off the background music and everything is fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542940076,
+    "title": "Fox Hime",
+    "source": "protondb"
+  },
+  {
+    "appId": "720280",
+    "title": "Fox Hime",
+    "timestamp": 1535551791,
+    "rating": "Borked",
+    "notes": "Game runs but there is no text in-game or in options.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 980",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

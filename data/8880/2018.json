@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "8880",
+    "title": "Freedom Force",
+    "timestamp": 1535130256,
+    "rating": "Silver",
+    "notes": "Game work fine with a minor issue with the mouse speed in the main menu",
+    "os": "Manjaro testing 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8350 / HD 7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8880",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It had no sound or music the first time, but after selecting Directsound3d Software Emulation and restarting, music and sound works just fine. Everything else is perfect.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Gold",
+    "timestamp": 1537400712,
+    "title": "Freedom Force",
+    "source": "protondb"
+  },
+  {
+    "appId": "8880",
+    "title": "Freedom Force",
+    "timestamp": 1535115856,
+    "rating": "Silver",
+    "notes": "Game work fine with a minor issue with the mouse speed in the main menu",
+    "os": "Manjaro testing 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8350 / HD 7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "391270",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "attempts to launch game settings but then hangs.. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1537877978,
+    "title": "Fingerbones",
+    "source": "protondb"
+  },
+  {
+    "appId": "391270",
+    "cpu": "AMD A9-9410 RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.4 Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "it runs but there is something wrong with the graphics. like you can not see any text on the starting menu, and you can not see other items in the gameplay.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1541268175,
+    "title": "Fingerbones",
+    "source": "protondb"
+  }
+]

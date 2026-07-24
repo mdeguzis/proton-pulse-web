@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "470740",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "works perfectly",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540631049,
+    "title": "Demolish & Build 2017",
+    "source": "protondb"
+  },
+  {
+    "appId": "470740",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540631131,
+    "title": "Demolish & Build 2017",
+    "source": "protondb"
+  }
+]

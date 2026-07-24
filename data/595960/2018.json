@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "595960",
+    "cpu": "Intel Core i5-8350U @ 1.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.19.4-300.fc29.x86_64",
+    "notes": "It starts but runs at unplayable low FPS. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543614078,
+    "title": "Pinball Wicked",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

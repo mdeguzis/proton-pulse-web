@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "512270",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "On first load there was no sound, but after closing it and opening again it worked perfectly and has done since. If it weren't for that, I'd have given this a platinum rating.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559080948,
+    "title": "Home - A VR Spacewalk",
+    "source": "protondb"
+  }
+]

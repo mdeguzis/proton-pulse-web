@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "1600",
+    "title": "Dangerous Waters",
+    "timestamp": 1535471647,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4700HQ / GT 750M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1600",
+    "title": "Dangerous Waters",
+    "timestamp": 1535496869,
+    "rating": "Silver",
+    "notes": "4:3 resolutions only + could not activate windowed mode. Both not a Proton issue, I had the same experience on Windows 7.",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "1600",
+    "cpu": "Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Only 4:3, but I think it's always been that way. It's actually better on linux because it dosen't bug you about voice control. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "11948 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537415701,
+    "title": "Dangerous Waters",
+    "source": "protondb"
+  },
+  {
+    "appId": "1600",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32124 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538489708,
+    "title": "Dangerous Waters",
+    "source": "protondb"
+  },
+  {
+    "appId": "1600",
+    "title": "Dangerous Waters",
+    "timestamp": 1535457247,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4700HQ / GT 750M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1600",
+    "title": "Dangerous Waters",
+    "timestamp": 1535482469,
+    "rating": "Silver",
+    "notes": "4:3 resolutions only + could not activate windowed mode. Both not a Proton issue, I had the same experience on Windows 7.",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

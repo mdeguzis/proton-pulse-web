@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1313",
+    "title": "Sin",
+    "timestamp": 1534970992,
+    "rating": "Platinum",
+    "notes": "Works perfect.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 2600 / RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1313",
+    "title": "SiN",
+    "timestamp": 1535629649,
+    "rating": "Silver",
+    "notes": "Game runs flawlessly at maximum (graphics) settings, but has display issues - for example, \"fullscreen\" doesn't actually display in fullscreen (it still displays in a window); a section at the top and bottom of the picture is \"chopped off\" also. Changing the various video settings produces similar results, irrespective of settings used.",
+    "os": "Ubuntu 18.04.1 LTS (64-bit)(Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel Core i7-6500U/NNVIDIA GeForce 920MX",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1313",
+    "title": "Sin",
+    "timestamp": 1534956592,
+    "rating": "Platinum",
+    "notes": "Works perfect.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.17.17-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 2600 / RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "1313",
+    "title": "SiN",
+    "timestamp": 1535615249,
+    "rating": "Silver",
+    "notes": "Game runs flawlessly at maximum (graphics) settings, but has display issues - for example, \"fullscreen\" doesn't actually display in fullscreen (it still displays in a window); a section at the top and bottom of the picture is \"chopped off\" also. Changing the various video settings produces similar results, irrespective of settings used.",
+    "os": "Ubuntu 18.04.1 LTS (64-bit)(Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel Core i7-6500U/NNVIDIA GeForce 920MX",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

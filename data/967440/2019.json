@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "967440",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.9-301.fc30.x86_64",
+    "notes": "Runs perfectly. No glitches.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562237574,
+    "title": "Kick The Anime Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "967440",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "Runs perfectly. No glitches.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564399528,
+    "title": "Kick The Anime Simulator",
+    "source": "protondb"
+  }
+]

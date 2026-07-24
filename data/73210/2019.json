@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "73210",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-48-generic",
+    "notes": "As easy as stated before. Just rename executables. Play!",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557099980,
+    "title": "Sengoku",
+    "source": "protondb"
+  },
+  {
+    "appId": "73210",
+    "cpu": "Intel Core i3-3217U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.4",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "After renaming SengokuGame.exe to Sengoku.exe works ok. FPS was around 10, but probably due my GPU",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1560147612,
+    "title": "Sengoku",
+    "source": "protondb"
+  },
+  {
+    "appId": "73210",
+    "cpu": "Intel Core i5-3475S @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Everyrthing was running flawless with decent framerate",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1571531957,
+    "title": "Sengoku",
+    "source": "protondb"
+  }
+]

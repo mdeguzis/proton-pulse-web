@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "573100",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Game loads to main menu. Settings work, but playing a campaign doesn't as it doesn't load. Multiplayer against AI kicks you back to main menu as does trying to connect to a player.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544309231,
+    "title": "Battlefleet Gothic: Armada 2",
+    "source": "protondb"
+  }
+]

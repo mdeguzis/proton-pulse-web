@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "749840",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Seems to play fine, although Full Screen mode doesn't work properly - the display doesn't resize so it just plays in the corner of a mostly-black screen",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555504127,
+    "title": "The Boogie Man",
+    "source": "protondb"
+  }
+]

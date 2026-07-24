@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "681910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Crashes to desktop without warning after anything from a few seconds to a few minutes. No error message. Completely unplayable.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562836105,
+    "title": "Plandzz",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1108590",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce MX250",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "O jogo trava constantemente, o que prejudica a experi\u00eancia do usu\u00e1rio.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1737842218,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1108590",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.1 - kisak-mesa PPA",
+    "kernel": "6.18.1-x64v3-xanmod1",
+    "notes": "Works well OOTB, even better with Proton-GE",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1766012814,
+    "title": "",
+    "source": "protondb"
+  }
+]

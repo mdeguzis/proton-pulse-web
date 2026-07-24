@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "271500",
+    "cpu": "Intel(R) Core(TM) i5-2500 CPU @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "The intro videos are black screen. Main menu froze once. Resolution only 1024x768. Character walks kind of hard, I don't know if it's a problem or normal. The game seems to be playable without tricks.",
+    "os": "Debian GNU/Linux testing (buster) (64-bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7962 Mb",
+    "rating": "Gold",
+    "timestamp": 1540233342,
+    "title": "Sniper Art of Victory",
+    "source": "protondb"
+  },
+  {
+    "appId": "271500",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-1.el7.elrepo.x86_64",
+    "notes": "Intro video is black-screened (audio works though), but the main game menu and the game itself work fine. Can change the resolution to 1600x1200 in the settings (that and 1024x768 are the only options!), though the game author doesn't scale the game text up at the higher res (that's a game issue, nothing to do with Proton).",
+    "os": "CentOS Linux release 7.5.1804 (Core)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1541926309,
+    "title": "Sniper Art of Victory",
+    "source": "protondb"
+  }
+]

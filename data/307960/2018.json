@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "307960",
+    "cpu": "i7-7700K\ufeff CPU @ 4.20GHz",
+    "gpu": "GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Throws error message asking for specific build and platform update of Windows. Then crashes on OK.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-5 beta",
+    "ram": "16005 Mb",
+    "rating": "Borked",
+    "timestamp": 1536892448,
+    "title": "IL-2 Sturmovik: Battle of Stalingrad",
+    "source": "protondb"
+  },
+  {
+    "appId": "307960",
+    "cpu": "Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Says something about the graphics API failing, then asks to install specific win7 updates. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "11948 Mb",
+    "rating": "Borked",
+    "timestamp": 1539571880,
+    "title": "IL-2 Sturmovik: Battle of Stalingrad",
+    "source": "protondb"
+  }
+]

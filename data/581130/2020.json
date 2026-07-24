@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "581130",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.8.0-33-generic",
+    "notes": "Seemed Unplayable to me",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1608759614,
+    "title": "",
+    "source": "protondb"
+  }
+]

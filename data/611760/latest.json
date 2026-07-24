@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "611760",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Didn't start until setting launch to 'PROTON_USE_WINED3D11=1 %command%', worked perfectly afterwards",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "20 GB",
+    "rating": "Gold",
+    "timestamp": 1555876993,
+    "title": "Don't Escape: 4 Days in a Wasteland",
+    "source": "protondb"
+  },
+  {
+    "appId": "611760",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-23-generic",
+    "notes": "As mentioned the 'PROTON_USE_WINED3D11=1 %command%' launch option is needed to run,  but then it runs perfectly.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565533928,
+    "title": "Don't Escape: 4 Days to Survive",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

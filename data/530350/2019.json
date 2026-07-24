@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "530350",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Controllers/hands sometimes disappeared and I couldn't work out how to get them back in the game without exiting and re-loading.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563957115,
+    "title": "Smashbox Arena",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1087500",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-2fd746e98e)",
+    "kernel": "5.7.6-zen1-1-zen",
+    "notes": "no valid mapping configuration for the input controllers (Valve Index knuckles) can be found -> unplayable",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593188027,
+    "title": "",
+    "source": "protondb"
+  }
+]

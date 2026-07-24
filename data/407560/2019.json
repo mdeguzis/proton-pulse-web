@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "407560",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Works pretty much perfectly. Had to bump up the mouse sensitivity quite a bit because it kept stuttering, but that might just be the norm.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1551937380,
+    "title": "Killing Room",
+    "source": "protondb"
+  }
+]

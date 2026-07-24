@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "13500",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works perfect. I had to disable fog (like in Win10).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547309995,
+    "title": "Prince of Persia: Warrior Within\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "13500",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.16-arch1-1-ARCH",
+    "notes": "Works fine out of the box on Proton. I installed D9VK and it worked great too, even when testing it with the new ACO compiler.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562619665,
+    "title": "Prince of Persia: Warrior Within\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "13500",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-25-generic",
+    "notes": "You need to use an older version of Proton to play the game, otherwise the game will crash after the main menu. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566210549,
+    "title": "Prince of Persia: Warrior Within\u2122",
+    "source": "protondb"
+  }
+]

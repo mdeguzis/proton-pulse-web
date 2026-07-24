@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "325420",
+    "cpu": "Intel(R) Core(TM) i5-3570 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.70-1-MANJARO",
+    "notes": "Text rendering is missing entirely",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16006 Mb",
+    "rating": "Borked",
+    "timestamp": 1537467097,
+    "title": "Homebrew - Patent Unknown",
+    "source": "protondb"
+  },
+  {
+    "appId": "325420",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.18-300.fc29.x86_64",
+    "notes": "disaling d3d11 just caused the ground to disappear (no texture), however using wine d3d11 seems to solve it to normal. I can't attest to crossplatform performance, i let my brother play it. no (abnormal) bugs reported. just the usual windows ones.\nran at low quality settings, but 1080p res. never got around to adjusting settings.\ntested a few scenerios, bounced plane through water, threw cars and planes into tornado. no signs of abnormal behaviour.\nFedora",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542610225,
+    "title": "Homebrew - Patent Unknown",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "325420",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "No issues noticed, only minor glitch noticed is tire skid marks have incorrect color.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544800508,
+    "title": "Homebrew - Patent Unknown",
+    "source": "protondb"
+  }
+]

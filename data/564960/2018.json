@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "564960",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Doesn't run. The game window appears for a second, but then closes.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Borked",
+    "timestamp": 1536763914,
+    "title": "Return to Krondor",
+    "source": "protondb"
+  },
+  {
+    "appId": "564960",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Crashes on startup citing that there was an error",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.4-6",
+    "ram": "16042 Mb",
+    "rating": "Borked",
+    "timestamp": 1536769370,
+    "title": "Return to Krondor",
+    "source": "protondb"
+  }
+]

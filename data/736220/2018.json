@@ -1,0 +1,113 @@
+[
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1535051882,
+    "rating": "Borked",
+    "notes": "Gets to loading screen but crashes at title screen to desktoip",
+    "os": "Arch Linux(Kernel 4.18.3-arch1-1-ARCH x86_64)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I7-8700k / GTX 1080Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1535497273,
+    "rating": "Borked",
+    "notes": "Can't reach the main menu",
+    "os": "Solus 3.9999",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3570K, AMD HD 7850",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1535715578,
+    "rating": "Borked",
+    "notes": "crashes on first load screen",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "gtx 970 i5 3570k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1536092407,
+    "rating": "Borked",
+    "notes": "The game did manage to run at first when I tested it, however, no servers could be found. Most likely has to do with the Anti-cheat software. After second attempt, the game wouldn't launch anymore. Also at the first attempt, sound quality was poor and multiple cracks can be heard. ",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-8350K / GTX1050 Ti",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543142010,
+    "title": "Post Scriptum",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1535037482,
+    "rating": "Borked",
+    "notes": "Gets to loading screen but crashes at title screen to desktoip",
+    "os": "Arch Linux(Kernel 4.18.3-arch1-1-ARCH x86_64)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I7-8700k / GTX 1080Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1535482873,
+    "rating": "Borked",
+    "notes": "Can't reach the main menu",
+    "os": "Solus 3.9999",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-3570K, AMD HD 7850",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1535701178,
+    "rating": "Borked",
+    "notes": "crashes on first load screen",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "gtx 970 i5 3570k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "736220",
+    "title": "Post Scriptum",
+    "timestamp": 1536078007,
+    "rating": "Borked",
+    "notes": "The game did manage to run at first when I tested it, however, no servers could be found. Most likely has to do with the Anti-cheat software. After second attempt, the game wouldn't launch anymore. Also at the first attempt, sound quality was poor and multiple cracks can be heard. ",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-8350K / GTX1050 Ti",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

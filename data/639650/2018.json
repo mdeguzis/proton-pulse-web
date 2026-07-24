@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "639650",
+    "title": "1982",
+    "timestamp": 1535438623,
+    "rating": "Gold",
+    "notes": "Gamepad support broken, but this may be true on Windows as well. Otherwise perfect.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "639650",
+    "title": "1982",
+    "timestamp": 1535398406,
+    "rating": "Platinum",
+    "notes": "Works perfectly. ",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "639650",
+    "title": "1982",
+    "timestamp": 1535424223,
+    "rating": "Gold",
+    "notes": "Gamepad support broken, but this may be true on Windows as well. Otherwise perfect.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "639650",
+    "title": "1982",
+    "timestamp": 1535384006,
+    "rating": "Platinum",
+    "notes": "Works perfectly. ",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

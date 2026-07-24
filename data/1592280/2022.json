@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1592280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "(Demo Version) Native Linux game with both Vulkan and OpenGL rendering. Still needs somw tweaking for Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1655737189,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1592280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "(Demo) Works nativley on linux, it also supports both Vulkan and OpenGL rendering. Still needs some tweaks to ve played on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1655737913,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1592280",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.6, DRM 3.47, 5.19.1-arch2-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.1-arch2-1",
+    "notes": "[DEMO] was able to finish the demo without any issues.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1661104178,
+    "title": "",
+    "source": "protondb"
+  }
+]

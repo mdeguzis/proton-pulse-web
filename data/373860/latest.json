@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "373860",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.19.0-sabayon",
+    "os": "Sabayon Linux amd64 19.05",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556901496,
+    "title": "Apothecarium: The Renaissance of Evil - Premium Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "373860",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-64-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569189638,
+    "title": "Apothecarium: The Renaissance of Evil - Premium Edition",
+    "source": "protondb"
+  }
+]

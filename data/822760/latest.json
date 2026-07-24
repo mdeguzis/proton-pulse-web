@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "822760",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "The default font is missing a musical note character (shows as a square), this can be changed in the config menu to something else, eg Deja Vu Sans. Other than that, no issues in the first hour or so.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1562453731,
+    "title": "Fureraba ~Friend to Lover~",
+    "source": "protondb"
+  }
+]

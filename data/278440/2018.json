@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "278440",
+    "title": "0rbitalis",
+    "timestamp": 1535119448,
+    "rating": "Silver",
+    "notes": "Sound is slightly glitchy, but does not affect play.",
+    "os": "Ubuntu 16.04.5 LTS 64-bit (kernel 4.4.0-131)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "AMD FX-8350 / NVidia 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "278440",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Some sound glitches and poor performance",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Silver",
+    "timestamp": 1537786032,
+    "title": "0RBITALIS",
+    "source": "protondb"
+  },
+  {
+    "appId": "278440",
+    "title": "0rbitalis",
+    "timestamp": 1535105048,
+    "rating": "Silver",
+    "notes": "Sound is slightly glitchy, but does not affect play.",
+    "os": "Ubuntu 16.04.5 LTS 64-bit (kernel 4.4.0-131)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "AMD FX-8350 / NVidia 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

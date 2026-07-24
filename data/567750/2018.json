@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "567750",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Gallium 0.4 on AMD POLARIS11 (DRM 3.8.0 / 4.9.0-8-amd64, LLVM 3.9.1)",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "os": "SolydK 9 64-bit (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16063 MB",
+    "rating": "Borked",
+    "timestamp": 1539357238,
+    "tweaks": {
+      "disableEsync": true
+    },
+    "title": "Gamer Career Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "567750",
+    "cpu": "AMD A6-6310 APU with AMD Radeon R4 Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD MULLINS (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "To run the game add \"PROTON_USE_WINED3D11=1 %command%\" without quotes on launch options on steam and select windowed mode ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3149 Mb",
+    "rating": "Gold",
+    "timestamp": 1539536232,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Gamer Career Tycoon",
+    "source": "protondb"
+  }
+]

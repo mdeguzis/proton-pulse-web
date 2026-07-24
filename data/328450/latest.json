@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "328450",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Win3.1/Win95 game. The game does not even start under Proton 4.2",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554480270,
+    "title": "Deadlock II: Shrine Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "328450",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.9.0-9-amd64",
+    "notes": "The game starts and runs without problems, but there are graphics errors (black pixels appear on mouse movement).",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564919263,
+    "title": "Deadlock II: Shrine Wars",
+    "source": "protondb"
+  }
+]

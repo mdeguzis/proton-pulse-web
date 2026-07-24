@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "714370",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Nothing to be done at this point",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1707239424,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "714370",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 16.0.6, DRM 3.57, 6.7.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.0.1-arch1.1",
+    "kernel": "6.7.5-zen1-1-zen",
+    "notes": "Instant crash after launching the game and seeing the logos",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1711141510,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "714370",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.3-arch1-1",
+    "notes": "I've tried Proton 9.0-2, GE9-1, Experimental and Hotfix, none work. It seems like this game is going to still be borked 4 years after the first report until someone with more technical know how can come up with some sort of fix.\n\nJust install a VM and do it that way or get a windows partition (puke). I hope someone does come along and tries to fix it, but honestly I don't think anyone cares at all about this game. I haven't tried Lutris or Bottles, but genuinely, I don't think either will work.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1723854004,
+    "title": "",
+    "source": "protondb"
+  }
+]

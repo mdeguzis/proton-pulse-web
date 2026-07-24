@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "981750",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.2.10-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567528425,
+    "title": "Crystar",
+    "source": "protondb"
+  },
+  {
+    "appId": "981750",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-f2bed9b344)",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Runs really well, 60 FPS all the time, but the scene when you cry to release sentiments shows a black screen, with sound working.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1568300807,
+    "title": "Crystar",
+    "source": "protondb"
+  }
+]

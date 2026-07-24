@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "580200",
+    "title": "Yonder: The Cloud Catcher Chronicles",
+    "timestamp": 1535561865,
+    "rating": "Silver",
+    "notes": "Slow performance, but playable",
+    "os": "Debian 64-bits  4.9.110-3",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GeForce GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "580200",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Runs fine with no tweaks, but performance is significantly worse than native.  Turn down those graphic options.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536345099",
+    "title": "Yonder: The Cloud Catcher Chronicles",
+    "source": "protondb"
+  },
+  {
+    "appId": "580200",
+    "cpu": "i5-6500 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.13.0-41-generic",
+    "notes": "Performance seems fine.",
+    "os": "Linux Mint 18.2 Sonya (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7934 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537038081,
+    "title": "Yonder: The Cloud Catcher Chronicles",
+    "source": "protondb"
+  },
+  {
+    "appId": "580200",
+    "title": "Yonder: The Cloud Catcher Chronicles",
+    "timestamp": 1535547465,
+    "rating": "Silver",
+    "notes": "Slow performance, but playable",
+    "os": "Debian 64-bits  4.9.110-3",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GeForce GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

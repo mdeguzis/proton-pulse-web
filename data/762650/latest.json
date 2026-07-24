@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "762650",
+    "cpu": "Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.10-041810-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.10-041810-generic",
+    "notes": "Fails to install NET framework",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15984 Mb",
+    "rating": "Borked",
+    "timestamp": 1538159318,
+    "tweaks": {
+      "disableEsync": true
+    },
+    "title": "Depraved",
+    "source": "protondb"
+  }
+]

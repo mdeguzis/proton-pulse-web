@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2647100",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.8.7-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.4",
+    "kernel": "6.8.7-200.fsync.fc39.x86_64",
+    "notes": "Works flawlessly with Proton Experimental!",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1718417893,
+    "title": "",
+    "source": "protondb"
+  }
+]

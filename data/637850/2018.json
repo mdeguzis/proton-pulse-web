@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "637850",
+    "title": "Confess My Love",
+    "timestamp": 1536097241,
+    "rating": "Silver",
+    "notes": "Sometimes becomes unresponsive after left as inactive window for prolonged amounts of time.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4670K / HD 7950",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "637850",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Sometimes it freezes so you have to restart it but otherwise it works most of the time fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15969 Mb",
+    "rating": "Silver",
+    "timestamp": 1539013505,
+    "title": "Confess My Love",
+    "source": "protondb"
+  },
+  {
+    "appId": "637850",
+    "title": "Confess My Love",
+    "timestamp": 1536082841,
+    "rating": "Silver",
+    "notes": "Sometimes becomes unresponsive after left as inactive window for prolonged amounts of time.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5-4670K / HD 7950",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

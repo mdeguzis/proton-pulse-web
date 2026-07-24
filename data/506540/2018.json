@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "506540",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Crash at launch.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-3",
+    "ram": "32030 Mb",
+    "rating": "Borked",
+    "timestamp": "1536335665",
+    "title": "Last Man Standing",
+    "source": "protondb"
+  },
+  {
+    "appId": "506540",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "gpu": "GTX1050ti",
+    "gpuDriver": "nvidia-396.54",
+    "kernel": "4.18.5-041805-generic",
+    "notes": "Crash on laucher",
+    "os": "KDE Neon 5.13.5 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "12288 Mb",
+    "rating": "Borked",
+    "timestamp": 1537564387,
+    "title": "Last Man Standing",
+    "source": "protondb"
+  }
+]

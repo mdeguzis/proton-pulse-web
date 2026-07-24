@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "583090",
+    "title": "SeaBed",
+    "timestamp": 1535632544,
+    "rating": "Borked",
+    "notes": "Game crashes as soon as it opens.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "583090",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Fullscreen doesn't work and the audio is a bit choppy at times.",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Silver",
+    "timestamp": "1536364800",
+    "title": "SeaBed",
+    "source": "protondb"
+  },
+  {
+    "appId": "583090",
+    "title": "SeaBed",
+    "timestamp": 1535618144,
+    "rating": "Borked",
+    "notes": "Game crashes as soon as it opens.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

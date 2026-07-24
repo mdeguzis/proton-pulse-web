@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "21660",
+    "title": "Street Fighter IV",
+    "timestamp": 1534952501,
+    "rating": "Borked",
+    "notes": "Launches, but game never starts, it appears frozen. On install, I get an error: You must use \"Turn Windows features on or off\" in the Control Panell to install or configure Microsoft .Net Framework 3.0.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51 ",
+    "specs": " i7-4790K / NVIDIA GTX 980 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21660",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The game starts up but results in a black screen. I don't know if the .NET 3.0 warning 'You must use \"Turn Windows features on or off\" in the Control Panel to install or configure Microsoft .NET Framework 3.0' warning has anything to do with this.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24049 Mb",
+    "rating": "Borked",
+    "timestamp": 1539462393,
+    "title": "Street Fighter\u00ae IV",
+    "source": "protondb"
+  },
+  {
+    "appId": "21660",
+    "title": "Street Fighter IV",
+    "timestamp": 1534938101,
+    "rating": "Borked",
+    "notes": "Launches, but game never starts, it appears frozen. On install, I get an error: You must use \"Turn Windows features on or off\" in the Control Panell to install or configure Microsoft .Net Framework 3.0.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51 ",
+    "specs": " i7-4790K / NVIDIA GTX 980 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

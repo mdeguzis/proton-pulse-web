@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "617160",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Tested on demo version of this game. Error appears upon starting it.\n\nCouldn't start:\n\"Z:\\home\\username\\.local\\share\\Steam\\steamapps\\common\\Home Sweet Home Demo\\HomeSweetHome\\Binaries\\Win32\\HomeSweetHome\\Home-Win32-Shipping.exe\"\nCreateProcess() returned 2.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562321036,
+    "title": "Home Sweet Home",
+    "source": "protondb"
+  },
+  {
+    "appId": "617160",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Crashes on game loading or starting new game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569837765,
+    "title": "Home Sweet Home",
+    "source": "protondb"
+  },
+  {
+    "appId": "617160",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Click on the black screen several times and the game will start.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1570566909,
+    "title": "Home Sweet Home",
+    "source": "protondb"
+  }
+]

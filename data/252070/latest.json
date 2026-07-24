@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "252070",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Installer runs every time you launch it, crashes immediately after.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542476719,
+    "title": "Gimbal",
+    "source": "protondb"
+  }
+]

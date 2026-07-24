@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "441350",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Runs flawlessly after setting controller configuration to xbox360 in game",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566053264,
+    "title": "Assault Suit Leynos",
+    "source": "protondb"
+  }
+]

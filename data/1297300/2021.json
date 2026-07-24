@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1297300",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.8-arch1-1",
+    "notes": "Runs fine out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1616531232,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1297300",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-48-generic",
+    "notes": "The game runs right out of the box but might have to turn down the games graphic settings to get better fps.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1617772784,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1297300",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.10.0-7-amd64, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0",
+    "kernel": "5.10.0-7-amd64",
+    "notes": "All ran fine except for short missing video sections, which I later watched on a playthrough.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1623602087,
+    "title": "",
+    "source": "protondb"
+  }
+]

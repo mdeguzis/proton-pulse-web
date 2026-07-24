@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "355000",
+    "cpu": "i7-6700K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "You can open it, but will not work over Proton.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-3",
+    "ram": "32030 Mb",
+    "rating": "Borked",
+    "timestamp": "1536337066",
+    "title": "GlassWire",
+    "source": "protondb"
+  }
+]

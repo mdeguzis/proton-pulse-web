@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "485950",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Seems to work fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562697810,
+    "title": "Rise of the Ancients",
+    "source": "protondb"
+  }
+]

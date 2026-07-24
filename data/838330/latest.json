@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "838330",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "Launcher seems to install fine,  but game has nProtect GameGuard that outputs \"initialization error 114\"  and the game won't start.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543528928,
+    "title": "Warlords Awakening",
+    "source": "protondb"
+  }
+]

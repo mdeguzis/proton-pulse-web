@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "543240",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The games runs fine, but all the videos are skipped.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541970737,
+    "title": "\u221aLetter - Root Letter -",
+    "source": "protondb"
+  }
+]

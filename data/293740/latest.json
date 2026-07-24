@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "293740",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 418.30",
+    "kernel": "4.20.0+",
+    "notes": "This game used to work, albeit with terrible performance, now it just opens a black window and nothing happens.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550753167,
+    "title": "Road Not Taken",
+    "source": "protondb"
+  }
+]

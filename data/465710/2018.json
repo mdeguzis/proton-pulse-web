@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "465710",
+    "cpu": "i7-4700HQ CPU @ 2.40GHz",
+    "gpu": "GeForce GTX 850M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Generally game plays well, without major issues, I've noticed small frame drop from time to time and wasn't able to connect to microtransactions, but the last one could also mean the developers abandoned the game.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15923 Mb",
+    "rating": "Silver",
+    "timestamp": 1537045806,
+    "title": "Heroes Tactics",
+    "source": "protondb"
+  }
+]

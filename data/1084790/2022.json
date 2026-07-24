@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1084790",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.44.0, 5.16.9-100.fc34.x86_64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.8",
+    "kernel": "5.16.9-100.fc34.x86_64",
+    "notes": "Works perfectly!",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1647149014,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1084790",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Worked perfectly after switching to 6.3-8",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1672510639,
+    "title": "",
+    "source": "protondb"
+  }
+]

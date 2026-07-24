@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "230650",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "You will get a Error Message telling you \"PhysX does not seem installed on your machine\".",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545673479,
+    "title": "Lords of Football",
+    "source": "protondb"
+  }
+]

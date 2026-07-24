@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "702160",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-arch1-1-ARCH",
+    "notes": "Sometimes produces audio \"pops\" that hurt for headphone users. Otherwise fine",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550846298,
+    "title": "Rocketboat - Pilot",
+    "source": "protondb"
+  }
+]

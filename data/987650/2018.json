@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "987650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.3-300.fc29.x86_64",
+    "notes": "Testing Demo. \"GetThreadContext failed\" error. After that a Unity windows with progress pops up and then it disappears. Nothing happens after that. This is a Unity game, so they should just release Linux port.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543331420,
+    "title": "Loria Demo",
+    "source": "protondb"
+  }
+]

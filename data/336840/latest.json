@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "336840",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Run out of the box perfectly.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558892927,
+    "title": "Color Guardians",
+    "source": "protondb"
+  }
+]

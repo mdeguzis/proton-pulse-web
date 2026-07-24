@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1090940",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.5",
+    "kernel": "4.19.113-1-MANJARO",
+    "notes": "Works out of the box with Proton 5.0-5",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1585788832,
+    "title": "",
+    "source": "protondb"
+  }
+]

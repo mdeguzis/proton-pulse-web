@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "208500",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Steam shows \"Preparing F1 2012...\" window, then disappears and does not start. No error message is given. ",
+    "os": "Arch Linux",
+    "protonVersion": "4-15-GE-2",
+    "protonVersionManual": "4-15-GE-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567885044,
+    "title": "F1 2012\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "208500",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-29-generic",
+    "notes": ">tested_wine-ge-protonified-nofshack, with lutris< \nwinesteam install game\nwinetricks install d3dcompiler_43 d3dcompiler_47 d3dx11_43 dxvk dxvk132\nlutris enable dxvk enable esync prefix architecture 64-bit\ngame runs!\nI posted a steamcommunity video at https://www.youtube.com/watch?v=BAaAS3w0ev0",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569088540,
+    "title": "F1 2012\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "208500",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.0-3-amd64",
+    "notes": "does not start",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-7",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1570814658,
+    "title": "F1 2012\u2122",
+    "source": "protondb"
+  }
+]

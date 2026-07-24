@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1094520",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.42, 5.15.0-25-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-25-generic",
+    "notes": "Works out of the box with proton experimental",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1655949860,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1094520",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.0-15-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.0-15-generic",
+    "notes": "Works perfectly, except a one-time crash that the game will detect and fix on second launch.",
+    "os": "Ubuntu Kinetic Kudu (development branch)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1662819943,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1094520",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 14.0.6, DRM 3.48, 6.0.11-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "6.0.11-1-MANJARO",
+    "notes": "Identical performance to windows out of the box. Played on max settings.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1672324379,
+    "title": "",
+    "source": "protondb"
+  }
+]

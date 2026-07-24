@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "392470",
+    "title": "NOBUNAGA'S AMBITION: Sphere of Influence",
+    "timestamp": 1535726089,
+    "rating": "Platinum",
+    "notes": "Flawless on default settings. Minor graphical glitches when \"CG Quality\" is turned up to \"Quality\"",
+    "os": "\"Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7500 / GeForce GTX 1070",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "392470",
+    "title": "NONUNAGA'S AMBITIONS: Sphere of Influence",
+    "timestamp": 1535612881,
+    "rating": "Silver",
+    "notes": "\u0421racking sound",
+    "os": "Fedora 28 (Kernel 4.17.18-200.fc28.x86_64)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 3 2200G / Vega 8",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "392470",
+    "cpu": "Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.12-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Full Campaign was plaid. Only one minor issue was found, everything else worked and looked just like it did on windows.\n\nNote on an Error that's present on both WIndows and Linux: The Game starts up with a launcher that lets you configure some options. Aspect Ratio will never be saved, even if you set it again ingame. When changing the aspect Ratio ingame I'd advicew to say the ratio first before selecting Windowed or No-Frame(Borderless), otherwise it can glitch.\nWhen in Fullscreen mode, tabbing out did glitch the game, did not happen on Bordered or No-Frame.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15997 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539788518,
+    "title": "NOBUNAGA'S AMBITION: Sphere of Influence",
+    "source": "protondb"
+  },
+  {
+    "appId": "392470",
+    "title": "NOBUNAGA'S AMBITION: Sphere of Influence",
+    "timestamp": 1535711689,
+    "rating": "Platinum",
+    "notes": "Flawless on default settings. Minor graphical glitches when \"CG Quality\" is turned up to \"Quality\"",
+    "os": "\"Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7500 / GeForce GTX 1070",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "392470",
+    "title": "NONUNAGA'S AMBITIONS: Sphere of Influence",
+    "timestamp": 1535598481,
+    "rating": "Silver",
+    "notes": "\u0421racking sound",
+    "os": "Fedora 28 (Kernel 4.17.18-200.fc28.x86_64)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 3 2200G / Vega 8",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

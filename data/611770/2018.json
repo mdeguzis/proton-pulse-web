@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "611770",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.8-1.el7.elrepo.x86_64",
+    "notes": "Game menu is fine, but game crashes when starting playing with a \"FATAL ERROR in Vertex Shader compilation\" dialogue box after about 5 seconds.",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537394709,
+    "title": "Void Source",
+    "source": "protondb"
+  }
+]

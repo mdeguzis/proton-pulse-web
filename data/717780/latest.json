@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "717780",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Ran without tweaks, completed without issues.  Multiplayer untested.",
+    "os": "Unknown",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568767266,
+    "title": "Trap Labs",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "595280",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-3573412981)",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "The game is available native on Linux for OpenGL and Vulkan, it starts, but then I cannot login. I tried to run the game on Proton, but there I only get an error message after starting the game independent of the DX11 or Vulkan backend.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1562006569,
+    "title": "Throne of Lies\u00ae The Online Game of Deceit",
+    "source": "protondb"
+  }
+]

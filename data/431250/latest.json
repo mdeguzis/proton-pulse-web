@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "431250",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.3",
+    "kernel": "5.2.2-1-MANJARO",
+    "notes": "Sound doesn't work. Everything else is good.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564489768,
+    "title": "Mushroom Wars",
+    "source": "protondb"
+  }
+]

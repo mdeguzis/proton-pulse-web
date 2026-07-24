@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2514460",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "It definitely is a wonderful addition to the Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1710311298,
+    "title": "GUARDS!",
+    "source": "protondb"
+  },
+  {
+    "appId": "2514460",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.6, DRM 3.42, 5.15.29-calculate)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.29-calculate",
+    "notes": "Aside from the poor performance I got, which will likely be better on another rig with more up-to-date hardware, the game works just fine.",
+    "os": "Calculate Linux Desktop 22.0.1 KDE",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1719698963,
+    "title": "GUARDS!",
+    "source": "protondb"
+  },
+  {
+    "appId": "2514460",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720626983,
+    "title": "GUARDS!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "230840",
+    "title": "Daylight",
+    "timestamp": 1535563188,
+    "rating": "Borked",
+    "notes": "Directly goes to \"Syncing\" and Last Played \"Today\" after starting from Steam",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-7700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "230840",
+    "title": "Daylight",
+    "timestamp": 1535548788,
+    "rating": "Borked",
+    "notes": "Directly goes to \"Syncing\" and Last Played \"Today\" after starting from Steam",
+    "os": "Ubuntu 18.04 (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-7700K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

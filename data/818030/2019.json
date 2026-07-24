@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "818030",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554241999,
+    "title": "Alicia Quatermain 3: The Mystery of the Flaming Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "818030",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA P106-100",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Hanged a few times on loading screens.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567787965,
+    "title": "Alicia Quatermain 3: The Mystery of the Flaming Gold",
+    "source": "protondb"
+  }
+]

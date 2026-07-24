@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "253110",
+    "title": "The Cat Lady",
+    "timestamp": 1535914348,
+    "rating": "Gold",
+    "notes": "Steam overlay is broken in OpenGL and software rending, but same bug exists on Windows.",
+    "os": "Antergos Linux 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "253110",
+    "title": "The Cat Lady",
+    "timestamp": 1535989589,
+    "rating": "Platinum",
+    "notes": "The game is playable.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i3-3220 / iGPU HD 2500",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "253110",
+    "cpu": "Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-30-lowlatency",
+    "notes": "Seem to play fine at a fixed 30 FPS. Did not test saving and loading.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15979 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537511177,
+    "title": "The Cat Lady",
+    "source": "protondb"
+  },
+  {
+    "appId": "253110",
+    "title": "The Cat Lady",
+    "timestamp": 1535899948,
+    "rating": "Gold",
+    "notes": "Steam overlay is broken in OpenGL and software rending, but same bug exists on Windows.",
+    "os": "Antergos Linux 64-bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "253110",
+    "title": "The Cat Lady",
+    "timestamp": 1535975189,
+    "rating": "Platinum",
+    "notes": "The game is playable.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i3-3220 / iGPU HD 2500",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

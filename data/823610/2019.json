@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "823610",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Start the game with \"Play Borderless Windowed Mode\", otherwise the game most probably will hang with a black screen. Also select \"Windowed Display Mode\" in the game settings.\nSometimes even then the game hangs at startup. Upgrade from Proton 4.11-5 to Proton 4.11-6 seemed to better the odds of loading through. Just keep trying. Once started, the game seemed stable to me. I just didn't play it for too long yet.. I will report again later.",
+    "os": "Freedesktop.org 19.08.1 (Flatpak runtime)",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569347149,
+    "title": "Dungeon Of Dragon Knight",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

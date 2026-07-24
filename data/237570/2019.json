@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "237570",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Requires (re)installing XNA and .NET with Protontricks. After installing winetricks and protontricks, run \"protontricks 237570 xna40 dotnet40\". The game takes a few seconds to launch but functions perfectly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1546927959,
+    "title": "Penny Arcade's On the Rain-Slick Precipice of Darkness 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "237570",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "does not need extra configuring on Proton 4.2-3",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1555926928,
+    "title": "Penny Arcade's On the Rain-Slick Precipice of Darkness 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "237570",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559457166,
+    "title": "Penny Arcade's On the Rain-Slick Precipice of Darkness 4",
+    "source": "protondb"
+  }
+]

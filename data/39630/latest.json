@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "39630",
+    "title": "AquaNox",
+    "timestamp": 1535044370,
+    "rating": "Platinum",
+    "notes": "Tested only skirmish fight",
+    "os": "Linux Mint 19",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i5-3230M / iGPU HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "39630",
+    "cpu": "i7-8700K CPU @ 3.70GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.4-steamvr-generic",
+    "notes": "The game works great.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15960 MB",
+    "rating": "Platinum",
+    "timestamp": 1537035993,
+    "title": "AquaNox",
+    "source": "protondb"
+  },
+  {
+    "appId": "39630",
+    "cpu": "Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Works great!",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "11948 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537415165,
+    "title": "AquaNox",
+    "source": "protondb"
+  },
+  {
+    "appId": "39630",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Seems to work ok",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540665767,
+    "title": "AquaNox",
+    "source": "protondb"
+  },
+  {
+    "appId": "39630",
+    "title": "AquaNox",
+    "timestamp": 1535029970,
+    "rating": "Platinum",
+    "notes": "Tested only skirmish fight",
+    "os": "Linux Mint 19",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i5-3230M / iGPU HD 3000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

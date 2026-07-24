@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "779990",
+    "title": "Space between Worlds",
+    "timestamp": 1535837793,
+    "rating": "Platinum",
+    "notes": "Game runs flawlessly. Also, it hits the feels ;)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4210U /gt820m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "779990",
+    "cpu": "AMD E-450 APU with Radeon(tm) HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD PALM (DRM 2.43.0 / 4.4.0-130-generic, LLVM 8.0.0)",
+    "gpuDriver": "3.1 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.4.0-130-generic",
+    "notes": "Loads and plays fine but randomly force closes ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7580 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538358092,
+    "title": "Space Between Worlds",
+    "source": "protondb"
+  },
+  {
+    "appId": "779990",
+    "title": "Space between Worlds",
+    "timestamp": 1535823393,
+    "rating": "Platinum",
+    "notes": "Game runs flawlessly. Also, it hits the feels ;)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-4210U /gt820m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

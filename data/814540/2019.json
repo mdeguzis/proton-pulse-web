@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "814540",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Some places in the game are extremely laggy, mainly the cat chase near the beginning and the water levels. For a fast-paced game like this, some parts are unplayable. Nevertheless, it did run.\n\nIt kept a solid framerate on windows",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1555628759,
+    "title": "Changed",
+    "source": "protondb"
+  },
+  {
+    "appId": "814540",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Runs perfectly for me.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562150788,
+    "title": "Changed",
+    "source": "protondb"
+  },
+  {
+    "appId": "814540",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.88",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Needs the \"corefonts\" package installed.\nThis can be done by installing winetricks and protontricks, then execute\n\n\"protontricks 814540 corefonts\"\n\nin a terminal after you've launched the game once to find out that the fonts are missing. You'll need some patience for it to download and install, but it shouldn't take longer than 2 minutes to complete.\nTake this uwu while you're at it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1568982771,
+    "title": "Changed",
+    "source": "protondb"
+  }
+]

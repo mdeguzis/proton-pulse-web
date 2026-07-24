@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1949740",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 17.0.6, DRM 3.57, 6.7.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.3-arch1.1",
+    "kernel": "6.7.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1710618037,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1949740",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 15.0.6, DRM 3.57, 6.7.12+bpo-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.7.12+bpo-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1718828150,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1949740",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.8.0-45-generic",
+    "notes": "Proton experimental likely not needed, had some frame drops but may be because of the game's poor optimization and not proton itself.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1731809876,
+    "title": "",
+    "source": "protondb"
+  }
+]

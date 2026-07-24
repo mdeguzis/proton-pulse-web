@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "296280",
+    "cpu": "Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Barely tested first lvl of it. Takes a while to learn to play (clunky mechanics). Music stuttered a little when loading map etc. but otherwise it all works except some minor stuttering/freezes that doesn't prevent you from playing it.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15994 Mb",
+    "rating": "Silver",
+    "timestamp": 1539025958,
+    "title": "TownCraft",
+    "source": "protondb"
+  }
+]

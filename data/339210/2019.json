@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "339210",
+    "cpu": "Intel Core i7-7820X @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Starts as windowed but that's probably because all the graphics settings are zeroed out by default. Works fine when set to full screen.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555348807,
+    "title": "RESCUE 2: Everyday Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "339210",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562272934,
+    "title": "RESCUE 2: Everyday Heroes",
+    "source": "protondb"
+  }
+]

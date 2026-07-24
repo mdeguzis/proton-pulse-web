@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "814540",
+    "title": "Changed",
+    "timestamp": 1536126706,
+    "rating": "Gold",
+    "notes": "Requires installing \"corefonts\" via Protontricks for any text to render",
+    "os": "Ubuntu 18.04 (Kernel 4.17.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814540",
+    "title": "Changed",
+    "timestamp": 1536004382,
+    "rating": "Gold",
+    "notes": "Completely stable but only after installing either corefonts or foss_corefonts via Protontricks",
+    "os": "KDE Neon (w/ Ubuntu 18.04 base, Kernel 4.17.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD Ryzen 7 1700 / NVIDIA GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814540",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Didn't have to use protontricks, probably because I installed windows fonts previously. Got fps down to 10 in the water levels, which also made the game time run slower",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16038 Mb",
+    "rating": "Silver",
+    "timestamp": 1539437179,
+    "title": "Changed",
+    "source": "protondb"
+  },
+  {
+    "appId": "814540",
+    "title": "Changed",
+    "timestamp": 1536112306,
+    "rating": "Gold",
+    "notes": "Requires installing \"corefonts\" via Protontricks for any text to render",
+    "os": "Ubuntu 18.04 (Kernel 4.17.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814540",
+    "title": "Changed",
+    "timestamp": 1535989982,
+    "rating": "Gold",
+    "notes": "Completely stable but only after installing either corefonts or foss_corefonts via Protontricks",
+    "os": "KDE Neon (w/ Ubuntu 18.04 base, Kernel 4.17.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD Ryzen 7 1700 / NVIDIA GTX 960",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

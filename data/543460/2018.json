@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "543460",
+    "title": "Dead Rising 4",
+    "timestamp": 1535143389,
+    "rating": "Borked",
+    "notes": "Crash during start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0_devel.104104.de57926dc9",
+    "specs": "Ryzen 7 1700 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "543460",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc4-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc4-generic",
+    "notes": "Game won't start, tried with different Proton launch options.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15961 Mb",
+    "rating": "Borked",
+    "timestamp": 1538399196,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Dead Rising 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "543460",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "I used a controller since the mouse does not seem to work. Performance was fine other than when loading into a new area.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541071206,
+    "title": "Dead Rising 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "543460",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Works great, a little choppy until shaders are compiled but then it runs well on DXVK!",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546279827,
+    "title": "Dead Rising 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "543460",
+    "title": "Dead Rising 4",
+    "timestamp": 1535128989,
+    "rating": "Borked",
+    "notes": "Crash during start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.3.0_devel.104104.de57926dc9",
+    "specs": "Ryzen 7 1700 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

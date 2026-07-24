@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "3410",
+    "title": "Heavy Weapon Deluxe",
+    "timestamp": 1535323134,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "3410",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs great",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538167160,
+    "title": "Heavy Weapon Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3410",
+    "title": "Heavy Weapon Deluxe",
+    "timestamp": 1535308734,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

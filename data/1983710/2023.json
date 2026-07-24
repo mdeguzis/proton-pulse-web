@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1983710",
+    "cpu": "AMD Ryzen 5 4500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.49, 6.1.31-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.1 (git-fa55e3c026)",
+    "kernel": "6.1.31-1-MANJARO",
+    "notes": "runs without any issues aside from a settings button on the startscreen",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1686129529,
+    "title": "",
+    "source": "protondb"
+  }
+]

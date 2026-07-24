@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2377230",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.54, 6.6.32)",
+    "gpuDriver": "4.6 Mesa 24.0.7",
+    "kernel": "6.6.32",
+    "notes": "",
+    "os": "NixOS 24.11 (Vicu\u00f1a)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1723722249,
+    "title": "Claws & Chaos",
+    "source": "protondb"
+  }
+]

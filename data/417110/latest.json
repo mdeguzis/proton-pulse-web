@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "417110",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.1",
+    "kernel": "5.1.16.a-1-hardened",
+    "notes": "With default settings, the game throws the error: \"Failed to call CDemuxSource::OpenStream( stream ). : [0x80004001] Error: 0x80004001\". The only way to fix it is to add the launch options \"PROTON_LOG=1\" and \"LANG=ja_JP.UTF-8\". However, the game then \"can't convert ANSI strings to UNICODE\" and asks to verify file integrity. Changing to other locales do not work.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1562408331,
+    "title": "Mayjasmine Episode01 - What is God?",
+    "source": "protondb"
+  }
+]

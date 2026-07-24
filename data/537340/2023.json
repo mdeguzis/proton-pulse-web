@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "537340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "out of box",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1674672667,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "537340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1680803555,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "537340",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.15.0-60-generic",
+    "notes": "Perfect.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1681388957,
+    "title": "",
+    "source": "protondb"
+  }
+]

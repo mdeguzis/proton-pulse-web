@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "379520",
+    "title": "DELTAZEAL",
+    "timestamp": 1534988926,
+    "rating": "Silver",
+    "notes": "If set to fullscreen the game launches with the screen in the background, so you have to alt+tab to bring it up",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "379520",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Upon launch, a window is displayed, after which the game immediately exits, rendering it unplayable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1546294525,
+    "title": "DELTAZEAL",
+    "source": "protondb"
+  },
+  {
+    "appId": "379520",
+    "title": "DELTAZEAL",
+    "timestamp": 1534974526,
+    "rating": "Silver",
+    "notes": "If set to fullscreen the game launches with the screen in the background, so you have to alt+tab to bring it up",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

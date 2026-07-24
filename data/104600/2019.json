@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "104600",
+    "cpu": "Intel Pentium G4400T @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 510 (Skylake GT1)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Adobe Air installation (first-run setup step 1 of 1) sits there, doing nothing. Cannot be canceled, but does not finish. A second attempt had to be force-quit by GNOME.\n\nGame might run once installed, but the installation step does not work.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550370272,
+    "title": "Portal 2 - The Final Hours",
+    "source": "protondb"
+  },
+  {
+    "appId": "104600",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "Stuck on Adobe Air installation.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551035423,
+    "title": "Portal 2 - The Final Hours",
+    "source": "protondb"
+  },
+  {
+    "appId": "104600",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.0-16-generic",
+    "notes": "Just doesn't work. I wish we could have Adobe AIR alternative on Linux :(",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560171504,
+    "title": "Portal 2 - The Final Hours",
+    "source": "protondb"
+  }
+]

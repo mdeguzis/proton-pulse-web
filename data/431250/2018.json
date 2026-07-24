@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "431250",
+    "title": "Mushroom Wars",
+    "timestamp": 1535567110,
+    "rating": "Silver",
+    "notes": "Runs without sound. to fix it prefix need to be switched to ALSA, added dsound, directmusic, directplay, gdiplus, ogg with winetricks and then switch dsound to native. After that fix game runs perfectly with sound.",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E8400/GT 8500 512Mb",
+    "protonVersion": "3.7-2/3.7.4-",
+    "source": "protondb"
+  },
+  {
+    "appId": "431250",
+    "title": "Mushroom Wars",
+    "timestamp": 1535552710,
+    "rating": "Silver",
+    "notes": "Runs without sound. to fix it prefix need to be switched to ALSA, added dsound, directmusic, directplay, gdiplus, ogg with winetricks and then switch dsound to native. After that fix game runs perfectly with sound.",
+    "os": "Debian 9",
+    "gpuDriver": "NVIDIA 340.106",
+    "specs": "E8400/GT 8500 512Mb",
+    "protonVersion": "3.7-2/3.7.4-",
+    "source": "protondb"
+  }
+]

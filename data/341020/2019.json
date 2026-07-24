@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "341020",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Just perfect",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552334266,
+    "title": "Chronicles of Teddy",
+    "source": "protondb"
+  },
+  {
+    "appId": "341020",
+    "cpu": "Intel Core i3-4130 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-29-generic",
+    "notes": "There is some wonkiness using a DS4 Controller without it going through Steam, but otherwise works just fine",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1569978862,
+    "title": "Chronicles of Teddy",
+    "source": "protondb"
+  }
+]

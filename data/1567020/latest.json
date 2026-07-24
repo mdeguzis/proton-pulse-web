@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1567020",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.6, DRM 3.61, 6.12.33-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.1.3-arch1.3",
+    "kernel": "6.12.33-1-lts",
+    "notes": "Works perfectly out of the box",
+    "os": "Arch Linux (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1750323427,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1567020",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1763508224,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1567020",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Works out of the box with Proton Experimental as the default compatibility tool",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1766714168,
+    "title": "",
+    "source": "protondb"
+  }
+]

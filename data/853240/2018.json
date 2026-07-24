@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "853240",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.10-arch1-1-ARCH, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "Runs fine but crashes when quit everytime.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32064 Mb",
+    "rating": "Silver",
+    "timestamp": 1539434933,
+    "title": "The Light Keeps Us Safe",
+    "source": "protondb"
+  }
+]

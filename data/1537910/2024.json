@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1537910",
+    "cpu": "AMD A12-9720P RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon R7 (carrizo, LLVM 13.0.1, DRM 3.42, 5.15.41-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.4",
+    "kernel": "5.15.41-1-MANJARO",
+    "notes": "Work out of the gate.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "11 GB",
+    "rating": "gold",
+    "timestamp": 1715132902,
+    "title": "Chaos Galaxy 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "657530",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "- If you alt-tab the mouse might get stuck, to fix this, alt-tab again until it works again",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1543182607,
+    "title": "Impresja",
+    "source": "protondb"
+  }
+]

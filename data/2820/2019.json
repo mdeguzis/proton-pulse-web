@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "2820",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game doesn't work for me native, but it does on Proton out of the box, you only have to skip not working videos with ESC key. I installed manually D9VK and it worked with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557259932,
+    "title": "X3: Terran Conflict",
+    "source": "protondb"
+  }
+]

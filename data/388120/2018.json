@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "388120",
+    "cpu": "Intel Core i5-2467M @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Runs fine in fullscreen and unmaximized windowed mode. Maximized windowed mode gives flickering window.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1545566908,
+    "title": "Spakoyno: Back to the USSR 2.0",
+    "source": "protondb"
+  }
+]

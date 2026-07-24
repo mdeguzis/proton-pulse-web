@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "723890",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Only issue is that it would not properly fullscreen. Ran great in windowed mode. Played through to one of the endings.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558211552,
+    "title": "Don't Make Love",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1582850",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, ACO, DRM 3.64, 6.19.10-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "Once past start menu, you get colored bars screen. However, you can hear the audio and the game appears to be running in the background. I attempted to change from default to Experimental and also 9.0.4 which tends to fix many games, but no luck here.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1775877057,
+    "title": "",
+    "source": "protondb"
+  }
+]

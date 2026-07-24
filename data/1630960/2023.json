@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1630960",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 17.0.4, DRM 3.54, 6.6.1-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.6.1-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1700252704,
+    "title": "",
+    "source": "protondb"
+  }
+]

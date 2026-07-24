@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "278590",
+    "cpu": "Intel(R) Core(TM) i7-3930K CPU @ 3.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Game window does not appear. No logs to view.",
+    "os": "Linux Mint 18.2 Sonya (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16019 Mb",
+    "rating": "Borked",
+    "timestamp": 1537812256,
+    "title": "Heroes of Legionwood",
+    "source": "protondb"
+  }
+]

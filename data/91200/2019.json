@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "91200",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Native version doesn't work for me. On Proton the game runs well. I installed manual D9VK and it worked well too with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556909864,
+    "title": "Anomaly: Warzone Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "91200",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-200.fc30.x86_64",
+    "notes": "Steam Version of the game originally purchased for Windows. Using Fedora 30 and Steam client.\n\nDefault Steam version of Proton did not work, but setting Steam client to beta and selected Proton 4.11-2 worked without issue. Successfully reached the settings menu--which was not working, and completed the first two missions without further issue.\n\nThe game does not permit setting resolution outside of a percentage--stupid. If using multiple monitors, advise disabling all monitors except one then running the game or it will span all monitors.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566775322,
+    "title": "Anomaly: Warzone Earth",
+    "source": "protondb"
+  }
+]

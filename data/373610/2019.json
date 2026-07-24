@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "373610",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Will initially go through the \"first time install\" dependencies, but won't actually launch afterwards. None of the tweaks work.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553862712,
+    "title": "Shoot 1UP",
+    "source": "protondb"
+  },
+  {
+    "appId": "373610",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game loaded in 4:3 ratio, off-center. Fixed by using \"stretch\" option in settings. Fully playable with Xbox 360 controller.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559361099,
+    "title": "Shoot 1UP",
+    "source": "protondb"
+  },
+  {
+    "appId": "373610",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Runs great after changing screen scaling to 'stretch', otherwise game is shifted to the left.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1561714442,
+    "title": "Shoot 1UP",
+    "source": "protondb"
+  }
+]

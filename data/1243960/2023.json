@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1243960",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600M (navi23, LLVM 15.0.7, DRM 3.52, 6.4.3-060403-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.4 (git-8b0202e4b4)",
+    "kernel": "6.4.3-060403-generic",
+    "notes": "Colocam o Proton GE 8.13 foi normal",
+    "os": "Linux Mint 21.1 x86_64",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1693186080,
+    "title": "",
+    "source": "protondb"
+  }
+]

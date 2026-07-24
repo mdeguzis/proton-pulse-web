@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "320820",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "[NATIVE]",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537288183,
+    "title": "Toren",
+    "source": "protondb"
+  },
+  {
+    "appId": "320820",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "When clicking \"Install\", download and installation process is completed instantly, but executable absent, nothing has been downloaded. Maybe it's my unsupported driver version.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543272398,
+    "title": "Toren",
+    "source": "protondb"
+  }
+]

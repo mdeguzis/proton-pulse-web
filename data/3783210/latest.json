@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3783210",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 20.1.2, DRM 3.64, 7.0.11-76070011-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.2",
+    "kernel": "7.0.11-76070011-generic",
+    "notes": "",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1781918076,
+    "title": "",
+    "source": "protondb"
+  }
+]

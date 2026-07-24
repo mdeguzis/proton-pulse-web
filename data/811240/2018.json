@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "811240",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "The game start but shows immediatly an error message. Then it crashes.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545994816,
+    "title": "Don't Stand Out",
+    "source": "protondb"
+  },
+  {
+    "appId": "811240",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "The game loads with DXVK, but there is an error message and you cannot continue",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1546265224,
+    "title": "Don't Stand Out",
+    "source": "protondb"
+  }
+]

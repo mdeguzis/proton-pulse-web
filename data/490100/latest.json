@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "490100",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Runs perfect, 100% completable.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562978524,
+    "title": "Quell Zen",
+    "source": "protondb"
+  }
+]

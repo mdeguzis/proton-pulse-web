@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2491640",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 18.1.6, DRM 3.57, 6.9.8-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.8-200.fc40.x86_64",
+    "notes": "Works great by default on PC and Steam Deck",
+    "os": "Fedora release 40 (Forty)",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1720855366,
+    "title": "SNAKE FARM",
+    "source": "protondb"
+  }
+]

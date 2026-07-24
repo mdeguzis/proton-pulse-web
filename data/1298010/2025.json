@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1298010",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-84-generic",
+    "notes": "I tried changing Proton and some launch options, but it didn't work.\n- PT-BR:\nVoc\u00ea seleciona o equipamento dos soldados, mas quando come\u00e7a a fase, s\u00f3 aparece uma tela preta.\nTentei mudar o Proton e algumas op\u00e7\u00f5es de lan\u00e7amento, mas n\u00e3o funcionou.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1755362994,
+    "title": "",
+    "source": "protondb"
+  }
+]

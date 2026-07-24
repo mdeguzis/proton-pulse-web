@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "260080",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.14",
+    "notes": "Doesn't start.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557927935,
+    "title": "YOU DON'T KNOW JACK Vol. 6 The Lost Gold",
+    "source": "protondb"
+  },
+  {
+    "appId": "260080",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc4",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Will not start. Throws error: \"Import Error: failed to load module MSVBVM60.DLL\". If anyone knows the correct DLL version to use and what to do with it to get it to run on Proton, please do find out.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565726062,
+    "title": "YOU DON'T KNOW JACK Vol. 6 The Lost Gold",
+    "source": "protondb"
+  }
+]

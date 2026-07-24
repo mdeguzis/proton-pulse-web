@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "649600",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "works out of the box",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1617210177,
+    "title": "",
+    "source": "protondb"
+  }
+]

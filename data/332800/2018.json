@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "332800",
+    "title": "Five Nights at Freddy's 2",
+    "timestamp": 1535191257,
+    "rating": "Silver",
+    "notes": "Weird screen resolution, everything else seems to work",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-5200U / iGPU HD 5500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "332800",
+    "title": "Five Nights at Freddy's 2",
+    "timestamp": 1535821037,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64bit (4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-5200U / Intel HD Graphics 5500 (rev 09)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "332800",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-33-generic",
+    "notes": "0 issues. Performance is identical to Windows. Flawless.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7913 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536707377,
+    "title": "Five Nights at Freddy's 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "332800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.19.0, 4.14.65-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.14.65-1-MANJARO",
+    "notes": "Works just like the native version",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16058 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537579537,
+    "title": "Five Nights at Freddy's 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "332800",
+    "title": "Five Nights at Freddy's 2",
+    "timestamp": 1535176857,
+    "rating": "Silver",
+    "notes": "Weird screen resolution, everything else seems to work",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-5200U / iGPU HD 5500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "332800",
+    "title": "Five Nights at Freddy's 2",
+    "timestamp": 1535806637,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64bit (4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-5200U / Intel HD Graphics 5500 (rev 09)",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

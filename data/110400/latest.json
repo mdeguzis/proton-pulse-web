@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "110400",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-1-MANJARO",
+    "notes": "Fails during installation of VC++ Redistributable, does not boot.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547488154,
+    "title": "inMomentum",
+    "source": "protondb"
+  },
+  {
+    "appId": "110400",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1553718110,
+    "title": "inMomentum",
+    "source": "protondb"
+  },
+  {
+    "appId": "110400",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Runs out of the box, but the framerate is too low.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557564801,
+    "title": "inMomentum",
+    "source": "protondb"
+  }
+]

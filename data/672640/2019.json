@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "672640",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Using HTC Vive. Performance issues cause low frame rate and uncomfortable judder when panning.  Manually lowering the rendering resolution down to 20% does not improve the judder.  ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1547458298,
+    "title": "War Robots VR: The Skirmish",
+    "source": "protondb"
+  },
+  {
+    "appId": "672640",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.52.18",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Fails to launch.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565550554,
+    "title": "War Robots VR: The Skirmish",
+    "source": "protondb"
+  },
+  {
+    "appId": "672640",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "Works out of the box with my Vive, but does have minor performance issues.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569639214,
+    "title": "War Robots VR: The Skirmish",
+    "source": "protondb"
+  }
+]

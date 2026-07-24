@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "398620",
+    "cpu": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "kernel": "4.14.67-1-MANJARO",
+    "notes": "Works fine but wide screen option can't be activated/doesn't work (probably has same problem in Windows version).",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7866 Mb",
+    "rating": "Gold",
+    "timestamp": 1537168879,
+    "title": "Living Legends: The Frozen Fear Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "398620",
+    "cpu": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "kernel": "4.14.70-1-MANJARO",
+    "notes": "Works great.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7866 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537375698,
+    "title": "Living Legends: The Frozen Fear Collection",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1383370",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.13.0-45-generic",
+    "notes": "Just sound, no picture.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1612415224,
+    "title": "",
+    "source": "protondb"
+  }
+]

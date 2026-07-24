@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1602110",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.19-3-MANJARO",
+    "notes": "Works only with Proton-GE.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1664404291,
+    "title": "Kredolis",
+    "source": "protondb"
+  }
+]

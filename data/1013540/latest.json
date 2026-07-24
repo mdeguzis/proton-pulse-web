@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1013540",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Needs very low graphic settings, then smooth gameplay. No needed tweaks.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551490004,
+    "title": "Evospace",
+    "source": "protondb"
+  },
+  {
+    "appId": "1013540",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Ran fine with most settings on High or better, average about 35fps.  Disabled Motion Blur and VSync.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553965849,
+    "title": "Evospace",
+    "source": "protondb"
+  },
+  {
+    "appId": "1013540",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Everything works out of the box on the highest settings. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1558134303,
+    "title": "Evospace",
+    "source": "protondb"
+  }
+]

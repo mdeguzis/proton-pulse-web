@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "207930",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555648137,
+    "title": "Sacred Citadel",
+    "source": "protondb"
+  },
+  {
+    "appId": "207930",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-60-generic",
+    "notes": "runs with no issues except that maximum resolution is 1600x900. tried modifying  resolution in sacredcitadel.ini with no luck",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1567794045,
+    "title": "Sacred Citadel",
+    "source": "protondb"
+  }
+]

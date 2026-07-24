@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "747340",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Flawless out of the box with good performance. Tried windowed and fullscreen, and also tested that the game works with a Nintendo Switch Pro controller.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552753703,
+    "title": "Unforgiving - A Northern Hymn",
+    "source": "protondb"
+  },
+  {
+    "appId": "747340",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "Works out of the box with good performance.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556745824,
+    "title": "Unforgiving - A Northern Hymn",
+    "source": "protondb"
+  },
+  {
+    "appId": "747340",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Had to disable E-sync to get a smooth experience. After an hour or so the game starts stuttering at which point it needs to be restarted.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557489146,
+    "title": "Unforgiving - A Northern Hymn",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "747340",
+    "cpu": "Intel Core2 Duo     E8600  @ 3.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel (git-974c4d6 2019-05-11 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Had to use WINED3D to get the game to start, but then there was only a black screen and my monitor wasn't receiving a signal. I had to unplug the computer because nothing worked to shut the game down.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558830437,
+    "title": "Unforgiving - A Northern Hymn",
+    "source": "protondb"
+  }
+]

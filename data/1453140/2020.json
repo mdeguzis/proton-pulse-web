@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1453140",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-56-generic",
+    "notes": "Crashes. Feels unfinished. Currently don't work.",
+    "os": "KDE neon User Edition 5.20",
+    "protonVersion": "5.13-2",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1607130986,
+    "title": "",
+    "source": "protondb"
+  }
+]

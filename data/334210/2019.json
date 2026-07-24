@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "334210",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.20.5-042005-generic",
+    "notes": "Get an error that says DX11 feature level 10 is required",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549991685,
+    "title": "Fortified",
+    "source": "protondb"
+  },
+  {
+    "appId": "334210",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Need use wined3d11. Starts menu with very low framerate. On loading level game freeze.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Borked",
+    "timestamp": 1551837991,
+    "title": "Fortified",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "334210",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.6",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Multiplayer game (LAN but with steam invite)",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560069056,
+    "title": "Fortified",
+    "source": "protondb"
+  }
+]

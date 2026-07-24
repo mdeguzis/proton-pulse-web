@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "396280",
+    "cpu": "Intel Core i7-2720QM @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Installed wine-stable from repository, followed https://steamcommunity.com/app/221410/discussions/0/1734336452578488603/?ctp=2 to set version to WinXP, game started without further issues.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1551272630,
+    "title": "Anarchy Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "396280",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game won't even launch with proton.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1553424233,
+    "title": "Anarchy Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "396280",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.45-1-MANJARO",
+    "notes": "Loaded a Froob (freebie) account, configured my UI, and ran around a few of the zones. Works as expected on a native environment or maybe even slightly better than expected. To get it working however, you have to use some winetricks. Assuming you are using the default steam directory for your games, this bash command should be all you need:\nWINEPREFIX=~/.local/share/Steam/steamapps/compatdata/396280/pfx winetricks corefonts directx9 ie6 fontfix",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560007642,
+    "title": "Anarchy Online",
+    "source": "protondb"
+  }
+]

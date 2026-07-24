@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "568220",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "Works fine, save file imported successfully from steam cloud.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555875692,
+    "title": "Lobotomy Corporation | Monster Management Simulation",
+    "source": "protondb"
+  },
+  {
+    "appId": "568220",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel (git-bd4c661 2019-04-29 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Game will start and runs well, but text is obscured in blocks of various opacity, some completely opaque, rendering most crucial text unreadable. Various sprites and textures are completely missing, making game essentially unplayable.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1556652796,
+    "title": "Lobotomy Corporation | Monster Management Simulation",
+    "source": "protondb"
+  },
+  {
+    "appId": "568220",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Works perfectly, not an issue or a bug.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566332438,
+    "title": "Lobotomy Corporation | Monster Management Simulation",
+    "source": "protondb"
+  }
+]

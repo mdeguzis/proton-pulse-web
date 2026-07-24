@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1049360",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 15.0.7, DRM 3.49, 6.2.12-200.fsync.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.12-200.fsync.fc37.x86_64",
+    "notes": "works as it should",
+    "os": "Nobara Linux 37 (Thirty Seven)",
+    "protonVersion": "8.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1691700894,
+    "title": "Orbitron",
+    "source": "protondb"
+  }
+]

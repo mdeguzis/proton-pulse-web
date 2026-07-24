@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "801120",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Runs just fine, but goes black when switching focus (alt tab). Also I'm not sure if it's normally this \"floaty\".",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1555256805,
+    "title": "Kirchhoff's Revenge",
+    "source": "protondb"
+  }
+]

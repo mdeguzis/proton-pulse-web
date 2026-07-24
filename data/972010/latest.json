@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "972010",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.9.7-xanmod1",
+    "notes": "Out of the box with latest Proton (5-13.1)",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605081927,
+    "title": "",
+    "source": "protondb"
+  }
+]

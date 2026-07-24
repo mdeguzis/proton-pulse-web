@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2913990",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.247.01",
+    "kernel": "6.1.0-37-amd64",
+    "notes": "With proton 7.0-6 it runs as good as it runs at Windows (I assume). No problems. It is an Indy game. So expect runs-as-is.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1748366403,
+    "title": "",
+    "source": "protondb"
+  }
+]

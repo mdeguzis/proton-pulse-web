@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "445190",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-44-generic",
+    "notes": "As others said, intro movie doesn't work. Main problem is that even after that, only a screen with some burning ships is shown, and nothing happens. No menu, no cursor, nothing to interact with.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548870743,
+    "title": "Expeditions: Viking",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "342260",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Sounds is scratchy and crackly. Game minimises itself during bootup when the \"heartrate monitor\" parks itself in your system tray unannounced. During play the mouse sensitivity keeps switching to 10000x without warning, forcing the player to quit and restart. When interacting with devices in-game, the mouse can't be moved, making the game unplayable as you can't select any options to advance the story. Plus when quitting, the game doesn't cleanly close it's processes requiring the user to manually kill all the phantom processes still running, otherwise Steam thinks the game is still being played.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556062311,
+    "title": "Nevermind",
+    "source": "protondb"
+  }
+]

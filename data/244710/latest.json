@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "244710",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1552051710,
+    "title": "Shelter",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "244710",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-46-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1556381094,
+    "title": "Shelter",
+    "source": "protondb"
+  },
+  {
+    "appId": "244710",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game works on Proton out of the box. I installed manually D9VK and it worked as well with this DX9 to Vulkan translation, but the text rendering was borked.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557081350,
+    "title": "Shelter",
+    "source": "protondb"
+  },
+  {
+    "appId": "244710",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "On Proton it works out of the box. I installed manually D9VK and it worked now as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560067631,
+    "title": "Shelter",
+    "source": "protondb"
+  }
+]

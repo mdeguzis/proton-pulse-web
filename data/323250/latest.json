@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "323250",
+    "cpu": "Intel Xeon E5-2650L v3 @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Runs perfect in window mode, but on ultrawide fullscreen it is glitching and blinking and it is not playable.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "64 GB",
+    "rating": "Silver",
+    "timestamp": 1560868141,
+    "title": "Hexus",
+    "source": "protondb"
+  }
+]

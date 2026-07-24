@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "565660",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Generally okay. The picture is larger than the window but that seems to fix itself if you go into full-screen and back. Oh, and alt-enter sometimes crashes the game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554769961,
+    "title": "Akihabara - Feel the Rhythm",
+    "source": "protondb"
+  },
+  {
+    "appId": "565660",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "No issues. From the menu, setting the full screen resolution was a bit tricky.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564465641,
+    "title": "Akihabara - Feel the Rhythm",
+    "source": "protondb"
+  }
+]

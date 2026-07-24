@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1484800",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-72-generic",
+    "notes": "Game launched and ran well under Proton 6.3-2.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1619967697,
+    "title": "",
+    "source": "protondb"
+  }
+]

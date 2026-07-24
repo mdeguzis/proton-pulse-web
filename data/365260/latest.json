@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "365260",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548627192,
+    "title": "Crash Dive",
+    "source": "protondb"
+  }
+]

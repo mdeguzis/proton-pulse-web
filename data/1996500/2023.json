@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1996500",
+    "cpu": "AMD Ryzen 7 2700U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 3 (raven, LLVM 15.0.7, DRM 3.42, 5.15.0-83-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-83-generic",
+    "notes": "Use Windowed mode. Seriously.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "7 GB",
+    "rating": "bronze",
+    "timestamp": 1694125310,
+    "title": "",
+    "source": "protondb"
+  }
+]

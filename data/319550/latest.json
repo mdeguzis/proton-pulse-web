@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "319550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 640",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Games starts then exits without reverting previous screen resolution",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1560030763,
+    "title": "The Collider",
+    "source": "protondb"
+  }
+]

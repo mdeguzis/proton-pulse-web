@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3325660",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "Se lance parfaitement, sans rien faire de plus. \nRuns perfectly out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1744633600,
+    "title": "AlibAi",
+    "source": "protondb"
+  }
+]

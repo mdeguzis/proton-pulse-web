@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1398180",
+    "cpu": "Intel Core i3-6100U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.4 (git-a5ffb70f86)",
+    "kernel": "5.19.0-32-generic",
+    "notes": "the game starts up in the main menu but when you press play the game crashes\n\nit does this with ALL versions of proton, including GE and experimental\n\n\nOS: Fedora 37",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "3.7-3",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1680718237,
+    "title": "Porcini",
+    "source": "protondb"
+  }
+]

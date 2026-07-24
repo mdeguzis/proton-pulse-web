@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "307230",
+    "title": "I, Zombie",
+    "timestamp": 1536213715,
+    "rating": "Platinum",
+    "notes": "Loaded game, changed graphics settings, played the tutorial. Started next level.",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-30-lowlatency)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4570 / GTX 960",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  },
+  {
+    "appId": "307230",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It works",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540659845,
+    "title": "I, Zombie",
+    "source": "protondb"
+  },
+  {
+    "appId": "307230",
+    "title": "I, Zombie",
+    "timestamp": 1536199315,
+    "rating": "Platinum",
+    "notes": "Loaded game, changed graphics settings, played the tutorial. Started next level.",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-30-lowlatency)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4570 / GTX 960",
+    "protonVersion": "3.7.4",
+    "source": "protondb"
+  }
+]

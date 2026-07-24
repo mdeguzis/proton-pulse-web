@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1292690",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 18.1.7, DRM 3.58, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel",
+    "kernel": "6.8.0-51-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1737919733,
+    "title": "Corruption of Champions II",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "281520",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.14.0-24-generic",
+    "notes": "After running installation i get two error messages and not being able to start up game. If anyone has a solution to this please post.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1753450659,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "281520",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.14.0-24-generic",
+    "notes": "After installing i get two error messages after installing. If anyone has a solution to this please type.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1753451042,
+    "title": "",
+    "source": "protondb"
+  }
+]

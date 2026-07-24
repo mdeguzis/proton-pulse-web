@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "285920",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.2",
+    "kernel": "5.3.8-3-MANJARO",
+    "notes": "Must be run on Proton. Either way it's plagued with general bugs and performance issues due to poor development.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1574129926,
+    "title": "",
+    "source": "protondb"
+  }
+]

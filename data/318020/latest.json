@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "318020",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Restarting a game 3 times causes the game to get stuck at loading screen, but music continues to play in the background. Doesn't quit using close button.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1561851309,
+    "title": "Act of Aggression - Reboot Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "318020",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Throws up an error on launch about windows media 9 codec, but you can just dismiss this message, press escape a couple of times on the black screen and get straight into the game.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567261411,
+    "title": "Act of Aggression - Reboot Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "318020",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.2.13-050213-generic",
+    "notes": "The game starts with a black screen, only the mousecursor is visible. Pressing the esc key several times will bring you to the game menu. Changing any the graphicsettings leads to a crash. The game runs with the standardsettings but looks really ugly.  ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1570310742,
+    "title": "Act of Aggression - Reboot Edition",
+    "source": "protondb"
+  }
+]

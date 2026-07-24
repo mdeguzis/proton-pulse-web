@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "548720",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.9.135-1-MANJARO",
+    "notes": "Wouldn't start",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1550534986,
+    "title": "Through the Mirror",
+    "source": "protondb"
+  }
+]

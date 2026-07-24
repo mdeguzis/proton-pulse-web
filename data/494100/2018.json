@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "494100",
+    "title": "ENIGMA:",
+    "timestamp": 1536044501,
+    "rating": "Borked",
+    "notes": "Starts into a black screen and crashes afterwards",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "494100",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-zen1-1-zen",
+    "notes": "Fullscreen and opening don't work. Everything else works fine. ",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7916 Mb",
+    "rating": "Silver",
+    "timestamp": 1536731019,
+    "title": "ENIGMA:",
+    "source": "protondb"
+  },
+  {
+    "appId": "494100",
+    "title": "ENIGMA:",
+    "timestamp": 1536030101,
+    "rating": "Borked",
+    "notes": "Starts into a black screen and crashes afterwards",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

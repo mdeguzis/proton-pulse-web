@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "80360",
+    "cpu": "Intel Core i3-3240 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.4-arch1-1-ARCH",
+    "notes": "Flawless. No issues.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548733996,
+    "title": "Blackwell Deception",
+    "source": "protondb"
+  },
+  {
+    "appId": "80360",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "Playable from start to finish with achievements working. Newer versions of proton up to 4.2 give an error at startup:  GetShortPathName failed. The specified game file might be missing.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.7-8)",
+    "protonVersionManual": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554242220,
+    "title": "Blackwell Deception",
+    "source": "protondb"
+  },
+  {
+    "appId": "80360",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Flawless work including achievements from start till end.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571443021,
+    "title": "Blackwell Deception",
+    "source": "protondb"
+  }
+]

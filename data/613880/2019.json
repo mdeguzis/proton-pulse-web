@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "613880",
+    "cpu": "AMD A12-9700P RADEON R7, 10 COMPUTE CORES 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CARRIZO",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "notes": "Tested: Running game, options menu, starting actual gameplay\n\nWhat doesn't work: The ground textures are entirely black and are not rendering at all. The same applies to buildings. Launcher does not function at all, and is entirely unusable.\n\nPerformance: No performance issues noted\n\nTweaks: No combination of configuration options noted on the github page appears to function for fixing the ground; when PROTON_USE_WINED3D is used, not even trees or the entrance will render. When PROTON_NO_D3D11 is used, more things render, including zookeepers and bits of the ground. When PROTON_NO_D3D10 is used, only water will render, and the game crashes shortly after opening a map.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2.3",
+    "protonVersionManual": "4.2.3",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1555879706,
+    "title": "Zoo Tycoon: Ultimate Animal Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "613880",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.18-acs-patch",
+    "notes": "Black screen.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "3.16-9",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1570236191,
+    "title": "Zoo Tycoon: Ultimate Animal Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "613880",
+    "cpu": "AMD A9-9420e RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.5 Mesa 19.2.0",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "when you start the game from steam, it takes forever to start.  when it does start, you get to the menu where you have the option for training.  you click on this and it takes forever to begin.  the graphics are very slow and at most unresponsive.  for my computer, i use the amdgpu driver (GPL).  pro will not work.  i have mesa 19.2.2-1 installed.  i have xorg 1.20.5-2 installed (with no xorg drivers installed except for libinput).  i am currently only using the kernel driver for amdgpu",
+    "os": "Freedesktop.org 19.08.3 (Flatpak runtime)",
+    "protonVersion": "4.11-7",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1571994815,
+    "title": "Zoo Tycoon: Ultimate Animal Collection",
+    "source": "protondb"
+  }
+]

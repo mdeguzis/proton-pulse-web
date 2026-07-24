@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "202090",
+    "title": "Magicka: Wizard Wars",
+    "timestamp": 1535077411,
+    "rating": "Borked",
+    "notes": "Could not connect to the EasyAntiCheat network",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5-4690K/Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202090",
+    "title": "Magicka: Wizard Wars",
+    "timestamp": 1535384432,
+    "rating": "Borked",
+    "notes": "Easy AntiCheat network connection fails",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "202090",
+    "title": "Magicka: Wizard Wars",
+    "timestamp": 1535063011,
+    "rating": "Borked",
+    "notes": "Could not connect to the EasyAntiCheat network",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5-4690K/Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202090",
+    "title": "Magicka: Wizard Wars",
+    "timestamp": 1535370032,
+    "rating": "Borked",
+    "notes": "Easy AntiCheat network connection fails",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

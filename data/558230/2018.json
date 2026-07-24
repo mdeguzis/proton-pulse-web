@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "558230",
+    "cpu": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Elsword launcher starts and after a few seconds crashes reporting the file MailMIME.dll is missing.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5842 Mb",
+    "rating": "Borked",
+    "timestamp": 1537732257,
+    "title": "Elsword Free-to-Play",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "493980",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-1.el7.elrepo.x86_64",
+    "notes": "No issues at all - it's a simple 2D farming game so smooth at 1440p",
+    "os": "CentOS Linux release 7.6.1810 (Core)",
+    "protonVersion": "4.11-2",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1566808415,
+    "title": "Green Ranch",
+    "source": "protondb"
+  }
+]

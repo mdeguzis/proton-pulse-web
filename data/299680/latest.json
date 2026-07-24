@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "299680",
+    "title": "Tengami",
+    "timestamp": 1535743764,
+    "rating": "Borked",
+    "notes": "Starts to splash screen then shuts down. OpenGL maybe requires mesa 18.2? Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "299680",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Pops up black screen and exits",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Borked",
+    "timestamp": 1536870679,
+    "title": "Tengami",
+    "source": "protondb"
+  },
+  {
+    "appId": "299680",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.0-1-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Crashes immediately. Tried with Wine3D and DX9",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "16054 Mb",
+    "rating": "Borked",
+    "timestamp": 1536974131,
+    "title": "Tengami",
+    "source": "protondb"
+  },
+  {
+    "appId": "299680",
+    "cpu": "i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "kernel": "4.14.67-1-MANJARO",
+    "notes": "Shows splash screen and then crashes.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7866 Mb",
+    "rating": "Borked",
+    "timestamp": 1537044101,
+    "title": "Tengami",
+    "source": "protondb"
+  },
+  {
+    "appId": "299680",
+    "title": "Tengami",
+    "timestamp": 1535729364,
+    "rating": "Borked",
+    "notes": "Starts to splash screen then shuts down. OpenGL maybe requires mesa 18.2? Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

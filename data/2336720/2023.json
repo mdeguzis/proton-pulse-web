@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2336720",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.101",
+    "notes": "I can't run the game because I need C++ Runtime, probably work around this if you know what you're doing but I don't.",
+    "os": "NixOS 22.11 (Raccoon)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1680397026,
+    "title": "",
+    "source": "protondb"
+  }
+]

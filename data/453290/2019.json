@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "453290",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "runs perfectly after using \"STEAM_COMPAT_CONFIG=nod3d11 %command%\"",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1558195848,
+    "title": "Awareness Rooms",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

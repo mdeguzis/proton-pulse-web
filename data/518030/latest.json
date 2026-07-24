@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "518030",
+    "title": "Aim Hero",
+    "timestamp": 1535909075,
+    "rating": "Borked",
+    "notes": "Cursor moves down when moving it horizontally. Some select boxes' items are all invisible",
+    "os": "Arch Linux 4.18.3-arch1-1-ARCH",
+    "gpuDriver": "4.18.3-arch1-1-ARCH",
+    "specs": "i7-7700HQ / GTX 1060 3gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "518030",
+    "cpu": "Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.25.0, 4.17.0-8.1-liquorix-amd64, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.17.0-8.1-liquorix-amd64",
+    "notes": "Invisible menus.\nThe real indefensible part is the mouse drift. Working past the menus isn't too bad, but a game that has mouse drift(moving down and to the right has \"resistance\" in this case) that is about aiming is fundamentally broken.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15988 Mb",
+    "rating": "Borked",
+    "timestamp": 1537763209,
+    "title": "Aim Hero",
+    "source": "protondb"
+  },
+  {
+    "appId": "518030",
+    "cpu": "Intel(R) Core(TM) i3-3227U CPU @ 1.90GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.9-1-MANJARO",
+    "notes": "mouse is crazy",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "9889 Mb",
+    "rating": "Silver",
+    "timestamp": 1537930734,
+    "title": "Aim Hero",
+    "source": "protondb"
+  },
+  {
+    "appId": "518030",
+    "title": "Aim Hero",
+    "timestamp": 1535894675,
+    "rating": "Borked",
+    "notes": "Cursor moves down when moving it horizontally. Some select boxes' items are all invisible",
+    "os": "Arch Linux 4.18.3-arch1-1-ARCH",
+    "gpuDriver": "4.18.3-arch1-1-ARCH",
+    "specs": "i7-7700HQ / GTX 1060 3gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "433350",
+    "cpu": "i5-4690K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Laucher does work but game doesn't start.",
+    "os": "Debian GNU/Linux unstable (sid) (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "7936 Mb",
+    "rating": "Borked",
+    "timestamp": "1536346977",
+    "title": "BlackShot: Mercenary Warfare FPS",
+    "source": "protondb"
+  }
+]

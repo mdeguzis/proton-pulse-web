@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "875760",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Doesn't start. Just shows an error message saying the game crashed.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544332757,
+    "title": "Furious Seas",
+    "source": "protondb"
+  }
+]

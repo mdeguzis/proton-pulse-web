@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "943260",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-1-amd64",
+    "notes": "The game runs flawless, you only need this tool called Media Foundation https://github.com/z0z0z/mf-install It is easy to install, just place the prefix of the game and go. WINEPREFIX=\"/home/gaben/.local/share/Steam/steamapps/compatdata/943260/pfx\" ./install-mf.sh",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571690067,
+    "title": "Stranded Sails - Explorers of the Cursed Islands",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

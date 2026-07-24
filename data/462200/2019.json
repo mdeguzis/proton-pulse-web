@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "462200",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-48-generic",
+    "notes": "It launches and runs for a minute or two then crashes regardless of whether you sit on the main menu and do nothing or go into the game and play.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557552828,
+    "title": "Dungetris",
+    "source": "protondb"
+  }
+]

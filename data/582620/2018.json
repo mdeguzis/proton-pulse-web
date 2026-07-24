@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "582620",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-arch1-1-ARCH",
+    "notes": "Performance should be better, but played throuh the whole game with 40-60fps",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541245464,
+    "title": "Copoka",
+    "source": "protondb"
+  }
+]

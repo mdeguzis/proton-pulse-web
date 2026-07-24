@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1640640",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.6-arch1-1",
+    "notes": "I wasn't able to play game just open the game menu",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1731274009,
+    "title": "",
+    "source": "protondb"
+  }
+]

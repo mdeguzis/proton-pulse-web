@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "438680",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.0-13-generic",
+    "notes": "No problems found. Runs just fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557606828,
+    "title": "One Troll Army",
+    "source": "protondb"
+  },
+  {
+    "appId": "438680",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.5",
+    "kernel": "5.0.17-300.fc30.x86_64",
+    "notes": "Runs just like Windows. No glitches.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559169922,
+    "title": "One Troll Army",
+    "source": "protondb"
+  },
+  {
+    "appId": "438680",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563592770,
+    "title": "One Troll Army",
+    "source": "protondb"
+  }
+]

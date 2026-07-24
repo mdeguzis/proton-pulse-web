@@ -1,0 +1,110 @@
+[
+  {
+    "appId": "559100",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-106.current",
+    "notes": "Esync disabled, even after raising the file limit as described in the FAQ. After 44 hours of play: ran mostly without issues with the exception of 2 CTD's due to renderer issue. 50 - 100 fps.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547410401,
+    "title": "Phantom Doctrine",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-arch1-1-ARCH",
+    "notes": "As native.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1549533160,
+    "title": "Phantom Doctrine",
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-200.fc29.x86_64",
+    "notes": "Mostly playable. Strategic map is usually glitching (cosmetic only: map looks like an extreme motion blur is applied to it, but markers are visible; using PROTON_USE_WINED3D11=1 fixes this issue but adds shading problems and kills framerate). Sometimes mission result popups stop appearing (workaround: save and reload) or some or all keyboard shortcuts stop working after initial tactical mission loading screen (requires restart).",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Bronze",
+    "timestamp": 1550855093,
+    "title": "Phantom Doctrine",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-200.fc29.x86_64",
+    "notes": "Updating from Bronze to Gold after finding solution to issues mentioned below. Most of them, apparently, happened when the game tried to show a story/loading movie: when finishing a story mission or moving hideout. Requires a WMF fix (https://github.com/ValveSoftware/Proton/issues/838, look for wmf_workaround.zip) AND mfplay.dll from Win7 SP1. After that seems to run perfectly.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1552302643,
+    "title": "Phantom Doctrine",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-cb2898f 2019-03-12 bionic-oibaf-ppa)",
+    "kernel": "5.0.1-050001-generic",
+    "notes": "Install xact via winetricks / protontricks to fix the broken sound.\n\nThe world map is a blurry mess. It doesn't affect gameplay much but it's painful to look at. Because of this it is a Silver and not a Gold.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1553549794,
+    "title": "Phantom Doctrine",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "559100",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Load old save for 5 minutes - it works fine. Started new game. First time game crashes when I was changing char name. Started new game again with new game. First mission is fine except minor freezes, got crashed in middle of second misson",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1566646682,
+    "title": "Phantom Doctrine",
+    "source": "protondb"
+  }
+]

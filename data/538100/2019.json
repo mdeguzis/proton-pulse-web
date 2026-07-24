@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "538100",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "running out of the box. There are microfreezes when running when the textures of the location are loaded, and so the game works perfectly",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557859025,
+    "title": "Feel The Snow",
+    "source": "protondb"
+  },
+  {
+    "appId": "538100",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Works great",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562582875,
+    "title": "Feel The Snow",
+    "source": "protondb"
+  },
+  {
+    "appId": "538100",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-6ddfd37 2019-09-13 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Works as it should",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568940529,
+    "title": "Feel The Snow",
+    "source": "protondb"
+  }
+]

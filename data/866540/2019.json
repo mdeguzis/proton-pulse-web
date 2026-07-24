@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "866540",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.52.18",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Works perfectly on my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565561488,
+    "title": "VR Flush",
+    "source": "protondb"
+  },
+  {
+    "appId": "866540",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567477073,
+    "title": "VR Flush",
+    "source": "protondb"
+  }
+]

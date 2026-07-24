@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "730310",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.17-1-MANJARO",
+    "notes": "Like the other dude said, you can enter the main menu if you disable the movie in the configuration tool, but that's as far as you will get. Most of Koei games are borked :/",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547930790,
+    "title": "DYNASTY WARRIORS 9 \u771f\u30fb\u4e09\u570b\u7121\u53cc\uff18",
+    "source": "protondb"
+  },
+  {
+    "appId": "730310",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "aboutAnHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6.13568 Compatibility Profile Context 5.0.73",
+    "kernel": "5.0.21-050021-generic",
+    "notes": "you need to disable movies in the configuration tool otherwise runs fine, slight slowdowns when a lot is on screen until the shaders are cached then all runs just as expected",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563740857,
+    "title": "DYNASTY WARRIORS 9 \u771f\u30fb\u4e09\u570b\u7121\u53cc\uff18",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "315660",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Briefly downloads some assets then opens a black window. Some train sounds can be heard, but nothing shows. Unplayable.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562649647,
+    "title": "Trainz: A New Era",
+    "source": "protondb"
+  },
+  {
+    "appId": "315660",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570905310,
+    "title": "Trainz: A New Era",
+    "source": "protondb"
+  }
+]

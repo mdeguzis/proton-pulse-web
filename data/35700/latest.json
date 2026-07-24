@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "35700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-21dd881416)",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "Game works native on Linux only with graphic glitches. On Proton it works out of the box, but only in full hd, it crashes immediately in higher resolutions with WineD3D. I installed manually D9VK and it worked much better even in 4k with this DX9 to Vulkan translation, only text was not visible sometimes.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561098190,
+    "title": "Trine Enchanted Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "35700",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-3f3665b8d5)",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "notes": "Game works native on Linux only with graphic glitches. On Proton it works out of the box. I installed manually D9VK and it worked great in 4k with this DX9 to Vulkan translation even with the new ACO compiler.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563995215,
+    "title": "Trine Enchanted Edition",
+    "source": "protondb"
+  }
+]

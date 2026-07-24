@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1021210",
+    "cpu": "AMD Ryzen 5 PRO 4650G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.6.8-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.6.8-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703497546,
+    "title": "",
+    "source": "protondb"
+  }
+]

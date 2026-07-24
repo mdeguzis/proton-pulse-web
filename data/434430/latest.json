@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "434430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Had to tune down render resolution on my Index, but everything seems to work otherwise.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562353652,
+    "title": "Abbot's Book Demo",
+    "source": "protondb"
+  }
+]

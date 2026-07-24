@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1661270",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.19.0-35-generic",
+    "notes": "the fps might be 'too slow' for some gamers but it works",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1678408068,
+    "title": "Car Detailing Simulator: Prologue",
+    "source": "protondb"
+  }
+]

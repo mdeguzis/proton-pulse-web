@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2757490",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.15.6-201.nobara.fc42.x86_64",
+    "notes": "Works perfectly if you use the correct version of Proton, otherwise...",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1768223334,
+    "title": "",
+    "source": "protondb"
+  }
+]

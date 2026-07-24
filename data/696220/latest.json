@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "696220",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 21.1.6, DRM 3.64, 6.18.9-arch1-2)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.18.9-arch1-2",
+    "notes": "Game ran with no issues or slow down.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771292897,
+    "title": "Folklore Hunter",
+    "source": "protondb"
+  }
+]

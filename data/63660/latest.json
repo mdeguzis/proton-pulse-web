@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "63660",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1568646776,
+    "title": "Myst: Masterpiece Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "63660",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.0-devel (git-3664a66 2019-08-31 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-62-generic",
+    "notes": "Runs perfectly! Only problem I came across was that game crashes to desktop about 70% of times when resizing in windowed mode, but that's hardly gamebreaking.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570442267,
+    "title": "Myst: Masterpiece Edition",
+    "source": "protondb"
+  }
+]

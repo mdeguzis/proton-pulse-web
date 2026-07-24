@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "606500",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Runs right out of the box with no real issues. A few frame drops are noticeable when a lot of lighting sources are on screen but rarely dips under 30fps in those situations. Keeps a high 60 most of the time. ",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555985231,
+    "title": "HellSign",
+    "source": "protondb"
+  },
+  {
+    "appId": "606500",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.19.59-1-lts",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566929475,
+    "title": "HellSign",
+    "source": "protondb"
+  }
+]

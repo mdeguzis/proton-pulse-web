@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "786590",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.12.48-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "Use proton 9-4",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1760265499,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "407290",
+    "title": "There was a caveman",
+    "timestamp": 1535518372,
+    "rating": "Platinum",
+    "notes": "perfectly running",
+    "os": "Linux Mint 19 64-bit(4.14)",
+    "gpuDriver": "mesa18.3.0-devel",
+    "specs": "intel i5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "407290",
+    "title": "There Was a Caveman",
+    "timestamp": 1535647363,
+    "rating": "Platinum",
+    "notes": "Seems very stable, fullscreen, controls and sounds works perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.46)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i3-3217U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "407290",
+    "cpu": "i3-3217U CPU @ 1.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "notes": "Runs perfectly also with a controller.",
+    "os": "Manjaro Linux (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "There Was A Caveman",
+    "source": "protondb"
+  },
+  {
+    "appId": "407290",
+    "title": "There was a caveman",
+    "timestamp": 1535503972,
+    "rating": "Platinum",
+    "notes": "perfectly running",
+    "os": "Linux Mint 19 64-bit(4.14)",
+    "gpuDriver": "mesa18.3.0-devel",
+    "specs": "intel i5",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "407290",
+    "title": "There Was a Caveman",
+    "timestamp": 1535632963,
+    "rating": "Platinum",
+    "notes": "Seems very stable, fullscreen, controls and sounds works perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.46)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i3-3217U",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

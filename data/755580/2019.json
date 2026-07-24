@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "755580",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "World perfect for the first level full controller support. Soon you get to the point with TNT the exploses creates a fatal error because something is missing.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554665364,
+    "title": "Daddy's gone a-hunting",
+    "source": "protondb"
+  },
+  {
+    "appId": "755580",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Would work perfect till the second level the TNT box causes a crash with missing files.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1554705181,
+    "title": "Daddy's gone a-hunting",
+    "source": "protondb"
+  }
+]

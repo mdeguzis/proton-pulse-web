@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "370480",
+    "cpu": "AMD A8-3820 APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 620",
+    "gpuDriver": "NVIDIA 390.129",
+    "kernel": "5.3.5-1-default",
+    "notes": "works flawlessy, but not on latest Proton",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1600785512,
+    "title": "Pixel Galaxy",
+    "source": "protondb"
+  }
+]

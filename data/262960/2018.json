@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "262960",
+    "title": "Castle in the Darkness",
+    "timestamp": 1534910400,
+    "rating": "Silver",
+    "notes": "Install and launching are perfect.  I'm unfamiliar with the game in windows but it runs only in a window and the games built in joypad support doesn't work.  Steam controller setup can be made to work.",
+    "os": "Antergos",
+    "gpuDriver": "Mesa-git 18.3",
+    "specs": "Ryzen 1700x / r9 Fury",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "262960",
+    "title": "Castle in the Darkness",
+    "timestamp": 1534896000,
+    "rating": "Silver",
+    "notes": "Install and launching are perfect.  I'm unfamiliar with the game in windows but it runs only in a window and the games built in joypad support doesn't work.  Steam controller setup can be made to work.",
+    "os": "Antergos",
+    "gpuDriver": "Mesa-git 18.3",
+    "specs": "Ryzen 1700x / r9 Fury",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

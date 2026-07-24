@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "393980",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546805528,
+    "title": "Pretty Girls Mahjong Solitaire",
+    "source": "protondb"
+  },
+  {
+    "appId": "393980",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.4-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558892785,
+    "title": "Pretty Girls Mahjong Solitaire",
+    "source": "protondb"
+  }
+]

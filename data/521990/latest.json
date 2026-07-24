@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "521990",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "I had to start the game twice to make it run properly. At the first run i had major lags on mouse move. Now it runs flawless.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Silver",
+    "timestamp": 1539525458,
+    "title": "Galactic Storm",
+    "source": "protondb"
+  }
+]

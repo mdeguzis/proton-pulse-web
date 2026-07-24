@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "337340",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.12.57",
+    "notes": "The remaster doesnt have a native version",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1762614873,
+    "title": "",
+    "source": "protondb"
+  }
+]

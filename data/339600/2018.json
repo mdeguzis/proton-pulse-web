@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "339600",
+    "title": "VEGA Conflict",
+    "timestamp": 1535555383,
+    "rating": "Gold",
+    "notes": "Played the tutorial, seems fine.",
+    "os": "Ubuntu MATE 18.04.1(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1500X / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "339600",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "This game is work normaly",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543245415,
+    "title": "VEGA Conflict",
+    "source": "protondb"
+  },
+  {
+    "appId": "339600",
+    "title": "VEGA Conflict",
+    "timestamp": 1535540983,
+    "rating": "Gold",
+    "notes": "Played the tutorial, seems fine.",
+    "os": "Ubuntu MATE 18.04.1(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1500X / GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

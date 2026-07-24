@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "352460",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "crash at startup of the game",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Proton 3.7.6 (Beta)",
+    "ram": "15984 Mb",
+    "rating": "Borked",
+    "timestamp": 1537018592,
+    "title": "Dead Realm",
+    "source": "protondb"
+  }
+]

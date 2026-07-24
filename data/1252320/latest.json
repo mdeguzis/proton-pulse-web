@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1252320",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "FPS Drops occurr in-game when a large amount of the user-interface text/font is being displayed (both gameplay/ui and menus) at once.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1704459194,
+    "title": "",
+    "source": "protondb"
+  }
+]

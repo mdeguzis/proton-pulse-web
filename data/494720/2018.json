@@ -1,0 +1,102 @@
+[
+  {
+    "appId": "494720",
+    "title": "Morphblade",
+    "timestamp": 1535223720,
+    "rating": "Borked",
+    "notes": "nothing happens ",
+    "os": "Solus",
+    "gpuDriver": "390.77",
+    "specs": "i5-6600k + Nvidia gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "494720",
+    "title": "Morphblade",
+    "timestamp": 1535223989,
+    "rating": "Borked",
+    "notes": "It's stuck on the \"starting morpblade\" steam popup (I already submitted the game once, but forgot to add this note.",
+    "os": "Solus (kernel 4.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-660k/gtx970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "494720",
+    "title": "Morphblade",
+    "timestamp": 1535379085,
+    "rating": "Platinum",
+    "notes": "Works as it should (had no install or run issues whatsoever)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "494720",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Like native",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Morphblade",
+    "source": "protondb"
+  },
+  {
+    "appId": "494720",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "works out of the box in fullscreen and windowed mode",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16035 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537561251,
+    "title": "Morphblade",
+    "source": "protondb"
+  },
+  {
+    "appId": "494720",
+    "title": "Morphblade",
+    "timestamp": 1535209320,
+    "rating": "Borked",
+    "notes": "nothing happens ",
+    "os": "Solus",
+    "gpuDriver": "390.77",
+    "specs": "i5-6600k + Nvidia gtx 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "494720",
+    "title": "Morphblade",
+    "timestamp": 1535209589,
+    "rating": "Borked",
+    "notes": "It's stuck on the \"starting morpblade\" steam popup (I already submitted the game once, but forgot to add this note.",
+    "os": "Solus (kernel 4.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-660k/gtx970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "494720",
+    "title": "Morphblade",
+    "timestamp": 1535364685,
+    "rating": "Platinum",
+    "notes": "Works as it should (had no install or run issues whatsoever)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

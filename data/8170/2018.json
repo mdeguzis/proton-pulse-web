@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "8170",
+    "title": "Battlestations: Pacific",
+    "timestamp": 1535794660,
+    "rating": "Borked",
+    "notes": "Always first time installation on start, net framework 3.0 installation fails with error, game does not start or starts with black screen",
+    "os": "Parrot OS Security 4.2 64-Bit (Kernel 4.17.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-77000K / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "8170",
+    "title": "Battlestations: Pacific",
+    "timestamp": 1535780260,
+    "rating": "Borked",
+    "notes": "Always first time installation on start, net framework 3.0 installation fails with error, game does not start or starts with black screen",
+    "os": "Parrot OS Security 4.2 64-Bit (Kernel 4.17.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7-77000K / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

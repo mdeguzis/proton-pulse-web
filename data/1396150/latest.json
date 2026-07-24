@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1396150",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.6, DRM 3.59, 6.11.4-201.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.11.4-201.fc40.x86_64",
+    "notes": "Now plays the OP, the White Screen issue has been resolved",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1730035225,
+    "title": "Sutekina kanojo no tsukurikata",
+    "source": "protondb"
+  }
+]

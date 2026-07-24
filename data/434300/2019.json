@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "434300",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-200.fc30.x86_64",
+    "notes": "I am setting this to Silver instead of Platinum only because I haven't played it on Windows to compare. The game is playable, no tweaks required - so that would qualify it for Platinum, but it has obvious gameplay issues and I can't decide if these are bugs or is original this way as well. It loads SLOOOOOOWLY (I saw the same criticism in Steam reviews for Windows version). This game simply seems unfinished as of August 2019 - controls are unintuitive and text in interaction menus is extremely sparse, even icons is stock Unreal engine icon.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566673531,
+    "title": "Wormhole City",
+    "source": "protondb"
+  }
+]

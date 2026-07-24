@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "15310",
+    "title": "The Settlers: Heritage of Kings",
+    "timestamp": 1535277976,
+    "rating": "Platinum",
+    "notes": "Works fine",
+    "os": "Arch Linux 64-bit (Kernel 4.14.66-1-lts)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-8550U / Intel UHD 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "15310",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It runs better than Windows, but does have minor issues. Graphics settings are locked by default since it doesn't detect modern GPUs correctly, and the maximum resolution is 1600x900. Luckily it displays correctly without changing the resolution due to Steam Play's fullscreen-to-borderless-window scaling.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15991 Mb",
+    "rating": "Platinum",
+    "systemInfoNotes": "XFCE",
+    "timestamp": 1536730158,
+    "title": "The Settlers\u00ae: Heritage of Kings",
+    "source": "protondb"
+  },
+  {
+    "appId": "15310",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Runs perfectly. Played through the first 3 missions as well as starting random custom maps to see if it works. No problems at all.\n\nHowever, there are some issues that are also present on Windows (this is why I gave a Platinum and not a Gold), namely: You cannot change the graphics settings, and you don't have access to high resolutions. Both of those issues can be fixed with registry changes and executable patches, but I won't link them here (a quick googling will suffice).",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1543784714,
+    "title": "The Settlers\u00ae: Heritage of Kings",
+    "source": "protondb"
+  },
+  {
+    "appId": "15310",
+    "title": "The Settlers: Heritage of Kings",
+    "timestamp": 1535263576,
+    "rating": "Platinum",
+    "notes": "Works fine",
+    "os": "Arch Linux 64-bit (Kernel 4.14.66-1-lts)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-8550U / Intel UHD 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

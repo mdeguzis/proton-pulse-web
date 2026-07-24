@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "236930",
+    "cpu": "Intel Core i3-3240 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.4-arch1-1-ARCH",
+    "notes": "Flawless. No issues.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548733963,
+    "title": "Blackwell Epiphany",
+    "source": "protondb"
+  },
+  {
+    "appId": "236930",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Smooth as silk.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553639893,
+    "title": "Blackwell Epiphany",
+    "source": "protondb"
+  },
+  {
+    "appId": "236930",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Flawless work including achievements from start till end.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1572046938,
+    "title": "Blackwell Epiphany",
+    "source": "protondb"
+  }
+]

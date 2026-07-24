@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1498490",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.11.6-137-tkg-bmq, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.6-137-tkg-bmq",
+    "notes": "You can see the potential of the game. The initial setting is ok. But you can't play it.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1617837630,
+    "title": "",
+    "source": "protondb"
+  }
+]

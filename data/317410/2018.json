@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "317410",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537560027,
+    "title": "Color Symphony",
+    "source": "protondb"
+  },
+  {
+    "appId": "317410",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.6-1-MANJARO",
+    "notes": "Seems to run without any problems. Nothing to note.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544590721,
+    "title": "Color Symphony",
+    "source": "protondb"
+  },
+  {
+    "appId": "317410",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.67",
+    "kernel": "4.15.0-29deepin-generic",
+    "notes": "work perfectly",
+    "os": "Deepin 15.8",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546010321,
+    "title": "Color Symphony",
+    "source": "protondb"
+  }
+]

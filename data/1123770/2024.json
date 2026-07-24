@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1123770",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.6.22",
+    "notes": "Basically native. Not officially supported but GE-Proton9-2 is the first version I tried.",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1712267986,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123770",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-arch1-1",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726763609,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123770",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.6, DRM 3.57, 6.10.12-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.10.12-200.fc40.x86_64",
+    "notes": "The FPS instability is extremely frustrating.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1735266041,
+    "title": "",
+    "source": "protondb"
+  }
+]

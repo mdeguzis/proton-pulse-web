@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "227480",
+    "title": "God Mode",
+    "timestamp": 1535210191,
+    "rating": "Borked",
+    "notes": "UI loads, can change options, audio works. Game throws a windows crash dialog when attempting to start a match",
+    "os": "Arch Linux 64-bit (4.18.1-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51-3",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "227480",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "Work ",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541857848,
+    "title": "God Mode",
+    "source": "protondb"
+  },
+  {
+    "appId": "227480",
+    "title": "God Mode",
+    "timestamp": 1535195791,
+    "rating": "Borked",
+    "notes": "UI loads, can change options, audio works. Game throws a windows crash dialog when attempting to start a match",
+    "os": "Arch Linux 64-bit (4.18.1-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51-3",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

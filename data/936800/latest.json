@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936800",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "Nvidia Geforce GTX 1650",
+    "gpuDriver": "515.65.01",
+    "kernel": "5.19.4-200.fc36.x86_64",
+    "notes": "It's also (probably) a bad game.",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-5",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1672753542,
+    "title": "Professor Watts Memory Match: Cats",
+    "source": "protondb"
+  }
+]

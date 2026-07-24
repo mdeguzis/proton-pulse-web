@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "207530",
+    "title": "Noitu Love 2: Devolution",
+    "timestamp": 1536221613,
+    "rating": "Platinum",
+    "notes": "Perfect out of the box. No full-screen or window-borders to maximize, though",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "207530",
+    "cpu": "AMD A10-4600M APU with Radeon(tm) HD Graphics",
+    "gpu": "X.Org AMD ARUBA (DRM 2.50.0",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "notes": "Does not run fullscreen, select 3x or 4x resolution from the menu before playing",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Gold",
+    "timestamp": "1536364800",
+    "title": "Noitu Love 2: Devolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "207530",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Both game, sound and configuration window works. Full screen doesn't work.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541269742,
+    "title": "Noitu Love 2: Devolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "207530",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "No window borders or fullscreen. Only playable in window mode. Played through to the first boss.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541756752,
+    "title": "Noitu Love 2: Devolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "207530",
+    "title": "Noitu Love 2: Devolution",
+    "timestamp": 1536207213,
+    "rating": "Platinum",
+    "notes": "Perfect out of the box. No full-screen or window-borders to maximize, though",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

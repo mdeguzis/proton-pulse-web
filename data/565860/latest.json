@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "565860",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Works fine but cannot buy ammo (camera moves out when trying to focus on thing to buy)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1553453812,
+    "title": "Tomato Way",
+    "source": "protondb"
+  }
+]

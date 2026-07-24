@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "582500",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-0dff1533f2)",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Seems to run with DXVK on Proton, but couldn't connect to game servers.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1554626939,
+    "title": "We Were Here",
+    "source": "protondb"
+  },
+  {
+    "appId": "582500",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "It boots up fine and even works with my Vive, but it can't connect to the game servers, which makes the game unplayable. This game cannot be played offline.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569578862,
+    "title": "We Were Here",
+    "source": "protondb"
+  }
+]

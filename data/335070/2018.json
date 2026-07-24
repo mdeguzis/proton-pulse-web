@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "335070",
+    "title": "VRC PRO",
+    "timestamp": 1535999854,
+    "rating": "Borked",
+    "notes": "Attempts to install .net framework then does not launch game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "GeForce GTX 1060 6GB (396.54)",
+    "specs": "i7 5930k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "335070",
+    "title": "VRC PRO",
+    "timestamp": 1535985454,
+    "rating": "Borked",
+    "notes": "Attempts to install .net framework then does not launch game.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "GeForce GTX 1060 6GB (396.54)",
+    "specs": "i7 5930k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

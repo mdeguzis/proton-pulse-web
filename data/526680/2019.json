@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "526680",
+    "cpu": "Intel Xeon E5-2687W v2 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.19.57-gentoo",
+    "notes": "I get `Unable to load mono library from \"Z:${HOME}/.local/share/Steam/steamapps/common/Lifeliqe VR Museum/Lifeliqe_VR_Museum_Data/Mono/mono.dll\" (error = 6).`. I have replaced my actual home directory path with ${HOME} in the quotation.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "3.16-4",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1565669421,
+    "title": "Lifeliqe VR Museum",
+    "source": "protondb"
+  }
+]

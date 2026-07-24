@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "470040",
+    "cpu": "Intel Core i3-4130 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Can't even run the game after installing it.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1551625614,
+    "title": "Spellgear",
+    "source": "protondb"
+  }
+]

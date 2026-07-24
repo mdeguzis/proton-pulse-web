@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "259680",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.5-222-tkg-pds, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.5-222-tkg-pds",
+    "notes": "Native and Proton just shows me a black screen",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1638722779,
+    "title": "",
+    "source": "protondb"
+  }
+]

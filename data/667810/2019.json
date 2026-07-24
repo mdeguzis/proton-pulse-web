@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "667810",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "notes": "Crashes on exit. But who cares?",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550264043,
+    "title": "Next Up Hero",
+    "source": "protondb"
+  },
+  {
+    "appId": "667810",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-100.fc28.x86_64",
+    "notes": "Worked well out of box. I did not noticed any issue. Although game didn't got me much interested so i went just through few areas.",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552762353,
+    "title": "Next Up Hero",
+    "source": "protondb"
+  },
+  {
+    "appId": "667810",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with Xbox 360 controller; no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558987066,
+    "title": "Next Up Hero",
+    "source": "protondb"
+  }
+]

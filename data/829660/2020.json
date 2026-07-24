@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "829660",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-46-generic",
+    "notes": "I tried out multiplayer not online play. It all worked as expected",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1586654200,
+    "title": "No Time to Relax",
+    "source": "protondb"
+  },
+  {
+    "appId": "829660",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.13-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1586674058,
+    "title": "No Time to Relax",
+    "source": "protondb"
+  },
+  {
+    "appId": "829660",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1588507614,
+    "title": "No Time to Relax",
+    "source": "protondb"
+  }
+]

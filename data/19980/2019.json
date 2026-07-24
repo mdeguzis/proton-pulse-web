@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "19980",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1548163984,
+    "title": "Prince of Persia\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "19980",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-62c6059584)",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Works out of the box with Proton. I installed D9VK and it worked as well perfectly fine with this DX9 to Vulkan translation.",
+    "os": "Unknown",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561662463,
+    "title": "Prince of Persia\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "19980",
+    "cpu": "AMD Phenom II X2 B53",
+    "duration": "aboutAnHour",
+    "gpu": "AMD HD 6450 CAICOS",
+    "gpuDriver": "3.1 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Starts up and plays with no issues but this game runs fine on Windows with this system, where on Manjaro, even at 720p with minimum settings it chugs unplayably, so while compatibility is perfect the performance dock from Proton is pretty bad I suppose?",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1561941008,
+    "title": "Prince of Persia\u00ae",
+    "source": "protondb"
+  }
+]

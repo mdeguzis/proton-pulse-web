@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "551700",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Shows initial splash screens, but then crashes. The game itself won't start.\nTried the basic tweaks: \ndisable esync: same result\ndisable d3d11: won't even give splash\nuse win d3d11: same result",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554030805,
+    "title": "Gunheart",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "612540",
+    "cpu": "Intel Core i5-7Y54 @ 1.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 615 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Disable Esync for more fps",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1546785621,
+    "title": "Sudden Strike 3",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "435480",
+    "cpu": "Intel Xeon           X3470  @ 2.93GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "crashes a few seconds after pressing play",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553531127,
+    "title": "Trials of the Blood Dragon",
+    "source": "protondb"
+  },
+  {
+    "appId": "435480",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Game won't successfully launch.  When launching from Steam app the UPlay DRM program never launches to authenticate.  By using Wine commands within the associated Wineprefix UPlay program can be launched, updated and completes authentication over the network and detects a local version of Trials of the Blood Dragon installed, but it can't successfully launch the game.  Even with UPlay app pre-launched and with authentication successful neither Steam app or UPlay app can launch the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1554328737,
+    "title": "Trials of the Blood Dragon",
+    "source": "protondb"
+  }
+]

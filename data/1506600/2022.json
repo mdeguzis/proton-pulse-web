@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1506600",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.13.0-35-generic",
+    "notes": "runs well on linux devices, no need for any customization. you can play with proton stable or experimental",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1669552563,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1803840",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.7.4-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.4-200.fsync.fc39.x86_64",
+    "notes": "No issues at all using a Quest 2 under ALVR.",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1738166571,
+    "title": "",
+    "source": "protondb"
+  }
+]

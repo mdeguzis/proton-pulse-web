@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "342370",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.12-1-MANJARO, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.12-1-MANJARO",
+    "notes": "Does not start when launched from steam. You have to start it from the normal company of heroes game with the launch options \"-mod Europe_At_War\". Then it works perfectly like the normal company of heroes. ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16053 Mb",
+    "rating": "Gold",
+    "timestamp": 1539882235,
+    "title": "Europe at War",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "738530",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Launches window and shows Bandai logo, but then launches mini window w/ \"Fatal error!\" text and \"Ok\" button. Clicking \"Ok\" button closes both windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540940510,
+    "title": "New Gundam Breaker",
+    "source": "protondb"
+  }
+]

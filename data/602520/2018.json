@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "602520",
+    "title": "NEKOPARA Vol. 3",
+    "timestamp": 1535693590,
+    "rating": "Gold",
+    "notes": "Screen tearing, not a big problem.",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "602520",
+    "title": "NEKOPARA Vol. 3",
+    "timestamp": 1535732369,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "602520",
+    "title": "NEKOPARA Vol. 3",
+    "timestamp": 1536186046,
+    "rating": "Silver",
+    "notes": "English works, japan need tweaks",
+    "os": "Fedora 28 64-bit (Kernel 17.12.19)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 2700X / Vega 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "602520",
+    "cpu": "Intel Core i5-4430 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "No launch options necessary for Japanese text - works out of the box.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1545419140,
+    "title": "NEKOPARA Vol. 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "602520",
+    "title": "NEKOPARA Vol. 3",
+    "timestamp": 1535679190,
+    "rating": "Gold",
+    "notes": "Screen tearing, not a big problem.",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "602520",
+    "title": "NEKOPARA Vol. 3",
+    "timestamp": 1535717969,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "602520",
+    "title": "NEKOPARA Vol. 3",
+    "timestamp": 1536171646,
+    "rating": "Silver",
+    "notes": "English works, japan need tweaks",
+    "os": "Fedora 28 64-bit (Kernel 17.12.19)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "Ryzen 2700X / Vega 56",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

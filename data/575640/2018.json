@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "575640",
+    "cpu": "i7-6800K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "32136 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536612077,
+    "title": "Zup! 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "575640",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "runs in 1280x1024 on first start, on second start after multiple \"fullscreen\"-\"no fullscreen\" clicks the window resizes to native 1920x1080",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16005 Mb",
+    "rating": "Gold",
+    "timestamp": 1537809459,
+    "title": "Zup! 3",
+    "source": "protondb"
+  }
+]

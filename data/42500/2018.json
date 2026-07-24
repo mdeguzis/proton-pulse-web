@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "42500",
+    "title": "DogFighter",
+    "timestamp": 1535524195,
+    "rating": "Borked",
+    "notes": "Screen is stretched well beyond monitor",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "42500",
+    "cpu": "AMD Athlon X4 760K Quad Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-11-generic",
+    "notes": "It works, but you need to alt+tab out and go back into the game for the resolution to be stretched in the correct way. The framerate is also pretty low, making it harder to aim.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1543062441,
+    "title": "DogFighter",
+    "source": "protondb"
+  },
+  {
+    "appId": "42500",
+    "title": "DogFighter",
+    "timestamp": 1535509795,
+    "rating": "Borked",
+    "notes": "Screen is stretched well beyond monitor",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1150720",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.7, DRM 3.54, 6.5.0-1-amd64)",
+    "gpuDriver": "4.6 Mesa 23.2.0~rc3-3",
+    "kernel": "6.5.0-1-amd64",
+    "notes": "Due to the audio issue I wouldn't recommend it",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1710441239,
+    "title": "",
+    "source": "protondb"
+  }
+]

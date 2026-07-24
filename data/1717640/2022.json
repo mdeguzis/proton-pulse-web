@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1717640",
+    "cpu": "Intel Core i7-10870H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.25-1-MANJARO",
+    "notes": "The game fork bomb the computer and eat all the RAM",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1659645113,
+    "title": "",
+    "source": "protondb"
+  }
+]

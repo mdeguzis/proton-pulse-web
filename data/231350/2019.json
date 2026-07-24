@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "231350",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.20.6-042006-generic",
+    "notes": "You need to select either \"force 64 bits\" or \"force 32 bits\" in order for the benchmark to start. DX12 benchmarks didn't start, saying that a \"DirectX 12 compatible operating system\" is required. The app doesn't start if Windows 10 is selected as OS instead of the default Windows 7. SystemInfo takes an unusually long amount of time to scan on 64 bits (around 5 - 10 minutes). All benchs does not work with wined3d. Some artifacts on Cloud Gate and Sky Diver, I don't if it's a RADV or a DXVK issue.",
+    "os": "Ubuntu 18.10 (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551997191,
+    "title": "3DMark Demo",
+    "source": "protondb"
+  }
+]

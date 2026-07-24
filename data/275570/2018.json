@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "275570",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "hit play and nothing happens",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15989 Mb",
+    "rating": "Borked",
+    "timestamp": 1536688180,
+    "title": "Summoner",
+    "source": "protondb"
+  },
+  {
+    "appId": "275570",
+    "cpu": "Intel(R) Core(TM) i7-2630QM CPU @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation Quadro 1000M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "Crashes on launch with the message:\n\"Error: No Direct3D devices found!\nFile: D:\\projects\\Summoner\\pccode\\vsdk\\gr\\directx\\gr_direct3d.cpp - Line: 1061\nA critical error has occurred and the program cannot continue.\" ",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "3900 Mb",
+    "rating": "Borked",
+    "timestamp": 1539003251,
+    "title": "Summoner",
+    "source": "protondb"
+  },
+  {
+    "appId": "275570",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Game spits out a no video card detected error on launch, I've attempted to launch with multiple versions of proton and have even bypassed the launcher.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540490041,
+    "title": "Summoner",
+    "source": "protondb"
+  }
+]

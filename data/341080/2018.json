@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "341080",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Crashes with message 'GetThreadContext failed'",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "NeXus: One Core",
+    "source": "protondb"
+  }
+]

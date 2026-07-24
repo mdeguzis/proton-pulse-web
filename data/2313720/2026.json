@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2313720",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.2, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-29-generic",
+    "notes": "This bug is intermittend but not really gamebreaking",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779460117,
+    "title": "",
+    "source": "protondb"
+  }
+]

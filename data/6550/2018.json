@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "6550",
+    "title": "Devil May Cry 3: Special Edition",
+    "timestamp": 1534824000,
+    "rating": "Borked",
+    "notes": "Input issues make this game unplayable from the start",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6550",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0 AMD 18.30 , 4.15.0-34-generic, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-34-generic",
+    "notes": "input problems, not playable",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7941 Mb",
+    "rating": "Borked",
+    "timestamp": 1537825037,
+    "title": "Devil May Cry\u00ae 3 Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "6550",
+    "title": "Devil May Cry 3: Special Edition",
+    "timestamp": 1534809600,
+    "rating": "Borked",
+    "notes": "Input issues make this game unplayable from the start",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

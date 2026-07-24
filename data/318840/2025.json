@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "318840",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 16.0.6, DRM 3.54, 6.6.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.8-arch1-1",
+    "notes": "Hits 144+fps very comfortably; no major issues",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1746833909,
+    "title": "",
+    "source": "protondb"
+  }
+]

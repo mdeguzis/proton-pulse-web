@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "730840",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.1.0 - padoka PPA",
+    "kernel": "4.15.0-52-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561645335,
+    "title": "Burger Shop",
+    "source": "protondb"
+  }
+]

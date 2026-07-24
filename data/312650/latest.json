@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "312650",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game is running great offline without VR with a great frame rate. I will be getting a VR headset soon - probably the Valve Index VR headset for the best experience. (Playstation VR has a better experience than the flat screen.)",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555040834,
+    "title": "Battlezone Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "312650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "4.19.55-2-lts",
+    "notes": "(SteamVR beta 1.5.15 + Vive + 8BitDo NES30Pro)\n\nPlayed offline, worked perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561506259,
+    "title": "Battlezone Gold Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3356310",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.7, DRM 3.64, 6.18.5-1-default)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "6.18.5-1-default",
+    "notes": "Any compatibility mode I tried it failed with the error \"Invalid image <long-path-to-dll>\".",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1769392227,
+    "title": "sheeeroom",
+    "source": "protondb"
+  },
+  {
+    "appId": "3356310",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, ACO, DRM 3.61, 6.14.4-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.3 (git-c3afa2a74f)",
+    "kernel": "6.14.4-300.fc42.x86_64",
+    "notes": "I tried opening it with three different versions of Proton, but it won't open. I get an \u201cinvalid_image\u201d error.",
+    "os": "Fedora Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1773363648,
+    "title": "sheeeroom",
+    "source": "protondb"
+  },
+  {
+    "appId": "3356310",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 19.1.7, DRM 3.61, 6.12.48+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "Borked",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1775857513,
+    "title": "sheeeroom",
+    "source": "protondb"
+  }
+]

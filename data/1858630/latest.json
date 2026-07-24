@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1858630",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "Works better on Linux. The common issue for me on Windows was input latency and stutters. Tried it on Bazzite - no input lag, no stutters.",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1750250231,
+    "title": "",
+    "source": "protondb"
+  }
+]

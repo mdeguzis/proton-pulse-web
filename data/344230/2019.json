@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "344230",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Using a 4k monitor so had a black screen on start up. Had to run protontricks 350810 then chose winecfg and do the following: \"automatically capture mouse in full screen mode\" - uncheck then set Virtual desktop to 1920x1080 .. Works great afterwards",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "3.16-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561554841,
+    "title": "Pixel Puzzles 2: Birds",
+    "source": "protondb"
+  }
+]

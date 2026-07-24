@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "775220",
+    "title": "Crusaders of Light",
+    "timestamp": 1536088851,
+    "rating": "Bronze",
+    "notes": "\n19/5000\nthe game does not update",
+    "os": "Antergos 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 3 1200 / GT 1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "775220",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "Game Launches to updater and then hangs for a while, gives the option to retry download or quit launcher . Error log ---> [ERROR] can not open a npkrawwriter, os error! ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15982 Mb",
+    "rating": "Borked",
+    "timestamp": 1537906840,
+    "title": "Crusaders of Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "775220",
+    "cpu": "Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-36-generic",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "5407 Mb",
+    "rating": "Borked",
+    "timestamp": 1539963543,
+    "title": "Crusaders of Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "775220",
+    "title": "Crusaders of Light",
+    "timestamp": 1536074451,
+    "rating": "Bronze",
+    "notes": "\n19/5000\nthe game does not update",
+    "os": "Antergos 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 3 1200 / GT 1030",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

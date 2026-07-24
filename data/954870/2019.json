@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "954870",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Runs great but the only issue is that the game does not take input after an alt + tab. \nRunning it in windowed mode has no issues but I prefer full screen.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553545235,
+    "title": "Astrox Imperium",
+    "source": "protondb"
+  },
+  {
+    "appId": "954870",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Runs totally fine unless you switch to another application or desktop. When you switch back to Astrox controls won't work properly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1553864570,
+    "title": "Astrox Imperium",
+    "source": "protondb"
+  },
+  {
+    "appId": "954870",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-200.fc30.x86_64",
+    "notes": "I'm running Fedora 30 (not sure why ProtonDB didn't detect it). I had to attempt to start the game 3 times (Steam would say \"Running\" next to the title in my library for a few seconds and then the \"Running\" label would disappear). After the 3rd attempt the started and ran with no issues. This is why I'm knocking this down to Gold. On further play attempts I was able to start it on first time with no issues.\n\nI played for over an hour in both fullscreen and windowed mode. I had no issues alt+tabbing to the desktop and back in any mode. The game just keeps running in the background. In windowed mode you can watch the game while working on other things. In fullscreen you cannot watch the game while working in other windows. I also had no issues with my 3 monitor setup. The game is running right now on my main monitor (windowed mode 2560x1080) while I type this in my 2nd monitor. I also no issues listening to Spotify while running the game.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1566601004,
+    "title": "Astrox Imperium",
+    "source": "protondb"
+  }
+]

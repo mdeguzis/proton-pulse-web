@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "744800",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "notes": "It's just a series of illustrations, but they are quite lovely :). Works perfectly.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536688093,
+    "title": "Banyu Lintar Angin - Little Storm -",
+    "source": "protondb"
+  },
+  {
+    "appId": "744800",
+    "cpu": "Intel(R) Core(TM) i5-4200U CPU @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.10-zen1-1-zen",
+    "notes": "Work out of the box using steam runtime. cannot start playing if runtime disabled, at least at my system. sometimes text on steam overlay did not appear",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7420 Mb",
+    "rating": "Gold",
+    "timestamp": 1538225445,
+    "title": "Banyu Lintar Angin - Little Storm -",
+    "source": "protondb"
+  }
+]

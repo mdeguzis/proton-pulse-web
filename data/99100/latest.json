@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "99100",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-154-generic",
+    "notes": "Game starts and plays perfectly (although you'll have to cancel out of the prompt to create a gamespy account, since that doesn't exist anymore). The mouse is a little sensitive at times, but it otherwise plays okay for such an old game.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562087458,
+    "title": "Dungeons and Dragons: Daggerdale",
+    "source": "protondb"
+  }
+]

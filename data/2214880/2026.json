@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2214880",
+    "cpu": "AMD Ryzen 9 4900HS with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.3-pikaos",
+    "notes": "Works out of the box / 2k / 40-60fps",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "40 GB",
+    "rating": "gold",
+    "timestamp": 1767516858,
+    "title": "",
+    "source": "protondb"
+  }
+]

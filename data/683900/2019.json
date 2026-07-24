@@ -1,0 +1,47 @@
+[
+  {
+    "appId": "683900",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.5-300.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546458394,
+    "title": "RollerCoaster Tycoon\u00ae Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "683900",
+    "cpu": "Intel Core i7-7740X @ 4.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561280605,
+    "title": "RollerCoaster Tycoon\u00ae Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "683900",
+    "cpu": "Intel Core i7-7740X @ 4.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561333407,
+    "title": "RollerCoaster Tycoon\u00ae Classic",
+    "source": "protondb"
+  }
+]

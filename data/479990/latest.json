@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "479990",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs flawlessly after installing CoreFonts, or else missing text.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554039416,
+    "title": "Dungeons & Darkness",
+    "source": "protondb"
+  }
+]

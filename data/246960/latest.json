@@ -1,0 +1,68 @@
+[
+  {
+    "appId": "246960",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "notes": "Did some experimenting with this today to see what is needed to get it working. It turns out that it works perfectly in Proton but requires quite a lot of extra work to get it going. The main cause of the crash is due to the lack with windows media player support. To get around this we have to install wmp10 from winetricks (or protontricks). This is where the nightmare begins. You can only install wmp10 (or 9) in a 32bit prefix that proton does not support. I manually created a 32bit prefix, installed wmp10 and ran the game in dx11 mode, and it crashed??? So after doing some digging, it turns out that the proton python script is programmed to put the 64bit d3d***.dll files into system32 which is correct for a 64 bit prefix but wrong for 32bit. I tried manually changing the files to the 32bit versions but they keep being deleted. Again looking at the python script, it replaces the dll files every time you launch the game. Finally modifying the script to stop the automatic replacement and the game launches without problems and plays perfectly. Unfortunately, the proton dev team are waiting until wmp support is fixed upstream so this may not work officially for a very long time which is a shame given how well it works.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1560710936,
+    "title": "Giana Sisters: Twisted Dreams - Rise of the Owlverlord",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "246960",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Game does not start.",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560723542,
+    "title": "Giana Sisters: Twisted Dreams - Rise of the Owlverlord",
+    "source": "protondb"
+  },
+  {
+    "appId": "246960",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.15.0-54-generic",
+    "notes": "The launcher starts. Settings can be accessed. When you click on start the launcher closes and nothing happens.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1563121510,
+    "title": "Giana Sisters: Twisted Dreams - Rise of the Owlverlord",
+    "source": "protondb"
+  },
+  {
+    "appId": "246960",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.3",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564595250,
+    "title": "Giana Sisters: Twisted Dreams - Rise of the Owlverlord",
+    "source": "protondb"
+  }
+]

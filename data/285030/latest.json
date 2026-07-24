@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "285030",
+    "title": "Actua Soccer 3",
+    "timestamp": 1535416625,
+    "rating": "Silver",
+    "notes": "Works fine, has some weird error when starting that says to retry but doesn't seem to affect anything.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "285030",
+    "title": "Actua Soccer 3",
+    "timestamp": 1535402225,
+    "rating": "Silver",
+    "notes": "Works fine, has some weird error when starting that says to retry but doesn't seem to affect anything.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

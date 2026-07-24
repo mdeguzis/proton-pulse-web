@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1488310",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.41-1-MANJARO",
+    "notes": "Although the game is in alpha, I had no issues relating to running it on linux after installing microsoft visual c++.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1655132421,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "809020",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-1-MANJARO",
+    "notes": "The game detected some of my Steam Controller's inputs twice. This is fixed by turning off a duplicated gamepad in the game's settings. Afterwards, it works without issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549206960,
+    "title": "ZeroRanger",
+    "source": "protondb"
+  },
+  {
+    "appId": "809020",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.27-gentoo-r1",
+    "notes": "Works without problems with controller support (tested with xboxOne and SNES controller) after disabling Esync, which prevents the game to crash a few minutes in.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1557062288,
+    "title": "ZeroRanger",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "809020",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "4.19.42-1-MANJARO",
+    "notes": "Everything works fine out of the box. I did not test with a controller (it seems others had problems).",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1559153923,
+    "title": "ZeroRanger",
+    "source": "protondb"
+  },
+  {
+    "appId": "809020",
+    "cpu": "AMD Ryzen 7 2700X",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs out of the box with full controller support. Changing screen orientation may knock the game out of fullscreen and place window slightly outside monitor range; simply press Alt+Enter a couple of times to fix it.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563082535,
+    "title": "ZeroRanger",
+    "source": "protondb"
+  }
+]

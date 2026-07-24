@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1896750",
+    "cpu": "AMD Ryzen 5 5600U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.14.0-37-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Cursed 1 works fine on Linux. The most annoying bugs encountered may very well be with the game as a whole, and not from playing on Linux.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1770075264,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1896750",
+    "cpu": "AMD Ryzen 7 5700",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 21.1.6, DRM 3.64, 6.19.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1777558687,
+    "title": "",
+    "source": "protondb"
+  }
+]

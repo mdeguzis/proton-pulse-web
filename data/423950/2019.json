@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "423950",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Initially had graphical glitches. Replaced DXVK with D9VK (current version 0.13) and this fixed the graphical issue. Only other issue I found was a sound distortion/corruption when draining the water in underground sewer area. Other than that game seemed to play fine with a steady 60fps.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563558873,
+    "title": "Deadlight: Director's Cut",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "722060",
+    "cpu": "AMD Ryzen 9 6900HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (rembrandt, LLVM 14.0.5, DRM 3.48, 6.0.7-200.rog.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.0-devel",
+    "kernel": "6.0.7-200.rog.fc36.x86_64",
+    "notes": "Linux version is the one the developers use themselves, I think.",
+    "os": "Fedora release 36 (Thirty Six)",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1677419887,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "722060",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1685466215,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "722060",
+    "cpu": "AMD Ryzen 9 6900HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (rembrandt, LLVM 14.0.5, DRM 3.48, 6.0.7-200.rog.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.0-devel",
+    "kernel": "6.0.7-200.rog.fc36.x86_64",
+    "notes": "Developers use Linux natively; supported better on Linux than other platforms",
+    "os": "Fedora release 36 (Thirty Six)",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1685642042,
+    "title": "",
+    "source": "protondb"
+  }
+]

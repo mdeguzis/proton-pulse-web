@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "871280",
+    "cpu": "Intel Core i3-7100U @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Works almost entirely without any tweak. Couldn't get videos to play from the gallery and it seems they get skipped during the game. Tested screen effects, all language settings, different resolutions, auto mode, and skipping scenes. ",
+    "os": "MX 18.3 Continuum",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561507160,
+    "title": "Grisaia Phantom Trigger Vol.5",
+    "source": "protondb"
+  }
+]

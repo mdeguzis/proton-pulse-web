@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "35600",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Has some problems with full screen resolution but it looks like WIndows has similar problems",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16001 Mb",
+    "rating": "Gold",
+    "timestamp": 1536813189,
+    "title": "Big Brain Wolf",
+    "source": "protondb"
+  }
+]

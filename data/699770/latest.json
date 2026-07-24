@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "699770",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Works out of the box. Some minor Audio issues in the Menu, some Performance issues during Gameplay, mainly when the rides are in motion, Performance issues are fixed by disabeling Esync",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545764337,
+    "title": "RideOp - Thrill Ride Simulator",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

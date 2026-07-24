@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1078690",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.16-towo.1-siduction-amd64",
+    "notes": "tested both fullscreen and windowed. no ultrawide support",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.14-GE-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569082238,
+    "title": "Neo Cab Demo",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "621000",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9",
+    "os": "NixOS 19.09.git.0dd725d (Loris)",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566557147,
+    "title": "\u5f02\u5e38 | Exception",
+    "source": "protondb"
+  },
+  {
+    "appId": "621000",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Played the first levels which felt native.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567975968,
+    "title": "\u5f02\u5e38 | Exception",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2265640",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "En for\u00e7ant l'utilisation de FSR, sinon il y a des ralentissements.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1759253655,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2265640",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Avec l'option --frs=1 le jeu tourne tr\u00e8s bien.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1759261450,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2265640",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.6, DRM 3.64, 6.16.5-322.current)",
+    "gpuDriver": "4.6 Mesa 25.2.3",
+    "kernel": "6.16.5-322.current",
+    "notes": "Se lance sans probl\u00e8me sur mon ordinateur",
+    "os": "Solus 4.7 Endurance",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1759261957,
+    "title": "",
+    "source": "protondb"
+  }
+]

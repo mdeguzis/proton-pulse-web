@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "8220",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537713050,
+    "title": "Sam & Max 103: The Mole, the Mob and the Meatball",
+    "source": "protondb"
+  },
+  {
+    "appId": "8220",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-39-generic",
+    "notes": "0 issues",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1543021874,
+    "title": "Sam & Max 103: The Mole, the Mob and the Meatball",
+    "source": "protondb"
+  }
+]

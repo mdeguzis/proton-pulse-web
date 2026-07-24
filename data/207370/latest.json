@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "207370",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-1-MANJARO",
+    "notes": "Game runs well, doesn't have the performance issues as it does on Windows.\n\n\nIf I don't have a controller plugged it, the \"up\" input gets constantly sent, making playing comfortably impossible. The Z/X inputs also acquire some lag, making menuing tricky - it initially made me thought that the game crashed when I picked \"Missions\", when it just looped over to the \"Exit\" option within the lag timeframe.\n\n\nPlugging in an Xbox 360 controller resolves the issue. However, the \"right\" and \"down\" actions on the left stick are not recognized. I have confirmed that my controller is not broken via https://html5gamepad.com/. Also sometimes the A input on the controller gets jammed instead. I can still use keyboard inputs as normal.\n\n\nThe dialogues inside the game are garbled, but that's probably something to do with my locale (en_us UTF-8). The menus are not affected by this.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1547489030,
+    "title": "eXceed - Gun Bullet Children",
+    "source": "protondb"
+  },
+  {
+    "appId": "207370",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core @ 4 GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Unplayable with Proton 3.16-9, but Borked with no textures under Proton 4.2-3",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557160144,
+    "title": "eXceed - Gun Bullet Children",
+    "source": "protondb"
+  }
+]

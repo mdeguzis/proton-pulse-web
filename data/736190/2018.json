@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "736190",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.14.85-1-lts",
+    "notes": "GetThreadContext failed",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544172115,
+    "title": "\u4e2d\u56fd\u5f0f\u5bb6\u957f / Chinese Parents",
+    "source": "protondb"
+  }
+]

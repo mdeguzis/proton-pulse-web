@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "2400",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Multiplayer servers don't work on native Windows too, but you can still manually host a server and connect to it. I suggest adjusting resolution via launch options \"-w 1920 -h 1080\". Otherwise the game works perfectly.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556568406,
+    "title": "The Ship: Murder Party",
+    "source": "protondb"
+  }
+]

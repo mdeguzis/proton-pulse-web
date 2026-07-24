@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "466110",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Crashes on exit",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1551555274,
+    "title": "Shaolin vs Wutang",
+    "source": "protondb"
+  }
+]

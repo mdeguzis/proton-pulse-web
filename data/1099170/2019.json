@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1099170",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.6-arch1-1-ARCH",
+    "notes": "Played with Steam Controller, game runs perfectly fine.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1571326167,
+    "title": "Battle Planet - Judgement Day",
+    "source": "protondb"
+  },
+  {
+    "appId": "1099170",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Played about 5 hours at release day. Single and local coop. No issues at all. A whitelist candidate.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571408343,
+    "title": "Battle Planet - Judgement Day",
+    "source": "protondb"
+  }
+]

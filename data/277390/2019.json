@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "277390",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.0",
+    "kernel": "5.1.14-arch1-1-ARCH",
+    "notes": "Working great now! Menus work right, all modes tested except online (but loading leaderboards, and creating and looking for lobbies works, works with XBox 360 controller.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Gold",
+    "timestamp": 1561799288,
+    "title": "VIDEOBALL",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

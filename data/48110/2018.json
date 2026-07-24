@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "48110",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not start. Shortly after pressing Play, the start process ends abruptly without an error message. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15979 Mb",
+    "rating": "Borked",
+    "timestamp": 1537909350,
+    "title": "Silent Hunter 5\u00ae: Battle of the Atlantic",
+    "source": "protondb"
+  },
+  {
+    "appId": "48110",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Does not start up at all, stops at installing .NET 2.0",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1542492850,
+    "title": "Silent Hunter 5\u00ae: Battle of the Atlantic",
+    "source": "protondb"
+  }
+]

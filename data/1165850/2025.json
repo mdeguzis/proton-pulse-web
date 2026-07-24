@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1165850",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 20.1.6, DRM 3.63, 6.15.3-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.15.3-200.fc42.x86_64",
+    "notes": "Everything works, Note starting menu does not appear in VR",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1752005656,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "452230",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.4.0-88-generic",
+    "notes": "Some slight missing textures, plug and play.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1635159794,
+    "title": "",
+    "source": "protondb"
+  }
+]

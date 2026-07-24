@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "287220",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Tested a few levels.\nSeems to run perfectly aside from a minor graphical glitch where the pilot chair is partially invisible. As this is the only issue I found, I'm still rating this as Platinum since this has no impact on gameplay.",
+    "os": "KDE neon User Edition 5.14 (64 Bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "16070 MB",
+    "rating": "Platinum",
+    "timestamp": 1539625171,
+    "title": "Autocraft",
+    "source": "protondb"
+  }
+]

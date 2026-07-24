@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "434250",
+    "cpu": "AMD Athlon(tm) II X4 630 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "nouveau NV137",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "well run.:)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7975 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539438206,
+    "title": "Masked Shooters 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "434250",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.2-041902-generic",
+    "notes": "Game runs on 3.7-4, however mainly tested on 3.16-4. Both the regular game and the Assault DLC have been tested and both work, however have the same issues. Mouse input works but does not work correctly - input is all over the place and it is difficult to aim. Fixing this issue would give the game a Platinum rating. Audio works fine. Game does not have controller support.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543071405,
+    "title": "Masked Shooters 2",
+    "source": "protondb"
+  }
+]

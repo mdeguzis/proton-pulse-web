@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1623210",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.1.7 - kisak-mesa PPA",
+    "kernel": "6.2.0-32-generic",
+    "notes": "Needs 4.11-13 to launch.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "4.11-13",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1695489069,
+    "title": "",
+    "source": "protondb"
+  }
+]

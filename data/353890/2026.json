@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "353890",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.19.14-300.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.3",
+    "kernel": "6.19.14-300.fc44.x86_64",
+    "notes": "Casey Powell Lacrosse 16 is Fantastic on Linux",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777435841,
+    "title": "",
+    "source": "protondb"
+  }
+]

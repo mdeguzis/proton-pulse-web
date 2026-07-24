@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "299030",
+    "title": "Blood One Unit Whole Blood",
+    "timestamp": 1535368995,
+    "rating": "Platinum",
+    "notes": "It runs perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770K / GTX970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "299030",
+    "title": "Blood: One Unit Whole Blood",
+    "timestamp": 1534993084,
+    "rating": "Borked",
+    "notes": "Starts up DOSBox. Stalls. Reopen, gets past the stallpoint but proceeds to crash. A++ would reminisce over default DOS typeface again.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "299030",
+    "title": "Blood One Unit Whole Blood",
+    "timestamp": 1535354595,
+    "rating": "Platinum",
+    "notes": "It runs perfectly",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770K / GTX970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "299030",
+    "title": "Blood: One Unit Whole Blood",
+    "timestamp": 1534978684,
+    "rating": "Borked",
+    "notes": "Starts up DOSBox. Stalls. Reopen, gets past the stallpoint but proceeds to crash. A++ would reminisce over default DOS typeface again.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

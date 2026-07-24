@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "875540",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Tutorial executed correctly. No crash so far. Low performance, game is choppy.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1541015078,
+    "title": "Virtual telescope",
+    "source": "protondb"
+  }
+]

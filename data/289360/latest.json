@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "289360",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Splash screen then crash",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551468673,
+    "title": "Konung 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "289360",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "starts into black screen, have to be terminated manually. same game from gog works with wine 4x 64bit installation. if it's the same game version you might need to tweak Proton prefix to make steam version work",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-2",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1559499113,
+    "title": "Konung 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "289360",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-44-generic",
+    "notes": "The game does work but a couple of workarounds are needed:\n\n1) Install Indeo codecs with \"protontricks 289360 icodecs\" OR rename/remove the \"video\" directory and just watch the videos with an external video player.\n2) In winecfg (protontricks 289360 winecfg) go to the Graphics tab and turn on \"emulate a virtual desktop\".\n3) Before running the game, set your desktop resolution to 1024x768. (or do it via xrandr in the Steam launch options).\nOnce you've correctly done all these actions the game will run, though with a minor slowdown.\n\nI was using the Russian version in my experiments, but the steps should apply to the English version as well.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562998501,
+    "title": "Konung 2",
+    "source": "protondb"
+  }
+]

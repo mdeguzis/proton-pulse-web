@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1973320",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.8-arch1-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726704798,
+    "title": "",
+    "source": "protondb"
+  }
+]

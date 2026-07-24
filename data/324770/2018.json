@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "324770",
+    "title": "eXperience 112",
+    "timestamp": 1535978339,
+    "rating": "Platinum",
+    "notes": "Very good performances, no",
+    "os": "Mageia 6 (kernel 4.17.18-desktop-1.mga6)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "i5-7300HQ - GTX1050",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "324770",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "I think performance has increased with newer versions of Proton.  The UI has less lag and the cameras have become more responsive while manually panning in any direction.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542668568,
+    "title": "eXperience 112",
+    "source": "protondb"
+  },
+  {
+    "appId": "324770",
+    "title": "eXperience 112",
+    "timestamp": 1535963939,
+    "rating": "Platinum",
+    "notes": "Very good performances, no",
+    "os": "Mageia 6 (kernel 4.17.18-desktop-1.mga6)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "i5-7300HQ - GTX1050",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

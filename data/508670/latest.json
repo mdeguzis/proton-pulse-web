@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "508670",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "I just get a black screen. Nothing shows. I waited almost an hour.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551163409,
+    "title": "Aircraft War X",
+    "source": "protondb"
+  }
+]

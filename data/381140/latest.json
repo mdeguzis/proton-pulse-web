@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "381140",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.7-rt5-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557593994,
+    "title": "Cruel Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "381140",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.28-1-MANJARO",
+    "notes": "Game tested on Apple Macbook Pro (13-inch, mid 2012) running on Manjaro Linux. Runs smoothly however when setting Display option to \"Windowed\" via the Game options. it started to slow down (20 to 25 FPS). Working fine with minor issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565965452,
+    "title": "Cruel Arena",
+    "source": "protondb"
+  }
+]

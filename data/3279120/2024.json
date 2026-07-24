@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3279120",
+    "cpu": "Intel Core i5-4258U @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris 5100 (HSW GT3)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Played with a controller for like an hour, runs well with Proton Experimental, haven't seen any issues so far",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1734259859,
+    "title": "",
+    "source": "protondb"
+  }
+]

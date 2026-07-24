@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1510860",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 21.1.5, DRM 3.64, 6.17.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.9-2-cachyos",
+    "notes": "works fine",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778428782,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "415590",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Doesn't work at all, just opens a black screen and crashes with \"Fatal Error\" Message some seconds later. Tried every debug option, different Proton builds, disabling dxvk etc.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562253916,
+    "title": "Earthfall",
+    "source": "protondb"
+  },
+  {
+    "appId": "415590",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-154-generic",
+    "notes": "It works with this workaround https://steamcommunity.com/app/415590/discussions/0/1643167006305565118",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563598655,
+    "title": "Earthfall",
+    "source": "protondb"
+  }
+]

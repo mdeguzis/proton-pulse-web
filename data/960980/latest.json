@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "960980",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.7-050207-lowlatency",
+    "notes": "Game is perfectly playable, however intro logo video is just a black screen, and you have to hit enter to continue. When exiting the game there is also an error message.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565374350,
+    "title": "Apsulov: End of Gods",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "676500",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It runs pretty much perfect. However there can be crashes related to RAM available.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541363933,
+    "title": "Time Warpers",
+    "source": "protondb"
+  }
+]

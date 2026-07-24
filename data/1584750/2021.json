@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1584750",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-9-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 11 (bullseye) (64\u00a0bits)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637180702,
+    "title": "",
+    "source": "protondb"
+  }
+]

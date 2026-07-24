@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "635060",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "Language selection has question marks for characters for 2 of the 3 languages, but the default English language is fine. Plays perfectly if you understand English, but could be a problem if you don't.",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Silver",
+    "timestamp": 1537568546,
+    "title": "Castle of no Escape",
+    "source": "protondb"
+  }
+]

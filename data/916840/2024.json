@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "916840",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 18.1.6, DRM 3.57, 6.10.6-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.6",
+    "kernel": "6.10.6-200.fc40.x86_64",
+    "notes": "Had to change default controller bindings, but even after that i couldn't play comfortable. Controllers were badly rotated, performance was terrible (over 16ms to render frame on lowest settings, while on windows i could play on max settings at 120hz). Used Quest 2 via ALVR (most likely all problems were due to my hmd)",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1727010882,
+    "title": "",
+    "source": "protondb"
+  }
+]

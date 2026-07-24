@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "340580",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Works only in Windowed mode, maximised or smaller. Fullscreen screws up the graphics. I have not tried disabling Esync, D3d11 or Wine D3d11.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1564403833,
+    "title": "Armed with Wings: Rearmed",
+    "source": "protondb"
+  }
+]

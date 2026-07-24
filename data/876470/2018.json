@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "876470",
+    "title": "Tentlan",
+    "timestamp": 1535826837,
+    "rating": "Bronze",
+    "notes": "Runs OK and works smoothly, but crash after exactly one minute.",
+    "os": "Debian 9",
+    "gpuDriver": "Mesa 13.0.6",
+    "specs": "i3-2350M / Intel SandyBridge Mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "876470",
+    "title": "Tentlan",
+    "timestamp": 1535812437,
+    "rating": "Bronze",
+    "notes": "Runs OK and works smoothly, but crash after exactly one minute.",
+    "os": "Debian 9",
+    "gpuDriver": "Mesa 13.0.6",
+    "specs": "i3-2350M / Intel SandyBridge Mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "243120",
+    "title": "Betrayer",
+    "timestamp": 1534945205,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Antergos",
+    "gpuDriver": "mesa-git 18.3",
+    "specs": "i5-8400/ RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "243120",
+    "title": "Betrayer",
+    "timestamp": 1535144617,
+    "rating": "Silver",
+    "notes": "Ran it on medium settings performance was solid however when initially starting the game the menu will flicker enabling vsync fixes the menu flickering\n \nwhen entering the game there will be slight texture flickering when looking around this can be fixed by disabling anti-aliasing in the graphics menu \n\nthere seems to be minor graphical glitch on the buildings in the form of tiny flickering textures however it does not effect the gameplaty enough to make it unplayable everything else runs smooth as butter i played for about an hour ",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 2600 / GTX 1050 ti 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "243120",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Playable, but performance isn't great and there are various graphical glitches. Anti-aliasing settings cause intermittent screen flicker unless set to \"off\", and blocky white spots can be seen when looking at dark areas up close.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1540513071,
+    "title": "Betrayer",
+    "source": "protondb"
+  },
+  {
+    "appId": "243120",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "Works great. You may need to turn off or down the graphics settings though.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1543597430,
+    "title": "Betrayer",
+    "source": "protondb"
+  },
+  {
+    "appId": "243120",
+    "title": "Betrayer",
+    "timestamp": 1534930805,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Antergos",
+    "gpuDriver": "mesa-git 18.3",
+    "specs": "i5-8400/ RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "243120",
+    "title": "Betrayer",
+    "timestamp": 1535130217,
+    "rating": "Silver",
+    "notes": "Ran it on medium settings performance was solid however when initially starting the game the menu will flicker enabling vsync fixes the menu flickering\n \nwhen entering the game there will be slight texture flickering when looking around this can be fixed by disabling anti-aliasing in the graphics menu \n\nthere seems to be minor graphical glitch on the buildings in the form of tiny flickering textures however it does not effect the gameplaty enough to make it unplayable everything else runs smooth as butter i played for about an hour ",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 2600 / GTX 1050 ti 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

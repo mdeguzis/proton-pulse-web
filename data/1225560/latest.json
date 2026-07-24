@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1225560",
+    "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600S (radeonsi, navi33, ACO, DRM 3.64, 6.19.10-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 26.0.3 - kisak-mesa PPA",
+    "kernel": "6.19.10-x64v3-xanmod1",
+    "notes": "Both GE-Proton10-34 and Experimental were unable to launch the game.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1778436570,
+    "title": "Unravel",
+    "source": "protondb"
+  }
+]

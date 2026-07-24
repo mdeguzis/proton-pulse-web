@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "644870",
+    "cpu": "Intel Core2 Duo     E8200  @ 2.66GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 19.0.8",
+    "kernel": "4.15.0-60-generic",
+    "notes": "The game runs, but crashes frequently, especially early on in the Guest Patio area. Granted it was on a weak Core2 Duo E8200, with OBS recording in the background with software encoding. Later on it is possible to play 1hour+ without a crash. Just save frequently. I have finished 3 scenarios out of the 4 possible. Since it is an RPG Maker VX Ace game, you should expect similar behavior on your system to other RPG Maker games.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-3",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1568287303,
+    "title": "Fortress of Hell",
+    "source": "protondb"
+  }
+]

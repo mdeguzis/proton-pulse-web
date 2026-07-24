@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1172190",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.5 - kisak-mesa PPA",
+    "kernel": "5.3.0-46-generic",
+    "notes": "Blank screen (except custom cursor), no music, 100% CPU after \"BEGIN NEW GAME\"",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1588189905,
+    "title": "",
+    "source": "protondb"
+  }
+]

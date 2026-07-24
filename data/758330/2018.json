@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "758330",
+    "title": "Shenmue I & II",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "The launcher requires .NET, which isn't installed by default. Can be worked around in regular Wine (with DXVK) by running the game's executable(s) directly, but there are additional audio problems.",
+    "os": "Gentoo 4.18.3",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 1600 / Rx 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "758330",
+    "title": "Shenmue I & II",
+    "timestamp": 1535416390,
+    "rating": "Borked",
+    "notes": "Claims that the game needs to be updated, but there is no update available",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA",
+    "specs": "i5 4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "758330",
+    "cpu": "AMD Phenom(tm) II X3 720 Processor",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.12.14-lp150.12.16-default",
+    "notes": "Launch the game from Steam with the option \"PROTON_DUMP_DEBUG_COMMANDS=1 %command%\". Go to \"/tmp/proton_$USER/\" and move the \"run\" script to your home dir. Edit it to bypass the launcher (first two lines, point to \"sm1/Shenmue.exe\" instead or \"sm2/Shenmue2.exe\") and add \";xaudio2_7=n,b\" to the \"WINEDLLOVERRIDES\" line. I also had to add the line \"PULSE_LATENCY_MSEC=30\" to solve audio crackling. Re-add the script to Steam as a non-steam game. ",
+    "os": "\"openSUSE Leap 15.0\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3936 Mb",
+    "rating": "Gold",
+    "timestamp": 1537550230,
+    "title": "Shenmue I & II",
+    "source": "protondb"
+  },
+  {
+    "appId": "758330",
+    "title": "Shenmue I & II",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "The launcher requires .NET, which isn't installed by default. Can be worked around in regular Wine (with DXVK) by running the game's executable(s) directly, but there are additional audio problems.",
+    "os": "Gentoo 4.18.3",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 1600 / Rx 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "758330",
+    "title": "Shenmue I & II",
+    "timestamp": 1535401990,
+    "rating": "Borked",
+    "notes": "Claims that the game needs to be updated, but there is no update available",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA",
+    "specs": "i5 4690k",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

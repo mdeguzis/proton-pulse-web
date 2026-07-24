@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "289460",
+    "cpu": "Intel Core i7-4702MQ @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "The game starts and works perfectly without any tweaks/issues. I had some troubles with changing resolution while the game was in windowed mode (after changing the resolution the game window would remain black), so eventually I ended up playing in fullscreen.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562517756,
+    "title": "RC Cars",
+    "source": "protondb"
+  }
+]

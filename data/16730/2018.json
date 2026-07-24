@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "16730",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Playing through from 1st to 2nd checkpoint. Played smoothly ",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6-beta",
+    "ram": "7404 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536663082,
+    "title": "Legendary",
+    "source": "protondb"
+  },
+  {
+    "appId": "16730",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No issues  ( The fire animation looks a bit blocky & square )",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541655156,
+    "title": "Legendary",
+    "source": "protondb"
+  },
+  {
+    "appId": "16730",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Game works and is playable. However, adjusting the brightness completely broke all textures and lighting in the game. Moments in the game with lots of moving objects tended to get about 10 frames per second with my PC.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544547765,
+    "title": "Legendary",
+    "source": "protondb"
+  }
+]

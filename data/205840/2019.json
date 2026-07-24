@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "205840",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Crashes at main menu unless you provide the launch option: WINEDLLOVERRIDES=\"openal32=b\" %command%",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559074064,
+    "title": "Yesterday",
+    "source": "protondb"
+  },
+  {
+    "appId": "205840",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.37",
+    "notes": "Runs ok after setting the resolution and use WINEDLLOVERRIDES=\"openal32=b\" %command%",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565023637,
+    "title": "Yesterday",
+    "source": "protondb"
+  }
+]

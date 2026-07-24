@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "985260",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.5-steamvr-generic",
+    "notes": "Game opens up to a black screen then a dialogue box appears saying fatal error. Haven't tried anything else to get it started yet. Just know it doesn't work out of the box on 4.2-9 or 4.11-2.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566674458,
+    "title": "The Morrigan",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1727180",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.18.4-1-liquorix-amd64",
+    "notes": "Funciona correctamente",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1768544881,
+    "title": "",
+    "source": "protondb"
+  }
+]

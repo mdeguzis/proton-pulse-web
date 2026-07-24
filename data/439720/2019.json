@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "439720",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Game runs exactly like on Windows.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556183359,
+    "title": "Unending Galaxy",
+    "source": "protondb"
+  }
+]

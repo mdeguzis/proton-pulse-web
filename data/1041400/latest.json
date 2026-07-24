@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1041400",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.59-1-MANJARO",
+    "notes": "Some load times were very long in the beginning, but everything seems to work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563678975,
+    "title": "Fight Angel/\u683c\u6597\u5929\u4f7f",
+    "source": "protondb"
+  }
+]

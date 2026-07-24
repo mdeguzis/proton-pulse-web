@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "397740",
+    "title": "Hylics",
+    "timestamp": 1535508248,
+    "rating": "Silver",
+    "notes": "A lot of lag in larger areas. This due to how RPG Maker renders with the CPU and not with the GPU.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "FX-6300 R9 280x",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "397740",
+    "cpu": "AMD FX(tm)-4300 Quad-Core Processor",
+    "gpu": "X.Org AMD CAPE VERDE (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works great! :)",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-6 Beta",
+    "ram": "7708 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537076639,
+    "title": "Hylics",
+    "source": "protondb"
+  },
+  {
+    "appId": "397740",
+    "title": "Hylics",
+    "timestamp": 1535493848,
+    "rating": "Silver",
+    "notes": "A lot of lag in larger areas. This due to how RPG Maker renders with the CPU and not with the GPU.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "FX-6300 R9 280x",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

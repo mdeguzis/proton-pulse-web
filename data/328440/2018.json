@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "328440",
+    "cpu": "Intel Core i5       M 560  @ 2.67GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ironlake Mobile",
+    "gpuDriver": "2.1 Mesa 13.0.6",
+    "kernel": "4.15.0-1-amd64",
+    "notes": "Opening videos play, but opening dialog box to start or load game does not load",
+    "os": "MX 17 Horizon",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1542999972,
+    "title": "Deadlock: Planetary Conquest",
+    "source": "protondb"
+  }
+]

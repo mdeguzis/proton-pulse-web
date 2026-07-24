@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "850000",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.44-1-MANJARO",
+    "notes": "After starting the game you get to the chapter selection screen. After selecting a chapter the screen stays black. No audio.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593432441,
+    "title": "",
+    "source": "protondb"
+  }
+]

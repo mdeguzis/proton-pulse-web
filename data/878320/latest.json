@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "878320",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.4.0-141-generic",
+    "notes": "Runs perfectly!",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1547650750,
+    "title": "SIMULACRA: Pipe Dreams",
+    "source": "protondb"
+  },
+  {
+    "appId": "878320",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.4-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1549106912,
+    "title": "SIMULACRA: Pipe Dreams",
+    "source": "protondb"
+  }
+]

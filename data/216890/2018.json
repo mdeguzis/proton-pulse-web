@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "216890",
+    "title": "Blood Bowl: Chaos Edition",
+    "timestamp": 1535797664,
+    "rating": "Borked",
+    "notes": "Only sound is playing. No video output.",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i7-4770 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "216890",
+    "title": "Blood Bowl: Chaos Edition",
+    "timestamp": 1535191731,
+    "rating": "Silver",
+    "notes": "Black screen at start, then the games works after a click. The main menu doesn't work when displayed on a secondary monitor (displayed, but no keyboard/mouse action works).",
+    "os": "XUbuntu 16.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3570K / HD7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "216890",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Just click through the initial black screen and it works great!",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15997 Mb",
+    "rating": "Gold",
+    "timestamp": 1539480427,
+    "title": "Blood Bowl: Chaos Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "216890",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CAYMAN",
+    "gpuDriver": "3.1 Mesa 18.2.5",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Minor menu problems",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542569477,
+    "title": "Blood Bowl: Chaos Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "216890",
+    "title": "Blood Bowl: Chaos Edition",
+    "timestamp": 1535783264,
+    "rating": "Borked",
+    "notes": "Only sound is playing. No video output.",
+    "os": "Fedora 28 64-bit",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i7-4770 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "216890",
+    "title": "Blood Bowl: Chaos Edition",
+    "timestamp": 1535177331,
+    "rating": "Silver",
+    "notes": "Black screen at start, then the games works after a click. The main menu doesn't work when displayed on a secondary monitor (displayed, but no keyboard/mouse action works).",
+    "os": "XUbuntu 16.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3570K / HD7850",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

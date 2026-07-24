@@ -1,0 +1,44 @@
+[
+  {
+    "appId": "361850",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game starts up fine, the menus, settings etc all work fine. Once you get into the game though it runs extremely slowly, ie 4-5fps. I tried different versions of Proton with no luck. I tried using WineD3d, disabling D3d11, disabling D3d10 and disabling ESync, all to no avail, the game just runs very slowly. \n\nSo then I tried running the executable in plain Wine and the game runs perfectly! I then tried running it via Lutris using ge-protonified-4.9 and the game runs perfectly, getting a solid 60fps all the way.\n\nSo there is something in the Steam client that causes the game to run so slowly and I can't figure out what it is.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2.3",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1566393734,
+    "title": "Portal of Evil: Stolen Runes Collector's Edition",
+    "tweaks": {
+      "disableD3d10": true,
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "361850",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-64-generic",
+    "notes": "In Set Launch Options add PROTON_NO_ESYNC=1 %command% to avoid low fps.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569776373,
+    "title": "Portal of Evil: Stolen Runes Collector's Edition",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

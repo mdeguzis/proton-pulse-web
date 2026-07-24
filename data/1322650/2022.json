@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1322650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Avviare con l'ultima versione di proton e selezionare in finestra 2x dalle opzioni in game",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1657286811,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1322650",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 10 (raven, LLVM 14.0.6, DRM 3.47, 5.19.1-arch2-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.1-arch2-1",
+    "notes": "Native version crashed on launch, proton works flawlessly though",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1665364264,
+    "title": "",
+    "source": "protondb"
+  }
+]

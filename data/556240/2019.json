@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "556240",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Works fine - no problems",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556056761,
+    "title": "Disoriented",
+    "source": "protondb"
+  },
+  {
+    "appId": "556240",
+    "cpu": "AMD A8-7410 APU with AMD Radeon R5 Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R5 M330",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.0.16-116.current",
+    "notes": "Game has no issue whatsoever. I thought game was native.",
+    "os": "Solus",
+    "protonVersion": "4.2-8",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1562783940,
+    "title": "Disoriented",
+    "source": "protondb"
+  }
+]

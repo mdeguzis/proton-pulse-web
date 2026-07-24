@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "201010",
+    "title": "Geneforge 5: Overthrow",
+    "timestamp": 1536089897,
+    "rating": "Platinum",
+    "notes": "Perfect.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "201010",
+    "cpu": "Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.25.0, 4.17.19-200.fc28.x86_64, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.17.19-200.fc28.x86_64",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64397 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539209229,
+    "title": "Geneforge 5: Overthrow",
+    "source": "protondb"
+  },
+  {
+    "appId": "201010",
+    "title": "Geneforge 5: Overthrow",
+    "timestamp": 1536075497,
+    "rating": "Platinum",
+    "notes": "Perfect.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

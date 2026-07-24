@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "999560",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-43-generic",
+    "notes": "On multiple monitors, sometimes the launcher launches outside of the desktop. Just use your window manager to move it to where it needs to be and then it works perfect.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1546800102,
+    "title": "Fragile Equilibrium",
+    "source": "protondb"
+  }
+]

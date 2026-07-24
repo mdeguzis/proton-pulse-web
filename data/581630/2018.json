@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "581630",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Over all performance is great, works flawlessly didnt need to do any configuration at all, only thing that using i3wm Fullscreen, Windowed, Windowed Fullscreen doesnt change anything, its always in fullscreen, though this is in no way an issue, atleast not on i3 as i can switch workplaces easily",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "40 GB",
+    "rating": "Platinum",
+    "timestamp": 1540988344,
+    "title": "Sword With Sauce",
+    "source": "protondb"
+  },
+  {
+    "appId": "581630",
+    "cpu": "Intel Pentium G3240 @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-11-generic",
+    "notes": "I notice sound settings don't work, but other then that, it runs perfectly",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543189679,
+    "title": "Sword With Sauce",
+    "source": "protondb"
+  }
+]

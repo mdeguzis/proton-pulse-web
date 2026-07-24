@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2507980",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon R7 M265 (radeonsi, oland, ACO, DRM 3.64, 6.17.5-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 25.2.5-1",
+    "kernel": "6.17.5-x64v3-xanmod1",
+    "notes": "",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1765328469,
+    "title": "Meta Ghost: Breaking Show",
+    "source": "protondb"
+  }
+]

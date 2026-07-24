@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "25980",
+    "title": "Majesty 2",
+    "timestamp": 1535767572,
+    "rating": "Platinum",
+    "notes": "Same performance as Windows.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel - Padoka PPA",
+    "specs": "i5-3210M / Radeon HD 7730M",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "25980",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.14-gentoo",
+    "notes": "Main game and the expansion, good and stable perfromance, no tweaks needed",
+    "os": "Gentoo Base System release 2.4.1",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540734482,
+    "title": "Majesty 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "25980",
+    "cpu": "Intel Core i7-3770S @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "Game plays perfectly @ 1920x1200 at max settings.  Works great!",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541632193,
+    "title": "Majesty 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "25980",
+    "title": "Majesty 2",
+    "timestamp": 1535753172,
+    "rating": "Platinum",
+    "notes": "Same performance as Windows.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel - Padoka PPA",
+    "specs": "i5-3210M / Radeon HD 7730M",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

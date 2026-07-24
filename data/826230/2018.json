@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "826230",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "has sound but no grfx, probably a simple fix",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537877537,
+    "title": "CONCLUSE",
+    "source": "protondb"
+  },
+  {
+    "appId": "826230",
+    "cpu": "AMD A9-9410 RADEON R5, 5 COMPUTE CORES 2C+3G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.15.0-38-generic",
+    "notes": "no gfx!! \neverything else in the game seems to run smoothly, but you can not see anything.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1540921474,
+    "title": "CONCLUSE",
+    "source": "protondb"
+  }
+]

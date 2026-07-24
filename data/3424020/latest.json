@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3424020",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.64, 6.17.2-zen1)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.17.2-zen1",
+    "notes": "It Runs, it plays but music is missing",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1763157994,
+    "title": "Letterlike",
+    "source": "protondb"
+  }
+]

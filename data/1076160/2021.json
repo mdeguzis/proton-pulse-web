@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1076160",
+    "cpu": "Intel Core i9-9880H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro RTX 3000",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Installs, presents Launcher, \"Running\"--but not so.",
+    "os": "Ubuntu 18.04 LTS (whitehaven-mlk X84.1)",
+    "protonVersion": "6.3-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1624810898,
+    "title": "",
+    "source": "protondb"
+  }
+]

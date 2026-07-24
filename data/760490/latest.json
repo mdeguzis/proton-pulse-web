@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "760490",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.18.0-21-generic",
+    "notes": "Launches and displays a white screen. Music plays and sounds good. None of the attempted tweaks worked.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560630497,
+    "title": "Frontier Runner",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

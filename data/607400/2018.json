@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "607400",
+    "title": "Necrosphere",
+    "timestamp": 1535325860,
+    "rating": "Borked",
+    "notes": "Black screen and nothing happens",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "607400",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.19.0-041900-generic",
+    "notes": "Black screen, no sound, launch option tweaks do nothing",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540744524,
+    "title": "Necrosphere",
+    "source": "protondb"
+  },
+  {
+    "appId": "607400",
+    "title": "Necrosphere",
+    "timestamp": 1535311460,
+    "rating": "Borked",
+    "notes": "Black screen and nothing happens",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 384.111",
+    "specs": "AMD FX(tm)-4100 Quad-Core / GeForce GTX 550 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

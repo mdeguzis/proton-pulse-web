@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "683280",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Game won't even start. Using proton-tkg, game starts, until it needs to load the opening and then crashes with the same error.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1561947420,
+    "title": "Omega Quintet",
+    "source": "protondb"
+  }
+]

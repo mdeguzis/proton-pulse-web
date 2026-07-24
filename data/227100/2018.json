@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "227100",
+    "title": "Sniper Elite: Nazi Zombie Army",
+    "timestamp": 1535532871,
+    "rating": "Borked",
+    "notes": "clicking the play button does nothing at all",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "227100",
+    "cpu": "AMD A6-6400K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It does not start.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1540592440,
+    "title": "Sniper Elite: Nazi Zombie Army",
+    "source": "protondb"
+  },
+  {
+    "appId": "227100",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Does not start",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540693156,
+    "title": "Sniper Elite: Nazi Zombie Army",
+    "source": "protondb"
+  },
+  {
+    "appId": "227100",
+    "title": "Sniper Elite: Nazi Zombie Army",
+    "timestamp": 1535518471,
+    "rating": "Borked",
+    "notes": "clicking the play button does nothing at all",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

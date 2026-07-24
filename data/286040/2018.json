@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "286040",
+    "title": "Dead Effect",
+    "timestamp": 1535052515,
+    "rating": "Silver",
+    "notes": "Runs fine, but the mouse is sometimes not controllable and the camera is moving weird.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-6100 / GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "286040",
+    "title": "Dead Effect",
+    "timestamp": 1535203000,
+    "rating": "Gold",
+    "notes": "work very well ,you will need lower mouse sensibility in game options.",
+    "os": "Debian 9.5 Stretch(kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Phenom II X6 / GTX 750",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "286040",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc5-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.19.0-041900rc5-generic",
+    "notes": "Game runs fine except for that the controls and camera are a bit off. You have to reduce mouse acceleration and camera sensitivity, but that is a flaw of the game and no different to playing it natively. However the camera keeps pulling down ever so slightly when walking forward, this does not occur when playing on native.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15960 Mb",
+    "rating": "Silver",
+    "timestamp": 1538001812,
+    "title": "Dead Effect",
+    "source": "protondb"
+  },
+  {
+    "appId": "286040",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.20",
+    "notes": "you will need lower mouse sensibility",
+    "os": "Debian GNU/Linux 9.6 (stretch) (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543390202,
+    "title": "Dead Effect",
+    "source": "protondb"
+  },
+  {
+    "appId": "286040",
+    "title": "Dead Effect",
+    "timestamp": 1535038115,
+    "rating": "Silver",
+    "notes": "Runs fine, but the mouse is sometimes not controllable and the camera is moving weird.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-6100 / GTX 960 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "286040",
+    "title": "Dead Effect",
+    "timestamp": 1535188600,
+    "rating": "Gold",
+    "notes": "work very well ,you will need lower mouse sensibility in game options.",
+    "os": "Debian 9.5 Stretch(kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Phenom II X6 / GTX 750",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

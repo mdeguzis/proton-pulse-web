@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "265810",
+    "title": "The Sandbox",
+    "timestamp": 1535492044,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Ubuntu 18.04.1 LTS 64-bit",
+    "gpuDriver": "NVIDIA 396",
+    "specs": "AMD\u00ae Ryzen 5 1600 ",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "265810",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-98.current",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542468835,
+    "title": "The Sandbox",
+    "source": "protondb"
+  },
+  {
+    "appId": "265810",
+    "title": "The Sandbox",
+    "timestamp": 1535477644,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Ubuntu 18.04.1 LTS 64-bit",
+    "gpuDriver": "NVIDIA 396",
+    "specs": "AMD\u00ae Ryzen 5 1600 ",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "431650",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "If you have a game controller connected, you need to set Properties->GENERAL->Steam Input Per-Game Setting to \"Forced Off\" otherwise you are stuck on the main menu. Without disabling D3d11, the game was unplayable for me (~ 5 fps) even on lowest graphics settings; disabling it improved that to a comfortable ~ 45 fps (on \"very high\" graphics settings). I would have rated it gold, but the game got stuck on the last portal transition, and it was also getting increasingly more difficult to successfully load a save game in the last three sections (it either crashed or got stuck). I had to finish the game (the last 30 minutes) on Windows.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546454910,
+    "title": "Phoning Home",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "431650",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.12.14-lp150.12.48-default",
+    "notes": "FPS are a sometimes low (~40 - 80) but it's completely playable",
+    "os": "openSUSE Leap 15.0",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1551524541,
+    "title": "Phoning Home",
+    "source": "protondb"
+  },
+  {
+    "appId": "431650",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 745",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-48-generic",
+    "notes": "The game with proton 4.2-5 was tested. There is a flaw in the game menus where the cursor stops moving. To activate and deactivate (from the game menu and the movement of the character) the combination TAB + ALT was used as needed for the cursor. The frames in the lowest graphic quality range from 25 to 35 frames. The sound and mechanics of the game works well. No adjustments were made in proton.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1559667359,
+    "title": "Phoning Home",
+    "source": "protondb"
+  }
+]

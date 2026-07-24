@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1189230",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 435.19.03",
+    "kernel": "4.15.0-66-generic",
+    "notes": "Quick test. Started game. Moved a bit. Got eaten. Exited game. So far so good.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575716172,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1189230",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-2-MANJARO",
+    "notes": "I didnt even know this game wasnt native",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575978744,
+    "title": "",
+    "source": "protondb"
+  }
+]

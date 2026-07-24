@@ -1,0 +1,92 @@
+[
+  {
+    "appId": "32800",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game doesn\u00b4t lauch",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546506539,
+    "title": "Lord of the Rings: War in the North",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "32800",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Game does not launch. Game states it is running for a few seconds then reverts back to not running. The log file indicates errors with winemenubuilder.exe\n\nwine: cannot find L\"C:\\\\windows\\\\system32\\\\winemenubuilder.exe\"\n78436.331:000a:000b:err:wineboot:ProcessRunKeys Error running cmd L\"C:\\\\windows\\\\system32\\\\winemenubuilder.exe -a -r\" (2)\nERROR: ld.so: object '/home/user/.steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1563119616,
+    "title": "Lord of the Rings: War in the North",
+    "source": "protondb"
+  },
+  {
+    "appId": "32800",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Game does not launch.. I also tried with d9vk.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567402318,
+    "title": "Lord of the Rings: War in the North",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "32800",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-58-generic",
+    "notes": "The game doesn't launch.-_\n\nTested only with Proton 4.2-9(recent auto update) and 4.11-3.-_\n\nno idea how to test the tweaks suggested.-_\n\nIs there some guide for basic troubleshooting?",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567458040,
+    "title": "Lord of the Rings: War in the North",
+    "source": "protondb"
+  },
+  {
+    "appId": "32800",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "This still fails to load up - It just says \"Running\" and then quits!",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569680531,
+    "title": "Lord of the Rings: War in the North",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461490",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "fails to start, same works in full 64bit wine prefix with .NET 46 so possibly Proton prefix lacks some DLLs to run this game.",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1548267735,
+    "title": "Kaboom Monsters",
+    "source": "protondb"
+  }
+]

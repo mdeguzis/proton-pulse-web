@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "3380",
+    "title": "Dynomite! Deluxe",
+    "timestamp": 1535317728,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "3380",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "systemInfoNotes": "N/A",
+    "timestamp": 1536695816,
+    "title": "Dynomite Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3380",
+    "cpu": "Intel(R) Atom(TM) CPU  330   @ 1.60GHz",
+    "gpu": "ION/integrated/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Runs in software mode only due to NVIDIA ION GPU being incompatible with Vulkan enabled NVIDIA drivers. May work with hardware acceleration on other systems with supported video cards. Custom cursor is very slow in full screen mode. Using Alt+Tab or the Super key causes the desktop environment to freeze. Otherwise the game is perfectly playable using all modes with 100% performance in full screen and window mode on a 2010 Intel Atom CPU. Given the above, there are no graphical or audio issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-6 Beta",
+    "ram": "2749 Mb",
+    "rating": "Silver",
+    "timestamp": 1537065957,
+    "title": "Dynomite Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3380",
+    "cpu": "AMD A10-8700P Radeon R6, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R6",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Basic gameplay appears to work flawlessly. No noticeable lag or control inaccuracies to speak of. It's exactly like I remember!",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1542843432,
+    "title": "Dynomite Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3380",
+    "title": "Dynomite! Deluxe",
+    "timestamp": 1535303328,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

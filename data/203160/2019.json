@@ -1,0 +1,123 @@
+[
+  {
+    "appId": "203160",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.7-arch1-1-ARCH",
+    "notes": "Performance is significantly lower than Windows game's, had to switch AA to FXAA. FPS drop below 60 rarely",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1549650127,
+    "title": "Tomb Raider",
+    "source": "protondb"
+  },
+  {
+    "appId": "203160",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-042006-generic",
+    "notes": "Forcing the game to run with Steam Play/Proton. Everything works perfectly out of the box, and actually has better performance than the native port. I get nearly the same performance as running it in Windows.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550593032,
+    "title": "Tomb Raider",
+    "source": "protondb"
+  },
+  {
+    "appId": "203160",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Proton has way better performance than native. No tweaks needed.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554157016,
+    "title": "Tomb Raider",
+    "source": "protondb"
+  },
+  {
+    "appId": "203160",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Runs faster and much smoother with Proton then the native approch. ",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Proton 4.2-3",
+    "protonVersionManual": "Proton 4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557661043,
+    "title": "Tomb Raider",
+    "source": "protondb"
+  },
+  {
+    "appId": "203160",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "os": "Freedesktop.org 18.08.33 (Flatpak runtime)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1564447098,
+    "title": "Tomb Raider",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "203160",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "The game runs a lot smoother through Proton than the native release, which ends up being at or very close to Windows level. Using Feral Gamemode helps reduce the random stutters but they still occur, likely due to shader caching. The process also has to be killed after the game closes. Without stuttering and having to kill the process the game would easily be Platinum. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1568000029,
+    "title": "Tomb Raider",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "203160",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-29-generic",
+    "notes": "The game is smoother when run in proton rather than in native. It crashes from time to time but it is still playable. An average of 30-56 FPS, slightly lower compared when playing it on a windows computer",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-5",
+    "ram": "11 GB",
+    "rating": "Silver",
+    "timestamp": 1569216796,
+    "title": "Tomb Raider",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

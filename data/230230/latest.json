@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "230230",
+    "title": "Devinity: Original Sin (Classic)",
+    "timestamp": 1535495497,
+    "rating": "Silver",
+    "notes": "Sometimes the game reacts sluggishly",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "specs": "AMD FX(tm)-4100 Quad-Core / Radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "230230",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "No problems and quite good gameplay.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15960 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537007068,
+    "title": "Divinity: Original Sin (Classic)",
+    "source": "protondb"
+  },
+  {
+    "appId": "230230",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 770",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs just as good as Windows as far as I can tell.",
+    "os": "Xubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15991 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537077980,
+    "title": "Divinity: Original Sin (Classic)",
+    "source": "protondb"
+  },
+  {
+    "appId": "230230",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.8-041808-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.8-041808-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16050 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537815003,
+    "title": "Divinity: Original Sin (Classic)",
+    "source": "protondb"
+  },
+  {
+    "appId": "230230",
+    "title": "Devinity: Original Sin (Classic)",
+    "timestamp": 1535481097,
+    "rating": "Silver",
+    "notes": "Sometimes the game reacts sluggishly",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "specs": "AMD FX(tm)-4100 Quad-Core / Radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "381560",
+    "cpu": "Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 850M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Everything works as should be, even achievements.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537137638,
+    "title": "Epic Cards Battle(TCG)",
+    "source": "protondb"
+  }
+]

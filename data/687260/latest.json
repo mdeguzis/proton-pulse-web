@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "687260",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.20-1-MANJARO",
+    "notes": "Starts fine without any tweaks. Occasionally crashes to desktop. Text display gets cut off on top. This can be fixed by installing fonts (Courier New + Wingdings (I think)) from Windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1552755485,
+    "title": "Tokyo Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-1-default",
+    "notes": "Well, as soon as it started, it seems to be fine, but before I could enter the main menu, it crashed two times; after that, it was fine, had some lags, but nothing terrible.\nCan't promise that there won't be more crashes, as it was already reported.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1555452159,
+    "title": "Tokyo Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA TITAN V",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Has worked well so far after adding \"PROTON_USE_WINED3D=1 %command%\" to launch options.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1555474201,
+    "title": "Tokyo Dark",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

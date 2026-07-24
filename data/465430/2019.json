@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "465430",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Valve Index, runs ok and I finished the game. This game is inherently not very stable and it's difficult to pin down how much of that stems from proton. Mainly starting up the game seems to be a fickle period where you better not switch windows and just keep the headset on or it'll crash. When you get to the main window I got the message \"I see you're playing on a rift, blah blah, stability issues, blah\" (slightly condensed) The message would stick to the view and I'm not sure how I closed it, it will also pop up again if you open the overlay or something. Afterwards, gameplay is without major problems and I enjoyed the game, looking past minor issues that'd be better served in a game review. Overall, I'd recommend the game.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1570267372,
+    "title": "Vertigo",
+    "source": "protondb"
+  }
+]

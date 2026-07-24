@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2589630",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.2, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-117-generic",
+    "notes": "Works fine. Only no savegames and a back button dont works. Start and playing without problems. You have every time the tutorial after start",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "96 GB",
+    "rating": "silver",
+    "timestamp": 1778869171,
+    "title": "",
+    "source": "protondb"
+  }
+]

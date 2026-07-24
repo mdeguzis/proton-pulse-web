@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "761330",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.6 - SteamVR PPA",
+    "kernel": "4.20.0-042000rc4-generic",
+    "notes": "Runs without any issues with like native performance.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543619688,
+    "title": "Navalny 20!8 : The Rise of Evil",
+    "source": "protondb"
+  },
+  {
+    "appId": "761330",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.18.16-arch1-1-vfio",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545752968,
+    "title": "Navalny 20!8 : The Rise of Evil",
+    "source": "protondb"
+  }
+]

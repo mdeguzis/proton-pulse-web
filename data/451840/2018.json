@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "451840",
+    "title": "Out of Ammo",
+    "timestamp": 1535221307,
+    "rating": "Borked",
+    "notes": "HTC Vive. Unable to get into any map except tutorial, which has extremely bad performance and audio distortion",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "451840",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Occasional minor audio distortions. Runs at an acceptable framerate. Played the tutorial and a little bit of mission and free play modes. I was unable to test multiplayer since nobody else was online.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545001643,
+    "title": "Out of Ammo",
+    "source": "protondb"
+  },
+  {
+    "appId": "451840",
+    "title": "Out of Ammo",
+    "timestamp": 1535206907,
+    "rating": "Borked",
+    "notes": "HTC Vive. Unable to get into any map except tutorial, which has extremely bad performance and audio distortion",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

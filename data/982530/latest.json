@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "982530",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Some issues with the framerate, but still perfectly playable.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551570174,
+    "title": "Mutant Year Zero: Road to Eden Demo",
+    "source": "protondb"
+  }
+]

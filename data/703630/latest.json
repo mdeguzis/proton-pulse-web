@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "703630",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Worked perfectly with an Xbox 360 controller and no tweaks needed. Completed game from start to finish.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568468734,
+    "title": "The Quarter Game",
+    "source": "protondb"
+  }
+]

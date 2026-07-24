@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3059750",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.52, 6.4.10-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-zen2-1-zen",
+    "notes": "The game doesnt launch",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1720223790,
+    "title": "",
+    "source": "protondb"
+  }
+]

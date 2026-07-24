@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "256390",
+    "cpu": "Intel Core i3-4005U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "5.0.0-17-generic",
+    "notes": "won't even open, in Steam it says: already runned",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1561825034,
+    "title": "MotoGP\u212214",
+    "source": "protondb"
+  }
+]

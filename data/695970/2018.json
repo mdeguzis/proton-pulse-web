@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "695970",
+    "title": "Treadnauts",
+    "timestamp": 1535358841,
+    "rating": "Bronze",
+    "notes": "Tutorial \"Windows\" have no text. Crashes upon exit; must force quit.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "695970",
+    "cpu": "Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 650 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.9-92.current",
+    "notes": "Crashes on exit and so minor graphical glitches, otherwise fully playable.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "12032 Mb",
+    "rating": "Silver",
+    "timestamp": 1538051432,
+    "title": "Treadnauts",
+    "source": "protondb"
+  },
+  {
+    "appId": "695970",
+    "title": "Treadnauts",
+    "timestamp": 1535344441,
+    "rating": "Bronze",
+    "notes": "Tutorial \"Windows\" have no text. Crashes upon exit; must force quit.",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "366970",
+    "title": "Mighty Switch Force! Hyper Drive Edition",
+    "timestamp": 1535507439,
+    "rating": "Platinum",
+    "notes": "Might lag a bit when you load the leaderboard in the menu for the first time.",
+    "os": "openSUSE Tumbleweed",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-6300 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "366970",
+    "cpu": "Intel Xeon           X5675  @ 3.07GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX TITAN",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.15-1-default",
+    "notes": "No issues that I can see.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "72 GB",
+    "rating": "Platinum",
+    "timestamp": 1541022918,
+    "title": "Mighty Switch Force! Hyper Drive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "366970",
+    "title": "Mighty Switch Force! Hyper Drive Edition",
+    "timestamp": 1535493039,
+    "rating": "Platinum",
+    "notes": "Might lag a bit when you load the leaderboard in the menu for the first time.",
+    "os": "openSUSE Tumbleweed",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-6300 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

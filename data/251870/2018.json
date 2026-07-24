@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "251870",
+    "title": "Go! Go! Nippon! ~My First Trip to Japan~",
+    "timestamp": 1535364908,
+    "rating": "Gold",
+    "notes": "Fullscreen mode is a bit temperamental in the original game. The 2015/2016 versions that are included as DLC work perfectly.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "251870",
+    "title": "Go! Go! Nippon! ~My First Trip to Japan~",
+    "timestamp": 1535432377,
+    "rating": "Platinum",
+    "notes": "No problems",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "251870",
+    "title": "Go! Go! Nippon! ~My First Trip to Japan~",
+    "timestamp": 1535846337,
+    "rating": "Gold",
+    "notes": "Original runs out of the box. Added PROTON_USE_WINED3D11=1 %command% for 2015 and 2016 DLC.",
+    "os": "KaOS (Kernel 4.16.14)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "iGPU HD 2500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251870",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "Works fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "20 GB",
+    "rating": "Platinum",
+    "timestamp": 1543597327,
+    "title": "Go! Go! Nippon! ~My First Trip to Japan~",
+    "source": "protondb"
+  },
+  {
+    "appId": "251870",
+    "title": "Go! Go! Nippon! ~My First Trip to Japan~",
+    "timestamp": 1535350508,
+    "rating": "Gold",
+    "notes": "Fullscreen mode is a bit temperamental in the original game. The 2015/2016 versions that are included as DLC work perfectly.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "251870",
+    "title": "Go! Go! Nippon! ~My First Trip to Japan~",
+    "timestamp": 1535417977,
+    "rating": "Platinum",
+    "notes": "No problems",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "251870",
+    "title": "Go! Go! Nippon! ~My First Trip to Japan~",
+    "timestamp": 1535831937,
+    "rating": "Gold",
+    "notes": "Original runs out of the box. Added PROTON_USE_WINED3D11=1 %command% for 2015 and 2016 DLC.",
+    "os": "KaOS (Kernel 4.16.14)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "iGPU HD 2500",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

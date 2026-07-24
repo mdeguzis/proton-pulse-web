@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "341500",
+    "title": "Camera Obscura",
+    "timestamp": 1535503566,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "341500",
+    "cpu": "Intel(R) Xeon(R) CPU E5-1620 0 @ 3.60GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.45",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Won't start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "ram": "32122 Mb",
+    "rating": "Borked",
+    "timestamp": 1537047711,
+    "title": "Camera Obscura",
+    "source": "protondb"
+  },
+  {
+    "appId": "341500",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "wont start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7991 Mb",
+    "rating": "Borked",
+    "timestamp": 1539508410,
+    "title": "Camera Obscura",
+    "source": "protondb"
+  },
+  {
+    "appId": "341500",
+    "title": "Camera Obscura",
+    "timestamp": 1535489166,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

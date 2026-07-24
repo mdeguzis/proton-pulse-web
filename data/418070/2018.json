@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "418070",
+    "title": "Turbo Pug",
+    "timestamp": 1535568273,
+    "rating": "Platinum",
+    "notes": "Works fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418070",
+    "title": "Turbo Pug",
+    "timestamp": 1535592737,
+    "rating": "Platinum",
+    "notes": "Works flawlessly ",
+    "os": "Antergos Stable 64-Bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-4790K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418070",
+    "title": "Turbo Pug",
+    "timestamp": 1535507761,
+    "rating": "Borked",
+    "notes": "Doesn't start. Well, starts, nothing happens, stops. ",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "3.7.4-",
+    "source": "protondb"
+  },
+  {
+    "appId": "418070",
+    "title": "Turbo Pug",
+    "timestamp": 1535553873,
+    "rating": "Platinum",
+    "notes": "Works fine.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8700 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418070",
+    "title": "Turbo Pug",
+    "timestamp": 1535578337,
+    "rating": "Platinum",
+    "notes": "Works flawlessly ",
+    "os": "Antergos Stable 64-Bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-4790K / GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418070",
+    "title": "Turbo Pug",
+    "timestamp": 1535493361,
+    "rating": "Borked",
+    "notes": "Doesn't start. Well, starts, nothing happens, stops. ",
+    "os": "Linux Mint 19 (Kernel 4.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD E-450 APU",
+    "protonVersion": "3.7.4-",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "246300",
+    "title": "Paranormal",
+    "timestamp": 1535415401,
+    "rating": "Bronze",
+    "notes": "UE3 version will not start, UE4 alpha version runs with Steam launch option \"PROTON_USE_WINED3D11=1 %command%\", but the framerate stutters and sound is distorted.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "246300",
+    "title": "Paranormal",
+    "timestamp": 1535401001,
+    "rating": "Bronze",
+    "notes": "UE3 version will not start, UE4 alpha version runs with Steam launch option \"PROTON_USE_WINED3D11=1 %command%\", but the framerate stutters and sound is distorted.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

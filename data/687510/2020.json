@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "687510",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "4.15.0-76-generic",
+    "notes": "A bit flaky, but generally works",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1580342806,
+    "title": "WireNet",
+    "source": "protondb"
+  }
+]

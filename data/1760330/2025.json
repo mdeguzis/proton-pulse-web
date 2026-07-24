@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1760330",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.1",
+    "kernel": "6.16.10-arch1-1",
+    "notes": "Works better under Proton despite native support.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1760054663,
+    "title": "Noreya: The Gold Project",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "587860",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.1-1-MANJARO",
+    "notes": "Runs perfectly out of the box. Multiplayer works. We only played the mine map. Only one missing texture: some arms behind some plans.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552776855,
+    "title": "Tales of Escape",
+    "source": "protondb"
+  },
+  {
+    "appId": "587860",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "runs OTB with no problem, multiplayer works, didn't try the VR version tho",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565959870,
+    "title": "Tales of Escape",
+    "source": "protondb"
+  },
+  {
+    "appId": "587860",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0",
+    "kernel": "5.3.4-arch1-1-ARCH",
+    "notes": "Played through the entire first room with a friend online multiplayer.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570882687,
+    "title": "Tales of Escape",
+    "source": "protondb"
+  }
+]

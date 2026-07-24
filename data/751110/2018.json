@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "751110",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-27faaed08d)",
+    "kernel": "4.20.0-rc1-g8c37b203eb94",
+    "notes": "wine: Unhandled page fault on read access to 0x00000000 at address 0x58f292 (thread 0009)",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541719997,
+    "title": "OVERVIEW: a Walk Through the Universe",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "511660",
+    "cpu": "AMD A10-9620P RADEON R5, 10 COMPUTE CORES 4C+6G",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon 500",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.16.18-041618-generic",
+    "notes": "sometimes the save names are not visible but i don't know if same happens for windows too",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1549133878,
+    "title": "Beachhead 2002",
+    "source": "protondb"
+  }
+]

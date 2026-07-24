@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "907710",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-zen1-1-zen",
+    "notes": "Some bugs but runs well enough",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1726880690,
+    "title": "",
+    "source": "protondb"
+  }
+]

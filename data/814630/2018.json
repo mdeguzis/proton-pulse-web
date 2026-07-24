@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "814630",
+    "title": "ELF",
+    "timestamp": 1535901253,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially, so Alt-Tab and Enter twice starts the game in fullscreen. Right-Shift starts the game and is also your fire key - once I'd sussed that, the game works perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814630",
+    "title": "ELF",
+    "timestamp": 1535886853,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially, so Alt-Tab and Enter twice starts the game in fullscreen. Right-Shift starts the game and is also your fire key - once I'd sussed that, the game works perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

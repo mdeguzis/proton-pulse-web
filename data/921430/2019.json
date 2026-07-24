@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "921430",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.19.0-2-amd64",
+    "notes": "MUST be tweaked to run, but when the tweaks have been enabled, seems to work fine. It is completely unplayable (sound is there, but only black screen) until you have (tried to) install Windows Media Player 9 through ProtonTricks.\n\nI am not sure if it's just the codecs, but WMP9 specifically seems not to work, but it continues to install other DLLs and components.\n\nOnce ProtonTricks has successfully installed the codecs requested by WMP9, the game seems to play -- you can view the actual images with the text and audio.\n\n\nNOTE: No Esync, D3d11, or Wine D3d11 flags seem to work. This appears to purely be a video issue.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1553081636,
+    "title": "Genius! NAZI-GIRL GoePPels-Chan ep1",
+    "source": "protondb"
+  }
+]

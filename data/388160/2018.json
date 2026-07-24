@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "388160",
+    "title": "Project Druid - 2D Labyrinth Explorer-",
+    "timestamp": 1535531594,
+    "rating": "Silver",
+    "notes": "Sometimes you move in one direction without pressing a key. If you press the key again it works fine again.",
+    "os": "Arch 4.18.5",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-4670",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "388160",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "No linux specific issues I guess",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15985 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536613673,
+    "title": "Project Druid - 2D Labyrinth Explorer-",
+    "source": "protondb"
+  },
+  {
+    "appId": "388160",
+    "title": "Project Druid - 2D Labyrinth Explorer-",
+    "timestamp": 1535517194,
+    "rating": "Silver",
+    "notes": "Sometimes you move in one direction without pressing a key. If you press the key again it works fine again.",
+    "os": "Arch 4.18.5",
+    "gpuDriver": "NVIDIA 396.54-2",
+    "specs": "i5-4670",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

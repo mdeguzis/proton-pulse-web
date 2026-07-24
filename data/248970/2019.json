@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "248970",
+    "cpu": "Intel Core i3-4340 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.7-arch1-1-ARCH",
+    "notes": "Nothing tuned, launched and played. The game does not work badly, but only in windowed mode. The full screen will have a black flickering screen.\nThere are no sound in video savers, to the satisfaction of them there are only 2, at the beginning and end, And the music does not play during the passage.",
+    "os": "Arch Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1550020532,
+    "title": "Vector",
+    "source": "protondb"
+  }
+]

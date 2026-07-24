@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "306620",
+    "cpu": "AMD Ryzen Threadripper 2920X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.44.0, 5.16.2-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.4",
+    "kernel": "5.16.2-1-MANJARO",
+    "notes": "Works",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1643233353,
+    "title": "",
+    "source": "protondb"
+  }
+]

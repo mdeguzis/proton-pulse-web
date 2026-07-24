@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "701870",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.6, DRM 3.64, 6.18.2-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-3-cachyos",
+    "notes": "Hangs on installing Adobe Air",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766389227,
+    "title": "Swarm Queen",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Account — Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
+<link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
+<link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
+<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
+<link rel="stylesheet" href="css/shared/lookup-inline.css?v=71ca0f75">
+<link rel="stylesheet" href="css/profile/profile.css?v=e9fe4860">
+</head>
+<body>
+
+
+
+<!-- Shared topbar (sprite, banner, nav row, mobile drawer) is injected by topbar.js -->
+<!-- Note: legacy sidebar markup intentionally removed; topbar.js owns the chrome -->
+
+<!-- Shared topbar injected by topbar.js -->
+<div class="main-content">
+  <div class="main-inner">
+
+    <div class="page-header">
+      <div class="eyebrow">Steam Account</div>
+      <div class="page-title">My Account</div>
+    </div>
+
+    <!-- Not signed in -->
+    <div id="profile-signed-out" hidden>
+      <div class="profile-unsigned">
+        <p>You're not signed in.</p>
+        <button class="gh-login-btn profile-google-btn" id="profile-login-btn" title="Sign in with Steam">
+          <span class="gh-login-btn__badge" aria-hidden="true">
+            <img class="gh-login-btn__icon" src="assets/steam-logo-glyph.png" alt="" aria-hidden="true">
+          </span>
+          <span class="gh-login-btn__label">Login with Steam</span>
+        </button>
+      </div>
+      <!-- Inline Library panel (issue #323 followup) is a peer of the login
+           card, not nested inside it, so the two alternatives read as
+           distinct paths rather than "part of the login flow". -->
+      <div id="profile-lookup-inline-mount"></div>
+    </div>
+
+    <!-- Signed in -->
+    <div id="profile-signed-in" hidden>
+
+      <div class="profile-card">
+        <img class="profile-avatar" id="profile-avatar" src="" alt="" width="72" height="72">
+        <div class="profile-card-info">
+          <div class="profile-display-name" id="profile-display-name"></div>
+          <div class="profile-user-email" id="profile-user-email"></div>
+        </div>
+        <button class="profile-signout-btn profile-signout-topright" id="profile-signout-btn">Sign out</button>
+      </div>
+
+      <!-- Jump-to-section dropdown (#285 review). Same shape as the Admin
+           panel's tab select, but here every section is visible on one long
+           page, so this is a scroll-to-anchor rather than a tab switcher. -->
+      <div class="profile-nav">
+        <label for="profile-jump-select" class="profile-nav-label">Jump to:</label>
+        <select id="profile-jump-select" class="profile-select">
+          <option value="" selected>Section...</option>
+          <option value="plugin-link-entry">Decky Plugin Link</option>
+          <option value="section-library">Library &amp; Wishlist</option>
+          <option value="section-account">Account details</option>
+          <option value="linked-plugins-section">Linked plugins</option>
+          <option value="section-submissions">Report submissions</option>
+          <option value="section-preferences">Site preferences</option>
+          <option value="section-filter-prefs">Report filter preferences</option>
+          <option value="section-hardware">My hardware</option>
+          <option value="section-my-reports">My Reports</option>
+          <option value="section-danger">Danger Zone</option>
+        </select>
+      </div>
+
+      <div class="profile-section profile-link-entry" id="plugin-link-entry" hidden>
+        <div class="profile-section-title">Decky Plugin Link</div>
+        <div class="profile-field">
+          <div class="profile-prefill-source profile-prefill-source--link">
+            <div class="profile-prefill-source-title">Finish linking your Decky install</div>
+            <div class="profile-prefill-source-body" id="plugin-link-entry-body">
+              We prefilled the link code from your Steam Deck. Review it below, then press <strong>Link plugin</strong>.
+            </div>
+            <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+              <button type="button" class="profile-refresh-btn" id="plugin-link-jump-btn">Jump to link box</button>
+              <button type="button" class="profile-refresh-btn" id="plugin-link-copy-btn">Copy code</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section" id="section-library">
+        <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <span>Library</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <a href="app.html?filter=mine" class="profile-refresh-btn" style="text-decoration:none;color:var(--accent);border-color:var(--accent)">View my games</a>
+            <button type="button" class="profile-refresh-btn" id="library-refresh-btn">Refresh</button>
+          </div>
+        </div>
+        <div class="profile-note">
+          Library and wishlist matching only works when your Steam profile visibility is set to <strong>Public</strong> on
+          <a href="https://steamcommunity.com/my/edit/settings" target="_blank" rel="noopener">steamcommunity.com/my/edit/settings</a>.
+          If it is Friends only or Private, Steam returns nothing and this section stays empty.
+        </div>
+        <div class="profile-field">
+          <div class="profile-field-value" id="library-count" style="font-size:1.05rem"></div>
+          <div class="profile-field-hint" id="library-status" style="margin-top:4px"></div>
+          <div class="profile-field-hint" id="library-empty" style="margin-top:4px" hidden></div>
+          <div class="profile-field-hint" id="library-types" style="margin-top:6px" hidden></div>
+          <div class="profile-field-hint" style="margin-top:8px">Fetched from Steam via IPlayerService/GetOwnedGames. Refresh whenever you install or uninstall games.</div>
+        </div>
+
+        <div class="profile-field" style="margin-top:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+            <div class="profile-field-label" style="margin:0">Wishlist</div>
+            <button type="button" class="profile-refresh-btn" id="wishlist-refresh-btn">Refresh</button>
+          </div>
+          <div class="profile-field-value" id="wishlist-count" style="font-size:1.05rem;margin-top:6px"></div>
+          <div class="profile-field-hint" id="wishlist-status" style="margin-top:4px"></div>
+          <div class="profile-field-hint" id="wishlist-empty" style="margin-top:4px" hidden></div>
+          <div class="profile-field-hint" id="wishlist-types" style="margin-top:6px" hidden></div>
+          <div class="profile-field-hint" style="margin-top:8px">Fetched from Steam via IWishlistService/GetWishlist. Powers the "On wishlist" filter on the browse page.</div>
+        </div>
+      </div>
+
+      <div class="profile-section" id="section-account">
+        <div class="profile-section-title">Account details</div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">User ID</div>
+          <div class="profile-field-value">
+            <code class="profile-uid" id="profile-uid"></code>
+            <button class="profile-copy" id="copy-uid-btn" title="Copy">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
+              <span id="copy-uid-label">Copy</span>
+            </button>
+          </div>
+          <div class="profile-field-hint">This is your unique Proton Pulse account ID, tied to your Steam account.</div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Email</div>
+          <div class="profile-field-value">
+            <span id="profile-email-detail"></span>
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Provider</div>
+          <div class="profile-field-value">
+            <span class="profile-provider-badge">Steam</span>
+          </div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Last sign-in</div>
+          <div class="profile-field-value">
+            <span id="profile-last-signin"></span>
+          </div>
+        </div>
+
+        <div class="profile-field" id="profile-role-field" hidden>
+          <div class="profile-field-label">Role</div>
+          <div class="profile-field-value">
+            <span class="profile-provider-badge profile-role-admin" id="profile-role-badge">Admin</span>
+            <a href="admin.html" class="profile-admin-link" id="profile-admin-link">Go to Admin Panel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section" id="linked-plugins-section">
+        <div class="profile-section-title">Linked plugins</div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Link a Decky plugin</div>
+          <div class="profile-field-value" style="gap:8px;align-items:center;flex-wrap:wrap">
+            <input type="text" id="plugin-link-code" class="profile-select" placeholder="Enter link code from Decky" maxlength="32" style="max-width:260px">
+            <button type="button" class="profile-refresh-btn" id="plugin-link-submit-btn">Link plugin</button>
+          </div>
+          <div class="profile-field-hint">Generate a link code in the Decky plugin, then enter it here to connect that install to your Proton Pulse account.</div>
+          <div id="plugin-link-status" class="profile-field-hint" style="margin-top:6px"></div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Currently linked</div>
+          <div class="profile-field-value" style="display:block">
+            <div id="linked-plugins-loading" class="profile-field-hint">Loading linked plugins...</div>
+            <div id="linked-plugins-empty" class="profile-field-hint" hidden>No linked Decky installs yet.</div>
+            <div id="linked-plugins-list" hidden></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-section" id="section-submissions">
+        <div class="profile-section-title">Report submissions</div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Steam username</div>
+          <div class="profile-field-value">
+            <span id="profile-steam-username"></span>
+          </div>
+          <div class="profile-field-hint">This is the username attached to your Steam account.</div>
+        </div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Show username on reports</div>
+          <div class="profile-field-value" style="gap:10px">
+            <label class="profile-toggle">
+              <input type="checkbox" id="show-username-toggle">
+              <span class="profile-toggle-track"></span>
+            </label>
+            <span id="show-username-status" style="font-size:0.78rem;color:var(--muted)"></span>
+          </div>
+          <div class="profile-field-hint">When enabled, your Steam username will be visible on your submitted reports. When disabled, your anonymous client ID will be used.</div>
+        </div>
+      </div>
+
+      <div class="profile-section" id="section-preferences">
+        <div class="profile-section-title">Site preferences</div>
+
+        <div class="profile-field">
+          <div class="profile-field-label">Show adult games</div>
+          <div class="profile-field-value" style="gap:10px">
+            <label class="profile-toggle">
+              <input type="checkbox" id="show-adult-toggle">
+              <span class="profile-toggle-track"></span>
+            </label>
+            <span id="show-adult-status" style="font-size:0.78rem;color:var(--muted)"></span>
+          </div>
+          <div class="profile-field-hint">When enabled, games flagged as adult (Steam content descriptors 3 or 4) show up in search, Popular, Recent, and stub pages. Off by default. This preference syncs across devices when you're signed in (#170).</div>
+        </div>
+      </div>
+
+      <div class="profile-section" id="section-filter-prefs">
+        <div class="profile-section-title">Report filter preferences</div>
+        <div class="profile-field">
+          <div class="profile-field-label">GPU vendor</div>
+          <div class="profile-field-value">
+            <select id="hw-gpu-vendor" class="profile-select">
+              <option value="">Any (no preference)</option>
+              <option value="nvidia">NVIDIA</option>
+              <option value="amd">AMD</option>
+              <option value="intel">Intel</option>
+            </select>
+          </div>
+          <div class="profile-field-hint">Pre-selects the GPU filter on report pages to match your hardware.</div>
+        </div>
+        <div class="profile-field">
+          <div class="profile-field-label">OS</div>
+          <div class="profile-field-value">
+            <input type="text" id="hw-os" class="profile-select" placeholder="e.g. Arch, Ubuntu, Nobara" maxlength="40">
+          </div>
+          <div class="profile-field-hint">Pre-selects the OS filter. Use the first word of your distro name.</div>
+        </div>
+        <div class="profile-field">
+          <div class="profile-field-label">Config type</div>
+          <div class="profile-field-value">
+            <select id="config-type" class="profile-select">
+              <option value="">Any (no preference)</option>
+              <option value="pulse-config">Proton Pulse</option>
+              <option value="protondb">ProtonDB</option>
+              <option value="protondb-edited">ProtonDB (edited)</option>
+            </select>
+          </div>
+          <div class="profile-field-hint">Pre-selects the config-origin filter for combined config/report pages.</div>
+        </div>
+      </div>
+
+      <div class="profile-section" id="section-hardware">
+        <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center">
+          <span>My hardware</span>
+        </div>
+          <div class="profile-field">
+            <div class="profile-field-hint" style="margin-top:0">
+              Systems uploaded from the Decky plugin or added manually below. Mark one as your default to prefill the submit-a-report form.
+            </div>
+          </div>
+          <div class="profile-field">
+            <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-bottom:8px">
+              <button type="button" class="profile-refresh-btn" id="add-system-btn" style="border-color:var(--accent);color:var(--accent)">+ Add system</button>
+              <button type="button" class="profile-refresh-btn" id="systems-refresh-btn">Refresh</button>
+            </div>
+            <div id="systems-empty" class="profile-field-hint" hidden>
+              Open Pulse on your Steam Deck and press <strong>Upload to Pulse</strong> in the plugin settings. Your systems will show up here.
+            </div>
+            <div id="systems-loading" class="profile-field-hint">Loading your systems...</div>
+            <table class="profile-systems-table" id="systems-table" hidden>
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Updated</th>
+                  <th class="col-default">Default</th>
+                  <th class="col-action"></th>
+                </tr>
+              </thead>
+              <tbody id="systems-tbody"></tbody>
+            </table>
+            <div id="systems-status" class="profile-field-hint" style="margin-top:6px"></div>
+          </div>
+      </div>
+
+      <!-- Owned report/config rows from public Pulse reports plus cloud-synced plugin configs -->
+      <div class="profile-section" id="section-my-reports">
+        <div class="profile-section-title" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <span>My Reports</span>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div id="my-configs-pager" class="profile-pager" hidden></div>
+            <button type="button" class="profile-refresh-btn" id="my-configs-refresh-btn">Refresh</button>
+          </div>
+        </div>
+        <div class="profile-field">
+          <div style="position:relative;margin-bottom:10px">
+            <input type="text" id="my-configs-search" class="profile-select" style="width:100%;padding-right:32px" placeholder="Search reports by game, rating, OS...">
+            <button id="my-configs-search-clear" type="button" aria-label="Clear search" hidden style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--red);font-size:1rem;line-height:1;padding:0">&#x2715;</button>
+          </div>
+          <div id="my-configs-empty" class="profile-field-hint" hidden>
+            Nothing synced yet. Open a game in the Decky plugin and use <strong>Upload to Pulse</strong> or cloud sync, or submit a report from a game page.
+          </div>
+          <div id="my-configs-loading" class="profile-field-hint">Loading your reports...</div>
+          <table class="profile-configs-table" id="my-configs-table" hidden>
+            <thead>
+              <tr>
+                <th>Game</th>
+                <th>Rating &middot; Updated</th>
+                <th>Status</th>
+                <th class="col-action"></th>
+              </tr>
+            </thead>
+            <tbody id="my-configs-tbody"></tbody>
+          </table>
+          <div id="my-configs-status" class="profile-field-hint" style="margin-top:6px"></div>
+        </div>
+      </div>
+
+      <div class="profile-section profile-section-danger" id="section-danger">
+        <div class="profile-section-title">Danger Zone</div>
+        <p class="profile-danger-note" style="margin-top:12px">Download a copy of all your data across every table.</p>
+        <button class="profile-signout-btn" id="profile-download-data-btn">Download my data</button>
+        <p class="profile-danger-note" style="margin-top:12px">Check whether any data tied to your account still exists.</p>
+        <button class="profile-signout-btn" id="profile-check-data-btn">Check if data exists</button>
+        <div id="profile-check-data-status" class="profile-field-hint" style="margin:4px 16px 8px;display:none"></div>
+        <p class="profile-danger-note" style="margin-top:12px">Delete all data associated with your account from every table -- reports, cloud configs, hardware systems, votes, and display name. This cannot be undone.</p>
+        <button class="profile-signout-btn profile-delete-data-btn" id="profile-delete-data-btn">Delete my account data</button>
+        <div id="profile-delete-data-status" class="profile-field-hint" style="margin:4px 16px 8px;display:none"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="sitefooter">
+    Built on <a href="https://www.protondb.com/" target="_blank" rel="noopener">ProtonDB</a> community data |
+    <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener">GitHub</a> |
+    Updated daily via GitHub Actions |
+    <a href="privacy.html">Privacy</a> |
+    <a href="terms.html">Terms</a>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=ad8d89f5"></script>
+<script src="js/lib/topbar.js?v=21a7ccea"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+<script type="module" src="js/profile/main.js?v=997804d8"></script>
+</body>
+</html>

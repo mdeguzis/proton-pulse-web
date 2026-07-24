@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1433570",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.15-201.fsync.fc34.x86_64",
+    "notes": "",
+    "os": "Linux 5.x",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1687283629,
+    "title": "",
+    "source": "protondb"
+  }
+]

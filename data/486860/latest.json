@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "486860",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.10-arch1-1",
+    "notes": "Had to add Proton and unset SDL, after that worked perfect.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1776700072,
+    "title": "",
+    "source": "protondb"
+  }
+]

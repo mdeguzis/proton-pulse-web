@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "283680",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "notes": "Finished game with native-like experience",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564041668,
+    "title": "Astebreed: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "283680",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.19.57-gentoo",
+    "notes": "Zero issues with the game, everything worked out of the box.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1565196865,
+    "title": "Astebreed: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "283680",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "Runs perfectly, no glitches.",
+    "os": "Fedora 30",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566307945,
+    "title": "Astebreed: Definitive Edition",
+    "source": "protondb"
+  }
+]

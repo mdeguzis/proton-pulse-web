@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "46750",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Ran perfectly out of the box. No tweaks, no issues noticed.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1540292455,
+    "title": "Dark Fall: Lost Souls",
+    "source": "protondb"
+  }
+]

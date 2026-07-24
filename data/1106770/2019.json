@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1106770",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Can't start. Probably some tweaks could help but not tested.",
+    "os": "Antergos Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567965190,
+    "title": "Shepherd of Light",
+    "source": "protondb"
+  }
+]

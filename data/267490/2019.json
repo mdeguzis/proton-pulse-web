@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "267490",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Graphics and audio are perfect but gamepad (Logitech F710) not working in game. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549881217,
+    "title": "Batman\u2122: Arkham Origins Blackgate - Deluxe Edition",
+    "source": "protondb"
+  }
+]

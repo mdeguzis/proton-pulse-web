@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1563940",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.42.0, 5.15.34-un-def-alt1, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.15.34-un-def-alt1",
+    "notes": "\u0414\u0430\u0436\u0435 \u043d\u0435 \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0435\u0442 \u043a\u043b\u0438\u0435\u043d\u0442.",
+    "os": "Simply Linux 10.0.900 (Captain Finn) (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1651888569,
+    "title": "",
+    "source": "protondb"
+  }
+]

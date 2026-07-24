@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "368000",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Runs fine, except for the robots being invisible.  The golf clubs are still visible.  Is 100ft Robot Golf as cool when played with 100ft invisible robots?  M'aiq finds this troubling.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Silver",
+    "timestamp": "1536344393",
+    "title": "100ft Robot Golf",
+    "source": "protondb"
+  }
+]

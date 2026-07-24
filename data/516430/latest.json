@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "516430",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Tried any combination of settings and none worked. All came up with a white screen and then crashed. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1555452794,
+    "title": "Ruin of the Reckless",
+    "source": "protondb"
+  }
+]

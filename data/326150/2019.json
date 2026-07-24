@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "326150",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.10-111.current",
+    "notes": "Runs perfectly",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552303096,
+    "title": "Death Skid Marks",
+    "source": "protondb"
+  },
+  {
+    "appId": "326150",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.4-1-default",
+    "notes": "run greats, no need any tweak, 1920x1080",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558877586,
+    "title": "Death Skid Marks",
+    "source": "protondb"
+  },
+  {
+    "appId": "326150",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Everything works out of the box except sound effects. Those are fixable by forcing use of the built-in openal32 library, e.g. by setting the launch options to this: WINEDLLOVERRIDES=\"openal32=b\" %command%",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560469206,
+    "title": "Death Skid Marks",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "337880",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.7-1-MANJARO",
+    "notes": "This game runs as bad with Proton as it does on Windows. You get a fraction of the FPS you would expect from your hardware and settings.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1587994808,
+    "title": "",
+    "source": "protondb"
+  }
+]

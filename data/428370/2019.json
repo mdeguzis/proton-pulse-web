@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "428370",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-d6683e1 2019-06-27 disco-oibaf-ppa)",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Did not go deep into gameplay, but fell off the level several times and it did not seem to affect the gameplay or FPS whatsoever. Also played on Steam Link with an Xbox 360 controller (Microsoft wireless adapter) with no issue.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562291633,
+    "title": "Windlands",
+    "source": "protondb"
+  }
+]

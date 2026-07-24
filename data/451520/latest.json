@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "451520",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.18.0-21-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1560132245,
+    "title": "theBlu",
+    "source": "protondb"
+  },
+  {
+    "appId": "451520",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Works well on my Valve Index.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562623067,
+    "title": "theBlu",
+    "source": "protondb"
+  },
+  {
+    "appId": "451520",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-728ebcdec2)",
+    "kernel": "5.2.0-rc1-amd-staging-drm-next-git-b8cd95e15410+",
+    "notes": "Runs great",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1566469593,
+    "title": "theBlu",
+    "source": "protondb"
+  }
+]

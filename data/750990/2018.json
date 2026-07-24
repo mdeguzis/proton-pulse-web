@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "750990",
+    "title": "NEKO-NIN exHeart +PLUS Saiha",
+    "timestamp": 1536084032,
+    "rating": "Platinum",
+    "notes": "audio play over itself in auto mode",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "ryzen 5 1600 / 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "750990",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545843463,
+    "title": "NEKO-NIN exHeart +PLUS Saiha",
+    "source": "protondb"
+  },
+  {
+    "appId": "750990",
+    "title": "NEKO-NIN exHeart +PLUS Saiha",
+    "timestamp": 1536069632,
+    "rating": "Platinum",
+    "notes": "audio play over itself in auto mode",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "ryzen 5 1600 / 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

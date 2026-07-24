@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2439760",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.54, 6.6.8-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1 (git-6cdc2b044d)",
+    "kernel": "6.6.8-200.fc39.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1703992134,
+    "title": "",
+    "source": "protondb"
+  }
+]

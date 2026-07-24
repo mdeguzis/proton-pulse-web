@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "372970",
+    "title": "Cash_Out",
+    "timestamp": 1534824000,
+    "rating": "Borked",
+    "notes": "Seems to work fine, but then crashes seemingly at random.",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "372970",
+    "title": "Cash_Out",
+    "timestamp": 1534809600,
+    "rating": "Borked",
+    "notes": "Seems to work fine, but then crashes seemingly at random.",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

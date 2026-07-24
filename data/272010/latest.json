@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "272010",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "No ingame text.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537788406,
+    "title": "Aveyond 3-1: Lord of Twilight",
+    "source": "protondb"
+  },
+  {
+    "appId": "272010",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.15.0-29deepin-generic",
+    "notes": "You need to install the Microsoft fonts for them to show up in the game correctly (RPG Maker uses Arial, Verdana and another font I can't remember)",
+    "os": "Deepin 15.7 (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "16052 Mb",
+    "rating": "Gold",
+    "timestamp": 1539730599,
+    "title": "Aveyond 3-1: Lord of Twilight",
+    "source": "protondb"
+  },
+  {
+    "appId": "272010",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "no problems here and and all fonts showed just without any problems.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542571972,
+    "title": "Aveyond 3-1: Lord of Twilight",
+    "source": "protondb"
+  }
+]

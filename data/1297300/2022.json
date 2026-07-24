@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1297300",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.16.5-1-default",
+    "notes": "Runs out of the box except for some very rare irrelevant cut scenes",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1644960604,
+    "title": "",
+    "source": "protondb"
+  }
+]

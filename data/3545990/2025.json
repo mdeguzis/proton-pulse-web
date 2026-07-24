@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3545990",
+    "cpu": "AMD Ryzen 7 H 255 w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.63, 6.15.3)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.3",
+    "notes": "Use GE-proton, minor artefacts in profile menu that doesn't affect game play",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1751345226,
+    "title": "",
+    "source": "protondb"
+  }
+]

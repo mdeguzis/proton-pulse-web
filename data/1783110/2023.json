@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1783110",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.52, 6.4.12-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.4 (git-8b0202e4b4)",
+    "kernel": "6.4.12-200.fc38.x86_64",
+    "notes": "Great visual novel game, works flawlessly",
+    "os": "Fedora 38",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1701667401,
+    "title": "Chasing Sunsets",
+    "source": "protondb"
+  }
+]

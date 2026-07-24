@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "468560",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-towo.3-siduction-amd64",
+    "notes": "Platinum since the game itself works perfectly. however. if you have several monitors the game will always open on the left one. set windowed mode to work around this. add Steam launch option -screen-fullscreen 0",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565897008,
+    "title": "Blind Trust",
+    "source": "protondb"
+  },
+  {
+    "appId": "468560",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-towo.3-siduction-amd64",
+    "notes": "Platinum as in the game itself works perfectly. if you have several monitors the game will always open on the left one. set windowed mode to work around this. add Steam launch option -screen-fullscreen 0     but you can't connect to anyone to actually play this online coop only game.... thus borked. game is dead as a dodo",
+    "os": "Siduction (Debian sid)",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565898244,
+    "title": "Blind Trust",
+    "source": "protondb"
+  }
+]

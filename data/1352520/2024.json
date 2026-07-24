@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1352520",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 17.0.6, DRM 3.59, 6.11.4-201.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.5 (git-3b9fcb7e4d)",
+    "kernel": "6.11.4-201.fc40.x86_64",
+    "notes": "Crashes when loading into the first level with the following error message:\nRuntime Error 506 - Could not load image at line 23762.\nCWD:Z:\\var\\home\\dudetime\\.var\\app\\com.valvesoftware.Steam\\.local\\share\\Steam\\steamapps\\common\\Soldier Warfare\\Files\nLOAD IMAGE texturebank\\341\\m9se_N.dds,602,1,0",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1730292313,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "9460",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Takes several Minutes to Start, runs fine at first, but randomly crashes with Visual C++ Errors.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1547541693,
+    "title": "Frontlines\u2122: Fuel of War\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "9460",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-108.current",
+    "notes": "Slow to start, but no issues through the first mission",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550090339,
+    "title": "Frontlines\u2122: Fuel of War\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "9460",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Did have to try this several times, but when the necessary application installers came, I knew it would work beyond that point. If you experience the same issue where nothing happens when you launch the game for the first time, like no DirectX installer or anything, make sure you have permissions for the drive you put the game in. Also I tried to emulate a virtual desktop using winecfg for the Proton config for this game at 1024x768 resolution. When it worked, I just disabled it. One more thing to note that all of a sudden the mouse stopped working mid-game, so I was unable to move the camera. The mouse still works in the system, the game just does not pick it up. Other than that, the game is playable with no performance drops other than having to wait for some time during each startup.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1567444550,
+    "title": "Frontlines\u2122: Fuel of War\u2122",
+    "source": "protondb"
+  }
+]

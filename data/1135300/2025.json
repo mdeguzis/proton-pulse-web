@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1135300",
+    "cpu": "Intel Core i3-4170 @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "It runs fine with low graphics and 720p resolution.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "silver",
+    "timestamp": 1738796691,
+    "title": "",
+    "source": "protondb"
+  }
+]

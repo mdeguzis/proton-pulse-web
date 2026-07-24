@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1225680",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-arch1-1",
+    "notes": "The game worked perfectly fine after just running it with the recommended proton version",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735005743,
+    "title": "Cube Chase",
+    "source": "protondb"
+  }
+]

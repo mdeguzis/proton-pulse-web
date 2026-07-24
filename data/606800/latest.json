@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "606800",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 9070XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.17.2-zen1)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.17.2-zen1",
+    "notes": "Game does not start up without any changes. After making use of experimental proton and gamemoderun, the game runs but is effectively unplayable in terms of framerate.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1765751422,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606800",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.8, DRM 3.59, 6.11.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.11.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1766270097,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606800",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Runs poorly or completely broken, take your pick.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767070185,
+    "title": "",
+    "source": "protondb"
+  }
+]

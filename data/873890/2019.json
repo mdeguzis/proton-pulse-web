@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "873890",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-143-generic",
+    "notes": "Played the main quest for a few hours using the default party. It works! Saving & loading works also.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554323390,
+    "title": "Legends of Amberland: The Forgotten Crown",
+    "source": "protondb"
+  },
+  {
+    "appId": "873890",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Fires right up using Proton 4.11-2. \nIf you already have the game installed and it updates. Restart Steam. Then you should be good to go.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566328889,
+    "title": "Legends of Amberland: The Forgotten Crown",
+    "source": "protondb"
+  },
+  {
+    "appId": "873890",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.2.0-2-amd64",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567935314,
+    "title": "Legends of Amberland: The Forgotten Crown",
+    "source": "protondb"
+  }
+]

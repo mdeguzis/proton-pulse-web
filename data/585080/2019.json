@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "585080",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "I ran the demo, not the full version, but it worked out of the box with no tweaks. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554072499,
+    "title": "Hunting Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "585080",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "OOTB: https://www.youtube.com/watch?v=IsPTZ9PDeF8",
+    "os": "Kubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554132907,
+    "title": "Hunting Simulator",
+    "source": "protondb"
+  }
+]

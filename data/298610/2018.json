@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "298610",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.0-pf3",
+    "notes": "Works even better than on windows without any tricks.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541281741,
+    "title": "Ylands",
+    "source": "protondb"
+  },
+  {
+    "appId": "298610",
+    "cpu": "Intel Xeon           X5650  @ 2.67GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.19.1",
+    "notes": "Seems to run mostly well on my system, but no body is rendered, so I'm just running around as a floating head.\nPerformance wise it seemed to be a mostly consistent 60fps",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1542167505,
+    "title": "Ylands",
+    "source": "protondb"
+  }
+]

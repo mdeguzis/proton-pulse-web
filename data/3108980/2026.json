@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3108980",
+    "cpu": "AMD Ryzen Z2 Extreme",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 890M (radeonsi, gfx1150, LLVM 20.1.8, DRM 3.64, 6.18.22-valve1-1-neptune-618-gcdf3a9c8043e)",
+    "gpuDriver": "4.6 Mesa 25.3.0 (git-59b552c765)",
+    "kernel": "6.18.22-valve1-1-neptune-618-gcdf3a9c8043e",
+    "notes": "Works perfectly fine on SteamOS running on my Legion Go 2.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1777488762,
+    "title": "",
+    "source": "protondb"
+  }
+]

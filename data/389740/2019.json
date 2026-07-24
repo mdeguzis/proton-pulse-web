@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "389740",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Before Using PROTON_NO_D3D11, the character sprite was not showing. With this tweak, everything seems fine (including controller)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1556218555,
+    "title": "D/Generation HD",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "389740",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558844842,
+    "title": "D/Generation HD",
+    "source": "protondb"
+  }
+]

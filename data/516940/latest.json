@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "516940",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-23-generic",
+    "notes": "music starts, but nothing on the screen",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565464854,
+    "title": "MineSweeper VR",
+    "source": "protondb"
+  }
+]

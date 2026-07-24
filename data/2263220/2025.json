@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2263220",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "No momento, crashes aleat\u00f3rios acontecem entre 10-15 minutos de jogo, ainda h\u00e1 muito \u00e0 configurar.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1737916611,
+    "title": "",
+    "source": "protondb"
+  }
+]

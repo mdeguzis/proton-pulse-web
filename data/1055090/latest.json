@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "1055090",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Loads, generates new world, and can get into game, but without a graphics card the framerate is unusable.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555995690,
+    "title": "Embark",
+    "source": "protondb"
+  },
+  {
+    "appId": "1055090",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Frame rate is very low, but arguably playable with Steam overlay off which yields about 15-20ish FPS, compared to 9-10 FPS normally.\n\nTried disabling Esync and D3d11, and using Wine D3d11, but none of them worked or improved the performance of the game.\n\nCan access and do everything without crashing, but just not quite playable.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1556000523,
+    "title": "Embark",
+    "source": "protondb"
+  },
+  {
+    "appId": "1055090",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-arch1-1-ARCH",
+    "notes": "Runs perfectly fine out of the box, but a good graphics card is recommended. The game runs at 50-55 fps in 4k, which is slower than I expected. At 1920x1080, it's perfect.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561606607,
+    "title": "Embark",
+    "source": "protondb"
+  }
+]

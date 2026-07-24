@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "951780",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.19-300.fc30.x86_64",
+    "notes": "Starts okay, but when you begin a game the screen freezes, if you bring up the talk dialog the render loop starts again, unfortunately the chat dialogue steals focus of your keys/mouse movement and makes it impossible to play.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1564350744,
+    "title": "Zombie Deathrace Feeding Frenzy",
+    "source": "protondb"
+  }
+]

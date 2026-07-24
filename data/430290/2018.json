@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "430290",
+    "title": "Shmups Skill Test \u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0\u6280\u80fd\u691c\u5b9a",
+    "timestamp": 1535234340,
+    "rating": "Platinum",
+    "notes": "Runs without problems.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "430290",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "The game runs too slowly to be playable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1546295371,
+    "title": "Shmups Skill Test \u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0\u6280\u80fd\u691c\u5b9a",
+    "source": "protondb"
+  },
+  {
+    "appId": "430290",
+    "title": "Shmups Skill Test \u30b7\u30e5\u30fc\u30c6\u30a3\u30f3\u30b0\u6280\u80fd\u691c\u5b9a",
+    "timestamp": 1535219940,
+    "rating": "Platinum",
+    "notes": "Runs without problems.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

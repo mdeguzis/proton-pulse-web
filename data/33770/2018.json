@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "33770",
+    "title": "Drakensang The River of Time",
+    "timestamp": 1535285948,
+    "rating": "Platinum",
+    "notes": "Played through the tutorial missions without issue. Worked out of the box",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "33770",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "\"Failed to load XACT sound bank 'Z:\\path\\to\\game\\export\\audio\\amb_a1_dungeon.xsb'!\" on launch\n\ntried installing xact via winetricks, also fails with other currently available proton versions",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540999785,
+    "title": "Drakensang: The River of Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "33770",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Will not start.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543184230,
+    "title": "Drakensang: The River of Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "33770",
+    "title": "Drakensang The River of Time",
+    "timestamp": 1535271548,
+    "rating": "Platinum",
+    "notes": "Played through the tutorial missions without issue. Worked out of the box",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

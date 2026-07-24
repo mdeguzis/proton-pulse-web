@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "771060",
+    "cpu": "Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "3767 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538826390,
+    "title": "Iron League",
+    "source": "protondb"
+  }
+]

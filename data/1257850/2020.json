@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1257850",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.10_1",
+    "notes": "Unity game - runs fine on linux, as expected.",
+    "os": "Void Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598879793,
+    "title": "",
+    "source": "protondb"
+  }
+]

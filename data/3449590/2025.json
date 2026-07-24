@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3449590",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.3-200.nobara.fc41.x86_64",
+    "notes": "Does not work out of the box",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1746126901,
+    "title": "Murim Survival",
+    "source": "protondb"
+  }
+]

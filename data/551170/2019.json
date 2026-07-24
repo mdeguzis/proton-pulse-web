@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "551170",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 680M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.14-1-MANJARO",
+    "notes": "Works pretty well, with new proton version NOT have any crash anymore\nand purchase in game works.\n\n[ tweak, tested by me several times ]>*** For any reason the game will start with black screen if you use the defalt installation path set by steam; to avoid it, have to create and choose other installation path that not contains any dot, space or special characters. After that the game runs fine. ***\n\n[ not related ]> Sometimes you get the game run in speed up or freeze, then move the game window around to back to normal (this even also happens the same on MSwindows, and NOT related to wine/proton, but with bad port of the game from mobile to pc. )",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549212113,
+    "title": "Onmyoji",
+    "source": "protondb"
+  },
+  {
+    "appId": "551170",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game immediately crashes, barely rendering a window for a fraction of a second. Disabling esync, forcing opengl, trying other available Proton versions, at best they lead to a window not even rendering.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1552937825,
+    "title": "Onmyoji",
+    "source": "protondb"
+  }
+]

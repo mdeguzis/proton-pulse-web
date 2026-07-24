@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1983220",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.15.53-1-MANJARO",
+    "notes": "It works out of the box with some stutters on the first screen. Probably due to  compilation of shaders. Played 2 hours without any problem",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1706480083,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1983220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1709734962,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1983220",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2) (NVIDIA RTX 3060)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1 (NVIDIA driver version 545.29.06)",
+    "kernel": "6.5.0-21-generic",
+    "notes": "Worked fine, no problems at all.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1729341453,
+    "title": "",
+    "source": "protondb"
+  }
+]

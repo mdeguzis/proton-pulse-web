@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "873200",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.13-041813-generic",
+    "notes": "Game starts and audio seems to play, suggesting the game itself works. Game is just a black screen from the start, no tweaks cause any change but an immediate crash to desktop.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1546989775,
+    "title": "Teleportals. I swear it's a nice game",
+    "source": "protondb"
+  },
+  {
+    "appId": "873200",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.7-gentoo",
+    "notes": "The game didn't render but that was fixed by setting ddr=gdi via protontricks",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1556370945,
+    "title": "Teleportals. I swear it's a nice game",
+    "source": "protondb"
+  },
+  {
+    "appId": "873200",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "Black screen, when moving to a new desktop changes to a white screen. The audio works, though.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564795624,
+    "title": "Teleportals. I swear it's a nice game",
+    "source": "protondb"
+  }
+]

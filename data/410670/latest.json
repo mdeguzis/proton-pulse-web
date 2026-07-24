@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "410670",
+    "cpu": "Intel Core i5-8365U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.7.10-100.fc38.x86_64",
+    "notes": "Native port seems like an afterthought, even with the supposedly improved support on the newer MV build.",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1720093533,
+    "title": "Suits: A Business RPG",
+    "source": "protondb"
+  }
+]

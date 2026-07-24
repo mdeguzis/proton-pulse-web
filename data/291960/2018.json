@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "291960",
+    "title": "Elminage Gothic",
+    "timestamp": 1534977325,
+    "rating": "Borked",
+    "notes": "Game freezes after opening logo, then crashes after a few minutes. with this error: \"PrMovie::Open - Unable to connect pins\"",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "291960",
+    "title": "Elminage Gothic",
+    "timestamp": 1534962925,
+    "rating": "Borked",
+    "notes": "Game freezes after opening logo, then crashes after a few minutes. with this error: \"PrMovie::Open - Unable to connect pins\"",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "367520",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "OK, so:\n\nThe game now features a native Linux version, BUT that native version has some ISSUES.\n\nThe main issue with it is that steam cloud saves AREN'T CROSS PLATFORM on native Linux Hollow Knight.\n\nIf you run Hollow Knight using Steam Play, however, STEAM CLOUD WILL SYNC CORRECTLY WITH YOUR WINDOWS SAVES (Assuming, like me, you have played the game on windows before).\n\nAlso, after playing through the game a lot with my old saves, I can say it runs smooth as butter on Proton 4, no crashes or bugs in sight.\n\nSo if you have precious old saves on a Windows OS, worry not, Steam Play has your back ;) .",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560725771,
+    "title": "Hollow Knight",
+    "source": "protondb"
+  },
+  {
+    "appId": "367520",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.15-ck1-00006-gb12d1544dbc7",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568718434,
+    "title": "Hollow Knight",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "13140",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-33-generic",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7.6-beta",
+    "ram": "7404 Mb",
+    "rating": "Borked",
+    "timestamp": 1537089070,
+    "title": "America's Army 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "13140",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Crashes after PunkBuster's setup ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542163110,
+    "title": "America's Army 3",
+    "source": "protondb"
+  }
+]

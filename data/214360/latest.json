@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "214360",
+    "title": "Tower Wars",
+    "timestamp": 1535925260,
+    "rating": "Platinum",
+    "notes": "Ran great, loading was slow and didn't test multiplayer.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2700K / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "214360",
+    "cpu": "i7 CPU       K 875  @ 2.93GHz",
+    "gpu": "X.Org AMD CYPRESS (DRM 2.50.0 / 4.17.19-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.17.19-1-MANJARO",
+    "notes": "Did not test multiplayer. ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7976 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536999324,
+    "title": "Tower Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "214360",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Everything works for about half a hour to a hour, then it will just crash. Tested this in single player and multi player its the same. Works great tell it does though.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540788461,
+    "title": "Tower Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "214360",
+    "title": "Tower Wars",
+    "timestamp": 1535910860,
+    "rating": "Platinum",
+    "notes": "Ran great, loading was slow and didn't test multiplayer.",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2700K / GTX 970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "887820",
+    "cpu": "AMD Phenom 9550 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Tried the demo. The game suddenly crashed during the first shooting scene.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558315808,
+    "title": "Double",
+    "source": "protondb"
+  }
+]

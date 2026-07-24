@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "982700",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Only the first Mission was tested.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563627887,
+    "title": "Space Battle VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "982700",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "It works with good performance",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568840488,
+    "title": "Space Battle VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "982700",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "It just works, performance is also great.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1572244491,
+    "title": "Space Battle VR",
+    "source": "protondb"
+  }
+]

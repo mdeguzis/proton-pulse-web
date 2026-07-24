@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "783840",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-30-generic",
+    "notes": "Played through entire game without any issues what so ever. Runs perfectly out of the box, also tested with the Steam Controller and that worked flawless as well.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572048532,
+    "title": "Lakeview Valley",
+    "source": "protondb"
+  }
+]

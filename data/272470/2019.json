@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "272470",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.14-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1549128940,
+    "title": "The Incredible Adventures of Van Helsing II",
+    "source": "protondb"
+  },
+  {
+    "appId": "272470",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-21-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "timestamp": 1559753067,
+    "title": "The Incredible Adventures of Van Helsing II",
+    "source": "protondb"
+  },
+  {
+    "appId": "272470",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-21-generic",
+    "notes": "Runs out of the box on Ubuntu MATE 18.04.2 LTS and Logitech F710 works properly. Game starts by default in DX9 mode but can be changed to DX11 mode. Also, 21:9 aspect ratio is properly supported. Don't forget to unlock the frame rate in the advanced video settings. My Radeon RX 580 8GB is able to get a consistent 60+ FPS at 2560 x 1080 resolution with Very High detail preset in DX11 mode.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559753293,
+    "title": "The Incredible Adventures of Van Helsing II",
+    "source": "protondb"
+  },
+  {
+    "appId": "272470",
+    "cpu": "AMD FX-8370E Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.1.0-rc4",
+    "kernel": "5.1.4-gentoo",
+    "notes": "I got white rectangles instead of UI elements during the game. Setting Disable Esync helped. But even with that the performance is very poor. I get less than 20fps on medium settings at 2560x1440.",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559772998,
+    "title": "The Incredible Adventures of Van Helsing II",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "272470",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-dfb8640 2019-09-07 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-27-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568003591,
+    "title": "The Incredible Adventures of Van Helsing II",
+    "source": "protondb"
+  }
+]

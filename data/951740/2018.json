@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "951740",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "3.2 Mesa 18.2.6",
+    "kernel": "4.19.4-200.fc28.x86_64",
+    "notes": "Game refuses to start at all, can't even get a debug log. Normal wine runs the game, but it never loads.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544649344,
+    "title": "Nice Shot! The Gun Golfing Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "951740",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "3.2 Mesa 18.2.6",
+    "kernel": "4.19.4-200.fc28.x86_64",
+    "notes": "Doesn't even start. Vanilla WINE starts the game, but it never loads the title screen.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544654232,
+    "title": "Nice Shot! The Gun Golfing Game",
+    "source": "protondb"
+  }
+]

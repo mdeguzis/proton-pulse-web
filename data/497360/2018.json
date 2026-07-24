@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "497360",
+    "title": "Gabriel Knight\u00ae 3: Blood of the Sacred, Blood of the Damned",
+    "timestamp": 1535562390,
+    "rating": "Gold",
+    "notes": "Game asks for CD 1 if you don't have an optical drive. GoG have provided a fixed exe http://files.gog.com/support/GK3.zip",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "497360",
+    "title": "Gabriel Knight\u00ae 3: Blood of the Sacred, Blood of the Damned",
+    "timestamp": 1535547990,
+    "rating": "Gold",
+    "notes": "Game asks for CD 1 if you don't have an optical drive. GoG have provided a fixed exe http://files.gog.com/support/GK3.zip",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

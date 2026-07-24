@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "465430",
+    "title": "Vertigo",
+    "timestamp": 1535219848,
+    "rating": "Borked",
+    "notes": "HTC Vive. Got through loading screens, then crashed",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "465430",
+    "title": "Vertigo",
+    "timestamp": 1535205448,
+    "rating": "Borked",
+    "notes": "HTC Vive. Got through loading screens, then crashed",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

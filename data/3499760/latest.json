@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3499760",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 460 (radeonsi, polaris11, LLVM 19.1.7, DRM 3.61, 6.13.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.6-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1742486716,
+    "title": "BubbleByte",
+    "source": "protondb"
+  }
+]

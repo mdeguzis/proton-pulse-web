@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "838390",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.2-arch1-1-ARCH",
+    "notes": "Runs perfectly without any tuning.",
+    "os": "Linux",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558358270,
+    "title": "Merry Glade",
+    "source": "protondb"
+  },
+  {
+    "appId": "838390",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.14-200.fc29.x86_64",
+    "notes": "I don't know how to avoid homicidal horse... Game itself works perfectly out of the box.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1558363578,
+    "title": "Merry Glade",
+    "source": "protondb"
+  }
+]

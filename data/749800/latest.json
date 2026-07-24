@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "749800",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.4",
+    "kernel": "5.1.4-1-default",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1562202451,
+    "title": "PixelJunk\u2122 Monsters 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "749800",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-MANJARO",
+    "notes": "Tried multiple tweaks, couldn't get the game to launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567516770,
+    "title": "PixelJunk\u2122 Monsters 2",
+    "source": "protondb"
+  }
+]

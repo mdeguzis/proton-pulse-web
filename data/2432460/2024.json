@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2432460",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 17.0.6, DRM 3.54, 6.6.10-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.3.1 (git-6cdc2b044d)",
+    "kernel": "6.6.10-1-MANJARO",
+    "notes": "Played just fine as far as I can tell",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1707549276,
+    "title": "",
+    "source": "protondb"
+  }
+]

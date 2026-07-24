@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "295750",
+    "title": "The Floor is Jelly",
+    "timestamp": 1535918856,
+    "rating": "Borked",
+    "notes": "Upon start, thows a \"Fatal error: the device lost the device context!\" error over the screen (along with a weird background)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "295750",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Borked",
+    "timestamp": 1537535344,
+    "title": "The Floor is Jelly",
+    "source": "protondb"
+  },
+  {
+    "appId": "295750",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "\"Fatal error: the device lost the device context!\"",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32175 Mb",
+    "rating": "Borked",
+    "timestamp": 1538236367,
+    "title": "The Floor is Jelly",
+    "source": "protondb"
+  },
+  {
+    "appId": "295750",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "\"Fatal error: The application lost the device context!\" displayed across the screen right away. I was still able to navigate the menu beneath, but the game itself was not playable\n",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541940730,
+    "title": "The Floor is Jelly",
+    "source": "protondb"
+  },
+  {
+    "appId": "295750",
+    "title": "The Floor is Jelly",
+    "timestamp": 1535904456,
+    "rating": "Borked",
+    "notes": "Upon start, thows a \"Fatal error: the device lost the device context!\" error over the screen (along with a weird background)",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

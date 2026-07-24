@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2131010",
+    "cpu": "Intel Core i5-10600KF @ 4.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-105-generic",
+    "notes": "The Demo version is very playable",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1714433166,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2131010",
+    "cpu": "Intel Core i5-10600KF @ 4.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-105-generic",
+    "notes": "Very playable",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1714435201,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2131010",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.1.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.12-arch1-1",
+    "notes": "Tried the demo, works great out of the box",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1716576024,
+    "title": "",
+    "source": "protondb"
+  }
+]

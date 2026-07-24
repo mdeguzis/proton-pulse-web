@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "322920",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. Radeon RX Vega",
+    "gpuDriver": "4.6.13542 Compatibility Profile Context 18.50.1.418",
+    "kernel": "4.15.0-43-generic",
+    "notes": "This game does not start with Proton.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546346368,
+    "title": "theHunter: Primal",
+    "source": "protondb"
+  }
+]

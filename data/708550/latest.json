@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "708550",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.0.5",
+    "kernel": "5.8.0-48-generic",
+    "notes": "I installed the game but couldn't play it, it just doesn't start.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1617054528,
+    "title": "",
+    "source": "protondb"
+  }
+]

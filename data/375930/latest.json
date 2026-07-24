@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "375930",
+    "cpu": "Intel Celeron  N2840  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.171-15926-g798b963ebef9",
+    "notes": "Doesn't even start. Tried disabling Esync and D3D11, neither worked. ",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1557786839,
+    "title": "Trap Them",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

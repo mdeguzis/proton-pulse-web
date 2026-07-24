@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "845890",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.10.136-1-MANJARO",
+    "notes": "Game is not playable at all. Game starts but either immediately quits or you are stuck at the starting screen with an error that says \"Failed to retrieve the platform authentication token\". There is one discussion on steam which discusses this error but unfortunately hasn't got a solution which is working for me.\nI tried with the standard proton (no forced use of a specific one), Proton Experimental and Proton 8.0-2.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1687038622,
+    "title": "",
+    "source": "protondb"
+  }
+]

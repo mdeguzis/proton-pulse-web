@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1466230",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.6, DRM 3.58, 6.11.0_tkg_eevdf+)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.11.0_tkg_eevdf+",
+    "notes": "Works flawlessly.",
+    "os": "Fedora release 40 (Forty)",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1728057862,
+    "title": "The Holy Gosh Darn",
+    "source": "protondb"
+  },
+  {
+    "appId": "1466230",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.12-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.0",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "Runs like native. Stock Steam & Proton on Nobara-39.",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728325778,
+    "title": "The Holy Gosh Darn",
+    "source": "protondb"
+  },
+  {
+    "appId": "1466230",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1729450358,
+    "title": "The Holy Gosh Darn",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "342020",
+    "title": "BiT Evolution",
+    "timestamp": 1535438925,
+    "rating": "Gold",
+    "notes": "Fullscreen has to be set off then on to work properly",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "342020",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "You have to turn fullscreen off and then on for fullscreen to work. Some cutscenes play muted.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Silver",
+    "timestamp": 1539221124,
+    "title": "BiT Evolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "342020",
+    "title": "BiT Evolution",
+    "timestamp": 1535424525,
+    "rating": "Gold",
+    "notes": "Fullscreen has to be set off then on to work properly",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

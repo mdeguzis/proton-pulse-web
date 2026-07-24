@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1925090",
+    "cpu": "12th Gen Intel Core i9-12900KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 510.108.03",
+    "kernel": "5.15.0-60-generic",
+    "notes": "Runs as bad as on Windows",
+    "os": "ZorinOS-16.2",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1684255302,
+    "title": "SubwaySim Hamburg",
+    "source": "protondb"
+  }
+]

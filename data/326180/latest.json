@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "326180",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Runs perfectly oob. I used Proton 3.7.8",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "4.2.3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566394433,
+    "title": "Sinister City",
+    "source": "protondb"
+  }
+]

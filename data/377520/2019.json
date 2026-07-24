@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "377520",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Previous workaround posted here apparently (also shown on wineHQ) is not needed anymore. Runs flawlessly out of the box. Multiplayer was not tested.",
+    "os": "Debian GNU/Linux 10 (buster) (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566235488,
+    "title": "Pike and Shot : Campaigns",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "747920",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Launcher starts and upgrades the game, Facebook login not responding, Start button just quits, nothing happens",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542494706,
+    "title": "Hero Plus",
+    "source": "protondb"
+  }
+]

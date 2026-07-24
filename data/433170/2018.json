@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "433170",
+    "title": "Die Young",
+    "timestamp": 1535173073,
+    "rating": "Silver",
+    "notes": "Requires \"PROTON_NO_D3D11=1 %command%\" to run. Game is playable but with stuttering framerate and sound is distorted.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "433170",
+    "cpu": "Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.23.0, 4.15.0-34-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15997 MB",
+    "rating": "Platinum",
+    "timestamp": 1538266932,
+    "title": "Die Young",
+    "source": "protondb"
+  },
+  {
+    "appId": "433170",
+    "title": "Die Young",
+    "timestamp": 1535158673,
+    "rating": "Silver",
+    "notes": "Requires \"PROTON_NO_D3D11=1 %command%\" to run. Game is playable but with stuttering framerate and sound is distorted.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

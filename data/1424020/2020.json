@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1424020",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.5.19-1-MANJARO",
+    "notes": "Game starts up to a black screen. You can hear the music, just not see anything.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1607280840,
+    "title": "",
+    "source": "protondb"
+  }
+]

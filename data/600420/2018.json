@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "600420",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Haven't tried disabling anything yet. But ran fine for 30 minutes and then crashed out. Very smooth when it was working though. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1541897099,
+    "title": "Mob Rule Classic",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "723390",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-zen1-1-zen",
+    "notes": "Crashed after the train level and several subsequent levels crashed on attempting to load them. Frequent crashing occurred regardless though it could be put down to the state of the game in general.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1549980761,
+    "title": "Hunt Down The Freeman",
+    "source": "protondb"
+  },
+  {
+    "appId": "723390",
+    "cpu": "Intel Core i5-8600 @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.11-zen1-1-zen",
+    "notes": "While it seemingly runs perfectly out of the box, it crashes randomly rather often and has many bugs during gameplay. One particular map seems to outright prevent your progress due to instant crashing on loading. It's also worth noting that these crashes and bugs almost certainly also apply to Windows due to the buggy nature of the game- so perhaps it deserves a higher compatibility rating for that. In addition, the console font is small and unreadable as with other Source games in Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1549980807,
+    "title": "Hunt Down The Freeman",
+    "source": "protondb"
+  }
+]

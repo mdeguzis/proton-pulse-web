@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "674170",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Runs perfectly with controller support",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555710019,
+    "title": "DriftForce",
+    "source": "protondb"
+  },
+  {
+    "appId": "674170",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2",
+    "protonVersionManual": "4.2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555710238,
+    "title": "DriftForce",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "555880",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch2-1-ARCH",
+    "notes": "Rating silver as sometimes it runs fine, sometimes has a terrible frame rate, and, sometimes just locks up/stops rendering (although the machine can be ssh'd into to stop the process). It's not apparent what or why this happens, but it does. \n\nWhen it's working though, it works well.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568582853,
+    "title": "Sairento VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "555880",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Valve Index, no issues. Performance is not great but I fear this is no different on windows, the main performance hit is when too many bullets are in the air at the same time, which you'll only encounter at the highest of difficulties.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569362829,
+    "title": "Sairento VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "555880",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-3c966fd688)",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Until first mission all seem to work (big board in 'dojo', tutorial mission, 1st mission), but 2nd mission refuses to load/start each time I tried and game quits (crashes)",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1569628516,
+    "title": "Sairento VR",
+    "source": "protondb"
+  }
+]

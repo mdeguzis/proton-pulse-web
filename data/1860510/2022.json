@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1860510",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.0-2-amd64",
+    "notes": "demo: hardly playable at ~35 fps, mouse lagging",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "5.0-10 RC3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1666598692,
+    "title": "",
+    "source": "protondb"
+  }
+]

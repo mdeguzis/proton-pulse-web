@@ -1,0 +1,67 @@
+[
+  {
+    "appId": "202410",
+    "title": "Scoregasm",
+    "timestamp": 1535101688,
+    "rating": "Silver",
+    "notes": "Don't enable gamepad in game when using the steam controller; bind kb/m instead.",
+    "os": "Gentoo AMD64 (Kernel 4.18.3)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202410",
+    "title": "Scoregasm",
+    "timestamp": 1535837455,
+    "rating": "Gold",
+    "notes": "Performance is great. Only issue encountered was with 360 controller, game defaults got one axis wrong on RS (can be configured) and movement in menus is a little bit sensitive, otherwise it's perfect.",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "202410",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Change xbox 360 gamepad in ingame settings \u201cshooting axis: horiz. JOYU and vert. JOYV\u201d; otherwise one shooting axis is bound to right trigger",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541412841,
+    "title": "Scoregasm",
+    "source": "protondb"
+  },
+  {
+    "appId": "202410",
+    "title": "Scoregasm",
+    "timestamp": 1535087288,
+    "rating": "Silver",
+    "notes": "Don't enable gamepad in game when using the steam controller; bind kb/m instead.",
+    "os": "Gentoo AMD64 (Kernel 4.18.3)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "202410",
+    "title": "Scoregasm",
+    "timestamp": 1535823055,
+    "rating": "Gold",
+    "notes": "Performance is great. Only issue encountered was with 360 controller, game defaults got one axis wrong on RS (can be configured) and movement in menus is a little bit sensitive, otherwise it's perfect.",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

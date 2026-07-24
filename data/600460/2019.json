@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "600460",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Everything seems to work fine. I played a few custom games too. Even the Level Editor works. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1555898985,
+    "title": "Dustwind",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "278360",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "The game worked out of the box on Proton. I did install additionally D9VK and it worked as well via DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556694218,
+    "title": "A Story About My Uncle",
+    "source": "protondb"
+  },
+  {
+    "appId": "278360",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD8800",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.2.9-125.current",
+    "notes": "The game works flawlessly on Windows on my PC. Linux Native isn't up to par and requires better specs to get that same performance. It didnt run any better with proton UNTIL I enabled D9VK with \"PROTON_USE_D9VK=1 %command%\". Then it ran at a constant 60fps. It did crash but I suspect my PC being at fault there since it already has immense hardware issues. I would recommend anybody else playing this game natively to test it out in Proton using D9VK and see the difference and provide their feedback.",
+    "os": "Solus",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567951625,
+    "title": "A Story About My Uncle",
+    "source": "protondb"
+  },
+  {
+    "appId": "278360",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD8800",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.2.9-125.current",
+    "notes": "The game works flawlessly on Windows on my PC. Linux Native isn't up to par and requires better specs to get that same performance. It didn't run any better with proton UNTIL I enabled D9VK with \"PROTON_USE_D9VK=1 %command%\". Then it ran at a constant 60fps. It did crash but I suspect my PC being at fault there since it already has immense hardware issues. I would recommend others the use this tweak and see how it compares.",
+    "os": "Solus",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567953653,
+    "title": "A Story About My Uncle",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

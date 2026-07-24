@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "321960",
+    "title": "Might & Magic Heroes VII",
+    "timestamp": 1534971496,
+    "rating": "Borked",
+    "notes": "Games need uplay who is not installed(and not install automatically). Perhaps manual install of uplay? Do not work out of the box at all.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Amd ryzen 7 1700/ Nvidia 1060 6g",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "321960",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Will not work even with UPlay installed through Lutris. Game cannot find the UPlay executable.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1540289623,
+    "title": "Might & Magic\u00ae Heroes\u00ae VII",
+    "source": "protondb"
+  },
+  {
+    "appId": "321960",
+    "title": "Might & Magic Heroes VII",
+    "timestamp": 1534957096,
+    "rating": "Borked",
+    "notes": "Games need uplay who is not installed(and not install automatically). Perhaps manual install of uplay? Do not work out of the box at all.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Amd ryzen 7 1700/ Nvidia 1060 6g",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

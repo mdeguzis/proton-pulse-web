@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "292160",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Loads black screen. Audio plays, and when it hits the main menu, the cursor is visible, but that is it. Recommended tweaks did not resolve issue.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560611145,
+    "title": "UFO: Aftermath",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1041270",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.1",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "\nFails to start. Logs indicate there is some issue with the game not properly reading memory. It reported:\n\n0 MB physical memory [0 MB free].\n0 MB paging file [2048 MB free].\n0 MB user address space [0 MB free].\nRead from location 00000000 caused an access violation.\n",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569897614,
+    "title": "Exogenesis ~Perils of Rebirth~",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "346810",
+    "title": "Grand Theft Auto 5",
+    "timestamp": 1536612400,
+    "rating": "Borked",
+    "notes": "During Story mode Prologue, exactly at the moment the character kicks the door the game crashes. \nShort video showing exit https://youtu.be/H7VdtshAT8k?t=22s",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "3.7-3 and 3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "346810",
+    "title": "Marble Age",
+    "timestamp": 1536405617,
+    "rating": "Platinum",
+    "notes": "Works as native",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.3.0-devel \u2013 padoka",
+    "specs": "i5-3210M / iGPU HD4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "346810",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-38-generic",
+    "notes": ":ok_hand:",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541317237,
+    "title": "Marble Age",
+    "source": "protondb"
+  },
+  {
+    "appId": "346810",
+    "title": "Grand Theft Auto 5",
+    "timestamp": 1536598000,
+    "rating": "Borked",
+    "notes": "During Story mode Prologue, exactly at the moment the character kicks the door the game crashes. \nShort video showing exit https://youtu.be/H7VdtshAT8k?t=22s",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "Ryzen 7 2700X",
+    "protonVersion": "3.7-3 and 3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "346810",
+    "title": "Marble Age",
+    "timestamp": 1536391217,
+    "rating": "Platinum",
+    "notes": "Works as native",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "Mesa 18.3.0-devel \u2013 padoka",
+    "specs": "i5-3210M / iGPU HD4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

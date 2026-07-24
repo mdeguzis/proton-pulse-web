@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "200390",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.154.05",
+    "kernel": "6.1.78-un-def-alt1",
+    "notes": "The native version works great",
+    "os": "ALT Workstation K 10.3 (Sorbaronia Mitschurinii) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1709033597,
+    "title": "Oil Rush",
+    "source": "protondb"
+  }
+]

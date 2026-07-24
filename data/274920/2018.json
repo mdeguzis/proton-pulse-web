@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "274920",
+    "title": "FaceRig",
+    "timestamp": 1535413643,
+    "rating": "Borked",
+    "notes": "Launcher shows only a black screen, bypass the launcher via steam, the software does run, but the camera does not pick up and the UI is missing.",
+    "os": "Xubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD Ryzen 5 2600X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "274920",
+    "title": "FaceRig",
+    "timestamp": 1536340753,
+    "rating": "Borked",
+    "notes": "Opens windows which can be interacted with / Black screens, couldn't find virtual screen / None",
+    "os": "Ubuntu 18.04 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-6600K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "274920",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Launcher displays a brief title screen and then a blank screen, bypassing the launcher results in a non functioning cam shown on screen with a non-responsive character in the background.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32113 Mb",
+    "rating": "Borked",
+    "timestamp": 1538890725,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "FaceRig",
+    "source": "protondb"
+  },
+  {
+    "appId": "274920",
+    "title": "FaceRig",
+    "timestamp": 1535399243,
+    "rating": "Borked",
+    "notes": "Launcher shows only a black screen, bypass the launcher via steam, the software does run, but the camera does not pick up and the UI is missing.",
+    "os": "Xubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "AMD Ryzen 5 2600X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "274920",
+    "title": "FaceRig",
+    "timestamp": 1536326353,
+    "rating": "Borked",
+    "notes": "Opens windows which can be interacted with / Black screens, couldn't find virtual screen / None",
+    "os": "Ubuntu 18.04 4.15.0-33-generic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-6600K / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

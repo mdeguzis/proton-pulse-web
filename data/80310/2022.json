@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "80310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Had no issues running it on the deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1656506042,
+    "title": "Gemini Rue",
+    "source": "protondb"
+  },
+  {
+    "appId": "80310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1665697875,
+    "title": "Gemini Rue",
+    "source": "protondb"
+  },
+  {
+    "appId": "80310",
+    "cpu": "Intel Core i3-4170 @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.4.0-125-generic",
+    "notes": "It doesn't run well at all on Native. I highly recommend running this through Proton 7.0-4",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1667587616,
+    "title": "Gemini Rue",
+    "source": "protondb"
+  }
+]

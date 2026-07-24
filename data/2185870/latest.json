@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2185870",
+    "cpu": "AMD Ryzen 7 3750H with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 10 (raven, LLVM 15.0.7, DRM 3.57, 6.8.0-48-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.8.0-48-generic",
+    "notes": "\u57fa\u672c\u53ef\u73a9\uff0c\u9664\u4e86\u5b57\u4f53\u95ee\u9898\u548c\u5168\u5c4f\u6a21\u5f0f\u4e0d\u5b9c\u5207\u51fa\u6e38\u620f",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "7 GB",
+    "rating": "silver",
+    "timestamp": 1731925205,
+    "title": "",
+    "source": "protondb"
+  }
+]

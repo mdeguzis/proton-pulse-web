@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "111400",
+    "title": "Bunch of Heros",
+    "timestamp": 1535231559,
+    "rating": "Platinum",
+    "notes": "Played several rounds without issue",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "111400",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Had to use the arrow keys because W (move up) and A (move left) weren't working. For some reason they swapped with Q and Z. Probably was expecting a different keyboard layout, but I can't seem to find a way to change that. I use QWERTY keyboard and that's what my system is set as.\n\nBesides that, seems to run fine. Did not test with controller.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541758870,
+    "title": "Bunch of Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "111400",
+    "title": "Bunch of Heros",
+    "timestamp": 1535217159,
+    "rating": "Platinum",
+    "notes": "Played several rounds without issue",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

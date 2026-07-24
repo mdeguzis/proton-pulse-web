@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "45000",
+    "title": "Sol Survivor",
+    "timestamp": 1535315501,
+    "rating": "Borked",
+    "notes": ".NET Framework won't install with \"XNA Framework 3.1 requires at least .NET 2.0\" popping up later.",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "45000",
+    "cpu": "Intel Core i3-4005U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Doesn't get past installing .NET 2.0. I believe the issue is related to Proton not supporting 32-bit games. See: https://steamcommunity.com/app/45000/discussions/0/630802344331447498/",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1540794418,
+    "title": "Sol Survivor",
+    "source": "protondb"
+  },
+  {
+    "appId": "45000",
+    "title": "Sol Survivor",
+    "timestamp": 1535301101,
+    "rating": "Borked",
+    "notes": ".NET Framework won't install with \"XNA Framework 3.1 requires at least .NET 2.0\" popping up later.",
+    "os": "Ubuntu 18.04.1 Bionic",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i3-2310M / Nvidia GeForce GT 520m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

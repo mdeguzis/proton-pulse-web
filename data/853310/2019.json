@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "853310",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "os": "Antergos Linux",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1572241440,
+    "title": "Mr. Maze",
+    "source": "protondb"
+  }
+]

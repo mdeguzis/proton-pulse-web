@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "33930",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Battleeye not working, key register issue which may lead to FADE as previous comment says. Heavy mouse issue making it accelerate for no reason.\nCan't set AA on very high without black screen. Getting between 42-72fps with vsync disabled.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1550119208,
+    "title": "Arma 2: Operation Arrowhead",
+    "source": "protondb"
+  },
+  {
+    "appId": "33930",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "Game has to be started without Battle Eye. V-Sync must be disabled to fix the mouse lag on my machine. The in-game 2D-map is a bit laggy, but everything else works fine with high framerate. I have played in LAN for many hours without issues. Absolutely stable and playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3, 3.16-4",
+    "protonVersionManual": "4.2-3, 3.16-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556477777,
+    "title": "Arma 2: Operation Arrowhead",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "422920",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "Plays fine. Occasionally, there are periods of intense slowdown. A save + restart of the game clears up the issue immediately. I'm not sure if this is a problem with the game, with Wine, or something else, so I'm not lowering my rating.",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566325172,
+    "title": "Creeper World 2: Anniversary Edition",
+    "source": "protondb"
+  }
+]

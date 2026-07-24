@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2681570",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.4-cachyos1.2",
+    "kernel": "6.14.3-2-cachyos",
+    "notes": "Game works great out of the box",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1757238234,
+    "title": "",
+    "source": "protondb"
+  }
+]

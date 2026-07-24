@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "508550",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-46-generic",
+    "notes": "it crashes all the time every 15 minutes needs to be fixed",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1590411520,
+    "title": "",
+    "source": "protondb"
+  }
+]

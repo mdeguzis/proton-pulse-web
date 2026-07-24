@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1293540",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.12-arch1-1",
+    "notes": "Runs as well as it seems to in Windows",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1641610220,
+    "title": "",
+    "source": "protondb"
+  }
+]

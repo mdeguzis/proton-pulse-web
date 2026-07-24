@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1057820",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "5.15.0-91-generic",
+    "notes": "Works with Steam VR 2.3.1 (beta) and Proton experimental-8.0-20240111c",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1705250499,
+    "title": "",
+    "source": "protondb"
+  }
+]

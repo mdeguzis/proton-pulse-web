@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1520500",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.8-060108-generic",
+    "notes": "The games works like a charm, when launch (read description) Proton exp & 8.x",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1703526253,
+    "title": "",
+    "source": "protondb"
+  }
+]

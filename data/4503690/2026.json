@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4503690",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.11-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 26.1.2 - kisak-mesa PPA",
+    "kernel": "7.0.11-x64v3-xanmod1",
+    "notes": "Game runs good",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1780879089,
+    "title": "Fat Fleet",
+    "source": "protondb"
+  }
+]

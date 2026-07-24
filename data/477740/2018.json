@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "477740",
+    "title": "Zero Escape: The Nonary Games",
+    "timestamp": 1535297308,
+    "rating": "Gold",
+    "notes": "ZE2 requires openal for Audio to work but stable framerate, ZE1 goes black after the menu",
+    "os": "Antergos 18.7 (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-8400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "477740",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.10-200.fc28.x86_64",
+    "notes": "Was told to use protontricks (or winetricks) to install the 'dotnet46' package, game still will not launch",
+    "os": "Korora release 28 (Fluke)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1545962068,
+    "title": "Zero Escape: The Nonary Games",
+    "source": "protondb"
+  },
+  {
+    "appId": "477740",
+    "title": "Zero Escape: The Nonary Games",
+    "timestamp": 1535282908,
+    "rating": "Gold",
+    "notes": "ZE2 requires openal for Audio to work but stable framerate, ZE1 goes black after the menu",
+    "os": "Antergos 18.7 (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-8400",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "823640",
+    "title": "Gnomes Garden Lost King",
+    "timestamp": 1535188075,
+    "rating": "Borked",
+    "notes": "\"Failed to initialize player\" error message on launch.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "823640",
+    "title": "Gnomes Garden Lost King",
+    "timestamp": 1535173675,
+    "rating": "Borked",
+    "notes": "\"Failed to initialize player\" error message on launch.",
+    "os": "Ubuntu 17.10 (64-bit)",
+    "gpuDriver": "NVIDIA 340.104",
+    "specs": "AMD Athlon X2 5000+ / GeForce 8500 GT",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

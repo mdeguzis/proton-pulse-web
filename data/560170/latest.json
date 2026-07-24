@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "560170",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "Works great!",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552840614,
+    "title": "STAR WARS\u2122 SHADOWS OF THE EMPIRE\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "560170",
+    "cpu": "AMD A4-9120 RADEON R3, 4 COMPUTE CORES 2C+2G",
+    "duration": "severalHours",
+    "gpu": "AMD STONEY",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Works well. I have the leatest version of proton (4.2-3). In the launcher I set Display Mode to 1280x720 dpp and 3D Device to Wine D3D Device using WineD3D and OpenGL. Finished the first 4 levels without any problem. Runs just like it did back then on Windows Xp.",
+    "os": "Endless Os 4.x",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1557282223,
+    "title": "STAR WARS\u2122 SHADOWS OF THE EMPIRE\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "560170",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558912331,
+    "title": "STAR WARS\u2122 SHADOWS OF THE EMPIRE\u2122",
+    "source": "protondb"
+  }
+]

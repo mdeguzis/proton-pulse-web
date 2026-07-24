@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1725340",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.4-200.fc40.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1726246326,
+    "title": "",
+    "source": "protondb"
+  }
+]

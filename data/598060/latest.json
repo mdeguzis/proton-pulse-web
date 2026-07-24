@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "598060",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.6, DRM 3.57, 6.9.11-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.4",
+    "kernel": "6.9.11-200.fc40.x86_64",
+    "notes": "Instead of displaying the dungeon and a map  of the dungeon, only the skybox and a bugged map are visible. The game is not playable on my machine with either direct3d 9 or its default graphics API. I tried all available versions of proton, as well as uninstalling and reinstalling several times but had no luck.",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1723240101,
+    "title": "",
+    "source": "protondb"
+  }
+]

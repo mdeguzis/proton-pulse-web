@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "525640",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-ae020fc7b4)",
+    "kernel": "4.19.0-rc6-gf59a38fe8744",
+    "notes": "good performance",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541337147,
+    "title": "Bullets And More VR - BAM VR",
+    "source": "protondb"
+  }
+]

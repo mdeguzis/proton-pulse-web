@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "247660",
+    "title": "Deadly Premonition: The Director's Cut",
+    "timestamp": 1535077746,
+    "rating": "Borked",
+    "notes": "Nothing happens",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "247660",
+    "title": "Deadly Premonition: The Director's Cut",
+    "timestamp": 1535174194,
+    "rating": "Borked",
+    "notes": "Initial launch configuration tool shows up, but then when starting the game nothing. Tried different proton launch options and disabled steam overlay.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "247660",
+    "cpu": "Intel(R) Core(TM) i5-2400S CPU @ 2.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "The launcher appears but when you press play nothing happens. Take into account this port is one of the most broken ports in Steam by far. It hardly works on Windows without fan patches, and even then some people report huge slowdowns. Sadly a mess",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5928 Mb",
+    "rating": "Borked",
+    "timestamp": 1537432947,
+    "title": "Deadly Premonition: The Director's Cut",
+    "source": "protondb"
+  },
+  {
+    "appId": "247660",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.3",
+    "kernel": "4.14.77-1-MANJARO",
+    "notes": "Only the launcher works, then immediate crash when trying to run the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543201086,
+    "title": "Deadly Premonition: The Director's Cut",
+    "source": "protondb"
+  },
+  {
+    "appId": "247660",
+    "title": "Deadly Premonition: The Director's Cut",
+    "timestamp": 1535063346,
+    "rating": "Borked",
+    "notes": "Nothing happens",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "247660",
+    "title": "Deadly Premonition: The Director's Cut",
+    "timestamp": 1535159794,
+    "rating": "Borked",
+    "notes": "Initial launch configuration tool shows up, but then when starting the game nothing. Tried different proton launch options and disabled steam overlay.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

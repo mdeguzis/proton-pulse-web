@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "485610",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "It can be frozen on opening sometimes (completely random) but after try one or two times again, it works flawlessly. (almost, because you need to click \"Try Again\" button after it says you something like \"Can't connected to servers\" etc. then it works flawlessly.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547064348,
+    "title": "Ball 3D: Soccer Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "485610",
+    "cpu": "Pentium Dual-Core       E5700  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.3.3",
+    "kernel": "4.20.8-arch1-1-ARCH",
+    "notes": "\nSteam shows that the game works, but the game does not show. Overall this doesn't work.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16",
+    "ram": "3 GB",
+    "rating": "Bronze",
+    "timestamp": 1550257504,
+    "title": "Ball 3D: Soccer Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "485610",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.13",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557384445,
+    "title": "Ball 3D: Soccer Online",
+    "source": "protondb"
+  }
+]

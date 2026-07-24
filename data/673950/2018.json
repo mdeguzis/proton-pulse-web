@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "673950",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "gpu": "X.Org AMD BARTS (DRM 2.50.0 / 4.15.0-33-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Works Perfectly. Performance is faster than Windows I've Noticed. Multiplayer works great too.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7975 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536706755,
+    "title": "Farm Together",
+    "source": "protondb"
+  },
+  {
+    "appId": "673950",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.17-300.fc29.x86_64",
+    "notes": "Game works perfect after you set this up in the launch options.  But not in Full screen. \n\n-screen-fullscreen 1 -screen-width 1920 -screen-height 1080 -force-glcore42 -force-clamped  ( the first time you need to disable fullscreen and restart the game and it works good)",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541884861,
+    "title": "Farm Together",
+    "source": "protondb"
+  },
+  {
+    "appId": "673950",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-20-generic",
+    "notes": "the game did not open properly, initially opened only a color background without texts or information, but audio playing. looking for solutions I found the following commands and it worked:\n\n-force-glcore42 -force-clamped\n-screen-fullscreen 1 -screen-width 1920 -screen-height 1080",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545315688,
+    "title": "Farm Together",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "586090",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000rc3-generic",
+    "notes": "There is audio but no video, just a black screen. Tried different launch options and disabling Steam overlays.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548518446,
+    "title": "Snowman",
+    "source": "protondb"
+  }
+]

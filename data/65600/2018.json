@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "65600",
+    "title": "Gothic 3 Forsaken Gods Enhanced Edition",
+    "timestamp": 1535383895,
+    "rating": "Silver",
+    "notes": "6-13fps ingame, otherwise seems fine",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "65600",
+    "title": "Gothic 3 Forsaken Gods Enhanced Edition",
+    "timestamp": 1535895163,
+    "rating": "Silver",
+    "notes": "Game itself is very stable (played for couple of hours, not a single crash) but the FPS is very low: 14 in villages, 20 outside making gameplay less pleasurable. Changing screen/picture settings doesn't seem to have any influence on it. Also, changing colors balance doesn't seem to have any effect so not everything works as intended. Game is playable thou.",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.15)",
+    "gpuDriver": "NVIDIA 1:396.54 Bumblebee",
+    "specs": "i7-6700HQ/GTX 970M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "65600",
+    "title": "Gothic 3 Forsaken Gods Enhanced Edition",
+    "timestamp": 1535369495,
+    "rating": "Silver",
+    "notes": "6-13fps ingame, otherwise seems fine",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "65600",
+    "title": "Gothic 3 Forsaken Gods Enhanced Edition",
+    "timestamp": 1535880763,
+    "rating": "Silver",
+    "notes": "Game itself is very stable (played for couple of hours, not a single crash) but the FPS is very low: 14 in villages, 20 outside making gameplay less pleasurable. Changing screen/picture settings doesn't seem to have any influence on it. Also, changing colors balance doesn't seem to have any effect so not everything works as intended. Game is playable thou.",
+    "os": "Manjaro Unstable 64-bit (Kernel 4.18.15)",
+    "gpuDriver": "NVIDIA 1:396.54 Bumblebee",
+    "specs": "i7-6700HQ/GTX 970M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

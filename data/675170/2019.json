@@ -1,0 +1,20 @@
+[
+  {
+    "appId": "675170",
+    "cpu": "AMD Phenom II X4 975",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.4.0-137-generic",
+    "os": "Ubuntu 16.04.5 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547742164,
+    "title": "303 Squadron: Battle of Britain",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

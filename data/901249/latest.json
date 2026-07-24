@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "901249",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "In game everything works well, but workarounds needed with Uplay. Mainly install a newer version of Uplay with protontricks, solve the network problem (https://github.com/ValveSoftware/Proton/issues/162 via linking correct system libraries) and the steam recognize problem by uplay (https://github.com/ValveSoftware/Proton/issues/1735)",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1542384289,
+    "title": "The Settlers 7: Paths to a Kingdom: Deluxe Gold Edition",
+    "source": "protondb"
+  }
+]

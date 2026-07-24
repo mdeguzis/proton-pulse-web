@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "46550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.18.0-25-lowlatency",
+    "notes": "Like Syberia, it can only be run in an 800\u00d7600 window. This can be done by creating a player.ini file containing the line, \"800 600 32 0 baseCMO.cmo\" Characters' lips move like horses. Otherwise it seems to play OK.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564604525,
+    "title": "Post Mortem",
+    "source": "protondb"
+  }
+]

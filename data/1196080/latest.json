@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1196080",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-201.nobara.fc43.x86_64",
+    "notes": "Several versions of proton, wine, and file editing. Game instantly closes, a few versions of proton the application didn't close but was black.\n\nMight try different driver versions and repeat but for right now it looks like it will not run.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "96 GB",
+    "rating": "borked",
+    "timestamp": 1769012365,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196080",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-201.nobara.fc43.x86_64",
+    "notes": "Several versions of proton, wine, and file editing. Game instantly closes, a few versions of proton the application didn't close but was black.\n\n\nMight try different driver versions and repeat but for right now it looks like it will not run.\n\n\nUpdate: After trying different drivers, even more proton branches, and game versions it still didn't work. Closest I got was Proton 10.0-4 on game version 0.2.5.2 - It was still a black screen but had a semi-working steam overlay. Screen still black if overlay was removed. It also gave an error log. I am going to give up here but if someone else wants to try to get it to work gl. I am going to wait and hope the devs add support.\n-\nNOTE: This event is reported to the developer.\nError message:\nError: shutdown\n    at Object.<anonymous> (C:\\snapshot\\steam-opencl\\scope.precompiled_\\ultimate-scope.js:128:9)\n    at Module._compile (pkg/prelude/bootstrap.js:1261:22)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:993:10)\n    at Module.load (internal/modules/cjs/loader.js:813:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:725:14)\n    at Module.require (internal/modules/cjs/loader.js:850:19)\n    at Module.require (pkg/prelude/bootstrap.js:1166:31)\n    at require (internal/modules/cjs/helpers.js:74:18)\n    at C:\\snapshot\\steam-opencl\\scope.precompiled_\\ultimate.js:200:3\n    at Object.<anonymous> (C:\\snapshot\\steam-opencl\\scope.precompiled_\\ultimate.js:206:3)",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "96 GB",
+    "rating": "borked",
+    "timestamp": 1769804249,
+    "title": "",
+    "source": "protondb"
+  }
+]

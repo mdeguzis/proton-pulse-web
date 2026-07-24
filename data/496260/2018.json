@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "496260",
+    "cpu": "Intel Core i5-4430 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "Requires LC_ALL=ja_JP.UTF-8 %command% launch option to render Japanese text.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545420156,
+    "title": "Corona Blossom Vol.1 Gift From the Galaxy",
+    "source": "protondb"
+  }
+]

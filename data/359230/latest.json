@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "359230",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-54-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562161235,
+    "title": "Lethis - Path of Progress",
+    "source": "protondb"
+  },
+  {
+    "appId": "359230",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-29-generic",
+    "notes": "The game crashed once but otherwise runs perfectly.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569013953,
+    "title": "Lethis - Path of Progress",
+    "source": "protondb"
+  }
+]

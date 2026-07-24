@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "993500",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1555974031,
+    "title": "Ritual of the Moon",
+    "source": "protondb"
+  }
+]

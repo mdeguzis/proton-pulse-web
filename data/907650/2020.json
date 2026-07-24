@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "907650",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.0-3-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1592449378,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "907650",
+    "cpu": "Intel Core i5-2300 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-38-generic",
+    "notes": "Out of the Box Nps",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592851016,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "907650",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-47-generic",
+    "notes": "The demo works great! No issues so far. Hyped for the full game release.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1600456981,
+    "title": "",
+    "source": "protondb"
+  }
+]

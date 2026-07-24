@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "288370",
+    "title": "Strike Suit Zero: Director's Cut",
+    "timestamp": 1535124771,
+    "rating": "Silver",
+    "notes": "Stuttered at lower resolutions, but oddly ran perfectly at 1080p",
+    "os": "Fedora 28 64-bit(kernel 4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Phenom II 960T",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "288370",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 390.48",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The game works perfectly, however it is best to adjust resolution to fit your screen and Alt-Tab in and out, any other method causes the game to studder like crazy when moving the mouse.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1540591326,
+    "title": "Strike Suit Zero: Director's Cut",
+    "source": "protondb"
+  },
+  {
+    "appId": "288370",
+    "title": "Strike Suit Zero: Director's Cut",
+    "timestamp": 1535110371,
+    "rating": "Silver",
+    "notes": "Stuttered at lower resolutions, but oddly ran perfectly at 1080p",
+    "os": "Fedora 28 64-bit(kernel 4.17.14-202)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Phenom II 960T",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

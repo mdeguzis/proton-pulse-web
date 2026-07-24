@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "261760",
+    "title": "Lichdom: Battlemage",
+    "timestamp": 1535026677,
+    "rating": "Borked",
+    "notes": "Crashes when trying to start a new game. Error related to wininet.dll: EXCEPTION_ACCESS_VIOLATION \"memory cannot be read\"",
+    "os": "Manjaro 4.18.3-1 Cinnamon 3.8.8",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "261760",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Crashes when hitting resume, or new game.",
+    "os": "Kbuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15919 Mb",
+    "rating": "Borked",
+    "timestamp": 1538197606,
+    "title": "Lichdom: Battlemage",
+    "source": "protondb"
+  },
+  {
+    "appId": "261760",
+    "cpu": "Intel Xeon           X3440  @ 2.53GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega 64",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.10-300.fc29.x86_64",
+    "notes": "Game runs in the main menu. Everything works. But when you try to start a game mid loading screen it crashes. ",
+    "os": "Fedora 29",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1545908889,
+    "title": "Lichdom: Battlemage",
+    "source": "protondb"
+  },
+  {
+    "appId": "261760",
+    "title": "Lichdom: Battlemage",
+    "timestamp": 1535012277,
+    "rating": "Borked",
+    "notes": "Crashes when trying to start a new game. Error related to wininet.dll: EXCEPTION_ACCESS_VIOLATION \"memory cannot be read\"",
+    "os": "Manjaro 4.18.3-1 Cinnamon 3.8.8",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

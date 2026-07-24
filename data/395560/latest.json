@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "395560",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Would not start without PROTON_NO_D3D11 or PROTON_USE_WINED3D added to the launch options, but ran well with either of these settings enabled.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1548606839,
+    "title": "Lost Horizon 2",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

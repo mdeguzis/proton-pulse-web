@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "361020",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-050106-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559718733,
+    "title": "Luxor HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "361020",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-050106-generic",
+    "notes": "Runs great",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559719232,
+    "title": "Luxor HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "361020",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "75% of the time crashes when tabbing out in fullscreen mode (windowed mode is fine), other than that no issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565554750,
+    "title": "Luxor HD",
+    "source": "protondb"
+  }
+]

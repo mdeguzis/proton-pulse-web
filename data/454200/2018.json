@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "454200",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Opens and closes a black window",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-6",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Neon Hardcorps",
+    "source": "protondb"
+  },
+  {
+    "appId": "454200",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "This game loaded fine and played fine. I didn't have to use any tricks. However, I have had it crash to desktop a few times. It happened when I tried walking off the side of the screen, so I think it may actually be a game bug rather than a Proton failure. As long as I didn't try to wander outside the game area, it seemed to be OK. Another problem is that once you set it to full screen mode, you can't change it back to windowed mode as it returns to the option screen that is too far to the right to hit the save button. It initially started in windowed mode, so if you prefer that then don't change it.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1544883984,
+    "title": "Neon Hardcorps",
+    "source": "protondb"
+  }
+]

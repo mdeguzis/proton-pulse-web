@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "476360",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Game will load indefinitely after the Unreal Engine logo unless ?nologos is entered as a custom launch option.\n\nMultiplayer works perfectly. Singleplayer campaign does not work at all. The game hangs indefinitely when starting a singleplayer mission because the video cutscenes do not play under Wine. This is a known issue with Unreal Engine needing a 'native video player' (i.e. Windows Media Player) to play the videos and there is currently no solution or workaround.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1561968943,
+    "title": "Strike Vector EX",
+    "source": "protondb"
+  }
+]

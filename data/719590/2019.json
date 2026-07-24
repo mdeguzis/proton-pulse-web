@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "719590",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.15.0-52-generic",
+    "notes": "Not working out of the box (pink screen). After adding config option \"PROTON_USE_WINED3D11=1 %command%\",  it worked seamlessly.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1561030015,
+    "title": "Mesozoica",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

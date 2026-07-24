@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "917840",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.12-300.fc32.x86_64",
+    "notes": "",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1590101062,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "917840",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "4.15.0-106-generic",
+    "notes": "Runs very well, only a minor issue with mouse capture",
+    "os": "elementary OS 5.1.5 Hera",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1594261737,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "917840",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.6-1-MANJARO",
+    "notes": "Works well on an older version of proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-13",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1600649777,
+    "title": "",
+    "source": "protondb"
+  }
+]

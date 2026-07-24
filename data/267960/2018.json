@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "267960",
+    "title": "Hyper Fighters",
+    "timestamp": 1535824308,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "267960",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "You Rdy for some extra info? This game is a bad port from Nintendo Wii to Windows PCs. In the main directory of the game there is a \"Autoexec.lua\" file, which should (apparently) recognize whether it is a Windows PC or a Wii environment and depending on that it should load the files that the game needs to act further. I think that's where the error is. I tried several things in there and could manage to change the resolution of the startup-screen but no further. I give up on that, but maybe this info can help a real fan of this game to make it run. I count on you! :] Peace.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543085490,
+    "title": "Hyper Fighters",
+    "source": "protondb"
+  },
+  {
+    "appId": "267960",
+    "title": "Hyper Fighters",
+    "timestamp": 1535809908,
+    "rating": "Borked",
+    "notes": "Reason Unknown",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

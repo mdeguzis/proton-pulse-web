@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "494360",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-42-generic",
+    "notes": "The game does not start and displays the following error message: \"This application cannot start as it cannot create needed files. There may not be enough disk space. \"",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544459219,
+    "title": "Barrow Hill: Curse of the Ancient Circle",
+    "source": "protondb"
+  }
+]

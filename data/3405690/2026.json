@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3405690",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 19.1.7, DRM 3.61, 6.13.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.2-arch1.2",
+    "kernel": "6.13.8-arch1-1",
+    "notes": "This game does not support Linux, Proton, or Steam Deck. It is impossible to start the game, even offline.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1767913059,
+    "title": "EA SPORTS FC\u2122 26",
+    "source": "protondb"
+  },
+  {
+    "appId": "3405690",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.2, DRM 3.59, 6.8.0-90-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.8.0-90-generic",
+    "notes": "This Game has an Kernel Anti-Cheat that doesnt support Linux.\nIts impossible to run it on Linux",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "8.0-5",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1768982713,
+    "title": "EA SPORTS FC\u2122 26",
+    "source": "protondb"
+  }
+]

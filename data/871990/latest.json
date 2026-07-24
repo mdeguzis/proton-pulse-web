@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "871990",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "With updated Proton, it runs out of the box, but it's slower than on Windows.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1557589865,
+    "title": "BattleRush 2",
+    "source": "protondb"
+  }
+]

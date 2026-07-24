@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "318660",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Runs out of the box. Game doesn't support widescreen resolutions at all.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1557598617,
+    "title": "Moorhuhn / Crazy Chicken Tales",
+    "source": "protondb"
+  }
+]

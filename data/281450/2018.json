@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "281450",
+    "cpu": "i5-4690K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Had to symlink the game directory from the \"steamapps\\common\" directory to the corresponding steam directory in the pfx (steamapps/compatdata/281450/pfx/drive_c/Program Files (x86)/Steam/SteamApps/common/Disciples Sacred Lands Gold, create the directories that are missing except the \"Disciples\" directory which will be the symlink). This is due to the game data paths being hard coded in the DISCIPLES.INI file in the \"Exe\" directory. Game runs fine after doing this.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15984 Mb",
+    "rating": "Gold",
+    "timestamp": 1536971248,
+    "title": "Disciples Sacred Lands Gold",
+    "source": "protondb"
+  }
+]

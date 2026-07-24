@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3500",
+    "cpu": "AMD Athlon X4 870K Quad Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Works okay in Windowed mode, but is unplayable in full-screen due to the aforementioned mouse cursor situation",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550092536,
+    "title": "Mystery P.I.\u2122 - The Lottery Ticket",
+    "source": "protondb"
+  }
+]

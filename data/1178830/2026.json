@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1178830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "50-60 fps \u0431\u0435\u0437 \u043c\u044b\u043b\u0430 \u0441 \u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043d\u044b\u043c fsr \u043e\u0442\u043b\u0438\u0447\u043d\u043e \u0438\u0433\u0440\u0430\u0435\u0442\u0441\u044f.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1768147544,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1178830",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.2-1-default)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.19.2-1-default",
+    "notes": "L\u00e4uft super. Keine Anpassungen notwendig.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1771610157,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1178830",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "Runs amazing, great graphics. Need to use GEProton Though",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1774763687,
+    "title": "",
+    "source": "protondb"
+  }
+]

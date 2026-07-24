@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1053730",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "5.3.0-26-generic",
+    "notes": "The game does not start.",
+    "os": "Zorin OS 15.1",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1579368229,
+    "title": "Foxyland 2",
+    "source": "protondb"
+  }
+]

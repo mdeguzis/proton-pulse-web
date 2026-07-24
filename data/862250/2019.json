@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "862250",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "notes": "First chapter (of 12) runs perfectly, but second one (Hydroautomatics) is crashing with error message:\n\n===\nFATAL ERROR in Vertex Shader compilation\nShaderName: shdr_wave\nmemory:61:22: error: syntax error, unexpected NEW_IDENTIFIER\nat gml_Object_o_floor_Draw_0\n===\n\nI've finished this chapter on Windows (and the next one too) and Solar Gardens are OK",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1558905553,
+    "title": "Danger!Energy",
+    "source": "protondb"
+  }
+]

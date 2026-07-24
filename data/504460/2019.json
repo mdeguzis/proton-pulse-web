@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "504460",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-42-generic",
+    "notes": "took a while to load for the first time, but once in game the performance was good.  I tested out the tutorial and the time trial mode.  I was unable to test multiplayer due no one being online to play against.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557976768,
+    "title": "Team Racing League",
+    "source": "protondb"
+  }
+]

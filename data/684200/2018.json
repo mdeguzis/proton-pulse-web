@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "684200",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "the game works but the characters do not show so its not really playable",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7923 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537580393,
+    "title": "Icons: Combat Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "684200",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "gpu": "X.Org AMD Radeon (TM) R9 390 Series (HAWAII / DRM 3.25.0 / 4.13.0-041300-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.13.0-041300-generic",
+    "notes": "Switching to resolution 1680x1050 failed, trying lower one\nSwitching to resolution 1680x1050 failed, trying lower one\nAll resolution switches have failed\nScreen: DX11 could not switch resolution (1680x1050 fs=1 hz=0)",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15866 Mb",
+    "rating": "Borked",
+    "timestamp": 1537810684,
+    "title": "Icons: Combat Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "684200",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "All player models are invisible, thus crucially unplayable.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540667225,
+    "title": "Icons: Combat Arena",
+    "source": "protondb"
+  }
+]

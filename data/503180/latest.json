@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "503180",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.12.16-gentoo-dist",
+    "notes": "Runs perfectly.",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1743451827,
+    "title": "",
+    "source": "protondb"
+  }
+]

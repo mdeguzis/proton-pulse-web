@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "913110",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-45-generic",
+    "notes": "it seems to use a native build, as it doesn't run with proton. But after the start an error occurs and you can't do anything.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552143892,
+    "title": "Desktop Tree",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "314590",
+    "cpu": "i5-4460  CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 560 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7905 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537010379,
+    "title": "room13",
+    "source": "protondb"
+  },
+  {
+    "appId": "314590",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537710989,
+    "title": "room13",
+    "source": "protondb"
+  }
+]

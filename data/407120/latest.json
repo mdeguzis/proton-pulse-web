@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "407120",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega 64",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.8-110.current",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550593325,
+    "title": "Soccer Manager 2016",
+    "source": "protondb"
+  },
+  {
+    "appId": "407120",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "White Screen. Nothing Happening",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567879295,
+    "title": "Soccer Manager 2016",
+    "source": "protondb"
+  }
+]

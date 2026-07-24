@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1275630",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.9.135-112.lts",
+    "notes": "Game is fully functional - yet still in development",
+    "os": "Solus",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1586575716,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1275630",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.6.3-300.fc32.x86_64",
+    "notes": "",
+    "os": "Unknown",
+    "protonVersion": "5.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1587050231,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1275630",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.4-152.current",
+    "notes": "Runs great out of the box",
+    "os": "Solus",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590358595,
+    "title": "",
+    "source": "protondb"
+  }
+]

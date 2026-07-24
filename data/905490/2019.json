@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "905490",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.12.14-lp150.12.61-default",
+    "notes": "Runs great with no tweaks.  Experienced occasional audio crackle.",
+    "os": "Linux 4.x",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559520054,
+    "title": "Deck Hunter",
+    "source": "protondb"
+  },
+  {
+    "appId": "905490",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.7-1-default",
+    "notes": "Runs perfectly with no sound issues.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561337181,
+    "title": "Deck Hunter",
+    "source": "protondb"
+  }
+]

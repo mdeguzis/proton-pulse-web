@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "457420",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "Does not detect my HTC Vive. Opens a window on the desktop saying \"You need a VR Headset to play this game\".",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545048856,
+    "title": "Surgeon Simulator VR: Meet The Medic",
+    "source": "protondb"
+  }
+]

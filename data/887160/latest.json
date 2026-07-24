@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "887160",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Game work but can't show any Chinese words, basically make this Chinese game unreadable thus unplayable.",
+    "os": "MX 18.1 Continuum",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1567612826,
+    "title": "The Sunny Day \u6674\u5929",
+    "source": "protondb"
+  }
+]

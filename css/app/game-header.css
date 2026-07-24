@@ -1,0 +1,1968 @@
+/* -- App page styles -- */
+
+/* search */
+.search-wrap { position: relative; }
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .12s;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--muted); }
+.search-results {
+  position: fixed;
+  z-index: 9999;
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  min-width: 620px;
+  max-width: min(780px, calc(100vw - 24px));
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+}
+.search-results.open { display: block; }
+.search-results a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: background .1s;
+}
+.search-results a:last-child { border-bottom: none; }
+.search-results a:hover, .search-results a.focused { background: var(--s2); text-decoration: none; }
+.search-results img { width: 84px; height: 40px; object-fit: cover; flex-shrink: 0; }
+.search-no-results { padding: 12px 10px; font-size: 13px; color: var(--muted); }
+.search-result-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.search-result-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.25;
+  max-height: 2.5em;
+  font-weight: 500;
+}
+.search-result-info { flex: 1; }
+.search-result-badges { display: flex; gap: 4px; flex-wrap: wrap; }
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge-reports  { background: #1a3a5c; color: #5dade2; border: 1px solid #2a5a8c; }
+.badge-pulse    { background: #1a3a1a; color: #4caf50; border: 1px solid #2a5a2a; }
+.search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: var(--s2);
+  text-decoration: none;
+  transition: background .1s;
+}
+.search-footer:hover { background: var(--border); color: var(--text); text-decoration: none; }
+
+.page-header {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.page-header .eyebrow { margin-bottom: 6px; }
+.page-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--strong);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+.page-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.search-summary {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* Hidden-count strip sits directly beneath .search-summary; muted so it
+   reads as an informational aside rather than a search result. */
+.search-adult-note {
+  margin: -12px 0 18px;
+  padding: 8px 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-top: none;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.search-adult-note a { color: var(--accent, #5c8bd6); }
+
+.search-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.search-group {
+  border: 1px solid var(--border);
+  background: var(--s1);
+}
+
+.search-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--s2);
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+
+.search-group-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.search-group-count {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.search-group-empty {
+  padding: 14px 16px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.search-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-result-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+
+.search-result-card:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.search-result-card:active { transform: translateY(1px); }
+
+.search-result-card img {
+  width: 92px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.search-result-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-result-main-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 4px;
+}
+
+.search-result-main-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.search-result-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 90px;
+}
+
+/* game page */
+.game-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin-bottom: 16px;
+}
+/* Box art (row1 col1) and rating panel (row1 col2) share one grid row so they
+   resolve to the same height -- their top and bottom edges align by construction.
+   The action row sits in row2 col2, directly under the panel. */
+.game-header-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr);
+  grid-template-rows: auto auto;
+  align-items: stretch;
+  gap: 12px 22px;
+}
+.game-header-art {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* ---- rating panel: confidence dial + per-tier bars + footer ---- */
+.game-rating-panel {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--s2);
+  border: 1px solid var(--border2);
+  border-radius: 9px;
+  min-width: 0;
+}
+.grp-row { display: flex; align-items: center; gap: 18px; flex: 1 1 auto; }
+/* The tier verdict is a full-name label ABOVE the dial (readable at any tier,
+   no clipping inside the 118px circle); the dial itself shows only the
+   confidence % + caption. */
+.grp-dial-block { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.grp-dial-verdict { font-size: 0.82rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; line-height: 1; text-align: center; }
+.grp-dial { position: relative; flex: 0 0 auto; width: 118px; height: 118px; }
+.grp-dial svg { width: 100%; height: 100%; display: block; }
+.grp-dial-ctr {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+}
+.grp-dial-pct { font-size: 1.5rem; font-weight: 800; color: var(--strong); font-variant-numeric: tabular-nums; line-height: 1; }
+.grp-dial-cap { font-size: 0.5rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+.grp-bars { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.grp-bar {
+  display: grid;
+  grid-template-columns: 74px 1fr 20px;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: var(--muted);
+}
+.grp-bar-label { white-space: nowrap; }
+.grp-bar-plat   .grp-bar-label { color: #b4c7dc; }
+.grp-bar-gold   .grp-bar-label { color: #c8a050; }
+.grp-bar-silver .grp-bar-label { color: #8fa0b0; }
+.grp-bar-bronze .grp-bar-label { color: #b07040; }
+.grp-bar-borked .grp-bar-label { color: #c85050; }
+.grp-bar-track { height: 9px; border-radius: 5px; background: rgba(255, 255, 255, 0.05); position: relative; overflow: hidden; }
+.grp-bar-fill { position: absolute; inset: 0 auto 0 0; border-radius: 5px; }
+.grp-bar-count { text-align: right; color: var(--text); font-variant-numeric: tabular-nums; }
+.grp-bars-note { font-size: 0.76rem; color: var(--muted); align-self: center; }
+/* One-line ProtonDB rating + count, sits above the 5-bar stack. Same visual
+   weight as the bar row so it reads as part of the same block, not a note. */
+.grp-bars-note--live {
+  align-self: stretch;
+  text-align: left;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.8rem;
+  color: var(--text);
+}
+.grp-bars-note--live strong { color: var(--strong); font-weight: 600; }
+.grp-foot {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.76rem;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  line-height: 1.7;
+}
+.grp-foot .grp-meta strong { color: var(--text); font-weight: 600; }
+.grp-why { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-weight: 700; margin-left: 4px; }
+.grp-why:hover { color: var(--accent-hi); }
+
+/* Small inline ProtonDB tier chip that rides inside the confidence line so
+   the panel keeps its original height. Tier color is applied to the chip
+   background, monospaced text so PLATINUM / BORKED don't jump around. */
+.grp-live-chip {
+  display: inline-block;
+  padding: 0 5px;
+  margin-left: 2px;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  vertical-align: 1px;
+  color: #0a0c10;
+  background: #808891;
+}
+.grp-live-chip[data-tier="platinum"] { background: #b4d4f5; }
+.grp-live-chip[data-tier="gold"]     { background: #f0c674; }
+.grp-live-chip[data-tier="silver"]   { background: #c8d0d8; }
+.grp-live-chip[data-tier="bronze"]   { background: #d19b6c; }
+.grp-live-chip[data-tier="borked"]   { background: #d47a7a; color: #ffffff; }
+
+/* ---- action row (row2 col2, under the panel). Icon + labeled buttons keep
+   their natural width and never wrap their labels; Submit shrinks first and,
+   when the row runs out of room, wraps whole to its own full-width line. ---- */
+.game-header-actions {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  gap: 6px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.game-header-actions .info-btn-labeled,
+.game-header-actions .deck-status-btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  justify-content: center;
+}
+.game-header-actions #stats-btn { flex: 0 0 auto; }
+/* Steam Deck is the last icon-labeled button in the row. Letting it grow
+   fills the leftover space on mobile once Submit Report wraps to its own
+   line -- otherwise the row ends with awkward empty space to the right
+   of the Deck pill. On wide screens it just shares row space with the
+   Submit pill (both are flex-grow), which stays balanced. */
+.game-header-actions .deck-status-btn { flex: 1 1 auto; }
+.game-header-actions .submit-report-btn {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 8px 16px;
+  /* the button is inline-flex, so center the label with justify-content
+     (text-align does nothing on a flex container) (#188) */
+  justify-content: center;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: none;
+}
+/* red flag: report a problem with this entry (opens the Game Report template) */
+.info-btn-flag {
+  background: rgba(224, 85, 79, 0.12);
+  border-color: rgba(224, 85, 79, 0.45);
+}
+.info-btn-flag:hover {
+  background: rgba(224, 85, 79, 0.22);
+  border-color: rgba(224, 85, 79, 0.7);
+}
+.game-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--strong);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+/* Box-art column wraps the img so its width is easy to control and future
+   overlays (badges, share buttons) have a natural home. The 'Native Linux
+   runtime available' hint that used to live here was retired -- the OS
+   chip strip at the top of the header carries the same availability
+   signal, and clicking a chip opens the Metadata modal directly. */
+.game-header-art-col {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  align-self: stretch;
+}
+.game-header-art-col .game-header-art { width: 100%; height: auto; }
+
+/* Unified tag row under the artwork (#266 refinement): OS availability
+   chips (Win / macOS / Linux) plus user-context tags (On wishlist / In
+   library) share one .game-tag rounded-square shape (matches the Submit
+   Report button's border-radius). The row occupies grid row 2 col 1 -- the
+   cell to the left of the action buttons that used to be empty -- so it
+   sits snug under the artwork WITHOUT growing the left column height, and
+   its baseline aligns with the action buttons on the right. */
+.game-header { position: relative; }
+.game-header-art-tags {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+}
+.game-os-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.game-user-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.game-user-tags:empty { display: none; }
+.game-type-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.game-type-strip[hidden] { display: none; }
+/* App type chip (mod / dlc / software) under the artwork. Same rounded-square
+   shape as the other tags, filled with the per-type color so it reads at a
+   glance (#251). Replaces the old corner ribbon that overlaid the tile. */
+.game-type-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: #0a0c10;
+  background: #808891;
+}
+.game-type-tag[data-type="dlc"]      { background: #b479db; }
+.game-type-tag[data-type="mod"]      { background: #4ec9b0; }
+.game-type-tag[data-type="software"] { background: #d1a25d; }
+.game-type-tag[data-type="music"]    { background: #b95bab; }
+.game-type-tag[data-type="video"],
+.game-type-tag[data-type="movie"],
+.game-type-tag[data-type="series"],
+.game-type-tag[data-type="episode"]  { background: #556577; color: #f0f2f5; }
+.game-type-tag[data-type="hardware"] { background: #808891; }
+/* Shared rounded-square shape. Every tag in the row uses this; per-variant
+   modifiers add color / opacity. Keeping padding, radius, and font-size
+   identical is what makes the row read as one cohesive strip. Matches
+   the 6px radius on .submit-report-btn so the eye reads the whole header
+   as one design language. */
+.game-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--muted);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: default;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s, background 0.15s;
+}
+.game-tag svg { display: block; }
+/* OS chips: buttons -- clicking opens the metadata modal. Off state is
+   muted; on state lights up green because Steam advertises the platform. */
+.game-os-chip { cursor: pointer; opacity: 0.55; }
+.game-os-chip:hover { border-color: var(--accent); }
+.game-os-chip--on {
+  opacity: 1;
+  color: #7ed37a;
+  border-color: rgba(126,211,122,0.55);
+  background: rgba(126,211,122,0.08);
+}
+.game-os-chip--on:hover {
+  border-color: rgba(126,211,122,0.9);
+  background: rgba(126,211,122,0.16);
+}
+[data-theme="light"] .game-os-chip--on { color: #256b25; }
+/* User-context tags (On wishlist / In library): Steam-blue background
+   with white text so they distinguish from the green OS chips at a
+   glance. Slightly faded so they read as ambient info. */
+.game-tag--user {
+  /* Dark text on the light steam-blue fill -- matches how active filter chips
+     and the gold/silver tier badges treat the accent, and reads far better
+     than the old white-at-85%-opacity which washed out. */
+  color: #0a0c10;
+  border-color: transparent;
+  opacity: 1;
+  font-weight: 700;
+  text-transform: none;
+}
+.game-native-linux::before {
+  content: '>_ ';
+  color: #7ed37a;
+  opacity: 0.75;
+}
+[data-theme="light"] .game-native-linux { color: #256b25; }
+[data-theme="light"] .game-native-linux::before { color: #256b25; }
+/* "DELISTED" chip surfaced inline next to the title on the game-detail page
+   when the pipeline confirmed Steam appdetails returned success=false. */
+.game-detail-delisted {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--red, #ff5566);
+  background: rgba(255, 85, 102, 0.12);
+  color: var(--red, #ff5566);
+  line-height: 1;
+  cursor: help;
+}
+.game-meta { font-size: 0.8rem; color: var(--muted); }
+.game-meta strong { color: var(--text); }
+.game-header-summary {
+  margin-top: 10px;
+  max-width: 58ch;
+  font-size: 0.82rem;
+  color: #9fb4c9;
+  line-height: 1.5;
+}
+
+/* --- Steam Deck Verified status (now a modal-triggering icon button) ---
+   Lives alongside the "i" info button and Min Reqs button in the
+   .game-header-actions row. The icon itself shows the status at a glance
+   (green check / yellow i / red x / gray ?) via inline SVG */
+.deck-status-btn { padding: 0; background: none; border: none; }
+.deck-status-btn-unsupported { opacity: 0.85; }
+.deck-status-btn svg { display: block; }
+/* Modal content - badge + per-criterion checklist */
+.deck-status-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 4px;
+}
+.deck-status-badge.deck-status-verified    { background: #5ba32b; color: #fff; }
+.deck-status-badge.deck-status-playable    { background: #d4a72c; color: #0a0c10; }
+.deck-status-badge.deck-status-compatible  { background: #3a7fc8; color: #fff; }
+.deck-status-badge.deck-status-unsupported { background: #c84a4a; color: #fff; }
+
+/* Three-tab compatibility modal: Deck / Machine / SteamOS (#273). Pure CSS
+   tabs -- radios are visually hidden and the :checked sibling shows its panel
+   and lights its tab, so the modal needs no JS. */
+.deck-tabs .dt-radio { position: absolute; opacity: 0; pointer-events: none; }
+.dt-tabbar { display: flex; gap: 8px; justify-content: center; margin: 0 0 14px; flex-wrap: wrap; }
+.dt-tab {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  background: var(--s1); border: 1px solid var(--border2); color: var(--muted);
+  font-size: 0.78rem; font-weight: 700; user-select: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.dt-tab:hover { border-color: var(--accent); color: var(--strong); }
+.dt-tab-glyph { flex: 0 0 auto; }
+.dt-tab-badge { flex: 0 0 auto; }
+.dt-panel { display: none; }
+/* Light the active tab + reveal its panel off the matching checked radio. */
+#dt-deck:checked    ~ .dt-tabbar .dt-tab[for="dt-deck"],
+#dt-machine:checked ~ .dt-tabbar .dt-tab[for="dt-machine"],
+#dt-steamos:checked ~ .dt-tabbar .dt-tab[for="dt-steamos"] {
+  background: var(--strong); color: var(--bg); border-color: var(--strong);
+}
+#dt-deck:checked    ~ .dt-panel-deck,
+#dt-machine:checked ~ .dt-panel-machine,
+#dt-steamos:checked ~ .dt-panel-steamos { display: block; }
+.dt-source { color: var(--muted); font-size: 0.72rem; margin: 0; font-style: italic; }
+@media (max-width: 480px) { .dt-tab-name { display: none; } }
+.deck-status-badge.deck-status-unknown {
+  background: rgba(120,120,120,0.35);
+  color: var(--muted);
+  border: 1px solid var(--border2);
+}
+.deck-criteria-list { display: flex; flex-direction: column; gap: 8px; }
+.deck-criterion {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+.deck-criterion-icon { flex-shrink: 0; padding-top: 1px; }
+
+/* --- External links row ---
+   Matches ProtonDB's "Steam SteamDB Steamcharts ..." row near the top of a
+   game page. Keep links small + muted so they don't compete with the rating */
+.game-header-links {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.8rem;
+}
+.game-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: color .12s, border-color .12s;
+}
+.game-link:hover {
+  color: var(--accent-hi, #aedcff);
+  border-bottom-color: var(--accent);
+}
+
+/* "Your report" chip, shown on the game page when the signed-in
+   client id matches a row in user_configs (a published compatibility report) */
+.my-config-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border: 1px solid var(--border2);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+.my-config-banner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.my-config-banner-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.66rem;
+}
+.my-config-banner-status {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.my-config-banner--published {
+  border-color: rgba(126, 196, 138, 0.45);
+  background: rgba(100, 180, 120, 0.08);
+}
+.my-config-banner--published .my-config-banner-dot { background: #7ec48a; }
+.my-config-banner--published .my-config-banner-status { color: #7ec48a; }
+.source-summary-grid {
+  display: grid;
+  /* Now one combined "Community" tile instead of separate Pulse + ProtonDB.
+     Per-source counts live in the small stat strip at the bottom of the tile */
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+}
+/* Confidence pill is a link to scoring.html - reset the anchor underline +
+   color so it inherits the pill background like the original span did */
+.conf-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.conf-link:hover { filter: brightness(1.12); text-decoration: none; }
+
+/* Rating distribution as a 5-chip grid showing each tier with its count.
+   Always shows all 5 tiers (even zero) so users see the full spread at a
+   glance and 0-count tiers don't visually disappear. Empty tiers fade out
+   via .dist-empty so populated ones still pop */
+.source-summary-distribution {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+}
+.dist-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 4px;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  min-width: 0;
+  /* Chip depth: same treatment as the tier badge -- top highlight, dark
+     bottom edge, slight drop shadow -- so all five chips read as one
+     cohesive strip of raised tiles rather than five flat colored bars. */
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.28) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.12) inset,
+    0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.dist-chip-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.6rem;
+  opacity: 0.85;
+}
+.dist-chip-count {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  margin-top: 1px;
+}
+/* Empty tiers fade out so the populated counts visually dominate */
+.dist-chip.dist-empty { opacity: 0.35; }
+/* Per-tier colors - same palette the cards / stats page already use */
+.dist-chip.dist-platinum { background: #b4c7dc; color: #111; }
+.dist-chip.dist-gold     { background: #c8a050; color: #111; }
+.dist-chip.dist-silver   { background: #8fa0b0; color: #111; }
+.dist-chip.dist-bronze   { background: #b07040; color: #fff; }
+.dist-chip.dist-borked   { background: #c85050; color: #fff; }
+
+/* Newest-report freshness line - terse "data is fresh / stale" signal */
+.source-summary-freshness {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.source-summary-freshness strong { color: var(--text); }
+
+/* Tiny per-source stat strip under the rating + confidence row */
+.source-summary-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border2);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.source-summary-stats strong { color: var(--text); }
+.source-summary-stats .ss-sep { opacity: 0.4; padding: 0 2px; }
+.source-summary-tile {
+  /* Two-column inner layout - primary info on left, distribution + freshness
+     + per-source stats on right. Used to be flex-column which left the right
+     half of the wide tile completely empty.
+     Depth treatment: rounded corners + soft outer shadow + inner highlight
+     stripe across the top so the tile reads as a raised card, not a flat
+     rectangle. The 1px inset-highlight is the top-edge specular; the outer
+     shadow is what sells the lift. */
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  min-height: 136px;
+  padding: 14px 16px;
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(102, 192, 244, 0.05), transparent 40%),
+    linear-gradient(180deg, rgba(39, 49, 63, 0.98), rgba(28, 35, 46, 0.98));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 4px 14px rgba(0, 0, 0, 0.28);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color .15s, transform .15s, background .15s, box-shadow .15s;
+}
+/* Inner columns - each is a vertical flex stack of its own content. Border
+   between them makes the split feel intentional, not accidental. Both use
+   space-between so the top items (kicker / distribution bar) hug the top,
+   bottom items (note / per-source stats) hug the bottom - keeps the two
+   columns visually aligned across their full height */
+.ss-primary, .ss-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+  min-width: 0;
+  justify-content: space-between;
+}
+.ss-details {
+  padding-left: 18px;
+  border-left: 1px solid var(--border);
+}
+@media (max-width: 720px) {
+  /* On narrow screens the header grid collapses to one column: box art,
+     rating panel, OS/type/user tags, then the action row. Without an
+     explicit grid-row on the tags, they collide with the rating panel
+     because both default to grid-row: 2. */
+  .game-header-grid { grid-template-columns: 1fr; }
+  .game-header-art-col { grid-column: 1; grid-row: 1; }
+  .game-rating-panel { grid-column: 1; grid-row: 2; }
+  .game-header-art-tags { grid-column: 1; grid-row: 3; align-self: start; }
+  .game-header-actions { grid-column: 1; grid-row: 4; }
+}
+.source-summary-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  /* Deepen the lift on hover and add a subtle accent glow so it feels
+     interactive without becoming a whole different card. */
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 12px 28px rgba(0, 0, 0, 0.32),
+    0 0 0 1px var(--accent-glow);
+}
+.source-summary-tile:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.source-summary-tile-pulse {
+  background: linear-gradient(180deg, rgba(27, 45, 63, 0.98), rgba(21, 32, 46, 0.98));
+}
+.source-summary-tile-protondb {
+  background: linear-gradient(180deg, rgba(40, 44, 56, 0.98), rgba(26, 31, 39, 0.98));
+}
+.source-summary-kicker {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.source-summary-tile-pulse .source-summary-kicker {
+  color: #5cb3e6;
+}
+.source-summary-tile-protondb .source-summary-kicker {
+  color: #d3dceb;
+}
+.source-summary-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 11px;
+  min-height: 31px;
+  font-weight: 800;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  /* Give the tier badge a touch of depth so it reads as a chip on top
+     of the tile background, not a flat block. Inset highlight + subtle
+     drop shadow; tier-specific bg colors still come from inline style. */
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.15) inset,
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+.source-summary-tier-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 6px;
+  width: 100%;
+}
+.source-summary-tier-row > * {
+  border-radius: 6px;
+}
+/* Both pills size to their own content and group at the left edge. The old
+   9:3 flex split stretched the row across the full column, which squeezed the
+   tier value ('PLATINUM') into a narrow right-hand slot - the text overflowed
+   the pill and pushed into the rating-distribution column next to it. Content
+   sizing keeps the conf pill on one line (it has white-space: nowrap) and gives
+   the tier value exactly the width it needs. */
+.source-summary-tier-row > :first-child { flex: 0 1 auto; }
+.source-summary-tier-row > :last-child  { flex: 0 0 auto; }
+.source-summary-conf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  min-height: 31px;
+  font-family: var(--mono);
+  font-weight: 800;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.source-summary-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.3;
+}
+.source-summary-note {
+  font-size: 0.68rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 0;
+  opacity: 1;
+  transition: opacity .15s, border-color .15s, background .15s;
+}
+.info-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(95, 156, 250, 0.6);
+}
+.info-btn svg { display: block; }
+/* Labeled variant - icon + text. Used by Min Requirements + Deck Verified
+   so users don't have to hover to guess what each icon means */
+.info-btn-labeled {
+  width: auto;
+  height: 34px;
+  padding: 0 12px;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.info-btn-labeled span { line-height: 1; }
+/* Deck status button matches the Min Requirements blue chrome so the row
+   reads as a coherent set. The status SVG icon (green check / yellow i /
+   red x / gray ?) still carries the at-a-glance state - the surrounding
+   button style stays neutral blue regardless */
+.deck-status-btn.info-btn-labeled {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+.deck-status-btn.info-btn-labeled:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(95, 156, 250, 0.6);
+}
+.info-tooltip {
+  display: none;
+  background: var(--s2);
+  border: 1px solid var(--border2);
+  margin-top: 10px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+.info-tooltip.open { display: block; }
+.info-tooltip-inner {
+  padding: 16px 18px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text);
+  max-height: 420px;
+  overflow-y: auto;
+}
+.info-tooltip-inner h3 { font-size: 0.88rem; color: var(--strong); }
+.info-tooltip-inner h4 { font-size: 0.78rem; color: var(--accent); }
+.info-tooltip-inner code {
+  font-size: 0.72rem;
+  background: var(--bg);
+  padding: 1px 5px;
+  border: 1px solid var(--border);
+}
+
+/* hub links */
+
+.submit-report-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* Subdued Steam-blue CTA. The previous neon-green pill (--green-hi /
+     #beee11) clashed with the dark blue theme and competed with the
+     hero atom's own brand-green accents. */
+  background: var(--accent, #66c0f4);
+  border: 0;
+  color: #0b1116;
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: none;
+  transition: background 0.12s ease, transform 0.06s ease;
+}
+.submit-report-btn:hover {
+  background: var(--accent-hi, #aedcff);
+  text-decoration: none;
+}
+
+/* Save = Steam green, Save Draft = orange, Publish keeps the accent blue.
+   Flat fills, no glow. */
+.submit-report-btn--save {
+  background: var(--green, #5ba32b);
+  color: #08140a;
+}
+.submit-report-btn--save:hover { background: #6fbf3a; }
+
+#save-draft-btn.submit-report-btn--secondary {
+  background: #e08a1e;
+  color: #1a1206;
+  border: 0;
+}
+#save-draft-btn.submit-report-btn--secondary:hover:not(:disabled) {
+  background: #f0982a;
+}
+.submit-report-btn:active { transform: translateY(1px); }
+
+/* Form action row: Save + Submit sit right-aligned on desktop; on mobile
+   the buttons stretch to share the row equally so a lone right-aligned pair
+   does not look unbalanced (#285 review). Status line sits below the
+   buttons on its own row. */
+.sf-form-actions {
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sf-form-actions-status {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+@media (max-width: 560px) {
+  .sf-form-actions {
+    justify-content: stretch;
+  }
+  .sf-form-actions .submit-report-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    justify-content: center;
+    padding: 11px 12px;
+  }
+  #submit-status { flex-basis: 100%; text-align: center; }
+  .sf-form-actions-status { justify-content: center; padding-top: 6px; }
+}
+.submit-report-btn:disabled {
+  background: var(--s3, #2a475e);
+  color: var(--muted, #67788c);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Live ProtonDB check action: modern colored pill (Steam accent blue) to
+   distinguish it from the green submit-report path and signal "fetches fresh
+   data from a third party" rather than "writes user content". */
+.live-check-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #0b1116;
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(102, 192, 244, 0.35), 0 4px 18px var(--accent-glow);
+  transition: background 0.12s ease, transform 0.06s ease, box-shadow 0.12s ease;
+}
+.live-check-pill:hover {
+  background: var(--accent-hi);
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(174, 220, 255, 0.55), 0 4px 22px var(--accent-glow);
+}
+.live-check-pill:active { transform: translateY(1px); }
+.live-check-pill:disabled {
+  background: var(--s3);
+  color: var(--muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.sf-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  flex-wrap: wrap;
+}
+/* Inline field hint sits to the right of the input on desktop. On mobile
+   the narrow space squeezes each word onto its own line -- flex-basis
+   100% pushes it below the input as a full-width caption. */
+.sf-row-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  padding-top: 5px;
+}
+@media (max-width: 560px) {
+  .sf-row-hint {
+    flex-basis: 100%;
+    padding-top: 2px;
+    padding-left: 130px;
+  }
+}
+.sf-row label {
+  width: 120px;
+  flex-shrink: 0;
+  color: var(--muted);
+  padding-top: 5px;
+  font-size: 0.72rem;
+}
+.sf-row input, .sf-row select, .sf-row textarea {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 0.76rem;
+  font-family: inherit;
+  outline: none;
+}
+/* FPS row: three narrow inputs on the same line, each with an inline (i)
+   info button that opens a popover explaining MangoHud + SteamOS QAM
+   measurement. Row is optional; nothing else in the form depends on it. */
+.sf-row--fps .sf-fps-group {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.sf-row--fps .sf-fps-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.sf-row--fps .sf-fps-cell input {
+  flex: 1;
+  min-width: 0;
+}
+.sf-fps-info {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--accent);
+  border-radius: 999px;
+  font-family: var(--font-display, serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.sf-fps-info:hover { border-color: var(--accent); background: var(--s2); }
+.sf-fps-popover {
+  position: absolute;
+  z-index: 1000;
+  max-width: 340px;
+  padding: 12px 14px;
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  color: var(--text);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.sf-fps-popover-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.sf-fps-popover ul { margin: 0; padding-left: 16px; }
+.sf-fps-popover li { margin-bottom: 8px; }
+.sf-fps-popover li:last-child { margin-bottom: 0; }
+.sf-fps-popover a { color: var(--accent); text-decoration: none; }
+.sf-fps-popover a:hover { text-decoration: underline; }
+.sf-fps-popover code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  background: var(--bg);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+.sf-fps-popover-close-row { margin-top: 10px; text-align: right; }
+.sf-fps-popover-close {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border2);
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.sf-fps-popover-close:hover { color: var(--text); border-color: var(--accent); }
+/* Report card: FPS trio rendered in mono so the "-" placeholder columns
+   line up when only one or two of the three fields have data. */
+.fps-values { font-family: var(--mono); }
+
+/* Run-type dropdown at the top of the submit form. The native option gets
+   disabled + relabeled when Steam does not offer a Linux build. Rest is
+   inherited from the base .sf-row select style. min-width: 0 stops the
+   select from demanding its widest-option intrinsic width on narrow mobile
+   viewports and wrapping the row -- Game title / Runtime Version already
+   sit inline with their labels; run-type used to be the odd one out (#285). */
+.sf-row--run-type select { flex: 1; min-width: 0; }
+.sf-run-type-hint {
+  margin: -2px 0 6px;
+  padding-left: 130px;
+  color: var(--accent);
+  font-size: 0.72rem;
+}
+/* Runtime Version soft-warning: sits under the input row when the entered
+   value doesn't match the pattern for the selected runtime. Amber, not
+   red -- we still allow the submission, but nudge the user. */
+.sf-runtime-version-warn {
+  margin: -2px 0 6px;
+  padding-left: 130px;
+  color: #f5b041;
+  font-size: 0.72rem;
+}
+.sf-row--disabled { opacity: 0.5; }
+.sf-row--disabled input { cursor: not-allowed; }
+
+/* "Also tested the native Linux build?" follow-up row. Only rendered when
+   run_type is a non-native flavor AND Steam confirms a native binary is
+   available for this game. Yes/No pair + optional notes + a helpful link
+   to file a paired Native report. */
+.sf-row--also-linux .sf-also-linux-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sf-inline-yn {
+  display: inline-flex;
+  gap: 6px;
+}
+.sf-inline-yn button {
+  padding: 4px 14px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.sf-inline-yn button[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: rgba(74,159,208,0.08);
+  color: var(--accent);
+}
+.sf-also-linux-body textarea {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 6px 8px;
+  font-size: 0.78rem;
+  font-family: inherit;
+  outline: none;
+  border-radius: 4px;
+}
+.sf-also-linux-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.sf-also-linux-hint a { color: var(--accent); }
+.sf-also-linux-hint a:hover { text-decoration: underline; }
+
+/* Report-card run-type pill: a small badge in place of / alongside the
+   Proton version so viewers immediately see whether a report is Native. */
+.run-type-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  border: 1px solid var(--border);
+}
+.run-type-pill--native {
+  color: #7ed37a;
+  border-color: rgba(126,211,122,0.5);
+  background: rgba(126,211,122,0.08);
+}
+.run-type-pill--lsfg {
+  color: #f5b041;
+  border-color: rgba(245,176,65,0.5);
+  background: rgba(245,176,65,0.08);
+  margin-right: 4px;
+}
+[data-theme="light"] .run-type-pill--native { color: #256b25; }
+.run-type-pill--plain {
+  color: var(--muted);
+  border-color: var(--border2);
+  background: transparent;
+}
+
+/* Runtime history modal (opened by clicking the Native Linux hint). Reuses
+   the flag-modal chrome for consistency. Table lists one row per runtime
+   with report count + first / last seen dates. Fluid width mirrors the
+   metadata modal so both fit small phones. */
+.flag-modal.runtime-history-modal {
+  width: 100%;
+  min-width: 0;
+  max-width: 520px;   /* widen the 420px .flag-modal cap for the table */
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+@media (max-width: 720px) {
+  .flag-modal.runtime-history-modal { max-width: 100%; }
+}
+.rh-hint {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.runtime-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+}
+.runtime-history-table th,
+.runtime-history-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.runtime-history-table th {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.runtime-history-table .rh-num { text-align: right; font-variant-numeric: tabular-nums; }
+.runtime-history-table .rh-date {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+.rh-empty {
+  text-align: center !important;
+  color: var(--muted);
+  font-style: italic;
+  padding: 18px 10px !important;
+}
+
+/* SteamDB-style Metadata modal opened from the hub-links row. Fluid width
+   so the modal fills small phones (with a small border buffer inherited
+   from the overlay's 16px padding) up to a comfortable desktop cap. The
+   scroll lives on the body so the header + Close row stay pinned. Base
+   .flag-modal caps width at 420px and loads later than this file
+   (game-header.css before reports.css); the compound selector below
+   bumps specificity so the 420px cap is beaten without !important. */
+.flag-modal.game-metadata-modal {
+  width: 100%;
+  min-width: 0;
+  max-width: 720px;
+  max-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 720px) {
+  /* Phones: fill the overlay -- overlay already has 16px padding on each
+     side which acts as the border buffer, so no extra math needed. */
+  .flag-modal.game-metadata-modal { max-width: 100%; }
+}
+.game-metadata-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding-right: 4px;
+}
+/* Each section is a label / value pair. Two columns on desktop for a
+   dense SteamDB-style read; stacks on phones so long values (languages,
+   category list) do not squeeze. */
+.gm-section {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px 16px;
+  align-items: baseline;
+}
+@media (max-width: 560px) {
+  .gm-section { grid-template-columns: 1fr; gap: 4px; }
+}
+.gm-section-title {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.gm-section-body {
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+.gm-section-body code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+.gm-section-body a { color: var(--accent); }
+.gm-section-body a:hover { text-decoration: underline; }
+.gm-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.gm-chip {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  font-size: 0.76rem;
+  background: var(--s1);
+}
+.gm-platforms { display: flex; gap: 8px; flex-wrap: wrap; }
+.gm-plat {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--muted);
+  font-size: 0.76rem;
+  opacity: 0.45;
+}
+.gm-plat--on {
+  opacity: 1;
+  color: #7ed37a;
+  border-color: rgba(126,211,122,0.5);
+  background: rgba(126,211,122,0.08);
+}
+/* Per-OS availability + depot link table. Each row: OS chip, release
+   date, SteamDB depot link. Steam does not publish per-depot dates via
+   appdetails (#214) so the "last update" cell is intentionally a link
+   rather than a date until we have a real source. */
+.gm-plat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+.gm-plat-table th,
+.gm-plat-table td {
+  padding: 5px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.gm-plat-table th {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.gm-mute { color: var(--muted); }
+.gm-depot-link { color: var(--accent); }
+.gm-depot-link:hover { text-decoration: underline; }
+/* Real depot dates from the #215 PICS cache -- render in mono so they
+   line up under the "Last update" column heading. */
+.gm-depot-date { font-family: var(--mono); color: var(--text); }
+/* Steam-style brown package icon that deep-links to the per-game
+   depots.json we publish under /data/{appId}/depots.json (#237).
+   Sits inline in the row so admins / curious viewers can jump straight
+   to the raw file the modal was built from. */
+.gm-depot-file {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: 6px;
+  border-radius: 4px;
+  background: rgba(120, 76, 40, 0.14);
+  border: 1px solid rgba(160, 106, 60, 0.35);
+  color: #b07040;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: background 0.12s, border-color 0.12s;
+}
+.gm-depot-file:hover {
+  background: rgba(160, 106, 60, 0.24);
+  border-color: rgba(200, 140, 80, 0.6);
+  text-decoration: none;
+}
+.gm-depot-file svg { width: 14px; height: 14px; }
+/* Depots column is icon-only after #237 v2, so keep it narrow: right-aligned,
+   fixed width so long dates in other columns don't shove it around. */
+.gm-plat-table .gm-plat-depots,
+.gm-plat-table .gm-plat-depots-th {
+  width: 40px;
+  text-align: right;
+  padding-right: 6px;
+}
+.gm-plat-foot {
+  padding-top: 6px !important;
+  font-size: 0.68rem;
+  color: var(--muted);
+  border-bottom: none !important;
+  font-style: italic;
+}
+
+/* Per-OS system requirements. One card per OS with min + recommended. */
+.gm-reqs {
+  padding: 6px 10px;
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.02);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.gm-reqs:last-child { margin-bottom: 0; }
+.gm-reqs-os {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.gm-reqs strong { color: var(--text); }
+
+/* Raw appdetails JSON viewer -- collapsed by default so mobile does not
+   render a wall of text before the user asks. */
+.gm-raw-wrap { margin-top: 8px; }
+.gm-raw-toggle {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--accent);
+  padding: 5px 10px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.gm-raw-toggle:hover { border-color: var(--accent); }
+.gm-raw {
+  margin: 8px 0 0;
+  padding: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text);
+  line-height: 1.4;
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre;
+}
+
+/* Match hub-link buttons (not just anchors) so the new Metadata pill sits
+   flush with the existing Steam / SteamDB / ProtonDB links. */
+button.hub-link {
+  font-family: inherit;
+  cursor: pointer;
+}
+button.hub-link:disabled { opacity: 0.5; cursor: default; }
+
+/* MangoHud CSV upload row. Not an sf-row -- lives on its own line under the
+   FPS inputs, no label indent, so the Steam-blue action spans the full form
+   width like a proper button rather than tucking into the input column
+   (#285 screenshot). Status caption wraps onto its own line under the button. */
+.sf-row--fps-upload {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0 8px;
+}
+.sf-fps-upload-btn {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  background: #417a9b;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.sf-fps-upload-btn:hover { background: #4c8ab0; }
+.sf-fps-upload-status { font-size: 0.72rem; color: var(--muted); flex-basis: 100%; }
+.sf-fps-upload-status--err { color: var(--red, #ff5566); }
+.sf-row input:focus, .sf-row select:focus, .sf-row textarea:focus { border-color: var(--accent); }
+.sf-row textarea { resize: vertical; }
+.sf-row--check { flex-direction: column; gap: 3px; }
+.sf-check-label { display: flex; align-items: center; gap: 6px; color: var(--text); font-size: 0.76rem; cursor: pointer; width: auto; }
+.sf-check-label input[type="checkbox"] { width: auto; flex: none; cursor: pointer; }
+.sf-check-hint { font-size: 0.68rem; color: var(--muted); padding-left: 1px; }
+.sf-hidden { display: none !important; }
+.sf-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 12px 0 6px; }
+
+/* #153 spike: markdown-it Write / Preview enhancer on the Notes field.
+   Opt-in via ?md=1 on submit.html. The tabs sit above the textarea and
+   swap the visible surface between the raw textarea and a rendered
+   preview div. The textarea keeps its name="notes" so the existing
+   submitReport payload logic does not change. */
+.md-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+.md-editor-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border, #253038);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+.md-editor-tab {
+  font-family: inherit;
+  font-size: 0.7rem;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--muted, #b8c0c8);
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+}
+.md-editor-tab:hover { color: var(--accent, #5c8bd6); }
+.md-editor-tab--active {
+  color: var(--accent, #5c8bd6);
+  background: rgba(92,139,214,0.1);
+  border-color: rgba(92,139,214,0.35);
+}
+.md-editor-hint {
+  margin-left: auto;
+  font-size: 0.65rem;
+  color: var(--muted, #b8c0c8);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.md-editor .md-editor-preview,
+.md-editor > textarea {
+  border-radius: 0 0 4px 4px;
+  border-top: none;
+}
+.md-editor-preview {
+  padding: 10px 12px;
+  min-height: 80px;
+  background: rgba(11,17,22,0.5);
+  border: 1px solid var(--border, #253038);
+  color: var(--text, #cfd6dd);
+  line-height: 1.5;
+  font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
+.md-editor-preview h1,
+.md-editor-preview h2,
+.md-editor-preview h3 { margin: 12px 0 6px; line-height: 1.2; }
+.md-editor-preview p { margin: 6px 0; }
+.md-editor-preview ul,
+.md-editor-preview ol { margin: 6px 0; padding-left: 22px; }
+.md-editor-preview code {
+  background: rgba(0,0,0,0.35);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.9em;
+}
+.md-editor-preview pre {
+  background: rgba(0,0,0,0.35);
+  padding: 10px 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+.md-editor-preview pre code { background: none; padding: 0; }
+.md-editor-preview blockquote {
+  border-left: 3px solid var(--accent, #5c8bd6);
+  padding: 2px 10px;
+  margin: 8px 0;
+  color: var(--muted, #b8c0c8);
+}
+.md-editor-preview a { color: var(--accent, #5c8bd6); }
+.md-editor-empty { color: var(--muted, #b8c0c8); font-size: 0.8rem; }
+/* Each yes/no question gets its own card-ish row: a bit of vertical
+   breathing room + a subtle divider so a run of 8 fault questions doesn't
+   feel like a wall of buttons where it's easy to lose track of which
+   prompt you're answering. */
+.sf-question {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.sf-question + .sf-question { margin-top: 4px; }
+.sf-question.sf-needs-answer { border-left: 3px solid var(--red); padding-left: 10px; }
+.sf-question.sf-needs-answer .sf-q-label { color: var(--red); }
+.sf-row.sf-needs-answer { border-left: 3px solid var(--red); padding-left: 10px; }
+.sf-row.sf-needs-answer label { color: var(--red); }
+.sf-row.sf-needs-answer input, .sf-row.sf-needs-answer select, .sf-row.sf-needs-answer textarea { border-color: var(--red); }
+.sf-q-label { font-size: 0.85rem; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+.sf-yn { display: flex; gap: 8px; }
+.sf-yn-btn { display: flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--text); cursor: pointer; padding: 4px 12px; border: 1px solid var(--border); border-radius: 4px; user-select: none; }
+.sf-yn-btn:has(input:checked) { border-color: var(--accent); background: rgba(76,175,80,0.12); color: var(--accent); }
+.sf-yn-btn input[type="radio"] { display: none; }
+.sf-fault-notes { margin-top: 6px; }
+.sf-fault-notes textarea { width: 100%; background: var(--s1); border: 1px solid var(--border); color: var(--text); font-size: 0.8rem; font-family: inherit; padding: 6px 10px; resize: vertical; }
+.sf-fault-notes textarea:focus { outline: none; border-color: var(--accent); }
+.sf-tink-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.sf-tink-label { display: flex; align-items: center; gap: 5px; font-size: 0.76rem; color: var(--text); cursor: pointer; padding: 3px 10px; border: 1px solid var(--border); border-radius: 4px; user-select: none; }
+.sf-tink-label:has(input:checked) { border-color: var(--accent); background: rgba(76,175,80,0.12); color: var(--accent); }
+.sf-tink-label input[type="checkbox"] { display: none; }
+.hub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  /* extra breathing room before the "Community Configs & Reports" heading
+     so the link boxes don't crowd the section break below */
+  margin-bottom: 32px;
+}
+/* When the link strip lives inside the game-header banner (the new layout),
+   it stitches to the banner's bottom border instead of floating below. The
+   top border-line visually links it to the rating tile above */
+.hub-links-in-banner {
+  /* Parent .game-header has flex gap: 14px, so we don't need extra
+     margin-top on top of that. Keeping the border-top gives the visual
+     separator; padding-top pulls the link row a few px away from it. */
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  gap: 8px;
+}
+.hub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border: 1px solid var(--border2);
+  background: var(--s1);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: background .1s, border-color .1s, color .1s;
+}
+.hub-link:hover {
+  background: var(--s2);
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+/* In-banner variant: the links flex to fill the row width and wrap
+   responsively, each an equal, centered pill. */
+.hub-links-in-banner .hub-link {
+  flex: 1 1 120px;
+  justify-content: center;
+  text-align: center;
+  padding: 9px 12px;
+  border-radius: 6px;
+}
+
+/* trend */
+.trend {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 9px 12px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border2);
+  margin-bottom: 14px;
+}
+/* The whole trend line links to the stats page trend breakdown. */
+.trend-link { color: inherit; text-decoration: none; display: inline; }
+.trend-link:hover { text-decoration: none; }
+.trend-more {
+  color: var(--accent);
+  white-space: nowrap;
+  margin-left: 4px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+.trend-link:hover .trend-more { text-decoration: underline; opacity: 1; }
+
+/* Hero dial links to the confidence breakdown. */
+.grp-dial-link { text-decoration: none; color: inherit; cursor: pointer; border-radius: 12px; padding: 4px; transition: transform 0.1s, filter 0.12s, box-shadow 0.15s, background 0.15s; }
+.grp-dial-link:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  background: rgba(102,192,244,0.06);
+  box-shadow: 0 0 0 1px rgba(102,192,244,0.35), 0 6px 22px rgba(102,192,244,0.22);
+}
+.grp-dial-link:focus-visible { outline: 2px solid var(--accent, #66c0f4); outline-offset: 4px; }
+
+/* Verified owner pill on the submit form (#199) */
+.sf-verified-owner-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(46, 160, 67, 0.14);
+  color: #2ea043;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+.sf-verified-owner-pill svg { flex-shrink: 0; }
+
+/* Save Draft button on the submit form (#199 follow-up) */
+.submit-report-btn--secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.submit-report-btn--secondary:hover:not(:disabled) {
+  background: rgba(102, 192, 244, 0.08);
+}
+
+/* Draft restore prompt (#199 follow-up) */
+.sf-draft-restore {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: rgba(102, 192, 244, 0.08);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+.sf-draft-restore-body { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.sf-draft-restore button {
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.sf-draft-restore button:hover { background: rgba(102, 192, 244, 0.1); }
+
+/* Replaced-by banner + REPLACED pill on the game header (#199 follow-up) */
+.game-replaced-banner {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(232, 172, 41, 0.35);
+  background: rgba(232, 172, 41, 0.10);
+  color: var(--text);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+.game-replaced-banner code {
+  font-family: var(--mono);
+  font-size: 0.82em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.05);
+}
+.game-replaced-link { color: var(--accent); font-weight: 600; }
+.game-title-replaced-pill {
+  display: inline-block;
+  background: #e8ac29;
+  color: #0a0c10;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.55em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.submit-report-legacy {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  margin-left: 6px;
+  align-self: center;
+}
+.submit-report-legacy:hover { color: var(--accent); }
+
+/* Replaced-by warning at the top of the submit form (#199 follow-up) */
+.submit-replaced-warning {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(232, 172, 41, 0.35);
+  background: rgba(232, 172, 41, 0.10);
+  color: var(--text);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+.submit-replaced-warning code {
+  font-family: var(--mono);
+  font-size: 0.82em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.05);
+}
+.submit-replaced-link { color: var(--accent); font-weight: 600; }

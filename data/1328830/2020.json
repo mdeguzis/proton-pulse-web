@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1328830",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.0-10.1-liquorix-amd64",
+    "notes": "Crashes instantly",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1599066486,
+    "title": "",
+    "source": "protondb"
+  }
+]

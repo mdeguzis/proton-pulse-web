@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1883800",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.0.1",
+    "kernel": "6.2.9-arch1-1",
+    "notes": "Work smoothly with everything set to default. No problem here",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-6",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1681064355,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1883800",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-107-generic",
+    "notes": "Pretty Cool. Looking forward to voices getting added in 1.0. Still Early Release.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688067033,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "29720",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556600640,
+    "title": "Guild Wars",
+    "source": "protondb"
+  },
+  {
+    "appId": "29720",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Runs without any issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562058784,
+    "title": "Guild Wars",
+    "source": "protondb"
+  }
+]

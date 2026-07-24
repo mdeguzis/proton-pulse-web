@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2458860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Corre perfectamente",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1720239152,
+    "title": "Summer Clover",
+    "source": "protondb"
+  },
+  {
+    "appId": "2458860",
+    "cpu": "AMD Ryzen 5 7640U w/ Radeon 760M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 18.1.8, DRM 3.57, 6.10.0-arch1-2)",
+    "gpuDriver": "4.6 Mesa 24.1.4-arch1.2",
+    "kernel": "6.10.0-arch1-2",
+    "notes": "",
+    "os": "Arch Linux\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1721877215,
+    "title": "Summer Clover",
+    "source": "protondb"
+  },
+  {
+    "appId": "2458860",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.7, DRM 3.42, 5.15.0-118-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-118-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "30 GB",
+    "rating": "gold",
+    "timestamp": 1723652253,
+    "title": "Summer Clover",
+    "source": "protondb"
+  }
+]

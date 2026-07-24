@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "271290",
+    "title": "Hawken",
+    "timestamp": 1535387471,
+    "rating": "Gold",
+    "notes": "Servers are gone so can't test that, but the menu loads fine (30fps). Not much benefit to learn due to this.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "271290",
+    "title": "Hawken",
+    "timestamp": 1535373071,
+    "rating": "Gold",
+    "notes": "Servers are gone so can't test that, but the menu loads fine (30fps). Not much benefit to learn due to this.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "537570",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.20.11-1-MANJARO",
+    "notes": "A blank screen is launched but then nothing happens. The game must be terminated manually to close. No tweaks have helped. There doesn't seem to be a native linux demo. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1551058973,
+    "title": "Sid Meier's Civilization VI Demo",
+    "source": "protondb"
+  }
+]

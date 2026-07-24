@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "541300",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "Missing in-game UI",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1594289996,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "541300",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "The game runs fine without problems after the fix is applied.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1594290231,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "541300",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.8.14-22-tkg-pds",
+    "notes": "Its simply just installing the Game, and then you would be good to go.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602361353,
+    "title": "",
+    "source": "protondb"
+  }
+]

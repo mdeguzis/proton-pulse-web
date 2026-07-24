@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "445770",
+    "title": "Airport Madness 3D",
+    "timestamp": 1534910400,
+    "rating": "Platinum",
+    "notes": "Game just works perfectly, no slowdowns, performance is good, there is music and sounds.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K, Nvidia GTX 780Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "445770",
+    "title": "Airport Madness 3D",
+    "timestamp": 1535133042,
+    "rating": "Bronze",
+    "notes": "Performance is good when in game. The in-game 3d graphics look good. The sounds and music all play like they should.\n\nErrors: \n1.The \"twitter\" style pop-ups, and achievement pop-ups, that play while in the main game, both have no text.\n2. There is also no text above or below the pictures of the airports, in the airport selection menu.\n3. There is no text/pictures in the Instruction part of the game. \n4. The menu option, \"Instructions\" has no pictures or text. Maybe there are even GIFs or videos embedded here, which don't play.\n5. There definitely is some missing content in the High Scores list -> explanation screen.\n6. The sounds get garbled sometime (music keeps playing normally), but some kind of crunching sound plays.\n\nCrashes:\n1. I've got the game to crash sometimes with: Main Menu -> High Scores -> Explanation.\n\nJust playing the main game seems stable enough though.",
+    "os": "Fedora 28 Stable 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4770K / GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "445770",
+    "title": "Airport Madness 3D",
+    "timestamp": 1534896000,
+    "rating": "Platinum",
+    "notes": "Game just works perfectly, no slowdowns, performance is good, there is music and sounds.",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "Intel i7-4770K, Nvidia GTX 780Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "445770",
+    "title": "Airport Madness 3D",
+    "timestamp": 1535118642,
+    "rating": "Bronze",
+    "notes": "Performance is good when in game. The in-game 3d graphics look good. The sounds and music all play like they should.\n\nErrors: \n1.The \"twitter\" style pop-ups, and achievement pop-ups, that play while in the main game, both have no text.\n2. There is also no text above or below the pictures of the airports, in the airport selection menu.\n3. There is no text/pictures in the Instruction part of the game. \n4. The menu option, \"Instructions\" has no pictures or text. Maybe there are even GIFs or videos embedded here, which don't play.\n5. There definitely is some missing content in the High Scores list -> explanation screen.\n6. The sounds get garbled sometime (music keeps playing normally), but some kind of crunching sound plays.\n\nCrashes:\n1. I've got the game to crash sometimes with: Main Menu -> High Scores -> Explanation.\n\nJust playing the main game seems stable enough though.",
+    "os": "Fedora 28 Stable 64-bit (Kernel 4.17.14)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4770K / GTX 780 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

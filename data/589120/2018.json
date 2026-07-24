@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "589120",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Crashes on launch. \"Fatal Error : code=b653588580004005 mess : Failed to initialize ID3D11Device.\"",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Borked",
+    "timestamp": 1537375047,
+    "title": "Danganronpa V3: Killing Harmony Demo Ver.",
+    "source": "protondb"
+  },
+  {
+    "appId": "589120",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Starts to a black screen",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540917674,
+    "title": "Danganronpa V3: Killing Harmony Demo Ver.",
+    "source": "protondb"
+  },
+  {
+    "appId": "589120",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.19.12-1-MANJARO",
+    "notes": "Runs flawlessly after fixes from here: https://github.com/ValveSoftware/Proton/issues/838#issuecomment-447379664",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1545538540,
+    "title": "Danganronpa V3: Killing Harmony Demo Ver.",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "273350",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Ran fine, did the tutorial, all good, except the game itself is dead because the online servers for it have been shutdown.. So, um.. I don't know, not Proton's fault the game is dead for other reasons lol.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1553955601,
+    "title": "Evolve Stage 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "273350",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Works without issues. For buyers of the original game (pre stage 2): you can switch to the \"legacyevolve\" branch in the beta settings. Multiplayer still working via p2p. Just played several matches with friends without problems.\nEvolve Stage 2 (F2P) had been shut down, so that's not available anymore.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558887683,
+    "title": "Evolve Stage 2",
+    "source": "protondb"
+  }
+]

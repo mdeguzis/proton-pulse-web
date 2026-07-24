@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "547360",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Add \"PROTON_USE_WINED3D11=1 %command%\" to launch options to fix invisible mech components. Xinput gamepad not detected.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "24010 Mb",
+    "rating": "Silver",
+    "timestamp": 1538195846,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "BREAK ARTS II",
+    "source": "protondb"
+  }
+]

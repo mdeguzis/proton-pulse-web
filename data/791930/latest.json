@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "791930",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-16-generic",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559942296,
+    "title": "BombTag",
+    "source": "protondb"
+  },
+  {
+    "appId": "791930",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "4.19.79-1-MANJARO",
+    "notes": "Game started but the screen flickers so not playable",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "14 GB",
+    "rating": "Borked",
+    "timestamp": 1571562708,
+    "title": "BombTag",
+    "source": "protondb"
+  }
+]

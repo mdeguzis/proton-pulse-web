@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "925470",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 19.2.0-devel (git-a110a80 2019-07-09 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-54-generic",
+    "notes": "this game don't start ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1562823154,
+    "title": "Endless Jade Sea -Midori no Umi-",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "536220",
+    "title": "The Walking Dead: A New Frontier",
+    "timestamp": 1535298554,
+    "rating": "Borked",
+    "notes": "Nothing happens when trying to launch the game, tried different Steam launch options and disabling overlays.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "536220",
+    "title": "The Walking Dead: A New Frontier",
+    "timestamp": 1535417167,
+    "rating": "Silver",
+    "notes": "Micro-stutters, possibly due to game's inbuilt Vsync. Turning off Allow Flipping in Nv control panel helps alleviate the issue somewhat.",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6800K / GTX 1080",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "536220",
+    "title": "The Walking Dead: A New Frontier",
+    "timestamp": 1536202312,
+    "rating": "Platinum",
+    "notes": "Performance like native and online connectivity seems to work.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "536220",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Minor stutters for a few seconds when loading new areas, other than that it works perfectly. Completed the game and experienced no bugs or crashes",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540834647,
+    "title": "The Walking Dead: A New Frontier",
+    "source": "protondb"
+  },
+  {
+    "appId": "536220",
+    "title": "The Walking Dead: A New Frontier",
+    "timestamp": 1535284154,
+    "rating": "Borked",
+    "notes": "Nothing happens when trying to launch the game, tried different Steam launch options and disabling overlays.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "536220",
+    "title": "The Walking Dead: A New Frontier",
+    "timestamp": 1535402767,
+    "rating": "Silver",
+    "notes": "Micro-stutters, possibly due to game's inbuilt Vsync. Turning off Allow Flipping in Nv control panel helps alleviate the issue somewhat.",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6800K / GTX 1080",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "536220",
+    "title": "The Walking Dead: A New Frontier",
+    "timestamp": 1536187912,
+    "rating": "Platinum",
+    "notes": "Performance like native and online connectivity seems to work.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

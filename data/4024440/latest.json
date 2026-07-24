@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4024440",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "Fun game with friends, no issue at all (Demo version review)",
+    "os": "Bluefin (Version 43.20260212.1)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1772722064,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "4024440",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.7-2-cachyos",
+    "notes": "With friends, my friends on Windows and me in Linux, everything works ok",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1773247375,
+    "title": "",
+    "source": "protondb"
+  }
+]

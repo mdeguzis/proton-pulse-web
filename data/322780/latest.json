@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "322780",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Loads fine, but once you choose your character you get a message like \"sandbox not loaded\" and the game quits out.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547237381,
+    "title": "Worlds Adrift",
+    "source": "protondb"
+  },
+  {
+    "appId": "322780",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.49.04",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "EAC issue.",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554206692,
+    "title": "Worlds Adrift",
+    "source": "protondb"
+  }
+]

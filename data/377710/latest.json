@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "377710",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "just works",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "3.16-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561546510,
+    "title": "Idol Magical Girl Chiru Chiru Michiru Part 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "377710",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.14.124-1-MANJARO",
+    "notes": "The game starts up perfectly, but the 3rd scene (after the cat first appears) change fades to black and just hangs, every time. Nothing happens, even normally closing the program doesn't work. Neither the CPU nor HDD are used much and waiting doesn't seem to change anything. The tree suggested tweaks don't do anything either.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562173961,
+    "title": "Idol Magical Girl Chiru Chiru Michiru Part 1",
+    "source": "protondb"
+  }
+]

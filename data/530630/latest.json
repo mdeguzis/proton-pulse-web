@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "530630",
+    "cpu": "Intel Core i5-3360M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-47-generic",
+    "notes": "The game won't start, only the launcher.\nFirst, after clicking \"Play Game\", a small error message box came up saying \"DX11 feature level 10.0 is required to run the engine.\"\nThen I installed the vulkan mesa drivers. Afterwards, the game seems to start with a black screen, ending in a crash with a longer error log, with the main error being \"Direct3DDevice-\n>CreateTexture2D(<function arguments here>) failed at .../Texture.cpp:471\"\n\nI tried disabling and enabling D3D11.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555150774,
+    "title": "Empires Apart",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

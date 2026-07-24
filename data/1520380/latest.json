@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1520380",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600M (navi23, LLVM 15.0.7, DRM 3.52, 6.4.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.4",
+    "kernel": "6.4.6-arch1-1",
+    "notes": "It ran fine, played with a friend and we played several rounds without any issues.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1693492711,
+    "title": "",
+    "source": "protondb"
+  }
+]

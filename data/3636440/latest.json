@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3636440",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "5.15.179-1-MANJARO",
+    "notes": "Works perfectly out of the bok with proton 9",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751158395,
+    "title": "",
+    "source": "protondb"
+  }
+]

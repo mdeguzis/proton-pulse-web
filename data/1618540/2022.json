@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1618540",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.15.14-rt27-xanmod1-1-rt, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.4",
+    "kernel": "5.15.14-rt27-xanmod1-1-rt",
+    "notes": "Game runs great!",
+    "os": "Star-Blade Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1642797947,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1618540",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.44.0, 5.17.1-desktop-2omv4050, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.6 (git-fef2cdb0a5)",
+    "kernel": "5.17.1-desktop-2omv4050",
+    "notes": "",
+    "os": "Freedesktop.org 21.08.14 (Flatpak runtime)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1661870518,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1618540",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.5-zen1-1-zen",
+    "notes": "Works great OOB",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1661955372,
+    "title": "",
+    "source": "protondb"
+  }
+]

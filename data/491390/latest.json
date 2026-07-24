@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "491390",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Does not start",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564601107,
+    "title": "Alchemist Penguin",
+    "source": "protondb"
+  }
+]

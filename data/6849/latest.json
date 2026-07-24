@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "6849",
+    "title": "Anno 1404 Gold Edition",
+    "timestamp": 1534990657,
+    "rating": "Borked",
+    "notes": "The game launchers and functions normally but constant Blackscreen, which obviously makes it impossible to do anything\n\nI've tested the following:\n  -> Forcing Windowed Mode via Game's config file. Result: Blackscreen\n  -> Changing the DirectX version from 10 to 9 in the Game's config. Result: Blackscreen\n  -> Launching the Game in a Virtual Desktop. Result: Blackscreen, but mouse was permanently locked in-bounds to only a small portion of the Window.\n\nThere seems to be no fix or Workaround for this issue as of yet.\nThis game runs fine with regular Wine-Staging however.",
+    "os": "Arch Linux (Kernel 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX 4100 / Radeon RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "6849",
+    "title": "Anno 1404 Gold Edition",
+    "timestamp": 1534976257,
+    "rating": "Borked",
+    "notes": "The game launchers and functions normally but constant Blackscreen, which obviously makes it impossible to do anything\n\nI've tested the following:\n  -> Forcing Windowed Mode via Game's config file. Result: Blackscreen\n  -> Changing the DirectX version from 10 to 9 in the Game's config. Result: Blackscreen\n  -> Launching the Game in a Virtual Desktop. Result: Blackscreen, but mouse was permanently locked in-bounds to only a small portion of the Window.\n\nThere seems to be no fix or Workaround for this issue as of yet.\nThis game runs fine with regular Wine-Staging however.",
+    "os": "Arch Linux (Kernel 4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "AMD FX 4100 / Radeon RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

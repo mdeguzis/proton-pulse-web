@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "441830",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX550/550 (POLARIS12, DRM 3.30.0, 4.15.0-48-generic, LLVM 7.1.0)",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc4",
+    "kernel": "4.15.0-48-generic",
+    "notes": "game not runnig at all, steam saying game is started, but nothing happen, ",
+    "os": "Linux Mint 19.1 Tessa (64\u00a0bits)",
+    "protonVersion": "proton 4.2-3",
+    "protonVersionManual": "proton 4.2-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1557333285,
+    "title": "I am Setsuna",
+    "source": "protondb"
+  },
+  {
+    "appId": "441830",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "Gamepad issue seems to be fixed, no issue found. I can't choose Platinum since I didn't try to play it from begin to end. ",
+    "os": "Freedesktop.org 18.08.33 (Flatpak runtime) (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563099227,
+    "title": "I am Setsuna",
+    "source": "protondb"
+  },
+  {
+    "appId": "441830",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Character models are not rendered",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1567406394,
+    "title": "I am Setsuna",
+    "source": "protondb"
+  }
+]

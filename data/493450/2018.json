@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "493450",
+    "cpu": "AMD Athlon 64 X2 Dual Core 5000+",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs fine, but the engine has font compatibility issues so the line breaks don't line up properly. YMMV on whether that's tolerable or is too frustrating to read.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1545417261,
+    "title": "Wild Romance",
+    "source": "protondb"
+  }
+]

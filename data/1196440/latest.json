@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1196440",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 13.0.1, DRM 3.46, 5.18.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.3-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1655622518,
+    "title": "",
+    "source": "protondb"
+  }
+]

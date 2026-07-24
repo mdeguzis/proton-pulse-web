@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "531270",
+    "title": "The Art of Fight",
+    "timestamp": 1535223683,
+    "rating": "Borked",
+    "notes": "HTC Vive. Missing textures/models",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "531270",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Detects Vive and tutorial modes seem to work. However, nobody was online so I did not get a chance to test the actual gameplay outside of the tutorial.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544916580,
+    "title": "The Art of Fight | 4vs4 Fast-Paced FPS",
+    "source": "protondb"
+  },
+  {
+    "appId": "531270",
+    "title": "The Art of Fight",
+    "timestamp": 1535209283,
+    "rating": "Borked",
+    "notes": "HTC Vive. Missing textures/models",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

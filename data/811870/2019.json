@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "811870",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs well enough, but the goal point creates a large, strange, white blob on the screen that makes it somewhat difficult to see. I did my best to get a reasonable screen grab, but I was on a rocket, so a lot of the blur you're seeing is just a result of the speed at which my character is moving: https://imgur.com/a/CgId0nf ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560534998,
+    "title": "Verlet Swing",
+    "source": "protondb"
+  },
+  {
+    "appId": "811870",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.1.18-300.fc30.x86_64",
+    "notes": "Runs perfectly. No glitches.\n",
+    "os": "Fedora 30",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566733020,
+    "title": "Verlet Swing",
+    "source": "protondb"
+  },
+  {
+    "appId": "811870",
+    "cpu": "Intel Xeon E5-2650L v3 @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Run perferct when I turn of Bloom in video settings. There was a white blob making it hard to target,  turn off Bloom fixed it.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1570855509,
+    "title": "Verlet Swing",
+    "source": "protondb"
+  }
+]

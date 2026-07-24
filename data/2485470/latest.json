@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2485470",
+    "cpu": "Intel Core i5-3470S @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6400 (navi24, LLVM 15.0.7, DRM 3.49, 6.1.38-generic-1rosa2021.1-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.4",
+    "kernel": "6.1.38-generic-1rosa2021.1-x86_64",
+    "notes": "Starts good (may need antivirus tuning)",
+    "os": "ROSA Fresh Desktop 12.4, platform 2021.1 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1700517217,
+    "title": "Poly Jigsaw: Furries",
+    "source": "protondb"
+  }
+]

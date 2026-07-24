@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "470260",
+    "title": "Graviteam Tactics: Mius-Front",
+    "timestamp": 1536779470,
+    "rating": "Borked",
+    "notes": "Starts without a problem, but crashes after a few minutes  (as soon as the combat phase itself begins) ",
+    "os": "Ubuntu 18.04.01 (4.15.0-34)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3570K / GTX 760",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "470260",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-30-lowlatency",
+    "notes": "This game will not download the Windows installation to a Linux machine because there is a functional native Linux beta under the beta menu. The beta has some rough edges, but is playable after configuring options.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15979 Mb",
+    "rating": "Borked",
+    "timestamp": 1536807975,
+    "title": "Event[0]",
+    "source": "protondb"
+  },
+  {
+    "appId": "470260",
+    "title": "Graviteam Tactics: Mius-Front",
+    "timestamp": 1536765070,
+    "rating": "Borked",
+    "notes": "Starts without a problem, but crashes after a few minutes  (as soon as the combat phase itself begins) ",
+    "os": "Ubuntu 18.04.01 (4.15.0-34)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3570K / GTX 760",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  }
+]

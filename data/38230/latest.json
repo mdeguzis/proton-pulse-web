@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "38230",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "The game crash immediately if you don't disable VSync in your system settings.\n\nThen the game crash after loading a game.\n\nWhen starting, it complains about a error with \"windows media format 9 series runtime\", but installing windows media format 9 series runtime has no effect.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562145275,
+    "title": "Hotel Giant 2",
+    "source": "protondb"
+  }
+]

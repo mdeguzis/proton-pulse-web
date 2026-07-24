@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1044980",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Game starts to main menu, but it is bugged. Shows 4 empty profile slots. Menu at the bottom is not clickable, clicking on load, delete or X only lets the main menu disappear and leave you with the 4 empty profile slots.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1733500844,
+    "title": "",
+    "source": "protondb"
+  }
+]

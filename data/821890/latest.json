@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "821890",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.20.7-042007-generic",
+    "notes": "Crashes immediately unless Wine D3D11 is enabled. The in-game main menu doesn't seem to work, so there's no way to exit the game that I can see other than by manually killing it. In all other respects, it seems to run fine.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1552445171,
+    "title": "Steven Universe: Save the Light",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "821890",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.20.7-042007-generic",
+    "notes": "I've played this game a little more, and it still seems to work fine except for the bug where the buttons in the pause menu don't work -- they just return you to the game without doing anything. This is mostly an annoyance when trying to exit the game. If you have the same issue, I recommend using Alt+F4 to quit as a workaround. Unlike what I was doing before (switching to a virtual terminal and manually killing processes), this will shut down the game cleanly. There is an autosave feature, so the game remains fairly playable despite this bug.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1564197715,
+    "title": "Steven Universe: Save the Light",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

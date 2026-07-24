@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "701160",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game runs perfectly in single player mode and online co-op out of the box. But I couldn't get local co-op to work. My steam controller didn't get detected, unless I map the gamepad buttons to keyboard keys, which in turn doesn't trigger the local co-op mode. That problem might be related to the following issue on GitHub: https://github.com/ValveSoftware/Proton/issues/1549",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1547755300,
+    "title": "Kingdom Two Crowns",
+    "source": "protondb"
+  },
+  {
+    "appId": "701160",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.1-towo.2-siduction-amd64",
+    "notes": "==========\n(1) only tested single player, but ~50 hours of gameplay yielded no proton issues. (kingdom two crowns itself has mutliple bugs, acknowledged by devs, but theyre on all platforms). ive completed the game several times, so no issues, soup to nuts.\n==========\n(2) im running this on a toaster- my laptop is a Lenovo T430s (2013) with Intel\u00ae HD Graphics 4000, and so i had to reduce the resolution to 640x360.\nBUT because this is a pixel-art game it looks....literally exactly the same as at 2560x1440, which is my normal resolution. at 640x360, it runs smoothly with no frame dropping or shearing. (its ALSO smooth at 720p, but it makes my battery drain faster and honestly doesnt look any better. 1080p has a little tearing, and 1440p is unplayable)\n==========\n(3) i also had to add launch options \"PROTON_USE_WINED3D11=1 %command%\" as described by multiple other users",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549142774,
+    "title": "Kingdom Two Crowns",
+    "source": "protondb"
+  },
+  {
+    "appId": "701160",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.15.0-45-generic",
+    "notes": "No particular extra setting. Runs flawlessly (considering the embedded games bugs)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550397424,
+    "title": "Kingdom Two Crowns",
+    "source": "protondb"
+  }
+]

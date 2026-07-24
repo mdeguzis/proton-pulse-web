@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "675620",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.1.1-2-MANJARO",
+    "notes": "Seems to work perfectly.  The mouse controls are a little finicky but it's the same in Windows.  It's a Unity engine game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558246907,
+    "title": "Alter Cosmos",
+    "source": "protondb"
+  }
+]

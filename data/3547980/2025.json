@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3547980",
+    "cpu": "13th Gen Intel Core i7-13700H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.1-arch1-1",
+    "notes": "crashes",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1755620547,
+    "title": "",
+    "source": "protondb"
+  }
+]

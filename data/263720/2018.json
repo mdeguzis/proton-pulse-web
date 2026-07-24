@@ -1,0 +1,80 @@
+[
+  {
+    "appId": "263720",
+    "title": "Brawlout",
+    "timestamp": 1535062762,
+    "rating": "Borked",
+    "notes": "Just load the first screen",
+    "os": "Ubuntu 18.04.1 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5 6400/GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "263720",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "None of the launch options work. Does not start.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16036 Mb",
+    "rating": "Borked",
+    "timestamp": 1539149221,
+    "title": "Brawlout",
+    "source": "protondb"
+  },
+  {
+    "appId": "263720",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Actually it runs without tweaks but the models of the characters won't render if you don't use OpenGL. Another issue is that the game doesn't close correctly without killing task (Esync off doesn't solve that). But game runs fine now!",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1540979420,
+    "title": "Brawlout",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "263720",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Performs very well with Wine D3D11 enabled. It crashes when exiting the game though. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545829410,
+    "title": "Brawlout",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "263720",
+    "title": "Brawlout",
+    "timestamp": 1535048362,
+    "rating": "Borked",
+    "notes": "Just load the first screen",
+    "os": "Ubuntu 18.04.1 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5 6400/GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

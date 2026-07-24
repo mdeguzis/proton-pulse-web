@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "303800",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555409206,
+    "title": "The Witcher Adventure Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.4",
+    "kernel": "5.0.9-301.fc30.x86_64",
+    "notes": "The default D3D11 version is slow and has some graphics glitches. But, if you disable D3D11 (PROTON_NO_D3D11=1 %command%), it works flawlessly.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1558290452,
+    "title": "The Witcher Adventure Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.9-125.current",
+    "notes": "Works perfectly after disabling D3D11.",
+    "os": "Solus",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1568645640,
+    "title": "The Witcher Adventure Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "303800",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.13-200.fc30.x86_64",
+    "notes": "Works perfectly after disabling D3D11 (PROTON_NO_D3D11=1 %command%).",
+    "os": "Fedora",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569249040,
+    "title": "The Witcher Adventure Game",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

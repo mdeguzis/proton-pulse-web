@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1033340",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.12.0-0.rc5.20210331git2bb25b3a748a.181.vanilla.1.fc33.x86_64, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.12.0-0.rc5.20210331git2bb25b3a748a.181.vanilla.1.fc33.x86_64",
+    "notes": "Works without any issues",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1619381458,
+    "title": "",
+    "source": "protondb"
+  }
+]

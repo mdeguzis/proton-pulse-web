@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1538480",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.11.0-40-generic",
+    "notes": "Steam button changed from Play to Cancel, then back to Play. Proton-5.11-GE-3-MF tried to do something for a while, with the same result.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1638022903,
+    "title": "Redeliver",
+    "source": "protondb"
+  }
+]

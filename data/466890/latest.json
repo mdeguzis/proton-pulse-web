@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "466890",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "runs at 11 to 15 fps but it $0.49 game so it maybe game its self",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "32164 Mb",
+    "rating": "Bronze",
+    "timestamp": 1539284667,
+    "tweaks": {
+      "disableEsync": true
+    },
+    "title": "Z.I.O.N.",
+    "source": "protondb"
+  }
+]

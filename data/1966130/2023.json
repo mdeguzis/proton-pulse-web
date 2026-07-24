@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1966130",
+    "cpu": "Intel Core i7-10700 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.2.0-39-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "48 GB",
+    "rating": "silver",
+    "timestamp": 1703771791,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "799240",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "https://youtu.be/Ve_ZXdk6_D0",
+    "os": "Kubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555361378,
+    "title": "My Free Farm 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "799240",
+    "cpu": "AMD Athlon II X4 640",
+    "duration": "severalHours",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Perfectly run for the game  .\nLibary right-click game and properties  click tab Set Launch options...  and  paste  PROTON_USE_WINED3D11=1 %command%  saving  and run game  .",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556435364,
+    "title": "My Free Farm 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "799240",
+    "cpu": "AMD FX-8120 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Runs without any tweaks. Only played through the tutorial.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564198613,
+    "title": "My Free Farm 2",
+    "source": "protondb"
+  }
+]

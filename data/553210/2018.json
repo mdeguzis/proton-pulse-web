@@ -1,0 +1,138 @@
+[
+  {
+    "appId": "553210",
+    "title": "Ori and the Blind Forest-Definitive Edition",
+    "timestamp": 1536459055,
+    "rating": "Borked",
+    "notes": "Game starts and appears to be loading, then crashes to desktop",
+    "os": "Sabayon Stable 64-bit 4.14.0",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 6700k",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "title": "Warhammer 40,000: Space Wolf",
+    "timestamp": 1535054515,
+    "rating": "Silver",
+    "notes": "Character models are missing, weapons are visible and game appears otherwise playable. I was able to complete the tutorial mission.",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "cpu": "i5-7400 CPU @ 3.00GHz",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game starts, but won't get beyond initial loading screen (suspect it's a DRM issue as this game can't be played offline)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7935 Mb",
+    "rating": "Borked",
+    "timestamp": 1536950310,
+    "title": "Warhammer 40,000: Space Wolf",
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Was able to pass tutorial mission using PROTON_USE_WINED3D11=1 %command% option, but after that game fails to connect to server.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16054 Mb",
+    "rating": "Borked",
+    "timestamp": 1538189847,
+    "title": "Warhammer 40,000: Space Wolf",
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Since game update 1.1.6, it works fine. All campaign and deck  progress from Windows transitioned successfully.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16054 Mb",
+    "rating": "Gold",
+    "timestamp": 1539884348,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Warhammer 40,000: Space Wolf",
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Runs well after you setup as start option this: \nPROTON_USE_WINED3D=1 %command%",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1540917317,
+    "title": "Warhammer 40,000: Space Wolf",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Without disabled D3d11 no charaktermodels are loaded. After disabling it, Space Wolf runs as good as under Windows. Maybe slight lower FPS but not noticeable as it is a turn based game",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542225504,
+    "title": "Warhammer 40,000: Space Wolf",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "title": "Ori and the Blind Forest-Definitive Edition",
+    "timestamp": 1536444655,
+    "rating": "Borked",
+    "notes": "Game starts and appears to be loading, then crashes to desktop",
+    "os": "Sabayon Stable 64-bit 4.14.0",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 6700k",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "title": "Warhammer 40,000: Space Wolf",
+    "timestamp": 1535040115,
+    "rating": "Silver",
+    "notes": "Character models are missing, weapons are visible and game appears otherwise playable. I was able to complete the tutorial mission.",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom II X4 965 / GeForce GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

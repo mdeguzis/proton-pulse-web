@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "744040",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-arch1-1-ARCH",
+    "notes": "Played a few races against bots. Performance is good. Controller detected correctly. No humans to play against to test multiplayer.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560044577,
+    "title": "Street Heat",
+    "source": "protondb"
+  }
+]

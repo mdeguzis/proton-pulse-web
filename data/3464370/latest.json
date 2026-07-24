@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3464370",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 21.1.2, DRM 3.64, 6.18.5-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.18.5-200.fc43.x86_64",
+    "notes": "Works with no tinkering",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1769438247,
+    "title": "Sani Yang's Laboratory",
+    "source": "protondb"
+  }
+]

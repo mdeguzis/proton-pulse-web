@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "16810",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Played for a couple of hours without any issue, after that the game would crash way too often at the end of the turn. I have tried yo disable D3d11 and using wined3d11, but to no avail. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Bronze",
+    "timestamp": 1549911411,
+    "title": "Sid Meier's Civilization IV: Colonization",
+    "source": "protondb"
+  },
+  {
+    "appId": "16810",
+    "cpu": "Intel Core i3-4000M @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Game runs normally, but not very stable. Around mid-game it starts crashing every few turns making the game unplayable.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1561576015,
+    "title": "Sid Meier's Civilization IV: Colonization",
+    "source": "protondb"
+  },
+  {
+    "appId": "16810",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.0.0-25-generic",
+    "notes": "I have used winetricks to install msxml3 which made the game much more stable. It crashes only when I use Go to Europe command further from high seas but that can be easily avoided by going to high seas tile manually and then using the button to leave the map.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569089955,
+    "title": "Sid Meier's Civilization IV: Colonization",
+    "source": "protondb"
+  }
+]

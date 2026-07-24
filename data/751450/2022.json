@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "751450",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works well from within Desktop mode. Works, with issues, from native, non-Desktop mode. Safest by far to keep it in Desktop mode.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1666664894,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "751450",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1669957082,
+    "title": "",
+    "source": "protondb"
+  }
+]

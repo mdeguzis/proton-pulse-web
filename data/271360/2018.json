@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "271360",
+    "cpu": "Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.12-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Was just tested by default installation.\n\nItself, the game works fine. It's forced fullscreen and tabbing out glitches the game blacking the screen and making it unresponsive.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15997 Mb",
+    "rating": "Silver",
+    "timestamp": 1539789126,
+    "title": "Industry Giant 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "271360",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game does not start in any way.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540834761,
+    "title": "Industry Giant 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "271360",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Title Screen and Game run at 1-2 avg fps. Hit 6-7 avg fps by lowering resolution.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542002076,
+    "title": "Industry Giant 2",
+    "source": "protondb"
+  }
+]

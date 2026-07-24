@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "562490",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Starts fine, but incredibly jerky framerate with constant pauses and jerky motion making it very unpleasant, if not impossible to play. Tweaks make no difference",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556145826,
+    "title": "EvilMorph",
+    "source": "protondb"
+  }
+]

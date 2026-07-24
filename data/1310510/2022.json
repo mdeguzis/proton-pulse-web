@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1310510",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.44.0, 5.16.7-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.7-arch1-1",
+    "notes": "Worked perfectly fine",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1644539995,
+    "title": "",
+    "source": "protondb"
+  }
+]

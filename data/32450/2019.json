@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32450",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "setting launch options to \"unset LC_ALL && %command%\" or game will crash when \"new game\" is pressed",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1547445003,
+    "title": "LEGO\u00ae Indiana Jones\u2122 2: The Adventure Continues",
+    "source": "protondb"
+  }
+]

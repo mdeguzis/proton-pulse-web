@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "397690",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-3c03718 2020-03-19 focal-oibaf-ppa)",
+    "kernel": "5.6.0-rc2",
+    "notes": "I didn't play too much, but it seemed completely fine and worked as expected. The menu buttons flashed all the time, but they worked fine.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1584891677,
+    "title": "",
+    "source": "protondb"
+  }
+]

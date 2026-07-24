@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "493370",
+    "cpu": "Intel(R) Celeron(R) CPU  N2830  @ 2.16GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Bay Trail x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7865 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537367468,
+    "title": "Ragnarok Clicker",
+    "source": "protondb"
+  },
+  {
+    "appId": "493370",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-96.current",
+    "notes": "Ran the game, tried all the tabs, buttons and game mechanics. Everything seems to work fine.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541446791,
+    "title": "Ragnarok Clicker",
+    "source": "protondb"
+  }
+]

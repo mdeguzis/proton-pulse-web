@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "819230",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "The game runs, all levels are playable as is the level editor. Unfortunately, the movement speed of everything is too fast. Exceptionally fast. This could be a general game bug as I have no tested on Windows 10, but in my previous tests of just using WINE and Steam it did not have this problem.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542218979,
+    "title": "Gothicc Breaker",
+    "source": "protondb"
+  }
+]

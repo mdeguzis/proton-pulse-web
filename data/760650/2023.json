@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "760650",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.8-arch1-1",
+    "notes": "Does not work, just shows a black screen. Fixes in other comments only made it worse for me.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1681682260,
+    "title": "",
+    "source": "protondb"
+  }
+]

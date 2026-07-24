@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "341550",
+    "title": "Super Cyborg",
+    "timestamp": 1535189142,
+    "rating": "Platinum",
+    "notes": "Runs smoothly and very responsive\n4:3 aspect ratio as to be expected from a retro game",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "341550",
+    "title": "Super Cyborg",
+    "timestamp": 1535621745,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 2500K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "341550",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q6600  @ 2.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works like a charm.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "3944 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537229852,
+    "title": "Super Cyborg",
+    "source": "protondb"
+  },
+  {
+    "appId": "341550",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.80-1-MANJARO",
+    "notes": "Perfect out of the box. Recognized my DualShock 4 immediately and mapped controls correctly. Got to stage 2, haven't gotten further yet because it's tough as friggin' nails",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542515730,
+    "title": "Super Cyborg",
+    "source": "protondb"
+  },
+  {
+    "appId": "341550",
+    "title": "Super Cyborg",
+    "timestamp": 1535174742,
+    "rating": "Platinum",
+    "notes": "Runs smoothly and very responsive\n4:3 aspect ratio as to be expected from a retro game",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "341550",
+    "title": "Super Cyborg",
+    "timestamp": 1535607345,
+    "rating": "Platinum",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 2500K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

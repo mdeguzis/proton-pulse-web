@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "645790",
+    "cpu": "Intel Xeon E31280 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Playable without any changes.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1557717537,
+    "title": "Home Wars",
+    "source": "protondb"
+  }
+]

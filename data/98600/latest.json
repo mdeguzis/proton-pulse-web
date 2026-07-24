@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "98600",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-aa7ac32 2019-09-21 bionic-oibaf-ppa)",
+    "kernel": "5.3.1-050301-generic",
+    "notes": "It works very well, the Xbox 360 game controller works",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "4.11-6",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1569937517,
+    "title": "Demolition Inc.",
+    "source": "protondb"
+  }
+]

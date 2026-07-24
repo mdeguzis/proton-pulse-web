@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "1058430",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.19.57-gentoo",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567669057,
+    "title": "A Legionary's Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "1058430",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-62-generic",
+    "notes": "The text is barely readable",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "3.16-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1568910954,
+    "title": "A Legionary's Life",
+    "source": "protondb"
+  }
+]

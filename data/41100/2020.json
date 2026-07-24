@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "41100",
+    "cpu": "Intel Core i7-6770HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Pro 580 (SKL GT4)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Mouse input in Native wasn't working correctly for me",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1596692386,
+    "title": "Hammerfight",
+    "source": "protondb"
+  }
+]

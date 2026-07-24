@@ -1,0 +1,109 @@
+[
+  {
+    "appId": "329430",
+    "title": "State of Decay: Year-One",
+    "timestamp": 1535079784,
+    "rating": "Silver",
+    "notes": "Same buggy game, but good performance at mid-settings with no v-sync. Can only run @ 1600x900 here, but in fullscreen with Xbox One controller support. Cannot run in Big Picture Mode--black screen, audio seizes.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-2600 / GTX 950 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "329430",
+    "title": "State of Decay: Year-One",
+    "timestamp": 1535575946,
+    "rating": "Platinum",
+    "notes": "Since latest driver and beta updates, game runs exactly as intended.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 @ 3.4GHz / GTX 950 @ 2GB",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "329430",
+    "title": "State of Decay: Year-One",
+    "timestamp": 1535338174,
+    "rating": "Silver",
+    "notes": "About 60% of native performance. Over 60fps at High 1080p. Gives error that your video card is unsupported but works anyways. Has a glitch that causes the courser to move diagonally slowly to the upper left while aiming with guns and while in the map.",
+    "os": "Solus",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Xeon X5675/ GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "329430",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "duration": "severalHours",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA, DRM 3.23.0, 4.15.0-36-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Does work out of the box but the fps are a bit lower than on windows and sometimes the screen freezes for a moment.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "15988 Mb",
+    "rating": "Gold",
+    "timestamp": 1539889558,
+    "title": "State of Decay: YOSE",
+    "source": "protondb"
+  },
+  {
+    "appId": "329430",
+    "cpu": "Intel Core i3-3110M @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Initially when I launched the game the title screen/s were blank redish pink color, the main menu had no background, and all text were colored blocks. So I stopped the game, and set PROTON_USE_WINED3D=1 %command% to the Launch Options, and now all the visuals render correctly, except for lag, both in gameplay, and flickering shadows.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1545030253,
+    "title": "State of Decay: YOSE",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "329430",
+    "title": "State of Decay: Year-One",
+    "timestamp": 1535065384,
+    "rating": "Silver",
+    "notes": "Same buggy game, but good performance at mid-settings with no v-sync. Can only run @ 1600x900 here, but in fullscreen with Xbox One controller support. Cannot run in Big Picture Mode--black screen, audio seizes.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-2600 / GTX 950 2GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "329430",
+    "title": "State of Decay: Year-One",
+    "timestamp": 1535561546,
+    "rating": "Platinum",
+    "notes": "Since latest driver and beta updates, game runs exactly as intended.",
+    "os": "Xubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 @ 3.4GHz / GTX 950 @ 2GB",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "329430",
+    "title": "State of Decay: Year-One",
+    "timestamp": 1535323774,
+    "rating": "Silver",
+    "notes": "About 60% of native performance. Over 60fps at High 1080p. Gives error that your video card is unsupported but works anyways. Has a glitch that causes the courser to move diagonally slowly to the upper left while aiming with guns and while in the map.",
+    "os": "Solus",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "Xeon X5675/ GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

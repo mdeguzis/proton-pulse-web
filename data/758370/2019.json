@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "758370",
+    "cpu": "Intel Celeron N3450 @ 1.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Tested and working: Launch game, log into online profile, join existing online game, start new game against AI, take multimple turns in AI game",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1549819151,
+    "title": "Through the Ages",
+    "source": "protondb"
+  },
+  {
+    "appId": "758370",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.6-300.fc30.x86_64",
+    "notes": "As others have mentioned, in-game music does not work, tried with the Esync option as well. Played into a new custom game without any other issues. Did not test online play, as I don't play this game online, but online login into the game account and sync options worked fine.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "14 GB",
+    "rating": "Silver",
+    "timestamp": 1555189641,
+    "title": "Through the Ages",
+    "source": "protondb"
+  }
+]

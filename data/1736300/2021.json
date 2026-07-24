@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1736300",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 470.94",
+    "kernel": "5.15.11-arch2-1",
+    "notes": "Playable but crashes often",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1640473639,
+    "title": "",
+    "source": "protondb"
+  }
+]

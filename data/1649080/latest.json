@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1649080",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.8, DRM 3.64, 6.18.10-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.18.10-200.fc43.x86_64",
+    "notes": "Runs Perfectly out-of-box",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1772699681,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "429280",
+    "cpu": "Intel Core i3         530  @ 2.93GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Proton 4.2.3 Game runs fine, I played 10 levels but no sound.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1555717508,
+    "title": "Gems of the Aztecs",
+    "source": "protondb"
+  }
+]

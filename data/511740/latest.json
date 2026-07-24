@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "511740",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Requires .NET 4.5+, but runs perfectly using wine-mono, since .NET is tricky to install.\nDownload a recent wine-mono MSI from https://dl.winehq.org/wine/wine-mono/\nThen use: `WINEPREFIX=~/.steam/steam/steamapps/compatdata/511740/pfx wine64 uninstaller` and install the MSI from there. Game works perfectly then.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1549930015,
+    "title": "Gal*Gun: Double Peace",
+    "source": "protondb"
+  },
+  {
+    "appId": "511740",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-13-generic",
+    "notes": "missing background",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556599087,
+    "title": "Gal*Gun: Double Peace",
+    "source": "protondb"
+  },
+  {
+    "appId": "511740",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-2-amd64",
+    "notes": "Runs perfectly. Eagle eyed players may see a small dip in framerate when many \"targets\" are onscreen, and there may be a few texture errors that are hard to see, but if you don't care about that, it isn't too immersion breaking anyway, you'll be great!",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1563763312,
+    "title": "Gal*Gun: Double Peace",
+    "source": "protondb"
+  }
+]

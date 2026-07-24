@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "589870",
+    "cpu": "Intel Pentium G3260 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "X.Org Gallium 0.4 on AMD BONAIRE (DRM 2.49.0 / 4.9.0-8-amd64, LLVM 3.9.1)",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552379248,
+    "title": "Learn to Fly 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "589870",
+    "cpu": "Intel Core i7       Q 820  @ 1.73GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro FX 880M",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "5.1.11-300.fc30.x86_64",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561211579,
+    "title": "Learn to Fly 3",
+    "source": "protondb"
+  }
+]

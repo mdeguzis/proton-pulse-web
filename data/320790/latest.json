@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "320790",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Seems to work ok, tried with bots. Crashes with d9vk.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1571753822,
+    "title": "Fabula Mortis",
+    "source": "protondb"
+  }
+]

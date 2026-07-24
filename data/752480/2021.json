@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "752480",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "Runs perfect, there are some bugs mentioned in reviews about control desyncs; a relevant issue for Windows and Linux. Using Valve's Index",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626565104,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "752480",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.12.19-1-MANJARO",
+    "notes": "Everything works except that you can only hear the audio from the videos, can not see the videos.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1629073590,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "752480",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.10.70-1-MANJARO",
+    "notes": "Works pretty much flawlessly, as is to be expected from a unity game",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1636525709,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "638850",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-17-generic",
+    "notes": "The textures only shows by using OpenGL wined3d with the Launch Options \" PROTON_USE_WINED3D=1 PROTON_NO_ESYNC=1 %command%\". But the framerate is too low...",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554233751,
+    "title": "Animallica",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

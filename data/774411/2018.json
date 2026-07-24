@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "774411",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-98.current",
+    "notes": "Runs perfectly, it's not really fullscreen, on budgie the opper taskbar is still visable.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542493906,
+    "title": "Temple of Xiala",
+    "source": "protondb"
+  }
+]

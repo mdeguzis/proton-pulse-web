@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2138450",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.49, 6.2.11-arch1-1-kcc)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.11-arch1-1-kcc",
+    "notes": "ESC\u9009\u9879\u754c\u9762\u80cc\u666f\u662f\u767d\u8272,\u65e0\u6cd5\u9605\u8bfb\u6587\u5b57\n\u521d\u59cb\u6559\u7a0b\u90e8\u5206\u753b\u9762\u56fe\u50cf\u9519\u8bef,\u663e\u793a\u6210\u767d\u8272\u65b9\u5757",
+    "os": "Arch Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1682134107,
+    "title": "The Agnietta ~The holy healer & the cursed dungeon~",
+    "source": "protondb"
+  },
+  {
+    "appId": "2138450",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Developers have said non-Linux platforms won't get support.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1687237833,
+    "title": "The Agnietta ~The holy healer & the cursed dungeon~",
+    "source": "protondb"
+  }
+]

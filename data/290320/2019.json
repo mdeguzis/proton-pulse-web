@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "290320",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "notes": "[ERROR] FATAL UNHANDLED EXCEPTION: Microsoft.Xna.Framework.Content.ContentLoadException: Exception of type 'Microsoft.Xna.Framework.Content.ContentLoadException' was thrown.",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566936029,
+    "title": "Project Temporality",
+    "source": "protondb"
+  },
+  {
+    "appId": "290320",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.19.67",
+    "os": "Unknown",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567885228,
+    "title": "Project Temporality",
+    "source": "protondb"
+  }
+]

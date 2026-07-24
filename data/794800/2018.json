@@ -1,0 +1,23 @@
+[
+  {
+    "appId": "794800",
+    "cpu": "Intel Core2 Quad    Q6600  @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.13.16-100.fc25.x86_64",
+    "notes": "starts up but crashes with a dump file and then will not easily close. ",
+    "os": "Fedora release 25 (Twenty Five)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545464719,
+    "title": "Clue/Cluedo: The Classic Mystery Game",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

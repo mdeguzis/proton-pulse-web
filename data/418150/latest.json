@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "418150",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Set Proton to Experimental.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32GB",
+    "rating": "silver",
+    "timestamp": 1771810839,
+    "title": "The Madness of Little Emma",
+    "source": "protondb"
+  }
+]

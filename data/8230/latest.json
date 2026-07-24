@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "8230",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.16",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558233751,
+    "title": "Sam & Max 104: Abe Lincoln Must Die!",
+    "source": "protondb"
+  },
+  {
+    "appId": "8230",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.18-1-MANJARO",
+    "notes": "after awhile frames stutter when moving the mouse fast. exiting and reopening is the only fix",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559532192,
+    "title": "Sam & Max 104: Abe Lincoln Must Die!",
+    "source": "protondb"
+  },
+  {
+    "appId": "8230",
+    "cpu": "AMD FX-7500 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.0-kali2-amd64",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "3.7-8",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1568035910,
+    "title": "Sam & Max 104: Abe Lincoln Must Die!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "455980",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q9650  @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The game installs normally. At launch I was met with a black screen, but I could skip it, set language, and made it to the title screen. The main menu appears to function correctly.  When you create a new game I found more black screens where the cutscenes should be but I could skip those too. The graphics and sound otherwise appear to function correctly. I played the game for a few minutes before I realized I couldn't set gather limits in the colony management window which was a big problem. None of the Proton commands helped and PROTON_NO_D3D11 caused the game to crash before reaching the title screen.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7976 Mb",
+    "rating": "Borked",
+    "timestamp": 1539856391,
+    "title": "Judgment: Apocalypse Survival Simulation",
+    "source": "protondb"
+  }
+]

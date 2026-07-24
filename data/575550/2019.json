@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "575550",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Every time after quiting my machine froze. Disabling Esync solved the problem.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1552580010,
+    "title": "Hell Girls",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "575550",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "nouveau NVE6",
+    "gpuDriver": "4.3 Mesa 19.1.1",
+    "kernel": "4.19.56_1",
+    "notes": "Perfect!",
+    "os": "Void Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1561851503,
+    "title": "Hell Girls",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "575550",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "no problems as i can see run well everything looks good",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562500793,
+    "title": "Hell Girls",
+    "source": "protondb"
+  },
+  {
+    "appId": "575550",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.2.0",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563019278,
+    "title": "Hell Girls",
+    "source": "protondb"
+  }
+]

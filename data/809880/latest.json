@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "809880",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Runs perfectly out of the box, played with two xbox360 controllers. Only problem : \"alt+tab\" bugs out everything and you have to force quit the game.",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554578031,
+    "title": "Degrees of Separation",
+    "source": "protondb"
+  },
+  {
+    "appId": "809880",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.7",
+    "kernel": "5.2.18-200.fc30.x86_64",
+    "notes": "Played ~2 hours through the whole first world and part of the second, no issues at all. An Xbox gamepad worked as well.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570263975,
+    "title": "Degrees of Separation",
+    "source": "protondb"
+  },
+  {
+    "appId": "809880",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-trunk-amd64",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571559500,
+    "title": "Degrees of Separation",
+    "source": "protondb"
+  }
+]

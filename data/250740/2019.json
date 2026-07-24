@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "250740",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Does not launch",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1553707177,
+    "title": "Ragnarok Online",
+    "source": "protondb"
+  }
+]

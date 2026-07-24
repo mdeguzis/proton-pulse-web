@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "637090",
+    "title": "BATTLETECH",
+    "timestamp": 1534968793,
+    "rating": "Gold",
+    "notes": "\"Performance is the same as on Windows, but the game will only work with two workarounds:\n\n1) It must be launched with the '-force-glcore' parameter\n2) The CCCP codec pack must be installed in the Proton prefix as follows.\n\na) Download the CCCP latest 32 and 64 bit codecs from cccp-project.net\nb) Navigate to the folder where the .exes are located and open a terminal\nc) Run the following commands. An installer will appear for each of them.\nWINEPREFIX=\"\"$HOME/.steam/steam/steamapps/compatdata/637090/pfx\"\" wine Combined-Community-Codec-Pack-2015-10-18.exe\n\nWINEPREFIX=\"\"$HOME/.steam/steam/steamapps/compatdata/637090/pfx\"\" wine Combined-Community-Codec-Pack-64bit-2015-10-18.exe\nd) Enjoy BATTLETECH\n\nSo far the game has been tested vanilla and with the latest RogueTech. I am not sure if the mod injector itself works, since I copied the files over from Windows, but after the modified Assembly-CSharp.dll has been created everything runs as expected.\n\nBUGS: Sound distortion while loading missions, but only on the loading screen. After the 'BEGIN MISSION' button is pressed the sound is normal.\"",
+    "os": "Manjaro 17.1.12",
+    "gpuDriver": "Mesa  18.1.6-1",
+    "specs": "i5-3570K / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "637090",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-1-MANJARO",
+    "notes": "I think i had a bad install - game loaded outside of steam with WINE - but had no game loading artwork, and ingame character models had no textures - didn't test thoroughly as i will re-install and patch at later date - \n---> https://www.youtube.com/watch?v=9oFYI14-zFY",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15982 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537821995,
+    "title": "BATTLETECH",
+    "source": "protondb"
+  },
+  {
+    "appId": "637090",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Played first couple of missions. This game has a native public beta available. Just go to Properties -> Beta and select the \"public_beta_linux\" option. No need to run this game through Proton. The official Linux support should be releasing soon.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541189768,
+    "title": "BATTLETECH",
+    "source": "protondb"
+  },
+  {
+    "appId": "637090",
+    "title": "BATTLETECH",
+    "timestamp": 1534954393,
+    "rating": "Gold",
+    "notes": "\"Performance is the same as on Windows, but the game will only work with two workarounds:\n\n1) It must be launched with the '-force-glcore' parameter\n2) The CCCP codec pack must be installed in the Proton prefix as follows.\n\na) Download the CCCP latest 32 and 64 bit codecs from cccp-project.net\nb) Navigate to the folder where the .exes are located and open a terminal\nc) Run the following commands. An installer will appear for each of them.\nWINEPREFIX=\"\"$HOME/.steam/steam/steamapps/compatdata/637090/pfx\"\" wine Combined-Community-Codec-Pack-2015-10-18.exe\n\nWINEPREFIX=\"\"$HOME/.steam/steam/steamapps/compatdata/637090/pfx\"\" wine Combined-Community-Codec-Pack-64bit-2015-10-18.exe\nd) Enjoy BATTLETECH\n\nSo far the game has been tested vanilla and with the latest RogueTech. I am not sure if the mod injector itself works, since I copied the files over from Windows, but after the modified Assembly-CSharp.dll has been created everything runs as expected.\n\nBUGS: Sound distortion while loading missions, but only on the loading screen. After the 'BEGIN MISSION' button is pressed the sound is normal.\"",
+    "os": "Manjaro 17.1.12",
+    "gpuDriver": "Mesa  18.1.6-1",
+    "specs": "i5-3570K / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

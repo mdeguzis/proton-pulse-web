@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "252230",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.12-arch1-1-ARCH",
+    "notes": "Won't launch",
+    "os": "Linux 4.x",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565375855,
+    "title": "YAIBA: NINJA GAIDEN Z",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "311080",
+    "cpu": "Intel Core2 Duo     E6550  @ 2.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "dont start ",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "3.16.1 and  4.2.2 ",
+    "protonVersionManual": "3.16.1 and  4.2.2 ",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1555006724,
+    "title": "Echelon",
+    "source": "protondb"
+  },
+  {
+    "appId": "311080",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Crash on launch.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558846331,
+    "title": "Echelon",
+    "source": "protondb"
+  }
+]

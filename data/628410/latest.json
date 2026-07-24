@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "628410",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.19.79",
+    "notes": "Needed to use the launch options: -noborder -h 1080 -w 1920 -windowed",
+    "os": "NixOS 19.09.794.28d2548a03f (Loris)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1571252619,
+    "title": "Arctic Adventure: Episodes",
+    "source": "protondb"
+  }
+]

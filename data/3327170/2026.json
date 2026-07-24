@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3327170",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.64, 6.16.0-pikaos)",
+    "gpuDriver": "4.6 Mesa 25.1.6 (git-357bbc55bd)",
+    "kernel": "6.16.0-pikaos",
+    "notes": "Works out of box, quite enjoyable if you like this type of games",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767486131,
+    "title": "Minutescape",
+    "source": "protondb"
+  }
+]

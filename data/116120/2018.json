@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "116120",
+    "title": "Lightfish",
+    "timestamp": 1535410773,
+    "rating": "Borked",
+    "notes": "Shows running in Steam, but nothing starts up and running status disappears after a few seconds.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "116120",
+    "title": "Lightfish",
+    "timestamp": 1535797270,
+    "rating": "Borked",
+    "notes": "Does not load, process exits with message \"Unknown shader cache type, ignoring\" in shader_log. ",
+    "os": "Fedora 27 (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1600X / GTX 1080 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "116120",
+    "title": "Lightfish",
+    "timestamp": 1535396373,
+    "rating": "Borked",
+    "notes": "Shows running in Steam, but nothing starts up and running status disappears after a few seconds.",
+    "os": "Mint Mate 18.3 Kernel 4.17.11",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "1900X / GTX960 FTW",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "116120",
+    "title": "Lightfish",
+    "timestamp": 1535782870,
+    "rating": "Borked",
+    "notes": "Does not load, process exits with message \"Unknown shader cache type, ignoring\" in shader_log. ",
+    "os": "Fedora 27 (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 1600X / GTX 1080 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

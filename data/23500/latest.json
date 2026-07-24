@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "23500",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "I played only single player, works perfectly - no issues.\nI did not play multi.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546855864,
+    "title": "Puzzle Quest: Galactrix",
+    "source": "protondb"
+  },
+  {
+    "appId": "23500",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Some issues with text splaying across the map when moving it, occasional crashes. Played a bit over an hour, got two crashes in that time, each during a matching sequence in story mode.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-1",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565028236,
+    "title": "Puzzle Quest: Galactrix",
+    "source": "protondb"
+  }
+]

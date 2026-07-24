@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "471810",
+    "cpu": "Intel Core i7-5775C @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Iris Pro 6200 (Broadwell GT3e)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Have not tried multiplayer, but works perfectly for single player with the tweak.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563937703,
+    "title": "Death Squared",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

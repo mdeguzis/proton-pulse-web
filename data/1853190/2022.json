@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1853190",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.13.0-37-lowlatency",
+    "notes": "Vor dem Starten mit Proton-5.11-GE-3-MF empfehle ich das Prefix mit Protontricks komplett zu entfernen und dann erst zu starten",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1649167105,
+    "title": "",
+    "source": "protondb"
+  }
+]

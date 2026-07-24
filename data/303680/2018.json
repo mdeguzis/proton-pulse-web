@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "303680",
+    "title": "Fate: The Traitor Soul",
+    "timestamp": 1535055711,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-5820K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "303680",
+    "cpu": "Intel(R) Core(TM) i3 CPU         550  @ 3.20GHz",
+    "gpu": "ATI Technologies Inc. AMD Radeon HD 7800 Series",
+    "gpuDriver": "4.5.13536 Compatibility Profile Context 18.30.2.15",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game just runs perfetly. Everything worked",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7839 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537645783,
+    "title": "FATE: The Traitor Soul",
+    "source": "protondb"
+  },
+  {
+    "appId": "303680",
+    "title": "Fate: The Traitor Soul",
+    "timestamp": 1535041311,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-5820K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

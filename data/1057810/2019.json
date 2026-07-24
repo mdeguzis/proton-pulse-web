@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1057810",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.2-1-MANJARO",
+    "notes": "Runs perfect out of the box. https://www.youtube.com/watch?v=snzYYlU_Y_4",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564087126,
+    "title": "Wolfenstein: Youngblood Deutsche Version",
+    "source": "protondb"
+  },
+  {
+    "appId": "1057810",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.1.20-300.fc30.x86_64",
+    "notes": "Played 2h now and runs very good. No crashes or hiccups. This is on Fedora 30.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1564500646,
+    "title": "Wolfenstein: Youngblood Deutsche Version",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "867400",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1603652486,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "879160",
+    "cpu": "Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.8",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Main menu works fine, and I can access settings, but the moment I try to switch to 'Play' tab or any other tab, game hangs, while music in background keeps playing",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16003 Mb",
+    "rating": "Borked",
+    "timestamp": 1537981215,
+    "title": "Battlerite Royale",
+    "source": "protondb"
+  },
+  {
+    "appId": "879160",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Game launcher works, but failes to load some graphics. Crashes when you try to start a game",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Borked",
+    "timestamp": 1538156448,
+    "title": "Battlerite Royale",
+    "source": "protondb"
+  },
+  {
+    "appId": "879160",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 745/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Games starts beautifully but everything network-related doesn't work.\nWhen you start a game, it crashes with the following error.log:\n\nsteamnetworkingsockets.dll caused an Access Violation (0xc0000005)\n\n\nIn the output.log you can see further details:\n\nLoadSteamNetworking = True\n...\nSteamNetworking InitClientAPI Failure: Can't get steam interface 'SteamNetworkingSocketsSerialized002'\n...\nFailed to initialize SteamSocketNetworkingGlue!\n...\nError initializing glue type MergedUnity.Glue.SteamSocketNetworkingGlue MergedUnity.Glue.InitializeFailedException:",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7916 Mb",
+    "rating": "Borked",
+    "timestamp": 1538580852,
+    "title": "Battlerite Royale",
+    "source": "protondb"
+  },
+  {
+    "appId": "879160",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.14.88",
+    "notes": "Initial loading screen gets to ~98% and then stays there indefinitely.\nTerminal starts outputting \"eventfd: Too many open files\" a few times when further loading stops.",
+    "os": "Linux 4.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545333464,
+    "title": "Battlerite Royale",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

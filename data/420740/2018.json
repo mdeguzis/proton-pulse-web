@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "420740",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz",
+    "gpu": "GeForce 9700M GTS/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.106",
+    "kernel": "4.15.0-33-generic",
+    "notes": "No issues found.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7972 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536675568,
+    "title": "The Deed",
+    "source": "protondb"
+  },
+  {
+    "appId": "420740",
+    "cpu": "Intel Core i3         530  @ 2.93GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "I selected Gold because if you switch from window mode to fullscreen using ALT-ENTER and then go back to window mode, the graphics are not resized.  Apart from that, the game runs fine, I played the game to get a few different endings and achievements.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1543282596,
+    "title": "The Deed",
+    "source": "protondb"
+  }
+]

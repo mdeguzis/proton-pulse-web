@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "324140",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "Worked right out the box. I used Proton 4.2-2 to play. I wasn't able to play multiplayer, but single player works perfectly with a controller.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555501553,
+    "title": "Kalimba",
+    "source": "protondb"
+  }
+]

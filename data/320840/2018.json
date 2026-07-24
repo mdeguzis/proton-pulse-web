@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "320840",
+    "title": "WINGS! REMASTERED EDITION",
+    "timestamp": 1535073955,
+    "rating": "Platinum",
+    "notes": "PLAYED TUTORIALS AND THREE MISSIONS WITH M+K, DIDN'T CHECK JOYSTICK/JOYPAD",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE2 QUAD Q9300 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "320840",
+    "title": "WINGS! REMASTERED EDITION",
+    "timestamp": 1535178483,
+    "rating": "Borked",
+    "notes": "After clicking on \"Play\", empty black window will open and just stays like that.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "320840",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA / DRM 3.18.0 / 4.13.0-45-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.13.0-45-generic",
+    "notes": "Game dont start. Crash",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15998 Mb",
+    "rating": "Borked",
+    "timestamp": 1537799827,
+    "title": "Wings! Remastered Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "320840",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "I have to change my rating given couple of month ago. With 3.16-4 Proton, Wings! run out of the box, no issues at all.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543099522,
+    "title": "Wings! Remastered Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "320840",
+    "title": "WINGS! REMASTERED EDITION",
+    "timestamp": 1535059555,
+    "rating": "Platinum",
+    "notes": "PLAYED TUTORIALS AND THREE MISSIONS WITH M+K, DIDN'T CHECK JOYSTICK/JOYPAD",
+    "os": "UBUNTU 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "CORE2 QUAD Q9300 OC",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "320840",
+    "title": "WINGS! REMASTERED EDITION",
+    "timestamp": 1535164083,
+    "rating": "Borked",
+    "notes": "After clicking on \"Play\", empty black window will open and just stays like that.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX-8370/GeForce GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

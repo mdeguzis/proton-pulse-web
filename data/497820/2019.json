@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "497820",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.2-1-MANJARO",
+    "notes": "Everything appears to work fine, though I have very little time in the game. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564695454,
+    "title": "Quanero VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "497820",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "Works perfectly on my Vive. Even at 150% supersampling.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569641379,
+    "title": "Quanero VR",
+    "source": "protondb"
+  }
+]

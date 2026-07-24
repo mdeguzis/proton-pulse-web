@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "279720",
+    "cpu": "Intel Core i5       M 520  @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA NVS 5100M",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Pseudo native shitty linux port even won't start.Only with proton game works.Little graphical glitches",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1562696855,
+    "title": "The I of the Dragon",
+    "source": "protondb"
+  }
+]

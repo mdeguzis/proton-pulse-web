@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "395930",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.4-zen1-1-zen",
+    "notes": "Works OOTB",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1661562833,
+    "title": "Farm Frenzy: Heave Ho",
+    "source": "protondb"
+  }
+]

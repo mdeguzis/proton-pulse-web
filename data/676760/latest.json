@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "676760",
+    "title": "Noise",
+    "timestamp": 1535299405,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. Works but there are some graphical glitches.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "676760",
+    "title": "Noise",
+    "timestamp": 1535285005,
+    "rating": "Silver",
+    "notes": "Requires Steam launch option \"PROTON_NO_D3D11=1 %command%\" to run. Works but there are some graphical glitches.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "336080",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Launcher starts fine, but the game requires  launch option \"PROTON_USE_WINED3D11=1 %command%\" to get in game. ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "7975 Mb",
+    "rating": "Gold",
+    "timestamp": 1536549174,
+    "title": "Vietnam \u201865",
+    "source": "protondb"
+  }
+]

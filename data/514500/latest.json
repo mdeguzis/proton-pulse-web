@@ -1,0 +1,93 @@
+[
+  {
+    "appId": "514500",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "ATI Technologies Inc. Radeon RX Vega",
+    "gpuDriver": "4.5.13540 Compatibility Profile Context 18.40.2.15",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Player characters are invisible",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1548775454,
+    "title": "Atomic Society",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "514500",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. Radeon RX Vega",
+    "gpuDriver": "4.5.13540 Compatibility Profile Context 18.40.2.15",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Player characters are invisible (also applies to character generator)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1548775787,
+    "title": "Atomic Society",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "514500",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.1-1-default",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "64 GB",
+    "rating": "Bronze",
+    "timestamp": 1552883558,
+    "title": "Atomic Society",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "514500",
+    "cpu": "Intel Core i5-3337U @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-16-generic",
+    "notes": "I tried disabling D3D11, but the game would hang while attempting to launch, and it never did. I was forced to close and exit Steam to get it to quit. I then decided to try using Wine D3D11 and the game launched fine. It's a little slow on my integrated graphics, but it runs just fine with no other problems observed so far.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1555209734,
+    "title": "Atomic Society",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "514500",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568010621,
+    "title": "Atomic Society",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "369400",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "notes": "crashes upon startup",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "Let the Cat in",
+    "source": "protondb"
+  }
+]

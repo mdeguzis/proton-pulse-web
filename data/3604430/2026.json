@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3604430",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-87-generic",
+    "notes": "In my case the game would start only on proton 8.0-5. But I played it from start to finish, everything works fine for the most part.",
+    "os": "Linux Mint 22",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1769764872,
+    "title": "",
+    "source": "protondb"
+  }
+]

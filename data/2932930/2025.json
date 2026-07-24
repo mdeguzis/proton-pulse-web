@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2932930",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-131-generic",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "gold",
+    "timestamp": 1740092300,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2932930",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.8.0-55-generic",
+    "notes": "Game fails to launch from Steam, tried with multiple Proton versions. Error message provided: \"Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date drivers for your graphics card and have not disabled 3D acceleration in display settings. InitializeEngineGraphics failed\"\n\nMay work with tinkering or proton GE",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1741208873,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2932930",
+    "cpu": "Intel Pentium G620 @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 2000 (SNB GT1)",
+    "gpuDriver": "3.3 Mesa 25.1.7-arch1.1",
+    "kernel": "6.12.39-1-lts",
+    "notes": "Funcionou como esperado, ap\u00f3s adicionar a PROTON_USE_WINED3D=1 %command% na inicializa\u00e7\u00e3o.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1755260791,
+    "title": "",
+    "source": "protondb"
+  }
+]

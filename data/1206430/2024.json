@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1206430",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.5, DRM 3.57, 6.9.1-1-default)",
+    "gpuDriver": "4.6 Mesa 24.0.7",
+    "kernel": "6.9.1-1-default",
+    "notes": "Works well",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1716676324,
+    "title": "",
+    "source": "protondb"
+  }
+]

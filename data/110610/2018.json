@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "110610",
+    "title": "Alien Zombie Megadeath",
+    "timestamp": 1535704321,
+    "rating": "Silver",
+    "notes": "Audio is choppy.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "110610",
+    "cpu": "Intel(R) Core(TM) i7-4900MQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "kernel": "4.17.17-87.current",
+    "notes": "No problems, runs fine in full-screen.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15467 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537563156,
+    "title": "Alien Zombie Megadeath",
+    "source": "protondb"
+  },
+  {
+    "appId": "110610",
+    "title": "Alien Zombie Megadeath",
+    "timestamp": 1535689921,
+    "rating": "Silver",
+    "notes": "Audio is choppy.",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

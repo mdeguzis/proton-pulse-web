@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "705120",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "- Play in windowed mode, or fullscreen without losing focus or minimize, if you do minimize in fullscreen will crash.\n- No sound\n\n",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541388599,
+    "title": "Death Coming",
+    "source": "protondb"
+  }
+]

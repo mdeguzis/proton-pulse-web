@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "387930",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1 - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Game works fine other than the mouse drifts down with button presses. Many Unity games have the problem see issue #1418 on github.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547749208,
+    "title": "The Tape",
+    "source": "protondb"
+  },
+  {
+    "appId": "387930",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game works perfectly out of the box (the issue with floating/jumping mouse pointer was fixed in this Proton version)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "3.16-8",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552136313,
+    "title": "The Tape",
+    "source": "protondb"
+  }
+]

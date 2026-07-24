@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "337720",
+    "title": "The Sea Will Claim Everything",
+    "timestamp": 1534824000,
+    "rating": "Gold",
+    "notes": "ran fine on local partition, would not run off ntfs windows partition",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "337720",
+    "title": "The Sea Will Claim Everything",
+    "timestamp": 1534809600,
+    "rating": "Gold",
+    "notes": "ran fine on local partition, would not run off ntfs windows partition",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

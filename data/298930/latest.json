@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "298930",
+    "cpu": "Intel Core i7-4771 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "I played through the entire game without noticing any issues.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1547089870,
+    "title": "Darkness Within 1: In Pursuit of Loath Nolder",
+    "source": "protondb"
+  },
+  {
+    "appId": "298930",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Worked well had only the famous mouse issue that disappeared and had always to press left or right mouse button to see the mouse",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552331198,
+    "title": "Darkness Within 1: In Pursuit of Loath Nolder",
+    "source": "protondb"
+  },
+  {
+    "appId": "298930",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Played through in it's entirety @1440p and no issues.  Good performance during game-play and cut-scenes.  Required no fixes or tweaks.  Platinum.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "3.16-4",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1560668762,
+    "title": "Darkness Within 1: In Pursuit of Loath Nolder",
+    "source": "protondb"
+  }
+]

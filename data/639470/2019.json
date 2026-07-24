@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "639470",
+    "cpu": "AMD A10-7850K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-29-generic",
+    "notes": "After putting 'PROTON_USE_WINED3D=1 %command%' in the launch options the game worked perfectly (audio, videos, gameplay) even alt tabbing worked flawlessly \n",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "ram": "9 GB",
+    "rating": "Gold",
+    "timestamp": 1569795204,
+    "title": "Original Journey",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

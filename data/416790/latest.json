@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "416790",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Still: after choosing game or editor, it immediately quits.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552949942,
+    "title": "The Metronomicon: Slay The Dance Floor",
+    "source": "protondb"
+  },
+  {
+    "appId": "416790",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Won't start.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554796590,
+    "title": "The Metronomicon: Slay The Dance Floor",
+    "source": "protondb"
+  },
+  {
+    "appId": "416790",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Tried both normal game and editor, neither launch. Tried disabling esync and d3d11, as well as using wine d3d11; nothing works.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555204538,
+    "title": "The Metronomicon: Slay The Dance Floor",
+    "source": "protondb"
+  }
+]

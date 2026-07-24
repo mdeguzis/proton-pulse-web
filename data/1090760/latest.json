@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1090760",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "Doesn't get past resolving references",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1612738175,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1090760",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-22-generic",
+    "notes": "as soon the map loads it wii says an error has occurred and you stock there",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628086539,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "326120",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Tried all the proton usual workarounds, plus installing DX9 and setting windows version to win7 with protontricks. No dice, a black screen appears briefly and closes. Borked.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1563049053,
+    "title": "Horizon Shift",
+    "source": "protondb"
+  }
+]

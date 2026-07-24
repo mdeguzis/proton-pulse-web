@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "920820",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with Xbox 360 controller and no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561600070,
+    "title": "Skater Cally",
+    "source": "protondb"
+  },
+  {
+    "appId": "920820",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-aa7ac32 2019-09-21 bionic-oibaf-ppa)",
+    "kernel": "5.3.1-050301-generic",
+    "notes": "It works very well, the Xbox 360 game controller works",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "3.16-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1569427130,
+    "title": "Skater Cally",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "501970",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Game hangs when moving the mouse.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1562016598,
+    "title": "Phantasmagoria 2: A Puzzle of Flesh",
+    "source": "protondb"
+  }
+]

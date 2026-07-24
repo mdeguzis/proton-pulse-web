@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2968430",
+    "cpu": "13th Gen Intel Core i7-13700KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 580.159.03",
+    "kernel": "7.0.3-1-cachyos",
+    "notes": "It works likes its native",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778202676,
+    "title": "",
+    "source": "protondb"
+  }
+]

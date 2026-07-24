@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "317400",
+    "cpu": "Intel Core i5-2300 @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Runs very well as native, but if you use D9VK you get a better FPS results.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1562675214,
+    "title": "Portal Stories: Mel",
+    "source": "protondb"
+  }
+]

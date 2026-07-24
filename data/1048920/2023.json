@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1048920",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.54, 6.6.4-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.0 (git-1fbdd37d4c)",
+    "kernel": "6.6.4-200.fc39.x86_64",
+    "notes": "If you don't care about voice-over, then it is fully playable.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1702050997,
+    "title": "The Jolly Gang's Misadventures in Africa / \u041c\u0430\u0441\u044f\u043d\u044f \u0432 \u043f\u043e\u043b\u043d\u043e\u0439 \u0410\u0444\u0440\u0438\u043a\u0435",
+    "source": "protondb"
+  }
+]

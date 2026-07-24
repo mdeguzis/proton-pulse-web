@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "61520",
+    "title": "Age of Wonders: Shadow Magic",
+    "timestamp": 1535057867,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "61520",
+    "title": "Age of Wonders: Shadow Magic",
+    "timestamp": 1535577967,
+    "rating": "Gold",
+    "notes": "Both software renderer and Direct3D work perfect",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600k / GTX 660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "61520",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 780 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta",
+    "ram": "7974 \u041c\u0411",
+    "rating": "Platinum",
+    "timestamp": 1538126644,
+    "title": "Age of Wonders Shadow Magic",
+    "source": "protondb"
+  },
+  {
+    "appId": "61520",
+    "title": "Age of Wonders: Shadow Magic",
+    "timestamp": 1535043467,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Debian unstable",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-7400 / NVIDIA GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "61520",
+    "title": "Age of Wonders: Shadow Magic",
+    "timestamp": 1535563567,
+    "rating": "Gold",
+    "notes": "Both software renderer and Direct3D work perfect",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600k / GTX 660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

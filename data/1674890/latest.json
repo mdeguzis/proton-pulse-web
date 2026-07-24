@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1674890",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-33-generic",
+    "notes": "When played, the game slows down over time until it crashes, not ideal for an idle game which is expected to stay on.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1761423839,
+    "title": "\ud83d\udc51 Idle Calibur \ud83d\udc51\uff08\u9009\u738b\u4e4b\u5251\uff09",
+    "source": "protondb"
+  },
+  {
+    "appId": "1674890",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.4-116.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Switched Proton versions between GE, CachyOS and other Proton available within steam (6.3, 3.16, Hotfix, Experimental, 10.0-2Beta) and none worked",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1762663114,
+    "title": "\ud83d\udc51 Idle Calibur \ud83d\udc51\uff08\u9009\u738b\u4e4b\u5251\uff09",
+    "source": "protondb"
+  }
+]

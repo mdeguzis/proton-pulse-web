@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "289400",
+    "title": "Parkan 2",
+    "timestamp": 1536113623,
+    "rating": "Platinum",
+    "notes": "Runs great",
+    "os": "Arch Linux  (Kernel \"4.18.5-arch1-1-ARCH\")",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD Ryzen 5 1600 / AMD R9 380 ",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "289400",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Didn't get play past the tutorial, but seems perfect.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536342830",
+    "title": "Parkan 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "289400",
+    "title": "Parkan 2",
+    "timestamp": 1536099223,
+    "rating": "Platinum",
+    "notes": "Runs great",
+    "os": "Arch Linux  (Kernel \"4.18.5-arch1-1-ARCH\")",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD Ryzen 5 1600 / AMD R9 380 ",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

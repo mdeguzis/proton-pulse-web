@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "550390",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-15-generic",
+    "notes": "For me the game crashed every other time i started it. No idea if that's a proton problem or a game problem. Other than that the game ran perfectly fine. Played both the main game and the epilog without problems from start to finish.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1556117175,
+    "title": "Kingdom of Aurelia: Mystery of the Poisoned Dagger",
+    "source": "protondb"
+  }
+]

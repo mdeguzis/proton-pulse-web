@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1363900",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.4-arch1-1",
+    "notes": "Crashes due to the \"[S_API FAIL] SteamAPI_Init() failed; connect to global user failed.\" error.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627887347,
+    "title": "",
+    "source": "protondb"
+  }
+]

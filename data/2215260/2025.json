@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2215260",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Wasn't able to play. Tried different versions of proton and just GE-Proton9-5 was able to open Uplay\nI do not recommend it",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1766340508,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1736290",
+    "cpu": "Intel Core i7-8665U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.4",
+    "kernel": "6.4.7-arch1-2",
+    "notes": "I was able to play the first two introduction cases without any issues",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1691102529,
+    "title": "",
+    "source": "protondb"
+  }
+]

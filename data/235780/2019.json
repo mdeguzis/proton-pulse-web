@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "235780",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Works amazingly, went through a game without a crash or a hitch. It's a HL2 mod so it *should* work, but still - it just works. Menu fonts were *a tiny bit* oversized (1pt-2pt larger), but it was never a problem.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1552388776,
+    "title": "MINERVA",
+    "source": "protondb"
+  },
+  {
+    "appId": "235780",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "work flawlessly",
+    "os": "Debian GNU/Linux 10 (buster) (64\u00a0bits)",
+    "protonVersion": "4.11-2",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1565725649,
+    "title": "MINERVA",
+    "source": "protondb"
+  }
+]

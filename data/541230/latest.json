@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "541230",
+    "cpu": "Intel Xeon E5-1620 v3 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro K620",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Run but after a few seconds it hangs the entire system",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1570101496,
+    "title": "Alien Shooter TD",
+    "source": "protondb"
+  }
+]

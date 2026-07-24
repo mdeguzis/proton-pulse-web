@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "801550",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "As long as your on valve index or something where tracking is really good id highly recommend",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1757653085,
+    "title": "VAIL",
+    "source": "protondb"
+  },
+  {
+    "appId": "801550",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.7-200.fc42.x86_64",
+    "notes": "Works out of the box using a Quest 3S with ALVR",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1757718541,
+    "title": "VAIL",
+    "source": "protondb"
+  }
+]

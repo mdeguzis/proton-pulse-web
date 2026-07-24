@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1985420",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.1 - kisak-mesa PPA",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Receive a \"fatal error\" on launch. Cannot get past the splash screen",
+    "os": "Zorin OS 16.2",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1672504885,
+    "title": "",
+    "source": "protondb"
+  }
+]

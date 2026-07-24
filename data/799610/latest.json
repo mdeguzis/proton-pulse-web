@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "799610",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.9-1.el7.elrepo.x86_64",
+    "notes": "Works perfectly. Now only if I knew what I was doing in the game :-)",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64419 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537568245,
+    "title": "Drill Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "799610",
+    "cpu": "Intel Core i7-6770HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Iris Pro 580 (Skylake GT4e)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541978027,
+    "title": "Drill Arena",
+    "source": "protondb"
+  }
+]

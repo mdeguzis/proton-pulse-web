@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "273760",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Game loads to a black screen.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1568832335,
+    "title": "Towtruck Simulator 2015",
+    "source": "protondb"
+  }
+]

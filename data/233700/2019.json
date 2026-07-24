@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "233700",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "The native build is lacking features such as fullscreen support, and some DLC. It also had distorted sound when I tried to play recently. To get the windows build running with Proton I installed dotnet40 and xna40 via winetricks, after that the game runs flawlessly.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554562554,
+    "title": "Sword of the Stars: The Pit",
+    "source": "protondb"
+  },
+  {
+    "appId": "233700",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.52.18",
+    "kernel": "5.2.7-zen1-1-zen",
+    "notes": "Since 4.11-2 the windows version in proton launches without any additional tweaks on my system. So i prefer this one over the native because of the lack of features.",
+    "os": "Unknown",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565520590,
+    "title": "Sword of the Stars: The Pit",
+    "source": "protondb"
+  }
+]

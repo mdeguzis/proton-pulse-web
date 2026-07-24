@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "704230",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-47-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557781013,
+    "title": "Pro Cycling Manager 2018",
+    "source": "protondb"
+  },
+  {
+    "appId": "704230",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.1.0-9.4-liquorix-amd64",
+    "notes": "The game crashes when the popup for your team members crashing appears, also when the same popup for fetching water appears. A workaround is to limit the number of crashes in the settings.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Silver",
+    "timestamp": 1561059866,
+    "title": "Pro Cycling Manager 2018",
+    "source": "protondb"
+  },
+  {
+    "appId": "704230",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.12-300.fc30.x86_64",
+    "notes": "Game halts when you run out of water or if a very large number of riders fall. Falling can be turned off and running out of water should be avoided anyway. So I have still managed to play over 50 hours.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1561560767,
+    "title": "Pro Cycling Manager 2018",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "503650",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.11-1-default",
+    "notes": "Works just fine out of the box.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589270718,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "503650",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Run Perfect",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600151048,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "503650",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "The game runs flawlessly",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604800124,
+    "title": "",
+    "source": "protondb"
+  }
+]

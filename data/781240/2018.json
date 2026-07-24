@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "781240",
+    "title": "Mystical",
+    "timestamp": 1535906504,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus, but Alt-Tab and Enter run the game fullscreen. Plays perfectly after that.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "781240",
+    "title": "Mystical",
+    "timestamp": 1535892104,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus, but Alt-Tab and Enter run the game fullscreen. Plays perfectly after that.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

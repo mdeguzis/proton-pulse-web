@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "38200",
+    "cpu": "%s1",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "VMware, Inc. Gallium 0.4 on llvmpipe (LLVM 3.9, 128 bits)",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.19.26-03278-g71dc68f9c9d0",
+    "notes": "Game doesn't launch",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "3 GB",
+    "rating": "Borked",
+    "timestamp": 1558982089,
+    "title": "Raven Squad",
+    "source": "protondb"
+  }
+]

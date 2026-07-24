@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "564950",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Game ran Ok out of the box, no tinkering necessary. No glitches or slowness or crackling.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1593139116,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "418030",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.16-arch1-1-ARCH",
+    "notes": "Shows as \"Running\" in steam library but does not launch.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562694480,
+    "title": "Subsistence",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "418030",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "The game runs out of the box without any tweaks, but there is a problem with the grass/foliage. It goes up and down for the entire map. I think its the wind effect over the grass or something like that. I've tried using \"disable Esync\", \"D3d11\" use \"Wine D3d11\" and nothing fix this problem.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1562988425,
+    "title": "Subsistence",
+    "source": "protondb"
+  },
+  {
+    "appId": "418030",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Well, the problem with foliage/grass it's fixed with proton 4.11.1. Now the game runs great, it's totally playable but with low fps. i've tried to add PROTON_USE_D9VK=1 %command% in steam launch parameters and the game runs so smooth , but it crashed without any error message all the time for me.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565058587,
+    "title": "Subsistence",
+    "source": "protondb"
+  },
+  {
+    "appId": "418030",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "I played it first on 4.11-2 smoothly then had problems starting the game on 4.11-3 and 4 but on 4.11-5 everything runs fine, as it was running on windows. Only glitch i encountered was a texture bug, where the rendering is white and can be seen from afar, but i don't think it is because of proton. Multiplayer was not testet, only single",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568904498,
+    "title": "Subsistence",
+    "source": "protondb"
+  }
+]

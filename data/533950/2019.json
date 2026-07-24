@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "533950",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1553541416,
+    "title": "Don't open the doors!",
+    "source": "protondb"
+  },
+  {
+    "appId": "533950",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-14-generic",
+    "notes": "Game installs and runs perfectly, but the framerate is very slow and input is very laggy making the game barely playable.  None of the tweaks make any difference.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1557037685,
+    "title": "Don't open the doors!",
+    "source": "protondb"
+  },
+  {
+    "appId": "533950",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.19.19-aufs",
+    "notes": "\nTotal laggy. Not playable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1564510165,
+    "title": "Don't open the doors!",
+    "source": "protondb"
+  }
+]

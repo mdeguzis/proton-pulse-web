@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "485310",
+    "cpu": "i3 CPU         530  @ 2.93GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ironlake Desktop x86/MMX/SSE2",
+    "gpuDriver": "2.1 Mesa 18.1.7",
+    "notes": "Doesn't run after clicking play",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Head Shot",
+    "source": "protondb"
+  }
+]

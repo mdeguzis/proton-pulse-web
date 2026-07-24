@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "463700",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "1440p with 180+ fps",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1549667012,
+    "title": "Super Cloudbuilt",
+    "source": "protondb"
+  },
+  {
+    "appId": "463700",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.12-300.fc30.x86_64",
+    "notes": "The game crashes when if you run out of lives. My Dualshock 4 works out of the box.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1561500336,
+    "title": "Super Cloudbuilt",
+    "source": "protondb"
+  },
+  {
+    "appId": "463700",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.11_1",
+    "notes": "With max settings at 1440p, there is noticeable micro-stutter which is only prevalent on X11 and not Wayland, game runs perfect otherwise.",
+    "os": "Void Linux",
+    "protonVersion": "4.11-3",
+    "ram": "30 GB",
+    "rating": "Platinum",
+    "timestamp": 1567550812,
+    "title": "Super Cloudbuilt",
+    "source": "protondb"
+  }
+]

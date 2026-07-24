@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "448640",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.6-zen1-1-zen",
+    "os": "Arch Linux (Flatpak)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1550234638,
+    "title": "Elements II: Hearts of Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "448640",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Worked perfectly, with the only exception being that once I turned it to fullscreen on the first run, it didn't black out the borders at the side (it's not a widescreen game). I could still see parts of my desktop. The second time that I ran the game (once fullscreen was the default) everything displayed correctly. This wasn't enough of a problem for me to lower the score.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561914639,
+    "title": "Elements II: Hearts of Light",
+    "source": "protondb"
+  }
+]

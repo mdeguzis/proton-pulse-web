@@ -1,0 +1,122 @@
+[
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535248561,
+    "rating": "Borked",
+    "notes": "Requires a 32-bit prefix with the following workaround to work with vanilla wine: winetricks -q devenum quartz wmp10. It won't work with steamplay as it doesn't support 32-bit prefixes yet. There is an alternative approach that involves re-encoding videos, but I wasn't able to get it to work: https://appdb.winehq.org/objectManager.php?sClass=version&iId=30779",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535433309,
+    "rating": "Platinum",
+    "notes": "No problems",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535481523,
+    "rating": "Borked",
+    "notes": "Game starts, but crashes every time in the same moment",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3427U / Intel HD Graphics 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535656733,
+    "rating": "Gold",
+    "notes": "Runs perfectly, but a \"this environment is not supported\" error appears at startup.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": " i5-8250U ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535931840,
+    "rating": "Borked",
+    "notes": "Game starts then crash when the first video is reached.",
+    "os": "Mint 64-bits",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535234161,
+    "rating": "Borked",
+    "notes": "Requires a 32-bit prefix with the following workaround to work with vanilla wine: winetricks -q devenum quartz wmp10. It won't work with steamplay as it doesn't support 32-bit prefixes yet. There is an alternative approach that involves re-encoding videos, but I wasn't able to get it to work: https://appdb.winehq.org/objectManager.php?sClass=version&iId=30779",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535418909,
+    "rating": "Platinum",
+    "notes": "No problems",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535467123,
+    "rating": "Borked",
+    "notes": "Game starts, but crashes every time in the same moment",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5-3427U / Intel HD Graphics 4000",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535642333,
+    "rating": "Gold",
+    "notes": "Runs perfectly, but a \"this environment is not supported\" error appears at startup.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": " i5-8250U ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "326480",
+    "title": "If My Heart Had Wings",
+    "timestamp": 1535917440,
+    "rating": "Borked",
+    "notes": "Game starts then crash when the first video is reached.",
+    "os": "Mint 64-bits",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "GTX 760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "577800",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Worked perfect using 4.2 BUT no commentary audio when playing game.  Audio works but the telecast audio is silent.  I don't know why this is.  With everything working great I don't know if it is a license issue.  But the game itself works great.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2",
+    "protonVersionManual": "4.2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1554004496,
+    "title": "NBA 2K18",
+    "source": "protondb"
+  },
+  {
+    "appId": "577800",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Most everything works great. The only thing that I found that doesn't work is the announcers voices, they just don't exist. All other sound works.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1555805434,
+    "title": "NBA 2K18",
+    "source": "protondb"
+  },
+  {
+    "appId": "577800",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Seems to work quite well for me but only played it a little bit.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1571612177,
+    "title": "NBA 2K18",
+    "source": "protondb"
+  }
+]

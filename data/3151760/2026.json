@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3151760",
+    "cpu": "AMD Ryzen 7 5800XT 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 6.18.17-1-lts)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch1.1",
+    "kernel": "6.18.17-1-lts",
+    "notes": "Crashes on startup and never reopens.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773439073,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3151760",
+    "cpu": "AMD Ryzen 7 5800XT 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 6.18.17-1-lts)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch1.1",
+    "kernel": "6.18.17-1-lts",
+    "notes": "hard crashes my computer",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773968573,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3151760",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.11-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.11-1-cachyos",
+    "notes": "Unplayable",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1775476873,
+    "title": "",
+    "source": "protondb"
+  }
+]

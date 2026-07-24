@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "361670",
+    "title": "STAR WARS\u2122 - X-Wing Alliance\u2122",
+    "timestamp": 1535486796,
+    "rating": "Gold",
+    "notes": "Game won't start without controller (I tested with X-Box One S controller) - but it's the same behaviour as under Windows. It seems to work fine, but needs a lot of tweaking to run well (but again, seems like exactly same tweaks are needed under Windows). More info about tweaks: https://steamcommunity.com/app/361670/discussions/0/620712999965906230/",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "361670",
+    "title": "STAR WARS\u2122 - X-Wing Alliance\u2122",
+    "timestamp": 1535472396,
+    "rating": "Gold",
+    "notes": "Game won't start without controller (I tested with X-Box One S controller) - but it's the same behaviour as under Windows. It seems to work fine, but needs a lot of tweaking to run well (but again, seems like exactly same tweaks are needed under Windows). More info about tweaks: https://steamcommunity.com/app/361670/discussions/0/620712999965906230/",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

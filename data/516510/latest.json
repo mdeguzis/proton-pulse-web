@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "516510",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 390",
+    "gpuDriver": "4.5 Mesa 19.1.7",
+    "kernel": "5.3.6-1-default",
+    "notes": "The game does not launch even with runtimes installed.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1571911117,
+    "title": "Orake Classic",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "appId": "288570",
+    "title": "Monopoly",
+    "timestamp": 1536491428,
+    "rating": "Bronze",
+    "notes": "Runs without sound and crashes after first dice roll (every time).",
+    "os": "OS: \"Manjaro Linux\" (64 bit) Kernel: 4.14.67-1-MANJARO",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz / Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "288570",
+    "title": "Wolfenstein: The New Order German Edition",
+    "timestamp": 1535059093,
+    "rating": "Borked",
+    "notes": "Crashes at while gameplay randomly",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3-dev",
+    "specs": "AMD Ryzen 7 1700 / AMD R9 270",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "288570",
+    "title": "Wolfenstein: The New Order German Edition",
+    "timestamp": 1535555291,
+    "rating": "Silver",
+    "notes": "Black Screen in Fullscreen Mode if Game does not run in native resolution.",
+    "os": "Manjaro Linux x86_64 (Kernel 4.14.66-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 1400 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "288570",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.23.0, 4.15.0-33-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "notes": "Played for 5 hours. Skill menu doesn't load sometimes. Frame rate drops sometimes. MESA 18.3, padoka from 2018/08/28",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "rating": "Silver",
+    "timestamp": "1536451200",
+    "title": "Wolfenstein: The New Order",
+    "source": "protondb"
+  },
+  {
+    "appId": "288570",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.7-300.fc29.x86_64",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545758486,
+    "title": "Wolfenstein: The New Order",
+    "source": "protondb"
+  },
+  {
+    "appId": "288570",
+    "title": "Monopoly",
+    "timestamp": 1536477028,
+    "rating": "Bronze",
+    "notes": "Runs without sound and crashes after first dice roll (every time).",
+    "os": "OS: \"Manjaro Linux\" (64 bit) Kernel: 4.14.67-1-MANJARO",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel(R) Core(TM) i3-3217U CPU @ 1.80GHz / Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "288570",
+    "title": "Wolfenstein: The New Order German Edition",
+    "timestamp": 1535044693,
+    "rating": "Borked",
+    "notes": "Crashes at while gameplay randomly",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.3-dev",
+    "specs": "AMD Ryzen 7 1700 / AMD R9 270",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "288570",
+    "title": "Wolfenstein: The New Order German Edition",
+    "timestamp": 1535540891,
+    "rating": "Silver",
+    "notes": "Black Screen in Fullscreen Mode if Game does not run in native resolution.",
+    "os": "Manjaro Linux x86_64 (Kernel 4.14.66-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 5 1400 / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1314460",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-9746e84a7e)",
+    "kernel": "5.7.10-21-tkg-pds",
+    "notes": "Playable. Requires decent GPU.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1596448012,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "742460",
+    "title": "Marble Skies",
+    "timestamp": 1535310391,
+    "rating": "Platinum",
+    "notes": "It worked well. Over 60 fps",
+    "os": "Arch Linux (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700HQ / GTX 1050",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "742460",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Both K+M and Steam Controller work perfectly. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542403065,
+    "title": "Marble Skies",
+    "source": "protondb"
+  },
+  {
+    "appId": "742460",
+    "title": "Marble Skies",
+    "timestamp": 1535295991,
+    "rating": "Platinum",
+    "notes": "It worked well. Over 60 fps",
+    "os": "Arch Linux (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700HQ / GTX 1050",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "844860",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Tried the tutorial, runs perfect, just like a native game.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1568197655,
+    "title": "Tank Operations: European Campaign",
+    "source": "protondb"
+  }
+]

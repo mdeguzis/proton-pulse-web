@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "273240",
+    "title": "Armored Hunter GUNHOUND EX",
+    "timestamp": 1535168588,
+    "rating": "Borked",
+    "notes": "Starts, but shows a black screen. Pressing Enter and directional keys causes sound effects from the UI, but I've never played the game before, so I can't tell what's going on.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.0-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "273240",
+    "title": "Armored Hunter GUNHOUND EX",
+    "timestamp": 1535154188,
+    "rating": "Borked",
+    "notes": "Starts, but shows a black screen. Pressing Enter and directional keys causes sound effects from the UI, but I've never played the game before, so I can't tell what's going on.",
+    "os": "openSUSE Tumbleweed 64-bit (Kernel 4.18.0-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 3550 / RX580 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

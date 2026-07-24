@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "560720",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Works pretty well. Had only one crash.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1655249770,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "288840",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega 56",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.13-zen1-1-zen",
+    "notes": "The game run fine , he doesnt take the whole screen and you don't have  the option to change the resolution and fix that but I'm not sure thats a proton issue",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557771339,
+    "title": "Haunted Past: Realm of Ghosts",
+    "source": "protondb"
+  }
+]

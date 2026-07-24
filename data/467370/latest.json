@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "467370",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560966334,
+    "title": "Escape This",
+    "source": "protondb"
+  },
+  {
+    "appId": "467370",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "It works. Some problems with resolution (not sure if it's game feature or Linux problem).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565888082,
+    "title": "Escape This",
+    "source": "protondb"
+  }
+]

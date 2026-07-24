@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "471710",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.3",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Played for a while now. While the game launches and graphics and everything is OK, the performance is pretty good. It looses internet access at random (and it appears that it mostly loses what I send, because I can still see online friends and get notifications for new messages). The issue is not with my network as two of us play on the same LAN (and I am the only one on Linux and only I get dropped). If I find a way to improve this, I'll post again",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1551550820,
+    "title": "Rec Room",
+    "source": "protondb"
+  },
+  {
+    "appId": "471710",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "As mentioned, the performance is honestly alright, I've noticed some pretty extensive frame drops at times that can be really disorienting, and connectivity is incredibly spotty. I was getting constant disconnects while trying to play with friends, but no issues playing other VR online games with them.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1558382721,
+    "title": "Rec Room",
+    "source": "protondb"
+  },
+  {
+    "appId": "471710",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "Will randomly disconnect from servers during games, even though the network is fine.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1563841504,
+    "title": "Rec Room",
+    "source": "protondb"
+  }
+]

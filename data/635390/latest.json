@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "635390",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega 56",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.14-121.current",
+    "notes": "So with limited testing there appears to be 3 problems, the biggest being the controller(ps4) with the \"playstation configuration support\" disabled in steam as having that enabled would make the controller not be detected. I had to press buttons multiple times as it appears to drop inputs randomly and the left analog stick wouldn't move the character in the intro if pressed all the way to the right, I had to push it halfway to walk at full speed very fiddly. The second problem is the intro videos with the company logos do not play this is pretty minor. The third problem was the audio was crackling, but that was easily fixed with running the launch options: \"PULSE_LATENCY_MSEC=100 %command%\"",
+    "os": "Solus",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1563109758,
+    "title": "Thief of Thieves: Season One",
+    "source": "protondb"
+  }
+]

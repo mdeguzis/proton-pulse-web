@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "794600",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.1-1-MANJARO",
+    "notes": "Tested with disabling esync, d3d11, and using wine d3d11. Nothing worked, it failed to launch every time",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548200792,
+    "title": "LET IT DIE",
+    "source": "protondb"
+  },
+  {
+    "appId": "794600",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Crashes on startup, no extra options took effect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1549057396,
+    "title": "LET IT DIE",
+    "source": "protondb"
+  },
+  {
+    "appId": "794600",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Game fails to launch, none of the recommended tweaks work.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560613264,
+    "title": "LET IT DIE",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "227220",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.0-15.1-liquorix-amd64",
+    "notes": "Game opens up a small black window and closes itself after 2 seconds.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1547793904,
+    "title": "Sang-Froid - Tales of Werewolves",
+    "source": "protondb"
+  },
+  {
+    "appId": "227220",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.5-Custom4gaming",
+    "os": "Debian GNU/Linux buster/sid (64\u00a0bits)",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-2",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1558865371,
+    "title": "Sang-Froid - Tales of Werewolves",
+    "source": "protondb"
+  }
+]

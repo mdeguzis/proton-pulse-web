@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "907770",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.1.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Demo doesn't start. Error message \"DX11 feature level 10.0 is required to run the engine\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542455335,
+    "title": "STONE",
+    "source": "protondb"
+  }
+]

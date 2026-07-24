@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "749520",
+    "cpu": "Intel Core i7-7Y75 @ 1.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 615 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.1.1",
+    "kernel": "5.6.0-kali2-amd64",
+    "notes": "Game getting stuck when load and save",
+    "os": "Kali GNU/Linux Rolling\uff0864 \u4f4d\uff09",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593097875,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "42680",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-16-generic",
+    "notes": "In process there's iw5sp.exe but 10 second and it stopped (sorry for my english but i'm Italian)",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552249152,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "42680",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-142-generic",
+    "notes": "Multiplayer works (no sound for me) - Singleplayer don't start",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1554693897,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "42680",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD8800",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "4.20.17-1-MANJARO",
+    "notes": "replace the singleplayer executable ONLY. (DRM problem) then it works. my performance was not great, but unsure if that is related, or something else.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1562579023,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "42680",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.5-1-default",
+    "notes": "multiplayer works out of the box and it's just fine\nuse d9vk for generate shader caches faster\nhowever i couldn't make single player work it crashes at startup",
+    "os": "OpenSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1571634044,
+    "title": "Call of Duty\u00ae: Modern Warfare\u00ae 3",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "389400",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Crashes when activating widescreen, runs fine otherwise.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1560688385,
+    "title": "The chronicles of Emerland. Solitaire.",
+    "source": "protondb"
+  }
+]

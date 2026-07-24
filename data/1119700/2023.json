@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1119700",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA P106-100",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.7-arch1-1",
+    "notes": "Very low framerate which also degrades over time",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1674907360,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1119700",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game runs fine with a few minor hiccups. text may be hard to read.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1682915549,
+    "title": "",
+    "source": "protondb"
+  }
+]

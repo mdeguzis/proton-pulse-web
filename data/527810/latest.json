@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "527810",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "In fullscreen there is graphical glitches, windowed is playable but when exiting the game it crashes with an \"Access violation\" error message and you have to manually kill the process.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1547315830,
+    "title": "Dynamite Alex",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "455910",
+    "title": "STAR WARS\u2122: Rogue Squadron 3D",
+    "timestamp": 1535807384,
+    "rating": "Borked",
+    "notes": "Loads to black screen.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "455910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.19.0, 4.14.65-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.14.65-1-MANJARO",
+    "notes": "Loads to blank screen",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16058 Mb",
+    "rating": "Borked",
+    "timestamp": 1537580621,
+    "title": "STAR WARS\u2122: Rogue Squadron 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "455910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.2-1-MANJARO",
+    "notes": "Loads to a blank screen, process has to be killed afterward",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543105751,
+    "title": "STAR WARS\u2122: Rogue Squadron 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "455910",
+    "cpu": "Pentium Dual-Core       T4400  @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 320M",
+    "gpuDriver": "NVIDIA 340.107",
+    "kernel": "4.14.83-1-MANJARO",
+    "notes": "Main menu loads, asks for setting up video driver when launching game. Only choice is \"DirectDraw HAL (Driver : D3D) (Driver : D3D)\". Then, game won't start (black screen). Didn't try any of \"Disable Esync\", \"Disable D3d11\", \"Use Wine D3d11\"",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1543594630,
+    "title": "STAR WARS\u2122: Rogue Squadron 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "455910",
+    "title": "STAR WARS\u2122: Rogue Squadron 3D",
+    "timestamp": 1535792984,
+    "rating": "Borked",
+    "notes": "Loads to black screen.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

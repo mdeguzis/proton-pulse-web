@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "410740",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-8-generic",
+    "notes": "Charming presentation, but weak flight controls, shallow systems, and repetitive gameplay make it hard to recommend even on Linux.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1766681862,
+    "title": "Flying Neko Delivery",
+    "source": "protondb"
+  }
+]

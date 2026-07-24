@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "610190",
+    "cpu": "Intel Core i7-6820HK @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-22-generic",
+    "notes": "Game works out of box. No tweaks needed. Occasional FPS drops, but it won't affect your play experience much. This game is meant to be played with a controller, so I tested the game with a controller. Works flawlessly and all keys on the controller had registered successfully.",
+    "os": "Zorin OS 15",
+    "protonVersion": "4.2-7",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1560975044,
+    "title": "WARRIORS ALL-STARS / \u7121\u53cc\u2606\u30b9\u30bf\u30fc\u30ba",
+    "source": "protondb"
+  }
+]

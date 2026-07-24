@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "371510",
+    "title": "Gunnheim",
+    "timestamp": 1535684905,
+    "rating": "Gold",
+    "notes": "Seems fine out of the box.",
+    "os": "Manjaro 64-bit (kernel 4.14.66-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K @4.00GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "371510",
+    "title": "Gunnheim",
+    "timestamp": 1535670505,
+    "rating": "Gold",
+    "notes": "Seems fine out of the box.",
+    "os": "Manjaro 64-bit (kernel 4.14.66-1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K @4.00GHz",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

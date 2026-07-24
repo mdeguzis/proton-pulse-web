@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "2130",
+    "cpu": "i3-8130U CPU @ 2.20GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) UHD Graphics 620 (Kabylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Depends on a DRM library to create a private server. Also fonts are totally messed up.",
+    "os": "elementary OS 0.4.1 Loki (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7892 Mb",
+    "rating": "Borked",
+    "timestamp": 1536720057,
+    "title": "Dark Messiah of Might & Magic",
+    "source": "protondb"
+  }
+]

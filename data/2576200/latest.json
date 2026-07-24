@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2576200",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.14.0-36-generic",
+    "notes": "Aside from the resolution issue, had no other outstanding issue.",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764263309,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1947530",
+    "cpu": "AMD Ryzen Threadripper 3990X 64-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 15.0.4, DRM 3.42, 5.15.0-53-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.4 - kisak-mesa PPA",
+    "kernel": "5.15.0-53-generic",
+    "notes": "Very slow framerate even with a Threadripper 3990x and Radeon 6900 XT.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1726599264,
+    "title": "",
+    "source": "protondb"
+  }
+]

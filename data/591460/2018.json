@@ -1,0 +1,106 @@
+[
+  {
+    "appId": "591460",
+    "cpu": "Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Everything runs great except the characters (humans and dinos) are invisible. You can just see hats moving around.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15940 MB",
+    "rating": "Silver",
+    "timestamp": 1537904639,
+    "title": "Parkasaurus",
+    "source": "protondb"
+  },
+  {
+    "appId": "591460",
+    "cpu": "Intel(R) Core(TM) i7-7700K CPU @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "Invisible characters / dinosaurs, everything else seems to run flawlessly.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15982 Mb",
+    "rating": "Silver",
+    "timestamp": 1538009509,
+    "title": "Parkasaurus",
+    "source": "protondb"
+  },
+  {
+    "appId": "591460",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GT 730/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Started the game, selected a new game, freezes or errors out while loading the map. Unplayable.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3941 Mb",
+    "rating": "Borked",
+    "timestamp": 1538932648,
+    "title": "Parkasaurus",
+    "source": "protondb"
+  },
+  {
+    "appId": "591460",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "Everything seems to work fine, the only issue (Invisible characters / dinosaurs) is fixed with custom command line options:\n\nPROTON_USE_WINED3D=1 %command%",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541321853,
+    "title": "Parkasaurus",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "591460",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "Use to have invisible characters/dino's but now works flawlessly after going to properties and setting launch options to PROTON_USE_WINED3D=1 %command%",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1541719260,
+    "title": "Parkasaurus",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "591460",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works with: PROTON_USE_WINED3D11=1 %command%",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1543271285,
+    "title": "Parkasaurus",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

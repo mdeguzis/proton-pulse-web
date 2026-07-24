@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "366990",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1555076453,
+    "title": "Puzzle Station 15th Anniversary Retro Release",
+    "source": "protondb"
+  },
+  {
+    "appId": "366990",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 8500 GT",
+    "gpuDriver": "NVIDIA 340.106",
+    "kernel": "4.9.0-8-amd64",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1555577404,
+    "title": "Puzzle Station 15th Anniversary Retro Release",
+    "source": "protondb"
+  }
+]

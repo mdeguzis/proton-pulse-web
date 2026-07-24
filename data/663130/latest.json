@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "663130",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "Runs perfectly.  The only issue is that switching the focus away from the window and back again may cause the audio to briefly spike.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557042319,
+    "title": "Game Tengoku CruisinMix Special",
+    "source": "protondb"
+  }
+]

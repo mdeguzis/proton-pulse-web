@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "46290",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Works fine",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.4-6",
+    "ram": "16042 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536768407,
+    "title": "Theatre of War",
+    "source": "protondb"
+  },
+  {
+    "appId": "46290",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "No issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542266325,
+    "title": "Theatre of War",
+    "source": "protondb"
+  }
+]

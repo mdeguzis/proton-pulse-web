@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2358260",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.7, DRM 3.57, 6.8.0-90-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Tried running the game via Proton Hotfix, Experimental, 9.0-4, and 8.0-5, with and without gamemoderun %command%. Game will compile shaders, open a window and immediately close it, not even a loading screen.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1766997629,
+    "title": "Cricket 24",
+    "source": "protondb"
+  }
+]

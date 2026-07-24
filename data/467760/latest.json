@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "467760",
+    "title": "Trapper's Delight",
+    "timestamp": 1535713763,
+    "rating": "Silver",
+    "notes": "Everything I've tested worked, no major performance problems, but I can't confirm that this is native-like performance.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8750H / GTX 1060 Max-Q",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "467760",
+    "title": "Trapper's Delight",
+    "timestamp": 1535699363,
+    "rating": "Silver",
+    "notes": "Everything I've tested worked, no major performance problems, but I can't confirm that this is native-like performance.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-8750H / GTX 1060 Max-Q",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

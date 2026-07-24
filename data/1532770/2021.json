@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1532770",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 560 (POLARIS11, DRM 3.40.0, 5.11.0-34-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-34-generic",
+    "notes": "Great works out of the box as intended took a gamble on it being a simple game and it paid off. Have some hot furry fun ^_^",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1631407483,
+    "title": "Sex and the Furry Titty",
+    "source": "protondb"
+  },
+  {
+    "appId": "1532770",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.11-arch1-1",
+    "notes": "Cool game :D | \n\nThe game is launched with one click without the need for a proton configuration.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634802966,
+    "title": "Sex and the Furry Titty",
+    "source": "protondb"
+  }
+]

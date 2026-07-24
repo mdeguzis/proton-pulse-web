@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "893670",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "ATI Technologies Inc. Radeon RX 570",
+    "gpuDriver": "4.6.13572 Compatibility Profile Context 5.0.73",
+    "kernel": "5.0.0-29-generic",
+    "notes": "I did play the demo without any issues, without using any tweaks. \n\nExcept there is quite massive tearing inside the church both under Linux as well as under Windows. The difference is that I could fix that under Window, I think with AMD's Enhanced Sync, while under Linux there is no such possibility.\nThe performance in the church is generally pretty bad (someone mentioned in the Steam forum that even their GTX1070 cannot maintain stable 60FPS) and I suppose the only thing that could help out there under Linux might possibly be a FreeSync screen with low framerate compensation.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569279280,
+    "title": "Silent Night",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "33950",
+    "cpu": "AMD Phenom II X4 945",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RV770",
+    "gpuDriver": "3.0 Mesa 18.3.3",
+    "kernel": "4.20.6.a-1-hardened",
+    "notes": "Disabling esync, or d3d11 didnt work. Black non responding window.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1549749885,
+    "title": "Fish Fillets 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "33950",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559134821,
+    "title": "Fish Fillets 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "577690",
+    "cpu": "AMD Athlon II X4 640",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-3-amd64",
+    "notes": "Works perfectly out of the box using the current beta-branch of Proton.\nSteady 60fps and fast loadtimes.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1551518497,
+    "title": "Spooky's Jump Scare Mansion: HD Renovation",
+    "source": "protondb"
+  },
+  {
+    "appId": "577690",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.16-zen1-1-zen",
+    "notes": "Launches to black screen, nothing works.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562530057,
+    "title": "Spooky's Jump Scare Mansion: HD Renovation",
+    "source": "protondb"
+  },
+  {
+    "appId": "577690",
+    "cpu": "Intel Pentium  N3700  @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 405 (Braswell)",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Boots to black screen after the 2019 update. Nothing works.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1567681212,
+    "title": "Spooky's Jump Scare Mansion: HD Renovation",
+    "source": "protondb"
+  }
+]

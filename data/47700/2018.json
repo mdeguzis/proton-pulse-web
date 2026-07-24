@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "47700",
+    "title": "Command and Conquer 4: Tiberian Twilight",
+    "timestamp": 1534953507,
+    "rating": "Silver",
+    "notes": "The game takes a while to start (around 1 minute), the performance is locked at 30 fps even though vsync is disabled. There were some minor graphical glitches from time to time but they are not permanent and don't disturb the gameplay)",
+    "os": "openSuse Tumbleweed",
+    "gpuDriver": "Mesa 18.1.5-204.2",
+    "specs": "R5 2600 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "title": "Command and Conquer 4: Tiberian Twilight",
+    "timestamp": 1535044442,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Kubuntu 18.04 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "cpu": "i7-3930K CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "does not start",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32109 Mb",
+    "rating": "Borked",
+    "timestamp": 1536762905,
+    "title": "Command & Conquer 4: Tiberian Twilight",
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "cpu": "Intel Core i7-6900K @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Doesn't start",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1543220733,
+    "title": "Command & Conquer 4: Tiberian Twilight",
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "title": "Command and Conquer 4: Tiberian Twilight",
+    "timestamp": 1534939107,
+    "rating": "Silver",
+    "notes": "The game takes a while to start (around 1 minute), the performance is locked at 30 fps even though vsync is disabled. There were some minor graphical glitches from time to time but they are not permanent and don't disturb the gameplay)",
+    "os": "openSuse Tumbleweed",
+    "gpuDriver": "Mesa 18.1.5-204.2",
+    "specs": "R5 2600 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "47700",
+    "title": "Command and Conquer 4: Tiberian Twilight",
+    "timestamp": 1535030042,
+    "rating": "Borked",
+    "notes": "Doesn't start",
+    "os": "Kubuntu 18.04 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 2600 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

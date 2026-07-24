@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1043230",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Everything works fine apart from the configuration tool displaying ??? instead of Japanese text, which presumably happens on windows too with non-JP locales as it does for most games.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566764854,
+    "title": "\u6771\u65b9\u795e\u970a\u5edf \u301c Ten Desires.",
+    "source": "protondb"
+  }
+]

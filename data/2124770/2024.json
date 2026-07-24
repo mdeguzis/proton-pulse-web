@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2124770",
+    "cpu": "Intel Pentium N4200 @ 1.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 505 (APL 3)",
+    "gpuDriver": "4.6 Mesa 24.1.2 - kisak-mesa PPA",
+    "kernel": "6.5.0-41-generic",
+    "notes": "Plays like native",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1719913837,
+    "title": "",
+    "source": "protondb"
+  }
+]

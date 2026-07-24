@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "465870",
+    "cpu": "i7 CPU         920  @ 2.67GHz",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.7-041807-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Attempting to launch the game gives an \"Assertion failed\" dialog.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7967 Mb",
+    "rating": "Borked",
+    "timestamp": 1536973863,
+    "title": "SHOCK TROOPERS 2nd Squad",
+    "source": "protondb"
+  }
+]

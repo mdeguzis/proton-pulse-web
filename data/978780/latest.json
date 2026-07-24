@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "978780",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.3-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch2.2",
+    "kernel": "7.0.3-1-cachyos",
+    "notes": "Smoother than butter",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777825769,
+    "title": "",
+    "source": "protondb"
+  }
+]

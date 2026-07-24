@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1665280",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.44, 5.17.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.2",
+    "kernel": "5.17.5-arch1-1",
+    "notes": "The game is rock solid, didn't crash a single time during the playthrough. Frames were stable.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1651692479,
+    "title": "Sk\u00e1bma\u2122 - Snowfall",
+    "source": "protondb"
+  },
+  {
+    "appId": "1665280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1654987417,
+    "title": "Sk\u00e1bma\u2122 - Snowfall",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "700160",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.20.7-200.fc29.x86_64",
+    "notes": "Everything works, no tweaks needed",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1553079322,
+    "title": "Semblance",
+    "source": "protondb"
+  }
+]

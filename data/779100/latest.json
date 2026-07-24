@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "779100",
+    "title": "Daemonical",
+    "timestamp": 1535622896,
+    "rating": "Borked",
+    "notes": "Main menu, configurations, and set up work, but cannot connect online to play",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "779100",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Q45/Q43",
+    "gpuDriver": "2.1 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "This game is not launched",
+    "os": "Debian GNU/Linux 9.5 (stretch)",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1542472877,
+    "title": "Daemonical",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "779100",
+    "title": "Daemonical",
+    "timestamp": 1535608496,
+    "rating": "Borked",
+    "notes": "Main menu, configurations, and set up work, but cannot connect online to play",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700K / GTX 1070",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

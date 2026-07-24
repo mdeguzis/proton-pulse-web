@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "277650",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Does not start",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16034 Mb",
+    "rating": "Borked",
+    "timestamp": 1540010622,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "title": "Kult: Heretic Kingdoms",
+    "source": "protondb"
+  },
+  {
+    "appId": "277650",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.24.10",
+    "kernel": "4.13.0-46-generic",
+    "notes": "Works after installing corefonts, d3dx9 and tahoma through winetricks with the following terminal command:\n\nWINEPREFIX=\"$HOME/.steam/steam/steamapps/compatdata/277650/pfx/\" winetricks corefonts d3dx9 tahoma",
+    "os": "Ubuntu 17.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545762297,
+    "title": "Kult: Heretic Kingdoms",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "723100",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.16-112.current",
+    "notes": "Ran smoothly as if native, only played a minute, but the gameplay seemed it worked with no prob.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555755792,
+    "title": "Orbital Racer",
+    "source": "protondb"
+  }
+]

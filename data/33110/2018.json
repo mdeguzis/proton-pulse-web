@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "33110",
+    "title": "Alien Shooter: Revisited",
+    "timestamp": 1535416815,
+    "rating": "Borked",
+    "notes": "Runs then black screens and crashes",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "33110",
+    "title": "Alien Shooter: Revisited",
+    "timestamp": 1535402415,
+    "rating": "Borked",
+    "notes": "Runs then black screens and crashes",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

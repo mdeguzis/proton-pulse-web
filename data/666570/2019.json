@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "666570",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.16-300.fc31.x86_64",
+    "notes": "It will prompt to ask for language with the custom zombie cursor and then it will not show anything or have sound again.",
+    "os": "Freedesktop.org 19.08.5 (Flatpak runtime)",
+    "protonVersion": "4.11-11",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1577307885,
+    "title": "",
+    "source": "protondb"
+  }
+]

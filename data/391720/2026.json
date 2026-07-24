@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "391720",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.7, DRM 3.64, 6.17.0-8-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "\u0423\u0432\u0456\u043c\u043a\u043d\u0435\u043d\u043e",
+    "notes": "Ist running good, but unplayable on my config with Linux",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1771156660,
+    "title": "Layers of Fear (2016)",
+    "source": "protondb"
+  },
+  {
+    "appId": "391720",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.8, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.17.0-14-generic",
+    "notes": "However, fps is lower than on Windows 90-105 vs 76-88",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1771177840,
+    "title": "Layers of Fear (2016)",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "341910",
+    "title": "Ultimate Space Commando",
+    "timestamp": 1535750129,
+    "rating": "Borked",
+    "notes": "Game never starts. Triggers .net framework install on every attempt to start.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "341910",
+    "title": "Ultimate Space Commando",
+    "timestamp": 1535735729,
+    "rating": "Borked",
+    "notes": "Game never starts. Triggers .net framework install on every attempt to start.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

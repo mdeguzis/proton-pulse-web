@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "426050",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.14-arch1-1",
+    "notes": "Seems to work without any problems, played the whole game, got all achievements.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1580335546,
+    "title": "LEGIE",
+    "source": "protondb"
+  },
+  {
+    "appId": "426050",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.0-58-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1609096975,
+    "title": "LEGIE",
+    "source": "protondb"
+  }
+]

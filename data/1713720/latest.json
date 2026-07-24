@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1713720",
+    "cpu": "Intel Core i3-1005G1 @ 1.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD (ICL GT1)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-90-generic",
+    "notes": "El Juego funciona muy bien sin ninguna modificaci\u00f3n con Proton \"6.3-8\"",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637852930,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "12230",
+    "title": "Grand Theft Auto III",
+    "timestamp": 1535989732,
+    "rating": "Gold",
+    "notes": "The screen appears in black. You have to press Enter or Alt + Enter to start the game.",
+    "os": "Reborn OS (Arch Linux) (kernel 4.18.5.arch1-1)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "AMD FX 8320 / Geforce GTX950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12230",
+    "title": "Grand Theft Auto III",
+    "timestamp": 1536332144,
+    "rating": "Platinum",
+    "notes": "Other than alt-tabbing during the title screen crashing the game (and only in that occasion), the game runs fine.",
+    "os": "Antergos Linux 64-bit (Kernel 4.18.5-1)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD A10 8700P",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12230",
+    "title": "Grand Theft Auto III",
+    "timestamp": 1535975332,
+    "rating": "Gold",
+    "notes": "The screen appears in black. You have to press Enter or Alt + Enter to start the game.",
+    "os": "Reborn OS (Arch Linux) (kernel 4.18.5.arch1-1)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "AMD FX 8320 / Geforce GTX950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12230",
+    "title": "Grand Theft Auto III",
+    "timestamp": 1536317744,
+    "rating": "Platinum",
+    "notes": "Other than alt-tabbing during the title screen crashing the game (and only in that occasion), the game runs fine.",
+    "os": "Antergos Linux 64-bit (Kernel 4.18.5-1)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "AMD A10 8700P",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

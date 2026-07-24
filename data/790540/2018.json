@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "790540",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "get error stating DX11 level 10 is required cannot start the game",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541119041,
+    "title": "THE QUIET MAN\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "790540",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "The game crashes at the end of every chapter, but the game is saved when restarting. The audio is a little choppy when playing, but not on the cutscenes.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541612579,
+    "title": "THE QUIET MAN\u2122",
+    "source": "protondb"
+  }
+]

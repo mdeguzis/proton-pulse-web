@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "622770",
+    "cpu": "Intel Core i5-5257U @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Iris 6100 (Broadwell GT3)",
+    "gpuDriver": "3.0 Mesa 19.0.6",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "The full tutorial can be played without issues. I have found nothing that doesn't work. Multiplayer not tested.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1560674871,
+    "title": "Hacktag",
+    "source": "protondb"
+  },
+  {
+    "appId": "622770",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Works Perfectly. Not a single issue",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568402847,
+    "title": "Hacktag",
+    "source": "protondb"
+  }
+]

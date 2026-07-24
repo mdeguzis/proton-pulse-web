@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "720150",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Runs perfectly out of the box, with similar performance as on Windows.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552255330,
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "source": "protondb"
+  },
+  {
+    "appId": "720150",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "Runs perfectly out of the box, except if a controller is detected the game keeps pulling to the left all the time. In this case it happened with a Nintendo Switch Pro controller available over bluetooth.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556659705,
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "source": "protondb"
+  },
+  {
+    "appId": "720150",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel",
+    "kernel": "5.2.8-050208-lowlatency",
+    "notes": "Everything works out of the box, windowed/fullscreen, alt+tab, and Nintendo Switch Pro controller without issues.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566134141,
+    "title": "Shikhondo(\u98df\u9b42\u5f92) - Soul Eater",
+    "source": "protondb"
+  }
+]

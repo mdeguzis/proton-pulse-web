@@ -1,0 +1,88 @@
+[
+  {
+    "appId": "238260",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 18.3.0",
+    "kernel": "4.19.14-calculate",
+    "notes": "All is okay. DX11 doesn't work. Config tool not work but it's possible to copy/paste settings from Windows computer and 1920x1080 works well. Sound OK (i can decrease sound of table with Steam Play, not possible with Steam Windows on Linux with Wine)",
+    "os": "Calculate Linux Desktop 18 MATE (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547941707,
+    "title": "Pinball Arcade",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "238260",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Seems to vary on a table by table basis.\n\nDX11 Doesn't work at all as other reports state, config tool also doesn't work but modifying the config works.\n\nAddams Family, Doctor Who, Doctor Who Masters of Time and Frankenstien works. Ghostbusters does not.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1549627820,
+    "title": "Pinball Arcade",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "238260",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Direct X 11 now works. Configuration tool doesn't but isn't required for it to work. However ghostbusters pinball table still fails.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1558002495,
+    "title": "Pinball Arcade",
+    "source": "protondb"
+  },
+  {
+    "appId": "238260",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-default",
+    "notes": "The config utility now works, despite spitting out an error at the end. All the options seem to do what they should. Keyboard mapping is weird, mapping any key shows it as \"(NULL)\" in the interface but the key still works in the game. Tested both DX9 and DX11 at maximum quality, worked fine. \n\nDX11 had issues in full-screen: Only a small rectangular area of the game actually displayed. Works in windowed mode.",
+    "os": "Unknown",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569355685,
+    "title": "Pinball Arcade",
+    "source": "protondb"
+  },
+  {
+    "appId": "238260",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "The config-tool works now, even when crashing at finishing configuration! The game is fully playable in DX11, windowed-mode. Great performance, no issues during gameplay. At  long last, we have a descent pinball sim on Linux now!  ",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570211862,
+    "title": "Pinball Arcade",
+    "source": "protondb"
+  }
+]

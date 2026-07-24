@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "16600",
+    "title": "Trials 2: Second Edition",
+    "timestamp": 1535416652,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Ubuntu 64-bit 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I7-3770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "16600",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.3-1-MANJARO",
+    "notes": "Basically Platinum performance wise. Throws dialog error \"Could not open windows fonts\", but will continue to run after hitting ok. You will need to alt+tab to another application then to the dialog box to find it usually.\n\n(note: Microsoft's core fonts are installed on this system)",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32162 Mb",
+    "rating": "Silver",
+    "timestamp": 1536549418,
+    "title": "Trials 2: Second Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "16600",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16034 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537535980,
+    "title": "Trials 2: Second Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "16600",
+    "title": "Trials 2: Second Edition",
+    "timestamp": 1535402252,
+    "rating": "Platinum",
+    "notes": "None",
+    "os": "Ubuntu 64-bit 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I7-3770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

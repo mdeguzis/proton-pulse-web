@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1131240",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.17-2-MANJARO",
+    "notes": "Sadly, this title is currently broken with an \"out of the box\" Proton experience (using 5.09 or 5.09 GE)",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1598768530,
+    "title": "",
+    "source": "protondb"
+  }
+]

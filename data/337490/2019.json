@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "337490",
+    "cpu": "AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "aboutAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "It started running after disabling D3D11 through launch parameters but only keyboard works, and with joysticks disconnected. Any joystick connected when launching the game causes it to get a constant directional input (cycling through options on menu and making impossible to control the characters).",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1551626263,
+    "title": "Four Sided Fantasy",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

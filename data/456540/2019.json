@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "456540",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-21dd881416)",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "It runs with a dosbox and is partially playable. Had some input and stability issues, but I could play a little.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1561233259,
+    "title": "STAR WARS\u2122: Rebel Assault I + II",
+    "source": "protondb"
+  },
+  {
+    "appId": "456540",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Crash on launch.",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562089086,
+    "title": "STAR WARS\u2122: Rebel Assault I + II",
+    "source": "protondb"
+  },
+  {
+    "appId": "456540",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "I did play this not with Proton, but with the steam-dos wrapper (native dosbox: https://github.com/dreamer/steam-dos) and with a Steam controller . So far I only played game 1 which does have a random Steam controller detection (from \"very good\" over \"acceptable\" to \"not at all\"). But the game is generally playable with native dosbox! It may need several starts though. Did only test the sound on game 2 (which worked).",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1563275083,
+    "title": "STAR WARS\u2122: Rebel Assault I + II",
+    "source": "protondb"
+  }
+]

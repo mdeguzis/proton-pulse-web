@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "385100",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "Crashed with Invalid Memory Access Error",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1585679162,
+    "title": "Space - The Return Of The Pixxelfrazzer",
+    "source": "protondb"
+  }
+]

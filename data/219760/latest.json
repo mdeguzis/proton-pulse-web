@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "219760",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-ck-skylake",
+    "notes": "When launching it says Wine is not responding, but if I just wait it out it works. Dialogs and fights are slow in 1080p, but plays fine in 720p (my ultrabook is certainly no \"gaming\" computer, but should be able to handle games from this era).",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546583285,
+    "title": "Beyond Divinity",
+    "source": "protondb"
+  },
+  {
+    "appId": "219760",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.24.02",
+    "kernel": "5.3.5-arch1-1-fsync",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570909484,
+    "title": "Beyond Divinity",
+    "source": "protondb"
+  }
+]

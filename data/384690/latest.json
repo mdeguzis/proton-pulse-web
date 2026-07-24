@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "384690",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7770",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Normally throws error \"can't create Direct3D device.\" and closes. Using PROTON_USE_WINED3D=1 launch option fixes that and makes the game run perfectly fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1557545541,
+    "title": "Umihara Kawase",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "384690",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7770",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Normally throws error \"can't create Direct3D device.\" and closes. Using PROTON_USE_WINED3D=1 launch option fixes that and makes the game run perfectly fine.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1557546739,
+    "title": "Umihara Kawase",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "384690",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "It ran successfully without needing to use Wine D3D. Xbox 360 controller worked fine. The water flickers in the game which can look like a graphical error, but that's actually how it displays natively.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558916314,
+    "title": "Umihara Kawase",
+    "source": "protondb"
+  }
+]

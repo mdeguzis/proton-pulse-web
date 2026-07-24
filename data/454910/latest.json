@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "454910",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Launcher is empty",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1557281249,
+    "title": "Twin Saga",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "454910",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.10-050110-generic",
+    "notes": "Launcher now shows the game artwork, but freezes before you can do anything.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564930276,
+    "title": "Twin Saga",
+    "source": "protondb"
+  }
+]

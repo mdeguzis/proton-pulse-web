@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "56400",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Even though it has a native port, I tried to run it via Proton to get an access to MP. Unfortunately this game is very much borked, and crashes right on a splash screen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554068945,
+    "title": "Warhammer 40,000: Dawn of War II: Retribution",
+    "source": "protondb"
+  },
+  {
+    "appId": "56400",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-48-generic",
+    "notes": "At last I got it running with proton. Initially I had just a black screen and nothing was being rendered, so I had to install winetricks, and there install d3dx9 to get it to work. After this it seems to run very fine. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557005982,
+    "title": "Warhammer 40,000: Dawn of War II: Retribution",
+    "source": "protondb"
+  }
+]

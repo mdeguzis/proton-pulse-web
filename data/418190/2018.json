@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "418190",
+    "title": "Helen's Mysterious Castle",
+    "timestamp": 1534962389,
+    "rating": "Platinum",
+    "notes": "works better tha windows",
+    "os": "Lubuntu 18.04",
+    "gpuDriver": "Mesa 18",
+    "specs": "psbdrmfb    onboard celeron",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418190",
+    "title": "helen's mysterious castle",
+    "timestamp": 1535686096,
+    "rating": "Gold",
+    "notes": "the game no run in full screen but this is an char of the game, the same in windows",
+    "os": "lubuntu 18.04 64 bits gtx 650",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "core2quad q8400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "418190",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.6-300.fc29.x86_64",
+    "notes": "Has sound but no music",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Silver",
+    "timestamp": 1545966437,
+    "title": "Helen's Mysterious Castle",
+    "source": "protondb"
+  },
+  {
+    "appId": "418190",
+    "title": "Helen's Mysterious Castle",
+    "timestamp": 1534947989,
+    "rating": "Platinum",
+    "notes": "works better tha windows",
+    "os": "Lubuntu 18.04",
+    "gpuDriver": "Mesa 18",
+    "specs": "psbdrmfb    onboard celeron",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "418190",
+    "title": "helen's mysterious castle",
+    "timestamp": 1535671696,
+    "rating": "Gold",
+    "notes": "the game no run in full screen but this is an char of the game, the same in windows",
+    "os": "lubuntu 18.04 64 bits gtx 650",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "core2quad q8400",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

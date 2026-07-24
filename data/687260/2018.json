@@ -1,0 +1,100 @@
+[
+  {
+    "appId": "687260",
+    "title": "Tokyo Dark",
+    "timestamp": 1534972817,
+    "rating": "Borked",
+    "notes": "The game launch but is stucked on the loading screen ",
+    "os": "Archlinux 64 bits 4.18.3 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 7 1700 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "title": "Tokyo Dark",
+    "timestamp": 1535218273,
+    "rating": "Borked",
+    "notes": "The Steam client shows the game is running, but no game windows appears,",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3",
+    "specs": "R7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.19.0-1-MANJARO",
+    "notes": "Launched without tweaks, crashed after new game (but worked the second time, had to restart steam), minor fps drops, seems to be fps locked @ 60\n\ndind't continue testing after the point where the game was playable",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16042 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537048605,
+    "title": "Tokyo Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "After disabling Esync, the game stops crashing (it crashed nearly immediately and reproducible before that) and seems to be playable fine. I only took a short peek (5-10 minutes) at it, so there might be some issues later on.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545411214,
+    "title": "Tokyo Dark",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs without tweaks but persistent crashes during gameplay preventing progress. When using 'wined3d' game sits as \"running\" without any window, 'nod3d11' causes the game to exit instantly and with  'noesync' or 'forcelgadd' the game is playable but continues to crash regularly.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "6 GB",
+    "rating": "Bronze",
+    "timestamp": 1545912748,
+    "title": "Tokyo Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "title": "Tokyo Dark",
+    "timestamp": 1534958417,
+    "rating": "Borked",
+    "notes": "The game launch but is stucked on the loading screen ",
+    "os": "Archlinux 64 bits 4.18.3 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 7 1700 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "687260",
+    "title": "Tokyo Dark",
+    "timestamp": 1535203873,
+    "rating": "Borked",
+    "notes": "The Steam client shows the game is running, but no game windows appears,",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3",
+    "specs": "R7 1700",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

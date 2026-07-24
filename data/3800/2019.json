@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "3800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Choose \"Play Advent Rising\" not \"Play Game\" otherwise nothing happens. Disabling Esync seems to stop the random \"General Protection Faults\" that crash the game. Still very jerky in places, but is generally playable",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556129295,
+    "title": "Advent Rising",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "3800",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.2.0-1-MANJARO",
+    "notes": "Fisrt started the game wiht the files what steam download, after i remembered it have a unofficial patch called Advent Revising v2 what adds a lot of cutscences from the xbox version, plus fix a lot of error, plus enables 16:9 screenratio for the game. Just copied over the files and since than i was playin and enjoyin that awesome music what the game have. Without troubles.\n\nOOB the game time to times crashed with \"General Protection Faults\", after the unoddicial patch its runs smoothly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1560199394,
+    "title": "Advent Rising",
+    "source": "protondb"
+  }
+]

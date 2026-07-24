@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "351990",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Crashes on startup",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554684123,
+    "title": "Riff Racer - Race Your Music!",
+    "source": "protondb"
+  },
+  {
+    "appId": "351990",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "Due to how hard the tweaks are, I sort of think this should be silver, but it does run perfectly...\n\nI used this to create a 32 bit wine prefix https://www.reddit.com/r/linux_gaming/comments/99e0kc/steam_playguide_create_custom_32bit_prefix_to/\n\nAnd I also installed dotnet452 with protontricks",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560372962,
+    "title": "Riff Racer - Race Your Music!",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "384750",
+    "cpu": "Intel Xeon E5-1650 v2 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.57-gentoo",
+    "notes": "Exits right after \"press any button to start\".",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "3.16-4",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1566600118,
+    "title": "EVEREST VR\u2122",
+    "source": "protondb"
+  }
+]

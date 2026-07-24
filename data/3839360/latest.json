@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3839360",
+    "cpu": "11th Gen Intel Core i7-11800H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "7.0.0-1-cachyos-bore",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1779768008,
+    "title": "",
+    "source": "protondb"
+  }
+]

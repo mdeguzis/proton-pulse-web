@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "239140",
+    "title": "Darksiders",
+    "timestamp": 1536717815,
+    "rating": "Borked",
+    "notes": "Installs but errors on directX installation. Loads first intro screen but then goes black. Plays sound and if you move the mouse around you can hear it hit menu options and select them but no video comes through.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3820 / GTX 1070",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "239140",
+    "cpu": "Intel(R) Core(TM) i7-8700K CPU @ 5.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-041808-generic",
+    "notes": "Runs perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64352 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537728698,
+    "title": "Dying Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "239140",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.19.2-041902-generic",
+    "notes": "Used Native2Proton and the game runs great. It actually starts unlike the native version",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542594803,
+    "title": "Dying Light",
+    "source": "protondb"
+  },
+  {
+    "appId": "239140",
+    "title": "Darksiders",
+    "timestamp": 1536703415,
+    "rating": "Borked",
+    "notes": "Installs but errors on directX installation. Loads first intro screen but then goes black. Plays sound and if you move the mouse around you can hear it hit menu options and select them but no video comes through.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3820 / GTX 1070",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

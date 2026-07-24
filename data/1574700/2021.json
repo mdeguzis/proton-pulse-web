@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1574700",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.40.0, 5.11.0-7633-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7633-generic",
+    "notes": "Doesn't start",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1632679667,
+    "title": "",
+    "source": "protondb"
+  }
+]

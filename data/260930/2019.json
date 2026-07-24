@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "260930",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.3-108.current",
+    "notes": "It's running fine initially, although with a very low resolution and low details. After setting the resolution to Full HD and exiting the game it won't start anymore. So you can run it, if graphics don't bother you.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548603694,
+    "title": "Emergency 2014",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1234180",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 Fury (FIJI, DRM 3.40.0, 5.12.8-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.1",
+    "kernel": "5.12.8-arch1-1",
+    "notes": "Launching the game shows the intro videos, then a black screen without sound",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1623948034,
+    "title": "",
+    "source": "protondb"
+  }
+]

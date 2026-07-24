@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "550340",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.7-1-MANJARO",
+    "notes": "As mentioned; must launch in fullscreen + ditch opening cinematic, after that, playing in single-player works fine.\nNo success was had trying to emulate a virtual desktop to circumvent the fullscreen requirement, although I still believe it to be possible. (I tried using https://wiki.winehq.org/FAQ#How_do_I_get_Wine_to_launch_an_application_in_a_virtual_desktop.3F this argument in the launch options to various bad affects, then tried winecfg in the prefix, but it seemed to do nothing.)",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1556290456,
+    "title": "Umineko: Golden Fantasia",
+    "source": "protondb"
+  },
+  {
+    "appId": "550340",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "it started getten error cant render out source pin. and then closes itself with a japanese error after that i can read for i get no japanese unicode installed",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562501306,
+    "title": "Umineko: Golden Fantasia",
+    "source": "protondb"
+  }
+]

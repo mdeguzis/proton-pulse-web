@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "501760",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Game is playable, but has distorted audio, if a controller is connected the game keeps moving in a direction. Some screen prompts are missing.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1540307976,
+    "title": "Francisca",
+    "source": "protondb"
+  }
+]

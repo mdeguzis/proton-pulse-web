@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "715720",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Game works perfectly except switching between fullscreen and windowed in-game is glitchy (needed to switch between desktops to bring up the screen again.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547309718,
+    "title": "Cuco",
+    "source": "protondb"
+  }
+]

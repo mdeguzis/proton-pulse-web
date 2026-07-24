@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1268750",
+    "cpu": "13th Gen Intel Core i7-13620H",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.8.0-88-generic",
+    "notes": "Great game for some hours of fun with others.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767941130,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1268750",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Forced frame generation and terrible input lag with no remedy, due to the graphics options being inaccessible to Deck users.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1771117954,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1268750",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 20.1.2, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1779106612,
+    "title": "",
+    "source": "protondb"
+  }
+]

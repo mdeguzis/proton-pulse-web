@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "2350",
+    "title": "Quake 3 Team Arena",
+    "timestamp": 1535583925,
+    "rating": "Gold",
+    "notes": "There's a long-standing bug (even in Windows) where the mouse endlessly copies itself to the background. That happens here.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "title": "Quake III: Team Arena",
+    "timestamp": 1535385321,
+    "rating": "Gold",
+    "notes": "Mouse movement in menus seems odd, otherwise smooth gameplay",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "title": "Quake III: Team Arena",
+    "timestamp": 1535428181,
+    "rating": "Gold",
+    "notes": "Some minor mouse issues in the menu. Be sure to play on native res, that helps.",
+    "os": "Ubuntu 17.04",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10 / DRM 3.23.0 / 4.15.0-36-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "The mouse draws over the background",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Gold",
+    "timestamp": 1539257935,
+    "title": "QUAKE III: Team Arena",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "title": "Quake 3 Team Arena",
+    "timestamp": 1535569525,
+    "rating": "Gold",
+    "notes": "There's a long-standing bug (even in Windows) where the mouse endlessly copies itself to the background. That happens here.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "title": "Quake III: Team Arena",
+    "timestamp": 1535370921,
+    "rating": "Gold",
+    "notes": "Mouse movement in menus seems odd, otherwise smooth gameplay",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350",
+    "title": "Quake III: Team Arena",
+    "timestamp": 1535413781,
+    "rating": "Gold",
+    "notes": "Some minor mouse issues in the menu. Be sure to play on native res, that helps.",
+    "os": "Ubuntu 17.04",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

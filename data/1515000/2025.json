@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1515000",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.0-108013-tuxedo",
+    "notes": "Too slow",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1747252630,
+    "title": "",
+    "source": "protondb"
+  }
+]

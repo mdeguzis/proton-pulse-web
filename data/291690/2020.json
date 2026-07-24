@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "291690",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "The game cannot reach the initial menu",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1593421881,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "291690",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "Got some errors in the log: details in the extra notes",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1593437270,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "291690",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.9.1-arch1-1",
+    "notes": "The game starts into the main menu, but then a blackscreen appears and nothing happens",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1603641034,
+    "title": "",
+    "source": "protondb"
+  }
+]

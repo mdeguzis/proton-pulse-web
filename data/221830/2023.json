@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "221830",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.5.7",
+    "notes": "The native version is unfortunately problematic, but playing through vanilla Proton is rock solid.",
+    "os": "NixOS 23.05 (Stoat)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1698857475,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "590950",
+    "cpu": "Intel Celeron  N2820  @ 2.13GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No tweaks needed, but to enter full-screen, press F11.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1542229311,
+    "title": "Toaster Jam",
+    "source": "protondb"
+  }
+]

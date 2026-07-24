@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1361350",
+    "cpu": "Intel Celeron N3450 @ 1.10GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 500 (APL 2)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.71-1-MANJARO",
+    "notes": "Setting low graphics, totally play well. But Opening-Movie and Shower-scene-movies are  sound only. Sometimes crush heavy graphic load.",
+    "os": "Manjaro Linux\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "7.0-4",
+    "ram": "3748Mb",
+    "rating": "bronze",
+    "timestamp": 1665399368,
+    "title": "",
+    "source": "protondb"
+  }
+]

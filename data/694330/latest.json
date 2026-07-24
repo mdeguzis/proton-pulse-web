@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "694330",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.15.0-58-generic",
+    "notes": "I'm running Underrail with the Expedition-DLC v. 1.1.0.12. First I installed protontricks (a simple google search should show you how to, if you're a linux newcomer like me), then used protontricks to install dotnet452 and xna40. After that, the game just runs like intended without any further tweaks, saves and autosaves work just fine, sound works without flaws.. Even closing the game now works as it should ;)",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1566953000,
+    "title": "Underrail: Expedition",
+    "source": "protondb"
+  }
+]

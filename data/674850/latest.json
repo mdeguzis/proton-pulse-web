@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "674850",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "The game generally runs, but has some issues. Note that some of these may be due to my own setup - I'm still tweaking things. Regardless, the issues I noticed were some minor screen tearing during gameplay and a strange underpower on the default throw strength and height. On my previous Windows machine, cranking the throw strength and height settings all the way up meant I could chuck 70 yard bombs easily. Now with those same settings I struggle to throw the ball ten yards. The game is playable without this, of course, but the precision of a crisp throw is required to beat some of the later levels.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566007605,
+    "title": "2MD VR Football",
+    "source": "protondb"
+  },
+  {
+    "appId": "674850",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Update from my prior review: after digging around about the throw strength issue, I found a developer recommendation to launch the configuration tool (shows up as a menu option when you click to play the game) and set the social viewer window to as small a resolution as possible. Apparently the physics of the throw strength are very closely related to the framerate you get in the game (and therefore in the social window) so reducing the output quality helps improve any stuttering or slowdowns. Applying this fix made the game run silky smooth and I no longer have issues with the throw strength.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566156992,
+    "title": "2MD VR Football",
+    "source": "protondb"
+  }
+]

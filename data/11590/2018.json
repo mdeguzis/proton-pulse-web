@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "11590",
+    "title": "Hospital Tycoon",
+    "timestamp": 1535160174,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Solus 3.9999 shannon (Kernel 4.17.14-86.current)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-4790 / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11590",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No faults found",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541290482,
+    "title": "Hospital Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "11590",
+    "cpu": "Intel Core i7         870  @ 2.93GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No issues. Game is forced to run in full screen.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541565910,
+    "title": "Hospital Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "11590",
+    "title": "Hospital Tycoon",
+    "timestamp": 1535145774,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Solus 3.9999 shannon (Kernel 4.17.14-86.current)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i7-4790 / R9 380",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

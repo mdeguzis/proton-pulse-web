@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "246980",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game ran and was fully playable. Only issue I saw was that the bunches of grass would rise up and down, floating in the air and then going below the ground of the level, but this only affected aesthetics, not gameplay.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560009643,
+    "title": "InFlux",
+    "source": "protondb"
+  }
+]

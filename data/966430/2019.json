@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "966430",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Runs great on boot, no tweaks necessary. Solid 60+ framerate, no crashes.",
+    "os": "Pop!_OS 18.10",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563041914,
+    "title": "Neverinth",
+    "source": "protondb"
+  },
+  {
+    "appId": "966430",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565380845,
+    "title": "Neverinth",
+    "source": "protondb"
+  }
+]

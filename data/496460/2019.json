@@ -1,0 +1,89 @@
+[
+  {
+    "appId": "496460",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-142-generic",
+    "notes": "Using the D3d11 env var, runs and displays absolutely great but hangs up after 2 to 5 minutes of gameplay (3 tries)",
+    "os": "Ubuntu 16.04.3 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1551093455,
+    "title": "Life is Feudal: Forest Village",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "496460",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game works out if the box, but with few issues:\n1. autosave sometimes throw error;\n2. game sometimes lags, when autosave is working or effects like rain or snow is visible;\n3. if press exit in full screen, game freezes (works fine in windowed mode).",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554625989,
+    "title": "Life is Feudal: Forest Village",
+    "source": "protondb"
+  },
+  {
+    "appId": "496460",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Used Proton 4.2-3 out of the Box with Nvidia 418.56 drivers (latest as of this review). Colors seems a bit off, but besides that it runs rather smooth. 60FPS with rare drops to about 42 FPS. With normal Game Speed it runs very smooth, stutters a bit when Game Speed is set to 2x or faster. The faster the Game Speed, the more stutter you get while still maintaining about 60 FPS. Grass (Particles?) gets all placed facing the same directions, so you will see some kind of a Grid when zoomed in.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1557174389,
+    "title": "Life is Feudal: Forest Village",
+    "source": "protondb"
+  },
+  {
+    "appId": "496460",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-52-generic",
+    "notes": "How to start:\n1. Copy user_settings.py from user_settings.example.py (~/.steam/steam/steamapps/common/Proton 4.2).\n2. Uncomment line with \"PROTON_USE_WINED3D\": \"1\"\n3. Save file & start game",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1560886925,
+    "title": "Life is Feudal: Forest Village",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "496460",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "Its playable, but it crashs every 10 or 15 minutes. You need to save the game manualy after you had load a game. Then it will run better.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1563024926,
+    "title": "Life is Feudal: Forest Village",
+    "source": "protondb"
+  }
+]

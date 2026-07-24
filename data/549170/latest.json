@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "549170",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "Gameplay works fine but when Esc is pressed the menu isn't visible but the game does pause. You can hear the menu mouse-over effects but it's not really functional. Upon exiting the menu the game works fine.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1550377791,
+    "title": "Army Men II",
+    "source": "protondb"
+  }
+]

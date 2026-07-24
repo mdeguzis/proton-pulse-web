@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "275290",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The game has it's content packaged as modules. After the Steam download you click 'Play\", the game launcher UI starts and needs to install (register) all the DLC. All you have to do is click \"Save & Play\" several times, for each module to install until this process is done. After the final DLC/module is installed, the game does start and all works out of the box.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549966937,
+    "title": "Graviteam Tactics: Operation Star",
+    "source": "protondb"
+  },
+  {
+    "appId": "275290",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-49-generic",
+    "notes": "One minor thing, with PPA Nvidia Driver versions (did not test with other Nvidia nor AMD cards): unless you check \"Simple Shader\" in graphics option, the game won't render HLSL/GLSL correctly, leaving 'black artifacts', when it should render 'shadows'/'shaded materials' = behind smoke effects, for example. Not sure if this is a 'translation' error in WINE/Proton or a Nvidia specific API driver related thing (In Windows OS, it renders correctly). Check \"Simple Shader\" and it's all good.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1557409249,
+    "title": "Graviteam Tactics: Operation Star",
+    "source": "protondb"
+  }
+]

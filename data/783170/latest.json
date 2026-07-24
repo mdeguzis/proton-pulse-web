@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "783170",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548008753,
+    "title": "INSOMNIA: The Ark",
+    "source": "protondb"
+  },
+  {
+    "appId": "783170",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Use newest proton beta, with 3.7-8 the game does not run",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548009308,
+    "title": "INSOMNIA: The Ark",
+    "source": "protondb"
+  },
+  {
+    "appId": "783170",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "The main game itself runs fine, but no videos will play.\nWhich means that the game cannot be played further than the short intro. Then a video starts and - due to not being played via Proton - never finishes playing and so the game can't advance.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561305570,
+    "title": "INSOMNIA: The Ark",
+    "source": "protondb"
+  }
+]

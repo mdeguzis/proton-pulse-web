@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "286140",
+    "title": "Eidolon",
+    "timestamp": 1535942572,
+    "rating": "Borked",
+    "notes": "-",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "286140",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-140-generic",
+    "notes": "The steam client shows the binary running shortly, however it then quickly exits.  Graphics never appear to get init'd.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1545166233,
+    "title": "Eidolon",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "286140",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Games does not launch at all",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545967170,
+    "title": "Eidolon",
+    "source": "protondb"
+  },
+  {
+    "appId": "286140",
+    "title": "Eidolon",
+    "timestamp": 1535928172,
+    "rating": "Borked",
+    "notes": "-",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

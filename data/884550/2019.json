@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "884550",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-46-generic",
+    "notes": "It loads without issue and menu has full functionality. Unfortunately I could not actually play the game as have to get a friend to play with. Will probably test it and write another report soon.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554200621,
+    "title": "Mist of the Dark",
+    "source": "protondb"
+  }
+]

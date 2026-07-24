@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "7600",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.5",
+    "kernel": "5.0.4-200.fc29.x86_64",
+    "notes": "Just as broken as it is on Windows. Runs after patching the 3GB flag in the executable,  then crashes after a game gets too complex. Just like Windows 7. \n\nIt's not Proton, this game is just broken.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554860637,
+    "title": "Sid Meier's Railroads!",
+    "source": "protondb"
+  },
+  {
+    "appId": "7600",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Quadro M1000M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch2-1-ARCH",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568903816,
+    "title": "Sid Meier's Railroads!",
+    "source": "protondb"
+  }
+]

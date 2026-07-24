@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "974630",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-8e26d53 2019-01-23 cosmic-oibaf-ppa)",
+    "kernel": "5.0.0-rc3",
+    "notes": "latest wine-staging and dxvk: the game hangs the system,  the amdgpu kernel driver resets itself and you must shut down with power button. This game did work a month ago.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1548265255,
+    "title": "Shadow of the Tomb Raider Demo",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "974630",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Shows \"No display adapter installed\" dialog but nevertheless runs fine. ",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555955843,
+    "title": "Shadow of the Tomb Raider Demo",
+    "source": "protondb"
+  },
+  {
+    "appId": "974630",
+    "cpu": "AMD Athlon II X4 640",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-rc4",
+    "kernel": "4.19.72-gentoo",
+    "notes": "With no startup parameters, the game starts, and gets to the screen asking to accept the trial terms. At that point, it will not accept any inputs (keyboard, mouse or controller - nothing responds).\n\nI then tried PROTON_NO_ESYNC=1 %command%  The game started, and I could get into gameplay, but it was VERY jerky, frequent stops and lip sync was very bad.\n\nNext try was PROTON_USE_WINED3D=1 PROTON_NO_ESYNC=1 PROTON_NO_FSYNC=1 %command%  Seemed OK until I started gameplay, at which point all I got was a blank screen. All the \"text\" type displays, and splash screens were visible, just nothing for game images.\n\nNext try was VK_ICD_FILENAMES=\"/usr/share/vulkan/icd.d/radeon_icd.x86_64.json\" %command%  (from one of the posts here - the path and filename will vary on your distro).  This looked very promising, in that all the graphics were fast and smooth, but the game crashed as soon as it got into the main game play sequence.\n\nFinally, this worked: VK_ICD_FILENAMES=\"/usr/share/vulkan/icd.d/radeon_icd.x86_64.json\" PROTON_NO_ESYNC=1 %command%  Intro scenes were smooth, no lags. Game play was OK, with occasional hiccups at save points. I set graphics to lowest, didn't stop lags. It's playable, but not ideal.\n\nMy Vulkan installation is at version 1.1.106\n\nRecognition of the xbox 360 controller was sporadic, with the game giving keyboard suggestions until I pressed a gamepad key, at which point they changed. But reverted back to keyboard again soon after. I set the Steam controller option to off.",
+    "os": "Unknown",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569095843,
+    "title": "Shadow of the Tomb Raider Demo",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "257850",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Can't seem to get it to run. I've tried several proton versions, D3d11, disabling Esync, and running LD_PRELOAD on necessary lib files as I saw some people suggest. No matter what I do, the game will open a black window for a few seconds and then crash.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540862929,
+    "title": "Hyper Light Drifter",
+    "source": "protondb"
+  },
+  {
+    "appId": "257850",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Posting here even though it has a native Linux version.\nIf on Arch and you get the libcurl.so.4/CURL3 error make sure your environment variable \"LANG\" is not set to \"C\".",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545613061,
+    "title": "Hyper Light Drifter",
+    "source": "protondb"
+  }
+]

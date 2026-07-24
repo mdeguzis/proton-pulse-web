@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "488310",
+    "title": "Eleven: Table Tennis VR",
+    "timestamp": 1535141138,
+    "rating": "Borked",
+    "notes": "Completely freezes immediately after starting and must be killed.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "488310",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Seems stable - but menu text is invisible. It's possible to get a game going, though. Performance is fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15981 Mb",
+    "rating": "Silver",
+    "timestamp": 1536784221,
+    "title": "Eleven: Table Tennis VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "488310",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "the game seems to work very fine and very playable (amazing physics), but the controllers disappear when you enter the steam menu and go back to the game. there doesn't seem to be a way to get them back and you have to close the game.\nhaven't tried any tweaks",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545400058,
+    "title": "Eleven: Table Tennis VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "488310",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Works perfectly for single player. Multiplayer not tested. It did crash a couple of times but that was over a few hours of game play and restarting was fairly quick. I did experience some framerate issues with the winter location when looking around to the left but gameplay was pretty smooth.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545990642,
+    "title": "Eleven: Table Tennis VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "488310",
+    "title": "Eleven: Table Tennis VR",
+    "timestamp": 1535126738,
+    "rating": "Borked",
+    "notes": "Completely freezes immediately after starting and must be killed.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700 / GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

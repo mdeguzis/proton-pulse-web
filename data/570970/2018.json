@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "570970",
+    "title": "ARENA an Age of Barbarians story",
+    "timestamp": 1535489983,
+    "rating": "Bronze",
+    "notes": "No music and playing with a controller the directions get stuck.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "570970",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Insists on running in a fullscreen window with my (Cinnamon) taskbar visible, otherwise runs OK.  Moderate slowdown at points, but not significantly worse than native.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7841 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536344122",
+    "title": "ARENA an Age of Barbarians story",
+    "source": "protondb"
+  },
+  {
+    "appId": "570970",
+    "title": "ARENA an Age of Barbarians story",
+    "timestamp": 1535475583,
+    "rating": "Bronze",
+    "notes": "No music and playing with a controller the directions get stuck.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

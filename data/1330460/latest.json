@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1330460",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.12.57+deb13-amd64",
+    "notes": "It just worked for me",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771186845,
+    "title": "",
+    "source": "protondb"
+  }
+]

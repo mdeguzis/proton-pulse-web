@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1270670",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RENOIR (DRM 3.40.0, 5.11.16-zen1-1-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.16-zen1-1-zen",
+    "notes": "Without sound effects you're missing voice lines and sounds that play during platforming & combat.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1623430647,
+    "title": "Touhou Double Focus",
+    "source": "protondb"
+  },
+  {
+    "appId": "1270670",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625758690,
+    "title": "Touhou Double Focus",
+    "source": "protondb"
+  },
+  {
+    "appId": "1270670",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "I couldn't select \"start\" in initial menu ,because this game didn't recognize my keyboard.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637832475,
+    "title": "Touhou Double Focus",
+    "source": "protondb"
+  }
+]

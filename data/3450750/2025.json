@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3450750",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.0-45-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-45-generic",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1747267605,
+    "title": "A Whole Wolfrush",
+    "source": "protondb"
+  }
+]

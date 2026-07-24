@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3327640",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.63, 6.15.6-113.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.15.6-113.bazzite.fc42.x86_64",
+    "notes": "works well enough using Proton Hotfix (20250501). a couple minor issues that don't bork the gameplay proper",
+    "os": "Bazzite (FROM Fedora Atomic)",
+    "protonVersion": "9.0-4",
+    "ram": "23 GB",
+    "rating": "gold",
+    "timestamp": 1754231276,
+    "title": "hololive Holo's Hanafuda",
+    "source": "protondb"
+  }
+]

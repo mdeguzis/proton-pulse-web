@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1822550",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.17.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.2-arch1-1",
+    "notes": "Took a while to start but it's running perfectly fine",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1760703961,
+    "title": "",
+    "source": "protondb"
+  }
+]

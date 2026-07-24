@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "20700",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.17",
+    "kernel": "5.0.0-27-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569549811,
+    "title": "Starscape",
+    "source": "protondb"
+  },
+  {
+    "appId": "20700",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.17",
+    "kernel": "5.0.0-27-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569632149,
+    "title": "Starscape",
+    "source": "protondb"
+  }
+]

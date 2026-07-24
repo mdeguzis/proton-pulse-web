@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "674150",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.49-1-MANJARO",
+    "notes": "The Game doesn't start. it loads then a short time a blackscreen is shown and then it stops running",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1656524408,
+    "title": "Simon the Sorcerer: 25th Anniversary Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1955830",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735954075,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1955830",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.7, DRM 3.59, 6.13.2-1-default)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.13.2-1-default",
+    "notes": "Tried everything, from launch options to different Proton versions, but it just launches to a black/grey screen with no audio.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1740055016,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1955830",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 25.0.1 - kisak-mesa PPA",
+    "kernel": "5.15.0-136-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1745308596,
+    "title": "",
+    "source": "protondb"
+  }
+]

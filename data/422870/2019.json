@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "422870",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000rc3-generic",
+    "notes": "Won't start, nothing happens. Tried different Proton launch options, and disabling Steam overlays.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548531514,
+    "title": "Super Duper Flying Genocide 2017",
+    "source": "protondb"
+  },
+  {
+    "appId": "422870",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.14",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557930026,
+    "title": "Super Duper Flying Genocide 2017",
+    "source": "protondb"
+  }
+]

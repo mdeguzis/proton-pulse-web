@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1062000",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Das Spiel bleibt im Ladebildschirm bei \"Anomaly detected\" h\u00e4ngen.",
+    "os": "Linux Mint 21",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1702903755,
+    "title": "Starmancer",
+    "source": "protondb"
+  }
+]

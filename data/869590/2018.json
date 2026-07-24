@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "869590",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.5 - SteamVR PPA",
+    "kernel": "4.19.4-041904-generic",
+    "notes": "Game launches to an all white screen then crashes to deskop. Different proton options or disabling overlays made no difference. ",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543086574,
+    "title": "U-BOOT 1945",
+    "source": "protondb"
+  }
+]

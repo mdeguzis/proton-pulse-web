@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "410430",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Works the same as on Windows out of the box (the game has bugs not Proton related). The mouse jumping/floating issue has been fixed as of this version.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "3.16-8",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552152237,
+    "title": "Morphine",
+    "source": "protondb"
+  }
+]

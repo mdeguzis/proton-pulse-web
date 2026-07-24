@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1372110",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.12-arch1-1",
+    "notes": "Game does not detect any input from my keyboard or mouse",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1674072168,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1372110",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 15.0.7, DRM 3.49, 6.2.7-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.2.7-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1679580335,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1372110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1695954536,
+    "title": "",
+    "source": "protondb"
+  }
+]

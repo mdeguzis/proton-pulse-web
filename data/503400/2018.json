@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "503400",
+    "title": "Four Last Things",
+    "timestamp": 1534947471,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Ubuntu Mate 16.04",
+    "gpuDriver": "?",
+    "specs": "i7-7500U / Intel 5916",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "503400",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": " 3.7-5-Beta",
+    "ram": "15981 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536666751,
+    "title": "Four Last Things",
+    "source": "protondb"
+  },
+  {
+    "appId": "503400",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541217136,
+    "title": "Four Last Things",
+    "source": "protondb"
+  },
+  {
+    "appId": "503400",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Performance is flawless; also handles Alt-Tab seamlessly",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1541459544,
+    "title": "Four Last Things",
+    "source": "protondb"
+  },
+  {
+    "appId": "503400",
+    "title": "Four Last Things",
+    "timestamp": 1534933071,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Ubuntu Mate 16.04",
+    "gpuDriver": "?",
+    "specs": "i7-7500U / Intel 5916",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

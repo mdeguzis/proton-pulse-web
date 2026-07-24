@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "522880",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.7-300.fc30.x86_64",
+    "notes": "720p 60 fps, 1080p 37 fps",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561917480,
+    "title": "PSYCHO-PASS: Mandatory Happiness",
+    "source": "protondb"
+  }
+]

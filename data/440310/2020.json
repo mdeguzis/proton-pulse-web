@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "440310",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.4.0-2.fc32.x86_64",
+    "notes": "The game runs exactly as it does on Windows with zero noticeable differences.",
+    "os": "Fedora release 31 (Rawhide)",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1583560671,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "440310",
+    "cpu": "Intel Core i7-3537U @ 2.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 735M",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-40-generic",
+    "notes": "Requires a CPU with very good single-threaded performance.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1594401641,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "440310",
+    "cpu": "AMD FX-4300 Quad-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 285",
+    "gpuDriver": "NVIDIA 340.108",
+    "kernel": "5.4.0-56-generic",
+    "notes": "Game window would not open",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1606873443,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "58550",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Click ESC until it moves past black screen. Performance is playable, but slow. Antialiasing doesn't work. Ran the game for a few minutes, just to check if it would launch.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1569416085,
+    "title": "A Game of Thrones - Genesis",
+    "source": "protondb"
+  }
+]

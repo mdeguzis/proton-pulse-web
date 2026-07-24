@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2729000",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.12.4-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-zen1-1-zen",
+    "notes": "Indistinguishable from baremetal",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1735646605,
+    "title": "Cats and Seek: Dino Park",
+    "source": "protondb"
+  }
+]

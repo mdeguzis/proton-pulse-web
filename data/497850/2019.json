@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "497850",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "4.19.47_1",
+    "notes": "Game launches with a all red screen, game music plays so I am assuming the main menu did load fine. The game used to run fine with older version of MESA + Proton but with dynamic numerical values not showing correctly as mentioned in another report. Both MESA and AMDVLK have this issue, so it's a AMDGPU or WINE/Proton issue (maybe both).  ",
+    "os": "Void Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559510515,
+    "title": "8-Bit Hordes",
+    "source": "protondb"
+  }
+]

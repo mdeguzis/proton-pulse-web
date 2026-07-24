@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1310330",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-200.nobara.fc42.x86_64",
+    "notes": "Honestly? It literally worked out of the box with 0 tinkering or extra configs",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763990345,
+    "title": "",
+    "source": "protondb"
+  }
+]

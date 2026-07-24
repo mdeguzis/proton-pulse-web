@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312240",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "doesn't launch at all",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545718244,
+    "title": "SEAL Team 12",
+    "source": "protondb"
+  }
+]

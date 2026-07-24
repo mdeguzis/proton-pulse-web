@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "274700",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Sound crackles or staticy. Otherwise, the game works fine. Wonder if FAudio will fix or if there's another setting I need to do.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542340650,
+    "title": "868-HACK",
+    "source": "protondb"
+  }
+]

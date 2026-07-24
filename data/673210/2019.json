@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "673210",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.1-041901-generic",
+    "notes": "takes a while to start first time but seems playable from the start though only got 15 mins in game so far.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551876741,
+    "title": "Frontier Pilot Simulator",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1096710",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.7-arch1-1",
+    "notes": "I couldn't play it and there was no info or error message on why it crashed",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1725479845,
+    "title": "",
+    "source": "protondb"
+  }
+]

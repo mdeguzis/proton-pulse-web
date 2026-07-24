@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "777430",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Game worked perfectly out of the box. I played long enough to test 2 fights and a couple of mini games with no graphical issues or performance problems.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572145798,
+    "title": "Virtual Boxing League",
+    "source": "protondb"
+  }
+]

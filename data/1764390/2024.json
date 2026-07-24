@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1764390",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Good game for the deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1704215878,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1764390",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u041d\u0438 \u0441\u0443\u0447\u043a\u0430, \u043d\u0438 \u0437\u0430\u0434\u043e\u0440\u0438\u043d\u043a\u0438",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1713301480,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1764390",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 555.52.04",
+    "kernel": "6.9.3-4-cachyos",
+    "notes": "C'est un jeu tr\u00e8s touchant, et il fonctionne tr\u00e8s bien.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1717879005,
+    "title": "",
+    "source": "protondb"
+  }
+]

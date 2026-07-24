@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "704860",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD HAWAII",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Installs and runs fine. Music, movement, all good. Windowed or full-screen.",
+    "os": "ArcoLinux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551908029,
+    "title": "Keepsake",
+    "source": "protondb"
+  },
+  {
+    "appId": "704860",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.20.0-1-ck-skylake",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552341504,
+    "title": "Keepsake",
+    "source": "protondb"
+  }
+]

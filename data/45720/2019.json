@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "45720",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-46-generic",
+    "notes": "DX9 Mode gives a black screen with \"E_INALIDARG: XLiveInitialiez(&xii)\" error box and then closes. DX10 Mode completely locks up on the black screen with no error box. Had for force quit application.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556332511,
+    "title": "Lost Planet: Extreme Condition Colonies Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "45720",
+    "cpu": "AMD Phenom II X2 B53",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD HD 6450 CAICOS",
+    "gpuDriver": "3.1 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Someone please fix GFWL games on Linux... Same error with xlive as everyone else.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1562303310,
+    "title": "Lost Planet: Extreme Condition Colonies Edition",
+    "source": "protondb"
+  }
+]

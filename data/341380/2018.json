@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "341380",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Won't start, tried different launch options and nothing happens.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540315657,
+    "title": "Countless Rooms of Death",
+    "source": "protondb"
+  }
+]

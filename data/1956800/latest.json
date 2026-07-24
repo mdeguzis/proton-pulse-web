@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1956800",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.0, DRM 3.59, 6.12.6-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.6-200.fc41.x86_64",
+    "notes": "Works out of the box with proton (experimental), no issues at all",
+    "os": "Fedora Linux 41 (Sway)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1735837722,
+    "title": "",
+    "source": "protondb"
+  }
+]

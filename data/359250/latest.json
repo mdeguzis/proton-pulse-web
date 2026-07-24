@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "359250",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-54-generic",
+    "notes": "It works well, rename the movies folder in YourSteamLibraryFolder/steamapps/common/City of Fools/assets to avoid black screen when playing the four .avi files.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1566388575,
+    "title": "City of Fools",
+    "source": "protondb"
+  }
+]

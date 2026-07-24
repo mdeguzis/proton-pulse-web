@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "735530",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.15-arch1-1",
+    "notes": "Doesn't launch at all",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1637519930,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "369230",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Seems to work well but sometimes hangs when leaving a match, didn't try any proton tweaks. Didn't try online multiplayer. Requires a controller.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546822214,
+    "title": "Kung Fu Panda Showdown of Legendary Legends",
+    "source": "protondb"
+  }
+]

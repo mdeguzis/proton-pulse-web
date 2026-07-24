@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2875780",
+    "cpu": "Intel Core Ultra 7 258V",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (LNL)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.1",
+    "kernel": "6.15.4-zen2-1-zen",
+    "notes": "Works great as long as you use fullscreen mode",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1754307935,
+    "title": "Staying Fresh",
+    "source": "protondb"
+  },
+  {
+    "appId": "2875780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works out of the box. Wonderful chiptune and pixelart game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1758395408,
+    "title": "Staying Fresh",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "585550",
+    "title": "FEMINAZI: The Triggering",
+    "timestamp": 1534824000,
+    "rating": "Platinum",
+    "notes": "Haven't tested fullscreen",
+    "os": "Ubuntu 18.04 16 GB RAM",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1500X / GTX 1070 8GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "585550",
+    "title": "FEMINAZI: The Triggering",
+    "timestamp": 1535817535,
+    "rating": "Silver",
+    "notes": "Even after increasing nofiles, game sometimes crashes with error eventfd: Too many open files, Protocol error: process 0025: sendmsg: Bad file descriptor. Otherwise, it runs fine both windowed and fullscreen and controller also works as intended.\n",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "585550",
+    "title": "FEMINAZI: The Triggering",
+    "timestamp": 1534809600,
+    "rating": "Platinum",
+    "notes": "Haven't tested fullscreen",
+    "os": "Ubuntu 18.04 16 GB RAM",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 5 1500X / GTX 1070 8GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "585550",
+    "title": "FEMINAZI: The Triggering",
+    "timestamp": 1535803135,
+    "rating": "Silver",
+    "notes": "Even after increasing nofiles, game sometimes crashes with error eventfd: Too many open files, Protocol error: process 0025: sendmsg: Bad file descriptor. Otherwise, it runs fine both windowed and fullscreen and controller also works as intended.\n",
+    "os": "Arch Linux (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1600X / RX 480",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "220700",
+    "cpu": "Intel Celeron          540  @ 1.86GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel 965GM",
+    "gpuDriver": "2.1 Mesa 19.0.2",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "Map editor:Created a npc saying hi.\nDatabase editor: Created a character, tested troop battle.\nIn-editor testing: Game can be played, but very low fps.\n\nSound issues? None, the app runs as intended.\n\nLow fps possibly because of hardware rather than software.\n\nNo tweaks were needed to run the game, at least that required manual intervention.\n\nThis report will be updated in the future in a longer testing session.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "2 GB",
+    "rating": "Platinum",
+    "timestamp": 1556391393,
+    "title": "RPG Maker VX Ace",
+    "source": "protondb"
+  },
+  {
+    "appId": "220700",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "Crashes on startup.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557657653,
+    "title": "RPG Maker VX Ace",
+    "source": "protondb"
+  }
+]

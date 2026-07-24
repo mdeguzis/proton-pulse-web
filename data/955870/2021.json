@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "955870",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-66-generic",
+    "notes": "Game works, shutdown does not work so you need to keep playing! :D",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1614625272,
+    "title": "Battlecruisers",
+    "source": "protondb"
+  },
+  {
+    "appId": "955870",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.53-1-MANJARO",
+    "notes": "Game randomly lags on startup but is usually fixed by restarting it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "28 GB",
+    "rating": "silver",
+    "timestamp": 1627724103,
+    "title": "Battlecruisers",
+    "source": "protondb"
+  },
+  {
+    "appId": "955870",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.42.0, 5.14.10-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.10-1-MANJARO",
+    "notes": "No issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634362625,
+    "title": "Battlecruisers",
+    "source": "protondb"
+  }
+]

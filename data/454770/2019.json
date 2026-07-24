@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "454770",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-16-generic",
+    "notes": "The game worked GREAT without touching any other tweaks or settings until it didn't. After some time playing the game, the screen freezes but audio continues. Had to restart PC each time after the freeze/crash.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "14 GB",
+    "rating": "Bronze",
+    "timestamp": 1553221895,
+    "title": "Mystic Melee",
+    "source": "protondb"
+  }
+]

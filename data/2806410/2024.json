@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2806410",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.57, 6.10.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.3",
+    "kernel": "6.10.9-2-cachyos",
+    "notes": "Game starts and shows launcher, crashes on loading the game at 90%",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1726191121,
+    "title": "",
+    "source": "protondb"
+  }
+]

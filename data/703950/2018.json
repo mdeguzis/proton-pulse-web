@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "703950",
+    "title": "Just Fishing",
+    "timestamp": 1535229811,
+    "rating": "Borked",
+    "notes": "some language file error",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 6500 / R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "703950",
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 620 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "#3694 language file error..",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7874 Mb",
+    "rating": "Borked",
+    "timestamp": 1537565623,
+    "title": "Just Fishing",
+    "source": "protondb"
+  },
+  {
+    "appId": "703950",
+    "title": "Just Fishing",
+    "timestamp": 1535215411,
+    "rating": "Borked",
+    "notes": "some language file error",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i5 6500 / R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

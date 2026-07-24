@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "246840",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559011941,
+    "title": "FATE",
+    "source": "protondb"
+  },
+  {
+    "appId": "246840",
+    "cpu": "AMD A8-5600K APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.8.0-53-generic",
+    "notes": "just works",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570723215,
+    "title": "FATE",
+    "source": "protondb"
+  }
+]

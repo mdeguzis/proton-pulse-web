@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1941780",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, LLVM 17.0.6, DRM 3.57, 6.8.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-19-generic",
+    "notes": "funciona perfeitamente",
+    "os": "Voyager 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1718510565,
+    "title": "",
+    "source": "protondb"
+  }
+]

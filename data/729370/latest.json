@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "729370",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.2.8-1-MANJARO",
+    "notes": "Game launches but when you choose to start new game it goes to a black screen with the cursor. Proton 4.11-3.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567484232,
+    "title": "-KLAUS-",
+    "source": "protondb"
+  }
+]

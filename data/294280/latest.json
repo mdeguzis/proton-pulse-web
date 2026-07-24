@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "294280",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Game runs perfectly fine. Although if you experience audio stuttering/glitching, add this to your Launch Options: PULSE_LATENCY_MSEC=30 %command%",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1546873430,
+    "title": "Scooby Doo! & Looney Tunes Cartoon Universe: Adventure",
+    "source": "protondb"
+  }
+]

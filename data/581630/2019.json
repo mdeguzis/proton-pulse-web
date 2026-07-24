@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "581630",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 560",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.14.92-1-MANJARO",
+    "notes": " \"PROTON_USE_WINED3D11=1 %command%\" launch option.  it runs good",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1548259761,
+    "title": "Sword With Sauce",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

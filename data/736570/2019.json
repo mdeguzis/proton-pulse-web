@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "736570",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Seems to play fine, although Full Screen mode doesn't work properly - the display doesn't resize so it just plays in the corner of a mostly-black screen",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555717379,
+    "title": "The Crooked Man",
+    "source": "protondb"
+  },
+  {
+    "appId": "736570",
+    "cpu": "Intel Core i7-3770S @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Works perfectly with GPU render. Full screen issue mentioned by a previous user does not affect me. I was able to play full screen (F11 key)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558986164,
+    "title": "The Crooked Man",
+    "source": "protondb"
+  }
+]

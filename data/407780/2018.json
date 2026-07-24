@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "407780",
+    "cpu": "Intel(R) Xeon(R) CPU E5-1650 0 @ 3.20GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.25.0, 4.17.0-3-amd64, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.17.0-3-amd64",
+    "notes": "Does not start. No tweaks tried.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-6 beta",
+    "ram": "64397 Mb",
+    "rating": "Borked",
+    "timestamp": 1536604779,
+    "title": "Lethe - Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "407780",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Does not run; tried the three suggested tweaks to no avail.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1540684642,
+    "title": "Lethe - Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "407780",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It still doesn't work with this version",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541377535,
+    "title": "Lethe - Episode One",
+    "source": "protondb"
+  }
+]

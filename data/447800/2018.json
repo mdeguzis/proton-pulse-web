@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "447800",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-cc6a5e937b)",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544378065,
+    "title": "LostWinds 2: Winter of the Melodias",
+    "source": "protondb"
+  },
+  {
+    "appId": "447800",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "works well",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1545995884,
+    "title": "LostWinds 2: Winter of the Melodias",
+    "source": "protondb"
+  }
+]

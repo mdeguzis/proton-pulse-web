@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "402620",
+    "title": "Kindred Spirits on the Roof",
+    "timestamp": 1535728759,
+    "rating": "Bronze",
+    "notes": "somehow ALT+Enter are not working, can\u00b4t change to window mode.   Game only display on upper left side with low resolution.    Actual button and the icon are shifted, can\u00b4t easily click the button.",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "402620",
+    "title": "Kindred Spirits on the Roof",
+    "timestamp": 1535766060,
+    "rating": "Borked",
+    "notes": "Text box background is transparent, some small audio problems, crashes on load game.",
+    "os": "Ubuntu 18.04.1 LTS 64x",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "specs": "AMD FX 6100 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "402620",
+    "cpu": "Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 770M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.06",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15927 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539665321,
+    "title": "Kindred Spirits on the Roof",
+    "source": "protondb"
+  },
+  {
+    "appId": "402620",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "3.1 Mesa 18.1.0-rc4",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Crashes on load game. Text background transparent. Full screen is screwed up. Text in list of saved games shows up as boxes.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541230050,
+    "title": "Kindred Spirits on the Roof",
+    "source": "protondb"
+  },
+  {
+    "appId": "402620",
+    "title": "Kindred Spirits on the Roof",
+    "timestamp": 1535714359,
+    "rating": "Bronze",
+    "notes": "somehow ALT+Enter are not working, can\u00b4t change to window mode.   Game only display on upper left side with low resolution.    Actual button and the icon are shifted, can\u00b4t easily click the button.",
+    "os": "Fedora 28 (kernel: 4.17.19-200.fc28.x86_64)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "E3-1230v2 / GTX970",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "402620",
+    "title": "Kindred Spirits on the Roof",
+    "timestamp": 1535751660,
+    "rating": "Borked",
+    "notes": "Text box background is transparent, some small audio problems, crashes on load game.",
+    "os": "Ubuntu 18.04.1 LTS 64x",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "specs": "AMD FX 6100 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

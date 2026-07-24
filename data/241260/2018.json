@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "241260",
+    "title": "Sherlock Holmes: Crimes and Punishments",
+    "timestamp": 1535536702,
+    "rating": "Platinum",
+    "notes": "Plays, sounds and high graphic works",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / Geforce 1060",
+    "protonVersion": "37.4-",
+    "source": "protondb"
+  },
+  {
+    "appId": "241260",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Seems to run perfectly.  Everything seems to work great.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "2.7.6 beta",
+    "ram": "16008 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537507265,
+    "title": "Sherlock Holmes: Crimes and Punishments",
+    "source": "protondb"
+  },
+  {
+    "appId": "241260",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Zorin OS 12.4 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16067 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537647440,
+    "title": "Sherlock Holmes: Crimes and Punishments",
+    "source": "protondb"
+  },
+  {
+    "appId": "241260",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "3.1 Mesa 18.1.9",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "On a first two or three tries audio was kind of broken, voice could be heard normally, but in the background (actually sometimes louder than actual voice) there was very annoying noise and distorted audio. Really unplayable because of that. Also when quitting the game, it was crashing. But on 4th try it started working just fine, without any changes. So maybe it was something else on my computer. Graphics looks perfect. Keyboard doesn't work in menus (but I am not sure if it works in Windows either). Mouse input looks to be working ok, but has a bit low acceleration by default.",
+    "os": "Debian GNU/Linux unstable (sid)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1541558640,
+    "title": "Sherlock Holmes: Crimes and Punishments",
+    "source": "protondb"
+  },
+  {
+    "appId": "241260",
+    "title": "Sherlock Holmes: Crimes and Punishments",
+    "timestamp": 1535522302,
+    "rating": "Platinum",
+    "notes": "Plays, sounds and high graphic works",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / Geforce 1060",
+    "protonVersion": "37.4-",
+    "source": "protondb"
+  }
+]

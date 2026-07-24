@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1115450",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.18-xanmod1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.18-xanmod1",
+    "notes": "The game runs, although very slow",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1632031856,
+    "title": "",
+    "source": "protondb"
+  }
+]

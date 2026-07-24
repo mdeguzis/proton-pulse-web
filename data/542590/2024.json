@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "542590",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.10_1",
+    "notes": "Updater works but crashes with likely anticheat \"Security Error: disruptive program\" message on game start",
+    "os": "Void Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1713228907,
+    "title": "",
+    "source": "protondb"
+  }
+]

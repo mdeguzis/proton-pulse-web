@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "33440",
+    "title": "Driver San Francisco",
+    "timestamp": 1535016000,
+    "rating": "Borked",
+    "notes": "Unable to test as Steam got stuck on \"allocating disk space\" both times installation was attempted. Somehow took out my internet connection in both cases ",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33440",
+    "title": "Driver San Francisco",
+    "timestamp": 1535471576,
+    "rating": "Borked",
+    "notes": "Error: \"Failed to request product key from Steam, please try again in few minutes\"",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33440",
+    "title": "Driver San Francisco",
+    "timestamp": 1535001600,
+    "rating": "Borked",
+    "notes": "Unable to test as Steam got stuck on \"allocating disk space\" both times installation was attempted. Somehow took out my internet connection in both cases ",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33440",
+    "title": "Driver San Francisco",
+    "timestamp": 1535457176,
+    "rating": "Borked",
+    "notes": "Error: \"Failed to request product key from Steam, please try again in few minutes\"",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

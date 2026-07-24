@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1327820",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-53-generic",
+    "notes": "Worked nicely once I forced use of Proton 5.0-10 and moved the game folder to the right location. Screenshots didn't work, though.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-10 RC3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1606082802,
+    "title": "",
+    "source": "protondb"
+  }
+]

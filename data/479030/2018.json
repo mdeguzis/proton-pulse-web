@@ -1,0 +1,15 @@
+[
+  {
+    "appId": "479030",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Doesn't start",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Borked",
+    "timestamp": "1536364800",
+    "title": "DOOM",
+    "source": "protondb"
+  }
+]

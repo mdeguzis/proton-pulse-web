@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1038670",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Game starts up, first splash screen is normal; from the second splash onwards you can only see a small portion of the game. Buttons are not visible/reachable so game cannot be played.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567875699,
+    "title": "Mind's Eye: Secrets of the Forgotten",
+    "source": "protondb"
+  },
+  {
+    "appId": "1038670",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game launches in Steam but only a small part of the screen is visible. I tried launching the game with PROTON_USE_WINED3D11=1 %command% but it made no difference. I then launched the game via Lutris using ge-protonified-nofshack-4.9-x86_64 as the runner. The game runs perfectly now!",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2.3",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1568801088,
+    "title": "Mind's Eye: Secrets of the Forgotten",
+    "source": "protondb"
+  }
+]

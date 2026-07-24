@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "365160",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.10.89",
+    "notes": "The native didn't work at all for me, but latest Proton works fine (didn't use GE, so maybe I missed a cutscene?)",
+    "os": "NixOS 22.05 (Quokka)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1644086976,
+    "title": "Kona",
+    "source": "protondb"
+  },
+  {
+    "appId": "365160",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.13-200.fc36.x86_64",
+    "notes": "Massive performance issues",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1659712414,
+    "title": "Kona",
+    "source": "protondb"
+  },
+  {
+    "appId": "365160",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.4.0-122-generic",
+    "notes": "Works fine natively with the correct launch options",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1662940387,
+    "title": "Kona",
+    "source": "protondb"
+  }
+]

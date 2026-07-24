@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "387070",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc8-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Works out of the box and the performance is as bad as on Windows.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15960 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540226450,
+    "title": "One Final Breath\u2122",
+    "source": "protondb"
+  }
+]

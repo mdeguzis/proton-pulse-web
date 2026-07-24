@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "33670",
+    "title": "Disciples III: Renaissance",
+    "timestamp": 1535053922,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "KDE Neon 5.13 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33670",
+    "cpu": "AMD Ryzen 5 1600X Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.5-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Played through tutorial and a little bit of campaign. No issues.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16057 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536690710,
+    "title": "Disciples III - Renaissance Steam Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "33670",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "Played one whole mission and everything runs smoothly.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541275725,
+    "title": "Disciples III - Renaissance Steam Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "33670",
+    "title": "Disciples III: Renaissance",
+    "timestamp": 1535039522,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "KDE Neon 5.13 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

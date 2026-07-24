@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "753420",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Game will crash upon exiting, but runs a stable 60FPS otherwise.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1553570174,
+    "title": "Dungreed",
+    "source": "protondb"
+  },
+  {
+    "appId": "753420",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game ran perfectly with an Xbox 360 controller and no tweaks.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559346044,
+    "title": "Dungreed",
+    "source": "protondb"
+  },
+  {
+    "appId": "753420",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-62-generic",
+    "notes": "I have played with gamepad Logitech F310. Everything works fine.",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569090497,
+    "title": "Dungreed",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1003480",
+    "cpu": "Intel Core i5-8257U @ 1.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Iris Plus 645 (CFL GT3)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.2-1mbp-16.1-linux-wifi",
+    "notes": "Works fine, aside from window size. It kinda hurts your eyes to play at such a small size.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1640302349,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "375530",
+    "title": "Football, Tactics & Glory",
+    "timestamp": 1535043716,
+    "rating": "Platinum",
+    "notes": "Works flawlessly.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel  4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "AMD FX-8350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "375530",
+    "title": "Football, Tactics & Glory",
+    "timestamp": 1535140938,
+    "rating": "Platinum",
+    "notes": "Runs like the Windows version",
+    "os": "Kubuntu 18.04.1 LTS 64 Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-3770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "375530",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Nothing to complain about so far",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539117145,
+    "title": "Football, Tactics & Glory",
+    "source": "protondb"
+  },
+  {
+    "appId": "375530",
+    "title": "Football, Tactics & Glory",
+    "timestamp": 1535029316,
+    "rating": "Platinum",
+    "notes": "Works flawlessly.",
+    "os": "Ubuntu 18.04.1 LTS (Kernel  4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel - padoka PPA",
+    "specs": "AMD FX-8350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "375530",
+    "title": "Football, Tactics & Glory",
+    "timestamp": 1535126538,
+    "rating": "Platinum",
+    "notes": "Runs like the Windows version",
+    "os": "Kubuntu 18.04.1 LTS 64 Bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-3770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

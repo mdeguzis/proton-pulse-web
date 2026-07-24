@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "207210",
+    "title": "Tony Hawk's Pro Skater HD",
+    "timestamp": 1534954875,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-2700K / NVIDIA GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207210",
+    "title": "Tony Hawk's Pro Skater HD",
+    "timestamp": 1535463165,
+    "rating": "Platinum",
+    "notes": "Performance is great, no errors, no glitches, no glitches, Vanilla Proton",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6800K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207210",
+    "title": "Tony Hawk's Pro Skater HD",
+    "timestamp": 1536141929,
+    "rating": "Platinum",
+    "notes": "Seems to be working fine",
+    "os": "Ubuntu MATE 14.04.5 (Kernel 4.4.0-131-generic)",
+    "gpuDriver": "Mesa 10.5.9",
+    "specs": "i5-4460 / Intel HD 4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207210",
+    "title": "Tony Hawk's Pro Skater HD",
+    "timestamp": 1534940475,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Ubuntu 16.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-2700K / NVIDIA GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207210",
+    "title": "Tony Hawk's Pro Skater HD",
+    "timestamp": 1535448765,
+    "rating": "Platinum",
+    "notes": "Performance is great, no errors, no glitches, no glitches, Vanilla Proton",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6800K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207210",
+    "title": "Tony Hawk's Pro Skater HD",
+    "timestamp": 1536127529,
+    "rating": "Platinum",
+    "notes": "Seems to be working fine",
+    "os": "Ubuntu MATE 14.04.5 (Kernel 4.4.0-131-generic)",
+    "gpuDriver": "Mesa 10.5.9",
+    "specs": "i5-4460 / Intel HD 4600",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "627950",
+    "cpu": "AMD Phenom II X4 955",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-45-generic",
+    "notes": "At first, the game seems to crash with a black screen. However, if you kill the game process THREE TIMES, then the game starts. After that, the game runs perfectly without issues.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1551079668,
+    "title": "1914: Prelude to Chaos",
+    "source": "protondb"
+  },
+  {
+    "appId": "627950",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Black screen.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556584808,
+    "title": "1914: Prelude to Chaos",
+    "source": "protondb"
+  }
+]

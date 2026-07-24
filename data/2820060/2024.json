@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2820060",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega Frontier Edition (radeonsi, vega10, LLVM 18.1.8, DRM 3.59, 6.12.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "It works!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1733670079,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2820060",
+    "cpu": "13th Gen Intel Core i7-13700KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.8, DRM 3.59, 6.12.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.2",
+    "kernel": "6.12.3-arch1-1",
+    "notes": "I tried multiple version of Proton (Experimental, Hotfix, 9.0-3, and 8.0-5) but all briefly show a window before disappearing and then I only hear some (background) sounds",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1733832498,
+    "title": "",
+    "source": "protondb"
+  }
+]

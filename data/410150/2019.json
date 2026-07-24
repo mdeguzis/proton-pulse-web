@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "410150",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-151-generic",
+    "notes": "It took about a minute to start the first time, but other than that it works like a native game. The only other quirk is that when you Alt-Tab from the game it doesn't minimize but instead stays visible behind the window you switched to. No problem unless you wanted to access the icons on your desktop.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568525166,
+    "title": "Swapperoo",
+    "source": "protondb"
+  }
+]

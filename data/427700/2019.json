@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "427700",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.42-1-MANJARO",
+    "notes": "video cutscenes don't play, otherwise runs perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1558198876,
+    "title": "Zwei: The Ilvard Insurrection",
+    "source": "protondb"
+  }
+]

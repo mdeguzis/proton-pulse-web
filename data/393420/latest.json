@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "393420",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "4.20.16-112.current",
+    "notes": "It's a native game even though store doesn't show linux support. Running without any problems.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-1",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554057836,
+    "title": "Hurtworld",
+    "source": "protondb"
+  }
+]

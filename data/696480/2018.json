@@ -1,0 +1,61 @@
+[
+  {
+    "appId": "696480",
+    "cpu": "i5-4590 CPU @ 3.30GHz",
+    "gpu": "X.Org AMD HAWAII (DRM 2.50.0, 4.15.0-33-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "notes": "Does not start. No Errors given",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6 Beta",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "The Norwood Suite",
+    "source": "protondb"
+  },
+  {
+    "appId": "696480",
+    "cpu": "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Freezes at loading screen",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "32110 Mb",
+    "rating": "Borked",
+    "timestamp": 1537653957,
+    "title": "The Norwood Suite",
+    "source": "protondb"
+  },
+  {
+    "appId": "696480",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541689120,
+    "title": "The Norwood Suite",
+    "source": "protondb"
+  },
+  {
+    "appId": "696480",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Works fine",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1546190235,
+    "title": "The Norwood Suite",
+    "source": "protondb"
+  }
+]

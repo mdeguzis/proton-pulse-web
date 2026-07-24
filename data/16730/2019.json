@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "16730",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game runs and plays fine, Performance is great. Has massive issues with loading in Textures properly and light effects generaly are rendered slightly wrong.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1547503173,
+    "title": "Legendary",
+    "source": "protondb"
+  },
+  {
+    "appId": "16730",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.18.0-20-generic",
+    "notes": "It honestly seems more stable for me on Linux than it was on Windows. I am continuing an old save from Windows where the game was broken, and am now probably halfway through. Unfortunately there have been some intermittent graphical glitches probably specific to my setup, but those were resolved on restarting the game. Other than that the game ran well.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1558224998,
+    "title": "Legendary",
+    "source": "protondb"
+  }
+]

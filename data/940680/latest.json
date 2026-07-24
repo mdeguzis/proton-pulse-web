@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "940680",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.8-arch1-1-ARCH",
+    "notes": "As native.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550171664,
+    "title": "The Textorcist: The Story of Ray Bibbia",
+    "source": "protondb"
+  },
+  {
+    "appId": "940680",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1550469381,
+    "title": "The Textorcist: The Story of Ray Bibbia",
+    "source": "protondb"
+  },
+  {
+    "appId": "940680",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Run perfecty out of the box",
+    "os": "Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "protonVersionManual": "Proton 3.16-8 Beta ED ",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561662400,
+    "title": "The Textorcist: The Story of Ray Bibbia",
+    "source": "protondb"
+  },
+  {
+    "appId": "940680",
+    "cpu": "AMD A8-5600K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.8.0-53-generic",
+    "notes": "Set Launch Options to \"PROTON_USE_WINED3D11=1 %command%\" - runs quite slowly during typing attacks",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568927122,
+    "title": "The Textorcist: The Story of Ray Bibbia",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

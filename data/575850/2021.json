@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "575850",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.4.0-80-generic",
+    "notes": "Game stuck  stuck on \"loading music\", never getting to the menu",
+    "os": "Zorin OS 15.3",
+    "protonVersion": "6.3-5",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1627091090,
+    "title": "",
+    "source": "protondb"
+  }
+]

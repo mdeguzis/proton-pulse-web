@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "280560",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-21-generic",
+    "notes": "As long as you don't press any of the triggers on the controller, this game will work like a charm. I recall it having the same issue on Windows, so it probably has nothing to do with Proton. That's why I choose to class it as platinum.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1564420457,
+    "title": "Danmaku Unlimited 2",
+    "source": "protondb"
+  }
+]

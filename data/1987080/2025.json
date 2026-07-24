@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1987080",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.7, DRM 3.54, 6.6.72)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.6.72",
+    "notes": "Works as intended",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime) NixOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1741131156,
+    "title": "",
+    "source": "protondb"
+  }
+]

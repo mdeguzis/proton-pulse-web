@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1552620",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.11.16-arch1-1",
+    "notes": "The only tinkering I performed was setting the proton version and reducing the graphics settings. The default proton version didn't startup.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1662175151,
+    "title": "Expedition Agartha",
+    "source": "protondb"
+  }
+]

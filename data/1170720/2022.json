@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1170720",
+    "cpu": "Intel Xeon E3-1240 v3 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 13.0.1, DRM 3.44, 5.17.9-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.4",
+    "kernel": "5.17.9-1-MANJARO",
+    "notes": "Funciona perfeitamente como nativo e com proton",
+    "os": "BigLinux (based on Manjaro)",
+    "protonVersion": "7.0-2",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1654814474,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1170720",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.15.72-1-MANJARO",
+    "notes": "I played a bit, ran fine and wasn't bad. I didn't play too much just yet since I mainly was trying it out to play with friends later.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1666843311,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1170720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Great on steam deck with default settigns, only the button glyphs to watch out for.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1666943219,
+    "title": "",
+    "source": "protondb"
+  }
+]

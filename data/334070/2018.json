@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "334070",
+    "title": "Hektor",
+    "timestamp": 1536356627,
+    "rating": "Platinum",
+    "notes": "Seems to work perfectly",
+    "os": "Arch 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "334070",
+    "cpu": "Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz",
+    "gpu": "NVIDIA Corporation GeForce GT 630/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "output_log.txt: Initialize engine version: 4.6.5f1 (c2bb1d7d067c)\nGfxDevice: creating device client; threaded=1\nd3d11: failed to create D3D11 device (0x80004005)\nGfxDevice: creating device client; threaded=1\nCrash!!!\n",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5944 Mb",
+    "rating": "Borked",
+    "timestamp": 1537489590,
+    "title": "Hektor",
+    "source": "protondb"
+  },
+  {
+    "appId": "334070",
+    "title": "Hektor",
+    "timestamp": 1536342227,
+    "rating": "Platinum",
+    "notes": "Seems to work perfectly",
+    "os": "Arch 64-bit (Kernel 4.18.6)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

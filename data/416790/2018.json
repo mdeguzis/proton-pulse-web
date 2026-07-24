@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "416790",
+    "title": "The Metronomicon: Slay The Dance Floor",
+    "timestamp": 1535917626,
+    "rating": "Borked",
+    "notes": "Gives the option to start either the game or editor at start. Both instantly quit the game",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "416790",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Still: after choosing game or editor, it immediately quits.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1542449807,
+    "title": "The Metronomicon: Slay The Dance Floor",
+    "source": "protondb"
+  },
+  {
+    "appId": "416790",
+    "title": "The Metronomicon: Slay The Dance Floor",
+    "timestamp": 1535903226,
+    "rating": "Borked",
+    "notes": "Gives the option to start either the game or editor at start. Both instantly quit the game",
+    "os": "Mint 18.1 Cinnamon 64-bit (kernel 4.4)",
+    "gpuDriver": "Intel HD graphics",
+    "specs": "Intel Core i3-3110M @  2.4GHz x 2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

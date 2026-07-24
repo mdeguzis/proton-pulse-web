@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "674370",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.0-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546354499,
+    "title": "CoffeeBiz",
+    "source": "protondb"
+  }
+]

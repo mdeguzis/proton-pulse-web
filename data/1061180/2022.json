@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1061180",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.0-arch1-1",
+    "notes": "No issues found",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1671623584,
+    "title": "Crumble",
+    "source": "protondb"
+  },
+  {
+    "appId": "1061180",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.4.0-42-generic",
+    "notes": "",
+    "os": "Linux Mint 20",
+    "protonVersion": "7.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1672270639,
+    "title": "Crumble",
+    "source": "protondb"
+  }
+]

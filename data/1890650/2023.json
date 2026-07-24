@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1890650",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "No issues, no setup, just worked.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1699825498,
+    "title": "",
+    "source": "protondb"
+  }
+]

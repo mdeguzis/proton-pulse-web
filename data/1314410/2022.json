@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1314410",
+    "cpu": "AMD Ryzen 5 3450U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.40.0, 5.10.0-1057-oem, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.10.0-1057-oem",
+    "notes": "",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "silver",
+    "timestamp": 1643669359,
+    "title": "",
+    "source": "protondb"
+  }
+]

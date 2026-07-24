@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "742500",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-27-generic",
+    "notes": "After moving the steamapps/compatdata directory to an EXT4 drive and letting steam regenerate everything the game launched with no issues",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569409259,
+    "title": "Nonogram - Master's Legacy",
+    "source": "protondb"
+  }
+]

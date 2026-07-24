@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "260210",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Game downloads uplay update ok, but fails to launch game exe when using defaults. When using PROTON_USE_WINED3D11 the game will launch, but go to a black screen. This happens regardless of whether the uplay overlay is enabled or not. Game downloads the latest uplay client which forces the overlay on with a nag message each time.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1553520373,
+    "title": "Assassin\u2019s Creed\u00ae Liberation HD",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "260210",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Runs flawlessly *after* you install a forked version of Proton. Using the report from the user just below me, I added GloriousEggrolls forked 4.15-GE-4 release. Along with D9VK. I had to start the game 3 times or so before it would actually start the game. Once to update Uplay, another to log into Uplay, another for something else, then another and it started the game right away. Also, Uplay will run in the background unless you uncheck \"run uplay launcher in background\" or whatever its called. Once unchecked, when you exit the game, the launcher will close.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.15-GE-4",
+    "protonVersionManual": "4.15-GE-4",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1568753544,
+    "title": "Assassin\u2019s Creed\u00ae Liberation HD",
+    "source": "protondb"
+  }
+]

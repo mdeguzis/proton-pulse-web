@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "854570",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "There is notification \"DX11 feature level 10.0 is required to run the engine\" maybe the direct X 11 on Proton not include this feature",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1546041070,
+    "title": "Pamali: Indonesian Folklore Horror",
+    "source": "protondb"
+  }
+]

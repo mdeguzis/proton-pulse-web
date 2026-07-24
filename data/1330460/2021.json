@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1330460",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.10.12-1-default, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.12-1-default",
+    "notes": "Running 5.0GE, it was flawless.  Have not tried other released.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613088717,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1330460",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.40.0, 5.11.0-37-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-37-generic",
+    "notes": "Runs Well with Wine",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634560811,
+    "title": "",
+    "source": "protondb"
+  }
+]

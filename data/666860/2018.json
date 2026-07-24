@@ -1,0 +1,63 @@
+[
+  {
+    "appId": "666860",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "Error loading data",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Bit Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "666860",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 570 Series (POLARIS10, DRM 3.26.0, 4.18.8-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Do not use Proton! and the game takes sometime to load",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "No Proton",
+    "ram": "15994 MB",
+    "rating": "Platinum",
+    "timestamp": 1537472906,
+    "title": "Bit Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "666860",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-12-generic",
+    "notes": "El juego corre perfectamente ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1545314958,
+    "title": "Bit Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "666860",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.11-arch1-1-ARCH",
+    "notes": "Now works perfectly in proton 3.16-6",
+    "os": "Arch Linux",
+    "protonVersion": "3.16-6",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545503772,
+    "title": "Bit Heroes",
+    "source": "protondb"
+  }
+]

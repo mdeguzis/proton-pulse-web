@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1056840",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-43-generic",
+    "notes": "",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1613816935,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1056840",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.0-10.1-liquorix-amd64",
+    "notes": "",
+    "os": "Linux Mint 20",
+    "protonVersion": "6.3-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1619891983,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1056840",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.12.2-1-MANJARO",
+    "notes": "It runs perfectly. I've had only one full freeze (probably because the game is still in early access)",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1622674914,
+    "title": "",
+    "source": "protondb"
+  }
+]

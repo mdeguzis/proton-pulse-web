@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "564230",
+    "cpu": "AMD FX-4300 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "4.15.0-58-generic",
+    "notes": "need to enter launch command: PROTON_USE_WINED3D11=1 %command%",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1567056664,
+    "title": "Fire Pro Wrestling World",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

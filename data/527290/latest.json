@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "527290",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Game shows \"starting\" then immediately closes. No windows pop up.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1552090553,
+    "title": "Atelier Firis: The Alchemist and the Mysterious Journey / \u30d5\u30a3\u30ea\u30b9\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u4e0d\u601d\u8b70\u306a\u65c5\u306e\u932c\u91d1\u8853\u58eb\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "527290",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.0",
+    "kernel": "5.0.3-arch1-1-ARCH",
+    "notes": "Runs fine with the instructions here: https://github.com/ValveSoftware/Proton/issues/1486#issuecomment-451980052",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1553873036,
+    "title": "Atelier Firis: The Alchemist and the Mysterious Journey / \u30d5\u30a3\u30ea\u30b9\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u4e0d\u601d\u8b70\u306a\u65c5\u306e\u932c\u91d1\u8853\u58eb\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "527290",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6.13568 Compatibility Profile Context 5.0.73",
+    "kernel": "4.18.0-25-generic",
+    "notes": "works with the d3d9.dll fix from the github https://github.com/ValveSoftware/Proton/issues/1486#issuecomment-451980052 completed basically all events no crashes no glitches just flawless",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563381564,
+    "title": "Atelier Firis: The Alchemist and the Mysterious Journey / \u30d5\u30a3\u30ea\u30b9\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u4e0d\u601d\u8b70\u306a\u65c5\u306e\u932c\u91d1\u8853\u58eb\uff5e",
+    "source": "protondb"
+  }
+]

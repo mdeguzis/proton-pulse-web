@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2333940",
+    "cpu": "Intel Core i5-10600KF @ 4.10GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-78-generic",
+    "notes": "Worked right out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1756065911,
+    "title": "",
+    "source": "protondb"
+  }
+]

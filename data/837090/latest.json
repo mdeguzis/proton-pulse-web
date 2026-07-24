@@ -1,0 +1,40 @@
+[
+  {
+    "appId": "837090",
+    "title": "Chronicles of Mystery - The Tree of Life",
+    "timestamp": 1535816418,
+    "rating": "Platinum",
+    "notes": "Works fine - played only a few mins",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "837090",
+    "cpu": "i5-7440HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.4-ext73-58.4-kabylake",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6 beta",
+    "ram": "7911 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536564710,
+    "title": "Chronicles of Mystery - The Tree of Life",
+    "source": "protondb"
+  },
+  {
+    "appId": "837090",
+    "title": "Chronicles of Mystery - The Tree of Life",
+    "timestamp": 1535802018,
+    "rating": "Platinum",
+    "notes": "Works fine - played only a few mins",
+    "os": "Ubuntu 18.04 64bit (custom 4.18.4)",
+    "gpuDriver": "padoka Mesa 18.3",
+    "specs": "i7-4710-MQ / iGPU HD 4600",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

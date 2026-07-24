@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2124380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1671567581,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2124380",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon R9 200 (hawaii, LLVM 14.0.0, DRM 3.48, 6.0.6-76060006-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.6-76060006-generic",
+    "notes": "Just restart the game every hour or two.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1672025356,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2124380",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.0.13-300.fc37.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 37 (MATE-Compiz)",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1672123674,
+    "title": "",
+    "source": "protondb"
+  }
+]

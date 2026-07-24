@@ -1,0 +1,101 @@
+[
+  {
+    "appId": "202530",
+    "title": "Sonic The Hedgehog 4 Episode I ",
+    "timestamp": 1535548272,
+    "rating": "Borked",
+    "notes": "Complains about missing Java 6 (openjdk is installed on system)",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom X4 965",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "title": "Sonic The Hedgehog 4 Episode I ",
+    "timestamp": 1535561724,
+    "rating": "Borked",
+    "notes": "i can't get passed the java error",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-7700k/Gtx 970",
+    "protonVersion": "3.74-",
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Doesn't start. Needs (at least) JRE installed.",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16068 MB",
+    "rating": "Borked",
+    "timestamp": 1537112929,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - padoka PPA",
+    "kernel": "4.18.0-041800-generic",
+    "notes": "I was able to manage to get this game running. First, you have to google and download the specific java version that is required (at least the 1.6.0 version). Then once it's downloaded, go to where the java download is at and right click the outside of the download folder and click the open in terminal option. Type in the terminal for example: (WINEPREFIX=\"/home/username/.steam/steamapps/compatdata/202530/pfx\" WINEARCH=win64 wine jre-6u45-windows-i586.exe) and install java. After that, use the terminal again to type for example: (WINEPREFIX=\"/home/username/.steam/steamapps/compatdata/202530/pfx\" WINEARCH=win64 winetricks) From there, install msxml3, vcrun2010, and maybe d3dx9. Disable esync (PROTON_NO_ESYNC=1 %command%). Once done, the game should work. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.7.8",
+    "protonVersionManual": "3.7.8",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1540744977,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "The crashes soon after launch and asks to install JAVA",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541555745,
+    "title": "Sonic the Hedgehog 4 - Episode I",
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "title": "Sonic The Hedgehog 4 Episode I ",
+    "timestamp": 1535533872,
+    "rating": "Borked",
+    "notes": "Complains about missing Java 6 (openjdk is installed on system)",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD Phenom X4 965",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "202530",
+    "title": "Sonic The Hedgehog 4 Episode I ",
+    "timestamp": 1535547324,
+    "rating": "Borked",
+    "notes": "i can't get passed the java error",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "I7-7700k/Gtx 970",
+    "protonVersion": "3.74-",
+    "source": "protondb"
+  }
+]

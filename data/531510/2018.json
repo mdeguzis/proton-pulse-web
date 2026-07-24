@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "531510",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 980M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Starts, sound plays, but after a warning only a black screen is visible",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-5 Beta",
+    "ram": "15996 Mb",
+    "rating": "Borked",
+    "timestamp": 1536781832,
+    "title": "Just Shapes & Beats",
+    "source": "protondb"
+  },
+  {
+    "appId": "531510",
+    "cpu": "AMD A10-7890K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Runs perfectly, but locks up if you alt-f4 out of the game. Intro cutscene does not show, and other pre-rendered cutscenes may do the same. (Most cutscenes are in-engine)",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "15 GB",
+    "rating": "Platinum",
+    "timestamp": 1542512779,
+    "title": "Just Shapes & Beats",
+    "source": "protondb"
+  },
+  {
+    "appId": "531510",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.8-300.fc29.x86_64",
+    "notes": "Games runs nearly flawlessly but with certain issues. After the initial launch of the game, the screen stays black until the title screen. When playing with a monitor with a high refresh rate the game physics speed up which does not happen under normal circumstances. Exiting the game leads to a crash which may force you to kill the process with htop or similar programs.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1545156455,
+    "title": "Just Shapes & Beats",
+    "source": "protondb"
+  }
+]

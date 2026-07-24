@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "23200",
+    "title": "I-Fluid",
+    "timestamp": 1535344442,
+    "rating": "Bronze",
+    "notes": "Doesn't support 1080p. The camera is controlled by the mouse, and sometimes I just can't move the camera anymore when I move the mouse to the right. Large framerate drops when the \"fireworks\" go off at the end of a level. I still marked it as \"Completely Stable\" because this is all probably exactly how it works on Windows too, judging by the feedback this game gets on the Steam forums.",
+    "os": "Linux Mint 17.3 MATE 64-bit",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i7-4790 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23200",
+    "title": "I-Fluid",
+    "timestamp": 1535330042,
+    "rating": "Bronze",
+    "notes": "Doesn't support 1080p. The camera is controlled by the mouse, and sometimes I just can't move the camera anymore when I move the mouse to the right. Large framerate drops when the \"fireworks\" go off at the end of a level. I still marked it as \"Completely Stable\" because this is all probably exactly how it works on Windows too, judging by the feedback this game gets on the Steam forums.",
+    "os": "Linux Mint 17.3 MATE 64-bit",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i7-4790 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

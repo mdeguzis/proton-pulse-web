@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2596670",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 18.1.6, DRM 3.57, 6.10.3-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.10.3-200.fc40.x86_64",
+    "notes": "Works out of the box without issues, completed full playthrough",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1723587437,
+    "title": "SPIDER MALL !",
+    "source": "protondb"
+  }
+]

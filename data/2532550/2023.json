@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2532550",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 11.0.1, DRM 3.49, 6.1.37-un-def-alt1)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.1.37-un-def-alt1",
+    "notes": "",
+    "os": "ALT Workstation K 10.2 (Sorbaronia Mitschurinii) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1695841554,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2532550",
+    "cpu": "11th Gen Intel Core i5-11320H @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX450",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.15-200.fc38.x86_64",
+    "notes": "Totally playable without any tweaks",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1695854430,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2532550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1695975445,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "934930",
+    "cpu": "Intel Core i3-4170 @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "I used a Proton setting meant for another game, that's why I chose \"out of the box\". I didn't have to change anything in order to make it work.\n\nThe setting I used that was meant for another game is this:\n\n #   \"PROTON_USE_WINED3D\": \"1\",\n #   \"PROTON_NO_D3D11\": \"1\",\n \"PROTON_NO_ESYNC\": \"1\",\n \nand the game ran perfectly!",
+    "os": "Linux (64  \u0431\u0438\u0442\u0430)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560799631,
+    "title": "RDS - The Official Drift Videogame",
+    "source": "protondb"
+  },
+  {
+    "appId": "934930",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.19-1-MANJARO",
+    "notes": "Installed it, Started it and i played it. Experienced no problems with anything, if you have a controller and have xpadneo installed it also fully works without any problems.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1564305487,
+    "title": "RDS - The Official Drift Videogame",
+    "source": "protondb"
+  }
+]

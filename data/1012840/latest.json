@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1012840",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-20-generic",
+    "notes": "At the first start the cursor won't move through the entire window. Press Alt+Enter to go into windowed mode until you are in the menu. After that, select either windowed or windowed full screen in the settings.\n\nOn my system, using DXVK, I locked the framerate to 60 FPS and it was almost rock solid, short of some parts in the opening sequence, where I could see the main menu for some frames during gameplay.\n\nUsing WINED3D gave me very glitchy graphics and single digit FPS numbers.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1571944006,
+    "title": "Moons of Madness",
+    "source": "protondb"
+  }
+]

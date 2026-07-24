@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "426310",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.1.0-050100-lowlatency",
+    "notes": "Game works except that startup logos and menu video does not play (it does not affect gameplay at all). The game renders text misaligned in 16:10 aspect ratio, have to change to 16:9 resolution. This is however likely a bug with the game and not Proton.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557602171,
+    "title": "Perception",
+    "source": "protondb"
+  },
+  {
+    "appId": "426310",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.10-1-default",
+    "notes": "Played 3h in 1080p without any problems.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562483110,
+    "title": "Perception",
+    "source": "protondb"
+  },
+  {
+    "appId": "426310",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570068038,
+    "title": "Perception",
+    "source": "protondb"
+  }
+]

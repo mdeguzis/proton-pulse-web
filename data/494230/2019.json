@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "494230",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Attempted to use Proton 4.2-5 and 3.16-9 Beta, game throws an error message about lack of hardware acceleration and closes upon start. Tried Disable Esync, Disable D3d11, and Use Wine D3d11 to no avail.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1559009237,
+    "title": "Heart's Medicine - Time to Heal",
+    "source": "protondb"
+  },
+  {
+    "appId": "494230",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-29-generic",
+    "notes": "Works with Proton 4.11-5",
+    "os": "Ubuntu 19.04 (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568920638,
+    "title": "Heart's Medicine - Time to Heal",
+    "source": "protondb"
+  }
+]

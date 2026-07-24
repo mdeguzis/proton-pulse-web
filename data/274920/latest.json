@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "274920",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Launcher doesn't work (black window) and bypassing the launcher gives the screen of the character, but webcam capturing doesn't work and can't change any options. It captures the voice and the mouth moves, though.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1558021038,
+    "title": "FaceRig",
+    "source": "protondb"
+  },
+  {
+    "appId": "274920",
+    "cpu": "Intel Core i7-2640M @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 19.0.8",
+    "kernel": "4.15.0-58-generic",
+    "notes": "The software launches but a good portion of the UI is missing and it doesn't seem to be able to access camera. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1566812563,
+    "title": "FaceRig",
+    "source": "protondb"
+  },
+  {
+    "appId": "274920",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Tried to test out if FaceRig would work with Proton, and custom versions of Proton like Proton 1.14-GE-1 or Proton 1.15-GE-2, but it doesn't. It's completely broken and just gives you a never ending popup loop of \"mscorelib recursive resource lookup bug\"  Like literally any button you hit to dismiss this message just opens up repeatedly with this bug error, and has to be forcibly killed with `pkill -9 exe` to get rid of it. -- If you try to select the Bypass Launcher (Troubleshooting) it attempts to load, but the window immediately turns black and can't see anything, but things are still clickable, and you will immediately get another popup error box asking if you want to dump the crash to a logfile. So yeah 100% borked unless someone can find a way to fix that issue.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "Proton-4.14-GE-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567835740,
+    "title": "FaceRig",
+    "source": "protondb"
+  }
+]

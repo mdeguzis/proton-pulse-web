@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "48160",
+    "title": "Tom Clancy's H.A.W.X. 2",
+    "timestamp": 1535285413,
+    "rating": "Borked",
+    "notes": "Ubisoft launcher crashes, and says error code 1",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 4690k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "48160",
+    "title": "Tom Clancy's H.A.W.X. 2",
+    "timestamp": 1535271013,
+    "rating": "Borked",
+    "notes": "Ubisoft launcher crashes, and says error code 1",
+    "os": "Arch Linux",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 4690k / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

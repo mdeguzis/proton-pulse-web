@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "481110",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.5-90.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.5-90.current",
+    "notes": "Crashes at Launch",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "16052 Mb",
+    "rating": "Borked",
+    "timestamp": "1536338547",
+    "title": "The Bunker",
+    "source": "protondb"
+  },
+  {
+    "appId": "481110",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.14-95.current",
+    "notes": "Crashes at Launch",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540474940,
+    "title": "The Bunker",
+    "source": "protondb"
+  }
+]

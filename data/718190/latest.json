@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "718190",
+    "cpu": "13th Gen Intel Core i7-13620H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.1-2-cachyos",
+    "notes": "Run completed without any issues",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1765902090,
+    "title": "",
+    "source": "protondb"
+  }
+]

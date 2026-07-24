@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "656900",
+    "cpu": "Intel Core2 Duo     E6750  @ 2.66GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.3-arch1-1",
+    "notes": "I have played full game through wine before. This version should work too.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "4 GB",
+    "rating": "silver",
+    "timestamp": 1577427660,
+    "title": "",
+    "source": "protondb"
+  }
+]

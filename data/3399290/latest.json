@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3399290",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-20-generic",
+    "notes": "Immediately after starting the game, you will be asked if you want to do shader compilation. The prompt will appear for a second, then the screen will go black, after a while, the game will crash.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1775482722,
+    "title": "",
+    "source": "protondb"
+  }
+]

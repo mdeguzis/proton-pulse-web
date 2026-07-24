@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "315430",
+    "title": "Polarity",
+    "timestamp": 1535582743,
+    "rating": "Borked",
+    "notes": "Does'nt start, instant crashing",
+    "os": "Archlinux 64-bit 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel Xeon E3-1231v3 | AMD Radeon R9 290",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "315430",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541996980,
+    "title": "Polarity",
+    "source": "protondb"
+  },
+  {
+    "appId": "315430",
+    "title": "Polarity",
+    "timestamp": 1535568343,
+    "rating": "Borked",
+    "notes": "Does'nt start, instant crashing",
+    "os": "Archlinux 64-bit 4.18.4-arch1-1-ARCH",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Intel Xeon E3-1231v3 | AMD Radeon R9 290",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

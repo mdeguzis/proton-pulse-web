@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "94600",
+    "title": "Hector: Ep 1",
+    "timestamp": 1534959372,
+    "rating": "Platinum",
+    "notes": "Performance just like windows",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7-6700k / NVIDIA GTX 980ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "94600",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Works perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537380768,
+    "title": "Hector: Episode 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "94600",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539829192,
+    "title": "Hector: Episode 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "94600",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It works",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540658638,
+    "title": "Hector: Episode 1",
+    "source": "protondb"
+  },
+  {
+    "appId": "94600",
+    "title": "Hector: Ep 1",
+    "timestamp": 1534944972,
+    "rating": "Platinum",
+    "notes": "Performance just like windows",
+    "os": "Fedora 28",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i7-6700k / NVIDIA GTX 980ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

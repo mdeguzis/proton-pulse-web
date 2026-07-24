@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "553960",
+    "title": "Husk",
+    "timestamp": 1535823662,
+    "rating": "Bronze",
+    "notes": "Fullscreen doesn't work properly. Unstable framerate. Audio stuttering",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "553960",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Lousy performance, menu text writes over itself, choppy audio",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-5",
+    "ram": "15985 Mb",
+    "rating": "Bronze",
+    "timestamp": "1536339076",
+    "title": "Husk",
+    "source": "protondb"
+  },
+  {
+    "appId": "553960",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.5-90.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.5-90.current",
+    "notes": "Installs, launches and was able to start the game. FPS dipped into the 40's early on though even with nothing going on.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "16052 Mb",
+    "rating": "Silver",
+    "timestamp": "1536337800",
+    "title": "Husk",
+    "source": "protondb"
+  },
+  {
+    "appId": "553960",
+    "title": "Husk",
+    "timestamp": 1535809262,
+    "rating": "Bronze",
+    "notes": "Fullscreen doesn't work properly. Unstable framerate. Audio stuttering",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

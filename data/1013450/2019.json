@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1013450",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-17-generic",
+    "notes": "With recent Proton version I passed through menu and then the game stuck with HUD displayed only on black screen. Then I needed to restart my PC. With Proton 3.16-9 Beta It is playable out of box, but the performance is poor. It is pretty playable at \"Fastest/Fast\" graphics settings with 45-60 FPS. On \"Good\" settings I had only about 7-8 FPS. After no-ensyc launch parameter applied I had only 1 FPS and the game seems to be stuck (but it only reacts too slowly).",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "20 GB",
+    "rating": "Silver",
+    "timestamp": 1560965529,
+    "title": "Triton Survival",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "34609",
+    "title": "Order of War",
+    "timestamp": 1535836048,
+    "rating": "Silver",
+    "notes": "Runs only in safe mode, normal mode is missing textures and crashes on loading  maps. Memory Overflow when using High Antialising (x8) while running 2K, can be delayed (or avoided) by disabling Antialising, but could still exist (not tested) and cause problems during longer playtimes.",
+    "os": "Parrot OS Security 4.2 64-Bit (Kernel 4.17.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7_7700K / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "34609",
+    "title": "Order of War",
+    "timestamp": 1535821648,
+    "rating": "Silver",
+    "notes": "Runs only in safe mode, normal mode is missing textures and crashes on loading  maps. Memory Overflow when using High Antialising (x8) while running 2K, can be delayed (or avoided) by disabling Antialising, but could still exist (not tested) and cause problems during longer playtimes.",
+    "os": "Parrot OS Security 4.2 64-Bit (Kernel 4.17.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i7_7700K / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

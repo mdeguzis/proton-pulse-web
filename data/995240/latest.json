@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "995240",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "No issues at all",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1761240551,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "769690",
+    "cpu": "AMD FX-4300 Quad-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-40-generic",
+    "notes": "This game runs phenomenally on Proton. (Tested on Proton 5.0-9)",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1595437514,
+    "title": "",
+    "source": "protondb"
+  }
+]

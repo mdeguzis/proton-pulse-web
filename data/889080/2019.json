@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "889080",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel (git-6823873 2019-05-05 bionic-oibaf-ppa)",
+    "kernel": "4.20.0-042000-generic",
+    "notes": "DEITY EMPIRES\nProgram started May 06,2019 23:49:27\nBuild: Mar 14,2019 00:29:02\nRunning Win7 64-bit exe\nsteamworks_initialized: 1\nGlobalVars.cpp(2425): Invalid file handle ./mods/*\nSwapchain backbuffer: 1920 , 1080\nException thrown at location:\n..\\..\\!!reuse\\dx11\\Render.cpp(818)\nError Message:\n\nPlease Contact: Deity Empires on Steam\n\nERROR: Main.cpp(108) *** Exception Handled.\nProgram ended May 06,2019 23:49:30",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557201148,
+    "title": "Deity Empires",
+    "source": "protondb"
+  },
+  {
+    "appId": "889080",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.1.16-ryzen",
+    "notes": "first: startoptions: PROTON_USE_WINED3D=1 %command%\nsecond: install wine64 and winetricks \nthird:\nWINEPREFIX=~/.steam/Steam/steamapps/compatdata/889080/pfx/ winetricks cambria",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563391333,
+    "title": "Deity Empires",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

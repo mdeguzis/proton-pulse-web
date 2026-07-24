@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "549090",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "60fps at 4k. Fullscreen works. No issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15972 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536967457,
+    "title": "Counter Agents",
+    "source": "protondb"
+  }
+]

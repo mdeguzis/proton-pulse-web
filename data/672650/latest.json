@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "672650",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-44-generic",
+    "notes": "UE4 based game with no 'real' fullscreen. Has no resolution options: only 'fullscreen' vs 'windowed' - does not go proper fullscreen on my HDMI 1080p single monitor setting. Runs perfectly fine in windowed mode (recognizes alt-enter for switching). Proton/WINE launch config options do not solve the issue. [Too bad, since this game tries to mimick old CRT Monitor distortion effects, which - in windowed mode - beat the immersion]",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1548601072,
+    "title": "MONITOR: The Game",
+    "source": "protondb"
+  }
+]

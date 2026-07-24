@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "409890",
+    "title": "Stranger of Sword City",
+    "timestamp": 1535228391,
+    "rating": "Gold",
+    "notes": "No sound. Fixed by running WINEPREFIX=~/.steam/steam/steamapps/compatdata/409890/pfx/ winetricks xact",
+    "os": "Ubuntu Budgie 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 3770k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "409890",
+    "cpu": "Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-36-generic",
+    "notes": "No sound. Tried the fix listed but was unsuccessful",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7700 Mb",
+    "rating": "Silver",
+    "timestamp": 1538781286,
+    "title": "Stranger of Sword City / \u5263\u306e\u8857\u306e\u7570\u90a6\u4eba \uff5e\u9ed2\u306e\u5bae\u6bbf\uff5e",
+    "source": "protondb"
+  },
+  {
+    "appId": "409890",
+    "title": "Stranger of Sword City",
+    "timestamp": 1535213991,
+    "rating": "Gold",
+    "notes": "No sound. Fixed by running WINEPREFIX=~/.steam/steam/steamapps/compatdata/409890/pfx/ winetricks xact",
+    "os": "Ubuntu Budgie 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 3770k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

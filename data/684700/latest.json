@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "684700",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.42.0, 5.14.21-210.current, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.14.21-210.current",
+    "notes": "Runs well, only problems seem like just part of the game itself.",
+    "os": "Solus",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1642997148,
+    "title": "Celestian Tales: Realms Beyond",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "244590",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD R9 M265X",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Installation of .NET Framework doesn't finish",
+    "os": "MX 18.1 Continuum",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551642245,
+    "title": "Epigenesis",
+    "source": "protondb"
+  },
+  {
+    "appId": "244590",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.17-1-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1553550495,
+    "title": "Epigenesis",
+    "source": "protondb"
+  },
+  {
+    "appId": "244590",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.14",
+    "notes": "Working perfectly out of the box. Multiplayer untested.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557919763,
+    "title": "Epigenesis",
+    "source": "protondb"
+  }
+]

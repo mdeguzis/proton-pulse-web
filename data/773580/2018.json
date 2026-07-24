@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "773580",
+    "cpu": "Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 530 (Skylake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-135-generic",
+    "notes": "Tested: Running in native screen resolution/Windowed (fullscreen), Menu, Some tutorials, Early game, Alt-tabbing",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15795 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537215622,
+    "title": "Game Dev Studio",
+    "source": "protondb"
+  },
+  {
+    "appId": "773580",
+    "cpu": "Intel(R) Core(TM)2 Duo CPU     E8400  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GT 730/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Started the game, changed resolution and settings without issues, started a tutorial game, all menus and graphics show up correctly.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3941 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538788136,
+    "title": "Game Dev Studio",
+    "source": "protondb"
+  }
+]

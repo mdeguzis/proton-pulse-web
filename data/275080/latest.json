@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "275080",
+    "title": "Post Master",
+    "timestamp": 1535298232,
+    "rating": "Platinum",
+    "notes": "Experienced no problems in 30+ minutes of game play",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "275080",
+    "title": "Post Master ",
+    "timestamp": 1535320308,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "275080",
+    "cpu": "AMD Phenom(tm) II X4 B97 Processor",
+    "gpu": "GeForce GT 710/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-0.bpo.1-amd64",
+    "notes": "Experienced no problems.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7976 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536850982,
+    "title": "Post Master",
+    "source": "protondb"
+  },
+  {
+    "appId": "275080",
+    "title": "Post Master",
+    "timestamp": 1535283832,
+    "rating": "Platinum",
+    "notes": "Experienced no problems in 30+ minutes of game play",
+    "os": "Arch Linux 64-bit (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "i7-4790K/GTX 970",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "275080",
+    "title": "Post Master ",
+    "timestamp": 1535305908,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

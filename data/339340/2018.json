@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "339340",
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Loads up to a black screen where the mouse cursor appears, doesn't load past 1.3% memory for me. Possible solution: https://www.reddit.com/r/linux_gaming/comments/99860i/titles_working_with_steam_play/e4lx1og/",
+    "os": "Lubuntu 17.10",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700k\r / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "timestamp": 1535807147,
+    "rating": "Borked",
+    "notes": "Loads then freezes on a black screen.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Black screen",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541307940,
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541473756,
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Loads up to a black screen where the mouse cursor appears, doesn't load past 1.3% memory for me. Possible solution: https://www.reddit.com/r/linux_gaming/comments/99860i/titles_working_with_steam_play/e4lx1og/",
+    "os": "Lubuntu 17.10",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700k\r / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "339340",
+    "title": "Resident Evil 0 / biohazard 0 HD REMASTER",
+    "timestamp": 1535792747,
+    "rating": "Borked",
+    "notes": "Loads then freezes on a black screen.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

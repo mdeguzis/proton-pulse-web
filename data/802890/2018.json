@@ -1,0 +1,61 @@
+[
+  {
+    "appId": "802890",
+    "title": "Muv-Luv Alternative",
+    "timestamp": 1536044261,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "802890",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "need to install visual c redistribuable 2015 - use protontricks and pick vcrun2015",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542448458,
+    "title": "Muv-Luv Alternative",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "802890",
+    "cpu": "Intel Core i7-2630QM @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.10-arch1-1-ARCH",
+    "notes": "on latest beta works out of box!",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542450105,
+    "title": "Muv-Luv Alternative",
+    "source": "protondb"
+  },
+  {
+    "appId": "802890",
+    "title": "Muv-Luv Alternative",
+    "timestamp": 1536029861,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

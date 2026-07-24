@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "15740",
+    "title": "Oddworld: Munch's Oddysee",
+    "timestamp": 1535131975,
+    "rating": "Silver",
+    "notes": "Cutscene wasn't playing, but was able to skip it",
+    "os": "SteamOS beta",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i5/ GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "15740",
+    "cpu": "i5-4570 CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-30-lowlatency",
+    "notes": "The intro screen is a bit messed up, and the cut scene(s) don't seem to work. Game play though the tutorial and most of the first level seem fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "15979 Mb",
+    "rating": "Silver",
+    "timestamp": 1536804985,
+    "title": "Oddworld: Munch's Oddysee",
+    "source": "protondb"
+  },
+  {
+    "appId": "15740",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Does not play movies. Other than that, everything seems to be working fine.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15923 Mb",
+    "rating": "Silver",
+    "timestamp": 1538358384,
+    "title": "Oddworld: Munch's Oddysee",
+    "source": "protondb"
+  },
+  {
+    "appId": "15740",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Doesn't play movies. Otherwise seems fine.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541351303,
+    "title": "Oddworld: Munch's Oddysee",
+    "source": "protondb"
+  },
+  {
+    "appId": "15740",
+    "title": "Oddworld: Munch's Oddysee",
+    "timestamp": 1535117575,
+    "rating": "Silver",
+    "notes": "Cutscene wasn't playing, but was able to skip it",
+    "os": "SteamOS beta",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "i5/ GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

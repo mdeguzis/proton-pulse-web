@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1220170",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.40.0, 5.10.0-14-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.0-14-generic",
+    "notes": "Cannot see after the first day.",
+    "os": "Ubuntu Hirsute Hippo (development branch)",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612573486,
+    "title": "Eville",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3310510",
+    "cpu": "12th Gen Intel Core i7-12700F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Extreme Gaming 8GB",
+    "gpuDriver": "NVIDIA 555.58",
+    "kernel": "6.11.9-arch1-1",
+    "notes": "Regardless of the Proton version, first it's a black screen with cursor in the middle and if you try to ALT+F4 from the game, you get this color palette you could see many years ago on analog TV. But the game won't even reach the menu.",
+    "os": "Arch Linux (64 \u0431\u0438\u0442\u0430)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1761560708,
+    "title": "Biztopia",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "748040",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-13-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1547764729,
+    "title": "State of War : Warmonger / \u84dd\u8272\u8b66\u6212 (Classic 2000)",
+    "source": "protondb"
+  },
+  {
+    "appId": "748040",
+    "cpu": "AMD A10-6700 APU with Radeon HD Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 460",
+    "gpuDriver": "4.6.13542 Compatibility Profile Context 18.50.1.418",
+    "kernel": "4.15.0-43-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548067080,
+    "title": "State of War : Warmonger / \u84dd\u8272\u8b66\u6212 (Classic 2000)",
+    "source": "protondb"
+  },
+  {
+    "appId": "748040",
+    "cpu": "AMD A10-6700 APU with Radeon HD Graphics",
+    "duration": "moreThanTenHours",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 460",
+    "gpuDriver": "4.6.13542 Compatibility Profile Context 18.50.1.418",
+    "kernel": "4.15.0-43-generic",
+    "notes": "You take OFF in options game: Steam Overlay and SteamVR active!!!! \n(sry i forgotten this in prewious submitt)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548072593,
+    "title": "State of War : Warmonger / \u84dd\u8272\u8b66\u6212 (Classic 2000)",
+    "source": "protondb"
+  }
+]

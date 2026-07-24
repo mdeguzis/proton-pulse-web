@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "240320",
+    "cpu": "i5-5200U CPU @ 2.20GHz",
+    "gpu": "GeForce 940M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-90.current",
+    "notes": "stuck on start logo",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7470 Mb",
+    "rating": "Borked",
+    "timestamp": 1536665733,
+    "title": "Panzar",
+    "source": "protondb"
+  }
+]

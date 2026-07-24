@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "41740",
+    "title": "Cargo! The Quest for Gravity",
+    "timestamp": 1536087377,
+    "rating": "Gold",
+    "notes": "Overall it is very much playable.\nPerformance is lower then on Windows.\nIt seems that fps does not depend on graphics settings. Both Low and High settings gives 13-20 fps underwater and 25-60 fps in other places.\nThe more your play session is the more are random fps drops. Sometimes it stays on 1 fps for several seconds.\nIt seems that fps is more stable with PROTON_NO_ESYNC=1 but sound becomes cracked sometimes.\n\nMusicTool does not run and gives a message \".NET Framework 2.0 is not installed\".",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Core2 Duo E8200 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "41740",
+    "title": "Cargo! The Quest for Gravity",
+    "timestamp": 1536072977,
+    "rating": "Gold",
+    "notes": "Overall it is very much playable.\nPerformance is lower then on Windows.\nIt seems that fps does not depend on graphics settings. Both Low and High settings gives 13-20 fps underwater and 25-60 fps in other places.\nThe more your play session is the more are random fps drops. Sometimes it stays on 1 fps for several seconds.\nIt seems that fps is more stable with PROTON_NO_ESYNC=1 but sound becomes cracked sometimes.\n\nMusicTool does not run and gives a message \".NET Framework 2.0 is not installed\".",
+    "os": "Linux Mint 18.3 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "Core2 Duo E8200 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

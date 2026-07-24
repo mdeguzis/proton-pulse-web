@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "615250",
+    "cpu": "Intel Xeon E5-2687W v2 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.1.0-20.1-liquorix-amd64",
+    "notes": "First start the game crashed, but after that it's ok.\nLow framerate (around 40), but that's perhaps not the linux fault as I didn't try the game on Windows. \nI played few turns on a custom game, worked fine... ",
+    "os": "Debian GNU/Linux bullseye/sid (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564216663,
+    "title": "M.A.X.: Mechanized Assault & Exploration",
+    "source": "protondb"
+  }
+]

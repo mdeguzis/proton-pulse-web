@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446800",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.0-300.fc30.x86_64",
+    "notes": "Works flawlessly, but have to use X11 instead of Wayland.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557781375,
+    "title": "Transport Fever",
+    "source": "protondb"
+  }
+]

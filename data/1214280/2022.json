@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1214280",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.0-arch1-1",
+    "notes": "Opened the game. Was presented with a black screen. Could not proceed.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1642898570,
+    "title": "Walking Simulator",
+    "source": "protondb"
+  }
+]

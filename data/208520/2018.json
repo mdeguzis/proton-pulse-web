@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "208520",
+    "title": "Omerta - City of Gangsters",
+    "timestamp": 1535016315,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Manjaro 5.13.4 (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51 / Mesa 18.1.6-1",
+    "specs": "i5-6402P @280GHz / Nvidia GTX 950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "208520",
+    "cpu": "Intel(R) Core(TM) i5-6402P CPU @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.14.74-1-MANJARO",
+    "notes": "Tweaks: Install dotnet40 via winetricks\n\nIssue: The launcher does not update, but the game works flawlessly.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7929 Mb",
+    "rating": "Gold",
+    "timestamp": 1539452471,
+    "title": "Omerta - City of Gangsters",
+    "source": "protondb"
+  },
+  {
+    "appId": "208520",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Install .NET 4 with \"protontricks 208520 dotnet40\"",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1541992553,
+    "title": "Omerta - City of Gangsters",
+    "source": "protondb"
+  },
+  {
+    "appId": "208520",
+    "title": "Omerta - City of Gangsters",
+    "timestamp": 1535001915,
+    "rating": "Borked",
+    "notes": "Won't Start",
+    "os": "Manjaro 5.13.4 (Kernel 4.14.65-1-MANJARO)",
+    "gpuDriver": "NVIDIA 396.51 / Mesa 18.1.6-1",
+    "specs": "i5-6402P @280GHz / Nvidia GTX 950",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

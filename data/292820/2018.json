@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "292820",
+    "cpu": "i5-2400 CPU @ 3.10GHz",
+    "gpu": "GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Everything seems to work fine",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "11967 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536636269,
+    "title": "Pajama Sam 4: Life Is Rough When You Lose Your Stuff!",
+    "source": "protondb"
+  },
+  {
+    "appId": "292820",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Window opens and immediately crashes.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1539833719,
+    "title": "Pajama Sam 4: Life Is Rough When You Lose Your Stuff!",
+    "source": "protondb"
+  },
+  {
+    "appId": "292820",
+    "cpu": "Intel Core i7-3770S @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-200.fc28.x86_64",
+    "notes": "Game loads just fine, plays like most of the others in the series.  Tested several locations successfully.   Plays great.",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541631989,
+    "title": "Pajama Sam 4: Life Is Rough When You Lose Your Stuff!",
+    "source": "protondb"
+  }
+]

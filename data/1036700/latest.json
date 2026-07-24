@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1036700",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.85-1-MANJARO",
+    "notes": "Ran smooth as butter",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1610681995,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1036700",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.9-arch1-1",
+    "notes": "Launch screen opens; a sub-menu opens saying \"fatal error\"",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1617412457,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1036700",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.7-186-tkg-bmq",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1628169937,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1398740",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX350",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-52-generic",
+    "notes": "tried all methods others have mentioned, some (like setting -w) don't even launch",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "10.0-3",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1776892779,
+    "title": "The Chrono Jotter",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2233220",
+    "cpu": "AMD Custom APU 0932",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0932 (radeonsi, vangogh, LLVM 18.1.6, DRM 3.57, 6.9.4-201.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.1",
+    "kernel": "6.9.4-201.fsync.fc40.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 40.20240615.0 (Bazzite)",
+    "protonVersion": "9.0-2",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1722284442,
+    "title": "Spirits of The Silicium Forest",
+    "source": "protondb"
+  },
+  {
+    "appId": "2233220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "launches when experimental is selected",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1722705659,
+    "title": "Spirits of The Silicium Forest",
+    "source": "protondb"
+  },
+  {
+    "appId": "2233220",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.6.62-gentoo",
+    "notes": "Looks like it tries to run exe as native binary. Have to force Proton to actually start the game.",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1735465236,
+    "title": "Spirits of The Silicium Forest",
+    "source": "protondb"
+  }
+]

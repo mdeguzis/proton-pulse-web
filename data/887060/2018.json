@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "887060",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "steam controller not work",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "14 GB",
+    "rating": "Gold",
+    "timestamp": 1546257862,
+    "title": "Asterix & Obelix XXL 2",
+    "source": "protondb"
+  }
+]

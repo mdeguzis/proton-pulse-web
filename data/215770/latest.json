@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "215770",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "gpu": "X.Org AMD Radeon(TM) HD 8800 Series (PITCAIRN, DRM 3.26.0, 4.18.5-90.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.5-90.current",
+    "notes": "Game started, continued game from previous install and game played and doesn't seem to lag either.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15991 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537735414,
+    "title": "Shad'O",
+    "source": "protondb"
+  },
+  {
+    "appId": "215770",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Runs great",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540835432,
+    "title": "Shad'O",
+    "source": "protondb"
+  },
+  {
+    "appId": "215770",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-20.3-liquorix-amd64",
+    "notes": "Works out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1544213533,
+    "title": "Shad'O",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1862660",
+    "cpu": "AMD Ryzen 7 PRO 6850U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD YELLOW_CARP (LLVM 13.0.1, DRM 3.42, 5.15.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-52-generic",
+    "notes": "A Linux version is installed and can be run using the launch options provided. Uses less resources that way.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1676413791,
+    "title": "",
+    "source": "protondb"
+  }
+]

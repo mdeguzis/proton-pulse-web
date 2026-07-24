@@ -1,0 +1,69 @@
+[
+  {
+    "appId": "914260",
+    "cpu": "Intel Xeon           X5680  @ 3.33GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.18.0-16-generic",
+    "notes": "open good,but sometimes crashes,and the framerate is very low.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1553492580,
+    "title": "HALF DEAD 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "914260",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "bis jetzt keine probleme und musste auch nichts bearbeiten",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562361233,
+    "title": "HALF DEAD 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "914260",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.62_1",
+    "notes": "works as is on my specs no issues crashes or graphics issues even on ultra",
+    "os": "Void Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564963207,
+    "title": "HALF DEAD 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "914260",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.4-1-MANJARO",
+    "notes": "Can run well on Ultra which is the auto detected preset, but it crashes sometimes on loading games. Put the High or Medium preset to stop crashing, didn't search for which settings produces these crashes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565631241,
+    "title": "HALF DEAD 2",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

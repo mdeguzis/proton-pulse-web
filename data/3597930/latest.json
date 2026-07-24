@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3597930",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-20-generic",
+    "notes": "the game opens on linux, it gets to the main menu (with the view being also borked)\nyou can't click on any button\nand the only way to close it is by opening the terminal, typing in \"sudo xkill\" and killing the game\noof",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776446202,
+    "title": "",
+    "source": "protondb"
+  }
+]

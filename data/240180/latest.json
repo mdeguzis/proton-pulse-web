@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "240180",
+    "title": "Duke Nukem 2",
+    "timestamp": 1535093318,
+    "rating": "Borked",
+    "notes": "The 1993 game. Same as first one. DOSBox opens into command line mode, but it doesn't start the game.",
+    "os": "Ubuntu 18.04.1 (Kernel 4.17.18)",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i5-4690K / R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240180",
+    "title": "Duke Nukem 2",
+    "timestamp": 1535179024,
+    "rating": "Gold",
+    "notes": "To launch, use DosBox's Quick Launch under main menu to select executable",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240180",
+    "title": "Duke Nukem 2",
+    "timestamp": 1536480217,
+    "rating": "Gold",
+    "notes": "(Not available in store)\nTo get it to run you need to perform these steps:\n\n1, add this line in the launch option to the game in steam:\n-conf \"/FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 2/Nukem2.conf\"\n\n2, open NUKEM2.conf in a text editor, and:\nreplace this \"Mount C: ..\"\nwith this \"mount c /FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 2\"\n\nafter that the game loads/runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (4.18.6-041806-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i7-6700 / RX 480",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "240180",
+    "title": "NBA 2K18",
+    "timestamp": 1536699144,
+    "rating": "Silver",
+    "notes": "The game runs fine, some minor issue, but the online doesn't work. Please fix it, the game can't connect at 2K servers.",
+    "os": "Debian Sid",
+    "gpuDriver": "Mesa 18.1.8",
+    "specs": "Ryzen 1600",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  },
+  {
+    "appId": "240180",
+    "title": "Duke Nukem 2",
+    "timestamp": 1535078918,
+    "rating": "Borked",
+    "notes": "The 1993 game. Same as first one. DOSBox opens into command line mode, but it doesn't start the game.",
+    "os": "Ubuntu 18.04.1 (Kernel 4.17.18)",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "i5-4690K / R9 290X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240180",
+    "title": "Duke Nukem 2",
+    "timestamp": 1535164624,
+    "rating": "Gold",
+    "notes": "To launch, use DosBox's Quick Launch under main menu to select executable",
+    "os": "Manjaro (4.18.3-1 Cinnamon 3.8.8)",
+    "gpuDriver": "NVIDIA 396.51-1",
+    "specs": "i5-3570K / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "240180",
+    "title": "Duke Nukem 2",
+    "timestamp": 1536465817,
+    "rating": "Gold",
+    "notes": "(Not available in store)\nTo get it to run you need to perform these steps:\n\n1, add this line in the launch option to the game in steam:\n-conf \"/FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 2/Nukem2.conf\"\n\n2, open NUKEM2.conf in a text editor, and:\nreplace this \"Mount C: ..\"\nwith this \"mount c /FULL-PATH-TO-STEAMLIBRARY/steamapps/common/Duke Nukem 2\"\n\nafter that the game loads/runs perfectly",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (4.18.6-041806-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i7-6700 / RX 480",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "240180",
+    "title": "NBA 2K18",
+    "timestamp": 1536684744,
+    "rating": "Silver",
+    "notes": "The game runs fine, some minor issue, but the online doesn't work. Please fix it, the game can't connect at 2K servers.",
+    "os": "Debian Sid",
+    "gpuDriver": "Mesa 18.1.8",
+    "specs": "Ryzen 1600",
+    "protonVersion": "3.7.6",
+    "source": "protondb"
+  }
+]

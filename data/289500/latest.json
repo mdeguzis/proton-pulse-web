@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "289500",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "The game gets a black screen in fullscreen. If you add the launch options \"--options fullscreen=false\" without the quotes in runs in a 1024x768 window and this can't be changed. Bug report for game is at https://github.com/ValveSoftware/Proton/issues/2975",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565676080,
+    "title": "UFO: Aftershock",
+    "source": "protondb"
+  },
+  {
+    "appId": "289500",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "Download the widescreen fix at https://community.pcgamingwiki.com/files/file/236-ufo-aftershock-widescreen-fix/ and apply to the game. Then if after starting it still does not use your resolution go to the UFOAftershock steam directory, under Profiles, find your profile, edit options.txt and where there is 'GKEY 2 \"video_mode\" INT some_number' change it to 'GKEY 2 \"video_mode\" INT 1' -- after that the game will run in 1920x1080 or whatever your chosen resolution from the widescreen fix is.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565756663,
+    "title": "UFO: Aftershock",
+    "source": "protondb"
+  }
+]

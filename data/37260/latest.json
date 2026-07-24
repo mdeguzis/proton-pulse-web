@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "37260",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.9.0-9-amd64",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562479493,
+    "title": "Emerald City Confidential\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "37260",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.5-1-default",
+    "notes": "Starts fullscreen, show only the part of the image. AltEnter borks image completely.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565304528,
+    "title": "Emerald City Confidential\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "37260",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-100.fc29.x86_64",
+    "notes": "Whether this works or not depends on the display properties. The game requires a native 800x600 video mode. It runs flawlessly if a matching mode is available, otherwise it screws up.\n\nIf you have a display that does not support 800x600 natively, try selecting 800x600 (scaled) in the NVidia configuration utility.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566338054,
+    "title": "Emerald City Confidential\u2122",
+    "source": "protondb"
+  }
+]

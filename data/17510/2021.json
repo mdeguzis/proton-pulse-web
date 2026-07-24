@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17510",
+    "cpu": "Intel Core i3         550  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Opens normally, but the game closes on loading.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1610320408,
+    "title": "Age of Chivalry",
+    "source": "protondb"
+  }
+]

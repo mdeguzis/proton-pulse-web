@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "527480",
+    "title": "Life Beetle",
+    "timestamp": 1535177898,
+    "rating": "Borked",
+    "notes": "It stays in running but nothing opens.",
+    "os": "Arch Linux (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "527480",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.7-300.fc29.x86_64",
+    "notes": "Black screen.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544679470,
+    "title": "Life Beetle",
+    "source": "protondb"
+  },
+  {
+    "appId": "527480",
+    "title": "Life Beetle",
+    "timestamp": 1535163498,
+    "rating": "Borked",
+    "notes": "It stays in running but nothing opens.",
+    "os": "Arch Linux (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-7700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

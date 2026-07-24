@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1374930",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.0, DRM 3.59, 6.11.10-304.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.11.10-304.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735797757,
+    "title": "Black Geyser: Couriers of Darkness",
+    "source": "protondb"
+  }
+]

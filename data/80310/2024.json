@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "80310",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 590 (radeonsi, polaris10, LLVM 18.1.6, DRM 3.57, 6.9.4-201.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.1",
+    "kernel": "6.9.4-201.fsync.fc40.x86_64",
+    "notes": "O jogo funcionou perfeitamente sem precisar de ajustes.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1718461983,
+    "title": "Gemini Rue",
+    "source": "protondb"
+  }
+]

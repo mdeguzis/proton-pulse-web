@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2157710",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Runs like native.",
+    "os": "Pop!_OS 22.04",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1771293815,
+    "title": "Hordes of Hunger",
+    "source": "protondb"
+  }
+]

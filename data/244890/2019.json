@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "244890",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.6",
+    "notes": "No sound, crashes when you start a game.",
+    "os": "NixOS",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559453757,
+    "title": "Velocity\u00aeUltra",
+    "source": "protondb"
+  },
+  {
+    "appId": "244890",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "No Sound, Crashes while loading first level. ",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565894267,
+    "title": "Velocity\u00aeUltra",
+    "source": "protondb"
+  },
+  {
+    "appId": "244890",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Sound doesn't work, Will freeze randomly for a couple of minutes in the zone selection menu.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569254029,
+    "title": "Velocity\u00aeUltra",
+    "source": "protondb"
+  }
+]

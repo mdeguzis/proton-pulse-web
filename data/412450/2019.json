@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "412450",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Works just perfect with a controller",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552672395,
+    "title": "The Black Death",
+    "source": "protondb"
+  },
+  {
+    "appId": "412450",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Launcher doesn't work, but game does. When fullscreened the bottom of the screen was cropped. I was not able to get into the settings menu to change graphics from the main menu, but once in game I was. After changing it to windowed mode, the game worked as intended. Unclear if these issues were because of Proton or the game's Early Access state.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560089410,
+    "title": "The Black Death",
+    "source": "protondb"
+  },
+  {
+    "appId": "412450",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-52-generic",
+    "notes": "worked right out of the box, and started on main display. settings menu only accessible after actually logging into your character. sound effects felt a tad bit off at times, like walking noise.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561060274,
+    "title": "The Black Death",
+    "source": "protondb"
+  }
+]

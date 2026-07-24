@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2738490",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.44.0, 5.16.0-1-amd64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.16.0-1-amd64",
+    "notes": "Cannot finish installing the game",
+    "os": "Debian GNU/Linux bookworm/sid (64\u00a0bits)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1710837828,
+    "title": "Sol Cesto",
+    "source": "protondb"
+  },
+  {
+    "appId": "2738490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "microsoft edge depedency won't install",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1717099659,
+    "title": "Sol Cesto",
+    "source": "protondb"
+  }
+]

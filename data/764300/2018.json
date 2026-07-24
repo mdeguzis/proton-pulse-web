@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "764300",
+    "title": "Shantae: Half-Genie Hero Ultimate Edition",
+    "timestamp": 1534946772,
+    "rating": "Gold",
+    "notes": "64bit version crashes, but default 32bit runs perfect.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i7 6700HQ / GeForce GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "764300",
+    "cpu": "Intel(R) Core(TM) i5-4460  CPU @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.14-95.current, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.14-95.current",
+    "notes": "First startup there was sound effects but no moving image, i closed the game after a while and restarted it and it has run fine using non-64bit launcher.\n\nAlso worth noting in fullscreen there is screen tearing and in windowed there are framerate drops, might just be by system.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7881 Mb",
+    "rating": "Silver",
+    "timestamp": 1540150118,
+    "title": "Shantae: Half-Genie Hero Ultimate Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "764300",
+    "title": "Shantae: Half-Genie Hero Ultimate Edition",
+    "timestamp": 1534932372,
+    "rating": "Gold",
+    "notes": "64bit version crashes, but default 32bit runs perfect.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i7 6700HQ / GeForce GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

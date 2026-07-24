@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "226840",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it works out of the box too. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557653190,
+    "title": "Age of Wonders III",
+    "source": "protondb"
+  },
+  {
+    "appId": "226840",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce MX130",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs perfectly well.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1563282564,
+    "title": "Age of Wonders III",
+    "source": "protondb"
+  },
+  {
+    "appId": "226840",
+    "cpu": "AMD Ryzen Threadripper 2920X 12-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-21-generic",
+    "notes": "The game runs on 1904, so that's good. However, my computer is a high end workstation but this game looks and runs awful. I can say it runs awful on Linux because because it looks and runs so much better on Windows it's much better.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563333813,
+    "title": "Age of Wonders III",
+    "source": "protondb"
+  }
+]

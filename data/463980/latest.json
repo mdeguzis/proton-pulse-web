@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "463980",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.16-200.fc29.x86_64",
+    "notes": "Runs great in fullscreen and windowed modes.  Slight graphical pausing when using Epic quality and fast animations but nothing game altering.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553445533,
+    "title": "Solitairica",
+    "source": "protondb"
+  },
+  {
+    "appId": "463980",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Game runs perfectly with no tweaks needed. Gives an error message on exit, but it affects nothing. The game still closes perfectly.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565570682,
+    "title": "Solitairica",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "871200",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 415.18.02",
+    "kernel": "4.15.0-33-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543576553,
+    "title": "FIGHTING EX LAYER",
+    "source": "protondb"
+  },
+  {
+    "appId": "871200",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "The game runs perfectly out of the box. I didn't need to tweak anything. The performance is also good.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543585156,
+    "title": "FIGHTING EX LAYER",
+    "source": "protondb"
+  },
+  {
+    "appId": "871200",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Only worked after setting PROTON_USE_WINED3D11=1 %command% in launch options. After that, Arcade, Training and Gougi worked pretty well.\nChanging Fullscreen and resolution options worked with no problems, PS3 sticks worked like a charm.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "5 GB",
+    "rating": "Gold",
+    "timestamp": 1543678009,
+    "title": "FIGHTING EX LAYER",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "871200",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "I had to change the launch options to PROTON_USE_WINED3D11=1 %command% so that I can have a true fullscreen up and running. Outside of that every aspect of the game works without issue.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1544305352,
+    "title": "FIGHTING EX LAYER",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

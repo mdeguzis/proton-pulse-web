@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1287040",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.6, DRM 3.63, 6.15.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.15.7-arch1-1",
+    "notes": "Works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1753355183,
+    "title": "Gun Devil",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "328600",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "ATI Technologies Inc. AMD Radeon HD 7800 Series",
+    "gpuDriver": "4.5.13536 Compatibility Profile Context 18.30.2.15",
+    "kernel": "4.15.0-33-generic",
+    "notes": "On initial testing the mouse cursor is invisible. Have not debugged this issue. Audio also glitched, but that could have been related to other processes playing audio.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "16065 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536693672,
+    "title": "Frozen Synapse Prime",
+    "source": "protondb"
+  },
+  {
+    "appId": "328600",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Low frame rate (around 3 fps)",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543529328,
+    "title": "Frozen Synapse Prime",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "247950",
+    "title": "Sacred 3",
+    "timestamp": 1535041184,
+    "rating": "Platinum",
+    "notes": "Tested 15 minutes of gameplay with no apparent issues (aside from the game being pants).",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "247950",
+    "title": "Sacred 3",
+    "timestamp": 1535148187,
+    "rating": "Silver",
+    "notes": "Gamepad (steam controller tested) cannot be used as either primary or guest, will cause crash.\nSound is very choppy.\nThe taskbar appears as an opaque bar over the bottom until resolution changes in settings -every launch-.\nUsing keyboard and mouse, everything else appears stable and functional.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "247950",
+    "cpu": "AMD A8-5600K APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-2-amd64",
+    "notes": "I ended the first level without any issue.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541239801,
+    "title": "Sacred 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "247950",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "If you play with SteamInput activated for XBox One S Controller (didn't try other controllers) the game crashes when you try to get to the menu pressing \"start\". Disable SteamInput and the game works just perfect.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541764569,
+    "title": "Sacred 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "247950",
+    "title": "Sacred 3",
+    "timestamp": 1535026784,
+    "rating": "Platinum",
+    "notes": "Tested 15 minutes of gameplay with no apparent issues (aside from the game being pants).",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "247950",
+    "title": "Sacred 3",
+    "timestamp": 1535133787,
+    "rating": "Silver",
+    "notes": "Gamepad (steam controller tested) cannot be used as either primary or guest, will cause crash.\nSound is very choppy.\nThe taskbar appears as an opaque bar over the bottom until resolution changes in settings -every launch-.\nUsing keyboard and mouse, everything else appears stable and functional.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

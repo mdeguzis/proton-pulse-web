@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "237310",
+    "title": "Elsword",
+    "timestamp": 1535332081,
+    "rating": "Borked",
+    "notes": "Complains about a missing MailMIME.dll file. Some people who attempted to run this on Wine long ago blame this on some sort of anticheat.",
+    "os": "Debian Sid (Kernel 4.17.0-3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8450 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "237310",
+    "title": "Elsword",
+    "timestamp": 1535317681,
+    "rating": "Borked",
+    "notes": "Complains about a missing MailMIME.dll file. Some people who attempted to run this on Wine long ago blame this on some sort of anticheat.",
+    "os": "Debian Sid (Kernel 4.17.0-3)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-8450 / R9 380X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "428080",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "4.19.34-1-lts",
+    "notes": "(SteamVR beta 1.4.1 / Vive + Wands) Arcade mode, works perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555500965,
+    "title": "Racket: Nx",
+    "source": "protondb"
+  }
+]

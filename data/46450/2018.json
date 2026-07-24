@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "46450",
+    "cpu": "Intel(R) Xeon(R) CPU           X5687  @ 3.60GHz",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Fails to launch immediately crashes with no error message ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "24098 Mb",
+    "rating": "Borked",
+    "timestamp": 1536768101,
+    "title": "Grotesque Tactics: Evil Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "46450",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.7-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "Does not start at all",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "24105 MB",
+    "rating": "Borked",
+    "timestamp": 1537094025,
+    "title": "Grotesque Tactics: Evil Heroes",
+    "source": "protondb"
+  }
+]

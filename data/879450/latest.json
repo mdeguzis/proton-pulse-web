@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "879450",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.0",
+    "notes": "Had to turn on PROTON_USE_WINED3D=1 because the game freeze PC without it",
+    "os": "Linux 4.x (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566681537,
+    "title": "The Chambers",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

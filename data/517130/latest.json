@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "517130",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-47-generic",
+    "notes": "I didn't have to do anything to get it running fine and the performance seemed pretty comparable to performance in windows. It wouldn't start at first, but I just had to restart Steam and Steam VR. I don't think that was related to Soundboxing as I have to do that to repeat room setup too.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555732408,
+    "title": "Soundboxing",
+    "source": "protondb"
+  }
+]

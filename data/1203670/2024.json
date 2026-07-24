@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1203670",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 16.0.6, DRM 3.42, 5.15.0-89-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.0",
+    "kernel": "5.15.0-89-generic",
+    "notes": "Can't play with 5 FPS",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1726076370,
+    "title": "",
+    "source": "protondb"
+  }
+]

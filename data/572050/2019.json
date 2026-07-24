@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "572050",
+    "cpu": "Intel Core2 Duo     E8500  @ 3.16GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD CEDAR",
+    "gpuDriver": "3.1 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-65-generic",
+    "notes": "game 'launches' to black screen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1573231624,
+    "title": "Call to Power II",
+    "source": "protondb"
+  }
+]

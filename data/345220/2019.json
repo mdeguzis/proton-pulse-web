@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "345220",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Cutscenes don't display properly, graphical artifacts in-game, had it crash on me.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556632989,
+    "title": "Agent Awesome",
+    "source": "protondb"
+  },
+  {
+    "appId": "345220",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.0-050300-generic",
+    "notes": "OOTB",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569863759,
+    "title": "Agent Awesome",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "343090",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.1-arch1-1-ARCH",
+    "notes": "Played through one mission, everything worked fine. ",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1548002732,
+    "title": "SimpleRockets",
+    "source": "protondb"
+  },
+  {
+    "appId": "343090",
+    "cpu": "Intel Core i7-8086K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "It doesn't start!",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1562401525,
+    "title": "SimpleRockets",
+    "source": "protondb"
+  },
+  {
+    "appId": "343090",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Crashes at start by default because of .net. First you need to re-install wine-mono into the prefix so that it can be uninstalled straight away, then winetricks dotnet40, otherwise winetricks will not remove the bundled wine-mono, and .net installer will refuse to run because a newer version (ie wine-mono) is already installed.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1562459651,
+    "title": "SimpleRockets",
+    "source": "protondb"
+  }
+]

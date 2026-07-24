@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "894270",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.4 Mesa 18.2.5",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "\ni had invisible people with dxvk that could probably be because i still dont have mesa 18.3 with transform feedback.. so i give it Platinum but for a walkaround i recommend to play without dxvk @Alexander",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544267953,
+    "title": "Beware of Trains",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

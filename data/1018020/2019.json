@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1018020",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Runs great in general, just some minor issues: not full screen, changing size of the window closes the game. Sometimes a Chinese question pops up, where you can only confirm the dialog, but it pop ups again. Only closing the game helps then. Controller works great.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560976227,
+    "title": "Contra Anniversary Collection",
+    "source": "protondb"
+  }
+]

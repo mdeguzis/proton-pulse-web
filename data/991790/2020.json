@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "991790",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-59-generic",
+    "notes": "When the game starts, a white screen appears.",
+    "os": "Freedesktop.org 19.08.11 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1592604202,
+    "title": "",
+    "source": "protondb"
+  }
+]

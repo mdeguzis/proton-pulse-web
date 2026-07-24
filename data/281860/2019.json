@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "281860",
+    "cpu": "Intel Xeon E3-1230 v3 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.23-1-MANJARO",
+    "notes": "It failed to start at first but but started working after a reinstall. Runs smoothly with maxed-out settings. Both bot games and online multiplayer work.\n\nThe screen refresh rate is locked at 60Hz even with a high refresh rate monitor.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551071726,
+    "title": "RefleX",
+    "source": "protondb"
+  },
+  {
+    "appId": "281860",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "Nothing happens when trying to launch the game or the configuration tool, tried different Proton launch options without success.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-8)",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552250824,
+    "title": "RefleX",
+    "source": "protondb"
+  },
+  {
+    "appId": "281860",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "When launching either the game or the configuration tool, steam client says game is running but nothing happens.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556736101,
+    "title": "RefleX",
+    "source": "protondb"
+  }
+]

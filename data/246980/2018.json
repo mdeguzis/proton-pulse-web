@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "246980",
+    "title": "InFlux",
+    "timestamp": 1535871699,
+    "rating": "Borked",
+    "notes": ".NET related",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "246980",
+    "cpu": "Intel(R) Core(TM) i5-4200U CPU @ 1.60GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.4.0-135-generic",
+    "notes": "Won't start, cannot link ELF file",
+    "os": "Ubuntu 16.04.2 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "5689 Mb",
+    "rating": "Borked",
+    "timestamp": 1537825388,
+    "title": "InFlux",
+    "source": "protondb"
+  },
+  {
+    "appId": "246980",
+    "title": "InFlux",
+    "timestamp": 1535857299,
+    "rating": "Borked",
+    "notes": ".NET related",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

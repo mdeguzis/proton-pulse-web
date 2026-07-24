@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "794820",
+    "cpu": "Intel(R) Core(TM) i5-2467M CPU @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Sandybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "3857 Mb",
+    "rating": "Borked",
+    "timestamp": 1539955373,
+    "title": "Knights of Pen and Paper 2: Free Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "794820",
+    "cpu": "Intel(R) Core(TM) i5 CPU         760  @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 650 Ti BOOST/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Starting and playing work fine, but quitting must be forced.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7935 Mb",
+    "rating": "Silver",
+    "timestamp": 1540023484,
+    "title": "Knights of Pen and Paper 2: Free Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "794820",
+    "cpu": "Intel(R) Core(TM) i5 CPU         760  @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 650 Ti BOOST/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "7935 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540053210,
+    "title": "Knights of Pen and Paper 2: Free Edition",
+    "source": "protondb"
+  }
+]

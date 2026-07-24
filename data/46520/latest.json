@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "46520",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs perfectly, however the enemy cars seem to have AI/physics issues. They drive inconsistently, in circles, often backwards. The tutorial was unbeatable because some of the cars could not find their way offscreen onto the main map.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1559953378,
+    "title": "Wasteland Angel",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "236790",
+    "cpu": "Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Nothing happens on launch.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7879 Mb",
+    "rating": "Borked",
+    "timestamp": 1538241024,
+    "title": "Agricultural Simulator 2013 - Steam Edition",
+    "source": "protondb"
+  }
+]

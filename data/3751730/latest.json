@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3751730",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.10-zen1)",
+    "gpuDriver": "4.6 Mesa 26.1.1",
+    "kernel": "7.0.10-zen1",
+    "notes": "Works good enough OOTB",
+    "os": "NixOS 26.11 (Zokor)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1780624975,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "270370",
+    "title": "Lambda Wars Beta",
+    "timestamp": 1534959589,
+    "rating": "Borked",
+    "notes": "Starts and says \"Loading Main Menu...\" but doesn't actually load anything.",
+    "os": "Fedora 28 x86_64",
+    "gpuDriver": "mesa",
+    "specs": "I5 / HD4000 switchable with AMD Radeon 350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "270370",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Starts but gets stuck at \"Loading Main Menu...\"",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "15980 Mb",
+    "rating": "Borked",
+    "timestamp": 1540032441,
+    "title": "Lambda Wars Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "270370",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "Game starts and can be played. Single-player missions can be played, tutorial can be played. Problem is that starting the lobby for any other game does not work, making it impossible to play custom games against AI or to host lobby for online game. Unless there are some alternative ways of starting a match against AI / an online lobby that I am not aware of.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1541099921,
+    "title": "Lambda Wars Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "270370",
+    "title": "Lambda Wars Beta",
+    "timestamp": 1534945189,
+    "rating": "Borked",
+    "notes": "Starts and says \"Loading Main Menu...\" but doesn't actually load anything.",
+    "os": "Fedora 28 x86_64",
+    "gpuDriver": "mesa",
+    "specs": "I5 / HD4000 switchable with AMD Radeon 350",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

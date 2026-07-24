@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "342300",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.5-1-default",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16052 Mb",
+    "rating": "Borked",
+    "systemInfoNotes": "OS: OpenSUSE Tumbleweed",
+    "timestamp": 1536684860,
+    "title": "Zombie Kill of the Week - Reborn",
+    "source": "protondb"
+  },
+  {
+    "appId": "342300",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Ran perfectly. Audio, video, input. Everything ran smoothly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541386965,
+    "title": "Zombie Kill of the Week - Reborn",
+    "source": "protondb"
+  }
+]

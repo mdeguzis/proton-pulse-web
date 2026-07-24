@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "236870",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Better performance than the Linux native version",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554435771,
+    "title": "HITMAN\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "236870",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.13-200.fc30.x86_64",
+    "notes": "Better performances using Proton 4.11-4 than with the Linux \"native\"/compatible version (~15% gain with max settings). I suppose the DXVK translation layer outperforms the proprietary solution used in the official port of the game.",
+    "os": "Fedora 30 (64\u00a0bits)",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568496924,
+    "title": "HITMAN\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "236870",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-f764725b3e)",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Runs pretty well with Proton. There are a few hang but that due to Navi 10 drivers not entirely finished (using cutting edge drivers from mesa-git on Arch) but I'm pretty impressed that those drivers runs correctly for a pretty new video card :)",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571824549,
+    "title": "HITMAN\u2122",
+    "source": "protondb"
+  }
+]

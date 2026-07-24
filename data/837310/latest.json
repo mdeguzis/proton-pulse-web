@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "837310",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.20.1-arch1-1-ARCH",
+    "notes": "Works perfectly except controller is out of control in menus",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "protonVersionManual": "3.16-6",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1547139727,
+    "title": "Telophase",
+    "source": "protondb"
+  }
+]

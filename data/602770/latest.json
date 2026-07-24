@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "602770",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "I played the game some hours without any crash or bug, performance are great, i did nothing special. When you launch the game, sometimes it tells us that we're not connected to steam, just restart the game (<= My connection is bad, maybe it's the problem).\n",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547648066,
+    "title": "Clatter",
+    "source": "protondb"
+  },
+  {
+    "appId": "602770",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-14-generic",
+    "notes": "Nvidia driver with transform feedback support required. On non-beta driver, units do not appear. Using beta driver (396.54.09) everything displays as intended and the game plays well.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549484691,
+    "title": "Clatter",
+    "source": "protondb"
+  },
+  {
+    "appId": "602770",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-15012077bc)",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Works perfectly fine with DXVK on Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554025581,
+    "title": "Clatter",
+    "source": "protondb"
+  }
+]

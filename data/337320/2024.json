@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "337320",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 16.0.6, DRM 3.56, 6.7.0-zen3-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "Runs flawlessly, if you want it, buy it!",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1706031171,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "337320",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.5.0-21-generic",
+    "notes": "Solid Linux support",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1711149151,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "337320",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.12-200.fc40.x86_64",
+    "notes": "Perfect native version",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728503732,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1985510",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 14.0.6, DRM 3.49, 6.1.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.1.0-1-MANJARO",
+    "notes": "Terminates immediately after starting",
+    "os": "Manjaro Linux\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "7.0-4",
+    "ram": "29999Mb",
+    "rating": "borked",
+    "timestamp": 1668202092,
+    "title": "",
+    "source": "protondb"
+  }
+]

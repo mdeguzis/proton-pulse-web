@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4405770",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "RTX 3050 Ti",
+    "gpuDriver": "Version 590",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "Works perfectly out of the box",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773462602,
+    "title": "",
+    "source": "protondb"
+  }
+]

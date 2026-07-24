@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1669320",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.49, 6.1.0-16-rt-amd64)",
+    "gpuDriver": "4.6 Mesa 23.3.1 (git-6cdc2b044d)",
+    "kernel": "6.1.0-16-rt-amd64",
+    "notes": "Everything just works. The game runs smooth, it's stable, and its experience is perfect.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703522748,
+    "title": "Trash Panda",
+    "source": "protondb"
+  }
+]

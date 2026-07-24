@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1114290",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 555.42.02",
+    "kernel": "6.7.12+bpo-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1719675653,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1114290",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 15.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-21-amd64",
+    "notes": "Works well out of the box.",
+    "os": "BunsenLabs GNU/Linux 12 (Boron)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725623574,
+    "title": "",
+    "source": "protondb"
+  }
+]

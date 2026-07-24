@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "249330",
+    "title": "Unholy Heights",
+    "timestamp": 1535752419,
+    "rating": "Borked",
+    "notes": "Nothing. Not even a window opens. Just silently closes down after a few secs.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "249330",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Doesn't start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Borked",
+    "timestamp": 1538061182,
+    "title": "Unholy Heights",
+    "source": "protondb"
+  },
+  {
+    "appId": "249330",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Game does not start. Does not open a window or anything. Tried installing .NET 4.0 or .NET 4.5.2, DirectX9, compatibility under Windows 7 or XP or 2003. Tried adding bcrypt.dll override, still doesn't do anything.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541054190,
+    "title": "Unholy Heights",
+    "source": "protondb"
+  },
+  {
+    "appId": "249330",
+    "title": "Unholy Heights",
+    "timestamp": 1535738019,
+    "rating": "Borked",
+    "notes": "Nothing. Not even a window opens. Just silently closes down after a few secs.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

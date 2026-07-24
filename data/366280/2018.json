@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "366280",
+    "title": "Twinkle Star Sprites",
+    "timestamp": 1535065772,
+    "rating": "Borked",
+    "notes": "\"Assertion failed\" on startup, and unlike Metal Slug games, there is no ignore button",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-550 / GT 740",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "366280",
+    "title": "Twinkle Star Sprites",
+    "timestamp": 1535579145,
+    "rating": "Borked",
+    "notes": "Crash dialog appears on startup",
+    "os": "SteamOS 2.154",
+    "gpuDriver": "NVIDIA 387.22",
+    "specs": "i3",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "366280",
+    "cpu": "i3-4170T CPU @ 3.20GHz",
+    "gpu": "GeForce GPU/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Crashes on start",
+    "os": "SteamOS 2.0 (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "3887 Mb",
+    "rating": "Borked",
+    "timestamp": 1536785715,
+    "title": "TWINKLE STAR SPRITES",
+    "source": "protondb"
+  },
+  {
+    "appId": "366280",
+    "title": "Twinkle Star Sprites",
+    "timestamp": 1535051372,
+    "rating": "Borked",
+    "notes": "\"Assertion failed\" on startup, and unlike Metal Slug games, there is no ignore button",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-550 / GT 740",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "366280",
+    "title": "Twinkle Star Sprites",
+    "timestamp": 1535564745,
+    "rating": "Borked",
+    "notes": "Crash dialog appears on startup",
+    "os": "SteamOS 2.154",
+    "gpuDriver": "NVIDIA 387.22",
+    "specs": "i3",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

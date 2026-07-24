@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "21900",
+    "title": "Tom Clancy's H.A.W.X",
+    "timestamp": 1535306174,
+    "rating": "Gold",
+    "notes": "Direct x 10 Version does not work",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "21900",
+    "title": "Tom Clancy's H.A.W.X",
+    "timestamp": 1535291774,
+    "rating": "Gold",
+    "notes": "Direct x 10 Version does not work",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

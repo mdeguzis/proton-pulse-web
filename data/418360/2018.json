@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "418360",
+    "cpu": "i7-7700K CPU @ 4.20GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "This game is natively supported in Linux (even though it is not listed as supported in the store), so Steam Play will not run the Windows version. The Linux version does not have bots and force feedback is buggy (keeps shaking once it starts and continues until the game is quit) for Xbox 360 controllers. The Windows version runs perfectly in the latest WINE (3.15.0).",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "32113 Mb",
+    "rating": "Silver",
+    "timestamp": 1536813938,
+    "title": "Gurgamoth",
+    "source": "protondb"
+  }
+]

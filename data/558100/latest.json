@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "558100",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "In the first launch it does not work because of black screen, but mouse works. I think that because of Intro. But in the second launch and next, it works well. But i recommend to use libstrangle to limit fps.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1566148795,
+    "title": "Art of War: Red Tides",
+    "source": "protondb"
+  }
+]

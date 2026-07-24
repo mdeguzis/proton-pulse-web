@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "726950",
+    "title": "Dark Rose Valkyrie",
+    "timestamp": 1534958852,
+    "rating": "Bronze",
+    "notes": "There's no sound at all. Otherwise seems fine",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / NVIDIA GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "726950",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.19.1-1-MANJARO",
+    "notes": "Using either Disable Esync or using WineD3d11 was able to get into the titlescreen and start the game but could not get audio. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1544125577,
+    "title": "Dark Rose Valkyrie / \u30af\u30ed\u30d0\u30e9\u30ce\u30ef\u30eb\u30ad\u30e5\u30fc\u30ec / \u9ed1\u73ab\u7470\u5973\u6b66\u795e",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "726950",
+    "title": "Dark Rose Valkyrie",
+    "timestamp": 1534944452,
+    "rating": "Bronze",
+    "notes": "There's no sound at all. Otherwise seems fine",
+    "os": "Antergos",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / NVIDIA GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

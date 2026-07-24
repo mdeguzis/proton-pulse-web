@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1901490",
+    "cpu": "Intel Celeron J4125 @ 2.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 600 (GLK 2)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.8.0-52-generic",
+    "notes": "the game tries to run but it just stops after like 5 seconds",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1740730414,
+    "title": "\u6771\u65b9\u7720\u4e16\u754c ~ Wonderful Waking World",
+    "source": "protondb"
+  }
+]

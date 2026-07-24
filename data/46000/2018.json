@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "46000",
+    "title": "Bob Came in Pieces",
+    "timestamp": 1535393955,
+    "rating": "Platinum",
+    "notes": "Works well but I did not test everything.",
+    "os": "Ubuntu 16.04.5 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "Intel i5-6300HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "46000",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.14.69-1-MANJARO",
+    "notes": "Menu is strangely zoomed in, can not select any entry",
+    "os": "\"Manjaro Linux\" (64 Bit)",
+    "protonVersion": "3.7.6 Beta",
+    "ram": "16051 MB",
+    "rating": "Borked",
+    "timestamp": 1537315465,
+    "title": "Bob Came in Pieces",
+    "source": "protondb"
+  },
+  {
+    "appId": "46000",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.26.0, 4.18.5-gentoo, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-2c1f249f2b)",
+    "kernel": "4.18.5-gentoo",
+    "notes": "Steam Overlay works, fullscreen working, max graphic settings works, playtested first level without any problems.",
+    "os": "\"Gentoo Base System release 2.6\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16010 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537540284,
+    "title": "Bob Came in Pieces",
+    "source": "protondb"
+  },
+  {
+    "appId": "46000",
+    "title": "Bob Came in Pieces",
+    "timestamp": 1535379555,
+    "rating": "Platinum",
+    "notes": "Works well but I did not test everything.",
+    "os": "Ubuntu 16.04.5 (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.45",
+    "specs": "Intel i5-6300HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "331360",
+    "title": "Gauntlet\u2122",
+    "timestamp": 1536492630,
+    "rating": "Gold",
+    "notes": "Game crashes straight away. The work around is to add this to your launch options PROTON_USE_WINED3D11=1 PROTON_NO_ESYNC=1 %command%\nAs far as I can tell from 30 minutes of testing, the game runs smoothly.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX(tm)-8350/GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "331360",
+    "cpu": "i3-3110M CPU @ 2.40GHz",
+    "gpu": "GeForce GT 620M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "notes": "minor issues\n1 - crashes at exi\n2 - crashes with big picture mode (unconfirmed",
+    "os": "Arch Linux (64 bit)",
+    "protonVersion": "3.7-5",
+    "rating": "Platinum",
+    "timestamp": "1536364800",
+    "title": "Heavy Metal Machines",
+    "source": "protondb"
+  },
+  {
+    "appId": "331360",
+    "cpu": "Intel(R) Core(TM) i3-4170 CPU @ 3.70GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.2.1",
+    "kernel": "4.18.9-1-MANJARO",
+    "notes": "everything runs perfect",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15903 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537563900,
+    "title": "Heavy Metal Machines",
+    "source": "protondb"
+  },
+  {
+    "appId": "331360",
+    "title": "Gauntlet\u2122",
+    "timestamp": 1536478230,
+    "rating": "Gold",
+    "notes": "Game crashes straight away. The work around is to add this to your launch options PROTON_USE_WINED3D11=1 PROTON_NO_ESYNC=1 %command%\nAs far as I can tell from 30 minutes of testing, the game runs smoothly.",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "AMD FX(tm)-8350/GTX 780",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

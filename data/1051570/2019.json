@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1051570",
+    "cpu": "Intel Xeon           E5410  @ 2.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game does not start.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1558490102,
+    "title": "Hockey Player VR",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "221910",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "Game works native on Linux. On Proton it used to work out of the box, but now there are only graphical glitches with WineD3D. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation => therefore Gold.",
+    "os": "Linux",
+    "protonVersion": "4.2-6",
+    "protonVersionManual": "3.16-5",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1560071167,
+    "title": "The Stanley Parable",
+    "source": "protondb"
+  }
+]

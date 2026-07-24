@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "229950",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Applied the movie fix for standard RE6 and got to the main menu. Had to lower resolution to 1280x720 in order to prevent \"Fatal error. ERR08 : out of video memory.\" Works fine at 1920x1200 on Windows. Couldn't figure out how to do the tweaks or they didn't work (the guide is not very helpful, needs step-by-step screenshots... I'm not really sure if i did them right).",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-7)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1540865220,
+    "title": "Resident Evil 6 Benchmark Tool",
+    "source": "protondb"
+  }
+]

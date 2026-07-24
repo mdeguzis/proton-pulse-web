@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "887800",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Loads with white screen, just hit any key and it's fine",
+    "os": "Arch",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1557505655,
+    "title": "Snooker 19",
+    "source": "protondb"
+  },
+  {
+    "appId": "887800",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 770M",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-65-generic",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570556485,
+    "title": "Snooker 19",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "207230",
+    "cpu": "AMD Athlon II X4 640",
+    "duration": "severalHours",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-48-generic",
+    "notes": "This game works perfectly without any kind of intervention",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556729863,
+    "title": "ArcheBlade\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "207230",
+    "cpu": "AMD A10-7870K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Just install and play. Comply with Proton video drivers requirements and it works :)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "22 GB",
+    "rating": "Platinum",
+    "timestamp": 1558995064,
+    "title": "ArcheBlade\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "207230",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Only gave it a gold cuz I coudnt test anything past the tutorial really. Network play seemed to work fine, connected to a server but eh, well this game is dead zero people in any servers. Im surprised to see any servers running at all. Might be a good lan party game though and seems to work 100% other wise.  ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1569734558,
+    "title": "ArcheBlade\u2122",
+    "source": "protondb"
+  }
+]

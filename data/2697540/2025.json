@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2697540",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-62-generic",
+    "notes": "Works as expected but webcam didnt work.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1751553227,
+    "title": "",
+    "source": "protondb"
+  }
+]

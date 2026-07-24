@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "758930",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Very low framerate, static-y audio, and very high control latency. Basically unplayable. It starts, though. I tried Using Wine D3D11, Disabling D3D11, and Disabling Esync. Esync provided some marginal improvements in performance, but game was still unplayable. It's worth noting that the games in this were originally made in Flash, if that helps.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543121369,
+    "title": "Captain Forever Trilogy",
+    "source": "protondb"
+  }
+]

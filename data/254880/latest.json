@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "254880",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.3",
+    "kernel": "4.19.24-1-MANJARO",
+    "notes": "loaded options screen but none could be selected",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1552133659,
+    "title": "MoonBase Commander",
+    "source": "protondb"
+  },
+  {
+    "appId": "254880",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Boots fine, cinematics play, but the main menu doesn't respond to the mouse. Possibly a dual monitor issue? Only responds to keyboard commands, which barely allows you to alt-f4 out.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1555121740,
+    "title": "MoonBase Commander",
+    "source": "protondb"
+  },
+  {
+    "appId": "254880",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Menu loads but none of the options to play can be selected",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1557250904,
+    "title": "MoonBase Commander",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "45200",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "nouveau NV106",
+    "gpuDriver": "4.3 Mesa 20.0.8",
+    "kernel": "5.4.0-150-generic",
+    "notes": "Works right out of the box!",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1747451115,
+    "title": "Defense of the Oasis",
+    "source": "protondb"
+  }
+]

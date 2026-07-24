@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "968790",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Works almost perfectly out of the box, no tweaks needed. However, certain pre-rendered videos that appears during the campaign aren't played. Otherwise, over 200 hours and not even a crash.  ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565292923,
+    "title": "DYNASTY WARRIORS 7: Xtreme Legends Definitive Edition",
+    "source": "protondb"
+  }
+]

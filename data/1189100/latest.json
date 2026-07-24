@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1189100",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Works!",
+    "os": "Zorin OS 17.3 Core - Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1768771926,
+    "title": "",
+    "source": "protondb"
+  }
+]

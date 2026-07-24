@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "464850",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1560795361,
+    "title": "Don Bradman Cricket 17",
+    "source": "protondb"
+  },
+  {
+    "appId": "464850",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.3.2-050302-generic",
+    "notes": "Runs through first steps setup and then process quits.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570020399,
+    "title": "Don Bradman Cricket 17",
+    "source": "protondb"
+  }
+]

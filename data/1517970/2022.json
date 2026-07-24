@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1517970",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.41.0, 5.13.12-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.12-arch1-1",
+    "notes": "Works perfectly thus far.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1644680759,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1517970",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.85-xanmod1",
+    "notes": "Game works great",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1648661522,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1517970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve21.3-1-neptune)",
+    "gpuDriver": "4.6 Mesa 22.0.2 (git-71648faf15)",
+    "kernel": "5.13.0-valve21.3-1-neptune",
+    "notes": "Works perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1665423524,
+    "title": "",
+    "source": "protondb"
+  }
+]

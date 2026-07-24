@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "890280",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Game starts in fullscreen and windowed, opening menu is displayed and options can be selected.  Proceeding with a new game results in a black screen with sound.\nNo success with Esync or D3D tweaks.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555886822,
+    "title": "Myha: Return to the Lost Island",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "545820",
+    "cpu": "Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works just as well as it does on Windows, no issues whatsoever.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3822 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539691820,
+    "title": "Wanderland",
+    "source": "protondb"
+  }
+]

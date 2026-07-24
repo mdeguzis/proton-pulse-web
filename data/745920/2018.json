@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "745920",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Alpha version doesn't run at all. Tried all Proton versions and all tweaks. Always says \"is playing\" but nothing appears.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543447152,
+    "title": "Temtem",
+    "source": "protondb"
+  },
+  {
+    "appId": "745920",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Need to revise my previous report. Basically changed nothing but suddenly works out of the box without any obvious problems.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543459978,
+    "title": "Temtem",
+    "source": "protondb"
+  },
+  {
+    "appId": "745920",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "No problems so far despite performance. Activating game mode gave a boost from 10fps to 40 and more.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543470036,
+    "title": "Temtem",
+    "source": "protondb"
+  }
+]

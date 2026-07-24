@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "273590",
+    "title": "Descent 3",
+    "timestamp": 1534992764,
+    "rating": "Borked",
+    "notes": "Opens launcher for the game, but cannot start because it doesn't think DirectX 3 is installed. This may be a problem that also exists when running native to Windows.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "273590",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Crashes right after intro movie.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542858512,
+    "title": "Descent 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "273590",
+    "title": "Descent 3",
+    "timestamp": 1534978364,
+    "rating": "Borked",
+    "notes": "Opens launcher for the game, but cannot start because it doesn't think DirectX 3 is installed. This may be a problem that also exists when running native to Windows.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-6600K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

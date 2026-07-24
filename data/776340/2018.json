@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "776340",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "Space button doesn't always work but I'm not sure if this is a Linux-specific issue. No noticeable performance penalty. Immersive dystopian atmosphere.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1542995562,
+    "title": "Gay World",
+    "source": "protondb"
+  }
+]

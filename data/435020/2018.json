@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "435020",
+    "title": "AFL Evolution",
+    "timestamp": 1535465680,
+    "rating": "Silver",
+    "notes": "Works perfectly inc controller, very minor graphical artefacts on main menu",
+    "os": "Antergos x64 Kernel 4.18.5-arch1-1",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "435020",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "gpu": "X.Org AMD Radeon R9 200 Series (HAWAII / DRM 3.23.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.1 - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Tested freeplay and matchplay and everything works perfectly. Performance generally 75% of Windows.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15989 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537256955,
+    "title": "AFL Evolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "435020",
+    "cpu": "Intel(R) Core(TM) i7 CPU         920  @ 2.67GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.06",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Everything works, square blocks on main menu look weird but no hindrance",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "11997 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538960278,
+    "title": "AFL Evolution",
+    "source": "protondb"
+  },
+  {
+    "appId": "435020",
+    "title": "AFL Evolution",
+    "timestamp": 1535451280,
+    "rating": "Silver",
+    "notes": "Works perfectly inc controller, very minor graphical artefacts on main menu",
+    "os": "Antergos x64 Kernel 4.18.5-arch1-1",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

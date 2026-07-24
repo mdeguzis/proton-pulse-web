@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "12430",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.9-gentoo",
+    "notes": "No tweaks.\nTexture glitches, i.e. incorrectly colored or completely transparent textures.\nApart from that the game starts and is playable.\n",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557666322,
+    "title": "SlamIt Pinball Big Score",
+    "source": "protondb"
+  }
+]

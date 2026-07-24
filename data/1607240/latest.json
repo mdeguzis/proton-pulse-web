@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1607240",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 21.1.6, DRM 3.64, 6.18.1-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.3",
+    "kernel": "6.18.1-2-cachyos",
+    "notes": "I got it from GOG and loaded it with Heroic. Worked perfectly on default settings.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778930848,
+    "title": "Mail Time",
+    "source": "protondb"
+  }
+]

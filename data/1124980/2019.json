@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1124980",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.6-1-MANJARO",
+    "notes": "Start login. Fatal error.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1572132130,
+    "title": "Watchers",
+    "source": "protondb"
+  }
+]

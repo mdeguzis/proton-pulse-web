@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1047830",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-6e5e4bf050)",
+    "kernel": "5.2.0",
+    "notes": "Tried disabling and enabling esync, d3d11, d3d10, d3d9, wind3d. Doesn't even show window - prints on console \"WSALookupServiceBegin failed with: 8\" and many sqlite errors like: \"PreviewsOptOut sqlite error 5, errno 1: database is locked\"",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1563461588,
+    "title": "DARK FABLE",
+    "source": "protondb"
+  }
+]

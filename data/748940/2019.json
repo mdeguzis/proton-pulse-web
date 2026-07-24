@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "748940",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Framerate is not terrific, but the game plays perfectly through the tutorial match.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550995639,
+    "title": "Rise of Legions",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "748940",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "After turorial you press continue and: \"An error occurred in the application\"",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1570341045,
+    "title": "Rise of Legions",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "348300",
+    "cpu": "Intel Core i5-6500T @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.6",
+    "kernel": "5.2.13-126.current",
+    "notes": "Closes immediately after the \"Preparing to launch\" dialog. Doesn't even spawn a window.",
+    "os": "Solus",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1569260697,
+    "title": "Chip's Challenge 2",
+    "source": "protondb"
+  }
+]

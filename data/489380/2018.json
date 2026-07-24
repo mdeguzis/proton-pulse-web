@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "489380",
+    "title": "QuiVr",
+    "timestamp": 1535221169,
+    "rating": "Borked",
+    "notes": "HTC Vive. Crashes with \"GetThreadContext failed\"",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "489380",
+    "title": "QuiVr",
+    "timestamp": 1535206769,
+    "rating": "Borked",
+    "notes": "HTC Vive. Crashes with \"GetThreadContext failed\"",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

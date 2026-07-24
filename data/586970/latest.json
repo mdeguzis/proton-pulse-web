@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "586970",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.24-1-MANJARO",
+    "notes": "Won't launch. Disable D3d11 or use Wine D3d11 either will get the game to work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1552388746,
+    "title": "Hungry Flame",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "586970",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.2-zen1-1-zen",
+    "os": "Linux (Flatpak)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1553088746,
+    "title": "Hungry Flame",
+    "source": "protondb"
+  },
+  {
+    "appId": "586970",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "works well (keyboard/xbox360 controller)",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560022762,
+    "title": "Hungry Flame",
+    "source": "protondb"
+  }
+]

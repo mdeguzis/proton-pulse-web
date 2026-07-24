@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "346500",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 930M",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.5-1-MANJARO",
+    "notes": "The game even opens, but when you click on the Arcade or History menu, the game crashes.\n\nError: \n\n\n___________________________________________\n############################################################################################\nFATAL ERROR in Vertex Shader compilation\nShaderName: glr_shader_fxaa\n\nmemory:67:22: error: syntax error, unexpected NEW_IDENTIFIER\n\nat gml_Script_glr_draw\n############################################################################################\n--------------------------------------------------------------------------------------------\nstack frame is\ngml_Script_glr_draw (line -1)\ngml_Object_obj_glare_controller_Draw_0\n\n",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2.3",
+    "protonVersionManual": "4.2.3",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555642845,
+    "title": "Road Scars: Origins",
+    "source": "protondb"
+  },
+  {
+    "appId": "346500",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 930M",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "The game opens, but when I try to start the arcade or story mode, the following error is displayed:\n\n\n___________________________________________\n################################################## ##########################################\nFATAL ERROR in Vertex Shader compilation\nShaderName: glr_shader_fxaa\n\nmemory: 67: 22: error: syntax error, unexpected NEW_IDENTIFIER\n\nat gml_Script_glr_draw\n################################################## ##########################################\n-------------------------------------------------- ------------------------------------------\nstack frame is\ngml_Script_glr_draw (line -1)\ngml_Object_obj_glare_controller_Draw_0\n\n\nSo I did not solve that mistake.\n\n\nSorry for any English error, because my native language is Portuguese.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1562116460,
+    "title": "Road Scars: Origins",
+    "source": "protondb"
+  },
+  {
+    "appId": "346500",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Menu screen appears. Career story plays out. Once gameplay is about to start two popups appear; 1 a white box 2 a grey box with \"abort\" \"copy\" and \"clear\" buttons and an error that reads:\n___________________________________________\n############################################################################################\nFATAL ERROR in Vertex Shader compilation\nShaderName: glr_shader_fxaa\n\nmemory:67:22: error: syntax error, unexpected NEW_IDENTIFIER\n\nat gml_Script_glr_draw\n############################################################################################\n--------------------------------------------------------------------------------------------\nstack frame is\ngml_Script_glr_draw (line -1)\ngml_Object_obj_glare_controller_Draw_0",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568806899,
+    "title": "Road Scars: Origins",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "61310",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-106.current",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1546647628,
+    "title": "Fractal: Make Blooms Not War",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-106.current",
+    "notes": "runs flawless",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1546701395,
+    "title": "Fractal: Make Blooms Not War",
+    "source": "protondb"
+  },
+  {
+    "appId": "61310",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VERDE",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.3-1-MANJARO",
+    "notes": "As noted previously, the game works fine with \"PROTON_NO_D3D11=1 %command%\" set in launch options. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1549072807,
+    "title": "Fractal: Make Blooms Not War",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

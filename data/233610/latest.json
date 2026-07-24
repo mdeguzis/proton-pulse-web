@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "233610",
+    "cpu": "Intel Core i7-4960X @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.31.03",
+    "kernel": "4.17.3-041703-generic",
+    "notes": "Forcing Proton is the only way to use the Custom Music feature on Linux. Works as expected. If you want to point to your home folder, it's Z:/home/(username) to find your music files. Distance accepts MP3, WAV and AIFF.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1551010979,
+    "title": "Distance",
+    "source": "protondb"
+  },
+  {
+    "appId": "233610",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.52.18",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Running this in Proton is the only way to get VR working. Everything works perfectly with my Vive.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565535594,
+    "title": "Distance",
+    "source": "protondb"
+  },
+  {
+    "appId": "233610",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-f2bed9b344)",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux (OpenGL). On Proton it works out of the box with DXVK (D3D11 to Vulkan translation). Tested with RADV and the new Mesa ACO compiler on Plasma.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567840464,
+    "title": "Distance",
+    "source": "protondb"
+  }
+]

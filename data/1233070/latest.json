@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1233070",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, ACO, DRM 3.64, 6.19.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch1.1",
+    "kernel": "6.19.13-arch1-1",
+    "notes": "Out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1777991014,
+    "title": "",
+    "source": "protondb"
+  }
+]

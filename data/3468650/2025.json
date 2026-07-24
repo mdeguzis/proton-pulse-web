@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3468650",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.64, 6.17.8-pikaos)",
+    "gpuDriver": "4.6 Mesa 25.2.7 - PikaOS YellowBirb Mesa Stable (git-461196a1c8)",
+    "kernel": "6.17.8-pikaos",
+    "notes": "Game instantly crashes on PikaOS Linux with any selected Proton version.",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1764688406,
+    "title": "Cricket 26 - The Official Game of the Ashes",
+    "source": "protondb"
+  },
+  {
+    "appId": "3468650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works Just Fine",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1766410794,
+    "title": "Cricket 26 - The Official Game of the Ashes",
+    "source": "protondb"
+  }
+]

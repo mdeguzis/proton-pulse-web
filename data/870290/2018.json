@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "870290",
+    "cpu": "i5-3570K CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 550 Ti/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.13.0-46-generic",
+    "notes": "throws \"Cannot extract package. Unable to create temporary directory.\" upon launch",
+    "os": "Ubuntu 17.10 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32131 Mb",
+    "rating": "Borked",
+    "timestamp": 1536596064,
+    "title": "The Miskatonic",
+    "source": "protondb"
+  }
+]

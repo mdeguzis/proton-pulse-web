@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "250260",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 21.1.6, DRM 3.64, 6.18.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "Switch to proton, native broken",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769959349,
+    "title": "",
+    "source": "protondb"
+  }
+]

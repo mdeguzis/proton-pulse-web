@@ -1,0 +1,773 @@
+// Entry module for submit.html. Migrated from the page's inline script.
+import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=8051e115';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=49306cae';
+import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=a8d355d8';
+import {
+  deleteDraft, deleteLocalDraft, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
+} from '../shared/drafts.js?v=d7011aa5';
+import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
+import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
+import { esc } from '../app/utils.js?v=9a39c726';
+
+(async function() {
+  const params = new URLSearchParams(window.location.search);
+  const appId = params.get('app');
+  // report ids are bigints (see migration 20260621010000_report_approvals.sql).
+  // Reject anything that is not a positive integer so it cannot be reflected
+  // into innerHTML as an XSS payload (banner renders `Report #${editReportId}`).
+  const editRaw = params.get('edit');
+  const editReportId = (editRaw && /^[0-9]+$/.test(editRaw)) ? editRaw : null;
+  const titleParam = params.get('title') || '';
+  const isEdit = !!editReportId;
+  // fromCloud=1 -> user is publishing a cloud-saved config that doesnt
+  // have report responses yet. Prefill what the cloud config carries
+  // (proton version, launch options, hardware) and the user fills in the
+  // can-install/start/play/verdict/faults answers to turn it into a real
+  // report. Save goes through the normal new-report path (writes to
+  // user_configs with form_responses)
+  const fromCloud = !isEdit && params.get('fromCloud') === '1';
+
+  // Where to go after a successful save. Defaults to the game page, but the
+  // profile page passes return=profile.html so an edit returns to where the
+  // user came from. Sanitized to prevent open-redirect / XSS by resolving
+  // the caller-supplied value as a URL against the current page, requiring
+  // the resolved origin to match, and restricting the final path component
+  // to a small whitelist of pages that actually link back here. This shape
+  // (URL parse + origin equality + filename allowlist) is what CodeQL
+  // recognizes as a safe sanitizer for `location.href = <userInput>` sinks.
+  const ALLOWED_RETURN_PAGES = new Set(['profile.html', 'app.html', 'index.html', '']);
+  const returnRaw = params.get('return') || '';
+  let returnTo = null;
+  if (returnRaw) {
+    try {
+      const parsed = new URL(returnRaw, window.location.href);
+      const filename = parsed.pathname.split('/').pop() || '';
+      if (parsed.origin === window.location.origin && ALLOWED_RETURN_PAGES.has(filename)) {
+        returnTo = parsed.href;
+      }
+    } catch { /* invalid URL -> keep returnTo null so we fall back to the game page */ }
+  }
+
+  if (!appId) {
+    document.getElementById('game-title').textContent = 'No app ID provided';
+    document.getElementById('submit-form-content').innerHTML =
+      '<div style="padding:24px;color:var(--muted)">Add ?app=APPID to the URL to submit a report.</div>';
+    return;
+  }
+
+  const backLink = document.getElementById('back-link');
+  backLink.href = `app.html#/app/${appId}`;
+
+  let title = titleParam;
+  // Search-index lookup: always run so we can also read column 10
+  // (replaced_by) for the warning banner, not just fall back for missing
+  // titles. Cached to a shared variable so the replaced_by check reuses it.
+  let searchIndex = null;
+  let indexHit = null;
+  try {
+    const searchUrl = /^localhost/.test(location.host)
+      ? 'https://www.proton-pulse.com/search-index.json'
+      : 'search-index.json';
+    const resp = await fetch(searchUrl);
+    if (resp.ok) {
+      searchIndex = await resp.json();
+      indexHit = Array.isArray(searchIndex) && searchIndex.find(row => String(row[0]) === String(appId));
+      if (!title && indexHit) title = indexHit[1] || '';
+    }
+  } catch {}
+  if (!title) {
+    if (!title) {
+      // Last-ditch: per-app data file. Use latest.json (real path) rather
+      // than the directory listing
+      try {
+        const appDir = appIdToDir(appId);
+        const dataUrl = /^localhost/.test(location.host)
+          ? `https://www.proton-pulse.com/data/${appDir}/latest.json`
+          : `data/${appDir}/latest.json`;
+        const resp = await fetch(dataUrl);
+        if (resp.ok) {
+          const data = await resp.json();
+          // latest.json is an array of reports; any of them carries the title
+          title = (Array.isArray(data) && data[0]?.title) || data?.title || data?.name || '';
+        }
+      } catch {}
+    }
+    if (!title) {
+      // Steam Store API fallback -- returns name for any app on Steam
+      try {
+        const steamResp = await fetch(`https://store.steampowered.com/api/appdetails?appids=${encodeURIComponent(appId)}&filters=basic`);
+        if (steamResp.ok) {
+          const steamData = await steamResp.json();
+          const appData = steamData?.[String(appId)];
+          if (appData?.success && appData?.data?.name) title = appData.data.name;
+        }
+      } catch {}
+    }
+    if (!title) title = `App ${appId}`;
+  }
+
+  const titlePrefix = isEdit ? 'Edit Report' : fromCloud ? 'Publish Report' : title;
+  document.getElementById('game-title').textContent = isEdit
+    ? `Edit Report: ${title}`
+    : fromCloud ? `Publish Report: ${title}` : title;
+  document.title = `${isEdit ? 'Edit' : fromCloud ? 'Publish' : 'Submit'} Report: ${title} — Proton Pulse`;
+  document.querySelector('.eyebrow').textContent = isEdit
+    ? 'Edit a Report'
+    : fromCloud ? 'Publish a Report' : 'Submit a Report';
+  // Subtitle under the game name: storefront + app id so a reporter always
+  // knows exactly which entry they're writing against, especially when a
+  // title exists on multiple stores or after a replaced-by redirect (#199).
+  const storeGuess = String(appId).startsWith('gog:')  ? 'GOG'
+                     : String(appId).startsWith('epic:') ? 'Epic'
+                     : 'Steam';
+  const subtitleEl = document.getElementById('game-subtitle');
+  if (subtitleEl) {
+    subtitleEl.hidden = false;
+    subtitleEl.textContent = `${storeGuess} \u00b7 App ${appId}`;
+  }
+
+  // Replaced-by warning banner: if this appid was superseded by a newer one
+  // (search-index column 10, populated by game_images.py), tell the user their
+  // report will land on an old build. Renders above the form so they see it
+  // before answering anything. (#199 follow-up)
+  const replacedBy = indexHit && indexHit[10] ? String(indexHit[10]) : '';
+  if (replacedBy) {
+    const replacedTitle = (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`;
+    const holder = document.querySelector('.main-inner');
+    const formHost = document.getElementById('submit-form-content');
+    if (holder && formHost) {
+      const banner = document.createElement('div');
+      banner.className = 'submit-replaced-warning';
+      banner.innerHTML = `
+        <strong>Heads up:</strong> This app was replaced.
+        Steam now sells this title as
+        <a class="submit-replaced-link" href="submit.html?app=${encodeURIComponent(replacedBy)}&title=${encodeURIComponent(replacedTitle)}">${escHtml(replacedTitle)}</a>.
+        Old app id: <code>${escHtml(String(appId))}</code>, new app id: <code>${escHtml(replacedBy)}</code>.
+        Submitting here files a report against the <em>original</em> build. If you're playing the current version,
+        <a class="submit-replaced-link" href="submit.html?app=${encodeURIComponent(replacedBy)}&title=${encodeURIComponent(replacedTitle)}">submit against the new appid</a> instead.
+      `;
+      formHost.parentNode.insertBefore(banner, formHost);
+    }
+  }
+  function escHtml(s) {
+    return String(s == null ? '' : s).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+  }
+
+  // auth check. On localhost the Steam OAuth redirect is configured for the
+  // production domain, so signing in locally just bounces back to prod -- you
+  // can't actually finish auth in dev. Skip the gate when the host is local
+  // so the form can be visually previewed and the question flow tested,
+  // even though submission will still fail without a real session.
+  const isLocalDev = /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(location.hostname);
+  const session = await SupaAuth.getSession();
+  if (!session?.user && !isLocalDev) {
+    document.getElementById('auth-gate').hidden = false;
+    document.getElementById('submit-form-content').hidden = true;
+    document.getElementById('login-btn')?.addEventListener('click', () => {
+      window.location.href = SupaAuth.buildLoginPageUrl(window.location.href); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - target is constructed by SupaAuth helper from the current page URL (same-origin)
+    });
+    // #323 followup: mount the inline Library panel as a peer of the
+    // auth-gate card so signed-out visitors have an alternative path.
+    try {
+      const mod = await import('../shared/profile-lookup-inline.js?v=00000001');
+      mod.mountInlineProfileLookup('profile-lookup-inline-mount');
+    } catch (err) {
+      console.warn('[submit] inline lookup mount failed', err);
+    }
+    return;
+  }
+  if (isLocalDev && !session?.user) {
+    console.warn('[submit] localhost dev mode: bypassing auth gate. Submission will not work without a real session.');
+  }
+
+  const el = document.querySelector('.main-inner');
+  try {
+    await populateSubmitForm(el);
+  } catch (err) {
+    console.error('[submit] populateSubmitForm failed:', err);
+    document.getElementById('submit-form-content').innerHTML =
+      `<div style="padding:24px;color:var(--red)">Failed to load form: ${err.message || err}</div>`;
+    return;
+  }
+  // Show the Verified owner pill at the top of the form when the user's
+  // cached Steam library confirms ownership (#199).
+  void renderVerifiedOwnerStatus(el, appId);
+
+  // Cross-check Steam appdetails: if the title has no native Linux build,
+  // disable the "Native Linux" run type so users cannot submit an
+  // impossible run_type. Non-blocking; the toggle stays enabled until
+  // Steam answers so the form renders instantly.
+  void (async () => {
+    try {
+      const hasLinuxNative = await fetchLinuxNativeSupport(appId);
+      setRunTypeNativeAvailable(el, hasLinuxNative);
+    } catch (e) { console.debug('[submit] linux native probe skipped:', e); }
+  })();
+
+  // Cloud draft restore: auto-apply on load so the user gets their in-progress
+  // work back without clicking anything -- "clicking Save should just work"
+  // (#285). Only applies when the draft carries real user work (answered
+  // compat questions, verdict, fault answers, tinkering methods, or free-text
+  // notes); prefill-only drafts get skipped so the fresh form is not overwritten
+  // with the same hardware fields it would populate anyway. The old restore
+  // banner container stays in the DOM (hidden) for backwards compatibility with
+  // any deep-linked docs but is no longer used.
+  const restoreEl = el.querySelector('#sf-draft-restore');
+  const hideRestoreBanner = () => { if (restoreEl) restoreEl.hidden = true; };
+  let _draftAutoApplied = null; // { ageLabel, sourceLabel } for the status render
+  // Draft load: any stored draft is treated as the user's in-progress work
+  // and auto-applied. The savedVia distinction (manual vs auto) is no
+  // longer surfaced -- autosave is the primary persistence path, and the
+  // Save button is just an explicit trigger for the same behaviour. The
+  // legacy #sf-draft-restore container stays in the DOM (hidden) for
+  // backwards compatibility with any deep links (#285 review).
+  if (!isEdit && session) {
+    try {
+      const draft = await loadBestDraft(session, appId);
+      if (draft?.form_data) {
+        const formEl = el.querySelector('#submit-report-form');
+        if (formEl) {
+          const ageMs = draft.updated_at ? Date.now() - new Date(draft.updated_at).getTime() : 0;
+          const ageLabel = ageMs > 86400000
+            ? `${Math.round(ageMs / 86400000)} day${Math.round(ageMs / 86400000) === 1 ? '' : 's'} ago`
+            : ageMs > 3600000
+              ? `${Math.round(ageMs / 3600000)} hour${Math.round(ageMs / 3600000) === 1 ? '' : 's'} ago`
+              : ageMs > 60000
+                ? `${Math.round(ageMs / 60000)} minute${Math.round(ageMs / 60000) === 1 ? '' : 's'} ago`
+                : 'just now';
+          const sourceLabel = draft.source === 'local' ? ' (from local backup)' : '';
+          applyDraftSnapshot(formEl, draft.form_data);
+          _draftAutoApplied = { ageLabel, sourceLabel };
+          console.debug('[submit] auto-applied draft', { appId, ageLabel, source: draft.source });
+        }
+      }
+      hideRestoreBanner();
+    } catch (err) {
+      console.warn('[submit] draft load failed', err);
+    }
+  }
+
+  // Save Draft is the "not published" save: shown for fresh submits and the
+  // fromCloud publish flow, hidden when editing an already-published report
+  // (that uses "Save Changes" instead -- never both).
+  const saveDraftBtn = el.querySelector('#save-draft-btn');
+  const saveDraftStatus = el.querySelector('#save-draft-status');
+  const renderDraftStatus = (info) => {
+    if (!saveDraftStatus) return;
+    if (!info) { saveDraftStatus.textContent = ''; saveDraftStatus.hidden = true; return; }
+    saveDraftStatus.hidden = false;
+    if (info.state === 'saving') saveDraftStatus.textContent = 'Saving...';
+    else if (info.state === 'saved' && info.where === 'cloud') saveDraftStatus.textContent = 'Saved to your account.';
+    else if (info.state === 'saved' && info.where === 'local') saveDraftStatus.textContent = 'Auto-saved to this browser.';
+    else if (info.state === 'error') saveDraftStatus.textContent = `Auto-save failed: ${info.error || 'unknown'}`;
+    else saveDraftStatus.textContent = '';
+  };
+  // Inline "restored your draft" status with a Discard action. Shows once
+  // right after the auto-apply so the user knows the form was repopulated
+  // and can throw it away in one click if they wanted a fresh form instead.
+  if (_draftAutoApplied && saveDraftStatus && session) {
+    saveDraftStatus.hidden = false;
+    saveDraftStatus.innerHTML = `Restored your saved draft (from ${_draftAutoApplied.ageLabel}${_draftAutoApplied.sourceLabel}). <a href="#" id="draft-discard-inline" style="color:var(--accent)">Discard</a>`;
+    saveDraftStatus.querySelector('#draft-discard-inline')?.addEventListener('click', async (e) => {
+      e.preventDefault();
+      try {
+        await deleteDraft(session, appId);
+        deleteLocalDraft(session?.user?.id, appId);
+        window.ppToast?.success('Draft discarded. Reloading with a fresh form...');
+      } finally {
+        setTimeout(() => window.location.reload(), 400);
+      }
+    });
+  }
+  if (saveDraftBtn && session && !isEdit) {
+    const formEl = el.querySelector('#submit-report-form');
+    const snapshot = () => {
+      const snap = formEl ? snapshotFormData(formEl) : {};
+      // Debug: what actually got captured. Small footprint, useful when a
+      // user reports "my draft came back with X missing".
+      console.debug('[submit] draft snapshot', {
+        appId,
+        valueKeys: Object.keys(snap.values || {}),
+        canInstall: snap.state?.canInstall, canStart: snap.state?.canStart, canPlay: snap.state?.canPlay,
+        source: 'snapshotFormData',
+      });
+      return snap;
+    };
+    // Manual save button: still available, feeds through the same cloud+local
+    // save path so the manual click enjoys the same fallback behaviour. Also
+    // hides any leftover restore banner -- if the user is actively saving,
+    // they clearly aren't going to click "Restore draft" for the same data.
+    saveDraftBtn.addEventListener('click', async () => {
+      if (!formEl) return;
+      const prevLabel = saveDraftBtn.textContent;
+      saveDraftBtn.disabled = true;
+      saveDraftBtn.textContent = 'Saving...';
+      try {
+        // Manual Save is the explicit trigger for the same persistence path
+        // autosave uses. Save + close: navigate back to the source page so
+        // the user is not stuck on the form after they intended to commit.
+        const res = await saveDraft(session, appId, snapshot());
+        if (res.where === 'cloud') window.ppToast?.success('Draft saved.');
+        else if (res.where === 'local') window.ppToast?.info('Saved locally. Cloud sync failed; will retry on next auto-save.');
+        else window.ppToast?.error(`Failed to save draft: ${res.error || 'unknown'}`);
+        renderDraftStatus({ state: res.where ? 'saved' : 'error', where: res.where, error: res.error });
+        if (res.where) {
+          hideRestoreBanner();
+          const dest = returnTo || `app.html#/app/${appId}`;
+          setTimeout(() => { window.location.href = dest; }, 400); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
+        }
+      } finally {
+        saveDraftBtn.disabled = false;
+        saveDraftBtn.textContent = prevLabel;
+      }
+    });
+    // Auto-save: 2.5s of quiet input triggers a save. Listens on 'input' for
+    // typing and 'change' for select / checkbox / radio commits. Skipped on
+    // the file input for the FPS CSV since browsers do not let us restore
+    // file selections anyway. event.isTrusted gate keeps the prefill's
+    // synthetic change events (My Hardware, fromCloud, isEdit restore) from
+    // firing an autosave the user did not ask for -- otherwise we would save
+    // the prefilled hardware fields as a draft the moment the page loads,
+    // and the restore banner would appear even though nothing user-authored
+    // exists yet (#285).
+    if (formEl) {
+      // First-load toast so the reporter learns their work is being saved
+      // (a laptop can die and the draft survives). Suppressed on repeat
+      // fires so 20 pauses per session do not generate 20 toasts. Errors
+      // always toast because a broken autosave the user does not see is
+      // worse than a chatty one.
+      let _firstAutosaveShown = false;
+      const autosaver = makeAutoSaver({
+        session, appId, snapshot,
+        delayMs: 2500,
+        onStatus: (info) => {
+          renderDraftStatus(info);
+          if (info?.state === 'saved' && info.where) {
+            hideRestoreBanner();
+            if (!_firstAutosaveShown) {
+              _firstAutosaveShown = true;
+              window.ppToast?.info('Auto-saving your draft to this browser. Tap Save to sync it to your account.');
+            }
+          }
+          if (info?.state === 'error') {
+            window.ppToast?.error(`Auto-save failed: ${info.error || 'unknown'}`);
+          }
+        },
+      });
+      const trigger = (e) => {
+        if (!e.isTrusted) return;
+        if (e.target && e.target.type === 'file') return;
+        autosaver.schedule();
+      };
+      formEl.addEventListener('input', trigger);
+      formEl.addEventListener('change', trigger);
+      // Flush pending edits before leaving the page so the user does not lose
+      // work by navigating too fast for the debounce.
+      window.addEventListener('beforeunload', () => { autosaver.cancel(); });
+    }
+  } else if (saveDraftBtn) {
+    saveDraftBtn.hidden = true;
+    if (saveDraftStatus) saveDraftStatus.hidden = true;
+  }
+
+  // #153: markdown editor is on site-wide now (no flag). Wrap the Notes
+  // textarea with Write / Preview tabs and render the preview via
+  // window.markdownit. Falls through silently if the CDN failed to load,
+  // in which case the textarea keeps working as plain text.
+  if (typeof window.markdownit === 'function') {
+    enhanceNotesWithMarkdown(el);
+  }
+
+  // In edit mode, pre-fill from existing report; otherwise fall back to saved hardware
+  if (isEdit && session) {
+    // #144: warn before editing a currently-published report. Fetch the
+    // approval row first so we know whether the report is live. If the
+    // user cancels, bounce them back to where they came from instead of
+    // prefilling the form (avoids them seeing a half-loaded edit they
+    // didn't want to start).
+    try {
+      const preCheckRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/report_approvals?report_id=eq.${editReportId}&select=approval_hash&limit=1`,
+        { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+      );
+      const preCheckRows = preCheckRes.ok ? await preCheckRes.json() : [];
+      const isCurrentlyPublished = preCheckRows.length > 0;
+      if (isCurrentlyPublished) {
+        const proceed = window.confirm(
+          'This report is currently published. Editing it puts it back into ' +
+          'pending review until the daily pipeline re-approves it. Continue?'
+        );
+        if (!proceed) {
+          const dest = returnTo || `app.html#/app/${appId}`;
+          window.location.href = dest; // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
+          return;
+        }
+      }
+    } catch (err) {
+      // Approval pre-check is best-effort. A network blip should not block
+      // the edit flow; the form still loads and the inline banner below
+      // will reflect the actual status once it does come back.
+      console.warn('[submit] edit pre-check failed:', err);
+    }
+
+    try {
+      const r = await fetch(
+        `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(editReportId)}&select=*&limit=1`,
+        { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+      );
+      const rows = r.ok ? await r.json() : [];
+      const rec = rows[0];
+      if (rec) {
+        const form = el.querySelector('#submit-report-form');
+        const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
+        set('gameTitle', (rec.title && !/^App \d+$/.test(rec.title)) ? rec.title : title);
+        set('cpu',          rec.cpu);
+        set('gpu',          rec.gpu);
+        set('gpuDriver',    rec.gpu_driver);
+        set('gpuVendor',    rec.gpu_vendor);
+        set('ram',          rec.ram);
+        set('kernel',       rec.kernel);
+        set('protonVersion',rec.proton_version);
+        set('notes',        rec.notes);
+        set('launchOptions',rec.launch_options || rec.config_key);
+        set('duration',     rec.duration);
+        // parse OS field -- stored as "SteamOS 3.6" or similar
+        if (rec.os) {
+          const osParts = rec.os.split(' ');
+          set('os', osParts[0]);
+          if (osParts.length > 1) set('osVersion', osParts.slice(1).join(' '));
+        }
+        // restore form_responses into radio/checkbox state
+        const fr = rec.form_responses || {};
+        const state = form._formState || {};
+        const setRadio = (name, val) => {
+          if (!val) return;
+          state[name] = val;
+          const radio = form.querySelector(`input[name="${name}"][value="${val}"]`);
+          if (radio) { radio.checked = true; radio.dispatchEvent(new Event('change', { bubbles: true })); }
+        };
+        setRadio('canInstall', fr.canInstall);
+        setRadio('canStart',   fr.canStart);
+        setRadio('canPlay',    fr.canPlay);
+        setRadio('verdict',    fr.verdict === 'no' ? null : fr.verdict);
+        // fault questions
+        const FAULT_KEYS = ['performanceFaults','graphicalFaults','windowingFaults','audioFaults',
+          'inputFaults','stabilityFaults','saveGameFaults','significantBugs'];
+        for (const k of FAULT_KEYS) {
+          if (fr[k]) setRadio(k, fr[k]);
+          if (fr[k + 'Notes']) set(k + 'Notes', fr[k + 'Notes']);
+        }
+        setRadio('onlineMultiplayer', fr.onlineMultiplayer);
+        if (fr.onlineMultiplayerNotes) set('onlineMultiplayerNotes', fr.onlineMultiplayerNotes);
+        setRadio('localMultiplayer',  fr.localMultiplayer);
+        if (fr.localMultiplayerNotes) set('localMultiplayerNotes', fr.localMultiplayerNotes);
+        setRadio('offlineCompat', fr.offlineCompat);
+        setRadio('requiresFramegen',  fr.requiresFramegen);
+        if (fr.framegenType) set('framegenType', fr.framegenType);
+        if (fr.framegenNotes) set('framegenNotes', fr.framegenNotes);
+        // tinkering checkboxes
+        if (fr.tinkeringMethods?.length) {
+          state.tinkeringMethods = new Set(fr.tinkeringMethods);
+          for (const m of fr.tinkeringMethods) {
+            const cb = form.querySelector(`input[name="tinkeringMethod"][value="${CSS.escape(m)}"]`);
+            if (cb) cb.checked = true;
+          }
+        }
+        form._formState = state;
+        console.debug('[submit] edit mode: prefilled from report', { editReportId, appId });
+
+        // Show approval status banner
+        try {
+          const approvalRes = await fetch(
+            `${SUPABASE_URL}/rest/v1/report_approvals?report_id=eq.${editReportId}&select=approval_hash,approved_at,approved_by`,
+            { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+          );
+          const approvalRows = approvalRes.ok ? await approvalRes.json() : [];
+          const approval = approvalRows[0];
+          const banner = document.createElement('div');
+          banner.className = 'submit-approval-banner';
+          if (approval) {
+            // #149: collapsed default state. Header line shows the badge +
+            // report number; everything else lives behind a native
+            // <details>/<summary> expander, one field per row so a long
+            // md5 hash never has to fit on the same line as a date.
+            // editReportId is already validated to be digits-only at parse time
+            // (see the top-of-file sanitizer), but approval.* values come from
+            // Supabase and a malicious admin could in theory push HTML into
+            // approved_by. Escape every server-provided value before templating
+            // into innerHTML.
+            banner.innerHTML = `
+              <details class="submit-approval-banner-details">
+                <summary class="submit-approval-banner-summary">
+                  <span class="submit-approval-badge submit-approval-badge--approved">Approved</span>
+                  <span class="submit-approval-banner-report">Report #${esc(editReportId)}</span>
+                  <span class="submit-approval-banner-toggle">See all details</span>
+                </summary>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Approved</span> ${esc(new Date(approval.approved_at).toLocaleDateString())}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">By</span> ${esc(approval.approved_by || 'Auto-Moderator')}</div>
+                <div class="submit-approval-banner-field"><span class="submit-approval-banner-label">Hash</span> <code>${esc(approval.approval_hash)}</code></div>
+              </details>`;
+          } else {
+            banner.innerHTML = `<span class="submit-approval-badge submit-approval-badge--pending">Pending Approval</span> Report #${esc(editReportId)} | This report is awaiting review. It will not appear publicly until approved. Reference this ID if you need to request a manual review.`;
+          }
+          const formContent = document.getElementById('submit-form-content');
+          formContent?.insertBefore(banner, formContent.firstChild);
+        } catch {}
+      }
+    } catch (err) {
+      console.warn('[submit] edit prefill failed:', err);
+    }
+    // change submit button label
+    const submitBtn = el.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = 'Save Changes';
+  } else if (fromCloud && session) {
+    // Pull the user's cloud config for this app so the proton version
+    // + launch options + any saved hardware/profile fields are already
+    // filled in. The user still has to answer the question flow to
+    // Publish, but they can Save at any point to update the draft.
+    let cloudRec = null;
+    try {
+      const uid = encodeURIComponent(session.user.id);
+      const r = await fetch(
+        `${SUPABASE_URL}/rest/v1/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&or=(voter_id.eq.${uid},proton_pulse_user_id.eq.${uid})&select=app_name,config,updated_at&order=updated_at.desc&limit=1`,
+        { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
+      );
+      const rows = r.ok ? await r.json() : [];
+      cloudRec = rows[0] ?? null;
+      if (cloudRec) {
+        const cfg = cloudRec.config || {};
+        const form = el.querySelector('#submit-report-form');
+        const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
+        if (cloudRec.app_name) set('gameTitle', cloudRec.app_name);
+        if (cfg.protonVersion) set('protonVersion', cfg.protonVersion);
+        if (cfg.launchOptions) set('launchOptions', cfg.launchOptions);
+        if (cfg.hardware) {
+          const hw = cfg.hardware;
+          set('cpu', hw.cpu);
+          set('gpu', hw.gpu);
+          set('gpuDriver', hw.gpuDriver);
+          set('gpuVendor', hw.gpuVendor);
+          set('ram', hw.ram);
+          set('kernel', hw.kernel);
+          if (hw.os) {
+            const osParts = String(hw.os).split(' ');
+            set('os', osParts[0]);
+            if (osParts.length > 1) set('osVersion', osParts.slice(1).join(' '));
+          }
+        }
+        console.debug('[submit] fromCloud: prefilled from cloud config', { appId });
+      } else {
+        prefillSubmitFormFromMyHardware(el);
+      }
+    } catch (err) {
+      console.warn('[submit] fromCloud prefill failed:', err);
+      prefillSubmitFormFromMyHardware(el);
+    }
+    const submitBtn = el.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = 'Publish';
+
+    // Cloud-config Save: patches only the reusable cloud config (proton version,
+    // launch options, hardware), NOT the report answers. In the publish flow the
+    // report is not published yet, so per the button rule we show "Save Draft"
+    // (which captures the full form state) and Publish, and keep this cloud Save
+    // out of the DOM to avoid the "my answers did not save" confusion.
+    const saveBtn = document.createElement('button');
+    saveBtn.type = 'button';
+    saveBtn.textContent = 'Save';
+    saveBtn.className = 'submit-report-btn submit-report-btn--save';
+    saveBtn.style.cssText = 'background:var(--s2);color:var(--text);border:1px solid var(--border);';
+    saveBtn.addEventListener('click', async () => {
+      const form = el.querySelector('#submit-report-form');
+      const get = name => form?.elements[name]?.value?.trim() || '';
+      const hw = { ...(cloudRec?.config?.hardware || {}) };
+      for (const k of ['cpu','gpu','gpuDriver','gpuVendor','ram','kernel']) {
+        const v = get(k); if (v) hw[k] = v; else delete hw[k];
+      }
+      const osVal = [get('os'), get('osVersion')].filter(Boolean).join(' ');
+      if (osVal) hw.os = osVal; else delete hw.os;
+      const newConfig = { ...(cloudRec?.config || {}), protonVersion: get('protonVersion'), launchOptions: get('launchOptions'), hardware: hw };
+      const gameTitle = el.querySelector('input[name="gameTitle"]')?.value?.trim() || title;
+      const statusEl = el.querySelector('#submit-status');
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
+      try {
+        const rpcR = await fetch(
+          `${SUPABASE_URL}/rest/v1/rpc/update_my_cloud_config`,
+          {
+            method: 'POST',
+            headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ p_app_id: parseInt(appId, 10), p_app_name: gameTitle, p_config: newConfig }),
+          }
+        );
+        if (!rpcR.ok) { const msg = await rpcR.text().catch(() => ''); throw new Error(`HTTP ${rpcR.status}${msg ? ': ' + msg : ''}`); }
+        cloudRec = { ...cloudRec, app_name: gameTitle, config: newConfig };
+        if (statusEl) { statusEl.textContent = 'Saved.'; statusEl.style.color = 'var(--green)'; }
+        console.debug('[submit] fromCloud: saved draft', { appId });
+      } catch (err) {
+        if (statusEl) { statusEl.textContent = 'Save failed: ' + (err.message || err); statusEl.style.color = 'var(--red)'; }
+        console.warn('[submit] fromCloud: save draft failed', { appId, error: String(err) });
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Save';
+      }
+    });
+  } else if (fromCloud && !session) {
+    // localhost dev preview without auth: can't fetch cloud config, just
+    // prefill from saved hardware so the form is at least populated
+    prefillSubmitFormFromMyHardware(el);
+    const submitBtn = el.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = 'Publish (dev preview)';
+  } else {
+    prefillSubmitFormFromMyHardware(el);
+  }
+
+  const titleInput = el.querySelector('input[name="gameTitle"]');
+  if (titleInput && !titleInput.value) titleInput.value = title;
+
+  const form = el.querySelector('#submit-report-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const statusEl = el.querySelector('#submit-status');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const savingText = isEdit ? 'Saving...' : 'Submitting...';
+
+      el.querySelectorAll('.sf-question.sf-needs-answer, .sf-row.sf-needs-answer').forEach(q => q.classList.remove('sf-needs-answer'));
+      const state = form._formState || {};
+      const needsAnswer = [];
+      if (!state.canInstall) needsAnswer.push('q-canInstall');
+      if (state.canInstall === 'yes' && !state.canStart) needsAnswer.push('q-canStart');
+      if (state.canInstall === 'yes' && state.canStart === 'yes' && !state.canPlay) needsAnswer.push('q-canPlay');
+      const allYes = state.canInstall === 'yes' && state.canStart === 'yes' && state.canPlay === 'yes';
+      if (allYes && !state.verdict) needsAnswer.push('q-verdict');
+      if (allYes) {
+        for (const k of (typeof FAULT_KEYS_WEB !== 'undefined' ? FAULT_KEYS_WEB : [])) {
+          if (!state.faults?.[k]) needsAnswer.push('q-' + k);
+        }
+      }
+      for (const id of needsAnswer) {
+        const q = el.querySelector('#' + id);
+        if (q) q.classList.add('sf-needs-answer');
+      }
+
+      // Required hardware/setup fields -- highlight their parent .sf-row on empty
+      const REQUIRED_FIELD_NAMES = ['protonVersion', 'gpu', 'gpuVendor', 'cpu', 'ram', 'os', 'notes'];
+      for (const name of REQUIRED_FIELD_NAMES) {
+        const input = form.elements[name];
+        if (input && !input.value.trim()) {
+          const row = input.closest('.sf-row');
+          if (row) row.classList.add('sf-needs-answer');
+        }
+      }
+
+      const errorEls = el.querySelectorAll('.sf-needs-answer');
+      if (errorEls.length > 0) {
+        errorEls[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (statusEl) {
+          statusEl.textContent = 'Please fill in all required fields before publishing.';
+          statusEl.style.color = 'var(--red)';
+        }
+        return;
+      }
+
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = savingText; }
+      if (statusEl) { statusEl.textContent = savingText; statusEl.style.color = 'var(--accent)'; }
+
+      try {
+        let result;
+        if (isEdit) {
+          result = await submitReport(appId, title, form, editReportId);
+        } else {
+          result = await submitReport(appId, title, form);
+        }
+        if (result.ok) {
+          // Toast is the single success confirmation now; no duplicate inline text.
+          window.ppToast?.success(isEdit ? 'Changes saved.' : 'Report submitted. Thanks!');
+          if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
+          // Clean up the saved draft now that the report is in. Applies to the
+          // fromCloud publish flow too, since it now saves/restores drafts.
+          if (!isEdit && session) {
+            void deleteDraft(session, appId).catch(() => {});
+          }
+          const dest = returnTo || `app.html#/app/${appId}`;
+          setTimeout(() => { window.location.href = dest; }, 900); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
+        } else {
+          if (statusEl) { statusEl.textContent = result.error || 'Failed'; statusEl.style.color = 'var(--red)'; }
+          window.ppToast?.error(result.error || (isEdit ? 'Could not save changes.' : 'Could not submit the report.'));
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = isEdit ? 'Save Changes' : 'Submit'; }
+        }
+      } catch (err) {
+        console.error('[submit] save failed:', err);
+        if (statusEl) { statusEl.textContent = err.message || 'Failed'; statusEl.style.color = 'var(--red)'; }
+        window.ppToast?.error(`Submit failed: ${err.message || err}`);
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = isEdit ? 'Save Changes' : 'Submit'; }
+      }
+    });
+  }
+})().catch(err => {
+  console.error('[submit] page init failed:', err);
+  const fc = document.getElementById('submit-form-content');
+  if (fc) {
+    const div = document.createElement('div');
+    div.style.cssText = 'padding:24px;color:var(--red)';
+    div.textContent = `Page error: ${err.message || err}`;
+    fc.innerHTML = '';
+    fc.appendChild(div);
+  }
+});
+
+// #153 spike: wraps the Notes textarea (name="notes") with a Write /
+// Preview tab pair. Preview renders via markdown-it. The textarea keeps
+// its name so the existing submitReport payload logic is untouched --
+// the raw markdown flows into user_configs.notes exactly like plain
+// text does today.
+function enhanceNotesWithMarkdown(rootEl) {
+  const textarea = rootEl.querySelector('textarea[name="notes"]');
+  if (!textarea || textarea.dataset.mdEnhanced === '1') return;
+  textarea.dataset.mdEnhanced = '1';
+
+  // html: false stops raw HTML from flowing through so the notes field
+  // is not an XSS vector. linkify + breaks match how most chat / issue
+  // renderers behave (Discord, GitHub Discussions).
+  const md = window.markdownit({
+    html: false,
+    linkify: true,
+    breaks: true,
+    typographer: false,
+  });
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'md-editor';
+  wrapper.innerHTML = `
+    <div class="md-editor-tabs" role="tablist">
+      <button type="button" class="md-editor-tab md-editor-tab--active" data-md-tab="write" role="tab" aria-selected="true">Write</button>
+      <button type="button" class="md-editor-tab" data-md-tab="preview" role="tab" aria-selected="false">Preview</button>
+      <span class="md-editor-hint">Markdown supported</span>
+    </div>
+    <div class="md-editor-preview" hidden></div>
+  `;
+  textarea.parentNode.insertBefore(wrapper, textarea);
+  wrapper.appendChild(textarea);
+
+  const previewEl = wrapper.querySelector('.md-editor-preview');
+  const writeBtn = wrapper.querySelector('[data-md-tab="write"]');
+  const previewBtn = wrapper.querySelector('[data-md-tab="preview"]');
+
+  function activate(tab) {
+    const isPreview = tab === 'preview';
+    writeBtn.classList.toggle('md-editor-tab--active', !isPreview);
+    previewBtn.classList.toggle('md-editor-tab--active', isPreview);
+    writeBtn.setAttribute('aria-selected', String(!isPreview));
+    previewBtn.setAttribute('aria-selected', String(isPreview));
+    textarea.hidden = isPreview;
+    previewEl.hidden = !isPreview;
+    if (isPreview) {
+      const raw = textarea.value || '';
+      previewEl.innerHTML = raw.trim()
+        ? md.render(raw)
+        : '<em class="md-editor-empty">Nothing to preview yet.</em>';
+    }
+  }
+  writeBtn.addEventListener('click', () => activate('write'));
+  previewBtn.addEventListener('click', () => activate('preview'));
+}

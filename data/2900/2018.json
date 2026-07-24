@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "2900",
+    "title": "688(I) Hunter/Killer",
+    "timestamp": 1535472187,
+    "rating": "Borked",
+    "notes": "No errors",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4700HQ / GT 750M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "2900",
+    "cpu": "AMD A8-3870 APU with Radeon(tm) HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTS 450/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-36-generic",
+    "notes": "After clicking \"Play\" the game just crashed to the desktop, without any errors, pop-up or other message leading to an explanation. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15515 Mb",
+    "rating": "Borked",
+    "timestamp": 1539620855,
+    "title": "688(I) Hunter/Killer",
+    "source": "protondb"
+  },
+  {
+    "appId": "2900",
+    "title": "688(I) Hunter/Killer",
+    "timestamp": 1535457787,
+    "rating": "Borked",
+    "notes": "No errors",
+    "os": "Fedora 28 64-bit (Kernel 4.17.18)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4700HQ / GT 750M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

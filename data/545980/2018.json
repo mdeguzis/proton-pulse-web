@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "545980",
+    "title": "Voodoo Vince: Remastered",
+    "timestamp": 1536073419,
+    "rating": "Borked",
+    "notes": "Main menu works fine, loading level/new save crashes",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.5",
+    "specs": "i5-4690 CPU / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "545980",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.69-1-MANJARO",
+    "notes": "Looks fine, occasionally drops a frame.  Cutscenes are out of sync which has been an issue on windows as well.  Otherwise it's nearly perfect. ",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "64424 Mb",
+    "rating": "Gold",
+    "timestamp": 1537490187,
+    "title": "Voodoo Vince: Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "545980",
+    "title": "Voodoo Vince: Remastered",
+    "timestamp": 1536059019,
+    "rating": "Borked",
+    "notes": "Main menu works fine, loading level/new save crashes",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.5",
+    "specs": "i5-4690 CPU / GTX 1070",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

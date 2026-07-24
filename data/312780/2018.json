@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "312780",
+    "title": "Way of the Samurai 4",
+    "timestamp": 1534969071,
+    "rating": "Borked",
+    "notes": "Does nothing at all",
+    "os": "Antergos 64-bit (kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.51-5",
+    "specs": "Ryzen 5 1600 / GTX 1060 3GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312780",
+    "cpu": "Intel(R) Core(TM) i5-4570 CPU @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16037 Mb",
+    "rating": "Borked",
+    "timestamp": 1539877296,
+    "title": "Way of the Samurai 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "312780",
+    "cpu": "AMD FX(tm)-6350 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.66",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Won't work.",
+    "os": "Ubuntu 18.10 (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7920 \u041c\u0411",
+    "rating": "Borked",
+    "timestamp": 1539895465,
+    "title": "Way of the Samurai 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "312780",
+    "title": "Way of the Samurai 4",
+    "timestamp": 1534954671,
+    "rating": "Borked",
+    "notes": "Does nothing at all",
+    "os": "Antergos 64-bit (kernel 4.17)",
+    "gpuDriver": "NVIDIA 396.51-5",
+    "specs": "Ryzen 5 1600 / GTX 1060 3GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

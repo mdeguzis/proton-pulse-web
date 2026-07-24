@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "751440",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "nvldumd.dll",
+    "kernel": "Supported",
+    "notes": "Game crashes when entering any of the sexy lessons. Normal game works okay, with the cloths sometimes losing textures",
+    "os": "Manjaro",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568471990,
+    "title": "VR Kanojo / VR\u30ab\u30ce\u30b8\u30e7",
+    "tweaks": {
+      "disableD3d10": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "751440",
+    "cpu": "Intel Xeon  X5675 (x2) @ 3.07GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.2-1-default",
+    "notes": "While there is stuttering in-game, if you delete or rename the ~/.local/share/Steam/steamapps/common/VR_Kanojo_Data/Plugins/AudioPluginOculusSpatializer.dll file, then everything will be playable from then on.",
+    "os": "OpenSUSE Tumbleweed",
+    "protonVersion": "4.11-7",
+    "ram": "72 GB",
+    "rating": "Silver",
+    "timestamp": 1571141915,
+    "title": "VR Kanojo / VR\u30ab\u30ce\u30b8\u30e7",
+    "source": "protondb"
+  }
+]

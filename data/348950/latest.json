@@ -1,0 +1,72 @@
+[
+  {
+    "appId": "348950",
+    "title": "Ame no Marginal -Rain Marginal-",
+    "timestamp": 1535441168,
+    "rating": "Bronze",
+    "notes": "Fullscreen mode is a bit glitchy (titlebar may get stuck on top). Should work if you switch to FS once on load, then titlebar should go away automatically when loading/starting a game. ",
+    "os": "Gentoo AMD64 (Kernel 4.18.5)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "348950",
+    "cpu": "Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-zen1-1-zen",
+    "notes": "Fullscreen doesn't work properly. Everything else works fine.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7916 Mb",
+    "rating": "Silver",
+    "timestamp": 1537421204,
+    "title": "Ame no Marginal -Rain Marginal-",
+    "source": "protondb"
+  },
+  {
+    "appId": "348950",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 780 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta",
+    "ram": "7974 \u041c\u0411",
+    "rating": "Platinum",
+    "timestamp": 1538127305,
+    "title": "Ame no Marginal -Rain Marginal-",
+    "source": "protondb"
+  },
+  {
+    "appId": "348950",
+    "cpu": "Intel(R) Core(TM) i7-4930K CPU @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation TITAN V/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs perfectly out of the box.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "64362 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539044243,
+    "title": "Ame no Marginal -Rain Marginal-",
+    "source": "protondb"
+  },
+  {
+    "appId": "348950",
+    "title": "Ame no Marginal -Rain Marginal-",
+    "timestamp": 1535426768,
+    "rating": "Bronze",
+    "notes": "Fullscreen mode is a bit glitchy (titlebar may get stuck on top). Should work if you switch to FS once on load, then titlebar should go away automatically when loading/starting a game. ",
+    "os": "Gentoo AMD64 (Kernel 4.18.5)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

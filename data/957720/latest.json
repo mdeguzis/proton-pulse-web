@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "957720",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-21-generic",
+    "notes": "Crashes in less than a minute, usually when opening menu dialogs; also blacks the entire screen out for a second every time a dialog appears. Scrolling seems to be completely broken and context menus render with a \"Windows UI\" (which I assume is not intended).",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565374733,
+    "title": "Strategic Command WWII: World at War",
+    "source": "protondb"
+  }
+]

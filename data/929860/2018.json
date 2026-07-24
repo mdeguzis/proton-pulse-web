@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "929860",
+    "cpu": "Intel Core i5-6198DU @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 920MX",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Multiplayer not tested yet since it was an experimental feature at the time of testing.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541749247,
+    "title": "Game Builder",
+    "source": "protondb"
+  }
+]

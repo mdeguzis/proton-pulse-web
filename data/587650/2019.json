@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "587650",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-29-generic",
+    "notes": "Great! Thanks Lord Gabe & Valve!",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1554322720,
+    "title": "Half-Life 2: DownFall",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "587650",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "runs out of the box! 170+ fps in the entire game, it's great :)",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566131101,
+    "title": "Half-Life 2: DownFall",
+    "source": "protondb"
+  }
+]

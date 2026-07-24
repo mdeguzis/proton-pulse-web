@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "345260",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org AMD Radeon (TM) R9 Fury Series (FIJI, DRM 3.23.0, 4.15.0-36-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Main menu and cinematics work.  In-game fonts, cursor, and parts of the UI are missing.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "15901 Mb",
+    "rating": "Borked",
+    "timestamp": 1539735900,
+    "title": "Medieval: Total War\u2122 - Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "345260",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Launcher does not display properly, but \"play\" button can be found with exploration. Menus, sounds, and Campaign map all work. Battles do not, command icons are all black, and (crucially) mouse cursor does not display. Game playable if all battles are autoresolved. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1542934437,
+    "title": "Medieval: Total War\u2122 - Collection",
+    "source": "protondb"
+  }
+]

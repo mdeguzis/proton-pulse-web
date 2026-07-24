@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "207370",
+    "title": "eXceed - Gun Bullet Children",
+    "timestamp": 1534910400,
+    "rating": "Silver",
+    "notes": "Works just fine except up is constnatly being pressed in the game no matter what. I don't have any controllers plugged it.",
+    "os": "Slackware 14.2",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "AMD 8350 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "207370",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Tried with keyboard and controller. Both worked fine. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545830509,
+    "title": "eXceed - Gun Bullet Children",
+    "source": "protondb"
+  },
+  {
+    "appId": "207370",
+    "title": "eXceed - Gun Bullet Children",
+    "timestamp": 1534896000,
+    "rating": "Silver",
+    "notes": "Works just fine except up is constnatly being pressed in the game no matter what. I don't have any controllers plugged it.",
+    "os": "Slackware 14.2",
+    "gpuDriver": "NVIDIA 396.24",
+    "specs": "AMD 8350 / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32640",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Black screen after a mission.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1567914119,
+    "title": "Delta Force Land Warrior",
+    "source": "protondb"
+  }
+]

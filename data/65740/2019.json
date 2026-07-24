@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "65740",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "4.20.14-200.fc29.x86_64",
+    "notes": "no gamma correction in the settings menu in the game, so too dark strategic map",
+    "os": "Fedora release 29 (Twenty Nine) (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552413337,
+    "title": "Carrier Command: Gaea Mission",
+    "source": "protondb"
+  },
+  {
+    "appId": "65740",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs out of the box without tweaks, but map textures are broken and it crashed at one checkpoint. No problem with gamma. Performance is flawless.",
+    "os": "Xubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565470462,
+    "title": "Carrier Command: Gaea Mission",
+    "source": "protondb"
+  },
+  {
+    "appId": "65740",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Performance is generally good, map screen textures aren't working and some of the first person  levels in buildings appear to have an issue with lighting, making it near impossible to find your way around in the dark. After about an hour experienced a crash as well.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1567232814,
+    "title": "Carrier Command: Gaea Mission",
+    "source": "protondb"
+  }
+]

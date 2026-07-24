@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "502370",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Same as others have reported. You need to create an OPTIONS.txt file in ~/.steam/steam/steamapps/compatdata/502370/pfx/drive_c/users/steamuser/My Documents/My Games/SANCTUS/OPTIONS.txt\n\nMy content of that file is https://pastebin.com/iJh7MGAq (the previous user had spanish language activated, this one will set you up for english).\n\nApart from this fix, it runs perfectly. A little slow on my Intel HD620, but everything is rendering fine. Going to test this later on my GTX1070. Seems like a fun game. I completed and finished the tutorial.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1558154554,
+    "title": "Warhammer 40,000: Sanctus Reach",
+    "source": "protondb"
+  }
+]

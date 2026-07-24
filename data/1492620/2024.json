@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1492620",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "No issues at all.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1704386611,
+    "title": "Jelly Is Sticky",
+    "source": "protondb"
+  }
+]

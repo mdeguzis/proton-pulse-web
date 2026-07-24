@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "649780",
+    "cpu": "Intel Core i7-2670QM @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-45-generic",
+    "notes": "The Launcher starts but when I click on Play, it closes without any message. I tried the Wine D3d11 tweak and th Disable D3d tweak but both gave me the error \"Loading DirectX 11 failed.\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1549806155,
+    "title": "HITMAN\u2122 Free Trial",
+    "source": "protondb"
+  }
+]

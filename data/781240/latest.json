@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "781240",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "DosBox game -  1st windows flashes \"DosBox\"  does not continue - Alt-Tab opens 2nd window with cursor in top left.  Pressing 'Enter' or any key did not start the game.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556223854,
+    "title": "Mystical",
+    "source": "protondb"
+  }
+]

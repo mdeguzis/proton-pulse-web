@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "469600",
+    "title": "Legion TD 2",
+    "timestamp": 1536046475,
+    "rating": "Platinum",
+    "notes": "Didn't notice any issues",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "i7-6700 / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "469600",
+    "cpu": "Intel Xeon           X5675  @ 3.07GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon R9 270",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-d014af98b7)",
+    "kernel": "4.19.6-12-tkg-pds",
+    "notes": "if the game doesn't start use \"TZ= %command%\" on launch options as a workaround, after that everything works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1544287568,
+    "title": "Legion TD 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "469600",
+    "title": "Legion TD 2",
+    "timestamp": 1536032075,
+    "rating": "Platinum",
+    "notes": "Didn't notice any issues",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "i7-6700 / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

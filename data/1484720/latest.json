@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1484720",
+    "cpu": "AMD Ryzen 5 4500U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.5, DRM 3.59, 6.12.12-207.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.3",
+    "kernel": "6.12.12-207.bazzite.fc41.x86_64",
+    "notes": "Works great",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1741217696,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1484720",
+    "cpu": "AMD Ryzen 7 5800X",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "570.153.02",
+    "kernel": "6.17.5-gnu",
+    "notes": "Runs fine OOTB. Had no issues.",
+    "os": "Guix System",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1764822613,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1484720",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-arch2-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1766866556,
+    "title": "",
+    "source": "protondb"
+  }
+]

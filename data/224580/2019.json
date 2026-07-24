@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "224580",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "There's only one other report on this game as I am writing this, and the problem they had is that they did not have Arma 2: Operation Arrowhead installed. Considering this mod is a mod of that game, you need the base game for this to work. \n\nHowever, I installed Arma 2: Operation Arrowhead, and resulted in a problem with BattleEye. BattleEye needs to be installed for this game to run, and after clicking install the game crashes.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1547014786,
+    "title": "Arma II: DayZ Mod",
+    "source": "protondb"
+  },
+  {
+    "appId": "224580",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.20.7-200.fc29.x86_64",
+    "notes": "This mod will not work as the base game does not work because of BattlEye",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1553079462,
+    "title": "Arma II: DayZ Mod",
+    "source": "protondb"
+  }
+]

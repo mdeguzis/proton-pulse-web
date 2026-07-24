@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "354620",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.2.2",
+    "kernel": "5.3.7-2-MANJARO",
+    "notes": "Fails to launch. Tried on multiple Proton versions. Anyone with more knowledge may be able to get it working with some tweaks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1572483577,
+    "title": "",
+    "source": "protondb"
+  }
+]

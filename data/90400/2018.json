@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "90400",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Game requires .NET 2.0 installation, which apparently is not included in the setup for the steam package of the game. ",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "15986 Mb",
+    "rating": "Borked",
+    "timestamp": 1537390016,
+    "title": "Blue Toad Murder Files\u2122: The Mysteries of Little Riddle",
+    "source": "protondb"
+  }
+]

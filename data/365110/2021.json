@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "365110",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 560 (POLARIS11, DRM 3.41.0, 5.13.0-22-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-22-generic",
+    "notes": "Cant install",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639527582,
+    "title": "After All",
+    "source": "protondb"
+  }
+]

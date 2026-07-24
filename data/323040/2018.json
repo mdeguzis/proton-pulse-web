@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "323040",
+    "title": "Laserlife",
+    "timestamp": 1535227428,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to run.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "323040",
+    "title": "Laserlife",
+    "timestamp": 1536250718,
+    "rating": "Platinum",
+    "notes": "Runs perfectly out of the box, no workaround were needed, native like performance and no glitches.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "323040",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.1-98.current",
+    "notes": "only starts with \"PROTON_USE_WINED3D11=1 %command%\", but them works fine with an Xbox360 controller.",
+    "os": "Solus",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542467947,
+    "title": "Laserlife",
+    "source": "protondb"
+  },
+  {
+    "appId": "323040",
+    "title": "Laserlife",
+    "timestamp": 1535213028,
+    "rating": "Gold",
+    "notes": "Requires Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to run.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "323040",
+    "title": "Laserlife",
+    "timestamp": 1536236318,
+    "rating": "Platinum",
+    "notes": "Runs perfectly out of the box, no workaround were needed, native like performance and no glitches.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

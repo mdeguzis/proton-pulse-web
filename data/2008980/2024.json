@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2008980",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Was able to boot into the game, sadly the controls dont work and going back into the menu breaks it.",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1704161077,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2008980",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1707649422,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2008980",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.54, 6.6.7-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 23.3.1 - kisak-mesa PPA",
+    "kernel": "6.6.7-x64v3-xanmod1",
+    "notes": "Game works perfectly out of the box",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1708128466,
+    "title": "",
+    "source": "protondb"
+  }
+]

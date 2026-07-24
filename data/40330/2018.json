@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "40330",
+    "title": "Secret Files: Tunguska",
+    "timestamp": 1534971005,
+    "rating": "Platinum",
+    "notes": "Works perfectly (letterboxing is normal)",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "40330",
+    "cpu": "i5-6400 CPU @ 2.70GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Only played the very beginning, but seems flawless.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15986 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537063442,
+    "title": "Secret Files: Tunguska",
+    "source": "protondb"
+  },
+  {
+    "appId": "40330",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "severalHours",
+    "gpu": "X.Org AMD MULLINS (DRM 2.50.0, 4.18.0-1-amd64, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "worked ootb",
+    "os": "Debian GNU/Linux testing (buster) (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "10970 MB",
+    "rating": "Platinum",
+    "timestamp": 1539445481,
+    "title": "Secret Files: Tunguska",
+    "source": "protondb"
+  },
+  {
+    "appId": "40330",
+    "title": "Secret Files: Tunguska",
+    "timestamp": 1534956605,
+    "rating": "Platinum",
+    "notes": "Works perfectly (letterboxing is normal)",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

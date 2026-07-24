@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "280200",
+    "title": "Eterium",
+    "timestamp": 1534824000,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 1.18.1.6-1",
+    "specs": "Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "280200",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-e2ae5f2f0a)",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Doesn't work at all",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1546186771,
+    "title": "Eterium",
+    "source": "protondb"
+  },
+  {
+    "appId": "280200",
+    "title": "Eterium",
+    "timestamp": 1534809600,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 1.18.1.6-1",
+    "specs": "Intel HD 530",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

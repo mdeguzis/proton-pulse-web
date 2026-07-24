@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "9480",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-15012077bc)",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "The game starts, but when after loading screen for a new game it will always crash on Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1554025228,
+    "title": "Saints Row 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "9480",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-5078d66a86)",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Native version doesn't work for me. On Proton now the game starts in a black box on the left top, but I cannot resize the window so not possible to start the game. After installing D9VK, the game start fine and playing is possible, but not fully stable and the menu doesn't seem to work.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1556702893,
+    "title": "Saints Row 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "9480",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "The game runs noticeably better with Proton and D9VK compared to the native Linux port. The native Linux version never went over 50 FPS, averaged about 40, and had many dips to mid 20 FPS, whereas Proton+D9VK generally averages around 60 FPS, with the highest framerate I've seen in game being 79 FPS and the absolute lowest dip being 35 FPS in a very intense sequence. The only thing that keeps me from wholeheartedly recommending this is there are occasional crashes when entering a vehicle that I haven't found a consistent recreation for yet. As for performance, as stated previously, it's a much better experience than the native port.",
+    "os": "Epic Arch Linux Meme",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567229728,
+    "title": "Saints Row 2",
+    "tweaks": {
+      "largeAddressAware": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

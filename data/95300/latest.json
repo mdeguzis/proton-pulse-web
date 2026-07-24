@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "95300",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 16.0.6, DRM 3.52, 6.4.7-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.7-200.fc38.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1696666774,
+    "title": "Capsized",
+    "source": "protondb"
+  }
+]

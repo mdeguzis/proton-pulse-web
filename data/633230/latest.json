@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "633230",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-13-generic",
+    "notes": "\"runs\", but boots you out of matches partway through and sometimes crashes in lobby.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1547068575,
+    "title": "NARUTO TO BORUTO: SHINOBI STRIKER",
+    "source": "protondb"
+  },
+  {
+    "appId": "633230",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.6-050106-generic",
+    "notes": "runs perfectly out of the box. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560938753,
+    "title": "NARUTO TO BORUTO: SHINOBI STRIKER",
+    "source": "protondb"
+  },
+  {
+    "appId": "633230",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Fails Easy Anti-Cheat validation checks. Unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561588380,
+    "title": "NARUTO TO BORUTO: SHINOBI STRIKER",
+    "source": "protondb"
+  }
+]

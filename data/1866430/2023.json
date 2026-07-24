@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1866430",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "5.15.0-76-generic",
+    "notes": "Input delay noticable with pad/keyboard. Had to force use of older version of Proton",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1688486437,
+    "title": "",
+    "source": "protondb"
+  }
+]

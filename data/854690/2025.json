@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "854690",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 16.0.6, DRM 3.54, 6.5.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.8-arch1.1",
+    "kernel": "6.5.5-zen1-1-zen",
+    "notes": "I also tried with regular controllers and it did not work. To start the roller coaster you need to select options with your controller.",
+    "os": "Garuda Linux",
+    "protonVersion": "10.0-3",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1764829676,
+    "title": "",
+    "source": "protondb"
+  }
+]

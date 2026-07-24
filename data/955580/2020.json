@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "955580",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.10-300.fc32.x86_64",
+    "notes": "You can run the game fine, however I couldnt get my XBox Pad to work. It works flawless with keyboard controls.",
+    "os": "Fedora 32",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1589677818,
+    "title": "Rise: Race The Future",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "933820",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Great on Steam Deck with a few small tweaks.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673295028,
+    "title": "Endzone - A World Apart",
+    "source": "protondb"
+  },
+  {
+    "appId": "933820",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Works with Proton 7.0-5 with good performance on a GTX 1050.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1673892725,
+    "title": "Endzone - A World Apart",
+    "source": "protondb"
+  },
+  {
+    "appId": "933820",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.2.0-32-generic",
+    "notes": "Spiel l\u00e4uft ohne Fehler",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1694440464,
+    "title": "Endzone - A World Apart",
+    "source": "protondb"
+  }
+]

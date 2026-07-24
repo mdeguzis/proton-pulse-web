@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "354650",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Played the full game from start to end no issue found",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552588570,
+    "title": "MISSING: An Interactive Thriller - Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "354650",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-51-generic",
+    "notes": "Full playthrough with zero issues.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560628381,
+    "title": "MISSING: An Interactive Thriller - Episode One",
+    "source": "protondb"
+  },
+  {
+    "appId": "354650",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Runs perfectly, some subtitle are bugged, but no big deal, also, there is, sometimes, some artifacts on screen, and one scene didn't showed up, but the choices were still there, so no real impact on gameplay.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567857414,
+    "title": "MISSING: An Interactive Thriller - Episode One",
+    "source": "protondb"
+  }
+]

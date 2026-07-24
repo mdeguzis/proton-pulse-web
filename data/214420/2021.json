@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "214420",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "it should work just like it does on windows, assuming that windows has a really unstable fps count on high graphical settings as well.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1611870954,
+    "title": "Gear Up",
+    "source": "protondb"
+  }
+]

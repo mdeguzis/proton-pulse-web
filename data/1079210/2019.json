@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "1079210",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-20-generic",
+    "notes": "Runs perfectly, even on a Ryzen APU. Drop down to 720p to get 60FPS on hardware this slow, though.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Platinum",
+    "timestamp": 1558293955,
+    "title": "Spark the Electric Jester 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079210",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "4.18.0-25-generic",
+    "notes": "The game runs relatively well after switching on Wine D3d11. Runs at a low frame-rate on my computer, and the Unity launcher doesn't appear, preventing you from changing the game's graphical settings. May work better on a more powerful system.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1562361805,
+    "title": "Spark the Electric Jester 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1079210",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.7",
+    "kernel": "5.3.1-arch1-1-vfio",
+    "notes": "No tweaks needed, works perfectly, FPS is through the roof",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1569269354,
+    "title": "Spark the Electric Jester 2",
+    "source": "protondb"
+  }
+]

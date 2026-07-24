@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "630610",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Game won't start. It shows a black window which turns into fullscreen and then quits after a few seconds.\nTried with Disabled Esync, Disabled D3D11 and virtual emulated desktop without success.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544130258,
+    "title": "Disneyland Adventures",
+    "source": "protondb"
+  }
+]

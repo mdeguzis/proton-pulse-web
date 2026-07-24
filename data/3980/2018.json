@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "3980",
+    "title": "CivCity: Rome",
+    "timestamp": 1535582386,
+    "rating": "Borked",
+    "notes": "Font problem - no text on main menu buttons",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "Intel Mesa 18.0.5",
+    "specs": "i7-7600U",
+    "protonVersion": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3980",
+    "cpu": "i7-3610QM CPU @ 2.30GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "Cursor is blinking, and the text is missing on the main menu buttons. Also, 1366x768 is not available but idk if Windows has it either",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7424 Mb",
+    "rating": "Bronze",
+    "timestamp": 1536953178,
+    "title": "CivCity: Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "3980",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.66",
+    "kernel": "4.15.0-36-generic",
+    "notes": "It initially had no text in the menus.  I used WineTricks to install MS corefonts and copied them from the /home/username/.wine/drive_c/windows/Fonts\nfolder to the\nsteamapps/compatdata/3980/pfx/drive_c/windows/Fonts\nfolder.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "32114 Mb",
+    "rating": "Gold",
+    "timestamp": 1540157849,
+    "title": "CivCity: Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "3980",
+    "cpu": "AMD E1-6010 APU with AMD Radeon R2 Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD MULLINS",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Initially slow to load. Mouse cursor flickering but not too distracting. All text in menus seems fine and the voice dialogue seems to work perfectly fine. Performance seemed as it should but further testing is required to verify long-term stability.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "5 GB",
+    "rating": "Silver",
+    "timestamp": 1541558073,
+    "title": "CivCity: Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "3980",
+    "title": "CivCity: Rome",
+    "timestamp": 1535567986,
+    "rating": "Borked",
+    "notes": "Font problem - no text on main menu buttons",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "Intel Mesa 18.0.5",
+    "specs": "i7-7600U",
+    "protonVersion": "",
+    "source": "protondb"
+  }
+]

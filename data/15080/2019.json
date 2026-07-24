@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "15080",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Runs out of the Box. But has issues with Inputs (Both Mouse and Controller (XBox One Controller) Inputs). Some inputs are not recognized at all or are recognized very slowly.. Which is very frustrating in Local Multiplayer/Party-Matches.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1550005010,
+    "title": "Rayman Raving Rabbids\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "15080",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "Only displays a black screen, even with: \"PROTON_NO_ESYNC=1 PROTON_OLD_GL_STRING=1 PROTON_LOG=1 PROTON_FORCE_LARGE_ADDRESS_AWARE=1 PROTON_USE_WINED3D=1 %command%\", all 32bit libs are installed",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1561178662,
+    "title": "Rayman Raving Rabbids\u2122",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "15080",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "runs perfectly fine after you turn the gamma to where the black screen goes away in the settings menu. there may be audio issues when skipping cut scenes. but other than that it runs good. I'll dig deeper into the game when I speedrun it soon",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1565761890,
+    "title": "Rayman Raving Rabbids\u2122",
+    "source": "protondb"
+  }
+]

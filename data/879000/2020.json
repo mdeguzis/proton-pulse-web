@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "879000",
+    "cpu": "AMD Phenom II X4 B55",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "4.15.0-88-generic",
+    "notes": "Comanche Open Multiplayer Beta: The game doesn't start at all",
+    "os": "Linux Mint 19 LOVE Edition (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1582960438,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "879000",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.8-arch1-1",
+    "notes": "Got it working with Proton",
+    "os": "Arch Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1584431715,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "879000",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.8-1-MANJARO",
+    "notes": "Black screen then the game exits",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1584469183,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "241660",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "Generally runs good, probably needs wineasio or something but just rang it under the MME setting to test. 32 bit vst work well did a little test with synth1.",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.16-4 Beta ED (patched)",
+    "protonVersionManual": "3.16-4 Beta ED (patched)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543043017,
+    "title": "Ohm Studio",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "23450",
+    "title": "Grand Ages: Rome",
+    "timestamp": 1535079130,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "23450",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.25.0, 4.17.12-041712-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.17.12-041712-generic",
+    "notes": "Runs great, but crashes at save/autosave.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16037 Mb",
+    "rating": "Bronze",
+    "systemInfoNotes": "Proton 3.7-8 Beta",
+    "timestamp": 1539496066,
+    "title": "Grand Ages: Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "23450",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "I am asked if I want to play \u201eGrand Ages: Rome\u201c or if I want to play \u201eGrand Ages: Rome Expansion\u201c. No matter which one I choose in both cases nothing happened - no game starts.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540823222,
+    "title": "Grand Ages: Rome",
+    "source": "protondb"
+  },
+  {
+    "appId": "23450",
+    "title": "Grand Ages: Rome",
+    "timestamp": 1535064730,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

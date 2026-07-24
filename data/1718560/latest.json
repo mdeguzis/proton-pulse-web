@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1718560",
+    "cpu": "Intel Core i5-8350U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "6.8.1-300.fc40.x86_64",
+    "notes": "works fine",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1713935489,
+    "title": "",
+    "source": "protondb"
+  }
+]

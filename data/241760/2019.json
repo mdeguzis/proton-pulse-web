@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "241760",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "Every now and then it takes a little time to start, but so far it always started with no necessary tweaks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557500045,
+    "title": "Kill to Collect",
+    "source": "protondb"
+  },
+  {
+    "appId": "241760",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Game worked flawlessly. One of my party members (using linux) had troubles using the controller, as the game didn't detect the key bindings correctly, but adjusting them manually seems fine.\nWe played several levels in the coop story mode, and nothing (as far as compatibility is concerded) went wrong so far.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567697169,
+    "title": "Kill to Collect",
+    "source": "protondb"
+  }
+]

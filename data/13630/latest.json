@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "13630",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-21-generic",
+    "notes": "This game plays just fine with proton.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "Proton-4.15-GE-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567567111,
+    "title": "Tom Clancy's Ghost Recon\u00ae Island Thunder\u2122",
+    "source": "protondb"
+  }
+]

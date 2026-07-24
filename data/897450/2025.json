@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "897450",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.13.6-200.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.6-200.nobara.fc41.x86_64",
+    "notes": "Great OOTB",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1748554224,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "897450",
+    "cpu": "AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 15.0.7, DRM 3.42, 5.15.0-136-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "5.15.0-136-generic",
+    "notes": "Out of the box playable. :)",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1759532621,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "841500",
+    "cpu": "Intel Xeon           X5450  @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.4.0-94-generic",
+    "notes": "\u0417\u0430\u043f\u0443\u0441\u043a\u0430\u0454\u0442\u044c\u0441\u044f \u043d\u0430 \u0441\u0442\u0430\u0440\u0456\u0448\u0456\u0439 \u0432\u0435\u0440\u0441\u0456\u0457 Proton",
+    "os": "Ubuntu 18.04.6 LTS (64-\u0440\u043e\u0437\u0440\u044f\u0434\u043d\u0430)",
+    "protonVersion": "5.13-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1642290571,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "295790",
+    "cpu": "Intel Core i5-7260U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Iris Plus 640 (Kaby Lake GT3e)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.20.5-200.fc29.x86_64",
+    "notes": "Codecs LAVFilters not able to install successfully, not able to play video in game.\nExcept this issue, the game runs perfectly.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1549195096,
+    "title": "Never Alone (Kisima Ingitchuna)",
+    "source": "protondb"
+  },
+  {
+    "appId": "295790",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-c989661985)",
+    "kernel": "5.0.12-arch1-1-ARCH",
+    "notes": "Game works native (only with graphical shadow glitches) and on Proton out of the box. I installed manually D9VK and it worked as well fine with this DX9 to Vulkan translation, only the text rendering is borked.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557051786,
+    "title": "Never Alone (Kisima Ingitchuna)",
+    "source": "protondb"
+  },
+  {
+    "appId": "295790",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-f2bed9b344)",
+    "kernel": "5.2.14-arch2-1-ARCH",
+    "notes": "Game works native on Linux (OpenGL). On Proton it works out of the box if you use PROTON_USE_D9VK=1 %command% as a launch option (available since Proton 4.11) the game works great with D9VK (D3D9 to Vulkan translation). Tested with RADV and the new Mesa ACO compiler on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568448407,
+    "title": "Never Alone (Kisima Ingitchuna)",
+    "source": "protondb"
+  }
+]

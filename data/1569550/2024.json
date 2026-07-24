@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1569550",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.8-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.6.8-2-MANJARO",
+    "notes": "Avoid if you want to play The Fruit",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1713501684,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "619880",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-9-generic",
+    "notes": "Display error and closes",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547495489,
+    "title": "ATOMEGA",
+    "source": "protondb"
+  },
+  {
+    "appId": "619880",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.5",
+    "kernel": "5.1.6-arch1-1-ARCH",
+    "notes": "The game runs perfectly, however, I was unable to join any matches thanks to a \"Network Error (3000)\" or something along those lines. I've tested the game in the past to the same result. ",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559595644,
+    "title": "ATOMEGA",
+    "source": "protondb"
+  },
+  {
+    "appId": "619880",
+    "cpu": "AMD FX-6100 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-20-generic",
+    "notes": "The game runs perfectly, however, I was unable to join any matches thanks to a \"Network Error (3000)\" or something along those lines. I've tested the game in the past to the same result.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564589635,
+    "title": "ATOMEGA",
+    "source": "protondb"
+  }
+]

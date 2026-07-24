@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "602170",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.4.0-151-generic",
+    "notes": "Full disclosure: I played the DRM-free version, but don't anticipate that there would be any difference with the Steam version. This game played perfectly in both full screen and windowed modes. I initially thought that there was a problem with the save system not working when you quit and load the game again, but this turned out to be just the game's stupid user interface. Remember to click the disk icon before quitting, then the down arrow to load the game when you start again.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565459777,
+    "title": "Planet of Mubu",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "16030",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "The only small issue is that full screen on doesn't hide Ubuntu's top and left menus. Other than that no issues, runs perfectly",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550925716,
+    "title": "7 Wonders: Treasures of Seven",
+    "source": "protondb"
+  },
+  {
+    "appId": "16030",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Works perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556471880,
+    "title": "7 Wonders: Treasures of Seven",
+    "source": "protondb"
+  }
+]

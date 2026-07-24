@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "753930",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Runs great on max settings - no stuttering - Tested at 1920 X 1080.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543165405,
+    "title": "God's Basement",
+    "source": "protondb"
+  }
+]

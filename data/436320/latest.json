@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "436320",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.37",
+    "notes": "runs with no tweaks, but performance makes it unplayable. ",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-9",
+    "ram": "64 GB",
+    "rating": "Bronze",
+    "timestamp": 1563648393,
+    "title": "Raw Data",
+    "source": "protondb"
+  },
+  {
+    "appId": "436320",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.2.0-rc4",
+    "kernel": "5.3.0-rc5-amd64",
+    "notes": "runs 100% without crashing. but performance is so bad its unplayable. ",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-5",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1569002506,
+    "title": "Raw Data",
+    "source": "protondb"
+  },
+  {
+    "appId": "436320",
+    "cpu": "Intel Core i7-7820X @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.5-arch1-1-fsync",
+    "notes": "Had to use winetricks to install xact to get sound working. Everything works out of the box otherwise.\n\nhttps://www.youtube.com/watch?v=TKNjXYLc-so",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "64 GB",
+    "rating": "Gold",
+    "timestamp": 1570941464,
+    "title": "Raw Data",
+    "source": "protondb"
+  }
+]

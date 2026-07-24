@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2850",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Works but bad graphical glitches - unplayable.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550857332,
+    "title": "X: Tension",
+    "source": "protondb"
+  },
+  {
+    "appId": "2850",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-7559060 2019-06-01 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs, it seems as if the videos are NOT playing so keep hitting ESC to skip them. Game (start) menu is.. unreadable. Guessed the first entry should be \"Play\". Game started but I call it UNPLAYABLE. As you got no radar screen. The ship lacks parts and well.. there are stars out there but neither the laser fire nor anything else is visible. Also the MUSIC is not playing :_( just sound fx.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559586544,
+    "title": "X: Tension",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1276100",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "Framerate drops to 40-ish but stays 62 fps for the majority of the time. Playable from start to finish.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593773077,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "719890",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "New to Linux and Pop os. Just installed under steam and didn't change anything (using steam play) but I do have good GTX 1080ti and I7 3770k 3.5 ghz 16GB Ram, As former Beta tester/former Moderator for Bob team, and server admin. I know Dev want & hope at some point too cook a native Linux client and server version, they just been very busy with current windows version. The current windows version seem playable under Linux with few hiccups. Its Ue4 game engine so prob why it runs good,  Was able browse server and connect with no issues.  :)",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568241289,
+    "title": "Beasts of Bermuda",
+    "source": "protondb"
+  }
+]

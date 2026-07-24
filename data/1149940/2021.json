@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1149940",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Installs and starts but no icons",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1625602645,
+    "title": "",
+    "source": "protondb"
+  }
+]

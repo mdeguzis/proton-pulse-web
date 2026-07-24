@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "491560",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Occasionally (rarely) crashes with a gc error on launch. Most npc and decoration polygons rapidly flicker. Otherwise fully playable. Logs show various DLL errors, but I couldn't track down a fix myself.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1543909359,
+    "title": "Momonga Pinball Adventures",
+    "source": "protondb"
+  }
+]

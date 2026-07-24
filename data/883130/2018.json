@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "883130",
+    "cpu": "Intel Core i5-4210H @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-39-generic",
+    "notes": "As far as I can tell, this works completely and perfectly out of the box. It's a mouse & keyboard only game, so no controllers to test. I haven't tested its response to multiple monitors.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542666266,
+    "title": "New Star Manager",
+    "source": "protondb"
+  }
+]

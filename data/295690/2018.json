@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "295690",
+    "title": "PARTICLE MACE",
+    "timestamp": 1535620866,
+    "rating": "Platinum",
+    "notes": "No Problems",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6300HQ / GTX 960M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "295690",
+    "title": "PARTICLE MACE",
+    "timestamp": 1536169785,
+    "rating": "Platinum",
+    "notes": "Works perfectly, performance same as Windows",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-34)",
+    "gpuDriver": "Mesa 18.3.0 devel",
+    "specs": "Intel Pentium N3540 / Intel HD Graphics",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "295690",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538039098,
+    "title": "PARTICLE MACE",
+    "source": "protondb"
+  },
+  {
+    "appId": "295690",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.3-041803-generic",
+    "notes": "works great",
+    "os": "Linux Mint 19 Tara (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541326408,
+    "title": "PARTICLE MACE",
+    "source": "protondb"
+  },
+  {
+    "appId": "295690",
+    "title": "PARTICLE MACE",
+    "timestamp": 1535606466,
+    "rating": "Platinum",
+    "notes": "No Problems",
+    "os": "Ubuntu 18.04.1 LTS 64-bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6300HQ / GTX 960M",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "295690",
+    "title": "PARTICLE MACE",
+    "timestamp": 1536155385,
+    "rating": "Platinum",
+    "notes": "Works perfectly, performance same as Windows",
+    "os": "Ubuntu 18.04.1 LTS (Kernel 4.15.0-34)",
+    "gpuDriver": "Mesa 18.3.0 devel",
+    "specs": "Intel Pentium N3540 / Intel HD Graphics",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "489380",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Just played the tutorial and started the first mission. Everything worked fine, same as my last experience on Windows.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1556384617,
+    "title": "QuiVr",
+    "source": "protondb"
+  },
+  {
+    "appId": "489380",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.9-041509-generic",
+    "notes": "Requires `protontricks 489380 vcrun2015` and manual creation of `C:\\ProgramData\\FOVE` directory in prefix. Seems to work fine afterwards, but at nontrivial performance penalty over Windows.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1568701851,
+    "title": "QuiVr",
+    "source": "protondb"
+  },
+  {
+    "appId": "489380",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.6-arch1-1-ARCH",
+    "notes": "Crashes on start almost always. I got it running once but never again since. The workarounds that are suggested in another review (created FOVE folder and install vcrun2015) do not help. This seems to be a Unity VR issue that hits other games too.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1571555301,
+    "title": "QuiVr",
+    "source": "protondb"
+  }
+]

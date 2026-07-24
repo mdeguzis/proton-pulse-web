@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2292220",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 19.1.7, DRM 3.61, 6.14.4-zen1-2-zen)",
+    "gpuDriver": "4.6 Mesa 25.0.4-arch1.1",
+    "kernel": "6.14.4-zen1-2-zen",
+    "notes": "Works nearly flawlessly. Only tested with a mouse on PC so I have no idea how the controls are with a Steam Deck.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1746368583,
+    "title": "",
+    "source": "protondb"
+  }
+]

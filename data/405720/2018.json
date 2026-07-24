@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "405720",
+    "title": "Perfect Universe",
+    "timestamp": 1536374803,
+    "rating": "Bronze",
+    "notes": "The game runs fine but the character models don't display properly making some of the games difficult to play",
+    "os": "Ubuntu 18.04.1 (Kernel 4.18.6)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "405720",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Use launch argument \"PROTON_USE_WINED3D11=1 %command%\" to make models show properly",
+    "os": "Antergos",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1541995168,
+    "title": "Perfect Universe - Play with Gravity",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "405720",
+    "title": "Perfect Universe",
+    "timestamp": 1536360403,
+    "rating": "Bronze",
+    "notes": "The game runs fine but the character models don't display properly making some of the games difficult to play",
+    "os": "Ubuntu 18.04.1 (Kernel 4.18.6)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

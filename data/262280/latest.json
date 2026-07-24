@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "262280",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "linux version is broken. tried base proton but the character models for every unit except the worker are missing\n\nadded the launch option to disable dxvk and the model are present. multi works as well",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1548822301,
+    "title": "Dungeons 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "7650",
+    "cpu": "AMD Athlon II X4 635",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.13-1-MANJARO",
+    "notes": "Runs completely stable, but mouse movement causes some stutter on a clean install. Setting cpu cycles to 10000 in \"dosbox.conf\" improves it, but mouse movement still causes some minor lag. Other than that it seems playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1547404095,
+    "title": "X-COM: Terror From the Deep",
+    "source": "protondb"
+  },
+  {
+    "appId": "7650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "notes": "With Proton the game has very high input lag and crashes when Steam Overlay is turned on. With steam-dos (https://github.com/dreamer/steam-dos), game works perfectly. Turn on MIDI by running SETUP.EXE and setting General MIDI and port 330 (this game has amazing music).",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560711643,
+    "title": "X-COM: Terror From the Deep",
+    "source": "protondb"
+  },
+  {
+    "appId": "7650",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-e1f60e9b38)",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "Mouse and menu acting weird suddenly swift to deployment screen and freezes",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564762201,
+    "title": "X-COM: Terror From the Deep",
+    "source": "protondb"
+  }
+]

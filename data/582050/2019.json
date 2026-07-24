@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "582050",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.3.5-050305-generic",
+    "notes": "Nothing to say here, the game works flawlessly on proton 4.11-7 and really on any version down to 3.16",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572174123,
+    "title": "HVRGUN",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "appId": "887720",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "did not start (fatal error message)",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568842469,
+    "title": "Devil's Hunt",
+    "tweaks": {
+      "disableD3d10": true,
+      "disableD3d11": true,
+      "disableEsync": true,
+      "disableFsync": true,
+      "largeAddressAware": true,
+      "oldGlString": true,
+      "useWineD3d11": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

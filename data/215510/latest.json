@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "215510",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "notes": "The Linux native version of this game had completely broken audio for me; running the game through Proton fixed it! Tested playing through the first level, using both a keyboard and a controller. Both worked as expected.",
+    "os": "Freedesktop.org 18.08.32 (Flatpak runtime)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561871963,
+    "title": "Rocketbirds: Hardboiled Chicken",
+    "source": "protondb"
+  }
+]

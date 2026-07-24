@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "324260",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-0dff1533f2)",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "Seems to work with DXVK, but it will not start the local game server on Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1554625585,
+    "title": "VoidExpanse",
+    "source": "protondb"
+  }
+]

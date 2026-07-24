@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "513780",
+    "title": "Turbo Pug DX",
+    "timestamp": 1535149790,
+    "rating": "Silver",
+    "notes": "Framerate and input are choppy, and online leaderboards does not seem to work.",
+    "os": "Ubuntu 18.04 LTS With Cinnamon (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5 6300-HQ / GTX 950M\t",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "513780",
+    "cpu": "i5-3437U CPU @ 1.90GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.18.5-200.fc28.x86_64",
+    "notes": "HP elitebook 9470m\nFedora 28",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7842 Mb",
+    "rating": "Borked",
+    "timestamp": 1536964329,
+    "title": "Turbo Pug DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "513780",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-16.2-liquorix-amd64",
+    "notes": "Exept for the online features (leaderboards & skin download) everything works fine.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1541486807,
+    "title": "Turbo Pug DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "513780",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "No network connectivity, but everything else works fine",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1541684815,
+    "title": "Turbo Pug DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "513780",
+    "title": "Turbo Pug DX",
+    "timestamp": 1535135390,
+    "rating": "Silver",
+    "notes": "Framerate and input are choppy, and online leaderboards does not seem to work.",
+    "os": "Ubuntu 18.04 LTS With Cinnamon (Kernel 4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5 6300-HQ / GTX 950M\t",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "714080",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.19.20-1-MANJARO",
+    "notes": "Crashes as soon as it tries to launch.  Suggest looking at VK translations based on info in logs",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "proton_4.2-local (unofficial mod) ",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1570189919,
+    "title": "BLACK CLOVER: QUARTET KNIGHTS",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "961660",
+    "cpu": "Intel Core i7-4810MQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 870M",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-54-generic",
+    "notes": "Crash on launch",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1617846216,
+    "title": "",
+    "source": "protondb"
+  }
+]

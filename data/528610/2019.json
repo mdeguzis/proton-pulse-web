@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "528610",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.10-050010-lowlatency",
+    "notes": "Game works fine but the controls are messed up. With a controller (Nintendo Switch Pro) the game keeps pulling left all the time. With a keyboard it is playable but the layout is really unusual/inconvenient. These appear to be problems on Windows too judging by all the Steam forum posts.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "protonVersionManual": "3.16-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556921019,
+    "title": "Double Dragon IV",
+    "source": "protondb"
+  },
+  {
+    "appId": "528610",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.2.11-050211-lowlatency",
+    "notes": "Game works out of the box, also tested with Nintendo Switch Pro Controller.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567282059,
+    "title": "Double Dragon IV",
+    "source": "protondb"
+  }
+]

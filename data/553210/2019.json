@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "553210",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Originally reported this as borked, but now works perfectly. Did the tutorial with no issues - performance on \"Very high\" - you would never know you weren't playing on Windows.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548357324,
+    "title": "Warhammer 40,000: Space Wolf",
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-45-generic",
+    "os": "Ubuntu 16.04.6 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1552726488,
+    "title": "Warhammer 40,000: Space Wolf",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "553210",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.0.0-27-generic",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571583129,
+    "title": "Warhammer 40,000: Space Wolf",
+    "source": "protondb"
+  }
+]

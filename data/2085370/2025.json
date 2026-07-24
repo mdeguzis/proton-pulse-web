@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2085370",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa NV134",
+    "gpuDriver": "4.3 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.12.12-2-MANJARO",
+    "notes": "It doesn't work. Appears a directx message and that is it.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1741983545,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2085370",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa NV134",
+    "gpuDriver": "4.3 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.12.12-2-MANJARO",
+    "notes": "",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1741996087,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2085370",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.16.9-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.3",
+    "kernel": "6.16.9-200.nobara.fc42.x86_64",
+    "notes": "Works fine, no issues.",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1760734637,
+    "title": "",
+    "source": "protondb"
+  }
+]

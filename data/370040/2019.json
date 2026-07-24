@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "370040",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Works well, don't use F12 because, like other RPG Maker games, take the screenshot but close the game.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1569238846,
+    "title": "Lilly and Sasha: Nexus of Souls",
+    "source": "protondb"
+  }
+]

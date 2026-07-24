@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "674210",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.9-zen2-1-zen",
+    "notes": "No issues found",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1634122668,
+    "title": "Rush to Adventure",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "254820",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Cinematics do not work (blank screen). However, you can single click to skip them. Otherwise, everything else works perfectly without any tweaks.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1555360158,
+    "title": "Ground Control Anthology",
+    "source": "protondb"
+  },
+  {
+    "appId": "254820",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "Game does not display correctly, only a small part of the screen is visible, other than that, the game probably runs okay, I was able to get into the tutorial area but I was unable to test gameplay even after attempting some of the tweaks due to display problems.\n\nThe game launcher also does not display correctly, but the buttons on it work.\n\nMenus and cutscenes seem to work fine but not all of it is visible.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1565016987,
+    "title": "Ground Control Anthology",
+    "source": "protondb"
+  },
+  {
+    "appId": "254820",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "After clicking the \"Play\"button in the Steam client, a white window appears with some links (\"Play\",\" Dark Conspiracy\",\"Support\"). After clicking on the \"Play\" link, the display turns black and a small area contains some animation, but I don't see the full game menu.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566309648,
+    "title": "Ground Control Anthology",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "278890",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Black screen, \"Uncaught node.exe error\". TypeError: Cannot read property 'Uq' of null.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561912604,
+    "title": "Angvik",
+    "source": "protondb"
+  }
+]

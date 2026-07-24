@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2200410",
+    "cpu": "13th Gen Intel Core i7-13700F",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 17.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-38-generic",
+    "notes": "The game worked great.",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1743787541,
+    "title": "",
+    "source": "protondb"
+  }
+]

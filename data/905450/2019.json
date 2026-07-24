@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "905450",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "Blidschirm 5 sekunden schwarz und dann war es weck",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1561830712,
+    "title": "NASCAR Heat 3",
+    "source": "protondb"
+  }
+]

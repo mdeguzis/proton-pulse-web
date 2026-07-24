@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "506900",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-3573412981)",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "It works native on Linux. On Proton it runs as well perfectly fine with DXVK.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561798833,
+    "title": "Downward",
+    "source": "protondb"
+  }
+]

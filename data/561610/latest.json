@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "561610",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.4",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "As previous player said - runs perfectly, you have to copy d3dcompiler_47.dll from the X64 folder to the game folder and rename Movies folder (or you can just delete Movies directory ).",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1552421580,
+    "title": "MotoGP\u212217",
+    "source": "protondb"
+  }
+]

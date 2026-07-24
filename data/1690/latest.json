@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "1690",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Managed to get the game running by setting it to windowed mode and playing with different display modes in launcher. Still, FPS were low to the point of unresponsiveness, even in menus.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2",
+    "protonVersionManual": "4.2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556450732,
+    "title": "Space Empires V",
+    "source": "protondb"
+  },
+  {
+    "appId": "1690",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "main menu works, but pressing play for a standard space empire 5 experience does absolutely nothing, also switch graphics to wine causes the whole desktop enviroment to crash",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566043556,
+    "title": "Space Empires V",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "appId": "872130",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.34-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556136174,
+    "title": "DEEP SPACE WAIFU: WORLD",
+    "source": "protondb"
+  },
+  {
+    "appId": "872130",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon HD 7770",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-48-generic",
+    "notes": "I didn't notice anything out of the ordinary after completing the entire game.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1556236627,
+    "title": "DEEP SPACE WAIFU: WORLD",
+    "source": "protondb"
+  },
+  {
+    "appId": "872130",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560696222,
+    "title": "DEEP SPACE WAIFU: WORLD",
+    "source": "protondb"
+  },
+  {
+    "appId": "872130",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Proton 4.11 crashes at the loading screen producing a popup saying that it has \"encountered an error and must close.\" 4.2 works fine after using \"PROTON_USE_WINED3D=1 %command%\" in the launch options to fix the framerate issue.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570314054,
+    "title": "DEEP SPACE WAIFU: WORLD",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

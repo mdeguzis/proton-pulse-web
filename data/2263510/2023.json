@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2263510",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 525.105.17",
+    "kernel": "6.1.0-9-amd64",
+    "notes": "Appears to work as intended. The game itself has a poor configuration menu, which might be a problem for some.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1688652633,
+    "title": "",
+    "source": "protondb"
+  }
+]

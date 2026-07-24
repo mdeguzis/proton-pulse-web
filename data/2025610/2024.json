@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2025610",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.42,  5.15.0-92-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu0.1~22.04.1",
+    "kernel": "5.15.0-92-generic",
+    "notes": "Everything ran perfectly.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1707934963,
+    "title": "Once Again",
+    "source": "protondb"
+  },
+  {
+    "appId": "2025610",
+    "cpu": "Intel Core i5-4210M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.3",
+    "kernel": "6.3.9-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-5",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1709564925,
+    "title": "Once Again",
+    "source": "protondb"
+  }
+]

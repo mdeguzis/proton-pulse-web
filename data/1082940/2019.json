@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "1082940",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-0905189a25)",
+    "kernel": "5.1.9-arch1-1-ARCH",
+    "notes": "all game features work",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1560608200,
+    "title": "Pop'n'splat",
+    "source": "protondb"
+  },
+  {
+    "appId": "1082940",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.0-devel (git-a8588f5 2019-06-11 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-51-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1560768320,
+    "title": "Pop'n'splat",
+    "source": "protondb"
+  }
+]

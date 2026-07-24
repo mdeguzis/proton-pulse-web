@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "1077580",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.19.46-041946-generic",
+    "notes": "Completely broken unless you disable D3D11. The music surges and slows and is very choppy, and the text bubble text seem slightly misaligned. Lost mouse control on a few occasions, but sometimes you get lucky. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1559341533,
+    "title": "Broke Girl  | \u8ca0\u50b5\u5343\u91d1",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

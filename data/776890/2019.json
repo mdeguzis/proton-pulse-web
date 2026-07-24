@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "776890",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Only gets 1-2 FPS for some reason.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1561564923,
+    "title": "Clicker: Mining Simulator",
+    "source": "protondb"
+  }
+]

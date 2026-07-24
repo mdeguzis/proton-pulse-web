@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "283080",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.4-1-default",
+    "notes": "Runs out of the box using Proton. But the native version is basically unplayable.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627812491,
+    "title": "",
+    "source": "protondb"
+  }
+]

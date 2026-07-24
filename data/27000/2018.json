@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "27000",
+    "title": "The Path",
+    "timestamp": 1536285789,
+    "rating": "Silver",
+    "notes": "Playable but the graphics have glitches, and the game starts minimized.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "27000",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.9-92.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.9-92.current",
+    "notes": "Flickering color changes to terrain, runs at 70-80 FPS, Proton 3.7-6",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16052 Mb",
+    "rating": "Silver",
+    "timestamp": 1537802574,
+    "title": "The Path",
+    "source": "protondb"
+  },
+  {
+    "appId": "27000",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.19.8-041908-lowlatency",
+    "notes": "The in-game graphics flickers (terrain and folliage). Performance problems when using menus. The game crashed every single time after 30-60 seconds of gameplay.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Bronze",
+    "timestamp": 1545182912,
+    "title": "The Path",
+    "source": "protondb"
+  },
+  {
+    "appId": "27000",
+    "title": "The Path",
+    "timestamp": 1536271389,
+    "rating": "Silver",
+    "notes": "Playable but the graphics have glitches, and the game starts minimized.",
+    "os": "Elementary OS 5.0 Beta 1 (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX Vega 56 Nano",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

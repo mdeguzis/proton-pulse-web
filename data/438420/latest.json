@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "438420",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.24.10",
+    "kernel": "4.13.0-46-generic",
+    "notes": "Game starts with characters being invisible, which can be fixed by adding 'PROTON_USE_WINED3D11=1 %command%' into the set launch options excluding apostrophes.",
+    "os": "Ubuntu 17.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546657598,
+    "title": "Zenith",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "438420",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "It works (you don't even Wine D3D11 but it seems a little less worse -- you don't see invisible shapes like in previous versions of proton), but the frame rate is so extremely bad even at the lowest quality settings it's unplayable. Like, 1 frame in 10 seconds on a GTX 1070. And it does not properly responds to controls. Bug report is at https://github.com/ValveSoftware/Proton/issues/1093",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1565678391,
+    "title": "Zenith",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "438420",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-lowlatency",
+    "notes": "I sent a previous protondb report saying the game is borked, but I was able to solve the issue by using launch options \"TZ= %command%\" (TZ, equals sign, then space, then %command%) because my timezone is America/Sao Paulo and there is a wine bug regarding that. After that the game ran smoothly with 90-100 fps and no problems at all.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1565753660,
+    "title": "Zenith",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "687980",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "Crashes in the first dialogue!",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569547534,
+    "title": "Mothlight",
+    "source": "protondb"
+  }
+]

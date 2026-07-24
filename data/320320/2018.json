@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "320320",
+    "title": "Darkstone",
+    "timestamp": 1535899233,
+    "rating": "Borked",
+    "notes": "Opens the window that immediately crashes to desktop ",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "320320",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Game does not even open. Crashes after hitting the play button in Steam. Game is bundled with SafeDisc copy protection program, which may be related to why the game does not start.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542889086,
+    "title": "Darkstone",
+    "source": "protondb"
+  },
+  {
+    "appId": "320320",
+    "title": "Darkstone",
+    "timestamp": 1535884833,
+    "rating": "Borked",
+    "notes": "Opens the window that immediately crashes to desktop ",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

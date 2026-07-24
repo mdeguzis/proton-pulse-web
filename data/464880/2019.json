@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "464880",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.3-108.current",
+    "notes": "Runs Perfectly.  I could change any of the options and ran through a game with no issues.  Ran into one LUA error during gameplay but it could be dismissed and did not affect gameplay",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550023196,
+    "title": "Stars in Shadow",
+    "source": "protondb"
+  },
+  {
+    "appId": "464880",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.19.32-1-MANJARO",
+    "notes": "Played a complete game with medium galaxy and 6 AI. Turns were fast, no issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554180867,
+    "title": "Stars in Shadow",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "438640",
+    "title": "LEGO\u00ae STAR WARS\u2122: The Force Awakens",
+    "timestamp": 1535119323,
+    "rating": "Platinum",
+    "notes": "Yesterday it had heavy visual glitches and it hanged before coming to title screen. Now it works flawlessly in DX11 mode (DXVK)!",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "438640",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15923 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537401712,
+    "title": "LEGO\u00ae STAR WARS\u2122: The Force Awakens",
+    "source": "protondb"
+  },
+  {
+    "appId": "438640",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs great. Works with Xbox One controller.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16054 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537834328,
+    "title": "LEGO\u00ae STAR WARS\u2122: The Force Awakens",
+    "source": "protondb"
+  },
+  {
+    "appId": "438640",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce RTX 2070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.66",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Audio is broken (all sound effects are very loud) unless you use DirectX 9 in video settings, winetricks xact and xaudio overrides.",
+    "os": "Ubuntu 18.10 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "24035 Mb",
+    "rating": "Silver",
+    "timestamp": 1540153296,
+    "title": "LEGO\u00ae STAR WARS\u2122: The Force Awakens",
+    "source": "protondb"
+  },
+  {
+    "appId": "438640",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Works fine with D3D9. No audio problems anymore",
+    "os": "Ubuntu 18.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1544794760,
+    "title": "LEGO\u00ae STAR WARS\u2122: The Force Awakens",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "438640",
+    "title": "LEGO\u00ae STAR WARS\u2122: The Force Awakens",
+    "timestamp": 1535104923,
+    "rating": "Platinum",
+    "notes": "Yesterday it had heavy visual glitches and it hanged before coming to title screen. Now it works flawlessly in DX11 mode (DXVK)!",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6600 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

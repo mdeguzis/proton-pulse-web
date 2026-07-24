@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "673130",
+    "title": "AMID EVIL",
+    "timestamp": 1535445233,
+    "rating": "Bronze",
+    "notes": "Main menu runs like native. In game, frame rate drops down to 5-10fps when looking towards the bulk of the map geometry. Changing gfx settings does nothing.",
+    "os": "Xubuntu 18.04(4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-4170 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "673130",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD TAHITI (DRM 2.50.0 / 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Error: \"DX11 feature level 10.0 is required to run the engine.\"",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Proton 3.7-6",
+    "ram": "15940 Mb",
+    "rating": "Borked",
+    "timestamp": 1537084106,
+    "title": "AMID EVIL",
+    "source": "protondb"
+  },
+  {
+    "appId": "673130",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Game works almost perfectly - only flaw I see is that player's vision is not properly \"fogged\" while underwater.  That's not enough for me to bump it down from Platinum",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544405159,
+    "title": "AMID EVIL",
+    "source": "protondb"
+  },
+  {
+    "appId": "673130",
+    "title": "AMID EVIL",
+    "timestamp": 1535430833,
+    "rating": "Bronze",
+    "notes": "Main menu runs like native. In game, frame rate drops down to 5-10fps when looking towards the bulk of the map geometry. Changing gfx settings does nothing.",
+    "os": "Xubuntu 18.04(4.15.0-32-generic)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-4170 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

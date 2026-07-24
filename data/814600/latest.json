@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "814600",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.18.7-1.el7.elrepo.x86_64",
+    "notes": "Needs Alt-tab and Enter to get Dos Box window to go fullscreen. Setup screens are OK, but game screen is a tiny centered area that flickers continuously, refreshes very slowly and has continously stuttering sound making it completely unplaayable.",
+    "os": "\"CentOS Linux release 7.5.1804 (Core) \" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "64419 Mb",
+    "rating": "Borked",
+    "timestamp": 1537039322,
+    "title": "Tunnel B1",
+    "source": "protondb"
+  }
+]

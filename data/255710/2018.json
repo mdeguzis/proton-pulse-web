@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "255710",
+    "title": "Cities Skylines",
+    "timestamp": 1535795515,
+    "rating": "Platinum",
+    "notes": "It officialy doesn't work on intel graphics but it works great :)",
+    "os": "Debian buster/sid 64-bit (Kernel 4.17.8-1)",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "specs": "I5-6440HQ / HD530 GT2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "255710",
+    "title": "Cities: Skylines",
+    "timestamp": 1535632234,
+    "rating": "Platinum",
+    "notes": "Runs at native performance, even with large numbers of Workshop mods",
+    "os": "Ubuntu 18.04.1 LTS (64-bit, Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "NVIDIA GeForce GTX 760 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "255710",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "notes": "The game has native Linux-Support - it runs out of the box.",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1540753263,
+    "title": "Cities: Skylines",
+    "source": "protondb"
+  },
+  {
+    "appId": "255710",
+    "title": "Cities Skylines",
+    "timestamp": 1535781115,
+    "rating": "Platinum",
+    "notes": "It officialy doesn't work on intel graphics but it works great :)",
+    "os": "Debian buster/sid 64-bit (Kernel 4.17.8-1)",
+    "gpuDriver": "3.0 Mesa 18.1.6",
+    "specs": "I5-6440HQ / HD530 GT2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "255710",
+    "title": "Cities: Skylines",
+    "timestamp": 1535617834,
+    "rating": "Platinum",
+    "notes": "Runs at native performance, even with large numbers of Workshop mods",
+    "os": "Ubuntu 18.04.1 LTS (64-bit, Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "NVIDIA GeForce GTX 760 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

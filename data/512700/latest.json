@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "512700",
+    "cpu": "i5-2400S CPU @ 2.50GHz",
+    "gpu": "GeForce GT 1030/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It doesn't show anything, other than changing the profile status for 2 seconds",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "5926 Mb",
+    "rating": "Borked",
+    "timestamp": 1536782209,
+    "title": "Duckles: the Jigsaw Witch",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "appId": "1104330",
+    "cpu": "Intel Core i7-2670QM @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Pops up loading window, finishes loading and disappears. Nothing else happens, just in steam window it shows that game is running.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1563822663,
+    "title": "Founders' Fortune",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1104330",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.3-arch1-1-ARCH",
+    "notes": "Runs flawlessly.",
+    "os": "Freedesktop.org 18.08.34 (Flatpak runtime)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564351692,
+    "title": "Founders' Fortune",
+    "source": "protondb"
+  },
+  {
+    "appId": "1104330",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.2-arch1-1-ARCH",
+    "os": "Unknown",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1564612271,
+    "title": "Founders' Fortune",
+    "source": "protondb"
+  },
+  {
+    "appId": "1104330",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.1.20-300.fc30.x86_64",
+    "os": "Fedora 30 (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1566322355,
+    "title": "Founders' Fortune",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

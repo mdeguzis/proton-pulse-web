@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "647830",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.19.36",
+    "notes": "The game worked absolutely flawlessly out of the box.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558194896,
+    "title": "LEGO\u00ae Marvel Super Heroes 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "647830",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "5.1.8-1-MANJARO",
+    "notes": "\"PROTON_NO_ESYNC=1\" %command% gets rid of the FPS dips. Working flawlessly with a steam controller.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "6 GB",
+    "rating": "Gold",
+    "timestamp": 1561263944,
+    "title": "LEGO\u00ae Marvel Super Heroes 2",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "647830",
+    "cpu": "AMD A10-7700K Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "\"Sorry but your machine is unable to run the game it requires a graphics card which supports DX11\" Not worth playing ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567106130,
+    "title": "LEGO\u00ae Marvel Super Heroes 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1252600",
+    "cpu": "Intel Pentium Silver N5030 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 605 (GLK 3)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-22-generic",
+    "notes": "This game cannot be played on Linux due to requiring KLAC. No workaround.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1777568743,
+    "title": "",
+    "source": "protondb"
+  }
+]

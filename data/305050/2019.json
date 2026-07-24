@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "305050",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel (git-2d2927938f)",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Game works native on Linux, but it doesn't run on Proton. I installed manually D9VK, but it didn't help. There is always this long error message: \"File: Impl\\Block_Managers\\DX9\\Texture_Block_Manager_DX9.cpp\nLine: 143\nExpr: '(((HRESULT)(hx)) >= 0) && \"hr\". '\nMessage: 'E_NOTIMPL'\nStack trace:\n  [0x676617] UNP_EDGE::Throw_Assertion_W32_Impl +503\n  [0x675737] UNP_EDGE::Throw_Assertion +23\n  [0x6e8292] UNP_Sasquatch_Jul_2007::Texture_Block_Manager::Finished_Loading +242\n  [0x725ead] UNP_Streamer_Nov_2004::Streamer_Impl::Try_Finish_Area +461\n  [0x725763] UNP_Streamer_Nov_2004::Streamer_Impl::Poll +339\n  [0x420e1a] UNP_Kingdom_Apr_2009::Master_Stream_Container::Poll +74\n  [0x41df68] UNP_Kingdom_Apr_2009::Game_Logic_Impl::Cycle_Per_Cycle +232\n  [0x691941] UNP_Sasquatch_Jul_2007::System_Cycler::Fixed_Interval_Cycle +49\n  [0x6917af] UNP_Sasquatch_Jul_2007::System_Cycler::Cycle +127\n  [0x691af7] UNP_Sasquatch_Jul_2007::Game_Runner_Impl::Run +167\n  [0x680058] UNP_Sasquatch_Jul_2007::DoMainGameLoop +72\n  [0x680eb7] UNP_Sasquatch_Jul_2007::Main +3303\n  [0x40d0b4] RealMain +148\n  [0x40d7e6] WinMain +118\n  [0x70b1a8] __tmainCRTStartup +290\n  [0x7b4622c2] call_process_entry +18\n  [0x7b464026] start_process +262\n  [0x7b4622ce] start_process_wrapper +10\nBrief: Impl\\Block_Managers\\DX9\\Texture_Block_Manager_DX9.cpp(143) Expr: '(((HRESULT)(hx)) >= 0) && \"hr\". '\nMessage: 'E_NOTIMPL'\n\"",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1557521302,
+    "title": "Outland",
+    "source": "protondb"
+  }
+]

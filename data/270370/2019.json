@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "270370",
+    "cpu": "Intel Core2 Duo     E6550  @ 2.33GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.0.0-devel - padoka PPA",
+    "kernel": "4.15.0-43-generic",
+    "notes": "11 fps ",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1547574678,
+    "title": "Lambda Wars Beta",
+    "source": "protondb"
+  }
+]

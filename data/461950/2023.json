@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "461950",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "6.0.3-1-default",
+    "notes": "Tried GOG (Windows and Linux) through Heroic, nothing.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1681456474,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "461950",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.52, 6.4.8-202.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.8-202.fsync.fc38.x86_64",
+    "notes": "Just clicked play and everything goes well. Some rare frame drops but mostly unnoticable.",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1691940611,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "461950",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, LLVM 15.0.7, DRM 3.42, 5.15.0-89-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.0 - kisak-mesa PPA",
+    "kernel": "5.15.0-89-generic",
+    "notes": "",
+    "os": "elementary OS 6.1 J\u00f3lnir",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1701654974,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "780350",
+    "cpu": "Intel Core i3-2330M @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.20.3-042003-generic",
+    "notes": "Starts and shows he first display which the game is running and the shows a black screen and stuck it on it.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1548362098,
+    "title": "Unruly Heroes",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "780350",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.2-1-default",
+    "notes": "Black screen instead of cutscenes; can be skipped with Esc",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1559768573,
+    "title": "Unruly Heroes",
+    "source": "protondb"
+  },
+  {
+    "appId": "780350",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-6c3bad5214)",
+    "kernel": "5.3.5-arch1-1-fsync",
+    "notes": "For videos to work installation of Media Foundation .dll libs is required. (z0z0z mf-install works just fine). I hadn't find any more problems.\n",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570991014,
+    "title": "Unruly Heroes",
+    "source": "protondb"
+  }
+]

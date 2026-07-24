@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "606150",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-34dd1ddde6)",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Game works native on Linux (OpenGL). On Proton it works out of the box (probably since Proton 4.11) with DXVK (D3D11 to Vulkan translation). Only keyboard input is a little strange sometimes, not sure if this is an issue of Wine or not. Tested with RADV and the new Mesa ACO compiler on Plasma Wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1565552690,
+    "title": "Moonlighter",
+    "source": "protondb"
+  }
+]

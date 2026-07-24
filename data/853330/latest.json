@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "853330",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.13-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.5.13-1-MANJARO",
+    "notes": "The game starts, but the menu is extremely laggy, to the point of being unusable. Game can only be exited by terminating the process.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1702303910,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "853330",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "It's super janky and requires rebinding controls, but playable after all is done.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1702304319,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "853330",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.13-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.5.13-1-MANJARO",
+    "notes": "It's a relatively simple fix and the game is still fun to play (if you're into janky old PC games, that is).",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1703532107,
+    "title": "",
+    "source": "protondb"
+  }
+]

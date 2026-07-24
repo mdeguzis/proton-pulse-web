@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3718990",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 21.1.7, DRM 3.61, 6.12.76)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.12.76",
+    "notes": "Small issue when panning and a softlock when closing the pause menu without pressing continue",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1776075598,
+    "title": "",
+    "source": "protondb"
+  }
+]

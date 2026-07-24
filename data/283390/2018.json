@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "283390",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "There are several issues. First of all you need to check the Checkbox in the Setup-Menu \"Skip Intro\" to prevent the game to crash at startup. Furthermore the Game seems to have problems with some audio files. When it tries to load them - it crashs. Thats the Main-Reason you have to disable the Intro-Movie i think. Also i discovered that there is a Github Project which can help you to made it (probably) to run. It is a Fork-Project from GoGs Code to make older Games run in newer Windows-Versions. ( https://github.com/bangstk/ogg-winmm ) I tried it for myself but i failed at the \"make\" command you have to run, to compile the needed dll for yourself. But hey... Maybe one of you out there can make it now to run! That would be awesome! :] ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1543143469,
+    "title": "Incoming Forces",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "21010",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "4.15.0-46-generic",
+    "notes": "First you need a fresh winetricks:\n\nsudo winetricks --self-update\n\n\nThen you need a fresh protontricks:\n\nwget https://raw.githubusercontent.com/Sirmentio/protontricks/master/protontricks && chmod +x protontricks\n\nsudo mv protontricks /usr/bin/protontricks\n\n\nThen you need set \"windows xp\" mode to profile:\n\nprotontricks 21010 winxp\n\n\nThen install \"dotnet20\":\n\nprotontricks 21010 dotnet20\n\n\nAfter that game runs nice. Performance is not very good.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "9 GB",
+    "rating": "Gold",
+    "timestamp": 1550644758,
+    "title": "Watchmen: The End is Nigh",
+    "source": "protondb"
+  },
+  {
+    "appId": "21010",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Does not start.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552585204,
+    "title": "Watchmen: The End is Nigh",
+    "source": "protondb"
+  }
+]

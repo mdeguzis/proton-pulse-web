@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "421170",
+    "title": "Indivisible",
+    "timestamp": 1534910400,
+    "rating": "Borked",
+    "notes": "Displays loading screen, then hangs until killed via task manager.",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GeForce 840M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "421170",
+    "title": "Indivisible",
+    "timestamp": 1534896000,
+    "rating": "Borked",
+    "notes": "Displays loading screen, then hangs until killed via task manager.",
+    "os": "Linux Mint 18.3",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "GeForce 840M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

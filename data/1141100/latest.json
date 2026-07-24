@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1141100",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-65-generic",
+    "notes": "Game Start and run. Text is only rectancle (with winetricks i install every font with Japan in name fixed it, except some Menu)",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1570804825,
+    "title": "Lilitales",
+    "source": "protondb"
+  }
+]

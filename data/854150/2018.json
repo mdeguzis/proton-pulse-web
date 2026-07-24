@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "854150",
+    "cpu": "Intel Core i5-2467M @ 1.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Crashes often dur.ng gameplay.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1544912188,
+    "title": "Snail Racer EXTREME",
+    "source": "protondb"
+  },
+  {
+    "appId": "854150",
+    "cpu": "Intel Core i5         760  @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Stutters often.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1544942801,
+    "title": "Snail Racer EXTREME",
+    "source": "protondb"
+  }
+]

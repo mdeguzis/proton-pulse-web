@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1002970",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "Window pops up, and gives error \"failed(0x80040218) in RenderFile(p)!\"",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1565780374,
+    "title": "Freefall 3050AD",
+    "source": "protondb"
+  },
+  {
+    "appId": "1002970",
+    "cpu": "Intel Core i7-2670QM @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "When started, it gives the error \"failed(0x80040218) in RenderFile(p)!\" and then it plays but with no sound.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1566897129,
+    "title": "Freefall 3050AD",
+    "source": "protondb"
+  },
+  {
+    "appId": "1002970",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "No audio (.WAV) will play whatsoever, neither will any of the FMV (.WMV) cutscenes, the latter of which result in totally skippable\u2013if you have a keyboard & mouse connected\u2013error prompts like 'Failed(0x80040218) in RenderFile(p)!'. Other than broken A/V the game itself looks to render properly at both its supported resolutions (640\u00d7480 & 1280\u00d71024) as well as perform & control perfectly, even with a DualShock 4 gamepad. Still, I have to rate Freefall 3050 AD 'bronze' because the lack of SFX, music, & FMVs prevents me from playing comfortably.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1568536252,
+    "title": "Freefall 3050AD",
+    "source": "protondb"
+  }
+]

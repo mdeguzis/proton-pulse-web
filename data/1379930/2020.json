@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1379930",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 418.152.00",
+    "kernel": "4.19.0-12-amd64",
+    "notes": "Le jeu fonctionne sous debian 10 avec proton 4.11, mais pas avec la version 5.  Mat\u00e9riel core i5, RAM 8Go, Nvidia GTX 770.",
+    "os": "Debian GNU/Linux 10 (buster) (64\u00a0bits)",
+    "protonVersion": "5.13-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1604109505,
+    "title": "",
+    "source": "protondb"
+  }
+]

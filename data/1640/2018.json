@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "1640",
+    "cpu": "i5-3210M CPU @ 2.50GHz",
+    "gpu": "X.Org AMD VERDE (DRM 2.50.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Doesn't start even mixing all Proton environment variables.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "5836 Mb",
+    "rating": "Borked",
+    "timestamp": 1537029848,
+    "title": "Disciples II: Gallean's Return",
+    "source": "protondb"
+  },
+  {
+    "appId": "1640",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.16-300.fc29.x86_64",
+    "notes": "I couldn't make Steam version to work at all. GOG version works great with wine 3.19  and setting WINEARCH=win32 (oldest working reports in wine appdb is using wine 0.9). After manually creating 32-bit pfx for Proton I managed to reach state when game started and \"steam initialization\" error popped up. GOG version runs beautifully in some resolutions but crashes in others (game was originally created only for 800x600 and 1024x768).",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541688832,
+    "title": "Disciples II: Gallean's Return",
+    "source": "protondb"
+  }
+]

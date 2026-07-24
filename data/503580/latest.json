@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "503580",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.0-1-MANJARO",
+    "notes": "It seems like the game hangs after the developer title card, but really it just takes 5+ minutes to load in each area for the first time. If you look at task manager it is maxing one core and slowly increasing RAM usage. I have this issue with multiple games, most notably Valve's \"The Lab\" demo. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1563395572,
+    "title": "Duck Season",
+    "source": "protondb"
+  },
+  {
+    "appId": "503580",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Game runs perfectly. I do see pixelation from time to time, but it is definitely playable.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563591147,
+    "title": "Duck Season",
+    "source": "protondb"
+  }
+]

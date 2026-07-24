@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2178070",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 15.0.7, DRM 3.61, 6.14.0-35-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.14.0-35-generic",
+    "notes": "Works well with custom Proton",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1769805910,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "10130",
+    "title": "TimeShift",
+    "timestamp": 1535129944,
+    "rating": "Gold",
+    "notes": "Incompatible Video Driver message. Works fine after selecting play. ",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1070/i5 4690K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "10130",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.69-1-MANJARO",
+    "notes": "Incompatible video driver message, crashes afterwards.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "64424 Mb",
+    "rating": "Borked",
+    "timestamp": 1537228380,
+    "title": "TimeShift\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "10130",
+    "cpu": "AMD FX-8370 Eight-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15944 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538525785,
+    "title": "TimeShift\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "10130",
+    "title": "TimeShift",
+    "timestamp": 1535115544,
+    "rating": "Gold",
+    "notes": "Incompatible Video Driver message. Works fine after selecting play. ",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1070/i5 4690K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "90500",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Game stuck on the loading screen forever.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558720332,
+    "title": "Guardians of Graxia",
+    "source": "protondb"
+  }
+]

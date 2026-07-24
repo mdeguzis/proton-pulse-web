@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2154820",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-57-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-57-generic",
+    "notes": "It works, but it ain't perfect.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1673185040,
+    "title": "EL PASO, NIGHTMARE",
+    "source": "protondb"
+  }
+]

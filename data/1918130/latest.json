@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1918130",
+    "cpu": "AMD Ryzen 7 5800XT 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "sad",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776842769,
+    "title": "Grim Quest - Old School RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "1918130",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, ACO, DRM 3.64, 6.19.14-ogc5.1.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "6.19.14-ogc5.1.fc44.x86_64",
+    "notes": "The game actually launches and plays without problems from what i quickly tested, but the audio doesn't work.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1779496681,
+    "title": "Grim Quest - Old School RPG",
+    "source": "protondb"
+  }
+]

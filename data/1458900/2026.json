@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1458900",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.7, DRM 3.61, 6.13.6-061306-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.3 - kisak-mesa PPA",
+    "kernel": "6.13.6-061306-generic",
+    "notes": "Playable but issues with video and audio",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1777326935,
+    "title": "Meridian 157: Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "1458900",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Ryzen 9 9950X3D 16-Core Processor (radeonsi, raphael_mendocino, ACO, DRM 3.64, 6.17.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 26.0.5 - kisak-mesa PPA",
+    "kernel": "6.17.0-22-generic",
+    "notes": "Playable but with audio and video issues",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1777399677,
+    "title": "Meridian 157: Prologue",
+    "source": "protondb"
+  }
+]

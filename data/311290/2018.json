@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "311290",
+    "title": "SpellForce 3",
+    "timestamp": 1535205274,
+    "rating": "Borked",
+    "notes": "Crashes at startup with an error dump",
+    "os": "Deepin 15.7 (64 bit) (Kernel Version:  4.15.0-29deepin-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel(R) Core(TM) i7-3820",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "311290",
+    "cpu": "Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Won't start, issues an error dump message which I sent to the devs :D",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15999 Mb",
+    "rating": "Borked",
+    "timestamp": 1539627063,
+    "title": "SpellForce 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "311290",
+    "title": "SpellForce 3",
+    "timestamp": 1535190874,
+    "rating": "Borked",
+    "notes": "Crashes at startup with an error dump",
+    "os": "Deepin 15.7 (64 bit) (Kernel Version:  4.15.0-29deepin-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel(R) Core(TM) i7-3820",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

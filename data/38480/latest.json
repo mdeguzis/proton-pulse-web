@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "38480",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.6-1-MANJARO, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-1-MANJARO",
+    "notes": "Frame rate is very low after a few seconds",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7.6",
+    "ram": "16042 Mb",
+    "rating": "Borked",
+    "timestamp": 1536636064,
+    "title": "Earthworm Jim",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1115850",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "Game works fine for offline tutorial, but Play button does nothing afterwards",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1564798126,
+    "title": "Vicious Circle Beta Test",
+    "source": "protondb"
+  },
+  {
+    "appId": "1115850",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "Tutorial and menu works perfectly, but the play button freezes the game for a second and does nothing. It seems like it cannot connect to the game servers hosted on AWS",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1564825431,
+    "title": "Vicious Circle Beta Test",
+    "source": "protondb"
+  },
+  {
+    "appId": "1115850",
+    "cpu": "AMD Ryzen 5 2600 @ 3.8 GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega 56",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel RADV/ACO",
+    "kernel": "5.3.0-rc1-fsync",
+    "notes": "The menus and tutorial work. Pressing the PLAY button after the tutorial just freezes the game for a fraction of a second and leaves you on the main menu.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564857228,
+    "title": "Vicious Circle Beta Test",
+    "source": "protondb"
+  }
+]

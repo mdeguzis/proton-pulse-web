@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "719110",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-22-generic",
+    "notes": "Very bad for proton",
+    "os": "Linux Mint 20.2 (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640853007,
+    "title": "",
+    "source": "protondb"
+  }
+]

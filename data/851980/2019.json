@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "851980",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "No issues, simple game",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561626262,
+    "title": "Ball Grabbers",
+    "source": "protondb"
+  }
+]

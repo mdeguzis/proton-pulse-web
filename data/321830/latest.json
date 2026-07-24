@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "321830",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "May need to increase the maximum number of file descriptors in /etc/security/limits.conf. Both game modes run with normal performance.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16058 Mb",
+    "rating": "Gold",
+    "timestamp": 1537903484,
+    "title": "Cavern Kings",
+    "source": "protondb"
+  }
+]

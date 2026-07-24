@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "905450",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "gpu": "GeForce GTX 1080 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Get a black screen for a couple of seconds and then back to steam.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7.6 Beta",
+    "ram": "32179 Mb",
+    "rating": "Borked",
+    "timestamp": 1536619412,
+    "title": "NASCAR Heat 3",
+    "source": "protondb"
+  }
+]

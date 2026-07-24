@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "341440",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "Certain text looks a little garbled, but not unreadable or even needed to play game. ",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1554004292,
+    "title": "BANZAI PECAN: The Last Hope For the Young Century",
+    "source": "protondb"
+  },
+  {
+    "appId": "341440",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Runs fine in windowed mode. Half the screen goes black and text flickers when in fullscreen mode.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560051148,
+    "title": "BANZAI PECAN: The Last Hope For the Young Century",
+    "source": "protondb"
+  }
+]

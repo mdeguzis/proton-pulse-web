@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "462730",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "5.19.0-41-generic",
+    "notes": "Works Natively in Windowed Mode",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1683488920,
+    "title": "",
+    "source": "protondb"
+  }
+]

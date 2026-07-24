@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "688880",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Continually brings up dialog with error \":3:1: Error: Unable to open include file settings.fx\". Game then starts, but dialog keeps coming back at VERY regular intervals, making game all but unplayable",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1555720725,
+    "title": "Cynoclept: The Game",
+    "source": "protondb"
+  }
+]

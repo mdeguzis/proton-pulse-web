@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "451930",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.4-arch1-1",
+    "notes": "Works out of the box, including my Xbox One controller.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627192007,
+    "title": "",
+    "source": "protondb"
+  }
+]

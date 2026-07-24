@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "392080",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon R9 200",
+    "gpuDriver": "4.6.13564 Compatibility Profile Context 5.0.19.20.7",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Doesn't open a window, uses 245MB of ram.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1567888751,
+    "title": "Wayward Terran Frontier: Zero Falls",
+    "source": "protondb"
+  }
+]

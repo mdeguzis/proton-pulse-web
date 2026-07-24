@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "758930",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-arch1-1-ARCH",
+    "notes": "Severely low fps in startup until main menu is fully loaded. In-game, severely low fps for around 15 seconds in the beginning of the game, then moderately low for the rest. Controls will take a while to respond if more than one input is received at a time, proportional to the amount of time the keys are held down. Basically unplayable, but it runs and doesn't crash. No tweaks improved results.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1560533315,
+    "title": "Captain Forever Trilogy",
+    "source": "protondb"
+  },
+  {
+    "appId": "758930",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Only shows a black screen when the desktop is set to 2560x1440, and will run very very slowly at 1080p. Runs at better speed in a small virtual desktop placed at upper left of screen. Tweaks were ineffective. Logs show a reference to Adobe Air, but was unable to try installing that component in protontricks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1562194776,
+    "title": "Captain Forever Trilogy",
+    "source": "protondb"
+  }
+]

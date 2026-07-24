@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "402330",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.61, 6.12.48-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "Force Proton 9, native version doesn't work",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1760077229,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "402330",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 19.1.1, DRM 3.57, 6.8.0-78-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-78-generic",
+    "notes": "I'm disappointed that a game claiming to be native should run immediately upon launch, or at least with just one of Valve's Hotfixes.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1760127788,
+    "title": "",
+    "source": "protondb"
+  }
+]

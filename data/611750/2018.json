@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "611750",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 470 Graphics (POLARIS10, DRM 3.26.0, 4.18.0-041800-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "kernel": "4.18.0-041800-generic",
+    "notes": "work fine",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16022 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537632312,
+    "title": "Welcome to Hanwell",
+    "source": "protondb"
+  },
+  {
+    "appId": "611750",
+    "cpu": "AMD Ryzen 5 2600X Six-Core Processor",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.9-92.current, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.6",
+    "kernel": "4.18.9-92.current",
+    "notes": "Audio crackling, other times audio missing. Performance great at 50-60 FPS. No crashes. Proton 3.7-6.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16052 Mb",
+    "rating": "Silver",
+    "timestamp": 1537818819,
+    "title": "Welcome to Hanwell",
+    "source": "protondb"
+  },
+  {
+    "appId": "611750",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-5aeee1a 2018-11-05 cosmic-oibaf-ppa)",
+    "kernel": "4.19.0-041900-generic",
+    "notes": "work fine",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542301201,
+    "title": "Welcome to Hanwell",
+    "source": "protondb"
+  }
+]

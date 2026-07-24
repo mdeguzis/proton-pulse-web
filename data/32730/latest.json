@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "32730",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Launched with no issue. Intro video played and was stoppable with no audio issues. Menu works and settings can be adjusted. Works out of the box with default 3dfx graphics settings, and also worked when set to DirectX. Max res of 1024x768 a little low by today's standards, and joystick mapping is weird for my Logitech Extreme 3d Pro, but \"just worked\".",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1546659316,
+    "title": "F-22 Lightning 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "32730",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-1-MANJARO",
+    "notes": "Everything seems to work fine out of the box including rumble support on an Xbox pad; The selected-by-default 3DFX Glide renderer is recommended, as Direct3D has minor visual glitches and frame drops (but is otherwise fine). Uncertain, but this may also be the case on Windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562870994,
+    "title": "F-22 Lightning 3",
+    "source": "protondb"
+  }
+]

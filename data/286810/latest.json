@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "286810",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4a131a1330)",
+    "kernel": "5.0.0-rc3-mainline",
+    "os": "Arch Linux",
+    "protonVersion": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "protonVersionManual": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550491519,
+    "title": "Hard Truck Apocalypse: Rise Of Clans / Ex Machina: Meridian 113",
+    "source": "protondb"
+  },
+  {
+    "appId": "286810",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-4a131a1330)",
+    "kernel": "5.0.0-rc3-mainline",
+    "notes": "You should go to the game directory, then to the \"data\" folder, find config and change these to your resolution:\n\nr_width=\"1280\"\nr_height=\"800\"\nfov=\"100.00\"",
+    "os": "Arch Linux",
+    "protonVersion": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "protonVersionManual": "Proton 3.16-6 Gallium Nine Extras 0.3.0",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1550491782,
+    "title": "Hard Truck Apocalypse: Rise Of Clans / Ex Machina: Meridian 113",
+    "source": "protondb"
+  },
+  {
+    "appId": "286810",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Works perfect out of box",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567183962,
+    "title": "Hard Truck Apocalypse: Rise Of Clans / Ex Machina: Meridian 113",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "222660",
+    "title": "Retro/Grade",
+    "timestamp": 1536091005,
+    "rating": "Gold",
+    "notes": "protontricks 222660 windowscodecs\nruns flawless 60FPS",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "222660",
+    "title": "Retro/Grade",
+    "timestamp": 1536119481,
+    "rating": "Borked",
+    "notes": "Game crashes on launch.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 386.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "222660",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.26.0, 4.18.12-zen1-1-zen, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.12-zen1-1-zen",
+    "notes": "Initially crashed after a black screen. Installing windowscodecs via Protontricks fixes it. Works perfect after that.",
+    "os": "Antergos (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "7934 Mb",
+    "rating": "Gold",
+    "timestamp": 1539620548,
+    "title": "Retro/Grade",
+    "source": "protondb"
+  },
+  {
+    "appId": "222660",
+    "title": "Retro/Grade",
+    "timestamp": 1536076605,
+    "rating": "Gold",
+    "notes": "protontricks 222660 windowscodecs\nruns flawless 60FPS",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "222660",
+    "title": "Retro/Grade",
+    "timestamp": 1536105081,
+    "rating": "Borked",
+    "notes": "Game crashes on launch.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 386.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

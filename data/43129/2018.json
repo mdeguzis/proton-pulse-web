@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "43129",
+    "title": "Metro 2033",
+    "timestamp": 1535371471,
+    "rating": "Silver",
+    "notes": "You must skip intro movies (i.e running game in safe mode). After that game won't crash and is working fine. Even on DX11 and with PhysX.",
+    "os": "Arch Linux 64-bit (4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "43129",
+    "title": "Metro 2033",
+    "timestamp": 1535357071,
+    "rating": "Silver",
+    "notes": "You must skip intro movies (i.e running game in safe mode). After that game won't crash and is working fine. Even on DX11 and with PhysX.",
+    "os": "Arch Linux 64-bit (4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "11040",
+    "title": "Sherlock Holmes: Nemesis",
+    "timestamp": 1535078157,
+    "rating": "Borked",
+    "notes": "Nothing happens",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "11040",
+    "cpu": "Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "For run need PhysXLoader.dll, game freeze on start New Game",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta",
+    "ram": "15974 \u041c\u0411",
+    "rating": "Bronze",
+    "timestamp": 1538211608,
+    "title": "Sherlock Holmes - Nemesis",
+    "source": "protondb"
+  },
+  {
+    "appId": "11040",
+    "title": "Sherlock Holmes: Nemesis",
+    "timestamp": 1535063757,
+    "rating": "Borked",
+    "notes": "Nothing happens",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

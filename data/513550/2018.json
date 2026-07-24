@@ -1,0 +1,20 @@
+[
+  {
+    "appId": "513550",
+    "cpu": "Intel(R) Core(TM) i5-2540M CPU @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Sandybridge Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.1.7",
+    "kernel": "4.17.0-3-amd64",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7862 Mb",
+    "rating": "Gold",
+    "timestamp": 1539077687,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Vive le Roi",
+    "source": "protondb"
+  }
+]

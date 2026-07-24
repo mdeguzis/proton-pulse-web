@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "972890",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22.01",
+    "kernel": "4.14.87-1-lts",
+    "notes": "This detects my Vive and runs. However, there are minor performance issues. In this game, even minor performance issues are nausea inducing and I believe this makes it unplayable to a large degree.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545434558,
+    "title": "RideOp - VR Thrill Ride Experience",
+    "source": "protondb"
+  }
+]

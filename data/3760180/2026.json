@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3760180",
+    "cpu": "Intel Core Ultra 5 125H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 25.3.5",
+    "kernel": "6.18.12-200.fc43.x86_64",
+    "notes": "Broken",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1771773602,
+    "title": "",
+    "source": "protondb"
+  }
+]

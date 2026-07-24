@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "23460",
+    "cpu": "i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) HD Graphics 630 (Kaby Lake GT2) x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-33-generic",
+    "notes": "will not start",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "default",
+    "ram": "15899 Mb",
+    "rating": "Borked",
+    "timestamp": 1536623277,
+    "title": "Ceville",
+    "source": "protondb"
+  }
+]

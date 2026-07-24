@@ -1,0 +1,92 @@
+[
+  {
+    "appId": "12220",
+    "title": "Grand Theft Auto: Episodes from Liberty City",
+    "timestamp": 1535039224,
+    "rating": "Borked",
+    "notes": "\"EFLC FATAL ERROR:\"",
+    "os": "Arch Linux (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "12220",
+    "cpu": "i7-2600 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.69-1-MANJARO",
+    "notes": "EFL FATAL ERROR",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16011 Mb",
+    "rating": "Borked",
+    "timestamp": 1537021479,
+    "title": "Grand Theft Auto: Episodes from Liberty City",
+    "source": "protondb"
+  },
+  {
+    "appId": "12220",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I downloaded Xliveless and installed it into the game directory. Added tv.rockstargames.com to the file /etc/hosts. Minor graphical glitches in the sky and occasional flickering shadows. If framerates are low, lower visibility range. 1440p works fine for me, but some may have to go with 1080p for a smoother experience. Nvidia users may have to do some extra steps: https://github.com/ValveSoftware/Proton/issues/350. Have Esync disabled always, since GTA V needed it, so that may be worth a try.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16029 Mb",
+    "rating": "Silver",
+    "timestamp": 1538028618,
+    "tweaks": {
+      "disableEsync": true
+    },
+    "title": "Grand Theft Auto: Episodes from Liberty City",
+    "source": "protondb"
+  },
+  {
+    "appId": "12220",
+    "cpu": "Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.66",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Used xliveless. Did those two things: https://github.com/ValveSoftware/Proton/issues/350#issuecomment-419514874\nand\nhttps://github.com/ValveSoftware/Proton/issues/350#issuecomment-418909900\nThe paths for nvapi may differ for you, for me they did at least.\nDraw distance kills the performance. On high settings (with draw distance and details set to the lowest) I'm getting 25-50fps depending on the area. There are some graphical glitches. I suggest turning off in-game V-Sync. I could play like this. But more testing is needed",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15996 Mb",
+    "rating": "Silver",
+    "timestamp": 1539979747,
+    "title": "Grand Theft Auto: Episodes from Liberty City",
+    "source": "protondb"
+  },
+  {
+    "appId": "12220",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-9007c0ed26)",
+    "kernel": "4.18.14-1-ck",
+    "notes": "Need xliveless and a line in the /etc/hosts. (127.0.0.1 tv.rockstargames.com). It has poor perfomrance.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1540915815,
+    "title": "Grand Theft Auto: Episodes from Liberty City",
+    "source": "protondb"
+  },
+  {
+    "appId": "12220",
+    "title": "Grand Theft Auto: Episodes from Liberty City",
+    "timestamp": 1535024824,
+    "rating": "Borked",
+    "notes": "\"EFLC FATAL ERROR:\"",
+    "os": "Arch Linux (4.18.3-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600 / RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

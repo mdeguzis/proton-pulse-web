@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "961620",
+    "cpu": "Intel Core i5-6440HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.34",
+    "notes": "The config window opens, I can choose the resolution etc. But the game doesn't start then, only a black screen is displayed. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556275607,
+    "title": "Flashback",
+    "source": "protondb"
+  },
+  {
+    "appId": "961620",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.42.02",
+    "kernel": "5.0.9-200.fc29.x86_64",
+    "notes": "Black screen when loading. Seems stuck. Setting PROTON_USE_WINED3D11=1 didn't help.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556303390,
+    "title": "Flashback",
+    "source": "protondb"
+  },
+  {
+    "appId": "961620",
+    "cpu": "Intel Core i5-6440HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.34",
+    "notes": "The config window opens up, but when the game is launched, only a black screen shows and nothing happens.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1561554148,
+    "title": "Flashback",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "248370",
+    "title": "Bridge It (plus)",
+    "timestamp": 1535051601,
+    "rating": "Gold",
+    "notes": "Black screen on first boot, worked without problems after a restart.",
+    "os": "Arch Linux (Kernel 4.17.14-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Intel Xeon E3-1230v2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "248370",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 780 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.9-200.fc28.x86_64",
+    "notes": "The game runs, but did not drawing in game objects. No playable.",
+    "os": "\"Fedora release 28 (Twenty Eight)\" (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta",
+    "ram": "7974 \u041c\u0411",
+    "rating": "Bronze",
+    "timestamp": 1538423164,
+    "title": "Bridge It +",
+    "source": "protondb"
+  },
+  {
+    "appId": "248370",
+    "title": "Bridge It (plus)",
+    "timestamp": 1535037201,
+    "rating": "Gold",
+    "notes": "Black screen on first boot, worked without problems after a restart.",
+    "os": "Arch Linux (Kernel 4.17.14-arch1-1-ARCH)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Intel Xeon E3-1230v2",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

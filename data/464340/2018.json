@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "464340",
+    "title": "METAL GEAR SOLID V: GROUND ZEROES",
+    "timestamp": 1536456109,
+    "rating": "Borked",
+    "notes": "Nothing works",
+    "os": "Reborn OS (Arch Linux) (kernel 4.18.6.arch1-1)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "AMD FX 8320 / Geforce GTX950",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "464340",
+    "title": "Syberia 3",
+    "timestamp": 1534973656,
+    "rating": "Silver",
+    "notes": "The game stutters.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "464340",
+    "cpu": "i5-4460  CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs fine, everything works out of the box. Slight stutters when loading areas but I had the same under Windows 7. The game is not well optimized to begin with so you are not going to get better than this. ",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15969 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536963677,
+    "title": "Syberia 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "464340",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Crashes on startup.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1546111460,
+    "title": "Syberia 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "464340",
+    "title": "METAL GEAR SOLID V: GROUND ZEROES",
+    "timestamp": 1536441709,
+    "rating": "Borked",
+    "notes": "Nothing works",
+    "os": "Reborn OS (Arch Linux) (kernel 4.18.6.arch1-1)",
+    "gpuDriver": "NVIDIA 396.54-1",
+    "specs": "AMD FX 8320 / Geforce GTX950",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "464340",
+    "title": "Syberia 3",
+    "timestamp": 1534959256,
+    "rating": "Silver",
+    "notes": "The game stutters.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i5-4690K / GTX 960",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

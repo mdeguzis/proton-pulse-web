@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "458770",
+    "title": "WRC 6",
+    "timestamp": 1535041810,
+    "rating": "Borked",
+    "notes": "Not booting",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700X/ RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "458770",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Absolutely nothing happens, game doesn't start. None of the 3 Proton launch options have any effect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543370329,
+    "title": "WRC 6 FIA World Rally Championship",
+    "source": "protondb"
+  },
+  {
+    "appId": "458770",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Won't start",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545196939,
+    "title": "WRC 6 FIA World Rally Championship",
+    "source": "protondb"
+  },
+  {
+    "appId": "458770",
+    "title": "WRC 6",
+    "timestamp": 1535027410,
+    "rating": "Borked",
+    "notes": "Not booting",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700X/ RX 480",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

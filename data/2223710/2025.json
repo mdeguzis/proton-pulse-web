@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2223710",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.0-13-generic",
+    "notes": "Renaming Loaders_unprotected.exe to Loaders.exe makes it not launch Easy Anti-Cheat's splash screen, but didn't make a difference.\nTo be fair, this game is not yet publicly available. I got a key from Alienware Arena. Maybe will work better at release?",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1752643770,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "547340",
+    "title": "LoveKami -Divinity Stage-",
+    "timestamp": 1534980286,
+    "rating": "Gold",
+    "notes": "Loading is a bit slower",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8320E",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "547340",
+    "title": "LoveKami -Divinity Stage-",
+    "timestamp": 1535435232,
+    "rating": "Silver",
+    "notes": "font is missing characters",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "547340",
+    "title": "LoveKami -Divinity Stage-",
+    "timestamp": 1534965886,
+    "rating": "Gold",
+    "notes": "Loading is a bit slower",
+    "os": "Arch Linux 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX-8320E",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "547340",
+    "title": "LoveKami -Divinity Stage-",
+    "timestamp": 1535420832,
+    "rating": "Silver",
+    "notes": "font is missing characters",
+    "os": "4.18.5-arch1-1-ARCH",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

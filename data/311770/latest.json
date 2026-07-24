@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "311770",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1547188639,
+    "title": "LEGO\u00ae Pirates of the Caribbean: The Video Game",
+    "source": "protondb"
+  },
+  {
+    "appId": "311770",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Black screen, non-responsive.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1566060984,
+    "title": "LEGO\u00ae Pirates of the Caribbean: The Video Game",
+    "source": "protondb"
+  }
+]

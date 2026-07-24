@@ -1,0 +1,103 @@
+[
+  {
+    "appId": "235720",
+    "title": "Cubetractor",
+    "timestamp": 1534952236,
+    "rating": "Gold",
+    "notes": "No noticeable issues",
+    "os": "ArchLinux 4.17.5-1",
+    "gpuDriver": "Mesa 18.1.4-1",
+    "specs": "\ti5-6200U / Intel HD Graphics 520",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "title": "Cubetractor",
+    "timestamp": 1534998476,
+    "rating": "Borked",
+    "notes": "Do not run at all",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "title": "Cubetractor",
+    "timestamp": 1535479296,
+    "rating": "Gold",
+    "notes": "Tutorial / first level tested, plays as well as on Windows",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Runs perfectly, no issues",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 Bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "16002 MB",
+    "rating": "Platinum",
+    "timestamp": 1537278453,
+    "title": "Cubetractor",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 980/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16000 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537741530,
+    "title": "Cubetractor",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "title": "Cubetractor",
+    "timestamp": 1534937836,
+    "rating": "Gold",
+    "notes": "No noticeable issues",
+    "os": "ArchLinux 4.17.5-1",
+    "gpuDriver": "Mesa 18.1.4-1",
+    "specs": "\ti5-6200U / Intel HD Graphics 520",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "title": "Cubetractor",
+    "timestamp": 1534984076,
+    "rating": "Borked",
+    "notes": "Do not run at all",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "235720",
+    "title": "Cubetractor",
+    "timestamp": 1535464896,
+    "rating": "Gold",
+    "notes": "Tutorial / first level tested, plays as well as on Windows",
+    "os": "Kubuntu 18.04 64-bit (4.15.0-32)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX8350 / NVIDIA GTX660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

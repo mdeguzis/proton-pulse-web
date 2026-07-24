@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "319280",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Launcher doesn't work, but it's possible bypass it by renaming \"Game.exe\" in the game folder to \"YatagarasuLauncher.exe\". Keyboard inputs and windowed mode by default. Steam overlay does not seem to work with this game. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1559527062,
+    "title": "Yatagarasu Attack on Cataclysm",
+    "source": "protondb"
+  },
+  {
+    "appId": "319280",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "5.0.21-rt16-MANJARO",
+    "notes": "This game needs the mfc42.dll file to be provided by the user for the games launcher to work  (put it in ~/.local/share/Steam/steamapps/common/Yatagarasu ) besides this every option seems to work except for fullscreen which crashes when attempted and havent tested online because i cant find matches",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1566176536,
+    "title": "Yatagarasu Attack on Cataclysm",
+    "source": "protondb"
+  }
+]

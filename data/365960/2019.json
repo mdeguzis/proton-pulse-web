@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "365960",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7850",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Single player works straight away in 4.2.2, in 64-bit. Previous version didn't work for me, even when forcing 32-bit. I played a bit with a PDP Xbox One controller. Vibration didn't work, but I don't think that's Proton's fault. Multiplayer not tested.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2.2",
+    "protonVersionManual": "4.2.2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554859311,
+    "title": "rFactor 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "365960",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.0.4",
+    "kernel": "5.2.0-1-MANJARO",
+    "notes": "Single- and multiplayer works perfectly. Performance is at 60% of what Windows provides. Force feedback and racing wheel support is highly vendor specific on Linux.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1560062704,
+    "title": "rFactor 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "appId": "761620",
+    "title": "Beholder 2",
+    "timestamp": 1535836719,
+    "rating": "Borked",
+    "notes": "Error: \nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "specs": "Intel HD 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "761620",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Runs flawless with PROTON_USE_WINED3D11=1",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16056 Mb",
+    "rating": "Gold",
+    "timestamp": 1539212355,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Beholder 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "761620",
+    "title": "Beholder 2",
+    "timestamp": 1535822319,
+    "rating": "Borked",
+    "notes": "Error: \nFailed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "specs": "Intel HD 620",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

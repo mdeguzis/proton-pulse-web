@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "966560",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "the game works ootb, absolutely smooth. default gfx settings were set to low, but it is also smooth on high.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1562314206,
+    "title": "ROGAN: The Thief in the Castle",
+    "source": "protondb"
+  }
+]

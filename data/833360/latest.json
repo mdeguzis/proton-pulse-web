@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "833360",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.11-300.fc30.x86_64",
+    "notes": "Game seems to work fine out of the box; No issues found so far (around 1h of play).",
+    "os": "Linux",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1562961653,
+    "title": "Star Valor",
+    "source": "protondb"
+  }
+]

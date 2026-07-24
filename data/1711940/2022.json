@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1711940",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.13.0-27-generic",
+    "notes": "Freezes on start. Game and SteamVR crash.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1643506129,
+    "title": "",
+    "source": "protondb"
+  }
+]

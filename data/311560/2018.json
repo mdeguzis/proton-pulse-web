@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "311560",
+    "cpu": "i7-3930K CPU @ 3.20GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-arch1-1-ARCH",
+    "notes": "can't get past uplay login.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "32109 Mb",
+    "rating": "Borked",
+    "timestamp": 1536785704,
+    "title": "Assassin\u2019s Creed\u00ae Rogue",
+    "source": "protondb"
+  },
+  {
+    "appId": "311560",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "i try many things, but i only believe is a problem with black screen",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1541072244,
+    "title": "Assassin\u2019s Creed\u00ae Rogue",
+    "source": "protondb"
+  }
+]

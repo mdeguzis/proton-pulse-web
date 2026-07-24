@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "436320",
+    "title": "Raw Data",
+    "timestamp": 1535221072,
+    "rating": "Borked",
+    "notes": "HTC Vive. Nothing happens",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "436320",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.51",
+    "kernel": "4.18.0-1-amd64",
+    "notes": "Boots into game with no tweaks but the lag makes it unplayable.",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1541126638,
+    "title": "Raw Data",
+    "source": "protondb"
+  },
+  {
+    "appId": "436320",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-7e9fc11 2018-11-17 cosmic-oibaf-ppa)",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Disabled my Display Compositor before running, otherwise lag is unbearable.\nSet WindowMirrorMode=0 in ~/.steam/steam/steamapps/compatdata/436320/pfx/drive_c/users/steamuser/Local Settings/Application Data/RawData/Saved/Config/WindowsNoEditor/Engine.ini to save some GPU cycles (not sure if this helps).\nStutters initially when loading new models or textures anyhow.\nOccasional de-sync between left and right screens for a few frames.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1542565986,
+    "title": "Raw Data",
+    "source": "protondb"
+  },
+  {
+    "appId": "436320",
+    "title": "Raw Data",
+    "timestamp": 1535206672,
+    "rating": "Borked",
+    "notes": "HTC Vive. Nothing happens",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

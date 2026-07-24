@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "505060",
+    "cpu": "Intel Core i7-7567U @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Iris Plus 650 (Kaby Lake GT3e)",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Launching a fresh install from steam had worked exactly once up to the point where the meteorite crashes into Old Kingdom (after craigz' intro / pressing the big red button). At that point the game crashes and will not launch again. (Reproduced multiple times.)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1563281905,
+    "title": "Warcube",
+    "source": "protondb"
+  }
+]

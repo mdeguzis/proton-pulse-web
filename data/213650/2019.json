@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "213650",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "Does not launch.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1568942101,
+    "title": "Dwarfs - F2P",
+    "source": "protondb"
+  }
+]

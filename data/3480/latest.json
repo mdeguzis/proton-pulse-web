@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3480",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Fully playable and completable",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551579065,
+    "title": "Peggle Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3480",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-47-generic",
+    "notes": "No problems what so ever, no tweaks needed.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565995813,
+    "title": "Peggle Deluxe",
+    "source": "protondb"
+  },
+  {
+    "appId": "3480",
+    "cpu": "Intel Core i5         650  @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ironlake Desktop",
+    "gpuDriver": "2.1 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-60-generic",
+    "notes": "Works flawlessly",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567742866,
+    "title": "Peggle Deluxe",
+    "source": "protondb"
+  }
+]

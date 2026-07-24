@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "733760",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "The game itself is nothing but the files that came on the original game CDs and a failed attempt to couple them to an old copy of DOSBOX. This makes it completely unplayable in Linux and maybe even Windows out of the box. That is why the game has only one review as of the time of this writing. However you can run the game off a local install of DOSBOX and it will play just fine. Even running it off a local install of DOSBOX I could not get my keyboard to function properly, but an old Xbox 360 controller worked just fine.\n\nI also had files being corrupted after running the game, forcing me to validate the game files every time I wanted to play. I solved this by copying the folder somewhere else and making it read only.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1555366141,
+    "title": "MegaRace 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "733760",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.8-200.fc29.x86_64",
+    "notes": "This game is simply badly packaged and won't run normally. However, steam-dos provides override that fixes it, allowing it to run through native Linux DOSBox: https://github.com/dreamer/steam-dos. During play, use mouse or controller to emulate mouse - keyboard will break due to SDL bug.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560772802,
+    "title": "MegaRace 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "733760",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "Using the compatibility tool https://www.gitlab.com/dreamer-tan/steam-dos makes the game playable. Launching from Steam gives an error about a missing \"Launcher.exe\". Making a symbolic link to \"MegaRace 2.exe\" in the same folder and naming it \"Launcher.exe\" will solve this.",
+    "os": "Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "4.2-2",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1562536254,
+    "title": "MegaRace 2",
+    "source": "protondb"
+  }
+]

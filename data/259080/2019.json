@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "259080",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-200.fc29.x86_64",
+    "notes": "Crashes.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558018941,
+    "title": "Just Cause 2: Multiplayer Mod",
+    "source": "protondb"
+  },
+  {
+    "appId": "259080",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.1",
+    "kernel": "4.19.58",
+    "notes": "I managed to get this running in NixOS with the following steps. 1. Replace 'JustCause2.exe' with DRM free crack. 2. Try to launch Just Cause 2 Multiplayer at least once (it will fail) 3. run protontricks 259080 d3dcompiler_43 d3dx10 winxp vcrun2005 win7. d3dcompiler_43 and d3d3x10 are required since wine's d3dcompiler has issues parsing Just Cause 2's shaders. vcrun2005 is required since's msvcr80 throws an exception (it has to be installed with wine configured as winxp, see https://github.com/Winetricks/winetricks/issues/169. The game also won't run unless you have winvista+, so the command also sets the wine configuration back to win7. I ran into a few issues where the game would crash, but it probably wouldn't be too hard to fix if I spent more time debugging. Overall, it seems pretty playable with these tweaks.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1563406634,
+    "title": "Just Cause 2: Multiplayer Mod",
+    "source": "protondb"
+  },
+  {
+    "appId": "259080",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Won't start",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1569395459,
+    "title": "Just Cause 2: Multiplayer Mod",
+    "source": "protondb"
+  }
+]

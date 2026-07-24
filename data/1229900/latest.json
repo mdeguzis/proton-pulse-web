@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1229900",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.8-arch1-1",
+    "notes": "Works like a charm",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1633102275,
+    "title": "",
+    "source": "protondb"
+  }
+]

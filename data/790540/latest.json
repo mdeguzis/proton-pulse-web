@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "790540",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Runs perfect out of the box. Only issue i faced is that the game crashed when closing. But the game experience is great",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552854538,
+    "title": "THE QUIET MAN\u2122",
+    "source": "protondb"
+  }
+]

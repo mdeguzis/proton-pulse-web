@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "301840",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.19.0-pf3",
+    "notes": "Need \"xact\" from winetricks to fix audio. Background in main menu is missing, everything else work flawless.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1540886387,
+    "title": "City of Brass",
+    "source": "protondb"
+  }
+]

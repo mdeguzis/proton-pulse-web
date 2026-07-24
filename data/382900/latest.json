@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "382900",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-15-generic",
+    "notes": "Works great most of the time. Sometimes crashes when buying items in shops.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1551629232,
+    "title": "FINAL FANTASY VI",
+    "source": "protondb"
+  },
+  {
+    "appId": "382900",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game runs great and works perfectly! Battles work fine. You can use a Xbox to control the game perfectly!",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557012790,
+    "title": "FINAL FANTASY VI",
+    "source": "protondb"
+  }
+]

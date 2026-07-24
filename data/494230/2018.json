@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "494230",
+    "title": "Heart's Medicine Time to Heal",
+    "timestamp": 1536301304,
+    "rating": "Borked",
+    "notes": "Refuses to launch, throws error message about hardware acceleration not supported.",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4590 / Nvidia GT 1030 2GB",
+    "protonVersion": "Attempted default, 3-7-3, and 3-7-5, nothing worked.",
+    "source": "protondb"
+  },
+  {
+    "appId": "494230",
+    "title": "Heart's Medicine Time to Heal",
+    "timestamp": 1536286904,
+    "rating": "Borked",
+    "notes": "Refuses to launch, throws error message about hardware acceleration not supported.",
+    "os": "Ubuntu 18.04 (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4590 / Nvidia GT 1030 2GB",
+    "protonVersion": "Attempted default, 3-7-3, and 3-7-5, nothing worked.",
+    "source": "protondb"
+  }
+]

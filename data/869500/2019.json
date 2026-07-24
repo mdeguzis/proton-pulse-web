@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "869500",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Works perfectly with no tweaks needed. I was able to complete a full playthrough from start to finish.\n\nSPOILER: There is a part of the game where it fakes a blue-screen. This is intended and is not an error. It resolves shortly after occurring.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559416290,
+    "title": "The Book of Regrets",
+    "source": "protondb"
+  }
+]

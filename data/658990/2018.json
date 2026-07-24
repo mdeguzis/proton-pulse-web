@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "658990",
+    "title": "Icycle: On Thin Ice",
+    "timestamp": 1535988495,
+    "rating": "Borked",
+    "notes": "Error: Unable to load nw_elf.dll",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "658990",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Doesn't start. Cannot load library nw_elf.dll",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "15962 MB",
+    "rating": "Borked",
+    "timestamp": 1537642463,
+    "title": "Icycle: On Thin Ice",
+    "source": "protondb"
+  },
+  {
+    "appId": "658990",
+    "title": "Icycle: On Thin Ice",
+    "timestamp": 1535974095,
+    "rating": "Borked",
+    "notes": "Error: Unable to load nw_elf.dll",
+    "os": "Ubuntu 18.04 (4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7600 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2943930",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Tried installing .NET Desktop Runtime as dependency to run, yet the game doesn't want to launch.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1738344549,
+    "title": "",
+    "source": "protondb"
+  }
+]

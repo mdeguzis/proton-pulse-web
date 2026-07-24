@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "650670",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.6",
+    "kernel": "4.18.0-0.bpo.3-amd64",
+    "notes": "Game loads, but is unusable due to terrible mouse-lag. Also, has no music. ",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546712839,
+    "title": "Grimoire : Heralds of the Winged Exemplar (V2)",
+    "source": "protondb"
+  },
+  {
+    "appId": "650670",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "4.12.14-lp151.28.13-default",
+    "notes": "Mouse lag still, very slow cannot navigate off the main menu without significant effort.",
+    "os": "openSUSE Leap 15.1",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1566165887,
+    "title": "Grimoire : Heralds of the Winged Exemplar (V2)",
+    "source": "protondb"
+  },
+  {
+    "appId": "650670",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-19-generic",
+    "notes": "Game loads, but mouse lag is so huge, I'm unable to even click buttons in main menu.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1571828836,
+    "title": "Grimoire : Heralds of the Winged Exemplar (V2)",
+    "source": "protondb"
+  }
+]

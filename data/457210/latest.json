@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "457210",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.1.21-1-MANJARO",
+    "notes": "Game fails to start on the native version but it works after deleting \"Seum\" executable from the game directory and renaming \"Seum.x86_64\" to \"Seum\". This seems to be a common problem with the unity engine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569509300,
+    "title": "SEUM: Speedrunners from Hell",
+    "source": "protondb"
+  }
+]

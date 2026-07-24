@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "8080",
+    "title": "Kane & Lynch: Dead Men",
+    "timestamp": 1535020444,
+    "rating": "Borked",
+    "notes": "Does not start at all",
+    "os": "openSUSE Tumbleweed (kernel 4.18.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "GeForce 820M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "8080",
+    "cpu": "i5-2500K CPU @ 3.30GHz",
+    "gpu": "GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "os": "\"Arch Linux\" (64 Bit)",
+    "protonVersion": "3.7-6",
+    "ram": "11905 MB",
+    "rating": "Borked",
+    "timestamp": 1537045213,
+    "title": "Kane and Lynch: Dead Men\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "8080",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Dont work. Starts only with GFWL-Fix but crashes afte a few seconds",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544147740,
+    "title": "Kane and Lynch: Dead Men\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "8080",
+    "title": "Kane & Lynch: Dead Men",
+    "timestamp": 1535006044,
+    "rating": "Borked",
+    "notes": "Does not start at all",
+    "os": "openSUSE Tumbleweed (kernel 4.18.0)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "GeForce 820M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "582380",
+    "title": "FINAL FANTASY XIV: Stormblood",
+    "timestamp": 1534945308,
+    "rating": "Silver",
+    "notes": "DX9 mode only. DX11 crashes on launch. Must set BrowserType 2 in ~/.steam/steam/steamapps/compatdata/39210/pfx/drive_c/users/steamuser/My Documents/My Games/FINAL FANTASY XIV - A Realm Reborn/FFXIV_BOOT.CFG or launcher will black screen. FMVs cause black screen. Everything else works well.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA-396.51",
+    "specs": "Intel 6700K, GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "582380",
+    "title": "FINAL FANTASY XIV: Stormblood",
+    "timestamp": 1535063771,
+    "rating": "Silver",
+    "notes": "No directx11, work with directx9. Black screen on launcher set BrowserType 2 in ~/.steam/steam/steamapps/compatdata/39210/pfx/drive_c/users/steamuser/My Documents/My Games/FINAL FANTASY XIV - A Realm Reborn/FFXIV_BOOT.CFG\n\nIf loadscreen in world selection don't work, set cutscenemovie 1 in ~/.steam/steam/steamapps/compatdata/39210/pfx/drive_c/users/steamuser/My Documents/My Games/FINAL FANTASY XIV - A Realm Reborn/FFXIV.CFG",
+    "os": "Ubuntu 18.04 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I7-4785T",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "582380",
+    "title": "FINAL FANTASY XIV: Stormblood",
+    "timestamp": 1534930908,
+    "rating": "Silver",
+    "notes": "DX9 mode only. DX11 crashes on launch. Must set BrowserType 2 in ~/.steam/steam/steamapps/compatdata/39210/pfx/drive_c/users/steamuser/My Documents/My Games/FINAL FANTASY XIV - A Realm Reborn/FFXIV_BOOT.CFG or launcher will black screen. FMVs cause black screen. Everything else works well.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA-396.51",
+    "specs": "Intel 6700K, GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "582380",
+    "title": "FINAL FANTASY XIV: Stormblood",
+    "timestamp": 1535049371,
+    "rating": "Silver",
+    "notes": "No directx11, work with directx9. Black screen on launcher set BrowserType 2 in ~/.steam/steam/steamapps/compatdata/39210/pfx/drive_c/users/steamuser/My Documents/My Games/FINAL FANTASY XIV - A Realm Reborn/FFXIV_BOOT.CFG\n\nIf loadscreen in world selection don't work, set cutscenemovie 1 in ~/.steam/steam/steamapps/compatdata/39210/pfx/drive_c/users/steamuser/My Documents/My Games/FINAL FANTASY XIV - A Realm Reborn/FFXIV.CFG",
+    "os": "Ubuntu 18.04 ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "I7-4785T",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

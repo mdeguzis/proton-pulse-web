@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "591370",
+    "title": "Production Line",
+    "timestamp": 1535211795,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Fedora 27",
+    "gpuDriver": "Mesa 17.3.9",
+    "specs": "i7-4770K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "591370",
+    "title": "production line",
+    "timestamp": 1536057432,
+    "rating": "Platinum",
+    "notes": "no errors or performance issues",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "gtx 1070",
+    "specs": "Intel Core i7-7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "591370",
+    "cpu": "Intel(R) Core(TM) i5-4670K CPU @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 760/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "notes": "No issues whatsoever, runs super smoothly as if it were native.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15986 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539237026,
+    "title": "Production Line : Car factory simulation",
+    "source": "protondb"
+  },
+  {
+    "appId": "591370",
+    "title": "Production Line",
+    "timestamp": 1535197395,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Fedora 27",
+    "gpuDriver": "Mesa 17.3.9",
+    "specs": "i7-4770K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "591370",
+    "title": "production line",
+    "timestamp": 1536043032,
+    "rating": "Platinum",
+    "notes": "no errors or performance issues",
+    "os": "ubuntu 18.04",
+    "gpuDriver": "gtx 1070",
+    "specs": "Intel Core i7-7700HQ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

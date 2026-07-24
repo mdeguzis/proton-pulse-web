@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "818150",
+    "cpu": "Intel Core i5-2415M @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.2",
+    "kernel": "5.4.14-2-MANJARO",
+    "notes": "Game install successfully but crash as soon it start",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-12",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1580311117,
+    "title": "Retro Hacker",
+    "source": "protondb"
+  }
+]

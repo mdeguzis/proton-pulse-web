@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "939600",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.0-20-generic",
+    "notes": "During launching appears message \"Cannot initialize low level graphics system\".",
+    "os": "Linux Mint 19.1 Tessa (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.2-9",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1564569894,
+    "title": "LOVE\u00b3 -Love Cube-",
+    "source": "protondb"
+  },
+  {
+    "appId": "939600",
+    "cpu": "Intel Xeon E5-2670 0 @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.9-22-tkg-pds",
+    "notes": "needs d3dcompiler_47.dll via proton/winetricks",
+    "os": "Freedesktop.org 18.08.34 (Flatpak runtime)",
+    "protonVersion": "Default",
+    "ram": "56 GB",
+    "rating": "Gold",
+    "timestamp": 1566497568,
+    "title": "LOVE\u00b3 -Love Cube-",
+    "source": "protondb"
+  }
+]

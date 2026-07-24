@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "853500",
+    "cpu": "AMD Ryzen Threadripper 2990WX 32-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.2.0-arch2-1-ARCH",
+    "notes": "Played completely through with no problems. Everything worked. No tweaks were necessary.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "48 GB",
+    "rating": "Platinum",
+    "timestamp": 1563031480,
+    "title": "Quarantine Circular",
+    "source": "protondb"
+  },
+  {
+    "appId": "853500",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 430.34",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Worked perfectly with no tweaks needed. Completed entire game.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567272772,
+    "title": "Quarantine Circular",
+    "source": "protondb"
+  }
+]

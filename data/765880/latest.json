@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "765880",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "The game works perfectly with good performance except for one problem. Any video based cutscenes, which the game has between chapters and sometimes in other parts, do not work. The game doesn't crash so they can just be waited out, but you are forced to see the cutscenes from Youtube to understand the story. As said, the gameplay is perfect out of the box, so the game is 100% playable. Just missing a lot of the story. Playback issue probably related to Proton bug #1464.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557391415,
+    "title": "The Occupation",
+    "source": "protondb"
+  }
+]

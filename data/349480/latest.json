@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "349480",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.4",
+    "kernel": "5.3.0-1-MANJARO",
+    "notes": "Tested with the ACO-Git mesa for AMD.\nGame runs but not flawlessly, however these issues do not get in the way of the gameplay its mostly issues with the menu's.\nI was getting a black screen on the startup of the game and needed to taskkill the game to get out of it. To remdy this use the -sw parameter to force the game in windowed mode. After you ran the game once this optional parameter can be removed. You should then be able to play the game in the fullscreen resolution native to your monitor, anything other than the native resolution in fullscreen mode gave me a black screen. The font in the menus is not completely rendered correctly, but ingame i experienced no issues. I also did not get any kicks from VAC which was a nice change.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566938808,
+    "title": "Modular Combat",
+    "source": "protondb"
+  }
+]

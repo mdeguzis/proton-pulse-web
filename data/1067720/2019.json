@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1067720",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "Tested with XBox contoller",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571066697,
+    "title": "Hellsinker.",
+    "source": "protondb"
+  },
+  {
+    "appId": "1067720",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.15.0-65-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571705773,
+    "title": "Hellsinker.",
+    "source": "protondb"
+  }
+]

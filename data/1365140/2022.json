@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1365140",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 11 (RAVEN, DRM 3.42.0, 5.15.15-76051515-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.15.15-76051515-generic",
+    "notes": "excluding the problem with intro videos the game does run fine",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "silver",
+    "timestamp": 1643913613,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3470170",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.3-arch2-1",
+    "notes": "external patches also work well when run with wine.",
+    "os": "Arch Linux(64\ube44\ud2b8)",
+    "protonVersion": "9.0-4",
+    "ram": "7699Mb",
+    "rating": "gold",
+    "timestamp": 1762011300,
+    "title": "Queens Casino",
+    "source": "protondb"
+  }
+]

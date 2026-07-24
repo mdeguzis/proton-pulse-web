@@ -1,0 +1,127 @@
+[
+  {
+    "appId": "400910",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Couple minor issues, mostly sound related. Main menu was quite laggy until disabling Esync. Otherwise seems to work fine. Noticed some initial hiccups but after 5 minutes in game I didn't encounter any problems anymore for the next hour+. Some areas have louder sound than others, not sure if that's a game or driver/setup issue. \nI used normal startup, no special options or anything. ",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555596724,
+    "title": "Rabi-Ribi",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "400910",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "notes": "Runs almost perfectly with disabled Esync. The only problem i noticed was little flickering for some textures.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1563911444,
+    "title": "Rabi-Ribi",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "400910",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "Intel HD 630 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2",
+    "kernel": "5.2.1-arch1-1-ARCH",
+    "notes": "Unexpected crashes (especially when switching to other window or desktop) in fullscreen mode, remember to save frequently.\nRare sprites flickering and glitching.\nBarring that, game runs perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1564009483,
+    "title": "Rabi-Ribi",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "400910",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 18.3.0-rc4",
+    "kernel": "4.18.20-gentoo",
+    "notes": "Did a 100% playthrough of the base game, and had no problems with it once Esync was disabled. Game wouldn't start up without it.",
+    "os": "Gentoo Linux 4.x",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Gold",
+    "timestamp": 1564616408,
+    "title": "Rabi-Ribi",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "400910",
+    "cpu": "Intel Celeron  N2806  @ 1.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.28-1-MANJARO",
+    "notes": "It seems to work fine, except that keyboard input is VERY broken and is unplayable",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1565397046,
+    "title": "Rabi-Ribi",
+    "source": "protondb"
+  },
+  {
+    "appId": "400910",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Runs great, no issues at all!",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1565551453,
+    "title": "Rabi-Ribi",
+    "source": "protondb"
+  },
+  {
+    "appId": "400910",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-58-generic",
+    "notes": "The game ran well out of the box.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567343969,
+    "title": "Rabi-Ribi",
+    "source": "protondb"
+  }
+]

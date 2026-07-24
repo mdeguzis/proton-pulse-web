@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "637880",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 21.1.7, DRM 3.64, 6.18.5-zen1)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.18.5-zen1",
+    "notes": "It only works with ancient proton versions.",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1769900692,
+    "title": "",
+    "source": "protondb"
+  }
+]

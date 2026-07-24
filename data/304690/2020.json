@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "304690",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.9.0-5-amd64",
+    "notes": "Works perfectly, just wait for all assets to load while in main menu (background thread loading is not supported)",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1609071834,
+    "title": "",
+    "source": "protondb"
+  }
+]

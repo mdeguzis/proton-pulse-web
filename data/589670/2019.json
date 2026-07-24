@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "589670",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.7-1-default",
+    "notes": "Runs into a couple ActionScript errors. The first one is \"ArgumentError: Error #3759: The selected texture format is not valid in this profile.\" The second is \"TypeError: Error #1009: Cannot access a property or method of a null object reference.\"",
+    "os": "OpenSUSE Tumbleweed",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560637320,
+    "title": "Double Kick Heroes",
+    "source": "protondb"
+  }
+]

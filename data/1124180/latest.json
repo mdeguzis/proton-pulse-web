@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1124180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "10/10 on PC, 7/10 on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1767296480,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1124180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "trying to play this is pianfull as the controlles are tarrible and buggy",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1769454323,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1124180",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5050",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.8-arch1-1",
+    "notes": "Game runs smoothly",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1774217413,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3894520",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "Runs perfect out of the box,\nGOTY candidate",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777673876,
+    "title": "",
+    "source": "protondb"
+  }
+]

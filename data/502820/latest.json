@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "502820",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.6-arch1-1-ARCH",
+    "notes": "A dialog with \"Fatal error!\" appears over a blank black window, then it crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1560495473,
+    "title": "Batman\u2122: Arkham VR",
+    "source": "protondb"
+  }
+]

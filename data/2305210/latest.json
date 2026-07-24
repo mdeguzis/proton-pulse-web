@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2305210",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Game crashes when ran natively, but once proton was set up it worked perfectly fine.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1770430355,
+    "title": "",
+    "source": "protondb"
+  }
+]

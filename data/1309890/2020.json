@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1309890",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.19.126-1-MANJARO",
+    "notes": "has a .net issue",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1603066478,
+    "title": "",
+    "source": "protondb"
+  }
+]

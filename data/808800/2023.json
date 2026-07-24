@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "808800",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 13.0.1, DRM 3.42, 5.15.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Injog\u00e1vel, testei no OpenSUSE Tumbleweed com o Kernel 6.0 tamb\u00e9m e obtive o mesmo resultado.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1673658500,
+    "title": "Star Singularity",
+    "source": "protondb"
+  }
+]

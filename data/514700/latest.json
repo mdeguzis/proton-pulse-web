@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "514700",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game launches a window, but its just a black window, no sounds, cant continue ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1545612134,
+    "title": "Mystery Case Files\u00ae: 13th Skull\u2122 Collector's Edition",
+    "source": "protondb"
+  }
+]

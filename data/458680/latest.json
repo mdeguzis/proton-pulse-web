@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "458680",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-arch1-1-ARCH",
+    "notes": "No connection to servers but playable single player..",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1552198517,
+    "title": "Auto Age: Standoff",
+    "source": "protondb"
+  },
+  {
+    "appId": "458680",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Single player runs fine, but seeing as how the game is all about playing online and you can't connect to servers to find a game I am not rating it higher than bronze.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1569477768,
+    "title": "Auto Age: Standoff",
+    "source": "protondb"
+  }
+]

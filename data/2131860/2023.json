@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2131860",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.6, DRM 3.49, 6.2.6-76060206-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Installed under GE-Proton8-9\nWill launch to menu but crashes to desktop at 90% progress after clicking \"Click to start\" under the following Proton Versions:\n\nGE-Proton8-9\nProton 8.0-3\nProton Experimental",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1691263428,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2131860",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.7, DRM 3.52, 6.3.13-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.4",
+    "kernel": "6.3.13-2-MANJARO",
+    "notes": "game crashes to desktop after loading bar reaches %90 tried x11 and wayland no difference.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1692118740,
+    "title": "",
+    "source": "protondb"
+  }
+]

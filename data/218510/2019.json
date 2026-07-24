@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "218510",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Everything OK, seems to run like native + 360 controller also works ootb.",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1557610365,
+    "title": "Planets Under Attack",
+    "source": "protondb"
+  }
+]

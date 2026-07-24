@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "956360",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.0.7-200.fc29.x86_64",
+    "notes": "Using WineD3D, because my hardware does not support Vulkan. Game starts in windowed mode for some reason (press alt-enter to switch to fullscreen). Seems to be working fine.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1556038095,
+    "title": "Badminton Warrior (\u7fbd\u6bdb\u7403\u52c7\u58eb \u4e2d\u56fd\u65b0\u5e74\u7248)",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "665370",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Works perfectly!",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1574706689,
+    "title": "",
+    "source": "protondb"
+  }
+]

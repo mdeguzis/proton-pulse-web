@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "759440",
+    "cpu": "Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "has to be ran with the index.html file found within /home/[username]/.steam/steam/steamapps/common/Learn Japanese To Survive! Kanji Combat/www/",
+    "os": "Linux Lite 4.0 (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15927 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537996891,
+    "title": "Learn Japanese To Survive! Kanji Combat",
+    "source": "protondb"
+  },
+  {
+    "appId": "759440",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1540934775,
+    "title": "Learn Japanese To Survive! Kanji Combat",
+    "source": "protondb"
+  },
+  {
+    "appId": "759440",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.18.15-1-default",
+    "notes": "Tried several different things and all worked well including full screen.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542868946,
+    "title": "Learn Japanese To Survive! Kanji Combat",
+    "source": "protondb"
+  }
+]

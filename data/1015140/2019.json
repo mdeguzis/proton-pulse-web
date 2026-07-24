@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1015140",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "5.3.12-1-MANJARO",
+    "notes": "Works wonderfully, used Proton 4.11-9 and it ran straight away, no further tweaks required.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575441220,
+    "title": "",
+    "source": "protondb"
+  }
+]

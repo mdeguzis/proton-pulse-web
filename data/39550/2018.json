@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "39550",
+    "title": "SpellForce 2 - Anniversary Edition",
+    "timestamp": 1535442588,
+    "rating": "Bronze",
+    "notes": "gliches, 14fps",
+    "os": "4.18.5-arch1-1-ARCH 64bit",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "39550",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "Starts normal, but when trying to start a campaign I can't get past loading screen (right after the intro sequence). A window opens in the background stating \"Access Violation\" error. ",
+    "os": "Linux 4.x (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16068 MB",
+    "rating": "Borked",
+    "timestamp": 1537956555,
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true
+    },
+    "title": "SpellForce 2 - Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "39550",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "loading into campain crashes the game with an access violation error but the freeplay works normaly except for slight shadow flickering",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541626794,
+    "title": "SpellForce 2 - Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "39550",
+    "title": "SpellForce 2 - Anniversary Edition",
+    "timestamp": 1535428188,
+    "rating": "Bronze",
+    "notes": "gliches, 14fps",
+    "os": "4.18.5-arch1-1-ARCH 64bit",
+    "gpuDriver": "flatpak 1.0.0, NVIDIA-dkms 396.54-2, mesa 18.1.7-1, xorg-server 1.20.1-1",
+    "specs": "i5-6600 / gtx 1060 3gb",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

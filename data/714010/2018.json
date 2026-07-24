@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "714010",
+    "title": "Aim Lab",
+    "timestamp": 1535129877,
+    "rating": "Platinum",
+    "notes": "All good",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-4170 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "714010",
+    "cpu": "i5-6600K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "notes": "80+ fps in 4k. No issues.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "rating": "Platinum",
+    "timestamp": "1536451200",
+    "title": "Aim Lab",
+    "source": "protondb"
+  },
+  {
+    "appId": "714010",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-3-MANJARO",
+    "notes": "Got this error, game doesn't launch.\n\nFatal error in gc: GetThreadContext failed",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543988276,
+    "title": "Aim Lab",
+    "source": "protondb"
+  },
+  {
+    "appId": "714010",
+    "title": "Aim Lab",
+    "timestamp": 1535115477,
+    "rating": "Platinum",
+    "notes": "All good",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-4170 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

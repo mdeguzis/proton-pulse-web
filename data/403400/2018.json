@@ -1,0 +1,107 @@
+[
+  {
+    "appId": "403400",
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "timestamp": 1535702316,
+    "rating": "Platinum",
+    "notes": "Worked as expected",
+    "os": "Ubuntu Mate 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-4670 / GTX 98ti (rev a1)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403400",
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "timestamp": 1536076674,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403400",
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "timestamp": 1536557661,
+    "rating": "Platinum",
+    "notes": "Working Perfect",
+    "os": "Arch Linux LTS",
+    "gpuDriver": "NVIDIA GeForce GTX 960 4GB",
+    "specs": "Intel i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403400",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537291071,
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "source": "protondb"
+  },
+  {
+    "appId": "403400",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD BONAIRE",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-43-generic",
+    "notes": "For me, it didn't launch until I set \"PROTON_USE_WINED3D11=1 %command%\" in launch options.  After that, it works fine with a very very minor glitch where the window loses focus when going fullscreen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1546126038,
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "403400",
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "timestamp": 1535687916,
+    "rating": "Platinum",
+    "notes": "Worked as expected",
+    "os": "Ubuntu Mate 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i5-4670 / GTX 98ti (rev a1)",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403400",
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "timestamp": 1536062274,
+    "rating": "Platinum",
+    "notes": "Works perfectly.",
+    "os": "Antergos (Kernel 4.18)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "403400",
+    "title": "ARCADE GAME SERIES: DIG DUG",
+    "timestamp": 1536543261,
+    "rating": "Platinum",
+    "notes": "Working Perfect",
+    "os": "Arch Linux LTS",
+    "gpuDriver": "NVIDIA GeForce GTX 960 4GB",
+    "specs": "Intel i7 920",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

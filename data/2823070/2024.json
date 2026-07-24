@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2823070",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "6.5.4-76060504-generic",
+    "notes": "Was designed around Linux",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1709024664,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2823070",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Fun game that works natively but has bugs specific to the game rather than operating system",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1729925476,
+    "title": "",
+    "source": "protondb"
+  }
+]

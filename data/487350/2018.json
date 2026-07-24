@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "487350",
+    "title": "Pirate Pop Plus",
+    "timestamp": 1535911916,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Arch Linux 4.18.3-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / GTX 1060 3gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "487350",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Neither keyboard nor xbox 360 gamepad work, loading screen and sound were working",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541342325,
+    "title": "Pirate Pop Plus",
+    "source": "protondb"
+  },
+  {
+    "appId": "487350",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Keyboard and xbox 360 gamepad work; sound was disabled by default but works; great improvement since my last test",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544571935,
+    "title": "Pirate Pop Plus",
+    "source": "protondb"
+  },
+  {
+    "appId": "487350",
+    "title": "Pirate Pop Plus",
+    "timestamp": 1535897516,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Arch Linux 4.18.3-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-7700HQ / GTX 1060 3gb",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

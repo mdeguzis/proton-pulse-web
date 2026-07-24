@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "334470",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "The fonts are messed up, with overlapping letters and strange spaces which shouldn't be there, but it generally works",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1554768624,
+    "title": "Adventures of Robinson Crusoe",
+    "source": "protondb"
+  }
+]

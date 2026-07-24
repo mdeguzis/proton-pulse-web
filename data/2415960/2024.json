@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2415960",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.6, DRM 3.54, 6.5.9-201.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.9-201.fsync.fc38.x86_64",
+    "notes": "Game pretty much works, with or without compatibility. Extensive testing is needed for further performance.",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1713968458,
+    "title": "",
+    "source": "protondb"
+  }
+]

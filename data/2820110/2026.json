@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2820110",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 20.1.2, DRM 3.61, 6.14.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-36-generic",
+    "notes": "aside the minor graphical glitch, pretty good",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1773130236,
+    "title": "",
+    "source": "protondb"
+  }
+]

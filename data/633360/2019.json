@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "633360",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.15-1-MANJARO",
+    "notes": "The new proton version seems to have fixed the aforementioned audio bugs. Runs well aside from shader caching.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559489535,
+    "title": "Remothered: Tormented Fathers",
+    "source": "protondb"
+  },
+  {
+    "appId": "633360",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.4-050304-lowlatency",
+    "notes": "Out of the box the cut-scenes are skipped, but otherwise game is playable. Installing Media Foundation fixes the cut-scenes, though there is still some audio crackling. Launch option \"PROTON_NO_ESYNC=1 %command%\" fixed the audio. Rating this game only Silver though (even though it fixable to be perfect), because installing MF is beyond a simple tweak.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-6",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1570372745,
+    "title": "Remothered: Tormented Fathers",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

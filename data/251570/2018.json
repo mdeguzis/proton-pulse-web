@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "251570",
+    "title": "7 Day to Die",
+    "timestamp": 1535744527,
+    "rating": "Gold",
+    "notes": "Everything worked out of the box. ",
+    "os": "Arch Linux 64-Bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "  AMD Ryzen 7 1800X / RX Vega 64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251570",
+    "title": "7 Days to Die",
+    "timestamp": 1535392482,
+    "rating": "Platinum",
+    "notes": "Max settings 4K - Performance arguably better than windows",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770 CPU / GeForce GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251570",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-39-generic",
+    "notes": "For Alpha 17 - In game runs fine, Navezgane loads normally. Can only run in 32-Bit, 64-Bit crashes right at loading screen. Cannot randomly generate maps at all, gets about 75% through then stops with OutOfMemory exception.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543469363,
+    "title": "7 Days to Die",
+    "source": "protondb"
+  },
+  {
+    "appId": "251570",
+    "title": "7 Day to Die",
+    "timestamp": 1535730127,
+    "rating": "Gold",
+    "notes": "Everything worked out of the box. ",
+    "os": "Arch Linux 64-Bit (Kernel 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "  AMD Ryzen 7 1800X / RX Vega 64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "251570",
+    "title": "7 Days to Die",
+    "timestamp": 1535378082,
+    "rating": "Platinum",
+    "notes": "Max settings 4K - Performance arguably better than windows",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-3770 CPU / GeForce GTX 1060 6GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

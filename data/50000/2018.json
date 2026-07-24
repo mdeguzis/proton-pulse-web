@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "50000",
+    "title": "Nimbus",
+    "timestamp": 1536176176,
+    "rating": "Platinum",
+    "notes": "Controller wasn't picked including with Big Picture Mode",
+    "os": "Arch Linux 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "50000",
+    "cpu": "AMD FX(tm)-8350 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) R9 380 Series (TONGA, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works perfectly fine",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "11974 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536677730,
+    "title": "Nimbus",
+    "source": "protondb"
+  },
+  {
+    "appId": "50000",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542450196,
+    "title": "Nimbus",
+    "source": "protondb"
+  },
+  {
+    "appId": "50000",
+    "title": "Nimbus",
+    "timestamp": 1536161776,
+    "rating": "Platinum",
+    "notes": "Controller wasn't picked including with Big Picture Mode",
+    "os": "Arch Linux 4.18.5-arch1-1-ARCH",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4670K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

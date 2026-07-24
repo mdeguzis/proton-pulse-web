@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "335190",
+    "title": "200% Mixed Juice!",
+    "timestamp": 1534824000,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Elementary OS 0.4.1 Loki ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-6100 / GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "335190",
+    "cpu": "Intel Core i7-6770HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Iris Pro 580 (Skylake GT4e)",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541984943,
+    "title": "200% Mixed Juice!",
+    "source": "protondb"
+  },
+  {
+    "appId": "335190",
+    "cpu": "Intel Core i7-3740QM @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Quadro K1000M",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.2-zen1-1-zen",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542865670,
+    "title": "200% Mixed Juice!",
+    "source": "protondb"
+  },
+  {
+    "appId": "335190",
+    "title": "200% Mixed Juice!",
+    "timestamp": 1534809600,
+    "rating": "Platinum",
+    "notes": "No noticeable issues",
+    "os": "Elementary OS 0.4.1 Loki ",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "FX-6100 / GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

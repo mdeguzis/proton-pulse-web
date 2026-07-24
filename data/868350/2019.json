@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "868350",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.15.0-44-generic",
+    "notes": "While the game *runs* perfectly fine on the Linux/SteamOS platforms, the game itself has an unsolved gameplay bug, which makes playing impossible. Has nothing to do with the Linux/SteamOS Proton/WINE version. The developers abandoned the game, while they are still selling it on Steam. See Steam forum.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1548531414,
+    "title": "Ancient Warlords: Aequilibrium",
+    "source": "protondb"
+  },
+  {
+    "appId": "868350",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-20-generic",
+    "notes": "Game starts and runs. No proton issues",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564690265,
+    "title": "Ancient Warlords: Aequilibrium",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "44360",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.19.0-3-amd64",
+    "notes": "Works perfectly and performance is just like on Windows. However to get the game running you have to remove the GFWL folder from the game's root directory and extract the files from this archive (https://community.pcgamingwiki.com/files/file/576-bulletstorm-xlivedll/) into the game's root directory before launching the game for the first time.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551105862,
+    "title": "F1 2011",
+    "source": "protondb"
+  },
+  {
+    "appId": "44360",
+    "cpu": "AMD A8-4555M APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "You need to delete GFWL folder from the game and patch XLIVE (https://community.pcgamingwiki.com/files/file/576-bulletstorm-xlivedll/) with this. Just drop it to root directory. I also needed to use Wine D3D11 (PROTON_USE_WINED3D11=1 %command%) as the game crashed just after splash without it. ",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1565525378,
+    "title": "F1 2011",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "44360",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "Runs perfectly with performance equal to or better than Windows and does not require any runtime config options. However, before launching the game for the first time, you have to remove the GFWL folder from the game's root directory and extract the files from this archive (https://community.pcgamingwiki.com/files/file/576-bulletstorm-xlivedll/) into the game's root directory.",
+    "os": "Arch Linux",
+    "protonVersion": "4-15-GE-2",
+    "protonVersionManual": "4-15-GE-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567882107,
+    "title": "F1 2011",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "689090",
+    "cpu": "AMD Athlon(tm) X4 870K Quad Core Processor",
+    "gpu": "X.Org AMD PITCAIRN (DRM 2.50.0 / 4.15.0-20-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Crashes on startup",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7991 Mb",
+    "rating": "Borked",
+    "timestamp": 1537757311,
+    "title": "Microtransaction Simulator",
+    "source": "protondb"
+  }
+]

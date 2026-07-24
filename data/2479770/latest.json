@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2479770",
+    "cpu": "11th Gen Intel Core i5-11320H @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "Nvidia RTX 3050 Laptop GPU",
+    "gpuDriver": "4.6 Mesa 25.2.2-arch1.1",
+    "kernel": "6.16.4-106.bazzite.fc42.x86_64",
+    "notes": "Demo: Intro music plays, 0 fps",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1757173884,
+    "title": "Troublemaker 2: Beyond Dream",
+    "source": "protondb"
+  },
+  {
+    "appId": "2479770",
+    "cpu": "AMD Ryzen 7 5800HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.8-arch1-1",
+    "notes": "This game was running, even i need to expect low fps due to the game using UE4, slightly heavy on a potato",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1764286386,
+    "title": "Troublemaker 2: Beyond Dream",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "525680",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-31-generic",
+    "notes": "At first I couldn't get it to work. It kept freezing on startup. I restarted the computer and then used PROTON_USE_WINED3D=1 %command% as a launch parameter. It almost worked after that. It would output to the monitor but not the VR goggles. I then removed that launch parameter and it magically started working after that. It actually even runs better now than on Windows. On Windows, I couldn't get the rotate view controls to work but on here, that actually works.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "129 GB",
+    "rating": "Gold",
+    "timestamp": 1571622030,
+    "title": "Deisim",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "428880",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-generic",
+    "notes": "I noticed the sound was a bit low even though the Audio setting in game was at maximum.  Just adjusted system volume and it was perfect.  ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1548261615,
+    "title": "The Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "428880",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.12-arch1-1-ARCH",
+    "notes": "Game runs perfectly out of the box. No anomalies whatsoever.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551525692,
+    "title": "The Quest",
+    "source": "protondb"
+  },
+  {
+    "appId": "428880",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "os": "SteamOS 2.0",
+    "protonVersion": "4.2-7",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561386839,
+    "title": "The Quest",
+    "source": "protondb"
+  }
+]

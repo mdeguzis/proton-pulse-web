@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3385670",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.17.15-76051715-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771058493,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3385670",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.8-arch1-1",
+    "notes": "Switch to Proton Experimental",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1771408181,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3385670",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.6, DRM 3.64, 6.18.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.1",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "At least on radeon hardware the chances are high that the native version will crash your system quite regularly.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1773005659,
+    "title": "",
+    "source": "protondb"
+  }
+]

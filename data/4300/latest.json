@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4300",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.24.10",
+    "kernel": "4.13.0-46-generic",
+    "notes": "After first launching and prompted to install physx, the game is playable minus controller support.",
+    "os": "Ubuntu 17.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547135355,
+    "title": "RoboBlitz",
+    "source": "protondb"
+  }
+]

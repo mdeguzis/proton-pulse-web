@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1012030",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.3.18-lp152.50-default",
+    "notes": "Runs out of box with minor audio popping/crackle",
+    "os": "openSUSE Leap 15.2",
+    "protonVersion": "5.13-2",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1605494164,
+    "title": "",
+    "source": "protondb"
+  }
+]

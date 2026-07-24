@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "927810",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.1",
+    "kernel": "4.19.12-zen1-1-zen",
+    "notes": "You can also use WineD3D11, but with some flickering.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1545657342,
+    "title": "Squares Puzzle",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

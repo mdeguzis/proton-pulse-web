@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "212630",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "UPlay doesn't load.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15923 Mb",
+    "rating": "Borked",
+    "timestamp": 1538055656,
+    "title": "Tom Clancy's Ghost Recon: Future Soldier\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "212630",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Uplay cannot connect to Internet",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "6 GB",
+    "rating": "Borked",
+    "timestamp": 1543485156,
+    "title": "Tom Clancy's Ghost Recon: Future Soldier\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "212630",
+    "cpu": "Intel Core i5-3570K",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7970",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Uplay cannot connect to Internet, even after linking gnutls.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1544533297,
+    "title": "Tom Clancy's Ghost Recon: Future Soldier\u2122",
+    "source": "protondb"
+  }
+]

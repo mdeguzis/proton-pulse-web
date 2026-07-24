@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "242980",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "If you can somehow ignore the fact that you are playing Daikatana it is a flawless experience.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1546543336,
+    "title": "Daikatana",
+    "source": "protondb"
+  },
+  {
+    "appId": "242980",
+    "cpu": "AMD Turion II P520 Dual-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD REDWOOD",
+    "gpuDriver": "3.1 Mesa 19.0.2",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Everything works out of the box. But i recommend getting the 1.3 Community patch. With that you even get a native version!",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Platinum",
+    "timestamp": 1561821125,
+    "title": "Daikatana",
+    "source": "protondb"
+  },
+  {
+    "appId": "242980",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Game is running great out of the box!",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561908935,
+    "title": "Daikatana",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1740230",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.57, 6.8.0-76060800daily20240311-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.0-1pop0~1706872735~22.04~0fa430c",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "A quirky game similar inspired by Undertale with a unique \"battle\" system for monsters.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "None detected",
+    "rating": "platinum",
+    "timestamp": 1713592644,
+    "title": "",
+    "source": "protondb"
+  }
+]

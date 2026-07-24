@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "457680",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-16-generic",
+    "notes": "No tweaks, run out of the box. Great performance.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1559941106,
+    "title": "OPUS: The Day We Found Earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "457680",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Worked perfectly with no tweaks needed.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561912368,
+    "title": "OPUS: The Day We Found Earth",
+    "source": "protondb"
+  }
+]

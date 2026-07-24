@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "822240",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.19.7-300.fc29.x86_64",
+    "notes": "Seems to work perfectly after using Wine D3D11, not sure if performance is optimal, but this could be a side effect of the game being a ported mobile game",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1544795983,
+    "title": "Animal Jam - Play Wild!",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

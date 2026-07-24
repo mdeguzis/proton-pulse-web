@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "298240",
+    "cpu": "Intel Core i3-3217U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-23-generic",
+    "notes": "There is also a native version on rocketeer games' website that works fine",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "11 GB",
+    "rating": "Borked",
+    "timestamp": 1565798366,
+    "title": "Red Crucible\u00ae: Firestorm",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

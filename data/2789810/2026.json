@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2789810",
+    "cpu": "Intel Core i9-14900KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "Game works fine natively, no need for proton",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770260187,
+    "title": "",
+    "source": "protondb"
+  }
+]

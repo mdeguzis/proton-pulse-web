@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "8330",
+    "title": "Telltale Texas Hold'Em",
+    "timestamp": 1535660285,
+    "rating": "Platinum",
+    "notes": "Absolutely perfect.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "8330",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon (TM) R9 380 Series",
+    "gpuDriver": "4.5.13529 Compatibility Profile Context",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Works well but in 4:3 by default. Minor configuration would probably fix.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15999 Mb",
+    "rating": "Gold",
+    "timestamp": 1540192682,
+    "title": "Telltale Texas Hold \u2018Em",
+    "source": "protondb"
+  },
+  {
+    "appId": "8330",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540434571,
+    "title": "Telltale Texas Hold \u2018Em",
+    "source": "protondb"
+  },
+  {
+    "appId": "8330",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.18.0-13-generic",
+    "notes": "No issues to report. Works perfectly out of the box.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544450981,
+    "title": "Telltale Texas Hold \u2018Em",
+    "source": "protondb"
+  },
+  {
+    "appId": "8330",
+    "title": "Telltale Texas Hold'Em",
+    "timestamp": 1535645885,
+    "rating": "Platinum",
+    "notes": "Absolutely perfect.",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-6500 / 1060 6gb",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

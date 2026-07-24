@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1142500",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-62-generic",
+    "notes": "On launch you get presented a black screen with a custom cursor and background music.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1568816089,
+    "title": "Fun with Ragdolls: The Game",
+    "source": "protondb"
+  }
+]

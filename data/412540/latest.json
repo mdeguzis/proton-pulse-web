@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "412540",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Controller doesn't work, but otherwise runs perfectly.",
+    "os": "Unknown",
+    "protonVersion": "4.11-1",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1566008937,
+    "title": "The Minotaur",
+    "source": "protondb"
+  },
+  {
+    "appId": "412540",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 19.1.4",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Works fine but in the menu it tells you to press the A button even though you don't have a controller plugged in. Just press enter and you will be able to continue. Full screen on KDE Plasma works, but you have to complete first the tutorial and go to the option menu, enable it and restart the game.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566031365,
+    "title": "The Minotaur",
+    "source": "protondb"
+  }
+]

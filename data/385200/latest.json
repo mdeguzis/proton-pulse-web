@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "385200",
+    "title": "Absconding Zatwor",
+    "timestamp": 1535971171,
+    "rating": "Platinum",
+    "notes": "no problems",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "385200",
+    "title": "Absconding Zatwor",
+    "timestamp": 1535369024,
+    "rating": "Platinum",
+    "notes": "Everything appears to be working properly",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "385200",
+    "title": "Absconding Zatwor",
+    "timestamp": 1535956771,
+    "rating": "Platinum",
+    "notes": "no problems",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 770",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "385200",
+    "title": "Absconding Zatwor",
+    "timestamp": 1535354624,
+    "rating": "Platinum",
+    "notes": "Everything appears to be working properly",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

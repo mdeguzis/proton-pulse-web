@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "858050",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "gpu": "GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-33-generic",
+    "notes": "There's a Linux version on itch.io, but it's not playable natively on Steam.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536567351,
+    "title": "The Rose of Segunda",
+    "source": "protondb"
+  }
+]

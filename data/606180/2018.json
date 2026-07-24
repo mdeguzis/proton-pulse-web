@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "606180",
+    "title": "Vive Video",
+    "timestamp": 1535210118,
+    "rating": "Borked",
+    "notes": "just dont start",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "606180",
+    "title": "Vive Video",
+    "timestamp": 1535213417,
+    "rating": "Gold",
+    "notes": "Works after restart of Steam ",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "606180",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.14.65-gentoo",
+    "notes": "Didn't test much.  Played two videos.  No tweaks.  No flaws found.  More testing needed.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1544196834,
+    "title": "Vive Video",
+    "source": "protondb"
+  },
+  {
+    "appId": "606180",
+    "title": "Vive Video",
+    "timestamp": 1535195718,
+    "rating": "Borked",
+    "notes": "just dont start",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "606180",
+    "title": "Vive Video",
+    "timestamp": 1535199017,
+    "rating": "Gold",
+    "notes": "Works after restart of Steam ",
+    "os": "Arch (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "518060",
+    "cpu": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.9.131-110.lts",
+    "notes": "The game needs to use xaudio2_7 (using winecfg) in order to fix the crackling sound. The gameplay works fine with a good performance. It has an error message after closing the game that doesn't affect the game experience.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta (3.16-1)",
+    "ram": "16047 Mb",
+    "rating": "Gold",
+    "timestamp": 1539590462,
+    "title": "Chess Ultra",
+    "source": "protondb"
+  }
+]

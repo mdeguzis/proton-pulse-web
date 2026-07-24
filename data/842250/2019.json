@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "842250",
+    "cpu": "Intel Core i7-3667U @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "VMware, Inc. llvmpipe (LLVM 7.0, 256 bits)",
+    "gpuDriver": "3.1 Mesa 18.3.4",
+    "kernel": "4.19.27_1",
+    "notes": "Didn't test much yet, but seems to load up into the menu and world editor fine.",
+    "os": "Void Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1555223577,
+    "title": "GM Forge - Virtual Tabletop",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

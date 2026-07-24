@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "242680",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.14-1-MANJARO",
+    "notes": "Everything runs very well, the native version appears to be broken. At least it was for me on both kubuntu 18.04 and now Manjaro",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547839280,
+    "title": "Nuclear Throne",
+    "source": "protondb"
+  },
+  {
+    "appId": "242680",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Native client doesn't work for me (Arch Linux), forcing proton works.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1548263636,
+    "title": "Nuclear Throne",
+    "source": "protondb"
+  },
+  {
+    "appId": "242680",
+    "cpu": "Intel Xeon           X5355  @ 2.66GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-18-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1557797695,
+    "title": "Nuclear Throne",
+    "source": "protondb"
+  }
+]

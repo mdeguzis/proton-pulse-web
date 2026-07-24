@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1926690",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-14-amd64",
+    "notes": "Had to manually launch with included shell script, then game ran in native linux runtime.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1656031770,
+    "title": "This Time - Part One",
+    "source": "protondb"
+  }
+]

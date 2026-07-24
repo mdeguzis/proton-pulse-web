@@ -1,0 +1,88 @@
+[
+  {
+    "appId": "856880",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.2.2",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Game crashes with an error as soon as I click on \"PLAY\".",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1551162765,
+    "title": "Fighting Fantasy Classics",
+    "source": "protondb"
+  },
+  {
+    "appId": "856880",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-15-generic",
+    "notes": "At the time of this report the  game works *only* with Proton 3.7-8 (other versions like 3.16-7 => crash)\nNo other launch flag needed.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1551341896,
+    "title": "Fighting Fantasy Classics",
+    "source": "protondb"
+  },
+  {
+    "appId": "856880",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "The game was crashing with an error as soon as I clicked on \"PLAY\", but worked after I set the following launch options: \"PROTON_USE_WINED3D=1 %command%\".",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1551454548,
+    "title": "Fighting Fantasy Classics",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "856880",
+    "cpu": "Intel Celeron  N2830  @ 2.16GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Bay Trail",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.18.0-11-generic",
+    "notes": "Zero Issues. It works perfectly!!!",
+    "os": "Ubuntu Disco Dingo (development branch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1552255502,
+    "title": "Fighting Fantasy Classics",
+    "source": "protondb"
+  },
+  {
+    "appId": "856880",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD PITCAIRN",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "4.15.0-58-generic",
+    "notes": "Initial attempts had the game \"start\" and Steam saying the game was running, but no window ever opened. I let it sit \"running\" for at least 15 minutes the first time, but it never quit on its own. Had to kill the processes:\n\n    kill -9 $(ps aux | grep -i \"[f]ighting\" | awk '{ print $2 }')\n\nI tried some other things first based on comments here and elsewhere with no luck, at least not until I got to the earliest two reviews here. Nuked all of the other changes I tried and then disabled D3D11. Started straight up after that and everything seems to be working fine.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1567473505,
+    "title": "Fighting Fantasy Classics",
+    "tweaks": {
+      "disableD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1220010",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.10.84-1-MANJARO",
+    "notes": "Does not start",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1641141854,
+    "title": "Home Behind 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1220010",
+    "cpu": "Intel Xeon           X5650  @ 2.67GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-43-generic",
+    "notes": "Game does not run",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1641325262,
+    "title": "Home Behind 2",
+    "source": "protondb"
+  }
+]

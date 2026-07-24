@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1432910",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Pro W5500 (navi14, LLVM 17.0.1, DRM 3.54, 6.5.4-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.0-rc4",
+    "kernel": "6.5.4-1-default",
+    "notes": "It works out of the box with Lutris-GE-Proton-8-8",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1696643392,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1432910",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5",
+    "notes": "",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1696761578,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1432910",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly on Steam Deck without modifications.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1698955739,
+    "title": "",
+    "source": "protondb"
+  }
+]

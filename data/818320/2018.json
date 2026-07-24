@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "818320",
+    "title": "LEGO The Incredibles",
+    "timestamp": 1535909314,
+    "rating": "Borked",
+    "notes": "Generally the game runs smoothly. Sound issues as in background music only (sound effect stop functioning fairly often). The minimap has graphic glitches (red tearing) but there is a game breaking bug when you are jackjack vs racoon. \n\nFight for a period and then when you are bashing X then B and kick the racoon into the pool the screen just holds on a poolside view... its not frozen as such as steam can be seen BUT no way past this \n\nhttps://steamuserimages-a.akamaihd.net/ugc/966474320530706991/52AF2865C2CE33F9253D216B88FB55C2A6B46825/?interpolation=lanczos-none&output-format=jpeg&output-quality=95&fit=inside%7C1024%3A576&composite-to=*,*%7C1024%3A576&background-color=black",
+    "os": "Gentoo  64-bit (kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "818320",
+    "title": "LEGO\u00ae The Incredibles",
+    "timestamp": 1534971896,
+    "rating": "Silver",
+    "notes": "Sound effects won't work but game runs fine with everything else",
+    "os": "Ubuntu 18.04 4.18",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "ryzen 1600/ rx 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "818320",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.8-gentoo",
+    "notes": "Previously the game had poor sound and would glitch at JackJack. Update of Nvidia drivers and more importantly Proton ( 3.16-5) has made this extremely playable ",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545413868,
+    "title": "LEGO\u00ae The Incredibles",
+    "source": "protondb"
+  },
+  {
+    "appId": "818320",
+    "title": "LEGO The Incredibles",
+    "timestamp": 1535894914,
+    "rating": "Borked",
+    "notes": "Generally the game runs smoothly. Sound issues as in background music only (sound effect stop functioning fairly often). The minimap has graphic glitches (red tearing) but there is a game breaking bug when you are jackjack vs racoon. \n\nFight for a period and then when you are bashing X then B and kick the racoon into the pool the screen just holds on a poolside view... its not frozen as such as steam can be seen BUT no way past this \n\nhttps://steamuserimages-a.akamaihd.net/ugc/966474320530706991/52AF2865C2CE33F9253D216B88FB55C2A6B46825/?interpolation=lanczos-none&output-format=jpeg&output-quality=95&fit=inside%7C1024%3A576&composite-to=*,*%7C1024%3A576&background-color=black",
+    "os": "Gentoo  64-bit (kernel 4.18.1)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "818320",
+    "title": "LEGO\u00ae The Incredibles",
+    "timestamp": 1534957496,
+    "rating": "Silver",
+    "notes": "Sound effects won't work but game runs fine with everything else",
+    "os": "Ubuntu 18.04 4.18",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "ryzen 1600/ rx 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

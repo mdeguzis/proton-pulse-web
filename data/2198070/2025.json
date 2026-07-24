@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2198070",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.8.0-48-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-48-generic",
+    "notes": "The grass flickering makes the game look awful. Its such a pretty game, but not with the flickering.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1742616434,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2198070",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce MX350",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Graphics issues are causing eye strain.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1749570284,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2198070",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.3-arch1-1",
+    "notes": "Main issue is the graphical bugs, makes it unplayable for a PC Linux gamer.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1751253989,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3265230",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.7-200.nobara.fc43.x86_64",
+    "notes": "Voice chat does not work. Spells are recognized, but other players cannot hear me.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1770009622,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3265230",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.6-2-cachyos",
+    "notes": "Game runs fine, in-game voice chat does NOT work",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1770323254,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3265230",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Part of the game is to use proximity chat. Other game modes like the traitor game mode make it hard as you have to use discord to talk them.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1773081795,
+    "title": "",
+    "source": "protondb"
+  }
+]

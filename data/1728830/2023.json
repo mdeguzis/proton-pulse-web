@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1728830",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.8-arch1-1",
+    "notes": "Tested via the Demo\n\nIt is a Unity game, it could be \"made\" to run on linux",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1675398784,
+    "title": "",
+    "source": "protondb"
+  }
+]

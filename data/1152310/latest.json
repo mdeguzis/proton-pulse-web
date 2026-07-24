@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1152310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1742249083,
+    "title": "Atelier Escha & Logy: Alchemists of the Dusk Sky DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "1152310",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-57-generic",
+    "notes": "The overall experience is fine, but if some videos don't play, you won't get the full context of the story.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1744603253,
+    "title": "Atelier Escha & Logy: Alchemists of the Dusk Sky DX",
+    "source": "protondb"
+  },
+  {
+    "appId": "1152310",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-57-generic",
+    "notes": "Using the atelier-fix patch is going to help you a lot if there is any performance issue.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1744628766,
+    "title": "Atelier Escha & Logy: Alchemists of the Dusk Sky DX",
+    "source": "protondb"
+  }
+]

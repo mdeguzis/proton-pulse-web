@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "259340",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.3-arch1-2",
+    "notes": "its chicken shoot so i didnt try anything but it just gives a black screen and sometimes makes the mouse unuseable on gnome 45.3",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1707243506,
+    "title": "",
+    "source": "protondb"
+  }
+]

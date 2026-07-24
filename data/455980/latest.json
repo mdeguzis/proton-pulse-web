@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "455980",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Cut scenes just give you a black screen but I could use ESC to skip past them. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1563554005,
+    "title": "Judgment: Apocalypse Survival Simulation",
+    "source": "protondb"
+  },
+  {
+    "appId": "455980",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Runs perfectly. Combat and base building works perfectly. Traversing the map also work fine. Slight kink when changing zones, you must press ESC when prompted with a black screen. This will begin the loading of the next zone. ",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1566756182,
+    "title": "Judgment: Apocalypse Survival Simulation",
+    "source": "protondb"
+  },
+  {
+    "appId": "455980",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Only cut scenes don't wont. ESC to skip. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1569148297,
+    "title": "Judgment: Apocalypse Survival Simulation",
+    "source": "protondb"
+  }
+]

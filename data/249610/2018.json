@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "249610",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10 / DRM 3.25.0 / 4.17.2-041702-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.17.2-041702-generic",
+    "notes": "Does not launch at all",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32161 Mb",
+    "rating": "Borked",
+    "timestamp": 1537645615,
+    "title": "Galactic Arms Race",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "23530",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.23.0, 4.15.0-33-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Like native performance, both Xbox One controller and kb+m works.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "3.7-5 Beta",
+    "ram": "15963 Mb",
+    "rating": "Platinum",
+    "timestamp": "1536295500",
+    "title": "Earth Defense Force: Insect Armageddon",
+    "source": "protondb"
+  }
+]

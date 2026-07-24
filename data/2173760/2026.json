@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2173760",
+    "cpu": "AMD Ryzen 9 9900X3D 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.3",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1776432044,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "263380",
+    "title": "Driftmoon",
+    "timestamp": 1535383406,
+    "rating": "Silver",
+    "notes": "Slowdowns in menus and main game, otherwise seems fine",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "263380",
+    "title": "Driftmoon",
+    "timestamp": 1535417698,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "263380",
+    "title": "Driftmoon",
+    "timestamp": 1535369006,
+    "rating": "Silver",
+    "notes": "Slowdowns in menus and main game, otherwise seems fine",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "263380",
+    "title": "Driftmoon",
+    "timestamp": 1535403298,
+    "rating": "Platinum",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 6600k / RX 470",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

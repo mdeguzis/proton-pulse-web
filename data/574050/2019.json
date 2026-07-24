@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "574050",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.11-gentoo",
+    "notes": " First you must launch the Configuration tool and choose the option of scenes to off and then the game is released correctly but without the intro ",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557091587,
+    "title": "DRAGON QUEST HEROES\u2122 II",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "385560",
+    "title": "Shadow Complex Remastered",
+    "timestamp": 1535058118,
+    "rating": "Silver",
+    "notes": "Can't get it to run fullscreen, windowed mode only",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E31230 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "385560",
+    "title": "Shadow Complex Remastered",
+    "timestamp": 1535121018,
+    "rating": "Silver",
+    "notes": "virtual desktop used - csmt off - dx9 mode tested",
+    "os": "Xubuntu 18.04 x64",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "Core i3 8350K Tri-Core 5.0ghz - Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "385560",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Launch with -windowed and switch to DX11, then activate native fullscreen. In DX9 mode it doesn't work in native fullscreen at all, also there are textures missing. DX11 seems to work great. Tries to install .net framework on every launch.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541269068,
+    "title": "Shadow Complex Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "385560",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-12-generic",
+    "notes": "I does go full screen and I cant figure out how to change the resolution.  I do not know how to try those  three options of using wine d3d11 or Disabling Esync or D3d11",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1545014634,
+    "title": "Shadow Complex Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "385560",
+    "title": "Shadow Complex Remastered",
+    "timestamp": 1535043718,
+    "rating": "Silver",
+    "notes": "Can't get it to run fullscreen, windowed mode only",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel Xeon E31230 / GTX 1050Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "385560",
+    "title": "Shadow Complex Remastered",
+    "timestamp": 1535106618,
+    "rating": "Silver",
+    "notes": "virtual desktop used - csmt off - dx9 mode tested",
+    "os": "Xubuntu 18.04 x64",
+    "gpuDriver": "NVIDIA 396.51.02",
+    "specs": "Core i3 8350K Tri-Core 5.0ghz - Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

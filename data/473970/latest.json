@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "473970",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "works like on windows",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1754840022,
+    "title": "",
+    "source": "protondb"
+  }
+]

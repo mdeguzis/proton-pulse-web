@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "6830",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.0-devel (git-828ec41 2019-04-20 disco-oibaf-ppa)",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Under 4.2.3 the game keys do not function properly ie, the keys do not what they are mapped to do. This makes the game unplayable",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555839828,
+    "title": "Commandos 2: Men of Courage",
+    "source": "protondb"
+  },
+  {
+    "appId": "6830",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.36-1-MANJARO",
+    "notes": "Unable to play in multiplayer mode using hamachi",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1557511611,
+    "title": "Commandos 2: Men of Courage",
+    "source": "protondb"
+  },
+  {
+    "appId": "6830",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.17",
+    "notes": "Working out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558567655,
+    "title": "Commandos 2: Men of Courage",
+    "source": "protondb"
+  }
+]

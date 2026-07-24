@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "330390",
+    "title": "Grandia II Anniversary Edition",
+    "timestamp": 1535260177,
+    "rating": "Silver",
+    "notes": "Couldn't get the game to run in fullscreen, but windowed mode worked without any hiccups. Couldn't get game configuration tool to run, either.",
+    "os": "Arch Linut (Kernel 4.18.5-arch1)",
+    "gpuDriver": "Mesa 18.1.7-1",
+    "specs": "Radeon RX Vega M GL",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "330390",
+    "cpu": "i7-6700HQ CPU @ 2.60GHz",
+    "gpu": "GeForce GTX 950M/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Config tool doesn't work (needs .Net) but doesn't seem necessary to run the game.   The .INI file in (game)/config/ is easy to edit.  I suggest turning \"useAnalogTriggerRotation\" OFF.  Using the analog triggers on my 360 pad made it continuously rotate.  Aside from those minor issues, runs perfectly.",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7841 Mb",
+    "rating": "Gold",
+    "timestamp": 1536601826,
+    "title": "Grandia\u00ae II Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "330390",
+    "cpu": "Intel(R) Xeon(R) CPU E5-1607 v4 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Config-Launcher wont start, but in Grandia2_settings.ini you can edit your resolution (1920x1080) and aspectratio (16:9), But remember it's a 4:3 game, so in 16:9 everything is stretched! Steamcloud savegames works fine.",
+    "os": "Ubuntu 18.04.1 LTS (64 Bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32022 MB",
+    "rating": "Gold",
+    "timestamp": 1539950317,
+    "title": "Grandia\u00ae II Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "330390",
+    "cpu": "Intel(R) Core(TM) i5-3570K CPU @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.09",
+    "kernel": "4.15.0-36-generic",
+    "notes": "As said below, can't run the configuration tool, you have to modify the config file manually.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "7924 Mb",
+    "rating": "Gold",
+    "timestamp": 1540047009,
+    "title": "Grandia\u00ae II Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "330390",
+    "title": "Grandia II Anniversary Edition",
+    "timestamp": 1535245777,
+    "rating": "Silver",
+    "notes": "Couldn't get the game to run in fullscreen, but windowed mode worked without any hiccups. Couldn't get game configuration tool to run, either.",
+    "os": "Arch Linut (Kernel 4.18.5-arch1)",
+    "gpuDriver": "Mesa 18.1.7-1",
+    "specs": "Radeon RX Vega M GL",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

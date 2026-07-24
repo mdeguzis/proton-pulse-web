@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "721310",
+    "cpu": "AMD A10-9600P RADEON R5, 10 COMPUTE CORES 4C+6G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD CARRIZO (DRM 3.23.0, 4.15.0-36-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1 - padoka PPA",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15550 Mb",
+    "rating": "Borked",
+    "timestamp": 1538713610,
+    "title": "Operasyon: PARS",
+    "source": "protondb"
+  }
+]

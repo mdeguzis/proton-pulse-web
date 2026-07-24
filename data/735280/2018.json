@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "735280",
+    "cpu": "Intel(R) Core(TM) i5-8600K CPU @ 3.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "First three missions of Emergency 20 campaign ran without issue. Emergency 5+ campaign frequent crashes at seemingly random times.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15970 Mb",
+    "rating": "Bronze",
+    "timestamp": 1538340825,
+    "title": "EMERGENCY 20",
+    "source": "protondb"
+  },
+  {
+    "appId": "735280",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Tried playing the Emergency 5 campaign contained in this  game. The game crashed when I tried to get a firefighter to cool down barrels next to burning stuff (tutorial mission). Error was \"ACCESS_VIOLATION in module \"C:\\windows\\system32\\d3d11.dll\"\"",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1544486461,
+    "title": "EMERGENCY 20",
+    "source": "protondb"
+  }
+]

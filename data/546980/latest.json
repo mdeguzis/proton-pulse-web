@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "546980",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.12-arch1-1-ARCH",
+    "notes": "It just launches a black windows.",
+    "os": "Arch",
+    "protonVersion": "4.2-9",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1565343232,
+    "title": "Midnight Carnival",
+    "source": "protondb"
+  }
+]

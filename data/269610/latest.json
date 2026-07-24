@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "269610",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "No issues",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1551421325,
+    "title": "Arcane Worlds",
+    "source": "protondb"
+  },
+  {
+    "appId": "269610",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-100.fc28.x86_64",
+    "notes": "Played via wine before, since proton appeared was one of my first games installed using it.\nWorks out of the box, have not seen single issue.\nNow with gtx1070ti get ~150(..220) fps, but performance was very good even before on gtx950.",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552761938,
+    "title": "Arcane Worlds",
+    "source": "protondb"
+  },
+  {
+    "appId": "269610",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.11-100.fc28.x86_64",
+    "notes": "Latest update of the game switched to Direct9ex which made the game not working (gets stuck at loading) ... and had no luck yet with making it working again.",
+    "os": "Fedora release 28 (Twenty Eight)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1556881256,
+    "title": "Arcane Worlds",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "9710",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-20-generic",
+    "notes": "No need for tweaks, runs out of the box. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1566503880,
+    "title": "Desperados 2: Cooper's Revenge",
+    "source": "protondb"
+  },
+  {
+    "appId": "9710",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Game runs great with no issues both with and without D9VK.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1568764613,
+    "title": "Desperados 2: Cooper's Revenge",
+    "source": "protondb"
+  }
+]

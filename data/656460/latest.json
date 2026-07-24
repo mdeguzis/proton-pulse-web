@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "656460",
+    "cpu": "i5-3350P CPU @ 3.10GHz",
+    "gpu": "GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "notes": "Performance seems a bit worse than Windows. Xbox 360 controller doesn't work.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "15996 Mb",
+    "rating": "Silver",
+    "timestamp": 1536648192,
+    "title": "Vostok Inc.",
+    "source": "protondb"
+  }
+]

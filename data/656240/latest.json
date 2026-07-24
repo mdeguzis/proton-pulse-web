@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "656240",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "I get a crash directly on startup. If I try to start the game through Wine I get to the main menu but is halted by the lack of steam communication.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1549579022,
+    "title": "Heat",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

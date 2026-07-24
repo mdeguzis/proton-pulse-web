@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "780750",
+    "cpu": "Intel Core m3-7Y30 @ 1.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 615 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.5",
+    "kernel": "5.4.0-7626-generic",
+    "notes": "When running without WineD3D, only black screen is shown. Once is used, game runs well.",
+    "os": "Freedesktop.org 19.08.10 (Flatpak runtime)",
+    "protonVersion": "5.0-7",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1589817260,
+    "title": "",
+    "source": "protondb"
+  }
+]

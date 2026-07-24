@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2643000",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.12-200.fc42.x86_64",
+    "notes": "black screen upon launch, unable to play",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1768995999,
+    "title": "",
+    "source": "protondb"
+  }
+]

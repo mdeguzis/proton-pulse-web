@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit Report — Proton Pulse</title>
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
+<link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
+<link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
+<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
+<link rel="stylesheet" href="css/shared/lookup-inline.css?v=71ca0f75">
+<link rel="stylesheet" href="css/app/game-header.css?v=1ae5af52">
+<link rel="stylesheet" href="css/app/configs.css?v=90d5bed5">
+<link rel="stylesheet" href="css/app/reports.css?v=dd4b044e">
+<link rel="stylesheet" href="css/app/modals.css?v=5e3db937">
+<link rel="stylesheet" href="css/app/home.css?v=3b655a71">
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/lib/supabase-client.js?v=79bf62c6"></script>
+<script src="js/lib/analytics.js?v=ad8d89f5"></script>
+<script src="js/lib/topbar.js?v=21a7ccea"></script>
+<script src="js/lib/toast.js?v=7bb23014"></script>
+<!-- Markdown editor spike (?md=1). Loaded eagerly but only wired when the
+     flag is on -- window.markdownit stays unused otherwise. -->
+<script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+
+<div class="main-content">
+  <div class="main-inner" style="max-width:860px">
+
+    <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;flex-wrap:wrap">
+      <a id="back-link" href="app.html" class="hub-link" style="flex-shrink:0;margin-top:4px">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="vertical-align:-2px"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Back to game
+      </a>
+      <div>
+        <div class="eyebrow">Submit a Report</div>
+        <h1 id="game-title" style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--strong);letter-spacing:-0.02em;margin:0;line-height:1.2">Loading...</h1>
+        <div id="game-subtitle" class="game-subtitle" hidden></div>
+      </div>
+    </div>
+
+    <div id="auth-gate" hidden>
+      <div style="padding:32px;background:var(--s1);border:1px solid var(--border);text-align:center">
+        <p style="color:var(--muted);margin-bottom:14px">Sign in with Steam to submit a report</p>
+        <button class="gh-login-btn" id="login-btn" style="margin:0 auto">
+          <span class="gh-login-btn__badge"><img class="gh-login-btn__icon" src="assets/steam-logo-glyph.png" alt=""></span>
+          <span class="gh-login-btn__label">Login with Steam</span>
+        </button>
+      </div>
+      <!-- Inline Library panel (#323 followup): peer of the auth-gate card,
+           not nested inside it, so the anonymous alternative reads as a
+           distinct path rather than "part of the sign-in prompt". -->
+      <div id="profile-lookup-inline-mount"></div>
+    </div>
+
+    <div id="submit-form-content">Loading form...</div>
+
+  </div>
+</div>
+
+<script type="module" src="js/submit/main.js?v=82ffef30"></script>
+</body>
+</html>

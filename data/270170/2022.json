@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "270170",
+    "cpu": "Intel Core i3-6100U @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.0-devel - padoka PPA",
+    "kernel": "5.15.0-41-generic",
+    "notes": "It still works on Linux natively",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1658043715,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1940410",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 16.0.6, DRM 3.54, 6.6.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.7-arch1-1",
+    "notes": "Might be from a bug with OpenCV (another game I know that uses a webcam does work with Proton, dunno if it uses OpenCV too or not), but at the moment the game just doesn't work on Linux.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1702937122,
+    "title": "",
+    "source": "protondb"
+  }
+]

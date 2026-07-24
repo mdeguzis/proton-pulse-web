@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "901162",
+    "title": "Napoleon: Total War",
+    "timestamp": 1535466246,
+    "rating": "Borked",
+    "notes": "game is starting, main menu works, strategic map in game works, 3D battle map does not working (crash during loading)",
+    "os": "Gentoo Linux (kernel 4.17.17-gento)",
+    "gpuDriver": "Mesa 18.2.0-rc4",
+    "specs": "AMD Radeon (TM) Pro WX 7100 Graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "901162",
+    "title": "Napoleon: Total War",
+    "timestamp": 1535451846,
+    "rating": "Borked",
+    "notes": "game is starting, main menu works, strategic map in game works, 3D battle map does not working (crash during loading)",
+    "os": "Gentoo Linux (kernel 4.17.17-gento)",
+    "gpuDriver": "Mesa 18.2.0-rc4",
+    "specs": "AMD Radeon (TM) Pro WX 7100 Graphics",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

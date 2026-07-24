@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "655730",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.20.0-rc1-mainline",
+    "notes": "Works out of the box. Finished the game with no issues",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550405299,
+    "title": "This Strange Realm Of Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "655730",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "Runs mostly perfect. The mouse seems to be stuck in the middle of the screen. Had to use keyboard for the menu interactions. It might be a WM problem (Cinnamon).",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1551936753,
+    "title": "This Strange Realm Of Mine",
+    "source": "protondb"
+  }
+]

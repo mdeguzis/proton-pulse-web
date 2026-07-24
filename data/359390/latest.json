@@ -1,0 +1,56 @@
+[
+  {
+    "appId": "359390",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Crashes to desktop with no error",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554807159,
+    "title": "Amnesia\u2122: Memories",
+    "source": "protondb"
+  },
+  {
+    "appId": "359390",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "Tried on Arch, latest Mesa and Proton versions. Black screen, then the game would quit. No error messages, just closed after a few seconds.\n\nAs there was no info online, I'll try to manually install the required redistributables, etc after seeing what it includes when I install the game on Windows and find out what they are.\n\nFor now, here's the Proton log. https://pastebin.com/zA1hLCXP",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556317656,
+    "title": "Amnesia\u2122: Memories",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "359390",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.3",
+    "kernel": "5.0.9-arch1-1-ARCH",
+    "notes": "The game requires directx9 to be installed via winetricks.\nThe videos don't work even after installing the required codec packs & gstreamer plugins. If the game still crashes after installing directx9, it's likely due to the videos. In which case, rename the movie subdirectory of the game to movie.bkp to disable them.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1557389647,
+    "title": "Amnesia\u2122: Memories",
+    "source": "protondb"
+  }
+]

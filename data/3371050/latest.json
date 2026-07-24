@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3371050",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.9-ogc3.2.fc44.x86_64",
+    "notes": "Attempted to force compatibility for Proton Experimental, Hotfix, 9.0-4, 8.0-5, 10.0-4, and 11.0 (Beta). Cannot get past loading screen.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1782852943,
+    "title": "Zeverland",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "319560",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.23.0, 4.16.0-2-amd64, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "kernel": "4.16.0-2-amd64",
+    "notes": "The game does not accept any keypresses. At the very start you have to enter your name. You can't do anything unless you write something, which you can't. Mouse clicks work fine, though.",
+    "os": "Debian GNU/Linux testing (buster) (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32155 Mb",
+    "rating": "Borked",
+    "timestamp": 1538299633,
+    "title": "Reprisal Universe",
+    "source": "protondb"
+  },
+  {
+    "appId": "319560",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.23",
+    "kernel": "4.15.0-42-generic",
+    "notes": "It is possible to enter in a name, just highlight the existing text and delete it.  The game runs ok overall but their are some minor graphical glitches that are annoying. ",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545259439,
+    "title": "Reprisal Universe",
+    "source": "protondb"
+  }
+]

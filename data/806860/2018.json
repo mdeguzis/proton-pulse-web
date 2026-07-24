@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "806860",
+    "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.26.0, 4.18.16-041816-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.18.16-041816-generic",
+    "notes": "Works but its really early alpha",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16050 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540119676,
+    "title": "They Are Hundreds",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "436670",
+    "title": "The Legend of Heroes: Trails in the Sky the 3rd",
+    "timestamp": 1535101624,
+    "rating": "Borked",
+    "notes": "no sound and the graphics don't show properly",
+    "os": "ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i7 3820/radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "436670",
+    "title": "The Legend of Heroes: Trails in the Sky the 3rd",
+    "timestamp": 1535256980,
+    "rating": "Bronze",
+    "notes": "No movies. Watch them from game folder",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4820K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "436670",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Videos don't play, so you have to press a key on startup (black screen) to skip the intro.  After this, it runs perfectly.  Didn't need to tweak anything.\n\nAreas load much faster - some sort of pause/temporary freezing issue that occurred on Windows 7 is gone.  Much more pleasant when going inside lots of houses.  So far I would actually consider it a slight upgrade to running natively.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543103136,
+    "title": "The Legend of Heroes: Trails in the Sky the 3rd",
+    "source": "protondb"
+  },
+  {
+    "appId": "436670",
+    "title": "The Legend of Heroes: Trails in the Sky the 3rd",
+    "timestamp": 1535087224,
+    "rating": "Borked",
+    "notes": "no sound and the graphics don't show properly",
+    "os": "ubuntu 18.04.1",
+    "gpuDriver": "Mesa 18.3.0",
+    "specs": "i7 3820/radeon RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "436670",
+    "title": "The Legend of Heroes: Trails in the Sky the 3rd",
+    "timestamp": 1535242580,
+    "rating": "Bronze",
+    "notes": "No movies. Watch them from game folder",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-4820K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

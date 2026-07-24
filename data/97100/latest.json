@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "97100",
+    "title": "Section 8: Prejudice",
+    "timestamp": 1535100765,
+    "rating": "Borked",
+    "notes": "Doesn't launch",
+    "os": "Arch Linux (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "97100",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Game does not start.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1540270736,
+    "title": "Section 8\u00ae: Prejudice\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "97100",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Game splash screen and then it stops",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540718804,
+    "title": "Section 8\u00ae: Prejudice\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "97100",
+    "title": "Section 8: Prejudice",
+    "timestamp": 1535086365,
+    "rating": "Borked",
+    "notes": "Doesn't launch",
+    "os": "Arch Linux (4.18.4-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3470 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

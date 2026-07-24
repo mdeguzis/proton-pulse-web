@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2159210",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 16.0.6, DRM 3.54, 6.6.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.8-arch1-1",
+    "notes": "Works great out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1726922702,
+    "title": "Just a To the Moon Series Beach Episode",
+    "source": "protondb"
+  },
+  {
+    "appId": "2159210",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.10.10-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.3 (git-b235da6781)",
+    "kernel": "6.10.10-200.fc40.x86_64",
+    "notes": "Native version runs flawless",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1727593773,
+    "title": "Just a To the Moon Series Beach Episode",
+    "source": "protondb"
+  },
+  {
+    "appId": "2159210",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.57, 6.10.13-3-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.2.4-arch1.0.1",
+    "kernel": "6.10.13-3-MANJARO",
+    "notes": "Works perfectly out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1731095372,
+    "title": "Just a To the Moon Series Beach Episode",
+    "source": "protondb"
+  }
+]

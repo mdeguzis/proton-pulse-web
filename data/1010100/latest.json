@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1010100",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "4.15.0-111-generic",
+    "notes": "It just works. Running Proton 5.0-9 (current default)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1600055045,
+    "title": "",
+    "source": "protondb"
+  }
+]

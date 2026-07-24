@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1150090",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "5.15.0-83-generic",
+    "notes": "Worked out of the box, no tinkering",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1694714127,
+    "title": "",
+    "source": "protondb"
+  }
+]

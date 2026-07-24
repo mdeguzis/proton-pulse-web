@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3385440",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.6-105.bazzite.fc42.x86_64",
+    "notes": "The game runs well, with no problem.",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1753207484,
+    "title": "",
+    "source": "protondb"
+  }
+]

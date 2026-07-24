@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "495290",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050 with Max-Q Design",
+    "gpuDriver": "nvidia 580.95.05-1",
+    "kernel": "6.17.4-arch2-1",
+    "notes": "AccuRC has been unmaintained since 2021.  \nDespite this, it is still by far, _the best_ aerobatics helicopter specific drone simulator.",
+    "os": "EndeavourOS",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1761196896,
+    "title": "",
+    "source": "protondb"
+  }
+]

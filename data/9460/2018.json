@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "9460",
+    "title": "Frontlines: Fuel of War",
+    "timestamp": 1535916685,
+    "rating": "Silver",
+    "notes": "Slow startup.\nGame is minimized after loading the first level due to some some GLX error window. Otherwise, the game is fully playable. \nAlso, a Mono error popps up when exiting the game. ",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3750K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "9460",
+    "title": "Frontlines: Fuel of War",
+    "timestamp": 1535902285,
+    "rating": "Silver",
+    "notes": "Slow startup.\nGame is minimized after loading the first level due to some some GLX error window. Otherwise, the game is fully playable. \nAlso, a Mono error popps up when exiting the game. ",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-3750K",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

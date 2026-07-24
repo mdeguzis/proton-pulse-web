@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1076200",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 15.0.7, DRM 3.49, 6.2.16-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.2.0-devel (git-0583c1f8d2)",
+    "kernel": "6.2.16-1-MANJARO",
+    "notes": "Funciona perfeitamente!",
+    "os": "BigLinux (based on Manjaro)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1685316823,
+    "title": "Roguebook",
+    "source": "protondb"
+  }
+]

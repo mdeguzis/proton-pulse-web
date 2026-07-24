@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "200550",
+    "title": "DUNGEONS - The Dark Lord (Steam Special Edition)",
+    "timestamp": 1534951932,
+    "rating": "Borked",
+    "notes": "It doesn't even start",
+    "os": "KDE Neon 5.13",
+    "gpuDriver": " NVIDIA 396.51",
+    "specs": "i5 4670 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "200550",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": ".Net install completes. Game does not start.  Tried all three proton tweaks.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542750492,
+    "title": "Dungeons - The Dark Lord",
+    "source": "protondb"
+  },
+  {
+    "appId": "200550",
+    "title": "DUNGEONS - The Dark Lord (Steam Special Edition)",
+    "timestamp": 1534937532,
+    "rating": "Borked",
+    "notes": "It doesn't even start",
+    "os": "KDE Neon 5.13",
+    "gpuDriver": " NVIDIA 396.51",
+    "specs": "i5 4670 / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

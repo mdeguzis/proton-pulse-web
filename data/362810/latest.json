@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "362810",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "Proton 4.2 seems to break game. Going down to at least the beta 13.16 fixes the issue and the game is completely playable. Have not tested multiplayer or with a controller yet. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559097928,
+    "title": "Fighties",
+    "source": "protondb"
+  }
+]

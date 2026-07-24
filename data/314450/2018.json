@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314450",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-cb863de626)",
+    "kernel": "4.18.10-zen1-1-zen",
+    "notes": "SteamDB falsely reports that this game has a native Linux version. Doesn't start at all with proton (errors with invalid character in path) on multiple systems.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1540505707,
+    "title": "Star Saviors",
+    "source": "protondb"
+  }
+]

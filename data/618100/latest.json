@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "618100",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Launched it and played no issues. Starting the game I got a black screen for a minute or so but the game works flawlessly",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571862530,
+    "title": "Feral Blue",
+    "source": "protondb"
+  }
+]

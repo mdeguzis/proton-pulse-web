@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3877410",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "works out of the box with good perfomance",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1757021130,
+    "title": "",
+    "source": "protondb"
+  }
+]

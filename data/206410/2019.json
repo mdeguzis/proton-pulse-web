@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "206410",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.19.34-1-MANJARO",
+    "notes": "No loading issues compared to the one reported previously. Snappy loading.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556587654,
+    "title": "Crazy Machines Elements",
+    "source": "protondb"
+  }
+]

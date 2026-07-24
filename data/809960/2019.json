@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "809960",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Plain Proton 4.11, game won't start",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567544057,
+    "title": "Radical Heights",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "99830",
+    "title": "Crysis 2",
+    "timestamp": 1534951725,
+    "rating": "Platinum",
+    "notes": "Minor performance loss",
+    "os": "Arch",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "7700k/GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "99830",
+    "title": "Crysis 2",
+    "timestamp": 1535051911,
+    "rating": "Silver",
+    "notes": "DX9 only, with no HD texture pack/DX11 patch installed. ",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "X4 860K / RX 480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "99830",
+    "title": "Crysis 2",
+    "timestamp": 1534937325,
+    "rating": "Platinum",
+    "notes": "Minor performance loss",
+    "os": "Arch",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "7700k/GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "99830",
+    "title": "Crysis 2",
+    "timestamp": 1535037511,
+    "rating": "Silver",
+    "notes": "DX9 only, with no HD texture pack/DX11 patch installed. ",
+    "os": "Ubuntu 18.04 64-bit",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "X4 860K / RX 480 4GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

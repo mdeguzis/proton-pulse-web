@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "32150",
+    "title": "Everyday Genius: SquareLogic",
+    "timestamp": 1535145640,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-2100 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "32150",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.26.0, 4.18.5-gentoo, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-2c1f249f2b)",
+    "kernel": "4.18.5-gentoo",
+    "notes": "Everything works as expected",
+    "os": "\"Gentoo Base System release 2.6\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16010 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537561322,
+    "title": "Everyday Genius: SquareLogic",
+    "source": "protondb"
+  },
+  {
+    "appId": "32150",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.0-4-MANJARO",
+    "notes": "Flawless, played few puzzles. Progress was synced from previous windows installation.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541409833,
+    "title": "Everyday Genius: SquareLogic",
+    "source": "protondb"
+  },
+  {
+    "appId": "32150",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.4 Mesa 18.2.3",
+    "kernel": "4.18.16-97.current",
+    "notes": "Solved some puzzles and it worked perfectly out of the box. It actually works *better* than Win10 where it would randomly crash sometimes when it lost focus, which didn't happen to me here.",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542429546,
+    "title": "Everyday Genius: SquareLogic",
+    "source": "protondb"
+  },
+  {
+    "appId": "32150",
+    "title": "Everyday Genius: SquareLogic",
+    "timestamp": 1535131240,
+    "rating": "Platinum",
+    "notes": "Flawless",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.65-1)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i3-2100 / GeForce GTX 750 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

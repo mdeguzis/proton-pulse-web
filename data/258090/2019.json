@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "258090",
+    "cpu": "Intel Pentium  J2900  @ 2.41GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Runs but not playable. Numbers render as boxes",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1558189861,
+    "title": "99 Spirits",
+    "source": "protondb"
+  },
+  {
+    "appId": "258090",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 660 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.15-arch1-1-ARCH",
+    "notes": "The game has missing backgrounds,  map textures, doesn't play developer logo in the beginning and crashes every half an hour or so. Otherwise seems to be functional. I'd guess that the backgrounds including maps are some sort of looping videos and the game is drawn over them.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-7",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1561721569,
+    "title": "99 Spirits",
+    "source": "protondb"
+  }
+]

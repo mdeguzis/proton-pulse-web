@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "658260",
+    "title": "BLUE REFLECTION",
+    "timestamp": 1535830585,
+    "rating": "Borked",
+    "notes": "the launcher start but when i press play the game windows open and close instant",
+    "os": "Fedora 27 64bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 17.3.9",
+    "specs": "FX 6300/R9 380",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "658260",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.0",
+    "kernel": "4.20.0-rc5-2595646791c319cadfdbf271563aac97d0843dc7+",
+    "os": "Fedora release 30 (Rawhide)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1544545786,
+    "title": "BLUE REFLECTION / BLUE REFLECTION\u3000\u5e7b\u306b\u821e\u3046\u5c11\u5973\u306e\u5263",
+    "source": "protondb"
+  },
+  {
+    "appId": "658260",
+    "title": "BLUE REFLECTION",
+    "timestamp": 1535816185,
+    "rating": "Borked",
+    "notes": "the launcher start but when i press play the game windows open and close instant",
+    "os": "Fedora 27 64bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 17.3.9",
+    "specs": "FX 6300/R9 380",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

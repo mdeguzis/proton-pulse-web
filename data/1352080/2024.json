@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1352080",
+    "cpu": "Intel Xeon E5-2680 v2 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.1-arch1-1",
+    "notes": "did the job mate",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1709920983,
+    "title": "",
+    "source": "protondb"
+  }
+]

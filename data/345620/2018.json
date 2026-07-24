@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "345620",
+    "title": "The Labyrinth of Grisaia",
+    "timestamp": 1535623841,
+    "rating": "Borked",
+    "notes": "Get a black background when entering the settings or a route. Music still playing in the background, you can hear when the mouse hovers over items in the menu.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600X / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "345620",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-arch1-1-ARCH",
+    "notes": "game does start but when starting or going into option menu only dark screen. Sound is working ",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-3",
+    "ram": "32166 Mb",
+    "rating": "Borked",
+    "timestamp": 1536864814,
+    "title": "The Labyrinth of Grisaia",
+    "source": "protondb"
+  },
+  {
+    "appId": "345620",
+    "title": "The Labyrinth of Grisaia",
+    "timestamp": 1535609441,
+    "rating": "Borked",
+    "notes": "Get a black background when entering the settings or a route. Music still playing in the background, you can hear when the mouse hovers over items in the menu.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.18.4)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 5 1600X / RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

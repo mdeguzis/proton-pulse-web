@@ -1,0 +1,81 @@
+[
+  {
+    "appId": "254960",
+    "title": "Silent Storm",
+    "timestamp": 1536263053,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "254960",
+    "title": "Silent Storm Gold Edition",
+    "timestamp": 1535842194,
+    "rating": "Platinum",
+    "notes": "Both games work very good. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "254960",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-041800-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1540372161,
+    "title": "Silent Storm Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "254960",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.4-arch1-1-ARCH",
+    "notes": "Crashes when switching to 1920x1080 (had to use 1680x1050), crashes after Alt-Tabbing. Also lags during fading-in, but this is not a big problem. Other than that game is playable.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1543776474,
+    "title": "Silent Storm Gold Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "254960",
+    "title": "Silent Storm",
+    "timestamp": 1536248653,
+    "rating": "Platinum",
+    "notes": "-",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4460",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "254960",
+    "title": "Silent Storm Gold Edition",
+    "timestamp": 1535827794,
+    "rating": "Platinum",
+    "notes": "Both games work very good. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

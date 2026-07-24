@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "331920",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.8-arch1-1",
+    "notes": "Need to patch the game to use native version. Without the patch the game not run (native version) or lagging as hell (Proton).",
+    "os": "Arch Linux (64bit)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1754583767,
+    "title": "",
+    "source": "protondb"
+  }
+]

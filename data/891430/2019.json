@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "891430",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 390.129",
+    "kernel": "4.15.0-55-generic",
+    "notes": "When the game starts I get an error message that said: DX11 feature level 10.0 is required to run the engine",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1566734644,
+    "title": "Rogue Heist",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1111220",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "As per the previous two games, I tried copying the configurations, and I have, in fact, narrowed down what must be done: Run protontricks and install WSH57,, and then run it again and install WMP9, which includes some additional programs. For a guaranteed order to make the game work: 1) run the game to register it with protontricks; 2) use protontricks to install the WSH57 Windows component/DLL; 3) run the game again to register the component; 4) install the WMP9 (Windows Media Player 9) application with protontricks -- WMP9 WILL FAIL, but it installs other DLLs and executables that are needed; 4) restart Steam and run the game again -- it should now work.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1565385866,
+    "title": "Genius! NAZI-GIRL GoePPels-Chan ep3",
+    "source": "protondb"
+  }
+]

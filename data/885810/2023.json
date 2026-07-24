@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "885810",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-41-generic",
+    "notes": "Short and simple game with small puzzles.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1683542115,
+    "title": "",
+    "source": "protondb"
+  }
+]

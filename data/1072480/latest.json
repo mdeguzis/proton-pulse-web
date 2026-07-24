@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "1072480",
+    "cpu": "Intel Core i7-8086K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "From the beta access - all works fine!",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "4.11-6",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1570267308,
+    "title": "The Fisherman - Fishing Planet",
+    "source": "protondb"
+  },
+  {
+    "appId": "1072480",
+    "cpu": "Intel Core2 Duo     E8400  @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon HD 6870 1GB",
+    "gpuDriver": "3.1 Mesa 18.3.6",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "Beta access with a minimum system requirement for this game. It works (no more than 30 FPS and the CPU is always at 100%), as this system doesn't support Vulkan, you need to disable it: PROTON_USE_WINED3D11=1 %command% All seems to work fine after this tweak.",
+    "os": "Debian GNU/Linux 10 (buster) (64\u00a0bits)",
+    "protonVersion": "4.11-7",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1570799956,
+    "title": "The Fisherman - Fishing Planet",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1072480",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-62-generic",
+    "notes": "In game Store works fine, was able to setup rod pod and fish with no problems. Tested different graphics setting all worked fine. Alt-tabbing in and out of the game works as intended.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571315554,
+    "title": "The Fisherman - Fishing Planet",
+    "source": "protondb"
+  }
+]

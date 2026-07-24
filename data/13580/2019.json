@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "13580",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "The game works out of the box, but since it's a bad port, the \"advance effects\" might not. \nTweaking the file SplinterCell4.ini inside the system folder, fixes it. \nSearch the Ubisoft forums for the tweak guide.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "24 GB",
+    "rating": "Gold",
+    "timestamp": 1551741781,
+    "title": "Tom Clancy's Splinter Cell Double Agent\u00ae",
+    "source": "protondb"
+  },
+  {
+    "appId": "13580",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-32-generic",
+    "notes": "The game sorta works out-of-the-box, but without tweaks, the game isn't really pleasant to play. I recommend the Widescreen tweak by ThirteenAG \n ( https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/scda ), which allows the game to run in FullHD, in addition to, well, widescreen.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1571347827,
+    "title": "Tom Clancy's Splinter Cell Double Agent\u00ae",
+    "tweaks": {
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

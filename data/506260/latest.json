@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "506260",
+    "cpu": "Intel Core i5-6260U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Iris 540 (Skylake GT3e)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.13.0-45-generic",
+    "os": "Linux Mint 18.1 Serena",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1561855159,
+    "title": "Cladun Returns: This Is Sengoku! / \u30af\u30e9\u30b7\u30c3\u30af\u30c0\u30f3\u30b8\u30e7\u30f3 \u6226\u56fd",
+    "source": "protondb"
+  },
+  {
+    "appId": "506260",
+    "cpu": "Intel Core i7-4820K @ 3.70GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Works flawless, including controller support",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567264713,
+    "title": "Cladun Returns: This Is Sengoku!",
+    "source": "protondb"
+  }
+]

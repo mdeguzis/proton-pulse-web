@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1388870",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (RX 9060 XT)",
+    "gpuDriver": "4.6 Mesa 25.2.2",
+    "kernel": "7.0.0-12-generic",
+    "notes": "XWayland causes graphical issues, force the game through Wayland instead.",
+    "os": "Ubuntu 26.04 (snap)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1775589039,
+    "title": "Arcade Paradise",
+    "source": "protondb"
+  }
+]

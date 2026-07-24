@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2019840",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.4-arch1-1",
+    "notes": "Identical to running under Windows",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1665722482,
+    "title": "",
+    "source": "protondb"
+  }
+]

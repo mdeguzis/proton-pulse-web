@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "307670",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 850M",
+    "gpuDriver": "NVIDIA 580.159.03-1",
+    "kernel": "Linux 7.0.3-1-cachyos",
+    "notes": "Works, but with issues",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1778227035,
+    "title": "",
+    "source": "protondb"
+  }
+]

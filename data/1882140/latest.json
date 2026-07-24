@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1882140",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800M (navi22, LLVM 16.0.6, DRM 3.57, 6.8.1)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.8.1",
+    "notes": "With the listed fixes, the game is suboptimal but quite playable.",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1712193647,
+    "title": "",
+    "source": "protondb"
+  }
+]

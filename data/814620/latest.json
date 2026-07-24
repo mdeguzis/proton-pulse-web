@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "814620",
+    "title": "Central Intelligence",
+    "timestamp": 1535896951,
+    "rating": "Borked",
+    "notes": "Brings up a DOS Box window, which flickers its logo over and over endlessly. Mouse control lost - had to kill manually.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814620",
+    "title": "Central Intelligence",
+    "timestamp": 1535899083,
+    "rating": "Gold",
+    "notes": "Updated notes: DOS Box window doesn't focus, so needs Alt-Tab and Enter to start the game fullscreen. Works perfectly after that.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814620",
+    "title": "Central Intelligence",
+    "timestamp": 1535882551,
+    "rating": "Borked",
+    "notes": "Brings up a DOS Box window, which flickers its logo over and over endlessly. Mouse control lost - had to kill manually.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814620",
+    "title": "Central Intelligence",
+    "timestamp": 1535884683,
+    "rating": "Gold",
+    "notes": "Updated notes: DOS Box window doesn't focus, so needs Alt-Tab and Enter to start the game fullscreen. Works perfectly after that.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

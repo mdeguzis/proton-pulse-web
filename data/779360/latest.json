@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "779360",
+    "title": "Instant Death",
+    "timestamp": 1535904696,
+    "rating": "Silver",
+    "notes": "Alt-tab doesn't work properly in fullscreen (won't return to game or let you focus on other apps). Otherwise, it runs perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "779360",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Alt-tab worked fine for me",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541685336,
+    "title": "Instant Death",
+    "source": "protondb"
+  },
+  {
+    "appId": "779360",
+    "title": "Instant Death",
+    "timestamp": 1535890296,
+    "rating": "Silver",
+    "notes": "Alt-tab doesn't work properly in fullscreen (won't return to game or let you focus on other apps). Otherwise, it runs perfectly.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

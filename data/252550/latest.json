@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "252550",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Performance is great, you might get random graphical glitches during a level but they aren't anything major, it will go away on the next level",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1556308898,
+    "title": "Qbeh-1: The Atlas Cube",
+    "source": "protondb"
+  },
+  {
+    "appId": "252550",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.20.17-042017-generic",
+    "notes": "Works fine without tweaks.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1557264973,
+    "title": "Qbeh-1: The Atlas Cube",
+    "source": "protondb"
+  }
+]

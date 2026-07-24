@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "1048390",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-810b95e 2019-05-21 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Blackscreen",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-3,3.7-8,3.16-4",
+    "ram": "20 GB",
+    "rating": "Borked",
+    "timestamp": 1558524698,
+    "title": "M.A.S.S. Builder Demo",
+    "source": "protondb"
+  }
+]

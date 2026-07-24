@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "344130",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.16-300.fc30.x86_64",
+    "notes": "Game itself works seemingly perfectly, however if I play in \"Maximized\" (full-screen window) mode a small part of the bottom of the game's content is cut off. This seems to be an issue with the game itself, as it runs with a fixed aspect ratio, and resizing the window to fit your screen by yourself results in stretching that doesn't look all that great. I can imagine that the \"Maximized\" mode might work better on a desktop environment that allows you to put any window in full screen.\n\nYou can, however, run the game in a 1X, 2X, or 3X window (meaning times the amount of pixels on the Y- and X-axis as the game renders) where nothing is cut off, but this results in a fairly small window on even a 1080p monitor; I can only imagine how tiny it must be on something more high resolution.\n\nDespite this, I'll still mark it as Platinum since these issues seem to be caused by the game itself rather than Proton.",
+    "os": "Linux",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1558695502,
+    "title": "Cataegis : The White Wind",
+    "source": "protondb"
+  },
+  {
+    "appId": "344130",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "I could not get the game window in a playable state.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1561523539,
+    "title": "Cataegis : The White Wind",
+    "source": "protondb"
+  }
+]

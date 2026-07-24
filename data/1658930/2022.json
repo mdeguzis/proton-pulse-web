@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1658930",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 2048SP (POLARIS10, DRM 3.44.0, 5.16.12-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.12-200.fc35.x86_64",
+    "notes": "\u5982\u679c\u7cfb\u7edf\u533a\u57df\u8bbe\u7f6e\u4e0d\u662f\u7b80\u4f53\u4e2d\u6587\uff0c\u5219\u65e0\u6cd5\u542f\u52a8\u6e38\u620f\uff0c\u9700\u8981\u52a0\u5165\u4ee5\u4e0b\u542f\u52a8\u53c2\u6570\uff1a\n\n```Bash\nenv LANG=zh_CN.UTF-8 %command%\n```",
+    "os": "Fedora release 35 (Thirty Five)\uff0864 \u4f4d\uff09",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1647143599,
+    "title": "",
+    "source": "protondb"
+  }
+]

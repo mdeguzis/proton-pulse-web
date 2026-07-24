@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1320550",
+    "cpu": "Pentium Dual-Core       E5800  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce 9500 GT",
+    "gpuDriver": "NVIDIA 340.108",
+    "kernel": "5.4.0-40-generic",
+    "notes": "Not working",
+    "os": "Linux Lite 5.0",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1595705761,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "605920",
+    "cpu": "AMD A10-5800K APU with Radeon(tm) HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "I just tried it to see whether it worked, and it did.  It didn't recognize my gamepad, though.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7983 Mb",
+    "rating": "Platinum",
+    "systemInfoNotes": "Kubuntu, Logitech F310",
+    "timestamp": 1538579292,
+    "title": "VOLTED",
+    "source": "protondb"
+  }
+]

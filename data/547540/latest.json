@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "547540",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.9.0-8-amd64",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1547222785,
+    "title": "panGEMic",
+    "source": "protondb"
+  }
+]

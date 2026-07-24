@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "345430",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "~30-60 FPS on high settings. Minor graphical glitches like black artifacts or missing models after reloading. No sound during scene intros.",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15973 Mb",
+    "rating": "Silver",
+    "timestamp": 1538419852,
+    "tweaks": {
+      "disableEsync": true
+    },
+    "title": "The Cursed Forest",
+    "source": "protondb"
+  }
+]

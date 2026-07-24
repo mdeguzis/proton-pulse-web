@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "312560",
+    "title": "Xanadu Next",
+    "timestamp": 1535055627,
+    "rating": "Silver",
+    "notes": "The game runs and plays, and would probably be classified as 'stable' except for the widespread graphical issues (no textures, mainly shaded single-color polygons).",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-5820K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "312560",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.14.78-1-MANJARO",
+    "notes": "Launcher opens a window for the game, but it's a black screen with nothing loading.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543203793,
+    "title": "Xanadu Next",
+    "source": "protondb"
+  },
+  {
+    "appId": "312560",
+    "title": "Xanadu Next",
+    "timestamp": 1535041227,
+    "rating": "Silver",
+    "notes": "The game runs and plays, and would probably be classified as 'stable' except for the widespread graphical issues (no textures, mainly shaded single-color polygons).",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-5820K / GTX 980 Ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

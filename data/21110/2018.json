@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "21110",
+    "title": "F.E.A.R.: Extraction Point",
+    "timestamp": 1535221784,
+    "rating": "Platinum",
+    "notes": "Works fine. No issues.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21110",
+    "title": "F.E.A.R.: Extraction Point",
+    "timestamp": 1535536335,
+    "rating": "Borked",
+    "notes": "no sound and graphics problems(you can go out the map and fall ),seems it's happen only with NVIDIA propr. drivers. i've tried with open source \"nouveau\" drivers game work well but always no sound.",
+    "os": "Debian 9.5 Stretch 64 bit (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Phenom II X6 / GTX 750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21110",
+    "title": "F.E.A.R.: Extraction Point",
+    "timestamp": 1535876956,
+    "rating": "Platinum",
+    "notes": "Working perfectly no tweaks needed. Should be whitelisted.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel G3258 / GTX 750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21110",
+    "title": "F.E.A.R.: Extraction Point",
+    "timestamp": 1535207384,
+    "rating": "Platinum",
+    "notes": "Works fine. No issues.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21110",
+    "title": "F.E.A.R.: Extraction Point",
+    "timestamp": 1535521935,
+    "rating": "Borked",
+    "notes": "no sound and graphics problems(you can go out the map and fall ),seems it's happen only with NVIDIA propr. drivers. i've tried with open source \"nouveau\" drivers game work well but always no sound.",
+    "os": "Debian 9.5 Stretch 64 bit (kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Phenom II X6 / GTX 750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "21110",
+    "title": "F.E.A.R.: Extraction Point",
+    "timestamp": 1535862556,
+    "rating": "Platinum",
+    "notes": "Working perfectly no tweaks needed. Should be whitelisted.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel G3258 / GTX 750",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

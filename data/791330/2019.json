@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "791330",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "for me the game will run, but whenever I enter any building, the game will freeze. I've tried most of the stuff mentioned here: https://pastebin.com/21Yi6vnt. None of that seemed to fix it though.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "protonVersionManual": "Proton-4.6-GE-2",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1560659295,
+    "title": "Fallen ~Makina and the City of Ruins~",
+    "source": "protondb"
+  }
+]

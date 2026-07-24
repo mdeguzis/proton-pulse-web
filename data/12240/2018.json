@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "12240",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD REDWOOD (DRM 2.50.0 / 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "3.1 Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Just click Install and Play. Running perfectly in high graphic configuration. No bugs or errors so far.",
+    "os": "Linux Mint 19 Tara (64-bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7960 Mb",
+    "rating": "Platinum",
+    "systemInfoNotes": "Placa de V\u00eddeo: AMD Radeon HD 5670 2GB",
+    "timestamp": 1537471746,
+    "title": "Grand Theft Auto: Vice City",
+    "source": "protondb"
+  },
+  {
+    "appId": "12240",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Not necessarily borked per se, but it is the MacOS version of the game, they're separated in your Steam Library which is an artifact of the original version of Steam Play, which gave you a game on all platforms when you buy it on one. Presumably GTA 3-San Andreas were on the platform before the first Steam Play, and as a result show separately in your library. It's safe to ignore this particular App ID.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24032 Mb",
+    "rating": "Borked",
+    "timestamp": 1538454965,
+    "title": "Grand Theft Auto: Vice City",
+    "source": "protondb"
+  },
+  {
+    "appId": "12240",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.9-arch1-1-ARCH, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel (git-cb863de626)",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "os": "\"Antergos Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15983 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538818518,
+    "title": "Grand Theft Auto: Vice City",
+    "source": "protondb"
+  }
+]

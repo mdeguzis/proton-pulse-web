@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2760",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Message Box popup \"Unable to detect a video card with hardware 3D acceleration\"",
+    "os": "Ubuntu 16.04.5 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1548653623,
+    "title": "Neverwinter Nights\u2122 2 Platinum",
+    "source": "protondb"
+  },
+  {
+    "appId": "2760",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.68-1-lts",
+    "notes": "Singleplayer works. Cinematics dont work, in ingame cutscenet there's minor cosmetic glitches.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1567002590,
+    "title": "Neverwinter Nights\u2122 2 Platinum",
+    "source": "protondb"
+  }
+]

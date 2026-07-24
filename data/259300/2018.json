@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "259300",
+    "title": "Earth 2150: Lost Souls",
+    "timestamp": 1535248148,
+    "rating": "Silver",
+    "notes": "to launch and avoid the F1 or con center crash, use 1680x1050x32 in Direct3d HAL graphics option menu instead of 1920x1080x32 (pick a resolution one aspect size lower)\nmouse is living its own life, set sensitivity to very low and it will work properly, but slow mouse.",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "259300",
+    "title": "Earth 2150: Lost Souls",
+    "timestamp": 1535276675,
+    "rating": "Borked",
+    "notes": "Menu works.But i can't run a gameplay because keyboard doesnt works.I cant make profile!",
+    "os": "Ubuntu 18.04.1 XFCE 64 bit( 4.17.0-17.3-liquorix-amd64 x86_64)",
+    "gpuDriver": "NVIDIA 340.107",
+    "specs": "Intel(R) Core(TM) i5 CPU M 520 @ 2.40GHz/GT216M [NVS 5100M]",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "259300",
+    "title": "Earth 2150: Lost Souls",
+    "timestamp": 1535233748,
+    "rating": "Silver",
+    "notes": "to launch and avoid the F1 or con center crash, use 1680x1050x32 in Direct3d HAL graphics option menu instead of 1920x1080x32 (pick a resolution one aspect size lower)\nmouse is living its own life, set sensitivity to very low and it will work properly, but slow mouse.",
+    "os": "Linux Mint 19",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "GTX 1080",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "259300",
+    "title": "Earth 2150: Lost Souls",
+    "timestamp": 1535262275,
+    "rating": "Borked",
+    "notes": "Menu works.But i can't run a gameplay because keyboard doesnt works.I cant make profile!",
+    "os": "Ubuntu 18.04.1 XFCE 64 bit( 4.17.0-17.3-liquorix-amd64 x86_64)",
+    "gpuDriver": "NVIDIA 340.107",
+    "specs": "Intel(R) Core(TM) i5 CPU M 520 @ 2.40GHz/GT216M [NVS 5100M]",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

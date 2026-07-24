@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "876330",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.11-93.current",
+    "notes": "The game doesn't want to start :'(",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15991 Mb",
+    "rating": "Borked",
+    "timestamp": 1538829770,
+    "title": "Revelation Online",
+    "source": "protondb"
+  }
+]

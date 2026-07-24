@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "31230",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "No controller support, but fine other than that.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1560511762,
+    "title": "Sam & Max 302: The Tomb of Sammun-Mak",
+    "source": "protondb"
+  },
+  {
+    "appId": "31230",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.0.21-1-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.16-4",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1561558316,
+    "title": "Sam & Max 302: The Tomb of Sammun-Mak",
+    "source": "protondb"
+  },
+  {
+    "appId": "31230",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-23-generic",
+    "notes": "works perfectly",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "3.7-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1565612919,
+    "title": "Sam & Max 302: The Tomb of Sammun-Mak",
+    "source": "protondb"
+  }
+]

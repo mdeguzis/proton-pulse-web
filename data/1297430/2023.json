@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1297430",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.2.0-76060200-generic",
+    "notes": "Borked apparently. Going to see if Lutris can raise it from the dead.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1680539489,
+    "title": "",
+    "source": "protondb"
+  }
+]

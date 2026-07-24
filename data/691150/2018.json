@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "691150",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "Errors out and crashes with \"Failed to call ConnectFilters( pSrc, pMPEG1Splitter ). : [0x80004005] Error: 0x80004005O\u00a3\u2610\" when you attempt to start the game. All suggested launch options cause failure to start.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24032 Mb",
+    "rating": "Borked",
+    "timestamp": 1538455467,
+    "title": "Saku Saku: Love Blooms with the Cherry Blossoms",
+    "source": "protondb"
+  },
+  {
+    "appId": "691150",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 580 Series (POLARIS10, DRM 3.26.0, 4.18.12-arch1-1-ARCH, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "Both Wine and Proton fail with \"Failed to call ConnectFilters(pSrc, pMPEG1Splitter )\" after starting a new game.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16056 Mb",
+    "rating": "Borked",
+    "timestamp": 1539532582,
+    "title": "Saku Saku: Love Blooms with the Cherry Blossoms",
+    "source": "protondb"
+  },
+  {
+    "appId": "691150",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "notes": "Generally runs good but crashes when changes to fullscreen. And it can also lock up the PC when exiting the game. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1545852041,
+    "title": "Saku Saku: Love Blooms with the Cherry Blossoms",
+    "source": "protondb"
+  }
+]

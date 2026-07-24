@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1844170",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.44.0, 5.16.12, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.12",
+    "notes": "Works great, except for no input being detected on my Xbox Controller.",
+    "os": "NixOS 22.05 (Quokka)",
+    "protonVersion": "7.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1651078146,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "267900",
+    "title": "GUILTY GEAR ISUKA",
+    "timestamp": 1534953712,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Kubuntu 18.04.1 64bit",
+    "gpuDriver": "?",
+    "specs": "GeForce GT 240 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "267900",
+    "title": "GUILTY GEAR ISUKA",
+    "timestamp": 1535002317,
+    "rating": "Borked",
+    "notes": "Input from keayboard and gamepad not working. Sound does not work.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "267900",
+    "title": "GUILTY GEAR ISUKA",
+    "timestamp": 1534939312,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Kubuntu 18.04.1 64bit",
+    "gpuDriver": "?",
+    "specs": "GeForce GT 240 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "267900",
+    "title": "GUILTY GEAR ISUKA",
+    "timestamp": 1534987917,
+    "rating": "Borked",
+    "notes": "Input from keayboard and gamepad not working. Sound does not work.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

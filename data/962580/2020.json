@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "962580",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-37-generic",
+    "notes": "Works well (with custom proton)",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1592399619,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "962580",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "4.15.0-106-generic",
+    "notes": "Works perfectly using Proton-GE (vanilla-proton isn't able to play the videos).",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592672943,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "391000",
+    "cpu": "AMD Athlon(tm) 64 X2 Dual Core Processor 5000+",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce 8500 GT/PCIe/SSE2",
+    "gpuDriver": "3.3.0 NVIDIA 340.107",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Farm Frenzy 4 is unplayable due to flickering graphics. Farm Frenzy 3 has issues with buttons randomly not working, which resolves on returning to the main menu. Gone Fishing, Ancient Rome, and Viking Heroes are very sluggish, playable but just barely. The other seven games run with no apparent issues. Not sure how to handle rating with a collection like this where some games work and others don't. Feel free to change my rating as seems appropriate.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "3945 Mb",
+    "rating": "Silver",
+    "timestamp": 1538051426,
+    "title": "Farm Frenzy Collection",
+    "source": "protondb"
+  }
+]

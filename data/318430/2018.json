@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535235150,
+    "rating": "Platinum",
+    "notes": "No issues.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535288321,
+    "rating": "Platinum",
+    "notes": "everything works",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535773719,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Gentoo (Kernel 4.15.18)",
+    "gpuDriver": "AMDGPU Mesa 18.1.6",
+    "specs": "Ryzen 7 1800X / Vega 64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535379101,
+    "rating": "Platinum",
+    "notes": "Perfect!",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "E5-2665 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535220750,
+    "rating": "Platinum",
+    "notes": "No issues.",
+    "os": "Linux Mint 18.3 Cinnamon 64-bit (Kernel 4.15.0-33.36)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7300HQ / GTX 1060",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535273921,
+    "rating": "Platinum",
+    "notes": "everything works",
+    "os": "Arch Linux 64-bit (kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7-6700HQ / GTX 1060",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535759319,
+    "rating": "Platinum",
+    "notes": "Works perfectly",
+    "os": "Gentoo (Kernel 4.15.18)",
+    "gpuDriver": "AMDGPU Mesa 18.1.6",
+    "specs": "Ryzen 7 1800X / Vega 64",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "318430",
+    "title": "Squishy the Suicidal Pig",
+    "timestamp": 1535364701,
+    "rating": "Platinum",
+    "notes": "Perfect!",
+    "os": "Ubuntu 18.04",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "E5-2665 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

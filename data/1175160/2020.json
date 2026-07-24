@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1175160",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Everything works from the start to the end.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1582445889,
+    "title": "",
+    "source": "protondb"
+  }
+]

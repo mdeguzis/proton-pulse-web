@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1001140",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-arch1-1-ARCH",
+    "notes": "Silently crashed on the first launch, but worked perfectly after waiting a few hours and trying again.",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1566451548,
+    "title": "Angry Birds VR: Isle of Pigs",
+    "source": "protondb"
+  }
+]

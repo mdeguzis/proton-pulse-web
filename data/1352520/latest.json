@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1352520",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.13-200.fc41.x86_64",
+    "notes": "Runtime Error 506 - Could not load image at line 23762.\nCWD:Z\\mnt\\8da5fc04-7f65-4bb0-ade1-58406eb0b9a8\\SteamLibrary\\steamapps\\common\\Soldier Warfare\\Files\nLOAD IMAGE texturebank\\341\\m9se_N.dds,602,1,0",
+    "os": "Fedora Linux 41 (Xfce)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1740962166,
+    "title": "",
+    "source": "protondb"
+  }
+]

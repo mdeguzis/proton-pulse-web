@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "327400",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (gfx1102, LLVM 16.0.6, DRM 3.54, 6.5.11-201.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.11-201.fsync.fc38.x86_64",
+    "notes": "With no autosave combined with occasional crashes this game can be frustrating to play on linux.",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1701545675,
+    "title": "",
+    "source": "protondb"
+  }
+]

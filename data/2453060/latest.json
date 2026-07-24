@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2453060",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1768711652,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2453060",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.12-1-default",
+    "notes": "Without PROTON_VKD3D_HEAP=1 the game would just hang after the intro played out i had to manually terminate the game through steam. With the flag the game is able to proceed into the main menu where it then hangs and crashes with fatal ue5 error. Seems like its the issue with nvidia again. Works fine on older nvidia drivers.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1777397299,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2453060",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.1-1-default",
+    "notes": "Works with these launch options",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1778310718,
+    "title": "",
+    "source": "protondb"
+  }
+]

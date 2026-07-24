@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "535520",
+    "title": "Nidhogg 2",
+    "timestamp": 1535012242,
+    "rating": "Platinum",
+    "notes": "Runs great!",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "Ryzen 5 1600, RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "535520",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.16.18-rt12-MANJARO",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32155 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539340109,
+    "title": "Nidhogg 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "535520",
+    "cpu": "Intel Core i5-4200M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "elementary OS 5.0 Juno (64 bit)",
+    "gpuDriver": "Linux",
+    "kernel": "0x6",
+    "notes": "Small graphical issues when switching between menus",
+    "os": "GenuineIntel",
+    "protonVersion": "Default",
+    "ram": "Intel Haswell HDMI",
+    "rating": "Silver",
+    "timestamp": 1543056865,
+    "title": "Nidhogg 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "535520",
+    "title": "Nidhogg 2",
+    "timestamp": 1534997842,
+    "rating": "Platinum",
+    "notes": "Runs great!",
+    "os": "Antergos",
+    "gpuDriver": "Mesa 18.1.5",
+    "specs": "Ryzen 5 1600, RX 560",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

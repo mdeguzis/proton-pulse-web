@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "814610",
+    "title": "Last Rites",
+    "timestamp": 1535905478,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially, but Alt-Tab and Enter start the game in fullscreen. Runs perfectly after that.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814610",
+    "title": "Last Rites",
+    "timestamp": 1535891078,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't focus initially, but Alt-Tab and Enter start the game in fullscreen. Runs perfectly after that.",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

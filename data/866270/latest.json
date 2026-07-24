@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "866270",
+    "cpu": "Intel Core i7-10710U @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.15-300.fc34.x86_64",
+    "notes": "This game runs perfectly on Linux with Proton out of the box",
+    "os": "Fedora release 34 (Thirty Four) (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626898761,
+    "title": "",
+    "source": "protondb"
+  }
+]

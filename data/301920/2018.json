@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "301920",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "It runs , not full screen and cannot read the game text",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "15980 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537384951,
+    "title": "War of the Human Tanks - ALTeR",
+    "source": "protondb"
+  }
+]

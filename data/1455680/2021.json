@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1455680",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.14.16-zen1-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.14.16-zen1-1-zen",
+    "notes": "Game installs and launches, loads to menu but unable to select anything. No cursor and keyboard activity at all.",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636252804,
+    "title": "",
+    "source": "protondb"
+  }
+]

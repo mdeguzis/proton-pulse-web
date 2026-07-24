@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2399160",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.44.0, 5.16.0-5mx-amd64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.16.0-5mx-amd64",
+    "notes": "Other than the small graphical issue I've noted (which only happens now and then) it runs flawlessly.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1741710671,
+    "title": "Soulash 2",
+    "source": "protondb"
+  }
+]

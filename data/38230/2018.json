@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "38230",
+    "cpu": "AMD Ryzen 3 1300X Quad-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-12-generic",
+    "notes": "Shows a few error boxes during start, gets to start menu then crashes within 30 seconds. Tried a few times, then gave up.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544642436,
+    "title": "Hotel Giant 2",
+    "source": "protondb"
+  }
+]

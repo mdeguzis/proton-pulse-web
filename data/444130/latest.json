@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "444130",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 630",
+    "gpuDriver": "nvldumd.dll",
+    "kernel": "Supported 311 0x0 0x0 0x0",
+    "notes": "I run the game and it crashes without wait. The crash report says that I've violated some kind of access even though I bought the game on steam and has a receipt with it",
+    "os": "Windows 10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1559937736,
+    "title": "Auralux: Constellations",
+    "source": "protondb"
+  }
+]

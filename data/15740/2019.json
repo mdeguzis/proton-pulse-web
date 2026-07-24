@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "15740",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Videos don't play and there simply doesn't seem to be a way to make them play. From what I can tell, this could be a codec issue where Proton doesn't ship with the right codec, while all versions of windows come with it preinstalled. I've tried many solutions, including installing quartz.dll, devenum, and CCCP, and nothing works. The only solution I couldn't test, because it didn't install, was installing WMP9 via protontricks/winetricks. Presumably, installing WMP9 would have also installed the proper codecs. But this couldn't be done, as Proton seems to only use win64 prefixes and WMP9 can only be installed on a win32 prefix, as there isn't a 64 bit version of WMP9. So I'm throwing in the towel on this one. I hope someone in the future can get something useful from this information. As an interesting side note, there is an \"original\" beta branch where the problems are reversed. The videos play but the in game audio doesn't work. I haven't had any luck making it work there either. I even tried re-encoding and swapping the videos and in game \"oddio\" between the two branches and still no luck. It just refuses to work. Good luck to those of you in the future!",
+    "os": "KDE neon User Edition 5.15",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1559903066,
+    "title": "Oddworld: Munch's Oddysee",
+    "source": "protondb"
+  }
+]

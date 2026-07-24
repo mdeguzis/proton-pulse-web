@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1611490",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 16.0.6, DRM 3.52, 6.4.0-gentoo)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.4.0-gentoo",
+    "notes": "Not recommended. Play on Windows if you have to, but don't expect it to play well either way.",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1704801186,
+    "title": "[Chilla's Art] Night Delivery | \u4f8b\u5916\u914d\u9054",
+    "source": "protondb"
+  }
+]

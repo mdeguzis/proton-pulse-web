@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1532200",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M1000M",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-48-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1664634010,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1532200",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.19.13-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1665336172,
+    "title": "",
+    "source": "protondb"
+  }
+]

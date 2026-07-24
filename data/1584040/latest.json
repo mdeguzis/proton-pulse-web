@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1584040",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.56-1-MANJARO",
+    "notes": "Won't load. Can't log in (freezes)",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628827294,
+    "title": "",
+    "source": "protondb"
+  }
+]

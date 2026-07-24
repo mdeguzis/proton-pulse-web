@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "786570",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-arch1-1-ARCH",
+    "notes": "No sound, and stutters a bit when playing.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-5",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1569344593,
+    "title": "The Alpha Device",
+    "source": "protondb"
+  }
+]

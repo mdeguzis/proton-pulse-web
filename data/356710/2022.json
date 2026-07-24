@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "356710",
+    "cpu": "AMD Ryzen 3 3100 4-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.44.0, 5.16.2-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.4",
+    "kernel": "5.16.2-1-MANJARO",
+    "notes": "'Out of the box' doesn't start. Switching to experimental doesn't do anything.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1657239580,
+    "title": "",
+    "source": "protondb"
+  }
+]

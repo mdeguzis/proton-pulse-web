@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "632020",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-d4e7d8b7f0)",
+    "kernel": "4.19.2-arch1-1-ARCH",
+    "notes": "runs from fresh install",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543038949,
+    "title": "Necromancer Returns",
+    "source": "protondb"
+  }
+]

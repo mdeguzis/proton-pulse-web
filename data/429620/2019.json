@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "429620",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-47-generic",
+    "notes": "No issues with game play works and plays fine.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1554670020,
+    "title": "Dungeon Rushers: Crawler RPG",
+    "source": "protondb"
+  }
+]

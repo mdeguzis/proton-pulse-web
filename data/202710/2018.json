@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "202710",
+    "title": "Demigod",
+    "timestamp": 1535205741,
+    "rating": "Borked",
+    "notes": "Game runs fine with the wine-pba-git 3.13.r14. Tried Proton 3.7-3 and 3.7-4 beta",
+    "os": "Arch Linux 64-bit (4.18.1-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51-3",
+    "specs": "i7-4790K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "202710",
+    "cpu": "i5-4670K CPU @ 3.40GHz",
+    "gpu": "X.Org AMD Radeon(TM) HD 8800 Series (PITCAIRN, DRM 3.26.0, 4.18.6-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.7",
+    "notes": "Stardock login box launches. Can input creds and can copy paste product key. Game doesn't launch when Register is clicked. Confirmed the game is working in wine 3.15-1.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Borked",
+    "timestamp": "1536451200",
+    "title": "Demigod",
+    "source": "protondb"
+  },
+  {
+    "appId": "202710",
+    "cpu": "Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.26.0, 4.18.0-sabayon, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.0-sabayon",
+    "os": "\"Sabayon Linux amd64 18.10\" (64 bit)",
+    "protonVersion": "3.7.6-beta",
+    "ram": "7901 Mb",
+    "rating": "Borked",
+    "timestamp": 1537116804,
+    "title": "Demigod",
+    "source": "protondb"
+  },
+  {
+    "appId": "202710",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Was able to create an account and register my key. Game crashed right after launching. Was able to copy and paste my Game.prefs file from my Windows install into my \"<Steam Directory>/steamapps/compatdata/202710/pfx/drive_c/users/steamuser/My Documents/My Games/Gas Powered Games/Demigod\" which allowed the game to launch. I was also able to copy over my CVPMultiplayerEngine_#######.csv file, which auto-unlocked the free DLC characters. Also tested hosting my own lobby and was able to create one and use this to unlock the DLC characters as well (I've created symlinks to my libgnutls files to fix network issues with proton and UPlay, so I'm not sure if that step is necessary). Out of the 3 games I've played, I did get one crash, however I have also had crashing issues with this game on my Windows 10 install, so it may not be wine-related. Disable Esync, Disable D3d11, and Use WineD3d11 is required for matches to fully load. Other than that, I was able to run the game at max settings with no stutter or anything.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541048244,
+    "title": "Demigod",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "202710",
+    "title": "Demigod",
+    "timestamp": 1535191341,
+    "rating": "Borked",
+    "notes": "Game runs fine with the wine-pba-git 3.13.r14. Tried Proton 3.7-3 and 3.7-4 beta",
+    "os": "Arch Linux 64-bit (4.18.1-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.51-3",
+    "specs": "i7-4790K",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

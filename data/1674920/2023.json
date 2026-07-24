@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1674920",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5-arch1-1",
+    "notes": "Launches to a black screen and menu music.",
+    "os": "Antergos Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1697288012,
+    "title": "Sovereign Syndicate",
+    "source": "protondb"
+  }
+]

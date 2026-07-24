@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "220860",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Like native",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547231649,
+    "title": "McPixel",
+    "source": "protondb"
+  },
+  {
+    "appId": "220860",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.19.0-0.bpo.4-amd64",
+    "notes": "Runs perfectly",
+    "os": "Debian GNU/Linux 9.9 (stretch)",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558110722,
+    "title": "McPixel",
+    "source": "protondb"
+  }
+]

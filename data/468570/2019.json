@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "468570",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Tried all of the different tweaks, no such luck. Game \"launches\" and steam recognizes it as running but no window or any sign of life is seen. Then within about 10 seconds or so it goes back to being not-played.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1552007933,
+    "title": "De-Void",
+    "source": "protondb"
+  }
+]

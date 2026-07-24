@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "526740",
+    "cpu": "i5-4210U CPU @ 1.70GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Starts and runs, but just shows an infinite black screen.\n(on the good news: this isn't the best game on steam by a long shot)",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "3872 Mb",
+    "rating": "Borked",
+    "timestamp": 1537083923,
+    "title": "hack_me",
+    "source": "protondb"
+  },
+  {
+    "appId": "526740",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Infinite black screen",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1539828440,
+    "title": "hack_me",
+    "source": "protondb"
+  }
+]

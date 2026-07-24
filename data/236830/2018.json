@@ -1,0 +1,98 @@
+[
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1534910400,
+    "rating": "Silver",
+    "notes": "Downloading Multiplayer will test and report back.",
+    "os": "Mint 19 Kernel 4.18",
+    "gpuDriver": " Mesa-Git 18.3",
+    "specs": "FX-8350/ R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1535043633,
+    "rating": "Silver",
+    "notes": "The game works \"out of the box\", unfortunately it works very poorly (it looks like it's limited by a single rendering thread which is used at a 100%). There is quite a bit of stuttering which can make is unplayable for some.",
+    "os": "openSuse Tumbleweed",
+    "gpuDriver": "AMDGPU Mesa 18.1.5",
+    "specs": "R5 2600 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1535193877,
+    "rating": "Borked",
+    "notes": "Works but poor performance makes it unplayable",
+    "os": "Solus (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-5200U / 940M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1535669571,
+    "rating": "Silver",
+    "notes": "If you minimalize, maximalize window you can have black screen.\nNew Nvidia driver from repository \"deb-src http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu xenial main\"\nVery good liquidity game.",
+    "os": "\"Linux Mint 18.3 Sylvia 64bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i5-3470 CPU / GTX 660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1534896000,
+    "rating": "Silver",
+    "notes": "Downloading Multiplayer will test and report back.",
+    "os": "Mint 19 Kernel 4.18",
+    "gpuDriver": " Mesa-Git 18.3",
+    "specs": "FX-8350/ R9 280x",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1535029233,
+    "rating": "Silver",
+    "notes": "The game works \"out of the box\", unfortunately it works very poorly (it looks like it's limited by a single rendering thread which is used at a 100%). There is quite a bit of stuttering which can make is unplayable for some.",
+    "os": "openSuse Tumbleweed",
+    "gpuDriver": "AMDGPU Mesa 18.1.5",
+    "specs": "R5 2600 / RX 580",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1535179477,
+    "rating": "Borked",
+    "notes": "Works but poor performance makes it unplayable",
+    "os": "Solus (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 390.77",
+    "specs": "i5-5200U / 940M",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "236830",
+    "title": "Red Orchestra 2: Heroes of Stalingrad - Single Player",
+    "timestamp": 1535655171,
+    "rating": "Silver",
+    "notes": "If you minimalize, maximalize window you can have black screen.\nNew Nvidia driver from repository \"deb-src http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu xenial main\"\nVery good liquidity game.",
+    "os": "\"Linux Mint 18.3 Sylvia 64bit",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i5-3470 CPU / GTX 660",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

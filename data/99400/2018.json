@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "99400",
+    "title": "Garshap: The Monster Slayer",
+    "timestamp": 1535900435,
+    "rating": "Borked",
+    "notes": "neither configuration tool or game starts",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "99400",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.23.0, 4.15.0-34-generic, LLVM 8.0.0)",
+    "gpuDriver": "4.5 (Compatibility Profile) Mesa 18.3.0-devel - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "notes": "wont open\n",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "7958 Mb",
+    "rating": "Borked",
+    "timestamp": 1537295784,
+    "title": "Garshasp: The Monster Slayer",
+    "source": "protondb"
+  },
+  {
+    "appId": "99400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Game wont start, but i did managed to make the config-window to work. You have to download or Copy the File \"PhysXLoader.dll\" (If you have other Games installed, i would recommend that you search in your Steam-Folder for it, and drop it in your \"Garshasp\"-Gamefolder  \"[PATH TO YOUR GAMEFOLDER]/distro\". So you can play around with the settings... Maybe this will help anyone.",
+    "os": "Linux Mint 19 Tara (64 Bit)",
+    "protonVersion": "Default",
+    "ram": "16054 MB",
+    "rating": "Borked",
+    "timestamp": 1539801706,
+    "title": "Garshasp: The Monster Slayer",
+    "source": "protondb"
+  },
+  {
+    "appId": "99400",
+    "title": "Garshap: The Monster Slayer",
+    "timestamp": 1535886035,
+    "rating": "Borked",
+    "notes": "neither configuration tool or game starts",
+    "os": "LUbuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7-4700HQ / GTX 850m",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

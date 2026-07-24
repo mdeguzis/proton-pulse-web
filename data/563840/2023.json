@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "563840",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.29-1-MANJARO",
+    "notes": "Everything works well with Proton 8, decent FPS even on Epic settings. Only issues I've encountered don't affect gameplay at all.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1685167370,
+    "title": "",
+    "source": "protondb"
+  }
+]

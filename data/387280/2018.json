@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "387280",
+    "cpu": "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 680/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.71-1-MANJARO",
+    "notes": "keyboard remapping is bugged and controller not recognized",
+    "os": "\"Manjaro Linux\" (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "7932 Mo",
+    "rating": "Bronze",
+    "systemInfoNotes": "Xbox One Controller (via USB)",
+    "timestamp": 1537824659,
+    "title": "Inferno 2",
+    "source": "protondb"
+  }
+]

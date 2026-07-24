@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "600080",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 23.1.1 (git-fa55e3c026)",
+    "kernel": "6.4.3-1-MANJARO",
+    "notes": "Works fine out from box with native Proton",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1689796206,
+    "title": "",
+    "source": "protondb"
+  }
+]

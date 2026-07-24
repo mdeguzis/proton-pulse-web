@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "327560",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD SIENNA_CICHLID (DRM 3.40.0, 5.10.0-15-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-15-amd64",
+    "notes": "Standartinstallation, Spiel l\u00e4uft fehlerfrei",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1656223780,
+    "title": "",
+    "source": "protondb"
+  }
+]

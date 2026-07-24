@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12130",
+    "cpu": "Intel Pentium G620 @ 2.60GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 19.1.1",
+    "kernel": "4.19.56-1-MANJARO",
+    "notes": "Before starting the game go to your install folder and backup \"manhunt.exe\" then rename \"testapp.exe\" to \"manhunt.exe\", this should stop the game from crashing. The game does not support wide screen resolutions, choose a 4:3 one, other resolutions may stretch the image or make the game run in a small window. Everything worked perfectly after that, completed the whole game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.2-9",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1562384762,
+    "title": "Manhunt",
+    "source": "protondb"
+  }
+]

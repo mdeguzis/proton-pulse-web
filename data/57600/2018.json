@@ -1,0 +1,39 @@
+[
+  {
+    "appId": "57600",
+    "title": "Tropico 3: Absolute Power",
+    "timestamp": 1535017920,
+    "rating": "Borked",
+    "notes": "\"Error creating process <msiexec /i vcredist.msi>. Reason: File not found\" when attempting to install Microsoft Visual C++ 2005 Redist. Black screen appears then quickly closes",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "57600",
+    "cpu": "i7-4712HQ CPU @ 2.30GHz",
+    "gpu": "Intel Open Source Technology Center Mesa DRI Intel(R) Haswell Mobile x86/MMX/SSE2",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "notes": "Installs and starts without problems. During play, the arrow keys don't work. So movement is only possible using the mouse. Some display settings (e.g. antialiasing) lead to crash.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "3.7-3",
+    "rating": "Silver",
+    "timestamp": "1536364800",
+    "title": "Tropico 3: Absolute Power",
+    "source": "protondb"
+  },
+  {
+    "appId": "57600",
+    "title": "Tropico 3: Absolute Power",
+    "timestamp": 1535003520,
+    "rating": "Borked",
+    "notes": "\"Error creating process <msiexec /i vcredist.msi>. Reason: File not found\" when attempting to install Microsoft Visual C++ 2005 Redist. Black screen appears then quickly closes",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 390.48",
+    "specs": "i7 5820k / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

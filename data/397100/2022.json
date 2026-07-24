@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "397100",
+    "cpu": "Intel Xeon E5-1620 0 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-46-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1662645578,
+    "title": "MachineCraft",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "306000",
+    "title": "Super Dungeon Bros",
+    "timestamp": 1535042810,
+    "rating": "Borked",
+    "notes": "Gamepad doesn't work, stucks on loading screen when trying to start any game mode.",
+    "os": "Manjaro 17.1.12 64bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "306000",
+    "title": "Super Dungeon Bros",
+    "timestamp": 1535028410,
+    "rating": "Borked",
+    "notes": "Gamepad doesn't work, stucks on loading screen when trying to start any game mode.",
+    "os": "Manjaro 17.1.12 64bit (Kernel 4.18.3)",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "i7 2600K / GTX760",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

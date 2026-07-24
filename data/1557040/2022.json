@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1557040",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-109-generic",
+    "notes": "no problems detected, just run and play.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1651663622,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1557040",
+    "cpu": "Intel Core2 Quad    Q8400  @ 2.66GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RV730",
+    "gpuDriver": "3.0 Mesa 22.0.4",
+    "kernel": "5.15.41-1-MANJARO",
+    "notes": "Perhaps get a newer/ better computer than mine. Otherwise, no. 1 FPS at 720p",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1654502837,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1557040",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.6-2-MANJARO",
+    "notes": "30+ FPS on FHD easily without eGPU",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1654507394,
+    "title": "",
+    "source": "protondb"
+  }
+]

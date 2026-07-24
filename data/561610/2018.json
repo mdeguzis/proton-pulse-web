@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "561610",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Runs perfectly, you have to copy d3dcompiler_47.dll from the X64 folder to the game folder and rename Movies folder.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1544355808,
+    "title": "MotoGP\u212217",
+    "source": "protondb"
+  }
+]

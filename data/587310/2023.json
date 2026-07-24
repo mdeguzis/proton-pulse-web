@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "587310",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 16.0.6, DRM 3.42, 5.15.0-89-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.0",
+    "kernel": "5.15.0-89-generic",
+    "notes": "Bekomme dann leider am Ende (Heroic Game Launcher) noch diese Errors zur\u00fcck:\nlibGL error: No matching fbConfigs or visuals found\nlibGL error: failed to load driver: radeonsi\nlibGL error: No matching fbConfigs or visuals found\nlibGL error: failed to load driver: radeonsi\nlibGL error: No matching fbConfigs or visuals found\nlibGL error: failed to load driver: swrast\n00ec:err:wgl:X11DRV_WineGL_InitOpenglInfo  couldn't initialize OpenGL, expect problems\n00ec:err:wgl:set_pixel_format Invalid format 0\n013c:fixme:uiautomation:uia_get_providers_for_hwnd Override provider callback currently unimplemented.\n013c:fixme:uiautomation:msaa_provider_GetPropertyValue Unimplemented propertyId 30024",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1701635879,
+    "title": "",
+    "source": "protondb"
+  }
+]

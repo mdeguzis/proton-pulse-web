@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "414580",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Sound works, but all you can see is a white screen.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-4",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1558643222,
+    "title": "Uriel's Chasm 2: \u05d0\u05ea",
+    "source": "protondb"
+  }
+]

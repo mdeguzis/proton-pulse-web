@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "759740",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.14-300.fc29.x86_64",
+    "notes": "Tried to simply start. Tried with different Proton Versions. Tried the suggested Workaround in https://github.com/ValveSoftware/Proton/issues/2052",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1547763626,
+    "title": "RIDE 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "759740",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-8-generic",
+    "notes": "\"Fatal error\" at launch.",
+    "os": "Ubuntu Disco Dingo (development branch) (64\u00a0bits)",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554769435,
+    "title": "RIDE 3",
+    "source": "protondb"
+  }
+]

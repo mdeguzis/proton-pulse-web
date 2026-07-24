@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "814580",
+    "title": "Where Time Stood Still",
+    "timestamp": 1535909362,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab and Enter run the game fullscreen. Works perfectly otherwise, assuming there's normally no audio (Steam store video suggests it's completely silent!).",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "814580",
+    "title": "Where Time Stood Still",
+    "timestamp": 1535894962,
+    "rating": "Gold",
+    "notes": "DOS Box window doesn't initially focus, but Alt-Tab and Enter run the game fullscreen. Works perfectly otherwise, assuming there's normally no audio (Steam store video suggests it's completely silent!).",
+    "os": "CentOS 7 64-bit (Kernel 4.18.5-1.el7.elrepo)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700 / GTX 1050 Ti",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

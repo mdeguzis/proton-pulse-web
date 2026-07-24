@@ -1,0 +1,32 @@
+[
+  {
+    "appId": "531930",
+    "cpu": "Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "X.Org AMD Radeon HD 7900 Series (TAHITI, DRM 3.23.0, 4.15.0-34-generic, LLVM 6.0.0)",
+    "gpuDriver": "3.1 Mesa 18.1.7 - padoka PPA",
+    "kernel": "4.15.0-34-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "16003 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538490287,
+    "title": "Dungeon Rats",
+    "source": "protondb"
+  },
+  {
+    "appId": "531930",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.19.6-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1544724024,
+    "title": "Dungeon Rats",
+    "source": "protondb"
+  }
+]

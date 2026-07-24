@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "944120",
+    "cpu": "Intel Core i5-2450M @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-38-generic",
+    "os": "Ubuntu 18.04.1 LTS (64\u00a0bits)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1540839483,
+    "title": "Abalyte",
+    "source": "protondb"
+  },
+  {
+    "appId": "944120",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "\"Win 32 function failed: HRESULT: 0x80004005\\n Call: at line 223 in file Graphics_DisplayM.cpp\" Manjaro Gnome, kernel 4.19.4.1",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543707362,
+    "title": "Abalyte",
+    "source": "protondb"
+  }
+]

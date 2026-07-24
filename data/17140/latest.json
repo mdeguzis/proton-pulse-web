@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "17140",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.24.10",
+    "kernel": "4.13.0-46-generic",
+    "notes": "After the game launches, the Tilted Mill Entertainment opening video does not play, but appears as a white screen. Most likely because it is encoded with the outdated \nmsvideo1 codec. Click on the white screen and the game will work.",
+    "os": "Ubuntu 17.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1547149151,
+    "title": "Hinterland",
+    "source": "protondb"
+  },
+  {
+    "appId": "17140",
+    "cpu": "Intel Core2 Extreme X9650  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Apart from blank video, everything runs ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1549323341,
+    "title": "Hinterland",
+    "source": "protondb"
+  },
+  {
+    "appId": "17140",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-48-generic",
+    "notes": "The starting video is blank, as others have stated, but everything else runs well.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1557865280,
+    "title": "Hinterland",
+    "source": "protondb"
+  }
+]

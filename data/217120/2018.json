@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "217120",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.22",
+    "kernel": "4.19.8-zen2-1-zen",
+    "notes": "Tested Arcade and some Story mode.\nStory mode features one arena with a boss to shoot that has an animation that tanks fps.\nSound options do not persist between game starts.\nNews Item in the main menu does not show any news.\nOtherwise no problems found.",
+    "os": "Artix",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1545935163,
+    "title": "Waves 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "712730",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.16.0-2-amd64",
+    "notes": "Runs perfectly smooth, no options required",
+    "os": "Debian GNU/Linux testing (buster)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1563537605,
+    "title": "SIMULACRA",
+    "source": "protondb"
+  }
+]

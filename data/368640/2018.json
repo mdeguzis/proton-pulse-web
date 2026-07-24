@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "368640",
+    "cpu": "Intel Core i5-4200M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 13.0.6",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Still need to beat the very last chapter but otherwise everything works perfectly.",
+    "os": "Debian GNU/Linux 9.6 (stretch)",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1542016769,
+    "title": "htoL#NiQ: The Firefly Diary / htoL#NiQ-\u30db\u30bf\u30eb\u30ce\u30cb\u30c3\u30ad-",
+    "source": "protondb"
+  },
+  {
+    "appId": "368640",
+    "cpu": "Intel Core i3-3217U @ 1.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Played only the first chapter, but it worked perfectly. Fullscreen worked perfectly and the DS4 mapping as well",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1543116120,
+    "title": "htoL#NiQ: The Firefly Diary / htoL#NiQ-\u30db\u30bf\u30eb\u30ce\u30cb\u30c3\u30ad-",
+    "source": "protondb"
+  }
+]

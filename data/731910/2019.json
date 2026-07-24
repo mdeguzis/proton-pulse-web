@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "731910",
+    "cpu": "Intel Xeon E5-1620 0 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 18.3.1",
+    "kernel": "4.20.0-arch1-1-ARCH",
+    "notes": "Game launches with the message \"DX11 feature level 10.0 is required to run the engine\". I have attempted NO fixes yet.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1547272767,
+    "title": "JumpSky",
+    "source": "protondb"
+  }
+]

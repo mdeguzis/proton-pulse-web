@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "658980",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "4.20.13-arch1-1-ARCH",
+    "notes": "After coming back from an alt-tab, the mouse becomes SUPER sensitive. Might be a WM issue (Cinnamon).",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1551936905,
+    "title": "Valnir Rok Survival RPG",
+    "source": "protondb"
+  },
+  {
+    "appId": "658980",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel",
+    "kernel": "5.3.6-fsync-toneport-dma",
+    "notes": "Mouse feels a bit sporadic, freezes sometimes during loading but fixes itself, some cutscenes seems not to work, space bar skips everything. Game is dead anyways, but it works",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1571686265,
+    "title": "Valnir Rok Survival RPG",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1197260",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (raphael_mendocino, LLVM 15.0.7, DRM 3.52, 6.3.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.2",
+    "kernel": "6.3.8-arch1-1",
+    "notes": "In the foreground, perfect.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1740325390,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1197260",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.63, 6.15.4-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.2",
+    "kernel": "6.15.4-zen2-1-zen",
+    "notes": "",
+    "os": "Mikicrep OS",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1754043233,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1197260",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.63, 6.15.4-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.2",
+    "kernel": "6.15.4-zen2-1-zen",
+    "notes": "",
+    "os": "Mikicrep OS",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1766322062,
+    "title": "",
+    "source": "protondb"
+  }
+]

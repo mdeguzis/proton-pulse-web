@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "411390",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.0-1-amd64",
+    "notes": "Game crash whenever game characters speak a bit longer, tried all the tweak, still no luck.",
+    "os": "MX 18.1 Continuum",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1567614767,
+    "title": "Getsuei Gakuen -kou-",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "219950",
+    "cpu": "Intel Core2 Duo     E6750  @ 2.66GHz",
+    "duration": "aboutAnHour",
+    "gpu": "nouveau NVA8",
+    "gpuDriver": "3.3 Mesa 18.3.4",
+    "kernel": "5.0.0-3.1-liquorix-amd64",
+    "notes": "For the launcher to work, you have to install dotnet 3.5, i'd recommend using an 32-bit wine prefix.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "4 GB",
+    "rating": "Gold",
+    "timestamp": 1553167245,
+    "title": "NiGHTS Into Dreams",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "219950",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Game launches without any tweaks but it is stuck at 640x480.  Updating the config file for the game does not have any effect on the resolution.  The sound occasionally stutters and I was not able to get controls working, but gameplay does appear to work (I was able to get to the first level but not move).  The \"first run config\" also runs every time the game is launched.  Disabling Esync prevented the game from launching for me so YMMV on that one.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1556144307,
+    "title": "NiGHTS Into Dreams",
+    "source": "protondb"
+  }
+]

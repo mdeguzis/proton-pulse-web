@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "876850",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.16-300.fc31.x86_64",
+    "notes": "Borked - steam without other options",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1581370729,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "876850",
+    "cpu": "AMD A10-7850K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "unreported",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 20.2.0-devel (git-55776a0 2020-07-12 focal-oibaf-ppa)",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "Doesn't start.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1595682424,
+    "title": "",
+    "source": "protondb"
+  }
+]

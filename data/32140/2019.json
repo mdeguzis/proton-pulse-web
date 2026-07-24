@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32140",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Access Violation errors followed by \"stack overflow\" looping errors. Need to  \"End\" / kill process to close it. ",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1550606665,
+    "title": "Midnight Mysteries",
+    "source": "protondb"
+  }
+]

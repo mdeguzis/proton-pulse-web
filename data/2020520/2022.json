@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2020520",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.42, 5.15.50-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.2",
+    "kernel": "5.15.50-1-MANJARO",
+    "notes": "If you don't mind the sound effecs,then you can enjoy the Wind Fantasy series.",
+    "os": "Manjaro Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1668422075,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2020520",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 14.0.6, DRM 3.42, 5.15.78-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "5.15.78-1-MANJARO",
+    "notes": "Plays just like in Windows except a slight delay in sound effects",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1668649239,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2020520",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 14.0.6, DRM 3.42, 5.15.78-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "5.15.78-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1668657436,
+    "title": "",
+    "source": "protondb"
+  }
+]

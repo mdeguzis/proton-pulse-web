@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2287140",
+    "cpu": "13th Gen Intel Core i7-1355U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-U)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "I'm planning to try tweaking, but figured I'd report the out-of-the-box experience: No dice. (This is surprising to me, since it apparently works on Steam Deck. I'm hopeful it will be fairly easy to get it running with some work.)",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1752597628,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2287140",
+    "cpu": "13th Gen Intel Core i7-1355U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-U)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Plays, but with some glitches.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "40 GB",
+    "rating": "silver",
+    "timestamp": 1752600066,
+    "title": "",
+    "source": "protondb"
+  }
+]

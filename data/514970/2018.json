@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "514970",
+    "title": "Drive Megapolis",
+    "timestamp": 1536168718,
+    "rating": "Borked",
+    "notes": "Config launcher works, but crashes as soon as you start a new game",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "514970",
+    "title": "Drive Megapolis",
+    "timestamp": 1536154318,
+    "rating": "Borked",
+    "notes": "Config launcher works, but crashes as soon as you start a new game",
+    "os": "Arch 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4790K / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

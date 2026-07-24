@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "275810",
+    "cpu": "AMD Phenom II X4 955",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-45-generic",
+    "notes": "It simply doesn't start. It gives an \"Unrecognized error\" and then exits.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "4 GB",
+    "rating": "Borked",
+    "timestamp": 1550999351,
+    "title": "7 Wonders of the Ancient World",
+    "source": "protondb"
+  },
+  {
+    "appId": "275810",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "Yup. \"Unrecognised error\"",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554766472,
+    "title": "7 Wonders of the Ancient World",
+    "source": "protondb"
+  }
+]

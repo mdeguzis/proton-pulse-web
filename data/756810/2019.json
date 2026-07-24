@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "756810",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-45-generic",
+    "notes": "Won't start, prompts a \"Failed to start init\" error message.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "64 GB",
+    "rating": "Borked",
+    "timestamp": 1552181373,
+    "title": "M.A.X. 2: Mechanized Assault & Exploration",
+    "source": "protondb"
+  }
+]

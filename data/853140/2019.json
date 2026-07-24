@@ -1,0 +1,22 @@
+[
+  {
+    "appId": "853140",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.10.0-38-generic",
+    "notes": "Invisible textures are fixed with PROTON_USE_WINED3D11=1 PROTON_NO_ESYNC=1 %command%. But then the main issue is the camera moving fast and by itself on the bottom right of the screen. It's \"playable\", but with pain and tears, until this \"bug\" is solved.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1546602709,
+    "title": "Adeptus Titanicus: Dominus",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

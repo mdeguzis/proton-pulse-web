@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1131900",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.54, 6.6.8-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.8-200.fsync.fc39.x86_64",
+    "notes": "I get a white screen while audio plays in the background. Seems the game is running as pressing keys makes sounds effects happen. But nothing will display.",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1704340267,
+    "title": "",
+    "source": "protondb"
+  }
+]

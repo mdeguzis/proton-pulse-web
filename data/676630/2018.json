@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "676630",
+    "title": "Attentat 1942",
+    "timestamp": 1536704055,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700, Nvidia 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "676630",
+    "title": "Event[0]",
+    "timestamp": 1536671928,
+    "rating": "Gold",
+    "notes": "By default, the installation downloads an empty folder. You need to enroll in the \"linbeta\" version of the game, that installs a native Linux binary, hence the Gold rating, and not Platinum. Language issues with it, although that is not related to proton",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "676630",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "GeForce GTX 960/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Game straight downloaded the Windows version, and there is no publicy available \"linbeta\".",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "16065 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536841447,
+    "title": "Attentat 1942",
+    "source": "protondb"
+  },
+  {
+    "appId": "676630",
+    "title": "Attentat 1942",
+    "timestamp": 1536689655,
+    "rating": "Platinum",
+    "notes": "No issues",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 6700, Nvidia 1060 6GB",
+    "protonVersion": "3.7-6",
+    "source": "protondb"
+  },
+  {
+    "appId": "676630",
+    "title": "Event[0]",
+    "timestamp": 1536657528,
+    "rating": "Gold",
+    "notes": "By default, the installation downloads an empty folder. You need to enroll in the \"linbeta\" version of the game, that installs a native Linux binary, hence the Gold rating, and not Platinum. Language issues with it, although that is not related to proton",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400S/GT1030",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

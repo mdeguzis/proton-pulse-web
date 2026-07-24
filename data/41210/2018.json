@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "41210",
+    "title": "Eufloria",
+    "timestamp": 1535212392,
+    "rating": "Borked",
+    "notes": "There is a Eufloria HD with Native Linux Client",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "41210",
+    "title": "Eufloria",
+    "timestamp": 1535318829,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "41210",
+    "title": "Eufloria",
+    "timestamp": 1535765781,
+    "rating": "Borked",
+    "notes": "The log ends with a \"pid 2544 != 2543, skipping destruction (fork without exec?)\" and I have no idea of what is this, but I think the game is only playable in a 32 bits prefix because, as stated in WineHQ, we've \"\"to copy msvcr90.dll und msvcm90.dll into the system32 folder and run 'winetricks dotnet20 vcrun2008' \"\" in the game's wine prefix. https://appdb.winehq.org/objectManager.php?sClass=version&iId=18490&iTestingId=47265",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel - Padoka PPA",
+    "specs": "i5-3210M / Radeon HD 7730M",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  },
+  {
+    "appId": "41210",
+    "title": "Eufloria",
+    "timestamp": 1535197992,
+    "rating": "Borked",
+    "notes": "There is a Eufloria HD with Native Linux Client",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "NVIDIA 384.130",
+    "specs": "i5-3570K / GTX 680",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "41210",
+    "title": "Eufloria",
+    "timestamp": 1535304429,
+    "rating": "Borked",
+    "notes": "Won't start",
+    "os": "Manjaro 64-bit (Kernel 4.18.4-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "Ryzen 7 1700/RX 580",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "41210",
+    "title": "Eufloria",
+    "timestamp": 1535751381,
+    "rating": "Borked",
+    "notes": "The log ends with a \"pid 2544 != 2543, skipping destruction (fork without exec?)\" and I have no idea of what is this, but I think the game is only playable in a 32 bits prefix because, as stated in WineHQ, we've \"\"to copy msvcr90.dll und msvcm90.dll into the system32 folder and run 'winetricks dotnet20 vcrun2008' \"\" in the game's wine prefix. https://appdb.winehq.org/objectManager.php?sClass=version&iId=18490&iTestingId=47265",
+    "os": "Linux Mint 19 64-bit (Kernel 4.15.0-33)",
+    "gpuDriver": "Mesa 18.3.0-devel - Padoka PPA",
+    "specs": "i5-3210M / Radeon HD 7730M",
+    "protonVersion": "3.7.5-",
+    "source": "protondb"
+  }
+]

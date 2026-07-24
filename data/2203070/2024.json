@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2203070",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.6-arch1-1",
+    "notes": "Runs out of the box",
+    "os": "Arch Linux (64 \u0431\u0456\u0442)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1708972162,
+    "title": "",
+    "source": "protondb"
+  }
+]

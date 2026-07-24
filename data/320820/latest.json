@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "320820",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.20.0-rc1-mainline",
+    "notes": "Works out of the box, you have to force the game to use proton (cause there is a native version available..kinda). If you wanna play the native version you have to go into BETAS and enable the beta version, then you can install the native version.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550403293,
+    "title": "Toren",
+    "source": "protondb"
+  },
+  {
+    "appId": "320820",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.1.0-devel - padoka PPA",
+    "kernel": "5.0.0-050000-generic",
+    "notes": "If launching out of the box, you need to select to launch with steamplay. Otherwise if launching native you need to select the Beta branch.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1552085281,
+    "title": "Toren",
+    "source": "protondb"
+  },
+  {
+    "appId": "320820",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Although Proton works with some people, with me it just shows that \"control is recommended\", and then black screen.\nI have tried the startup commands, old versions of proton, but without success.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1555090688,
+    "title": "Toren",
+    "source": "protondb"
+  }
+]

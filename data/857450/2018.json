@@ -1,0 +1,65 @@
+[
+  {
+    "appId": "857450",
+    "title": "ISLAND",
+    "timestamp": 1535147007,
+    "rating": "Silver",
+    "notes": "Runs well, movies do not play.",
+    "os": "Arch Linux 64-Bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1800X / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "857450",
+    "title": "ISLAND",
+    "timestamp": 1535632629,
+    "rating": "Silver",
+    "notes": "Movies do not play. Apparently Proton doesn't support vp8. Everything else works fine.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "857450",
+    "cpu": "i7-4790K CPU @ 4.00GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-gentoo",
+    "notes": "No movies, but can otherwise be played and completed.",
+    "os": "\"Gentoo Base System release 2.6\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "20008 Mb",
+    "rating": "Silver",
+    "timestamp": 1537053543,
+    "title": "ISLAND",
+    "source": "protondb"
+  },
+  {
+    "appId": "857450",
+    "title": "ISLAND",
+    "timestamp": 1535132607,
+    "rating": "Silver",
+    "notes": "Runs well, movies do not play.",
+    "os": "Arch Linux 64-Bit (Kernel 4.18.4)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1800X / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "857450",
+    "title": "ISLAND",
+    "timestamp": 1535618229,
+    "rating": "Silver",
+    "notes": "Movies do not play. Apparently Proton doesn't support vp8. Everything else works fine.",
+    "os": "Arch Linux 64-bit (Kernel 4.18.5-zen)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770 / GTX 770",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

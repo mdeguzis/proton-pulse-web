@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "570",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 18.2.5",
+    "kernel": "4.19.4-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "3.7-8",
+    "ram": "16 GB",
+    "rating": "pending",
+    "timestamp": 1543222579,
+    "title": "Dota 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "570",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.0-12-generic",
+    "notes": "",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "3.16-4",
+    "ram": "8 GB",
+    "rating": "pending",
+    "timestamp": 1544380024,
+    "title": "Dota 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "570",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-39-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.7-8",
+    "ram": "16 GB",
+    "rating": "pending",
+    "timestamp": 1545049115,
+    "title": "Dota 2",
+    "source": "protondb"
+  }
+]

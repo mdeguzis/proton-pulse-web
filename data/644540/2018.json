@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "644540",
+    "title": "Dies irae ~Amantes amentes~",
+    "timestamp": 1535250944,
+    "rating": "Gold",
+    "notes": "No response when clicking on Title in game (to return to the title screen) but that might be an issue also on Windows. Everything else works.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "644540",
+    "cpu": "i7-4770 CPU @ 3.40GHz",
+    "gpu": "GeForce GTX 770/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.5-zen1-1-zen",
+    "notes": "No problems whatsoever.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7916 Mb",
+    "rating": "Platinum",
+    "timestamp": 1536826647,
+    "title": "Dies irae ~Amantes amentes~",
+    "source": "protondb"
+  },
+  {
+    "appId": "644540",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "It just works, both on 3.7.8 and 3.16",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "31 GB",
+    "rating": "Platinum",
+    "timestamp": 1540709847,
+    "title": "Dies irae ~Amantes amentes~",
+    "source": "protondb"
+  },
+  {
+    "appId": "644540",
+    "title": "Dies irae ~Amantes amentes~",
+    "timestamp": 1535236544,
+    "rating": "Gold",
+    "notes": "No response when clicking on Title in game (to return to the title screen) but that might be an issue also on Windows. Everything else works.",
+    "os": "Gentoo AMD64 (Kernel 4.18.4)",
+    "gpuDriver": "Mesa git",
+    "specs": "Ryzen 5 1600 / RX 550",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

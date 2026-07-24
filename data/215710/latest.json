@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "215710",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-16-generic",
+    "notes": "Contrary to the native port (the puzzle levels were broken for me) this one runs flawlessly.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1552144298,
+    "title": " Fieldrunners 2",
+    "source": "protondb"
+  }
+]

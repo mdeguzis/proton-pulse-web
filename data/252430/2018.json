@@ -1,0 +1,59 @@
+[
+  {
+    "appId": "252430",
+    "title": "Dusty Revenge",
+    "timestamp": 1535204521,
+    "rating": "Borked",
+    "notes": "Sometimes you can reach menu, but then it crashes when starting game.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "252430",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Crashes after developer titles.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Borked",
+    "timestamp": 1539225089,
+    "title": "Dusty Revenge:Co-Op Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "252430",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-arch1-1-ARCH",
+    "notes": "Game minimizes after opening credits the first time. After that runs with stable 60 FPS",
+    "os": "Linux 4.x",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1542191950,
+    "title": "Dusty Revenge:Co-Op Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "252430",
+    "title": "Dusty Revenge",
+    "timestamp": 1535190121,
+    "rating": "Borked",
+    "notes": "Sometimes you can reach menu, but then it crashes when starting game.",
+    "os": "Fedora 28 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 770",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

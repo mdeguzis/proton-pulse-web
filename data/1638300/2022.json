@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1638300",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "4.15.0-167-generic",
+    "notes": "Das Spiel ist noch im Earlyaccess (5 Feb 22) und hat leichte Audioprobleme",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1644074263,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1638300",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.35, 5.4.0-104-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-devel (git-177805c 2022-03-13 focal-oibaf-ppa)",
+    "kernel": "5.4.0-104-generic",
+    "notes": "Everything works great until it randomly freezes up",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1648752528,
+    "title": "",
+    "source": "protondb"
+  }
+]

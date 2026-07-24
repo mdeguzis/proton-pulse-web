@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1502260",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.49, 6.2.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.2.5-arch1-1",
+    "notes": "Runs perfectly OOTB",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1678649209,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "619890",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "After loading, immediately displays the starfield....but nothing happens. No logo, no menu, no game.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1556145705,
+    "title": "Evil Glitch",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1106530",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-43-generic",
+    "notes": "Runs great. Only issue is game crashing if you open and close the in-game Steam overlay (which is avoidable)",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1644911748,
+    "title": "",
+    "source": "protondb"
+  }
+]

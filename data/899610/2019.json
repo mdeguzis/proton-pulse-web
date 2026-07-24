@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "899610",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.19.16-1-MANJARO",
+    "notes": "Everything seems to work perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1549779359,
+    "title": "So, uh... a spaceship crashed in my yard.",
+    "source": "protondb"
+  },
+  {
+    "appId": "899610",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.0.0-23-lowlatency",
+    "notes": "Steam overlay doesn't work",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-2",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1565531165,
+    "title": "So, uh... a spaceship crashed in my yard.",
+    "source": "protondb"
+  },
+  {
+    "appId": "899610",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.6-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1571948421,
+    "title": "So, uh... a spaceship crashed in my yard.",
+    "source": "protondb"
+  }
+]

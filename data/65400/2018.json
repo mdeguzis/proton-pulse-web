@@ -1,0 +1,48 @@
+[
+  {
+    "appId": "65400",
+    "cpu": "i7-7700K CPU @ 4.20GHz",
+    "gpu": "GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Plays with XBox360 game pad but only with D Pad for directions (left stick disabled) and buttons are different from Windows and not configurable., i.e., X functions as A button. Game still plays fine.",
+    "os": "Linux Mint 18.3 Sylvia (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "32113 Mb",
+    "rating": "Silver",
+    "timestamp": 1536714694,
+    "title": "Archon Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "65400",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "GeForce GT 630/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.77",
+    "kernel": "4.17.0-0.bpo.3-amd64",
+    "notes": "Out of the box gamepad may not work right. With moltengamepad or xboxdrv it's possible to make it usable.",
+    "os": "Debian GNU/Linux 9.5 (stretch) (64 bit)",
+    "protonVersion": "3.7-6 Beta",
+    "ram": "7945 Mb",
+    "rating": "Gold",
+    "timestamp": 1536944125,
+    "title": "Archon Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "65400",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "No problems found.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1542050187,
+    "title": "Archon Classic",
+    "source": "protondb"
+  }
+]

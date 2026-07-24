@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "207890",
+    "title": "Fotball Manager 2013",
+    "timestamp": 1535679605,
+    "rating": "Borked",
+    "notes": "Gives error message related to gameoverlayrenderer.so when steamclient is launched from terminal, process starts but never launched a window.",
+    "os": "Kubuntu 18.04 (4.15.0.33-generic)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-4510u / Geforce 840m",
+    "protonVersion": "tested both default and",
+    "source": "protondb"
+  },
+  {
+    "appId": "207890",
+    "title": "Fotball Manager 2013",
+    "timestamp": 1535665205,
+    "rating": "Borked",
+    "notes": "Gives error message related to gameoverlayrenderer.so when steamclient is launched from terminal, process starts but never launched a window.",
+    "os": "Kubuntu 18.04 (4.15.0.33-generic)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "i7-4510u / Geforce 840m",
+    "protonVersion": "tested both default and",
+    "source": "protondb"
+  }
+]

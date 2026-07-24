@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3267900",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.9-201.nobara.fc43.x86_64",
+    "notes": "Works out of the box",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1775757231,
+    "title": "",
+    "source": "protondb"
+  }
+]

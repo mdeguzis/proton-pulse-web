@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "579840",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Just ran the game with Proton 4.2-5 and it worked flawlessly straight from the get go.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1558717924,
+    "title": "Bloody Trapland 2: Curiosity",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "appId": "238070",
+    "title": "Shadow Warrior Classic (1997)",
+    "timestamp": 1535751002,
+    "rating": "Platinum",
+    "notes": "Smooth, no issues",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "238070",
+    "title": "Shadow Warrior Classic (1997)",
+    "timestamp": 1535796859,
+    "rating": "Platinum",
+    "notes": "works as expected",
+    "os": "Ubuntu 18.04.1 LTS 64 bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i5-5300U / Intel(R) HD Graphics 5500 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "238070",
+    "cpu": "AMD A6-7400K Radeon R5, 6 Compute Cores 2C+4G",
+    "duration": "aboutAnHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Framerate drops a lot sometimes but it is completely playable otherwise",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "6 GB",
+    "rating": "Silver",
+    "timestamp": 1540428772,
+    "title": "Shadow Warrior Classic (1997)",
+    "source": "protondb"
+  },
+  {
+    "appId": "238070",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Perfect",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541191906,
+    "title": "Shadow Warrior Classic (1997)",
+    "source": "protondb"
+  },
+  {
+    "appId": "238070",
+    "title": "Shadow Warrior Classic (1997)",
+    "timestamp": 1535736602,
+    "rating": "Platinum",
+    "notes": "Smooth, no issues",
+    "os": "Ubuntu 18.04.1 64-bit(Kernel 4.15.0-33)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-7400 / GTX 1080",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "238070",
+    "title": "Shadow Warrior Classic (1997)",
+    "timestamp": 1535782459,
+    "rating": "Platinum",
+    "notes": "works as expected",
+    "os": "Ubuntu 18.04.1 LTS 64 bit (Kernel 4.15.0-33-generic)",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "i5-5300U / Intel(R) HD Graphics 5500 ",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

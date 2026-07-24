@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "34810",
+    "title": "Project Freedom",
+    "timestamp": 1535665193,
+    "rating": "Silver",
+    "notes": "Runs OK, but a little bit jittery on my old box. Tried som launch options with no difference.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34810",
+    "title": "Project Freedom",
+    "timestamp": 1535820315,
+    "rating": "Silver",
+    "notes": "No movies. Choppy gameplay during shooting/combat. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "34810",
+    "title": "Project Freedom",
+    "timestamp": 1535650793,
+    "rating": "Silver",
+    "notes": "Runs OK, but a little bit jittery on my old box. Tried som launch options with no difference.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.66-1)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5 M 460 @ 2.53GHz / Mob. Radeon HD5650",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "34810",
+    "title": "Project Freedom",
+    "timestamp": 1535805915,
+    "rating": "Silver",
+    "notes": "No movies. Choppy gameplay during shooting/combat. Steam overlay manually disabled.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

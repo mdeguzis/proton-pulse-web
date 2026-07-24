@@ -1,0 +1,31 @@
+[
+  {
+    "appId": "706130",
+    "cpu": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 with MaxQ Design/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Runs like native windows",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15978 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537764508,
+    "title": "Far from Noise",
+    "source": "protondb"
+  },
+  {
+    "appId": "706130",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-34-generic",
+    "os": "KDE neon User Edition 5.13 (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7959 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537822081,
+    "title": "Far from Noise",
+    "source": "protondb"
+  }
+]

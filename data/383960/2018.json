@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "383960",
+    "title": "Machina of the Planet Tree -Planet Ruler-",
+    "timestamp": 1535558293,
+    "rating": "Silver",
+    "notes": "The dialogues don't look good, boxes appear. Of the rest, the game works well. Imgur: https://imgur.com/a/0yabQjC",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  },
+  {
+    "appId": "383960",
+    "cpu": "Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.7-041807-generic",
+    "notes": "A very small amount of the text at the very beginning is distorted for whatever reason, but the game otherwise runs perfectly.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "24032 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538461182,
+    "title": "Machina of the Planet Tree -Planet Ruler-",
+    "source": "protondb"
+  },
+  {
+    "appId": "383960",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.1",
+    "kernel": "4.19.12-arch1-1-ARCH",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545829052,
+    "title": "Machina of the Planet Tree -Planet Ruler-",
+    "source": "protondb"
+  },
+  {
+    "appId": "383960",
+    "title": "Machina of the Planet Tree -Planet Ruler-",
+    "timestamp": 1535543893,
+    "rating": "Silver",
+    "notes": "The dialogues don't look good, boxes appear. Of the rest, the game works well. Imgur: https://imgur.com/a/0yabQjC",
+    "os": "Solus 64-bit (Kernel 4.17.17)",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "i5-2320 / iGPU HD 2000",
+    "protonVersion": "3.7-3",
+    "source": "protondb"
+  }
+]

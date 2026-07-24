@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "517160",
+    "title": "Richie's Plank Experience",
+    "timestamp": 1536022483,
+    "rating": "Silver",
+    "notes": "Didn't test setting up a real plank, or foot tracking.",
+    "os": "Xubuntu 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "517160",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Tested real world plank.  Haven't tested vive tracker.  Otherwise perfect.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1545019714,
+    "title": "Richie's Plank Experience",
+    "source": "protondb"
+  },
+  {
+    "appId": "517160",
+    "title": "Richie's Plank Experience",
+    "timestamp": 1536008083,
+    "rating": "Silver",
+    "notes": "Didn't test setting up a real plank, or foot tracking.",
+    "os": "Xubuntu 64-bit (Kernel 4.15)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-6700K / GTX 980",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

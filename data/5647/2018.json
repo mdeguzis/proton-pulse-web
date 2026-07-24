@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "5647",
+    "title": "Call of Duty",
+    "timestamp": 1536072971,
+    "rating": "Gold",
+    "notes": "Need to apply \"__GL_ExtensionStringVersion=17700 %command%\" to launch options. If not applied, buffer overrun will occur.",
+    "os": "Gentoo AMD64 (Custom 4.18.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-7820X / GTX 1080 Ti (SLI)",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  },
+  {
+    "appId": "5647",
+    "title": "Call of Duty",
+    "timestamp": 1536058571,
+    "rating": "Gold",
+    "notes": "Need to apply \"__GL_ExtensionStringVersion=17700 %command%\" to launch options. If not applied, buffer overrun will occur.",
+    "os": "Gentoo AMD64 (Custom 4.18.3)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel i7-7820X / GTX 1080 Ti (SLI)",
+    "protonVersion": "3.7.5",
+    "source": "protondb"
+  }
+]

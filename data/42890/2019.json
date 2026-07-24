@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "42890",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.20.5-042005-generic",
+    "notes": "The game will run after some small tweaks. It normally fails to launch because it can not find the sots.gob file as it is looking for it in the user home directory. There are two solutions to this, first is to move, from the game folder, the stos.gob and the sots_local_en.gob(or the language that you have installed) to the user home directory. Second you can modify the sots.ini file(which is in the games base directory) and replace the two lines under [Modules] with\nMount1=Z:\\home\\<INSERT USER NAME>\\.local\\share\\Steam\\steamapps\\common\\Sword of the Stars Complete Collection\\sots_local_en.gob\nMount2=Z:\\home\\<INSERT USER NAME>\\.local\\share\\Steam\\steamapps\\common\\Sword of the Stars Complete Collection\\sots.gob\nBe sure to change <INSERT USER NAME> to your current user name. If you have installed the game to a different directory, make sure to change the two lines to reflect the location installed, the two lines above are the default install locations.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1548860230,
+    "title": "Sword of the Stars: Complete Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "42890",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.8",
+    "kernel": "4.18.0-17-generic",
+    "notes": "Gives error saying \"application error occurred\", then creates a \"Mars.dmp\" file. I tried moving the two files suggested in previous post to the home directory, but still failed to launch.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1554565285,
+    "title": "Sword of the Stars: Complete Collection",
+    "source": "protondb"
+  },
+  {
+    "appId": "42890",
+    "cpu": "Intel Core i3-4000M @ 2.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.1 - padoka PPA",
+    "kernel": "4.15.0-50-generic",
+    "notes": "Does not load. gives error of \"application error occurred\", then creates a \"Mars.dmp\" and then just gives a frozen black screen.\n\nMoving the files as proposed below didnt change anything. Editing the INI caused the game to crash on load.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "ram": "12 GB",
+    "rating": "Borked",
+    "timestamp": 1559649408,
+    "title": "Sword of the Stars: Complete Collection",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461720",
+    "cpu": "AMD A8-3850 APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650 Ti BOOST",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Won't start unless you are using separately installed (system) WINE directly on the 64-bit executable in console. Then, it starts up and is trying to connect to the Internet in Fullscreen, while it cannot. \"Single Player\" is not accessible during this failed infinite connection loop. Did not try it with Steam Offline. Steam/Proton various Launch options did not work.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "7 GB",
+    "rating": "Borked",
+    "timestamp": 1544499447,
+    "title": "Tank Blast",
+    "source": "protondb"
+  }
+]

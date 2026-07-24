@@ -1,0 +1,54 @@
+[
+  {
+    "appId": "1106880",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-17d9490cef)",
+    "kernel": "5.2.3-arch1-1-ARCH",
+    "notes": "Runs perfectly with no issues. ",
+    "os": "Unknown",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1564213644,
+    "title": "Tribes of Midgard - Open Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "1106880",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-arch1-1-ARCH",
+    "notes": "The game runs out of the box really well at max settings with stable framerates.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1567701425,
+    "title": "Tribes of Midgard - Open Beta",
+    "source": "protondb"
+  },
+  {
+    "appId": "1106880",
+    "cpu": "Intel Xeon           E5450  @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD JUNIPER",
+    "gpuDriver": "3.1 Mesa 19.2.0-devel - padoka PPA",
+    "kernel": "5.2.11-050211-generic",
+    "notes": "\u0438\u0433\u0440\u0430 \u043d\u0435 \u0445\u043e\u0442\u0435\u043b\u0430 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c\u0441\u044f \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439 \u043d\u0430 D3d11 \u043f\u043e\u0441\u043b\u0435 \u0442\u043e\u0433\u043e \u043a\u0430\u043a \u0434\u043e\u0431\u0430\u0432\u0438\u043b \u043a\u043e\u043c\u0430\u043d\u0434\u0443 PROTON_USE_WINED3D11=1 \u0438\u0433\u0440\u0430 \u043d\u0430\u0447\u0430\u043b\u0430 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c\u0441\u044f \u0441 1FPS. \u043f\u043e\u0441\u043b\u0435 \u0442\u043e\u0433\u043e \u043a\u0430\u043a \u044f \u043f\u043e\u043c\u0435\u043d\u044f\u043b \u0432\u0435\u0440\u0441\u0438\u044e \u043f\u0440\u043e\u0442\u043e\u043d\u0430 \u043d\u0430 3,18 - 9 \u0438\u0433\u0440\u0430 \u043d\u0430\u0447\u0430\u043b\u0430 \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0442\u044c\u0441\u044f \u0432 \u043c\u0435\u043d\u044e 20 \u0444\u043f\u0441. \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043c\u043e\u0436\u043d\u043e \u0432\u044b\u0431\u0438\u0442\u044c \u0438 \u0431\u043e\u043b\u044c\u0448\u0435  \n\n\nthe game did not want to start with an error on D3d11, after adding the PROTON_USE_WINED3D11 = 1 command, the game started with 1FPS. after I changed the proton version to 3.18-9, the game started working in the menu 20 frames per second. maybe you can knock more",
+    "os": "Ubuntu 18.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "3.16-8",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1572192761,
+    "title": "Tribes of Midgard - Open Beta",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "269110",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "In launcher it defaulted to using OpenGL for rendering, and game worked perfectly. ",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1547053301,
+    "title": "Super Motherload",
+    "source": "protondb"
+  },
+  {
+    "appId": "269110",
+    "cpu": "AMD Athlon X4 880K Quad Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon R7 300",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "5.1.7-050107-generic",
+    "notes": "Select DirectX in the Super Motherload launcher, OpenGL will result in crash. Motherload Goldium works perfectly with no tweaks.",
+    "os": "Zorin OS 15",
+    "protonVersion": "4.2-7",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1560420757,
+    "title": "Super Motherload",
+    "source": "protondb"
+  },
+  {
+    "appId": "269110",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.0-17-generic",
+    "notes": "Game launched using OpenGL, but all text characters were just blocks, and was completely unusable",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.2-7",
+    "ram": "4 GB",
+    "rating": "Bronze",
+    "timestamp": 1560909130,
+    "title": "Super Motherload",
+    "source": "protondb"
+  }
+]

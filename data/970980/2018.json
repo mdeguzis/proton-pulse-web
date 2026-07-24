@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "970980",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Only tried the demo, but it works very well with great performance. At one point the sound of footsteps are way to loud - but this can be fixed using protontricks",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1541862076,
+    "title": "VR INTERACTIVE TRAILER: Runes",
+    "source": "protondb"
+  }
+]

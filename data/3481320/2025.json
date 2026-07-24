@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3481320",
+    "cpu": "AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.61, 6.14.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "Pretty cool atmospheric card game on an war setting",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1747525642,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3481320",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Game did not display anything",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1748431408,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3481320",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Game works fine",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1748440125,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "appId": "934070",
+    "cpu": "Intel(R) Core(TM)2 Quad CPU    Q6600  @ 2.40GHz",
+    "gpu": "X.Org AMD REDWOOD (DRM 2.50.0 / 4.18.6-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "3.1 Mesa 18.1.8",
+    "kernel": "4.18.6-arch1-1-ARCH",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "3.7-6",
+    "ram": "3946 Mb",
+    "rating": "Borked",
+    "timestamp": 1536978950,
+    "title": "MochiMochi",
+    "source": "protondb"
+  }
+]

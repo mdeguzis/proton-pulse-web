@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "336010",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-128-generic",
+    "os": "Linux Mint 18.1 Serena (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15965 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538877246,
+    "title": "MXGP - The Official Motocross Videogame Compact",
+    "source": "protondb"
+  },
+  {
+    "appId": "336010",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.4.0-128-generic",
+    "notes": "IF it ain't broke don't fix, I posted the report above this one (see same pc specs)when the game worked just fine. Since then I tried changing some of the settings and disabling 'Steam Play' (Proton) in the Steam settings to get some other game working, when I re-enabled Proton this game no longer works, I get the first splash screen after the little config box, hit 'play' one splash screen shows then just black screen.",
+    "os": "Linux Mint 18.1 Serena (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "15965 Mb",
+    "rating": "Borked",
+    "timestamp": 1539382915,
+    "title": "MXGP - The Official Motocross Videogame Compact",
+    "source": "protondb"
+  },
+  {
+    "appId": "336010",
+    "cpu": "Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070/PCIe/SSE2",
+    "gpuDriver": "4.5.0 NVIDIA 384.130",
+    "kernel": "4.4.0-128-generic",
+    "notes": "It worked, then it didn't and now it does again, my 3rd post here about this game. The 2 posts below this are mine, I deleted the whole folder \"336010\" found here: /<Path-to-your-install-directory>/steamapps/compatdata/336010 and started the game, it went through the 'first time setup' stuff again and worked just fine again. Also have gone back to Nvidia 384 video driver as my system was failing to boot correctly with 396 and 390 drivers. Proton version is also updated same day as I did this fix!",
+    "os": "Linux Mint 18.1 Serena (64 bit)",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "15965 Mb",
+    "rating": "Gold",
+    "timestamp": 1539572563,
+    "title": "MXGP - The Official Motocross Videogame Compact",
+    "source": "protondb"
+  }
+]

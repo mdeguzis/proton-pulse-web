@@ -1,0 +1,1143 @@
+/* ---- Index page specifics ---- */
+
+/* hero shell - the atom SVG lives absolutely positioned inside this */
+.welcome-header {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background:
+    radial-gradient(700px 320px at 70% 50%, rgba(102, 192, 244, 0.08), transparent 60%),
+    linear-gradient(180deg, var(--s2), var(--s1));
+  padding: 36px 32px 38px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  /* sci-fi corner clip on top-right */
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+}
+
+/* hairline accent inside the hero, top edge */
+.welcome-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, var(--accent) 30%, var(--green-hi) 55%, var(--accent) 70%, transparent);
+  z-index: 2;
+}
+
+/* hero atom SVG layer: anchored right, opacity full so it actually shows up */
+.hero-atom {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* nucleus gets a soft heartbeat - same rhythm as the banner pulse */
+.hero-atom .hero-nucleus {
+  filter: drop-shadow(0 0 12px var(--accent-glow));
+  animation: hero-nucleus-pulse 2s ease-in-out infinite;
+  transform-origin: 0 0;
+}
+
+/* electrons cast a subtle trail glow */
+.hero-atom-group circle[fill^="url"] {
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* very slow ring counter-drift adds parallax depth without being noisy */
+.hero-atom .hero-ring-a { animation: hero-ring-drift-a 60s linear infinite; transform-origin: 0 0; }
+.hero-atom .hero-ring-b { animation: hero-ring-drift-b 80s linear infinite; transform-origin: 0 0; }
+.hero-atom .hero-ring-c { animation: hero-ring-drift-c 100s linear infinite; transform-origin: 0 0; }
+
+/* pulse waveform across the bottom of the hero, kept from the old design */
+.hero-atom .pulse-line {
+  stroke-dasharray: 80 800;
+  stroke-dashoffset: 0;
+  animation: hero-pulse-sweep 4.5s linear infinite;
+  filter: drop-shadow(0 0 4px var(--green-glow));
+}
+
+@keyframes hero-nucleus-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.25); }
+}
+/* each ring keeps its inline rotation (0/60/-60) and adds a full 360 sweep
+   from-and-to that ends at the same visual angle, so the loop is seamless */
+@keyframes hero-ring-drift-a {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes hero-ring-drift-b {
+  from { transform: rotate(60deg); }
+  to   { transform: rotate(-300deg); }
+}
+@keyframes hero-ring-drift-c {
+  from { transform: rotate(-60deg); }
+  to   { transform: rotate(300deg); }
+}
+@keyframes hero-pulse-sweep { to { stroke-dashoffset: -880; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-atom .hero-nucleus,
+  .hero-atom .hero-ring-a,
+  .hero-atom .hero-ring-b,
+  .hero-atom .hero-ring-c,
+  .hero-atom .pulse-line { animation: none; }
+}
+
+/* hero content sits above the SVG */
+.welcome-header > *:not(.hero-atom) { position: relative; z-index: 1; }
+
+.welcome-header .eyebrow {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
+.welcome-title {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--strong);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  /* the brand name gets a subtle gradient on the second word, but we keep it as one block for the H1 -
+     uses a span in index.html for the .pulse-word fragment */
+}
+.welcome-title .pulse-word {
+  background: linear-gradient(90deg, var(--accent-hi), var(--green-hi) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 24px var(--accent-glow);
+}
+
+.welcome-sub {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 640px;
+  opacity: 0.9;
+}
+
+/* community stats bar - mono numbers, hairline accent rule under each */
+/* Games-by-store snapshot. Three counts + a stacked bar showing the share
+   each store contributes, plus a link to the full stats page. Replaces
+   the old .community-stats block on the home page. */
+.store-counts {
+  display: grid;
+  grid-template-columns: repeat(3, auto) 1fr auto;
+  gap: 18px 24px;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.store-count {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease;
+}
+.store-count[data-store="steam"]:hover { border-bottom-color: #1689d0; }
+.store-count[data-store="gog"]:hover   { border-bottom-color: #7a3fcf; }
+.store-count[data-store="epic"]:hover  { border-bottom-color: #bbb; }
+.store-count-num {
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent-hi);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.store-count-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.store-count-bar {
+  display: flex;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--s1);
+}
+.store-count-bar .seg {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+.store-count-bar .seg--steam { background: #1689d0; }
+.store-count-bar .seg--gog   { background: #7a3fcf; }
+.store-count-bar .seg--epic  { background: #888; }
+.store-count-link {
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.store-count-link:hover { color: var(--accent); }
+@media (max-width: 640px) {
+  .store-counts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 16px;
+  }
+  .store-count-bar { grid-column: 1 / -1; order: 4; }
+  .store-count-link { grid-column: 1 / -1; order: 5; text-align: right; }
+}
+
+/* primary CTA row - keeps first load focused on the two essential actions
+   (browse reports, get the plugin) plus a learn-more link to about.html */
+.welcome-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-bottom: 16px;
+}
+/* CTAs adopt a calm Steam blue palette so they read the same in dark and
+   light mode (was blue -> dark blue on secondary and blue -> green on
+   primary, which fluoresced in light mode). Colors:
+     #316783   Steam navy button
+     #417a9b   Steam steel blue button
+     #4c8ab0   Steam blue hover
+   White text works on all three. */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #417a9b;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.05s, box-shadow 0.15s;
+  text-align: center;
+}
+.cta-btn:hover {
+  background: #4c8ab0;
+  box-shadow: 0 4px 14px rgba(65, 122, 155, 0.35);
+  text-decoration: none; /* override global a:hover underline */
+  color: #ffffff;
+}
+.cta-btn:active { transform: translateY(1px); }
+/* .cta-primary was a darker Steam navy earlier; the two CTAs read better as
+   equal-weight peers (both #417a9b), so keep the class for HTML consistency
+   but inherit the exact same fill as .cta-btn. */
+.cta-primary {
+  background: #417a9b;
+  box-shadow: 0 4px 14px rgba(65, 122, 155, 0.35);
+}
+.cta-primary:hover { background: #4c8ab0; box-shadow: 0 6px 18px rgba(65, 122, 155, 0.45); }
+/* On desktop the flex:1 buttons stretch the full container and read as huge
+   banners. Cap the row to half width so the two CTAs stay a sensible size.
+   Mobile keeps the full-width row for tap targets. */
+@media (min-width: 760px) {
+  .welcome-cta { max-width: 50%; }
+}
+.welcome-learn-more {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.welcome-learn-more a { color: var(--accent); }
+
+/* Popular games on Steam: wide-card list (boxart | title + peak | rating).
+   Capped width so the rows read as a list, not a stretched banner. */
+.popular-games { margin-top: 38px; }
+.popular-games-sub {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.pg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pg-card {
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  box-shadow: 0 0 0 1px var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.05s;
+  /* position:relative anchors the card-corner tag's absolute box so the
+     'art-corner' placement can hug the top-right edge of the card. */
+  position: relative;
+}
+/* Combined corner chip (rating + store) for pg-cards. Mirrors the
+   .game-card-combo-tag rules in css/shared/cards.css. Hidden unless
+   data-card-layout="combo" is set on <html>. */
+.pg-card-combo-tag { display: none; }
+[data-card-layout="combo"] .pg-card-combo-tag {
+  display: inline-flex;
+  align-items: stretch;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  border-radius: 0 10px 0 10px;
+  overflow: hidden;
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+[data-card-layout="combo"] .pg-card-combo-tag .combo-tier,
+[data-card-layout="combo"] .pg-card-combo-tag .combo-store {
+  padding: 4px 9px;
+  display: inline-flex;
+  align-items: center;
+}
+[data-card-layout="combo"] .pg-card-combo-tag .combo-tier { background: #3a4252; color: #d6dee8; }
+[data-card-layout="combo"] .pg-card-combo-tag[data-tier="platinum"] .combo-tier { background: #b4c7dc; color: #0a0c10; }
+[data-card-layout="combo"] .pg-card-combo-tag[data-tier="gold"]     .combo-tier { background: #c8a050; color: #111; }
+[data-card-layout="combo"] .pg-card-combo-tag[data-tier="silver"]   .combo-tier { background: #8fa0b0; color: #111; }
+[data-card-layout="combo"] .pg-card-combo-tag[data-tier="bronze"]   .combo-tier { background: #b07040; color: #fff; }
+[data-card-layout="combo"] .pg-card-combo-tag[data-tier="borked"]   .combo-tier { background: #c85050; color: #fff; }
+[data-card-layout="combo"] .pg-card-combo-tag .combo-store { background: #1689d0; color: #fff; }
+[data-card-layout="combo"] .pg-card-combo-tag[data-store="gog"]  .combo-store { background: #7a3fcf; }
+[data-card-layout="combo"] .pg-card-combo-tag[data-store="epic"] .combo-store { background: #2a2a2a; }
+[data-card-layout="combo"] .pg-right { display: none; }
+[data-card-layout="combo"] .pg-card-strip { display: none; }
+/* Combo owns the rating + store presentation; suppress the artwork overlay
+   tag, dedicated card-corner tag, and any inline store pill so they don't
+   peek out from behind the chip. */
+[data-card-layout="combo"] .game-card-store-tag,
+[data-card-layout="combo"] .pg-card-corner-tag,
+[data-card-layout="combo"] .game-card-store-pill { display: none; }
+
+.pg-card-corner-tag { display: none; }
+[data-store-pill-pos="art-corner"] .pg-card-corner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 10px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 0 10px 0 10px;
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+.pg-card-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
+}
+/* Hide the bottom strip by default; "Rating layout: Bottom bar" flips it on. */
+.pg-card-strip { display: none; }
+[data-card-layout="strip"] .pg-card-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 26px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 0 14px;
+  background: var(--s2);
+  color: var(--muted);
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+}
+[data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+[data-card-layout="strip"] .pg-card-strip[data-tier="platinum"] { background: linear-gradient(90deg, #b4c7dc, #cad8e7); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="gold"]     { background: linear-gradient(90deg, #cfb274, #e4cb8f); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="silver"]   { background: linear-gradient(90deg, #a8b1bd, #c5cdd7); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="bronze"]   { background: linear-gradient(90deg, #b07d4f, #cf9e6f); color: #0a0c10; }
+[data-card-layout="strip"] .pg-card-strip[data-tier="borked"]   { background: linear-gradient(90deg, #884444, #b25555); color: #fff; }
+[data-card-layout="strip"] .pg-card-strip-tier {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+[data-card-layout="strip"] .pg-card-strip .game-card-store-pill {
+  background: rgba(0, 0, 0, 0.22) !important;
+  color: inherit;
+  font-size: 0.62rem;
+  padding: 2px 8px;
+}
+/* Hide the inline pill in the strip whenever the store badge lives
+   elsewhere (artwork overlay, card corner, inline next to tier, or
+   trailing split segment). */
+[data-card-layout="strip"][data-store-pill-pos="art"] .pg-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="art-corner"] .pg-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip .game-card-store-pill,
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip .game-card-store-pill { display: none; }
+/* bar-inline: store badge flush right of tier label. Honors the global
+   store-display pref so the text label shows in text mode and the round
+   glyph shows in icon mode. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip {
+  gap: 6px;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip-store {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip-store > svg {
+  width: 16px;
+  height: 16px;
+}
+/* Text mode: brand-colored pill behind the store label so it reads
+   cleanly on any tier-colored strip. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip-store > .store-text {
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #fff;
+  line-height: 1.4;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip[data-store="steam"] .pg-card-strip-store > .store-text { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip[data-store="gog"]   .pg-card-strip-store > .store-text { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .pg-card-strip[data-store="epic"]  .pg-card-strip-store > .store-text { background: #2a2a2a; }
+
+/* Strip store segment for pg-cards. Hidden unless bar-segment is set. The
+   strip-store span carries .store-icon so the SVG must be hidden in text
+   mode or the round monogram circle paints behind the label. */
+.pg-card-strip-store { display: none; }
+.pg-card-strip-store > svg { display: none; }
+[data-store-display="icon"] .pg-card-strip-store > svg { display: block; }
+[data-store-display="icon"] .pg-card-strip-store > .store-text { display: none; }
+/* Two-tone segment: tier color in the leading 3/4, store color in the last
+   1/4. The strip becomes a grid so the segment owns its own column. */
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip-tier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip-store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom-right-radius: 10px;
+}
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip[data-store="steam"] .pg-card-strip-store { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip[data-store="gog"]   .pg-card-strip-store { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip[data-store="epic"]  .pg-card-strip-store { background: #2a2a2a; }
+/* When the user has store-display=icon AND bar-segment is on, hide the text
+   so the segment shows just the round icon. */
+[data-store-display="icon"][data-card-layout="strip"][data-store-pill-pos="bar-segment"] .pg-card-strip-store .store-text { display: none; }
+[data-card-layout="strip"] .pg-right { display: none; }
+/* Suppress link underline on the card AND every text-bearing descendant
+   in every state. Browsers apply :focus underlines to the inner spans
+   (title, sub, tier label) too, not just the <a> itself. */
+.pg-card,
+.pg-card *,
+.pg-card:hover,
+.pg-card:hover *,
+.pg-card:focus,
+.pg-card:focus *,
+.pg-card:focus-visible,
+.pg-card:focus-visible *,
+.pg-card:active,
+.pg-card:active * { text-decoration: none; }
+.pg-card:hover { box-shadow: 0 0 0 1px var(--accent); }
+.pg-card:active { transform: translateY(1px); }
+.pg-thumb-wrap {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.pg-thumb {
+  width: 92px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.pg-info { flex: 1 1 auto; min-width: 0; }
+.pg-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pg-sub {
+  font-size: 0.78rem;
+  color: #c8a050;
+  margin-top: 2px;
+  font-family: var(--mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Drop the " peak players" suffix when the card is too narrow for it
+   (small list rows, all tile-mode tiles). Mobile drops the suffix at sm
+   only; tile mode always drops it because the column width can be as
+   tight as 140px. */
+.pg-list--sm .pg-sub-suffix,
+.pg-list--tile-mode .pg-sub-suffix { display: none; }
+.pg-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .pg-right { flex-direction: column; align-items: flex-end; gap: 4px; }
+}
+.pg-badge {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+}
+.pg-platinum { background: #b4c7dc; color: #0a0c10; }
+.pg-gold     { background: #c8a050; color: #111; }
+.pg-silver   { background: #8fa0b0; color: #111; }
+.pg-bronze   { background: #b07040; color: #fff; }
+.pg-borked   { background: #c85050; color: #fff; }
+.pg-unrated  { background: var(--border); color: var(--muted); }
+
+/* Popular games header row: section label + two rating filter buttons.
+   "Rated" and "Not Rated" are independent toggles, any combination allowed.
+   Inactive buttons read as clearly off (dim, hollow); active buttons light up
+   with the accent so the current filter state is obvious at a glance. */
+.pg-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.pg-section-heading { margin: 6px 0 2px; }
+/* Unified Filters popover for the popular section */
+.pg-filter-wrap { position: relative; }
+/* .pg-filter-toggle-btn, .pg-filter-badge -- base styles in css/shared/filters.css */
+/* .pg-filter-panel base -- in css/shared/filters.css */
+.pg-filter-panel { display: none; flex-direction: column; gap: 14px; }
+.pg-filter-panel.open { display: flex; }
+@media (min-width: 601px) {
+  .pg-filter-panel.open { flex-direction: row; gap: 24px; }
+}
+/* .pg-filter-group, .pg-filter-group-label, .pg-filter, .pg-filter--active,
+   .pg-filter-count -- all in css/shared/filters.css */
+/* View controls: S/M/L size + Grid/List toggle */
+.pg-view-controls { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.pg-size-toggle { display: flex; gap: 4px; }
+.pg-size-btn {
+  padding: 4px 9px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+}
+.pg-size-btn:hover:not(:disabled) { background: var(--s2); color: var(--text); }
+.pg-size-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
+.pg-size-btn:disabled { opacity: 0.4; cursor: default; }
+.pg-size-toggle--disabled { opacity: 0.6; }
+.pg-layout-toggle { display: flex; gap: 4px; }
+.pg-layout-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+}
+.pg-layout-btn:hover { background: var(--s2); color: var(--text); }
+.pg-layout-btn.active { color: var(--accent); border-color: var(--accent); background: rgba(74,159,208,0.08); }
+
+/* S/M/L/XL card sizes */
+/* Size modifiers redirect spacing to .pg-card-row instead of .pg-card so
+   the bottom-bar strip (a sibling of the row) can still reach the card's
+   bottom and side edges. Putting padding on .pg-card itself would inset
+   every child including the strip. */
+.pg-list--sm .pg-thumb { width: 68px; height: 32px; }
+.pg-list--sm .pg-card-row { gap: 10px; padding: 6px 10px 6px 6px; }
+.pg-list--sm .pg-title { font-size: 0.85rem; }
+.pg-list--md .pg-thumb { width: 92px; height: 43px; }
+.pg-list--lg .pg-thumb { width: 130px; height: 61px; }
+.pg-list--lg .pg-card-row { gap: 18px; padding: 10px 16px 10px 10px; }
+.pg-list--lg .pg-title { font-size: 1.05rem; }
+.pg-list--lg .pg-sub { font-size: 0.82rem; }
+.pg-list--xl .pg-thumb { width: 184px; height: 86px; }
+.pg-list--xl .pg-card-row { gap: 20px; padding: 12px 18px 12px 12px; }
+.pg-list--xl .pg-title { font-size: 1.15rem; }
+.pg-list--xl .pg-sub { font-size: 0.88rem; }
+/* XL only makes sense on wider screens */
+.pg-size-btn--desktop-only { display: none; }
+@media (min-width: 760px) { .pg-size-btn--desktop-only { display: inline-flex; } }
+@media (max-width: 600px) {
+  .pg-list--lg .pg-thumb { width: 100px; height: 47px; }
+}
+/* Desktop bump for each size step. Mirrors the matching .cards--XX rules
+   in css/app/home.css so home and app browser scale the same way.
+   Default size on desktop is 'lg'. */
+@media (min-width: 760px) {
+  .pg-list--sm .pg-thumb { width: 110px; height: 51px; }
+  .pg-list--md .pg-thumb { width: 150px; height: 70px; }
+  .pg-list--lg .pg-thumb { width: 220px; height: 103px; }
+  .pg-list--xl .pg-thumb { width: 320px; height: 149px; }
+  .pg-list--sm .pg-card-row { gap: 14px; padding: 10px 14px 10px 10px; }
+  .pg-list--md .pg-card-row { gap: 18px; padding: 12px 18px 12px 12px; }
+  .pg-list--lg .pg-card-row { gap: 24px; padding: 16px 24px 16px 14px; }
+  .pg-list--xl .pg-card-row { gap: 30px; padding: 20px 30px 20px 16px; }
+  .pg-list--sm .pg-title { font-size: 1rem; }
+  .pg-list--md .pg-title { font-size: 1.12rem; }
+  .pg-list--lg .pg-title { font-size: 1.3rem; }
+  .pg-list--xl .pg-title { font-size: 1.5rem; }
+  .pg-list--sm .pg-sub { font-size: 0.8rem; }
+  .pg-list--md .pg-sub { font-size: 0.88rem; }
+  .pg-list--lg .pg-sub { font-size: 0.98rem; }
+  .pg-list--xl .pg-sub { font-size: 1.08rem; }
+}
+
+/* Tile (grid) mode: Steam library look. The container becomes a CSS grid
+   of header-aspect thumbnails; each card re-flows into a vertical tile
+   with the thumbnail on top and the title row below. S/M/L/XL size still
+   applies -- it controls the minimum tile width (and via auto-fill, how
+   many columns fit). */
+.pg-list--tile-mode {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.pg-list--tile-mode.pg-list--sm { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.pg-list--tile-mode.pg-list--md { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.pg-list--tile-mode.pg-list--lg { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.pg-list--tile-mode.pg-list--xl { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+/* Mobile tile grid: same fix as .home-cards-tile-mode in app/home.css.
+   Desktop minmax values collapsed sm+md to 2 cols each and lg+xl to 1
+   col each on a ~360-430px viewport, so the four size steps looked
+   identical in pairs. Tighten mobile so each step produces a distinct
+   column count. */
+@media (max-width: 560px) {
+  .pg-list--tile-mode.pg-list--sm { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); }
+  .pg-list--tile-mode.pg-list--md { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); }
+  .pg-list--tile-mode.pg-list--lg { grid-template-columns: 1fr; }
+  .pg-list--tile-mode.pg-list--xl { grid-template-columns: 1fr; }
+}
+.pg-list--tile-mode .pg-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.pg-list--tile-mode .pg-card-row {
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  align-items: stretch;
+}
+.pg-list--tile-mode .pg-thumb-wrap { width: 100%; }
+.pg-list--tile-mode .pg-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 460 / 215;
+  border-radius: 0;
+  display: block;
+}
+.pg-list--tile-mode .pg-info { padding: 8px 10px; min-width: 0; }
+.pg-list--tile-mode .pg-title {
+  font-size: 0.95rem;
+  line-height: 1.25;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.pg-list--tile-mode .pg-sub { font-size: 0.78rem; }
+/* Right-column rating pill doesn't fit in a vertical tile -- the strip
+   (which the user's card layout already enables by default) carries the
+   tier across the tile bottom instead. */
+.pg-list--tile-mode .pg-right { display: none; }
+
+.pg-empty {
+  padding: 24px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+/* Load more for the popular list. Matches .load-more-btn in shared/site.css
+   so the homepage and the app browser pagination look the same. */
+.pg-load-more-row { display: flex; justify-content: center; }
+.pg-load-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px auto 0;
+  padding: 8px 24px;
+  background: var(--s2);
+  color: var(--muted);
+  border: none;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.pg-load-more:hover { background: var(--s3); color: var(--fg); }
+.pg-load-more-count {
+  background: var(--border);
+  border-radius: 999px;
+  padding: 0 7px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+/* quick-actions row removed - the topnav covers those links now */
+
+/* explore grid - explicit column count per breakpoint so rows are always uniform
+   3 across on desktop, 2 on tablet, 1 on mobile. cards stretch to equal height */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+@media (max-width: 1024px) {
+  .explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .explore-grid { grid-template-columns: 1fr; gap: 12px; }
+}
+.explore-item {
+  position: relative;
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  border: 1px solid var(--border);
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color .18s, transform .18s, box-shadow .18s, background .18s;
+  /* notched bottom-right corner for the sci-fi panel feel */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+.explore-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+.explore-item:hover {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--s3), var(--s2));
+  box-shadow: 0 0 24px -8px var(--accent-glow);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.explore-item:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+.explore-item .ei-title {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--strong);
+  letter-spacing: 0.01em;
+}
+.explore-item .ei-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.explore-item .ei-tag {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  padding-top: 8px;
+}
+.explore-item .ei-tag::before { content: '> '; opacity: 0.6; }
+
+/* info blocks */
+.info-block {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border2);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.info-block strong { color: var(--text); font-weight: 600; }
+.info-block a { color: var(--accent); }
+
+/* prose section */
+.prose {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 720px;
+}
+.prose p { margin-bottom: 14px; color: var(--text); }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--strong); }
+.prose a { color: var(--accent); }
+.prose code {
+  font-size: 0.85em;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  padding: 1px 5px;
+}
+
+/* search (reuse app.html styles) */
+.search-wrap { position: relative; }
+.search-wrap input {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .12s;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--muted); }
+.search-results {
+  position: fixed;
+  z-index: 9999;
+  background: var(--s1);
+  border: 1px solid var(--border2);
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+}
+.search-results.open { display: block; }
+.search-results a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: background .1s;
+}
+.search-results a:last-child { border-bottom: none; }
+.search-results a:hover { background: var(--s2); text-decoration: none; }
+.search-results img { width: 108px; height: 40px; object-fit: cover; }
+.search-no-results { padding: 12px 10px; font-size: 13px; color: var(--muted); }
+
+/* spotlight callout - single high-impact differentiator card */
+.spotlight {
+  border: 1px solid var(--green);
+  border-left: 3px solid var(--green-hi);
+  background: linear-gradient(135deg, rgba(164, 208, 7, 0.07) 0%, var(--s1) 60%);
+  padding: 20px 22px;
+  margin-bottom: 28px;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--green-hi), transparent 60%);
+}
+.spotlight-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--green-hi);
+  margin-bottom: 8px;
+}
+.spotlight-eyebrow::before { content: '> '; opacity: 0.6; }
+.spotlight-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 8px;
+}
+.spotlight-body {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 720px;
+}
+.spotlight-body strong { color: var(--green-hi); }
+
+/* site vs site comparison table */
+.vs-table-wrap {
+  margin-bottom: 40px;
+  overflow-x: auto;
+}
+.vs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.vs-table th,
+.vs-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+.vs-table thead th {
+  background: var(--s2);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--strong);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.vs-table thead th:first-child { color: var(--muted); }
+.vs-table thead th.col-us {
+  color: var(--accent-hi);
+  border-top: 2px solid var(--accent);
+}
+.vs-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+.vs-table tbody tr:hover td { background: rgba(102,192,244,0.04); }
+.vs-table td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+.vs-table td.cell-yes {
+  color: var(--green-hi);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.vs-table td.cell-no {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+.vs-table td.cell-partial {
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+.vs-table td.cell-note {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.vs-table .highlight-row td { border-left: 2px solid var(--green-hi); }
+
+/* responsive */
+@media (max-width: 600px) {
+  .welcome-header { padding: 18px 16px 20px; margin-bottom: 18px; }
+  .welcome-header .eyebrow { margin-bottom: 6px; }
+  .welcome-title { font-size: 1.5rem; margin-bottom: 8px; }
+  .welcome-sub { font-size: 0.82rem; line-height: 1.5; }
+  .store-counts { margin-bottom: 18px; }
+  .store-count-num { font-size: 1.25rem; }
+  .welcome-cta { margin-bottom: 8px; }
+  .welcome-learn-more { margin-bottom: 14px; }
+  .explore-grid { grid-template-columns: 1fr; }
+  .quick-actions { flex-direction: column; }
+  .qa-link { justify-content: center; }
+  .pg-head { gap: 8px; }
+}
+
+/* ---- Icons & Signage legend (about page, #272) ---- */
+/* Anchor targets clear the fixed topbar so the heading isn't hidden under it. */
+#icons-signage, #compare, #mission { scroll-margin-top: 90px; }
+.about-quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 28px;
+}
+.about-legend-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 15px;
+  border: 1.5px solid var(--border2);
+  border-radius: 999px;
+  background: var(--s1);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.about-legend-btn:hover { border-color: var(--accent); color: var(--strong); background: var(--s2); }
+.about-legend-btn .alb-glyph { width: 18px; height: 18px; flex: 0 0 auto; }
+
+/* Your Data & Privacy section on About: three cards laid out on a responsive
+   grid. Cards adopt the same neutral surface as .explore-item so the section
+   feels of a piece with the rest of the page. */
+.your-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin: 8px 0 32px;
+}
+.your-data-card {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--s1);
+}
+.your-data-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--text);
+}
+.your-data-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0 0 8px;
+}
+.your-data-card p:last-child { margin-bottom: 0; }
+.your-data-card ul {
+  color: var(--muted);
+  font-size: 0.88rem;
+  padding-left: 1.2rem;
+  margin: 4px 0 0;
+}
+.your-data-card ul li { margin-bottom: 3px; }
+.your-data-card a { color: var(--accent); text-decoration: none; }
+.your-data-card a:hover { text-decoration: underline; }
+
+.il-intro { color: var(--muted); font-size: 0.9rem; margin: 4px 0 16px; }
+.icons-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px 28px;
+  margin-bottom: 8px;
+}
+.il-col { display: flex; flex-direction: column; }
+.il-subhead {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.il-subhead--spaced { margin-top: 16px; }
+.il-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 2px;
+}
+.il-row + .il-row { border-top: 1px solid rgba(128, 128, 128, 0.12); }
+/* Dark chip behind each mark so white/blue glyphs read in both themes. */
+.il-chip {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #0e1520;
+  border: 1px solid #1f3346;
+}
+.il-chip--steam { background: #1689d0; border-color: #1273b4; }
+.il-chip svg { width: 26px; height: 26px; display: block; }
+.il-text { display: flex; flex-direction: column; min-width: 0; }
+.il-text b { font-size: 0.9rem; color: var(--strong); }
+.il-text span { font-size: 0.8rem; color: var(--muted); }
+/* Tier pills reuse the site's rating colors. */
+.il-tier {
+  flex: 0 0 auto;
+  width: 76px;
+  text-align: center;
+  padding: 5px 6px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.il-tier--platinum { background: #b4c7dc; color: #0a0c10; }
+.il-tier--gold     { background: #c8a050; color: #0a0c10; }
+.il-tier--silver   { background: #8fa0b0; color: #0a0c10; }
+.il-tier--bronze   { background: #b07040; color: #0a0c10; }
+.il-tier--borked   { background: #c85050; color: #fff; }
+/* Store app-icons (Steam/GOG/Epic) render as their own rounded-square tiles,
+   so no dark chip behind them. */
+.il-storeicon { flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.il-storeicon img, .il-storeicon svg { width: 34px; height: 34px; border-radius: 7px; display: block; }

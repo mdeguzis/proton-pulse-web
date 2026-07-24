@@ -1,0 +1,38 @@
+[
+  {
+    "appId": "638200",
+    "cpu": "i7-4770K CPU @ 3.50GHz",
+    "gpu": "GeForce GTX 1060 3GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-32-generic",
+    "notes": "Contains graphics issues, loads to start screen but when starting graphics issues cause it to be unplayable.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15984 Mb",
+    "rating": "Borked",
+    "timestamp": 1537735139,
+    "title": "Capitalism 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "638200",
+    "cpu": "Intel Core i7-4765T @ 2.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GPU",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "3.16.0-77-generic",
+    "notes": "After the start a new game the video freezes",
+    "os": "Linux Mint 17.2 Rafaela",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1541807172,
+    "title": "Capitalism 2",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

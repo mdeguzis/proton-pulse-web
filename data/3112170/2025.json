@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3112170",
+    "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 20.1.8, DRM 3.64, 6.17.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.1-arch1-1",
+    "notes": "Works out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "27 GB",
+    "rating": "gold",
+    "timestamp": 1760482763,
+    "title": "Dice Legends",
+    "source": "protondb"
+  }
+]

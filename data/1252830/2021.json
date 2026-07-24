@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1252830",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX550/550 (POLARIS12, DRM 3.35.0, 5.4.0-86-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-86-generic",
+    "notes": "Overall fine; minor graphic delays",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1633325589,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1252830",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.11-zen1",
+    "notes": "Everything working flawlessly (graphics maxed up).",
+    "os": "Gentoo Base System release 2.8",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1640469242,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1252830",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.7-1-MANJARO",
+    "notes": "Excellent game, excellent support of this game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640722600,
+    "title": "",
+    "source": "protondb"
+  }
+]

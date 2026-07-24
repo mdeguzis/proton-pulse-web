@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314250",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.7-arch1-1-ARCH",
+    "notes": "I was not able to go fullscreen. I only get a tiny window. Trying to change settings...only made the window tinier.",
+    "os": "Antergos Linux",
+    "protonVersion": "4.2-6",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1560198752,
+    "title": "Jet Gunner",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "704470",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.4.0-142-generic",
+    "notes": "only played the demo, not the full game",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567266772,
+    "title": "VR Furballs - Demolition",
+    "source": "protondb"
+  },
+  {
+    "appId": "704470",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "a very nice game. works excellent ootb.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569429031,
+    "title": "VR Furballs - Demolition",
+    "source": "protondb"
+  }
+]

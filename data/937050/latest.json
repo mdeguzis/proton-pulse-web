@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "937050",
+    "cpu": "AMD A8-5600K APU with Radeon HD Graphics",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.8.0-53-generic",
+    "notes": "Set Launch Options to \"PROTON_USE_WINED3D11=1 %command%\" - works fine after this change",
+    "os": "Linux Mint 18.2 Sonya",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1568925899,
+    "title": "JackQuest: The Tale of The Sword",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

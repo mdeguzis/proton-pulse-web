@@ -1,0 +1,67 @@
+[
+  {
+    "appId": "544610",
+    "title": "Battlestar Galactica Deadlock",
+    "timestamp": 1535324471,
+    "rating": "Borked",
+    "notes": "laucher just loops when play game is hit.",
+    "os": "Antergos Stable  (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6400k / GTX 1060 3GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "544610",
+    "cpu": "Intel(R) Core(TM) i5-7600 CPU @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Corporation GeForce GTX 1050 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-20-generic",
+    "os": "Ubuntu 18.04 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7936 Mb",
+    "rating": "Platinum",
+    "timestamp": 1540083796,
+    "title": "Battlestar Galactica Deadlock",
+    "source": "protondb"
+  },
+  {
+    "appId": "544610",
+    "duration": "lessThanAnHour",
+    "notes": "Crashes on start for me, but note, it DOES WORK in standard Wine Staging 3.12 plus DXVK 0.81 outside of Proton.",
+    "protonVersion": "Beta (3.16-3)",
+    "rating": "Borked",
+    "timestamp": 1540619223,
+    "title": "Battlestar Galactica Deadlock",
+    "source": "protondb"
+  },
+  {
+    "appId": "544610",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.4 Mesa 18.2.6",
+    "kernel": "4.19.10-300.fc29.x86_64",
+    "notes": "I continued the campaign from where I left off on my Windows 10 machine. The only issue I had was when using free-look with the right mouse button. When releasing the right mouse button the camera would suddenly start moving on its own. Moving the mouse around would stop it.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1545763246,
+    "title": "Battlestar Galactica Deadlock",
+    "source": "protondb"
+  },
+  {
+    "appId": "544610",
+    "title": "Battlestar Galactica Deadlock",
+    "timestamp": 1535310071,
+    "rating": "Borked",
+    "notes": "laucher just loops when play game is hit.",
+    "os": "Antergos Stable  (Kernel 4.18.5-arch1-1-ARCH)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5 6400k / GTX 1060 3GB",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

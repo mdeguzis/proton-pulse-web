@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "777760",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 384.130",
+    "kernel": "4.4.0-134-generic",
+    "notes": "It does not work in DirectX mode, only OpenGL. When you first run the game, it displays an error message \"3D device not found\" (twice) and then a black screen. When the black screen comes up, press Alt-Enter to go into windowed mode. Then you can use the menu View->Graphics->OpenGL. It will display an error message, after which you should close the game. That's the end of the setup.\n\nWhen you run the game again, you will still get the \"3D device not found\", but if you press Alt-Enter to go to full screen, it will work fine. If you want to play in windowed mode, you need to press Alt-Enter twice when you run the game to switch to full-screen and back because it doesn't work initially in windowed mode. This last step is why I gave it a silver rating and not gold. If you play in fullscreen mode then it is a gold rating.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-9",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1563075992,
+    "title": "Charlie II",
+    "source": "protondb"
+  }
+]

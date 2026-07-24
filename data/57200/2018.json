@@ -1,0 +1,42 @@
+[
+  {
+    "appId": "57200",
+    "title": "Puzzle Dimension",
+    "timestamp": 1535044573,
+    "rating": "Bronze",
+    "notes": "Game works great. Starts in windowed mode. Switching to fullscreen in settings causes the game to lose focus. Alt-tabbing back to it makes it work correctly. Works perfectly with wired Xbox 360 controller.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "57200",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Works great, no problem switching to full screen for me.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1541269940,
+    "title": "Puzzle Dimension",
+    "source": "protondb"
+  },
+  {
+    "appId": "57200",
+    "title": "Puzzle Dimension",
+    "timestamp": 1535030173,
+    "rating": "Bronze",
+    "notes": "Game works great. Starts in windowed mode. Switching to fullscreen in settings causes the game to lose focus. Alt-tabbing back to it makes it work correctly. Works perfectly with wired Xbox 360 controller.",
+    "os": "Ubuntu 18.04 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "I5-4690k/R9 280",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

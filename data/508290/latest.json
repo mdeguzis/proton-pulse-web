@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "508290",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.9",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556592757,
+    "title": "$1 Ride",
+    "source": "protondb"
+  },
+  {
+    "appId": "508290",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-51-generic",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563119515,
+    "title": "$1 Ride",
+    "source": "protondb"
+  },
+  {
+    "appId": "508290",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-200.fc30.x86_64",
+    "notes": "Just give an error message that asks to send the log file to the dev of the game.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569106697,
+    "title": "$1 Ride",
+    "source": "protondb"
+  }
+]

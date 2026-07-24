@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "204840",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 8800",
+    "gpuDriver": "4.5 Mesa 18.3.0-devel",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Xbox 360 controller work perfect. https://www.youtube.com/watch?v=or4aMij1iVk",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543865584,
+    "title": "Babel Rising",
+    "source": "protondb"
+  }
+]

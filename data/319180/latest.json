@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "319180",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.18.0-14-generic",
+    "notes": "Works well, does not fit screen.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "3.7-8",
+    "protonVersionManual": "3.7-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1549564134,
+    "title": "Platypus II",
+    "source": "protondb"
+  },
+  {
+    "appId": "319180",
+    "cpu": "Intel Core i5-5300U @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "4.19.69-1-MANJARO",
+    "notes": "stuck at lower resolution in top left corner",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1570747423,
+    "title": "Platypus II",
+    "source": "protondb"
+  }
+]

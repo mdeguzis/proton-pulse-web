@@ -1,0 +1,1314 @@
+// Shared topbar component for every page on the site.
+// Injects the icon sprite, two-tier banner+nav, and mobile drawer at body start,
+// then wires the universal behaviors (active link, mobile toggle, search dropdown,
+// auth state indicator).
+//
+// Page-specific logic (Supabase stats on index, profile editing, etc.) stays in
+// each page's own JS. This file is the single source of truth for chrome.
+
+(function () {
+  var _reflowOverflow = null; // set by wireNavOverflow, called after auth resolves
+
+  // ---- 1. Markup -------------------------------------------------------
+
+  const SPRITE = `
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+    </symbol>
+    <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>
+    </symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>
+    </symbol>
+    <symbol id="icon-stats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+    </symbol>
+    <symbol id="icon-contact" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </symbol>
+    <symbol id="icon-scoring" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="M5 14h14"/><path d="M5 14a4 4 0 0 0 4-4V5"/><path d="M19 14a4 4 0 0 1-4-4V5"/><path d="M19 14a4 4 0 0 1-4 4h-1a4 4 0 0 0-4 0H9a4 4 0 0 1-4-4"/>
+    </symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+      <path d="M9 18c-4.51 2-5-2-7-2"/>
+    </symbol>
+    <symbol id="icon-gamepad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/>
+      <line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/>
+      <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258a4 4 0 0 0-3.995-3.743Z"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/>
+    </symbol>
+    <!-- List icon for the Wishlist nav entry: bulleted list (three dots +
+         three lines) so it reads as "a saved list of things". -->
+    <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="9" x2="20" y1="6" y2="6"/>
+      <line x1="9" x2="20" y1="12" y2="12"/>
+      <line x1="9" x2="20" y1="18" y2="18"/>
+      <circle cx="5" cy="6"  r="1.4" fill="currentColor" stroke="none"/>
+      <circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none"/>
+      <circle cx="5" cy="18" r="1.4" fill="currentColor" stroke="none"/>
+    </symbol>
+    <!-- Wishlist corner badge: a wrapped present (lid + body + bow + ribbon
+         groove). White fills with black hairline outlines so it reads on any
+         store-pill color at 11-13px without the old white halo. Id kept for
+         call-site stability (home.js references #icon-wishlist-heart). -->
+    <symbol id="icon-wishlist-heart" viewBox="0 0 24 24">
+      <g fill="#fff" stroke="#000" stroke-width="1.2" stroke-linejoin="round">
+        <path d="M4.6 8.2h14.8v3.4H4.6z"/>
+        <path d="M5.6 11.6h12.8v7a1.4 1.4 0 0 1-1.4 1.4H7a1.4 1.4 0 0 1-1.4-1.4z"/>
+        <path d="M12 8.2C10.6 8.2 8 7.9 7.5 6.3 7.1 5.1 8.4 4.3 9.5 5 10.6 5.7 11.5 6.8 12 8.2z"/>
+        <path d="M12 8.2C13.4 8.2 16 7.9 16.5 6.3 16.9 5.1 15.6 4.3 14.5 5 13.4 5.7 12.5 6.8 12 8.2z"/>
+      </g>
+      <path d="M12 8.4v11.8" stroke="#000" stroke-width="1.2"/>
+    </symbol>
+    <!-- Library corner badge: a 2x2 collection grid, clean white tiles (no
+         outline) to match the picker mockup. The gaps between tiles read as
+         the store-pill color. Id kept for call-site stability (home.js
+         references #icon-book-open). -->
+    <symbol id="icon-book-open" viewBox="0 0 24 24" fill="#fff">
+      <rect x="3.4" y="3.4" width="7" height="7" rx="1.5"/>
+      <rect x="13.6" y="3.4" width="7" height="7" rx="1.5"/>
+      <rect x="3.4" y="13.6" width="7" height="7" rx="1.5"/>
+      <rect x="13.6" y="13.6" width="7" height="7" rx="1.5"/>
+    </symbol>
+    <!-- Steam Deck brand mark: dot nested in a right-facing crescent, traced
+         from Valve's official mark (SteamGridDB 1920px source). Monochrome
+         currentColor so the chip themes cleanly (white on dark, dark on the
+         active accent chip, dark on light). The ~1.5u gap between dot and
+         crescent keeps it reading as dot-in-crescent even in one color, like
+         the plain mark. The two-tone blue/white version lives in
+         assets/icons/steam/steam-deck.svg for larger contexts. -->
+    <symbol id="icon-steam-deck" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9.2 1.2A10.8 10.8 0 0 1 9.2 22.8L9.2 18.9A6.9 6.9 0 0 0 9.2 5.1Z"/>
+      <circle cx="9.4" cy="12" r="5.2"/>
+    </symbol>
+    <!-- Steam Machine chip glyph (#273): monochrome square-with-dot so it
+         themes on the at-a-glance chip like the Deck mark. The full two-tone
+         mark lives in assets/icons/steam/steam-machine.svg. -->
+    <symbol id="icon-steam-machine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="18" height="18" rx="4.2"/>
+      <circle cx="12" cy="12" r="3.3" fill="currentColor" stroke="none"/>
+    </symbol>
+    <!-- SteamOS chip glyph (#273): the Steam logo in currentColor. -->
+    <symbol id="icon-steamos" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.004 2c-5.25 0-9.556 4.05-9.964 9.197l5.36 2.216c.454-.31 1.002-.492 1.593-.492.053 0 .104.003.157.005l2.384-3.452v-.049c0-2.08 1.69-3.77 3.77-3.77 2.079 0 3.77 1.692 3.77 3.772s-1.692 3.771-3.77 3.771h-.087l-3.397 2.426c0 .043.003.088.003.133 0 1.562-1.262 2.83-2.825 2.83-1.362 0-2.513-.978-2.775-2.273l-3.838-1.589C3.573 18.922 7.427 22 12.005 22c5.522 0 9.998-4.477 9.998-10 0-5.522-4.477-10-9.999-10zM7.078 16.667c.218.452.595.832 1.094 1.041 1.081.45 2.328-.063 2.777-1.145.22-.525.22-1.1.004-1.625-.215-.525-.625-.934-1.147-1.152-.52-.217-1.075-.208-1.565-.025l1.269.525c.797.333 1.174 1.25.84 2.046-.33.797-1.247 1.175-2.044.843l-1.228-.508zm10.74-7.245c0-1.385-1.128-2.512-2.513-2.512-1.387 0-2.512 1.127-2.512 2.512 0 1.388 1.125 2.513 2.512 2.513 1.386 0 2.512-1.125 2.512-2.513zM15.31 7.53c1.04 0 1.888.845 1.888 1.888s-.847 1.888-1.888 1.888c-1.044 0-1.888-.845-1.888-1.888s.845-1.888 1.888-1.888z"/>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+    </symbol>
+    <symbol id="icon-discord" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 7a14.9 14.9 0 0 0-4-1 10 10 0 0 0-.4 1 14 14 0 0 0-4.2 0A10 10 0 0 0 9 6a14.9 14.9 0 0 0-4 1C3 10.5 2.5 14 3 17a15 15 0 0 0 4.7 2.4l.6-1a9.5 9.5 0 0 1-1.3-.6l.3-.2a10.5 10.5 0 0 0 9.4 0l.3.2a9.4 9.4 0 0 1-1.3.6l.6 1A15 15 0 0 0 21 17c.5-3-.1-6.5-3-10z"/>
+      <circle cx="9.5" cy="11.5" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="14.5" cy="11.5" r="1.2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <!-- Store glyphs for the "store badge: icon" preference. Each retains
+         the brand's actual outline rather than being forced into a circle:
+         Steam is its own round mark on a blue circle; GOG is a white disc
+         with the purple "gog" wordmark; Epic is the shield-with-tab badge
+         in dark grey with the white "EPIC" wordmark. -->
+    <symbol id="icon-store-steam" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="12" fill="#1689d0"/>
+      <g transform="translate(4 4) scale(0.667)" fill="#fff">
+        <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658a3.37 3.37 0 011.912-.59c.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61a2.563 2.563 0 001.314 1.25 2.557 2.557 0 003.337-1.375 2.534 2.534 0 00-1.373-3.331 2.567 2.567 0 00-1.878-.03l1.523.63a1.885 1.885 0 011.013 2.455 1.892 1.892 0 01-2.463 1.011zm11.415-9.301a3.014 3.014 0 00-3.015-3.014 3.013 3.013 0 100 6.027 3.013 3.013 0 003.015-3.013zm-5.273-.004a2.26 2.26 0 014.521 0 2.26 2.26 0 01-4.521 0z"/>
+      </g>
+    </symbol>
+    <symbol id="icon-store-gog" viewBox="0 0 24 24">
+      <!-- GOG's brand mark is a white disc with the purple 'gog' wordmark
+           inside a thin purple ring. Stylized as a clean text mark since
+           the real type face isn't web-available. -->
+      <circle cx="12" cy="12" r="11.5" fill="#fff" stroke="#7a3fcf" stroke-width="1.2"/>
+      <text x="12" y="16" text-anchor="middle" font-family="Inter, -apple-system, system-ui, sans-serif" font-weight="900" font-size="10" fill="#7a3fcf" letter-spacing="-0.5">gog</text>
+    </symbol>
+    <symbol id="icon-store-epic" viewBox="0 0 24 24">
+      <!-- Epic's brand mark is a shield-shaped badge (rounded rectangle
+           with a downward V-tab at the bottom) in dark slate, with the
+           white 'EPIC' wordmark above the tab. -->
+      <path d="M4 2 L20 2 Q22 2 22 4 L22 16 L12 22 L2 16 L2 4 Q2 2 4 2 Z" fill="#2a2a2a"/>
+      <text x="12" y="14" text-anchor="middle" font-family="Inter, -apple-system, system-ui, sans-serif" font-weight="900" font-size="6.5" fill="#fff" letter-spacing="0.3">EPIC</text>
+      <path d="M9 16 L15 16 L12 19 Z" fill="#fff"/>
+    </symbol>
+    <!-- Support links: heart for Patreon, coffee cup for Ko-Fi. Stroke style
+         matches the rest of the nav sprite so they theme with currentColor. -->
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>
+    </symbol>
+    <symbol id="icon-kofi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 8h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/>
+      <path d="M16 9h2.5a2.5 2.5 0 0 1 0 5H16"/>
+      <path d="M7 3.5v2M10 3.5v2M13 3.5v2"/>
+    </symbol>
+  </defs>
+</svg>`;
+
+  const BANNER_AND_NAV = `
+<header class="topbar">
+  <div class="topbar-banner">
+    <a class="topbar-brand" href="index.html">
+      <span class="topbar-brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <ellipse class="brand-ring-a" cx="18" cy="18" rx="15" ry="5.5" stroke="currentColor" stroke-width="1.1"/>
+          <ellipse class="brand-ring-b" cx="18" cy="18" rx="15" ry="5.5" stroke="currentColor" stroke-width="1.1" transform="rotate(60 18 18)"/>
+          <ellipse class="brand-ring-c" cx="18" cy="18" rx="15" ry="5.5" stroke="currentColor" stroke-width="1.1" transform="rotate(-60 18 18)"/>
+          <circle cx="18" cy="18" r="2.6" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="topbar-brand-text">
+        Proton <span class="brand-accent">Pulse</span>
+      </span>
+      <span class="topbar-brand-tag">Open Compatibility Platform</span>
+    </a>
+
+    <div class="topbar-banner-actions">
+      <!-- Site options (gear): page for non-profile settings, starting with
+           an animations on/off toggle. -->
+      <a class="banner-icon-link" href="options.html" data-page="options" title="Site options" aria-label="Site options">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </a>
+      <!-- Theme toggle - sun/moon icon flips between dark (default) and light.
+           Persists to localStorage so it survives page reloads. Respects
+           prefers-color-scheme on first visit when no preference is saved -->
+      <button class="banner-icon-link theme-toggle" id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle theme">
+        <svg class="nav-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="nav-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <div class="gh-auth-chip" id="gh-auth-chip">
+        <a class="auth-link" id="auth-signedout" href="profile.html" title="Sign in or manage account">
+          <svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg>
+          <span>Login</span>
+        </a>
+        <a class="auth-link auth-link--signedin" id="auth-signedin" href="profile.html" title="Manage account" hidden>
+          <img class="auth-avatar" id="google-avatar" src="" alt="" width="22" height="22">
+          <span class="auth-username" id="google-username"></span>
+        </a>
+      </div>
+      <button class="topbar-mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg aria-hidden="true"><use href="#icon-menu"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="topbar-nav">
+    <nav class="topnav-links" id="primary-nav">
+      <a href="index.html" data-page="index">
+        <svg class="nav-icon" aria-hidden="true"><use href="#icon-home"/></svg>
+        <span>Home</span>
+      </a>
+      <!-- Browse dropdown: opens on hover (and focus-within for keyboard).
+           Reports/Data/Coverage/Stats all live behind here so the top row
+           stays compact. Parent button highlights if you're on any child -->
+      <div class="nav-dropdown" data-group="browse">
+        <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          <svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+          <span>Browse</span>
+          <svg class="nav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-dropdown-panel">
+          <a href="app.html" data-page="app">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+            <span>Reports</span>
+          </a>
+          <a href="app.html?filter=mine" data-page="my-library" id="nav-my-library">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg>
+            <span>My Library</span>
+          </a>
+          <a href="app.html?filter=wishlist" data-page="my-wishlist" id="nav-my-wishlist">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg>
+            <span>My Wishlist</span>
+          </a>
+          <a href="lookup.html" data-page="lookup" id="nav-lookup">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg>
+            <span>Look up a Profile</span>
+          </a>
+          <a href="data-index.html" data-page="data-index">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg>
+            <span>Data</span>
+          </a>
+          <a href="coverage.html" data-page="coverage">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg>
+            <span>Coverage</span>
+          </a>
+          <a href="stats.html" data-page="stats">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg>
+            <span>Stats</span>
+          </a>
+        </div>
+      </div>
+      <!-- Resources dropdown: scoring docs and the decky plugin live here -->
+      <div class="nav-dropdown" data-group="resources">
+        <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          <svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg>
+          <span>Resources</span>
+          <svg class="nav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-dropdown-panel">
+          <a href="status.html#status-announcements" title="Latest announcements on the status page">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
+            <span>Announcements</span>
+          </a>
+          <a href="scoring.html" data-page="scoring" title="How compatibility scores are calculated">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg>
+            <span>Scoring</span>
+          </a>
+          <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener" title="Decky Loader plugin for Steam Deck">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg>
+            <span>Decky Plugin</span>
+          </a>
+          <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener" title="Report a bug, file a Game Report, or contact the maintainer">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg>
+            <span>Contact</span>
+          </a>
+          <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener" title="Join the Proton Pulse Discord">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg>
+            <span>Discord</span>
+          </a>
+          <a href="https://ko-fi.com/mikeyd64" target="_blank" rel="noopener" title="Support Proton Pulse on Ko-Fi">
+            <svg class="nav-icon" aria-hidden="true"><use href="#icon-kofi"/></svg>
+            <span>Ko-Fi</span>
+          </a>
+        </div>
+      </div>
+      <!-- Admin link: hidden until checkIsAdmin confirms the signed-in user is an admin -->
+      <a href="admin.html" id="topbar-admin-link" class="auth-admin-navlink" hidden>
+        <span>Admin</span>
+      </a>
+      <!-- Site status: live health of the edge functions the site depends on.
+           Sits just before About so the About link stays the trailing item. -->
+      <a href="status.html" data-page="status" id="topbar-status-link" title="Live health of the Supabase edge functions">
+        <span class="topbar-status-dot" data-state="unknown" aria-hidden="true"></span>
+        <span>Status</span>
+      </a>
+      <!-- About: kept last in nav order so it sits at the trailing edge
+           regardless of whether the admin link is visible. -->
+      <a href="about.html" data-page="about" title="What Proton Pulse is and how it compares to ProtonDB">
+        <svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg>
+        <span>About</span>
+      </a>
+      <!-- Overflow "More" button. Hidden by default; topbar resize observer
+           reveals it and migrates trailing items into the panel when the nav
+           gets squeezed (typical between 760 and ~1280px) -->
+      <div class="nav-overflow" id="nav-overflow" hidden>
+        <button class="nav-overflow-toggle" id="nav-overflow-toggle" aria-haspopup="true" aria-expanded="false" type="button">
+          <svg class="nav-icon" aria-hidden="true"><use href="#icon-menu"/></svg>
+          <span>More</span>
+        </button>
+        <div class="nav-overflow-panel" id="nav-overflow-panel"></div>
+      </div>
+    </nav>
+
+    <div class="topbar-search-wrap">
+      <svg class="topbar-search-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+      <input id="search" type="search" placeholder="Search games or app ID..." autocomplete="off" aria-label="Search games" aria-autocomplete="list" aria-controls="search-dropdown" aria-expanded="false">
+      <div id="search-dropdown" class="search-dropdown" role="listbox" hidden></div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-drawer" id="mobile-nav-drawer" hidden>
+  <a href="index.html" data-page="index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-home"/></svg> Home</a>
+  <!-- Browse group: same items as the desktop Browse dropdown. The parent is a
+       button that expands/collapses its sub-items (accordion), with a caret
+       showing the state. -->
+  <div class="mnav-group">
+    <button class="mnav-parent" type="button" aria-expanded="false" data-group="browse">
+      <svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg>
+      <span>Browse</span>
+      <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mnav-sub">
+      <a href="app.html" data-page="app"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg> Reports</a>
+      <a href="app.html?filter=mine" data-page="my-library" id="mobile-my-library"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> My Library</a>
+      <a href="app.html?filter=wishlist" data-page="my-wishlist" id="mobile-my-wishlist"><svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg> My Wishlist</a>
+      <a href="lookup.html" data-page="lookup" id="mobile-lookup"><svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg> Look up a Profile</a>
+      <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
+      <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
+      <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
+    </div>
+  </div>
+  <!-- Resources group: mirrors the desktop Resources dropdown. -->
+  <div class="mnav-group">
+    <button class="mnav-parent" type="button" aria-expanded="false" data-group="resources">
+      <svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg>
+      <span>Resources</span>
+      <svg class="mnav-caret" aria-hidden="true" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mnav-sub">
+      <a href="status.html#status-announcements"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> Announcements</a>
+      <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
+      <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
+      <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+      <a href="https://ko-fi.com/mikeyd64" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-kofi"/></svg> Ko-Fi</a>
+      <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
+    </div>
+  </div>
+  <a href="admin.html" id="mobile-admin-link" data-page="admin" hidden><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Admin</a>
+  <a href="status.html" data-page="status" id="mobile-status-link"><span class="topbar-status-dot" data-state="unknown" aria-hidden="true"></span> Status</a>
+  <!-- About kept last so it remains the trailing item whether the
+       admin link is visible or not. -->
+  <a href="about.html" data-page="about"><svg class="nav-icon" aria-hidden="true"><use href="#icon-info"/></svg> About</a>
+</div>`;
+
+  // ---- 2. Insert markup at body start (skip if already present) --------
+
+  // ---- Theme toggle (light/dark) -----------------------------------
+  //
+  // Dark is the default. The toggle persists the user's choice in
+  // localStorage so it survives page reloads. On first visit with no
+  // stored preference, we respect prefers-color-scheme if the OS is
+  // set to light mode. The CSS flips via [data-theme="light"] on <html>.
+
+  function initTheme() {
+    const THEME_KEY = 'proton-pulse:theme';
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else if (!stored && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }
+
+  function wireThemeToggle() {
+    const THEME_KEY = 'proton-pulse:theme';
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    function update() {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      btn.querySelector('.theme-icon-sun').style.display = isLight ? 'none' : 'block';
+      btn.querySelector('.theme-icon-moon').style.display = isLight ? 'block' : 'none';
+      btn.title = isLight ? 'Switch to dark theme' : 'Switch to light theme';
+    }
+
+    btn.addEventListener('click', function () {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem(THEME_KEY, 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem(THEME_KEY, 'light');
+      }
+      update();
+    });
+
+    update();
+  }
+
+  // Site option: animations on/off. When off (explicit choice, or the OS
+  // prefers-reduced-motion with no saved choice), set data-motion=off so CSS
+  // disables animations/transitions, and pause SMIL (<animateMotion>), which CSS
+  // cannot stop. Saved by the options page under proton-pulse:motion.
+  function motionDisabled() {
+    const stored = localStorage.getItem('proton-pulse:motion'); // 'on' | 'off' | null
+    if (stored === 'off') return true;
+    if (stored === 'on') return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+  function pauseSmilAnimations() {
+    const svgs = document.querySelectorAll('svg');
+    let paused = 0;
+    svgs.forEach(function (svg) {
+      if (typeof svg.pauseAnimations === 'function') {
+        try { svg.pauseAnimations(); paused++; } catch (e) { /* ignore */ }
+      }
+    });
+    console.log('[topbar] pauseSmilAnimations: paused', paused, 'of', svgs.length, 'SVGs');
+  }
+  function initMotion() {
+    const stored = localStorage.getItem('proton-pulse:motion');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const disabled = motionDisabled();
+    console.log('[topbar] initMotion: stored=' + stored + ' prefersReduced=' + prefersReduced + ' => disabled=' + disabled);
+    if (disabled) {
+      document.documentElement.setAttribute('data-motion', 'off');
+      pauseSmilAnimations();
+    } else if (stored === 'on') {
+      document.documentElement.setAttribute('data-motion', 'on');
+    }
+  }
+
+  // Apply theme + motion prefs BEFORE inject so the first paint is correct
+  // (avoids a flash of the wrong mode / running animations).
+  initTheme();
+  initMotion();
+  // Defaults: store badge sits in the bar (bar-inline) on mobile, in the
+  // card corner (art-corner) on desktop. Both viewports default to the
+  // text label until the round brand glyphs read consistently across
+  // stores. Mobile picks bar-inline because the card-corner tag steals
+  // useful width from the title row at narrow screens.
+  const _isDesktop = window.matchMedia('(min-width: 760px)').matches;
+
+  // Store badge placement. Other values: 'right' (legacy column), 'art'
+  // (thumbnail overlay), 'art-corner' (card top-right), 'bar-inline'
+  // (next to tier in the strip), 'bar-segment' (split strip).
+  // Migrations: dropped 'bar-right' -> 'bar-segment'; renamed 'bar-icon'
+  // -> 'bar-inline' once it started honoring the store-display pref.
+  let storePillPos = localStorage.getItem('pp:store-pill-pos');
+  if (storePillPos === 'bar-right') {
+    storePillPos = 'bar-segment';
+    localStorage.setItem('pp:store-pill-pos', 'bar-segment');
+  } else if (storePillPos === 'bar-icon') {
+    storePillPos = 'bar-inline';
+    localStorage.setItem('pp:store-pill-pos', 'bar-inline');
+  }
+  if (!storePillPos) storePillPos = _isDesktop ? 'art-corner' : 'bar-inline';
+  if (storePillPos !== 'right') {
+    document.documentElement.setAttribute('data-store-pill-pos', storePillPos);
+  }
+  // Card layout preference. Default is 'strip' on both viewports (tier in
+  // a colored bar across the full bottom of the card). 'right' falls back
+  // to the column pill; 'combo' shows the tier + store as a two-tone
+  // corner chip and hides the strip / right column entirely.
+  const cardLayoutPref = localStorage.getItem('pp:card-layout') || 'strip';
+  if (cardLayoutPref === 'strip' || cardLayoutPref === 'combo') {
+    document.documentElement.setAttribute('data-card-layout', cardLayoutPref);
+  }
+  // Store badge display. Default is 'text' on both viewports until the
+  // round brand glyphs read consistently at small sizes; 'icon' is still
+  // available as an opt-in for users who want the compact look.
+  const storeDisplayPref = localStorage.getItem('pp:store-display') || 'text';
+  if (storeDisplayPref === 'icon') {
+    document.documentElement.setAttribute('data-store-display', 'icon');
+  }
+  // Trend arrow: on by default, off suppresses the glyph on every card.
+  // Apply here so the attribute is on <html> before the first paint --
+  // otherwise the arrows flash in briefly before the options page toggle
+  // reads and clears them.
+  const trendArrowPref = localStorage.getItem('pp:trend-arrow');
+  if (trendArrowPref === 'off') {
+    document.documentElement.setAttribute('data-trend-arrow', 'off');
+  }
+  // Store tag icon size: apply the saved px as --owner-badge-size before first
+  // paint so the corner decals render at the chosen size with no flash. Read +
+  // clamp inline (topbar loads before the prefs module on every page).
+  const rawBadgeSize = parseInt(localStorage.getItem('pp:owner-badge-size'), 10);
+  if (Number.isFinite(rawBadgeSize)) {
+    const clamped = Math.min(28, Math.max(10, rawBadgeSize));
+    document.documentElement.style.setProperty('--owner-badge-size', clamped + 'px');
+  }
+
+  // inject favicon if the page doesn't already have one
+  if (!document.querySelector('link[rel="icon"]')) {
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/svg+xml';
+    link.href = 'favicon.svg';
+    document.head.appendChild(link);
+  }
+
+  // Make the steam-img.js 3-tier fallback (akamai -> cloudflare -> game-images.json
+  // -> hide) available on every page that loads the topbar. Pages that already
+  // import steam-img.js through their bundle short-circuit via the __steamImgLoad
+  // existence check. Without this, the topbar search dropdown's <img onerror>
+  // would no-op on pages outside the app bundle.
+  if (typeof window.__steamImgLoad !== 'function' &&
+      !document.querySelector('script[data-topbar-steam-img]')) {
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'js/app/lib/steam-img.js';
+    s.dataset.topbarSteamImg = '';
+    document.head.appendChild(s);
+  }
+
+  // Same-name disambiguation for search results. When two or more visible
+  // results normalize to the same title (Prey 2006 vs Prey 2017, etc.), append
+  // " (YEAR)" to any result that has a releaseYear -- the storefront badge
+  // alone is not enough to tell them apart. Returns Map<index, displayTitle>
+  // with only the overridden indices; callers fall back to r.title when absent.
+  //
+  // Exposed as window.__buildTitleOverrides so the app.html grouped-results
+  // page (an ES module) can reuse the same logic without duplicating it.
+  function buildTitleOverrides(results) {
+    const groups = {};
+    for (let i = 0; i < results.length; i++) {
+      const key = String(results[i].title || '').trim().toLowerCase();
+      if (!key) continue;
+      (groups[key] = groups[key] || []).push(i);
+    }
+    const out = new Map();
+    Object.keys(groups).forEach(function (key) {
+      const idxs = groups[key];
+      if (idxs.length <= 1) return;
+      idxs.forEach(function (i) {
+        const r = results[i];
+        if (r.releaseYear) {
+          out.set(i, r.title + ' (' + r.releaseYear + ')');
+        }
+      });
+    });
+    return out;
+  }
+  window.__buildTitleOverrides = buildTitleOverrides;
+
+  function inject() {
+    if (document.querySelector('.topbar')) return; // page already has it (e.g. inlined for SSR)
+    // sprite first so the <use href="#..."> refs in the banner resolve immediately
+    document.body.insertAdjacentHTML('afterbegin', SPRITE + BANNER_AND_NAV);
+    const disabled = motionDisabled();
+    // pauseSmilAnimations() in initMotion() runs before other SVGs exist; re-apply now
+    if (disabled) pauseSmilAnimations();
+    markActive();
+    wireMobileDrawer();
+    wireSearchDropdown();
+    wireAuthIndicator();
+    wireNavOverflow();
+    wireThemeToggle();
+    wireDropdowns();
+    wireStatusDot();
+    wireFilterPanelClose();
+  }
+
+  // ---- Mobile filter modal close button (delegated) --------------------
+  //
+  // On mobile (<= 720px) the .filter-panel opens as a full-viewport modal
+  // with a header row containing a .filter-panel-close X button. Every
+  // filter panel across the site (home, index, game-page) ships that
+  // markup, so a single delegated click handler in topbar.js -- which
+  // loads on every page -- covers all of them. Clicking the X closes the
+  // nearest .filter-panel / .pg-filter-panel and resets its toggle's
+  // aria-expanded state so screen readers stay in sync.
+  //
+  // Portal-on-open: base.css sets .main-content { z-index: 2 } to sit above
+  // the body::before scanline overlay. That creates a stacking context, so
+  // any filter-panel inside main-content is trapped at stacking-layer 2 --
+  // below the fixed topbar at stacking-layer 200 -- no matter how high its
+  // own z-index is. To rise above the topbar on mobile, we detach the panel
+  // and re-append it to <body> when it opens (only on mobile widths). When
+  // it closes we move it back to its original DOM location so page-level
+  // event wiring (outside-click handlers, sibling toggle button lookup)
+  // still works. MutationObserver watches every panel across the site so
+  // no per-page changes are required.
+  const MOBILE_MODAL_QUERY = '(max-width: 720px)';
+  const _panelOriginals = new WeakMap();  // panel -> { parent, next }
+  function _portalPanelToBody(panel) {
+    if (_panelOriginals.has(panel)) return;
+    _panelOriginals.set(panel, { parent: panel.parentNode, next: panel.nextSibling });
+    document.body.appendChild(panel);
+  }
+  function _restorePanel(panel) {
+    const rec = _panelOriginals.get(panel);
+    if (!rec || !rec.parent) return;
+    if (rec.next && rec.next.parentNode === rec.parent) rec.parent.insertBefore(panel, rec.next);
+    else rec.parent.appendChild(panel);
+    _panelOriginals.delete(panel);
+  }
+  function _handleOpenState(panel) {
+    const isOpen = panel.classList.contains('open');
+    const isMobile = window.matchMedia(MOBILE_MODAL_QUERY).matches;
+    if (isOpen && isMobile) _portalPanelToBody(panel);
+    else _restorePanel(panel);
+  }
+  function wireFilterPanelClose() {
+    // Portal each panel when its .open class flips on/off. game-page.js
+    // renders its filter panel long after DOMContentLoaded, so we can't just
+    // scope the observer to panels present at inject() time -- watch the
+    // document subtree for attribute + childList changes and portal any
+    // qualifying panel we find. attributeFilter keeps the callback cheap.
+    function _observePanel(panel) {
+      if (panel.__ppFilterObs) return;
+      panel.__ppFilterObs = true;
+      const obs = new MutationObserver(function (records) {
+        for (const rec of records) {
+          if (rec.attributeName === 'class') _handleOpenState(rec.target);
+        }
+      });
+      obs.observe(panel, { attributes: true, attributeFilter: ['class'] });
+      _handleOpenState(panel);
+    }
+    document.querySelectorAll('.filter-panel, .pg-filter-panel').forEach(_observePanel);
+    // Catch panels that get rendered later (e.g. game-page filter panel
+    // injected after report data loads).
+    const treeObs = new MutationObserver(function (records) {
+      for (const rec of records) {
+        rec.addedNodes && rec.addedNodes.forEach(function (n) {
+          if (n.nodeType !== 1) return;
+          if (n.matches && n.matches('.filter-panel, .pg-filter-panel')) _observePanel(n);
+          if (n.querySelectorAll) n.querySelectorAll('.filter-panel, .pg-filter-panel').forEach(_observePanel);
+        });
+      }
+    });
+    treeObs.observe(document.body, { childList: true, subtree: true });
+    // Viewport crosses the 720px boundary (rotation, window resize on
+    // Chromebook): close and restore every open panel so we never leave a
+    // portal in a busted intermediate state. Users can re-open in the new
+    // layout mode; this is safer than trying to reflow mid-flight.
+    if (window.matchMedia) {
+      const mq = window.matchMedia(MOBILE_MODAL_QUERY);
+      const onMqChange = function () {
+        document.querySelectorAll('.filter-panel.open, .pg-filter-panel.open').forEach(function (p) {
+          p.classList.remove('open');
+        });
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onMqChange);
+      else if (mq.addListener) mq.addListener(onMqChange);
+    }
+    // Delegated close on the X button. Lives on document so it survives the
+    // panel being portaled to body (event bubbles up either way).
+    document.addEventListener('click', function (e) {
+      const btn = e.target && e.target.closest && e.target.closest('.filter-panel-close');
+      if (!btn) return;
+      e.stopPropagation();
+      const panel = btn.closest('.filter-panel, .pg-filter-panel');
+      if (!panel) return;
+      panel.classList.remove('open');
+      // Reset the associated toggle's aria-expanded. When the panel has been
+      // portaled to <body>, the toggle no longer lives as a sibling ancestor,
+      // so read the original wrap from _panelOriginals to find it.
+      const rec = _panelOriginals.get(panel);
+      const wrap = (rec && rec.parent) || panel.parentElement;
+      if (wrap) {
+        const toggle = wrap.querySelector('[aria-expanded="true"]');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      }
+      void logFrontendEvent('DEBUG', 'filter panel closed via mobile modal X', {
+        panelId: panel.id || null,
+        portaled: _panelOriginals.has(panel),
+        source: 'wireFilterPanelClose',
+      });
+    });
+  }
+  // Debug-log helper: filter-modal close is a good candidate to spot the
+  // "close does nothing" class of bug across pages. Reuses the topbar's
+  // existing logging pattern (no-op when window.ppTrack isn't available).
+  function logFrontendEvent(level, msg, ctx) {
+    try { if (typeof window.ppTrack === 'function') window.ppTrack('log', { level: level, msg: msg, ctx: ctx || {} }); } catch (_) {}
+    return Promise.resolve();
+  }
+
+  // ---- Site status dot on the topbar (see #254) ------------------------
+  //
+  // Fetches edge-status.json (published every 15 min by
+  // .github/workflows/edge-fn-health.yml) and colors the small dot inside
+  // the Status nav link so users see at a glance whether anything is
+  // degraded before they click through. Cached in sessionStorage for a
+  // minute so hopping across pages does not re-fetch every time.
+  function wireStatusDot() {
+    var dots = document.querySelectorAll('.topbar-status-dot');
+    if (!dots.length) return;
+    var apply = function (state) {
+      dots.forEach(function (d) { d.setAttribute('data-state', state); });
+    };
+    var cachedRaw = null;
+    try { cachedRaw = sessionStorage.getItem('pp-edge-status'); } catch (e) { /* ignore */ }
+    if (cachedRaw) {
+      try {
+        var cached = JSON.parse(cachedRaw);
+        if (cached && cached.overall && (Date.now() - (cached.ts || 0)) < 60 * 1000) {
+          apply(cached.overall);
+          return;
+        }
+      } catch (e) { /* ignore */ }
+    }
+    fetch('edge-status.json', { cache: 'no-store' })
+      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+      .then(function (payload) {
+        var overall = payload && payload.overall ? payload.overall : 'unknown';
+        apply(overall);
+        try { sessionStorage.setItem('pp-edge-status', JSON.stringify({ overall: overall, ts: Date.now() })); } catch (e) { /* ignore */ }
+      })
+      .catch(function (err) {
+        console.debug('[topbar] edge-status.json fetch failed', { error: String(err), source: 'wireStatusDot' });
+        apply('unknown');
+      });
+  }
+
+  // ---- 3. Active link based on current page ----------------------------
+
+  function markActive() {
+    // derive page key from filename, default to "index" for / and /index.html
+    let page = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '');
+    if (!page) page = 'index';
+    document.querySelectorAll('[data-page]').forEach(function (a) {
+      if (a.getAttribute('data-page') === page) a.classList.add('active');
+    });
+    // Lift active state up to the parent dropdown toggle so the user can
+    // tell at a glance which group the current page lives in
+    document.querySelectorAll('.nav-dropdown').forEach(function (dd) {
+      if (dd.querySelector('a.active')) dd.classList.add('has-active');
+    });
+  }
+
+  // ---- 3b. Dropdown click toggle (hover already handled in CSS) -------
+  //
+  // CSS gives us hover-to-open and focus-within-to-stay-open. Add click as
+  // a third path for touch + keyboard users who reach the toggle via tab
+  // and press Enter. Clicking outside any open dropdown closes it.
+
+  function wireDropdowns() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(function (dd) {
+      const toggle = dd.querySelector('.nav-dropdown-toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const wasOpen = dd.classList.contains('is-open');
+        // close any other open dropdown first
+        dropdowns.forEach(function (other) {
+          if (other !== dd) other.classList.remove('is-open');
+        });
+        dd.classList.toggle('is-open', !wasOpen);
+        toggle.setAttribute('aria-expanded', String(!wasOpen));
+      });
+    });
+    document.addEventListener('click', function (e) {
+      // close all when clicking anywhere outside a dropdown
+      if (!e.target.closest('.nav-dropdown')) {
+        dropdowns.forEach(function (dd) {
+          dd.classList.remove('is-open');
+          const t = dd.querySelector('.nav-dropdown-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+  }
+
+  // ---- 4a. Overflow "More" menu (priority+ pattern) -------------------
+  //
+  // When the nav row runs out of room (typically between 760 and ~1280px),
+  // trailing items collapse into a "More" dropdown. ResizeObserver re-checks
+  // the fit whenever the nav width changes. The "More" button itself takes
+  // ~80px so leave a buffer when measuring.
+
+  function wireNavOverflow() {
+    const nav = document.getElementById('primary-nav');
+    const wrap = document.getElementById('nav-overflow');
+    const toggle = document.getElementById('nav-overflow-toggle');
+    const panel = document.getElementById('nav-overflow-panel');
+    if (!nav || !wrap || !toggle || !panel) return;
+
+    // Snapshot every nav <a> in its original order so we can move things
+    // freely without losing the layout. The More button (`wrap`) stays at
+    // the end of the nav always
+    const originalItems = Array.from(nav.querySelectorAll(':scope > a'));
+    if (!originalItems.length) return;
+
+    let openOverflow = false;
+
+    function setOpen(open) {
+      openOverflow = open;
+      wrap.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!openOverflow);
+    });
+
+    // Click outside the panel closes it. Use capture phase so dropdown
+    // internal clicks (handled below) still go through first
+    document.addEventListener('click', function (e) {
+      if (!openOverflow) return;
+      if (!wrap.contains(e.target)) setOpen(false);
+    });
+
+    // Selecting an item in the panel closes the dropdown and navigates
+    panel.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    // Returns the count of items that fit before the More button starts to
+    // overflow. Uses the nav's natural scroll width as the metric: if
+    // scrollWidth > clientWidth then the More button itself is being
+    // pushed off-screen, so we need to move items into the panel.
+    function fitItems() {
+      // First put every item back in the nav (in original order) and let
+      // layout settle, so we can re-measure naturally on every resize
+      originalItems.forEach(function (a) {
+        if (a.parentElement !== nav) nav.insertBefore(a, wrap);
+      });
+      panel.innerHTML = '';
+      wrap.hidden = true;
+
+      // Only run overflow logic when the nav is actually visible (above
+      // the mobile breakpoint where the hamburger takes over)
+      const navStyle = getComputedStyle(nav.parentElement || nav);
+      if (navStyle.display === 'none') return;
+
+      // If everything fits, we're done
+      if (nav.scrollWidth <= nav.clientWidth + 1) return;
+
+      // Reveal the More button, then move items from the end into the panel
+      // one by one until things fit. Cap iterations as a safety guard
+      wrap.hidden = false;
+      let guard = originalItems.length;
+      while (nav.scrollWidth > nav.clientWidth + 1 && guard-- > 0) {
+        // Find the LAST original-order item still in the nav and move it
+        for (let i = originalItems.length - 1; i >= 0; i--) {
+          const a = originalItems[i];
+          if (a.parentElement === nav) {
+            // Clone for the overflow panel (so the original keeps any data-page
+            // wiring and active state). Re-mark active on the clone too.
+            const cloned = a.cloneNode(true);
+            // Insert in reverse so panel order matches original left-to-right
+            panel.insertBefore(cloned, panel.firstChild);
+            // Hide original instead of removing - this keeps the layout
+            // measurement stable when we re-run the fit calculation
+            a.remove();
+            break;
+          }
+        }
+      }
+      // Re-apply active class to overflow clones
+      const activeKey = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
+      panel.querySelectorAll('[data-page="' + activeKey + '"]').forEach(function (a) { a.classList.add('active'); });
+    }
+
+    _reflowOverflow = fitItems;
+
+    // Run once on insertion, then debounce on resize
+    fitItems();
+    let raf = null;
+    const ro = new ResizeObserver(function () {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(fitItems);
+    });
+    ro.observe(nav.parentElement || nav);
+  }
+
+  // ---- 4. Mobile drawer toggle ----------------------------------------
+
+  function wireMobileDrawer() {
+    const toggle = document.getElementById('mobile-nav-toggle');
+    const drawer = document.getElementById('mobile-nav-drawer');
+    if (!toggle || !drawer) return;
+
+    function collapseGroups() {
+      drawer.querySelectorAll('.mnav-group').forEach(function (g) { g.classList.remove('mnav-open'); });
+      drawer.querySelectorAll('.mnav-parent').forEach(function (p) { p.setAttribute('aria-expanded', 'false'); });
+    }
+    toggle.addEventListener('click', function () {
+      const open = drawer.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        drawer.removeAttribute('hidden');
+        // Reset every accordion to collapsed each time the drawer opens, so it
+        // never reopens holding a previously expanded group.
+        collapseGroups();
+      }
+    });
+    // Accordion parents (Browse / Resources): toggle their sub-list open;
+    // clicking a parent must NOT close the whole drawer, so it's handled
+    // before the link handler below and stops there.
+    drawer.querySelectorAll('.mnav-parent').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const group = btn.closest('.mnav-group');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        if (group) group.classList.toggle('mnav-open', !expanded);
+      });
+    });
+    // Real navigation links close the drawer; parents (buttons) don't match.
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        drawer.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ---- 5. Search dropdown (live results from search-index.json) -------
+
+  function wireSearchDropdown() {
+    const input = document.getElementById('search');
+    const dropdown = document.getElementById('search-dropdown');
+    if (!input || !dropdown) return;
+
+    let index = null;
+    let indexLoading = null;
+    let focusIdx = -1;
+    let visible = [];
+
+    function loadIndex() {
+      if (index) return Promise.resolve(index);
+      if (indexLoading) return indexLoading;
+      indexLoading = fetch('search-index.json')
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .catch(function () { return []; })
+        .then(function (data) { index = Array.isArray(data) ? data : []; return index; });
+      return indexLoading;
+    }
+
+    // Adult-content gate. Topbar is a classic <script> and can't ES-import
+    // js/lib/adult-filter.js, so this inlines the same rule. KEEP IN SYNC:
+    // pref key pp:show-adult, adult flag at search-index column 8
+    // (ADULT_COL_SEARCH_INDEX). When the pref is off (default) adult-flagged
+    // games are hidden from the autocomplete, matching the results page.
+    function _showAdultAllowed() {
+      try { return localStorage.getItem('pp:show-adult') === 'on'; } catch (e) { return false; }
+    }
+
+    function match(q, limit) {
+      if (!q) return [];
+      const ql = q.toLowerCase();
+      const asAppId = /^\d+$/.test(q);
+      const showAdult = _showAdultAllowed();
+      const out = [];
+      for (let i = 0; i < index.length && out.length < limit; i++) {
+        const row = index[i];
+        // Hide Steam-classified adult games unless the user opted in.
+        if (!showAdult && row[8] === true) continue;
+        const id = String(row[0]);
+        const title = String(row[1] || '');
+        if (asAppId ? id.startsWith(q) : title.toLowerCase().indexOf(ql) !== -1) {
+          // extra columns may not exist on older deployments - fall back gracefully.
+          // Column 7 (releaseYear) is set only when the pipeline could resolve a
+          // year and powers same-name disambiguation (Prey 2006 vs Prey 2017).
+          out.push({
+            appId: id,
+            title: title,
+            tier: row[2] || '',
+            protondbCount: row[3] || 0,
+            pulseCount: row[4] || 0,
+            appType: row[5] || '',
+            releaseYear: row[6] || null,
+          });
+        }
+      }
+      return out;
+    }
+
+    function steamHeader(appId) {
+      // akamai is the primary tier; steam-img.js (window.__steamImgLoad)
+      // walks cloudflare -> game-images.json -> hide on error.
+      return 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/' + appId + '/header.jpg';
+    }
+
+    // Store URL parser (#116). Inline copy of js/lib/store-url-parser.js
+    // because topbar loads as a classic <script> and can't ES-import.
+    // KEEP IN SYNC with the module. Tests live at tests/storeUrlParser.test.js.
+    var _STEAM_HOSTS = { 'store.steampowered.com': 1, 'steamcommunity.com': 1, 's.team': 1 };
+    var _GOG_HOSTS   = { 'www.gog.com': 1, 'gog.com': 1 };
+    var _EPIC_HOSTS  = { 'store.epicgames.com': 1, 'www.epicgames.com': 1 };
+    var _LOCALE_RE   = /^[a-z]{2}(-[a-z]{2})?$/i;
+    function _parseStoreUrl(input) {
+      var s = String(input || '').trim();
+      if (!s) return null;
+      var withProto = /^https?:\/\//i.test(s) ? s : 'https://' + s;
+      var u;
+      try { u = new URL(withProto); } catch (e) { return null; }
+      var host = u.hostname.toLowerCase();
+      var parts = u.pathname.split('/').filter(Boolean);
+      if (_STEAM_HOSTS[host]) {
+        for (var i = 0; i < parts.length - 1; i++) {
+          if (parts[i].toLowerCase() === 'app' && /^\d+$/.test(parts[i + 1])) {
+            return { store: 'steam', appId: parts[i + 1], canonicalId: parts[i + 1], slug: null };
+          }
+        }
+        return null;
+      }
+      if (_GOG_HOSTS[host]) {
+        var gidx = 0;
+        if (parts[0] && _LOCALE_RE.test(parts[0])) gidx = 1;
+        if (parts[gidx] !== 'game' || !parts[gidx + 1]) return null;
+        return { store: 'gog', appId: null, canonicalId: null, slug: parts[gidx + 1] };
+      }
+      if (_EPIC_HOSTS[host]) {
+        var eidx = 0;
+        if (parts[0] && _LOCALE_RE.test(parts[0])) eidx = 1;
+        var kind = parts[eidx];
+        if ((kind !== 'p' && kind !== 'product') || !parts[eidx + 1]) return null;
+        return { store: 'epic', appId: null, canonicalId: null, slug: parts[eidx + 1] };
+      }
+      return null;
+    }
+
+    function render(results, query) {
+      focusIdx = -1;
+      visible = results;
+      if (!query) {
+        dropdown.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      if (!results.length) {
+        const devHint = index && index.length === 0
+          ? '<br><code>search-index.json</code> not built yet (prod only)'
+          : '';
+        dropdown.innerHTML =
+          '<div class="sd-empty">No matches' + devHint + '<br>' +
+          '<span style="font-size:0.72rem">press Enter to open Reports</span></div>';
+        dropdown.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+        return;
+      }
+      const titleOverrides = window.__buildTitleOverrides(results);
+      const html = results.map(function (r, idx) {
+        const display = titleOverrides.get(idx) || r.title;
+        const safe = display.replace(/[<>&]/g, function (c) {
+          return { '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c];
+        });
+        const idStr = String(r.appId);
+        const inferredStore = r.appType
+          ? r.appType
+          : (idStr.startsWith('gog:') ? 'gog'
+            : idStr.startsWith('epic:') ? 'epic'
+            : 'steam');
+        const storeLabel = inferredStore === 'gog' ? 'GOG'
+                         : inferredStore === 'epic' ? 'Epic'
+                         : 'Steam';
+        // Split chip on the trailing edge that mirrors the .game-card combo
+        // corner chip (tier color on the left, store color on the right).
+        // The app id is the row-two subline (replacing the old report-count
+        // line) so the thumbnail flows straight into the title.
+        const tierAttr = r.tier ? r.tier.toLowerCase() : '';
+        const tierLabel = r.tier ? r.tier.toUpperCase() : 'NO RATING';
+        const comboHtml = '<span class="sd-combo" data-tier="' + tierAttr + '" data-store="' + inferredStore + '">' +
+                          '<span class="sd-combo-tier">' + tierLabel + '</span>' +
+                          '<span class="sd-combo-store">' + storeLabel + '</span>' +
+                          '</span>';
+        return '<a href="app.html#/app/' + r.appId + '" role="option" data-idx="' + idx + '">' +
+               '<img loading="lazy" data-appid="' + r.appId + '" src="' + steamHeader(r.appId) + '" alt="" ' +
+                 'onerror="window.__steamImgLoad && window.__steamImgLoad(this)">' +
+               '<span class="sd-meta">' +
+                 '<span class="sd-title">' + safe + '</span>' +
+                 '<span class="sd-appid" title="' + idStr + '">' + idStr + '</span>' +
+               '</span>' +
+               comboHtml +
+               '</a>';
+      }).join('');
+      // Footer hint: the dropdown only searches the small primary index
+      // (fast; loaded on page open). The full search results page also
+      // loads the extended Steam catalog (2MB, lazy), which usually
+      // adds many more hits. Prompt the user to press Enter to see
+      // them all so the dropdown/results-page count difference isn't
+      // confusing.
+      const footer = results.length >= 4
+        ? '<div class="sd-footer">Press <kbd>Enter</kbd> for full search (includes extended catalog)</div>'
+        : '';
+      dropdown.innerHTML = html + footer;
+      dropdown.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+    }
+
+    function setFocus(idx) {
+      const items = dropdown.querySelectorAll('a');
+      if (!items.length) return;
+      focusIdx = (idx + items.length) % items.length;
+      items.forEach(function (el, i) { el.classList.toggle('is-focused', i === focusIdx); });
+      items[focusIdx].scrollIntoView({ block: 'nearest' });
+    }
+
+    let timer = null;
+    input.addEventListener('input', function () {
+      const q = input.value.trim();
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        loadIndex().then(function () { render(match(q, 8), q); });
+      }, 120);
+    });
+    input.addEventListener('focus', function () {
+      const q = input.value.trim();
+      if (q) loadIndex().then(function () { render(match(q, 8), q); });
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); setFocus(focusIdx + 1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setFocus(focusIdx - 1); }
+      else if (e.key === 'Escape') {
+        dropdown.hidden = true; input.setAttribute('aria-expanded', 'false');
+      } else if (e.key === 'Enter') {
+        if (focusIdx >= 0 && visible[focusIdx]) {
+          window.location.href = 'app.html#/app/' + visible[focusIdx].appId;
+          return;
+        }
+        const q = input.value.trim();
+        if (!q) return;
+        // Store URL paste path (#116): route directly to the game page
+        // when the input is a recognised Steam / GOG / Epic URL. Keep
+        // this inline copy in sync with js/lib/store-url-parser.js --
+        // topbar loads as a classic script and can't ES-import.
+        const parsed = _parseStoreUrl(q);
+        if (parsed && parsed.canonicalId) {
+          window.location.href = 'app.html#/app/' + parsed.canonicalId;
+          return;
+        }
+        if (parsed && parsed.slug) {
+          // GOG / Epic slug -- no canonical id lookup here; hand it to
+          // the full search page and let it match against the catalog.
+          window.location.href = 'app.html?q=' + encodeURIComponent(parsed.slug);
+          return;
+        }
+        if (/^\d+$/.test(q)) {
+          window.location.href = 'app.html#/app/' + q;
+        } else {
+          window.location.href = 'app.html?q=' + encodeURIComponent(q);
+        }
+      }
+    });
+    document.addEventListener('click', function (e) {
+      const wrap = input.closest('.topbar-search-wrap');
+      if (wrap && !wrap.contains(e.target)) {
+        dropdown.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // ---- 6. Auth indicator: swap signed-out link <-> signed-in chip -----
+
+  async function checkIsAdmin(session) {
+    if (!session || !session.access_token) return false;
+    // SUPABASE_URL and SUPABASE_ANON_KEY are declared in supabase-client.js
+    // which loads before topbar.js on every page.
+    var sbUrl = (typeof SUPABASE_URL !== 'undefined') ? SUPABASE_URL : '';
+    var sbKey = (typeof SUPABASE_ANON_KEY !== 'undefined') ? SUPABASE_ANON_KEY : '';
+    if (!sbUrl) return false;
+    try {
+      const res = await fetch(
+        sbUrl + '/rest/v1/admins?select=proton_pulse_user_id&limit=1',
+        {
+          headers: {
+            apikey: sbKey,
+            Authorization: 'Bearer ' + session.access_token,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      if (!res.ok) return false;
+      const rows = await res.json();
+      return Array.isArray(rows) && rows.length > 0;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function wireAuthIndicator() {
+    const signedOut = document.getElementById('auth-signedout');
+    const signedIn  = document.getElementById('auth-signedin');
+    const avatarEl  = document.getElementById('google-avatar');
+    const nameEl    = document.getElementById('google-username');
+    if (typeof SupaAuth === 'undefined') return; // not all pages load supabase
+
+    SupaAuth.onStateChange(function (state) {
+      const user = state && state.user;
+      if (user) {
+        if (signedOut) signedOut.hidden = true;
+        if (signedIn)  signedIn.hidden  = false;
+
+        // Fire-and-forget: record that this user visited the site right now.
+        // Uses PATCH so it only updates existing rows (users who have opted in
+        // to showing their username). No-op if no row exists yet.
+        var sbUrl2 = (typeof SUPABASE_URL !== 'undefined') ? SUPABASE_URL : '';
+        var sbKey2 = (typeof SUPABASE_ANON_KEY !== 'undefined') ? SUPABASE_ANON_KEY : '';
+        var token2 = state.session && state.session.access_token;
+        if (sbUrl2 && token2) {
+          fetch(sbUrl2 + '/rest/v1/author_avatars?proton_pulse_user_id=eq.' + user.id, {
+            method: 'PATCH',
+            headers: { apikey: sbKey2, Authorization: 'Bearer ' + token2, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ last_seen_at: new Date().toISOString() }),
+          }).catch(function () {});
+        }
+        if (avatarEl)  avatarEl.src = (user.user_metadata && user.user_metadata.avatar_url) || '';
+        if (avatarEl)  avatarEl.alt = (user.user_metadata && user.user_metadata.name) || user.email || '';
+        const rawName = (user.user_metadata && user.user_metadata.name) || user.email || '';
+        // Set the full name; CSS (.auth-username) handles truncation, capping it
+        // on narrow viewports but showing it in full on desktop (>=1024px).
+        if (nameEl) { nameEl.textContent = rawName; nameEl.title = rawName; }
+
+        // Show/hide the pre-rendered admin nav link based on admin status.
+        checkIsAdmin(state.session).then(function (admin) {
+          var link = document.getElementById('topbar-admin-link');
+          var mobileLink = document.getElementById('mobile-admin-link');
+          if (link) link.hidden = !admin;
+          if (mobileLink) mobileLink.hidden = !admin;
+          if (admin && _reflowOverflow) _reflowOverflow();
+        });
+
+      } else {
+        if (signedOut) signedOut.hidden = false;
+        if (signedIn)  signedIn.hidden  = true;
+        var adminLink = document.getElementById('topbar-admin-link');
+        if (adminLink) adminLink.hidden = true;
+        var mobileAdminLink = document.getElementById('mobile-admin-link');
+        if (mobileAdminLink) mobileAdminLink.hidden = true;
+      }
+    });
+  }
+
+  // ---- 7. Boot ---------------------------------------------------------
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inject);
+  } else {
+    inject();
+  }
+
+  // ---- 8. Auto-hide topbar on scroll (Steam store style) ---------------
+  // After scrolling past 15% of the viewport, the topbar slides up out of
+  // view. Scrolling back up reveals it again.
+  (function initScrollHide() {
+    var lastY = 0;
+    var hidden = false;
+    var threshold = window.innerHeight * 0.15;
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      var topbar = document.querySelector('.topbar');
+      if (!topbar) return;
+      if (y > threshold && y > lastY && !hidden) {
+        topbar.style.transform = 'translateY(-100%)';
+        topbar.style.transition = 'transform 0.3s ease';
+        hidden = true;
+      } else if (y < lastY && hidden) {
+        topbar.style.transform = 'translateY(0)';
+        hidden = false;
+      }
+      lastY = y;
+    }, { passive: true });
+  })();
+
+  // ---- 9. Service worker (cache-first image cache) --------------------
+  // Registered from a plain script tag (no build step). sw.js resolves relative
+  // to the page, so it works at the prod root and under the /proton-pulse-web*
+  // staging subpath alike. Only caches cover images; see sw.js.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').then(function (reg) {
+        console.debug('[sw] registered', { scope: reg.scope, source: 'topbar' });
+      }).catch(function (err) {
+        console.debug('[sw] registration failed', { error: String(err), source: 'topbar' });
+      });
+    });
+
+    // Cache analytics: ask the worker for its hit/miss counters when the page is
+    // hidden and report one aggregate event (via ppTrack -> site_events) so the
+    // admin tab can chart the image cache hit rate. The worker resets counters on
+    // read, so each report is a delta and totals never double-count.
+    var reportSwStats = function () {
+      var sw = navigator.serviceWorker.controller;
+      if (!sw) return; // no active worker controlling this page yet
+      try {
+        var ch = new MessageChannel();
+        ch.port1.onmessage = function (e) {
+          var d = e.data || {};
+          var total = (d.hits || 0) + (d.misses || 0);
+          if (!total) return; // nothing happened since the last report
+          if (window.ppTrack) {
+            window.ppTrack('sw_cache', {
+              hits: d.hits || 0,
+              misses: d.misses || 0,
+              hit_rate: Math.round((d.hits || 0) / total * 100),
+            });
+          }
+        };
+        sw.postMessage({ type: 'pp-sw-stats' }, [ch.port2]);
+      } catch (err) {
+        console.debug('[sw] stats report failed', { error: String(err), source: 'topbar' });
+      }
+    };
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') reportSwStats();
+    });
+  }
+})();

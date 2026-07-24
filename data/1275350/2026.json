@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1275350",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1769893943,
+    "title": "",
+    "source": "protondb"
+  }
+]

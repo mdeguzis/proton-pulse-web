@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "343100",
+    "cpu": "AMD FX-9370 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 430.14",
+    "kernel": "5.1.5-arch1-2-ARCH",
+    "notes": "Runs perfectly without having to tweak ESYNC related stuff as said on other reports. Works also with Xbox 360 wired controllers with zero conf.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1571530114,
+    "title": "Overture",
+    "source": "protondb"
+  }
+]

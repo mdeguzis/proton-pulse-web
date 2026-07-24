@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "233470",
+    "title": "Evoland",
+    "timestamp": 1534995500,
+    "rating": "Borked",
+    "notes": "Flash Player PPAPI not detected",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5-4690K/Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "233470",
+    "title": "Evoland",
+    "timestamp": 1534981100,
+    "rating": "Borked",
+    "notes": "Flash Player PPAPI not detected",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "Intel i5-4690K/Geforce GTX 1050",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

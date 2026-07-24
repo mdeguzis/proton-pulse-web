@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "427680",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-27-generic",
+    "notes": "Install winetricks/protontricks icodecs to Proton prefix (427680) to play video cut scenes properly.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.15-GE-4",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1569079948,
+    "title": "Zwei: The Arges Adventure",
+    "source": "protondb"
+  }
+]

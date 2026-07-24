@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "55020",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.11-200.fc30.x86_64",
+    "notes": "Works out of the box but there is no sound.",
+    "os": "Fedora release 30 (Thirty)",
+    "protonVersion": "4.11-4",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1569422510,
+    "title": "Air Forte",
+    "source": "protondb"
+  }
+]

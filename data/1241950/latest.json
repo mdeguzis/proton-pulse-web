@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1241950",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.7-zen1-3-zen",
+    "notes": "The game just throws an exception that takes me to https://wz2100.net/compat/wine/?platform=Linux&variant=Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1745628213,
+    "title": "",
+    "source": "protondb"
+  }
+]

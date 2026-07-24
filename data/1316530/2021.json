@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1316530",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "Works perfectly out of the box, didn't need any tweaks.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1612796053,
+    "title": "",
+    "source": "protondb"
+  }
+]

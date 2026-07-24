@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "498240",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "moreThanTenHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-f447a13032)",
+    "kernel": "4.20.0-rc1-mainline",
+    "notes": "Works out of the box. Smooth, stable, amazing.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1550406192,
+    "title": "Batman - The Telltale Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "498240",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.19.0-0.bpo.2-amd64",
+    "notes": "Playable from start to finish.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554194222,
+    "title": "Batman - The Telltale Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "498240",
+    "cpu": "Intel Xeon E3-1230 v3 @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Perfect experience as it would be expected from a native game binary",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568754426,
+    "title": "Batman - The Telltale Series",
+    "source": "protondb"
+  }
+]

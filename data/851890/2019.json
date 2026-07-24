@@ -1,0 +1,37 @@
+[
+  {
+    "appId": "851890",
+    "cpu": "AMD model unknown (6-core)",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "Intro video not showing, game bit laggy on start of new locations (not sure if it is normal). In general game works normal after setting up wined3d11 in launch options.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "12 GB",
+    "rating": "Silver",
+    "timestamp": 1553617862,
+    "title": "Gal*Gun 2",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "851890",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "4.15.0-55-generic",
+    "notes": "Runs almost perfectly. Had some issues with the mouse \"jumping\", but solved by using a controller (obviously not the best solution). If you have the Doki-Doki VR DLC, it should to be disabled to play in \"flat\" mode and re-enabled to play in VR mode. Mods work fine when you rename the \"GalGun2-WindowsNoEditor.pak\" in \"GalGun2/Content/Paks/\" to \"GalGun2.pak\". No problems with VR, tested with SteamVR 1.6.8",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Gold",
+    "timestamp": 1564374837,
+    "title": "Gal*Gun 2",
+    "source": "protondb"
+  }
+]

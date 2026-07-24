@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "33100",
+    "title": "Alien Shooter",
+    "timestamp": 1535703779,
+    "rating": "Platinum",
+    "notes": "Runs as intended",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "33100",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54.05",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Works well",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15980 Mb",
+    "rating": "Platinum",
+    "timestamp": 1537823231,
+    "title": "Alien Shooter",
+    "source": "protondb"
+  },
+  {
+    "appId": "33100",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Graphical glitches - the screen is split into squares with stripes. The performance get worse with raising resolution (30+ fps at 640x480, 20 fps at 1024x768). I had to restart the level 6 because some script failed and I couldn't finish it.",
+    "os": "Ubuntu 18.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1544332964,
+    "title": "Alien Shooter",
+    "source": "protondb"
+  },
+  {
+    "appId": "33100",
+    "title": "Alien Shooter",
+    "timestamp": 1535689379,
+    "rating": "Platinum",
+    "notes": "Runs as intended",
+    "os": "ArchLinux Testing (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Ryzen 7 1700X / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

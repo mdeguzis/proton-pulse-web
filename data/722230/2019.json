@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "722230",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "The game does run but does not render in the headset(HTC Vive). ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1567323033,
+    "title": "L.A. Noire: The VR Case Files",
+    "source": "protondb"
+  }
+]

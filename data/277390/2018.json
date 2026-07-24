@@ -1,0 +1,46 @@
+[
+  {
+    "appId": "277390",
+    "title": "Videoball",
+    "timestamp": 1535609546,
+    "rating": "Borked",
+    "notes": "Launces in Wine, with errors",
+    "os": "Arch Linux 64bit (Kernal 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1400 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "277390",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.19.2-041902-generic",
+    "notes": "Game will not boot out of the box with 3.7-4 or 3.16-4, however by adding EITHER the PROTON_USE_WINED3D or PROTON_NO_D3D11 launch options, the game runs flawlessly. Audio perfect. Controllers perfect. Have not tested online, but everything (leaderboards, creating a private lobby etc.) work fine, so I expect it should work.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1543072179,
+    "title": "VIDEOBALL",
+    "tweaks": {
+      "disableD3d11": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "277390",
+    "title": "Videoball",
+    "timestamp": 1535595146,
+    "rating": "Borked",
+    "notes": "Launces in Wine, with errors",
+    "os": "Arch Linux 64bit (Kernal 4.18.5)",
+    "gpuDriver": "Mesa 18.1.7",
+    "specs": "Ryzen 5 1400 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "921710",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.18.15-1-default",
+    "notes": "Tested pretty much everything. No issues",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1541937631,
+    "title": "Galaxy Squad",
+    "source": "protondb"
+  },
+  {
+    "appId": "921710",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-42-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1544654727,
+    "title": "Galaxy Squad",
+    "source": "protondb"
+  }
+]

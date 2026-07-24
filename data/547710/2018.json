@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "547710",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX Vega (VEGA10, DRM 3.27.0, 4.19.0-041900rc8-generic, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.3 - SteamVR PPA",
+    "kernel": "4.19.0-041900rc8-generic",
+    "notes": "Game launches to a blank screen, hit alt+enter to get enter windowed mode to see anything. In main menu pointer is misaligned, to select any option you have to point several pixels below the options. Game also has distorted/crackling sound.",
+    "os": "elementary OS 5.0 Juno (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "15960 Mb",
+    "rating": "Bronze",
+    "timestamp": 1540222213,
+    "title": "Darkness Ahead",
+    "source": "protondb"
+  }
+]

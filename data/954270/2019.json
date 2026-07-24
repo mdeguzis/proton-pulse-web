@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "954270",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.4",
+    "kernel": "5.3.11-arch1-1",
+    "notes": "Doesn't start",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577045801,
+    "title": "LOGistICAL 2",
+    "source": "protondb"
+  }
+]

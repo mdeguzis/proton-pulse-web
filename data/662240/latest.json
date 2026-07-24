@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "662240",
+    "cpu": "AMD FX-9370 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.09",
+    "kernel": "5.0.10-1-default",
+    "notes": "Requires the Media Foundation hack as detailed here: https://github.com/ValveSoftware/Proton/issues/1102#issuecomment-419678627\n\nCrashes with graphics settings set to maximum. Reduce these before starting a game.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1557055854,
+    "title": "Epitasis",
+    "source": "protondb"
+  }
+]

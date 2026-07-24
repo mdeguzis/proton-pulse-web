@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "409870",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD Radeon HD 7770",
+    "gpuDriver": "4.4 Mesa 18.2.2",
+    "kernel": "4.15.0-45-generic",
+    "notes": "With scaling set to pillarbox there are some visual glitches, like sprites showing on top of objects that cover them or some strange artifacts. Scaling set to stretch fixes these glitches, but that option cannot be used in windowed mode and it automatically makes the game go fullscreen, so you can't play in window without those glitches.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "4 GB",
+    "rating": "Silver",
+    "timestamp": 1551440242,
+    "title": "Phantom Brave PC / \u30d5\u30a1\u30f3\u30c8\u30e0\u30fb\u30d6\u30ec\u30a4\u30d6 PC",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1062040",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.16.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-arch1-1",
+    "notes": "Performance issues",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1759087338,
+    "title": "Dragon Star Varnir",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "466920",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "Wine gave me a nondescript error on startup, after which I was able to alt-tab into the game but it was hung.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541268722,
+    "title": "Mugen Souls Z",
+    "source": "protondb"
+  }
+]

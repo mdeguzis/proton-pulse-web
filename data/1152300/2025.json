@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1152300",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.63, 6.15.9-106.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.0",
+    "kernel": "6.15.9-106.bazzite.fc42.x86_64",
+    "notes": "Video playback may require different proton version",
+    "os": "Bazzite (FROM Fedora Atomic)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1755993632,
+    "title": "",
+    "source": "protondb"
+  }
+]

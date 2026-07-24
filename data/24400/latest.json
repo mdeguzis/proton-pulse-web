@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "24400",
+    "cpu": "Intel Pentium Dual   E2200  @ 2.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.4.0-142-generic",
+    "notes": "Gameplay is good right out of the box. Some audio buzz and crackle. Video artifacts in strategic and tactical maps, most were cleared up by adjusting the resolution.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "6 GB",
+    "rating": "Silver",
+    "timestamp": 1550887062,
+    "title": "King Arthur - The Role-playing Wargame",
+    "source": "protondb"
+  }
+]

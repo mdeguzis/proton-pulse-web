@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "704040",
+    "cpu": "AMD Athlon II X4 630",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.87",
+    "kernel": "4.15.0-38-generic",
+    "notes": "White screen is not running the game",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1540717111,
+    "title": "Castle Clicker : Building Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "704040",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Blank screen, the game does not start.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543601107,
+    "title": "Castle Clicker : Building Tycoon",
+    "source": "protondb"
+  }
+]

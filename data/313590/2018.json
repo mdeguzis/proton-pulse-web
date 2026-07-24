@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "313590",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Game starts and runs ok but in game the character control goes into a continuous spin. Un-playable. ",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1544225515,
+    "title": "Boo Bunny Plague",
+    "source": "protondb"
+  }
+]

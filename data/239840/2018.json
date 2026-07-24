@@ -1,0 +1,73 @@
+[
+  {
+    "appId": "239840",
+    "title": "Dead State",
+    "timestamp": 1535442709,
+    "rating": "Platinum",
+    "notes": "Sometimes crashes (like on windows)",
+    "os": "Nixos 18.03 (kernel 4.14.65)",
+    "gpuDriver": "Mesa 17.3.6",
+    "specs": "i5-750 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "239840",
+    "cpu": "AMD Athlon(tm) X4 860K Quad Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.15.0-36-generic",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7919 Mb",
+    "rating": "Platinum",
+    "timestamp": 1539224098,
+    "title": "Dead State: Reanimated",
+    "source": "protondb"
+  },
+  {
+    "appId": "239840",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Game starts and opens a black window; then immediately generates a crash report and asks if you would like to send the error log. ",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1541462845,
+    "title": "Dead State: Reanimated",
+    "source": "protondb"
+  },
+  {
+    "appId": "239840",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 410.57",
+    "kernel": "4.18.14-arch1-1-ARCH",
+    "notes": "Game opens a black window and immediately begins creating a crash report, then asks if you would like to submit the report. Testing with other proton version as well with same result.",
+    "os": "Linux 4.x",
+    "protonVersion": "Default",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1541463618,
+    "title": "Dead State: Reanimated",
+    "source": "protondb"
+  },
+  {
+    "appId": "239840",
+    "title": "Dead State",
+    "timestamp": 1535428309,
+    "rating": "Platinum",
+    "notes": "Sometimes crashes (like on windows)",
+    "os": "Nixos 18.03 (kernel 4.14.65)",
+    "gpuDriver": "Mesa 17.3.6",
+    "specs": "i5-750 / RX 570",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

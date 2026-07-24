@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "773370",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.1-1-default",
+    "notes": "Requires Proton 5.8-GE-2-MF",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592572172,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "773370",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.38.0, 5.8.12-200.fc32.x86_64, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel",
+    "kernel": "5.8.12-200.fc32.x86_64",
+    "notes": "Black screen  after 'new game'",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602146084,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "773370",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.1.8",
+    "kernel": "5.8.6-1-MANJARO",
+    "notes": "Crashes after intro video",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602331944,
+    "title": "",
+    "source": "protondb"
+  }
+]

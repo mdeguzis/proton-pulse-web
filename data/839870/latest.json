@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "839870",
+    "cpu": "AMD Ryzen Threadripper 2920X 12-Core",
+    "duration": "aboutAnHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon VII",
+    "gpuDriver": "4.6.13572 Compatibility Profile Context",
+    "kernel": "5.2.9-arch1-1-ARCH",
+    "notes": "No issues, runs great, sound, controls, etc. ",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1567292630,
+    "title": "Wilmot's Warehouse",
+    "source": "protondb"
+  },
+  {
+    "appId": "839870",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.8-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567306796,
+    "title": "Wilmot's Warehouse",
+    "source": "protondb"
+  },
+  {
+    "appId": "839870",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "I works!",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1572181559,
+    "title": "Wilmot's Warehouse",
+    "source": "protondb"
+  }
+]

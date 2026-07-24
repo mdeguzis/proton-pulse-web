@@ -1,0 +1,41 @@
+[
+  {
+    "appId": "568930",
+    "title": "The Land of Pain",
+    "timestamp": 1535278678,
+    "rating": "Gold",
+    "notes": "Required Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to run. ",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "568930",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1541699816,
+    "title": "The Land of Pain",
+    "source": "protondb"
+  },
+  {
+    "appId": "568930",
+    "title": "The Land of Pain",
+    "timestamp": 1535264278,
+    "rating": "Gold",
+    "notes": "Required Steam launch option \"PROTON_USE_WINED3D11=1 %command%\" to run. ",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

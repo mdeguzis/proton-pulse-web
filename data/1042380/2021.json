@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1042380",
+    "cpu": "Intel Core i7-10510U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.11.15-051115-generic",
+    "notes": "Very straightforward, everything worked perfectly",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1621447699,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1042380",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "With the low framerate and audio issues (out of the box) this is not enjoyable. Next: tinkering with the proton version.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1628697430,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1042380",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.10.70-1-MANJARO",
+    "notes": "Works perfect OOTB",
+    "os": "Manjaro Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640109817,
+    "title": "",
+    "source": "protondb"
+  }
+]

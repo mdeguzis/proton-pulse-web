@@ -1,0 +1,71 @@
+[
+  {
+    "appId": "351940",
+    "cpu": "AMD A6-6400K APU with Radeon HD Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 18.2.8",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Put PROTON_USE_WINED3D=1 %command% in \"Launch options\"",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "3.16-4",
+    "protonVersionManual": "3.16-4",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1547274149,
+    "title": "The Descendant",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "351940",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.16.0-0.steamos2.1-amd64",
+    "notes": "4.2.1 played the full first chapter and the start of the second chapter. Works perfect no issue at all. Xbox one controller worked out of the box.",
+    "os": "SteamOS 2.0",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1554378001,
+    "title": "The Descendant",
+    "source": "protondb"
+  },
+  {
+    "appId": "351940",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.3",
+    "kernel": "5.0.9-2-MANJARO",
+    "notes": "played through whole game in 6.4 hrs. No crashes. Great performance except for 1 scene where it was at 19 FPS.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1556942209,
+    "title": "The Descendant",
+    "source": "protondb"
+  },
+  {
+    "appId": "351940",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "aboutAnHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.5 Mesa 19.1.2",
+    "kernel": "5.2.1-1-MANJARO",
+    "notes": "I have finished first episode, game works perfectly",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "Default",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563656458,
+    "title": "The Descendant",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "579180",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.4-arch1-1-ARCH",
+    "notes": "The controller detection works for directinput-style controllers; xinput did not detect the triggers properly.  (I used a MayFlash Magic-NS and set it to dinput mode rather than xinput.)\n\nOnce you are in the game, it runs fantastically.  The only 'gotcha' is that lighting doesn't work - when you are in a cave, it doesn't get darker.  The movies do not work and immediately exit.\n\nIf you try to run the game at high resolutions (I use 4k), you may see only the upper left corner of the screen.  If you manually walk the options (partly by memory, partly by sight) then you can get the resolution back.  You have to do this every time you start the game.  It works perfectly fine until you exit out, and have to do it again.",
+    "os": "Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1553717053,
+    "title": "Ys VIII: Lacrimosa of DANA / \u30a4\u30fc\u30b9VIII-Lacrimosa of DANA-",
+    "source": "protondb"
+  },
+  {
+    "appId": "579180",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.4-1-MANJARO",
+    "notes": "game starts and runs, but had some issues with controller (Logitech F710). On DirectInput, the right analog stick can't move vertically and sometimes the vibration doesn't stop for a long time. On xInput, the triggers doesn't work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1565923795,
+    "title": "Ys VIII: Lacrimosa of DANA / \u30a4\u30fc\u30b9VIII-Lacrimosa of DANA-",
+    "source": "protondb"
+  },
+  {
+    "appId": "579180",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "5.2.11-1-MANJARO",
+    "notes": "Wokring perfect out of box. Gamepad fully working and fps is above 60 - around 90-80 all the time. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-5",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1568870055,
+    "title": "Ys VIII: Lacrimosa of DANA",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "appId": "2330",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Application Load Error 5:0000065434",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "4.2-6",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1560176242,
+    "title": "QUAKE II Mission Pack: The Reckoning",
+    "source": "protondb"
+  },
+  {
+    "appId": "2330",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.15.0-55-generic",
+    "notes": "It fails to load - I get Application Load Error 5:0000065434",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-5",
+    "protonVersionManual": "4.11-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1569682302,
+    "title": "QUAKE II Mission Pack: The Reckoning",
+    "source": "protondb"
+  }
+]

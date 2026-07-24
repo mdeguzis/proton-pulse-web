@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1563130",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.6, DRM 3.47, 5.19.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.13-arch1-1",
+    "notes": "Launches, but doesn't actually seem to load.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1665170540,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1563130",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.13-arch1-1",
+    "notes": "Game launches, can reach main menu, can reach character creation screen but the loading screen after that seems to hang.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1665326624,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1563130",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.6, DRM 3.47, 5.19.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.13-arch1-1",
+    "notes": "Game takes 15 minutes to load on Linux using Proton-GE.\nHigh RAM usage & crashes after awhile, bad performance in general.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1666031475,
+    "title": "",
+    "source": "protondb"
+  }
+]

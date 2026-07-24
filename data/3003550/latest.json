@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3003550",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 535.146.02",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Games crashes on launch loading screen",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1768323574,
+    "title": "Aqua TV",
+    "source": "protondb"
+  }
+]

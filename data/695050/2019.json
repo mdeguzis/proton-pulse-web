@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "695050",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Worked instantly. Some problems when closing/exiting the game. Had to resort to killing the game.",
+    "os": "elementary OS 5.0 Juno",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1570361977,
+    "title": "Rain of Reflections: Chapter 1",
+    "source": "protondb"
+  }
+]

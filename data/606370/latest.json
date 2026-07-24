@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "606370",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon HD 7800",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-0cc01f4 2019-01-07 bionic-oibaf-ppa)",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Video and audio appear to work and game appears to be playable.\n\nCould not play with controller (tried multiple Bluetooth connected controllers including Xbox One S and tried XBox One S and XBox One controller using wired connection).  It appears that some input is constantly being triggered and directional control is not usable with a controller connected.  This makes the game unplayable with a controller connected.\n\nDisconnecting controller allows keyboard controls to be used normally.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1546910872,
+    "title": "Romancing SaGa 2",
+    "source": "protondb"
+  }
+]

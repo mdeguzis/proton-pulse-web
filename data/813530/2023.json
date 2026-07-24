@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "813530",
+    "cpu": "11th Gen Intel Core i9-11900 @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.19.16-200.fc36.x86_64",
+    "notes": "Works great. My Turnigy controller works just great",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1680298386,
+    "title": "FPV Freerider Recharged",
+    "source": "protondb"
+  }
+]

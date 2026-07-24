@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "322770",
+    "title": "Vanishing Realms",
+    "timestamp": 1535219910,
+    "rating": "Borked",
+    "notes": "HTC Vive. Fails to start.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "322770",
+    "title": "Vanishing Realms",
+    "timestamp": 1535250008,
+    "rating": "Silver",
+    "notes": "Can hear a crackling noise in the background",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "322770",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 415.18.04",
+    "kernel": "4.19.8-arch1-1-ARCH",
+    "notes": "Occasional minor slowdowns. Controllers sometimes disappear after entering the settings menu. Other than that it seems to work great.",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1544908244,
+    "title": "Vanishing Realms\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "322770",
+    "title": "Vanishing Realms",
+    "timestamp": 1535205510,
+    "rating": "Borked",
+    "notes": "HTC Vive. Fails to start.",
+    "os": "Ubuntu 18.04 64-bit (Kernel 4.15.0)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7 4790k / GTX 1080 Ti",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "322770",
+    "title": "Vanishing Realms",
+    "timestamp": 1535235608,
+    "rating": "Silver",
+    "notes": "Can hear a crackling noise in the background",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-2400 / GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

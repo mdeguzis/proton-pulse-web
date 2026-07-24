@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "469890",
+    "cpu": "AMD FX(tm)-6300 Six-Core Processor",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org AMD Radeon HD 7800 Series (PITCAIRN, DRM 3.19.0, 4.14.72-1-lts, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.1",
+    "kernel": "4.14.72-1-lts",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7882 Mb",
+    "rating": "Borked",
+    "timestamp": 1538702703,
+    "title": "Space Codex",
+    "source": "protondb"
+  }
+]

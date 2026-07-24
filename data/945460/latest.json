@@ -1,0 +1,21 @@
+[
+  {
+    "appId": "945460",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.0",
+    "kernel": "5.0.2-arch1-1-ARCH",
+    "notes": "Originally the game didn't boot. I'm new to WINE, Proton, and Linux alike so that was expected. After looking online some more I, I found a launch option \"PROTON_USE_WINED3D11=1 %command%\" that turns DX11 on in WINE and the game booted fine afterward. \n\nNow it should be noted, I'm running on a VERY low powered laptop. To be specific, it's got a GT 820m, so lag was expected. However, I got a pretty bad performance hit. I didn't expect it because this laptop runs Killing Floor just fine, but this game ran at a stable 25ish FPS on solo. I had to turn all the settings down along with the resolution to ensure the best framerate, 60+.\n\nOverall, the game runs. And if you have better hardware, I can imagine it'll run much better for you.",
+    "os": "Linux",
+    "protonVersion": "Beta (3.16-8)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1553225485,
+    "title": "Zombie Builder Defense",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  }
+]

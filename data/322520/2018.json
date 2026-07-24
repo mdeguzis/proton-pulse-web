@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "322520",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.15.0-38-generic",
+    "notes": "It opened, launched to a loading screen, then went blank",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1541747621,
+    "title": "DYNASTY WARRIORS\u00ae 8 Empires",
+    "source": "protondb"
+  }
+]

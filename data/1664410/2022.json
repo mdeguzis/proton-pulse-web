@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1664410",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Worked out-of-the-box after adding the launch option. I played in windowed mode, but there should be no problems playing in fullscreen.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1642791997,
+    "title": "\u6771\u65b9\u5b9f\u5728\u76f8 \uff5e Dream Logical World",
+    "source": "protondb"
+  },
+  {
+    "appId": "1664410",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.11-76051511-generic",
+    "notes": "Fullscreen launchflag make it crashes, and sometimes it glitches when bombing without WineD3D",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1645383598,
+    "title": "\u6771\u65b9\u5b9f\u5728\u76f8 \uff5e Dream Logical World",
+    "source": "protondb"
+  }
+]

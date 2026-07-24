@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1943730",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.1-1-cachyos",
+    "notes": "Running smooth on Ultra settings between 60-80fps. Tested on GE-Proton10-34 (higher ram consume) and Proton-cachyos-10.0 (best choose)",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777418658,
+    "title": "",
+    "source": "protondb"
+  }
+]

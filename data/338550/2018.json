@@ -1,0 +1,66 @@
+[
+  {
+    "appId": "338550",
+    "title": "Terra Lander",
+    "timestamp": 1535293684,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "manjaro",
+    "gpuDriver": "nouveau",
+    "specs": "gtx 260",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "338550",
+    "title": "Terra Lander",
+    "timestamp": 1535294359,
+    "rating": "Platinum",
+    "notes": "flawless.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14)",
+    "gpuDriver": "nouveau",
+    "specs": "core 2 / gtx 260",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "338550",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "The game works perfectly",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1543338383,
+    "title": "Terra Lander",
+    "source": "protondb"
+  },
+  {
+    "appId": "338550",
+    "title": "Terra Lander",
+    "timestamp": 1535279284,
+    "rating": "Platinum",
+    "notes": "flawless",
+    "os": "manjaro",
+    "gpuDriver": "nouveau",
+    "specs": "gtx 260",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "338550",
+    "title": "Terra Lander",
+    "timestamp": 1535279959,
+    "rating": "Platinum",
+    "notes": "flawless.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14)",
+    "gpuDriver": "nouveau",
+    "specs": "core 2 / gtx 260",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

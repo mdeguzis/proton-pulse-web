@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "46450",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.2",
+    "kernel": "4.20.3-arch1-1-ARCH",
+    "notes": "Does not start at all",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Borked",
+    "timestamp": 1548793552,
+    "title": "Grotesque Tactics: Evil Heroes",
+    "source": "protondb"
+  }
+]

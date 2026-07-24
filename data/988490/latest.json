@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "988490",
+    "cpu": "Intel Core i5-1035G4 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Iris Plus (Ice Lake 6x8 GT1.5)",
+    "gpuDriver": "3.0 Mesa 19.2.4",
+    "kernel": "5.4.0-12-generic",
+    "notes": "Will not boot to menu",
+    "os": "Ubuntu Focal Fossa (development branch)",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1580840202,
+    "title": "Black Powder Red Earth\u00ae",
+    "source": "protondb"
+  }
+]

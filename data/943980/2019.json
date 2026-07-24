@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "943980",
+    "cpu": "Intel Core i5-3340M @ 2.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "4.15.0-64-generic",
+    "notes": "Crashes shortly after starting",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1569962143,
+    "title": "The logic of the miniature garden",
+    "source": "protondb"
+  }
+]

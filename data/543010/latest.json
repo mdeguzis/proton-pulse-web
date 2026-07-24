@@ -1,0 +1,17 @@
+[
+  {
+    "appId": "543010",
+    "cpu": "Intel Xeon           E5410  @ 2.33GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-47-generic",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Default",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1555181920,
+    "title": "Bush Hockey League",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1147660",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.79-1-MANJARO",
+    "notes": "anti cheat fails to update and prevents the game from starting. ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1571870326,
+    "title": "ArcheAge: Unchained",
+    "source": "protondb"
+  },
+  {
+    "appId": "1147660",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.13-126.current",
+    "notes": "I confirm, because of anti cheat, you won't be able to play it on linux",
+    "os": "Solus",
+    "protonVersion": "4.11-4",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1572118254,
+    "title": "ArcheAge: Unchained",
+    "source": "protondb"
+  }
+]

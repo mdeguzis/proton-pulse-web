@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1196310",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.8.0-1-default",
+    "notes": "Tries to install but fails... stating that the FGUpdaterEngine.exe is missing",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1598558568,
+    "title": "",
+    "source": "protondb"
+  }
+]

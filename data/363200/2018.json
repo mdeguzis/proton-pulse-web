@@ -1,0 +1,43 @@
+[
+  {
+    "appId": "363200",
+    "title": "Virus Jigglin' Fever",
+    "timestamp": 1536114336,
+    "rating": "Silver",
+    "notes": "Gamepad does not work",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "363200",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "only keyboard works",
+    "os": "Arch Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "protonVersionManual": "native",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541414056,
+    "title": "Virus Jigglin' Fever",
+    "source": "protondb"
+  },
+  {
+    "appId": "363200",
+    "title": "Virus Jigglin' Fever",
+    "timestamp": 1536099936,
+    "rating": "Silver",
+    "notes": "Gamepad does not work",
+    "os": "Arch Linux Stable 64-bit (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "E3-1230 v2 / GTX 660",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

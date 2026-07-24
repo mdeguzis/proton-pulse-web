@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "621220",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 18.1.8, DRM 3.58, 6.11.1-200.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.3",
+    "kernel": "6.11.1-200.fsync.fc40.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1728342258,
+    "title": "",
+    "source": "protondb"
+  }
+]

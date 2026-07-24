@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1306580",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.41.0, 5.13.19-2-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Audio sounded more like background noise, and it was super low.\nRuns perfectly for everything else",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1640074244,
+    "title": "Left on Read",
+    "source": "protondb"
+  }
+]

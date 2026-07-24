@@ -1,0 +1,74 @@
+[
+  {
+    "appId": "460870",
+    "title": "GOD EATER RESURRECTION",
+    "timestamp": 1534973410,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6 - padoka PPA",
+    "specs": "Ryzen 2600 / AMD Radeon R9 Fury",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460870",
+    "title": "GOD EATER RESURRECTION",
+    "timestamp": 1534974810,
+    "rating": "Borked",
+    "notes": "crashes on launch",
+    "os": "Kubuntu 18.04 (Kernel 4.18.0-041800-generic)",
+    "gpuDriver": "Mesa 18.1.6 - padoka PPA",
+    "specs": "AMD Ryzen 5 2600 / AMD Radeon R9 FURY",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460870",
+    "title": "GOD EATER RESURRECTION",
+    "timestamp": 1535564243,
+    "rating": "Borked",
+    "notes": "Appears to be denuvo related. Displays an error and links to codefusion (denuvo)",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460870",
+    "title": "GOD EATER RESURRECTION",
+    "timestamp": 1534959010,
+    "rating": "Borked",
+    "notes": "",
+    "os": "Kubuntu 18.04",
+    "gpuDriver": "Mesa 18.1.6 - padoka PPA",
+    "specs": "Ryzen 2600 / AMD Radeon R9 Fury",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460870",
+    "title": "GOD EATER RESURRECTION",
+    "timestamp": 1534960410,
+    "rating": "Borked",
+    "notes": "crashes on launch",
+    "os": "Kubuntu 18.04 (Kernel 4.18.0-041800-generic)",
+    "gpuDriver": "Mesa 18.1.6 - padoka PPA",
+    "specs": "AMD Ryzen 5 2600 / AMD Radeon R9 FURY",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "460870",
+    "title": "GOD EATER RESURRECTION",
+    "timestamp": 1535549843,
+    "rating": "Borked",
+    "notes": "Appears to be denuvo related. Displays an error and links to codefusion (denuvo)",
+    "os": "Antergos (Kernel 4.18.5)",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-2600 / GTX 1070",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

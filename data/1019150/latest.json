@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1019150",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "nvldumd.dll",
+    "kernel": "Supported 311 0x0 0x0 0x0",
+    "notes": "Verified by Linux Gaming Consortium",
+    "os": "Windows 10",
+    "protonVersion": "Default",
+    "ram": "33 GB",
+    "rating": "Platinum",
+    "timestamp": 1567531797,
+    "title": "Apolune",
+    "source": "protondb"
+  }
+]

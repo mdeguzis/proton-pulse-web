@@ -1,0 +1,58 @@
+[
+  {
+    "appId": "25830",
+    "title": "Knights of Honor",
+    "timestamp": 1534910400,
+    "rating": "Gold",
+    "notes": "Doesn't run in fullscreen but I think that's a problem with the game (no native widescreen support).",
+    "os": "Solus 3.9999, latest sync",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-6300, R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "25830",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 390.77",
+    "kernel": "4.15.0-36-generic",
+    "notes": "Countless errors.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1540928075,
+    "title": "Knights of Honor",
+    "source": "protondb"
+  },
+  {
+    "appId": "25830",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.4.0-139-generic",
+    "notes": "The game is displayed in left upper corner, but mouse behaves the way that the game was scaled. Therefore it's almost impossible to click on anything.",
+    "os": "Linux Mint 18 Sarah",
+    "protonVersion": "Default",
+    "ram": "12 GB",
+    "rating": "Bronze",
+    "timestamp": 1544222073,
+    "title": "Knights of Honor",
+    "source": "protondb"
+  },
+  {
+    "appId": "25830",
+    "title": "Knights of Honor",
+    "timestamp": 1534896000,
+    "rating": "Gold",
+    "notes": "Doesn't run in fullscreen but I think that's a problem with the game (no native widescreen support).",
+    "os": "Solus 3.9999, latest sync",
+    "gpuDriver": "Mesa 18.1.6",
+    "specs": "FX-6300, R9 270X",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]

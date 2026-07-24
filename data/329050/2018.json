@@ -1,0 +1,192 @@
+[
+  {
+    "appId": "329050",
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "timestamp": 1535581101,
+    "rating": "Silver",
+    "notes": "Only runs with launch option \"PROTON_USE_WINED3D11=1 %command%\". Works well except that the performance/framerate is really poor, like 20-30 FPS on a Vega 56 at 1080p. Quality setting in the game make almost no difference in performance.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "timestamp": 1535726315,
+    "rating": "Borked",
+    "notes": "On startup theres a black screen and a error box that says, \"E_FAIL: IRender -> getDevice() -> createTextureID(&desc,NULL,&ptex).\"\nI think thats the same error I got in Monster Hunter which is normally very stable.  May be something specific to my system.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel\u00ae Core\u2122 i5-4670 / GTX 1060 6GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz",
+    "gpu": "NVIDIA Corporation GeForce GTX 970/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.18.8-arch1-1-ARCH",
+    "notes": "I also had to edit the launch settings to \"PROTON_USE_WINED3D11=1 %command%\" to get the game running. Otherwise it would crash with the error \"E_FAIL: IRender -> getDevice() -> createTextureID(&desc,NULL,&ptex).\"\n\nThe game runs fantastic in vanilla wine with dxvk at over 100fps.\nOn proton 3.7 it is currently at around 20-30fps like someone else here stated.",
+    "os": "Linux 4.x (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15960 Mb",
+    "rating": "Silver",
+    "timestamp": 1537553681,
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "gpu": "X.Org AMD Radeon (TM) RX 480 Graphics (POLARIS10, DRM 3.26.0, 4.18.9-arch1-1-ARCH, LLVM 6.0.1)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.9-arch1-1-ARCH",
+    "notes": "The game only runs after forcing WINE's OpenGL-based D3D10 support with the launch option \"PROTON_USE_WINED3D11=1 %command%\". Somehow, the performance is even worse than it is in vanilla WINE- quite unplayable at least on Mesa.\n\nMuch worse than this, however, is that the HUD for Vergil and Trish causes the screen to turn black. Since the new playable characters are the main reason for choosing the Special Edition over DMC 4 Vanilla, this significantly hurts the game's playability.\n\nUpdating DXVK to a version that supports D3D10 or using DXUP may remedy these issues.",
+    "os": "\"Arch Linux\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7944 Mb",
+    "rating": "Bronze",
+    "timestamp": 1537745934,
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "AMD FX(tm)-8320 Eight-Core Processor",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 950/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 410.57",
+    "kernel": "4.18.12-arch1-1-ARCH",
+    "notes": "The game only runs after forcing WINE's OpenGL-based D3D10 support with the launch option \"PROTON_USE_WINED3D11=1 %command%\". The game closes when you maximize the screen",
+    "os": "\"Antergos Linux\" (64 bits)",
+    "protonVersion": "Default",
+    "ram": "16022 MB",
+    "rating": "Bronze",
+    "timestamp": 1539109165,
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "AMD Ryzen 5 1600 Six-Core Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 1080/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.48",
+    "kernel": "4.15.0-34-generic",
+    "notes": "Update on the new proton 3.7-8 beta; forcing D311 is no longer necessary, and the game seems to run at full speed. Played for about half an hour until a crash. ",
+    "os": "Linux Mint 19 Tara (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "16056 Mb",
+    "rating": "Silver",
+    "timestamp": 1539319971,
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 1060 6GB/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 396.54",
+    "kernel": "4.14.67-1-MANJARO",
+    "notes": "doesn't get past the start screen without a crash",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Beta (3.16-3)",
+    "ram": "16002 Mb",
+    "rating": "Borked",
+    "timestamp": 1540264485,
+    "tweaks": {
+      "disableEsync": true
+    },
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "Intel Core i7-4930K @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "On first run without any work around it launched but failed to run the actual game (got title screen and settings menu). After the first crash (well, I had to kill it) it would crash on trying to run the performance test. I uninstalled and reinstalled the game. Now it won't even launch with DXVK. The performance is abysmal (pun intended).",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1542759007,
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "Intel Core2 Quad    Q8300  @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.4 Mesa 18.2.4 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "This game starts up once you use the Wine D3d11. It runs very smoothly in menus. There is no problem to run a mission either. And all that is for nothing as the in game FPS is like 3 times lower than when you run the game on Windows, which is 30-40 fps out of combat. But once the combat starts the frames drop like beat in some hardcore techno, or rather stuttering kicks in very hard. It's absolutely unacceptable in a game, which demands so much timing. Wanted to give it a borked, as for me it is barely playable (until you play it for sightseeing), but hey, it runs somehow after all. Gotta mention it kinda looks like there's a huge problem with using the power of the hardware, I've noticed my gpu temperatures not really getting above the idle, while I believe it still should warm it up a lil bit.",
+    "os": "KDE neon User Edition 5.14",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1543917097,
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "I needed to disable esync and use wine d3d11 in order to get the game to run stable. In-game fullscreen option is bugged and causes game to hang on startup until you disable it again in config.ini, best to leave it off and use alt+enter instead. Full controller support, noticeably worse performance than on Windows in some segments.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1545430022,
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "tweaks": {
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "timestamp": 1535566701,
+    "rating": "Silver",
+    "notes": "Only runs with launch option \"PROTON_USE_WINED3D11=1 %command%\". Works well except that the performance/framerate is really poor, like 20-30 FPS on a Vega 56 at 1080p. Quality setting in the game make almost no difference in performance.",
+    "os": "Elementary OS 5.0 b1 (Kernel 4.15.0)",
+    "gpuDriver": "Mesa 18.3.0-devel padoka",
+    "specs": "TR 1900X / RX 56 Nano",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "329050",
+    "title": "Devil May Cry\u00ae 4 Special Edition",
+    "timestamp": 1535711915,
+    "rating": "Borked",
+    "notes": "On startup theres a black screen and a error box that says, \"E_FAIL: IRender -> getDevice() -> createTextureID(&desc,NULL,&ptex).\"\nI think thats the same error I got in Monster Hunter which is normally very stable.  May be something specific to my system.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "Intel\u00ae Core\u2122 i5-4670 / GTX 1060 6GB",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

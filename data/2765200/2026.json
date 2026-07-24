@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2765200",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.18.1-273-tkg-eevdf",
+    "notes": "wine 11 started doing some stubs but it will take time to finish and even more to get to proton.\n\nFollow my Steam Curator for VR Games on Linux: https://store.steampowered.com/curator/45753882-VR-Linux/",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1774784076,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2765200",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-20-generic",
+    "notes": "does not work. crashes after showing a loading bar",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1775492530,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2503220",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.54, 6.6.15-amd64)",
+    "gpuDriver": "4.6 Mesa 23.3.5-1",
+    "kernel": "6.6.15-amd64",
+    "notes": "Works out of the box with default proton",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1719531106,
+    "title": "",
+    "source": "protondb"
+  }
+]

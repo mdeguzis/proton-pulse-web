@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2967320",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.2-3-cachyos",
+    "notes": "works fine, just hit play",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1756147057,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2967320",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.1-arch1-1-znver3",
+    "notes": "",
+    "os": "GarudaOS (Arch Linux)",
+    "protonVersion": "10.0-3",
+    "ram": "32GB",
+    "rating": "gold",
+    "timestamp": 1762685640,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2967320",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "Peak Gameplay. Works out of the box without any changes.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1764933879,
+    "title": "",
+    "source": "protondb"
+  }
+]

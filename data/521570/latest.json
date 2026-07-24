@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "521570",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-20-generic",
+    "notes": "I played until I unlocked Area X. Everything worked out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1550086169,
+    "title": "You Have 10 Seconds 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "521570",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.3 - padoka PPA",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Everything works perfectly.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "7 GB",
+    "rating": "Platinum",
+    "timestamp": 1550154615,
+    "title": "You Have 10 Seconds 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "521570",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Finished the game with xbox one controller. ",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-1",
+    "protonVersionManual": "4.2-1",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1553938443,
+    "title": "You Have 10 Seconds 2",
+    "source": "protondb"
+  }
+]

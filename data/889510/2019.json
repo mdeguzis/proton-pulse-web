@@ -1,0 +1,55 @@
+[
+  {
+    "appId": "889510",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 410.78",
+    "kernel": "4.18.18-300.fc29.x86_64",
+    "notes": "Game works well overall and performance is good, although I had a tough start.\n\nNevertheless there were some Issues and I post the solution here for other Linux users on SteamPlay:\n\n########################################################\n\n  --For some reason the Game can't create the folder containing the save/setting files. You can see that when you try to make a new game in the start screen pick an empty save file, and then will be prompted back. Solution: create the folder by hand e.g. with \"mkdir -p ~/.local/share/Steam/steamapps/compatdata/889510/pfx/drive_c/users/steamuser/AppData/Local/Senran\\ Kagura\\ Burst\\ ReNewal\"\nor your file manager of your choice like nautilus or dolphin.\n\n########################################################\n\n -- esynch makes trouble like in this issue https://github.com/ValveSoftware/Proton/issues/32 Disable esynch with adding: \n \"PROTON_NO_ESYNC=1\" to Properties -> Set Launch Options or when starting in command line \n\"env PROTON_NO_ESYNC=1 steam -console steam://rungameid/889510\"\n\n######################################################## \n   \n-- For some reason the game crashes after some time in Full Screen mode if one Alt-Tabs out. Either stay in the game or use windowed mode",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "64 GB",
+    "rating": "Silver",
+    "timestamp": 1548512543,
+    "title": "SENRAN KAGURA Burst Re:Newal",
+    "tweaks": {
+      "disableEsync": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "889510",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "Runs perfectly after using the tweak in the post below. Game runs at a stable 60 fps and I didn't have any problems with mods.",
+    "os": "Linux",
+    "protonVersion": "4.2-2",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1555416984,
+    "title": "SENRAN KAGURA Burst Re:Newal",
+    "source": "protondb"
+  },
+  {
+    "appId": "889510",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.0.9-gentoo",
+    "notes": "Manually created the game's save folder as described below.\nPlayed 2 missions in single player.",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "32 GB",
+    "rating": "Silver",
+    "timestamp": 1557440033,
+    "title": "SENRAN KAGURA Burst Re:Newal",
+    "source": "protondb"
+  }
+]

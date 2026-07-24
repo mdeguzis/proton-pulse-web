@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2529120",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.5.6-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.6-gentoo-dist",
+    "notes": "Works well, but no controller support",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1697193628,
+    "title": "",
+    "source": "protondb"
+  }
+]

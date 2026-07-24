@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "4870",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.1.14-zen1-2-zen",
+    "notes": "Runs too quickly.",
+    "os": "Linux",
+    "protonVersion": "4.2-8",
+    "protonVersionManual": "4.2-8",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1561651669,
+    "title": "Cossacks: Art of War",
+    "source": "protondb"
+  }
+]

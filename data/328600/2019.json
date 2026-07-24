@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "328600",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-5-amd64",
+    "notes": "The game starts but run too slow (~5fps) to be played, no tweaks by flags seems helpful",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "3.16.7",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1558114766,
+    "title": "Frozen Synapse Prime",
+    "source": "protondb"
+  }
+]

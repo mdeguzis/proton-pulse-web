@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "717310",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon 550",
+    "gpuDriver": "4.5 Mesa 19.1.7",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Only the upper left corner of the screen is displayed for me. Technically I could start playing, but couldn't see anything.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1572734116,
+    "title": "",
+    "source": "protondb"
+  }
+]

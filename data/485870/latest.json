@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "485870",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.0.1",
+    "kernel": "5.0.5-arch1-1-ARCH",
+    "notes": "Crashed at launch.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "15 GB",
+    "rating": "Borked",
+    "timestamp": 1555005957,
+    "title": "Super Duper Party Pooper",
+    "source": "protondb"
+  }
+]

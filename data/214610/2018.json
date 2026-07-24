@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "214610",
+    "title": "Cherry Tree High Comedy Club",
+    "timestamp": 1536090333,
+    "rating": "Platinum",
+    "notes": "Perfect. Also with Wireless Xbox 360 controller in Big Picture.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "214610",
+    "cpu": "AMD Phenom(tm) II X4 965 Processor",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA Corporation GeForce GTX 750 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.18.9-92.current",
+    "notes": "Launched and ran without issues. Seems solid, though I'll need to give it more prolonged playtime to know for sure, looks good so far though.",
+    "os": "\"Solus\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7977 Mb",
+    "rating": "Platinum",
+    "timestamp": 1538554564,
+    "title": "Cherry Tree High Comedy Club",
+    "source": "protondb"
+  },
+  {
+    "appId": "214610",
+    "cpu": "AMD FX-4100 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.19.1-1-MANJARO",
+    "os": "Manjaro Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1542572142,
+    "title": "Cherry Tree High Comedy Club",
+    "source": "protondb"
+  },
+  {
+    "appId": "214610",
+    "title": "Cherry Tree High Comedy Club",
+    "timestamp": 1536075933,
+    "rating": "Platinum",
+    "notes": "Perfect. Also with Wireless Xbox 360 controller in Big Picture.",
+    "os": "Manjaro Stable 64-bit (Kernel 4.14.67-1)",
+    "gpuDriver": "NVIDIA 390.87",
+    "specs": "Core2 Quad CPU Q9550 @ 2.83GHz / GTX 460",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

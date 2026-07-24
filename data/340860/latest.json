@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "340860",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.0-devel (git-d1d2bb8 2019-01-28 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-43-generic",
+    "notes": "While the game works in the sense that you can fly around, no text is rendered, which contains vital information such as ammunition counts and mission objectives, effectively rendering the game almost unplayable. Messing with DXVK and various permutations of WINE_D3D11 made no difference.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Bronze",
+    "timestamp": 1549165879,
+    "title": "RaidersSphere4th",
+    "source": "protondb"
+  }
+]

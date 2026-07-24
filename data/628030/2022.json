@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "628030",
+    "cpu": "%s1",
+    "duration": "underOneHour",
+    "gpu": "Red Hat virgl",
+    "gpuDriver": "3.1 Mesa 19.2.8",
+    "kernel": "5.4.157-17191-g6575d22de694",
+    "notes": "with window mode, it works",
+    "os": "Debian GNU/Linux 10 (buster)\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "6.3-8",
+    "ram": "2777Mb",
+    "rating": "gold",
+    "timestamp": 1643238856,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "628030",
+    "cpu": "%s1",
+    "duration": "underOneHour",
+    "gpu": "Red Hat virgl",
+    "gpuDriver": "3.1 Mesa 19.2.8",
+    "kernel": "5.4.157-17191-g6575d22de694",
+    "notes": "it's works",
+    "os": "Debian GNU/Linux 10 (buster)\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "4.11-13",
+    "ram": "2777Mb",
+    "rating": "gold",
+    "timestamp": 1643401189,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "299360",
+    "title": "Block N Load",
+    "timestamp": 1535940903,
+    "rating": "Borked",
+    "notes": "\"EasyAntiCheat failed to authenticate\", otherwise it would run flawlessly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "299360",
+    "cpu": "Intel(R) Core(TM) i5-4440 CPU @ 3.10GHz",
+    "gpu": "X.Org AMD Radeon (TM) RX 460 Graphics (POLARIS11, DRM 3.26.0, 4.18.0-sabayon, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.0",
+    "kernel": "4.18.0-sabayon",
+    "notes": "Anti cheat not working thus the game won't start",
+    "os": "\"Sabayon Linux amd64 18.10\" (64 bit)",
+    "protonVersion": "Beta",
+    "ram": "7901 Mb",
+    "rating": "Borked",
+    "timestamp": 1537557108,
+    "title": "Block N Load",
+    "source": "protondb"
+  },
+  {
+    "appId": "299360",
+    "cpu": "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "X.Org Radeon RX 560 Series (POLARIS11, DRM 3.19.0, 4.14.74-1-MANJARO, LLVM 7.0.0)",
+    "gpuDriver": "4.4 (Compatibility Profile) Mesa 18.2.2",
+    "kernel": "4.14.74-1-MANJARO",
+    "notes": "EasyAntiCheat blocks from playing, otherwise it seems to launch.",
+    "os": "\"Manjaro Linux\" (64 bit)",
+    "protonVersion": "Default",
+    "ram": "7923 Mb",
+    "rating": "Borked",
+    "timestamp": 1539275787,
+    "title": "Block N Load",
+    "source": "protondb"
+  },
+  {
+    "appId": "299360",
+    "title": "Block N Load",
+    "timestamp": 1535926503,
+    "rating": "Borked",
+    "notes": "\"EasyAntiCheat failed to authenticate\", otherwise it would run flawlessly.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "gpuDriver": "Mesa 18.3.0-devel",
+    "specs": "Ryzen 5 1400 / RX 580",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

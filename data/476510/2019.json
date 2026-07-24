@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "476510",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Splash screen loaded up off-center with large parts off-screen. Game loaded fine after it, but did not properly fullscreen. Game runs perfectly in windowed mode.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1559498122,
+    "title": "Cally's Trials",
+    "source": "protondb"
+  },
+  {
+    "appId": "476510",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.13-arch1-1-ARCH",
+    "notes": "Finished game using xbox one controller",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1567928202,
+    "title": "Cally's Trials",
+    "source": "protondb"
+  },
+  {
+    "appId": "476510",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "AMD Radeon RX 470",
+    "gpuDriver": "4.5 Mesa 19.3.0-devel (git-aa7ac32 2019-09-21 bionic-oibaf-ppa)",
+    "kernel": "5.3.1-050301-generic",
+    "notes": "It works very well, the Xbox 360 game controller works",
+    "os": "KDE neon User Edition 5.16",
+    "protonVersion": "3.16-9",
+    "ram": "12 GB",
+    "rating": "Platinum",
+    "timestamp": 1569426733,
+    "title": "Cally's Trials",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3860590",
+    "cpu": "11th Gen Intel Core i7-11700 @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.12.47-gentoo-dist",
+    "notes": "Able to get the game to go to menu for a few seconds after a few tries but still crashes.\n\nError message in quesiton\n\nFile:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\D3D11Util.cpp] [Line: 236]\nResult failed with error DXGI_ERROR_INVALID_CALL\nat D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\D3D11Query.cpp:361",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1761243485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3860590",
+    "cpu": "Intel Core i5-9600KF @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.16.0-2-cachyos-lto-diamondius",
+    "notes": "LowLevelFatalError [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\RenderCore\\Private\\RenderingThread.cpp] [Line: 952]\nRendering thread exception:\nLowLevelFatalError [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\D3D11Util.cpp] [Line: 236]\nResult failed with error DXGI_ERROR_INVALID_CALL\nat D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Windows\\D3D11RHI\\Private\\D3D11Query.cpp:361\n\n0x000000014289d252 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x000000014288cc60 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142894467 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142a17cfa BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142a18df9 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142a14308 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x00000001426494ed BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x000000014262c446 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x00000001426610ad BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x000000014205bd76 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x00000001426700af BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x000000014265188b BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142a940e4 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142aa43b2 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000140f52e3e BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142ab3915 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x0000000142ab3fc7 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x00000001410f9a77 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x00000001410f7241 BarrelRollProd-Win64-Shipping.exe!UnknownFunction []\n0x00006fffffec0ba9 kernel32.dll!UnknownFunction []",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1761604839,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3860590",
+    "cpu": "11th Gen Intel Core i7-11700 @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.12.47-gentoo-dist",
+    "notes": "Was crashing repeatedly, tried again recently and it randomly worked but only on borderless fullscreen mode seemingly",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763116160,
+    "title": "",
+    "source": "protondb"
+  }
+]

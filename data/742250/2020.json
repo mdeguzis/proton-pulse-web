@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "742250",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.5.2-arch1-1",
+    "notes": "Works perfectly out of the box.",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "5.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1582494756,
+    "title": "",
+    "source": "protondb"
+  }
+]

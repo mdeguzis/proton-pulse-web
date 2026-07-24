@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "390310",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-44-generic",
+    "notes": "Game starts after doing `protontricks 390310 dlls d3dx9_43 dotnet40` and removing `d3dx9_43.dll` from the game's directory, but crashes with a D3D error after the intro movie. Can't be bothered to investigate further.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1552991837,
+    "title": "Little King's Story",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1150730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Replace nwjs, change version proton does not help. Game daesnt launch without error dialog. In  game directory file debug.log contains follow \n\n\"[1029/162116.155:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/162131.563:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/162250.445:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/163123.830:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/163422.495:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/163452.113:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/164239.014:FATAL:rand_util_win.cc(60)] Check failed: hmod. \n\t(No symbol) [0x00000000011E4F82]\n\t(No symbol) [0x00000000053E9222]\n\t(No symbol) [0x000000000545A628]\n\t(No symbol) [0x000000000545B430]\n\t(No symbol) [0x00000000054735F1]\n\t(No symbol) [0x00000000053CF75B]\n\t(No symbol) [0x00000000053CF62F]\n\t(No symbol) [0x000000000542E9F2]\n\t(No symbol) [0x00000000010167E1]\n\t(No symbol) [0x00000000010169E5]\n\t(No symbol) [0x0000000001016764]\n\t(No symbol) [0x0000000001016733]\n\t(No symbol) [0x0000000001016146]\n\t(No symbol) [0x0000000001014DA9]\n\t(No symbol) [0x0000000001014CD0]\n\t(No symbol) [0x0000000001014531]\n\t(No symbol) [0x000000000101119F]\n\t(No symbol) [0x0000000140002847]\n\t(No symbol) [0x000000014000185B]\n\t(No symbol) [0x000000014014A142]\n\t(No symbol) [0x000000007B61469D]\n\t(No symbol) [0x000000017000F1A7]\n\t(No symbol) [0x0000000000000000]\n\n[1029/164502.658:FATAL:rand_util_win.cc(60)] Check failed: hmod. \n\t(No symbol) [0x00000000011E4F82]\n\t(No symbol) [0x00000000053E9222]\n\t(No symbol) [0x000000000545A628]\n\t(No symbol) [0x000000000545B430]\n\t(No symbol) [0x00000000054735F1]\n\t(No symbol) [0x00000000053CF75B]\n\t(No symbol) [0x00000000053CF62F]\n\t(No symbol) [0x000000000542E9F2]\n\t(No symbol) [0x00000000010167E1]\n\t(No symbol) [0x00000000010169E5]\n\t(No symbol) [0x0000000001016764]\n\t(No symbol) [0x0000000001016733]\n\t(No symbol) [0x0000000001016146]\n\t(No symbol) [0x0000000001014DA9]\n\t(No symbol) [0x0000000001014CD0]\n\t(No symbol) [0x0000000001014531]\n\t(No symbol) [0x000000000101119F]\n\t(No symbol) [0x0000000140002847]\n\t(No symbol) [0x000000014000185B]\n\t(No symbol) [0x000000014014A142]\n\t(No symbol) [0x000000007B61469D]\n\t(No symbol) [0x000000017000F1A7]\n\t(No symbol) [0x0000000000000000]\n\n[1029/164527.353:FATAL:rand_util_win.cc(60)] Check failed: hmod. \n\t(No symbol) [0x00000000011E4F82]\n\t(No symbol) [0x00000000053E9222]\n\t(No symbol) [0x000000000545A628]\n\t(No symbol) [0x000000000545B430]\n\t(No symbol) [0x00000000054735F1]\n\t(No symbol) [0x00000000053CF75B]\n\t(No symbol) [0x00000000053CF62F]\n\t(No symbol) [0x000000000542E9F2]\n\t(No symbol) [0x00000000010167E1]\n\t(No symbol) [0x00000000010169E5]\n\t(No symbol) [0x0000000001016764]\n\t(No symbol) [0x0000000001016733]\n\t(No symbol) [0x0000000001016146]\n\t(No symbol) [0x0000000001014DA9]\n\t(No symbol) [0x0000000001014CD0]\n\t(No symbol) [0x0000000001014531]\n\t(No symbol) [0x000000000101119F]\n\t(No symbol) [0x0000000140002847]\n\t(No symbol) [0x000000014000185B]\n\t(No symbol) [0x000000014014A142]\n\t(No symbol) [0x000000007B61469D]\n\t(No symbol) [0x000000017000F1A7]\n\t(No symbol) [0x0000000000000000]\n\n[1029/164911.688:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/164934.953:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/165639.828:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/165916.449:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/170024.564:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/170152.674:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/170218.625:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n[1029/180250.404:ERROR:http_transport_win.cc(178)] WinHttpCrackUrl: Success. (0x0)\n\"",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1698578914,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1150730",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6950 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.9-AMD)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.9-AMD",
+    "notes": "Works with Proton 5.13-6",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1699379230,
+    "title": "",
+    "source": "protondb"
+  }
+]

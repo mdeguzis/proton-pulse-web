@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "368430",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.0 - padoka PPA",
+    "kernel": "4.15.0-42-generic",
+    "notes": "Runs perfectly from start to finish - No tweaks needed - Tested at 1920 x 1080",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-5)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1545014077,
+    "title": "Through the Woods",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1569700",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.3 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.9-arch2-1",
+    "notes": "Just works",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1725369615,
+    "title": "",
+    "source": "protondb"
+  }
+]

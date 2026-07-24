@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "955170",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 530 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 18.3.4",
+    "kernel": "4.19.0-4-amd64",
+    "notes": "Playable out of box.",
+    "os": "Debian GNU/Linux buster/sid",
+    "protonVersion": "Default",
+    "ram": "8 GB",
+    "rating": "Platinum",
+    "timestamp": 1558075795,
+    "title": "\u94c1\u9053\u7269\u8bed\uff1a\u9646\u738b\uff08Railway Saga:Land King\uff09",
+    "source": "protondb"
+  },
+  {
+    "appId": "955170",
+    "cpu": "Intel Xeon E31280 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 19.1.6",
+    "kernel": "5.2.0-2-amd64",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-4",
+    "ram": "24 GB",
+    "rating": "Platinum",
+    "timestamp": 1568899630,
+    "title": "\u94c1\u9053\u7269\u8bed\uff1a\u9646\u738b\uff08Railway Saga:Land King\uff09",
+    "source": "protondb"
+  }
+]

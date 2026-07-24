@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "271640",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Game Starts, shows Loading Screen and then crashes without any Errormessage.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542916288,
+    "title": "Humanity Asset",
+    "source": "protondb"
+  }
+]

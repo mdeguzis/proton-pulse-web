@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "15160",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.11.0-34-generic",
+    "notes": "Game will not boot without user intervention in the game's install location.",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1631987576,
+    "title": "Petz\u00ae Horsez\u00ae 2",
+    "source": "protondb"
+  }
+]

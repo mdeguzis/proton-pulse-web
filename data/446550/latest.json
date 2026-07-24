@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446550",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-39-generic",
+    "notes": "Game does not launch and no error messages are displayed. It appears the game relies on DX12 and PhysX.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.7-8)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1543685618,
+    "title": "Infinite Mini Golf",
+    "source": "protondb"
+  }
+]

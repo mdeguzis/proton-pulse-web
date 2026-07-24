@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "303550",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Game finished in ~10 hours. Everything runs fine except mu xbox 360  controller (had to configure it with big picture)",
+    "os": "Linux Mint 19 Tara (64\u00a0bits)",
+    "protonVersion": "Default",
+    "ram": "14 GB",
+    "rating": "Gold",
+    "timestamp": 1548279420,
+    "title": "Adventures of Pip",
+    "source": "protondb"
+  }
+]

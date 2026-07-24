@@ -1,0 +1,53 @@
+[
+  {
+    "appId": "1003400",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Installed the game and hit play. Game ran without any tweaks or changes. Tested a game. Selected heroes and inventory then explored, fought and adventured.",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "4.2-9",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1563125004,
+    "title": "The Lord of the Rings: Journeys in Middle-earth",
+    "source": "protondb"
+  },
+  {
+    "appId": "1003400",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.2.2-1-MANJARO",
+    "notes": "The game would crash before I could even select a resolution. However, once I set the PROTON_USE_WINED3D environment variable (I used the launch options), the game ran perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-1",
+    "ram": "8 GB",
+    "rating": "Gold",
+    "timestamp": 1564939770,
+    "title": "The Lord of the Rings: Journeys in Middle-earth",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "1003400",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.1.5",
+    "kernel": "5.1.4-1-MANJARO",
+    "notes": "The game runs perfectly out-of-box. I tested regular single player gameplay, various graphics options and deckbuilding. Didn't test multiplayer.",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1568504637,
+    "title": "The Lord of the Rings: Journeys in Middle-earth",
+    "source": "protondb"
+  }
+]

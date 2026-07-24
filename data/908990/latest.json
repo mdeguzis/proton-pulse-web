@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "908990",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.0.1 - padoka PPA",
+    "kernel": "5.0.13-050013-lowlatency",
+    "notes": "Worked perfectly out of the box, both in windowed and fullscreen mode.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.2-5",
+    "protonVersionManual": "4.2-5",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1559568723,
+    "title": "Steel Vampire / \u92fc\u9244\u306e\u30f4\u30a1\u30f3\u30d1\u30a4\u30a2",
+    "source": "protondb"
+  }
+]

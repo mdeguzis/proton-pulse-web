@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "289930",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.18.0-13-generic",
+    "notes": "Contracts don't load, so you are unable to play the game. Also, I don't know if it's a problem on Windows too but there's no 21:9 aspect ratio resolutions. Everything else seems to work fine, it's just this one issue preventing gameplay.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1547316819,
+    "title": "TransOcean: The Shipping Company",
+    "source": "protondb"
+  },
+  {
+    "appId": "289930",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.0.0-25-generic",
+    "notes": "Played tutorial and career mode. No problems with the game or performance. ",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1566456738,
+    "title": "TransOcean: The Shipping Company",
+    "source": "protondb"
+  }
+]

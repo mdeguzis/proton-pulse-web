@@ -1,0 +1,49 @@
+[
+  {
+    "appId": "312790",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core Processor",
+    "gpu": "NVIDIA Corporation GeForce GTX 1070 Ti/PCIe/SSE2",
+    "gpuDriver": "4.6.0 NVIDIA 390.87",
+    "kernel": "4.15.0-34-generic",
+    "notes": "\"installs\" directX, then launches. Briefly shows Game Cursor, then gets stuck on black screen. Alt-Tabbing revealed an error window: \"prMovie: Open - Unable to connect pins\". Clicking ok on this error closes the game.",
+    "os": "Ubuntu 18.04.1 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "32157 Mb",
+    "rating": "Borked",
+    "timestamp": 1537262066,
+    "title": "Agarest: Generations of War 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "312790",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 410.73",
+    "kernel": "4.18.0-10-generic",
+    "notes": "It starts up to a blank screen. I waited around for a while and tried hitting a bunch of buttons to make sure it wasn't just a video not playing, before eventually killing the process.",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1541872648,
+    "title": "Agarest: Generations of War 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "312790",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-lowlatency",
+    "notes": "After running install quartz with protontricks and manually installing the LAVFilters codec pack game runs just fine. Original issue related to codecs in Ubuntu, wine, or both.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Gold",
+    "timestamp": 1542741350,
+    "title": "Agarest: Generations of War 2",
+    "source": "protondb"
+  }
+]

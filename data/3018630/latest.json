@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3018630",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.5-arch1-1",
+    "notes": "I simply installed the game from steam, applyed Proton Experimental and started it. Only tested singleplayer.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1730638701,
+    "title": "Nightmare Pursuit",
+    "source": "protondb"
+  },
+  {
+    "appId": "3018630",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.5-arch1-1",
+    "notes": "I tested multiplayer as well now. Runs completely fine with Proton Experimental.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1730737108,
+    "title": "Nightmare Pursuit",
+    "source": "protondb"
+  }
+]

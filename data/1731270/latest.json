@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1731270",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 18.1.6, DRM 3.57, 6.10.3-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.5",
+    "kernel": "6.10.3-200.fc40.x86_64",
+    "notes": "This game runs perfectly on Linux straight after installation. No extra mileage needed to run the game, an exact replica of the mobile game.",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1723357077,
+    "title": "",
+    "source": "protondb"
+  }
+]

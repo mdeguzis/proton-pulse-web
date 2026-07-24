@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "504650",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "Works perfectly after setting up the headset (Valve Index). Controller input is a bit strange, but it works the same on Windows, so it's likely a compatibility issue with the Index controllers.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1564725531,
+    "title": "MasterpieceVR",
+    "source": "protondb"
+  }
+]

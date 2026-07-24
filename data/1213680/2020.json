@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1213680",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "4.18.0-18-generic",
+    "notes": "Execpt for level 1 the game runs great with proton!",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1586064382,
+    "title": "Finding the Soul Orb",
+    "source": "protondb"
+  }
+]

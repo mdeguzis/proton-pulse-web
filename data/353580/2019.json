@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "353580",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.9-1.el7.elrepo.x86_64",
+    "notes": "Intro sequences have just a black screen (space bar skips them) and when exiting the game, a fatal error dialogue appears. Other than that, it ran fine (though my GPU meant I had to lower the detail a bit to avoid frame drops at 1080p - not sure if that's a Proton issue or it's a bit sluggish on WIndows too). Note that its \"companion\" program, just called Rad Rodgers, doesn't launch at all for me, so this is the one to play with Proton.",
+    "os": "CentOS Linux release 7.6.1810 (Core)",
+    "protonVersion": "4.11-2",
+    "ram": "64 GB",
+    "rating": "Silver",
+    "timestamp": 1566806273,
+    "title": "Rad Rodgers: World One",
+    "source": "protondb"
+  },
+  {
+    "appId": "353580",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.2.14-arch1-1-fsync",
+    "notes": "I've seen some skipable black intro scenes as well, but thought they were black, as I skipped the scenes before - no idea. apart from that the game seems to works excellent ootb without any glitches in max details. only played to the first checkpoint so far.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569083260,
+    "title": "Rad Rodgers: World One",
+    "source": "protondb"
+  }
+]

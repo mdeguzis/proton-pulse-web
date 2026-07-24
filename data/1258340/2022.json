@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1258340",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro P600",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "4.15.0-171-generic",
+    "notes": "The window stays white after selecting the language",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1651767116,
+    "title": "",
+    "source": "protondb"
+  }
+]

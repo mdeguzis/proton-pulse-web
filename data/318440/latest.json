@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "318440",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.7, DRM 3.49, 6.1.11-201.fsync.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.1.11-201.fsync.fc37.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 37 (KDE Plasma)",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1676998114,
+    "title": "",
+    "source": "protondb"
+  }
+]

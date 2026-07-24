@@ -1,0 +1,36 @@
+[
+  {
+    "appId": "667820",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "aboutAnHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Flawless",
+    "os": "Ubuntu 18.04 LTS",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "64 GB",
+    "rating": "Platinum",
+    "timestamp": 1555933373,
+    "title": "Farmington Tales",
+    "source": "protondb"
+  },
+  {
+    "appId": "667820",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.1-arch1-1-ARCH",
+    "notes": "Finished game without issues",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-6",
+    "protonVersionManual": "4.11-3",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1569867479,
+    "title": "Farmington Tales",
+    "source": "protondb"
+  }
+]

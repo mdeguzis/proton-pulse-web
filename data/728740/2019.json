@@ -1,0 +1,99 @@
+[
+  {
+    "appId": "728740",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "5.0.13-arch1-1-ARCH",
+    "notes": "Launcher starts fine, but no css is loaded (play button works which is the only one that matters).\n\nGame starts to main menu and works fine there, but the game randomly crashes after a while and when doing the tutorial there is a point where the game always crashes. I didn't test if you can somehow skip the tutorial or something.\n\nI also tested with 3.16-9 where the behaviour was the same as in 4.2-3 and also tested with 3.7-8 where I actually got past the point but there was no audio (except for cutscenes).",
+    "os": "Linux",
+    "protonVersion": "4.2-3",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1557846295,
+    "title": "Sniper Elite V2 Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "728740",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Borked; start screen is a white box, but can get past that. The game starts, runs, then crashes when attempting to do anything like shoot a weapon.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.2.3",
+    "protonVersionManual": "4.2.3",
+    "ram": "32 GB",
+    "rating": "Bronze",
+    "timestamp": 1557851357,
+    "title": "Sniper Elite V2 Remastered",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "728740",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.5-arch1-1-ARCH",
+    "notes": "No change since 4.2-3 still the same roadblock",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-1",
+    "protonVersionManual": "4.2-3",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1564873671,
+    "title": "Sniper Elite V2 Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "728740",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Launcher runs correctly, loads graphics and such. PROTON_USE_WINED3D11=1 seems to extend the duration after \"PLAY\" is clicked in the launcher before the game crashes. No game screen ever shows. ",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "8 GB",
+    "rating": "Borked",
+    "timestamp": 1565107526,
+    "title": "Sniper Elite V2 Remastered",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "728740",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-13-generic",
+    "notes": "Games starts, runs and gets into play, but never recognizes the mouse for aim, shoot, etc. Mouse works for movement, but does not allow for a way to shoot or aim. If that was fixed, this would be platinum. :(",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "4.11-2",
+    "protonVersionManual": "4.2.3",
+    "ram": "32 GB",
+    "rating": "Borked",
+    "timestamp": 1565641779,
+    "title": "Sniper Elite V2 Remastered",
+    "tweaks": {
+      "disableD3d11": true,
+      "disableEsync": true,
+      "useWineD9vk": true
+    },
+    "source": "protondb"
+  }
+]

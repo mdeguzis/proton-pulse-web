@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "644320",
+    "cpu": "Intel Core i3-2330M @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.2.4",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Appears to run at a consistent framerate with no apparent bugs straight out of the box on old hardware. Only dropped in for a few moments to see if it would get in-game, however, but was able to load and play an early map just fine. Runs better than on a Windows 10 gaming machine because an annoying mouse bug introduced with a Windows update is not present.",
+    "os": "Antergos Linux",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "6 GB",
+    "rating": "Platinum",
+    "timestamp": 1541911840,
+    "title": "Halfquake Trilogy",
+    "source": "protondb"
+  }
+]

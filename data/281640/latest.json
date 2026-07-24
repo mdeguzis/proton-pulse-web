@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "281640",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Game is playable, not as good performance as first game (including old native version and with proton) as cut scenes seem ok but combat is more sluggish. Also experienced some scratchy audio issues; reducing Effects volume in game resolves this but you obviously lose the sound effects with it.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1546560943,
+    "title": "The Banner Saga 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "281640",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.19.12-106.current",
+    "notes": "it runs out of the box, but the performance isn't good. combat feels sluggish",
+    "os": "Solus",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "24 GB",
+    "rating": "Silver",
+    "timestamp": 1546644689,
+    "title": "The Banner Saga 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "281640",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 860M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-43-generic",
+    "notes": "Completed without issue, no tweaks required. Performance is sluggish in combat compared to Windows (hence Silver rating) but otherwise runs fine, and it does mean you can at least continue your saga from the first game (TBS1 save location: ~/steamapps/compatdata/237990/pfx/drive_c/users/steamuser/Application Data/TheBannerSaga/Local Store/save)",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-7)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1551300610,
+    "title": "The Banner Saga 2",
+    "source": "protondb"
+  }
+]

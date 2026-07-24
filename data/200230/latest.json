@@ -1,0 +1,33 @@
+[
+  {
+    "appId": "200230",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "aboutAnHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.0.6",
+    "kernel": "4.19.49-1-MANJARO",
+    "notes": "Controller works fine or keyboard, ",
+    "os": "Manjaro Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1561000387,
+    "title": "Off-Road Drive",
+    "source": "protondb"
+  },
+  {
+    "appId": "200230",
+    "cpu": "AMD A10-5757M APU with Radeon HD Graphics",
+    "duration": "aboutAnHour",
+    "gpu": "AMD ARUBA",
+    "gpuDriver": "3.1 Mesa 19.3.0-devel (bionic-oibaf-ppa)",
+    "kernel": "5.0.0-31-generic",
+    "os": "Linux Mint 19.2 Tina (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-7",
+    "ram": "7 GB",
+    "rating": "Gold",
+    "timestamp": 1571396384,
+    "title": "Off-Road Drive",
+    "source": "protondb"
+  }
+]

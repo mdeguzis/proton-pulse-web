@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "722960",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.3-arch1-1",
+    "notes": "Everything works out of the box (including multiplayer)",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1586538479,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "722960",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "I haven't tried the multiplayer mode, but the story mode works perfectly.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1605803870,
+    "title": "",
+    "source": "protondb"
+  }
+]

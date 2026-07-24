@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "906120",
+    "cpu": "AMD A10-7850K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 480",
+    "gpuDriver": "4.5.13540 Compatibility Profile Context 18.40.2.15",
+    "kernel": "4.15.0-43-generic",
+    "notes": "The game always thinks you're trying to use a VR headset. It will switch to 2D as soon as initializing VR fails, but it won't let you modify graphical settings after this. So the game works, but only in windowed mode with a low resolution.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Default",
+    "ram": "7 GB",
+    "rating": "Silver",
+    "timestamp": 1548436380,
+    "title": "POLYBIUS",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "402040",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.0-15-generic",
+    "notes": "Ran into some issues on the menu (mouse wouldn't register initially, and then a previous menu overlaid a new one). Did not run into any issues during gameplay itself.",
+    "os": "Pop!_OS 19.04",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1558309569,
+    "title": "The Guest",
+    "source": "protondb"
+  },
+  {
+    "appId": "402040",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.7-100.fc29.x86_64",
+    "notes": "Alt-tabbing out of the game can mess up the graphics. Some very minor graphics glitches. No problems with gameplay.",
+    "os": "Fedora release 29 (Twenty Nine)",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1569510407,
+    "title": "The Guest",
+    "source": "protondb"
+  }
+]

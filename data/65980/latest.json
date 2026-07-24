@@ -1,0 +1,19 @@
+[
+  {
+    "appId": "65980",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "5.0.7-arch1-1-ARCH",
+    "notes": "I've got some annoying issues w/ the game natively, so figured I'd give the Windows version (via Proton) a try, but in the end I couldn't get it to so much as launch.  Tried disabling esync and wine d3d11 (it requires DX11, so disabling d3d11 wasn't an option), it just hangs there for a bit and then dies without ever even creating a window.  Tried 3.16-9 Beta and 3.7-8 as well, with no luck on either.  Nothing useful in the logs, or on the console.  Given that there *is* the native version, I didn't bother investigating any further.",
+    "os": "Arch Linux",
+    "protonVersion": "4.2-4",
+    "protonVersionManual": "4.2-2",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1558650560,
+    "title": "Sid Meier's Civilization\u00ae: Beyond Earth\u2122",
+    "source": "protondb"
+  }
+]

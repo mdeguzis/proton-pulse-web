@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1299690",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.6",
+    "kernel": "5.8.2-arch1-1",
+    "notes": "Slight jitters go away after a while. Maybe a shaders preload thing?",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1598110979,
+    "title": "",
+    "source": "protondb"
+  }
+]

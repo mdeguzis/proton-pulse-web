@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "223330",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.2",
+    "kernel": "5.0.8-arch1-1-ARCH",
+    "notes": "Game runs nicely but it randomly crashes when exiting to sea.",
+    "os": "Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1556104832,
+    "title": "Sea Dogs: To Each His Own - Pirate Open World RPG",
+    "source": "protondb"
+  }
+]

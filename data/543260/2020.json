@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "543260",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-ffc7574ff7)",
+    "kernel": "5.5.13-arch2-1-fsync",
+    "notes": "Proton version works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-6 RC2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1586463160,
+    "title": "",
+    "source": "protondb"
+  }
+]

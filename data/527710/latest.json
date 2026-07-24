@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "527710",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-47-generic",
+    "notes": "After starting a new game, open a task manager and kill \"Nw.exe\". Game then starts after a few seconds, though performance is shoddy, with frame rate in the single digits",
+    "os": "Ubuntu 18.04.2 LTS",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1555718280,
+    "title": "Crown Champion: Legends of the Arena",
+    "source": "protondb"
+  }
+]

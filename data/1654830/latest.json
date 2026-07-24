@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1654830",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.1-arch1-1",
+    "notes": "Works great after fix",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1672677075,
+    "title": "",
+    "source": "protondb"
+  }
+]

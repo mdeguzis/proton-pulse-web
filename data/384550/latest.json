@@ -1,0 +1,51 @@
+[
+  {
+    "appId": "384550",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 410.66",
+    "kernel": "4.20.1-arch1-1-ARCH",
+    "notes": "Starts to seriously lag to a crawl about an hour in, but you can save and exit then relaunch the game and load back in for another hour.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-6)",
+    "ram": "16 GB",
+    "rating": "Bronze",
+    "timestamp": 1548827094,
+    "title": "Painters Guild",
+    "source": "protondb"
+  },
+  {
+    "appId": "384550",
+    "cpu": "AMD Ryzen Threadripper 2950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 410.93",
+    "kernel": "4.9.0-8-amd64",
+    "notes": "There is a noticeable slowdown after a while of playing the game and another slowdown a while later. Moving the cursor, dragging, and clicking become difficult.",
+    "os": "Debian GNU/Linux 9.8 (stretch)",
+    "protonVersion": "Default",
+    "ram": "64 GB",
+    "rating": "Silver",
+    "timestamp": 1552037244,
+    "title": "Painters Guild",
+    "source": "protondb"
+  },
+  {
+    "appId": "384550",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-58-generic",
+    "notes": "No issues.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "protonVersionManual": "4.2-5",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1570901784,
+    "title": "Painters Guild",
+    "source": "protondb"
+  }
+]

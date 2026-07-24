@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1145950",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-56-generic",
+    "notes": "Splash Screen no Menu",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1608921814,
+    "title": "Vector Prospector",
+    "source": "protondb"
+  }
+]

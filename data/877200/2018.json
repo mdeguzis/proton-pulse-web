@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "877200",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "Just the Demo was tested, but this works out of the box. Even other players were able to connect my game. Only issue: The Textboxes, where the movement will be explained just show a white board.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541086005,
+    "title": "Zero Caliber VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "877200",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.18.16-arch1-1-ARCH",
+    "notes": "same as in the demo before it runs not any different to windows, but the texts in the tutorial are not shown.",
+    "os": "Linux 4.x",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Silver",
+    "timestamp": 1541895771,
+    "title": "Zero Caliber VR",
+    "source": "protondb"
+  }
+]

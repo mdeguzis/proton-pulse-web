@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2784840",
+    "cpu": "11th Gen Intel Core i9-11900KF @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.1.4-arch1.1",
+    "kernel": "6.15.3-arch1-1",
+    "notes": "EGG",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751473260,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2784840",
+    "cpu": "Intel Core i5 M 520 @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Mesa NVA5",
+    "gpuDriver": "3.3 Mesa 25.0.2-arch1.2",
+    "kernel": "6.13.8-zen1-1-zen",
+    "notes": "",
+    "os": "Mikicrep OS",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1754293901,
+    "title": "",
+    "source": "protondb"
+  }
+]

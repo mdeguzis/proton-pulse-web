@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "741990",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, ACO, DRM 3.64, 6.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch1.1",
+    "kernel": "6.19.8-arch1-1",
+    "notes": "I'm sure Linux users are blessed to know that this game works flawlessley even with controller support",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776044080,
+    "title": "Wild Animal Sports Day",
+    "source": "protondb"
+  }
+]

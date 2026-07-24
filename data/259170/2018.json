@@ -1,0 +1,57 @@
+[
+  {
+    "appId": "259170",
+    "title": "Alone in the Dark",
+    "timestamp": 1535382476,
+    "rating": "Bronze",
+    "notes": "Pressing keys causes screen to freeze for several seconds, otherwise works",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  },
+  {
+    "appId": "259170",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 396.54.09",
+    "kernel": "4.15.0-38-generic",
+    "notes": "Shows the message \u201cCould not write data! Please contact Customer Support for further instructions.\u201d",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1542858126,
+    "title": "Alone in the Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "259170",
+    "cpu": "Intel Core i3-6300 @ 3.80GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 415.13",
+    "kernel": "4.15.0-39-generic",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Borked",
+    "timestamp": 1543022887,
+    "title": "Alone in the Dark",
+    "source": "protondb"
+  },
+  {
+    "appId": "259170",
+    "title": "Alone in the Dark",
+    "timestamp": 1535368076,
+    "rating": "Bronze",
+    "notes": "Pressing keys causes screen to freeze for several seconds, otherwise works",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i5-4210H / Gtx 960m",
+    "protonVersion": "3.7-4",
+    "source": "protondb"
+  }
+]

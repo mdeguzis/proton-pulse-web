@@ -1,0 +1,90 @@
+[
+  {
+    "appId": "58520",
+    "title": "Blood Bowl: Legendary Edition",
+    "timestamp": 1534946891,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX 8350/ GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58520",
+    "title": "Blood Bowl: Legendary Edition",
+    "timestamp": 1535060379,
+    "rating": "Bronze",
+    "notes": "The game starts with black screen until you click the mouse, maybe a cinematic.\nFulllscreen doesn't work.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58520",
+    "title": "Blood Bowl: Legendary Edition",
+    "timestamp": 1536198192,
+    "rating": "Gold",
+    "notes": "Click through initial blank screen (probably unplayed video). Otherwise great. Surprisingly smooth. Should work fullscreen automatically but don't put it on fullscreen in the options as it won't start.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-6100H / GeForce 940M",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  },
+  {
+    "appId": "58520",
+    "cpu": "Intel(R) Core(TM) i5-3450 CPU @ 3.10GHz",
+    "duration": "lessThanFifteenMinutes",
+    "gpu": "NVIDIA Corporation GeForce GTX 660/PCIe/SSE2",
+    "gpuDriver": "4.4.0 NVIDIA 340.104",
+    "kernel": "4.4.0-134-generic",
+    "notes": "Machine report will not be generated even after 15 minutes",
+    "os": "Ubuntu 16.04.5 LTS (64 bit)",
+    "protonVersion": "Default",
+    "ram": "15996 Mb",
+    "rating": "Borked",
+    "timestamp": 1538576356,
+    "title": "Blood Bowl\u00ae Legendary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "58520",
+    "title": "Blood Bowl: Legendary Edition",
+    "timestamp": 1534932491,
+    "rating": "Platinum",
+    "notes": "",
+    "os": "Mint 19",
+    "gpuDriver": "NVIDIA 396.51",
+    "specs": "AMD FX 8350/ GTX 970",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58520",
+    "title": "Blood Bowl: Legendary Edition",
+    "timestamp": 1535045979,
+    "rating": "Bronze",
+    "notes": "The game starts with black screen until you click the mouse, maybe a cinematic.\nFulllscreen doesn't work.",
+    "os": "Debian Stretch",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i7-4770K / GTX 1080ti",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "58520",
+    "title": "Blood Bowl: Legendary Edition",
+    "timestamp": 1536183792,
+    "rating": "Gold",
+    "notes": "Click through initial blank screen (probably unplayed video). Otherwise great. Surprisingly smooth. Should work fullscreen automatically but don't put it on fullscreen in the options as it won't start.",
+    "os": "Ubuntu 18.04.1",
+    "gpuDriver": "NVIDIA 396.54",
+    "specs": "i3-6100H / GeForce 940M",
+    "protonVersion": "3.7-5",
+    "source": "protondb"
+  }
+]

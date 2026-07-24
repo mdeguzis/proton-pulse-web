@@ -1,0 +1,52 @@
+[
+  {
+    "appId": "774201",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 415.18",
+    "kernel": "4.15.0-42-generic",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-4)",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1555951053,
+    "title": "Heaven's Vault",
+    "source": "protondb"
+  },
+  {
+    "appId": "774201",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "lessThanAnHour",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 18.2.8",
+    "kernel": "4.15.0-46-generic",
+    "notes": "Sprites sometimes disappear for a fraction of a second. The frame rate is low, but playable. I had to turn the mouse sensitivity all the way down, and it's still a bit too sensitive for my taste. Otherwise, the game works reasonably well.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "Beta (3.16-9)",
+    "ram": "8 GB",
+    "rating": "Silver",
+    "timestamp": 1556167273,
+    "title": "Heaven's Vault",
+    "tweaks": {
+      "useWineD3d11": true
+    },
+    "source": "protondb"
+  },
+  {
+    "appId": "774201",
+    "cpu": "Intel Core i7-8705G @ 3.10GHz",
+    "duration": "moreThanTenHours",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Everything worked out of the box. At first, I have noticed small smoothness issues, but https://aur.archlinux.org/packages/gamemode helped.",
+    "os": "Arch Linux",
+    "protonVersion": "Default",
+    "ram": "16 GB",
+    "rating": "Platinum",
+    "timestamp": 1571771412,
+    "title": "Heaven's Vault",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1351240",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.13.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.2-arch1.2",
+    "kernel": "6.13.8-arch1-1",
+    "notes": "Game is borked when trying to use a steering wheel. So no use as a driving Sim.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1774804890,
+    "title": "",
+    "source": "protondb"
+  }
+]

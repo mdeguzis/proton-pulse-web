@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1000010",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 16.0.6, DRM 3.54, 6.6.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 23.3.2-arch1.2",
+    "kernel": "6.6.8-2-cachyos",
+    "notes": "Maybe you need to downgrade the version of Proton.",
+    "os": "CachyOS\uff0864\u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "5.13-6",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1705818937,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1000010",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "this game is an absolute headache and a half to get running, but it can be done",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1708645468,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1000010",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-arch1-1",
+    "notes": "Works Great with Proton-6.8-GE-2",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1726763288,
+    "title": "",
+    "source": "protondb"
+  }
+]

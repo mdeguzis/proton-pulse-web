@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "764670",
+    "cpu": "Intel Core i7-6800K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.0-devel (git-5167e94 2019-08-19 bionic-oibaf-ppa)",
+    "kernel": "5.2.6-050206-lowlatency",
+    "notes": "The game works perfectly. And much more stable than on Windows 7.",
+    "os": "Linux Mint 19.2 Tina (64 \u0431\u0438\u0442)",
+    "protonVersion": "4.11-2",
+    "ram": "32 GB",
+    "rating": "Platinum",
+    "timestamp": 1566315072,
+    "title": "Sea Dogs",
+    "source": "protondb"
+  }
+]

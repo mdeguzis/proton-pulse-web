@@ -1,0 +1,26 @@
+[
+  {
+    "appId": "228100",
+    "title": "Autonomous Prototpe",
+    "timestamp": 1535402805,
+    "rating": "Borked",
+    "notes": "Won't start, can't test further",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  },
+  {
+    "appId": "228100",
+    "title": "Autonomous Prototpe",
+    "timestamp": 1535388405,
+    "rating": "Borked",
+    "notes": "Won't start, can't test further",
+    "os": "Ubuntu 16.04 64-bit (Kernel 4.4.0)",
+    "gpuDriver": "Mesa 18.0.5",
+    "specs": "i7-2620m/intel sandybridge mobile",
+    "protonVersion": "Default",
+    "source": "protondb"
+  }
+]
