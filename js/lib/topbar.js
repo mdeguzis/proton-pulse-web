@@ -139,6 +139,17 @@
       <text x="12" y="14" text-anchor="middle" font-family="Inter, -apple-system, system-ui, sans-serif" font-weight="900" font-size="6.5" fill="#fff" letter-spacing="0.3">EPIC</text>
       <path d="M9 16 L15 16 L12 19 Z" fill="#fff"/>
     </symbol>
+    <symbol id="icon-store-pgwiki" viewBox="0 0 24 24">
+      <!-- PCGamingWiki entries: a simple PC tower on a periwinkle disc.
+           Homage to PCGW's computer-tower logo (their banner periwinkle
+           #6073b4, pill uses the darker #4d5f9c step); drawn as clean
+           geometry so it stays legible at 13-18px. -->
+      <circle cx="12" cy="12" r="12" fill="#4d5f9c"/>
+      <rect x="8" y="5" width="8" height="14" rx="1" fill="#fff"/>
+      <rect x="9.4" y="7" width="5.2" height="1.4" rx="0.7" fill="#4d5f9c"/>
+      <rect x="9.4" y="9.4" width="5.2" height="1.4" rx="0.7" fill="#4d5f9c"/>
+      <circle cx="12" cy="14.8" r="1.3" fill="#4d5f9c"/>
+    </symbol>
     <!-- Support links: heart for Patreon, coffee cup for Ko-Fi. Stroke style
          matches the rest of the nav sprite so they theme with currentColor. -->
     <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
