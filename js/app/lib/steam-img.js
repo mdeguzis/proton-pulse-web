@@ -290,9 +290,51 @@ async function _lookupSgdbUrlByTitle(appId, title) {
     return null;
   }
   const body = await res.json().catch(() => null);
-  const first = body?.ok && Array.isArray(body?.results) && body.results.length ? body.results[0] : null;
+  const results = body?.ok && Array.isArray(body?.results) ? body.results : [];
+  // Prefer a widescreen grid (width > height) -- our card slots are
+  // hero-shaped, and a portrait 600x900 cover in a 460x215 slot gets
+  // cropped to a sliver by object-fit:cover. Fall back to the top result
+  // (usually portrait) only when SGDB has no widescreen art at all; the
+  // game page's height:auto layout renders portrait acceptably.
+  const widescreen = results.find(g => g?.url && g.width && g.height && g.width > g.height);
+  const first = widescreen || (results.length ? results[0] : null);
   const picked = first?.url ? String(first.url) : null;
   _sgdbCacheWrite(appId, picked);
+  return picked;
+}
+
+// Steam-id last resort (#375 follow-up). Standard + cloudflare CDN paths
+// 404 for some apps (Steam moved them to hashed store_item_assets URLs),
+// and game-images.json only carries what the pipeline's capped backlog has
+// probed so far (~500/run against a 10k+ backlog). Ask the image-refetch
+// edge fn for the current appdetails header URL. Session-cached via the
+// same map as SGDB lookups so a browse grid pays one round-trip per id.
+async function _lookupSteamRefetch(appId) {
+  const cached = _sgdbCacheRead(`steam:${appId}`);
+  if (cached !== undefined) return cached; // may be null (known miss)
+  if (!_SUPABASE_URL || !_SUPABASE_ANON_KEY) return null;
+  let res;
+  try {
+    res = await fetch(`${_SUPABASE_URL}/functions/v1/image-refetch`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${_SUPABASE_ANON_KEY}`,
+        'apikey': _SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ app_id: appId, source: 'steam' }),
+    });
+  } catch (e) {
+    console.warn('[steam-img] steam refetch network failure', { appId, err: String(e) });
+    return null; // transient -- do not cache the miss
+  }
+  if (!res.ok) {
+    _sgdbCacheWrite(`steam:${appId}`, null);
+    return null;
+  }
+  const body = await res.json().catch(() => null);
+  const picked = body?.ok && body?.url ? String(body.url) : null;
+  _sgdbCacheWrite(`steam:${appId}`, picked);
   return picked;
 }
 
@@ -307,6 +349,12 @@ function _tryUrl(url) {
 
 function _swap(el, loaded) {
   loaded.className = el.className;
+  // Portrait covers (PCGW product shots, SGDB 600x900 grids) blow out the
+  // hero slot, which is sized for Steam's 460x215 widescreen shape. Tag them
+  // so CSS can cap the height and center them instead (base.css).
+  if (loaded.naturalHeight > loaded.naturalWidth) {
+    loaded.className += ' boxart-portrait';
+  }
   loaded.alt = el.alt || '';
   el.parentNode?.replaceChild(loaded, el);
 }
@@ -323,6 +371,7 @@ function _bumpRoute(route) {
     'steam-title-match': 0,
     'sgdb-title-match': 0,
     'pgwiki-cover': 0,
+    'steam-refetch': 0,
     hidden: 0,
   });
   counts[route] = (counts[route] || 0) + 1;
@@ -443,7 +492,20 @@ export async function loadSteamImg(el, appId) {
     }
   }
 
-  console.warn(`[steam-img] appId=${id} all CDN paths exhausted`);
+  // Live appdetails refetch: covers apps Steam moved to hashed URLs that
+  // the pipeline's capped probe backlog has not reached yet (e.g. 499170).
+  const refetched = await _lookupSteamRefetch(id);
+  if (refetched) {
+    const loaded = await _tryUrl(refetched);
+    if (loaded) {
+      console.log(`[steam-img] appId=${id} route=steam-refetch`);
+      _bumpRoute('steam-refetch');
+      _swap(el, loaded);
+      return;
+    }
+  }
+
+  console.warn(`[steam-img] appId=${id} all CDN paths exhausted (incl. live appdetails refetch)`);
   _bumpRoute('hidden');
   _reportMissingImage(id, map[id] || _CDN2(id));
   _showMissing(el);

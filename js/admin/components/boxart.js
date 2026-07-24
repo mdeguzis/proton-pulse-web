@@ -83,7 +83,7 @@ const BATCH_YIELD_MS = 50;          // pause between batches so the UI stays res
 let _cache = null;
 async function _loadIndexes() {
   if (_cache) return _cache;
-  const [siRes, giRes, gcRes, nsRes, nscRes, overrides, clientErrors, confirmations, extRes] = await Promise.all([
+  const [siRes, giRes, gcRes, nsRes, nscRes, overrides, clientErrors, confirmations, extRes, pgwRes] = await Promise.all([
     fetch(await dataUrl('search-index.json')).catch(() => null),
     fetch(await dataUrl('game-images.json')).catch(() => null),
     fetch(await dataUrl('game-images-cache.json')).catch(() => null),
@@ -96,11 +96,24 @@ async function _loadIndexes() {
     // here, not in the main search-index, so without it an admin cannot find them
     // to fix their box art. Same [appId, title, "", 0, 0, "steam"] row shape.
     fetch(await dataUrl('search-index-steam-extended.json')).catch(() => null),
+    // pgwiki: entries resolve their cover from pcgwiki-catalog.json cover_url
+    // (steam-img.js tier 4), not nonsteam-images.json. Without this map the
+    // manager labeled every PGWiki title 'missing' even when a cover exists.
+    fetch(await dataUrl('pcgwiki-catalog.json')).catch(() => null),
   ]);
   const searchIndex = (siRes && siRes.ok) ? await siRes.json().catch(() => []) : [];
   const extendedIndex = (extRes && extRes.ok) ? await extRes.json().catch(() => []) : [];
   const gameImages  = (giRes && giRes.ok) ? await giRes.json().catch(() => ({})) : {};
   const nonSteam    = (nsRes && nsRes.ok) ? await nsRes.json().catch(() => ({})) : {};
+  // Fold PGWiki cover_urls into the non-Steam URL map under their pgwiki:
+  // ids so _deriveStatus and the details preview see them like any other
+  // non-Steam cached URL. nonsteam-images.json entries (if any) win.
+  const pgwCatalog = (pgwRes && pgwRes.ok) ? await pgwRes.json().catch(() => ({})) : {};
+  for (const [aid, entry] of Object.entries(pgwCatalog)) {
+    if (!nonSteam[aid] && entry && typeof entry === 'object' && entry.cover_url) {
+      nonSteam[aid] = String(entry.cover_url);
+    }
+  }
   const cacheRaw    = (gcRes && gcRes.ok) ? await gcRes.json().catch(() => ({})) : {};
   const nsCacheRaw  = (nscRes && nscRes.ok) ? await nscRes.json().catch(() => ({})) : {};
   // game-images-cache.json is the pipeline's authoritative status per Steam

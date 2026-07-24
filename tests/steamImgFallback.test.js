@@ -149,3 +149,45 @@ describe('CSP img-src covers PGWiki cover host (#375 tier 4)', () => {
     });
   }
 });
+
+describe('Steam live appdetails refetch (last resort before hidden)', () => {
+  // Steam moved some apps (499170) to hashed store_item_assets URLs; the
+  // standard + cloudflare CDN paths 404 and the pipeline's capped probe
+  // backlog (~500/run over 10k+) may not have reached them yet. The Steam
+  // branch must try the image-refetch edge fn before giving up.
+  test('steam branch tries the live refetch after game-images.json', () => {
+    expect(SRC).toMatch(/_loadGameImages\(\)[\s\S]{0,900}_lookupSteamRefetch\(id\)/);
+  });
+
+  test('refetch runs before the hidden placeholder', () => {
+    expect(SRC).toMatch(/_lookupSteamRefetch[\s\S]{0,800}_showMissing\(el\)/);
+  });
+
+  test('refetch misses are session-cached under a steam: key', () => {
+    // Without the namespaced key a Steam id could collide with the SGDB
+    // cache entry for the same id.
+    expect(SRC).toMatch(/_sgdbCacheRead\(`steam:\$\{appId\}`\)/);
+    expect(SRC).toMatch(/_sgdbCacheWrite\(`steam:\$\{appId\}`,\s*null\)/);
+  });
+
+  test('network failures are not cached (transient)', () => {
+    expect(SRC).toMatch(/steam refetch network failure[\s\S]{0,200}return null/);
+  });
+});
+
+describe('widescreen preference + portrait handling', () => {
+  test('SGDB lookup prefers a widescreen grid over the top result', () => {
+    // Portrait 600x900 covers crop to a sliver in the 460x215 card slots;
+    // pick width > height when SGDB offers one.
+    expect(SRC).toMatch(/g\.width > g\.height/);
+  });
+
+  test('_swap tags portrait art with boxart-portrait for the CSS cap', () => {
+    expect(SRC).toMatch(/naturalHeight > (?:loaded\.)?naturalWidth[\s\S]{0,120}boxart-portrait/);
+  });
+
+  test('base.css constrains portrait covers', () => {
+    const css = fs.readFileSync(path.join(__dirname, '..', 'css/shared/base.css'), 'utf8');
+    expect(css).toMatch(/img\.boxart-portrait\s*\{[\s\S]{0,200}object-fit:\s*contain/);
+  });
+});
