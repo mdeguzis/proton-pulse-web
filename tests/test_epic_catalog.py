@@ -214,6 +214,6 @@ def test_fetch_page_captures_covers():
     epic_module._epic_covers_cache = None
     with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
          patch("scripts.pipeline.epic_catalog.time.sleep"):
-        catalog, covers = epic_module._fetch_all_pages()
+        catalog, covers, _years = epic_module._fetch_all_pages()
     assert catalog == {"ns1": "Game"}
     assert covers == {"ns1": "https://img/g.jpg"}

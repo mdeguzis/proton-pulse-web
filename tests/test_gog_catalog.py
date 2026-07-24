@@ -162,7 +162,7 @@ def test_fetch_all_pages_skips_only_after_retries_exhausted():
         return json.loads(_make_page([{"id": page, "title": f"Game {page}"}], total_pages=3))
     with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
          patch("scripts.pipeline.gog_catalog.time.sleep"):
-        catalog, _covers = gog_module._fetch_all_pages()
+        catalog, _covers, _years = gog_module._fetch_all_pages()
     assert catalog == {"1": "Game 1", "3": "Game 3"}
 
 
@@ -176,7 +176,7 @@ def test_fetch_all_pages_captures_cover_images():
         }
     with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
          patch("scripts.pipeline.gog_catalog.time.sleep"):
-        catalog, covers = gog_module._fetch_all_pages()
+        catalog, covers, _years = gog_module._fetch_all_pages()
     assert catalog == {"5": "Cover Game"}
     assert covers == {"5": "https://images.gog-statics.com/abc.png"}
 

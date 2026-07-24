@@ -52,6 +52,14 @@ REQUIRED_SECRETS = [
     ("OPENAI_API_KEY", "https://platform.openai.com/api-keys"),
     ("VT_API_KEY", "https://www.virustotal.com/gui/my-apikey"),
     ("CODECOV_TOKEN", "codecov.io repo settings"),
+    ("CLOUDFLARE_ACCOUNT_ID", "Cloudflare dashboard -> right sidebar Account ID"),
+    ("CLOUDFLARE_API_TOKEN", "Cloudflare dashboard -> My Profile -> API Tokens"),
+    ("R2_ACCESS_KEY_ID", "Cloudflare dashboard -> R2 -> Manage R2 API Tokens"),
+    ("R2_SECRET_ACCESS_KEY", "Cloudflare dashboard -> R2 -> Manage R2 API Tokens"),
+    ("DISCORD_ANNOUNCE_WEBHOOK", "Discord server integrations"),
+    ("PCGAMINGWIKI_BOT_USER", "pcgamingwiki.com -> Special:BotPasswords"),
+    ("PCGAMINGWIKI_BOT_PASS", "pcgamingwiki.com -> Special:BotPasswords"),
+    ("SEMGREP_APP_TOKEN", "semgrep.dev -> Settings -> Tokens"),
 ]
 
 

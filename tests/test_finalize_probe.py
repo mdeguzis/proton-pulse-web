@@ -382,7 +382,7 @@ def test_compute_game_summary_corrupt_year_file(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
     (app_dir / "2024.json").write_text("not json")
-    tier, pdb, pulse = _compute_game_summary(app_dir)
+    tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert tier == "pending"
 
 
@@ -390,7 +390,7 @@ def test_compute_game_summary_non_list_year_file(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
     (app_dir / "2024.json").write_text('"not a list"')
-    tier, pdb, pulse = _compute_game_summary(app_dir)
+    tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert tier == "pending"
 
 
@@ -398,7 +398,7 @@ def test_compute_game_summary_non_dict_report(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
     (app_dir / "2024.json").write_text(json.dumps(["not-a-dict", {"rating": "gold", "source": "protondb"}]))
-    tier, pdb, pulse = _compute_game_summary(app_dir)
+    tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert pdb == 1
 
 

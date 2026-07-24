@@ -63,7 +63,8 @@ def test_proton_versions_does_not_double_rest_v1(tmp_path):
 
 def test_generate_nonsteam_images_maps_by_canonical_id(tmp_path):
     with patch("scripts.pipeline.finalize.load_gog_covers", return_value={"123": "https://gog/cover.png"}), \
-         patch("scripts.pipeline.finalize.load_epic_covers", return_value={"ns1": "https://epic/cover.jpg"}):
+         patch("scripts.pipeline.finalize.load_epic_covers", return_value={"ns1": "https://epic/cover.jpg"}), \
+         patch("scripts.pipeline.nonsteam_images_probe.probe_nonsteam_images", side_effect=lambda _out, images: images):
         generate_nonsteam_images(tmp_path)
     out = json.loads((tmp_path / "nonsteam-images.json").read_text())
     assert out == {
@@ -74,7 +75,8 @@ def test_generate_nonsteam_images_maps_by_canonical_id(tmp_path):
 
 def test_generate_nonsteam_images_skips_empty_urls(tmp_path):
     with patch("scripts.pipeline.finalize.load_gog_covers", return_value={"123": "", "456": "https://gog/x.png"}), \
-         patch("scripts.pipeline.finalize.load_epic_covers", return_value={}):
+         patch("scripts.pipeline.finalize.load_epic_covers", return_value={}), \
+         patch("scripts.pipeline.nonsteam_images_probe.probe_nonsteam_images", side_effect=lambda _out, images: images):
         generate_nonsteam_images(tmp_path)
     out = json.loads((tmp_path / "nonsteam-images.json").read_text())
     assert out == {"gog:456": "https://gog/x.png"}
