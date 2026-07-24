@@ -672,6 +672,17 @@ jobs:
       # job (make gh-staging) and reads production data through the CDN
       # (USES_PROD_DATA in config.js), so it never needs a data sync from here.
 
+      # Backup: tar the local pipeline output and upload to a rolling GitHub
+      # Release (#393). Only on production runs -- staging does not need backups.
+      # Replaces the old nightly backup-r2-snapshot cron that re-pulled 75k
+      # objects from R2 just to tar them. This uses what is already on disk.
+      - name: Backup data to GitHub Release
+        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bash scripts/backup-to-release.sh /tmp/protondb-output
+
   # ── Pages-only redeploy: refresh app/index shell files on gh-pages ─────────
   pages-only:
     if: inputs.pages_only == true && inputs.staging_only != true
