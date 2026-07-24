@@ -71,7 +71,7 @@ help:
 	@echo "  smoke-live          Same harness pointed at https://www.proton-pulse.com"
 	@echo "  sync-runtime        Pull scoring-info.json and form-schema.json from plugin repo"
 	@echo "  setup               Bootstrap local dev tools and Python dependencies"
-	@echo "  install-pg          Install pg_dump (postgresql) via pkg (Termux/Debian)"
+	@echo "  install-pg          Install pg_dump (postgresql) via pkg/apt/brew (Termux/Debian/macOS)"
 	@echo "  init-submodules     Initialize and update git submodules"
 	@echo "  test                Run linting and the Python test suite"
 	@echo "  lint                Run static checks that should match VS Code Problems output"
@@ -132,18 +132,7 @@ serve:
 	@if [ -d node_modules/vite ]; then pnpm run dev; else npx vite --host --port 5173; fi
 
 install-pg:
-	@if command -v pg_dump >/dev/null 2>&1; then \
-		echo "pg_dump already installed: $$(pg_dump --version)"; \
-	elif command -v pkg >/dev/null 2>&1; then \
-		echo "Installing postgresql via pkg..."; \
-		pkg install -y postgresql; \
-	elif command -v apt-get >/dev/null 2>&1; then \
-		echo "Installing postgresql-client via apt-get..."; \
-		sudo apt-get install -y postgresql-client; \
-	else \
-		echo "error: cannot auto-install pg_dump. Install postgresql-client manually." >&2; \
-		exit 1; \
-	fi
+	@bash scripts/install-pg.sh
 
 setup: install-pg
 	UV_CACHE_DIR=$(UV_CACHE_DIR) bash scripts/setup_dev.sh
