@@ -200,21 +200,27 @@ export function ratingMix(reports) {
 
 // --- pulseTierFromReports ---
 /**
- * Computes a weighted aggregate tier and confidence level for a game.
- * Pulse reports are recency-weighted (full weight) and ProtonDB report count
- * contributes fractionally (0.2x) to the confidence calculation only.
- * @param {Array<{rating: string, timestamp: number}>} nativeReports - Pulse reports for the game.
- * @param {number} [protonDbCount=0] - Number of ProtonDB reports for the game (count only, no detail).
- * @returns {{ tier: string, count: number, confidence: string, confidencePct?: number, confidenceNote: string }}
+ * Computes the recency-weighted aggregate TIER for a game. All reports in
+ * the array are treated identically regardless of source (ProtonDB mirror
+ * or native Pulse) -- one homogeneous community view. Pulse's richer form
+ * data enriches downstream displays, not the tier weighting.
+ *
+ * Tier ONLY: per-game confidence lives exclusively in computeConfidence()
+ * (js/lib/scoring/gameStats.js). This function used to carry its own
+ * confidencePct log formula; that parallel calc is how the game page and
+ * confidence.html diverged (#361/#376). Do not add confidence fields back.
+ * @param {Array<{rating: string, timestamp: number}>} reports - every held report for the game, any source.
+ * @param {number} [protonDbCount=0] - retained for call compatibility; not used for the tier.
+ * @returns {{ tier: string, count: number }}
  */
-export function pulseTierFromReports(nativeReports, protonDbCount = 0) {
-  if (!nativeReports.length) {
-    return { tier: 'pending', count: 0, confidence: 'none', confidenceNote: protonDbCount > 0 ? 'No Pulse reports yet' : 'No Pulse data yet' };
+export function pulseTierFromReports(reports, protonDbCount = 0) {  // eslint-disable-line no-unused-vars
+  if (!reports.length) {
+    return { tier: 'pending', count: 0 };
   }
   const SCORE = { platinum: 1.0, gold: 0.8, silver: 0.6, bronze: 0.4, borked: 0.0 };
   const now = Date.now() / 1000;
   let wSum = 0, wTotal = 0;
-  for (const r of nativeReports) {
+  for (const r of reports) {
     const days = (now - (r.timestamp || 0)) / 86400;
     const recency = days < 30 ? 1.0
       : days < 90 ? 0.85
@@ -230,21 +236,7 @@ export function pulseTierFromReports(nativeReports, protonDbCount = 0) {
   }
   const avg = wTotal > 0 ? wSum / wTotal : 0;
   const tier = avg >= 0.85 ? 'platinum' : avg >= 0.65 ? 'gold' : avg >= 0.40 ? 'silver' : avg >= 0.15 ? 'bronze' : 'borked';
-  const count = nativeReports.length;
-  const weightedEvidence = count + (protonDbCount * 0.2);
-  const confidence = weightedEvidence >= 6 ? 'high' : weightedEvidence >= 3 ? 'medium' : 'low';
-  // Numeric per-game confidence on a 0-100 scale, log-curve over total evidence.
-  // ProtonDB reports count at 0.4x Pulse weight (less structured data) so the
-  // combined pool drives confidence up without over-inflating it.
-  const totalForPct = count + Math.round(protonDbCount * 0.4);
-  const confidencePct = Math.min(95, Math.round(30 + Math.log2(Math.max(1, totalForPct)) * 18));
-  // Note phrases confidence in terms of TOTAL reports - the system is meant
-  // to read as one homogeneous community view (Pulse + ProtonDB combined),
-  // so we don't attribute "low confidence" to a thin Pulse count when the
-  // ProtonDB pool fills it out
-  const totalReports = count + protonDbCount;
-  const confidenceNote = `${confidence} confidence (based on ${totalReports} total report${totalReports !== 1 ? 's' : ''})`;
-  return { tier, count, confidence, confidencePct, confidenceNote };
+  return { tier, count: reports.length };
 }
 
 // --- estimateScore ---
