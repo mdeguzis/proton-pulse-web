@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "domain": "www.proton-pulse.com",
+  "checked_at": "2026-07-24T02:47:41Z",
+  "edge": {
+    "reachable": true,
+    "subject": "CN = www.proton-pulse.com",
+    "issuer": "C = US, O = Google Trust Services, CN = WE1",
+    "san": [
+      "www.proton-pulse.com"
+    ],
+    "not_before": "2026-07-20T17:41:50Z",
+    "not_after": "2026-10-18T18:41:42Z"
+  },
+  "origin": {
+    "reachable": true,
+    "subject": "CN = www.proton-pulse.com",
+    "issuer": "C = US, O = Let's Encrypt, CN = R13",
+    "san": [
+      "proton-pulse.com",
+      "www.proton-pulse.com"
+    ],
+    "not_before": "2026-04-19T11:58:37Z",
+    "not_after": "2026-07-18T11:58:36Z"
+  },
+  "github_pages": null
+}
