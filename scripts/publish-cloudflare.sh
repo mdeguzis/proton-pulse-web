@@ -266,10 +266,14 @@ fi
 printf '{"dataBase":"%s","target":"cloudflare"}\n' "$DATA_BASE" > "$DEPLOY/data-config.json"
 
 # 2d. version.json for the About page (version from package.json, sha from git).
+# commit_time (committer date, UTC) feeds the version guard below: deploys
+# are ordered by the COMMIT being deployed, not by when a runner happened to
+# finish. deployed_at stays for display + as the guard's legacy fallback.
 VERSION="$(node -e "console.log(require('$REPO_DIR/package.json').version)" 2>/dev/null || echo 0.0.0)"
 SHA="$(git -C "$REPO_DIR" rev-parse --short HEAD 2>/dev/null || echo unknown)"
-printf '{"version":"%s","sha":"%s","deployed_at":"%s","repo":"mdeguzis/proton-pulse-web","target":"cloudflare"}\n' \
-  "$VERSION" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$DEPLOY/version.json"
+COMMIT_TIME="$(date -d "$(git -C "$REPO_DIR" log -1 --format=%cI HEAD 2>/dev/null)" -u +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || echo '')"
+printf '{"version":"%s","sha":"%s","commit_time":"%s","deployed_at":"%s","repo":"mdeguzis/proton-pulse-web","target":"cloudflare"}\n' \
+  "$VERSION" "$SHA" "$COMMIT_TIME" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$DEPLOY/version.json"
 
 log "assembled $(find "$DEPLOY" -type f | wc -l) files for Pages (v$VERSION - $SHA)"
 
@@ -294,7 +298,17 @@ esac
 if [ -n "$LIVE_DOMAIN" ] && command -v curl >/dev/null 2>&1; then
   live_json="$(curl -sf --max-time 10 "https://$LIVE_DOMAIN/version.json" 2>/dev/null || echo '')"
   if [ -n "$live_json" ]; then
+    # Compare COMMIT times on both sides, not commit-vs-deploy. The old
+    # commit-vs-deployed_at compare had a false positive: a long pipeline
+    # run that deploys commit X hours after it landed writes deployed_at >>
+    # commit-time(X), and a NEWER commit Y pushed during the run then loses
+    # the comparison and gets skipped (bit the #361 confidence fix: run A
+    # deployed 63a26dd1e at 04:18, run B carried a90d8f9e1 committed 02:32,
+    # guard refused it). commit_time is absent from version.json written
+    # before this change -- fall back to deployed_at once, then self-heal.
+    live_commit_time="$(printf '%s' "$live_json" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("commit_time",""))' 2>/dev/null || echo '')"
     live_deployed_at="$(printf '%s' "$live_json" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("deployed_at",""))' 2>/dev/null || echo '')"
+    live_ref_ts="${live_commit_time:-$live_deployed_at}"
     live_sha="$(printf '%s' "$live_json" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("sha",""))' 2>/dev/null || echo '')"
     # Our commit's ISO timestamp (committer date). git log emits it with the
     # committer's local offset -- e.g. 2026-07-20T21:30:54-04:00 for a commit
@@ -305,18 +319,18 @@ if [ -n "$LIVE_DOMAIN" ] && command -v curl >/dev/null 2>&1; then
     # which only handled commits already in UTC; that dropped every deploy
     # made from a non-UTC dev box.
     our_commit_iso="$(git -C "$REPO_DIR" log -1 --format=%cI HEAD 2>/dev/null || echo '')"
-    if [ -n "$live_deployed_at" ] && [ -n "$our_commit_iso" ]; then
+    if [ -n "$live_ref_ts" ] && [ -n "$our_commit_iso" ]; then
       # date -d "..." -u prints UTC regardless of the input offset. GNU date
       # (Ubuntu runners) accepts full ISO 8601 with offset here. Output
-      # format matches deployed_at exactly (Z suffix, no fractional sec).
+      # format matches the stored timestamps (Z suffix, no fractional sec).
       our_ts="$(date -d "$our_commit_iso" -u +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || echo '')"
       if [ -z "$our_ts" ]; then
         log "version guard skipped: could not normalize commit ts '$our_commit_iso' to UTC -- proceeding with deploy"
-      elif [ "$our_ts" \< "$live_deployed_at" ]; then
-        log "SKIP: current live deploy (sha=$live_sha, deployed_at=$live_deployed_at) is NEWER than our commit ($SHA, $our_ts). Refusing to move the site backwards."
+      elif [ "$our_ts" \< "$live_ref_ts" ]; then
+        log "SKIP: live deploy (sha=$live_sha, ${live_commit_time:+commit_time}${live_commit_time:-deployed_at}=$live_ref_ts) carries a NEWER commit than ours ($SHA, $our_ts). Refusing to move the site backwards."
         exit 0
       else
-        log "version guard OK: live deployed_at=$live_deployed_at, our commit=$our_ts -- proceeding"
+        log "version guard OK: live ${live_commit_time:+commit_time}${live_commit_time:-deployed_at}=$live_ref_ts, our commit=$our_ts -- proceeding"
       fi
     fi
   fi
