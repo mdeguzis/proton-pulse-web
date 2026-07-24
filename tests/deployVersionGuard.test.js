@@ -71,14 +71,22 @@ describe('publish-cloudflare.sh refuses to move the site backwards', () => {
     expect(PUBLISH_SCRIPT_SRC).toContain('www.proton-pulse.com');
   });
 
-  test('compares our git commit ISO to the deployed_at timestamp', () => {
+  test('compares our git commit ISO to the live commit_time (deployed_at fallback)', () => {
     // The core of the check. Uses git log --format=%cI HEAD for our side
     // (committer date, format includes the local offset e.g. -04:00) and
-    // deployed_at from the live JSON (UTC Z form). MUST normalize both to
-    // the same timezone before compare or a commit made in EDT compares as
-    // a full day earlier than a UTC deploy done at the same wall clock.
+    // commit_time from the live JSON (UTC Z form). Comparing commit-to-
+    // commit, NOT commit-vs-deployed_at: a slow pipeline that deploys
+    // commit X hours late writes deployed_at >> commit-time(X), and a
+    // newer commit Y pushed mid-run then loses that compare and gets
+    // skipped (bit the #361 confidence fix). deployed_at remains only as
+    // a one-time fallback for version.json written before commit_time.
     expect(PUBLISH_SCRIPT_SRC).toMatch(/git\s+-C\s+"\$REPO_DIR"\s+log\s+-1\s+--format=%cI\s+HEAD/);
-    expect(PUBLISH_SCRIPT_SRC).toMatch(/\.get\(['"]deployed_at['"]/);
+    expect(PUBLISH_SCRIPT_SRC).toMatch(/\.get\(['"]commit_time['"]/);
+    expect(PUBLISH_SCRIPT_SRC).toMatch(/live_ref_ts="\$\{live_commit_time:-\$live_deployed_at\}"/);
+  });
+
+  test('version.json records commit_time for the next deploy to compare against', () => {
+    expect(PUBLISH_SCRIPT_SRC).toMatch(/"commit_time":"%s"/);
   });
 
   test('normalizes both timestamps to UTC before compare (offset bug fix)', () => {
@@ -102,6 +110,6 @@ describe('publish-cloudflare.sh refuses to move the site backwards', () => {
     expect(PUBLISH_SCRIPT_SRC).toMatch(/SKIP:[\s\S]{0,300}exit 0/);
     // The comparison must guard on OLDER, not NEWER (would deploy newer
     // sha only which is opposite of what we want).
-    expect(PUBLISH_SCRIPT_SRC).toMatch(/"\$our_ts"\s*\\<\s*"\$live_deployed_at"/);
+    expect(PUBLISH_SCRIPT_SRC).toMatch(/"\$our_ts"\s*\\<\s*"\$live_ref_ts"/);
   });
 });

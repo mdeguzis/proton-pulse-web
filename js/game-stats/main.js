@@ -1,6 +1,6 @@
 // Entry module for game-stats.html. Migrated from game-stats.js.
 import { computeGameStats } from '../lib/scoring/gameStats.js?v=ac350c7f';
-import { pulseTierFromReports } from '../shared/scoring.js?v=8051e115';
+import { pulseTierFromReports } from '../shared/scoring.js?v=5090f6d2';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=2f0dee0e';

@@ -1,6 +1,6 @@
 // search (components) for the app page. Relocated from app.js/app-search.js.
 
-import { estimateScore } from '../../shared/scoring.js?v=8051e115';
+import { estimateScore } from '../../shared/scoring.js?v=5090f6d2';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=003f23c0';
 import { renderGamePage } from './game-page.js?v=842f85bd';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=cd6114a7';
