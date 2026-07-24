@@ -30,7 +30,7 @@ def test_steam_stub_emitted_for_protondb_known_app(tmp_path):
         protondb_known_app_ids={"480490"},
     )
     entries = json.loads((tmp_path / "search-index.json").read_text())
-    assert entries == [["480490", "Prey", "", 0, 0, "steam", None, None, False]]
+    assert entries == [["480490", "Prey", "", 0, 0, "steam", None, None, False, ""]]
 
 
 def test_steam_stub_skipped_when_not_in_protondb_known_set(tmp_path):
@@ -154,7 +154,7 @@ def test_protondb_signal_stub_for_app_absent_from_steam_catalog(tmp_path):
         protondb_signal_titles={"236830": "Some Delisted Game"},
     )
     entries = json.loads((tmp_path / "search-index.json").read_text())
-    assert entries == [["236830", "Some Delisted Game", "", 0, 0, "steam", None, None, False]]
+    assert entries == [["236830", "Some Delisted Game", "", 0, 0, "steam", None, None, False, ""]]
 
 
 def test_protondb_signal_stub_does_not_duplicate_steam_catalog_entry(tmp_path):
@@ -171,7 +171,7 @@ def test_protondb_signal_stub_does_not_duplicate_steam_catalog_entry(tmp_path):
         protondb_signal_titles={"480490": "Prey (ProtonDB title)"},
     )
     entries = json.loads((tmp_path / "search-index.json").read_text())
-    assert entries == [["480490", "Prey", "", 0, 0, "steam", None, None, False]]
+    assert entries == [["480490", "Prey", "", 0, 0, "steam", None, None, False, ""]]
 
 
 def test_protondb_signal_stub_skips_empty_title(tmp_path):
@@ -201,4 +201,4 @@ def test_protondb_signal_stub_pass_is_noop_without_signal_titles(tmp_path):
         protondb_signal_titles=None,
     )
     entries = json.loads((tmp_path / "search-index.json").read_text())
-    assert entries == [["480490", "Prey", "", 0, 0, "steam", None, None, False]]
+    assert entries == [["480490", "Prey", "", 0, 0, "steam", None, None, False, ""]]

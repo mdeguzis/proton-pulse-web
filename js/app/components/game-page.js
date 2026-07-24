@@ -1,28 +1,29 @@
 // game-page (components) for the app page. Relocated from app.js.
 
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
-import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=8051e115';
-import { computeCompatTrend, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=1c1b7f9d';
+import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
+import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
 import { getWebClientId } from '../../shared/submit.js?v=49306cae';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=a8d355d8';
-import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=55a861cb';
+import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=003a9b4d';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
 import { renderCard } from './report-card.js?v=1ee75a46';
-import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=598aaad1';
+import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=7ec2be23';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=f9591262';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ba0d7848';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=cd6114a7';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=2f0dee0e';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
+import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
 
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
@@ -244,7 +245,7 @@ async function _openMetadataModal(appId) {
     if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
 
-  const [meta, depotInfo, newsInfo, antiCheat] = await Promise.all([
+  const [meta, depotInfo, newsInfo, antiCheat, pgw] = await Promise.all([
     fetchAppMetadata(appId).catch(() => null),
     // Depot info from the PICS pipeline (#215). Populated nightly; may
     // not exist for this app yet.
@@ -257,6 +258,10 @@ async function _openMetadataModal(appId) {
     // Anti-cheat data from AreWeAntiCheatYet (#242). Returns null when
     // the game has no upstream entry.
     getAntiCheatForApp(appId).catch(() => null),
+    // PCGamingWiki metadata: OS support + engine (#377 slice 2). Returns
+    // null when the game has no PGWiki entry. Attribution + source link
+    // rendered inline; CC BY-NC-SA 3.0 requires it.
+    getPCGamingWikiForApp(appId).catch(() => null),
   ]);
   const body = modal.querySelector('#game-metadata-body');
   if (!body) return;
@@ -406,10 +411,29 @@ async function _openMetadataModal(appId) {
     const src = '<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="https://areweanticheatyet.com/" target="_blank" rel="noopener">AreWeAntiCheatYet</a></div>';
     return `<span class="${badgeCls}">${esc(label)}</span>${vendorChips}${src}`;
   };
+  // PCGamingWiki block (#377 slice 2). Only rendered when we have an entry
+  // -- absence is NOT "no OS support / no engine", it is "no PGWiki data".
+  // The OS chips answer the "not-just-Windows" question at a glance; the
+  // engine name helps triage Proton compat when Steam appdetails is thin.
+  const pcgamingwikiBlock = () => {
+    if (!pgw) return '';
+    const osList = Array.isArray(pgw.os) ? pgw.os.filter(Boolean) : [];
+    const engine = pgw.engine ? String(pgw.engine) : '';
+    if (!osList.length && !engine) return '';
+    const osChips = osList.length
+      ? `<div class="gm-chips">${osList.map(o => `<span class="gm-chip">${esc(humanPCGamingWikiOs(o))}</span>`).join('')}</div>`
+      : '';
+    const engineLine = engine
+      ? `<div style="margin-top:6px"><strong>Engine:</strong> <span>${esc(engine)}</span></div>`
+      : '';
+    const src = `<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="${esc(pcgamingwikiSearchUrl(meta.name || ''))}" target="_blank" rel="noopener">PCGamingWiki</a> (CC BY-NC-SA 3.0)</div>`;
+    return `${osChips}${engineLine}${src}`;
+  };
 
   body.innerHTML = [
     section('Name',          meta.name ? `<strong>${esc(meta.name)}</strong>` : ''),
     section('Anti-cheat',    antiCheatBlock()),
+    section('PCGamingWiki',  pcgamingwikiBlock()),
     section('App ID',        `<code>${esc(meta.appId)}</code>`),
     section('Type',          meta.type ? `<code>${esc(meta.type)}</code>` : ''),
     section('Parent game',   fullgameLink()),
@@ -912,12 +936,17 @@ export async function renderGamePage(appId) {
     const hasAnyReports = totalReports > 0;
     const overallTier = hasAnyReports ? combinedTier.tier : 'pending';
     const overallTileColor = hasAnyReports ? (RATING_COLORS[overallTier] || '#3a4a5a') : '#2a5a8c';
-    // Confidence percent from the combined-source calculation. The recency-
-    // weighted algorithm already factors in the ProtonDB live total so there
-    // is one canonical confidence value regardless of source mix.
-    const overallConfidencePct = hasAnyReports && combinedTier.confidencePct
-      ? combinedTier.confidencePct
-      : (protonDbCount > 0 ? Math.min(95, Math.round(30 + Math.log2(Math.max(1, protonDbCount)) * 18)) : 0);
+    // Confidence percent. #361/#376: computeConfidence is THE single
+    // source -- the same call confidence.html and game-stats.html make,
+    // with the same inputs: every report we hold (mirrored ProtonDB +
+    // native Pulse) plus the unmirrored live excess as sample-only
+    // evidence. Summary-only games (zero held reports) are capped by
+    // neutral consistency/freshness factors inside the helper, so a
+    // ProtonDB aggregate alone can never read "high confidence". No
+    // fallback formula here -- a second formula is how the pages
+    // diverged in the first place.
+    const _liveExcess = liveTotal > cdn.length ? liveTotal - cdn.length : 0;
+    const overallConfidencePct = computeConfidence(allReportsForTier, _liveExcess).confidencePct;
     // Bucket the summary label off the SAME percent thresholds confidence.html
     // uses (>=80 high, >=50 moderate, else low) so the dial %, this line, and
     // the "why?" page never disagree (#187). The old code bucketed by report
@@ -1327,8 +1356,75 @@ export async function renderGamePage(appId) {
     // Every filter-panel node stays exactly where it is (portalled or not),
     // so no re-portal, no visible flicker, and dropdown state stays intact.
     // Filter badge count + "N of M shown" counter also refresh inline.
+
+    // Opt-in on-screen debug: append ?debug=filters to the URL and a small
+    // status bar renders inside the filter panel showing the last change
+    // event + current filter state + reps.length after each refresh. Lets us
+    // diagnose "picker did nothing" reports on mobile without needing a
+    // desktop DevTools session. No-op when the flag is absent.
+    const _debugFilters = (() => {
+      try {
+        return new URLSearchParams(window.location.search).get('debug') === 'filters';
+      } catch { return false; }
+    })();
+    function _writeDebugBar(msg) {
+      if (!_debugFilters) return;
+      const host = document.getElementById('filterPanel');
+      if (!host) return;
+      let bar = host.querySelector('.gp-filter-debug');
+      if (!bar) {
+        bar = document.createElement('div');
+        bar.className = 'gp-filter-debug';
+        bar.style.cssText = 'position:sticky;top:0;z-index:5;background:#000;color:#0f0;font:11px/1.3 monospace;padding:6px 10px;border-bottom:1px solid #0f0;white-space:pre-wrap;word-break:break-word';
+        host.insertBefore(bar, host.firstChild);
+      }
+      const now = new Date().toISOString().slice(11, 19);
+      bar.textContent = `[${now}] ${msg}`;
+    }
+    function _debugSnapshot(label, extra) {
+      const active = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, source: filterSource, device: filterDevice, minPlaytime: filterMinPlaytime };
+      const nonBlank = Object.fromEntries(Object.entries(active).filter(([, v]) => v !== '' && v !== 0));
+      const parts = [label, `filters=${JSON.stringify(nonBlank)}`];
+      if (extra) parts.push(extra);
+      const line = parts.join(' · ');
+      // On-screen debug bar is behind the URL flag; the persistent log
+      // push happens unconditionally so the admin Logging tab captures
+      // every filter interaction without the user having to enable a
+      // flag first. That is the whole point of the ring buffer.
+      _writeDebugBar(line);
+      try {
+        if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') {
+          // INFO (not DEBUG) so entries land in the ring at the default
+          // capture level. Filter interactions are the primary thing users
+          // will want to see in the Logging tab when triaging a bug; DEBUG
+          // would silently drop them unless someone remembered to open
+          // with ?loglevel=debug first.
+          window.ppLogBuffer.pushLog('INFO', label, { source: 'game-page:filter', filters: nonBlank, extra: extra || null, appId: String(appId) });
+        }
+      } catch (_) { /* buffer failure must never break filtering */ }
+    }
+
+    // When ?debug=filters is set, watch #filterPanel's class attribute for any
+    // change and log it. Catches the "something stripped .open right after the
+    // OS picker came up" case that the mq listener in js/lib/topbar.js can
+    // trigger on some Android viewports.
+    if (_debugFilters) {
+      const p0 = document.getElementById('filterPanel');
+      if (p0 && !p0.__gpDebugAttr) {
+        p0.__gpDebugAttr = true;
+        new MutationObserver((records) => {
+          for (const r of records) {
+            if (r.attributeName === 'class') {
+              _writeDebugBar('#filterPanel class -> ' + p0.className + ' (was ' + r.oldValue + ')');
+            }
+          }
+        }).observe(p0, { attributes: true, attributeFilter: ['class'], attributeOldValue: true });
+      }
+    }
+
     function refreshReports() {
       const reps = sorted();
+      _debugSnapshot('refreshReports', `reps=${reps.length}/${combined.length} panelInBody=${document.body.contains(document.getElementById('filterPanel')) && document.getElementById('filterPanel')?.parentElement === document.body} .open=${document.getElementById('filterPanel')?.classList.contains('open')}`);
       const cardsHost = el.querySelector('.cards');
       if (cardsHost) {
         cardsHost.innerHTML = liveOnly && !reps.length
@@ -1475,14 +1571,14 @@ export async function renderGamePage(appId) {
     // OS-native picker dismisses. Prior version called render() which does
     // el.innerHTML = ... on the whole subtree -- that tore down the
     // portalled panel and made it appear the modal closed on pick.
-    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
 
     // Collapse: close the modal so the user sees the filtered reports. Uses
     // panelEl() so it finds the panel whether it is still in el or portalled

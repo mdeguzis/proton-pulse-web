@@ -2,6 +2,23 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.13.0
+
+- Staging and production now read from separate data buckets so a staging pipeline can no longer overwrite prod mid-flight. Prod stays on `data.proton-pulse.com`; staging reads from `staging-data.proton-pulse.com`. Frontend picks the host based on origin, and the pipeline sets the R2 target per environment.
+
+## v1.12.0
+
+- Boxart for PCGamingWiki-only stub entries now falls back to the wiki's own cover image when Steam-title match and SteamGridDB both come up empty. This picks up abandonware and classics that have a PGWiki cover but no equivalent art on Steam or SGDB. Ordering is unchanged for Steam / GOG / Epic entries: PGWiki cover only kicks in for `pgwiki:` ids as the final tier before the placeholder.
+
+## v1.11.0
+
+- PCGamingWiki-only games (Windows classics and abandonware with no Steam or GOG entry) now get stub pages in Proton Pulse so users can submit compat reports against them. The pipeline pulls every PCGW game that ships a Windows build and has no store ID, then merges them into the search index with a canonical id of `pgwiki:<slug>`. Cards mark the source as PCGWiki. The Chronicles of Riddick: Escape from Butcher Bay is one such entry. DOS-only games are excluded (Proton does not play them).
+
+## v1.10.0
+
+- Metadata modal on the game page has a new PCGamingWiki section under Anti-cheat. It shows native OS support (Windows, macOS, Linux, DOS) as chips and the game engine on its own line. Data comes from the PCGamingWiki Cargo API and is refreshed weekly by the pipeline. Games with no PGWiki entry just skip the section. Attribution links back to a PCGamingWiki search for the title (content is CC BY-NC-SA 3.0). Sets up follow-up filter chips and a PGWiki-only store tag under #377.
+- Admin API Explorer picked up a PCGamingWiki tab so admins can inspect the raw Cargo response before it lands in the pipeline. Three endpoints: by Steam App ID, by title substring, and cargofields schema introspection for any Cargo table. The tab fetches directly from pcgamingwiki.com (they run CORS open on the API) and skips the edge function.
+
 ## v1.9.0
 
 - Submit form drafts got a full UX rework. Autosave now writes only to browser localStorage every 2.5 seconds of pause, so no network chatter while you're typing. The Save button is the explicit trigger for a cloud upload plus commit-and-close: the form saves your work to your account and navigates back to where you came from, matching every other commit-and-close web flow. If cloud is unreachable the manual save falls back to local so the draft survives a network blip. On next visit the load path picks whichever of local or cloud is newer and applies it silently. Runtime Type dropdown now stays inline with its label on mobile.

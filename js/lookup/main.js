@@ -13,8 +13,8 @@
 // deep-link into a profile.
 
 import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=9b244db9';
-import { loadSearchIndex, searchIndex } from '../app/components/search.js?v=598aaad1';
-import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=f9591262';
+import { loadSearchIndex, searchIndex } from '../app/components/search.js?v=7ec2be23';
+import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=cd6114a7';
 import { esc } from '../app/utils.js?v=9a39c726';
 // localStorage keys the /lookup page reads + writes are defined in the
 // shared module so the inline "Library" panel + the nav fallback + this

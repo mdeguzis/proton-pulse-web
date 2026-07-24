@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com https://*.gog.com https://*.gog-statics.com https://cdn.steamgriddb.com https://cdn2.steamgriddb.com https://www.steamgriddb.com https://images.pcgamingwiki.com data:; connect-src 'self' https://data.proton-pulse.com https://staging-data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev https://api.github.com https://www.pcgamingwiki.com; font-src 'self'; frame-src 'none'; object-src 'none';">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
 <link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
-<link rel="stylesheet" href="css/admin/admin.css?v=cda1fa9b">
+<link rel="stylesheet" href="css/shared/cards.css?v=0d85b016">
+<link rel="stylesheet" href="css/admin/admin.css?v=8b20efed">
 </head>
 <body>
 
@@ -46,7 +46,9 @@
           <option value="boxart">Box Art Manager</option>
           <option value="api-explorer">API Explorer</option>
           <option value="depot-tracking">Depot Tracking</option>
+          <option value="deployments">Deployments</option>
           <option value="games">Game Manager</option>
+          <option value="logging">Logging</option>
           <option value="all-reports">Reports</option>
         </select>
       </div>
@@ -321,6 +323,16 @@
         <div id="game-manager-content"></div>
       </section>
 
+      <!-- Logging tab (#366): in-memory ring buffer of frontend logs +
+           ppTrack calls for this session. renderLoggingTab() in
+           js/admin/components/logging.js populates on activation. -->
+      <section id="tab-logging" class="admin-section" hidden></section>
+
+      <!-- Deployments tab (#367): last N GH Actions runs across every
+           deploy workflow (publish-shell, deploy-worker, build-site-data,
+           deploy-functions). renderDeploymentsTab() populates. -->
+      <section id="tab-deployments" class="admin-section" hidden></section>
+
       <!-- Shared boxart chrome (modal + file picker). Used by both the
            list view and the detail view so a single instance handles
            set-url and upload actions from either place. -->
@@ -361,9 +373,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
-<script src="js/lib/analytics.js?v=ad8d89f5"></script>
-<script src="js/lib/topbar.js?v=21a7ccea"></script>
+<script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
+<script src="js/lib/analytics.js?v=ee2cbf3e"></script>
+<script src="js/lib/topbar.js?v=1e8af6e6"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
-<script type="module" src="js/admin/main.js?v=114fd917"></script>
+<script type="module" src="js/admin/main.js?v=71d22fe9"></script>
 </body>
 </html>

@@ -251,16 +251,123 @@ export function computeSettingsTips(allReports, configs) {
 // rating distribution) with protondb-decky-inspired metrics (working status,
 // freshness, monthly chart, settings tips).
 /**
+ * Canonical per-game confidence. THE single source of truth -- the game-page
+ * headline, confidence.html breakdown, and game-stats.html must all read this
+ * function so the number can never disagree across surfaces (#361, #376).
+ *
+ * Factors (weighted): sample size 45%, tier consistency 35%, data freshness
+ * 20%, then a staleness hard-cap when the median report is old.
+ *
+ * liveExcess = ProtonDB reports known to exist (live aggregate total) beyond
+ * what we have mirrored. They are real evidence of sample size but carry no
+ * tier/timestamp detail, so they count at 0.4x into the sample factor ONLY.
+ * When we have zero per-report data at all (summary-only game), consistency
+ * and freshness score a neutral 0.5 -- unknown, not bad -- which caps the
+ * maximum at ~72%: a summary-only game can never read "high confidence" (#361).
+ * @param {Array<{rating: string, timestamp: number}>} allReports - every report we actually hold (mirrored ProtonDB + native Pulse).
+ * @param {number} [liveExcess=0] - unmirrored ProtonDB report count (live total minus mirrored), sample evidence only.
+ * @returns {{ confidencePct: number, confFactors: Array<{label: string, value: number, detail: string}> }}
+ */
+export function computeConfidence(allReports, liveExcess = 0) {
+  const now = Date.now() / 1000;
+  const n = allReports.length;
+  const liveSample = Math.max(0, liveExcess) * 0.4;
+  const effectiveN = n + liveSample;
+
+  if (effectiveN <= 0) {
+    return { confidencePct: 0, confFactors: [] };
+  }
+
+  const sampleFactor = Math.min(1.0, Math.log2(Math.max(1, effectiveN)) / Math.log2(50));
+  const summaryOnly = n === 0;
+
+  let consistencyFactor;
+  if (summaryOnly) {
+    consistencyFactor = 0.5;
+  } else {
+    const vals = allReports.map(r => RATING_VAL[r.rating] || 3);
+    const mean = vals.reduce((s, v) => s + v, 0) / vals.length;
+    const variance = vals.reduce((s, v) => s + (v - mean) ** 2, 0) / vals.length;
+    const stdDev = Math.sqrt(variance);
+    consistencyFactor = Math.max(0, 1 - stdDev / 2);
+  }
+
+  let freshnessFactor;
+  const ageDaysList = [];
+  if (summaryOnly) {
+    freshnessFactor = 0.5;
+  } else {
+    let freshnessSum = 0;
+    for (const r of allReports) {
+      const days = (now - (r.timestamp || 0)) / 86400;
+      ageDaysList.push(days);
+      freshnessSum += days < 90 ? 1.0
+        : days < 365 ? 0.60
+        : days < 730 ? 0.30
+        : days < 1095 ? 0.15
+        : days < 1825 ? 0.05
+        : 0.0;
+    }
+    freshnessFactor = freshnessSum / n;
+  }
+
+  // Staleness cap: when the median report is very old, hard-cap the overall
+  // confidence. A tight cluster of ratings still "reads" consistent but tells
+  // us little about a Proton stack from 5+ years ago. Summary-only games have
+  // no ages to judge; the neutral factors above already hold them at <= 72%.
+  const sortedAges = [...ageDaysList].sort((a, b) => a - b);
+  const medianDays = sortedAges.length > 0 ? sortedAges[Math.floor(sortedAges.length / 2)] : 0;
+  const stalenessCap = summaryOnly ? 1.0
+    : medianDays < 365 ? 1.0
+    : medianDays < 730 ? 0.85
+    : medianDays < 1095 ? 0.70
+    : medianDays < 1825 ? 0.55
+    : medianDays < 2920 ? 0.40
+    : 0.25;
+
+  const rawConf = sampleFactor * 0.45 + consistencyFactor * 0.35 + freshnessFactor * 0.20;
+  const confidencePct = Math.min(95, Math.round(rawConf * 100 * stalenessCap));
+
+  const medianHuman = medianDays < 30 ? `${Math.round(medianDays)} days`
+    : medianDays < 365 ? `${Math.round(medianDays / 30)} months`
+    : `${(medianDays / 365).toFixed(1)} years`;
+  const sampleDetail = liveExcess > 0
+    ? `${n} report${n !== 1 ? 's' : ''} held + ${liveExcess} unmirrored ProtonDB report${liveExcess !== 1 ? 's' : ''} at 0.4x (log curve, 45% weight)`
+    : `${n} report${n !== 1 ? 's' : ''} (log curve, 45% weight)`;
+  const confFactors = [
+    { label: 'Sample size', value: Math.round(sampleFactor * 100), detail: sampleDetail },
+    { label: 'Tier consistency', value: Math.round(consistencyFactor * 100), detail: summaryOnly ? 'Unknown -- no per-report tiers held, neutral 50% (35% weight)' : 'How tightly clustered ratings are (35% weight)' },
+    { label: 'Data freshness', value: Math.round(freshnessFactor * 100), detail: summaryOnly ? 'Unknown -- no report dates held, neutral 50% (20% weight)' : 'Recency-weighted freshness (20% weight)' },
+  ];
+  if (!summaryOnly && stalenessCap < 1.0) {
+    confFactors.push({
+      label: 'Staleness cap',
+      value: Math.round(stalenessCap * 100),
+      detail: `median report is ${medianHuman} old; overall confidence capped at ${Math.round(stalenessCap * 100)}%`,
+    });
+  }
+  if (summaryOnly) {
+    confFactors.push({
+      label: 'ProtonDB aggregate only',
+      value: 0,
+      detail: 'No individual reports mirrored yet; score is capped and cannot reach "high" until real reports arrive',
+    });
+  }
+  return { confidencePct, confFactors };
+}
+
+/**
  * Main entry point. Computes the full per-game compatibility stats object.
- * Aggregates rating distribution, confidence score (sample size + tier consistency +
- * freshness), trend direction (recent 90d vs prior 90-270d window), per-Proton-version
+ * Aggregates rating distribution, confidence score (via computeConfidence),
+ * trend direction (recent 90d vs prior 90-270d window), per-Proton-version
  * success percentages, launch flag frequency, and the new working-status/freshness/
  * monthly-chart/settings-tips metrics.
  * @param {Array<{rating: string, timestamp: number, protonVersion?: string, launchOptions?: string}>} allReports
  * @param {Array<{launchOptions?: string, launch_options?: string}>} configs
+ * @param {number} [liveExcess=0] - unmirrored ProtonDB report count; see computeConfidence.
  * @returns {{ confidencePct: number, confFactors: Array, trendDir: string, trendDiff: number, recentPositiveRatio: number|null, olderPositiveRatio: number|null, recentCount: number, priorCount: number, versionStats: Array, launchFlags: Array, ratingCounts: object, totalReports: number, monthly: Array, workingStatus: object, freshness: object, settingsTips: Array }}
  */
-export function computeGameStats(allReports, configs) {
+export function computeGameStats(allReports, configs, liveExcess = 0) {
   const now = Date.now() / 1000;
   const n = allReports.length;
 
@@ -270,59 +377,8 @@ export function computeGameStats(allReports, configs) {
     if (ratingCounts[r.rating] != null) ratingCounts[r.rating]++;
   }
 
-  // --- Confidence: sample size + tier consistency + freshness ---
-  const sampleFactor = n > 0 ? Math.min(1.0, Math.log2(Math.max(1, n)) / Math.log2(50)) : 0;
-  let consistencyFactor = 0;
-  if (n > 0) {
-    const vals = allReports.map(r => RATING_VAL[r.rating] || 3);
-    const mean = vals.reduce((s, v) => s + v, 0) / vals.length;
-    const variance = vals.reduce((s, v) => s + (v - mean) ** 2, 0) / vals.length;
-    const stdDev = Math.sqrt(variance);
-    consistencyFactor = Math.max(0, 1 - stdDev / 2);
-  }
-  let freshnessSum = 0, freshnessTotal = 0;
-  const ageDaysList = [];
-  for (const r of allReports) {
-    const days = (now - (r.timestamp || 0)) / 86400;
-    ageDaysList.push(days);
-    const w = days < 90 ? 1.0
-      : days < 365 ? 0.60
-      : days < 730 ? 0.30
-      : days < 1095 ? 0.15
-      : days < 1825 ? 0.05
-      : 0.0;
-    freshnessSum += w;
-    freshnessTotal++;
-  }
-  const freshnessFactor = freshnessTotal > 0 ? freshnessSum / freshnessTotal : 0;
-  // Staleness cap: when the median report is very old, hard-cap the overall
-  // confidence. A tight cluster of ratings still "reads" consistent but tells
-  // us little about a Proton stack from 5+ years ago.
-  const sortedAges = [...ageDaysList].sort((a, b) => a - b);
-  const medianDays = sortedAges.length > 0 ? sortedAges[Math.floor(sortedAges.length / 2)] : 0;
-  const stalenessCap = medianDays < 365 ? 1.0
-    : medianDays < 730 ? 0.85
-    : medianDays < 1095 ? 0.70
-    : medianDays < 1825 ? 0.55
-    : medianDays < 2920 ? 0.40
-    : 0.25;
-  const rawConf = n > 0 ? (sampleFactor * 0.45 + consistencyFactor * 0.35 + freshnessFactor * 0.20) : 0;
-  const confidencePct = Math.min(95, Math.round(rawConf * 100 * stalenessCap));
-  const medianHuman = medianDays < 30 ? `${Math.round(medianDays)} days`
-    : medianDays < 365 ? `${Math.round(medianDays / 30)} months`
-    : `${(medianDays / 365).toFixed(1)} years`;
-  const confFactors = [
-    { label: 'Sample size', value: Math.round(sampleFactor * 100), detail: `${n} report${n !== 1 ? 's' : ''} (log curve, 45% weight)` },
-    { label: 'Tier consistency', value: Math.round(consistencyFactor * 100), detail: 'How tightly clustered ratings are (35% weight)' },
-    { label: 'Data freshness', value: Math.round(freshnessFactor * 100), detail: 'Recency-weighted freshness (20% weight)' },
-  ];
-  if (n > 0 && stalenessCap < 1.0) {
-    confFactors.push({
-      label: 'Staleness cap',
-      value: Math.round(stalenessCap * 100),
-      detail: `median report is ${medianHuman} old; overall confidence capped at ${Math.round(stalenessCap * 100)}%`,
-    });
-  }
+  // --- Confidence (canonical; see computeConfidence) ---
+  const { confidencePct, confFactors } = computeConfidence(allReports, liveExcess);
 
   // --- Trend ---
   // Playable-share based (see computeCompatTrend): a platinum->gold drift is not
@@ -395,6 +451,7 @@ export function computeGameStats(allReports, configs) {
 if (typeof module !== 'undefined' && /* istanbul ignore next */ module.exports) {
   module.exports = {
     computeGameStats,
+    computeConfidence,
     computeMonthlyReports,
     computeWorkingStatus,
     computeFreshness,

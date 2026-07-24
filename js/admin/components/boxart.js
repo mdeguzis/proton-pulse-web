@@ -13,7 +13,7 @@
 // "Probe all (filtered)" walks every row that matches the current
 // filters in bounded batches so the browser stays responsive.
 
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   probeImageUrl,
@@ -1124,8 +1124,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     <div class="boxart-detail-grid">
       <div class="admin-card" style="padding:12px">
         <div class="admin-subhead">Preview</div>
-        <img id="boxart-detail-preview" src="${escapeHtml(previewSrc)}" alt="header preview" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)"
-             onerror="this.style.opacity=0.3; this.alt='(preview failed to load)'">
+        <img id="boxart-detail-preview" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)">
         <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${gameManagerLink}</p>
       </div>
 
@@ -1155,6 +1154,37 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
 // Given the URL sources for this row, resolve which one the frontend
 // would actually display. Overrides always win. Otherwise HEAD-probe
 // in the standard fallback order.
+// Auto-refetch on preview img error. Called once per detail render; the
+// handler self-guards against a refetch loop via data-auto-refetch-tried.
+// Uses the server-side refetch path (Steam appdetails / non-Steam pipeline
+// probe) which resolves hashed URLs the plain-URL prober cannot see. On
+// success, swaps the preview src AND updates the URL-sources table (via
+// refreshBody in the caller) so the "live source" highlight is honest.
+function _wireAutoRefetch(row) {
+  const img = document.getElementById('boxart-detail-preview');
+  if (!img) return;
+  img.addEventListener('error', async () => {
+    if (img.dataset.autoRefetchTried === '1') {
+      img.style.opacity = 0.3;
+      img.alt = '(preview failed to load)';
+      return;
+    }
+    img.dataset.autoRefetchTried = '1';
+    img.alt = 'header preview (auto-refetching...)';
+    const result = row.type === 'steam'
+      ? await refetchSteamHeader(row.appId)
+      : await refetchNonSteamHeader(row.appId, row.cachedUrl || null);
+    if (result?.ok && result.url) {
+      img.src = result.url;
+      img.style.opacity = 1;
+      img.alt = 'header preview';
+    } else {
+      img.style.opacity = 0.3;
+      img.alt = '(preview failed to load; refetch also failed)';
+    }
+  }, { once: false });
+}
+
 async function _resolveCurrentLive(row) {
   if (row.override?.image_url) return { url: row.override.image_url, source: 'override' };
   if (row.type === 'steam') {
@@ -1224,6 +1254,12 @@ export async function renderBoxartAdminDetail(appId) {
   document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, null, null);
   const live = await _resolveCurrentLive(row).catch(() => ({ url: null, source: null }));
   document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, live.url, live.source);
+  // Auto-refetch on preview load failure. `_resolveCurrentLive` only probes
+  // plain CDN URLs; games whose header ships under a Steam content hash
+  // (e.g. .../<appid>/<hash>/header.jpg) 404 on the plain path and the
+  // preview img fires onerror. Same click that clicking Refetch would do,
+  // done automatically so the admin sees the correct art immediately.
+  _wireAutoRefetch(row);
 
   // Wire the shared modal + upload input for this view. modalContext
   // is set BEFORE opening the modal or triggering the file picker so
@@ -1237,6 +1273,9 @@ export async function renderBoxartAdminDetail(appId) {
   function refreshBody() {
     _resolveCurrentLive(row).catch(() => ({ url: null, source: null })).then(l => {
       document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, l.url, l.source);
+      // Re-wire the auto-refetch since the innerHTML swap replaced the img
+      // element that was carrying the previous listener.
+      _wireAutoRefetch(row);
     });
   }
   function setStatus(text, isError) {

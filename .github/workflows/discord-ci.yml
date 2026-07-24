@@ -12,6 +12,7 @@ on:
       - Deploy Supabase Edge Functions
       - Backup
       - Content Moderation
+      - R2 Canary
       - Deploy on merge to main
       - Sync staging repo
       - Update Epic Catalog

@@ -115,11 +115,15 @@ describe('certState (public descriptive state)', () => {
   });
 });
 
-describe('certStateForCert (two-cert model: edge / origin)', () => {
-  test('expired origin cert -> expired', () => {
+describe('certStateForCert (single-cert model post-#362)', () => {
+  // Kept as a per-cert-object helper (rather than reading a flat top-level
+  // status) because the cert-monitor payload still nests the details under
+  // status.edge -- consumers can drop into any cert object without unwrapping
+  // more than one level.
+  test('expired cert -> expired', () => {
     expect(certStateForCert({ not_after: '2026-07-18T11:58:36Z' }, NOW)).toBe('expired');
   });
-  test('valid edge cert -> valid', () => {
+  test('valid cert -> valid', () => {
     expect(certStateForCert({ not_after: '2026-09-14T23:25:02Z' }, NOW)).toBe('valid');
   });
   test('null / unreachable cert -> unreachable', () => {

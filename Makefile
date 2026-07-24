@@ -10,9 +10,10 @@ WATCH_ALL_WORKFLOWS ?= true
 STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/version.json
 FORCE_DEPLOY ?=
 
-.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert \
+.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert r2-canary \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
-	build serve smoke smoke-live pre-push coverage deploy-worker renew-certificate
+	cf-staging cf-prod \
+	build serve smoke smoke-live pre-push coverage deploy-worker
 
 build:
 	@bash scripts/cache-bust.sh
@@ -20,13 +21,6 @@ build:
 # Deploy a Cloudflare Worker (default: edge-status). Override: make deploy-worker WORKER=<name>
 deploy-worker:
 	@bash scripts/deploy-worker.sh $(WORKER)
-
-# Renew the GH Pages Let's Encrypt cert (walks the operator through the
-# Cloudflare grey-cloud step, then polls the GitHub Pages API + flips
-# https_enforced=true once the cert is provisioned). See #<TODO> if you
-# want to know why it needs a human touch.
-renew-certificate:
-	@bash scripts/renew-github-pages-cert.sh
 
 # Run Jest unit tests + manifest completeness check
 test-js:
@@ -47,11 +41,16 @@ pre-push: build coverage smoke
 smoke:
 	@bash scripts/smoke.sh
 
-# Print the live site's TLS certificate state: edge cert (what browsers see),
-# origin cert (GitHub Pages backend), and GitHub's Pages ACME state (e.g.
-# bad_authz). Read-only -- does not touch gh-pages. See the Certificates wiki.
+# Print the live site's TLS certificate state (post-#362: single Cloudflare
+# Pages cert, no more origin cert / GitHub Pages ACME state). Read-only.
 check-cert:
 	@bash scripts/check-cert.sh
+
+# R2 canary: prove each R2 bucket is writable/listable/readable/deletable with
+# the current S3 creds (catches AccessDenied-type regressions fast). Needs
+# CLOUDFLARE_ACCOUNT_ID + R2_ACCESS_KEY_ID + R2_SECRET_ACCESS_KEY in the env.
+r2-canary:
+	@bash scripts/r2-canary.sh
 
 # Same harness pointed at the production site -- skips the local staging
 # step (so no error-catcher injection; DOM-state assertions only) and
@@ -72,7 +71,7 @@ help:
 	@echo "  smoke-live          Same harness pointed at https://www.proton-pulse.com"
 	@echo "  sync-runtime        Pull scoring-info.json and form-schema.json from plugin repo"
 	@echo "  setup               Bootstrap local dev tools and Python dependencies"
-	@echo "  install-pg          Install pg_dump (postgresql) via pkg (Termux/Debian)"
+	@echo "  install-pg          Install pg_dump (postgresql) via pkg/apt/brew (Termux/Debian/macOS)"
 	@echo "  init-submodules     Initialize and update git submodules"
 	@echo "  test                Run linting and the Python test suite"
 	@echo "  lint                Run static checks that should match VS Code Problems output"
@@ -91,6 +90,8 @@ help:
 	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
 	@echo "  gh-staging-pipeline Run FULL pipeline against staging + deploy data to staging (#117, ~30 min)"
 	@echo "  gh-staging-finalize Skip probe/build, re-run finalize + stats against prod state, deploy to staging (#196, ~5 min)"
+	@echo "  cf-staging          Force a shell-only CF Pages staging deploy (~1-2 min). Every push to staging auto-triggers this via publish-shell.yml."
+	@echo "  cf-prod             Force a shell-only CF Pages production deploy (~1-2 min). Every push to main auto-triggers this via publish-shell.yml."
 	@echo "  gh-resume           Re-run only chunks marked incomplete in the manifest (#171)"
 	@echo "  gh-finalize-only    Skip probing, re-run finalize against current manifest state (#171)"
 	@echo "  gh-backfill-apps    Trigger targeted app backfill"
@@ -131,18 +132,7 @@ serve:
 	@if [ -d node_modules/vite ]; then pnpm run dev; else npx vite --host --port 5173; fi
 
 install-pg:
-	@if command -v pg_dump >/dev/null 2>&1; then \
-		echo "pg_dump already installed: $$(pg_dump --version)"; \
-	elif command -v pkg >/dev/null 2>&1; then \
-		echo "Installing postgresql via pkg..."; \
-		pkg install -y postgresql; \
-	elif command -v apt-get >/dev/null 2>&1; then \
-		echo "Installing postgresql-client via apt-get..."; \
-		sudo apt-get install -y postgresql-client; \
-	else \
-		echo "error: cannot auto-install pg_dump. Install postgresql-client manually." >&2; \
-		exit 1; \
-	fi
+	@bash scripts/install-pg.sh
 
 setup: install-pg
 	UV_CACHE_DIR=$(UV_CACHE_DIR) bash scripts/setup_dev.sh
@@ -218,11 +208,32 @@ gh-run: gh-check check-staging-sync
 gh-pages-only: gh-check check-staging-sync
 	gh workflow run $(GITHUB_WORKFLOW) --field pages_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with pages_only=true"
+	@echo "NOTE: this promotes shell files to the OLD gh-pages branch (rollback path only per #362). For prod CF Pages (www.proton-pulse.com) use \`make cf-prod\` -- but ideally you do not need to, since publish-shell.yml auto-deploys on every push to main."
 
 gh-staging: gh-check
 	@bash scripts/wait-for-remote.sh
 	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with staging_only=true -- preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
+	@echo "NOTE: this deploys to the OLD gh-pages staging repo (kept as rollback per #362). For the live CF Pages staging site (staging.proton-pulse.com) use \`make cf-staging\`."
+
+# ── Cloudflare Pages shell deploys (#362 follow-up) ────────────────────
+#
+# Fast (~1-2 min) shell-only push to CF Pages. Every push to staging or main
+# that touches user-facing files ALREADY triggers .github/workflows/publish-
+# shell.yml automatically -- these targets are just the manual dispatch path
+# for the same workflow (e.g. to force a re-deploy after fixing something
+# out-of-band). SKIP_R2_SYNC=1 keeps the per-game data buckets in R2 as they
+# are; the pipeline in update-data.yml refreshes those on its own cadence.
+
+cf-staging: gh-check
+	@bash scripts/wait-for-remote.sh
+	gh workflow run publish-shell.yml --ref staging
+	@echo "Triggered publish-shell.yml against staging -- deploys to CF Pages 'proton-pulse-web-staging' (staging.proton-pulse.com). ~1-2 min."
+
+cf-prod: gh-check
+	@bash scripts/wait-for-remote.sh
+	gh workflow run publish-shell.yml --ref main
+	@echo "Triggered publish-shell.yml against main -- deploys to CF Pages 'proton-pulse-web' (www.proton-pulse.com). ~1-2 min."
 
 # Full-pipeline staging deploy (#117). Runs the whole pipeline against the
 # staging branch and deploys the resulting data + shell to the staging repo.

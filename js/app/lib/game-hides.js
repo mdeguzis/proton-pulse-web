@@ -3,7 +3,7 @@
 // policy on the table lets browse / search / game-page reject hidden
 // appids without needing a user session. Cached once per page load in a
 // Promise so parallel callers share a single fetch.
-import { SB_URL, SB_KEY } from '../config.js?v=f9591262';
+import { SB_URL, SB_KEY } from '../config.js?v=cd6114a7';
 
 let _hidesPromise = null;
 

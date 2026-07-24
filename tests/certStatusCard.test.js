@@ -14,8 +14,11 @@ const STATUS_SRC = fs.readFileSync(
   'utf8',
 );
 
-describe('public status page renders the two-cert model + graph', () => {
-  test('imports the two-cert + day-math helpers from cert.js', () => {
+describe('public status page renders the single-cert model + graph', () => {
+  // Post-#362 the site is fully served from Cloudflare Pages so there is only
+  // one cert to track (the CF-served, browser-facing one). The old two-cert
+  // model (edge + GitHub-Pages origin + GH ACME state) is gone.
+  test('imports the day-math helpers from cert.js', () => {
     const imp = STATUS_SRC.match(/import\s*\{([\s\S]*?)\}\s*from\s*['"]\.\.\/lib\/cert\.js/);
     expect(imp).not.toBeNull();
     const names = imp[1];
@@ -30,17 +33,21 @@ describe('public status page renders the two-cert model + graph', () => {
     expect(STATUS_SRC).toMatch(/status-graph-svg/);
   });
 
-  test('edge cert drives the headline; origin + github_pages shown as context', () => {
+  test('single-cert model: edge cert drives everything, no origin/github_pages', () => {
     const start = STATUS_SRC.indexOf('function renderCertCard');
     const end = STATUS_SRC.indexOf('async function loadAndRenderCert');
     const cardFn = STATUS_SRC.slice(start, end);
     expect(start).toBeGreaterThan(-1);
     // Headline state comes from the edge cert.
     expect(cardFn).toMatch(/certStateForCert\(edge\)/);
-    // Origin cert and GitHub's ACME state both surface in the card.
-    expect(cardFn).toMatch(/status\.origin/);
-    expect(cardFn).toMatch(/github_pages/);
-    // Burndown plots the edge cert's expiry field.
+    // Regression guard: the old two-cert fields must NOT appear on the card.
+    // If they come back it means someone re-introduced the GH-Pages-behind-
+    // Cloudflare cert probe -- which does not exist post-#362 and would be a
+    // silent regression to a "GitHub Pages origin" line that has no meaning.
+    expect(cardFn).not.toMatch(/status\.origin/);
+    expect(cardFn).not.toMatch(/github_pages/);
+    expect(cardFn).not.toMatch(/GitHub Pages origin/);
+    // Burndown still plots the edge cert's expiry field.
     expect(cardFn).toMatch(/renderCertBurndown\(history, 'edge_not_after'\)/);
   });
 

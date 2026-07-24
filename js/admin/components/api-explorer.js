@@ -8,10 +8,11 @@
 // goes through the steam-explore edge function because the stores are
 // CORS-blocked from the browser.
 
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
 import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';
+import { exploreCargoPCGamingWiki } from '../api/pcgamingwiki-explore.js?v=49d016c5';
 
 // Store -> endpoints. `arg` is 'id' (numeric app/product id, name-resolvable)
 // or 'term' (free-text search). Keys match the edge function's ENDPOINTS.
@@ -62,6 +63,18 @@ const STORES = {
     endpoints: [
       { key: 'protondb_summary', label: 'summary (tier + confidence + best/worst per app)', arg: 'id' },
       { key: 'protondb_counts', label: 'global counts (sanity check)', arg: 'none' },
+    ],
+  },
+  // PCGamingWiki tab (#377). Client-side Cargo API fetch -- PGWiki is
+  // CORS-enabled + public. Lets admins inspect what the pipeline enricher
+  // will see for any given game before shipping data-driven UI on it.
+  pcgamingwiki: {
+    label: 'PCGamingWiki',
+    placeholder: 'Steam App ID, game title, or Cargo table name',
+    endpoints: [
+      { key: 'pcgw_by_appid', label: 'Infobox_game by Steam App ID (Cargo HOLDS query)', arg: 'id' },
+      { key: 'pcgw_by_title', label: 'Infobox_game by title substring (Cargo LIKE)', arg: 'term', placeholder: 'Title fragment (e.g. half-life)' },
+      { key: 'pcgw_table_fields', label: 'cargofields -- schema of a Cargo table (default: Infobox_game)', arg: 'term', placeholder: 'Cargo table name (leave empty for Infobox_game)' },
     ],
   },
 };
@@ -238,6 +251,37 @@ const FIELD_DOCS = {
       ['lastUpdated / date / timestamp', 'When ProtonDB last refreshed the counts (field name varies -- check what the raw JSON returns).'],
     ],
   },
+  pcgw_by_appid: {
+    title: 'PCGamingWiki Infobox_game by Steam App ID (Cargo)',
+    rows: [
+      ['cargoquery[].title.page', 'PCGW wiki page name for the match. Same page can bundle multiple appids (e.g. Half-Life 2 -> "220,219,323140,466270,290930").'],
+      ['cargoquery[].title.appId', 'Full comma-list of Steam App IDs on this PCGW page.'],
+      ['cargoquery[].title.gogId', 'GOG product ID if the page tracks it. Empty when the game is not on GOG.'],
+      ['cargoquery[].title.engines', 'Comma-list with the wiki namespace prefix ("Engine:Source,Engine:Unity"). The enricher strips "Engine:" on read.'],
+      ['cargoquery[].title.available', 'Native platforms as comma-list: Windows, OS X, Linux, DOS. Drives the pgw_os column (14) on search-index.'],
+      ['cargoquery[].title.relWin / relLin / relMac / relDos', 'Per-OS release date. Presence + value both signal native support on that OS. relDos = null is common.'],
+      ['cargoquery[].title.developers / publishers', 'Comma-list of dev + publisher pages. Aliased so Cargo does not reject the underscore prefix.'],
+      ['error.info', 'MWException message when the query is malformed (bad field, wrong operator, blocked alias). The API returns HTTP 200 with this envelope -- watch for it.'],
+    ],
+  },
+  pcgw_by_title: {
+    title: 'PCGamingWiki Infobox_game by title (Cargo LIKE)',
+    rows: [
+      ['(same shape as pcgw_by_appid)', 'Rows are ordered by _pageName so results are stable across runs.'],
+      ['cargoquery[].title.page', 'The wiki page that matched. Case-insensitive substring on _pageName -- e.g. "half-life" matches Half-Life, Half-Life 2, Half-Life: Alyx.'],
+      ['(limit 20)', 'Client-side cap to keep the payload readable. Increase LIMIT in the fetcher if the tail is meaningful.'],
+    ],
+  },
+  pcgw_table_fields: {
+    title: 'PCGamingWiki cargofields (schema introspection)',
+    rows: [
+      ['cargofields.<FieldName>.type', 'Cargo data type: String / Text / Integer / Date / Page / File / URL / etc.'],
+      ['cargofields.<FieldName>.isList', 'Empty string ("") when this is a virtual list field. Bulk WHERE clauses on virtual lists need the __full companion.'],
+      ['cargofields.<FieldName>.delimiter', 'Delimiter for list fields (usually ",").'],
+      ['(use case)', 'Handy when porting a new field into the pipeline enricher: check the real type before adding a query.'],
+      ['(default table)', 'Empty term defaults to Infobox_game. Try Engine, Availability, Company, Series, or any name from action=cargotables.'],
+    ],
+  },
 };
 
 function _showFieldDocs(endpointKey) {
@@ -292,6 +336,15 @@ function _storeUrl(endpoint, id, term, payload) {
   }
   if (endpoint === 'protondb_counts') {
     return 'https://www.protondb.com/explore';
+  }
+  if (endpoint === 'pcgw_by_appid') {
+    // PCGW ships an appid-to-page redirect endpoint that lands on the
+    // canonical wiki entry for the game. Handy to compare our parsed data
+    // against the rendered infobox.
+    return id ? `https://www.pcgamingwiki.com/api/appid.php?appid=${encodeURIComponent(id)}` : null;
+  }
+  if (endpoint === 'pcgw_by_title' || endpoint === 'pcgw_table_fields') {
+    return term ? `https://www.pcgamingwiki.com/w/index.php?search=${encodeURIComponent(term)}` : null;
   }
   return null;
 }
@@ -353,9 +406,11 @@ async function _resolveArg(store, endpointArg, input) {
   const inStore = (r) => {
     if (!Array.isArray(r)) return false;
     const sid = String(r[0]);
-    // ProtonDB is keyed by Steam appid upstream, so the search index lookup
-    // matches Steam entries -- same code path (#280).
-    if (store === 'steam' || store === 'protondb') return r[5] === 'steam' || /^\d+$/.test(sid);
+    // ProtonDB (#280) + PCGamingWiki (#377) are both keyed by Steam appid,
+    // so a name-to-id resolve for those tabs walks the Steam entries.
+    if (store === 'steam' || store === 'protondb' || store === 'pcgamingwiki') {
+      return r[5] === 'steam' || /^\d+$/.test(sid);
+    }
     return sid.startsWith(prefix);
   };
   const exact = idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase() === ql);
@@ -420,6 +475,12 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
       <div id="apix-resp-section" class="apix-req-section" hidden>
         <div class="apix-section-label">Response <span id="apix-resp-status" class="apix-req-key"></span></div>
       </div>
+      <!-- Results index: rendered for endpoints that come back with a list
+           (e.g. PCGamingWiki title search). Each row is a clickable button
+           that refills the input with the exact page name and refetches so
+           an admin can drill into one specific match without scrolling
+           through a 20-row JSON blob. -->
+      <div id="apix-results-index" class="apix-results-index" hidden></div>
       <pre id="apix-output" class="apix-output" hidden></pre>
 
       <div id="apix-followup-header" class="admin-hint" hidden style="margin-top:14px;color:var(--accent);font-weight:600"></div>
@@ -439,18 +500,27 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
       (e) => !e.adminGated || canManageAdmins,
     );
     endpointSel.innerHTML = list
-      .map((e) => `<option value="${e.key}" data-arg="${e.arg}">${escapeHtml(e.label)}</option>`)
+      .map((e) => `<option value="${e.key}" data-arg="${e.arg}"${e.placeholder ? ` data-placeholder="${escapeHtml(e.placeholder)}"` : ''}>${escapeHtml(e.label)}</option>`)
       .join('');
-    // Placeholder updates with the currently selected endpoint's arg type so
-    // admins see "Steam ID (17 digits)" instead of a stale "App ID or name"
-    // hint. Rebuilt on populate + on select change below.
+    // Placeholder updates with the currently selected endpoint. An endpoint's
+    // own `placeholder` beats the arg-type default beats the store default,
+    // so switching from a numeric-appid endpoint to a table-name endpoint
+    // shows "Cargo table name" instead of a stale "App ID or name" hint.
     const updatePlaceholder = () => {
       const opt = endpointSel.options[endpointSel.selectedIndex];
       const arg = opt?.dataset.arg || 'id';
-      const hint = arg === 'steamid' ? 'Steam ID (17 digits, e.g. 76561197960287930)'
-        : arg === 'vanity' ? 'Vanity URL profile name (e.g. gaben)'
-        : STORES[store].placeholder;
+      const perEndpoint = opt?.dataset.placeholder;
+      const hint = perEndpoint
+        || (arg === 'steamid' ? 'Steam ID (17 digits, e.g. 76561197960287930)'
+          : arg === 'vanity' ? 'Vanity URL profile name (e.g. gaben)'
+          : STORES[store].placeholder);
       inputEl.placeholder = hint;
+      // Clear a stale numeric appid when the user switches to the Cargo table
+      // name endpoint. Without this the input still says "220" from the
+      // previous pcgw_by_appid call and gets rejected as "not a table name".
+      if (opt?.value === 'pcgw_table_fields' && /^\d+$/.test(inputEl.value.trim())) {
+        inputEl.value = '';
+      }
     };
     updatePlaceholder();
     endpointSel.onchange = updatePlaceholder;
@@ -486,9 +556,17 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
     if (btn) btn.disabled = true;
     // #221: keyed endpoints go through the admin-only proxy. Public endpoints
     // stay on steam-explore. isLibraryEndpoint keeps the routing in one place.
-    const payload = isLibraryEndpoint(endpoint)
-      ? await lookupLibrary(endpoint, { steamid: resolved.steamid, vanityurl: resolved.vanityurl })
-      : await exploreStore(endpoint, { id: resolved.id, term: resolved.term });
+    // #377: PCGamingWiki bypasses the edge fn entirely because PGWiki is
+    // CORS-enabled + public. Client-side fetch returns the same envelope
+    // shape so the rest of this function does not need to branch.
+    let payload;
+    if (store === 'pcgamingwiki') {
+      payload = await exploreCargoPCGamingWiki(endpoint, { id: resolved.id, term: resolved.term });
+    } else if (isLibraryEndpoint(endpoint)) {
+      payload = await lookupLibrary(endpoint, { steamid: resolved.steamid, vanityurl: resolved.vanityurl });
+    } else {
+      payload = await exploreStore(endpoint, { id: resolved.id, term: resolved.term });
+    }
     if (btn) btn.disabled = false;
     lastPayload = payload;
     const rawMode = document.getElementById('apix-raw')?.checked;
@@ -519,6 +597,37 @@ export function renderApiExplorer({ canManageAdmins = false } = {}) {
           : `term="${resolved.term}"`;
       setText('apix-req-params', paramsStr);
       setText('apix-resp-status', `HTTP ${payload?.status ?? (payload?.ok ? 200 : 'ERR')}`);
+    }
+
+    // Results index (#377): when pcgw_by_title comes back with a Cargo
+    // rowset, render each row as a clickable button so an admin can drill
+    // into one specific match without scrolling the raw JSON. Click refills
+    // the input with the EXACT page name and refetches, which narrows the
+    // LIKE match to a single row.
+    const resultsEl = document.getElementById('apix-results-index');
+    if (resultsEl) { resultsEl.hidden = true; resultsEl.innerHTML = ''; }
+    if (endpoint === 'pcgw_by_title' && resultsEl && Array.isArray(payload?.data?.cargoquery)) {
+      const rows = payload.data.cargoquery
+        .map((r) => (r && typeof r === 'object' ? r.title : null))
+        .filter((t) => t && typeof t === 'object' && t.page);
+      if (rows.length > 1) {
+        // Show the picker only when it actually narrows -- a single-row
+        // response already IS the drilled-in view.
+        const items = rows.map((row) => {
+          const page = String(row.page);
+          const appId = String(row.appId || '').split(',')[0].trim();
+          const meta = appId ? ` -- Steam appid ${escapeHtml(appId)}` : ' -- no Steam ID';
+          return `<button type="button" class="apix-result-item" data-page="${escapeHtml(page)}">${escapeHtml(page)}<span class="apix-result-meta">${meta}</span></button>`;
+        }).join('');
+        resultsEl.hidden = false;
+        resultsEl.innerHTML = `<div class="apix-results-head">${rows.length} matches -- click to drill in:</div>${items}`;
+        resultsEl.querySelectorAll('.apix-result-item').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            inputEl.value = btn.dataset.page || '';
+            doFetch();
+          });
+        });
+      }
     }
 
     // Hop-by-hop redirect trace (curl -L -v style). Rendered when the caller

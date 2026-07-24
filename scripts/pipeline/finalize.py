@@ -46,6 +46,7 @@ from .common import (
 from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_release_years
 from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_release_years
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
+from .data_manifest import write_data_manifest
 from .data_versions import write_data_versions_json
 from .game_images import build_game_images, enrich_search_index_with_delisted
 from .deck_status import build_deck_status
@@ -53,6 +54,8 @@ from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .steam_type import enrich_search_index_with_steam_type
 from .anti_cheat import enrich_search_index_with_anti_cheat
+from .pcgamingwiki import enrich_search_index_with_pcgamingwiki
+from .pcgamingwiki_catalog import merge_catalog_into_search_index as merge_pcgwiki_catalog
 from .pulse import merge_pulse_into_data_dir
 from .write_depot_files import write_depot_files
 from .state import read_pipeline_state
@@ -122,6 +125,16 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
     for (app_id, year) in index_keys:
         app_years.setdefault(app_id, []).append(year)
 
+    # ~47k apps means one log line per app buries every downstream step
+    # under scroll noise and makes the pipeline look hung on the CI UI.
+    # Emit a per-app line only under DEBUG; otherwise print a heartbeat
+    # every PROGRESS_EVERY apps + a final total. See #memoryref:
+    # feedback_never_obscure -- we still surface work-in-progress, just at
+    # a legible cadence.
+    PROGRESS_EVERY = 5000
+    total = len(app_years)
+    log(f"[app-index] writing {total} index.json files")
+    processed = 0
     for app_id, years in app_years.items():
         sorted_years = sorted(years, key=lambda y: (0, int(y)) if y.isdigit() else (1, y))
         app_dir = data_output_path / app_id_to_dir(app_id)
@@ -152,7 +165,11 @@ def generate_app_indexes(index_keys: set, data_output_path: Path) -> None:
         )
         (app_dir / "index.html").write_text(html)
 
-        log(f"[app-index] {app_id}/index.json -> {sorted_years}")
+        log(f"[app-index] {app_id}/index.json -> {sorted_years}", debug=True)
+        processed += 1
+        if processed % PROGRESS_EVERY == 0:
+            log(f"[app-index] progress: {processed}/{total}")
+    log(f"[app-index] done: wrote {processed} index.json files")
 
 
 def generate_index_html(index_keys: set, output_path: Path) -> None:
@@ -1691,19 +1708,30 @@ def finalize_output(output_dir, skip_probe: bool = False):
     steam_api_key = get_steam_api_key(os.environ)
     probe_cache_max_age = get_protondb_probe_cache_max_age_seconds(os.environ)
 
+    # Phase announcements at INFO level: finalize runs many minutes of
+    # network fetches and full-tree disk walks whose own logging is either
+    # DEBUG-only or one line at completion, which reads as a hang on the CI
+    # UI. One line per phase with cumulative elapsed keeps the log honest
+    # without per-item noise.
+    def phase(name: str) -> None:
+        log(f"[finalize] {name} (T+{time.time() - pipeline_start:.0f}s)")
+
     if skip_probe:
         log("[protondb-probe] Skipping active probe pass; using cached probe results only")
+    phase("ProtonDB probe catalog")
     protondb_probe_catalog = (
         probe_cache_to_catalog(read_protondb_probe_cache(max_age_seconds=probe_cache_max_age))
         if skip_probe
         else update_protondb_probe_cache(output_dir)
     )
 
+    phase("ProtonDB signal catalog")
     try:
         protondb_signal_catalog = load_protondb_signal_catalog()
     except Exception as exc:
         log(f"[protondb-signal] Failed to load ProtonDB signal catalog: {exc}")
 
+    phase("Steam app catalog")
     if steam_api_key:
         try:
             steam_catalog = load_steam_game_catalog(steam_api_key)
@@ -1712,12 +1740,14 @@ def finalize_output(output_dir, skip_probe: bool = False):
     else:
         log("[steam-catalog] STEAM_API_KEY not set; coverage report will use local output only", debug=True)
 
+    phase("GOG catalog (full re-fetch on cold cache; pages the whole catalog)")
     gog_catalog: dict[str, str] | None = None
     try:
         gog_catalog = load_gog_catalog()
     except Exception as exc:
         log(f"[gog-catalog] Failed to load GOG catalog: {exc}")
 
+    phase("Epic catalog (full re-fetch on cold cache; pages the whole catalog)")
     epic_catalog: dict[str, str] | None = None
     try:
         epic_catalog = load_epic_catalog()
@@ -1736,11 +1766,14 @@ def finalize_output(output_dir, skip_probe: bool = False):
     except Exception as exc:
         log(f"[protondb-counts] Failed to fetch counts.json: {exc}")
 
+    phase("latest.json for every app dir (disk walk, quiet)")
     generate_latest_files(data_output_path)
     # merge Pulse Reports (Supabase user_configs) into year.json files alongside
     # ProtonDB data. runs before app-indexes so latest/index files pick up the
     # new pulse records too. silently no-ops if Supabase is unreachable
+    phase("Merge Pulse reports from Supabase")
     merge_pulse_into_data_dir(data_output_path)
+    phase("Bootstrap app metadata")
     bootstrapped_metadata = bootstrap_all_app_metadata(
         data_output_path,
         backfilled_app_ids={app_id for app_id, _ in state["backfilled_keys"]},
@@ -1756,6 +1789,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # (artifact + gh-pages historical apps), not just this run's processed
     # delta. Without this, a scheduled run that touched 1 new app produces
     # a data-index.html with 1 entry. See derive_index_keys_from_disk doc.
+    phase("Derive index keys from disk (full data/ walk)")
     disk_index_keys = derive_index_keys_from_disk(data_output_path)
     full_index_keys = set(state["index_keys"]) | disk_index_keys
     state_app_count = len({k[0] for k in state["index_keys"]})
@@ -1766,13 +1800,16 @@ def finalize_output(output_dir, skip_probe: bool = False):
         f"{len({k[0] for k in full_index_keys}):,} merged"
     )
 
+    phase("App indexes")
     generate_app_indexes(full_index_keys, data_output_path)
+    phase("data-index.html")
     generate_index_html(full_index_keys, output_path)
     # ProtonDB-known set scopes the Steam stub pass: signal (full ProtonDB
     # compatibility report) plus probe (apps we have actively confirmed). Apps
     # outside this set are mostly tools/demos/soundtracks and not worth
     # surfacing as searchable stubs.
     protondb_known_app_ids = set((protondb_signal_catalog or {}).keys()) | set((protondb_probe_catalog or {}).keys())
+    phase("Search index (per-app tier summaries; largest single phase)")
     generate_search_index(
         full_index_keys,
         data_output_path,
@@ -1786,8 +1823,11 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # Fill in releaseYear column on same-name collisions (e.g. Prey 2006 vs
     # Prey 2017). Runs against the freshly written search-index.json so it can
     # detect collisions before the file is consumed by the homepage / app page.
+    phase("Release-year enrichment")
     enrich_search_index_with_release_years(output_path)
+    phase("Non-Steam box art probe")
     generate_nonsteam_images(output_path)
+    phase("Coverage report")
     generate_coverage_report(
         full_index_keys,
         state["backfilled_keys"],
@@ -1803,12 +1843,16 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # Walk the data tree (post pulse merge) and emit stats.json that powers the
     # /stats.html page. Tiny output regardless of dataset size since everything
     # is pre-aggregated. See scripts/pipeline/stats.py
+    phase("stats.json")
     write_stats_json(data_output_path, output_path)
+    phase("recent-reports.json")
     generate_recent_reports(data_output_path, output_path)
+    phase("most_played.json")
     build_most_played(output_path)
     # Valve's per-game Steam Deck verdict, fetched server-side (their endpoint
     # is not CORS-enabled) and published as deck-status.json (task #37). Runs
     # after the search index exists so it can scope to games with reports.
+    phase("Steam Deck verdicts")
     build_deck_status(output_path)
     # #250 / #258: run steam_type BEFORE game_images. game_images can stall
     # against Steam under 403 conditions, and when it hangs the type filter
@@ -1816,32 +1860,59 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # budget, and writes column 11 to disk before returning -- so putting it
     # first guarantees the DLC / Mod / Software filter always has fresh data
     # even when the rest of finalize has a rough day.
+    phase("Steam type enrichment")
     enrich_search_index_with_steam_type(output_path)
+    phase("Game images (Steam CDN probing; slow under 403s)")
     overrides = build_game_images(output_path)
     # Game-images probing now knows which Steam IDs returned success=false from
     # appdetails. Flag them in search-index.json column 7 so the frontend can
     # render a DELISTED chip without re-fetching anything client-side.
+    phase("Delisted enrichment")
     enrich_search_index_with_delisted(output_path)
     # #242: merge AreWeAntiCheatYet status + vendors into columns 12 + 13
     # so the frontend can drive an anti-cheat filter chip + report badges
     # without a separate fetch per game. #354 fixed the original 10/11
     # placement that was overwriting replaced_by + steam_type.
+    phase("Anti-cheat enrichment")
     enrich_search_index_with_anti_cheat(output_path)
+    # #377 slice 1: merge PCGamingWiki OS support + engine into cols 14 + 15
+    # so the frontend can drive a "not Windows-only" filter and show engine
+    # metadata without a per-game fetch. Cached weekly, falls back to disk
+    # cache on API failure.
+    phase("PCGamingWiki enrichment")
+    enrich_search_index_with_pcgamingwiki(output_path)
+    # #377 slice 3: add Windows-native PCGamingWiki-only games (no Steam,
+    # no GOG) as stub entries so users can submit compat reports against
+    # abandonware / classics. Runs after the enricher so the two share the
+    # same Cargo TTL if both are refreshing on the same run.
+    phase("PCGamingWiki catalog stubs")
+    merge_pcgwiki_catalog(output_path)
+    phase("Validate Steam app ids")
     validate_steam_app_ids(output_dir)
     # Issue #134: emit the extended Steam index AFTER the primary index has
     # been finalized (release-year + delisted enrichment runs first), so the
     # primary id set we read back is the final one.
+    phase("Extended Steam index")
     generate_extended_steam_index(output_path, steam_catalog=steam_catalog)
     _backfill_most_played_header_images(output_path, overrides)
     write_proton_versions_json(output_path)
     # #237: emit per-Steam-app depots.json under {data}/{appId}/. Reads the
     # steam_depot_* tables in Supabase and includes both current per-OS
     # rollups and the full parsed PICS depots dict.
+    phase("Depot files")
     write_depot_files(data_output_path)
     # Hash every emitted data file and write data-versions.json so the
     # frontend can cache-bust each data fetch individually. Must run LAST so
     # the hashes reflect every other generator's final output. See #119.
+    phase("data-versions.json (full tree hash)")
     write_data_versions_json(output_path)
+    # Hash every per-game file under data/ into data-manifest.json so the R2
+    # deploy can content-diff against the previous run and upload only real
+    # changes instead of mtime-churned identical files. Same must-run-last
+    # invariant as data-versions above. Consumed by publish-cloudflare.sh
+    # via scripts/pipeline/manifest_delta.py. See #392.
+    phase("data-manifest.json (full tree hash for R2 delta)")
+    write_data_manifest(output_path)
     log_summary(state["parsed_count"], data_output_path, output_path, pipeline_start, state["backfilled_keys"])
     flush_steam_title_cache()
     flush_steam_descriptors_cache()

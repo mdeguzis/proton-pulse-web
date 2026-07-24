@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com data:; connect-src 'self' https://data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com https://cdn.cloudflare.steamstatic.com https://media.steampowered.com https://*.gog.com https://*.gog-statics.com https://cdn.steamgriddb.com https://cdn2.steamgriddb.com https://www.steamgriddb.com https://images.pcgamingwiki.com data:; connect-src 'self' https://data.proton-pulse.com https://staging-data.proton-pulse.com https://ilsgdshkaocrmibwdezk.supabase.co https://pp-edge-status.mdeguzis.workers.dev; font-src 'self'; frame-src 'none'; object-src 'none';">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/shared/base.css?v=daf1bfe9">
 <link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/shared/cards.css?v=02cda53a">
+<link rel="stylesheet" href="css/shared/cards.css?v=0d85b016">
 <link rel="stylesheet" href="css/shared/lookup-inline.css?v=71ca0f75">
 <link rel="stylesheet" href="css/profile/profile.css?v=e9fe4860">
 </head>
@@ -367,8 +367,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
-<script src="js/lib/analytics.js?v=ad8d89f5"></script>
-<script src="js/lib/topbar.js?v=21a7ccea"></script>
+<script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
+<script src="js/lib/analytics.js?v=ee2cbf3e"></script>
+<script src="js/lib/topbar.js?v=1e8af6e6"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 <script type="module" src="js/profile/main.js?v=997804d8"></script>
 </body>

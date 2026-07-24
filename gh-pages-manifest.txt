@@ -65,6 +65,7 @@ css/plugin-link/plugin-link.css
 lookup.html
 js/lookup/main.js
 js/app/lib/anti-cheat.js
+js/app/lib/pcgamingwiki.js
 js/app/lib/saved-lookup.js
 js/shared/lookup-storage.js
 js/shared/profile-lookup-inline.js
@@ -106,6 +107,7 @@ js/admin/api/boxart.js
 js/admin/components/boxart.js
 js/admin/api/steam-explore.js
 js/admin/api/steam-library-lookup.js
+js/admin/api/pcgamingwiki-explore.js
 js/admin/api/gameManager.js
 js/admin/components/api-explorer.js
 js/admin/api/depotTracking.js
@@ -119,6 +121,9 @@ js/admin/components/phrases.js
 js/admin/components/userDetail.js
 js/admin/components/analytics.js
 js/admin/components/cache-status.js
+js/admin/components/logging.js
+js/admin/components/deployments.js
+js/app/lib/search-match.js
 stats.html
 js/stats/main.js
 js/stats/utils.js
@@ -134,6 +139,7 @@ js/lib/app-id.js
 js/lib/gpu-arch-detector.js
 js/lib/supabase-client.js
 js/lib/analytics.js
+js/lib/log-buffer.js
 js/lib/topbar.js
 js/lib/toast.js
 js/lib/data-url.js

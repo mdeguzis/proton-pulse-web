@@ -1,13 +1,14 @@
 // search (components) for the app page. Relocated from app.js/app-search.js.
 
-import { estimateScore } from '../../shared/scoring.js?v=8051e115';
+import { estimateScore } from '../../shared/scoring.js?v=5090f6d2';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=003f23c0';
-import { renderGamePage } from './game-page.js?v=73701d8d';
-import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=f9591262';
+import { renderGamePage } from './game-page.js?v=842f85bd';
+import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=cd6114a7';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=9a39c726';
 import { renderGameCard } from '../lib/card.js?v=93448301';
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { filterAdultEntries, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
+import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its globals
@@ -23,14 +24,10 @@ export let extendedSteamLoadingP  = null;   // in-flight Promise so concurrent s
 export let searchFocusIdx         = -1;
 
 // --- _matchEntries (pure filter, shared between primary and extended) ---
-function _matchEntries(entries, query, limit) {
-  if (!entries || !entries.length) return [];
-  const ql = query.toLowerCase();
-  const isNum = /^\d+$/.test(query);
-  return entries.filter(([id, title]) =>
-    isNum ? String(id).startsWith(query) : (String(title).toLowerCase().includes(ql) || String(id).startsWith(query))
-  ).slice(0, limit);
-}
+// Delegates to the pure module in js/app/lib/search-match.js so the
+// matching rules can be unit-tested without pulling this whole search
+// component + its DOM / Supabase transitive imports.
+const _matchEntries = matchEntries;
 
 // --- searchIndexMatches ---
 export function searchIndexMatches(query, limit) {
