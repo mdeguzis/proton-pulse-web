@@ -43,8 +43,8 @@ from .common import (
     is_adult_app_cached,
     log,
 )
-from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_release_years
-from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_release_years
+from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_meta, load_gog_release_years
+from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_meta, load_epic_release_years
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .data_manifest import write_data_manifest
 from .data_versions import write_data_versions_json
@@ -1134,6 +1134,62 @@ def generate_extended_steam_index(
     )
 
 
+def enrich_nonsteam_app_metadata(data_output_path: Path) -> None:
+    """Write store facts into each non-Steam app's data/{appId}/metadata.json
+    under a `store` key (#400): {genres, developers, publishers, os,
+    store_link}.
+
+    The catalog sweeps already receive these fields in the same payloads
+    they page for titles/covers -- this publishes them where all per-app
+    enrichment lives (same folder as year files, depots.json, and the
+    provenance flags already in metadata.json). The stores CORS-lock their
+    APIs to their own origins, so the browser can never fetch this itself;
+    the pipeline runs server-side where CORS does not apply.
+
+    Only apps that HAVE a data dir get the block -- catalog-only stubs have
+    no reports and no folder, and the game page's stub view has no Metadata
+    button. The tiny per-app writes ride the R2 delta sync: only apps whose
+    store facts actually changed re-upload.
+    """
+    facts: dict[str, dict] = {}
+    try:
+        for pid, entry in load_gog_meta().items():
+            facts[f"gog:{pid}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: GOG meta unavailable: {exc}")
+    try:
+        for namespace, entry in load_epic_meta().items():
+            facts[f"epic:{namespace}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: Epic meta unavailable: {exc}")
+
+    written = 0
+    skipped_no_dir = 0
+    for app_id, entry in facts.items():
+        app_dir = data_output_path / app_id_to_dir(app_id)
+        if not app_dir.is_dir():
+            skipped_no_dir += 1
+            continue
+        meta_path = app_dir / "metadata.json"
+        existing: dict = {}
+        if meta_path.exists():
+            try:
+                raw = json.loads(meta_path.read_text())
+                if isinstance(raw, dict):
+                    existing = raw
+            except (OSError, json.JSONDecodeError):
+                pass
+        if existing.get("store") == entry:
+            continue  # unchanged -- keep the file byte-identical for the delta sync
+        existing["store"] = entry
+        meta_path.write_text(json.dumps(existing, indent=2, sort_keys=True) + "\n")
+        written += 1
+    log(
+        f"[nonsteam-metadata] store facts: {written:,} metadata.json updated, "
+        f"{skipped_no_dir:,} catalog-only ids skipped (no data dir), source=gog+epic catalog caches"
+    )
+
+
 def generate_nonsteam_images(output_path: Path) -> None:
     """Emit nonsteam-images.json: {canonical_id: cover_url} for GOG/Epic games.
 
@@ -1836,6 +1892,8 @@ def finalize_output(output_dir, skip_probe: bool = False):
     enrich_search_index_with_release_years(output_path)
     phase("Non-Steam box art probe")
     generate_nonsteam_images(output_path)
+    phase("Non-Steam store facts into per-app metadata.json")
+    enrich_nonsteam_app_metadata(data_output_path)
     phase("Coverage report")
     generate_coverage_report(
         full_index_keys,

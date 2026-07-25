@@ -1,5 +1,6 @@
 // game-page (components) for the app page. Relocated from app.js.
 
+import { appIdToDir } from '../../lib/app-id.js?v=18a73fb7';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
@@ -259,20 +260,40 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
     return;
   }
 
-  // GOG / Epic: we hold title + release year + cover; deep facts live
-  // behind CORS-locked store APIs. Render what is honest and link out.
+  // GOG / Epic: the pipeline writes the store facts it receives from the
+  // catalog sweeps into this app's data/{appId}/metadata.json under a
+  // `store` key (#400) -- genres, developers, publishers, OS list, store
+  // link. Same folder as the year files and depots.json, fetched the same
+  // way. The browser cannot ask the stores directly (their APIs CORS-lock
+  // to their own origins); the pipeline runs server-side where that does
+  // not apply.
+  let store = null;
+  try {
+    const res = await fetch(await dataUrl(`data/${appIdToDir(appId)}/metadata.json`));
+    const raw = res.ok ? await res.json() : null;
+    if (raw && typeof raw.store === 'object') store = raw.store;
+  } catch { /* metadata.json absent for this app -- render index facts */ }
+
   const bareId = String(appId).replace(/^(gog|epic):/, '');
-  const storeLink = storeType === 'gog'
-    ? `https://www.gogdb.org/product/${encodeURIComponent(bareId)}`
-    : `https://store.epicgames.com/en-US/browse?q=${encodeURIComponent(title)}&sortBy=relevancy&sortDir=DESC`;
-  const storeLinkLabel = storeType === 'gog' ? 'GOG DB product page' : 'Search the Epic store';
+  const OS_LABEL = { windows: 'Windows', linux: 'Linux', osx: 'macOS', mac: 'macOS' };
+  const storeLink = (store?.store_link && /^https:\/\/(www\.gog\.com|store\.epicgames\.com)\//.test(store.store_link))
+    ? store.store_link
+    : (storeType === 'gog'
+      ? `https://www.gogdb.org/product/${encodeURIComponent(bareId)}`
+      : `https://store.epicgames.com/en-US/browse?q=${encodeURIComponent(title)}&sortBy=relevancy&sortDir=DESC`);
+  const storeLinkLabel = store?.store_link ? `Open on ${storeLabel(storeType)}`
+    : (storeType === 'gog' ? 'GOG DB product page' : 'Search the Epic store');
   body.innerHTML = [
     section('Name', title ? `<strong>${esc(title)}</strong>` : ''),
     section('App ID', `<code>${esc(String(appId))}</code>`),
     section('Store', `<span class="gm-plat">${esc(storeLabel(storeType))}</span>`),
+    section('Developer', chips(store?.developers)),
+    section('Publisher', chips(store?.publishers)),
+    section('Genres', chips(store?.genres)),
+    section('Supported systems', chips((store?.os || []).map(o => OS_LABEL[String(o).toLowerCase()] || o))),
     section('Release year', releaseYear ? `<code>${esc(releaseYear)}</code>` : ''),
-    section('More details', `<a href="${esc(storeLink)}" target="_blank" rel="noopener">${esc(storeLinkLabel)} -&gt;</a>
-      <div class="gm-mute" style="margin-top:4px; font-size:0.75rem">${esc(storeLabel(storeType))}'s API is not accessible from the browser (CORS), so deep metadata (genres, requirements, DLC) is not available here yet.</div>`),
+    section('More details', `<a href="${esc(storeLink)}" target="_blank" rel="noopener">${esc(storeLinkLabel)} -&gt;</a>${store ? '' : `
+      <div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Store facts for this game have not been published by the pipeline yet (next nightly run picks them up).</div>`}`),
   ].join('') || '<p class="rh-hint">No catalog data held for this entry.</p>';
 }
 

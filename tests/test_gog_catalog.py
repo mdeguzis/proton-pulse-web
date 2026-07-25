@@ -162,7 +162,7 @@ def test_fetch_all_pages_skips_only_after_retries_exhausted():
         return json.loads(_make_page([{"id": page, "title": f"Game {page}"}], total_pages=3))
     with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
          patch("scripts.pipeline.gog_catalog.time.sleep"):
-        catalog, _covers, _years = gog_module._fetch_all_pages()
+        catalog, _covers, _years, _meta = gog_module._fetch_all_pages()
     assert catalog == {"1": "Game 1", "3": "Game 3"}
 
 
@@ -176,7 +176,7 @@ def test_fetch_all_pages_captures_cover_images():
         }
     with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
          patch("scripts.pipeline.gog_catalog.time.sleep"):
-        catalog, covers, _years = gog_module._fetch_all_pages()
+        catalog, covers, _years, _meta = gog_module._fetch_all_pages()
     assert catalog == {"5": "Cover Game"}
     assert covers == {"5": "https://images.gog-statics.com/abc.png"}
 
@@ -194,3 +194,57 @@ def test_load_gog_covers_reads_from_cache(tmp_path):
     assert covers == {"5": "https://images.gog-statics.com/abc.png"}
     _reset()
     gog_module._gog_covers_cache = None
+
+
+# ---- meta sidecar (#400) ----------------------------------------------------
+
+def test_fetch_all_pages_captures_meta_sidecar():
+    def fake_fetch_page(page):
+        return {
+            "products": [{
+                "id": 7, "title": "Meta Game",
+                "genres": [{"name": "Strategy", "slug": "strategy"}],
+                "developers": ["DevCo"], "publishers": ["PubCo"],
+                "operatingSystems": ["windows", "linux"],
+                "storeLink": "https://www.gog.com/en/game/meta_game",
+            }],
+            "pages": 1,
+            "productCount": 1,
+        }
+    with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
+         patch("scripts.pipeline.gog_catalog.time.sleep"):
+        _catalog, _covers, _years, meta = gog_module._fetch_all_pages()
+    assert meta["7"] == {
+        "genres": ["Strategy"],
+        "developers": ["DevCo"],
+        "publishers": ["PubCo"],
+        "os": ["windows", "linux"],
+        "store_link": "https://www.gog.com/en/game/meta_game",
+    }
+
+
+def test_meta_sidecar_rejects_offsite_store_links():
+    def fake_fetch_page(page):
+        return {
+            "products": [{"id": 8, "title": "Evil", "storeLink": "https://evil.example/phish"}],
+            "pages": 1, "productCount": 1,
+        }
+    with patch("scripts.pipeline.gog_catalog._fetch_page", side_effect=fake_fetch_page), \
+         patch("scripts.pipeline.gog_catalog.time.sleep"):
+        _catalog, _covers, _years, meta = gog_module._fetch_all_pages()
+    assert "store_link" not in meta.get("8", {})
+
+
+def test_load_gog_meta_reads_from_cache(tmp_path):
+    import json, time as _time
+    cache_path = tmp_path / "cache.json"
+    cache_path.write_text(json.dumps({
+        "_ts": int(_time.time()),
+        "catalog": {"7": "Meta Game"},
+        "covers": {}, "years": {},
+        "meta": {"7": {"genres": ["Strategy"]}},
+    }))
+    gog_module.flush_gog_catalog_cache()
+    meta = gog_module.load_gog_meta(cache_path=cache_path)
+    assert meta == {"7": {"genres": ["Strategy"]}}
+    gog_module.flush_gog_catalog_cache()

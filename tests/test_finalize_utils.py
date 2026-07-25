@@ -584,3 +584,60 @@ def test_finalize_score_to_tier_platinum():
 
 def test_finalize_score_to_tier_borked():
     assert _score_to_tier(0.0) == "borked"
+
+
+# ── enrich_nonsteam_app_metadata (#400) ──────────────────────────────────────
+
+from scripts.pipeline.finalize import enrich_nonsteam_app_metadata
+
+
+def test_nonsteam_store_facts_written_into_app_metadata(tmp_path):
+    data_dir = tmp_path / "data"
+    (data_dir / "gog_7").mkdir(parents=True)
+    (data_dir / "gog_7" / "2024.json").write_text("[]")
+    # pre-existing provenance flags must survive the store-facts write
+    (data_dir / "gog_7" / "metadata.json").write_text(json.dumps({"official_dump": True, "protondb_live": False}))
+    facts = {"7": {"genres": ["Strategy"], "developers": ["DevCo"], "os": ["windows", "linux"]}}
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value=facts), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={}):
+        enrich_nonsteam_app_metadata(data_dir)
+    written = json.loads((data_dir / "gog_7" / "metadata.json").read_text())
+    assert written["store"] == facts["7"]
+    assert written["official_dump"] is True  # provenance preserved
+
+
+def test_nonsteam_store_facts_skip_catalog_only_ids(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value={"9": {"genres": ["X"]}}), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={}):
+        enrich_nonsteam_app_metadata(data_dir)
+    assert not (data_dir / "gog_9").exists()  # no dir created for stubs
+
+
+def test_nonsteam_store_facts_unchanged_file_not_rewritten(tmp_path):
+    data_dir = tmp_path / "data"
+    (data_dir / "gog_7").mkdir(parents=True)
+    facts = {"7": {"genres": ["Strategy"]}}
+    meta_path = data_dir / "gog_7" / "metadata.json"
+    meta_path.write_text(json.dumps({"store": facts["7"]}, indent=2, sort_keys=True) + "\n")
+    before = meta_path.stat().st_mtime_ns
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value=facts), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={}):
+        enrich_nonsteam_app_metadata(data_dir)
+    # byte-identity matters for the R2 delta sync -- unchanged = untouched
+    assert meta_path.stat().st_mtime_ns == before
+
+
+def test_update_app_metadata_preserves_store_block(tmp_path):
+    from scripts.pipeline.metadata import update_app_metadata
+    data_dir = tmp_path / "data"
+    (data_dir / "gog_7").mkdir(parents=True)
+    (data_dir / "gog_7" / "metadata.json").write_text(json.dumps({
+        "official_dump": False, "protondb_live": False,
+        "store": {"genres": ["Strategy"]},
+    }))
+    update_app_metadata(data_dir, "gog:7", protondb_live=True)
+    raw = json.loads((data_dir / "gog_7" / "metadata.json").read_text())
+    assert raw["protondb_live"] is True
+    assert raw["store"] == {"genres": ["Strategy"]}  # not dropped by the flag update

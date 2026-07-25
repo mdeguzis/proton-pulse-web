@@ -41,15 +41,25 @@ describe('metadata modal store routing (#400)', () => {
     }
   });
 
-  test('gog links to GOG DB by bare product id; epic falls back to store search', () => {
+  test('gog/epic read the pipeline-published store block from per-app metadata.json', () => {
+    const fn = SRC.slice(SRC.indexOf('async function _renderNonSteamMetadata'));
+    expect(fn).toContain('data/${appIdToDir(appId)}/metadata.json');
+    expect(fn).toMatch(/raw\.store === 'object'/);
+    // renders the pipeline facts
+    for (const bit of ['store?.developers', 'store?.publishers', 'store?.genres', 'store?.os']) {
+      expect(fn).toContain(bit);
+    }
+  });
+
+  test('store_link from the pipeline is origin-checked before use', () => {
+    const fn = SRC.slice(SRC.indexOf('async function _renderNonSteamMetadata'));
+    expect(fn).toMatch(/www\\\.gog\\\.com\|store\\\.epicgames\\\.com/);
+  });
+
+  test('fallback links when no store block yet: GOG DB by bare id, Epic store search', () => {
     const fn = SRC.slice(SRC.indexOf('async function _renderNonSteamMetadata'));
     expect(fn).toContain('https://www.gogdb.org/product/');
     expect(fn).toMatch(/replace\(\/\^\(gog\|epic\):\/, ''\)/);
     expect(fn).toContain('store.epicgames.com');
-  });
-
-  test('gog/epic honestly state why deep metadata is unavailable (CORS)', () => {
-    const fn = SRC.slice(SRC.indexOf('async function _renderNonSteamMetadata'));
-    expect(fn).toContain('CORS');
   });
 });

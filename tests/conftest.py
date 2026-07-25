@@ -29,6 +29,8 @@ def _no_network_in_finalize():
         patch("scripts.pipeline.finalize.load_epic_covers", return_value={}),
         patch("scripts.pipeline.finalize.load_gog_release_years", return_value={}),
         patch("scripts.pipeline.finalize.load_epic_release_years", return_value={}),
+        patch("scripts.pipeline.finalize.load_gog_meta", return_value={}),
+        patch("scripts.pipeline.finalize.load_epic_meta", return_value={}),
         patch("scripts.pipeline.finalize.enrich_search_index_with_pcgamingwiki", return_value=None),
         patch("scripts.pipeline.finalize.merge_pcgwiki_catalog", return_value=None),
         patch("scripts.pipeline.finalize.enrich_search_index_with_anti_cheat", return_value=None),

@@ -214,6 +214,68 @@ def test_fetch_page_captures_covers():
     epic_module._epic_covers_cache = None
     with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
          patch("scripts.pipeline.epic_catalog.time.sleep"):
-        catalog, covers, _years = epic_module._fetch_all_pages()
+        catalog, covers, _years, _meta = epic_module._fetch_all_pages()
     assert catalog == {"ns1": "Game"}
     assert covers == {"ns1": "https://img/g.jpg"}
+
+
+# ---- meta sidecar (#400) ----------------------------------------------------
+
+def test_fetch_all_pages_captures_meta_sidecar():
+    def fake_urlopen(req, timeout=None):
+        class FakeResp:
+            def read(self):
+                return json.dumps({
+                    "data": {"Catalog": {"searchStore": {
+                        "elements": [{
+                            "namespace": "ns2", "title": "Meta Epic",
+                            "developerDisplayName": "DevCo",
+                            "publisherDisplayName": "PubCo",
+                            "productSlug": "meta-epic",
+                            "tags": [
+                                {"name": "Action", "groupName": "genre"},
+                                {"name": "Controller", "groupName": "feature"},
+                            ],
+                            "keyImages": [],
+                        }],
+                        "paging": {"count": 1, "total": 1},
+                    }}}
+                }).encode("utf-8")
+            def __enter__(self): return self
+            def __exit__(self, *a): pass
+        return FakeResp()
+    epic_module.flush_epic_catalog_cache()
+    with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
+         patch("scripts.pipeline.epic_catalog.time.sleep"):
+        _catalog, _covers, _years, meta = epic_module._fetch_all_pages()
+    assert meta["ns2"] == {
+        "developers": ["DevCo"],
+        "publishers": ["PubCo"],
+        "genres": ["Action"],
+        "store_link": "https://store.epicgames.com/en-US/p/meta-epic",
+    }
+
+
+def test_meta_sidecar_falls_back_to_catalogNs_mapping_slug():
+    def fake_urlopen(req, timeout=None):
+        class FakeResp:
+            def read(self):
+                return json.dumps({
+                    "data": {"Catalog": {"searchStore": {
+                        "elements": [{
+                            "namespace": "ns3", "title": "Slugless",
+                            "productSlug": None,
+                            "catalogNs": {"mappings": [{"pageSlug": "slugless-home"}]},
+                            "keyImages": [],
+                        }],
+                        "paging": {"count": 1, "total": 1},
+                    }}}
+                }).encode("utf-8")
+            def __enter__(self): return self
+            def __exit__(self, *a): pass
+        return FakeResp()
+    epic_module.flush_epic_catalog_cache()
+    with patch("scripts.pipeline.epic_catalog.request.urlopen", side_effect=fake_urlopen), \
+         patch("scripts.pipeline.epic_catalog.time.sleep"):
+        _catalog, _covers, _years, meta = epic_module._fetch_all_pages()
+    assert meta["ns3"]["store_link"] == "https://store.epicgames.com/en-US/p/slugless-home"

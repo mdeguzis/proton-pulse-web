@@ -48,17 +48,33 @@ def update_app_metadata(data_output_path: Path, app_id: str, **flags: bool) -> d
     app_dir = data_output_path / app_id_to_dir(str(app_id))
     app_dir.mkdir(parents=True, exist_ok=True)
 
+    # Round-trip the raw file, not just the provenance flags: metadata.json
+    # also carries the non-Steam `store` block (#400), and rebuilding from
+    # read_app_metadata()'s two-flag view silently dropped everything else.
+    metadata_path = app_metadata_path(data_output_path, app_id)
+    existing: dict = {}
+    if metadata_path.exists():
+        try:
+            raw = json.loads(metadata_path.read_text())
+            if isinstance(raw, dict):
+                existing = raw
+        except (OSError, json.JSONDecodeError):
+            pass
+
     metadata = {
         "official_dump": False,
         "protondb_live": False,
-        **read_app_metadata(data_output_path, app_id),
+        **existing,
     }
     for key, value in flags.items():
-        if key in metadata:
+        if key in ("official_dump", "protondb_live"):
             metadata[key] = bool(value)
 
-    app_metadata_path(data_output_path, app_id).write_text(json.dumps(metadata, indent=2) + "\n")
-    return metadata
+    metadata_path.write_text(json.dumps(metadata, indent=2) + "\n")
+    return {
+        "official_dump": bool(metadata.get("official_dump")),
+        "protondb_live": bool(metadata.get("protondb_live")),
+    }
 
 
 def _iter_report_files(app_dir: Path):

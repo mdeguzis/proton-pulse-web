@@ -43,6 +43,11 @@ _gog_covers_cache: dict[str, str] | None = None
 # (#112). GOG's catalog payload carries releaseDate per product, so we pull
 # it in the same fetch pass instead of a separate per-product API call.
 _gog_years_cache: dict[str, int] | None = None
+# Parallel map {str(product_id): {genres, developers, publishers, os,
+# store_link}} (#400). The catalog payload already carries all of it per
+# product; capturing it here costs zero extra requests and feeds the
+# nonsteam-metadata.json the game-page Metadata modal renders.
+_gog_meta_cache: dict[str, dict] | None = None
 
 
 def load_gog_catalog(
@@ -57,7 +62,7 @@ def load_gog_catalog(
     URLs and release years are loaded into parallel caches; use
     load_gog_covers() and load_gog_release_years() to read them.
     """
-    global _gog_catalog_cache, _gog_covers_cache, _gog_years_cache
+    global _gog_catalog_cache, _gog_covers_cache, _gog_years_cache, _gog_meta_cache
     if _gog_catalog_cache is not None and not force_refresh:
         return _gog_catalog_cache
 
@@ -72,6 +77,8 @@ def load_gog_catalog(
                 # load fine -- the years map stays empty until the cache
                 # expires and the next fetch populates it.
                 _gog_years_cache = cached.get("years", {}) or {}
+                # `meta` was added in #400; same forward-compat rule as years.
+                _gog_meta_cache = cached.get("meta", {}) or {}
                 log(
                     f"[gog-catalog] loaded {len(_gog_catalog_cache):,} entries"
                     f" ({len(_gog_covers_cache):,} covers, {len(_gog_years_cache):,} years) from cache (age {age / 3600:.1f}h)"
@@ -82,18 +89,19 @@ def load_gog_catalog(
 
     log("[gog-catalog] fetching full GOG catalog from catalog.gog.com ...")
     try:
-        catalog, covers, years = _fetch_all_pages()
+        catalog, covers, years, meta = _fetch_all_pages()
     except Exception as exc:
         log(f"[gog-catalog] WARN: catalog fetch failed: {exc}; search index will lack GOG stubs")
         _gog_catalog_cache = {}
         _gog_covers_cache = {}
         _gog_years_cache = {}
+        _gog_meta_cache = {}
         return _gog_catalog_cache
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
         json.dumps(
-            {"_ts": int(time.time()), "catalog": catalog, "covers": covers, "years": years},
+            {"_ts": int(time.time()), "catalog": catalog, "covers": covers, "years": years, "meta": meta},
             ensure_ascii=False,
         ),
         encoding="utf-8",
@@ -102,6 +110,7 @@ def load_gog_catalog(
     _gog_catalog_cache = catalog
     _gog_covers_cache = covers
     _gog_years_cache = years
+    _gog_meta_cache = meta
     return catalog
 
 
@@ -136,6 +145,22 @@ def load_gog_release_years(
     return _gog_years_cache or {}
 
 
+def load_gog_meta(
+    cache_path: Path = DEFAULT_GOG_CATALOG_CACHE_PATH,
+    max_age_seconds: int = GOG_CATALOG_CACHE_MAX_AGE_SECONDS,
+) -> dict[str, dict]:
+    """Return {str(product_id): {genres, developers, publishers, os,
+    store_link}} for GOG games (#400).
+
+    Same forward-compat contract as load_gog_release_years: empty dict when
+    the cached catalog predates #400; the next fetch after the TTL fills it.
+    """
+    global _gog_meta_cache
+    if _gog_meta_cache is None:
+        load_gog_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
+    return _gog_meta_cache or {}
+
+
 def _extract_year(release_date: str | None) -> int | None:
     """Pull a 19xx/20xx year out of GOG's releaseDate string. Formats vary
     (ISO, human-readable, `TBA`); a regex on the whole string catches
@@ -148,10 +173,11 @@ def _extract_year(release_date: str | None) -> int | None:
     return int(m.group(1)) if m else None
 
 
-def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
+def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int], dict[str, dict]]:
     catalog: dict[str, str] = {}
     covers: dict[str, str] = {}
     years: dict[str, int] = {}
+    meta: dict[str, dict] = {}
     page = 1
     total_pages = 1
     skipped_pages = 0
@@ -184,6 +210,26 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
                 year = _extract_year(product.get("releaseDate"))
                 if year is not None:
                     years[str(pid)] = year
+                # #400: store-facts sidecar for the Metadata modal. All of
+                # this rides the SAME payload -- zero extra requests.
+                entry: dict = {}
+                genres = [g.get("name") for g in (product.get("genres") or []) if isinstance(g, dict) and g.get("name")]
+                if genres:
+                    entry["genres"] = genres
+                devs = [d for d in (product.get("developers") or []) if d]
+                if devs:
+                    entry["developers"] = devs
+                pubs = [pub for pub in (product.get("publishers") or []) if pub]
+                if pubs:
+                    entry["publishers"] = pubs
+                oses = [o for o in (product.get("operatingSystems") or []) if o]
+                if oses:
+                    entry["os"] = oses
+                store_link = (product.get("storeLink") or "").strip()
+                if store_link.startswith("https://www.gog.com/"):
+                    entry["store_link"] = store_link
+                if entry:
+                    meta[str(pid)] = entry
 
         if page % 100 == 0:
             log(f"[gog-catalog] page {page}/{total_pages} ({len(catalog):,} games so far)")
@@ -191,7 +237,7 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
         time.sleep(_INTER_PAGE_DELAY_SECONDS)
 
     log(f"[gog-catalog] complete: {len(catalog):,} GOG games ({skipped_pages} page(s) skipped after retries)")
-    return catalog, covers, years
+    return catalog, covers, years, meta
 
 
 def _fetch_page(page: int) -> dict:
@@ -227,6 +273,8 @@ def _fetch_page(page: int) -> dict:
 
 
 def flush_gog_catalog_cache() -> None:
-    global _gog_catalog_cache, _gog_covers_cache
+    global _gog_catalog_cache, _gog_covers_cache, _gog_years_cache, _gog_meta_cache
     _gog_catalog_cache = None
     _gog_covers_cache = None
+    _gog_years_cache = None
+    _gog_meta_cache = None
