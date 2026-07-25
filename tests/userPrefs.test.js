@@ -134,3 +134,104 @@ describe('owner badge size (store tag icon size)', () => {
     expect(readOwnerBadgeSizeLocal()).toBe(OWNER_BADGE_SIZE_DEFAULT);
   });
 });
+
+
+// ---------- Generic boolean pref sync (setPrefBool / pullPrefBool) --------
+// Coverage for the #266-groundwork generic path the named helpers wrap.
+const {
+  readPrefBoolLocal, writePrefBoolLocal, setPrefBool, pullPrefBool,
+  readShowOwnerBadgesLocal, pullShowOwnerBadges,
+} = require('../js/lib/user-prefs.js');
+
+describe('readPrefBoolLocal / writePrefBoolLocal', () => {
+  test('round-trips on/off under pp:<key> and honors the default', () => {
+    expect(readPrefBoolLocal('some-flag', true)).toBe(true);   // absent -> dflt
+    writePrefBoolLocal('some-flag', true);
+    expect(readPrefBoolLocal('some-flag', false)).toBe(true);
+    writePrefBoolLocal('some-flag', false);
+    expect(readPrefBoolLocal('some-flag', true)).toBe(false);
+    expect(store['pp:some-flag']).toBe('off');
+  });
+});
+
+describe('setPrefBool', () => {
+  test('signed out: writes local only, reports synced=false', async () => {
+    const r = await setPrefBool('show-owner-badges', true);
+    expect(r).toEqual({ synced: false });
+    expect(store['pp:show-owner-badges']).toBe('on');
+  });
+
+  test('signed in: merges into the prefs bag and upserts', async () => {
+    signedInWindow();
+    const calls = [];
+    global.fetch = jest.fn(async (url, opts = {}) => {
+      calls.push({ url: String(url), method: opts.method || 'GET', body: opts.body });
+      if (!opts.method) return { ok: true, json: async () => [{ prefs: { existing: 'on' } }] };
+      return { ok: true, json: async () => [] };
+    });
+    const r = await setPrefBool('show-owner-badges', true);
+    expect(r).toEqual({ synced: true });
+    const post = calls.find(c => c.method === 'POST');
+    const body = JSON.parse(post.body);
+    expect(body.prefs).toMatchObject({ existing: 'on', 'show-owner-badges': 'on' });
+    expect(post.url).toContain('on_conflict=user_id');
+  });
+
+  test('signed in: upsert failure reports synced=false but local sticks', async () => {
+    signedInWindow();
+    global.fetch = jest.fn(async (url, opts = {}) => {
+      if (!opts.method) return { ok: true, json: async () => [] };
+      return { ok: false, json: async () => [] };
+    });
+    const r = await setPrefBool('show-owner-badges', true);
+    expect(r).toEqual({ synced: false });
+    expect(store['pp:show-owner-badges']).toBe('on');
+  });
+
+  test('network throw degrades to synced=false', async () => {
+    signedInWindow();
+    global.fetch = jest.fn(async () => { throw new Error('offline'); });
+    await expect(setPrefBool('x', true)).resolves.toEqual({ synced: false });
+  });
+});
+
+describe('pullPrefBool', () => {
+  test('signed out: local value wins, no change', async () => {
+    writePrefBoolLocal('show-owner-badges', true);
+    await expect(pullPrefBool('show-owner-badges', false)).resolves.toEqual({ changed: false, value: true });
+  });
+
+  test('server value differs from local: local updated, changed=true', async () => {
+    signedInWindow();
+    writePrefBoolLocal('show-owner-badges', false);
+    global.fetch = jest.fn(async () => ({ ok: true, json: async () => [{ prefs: { 'show-owner-badges': 'on' } }] }));
+    await expect(pullPrefBool('show-owner-badges', false)).resolves.toEqual({ changed: true, value: true });
+    expect(store['pp:show-owner-badges']).toBe('on');
+  });
+
+  test('server has no stored value: local value stands', async () => {
+    signedInWindow();
+    writePrefBoolLocal('show-owner-badges', true);
+    global.fetch = jest.fn(async () => ({ ok: true, json: async () => [{ prefs: {} }] }));
+    await expect(pullPrefBool('show-owner-badges', false)).resolves.toEqual({ changed: false, value: true });
+  });
+
+  test('fetch failure keeps local value', async () => {
+    signedInWindow();
+    writePrefBoolLocal('show-owner-badges', true);
+    global.fetch = jest.fn(async () => ({ ok: false, json: async () => [] }));
+    await expect(pullPrefBool('show-owner-badges', false)).resolves.toEqual({ changed: false, value: true });
+  });
+});
+
+describe('named owner-badge wrappers delegate to the generic path', () => {
+  test('readShowOwnerBadgesLocal reads pp:show-owner-badges', () => {
+    store['pp:show-owner-badges'] = 'on';
+    expect(readShowOwnerBadgesLocal()).toBe(true);
+  });
+
+  test('pullShowOwnerBadges signed out returns local', async () => {
+    store['pp:show-owner-badges'] = 'off';
+    await expect(pullShowOwnerBadges()).resolves.toEqual({ changed: false, value: false });
+  });
+});
