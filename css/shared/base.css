@@ -455,3 +455,15 @@ code {
   border-radius: 6px;
 }
 .boxart-missing-icon { opacity: 0.55; }
+
+/* Portrait cover art (PCGW product shots, SGDB 600x900 grids) swapped in by
+   steam-img.js. The hero/card slots are sized for Steam's widescreen
+   460x215 shape; unconstrained portrait art stretches the layout to 1.5x
+   the viewport. Cap the height and letterbox on the muted panel color so
+   the slot keeps its footprint. object-fit:contain (not cover) because a
+   center-crop of a portrait cover in a widescreen slot cuts the title off. */
+img.boxart-portrait {
+  max-height: 215px;
+  object-fit: contain;
+  background: var(--s2, #16202c);
+}

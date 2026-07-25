@@ -1,11 +1,16 @@
 name: Cert Monitor
 
-# Reads the TLS certificate actually served on the live site
-# (www.proton-pulse.com) every 6 hours and writes cert-status.json +
-# cert-history.json to gh-pages (#359). This is the cert a browser validates --
-# for us the Cloudflare edge cert -- so it is the honest answer to "is the
-# site's certificate valid, and when does it expire?". It complements the
-# reactive site probe by warning ahead of an expiry rather than after an outage.
+# Reads the TLS certificate served on the live site (www.proton-pulse.com) every
+# 6 hours and writes cert-status.json + cert-history.json to gh-pages (#359).
+# Post-#362 the site is on Cloudflare Pages so this is the single CF-managed
+# cert -- there is no more separate origin cert to worry about. The burndown
+# graph still lives on the status page and is fed from these files.
+#
+# Why gh-pages is still the destination: the main pipeline (update-data.yml)
+# handles publishing to Cloudflare Pages, and its publish-cloudflare.sh copies
+# cert-status.json + cert-history.json from gh-pages into the CF Pages deploy.
+# Keeping this workflow's writes on gh-pages means the append-only history
+# survives every pipeline run without a separate R2 upload path here.
 #
 # No secret: the cert is read with a plain public openssl handshake, and the
 # commit uses the built-in GITHUB_TOKEN. There is no PAT to store or rotate.
@@ -14,15 +19,12 @@ on:
   schedule:
     # Every 6 hours. The cert only changes on renewal (~every 60-90 days), so a
     # tight cadence buys nothing; 4x/day keeps days-remaining fresh and the
-    # burndown graph smooth without churning gh-pages.
+    # burndown graph smooth.
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
-  # Read the repo's own GitHub Pages cert state (state + description, e.g.
-  # bad_authz) so the status page can explain WHY the origin cert is stale.
-  pages: read
 
 concurrency:
   group: cert-monitor
@@ -45,9 +47,7 @@ jobs:
           path: gh-pages
           persist-credentials: true
 
-      - name: Read certs (edge + origin) and GitHub Pages state
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Read the served cert + append history
         run: |
           bash repo/scripts/cert-monitor.sh gh-pages/cert-status.json gh-pages/cert-history.json
           cat gh-pages/cert-status.json

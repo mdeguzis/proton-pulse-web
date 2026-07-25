@@ -2,11 +2,11 @@
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { loadSearchIndex, searchIndex } from './search.js?v=598aaad1';
-import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=f9591262';
+import { loadSearchIndex, searchIndex } from './search.js?v=7ec2be23';
+import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=cd6114a7';
 import { daysAgo, latestPerApp } from '../utils.js?v=9a39c726';
-import { renderGameCard } from '../lib/card.js?v=93448301';
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { renderGameCard } from '../lib/card.js?v=becad69c';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=ad4b114d';
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
@@ -469,6 +469,7 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="steam">Steam</button>
               <button class="pg-filter" type="button" data-value="gog">GOG</button>
               <button class="pg-filter" type="button" data-value="epic">Epic</button>
+              <button class="pg-filter" type="button" data-value="pgwiki" title="Windows games catalogued only on PCGamingWiki (no Steam/GOG/Epic store page)">PCGW</button>
             </div>
             <div class="pg-filter-group" id="home-tier-checks">
               <span class="pg-filter-group-label">Tier</span>
@@ -624,6 +625,7 @@ export async function renderHomePage() {
       if (!sel || sel.size === 0 || sel.has('all') || sel.has('steam')) return 'Popular on Steam';
       if (sel.size === 1 && sel.has('gog')) return 'Popular GOG Games';
       if (sel.size === 1 && sel.has('epic')) return 'Popular Epic Games';
+      if (sel.size === 1 && sel.has('pgwiki')) return 'PCGamingWiki Catalog';
       return 'Popular Games';
     }
 

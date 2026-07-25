@@ -139,6 +139,17 @@
       <text x="12" y="14" text-anchor="middle" font-family="Inter, -apple-system, system-ui, sans-serif" font-weight="900" font-size="6.5" fill="#fff" letter-spacing="0.3">EPIC</text>
       <path d="M9 16 L15 16 L12 19 Z" fill="#fff"/>
     </symbol>
+    <symbol id="icon-store-pgwiki" viewBox="0 0 24 24">
+      <!-- PCGamingWiki entries: a simple PC tower on a periwinkle disc.
+           Homage to PCGW's computer-tower logo (their banner periwinkle
+           #6073b4, pill uses the darker #4d5f9c step); drawn as clean
+           geometry so it stays legible at 13-18px. -->
+      <circle cx="12" cy="12" r="12" fill="#4d5f9c"/>
+      <rect x="8" y="5" width="8" height="14" rx="1" fill="#fff"/>
+      <rect x="9.4" y="7" width="5.2" height="1.4" rx="0.7" fill="#4d5f9c"/>
+      <rect x="9.4" y="9.4" width="5.2" height="1.4" rx="0.7" fill="#4d5f9c"/>
+      <circle cx="12" cy="14.8" r="1.3" fill="#4d5f9c"/>
+    </symbol>
     <!-- Support links: heart for Patreon, coffee cup for Ko-Fi. Stroke style
          matches the rest of the nav sprite so they theme with currentColor. -->
     <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -226,10 +237,6 @@
           <a href="app.html?filter=wishlist" data-page="my-wishlist" id="nav-my-wishlist">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg>
             <span>My Wishlist</span>
-          </a>
-          <a href="lookup.html" data-page="lookup" id="nav-lookup">
-            <svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg>
-            <span>Look up a Profile</span>
           </a>
           <a href="data-index.html" data-page="data-index">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg>
@@ -330,7 +337,6 @@
       <a href="app.html" data-page="app"><svg class="nav-icon" aria-hidden="true"><use href="#icon-search"/></svg> Reports</a>
       <a href="app.html?filter=mine" data-page="my-library" id="mobile-my-library"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> My Library</a>
       <a href="app.html?filter=wishlist" data-page="my-wishlist" id="mobile-my-wishlist"><svg class="nav-icon" aria-hidden="true"><use href="#icon-list"/></svg> My Wishlist</a>
-      <a href="lookup.html" data-page="lookup" id="mobile-lookup"><svg class="nav-icon" aria-hidden="true"><use href="#icon-user"/></svg> Look up a Profile</a>
       <a href="data-index.html" data-page="data-index"><svg class="nav-icon" aria-hidden="true"><use href="#icon-database"/></svg> Data</a>
       <a href="coverage.html" data-page="coverage"><svg class="nav-icon" aria-hidden="true"><use href="#icon-chart"/></svg> Coverage</a>
       <a href="stats.html" data-page="stats"><svg class="nav-icon" aria-hidden="true"><use href="#icon-stats"/></svg> Stats</a>
@@ -607,6 +613,21 @@
   function _handleOpenState(panel) {
     const isOpen = panel.classList.contains('open');
     const isMobile = window.matchMedia(MOBILE_MODAL_QUERY).matches;
+    // Diagnostic breadcrumb so the admin Logging tab shows the decision
+    // point on every class change. If a mobile user's filter modal
+    // never portals -> isMobile is false, which means matchMedia does
+    // not match `${MOBILE_MODAL_QUERY}` -- typically because the
+    // viewport reports > 720px (Chrome "request desktop site" toggle,
+    // unusual pixel-density scaling, etc.).
+    logFrontendEvent('DEBUG', '_handleOpenState decided', {
+      panelId: panel.id || null,
+      isOpen: isOpen,
+      isMobile: isMobile,
+      viewportWidth: window.innerWidth,
+      mqQuery: MOBILE_MODAL_QUERY,
+      action: (isOpen && isMobile) ? 'portalToBody' : 'restoreOrNoop',
+      source: '_handleOpenState',
+    });
     if (isOpen && isMobile) _portalPanelToBody(panel);
     else _restorePanel(panel);
   }
@@ -680,20 +701,35 @@
     });
   }
   // Debug-log helper: filter-modal close is a good candidate to spot the
-  // "close does nothing" class of bug across pages. Reuses the topbar's
-  // existing logging pattern (no-op when window.ppTrack isn't available).
+  // "close does nothing" class of bug across pages. Fires the server-side
+  // hook (ppTrack -> site_events) AND the in-memory ring buffer (#366) so
+  // admins can see logs live in the Logging tab without waiting for a
+  // Supabase round-trip. window.ppLogBuffer is set by the ES module in
+  // js/lib/log-buffer.js (loaded as a plain <script> at page start on
+  // admin.html; other pages get the ring lazily via ppTrack call below).
   function logFrontendEvent(level, msg, ctx) {
     try { if (typeof window.ppTrack === 'function') window.ppTrack('log', { level: level, msg: msg, ctx: ctx || {} }); } catch (_) {}
+    try { if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') window.ppLogBuffer.pushLog(level, msg, ctx || {}); } catch (_) {}
     return Promise.resolve();
   }
 
   // ---- Site status dot on the topbar (see #254) ------------------------
   //
-  // Fetches edge-status.json (published every 15 min by
-  // .github/workflows/edge-fn-health.yml) and colors the small dot inside
+  // Fetches the health payload from the pp-edge-status Cloudflare Worker
+  // (same source js/status/main.js uses) and colors the small dot inside
   // the Status nav link so users see at a glance whether anything is
   // degraded before they click through. Cached in sessionStorage for a
   // minute so hopping across pages does not re-fetch every time.
+  //
+  // Post-CF migration the static edge-status.json is no longer part of the
+  // CF Pages shell, so the static fallback would 404 -> SPA HTML -> the
+  // dot went "unknown" on every page load. Route straight at the worker
+  // now; if the worker is unreachable, dot stays "unknown" which is the
+  // same graceful degradation as before.
+  //
+  // Worker URL is kept in sync with js/status/main.js -> EDGE_STATUS_ENDPOINT.
+  var EDGE_STATUS_ENDPOINT = 'https://pp-edge-status.mdeguzis.workers.dev';
+
   function wireStatusDot() {
     var dots = document.querySelectorAll('.topbar-status-dot');
     if (!dots.length) return;
@@ -711,7 +747,7 @@
         }
       } catch (e) { /* ignore */ }
     }
-    fetch('edge-status.json', { cache: 'no-store' })
+    fetch(EDGE_STATUS_ENDPOINT, { cache: 'no-store' })
       .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
       .then(function (payload) {
         var overall = payload && payload.overall ? payload.overall : 'unknown';
@@ -719,7 +755,7 @@
         try { sessionStorage.setItem('pp-edge-status', JSON.stringify({ overall: overall, ts: Date.now() })); } catch (e) { /* ignore */ }
       })
       .catch(function (err) {
-        console.debug('[topbar] edge-status.json fetch failed', { error: String(err), source: 'wireStatusDot' });
+        console.debug('[topbar] pp-edge-status worker fetch failed', { error: String(err), source: 'wireStatusDot', endpoint: EDGE_STATUS_ENDPOINT });
         apply('unknown');
       });
   }

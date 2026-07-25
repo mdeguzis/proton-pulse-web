@@ -1,8 +1,8 @@
 // Unified game card renderer. Single source of truth for the
 // thumbnail | title + sub | badge card layout used everywhere.
-import { STEAM_IMG } from '../config.js?v=f9591262';
+import { STEAM_IMG } from '../config.js?v=cd6114a7';
 import { esc } from '../utils.js?v=9a39c726';
-import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=ba0d7848';
+import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=e6503ae7';
 
 const TIER_COLORS = {
   platinum: { bg: '#b4c7dc', color: '#0a0c10' },
@@ -42,8 +42,13 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
     : `<div class="game-card-thumb game-card-thumb--missing">Box art missing</div>`;
   // Both positions are rendered; CSS (driven by data-store-pill-pos on <html>)
   // shows one and hides the other based on the site preference.
-  const storeKey = storePill ? esc(String(storePill).toLowerCase()) : '';
-  const storeIcon = storeKey === 'steam' || storeKey === 'gog' || storeKey === 'epic'
+  // Normalize the label to the CSS/appType key. Labels and keys diverge for
+  // PCGamingWiki ('PCGWiki' label vs 'pgwiki' appType) -- deriving the class
+  // from the raw label produced 'game-card-store-pill--pcgwiki', which has
+  // no CSS rule, so the pill rendered transparent.
+  const _label = storePill ? String(storePill).toLowerCase() : '';
+  const storeKey = _label === 'pcgwiki' ? 'pgwiki' : esc(_label);
+  const storeIcon = storeKey === 'steam' || storeKey === 'gog' || storeKey === 'epic' || storeKey === 'pgwiki'
     ? `<span class="store-icon store-icon--${storeKey}" title="${esc(storePill)}" aria-label="${esc(storePill)}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg></span>`
     : '';
   // Owner badges attach to the LEFT of whichever store-badge variant is

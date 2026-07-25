@@ -302,6 +302,32 @@ describe('game-page filter panel adopts the browse modal framework (#360)', () =
   });
 });
 
+describe('outside-click closer allows taps inside the (portalled) panel', () => {
+  // Same fix pattern as home.js's outside-click closer. Motivating incident:
+  // on mobile, tapping the X to close the filter modal fired the "closed"
+  // log with portaled=false because the outside-click handler in
+  // js/app/main.js stripped .open first (the panel was portalled to body
+  // and thus no longer inside .filter-wrap). The X handler then saw the
+  // panel already closed and logged the wrong state.
+  const appMainSrc = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'app', 'main.js'),
+    'utf8',
+  );
+
+  test('handler checks panel.contains(e.target) before stripping .open', () => {
+    // Without this check every click inside the portalled modal (X,
+    // dropdowns, footer buttons) counts as "outside" .filter-wrap and
+    // closes the panel. Regression guard on the exact string.
+    expect(appMainSrc).toMatch(/panel\.contains\(e\.target\)/);
+  });
+
+  test('early-returns when the panel is not .open (avoid needless work)', () => {
+    // The handler runs on EVERY document click; guard against doing DOM
+    // work when the panel is not even open.
+    expect(appMainSrc).toMatch(/panel\.classList\.contains\(['"]open['"]\)/);
+  });
+});
+
 describe('game-page render() cleans up portalled panel before re-rendering (#358)', () => {
   // Bug: game-page.js render() sets el.innerHTML = ... on every filter change.
   // The shared mobile-modal observer in js/lib/topbar.js portals an open

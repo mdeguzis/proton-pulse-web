@@ -6,9 +6,10 @@
  * when available (otherwise it just leaks globals for the browser script tag).
  */
 
-// gameStats.js is now an ES module; load it into a vm scope (pure compute, only
-// needs standard globals) and pull the named exports off the context.
-const { loadEsm } = require('./_esm-vm.js');
+// gameStats.js carries a module.exports bridge, so require it directly --
+// babel-jest transforms + INSTRUMENTS it this way, unlike the vm loader,
+// which runs the source outside coverage tracking. (The vm loader remains
+// right for modules without a CJS bridge.)
 const {
   computeGameStats,
   computeMonthlyReports,
@@ -18,7 +19,7 @@ const {
   isPositive,
   isNegative,
   computeCompatTrend,
-} = loadEsm(['js/lib/scoring/gameStats.js'], { Math, Object, Array, Date, JSON, console });
+} = require('../js/lib/scoring/gameStats.js');
 
 const NOW = Math.floor(Date.now() / 1000);
 const DAY = 86400;

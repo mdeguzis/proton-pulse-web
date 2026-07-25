@@ -381,9 +381,16 @@ def app_type_from_id(app_id: str) -> str:
         return "gog"
     if app_id.startswith("epic:"):
         return "epic"
+    if app_id.startswith("pgwiki:"):
+        return "pgwiki"
     return "steam"
 
 
 def is_valid_app_id(app_id: str) -> bool:
     """Return True for Steam (digit) IDs and known non-Steam prefixes."""
-    return app_id.isdigit() or app_id.startswith("gog:") or app_id.startswith("epic:")
+    return (
+        app_id.isdigit()
+        or app_id.startswith("gog:")
+        or app_id.startswith("epic:")
+        or app_id.startswith("pgwiki:")
+    )

@@ -359,6 +359,32 @@ describe('SITES list covers prod and staging', () => {
   });
 });
 
+describe('CORS allow-list covers every origin the status page runs on', () => {
+  // Regression guard: staging.proton-pulse.com was added after the CF Pages
+  // migration (#362). Before that fix, the browser blocked the worker
+  // response on staging (Access-Control-Allow-Origin fell back to prod),
+  // the JS fell through to the static edge-status.json fallback, that file
+  // did not exist on the CF Pages shell, and the status page threw
+  // "JSON.parse: unexpected character at line 1 column 1". If a future
+  // edit drops any of these origins, that whole chain reproduces.
+  const src = fs.readFileSync(
+    path.join(__dirname, '..', 'workers', 'edge-status', 'index.js'),
+    'utf8',
+  );
+  const match = src.match(/const\s+ALLOWED_ORIGINS\s*=\s*\[([^\]]+)\]/);
+  const origins = match ? match[1].match(/'([^']+)'/g).map(s => s.slice(1, -1)) : [];
+
+  test('prod origin is present', () => {
+    expect(origins).toContain('https://www.proton-pulse.com');
+  });
+  test('CF Pages staging origin is present (staging.proton-pulse.com)', () => {
+    expect(origins).toContain('https://staging.proton-pulse.com');
+  });
+  test('legacy GH-Pages staging origin is present (rollback path)', () => {
+    expect(origins).toContain('https://mdeguzis.github.io');
+  });
+});
+
 describe('function list parity with the bash probe', () => {
   test('STATUS_KEY is stable', () => {
     expect(STATUS_KEY).toBe('edge-status');

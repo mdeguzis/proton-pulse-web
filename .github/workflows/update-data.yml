@@ -66,13 +66,13 @@ on:
         type: boolean
         default: false
       deploy_target:
-        description: "Where to publish the built site. 'ghpages' (default) uses the existing gh-pages orphan deploy. 'cloudflare' syncs data/ to R2 and deploys the shell to Cloudflare Pages (#362). Pluggable + reversible."
+        description: "Where to publish the built site. 'cloudflare' (default) syncs data/ to R2 and deploys the shell to Cloudflare Pages. 'ghpages' is retained as a rollback path only -- the origin cert saga and 20k-file Pages cap made it obsolete (#362)."
         required: false
-        default: "ghpages"
+        default: "cloudflare"
         type: choice
         options:
-          - ghpages
           - cloudflare
+          - ghpages
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -270,6 +270,17 @@ jobs:
         inputs.staging_with_finalize == true ||
         (needs.build.result == 'success' &&
          (needs.probe-chunks.result == 'success' || needs.probe-chunks.result == 'skipped')))
+    # Shared with .github/workflows/publish-shell.yml so a slow finalize can
+    # never deploy concurrently with (or on top of) a fast shell push. Group
+    # keys on the CF Pages project the finalize will actually target, which
+    # depends on the staging_with_* inputs -- NOT on github.ref_name -- so a
+    # main-dispatched pipeline with staging_with_finalize=true still shares
+    # the staging group. cancel-in-progress: false = queue behind whatever is
+    # running; the version-check inside publish-cloudflare.sh is the second
+    # safety net if the pipeline's checkout is stale.
+    concurrency:
+      group: cf-pages-${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-web-staging' || 'proton-pulse-web' }}
+      cancel-in-progress: false
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -444,6 +455,13 @@ jobs:
           # without seeding overrides.
           SUPABASE_URL:      ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          # #387: PCGamingWiki bot password (Special:BotPasswords under the
+          # owner's SSO account, Basic rights only -- PCGW staff confirmed
+          # this is the supported API auth). Either unset = anonymous reads,
+          # which PCGW also allows. Auth does not change the 30 req/min
+          # per-IP limit; pcgamingwiki.py paces for that regardless.
+          PCGAMINGWIKI_BOT_USER: ${{ secrets.PCGAMINGWIKI_BOT_USER }}
+          PCGAMINGWIKI_BOT_PASS: ${{ secrets.PCGAMINGWIKI_BOT_PASS }}
         run: |
           uv run python scripts/split_reports.py finalize --skip-probe \
             /tmp/protondb-output
@@ -482,6 +500,19 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           PAGES_PROJECT: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-web-staging' || 'proton-pulse-web' }}
           PAGES_BRANCH: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'staging' || 'main' }}
+          # #380: staging + prod get separate R2 buckets so a staging sync
+          # cannot overwrite prod data mid-flight. Staging bucket is bound
+          # to staging-data.proton-pulse.com; prod bucket stays on
+          # data.proton-pulse.com. publish-cloudflare.sh already reads
+          # R2_BUCKET + DATA_BASE env vars.
+          R2_BUCKET: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-data-staging' || 'proton-pulse-data' }}
+          DATA_BASE: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'https://staging-data.proton-pulse.com' || 'https://data.proton-pulse.com' }}
+          # #392: content-hash delta sync. Driven by the R2_DELTA_SYNC repo
+          # variable so rollout/rollback is a settings flip, not a commit.
+          # Unset variable = '0' = full sync (the pre-#392 behavior). Each
+          # bucket (staging/prod, split in #380) keeps its own manifest, so
+          # the two targets delta independently.
+          R2_DELTA_SYNC: ${{ vars.R2_DELTA_SYNC || '0' }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
 
@@ -556,7 +587,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -624,7 +655,7 @@ jobs:
           # cache if staging has none yet.
           bash /tmp/preserve-steam-type-cache.sh "$(pwd)" gh-pages || true
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -920,7 +951,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -1168,7 +1199,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do

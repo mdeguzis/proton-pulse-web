@@ -34,7 +34,13 @@ from .common import log
 
 REQUEST_DELAY = 0.1       # seconds between HEAD requests; GOG/Epic CDNs tolerate
 PROBE_CAP = 800           # backlog cap per run
-STALE_DAYS = 30           # re-probe cache entries older than this
+STALE_DAYS = 30           # re-probe OK cache entries older than this
+# Missing entries retry much sooner: a transient CDN hiccup during one
+# probe run poisoned working covers for a whole month (Coffee Noir's
+# gog-statics URL probed 'missing' 2026-07-09 while serving 200 -- the
+# frontend hid its cover for weeks). Failures are cheap to re-check and
+# false negatives are user-visible, so retry them every run + 3 days.
+MISSING_RETRY_DAYS = 3
 
 
 def _url_is_ok(url: str, timeout: int = 8) -> bool:
@@ -73,7 +79,11 @@ def _is_stale(entry: dict) -> bool:
         probed = datetime.fromisoformat(entry["probed_at"]).date()
     except Exception:
         return True
-    return (date.today() - probed) > timedelta(days=STALE_DAYS)
+    # Failed probes get a much shorter shelf life than successes: 'missing'
+    # is often a transient CDN 5xx / timeout, and while it sits in the cache
+    # the frontend map drops that cover entirely.
+    max_age = MISSING_RETRY_DAYS if entry.get("status") == "missing" else STALE_DAYS
+    return (date.today() - probed) > timedelta(days=max_age)
 
 
 def _hot_ids(output_dir: Path) -> set[str]:
@@ -104,13 +114,20 @@ def probe_nonsteam_images(output_dir: Path, catalog_urls: dict[str, str]) -> dic
     today = date.today().isoformat()
 
     to_probe: list[str] = []
+    retry_missing: list[str] = []
     for aid in catalog_urls:
         entry = cache.get(aid)
         if entry is None or _is_stale(entry) or entry.get("url") != catalog_urls[aid]:
-            to_probe.append(aid)
+            # Missing-status retries jump the queue: each one is a cover the
+            # frontend is actively hiding, and there are at most a few dozen
+            # -- never let the uncached backlog starve them past the cap.
+            if entry is not None and entry.get("status") == "missing":
+                retry_missing.append(aid)
+            else:
+                to_probe.append(aid)
 
     hot_to_probe = [a for a in to_probe if a in hot]
-    backlog_to_probe = [a for a in to_probe if a not in hot]
+    backlog_to_probe = retry_missing + [a for a in to_probe if a not in hot]
 
     log(
         f"[nonsteam-images-probe] {len(catalog_urls)} URLs | cache {len(cache)} | "

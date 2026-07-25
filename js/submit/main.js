@@ -1,5 +1,5 @@
 // Entry module for submit.html. Migrated from the page's inline script.
-import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=8051e115';
+import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=5090f6d2';
 import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=49306cae';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=a8d355d8';
 import {
@@ -119,6 +119,7 @@ import { esc } from '../app/utils.js?v=9a39c726';
   // title exists on multiple stores or after a replaced-by redirect (#199).
   const storeGuess = String(appId).startsWith('gog:')  ? 'GOG'
                      : String(appId).startsWith('epic:') ? 'Epic'
+                     : String(appId).startsWith('pgwiki:') ? 'PCGWiki'
                      : 'Steam';
   const subtitleEl = document.getElementById('game-subtitle');
   if (subtitleEl) {

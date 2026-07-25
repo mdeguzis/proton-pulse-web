@@ -28,17 +28,35 @@ function _loadDataConfig() {
   return _dataConfigPromise;
 }
 
-function _isStagingOrLocal() {
-  const host = (typeof window !== 'undefined' && window.location && window.location.hostname) || '';
-  return host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0' || host.endsWith('.github.io');
+function _hostname() {
+  return (typeof window !== 'undefined' && window.location && window.location.hostname) || '';
+}
+
+function _isLocal() {
+  const host = _hostname();
+  return host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0';
+}
+
+function _isStaging() {
+  const host = _hostname();
+  // Include the GH-Pages fallback host so a staging rollback still resolves.
+  return host === 'staging.proton-pulse.com' || host.endsWith('.github.io');
 }
 
 function _manifestUrl() {
-  // Staging fetches data files from prod; the manifest comes from the same
-  // origin so the hashes match the files actually being served.
-  return _isStagingOrLocal()
-    ? 'https://www.proton-pulse.com/data-versions.json'
-    : 'data-versions.json';
+  // #380: staging must NEVER read from prod (the two now have separate R2
+  // buckets and independent manifests). Local dev reads the prod manifest
+  // because a local vite server has no data-versions.json of its own.
+  //   staging.proton-pulse.com   -> staging manifest, staging bucket
+  //   www.proton-pulse.com       -> prod manifest, prod bucket
+  //   localhost / gh.io fallback -> prod manifest (dev + rollback path)
+  if (_isStaging() && _hostname() === 'staging.proton-pulse.com') {
+    return 'data-versions.json';  // same-origin on staging
+  }
+  if (_isStaging() || _isLocal()) {
+    return 'https://www.proton-pulse.com/data-versions.json';
+  }
+  return 'data-versions.json';
 }
 
 function _loadManifest() {

@@ -53,32 +53,31 @@ export const FNS = [
 ];
 
 // Public URLs the worker also probes so the status page catches origin-cert /
-// CDN issues (e.g. Cloudflare 526 "Invalid SSL Certificate") the same way it
-// catches edge-function outages. Each entry probes /version.json because it
-// is small, deployed on every build, and matches an existing per-site file
-// so the worker does not have to know the hosting layout. Add new sites here.
+// CDN issues the same way it catches edge-function outages. Each entry probes
+// /version.json because it is small, deployed on every build, and matches an
+// existing per-site file so the worker does not have to know the hosting
+// layout. Add new sites here.
+//
+// Post-#362: both prod and staging are served directly from Cloudflare Pages
+// (no GitHub Pages behind Cloudflare hop). Origin hints reflect that -- one
+// managed cert per site, auto-renewed by CF. If a tile ever goes red, the
+// fix is at the CF Pages project level, not a GitHub ACME dance.
 //
 // Design note: we deliberately do NOT try to read cert expiry / ACME state
-// out-of-band (via the GitHub Pages REST API or a cert-transparency log).
-// That would require a token, which is one more secret to rotate and one
-// more blast radius on leak. Fetching the URL from a Worker already tells
-// us everything actionable -- Cloudflare 525/526 fire the moment the
-// origin cert breaks, and a broken TLS handshake surfaces as http_status=0.
-// If the tile ever goes red, the operator follows the wiki renewal
-// walkthrough. See proton-pulse-web-wiki/GitHub-Pages-Cert-Renewal.md.
+// out-of-band. Fetching the URL from a Worker already tells us everything
+// actionable -- Cloudflare handles cert rotation, and a broken TLS handshake
+// or origin 5xx surfaces as an http_status the classifier maps to a card
+// state.
 export const SITES = [
   {
     name: 'prod (www.proton-pulse.com)',
     url: 'https://www.proton-pulse.com/version.json',
-    // The origin cert path Cloudflare authorizes against. Displayed on the
-    // status card so a 526 links to a specific thing the operator can look
-    // up (GitHub Pages Let's Encrypt cert on the CNAME target).
-    origin_hint: 'GitHub Pages Let\'s Encrypt cert on the CNAME target',
+    origin_hint: 'Cloudflare Pages (auto-renewed)',
   },
   {
-    name: 'staging (mdeguzis.github.io)',
-    url: 'https://mdeguzis.github.io/proton-pulse-web-staging/version.json',
-    origin_hint: 'GitHub Pages default certificate',
+    name: 'staging (staging.proton-pulse.com)',
+    url: 'https://staging.proton-pulse.com/version.json',
+    origin_hint: 'Cloudflare Pages (auto-renewed)',
   },
 ];
 
@@ -90,7 +89,17 @@ export const HISTORY_WINDOW_SEC = 7 * 24 * 3600;
 export const HISTORY_MAX_POINTS = 800;
 const PROBE_TIMEOUT_MS = 15000;
 
-const ALLOWED_ORIGINS = ['https://www.proton-pulse.com', 'https://mdeguzis.github.io'];
+// Origins allowed to fetch the payload from the worker. Post-#362 the CF
+// Pages custom domain (staging.proton-pulse.com) is the real staging URL;
+// mdeguzis.github.io is kept for the retired-but-still-reachable GH-Pages
+// staging repo (rollback path). Prod is www.proton-pulse.com. Any origin
+// not on this list falls back to the first entry (prod), which causes a
+// CORS mismatch in the browser and drops the status card silently.
+const ALLOWED_ORIGINS = [
+  'https://www.proton-pulse.com',
+  'https://staging.proton-pulse.com',
+  'https://mdeguzis.github.io',
+];
 
 function corsHeaders(origin) {
   const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];

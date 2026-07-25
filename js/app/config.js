@@ -39,9 +39,18 @@ export const PROD_ROOT = 'https://www.proton-pulse.com';
 export const CDN = USES_PROD_DATA
   ? 'https://www.proton-pulse.com/data'
   : `${window.location.origin}${STAGING_SITE_BASE}/data`;
-export const dataFilesHref = appId => USES_PROD_DATA
-  ? `https://www.proton-pulse.com/data/${appId}/`
-  : `${STAGING_SITE_BASE}/data/${appId}/`;
+// Per-env data host lookup (post-CF Pages migration). Same hostname-based
+// routing dataUrl() uses; kept synchronous here so it can build an <a href>
+// without an await. The R2 buckets do not serve a directory index for the
+// bare /data/<id>/ path, so we link straight at latest.json which is the
+// concrete file every game has -- users can navigate to sibling files
+// (year buckets, votes.json) from there.
+function _dataHost() {
+  const host = (typeof window !== 'undefined' && window.location && window.location.hostname) || '';
+  if (host === 'staging.proton-pulse.com') return 'https://staging-data.proton-pulse.com';
+  return 'https://data.proton-pulse.com';
+}
+export const dataFilesHref = appId => `${_dataHost()}/data/${appId}/latest.json`;
 
 // Fetch a pipeline data path from the current origin first; if it 404s,
 // retry once against production so a staging build that hasn't run the
@@ -65,17 +74,19 @@ export async function fetchDataWithProdFallback(bustedName) {
 // Any ID above 10 million is treated as a non-Steam shortcut.
 export const isNonSteamAppId = id => Number(id) > 10_000_000;
 
-// Catalog (non-Steam) games carry a prefixed canonical id: gog:<productId>
-// or epic:<namespace>. Steam ids are bare digits. Keep this in lockstep with
-// the pipeline helper app_type_from_id in scripts/pipeline/common.py.
+// Catalog (non-Steam) games carry a prefixed canonical id: gog:<productId>,
+// epic:<namespace>, or pgwiki:<slug>. Steam ids are bare digits. Keep this
+// in lockstep with the pipeline helper app_type_from_id in
+// scripts/pipeline/common.py.
 export const appTypeFromAppId = id => {
   const s = String(id);
   if (s.startsWith('gog:')) return 'gog';
   if (s.startsWith('epic:')) return 'epic';
+  if (s.startsWith('pgwiki:')) return 'pgwiki';
   return 'steam';
 };
 // Human-readable store label for the row source line on cards.
-export const STORE_LABELS = { gog: 'GOG', epic: 'Epic', steam: 'Steam' };
+export const STORE_LABELS = { gog: 'GOG', epic: 'Epic', steam: 'Steam', pgwiki: 'PCGWiki' };
 export const storeLabel = appType => STORE_LABELS[appType] || 'Steam';
 // Label resolved straight from a canonical app id, for callers that only have
 // the id (search index stubs, cards built from a bare id).

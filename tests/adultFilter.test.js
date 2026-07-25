@@ -83,3 +83,42 @@ describe('topbar autocomplete adult gate', () => {
     expect(TOPBAR).toContain('if (!showAdult && row[8] === true) continue');
   });
 });
+
+
+// ---------- array-row variants (search-index shape) ----------------------
+const { isAdultEntry, filterAdultEntries, ADULT_COL_SEARCH_INDEX } = require('../js/lib/adult-filter.js');
+
+describe('isAdultEntry / filterAdultEntries', () => {
+  const mk = (adult) => ['1', 'T', '', 0, 0, 'steam', null, null, adult];
+
+  test('flags only rows with adult === true at the adult column', () => {
+    expect(isAdultEntry(mk(true))).toBe(true);
+    expect(isAdultEntry(mk(false))).toBe(false);
+    expect(isAdultEntry(mk(null))).toBe(false);
+    expect(isAdultEntry(['1', 'short-row'])).toBe(false);
+    expect(isAdultEntry('not-an-array')).toBe(false);
+  });
+
+  test('filterAdultEntries drops adult rows when the pref is off', () => {
+    global.localStorage = { getItem: () => 'off' };
+    const rows = [mk(true), mk(false), mk(null)];
+    expect(filterAdultEntries(rows)).toHaveLength(2);
+  });
+
+  test('filterAdultEntries passes everything through when the pref is on', () => {
+    global.localStorage = { getItem: () => 'on' };
+    const rows = [mk(true), mk(false)];
+    expect(filterAdultEntries(rows)).toHaveLength(2);
+  });
+
+  test('honors a custom column index', () => {
+    global.localStorage = { getItem: () => 'off' };
+    const row = ['1', 'T', true];
+    expect(isAdultEntry(row, 2)).toBe(true);
+    expect(filterAdultEntries([row], 2)).toHaveLength(0);
+  });
+
+  test('column constant matches the pipeline row shape', () => {
+    expect(ADULT_COL_SEARCH_INDEX).toBe(8);
+  });
+});

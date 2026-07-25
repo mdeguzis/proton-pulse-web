@@ -71,6 +71,9 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # #378: layer 3 URL reputation lookups. Same key the attachment
+          # scanner uses. Absent = layer skipped, text layers unaffected.
+          VT_API_KEY: ${{ secrets.VT_API_KEY }}
           LOOKBACK_HOURS: ${{ steps.lookback.outputs.hours }}
           # APP_IDS is comma-separated. Legacy scripts read APP_ID (singular);
           # the moderation script now honors both -- prefer APP_IDS when set.

@@ -35,13 +35,28 @@ jobs:
             *)                TRIGGER="$WF_EVENT"  ;;
           esac
 
-          if [ "$WF_CONCLUSION" = "success" ]; then
-            STATUS="Backup complete"
-            COLOR=3066993
-          else
-            STATUS="Backup FAILED"
-            COLOR=15158332
-          fi
+          # Skipped is by design: Backup only runs the job when the upstream
+          # Build Site Data run succeeded (workflow.if gate). A skipped result
+          # means "nothing to back up", not a failure. Cancelled falls in the
+          # same bucket -- neutral, not red. Only real failures show as FAILED.
+          case "$WF_CONCLUSION" in
+            success)
+              STATUS="Backup complete"
+              COLOR=3066993     # green
+              ;;
+            skipped)
+              STATUS="Backup skipped"
+              COLOR=10070709    # muted grey
+              ;;
+            cancelled)
+              STATUS="Backup cancelled"
+              COLOR=10070709    # muted grey
+              ;;
+            *)
+              STATUS="Backup FAILED"
+              COLOR=15158332    # red
+              ;;
+          esac
 
           MSG=$(printf '**%s** (%s)\nBranch: `%s` | Commit: [%s](%s)\nTrigger: %s\n[View run](%s)' \
             "$STATUS" "$WF_CONCLUSION" "$WF_BRANCH" "$SHORT_SHA" "$COMMIT_URL" "$TRIGGER" "$WF_URL")

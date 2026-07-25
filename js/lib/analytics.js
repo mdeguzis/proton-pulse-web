@@ -65,6 +65,19 @@
 
   async function track(eventType, metadata) {
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return;
+    // #366: also push into the local ring buffer so the admin Logging tab
+    // shows every ppTrack event live -- not just 'log' entries. Fires
+    // BEFORE the network POST so a slow / failed fetch never blocks the
+    // local visibility. Non-log events land at INFO level; explicit log
+    // entries carry their own level in metadata.
+    try {
+      if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') {
+        var lvl = (eventType === 'log' && metadata && metadata.level) ? metadata.level : 'INFO';
+        var msg = eventType === 'log' ? (metadata && metadata.msg) || '' : eventType;
+        var ctx = eventType === 'log' ? (metadata && metadata.ctx) || {} : Object.assign({}, metadata || {});
+        window.ppLogBuffer.pushLog(lvl, msg, Object.assign({ event_type: eventType, page: location.pathname }, ctx));
+      }
+    } catch (_) { /* buffer failure must never break analytics */ }
     var session = await getCurrentSession();
     var protonPulseUserId = session && session.user ? session.user.id : null;
     var accessToken = session && session.access_token ? session.access_token : null;

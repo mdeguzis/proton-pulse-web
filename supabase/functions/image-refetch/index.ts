@@ -299,14 +299,23 @@ async function _setOverride(req: Request, appId: string, url: string): Promise<W
     return { ok: false, source: "set_override", status: 400, error: "image_url must be an http(s) URL" };
   }
   // Verify URL loads before persisting so the admin doesn't stamp a
-  // broken URL into the override map.
-  try {
-    const probe = await fetch(url, { method: "HEAD" });
-    if (!probe.ok) {
-      return { ok: false, source: "set_override", status: probe.status, error: `image URL HTTP ${probe.status}` };
+  // broken URL into the override map. images.pcgamingwiki.com is exempt:
+  // its Cloudflare config bot-blocks every server-side request (always
+  // 403 from Deno/curl) while browser <img> loads with no-referrer work
+  // fine -- the admin UI does its own in-browser load check before
+  // calling us, which is the only trustworthy signal for that host.
+  const SERVER_PROBE_EXEMPT_HOSTS = new Set(["images.pcgamingwiki.com"]);
+  let probeHost = "";
+  try { probeHost = new URL(url).hostname; } catch { /* caught by the regex above */ }
+  if (!SERVER_PROBE_EXEMPT_HOSTS.has(probeHost)) {
+    try {
+      const probe = await fetch(url, { method: "HEAD" });
+      if (!probe.ok) {
+        return { ok: false, source: "set_override", status: probe.status, error: `image URL HTTP ${probe.status}` };
+      }
+    } catch (e) {
+      return { ok: false, source: "set_override", error: `image URL probe failed: ${(e as Error).message}` };
     }
-  } catch (e) {
-    return { ok: false, source: "set_override", error: `image URL probe failed: ${(e as Error).message}` };
   }
   const svc = createServiceClient();
   const { error: upErr } = await svc.from("box_art_overrides").upsert({

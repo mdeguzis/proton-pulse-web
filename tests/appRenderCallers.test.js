@@ -113,6 +113,9 @@ const APP_MODULE_FILES = [
   'js/app/config.js', 'js/app/utils.js',
   'js/app/api/supabase.js', 'js/app/api/protondb.js', 'js/app/api/votes.js',
   'js/app/api/reports.js', 'js/app/api/deck-status.js', 'js/app/api/author.js',
+  // Pure fuzzy-match module search.js imports as _matchEntriesPure. Must
+  // load before search.js so its top-level assignment finds the symbol.
+  'js/app/lib/search-match.js',
   'js/app/components/signals.js', 'js/app/components/config-cards.js',
   'js/app/components/report-card.js', 'js/app/components/deck-status.js',
   'js/app/components/author.js', 'js/app/components/home.js',

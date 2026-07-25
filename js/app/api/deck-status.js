@@ -1,6 +1,6 @@
 // deck-status (api) for the app page. Relocated from app.js.
 
-import { dataUrl } from '../../lib/data-url.js?v=97f09986';
+import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 
 export const DECK_CAT_MAP = { 0: 'unknown', 1: 'unsupported', 2: 'playable', 3: 'verified' };
 // display_type in resolved_items: 2=fail, 3=info/caveat, 4=pass

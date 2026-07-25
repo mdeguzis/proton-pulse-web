@@ -31,7 +31,7 @@ def test_extended_index_emits_steam_apps_not_in_primary(tmp_path):
         steam_catalog={"2881370": "Thank You For Your Application"},
     )
     entries = json.loads((tmp_path / "search-index-steam-extended.json").read_text())
-    assert entries == [["2881370", "Thank You For Your Application", "", 0, 0, "steam", None, None, False]]
+    assert entries == [["2881370", "Thank You For Your Application", "", 0, 0, "steam", None, None, False, ""]]
 
 
 def test_extended_index_excludes_apps_already_in_primary(tmp_path):
@@ -98,14 +98,14 @@ def test_extended_index_handles_missing_primary_file(tmp_path):
         steam_catalog={"2881370": "Thank You For Your Application"},
     )
     entries = json.loads((tmp_path / "search-index-steam-extended.json").read_text())
-    assert entries == [["2881370", "Thank You For Your Application", "", 0, 0, "steam", None, None, False]]
+    assert entries == [["2881370", "Thank You For Your Application", "", 0, 0, "steam", None, None, False, ""]]
 
 
 def test_extended_index_uses_same_row_shape_as_primary(tmp_path):
     """Frontend reuses renderIndexSearchResult for both files + the adult
-    filter reads column 8, so columns must line up 9-wide:
+    filter reads column 8, so columns must line up 10-wide:
     [appId, title, tier, pdbCount, pulseCount, appType, releaseYear,
-    delisted, adult].
+    delisted, adult, trend].
     """
     _write_primary(tmp_path, [])
     generate_extended_steam_index(
@@ -113,7 +113,7 @@ def test_extended_index_uses_same_row_shape_as_primary(tmp_path):
         steam_catalog={"111": "Some Game"},
     )
     entry = json.loads((tmp_path / "search-index-steam-extended.json").read_text())[0]
-    assert len(entry) == 9
+    assert len(entry) == 10
     assert entry[2] == ""       # tier
     assert entry[3] == 0        # protondbCount
     assert entry[4] == 0        # pulseCount

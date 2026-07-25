@@ -9,6 +9,8 @@
 // and applied via MutationObserver so dynamically-inserted images also
 // pick them up.
 
+import { normalizeSearchable } from './search-match.js?v=dd1b70b2';
+
 const _CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
 
 // Session-scoped set so we only POST once per appid per tab; browsers navigating
@@ -27,7 +29,7 @@ function _reportMissingImage(appId, attemptedUrl) {
     console.debug('[steam-img] report skipped (no supabase env)', { appId: id });
     return;
   }
-  const storeType = id.startsWith('gog:') ? 'gog' : id.startsWith('epic:') ? 'epic' : 'steam';
+  const storeType = id.startsWith('gog:') ? 'gog' : id.startsWith('epic:') ? 'epic' : id.startsWith('pgwiki:') ? 'pgwiki' : 'steam';
   const body = {
     app_id: id,
     store_type: storeType,
@@ -174,9 +176,177 @@ function _loadNonsteamImages() {
   return _nonsteamImagesPromise;
 }
 
+// Cache the PGWiki catalog so tier-4 (`pgwiki:` cover lookup) does not
+// re-fetch it per card. Only referenced for `pgwiki:` ids -- Steam / GOG /
+// Epic paths never touch this promise.
+let _pgwikiCatalogPromise = null;
+function _loadPgwikiCatalog() {
+  if (!_pgwikiCatalogPromise) _pgwikiCatalogPromise = _fetchWithFallback('pcgwiki-catalog.json');
+  return _pgwikiCatalogPromise;
+}
+
+// Cache the search index so repeated title-match probes don't re-fetch it.
+// The gog/epic fallback path can run many times per page (a full library
+// grid can be hundreds of cards), so memoize the promise the same way we
+// do for game-images / nonsteam-images.
+let _searchIndexPromise = null;
+function _loadSearchIndex() {
+  if (!_searchIndexPromise) _searchIndexPromise = _fetchWithFallback('search-index.json');
+  return _searchIndexPromise;
+}
+
+// Same-title Steam CDN fallback for non-Steam entries (#375). Many
+// multi-store titles (Cyberpunk, Divinity: Original Sin, Cities: Skylines,
+// etc.) ship on both Steam and GOG/Epic. If this non-Steam entry has a
+// Steam counterpart with the same normalized title, the frontend can reuse
+// the Steam CDN header URL and paint a real box art instead of the "box
+// art unavailable" placeholder.
+//
+// Returns the numeric Steam appid, or null when no match is found.
+// Normalization matches search-match.js (lowercase + non-alphanumeric -> space)
+// so titles that differ only in punctuation ("Divinity: Original Sin" vs
+// "Divinity Original Sin") still match.
+async function _findSteamAppIdByMatchingTitle(nonSteamId) {
+  const idx = await _loadSearchIndex();
+  if (!Array.isArray(idx)) return null;
+  const source = idx.find(r => Array.isArray(r) && String(r[0]) === nonSteamId);
+  if (!source) return null;
+  const targetNorm = normalizeSearchable(String(source[1] || ''));
+  if (!targetNorm) return null;
+  const steamMatch = idx.find(r => {
+    if (!Array.isArray(r)) return false;
+    const rid = String(r[0]);
+    if (!/^\d+$/.test(rid)) return false; // steam ids are bare digits
+    return normalizeSearchable(String(r[1] || '')) === targetNorm;
+  });
+  return steamMatch ? String(steamMatch[0]) : null;
+}
+
+// Return the entry title from the search index for a given canonical id.
+// Used by the SGDB final fallback so we can pass the game title to the
+// image-refetch edge function's sgdb_search action.
+async function _titleForAppId(appId) {
+  const idx = await _loadSearchIndex();
+  if (!Array.isArray(idx)) return '';
+  const row = idx.find(r => Array.isArray(r) && String(r[0]) === appId);
+  return row && row[1] ? String(row[1]) : '';
+}
+
+// SGDB final fallback (#375). When both the pipeline's nonsteam-images.json
+// and the same-title Steam CDN match miss, ask the image-refetch edge fn
+// to look up the title on SteamGridDB and return one widescreen grid URL.
+// Cached per-session in sessionStorage so a browse grid of dozens of
+// GOG/Epic covers only pays the round-trip once per unique appid.
+const _SGDB_CACHE_KEY = 'pp:steam-img:sgdb-lookup:v1';
+function _sgdbCacheRead(appId) {
+  try {
+    const raw = sessionStorage.getItem(_SGDB_CACHE_KEY);
+    if (!raw) return undefined;
+    const map = JSON.parse(raw);
+    return map && Object.prototype.hasOwnProperty.call(map, appId) ? map[appId] : undefined;
+  } catch { return undefined; }
+}
+function _sgdbCacheWrite(appId, urlOrNull) {
+  try {
+    const raw = sessionStorage.getItem(_SGDB_CACHE_KEY);
+    const map = raw ? JSON.parse(raw) : {};
+    map[appId] = urlOrNull;
+    sessionStorage.setItem(_SGDB_CACHE_KEY, JSON.stringify(map));
+  } catch { /* private mode / quota -- fine, just skip cache */ }
+}
+
+async function _lookupSgdbUrlByTitle(appId, title) {
+  const cached = _sgdbCacheRead(appId);
+  if (cached !== undefined) return cached; // may be null (known miss)
+  if (!_SUPABASE_URL || !_SUPABASE_ANON_KEY) return null;
+  if (!title) { _sgdbCacheWrite(appId, null); return null; }
+  const url = `${_SUPABASE_URL}/functions/v1/image-refetch`;
+  // Preferred SGDB grid shapes for a widescreen hero-style card. The upstream
+  // filter is a comma allowlist so any of these dimensions wins.
+  const dimensions = '920x430,600x900,460x215';
+  let res;
+  try {
+    res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${_SUPABASE_ANON_KEY}`,
+        'apikey': _SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({
+        app_id: appId,
+        source: 'sgdb_search',
+        term: title,
+        dimensions,
+      }),
+    });
+  } catch (e) {
+    console.warn('[steam-img] sgdb lookup network failure', { appId, err: String(e) });
+    // Don't cache the miss on network errors -- transient. Next card gets a retry.
+    return null;
+  }
+  if (!res.ok) {
+    _sgdbCacheWrite(appId, null);
+    return null;
+  }
+  const body = await res.json().catch(() => null);
+  const results = body?.ok && Array.isArray(body?.results) ? body.results : [];
+  // Prefer a widescreen grid (width > height) -- our card slots are
+  // hero-shaped, and a portrait 600x900 cover in a 460x215 slot gets
+  // cropped to a sliver by object-fit:cover. Fall back to the top result
+  // (usually portrait) only when SGDB has no widescreen art at all; the
+  // game page's height:auto layout renders portrait acceptably.
+  const widescreen = results.find(g => g?.url && g.width && g.height && g.width > g.height);
+  const first = widescreen || (results.length ? results[0] : null);
+  const picked = first?.url ? String(first.url) : null;
+  _sgdbCacheWrite(appId, picked);
+  return picked;
+}
+
+// Steam-id last resort (#375 follow-up). Standard + cloudflare CDN paths
+// 404 for some apps (Steam moved them to hashed store_item_assets URLs),
+// and game-images.json only carries what the pipeline's capped backlog has
+// probed so far (~500/run against a 10k+ backlog). Ask the image-refetch
+// edge fn for the current appdetails header URL. Session-cached via the
+// same map as SGDB lookups so a browse grid pays one round-trip per id.
+async function _lookupSteamRefetch(appId) {
+  const cached = _sgdbCacheRead(`steam:${appId}`);
+  if (cached !== undefined) return cached; // may be null (known miss)
+  if (!_SUPABASE_URL || !_SUPABASE_ANON_KEY) return null;
+  let res;
+  try {
+    res = await fetch(`${_SUPABASE_URL}/functions/v1/image-refetch`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${_SUPABASE_ANON_KEY}`,
+        'apikey': _SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ app_id: appId, source: 'steam' }),
+    });
+  } catch (e) {
+    console.warn('[steam-img] steam refetch network failure', { appId, err: String(e) });
+    return null; // transient -- do not cache the miss
+  }
+  if (!res.ok) {
+    _sgdbCacheWrite(`steam:${appId}`, null);
+    return null;
+  }
+  const body = await res.json().catch(() => null);
+  const picked = body?.ok && body?.url ? String(body.url) : null;
+  _sgdbCacheWrite(`steam:${appId}`, picked);
+  return picked;
+}
+
 function _tryUrl(url) {
   return new Promise(resolve => {
     const img = new Image();
+    // no-referrer: images.pcgamingwiki.com hotlink-blocks by Referer
+    // (Cloudflare 1011) but allows referrer-less requests -- the same URL
+    // opens fine in the address bar. Suppressing the referrer makes our
+    // embed look like direct navigation. Harmless for every other CDN and
+    // slightly privacy-friendlier. The swapped-in element keeps the policy.
+    img.referrerPolicy = 'no-referrer';
     img.onload = () => resolve(img);
     img.onerror = () => resolve(null);
     img.src = url;
@@ -185,6 +355,12 @@ function _tryUrl(url) {
 
 function _swap(el, loaded) {
   loaded.className = el.className;
+  // Portrait covers (PCGW product shots, SGDB 600x900 grids) blow out the
+  // hero slot, which is sized for Steam's 460x215 widescreen shape. Tag them
+  // so CSS can cap the height and center them instead (base.css).
+  if (loaded.naturalHeight > loaded.naturalWidth) {
+    loaded.className += ' boxart-portrait';
+  }
   loaded.alt = el.alt || '';
   el.parentNode?.replaceChild(loaded, el);
 }
@@ -198,6 +374,10 @@ function _bumpRoute(route) {
     cloudflare: 0,
     'game-images-json': 0,
     'nonsteam-images-json': 0,
+    'steam-title-match': 0,
+    'sgdb-title-match': 0,
+    'pgwiki-cover': 0,
+    'steam-refetch': 0,
     hidden: 0,
   });
   counts[route] = (counts[route] || 0) + 1;
@@ -229,7 +409,7 @@ export async function loadSteamImg(el, appId) {
   // Non-Steam (GOG/Epic) games have no Steam CDN image. Resolve their cover
   // straight from the pipeline's nonsteam-images.json instead of walking the
   // Steam CDN chain (which would always 404 for a prefixed id).
-  if (id.startsWith('gog:') || id.startsWith('epic:')) {
+  if (id.startsWith('gog:') || id.startsWith('epic:') || id.startsWith('pgwiki:')) {
     const nsMap = await _loadNonsteamImages();
     const nsUrl = nsMap[id];
     if (nsUrl) {
@@ -241,9 +421,59 @@ export async function loadSteamImg(el, appId) {
         return;
       }
     }
-    console.warn(`[steam-img] appId=${id} no non-Steam cover available`);
+    // #375 Path 1: same-title Steam CDN fallback. Multi-store releases
+    // (Cyberpunk on both Steam + GOG, etc.) share a title, and Steam has
+    // the highest-quality header art. Cheap lookup: normalize the source
+    // title, match against a bare-digits Steam id in the search index.
+    const steamAppId = await _findSteamAppIdByMatchingTitle(id);
+    if (steamAppId) {
+      const url = _CDN2(steamAppId);
+      const loaded = await _tryUrl(url);
+      if (loaded) {
+        console.log(`[steam-img] appId=${id} route=steam-title-match steamAppId=${steamAppId}`);
+        _bumpRoute('steam-title-match');
+        _swap(el, loaded);
+        return;
+      }
+    }
+    // #375 final fallback: SteamGridDB via the anonymous image-refetch
+    // edge fn. Only fires when the previous tiers all missed. Cached per
+    // session so a browse grid of many non-Steam cards only pays the
+    // round-trip once per unique appid.
+    const title = await _titleForAppId(id);
+    const sgdbUrl = await _lookupSgdbUrlByTitle(id, title);
+    if (sgdbUrl) {
+      const loaded = await _tryUrl(sgdbUrl);
+      if (loaded) {
+        console.log(`[steam-img] appId=${id} route=sgdb-title-match`);
+        _bumpRoute('sgdb-title-match');
+        _swap(el, loaded);
+        return;
+      }
+    }
+    // #375 tier 4 (final resort). PGWiki-only entries carry a `cover_url`
+    // in pcgwiki-catalog.json (pipeline slice 3.5). Portrait product-shot
+    // rather than widescreen hero art, so we only reach for it when the
+    // better sources all missed. Only fires for `pgwiki:` ids -- GOG / Epic
+    // never had a PGWiki cover to begin with.
+    let pgwikiCoverUrl = null;
+    if (id.startsWith('pgwiki:')) {
+      const catalog = await _loadPgwikiCatalog();
+      const cover = catalog && catalog[id] && catalog[id].cover_url;
+      if (cover && String(cover).startsWith('https://images.pcgamingwiki.com/')) {
+        pgwikiCoverUrl = String(cover);
+        const loaded = await _tryUrl(pgwikiCoverUrl);
+        if (loaded) {
+          console.log(`[steam-img] appId=${id} route=pgwiki-cover`);
+          _bumpRoute('pgwiki-cover');
+          _swap(el, loaded);
+          return;
+        }
+      }
+    }
+    console.warn(`[steam-img] appId=${id} no non-Steam cover available (exhausted nonsteam-json, steam-title-match, sgdb, pgwiki-cover)`);
     _bumpRoute('hidden');
-    _reportMissingImage(id, nsUrl || '');
+    _reportMissingImage(id, nsUrl || sgdbUrl || pgwikiCoverUrl || '');
     _showMissing(el);
     return;
   }
@@ -268,7 +498,20 @@ export async function loadSteamImg(el, appId) {
     }
   }
 
-  console.warn(`[steam-img] appId=${id} all CDN paths exhausted`);
+  // Live appdetails refetch: covers apps Steam moved to hashed URLs that
+  // the pipeline's capped probe backlog has not reached yet (e.g. 499170).
+  const refetched = await _lookupSteamRefetch(id);
+  if (refetched) {
+    const loaded = await _tryUrl(refetched);
+    if (loaded) {
+      console.log(`[steam-img] appId=${id} route=steam-refetch`);
+      _bumpRoute('steam-refetch');
+      _swap(el, loaded);
+      return;
+    }
+  }
+
+  console.warn(`[steam-img] appId=${id} all CDN paths exhausted (incl. live appdetails refetch)`);
   _bumpRoute('hidden');
   _reportMissingImage(id, map[id] || _CDN2(id));
   _showMissing(el);
