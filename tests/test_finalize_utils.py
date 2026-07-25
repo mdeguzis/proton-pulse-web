@@ -650,3 +650,53 @@ def test_generate_nonsteam_metadata_aggregate(tmp_path):
         generate_nonsteam_metadata(tmp_path)
     out = json.loads((tmp_path / "nonsteam-metadata.json").read_text())
     assert out == {"gog:7": {"genres": ["Strategy"]}, "epic:ns1": {"developers": ["DevCo"]}}
+
+
+# ── init_nonsteam_stub_dirs (#Data Files 404 for catalog-only stubs) ─────────
+
+from scripts.pipeline.finalize import init_nonsteam_stub_dirs
+
+
+def _patched_stub_catalogs(gog=None, epic=None, pgw=None):
+    return (
+        patch("scripts.pipeline.finalize.load_gog_catalog", return_value=gog or {}),
+        patch("scripts.pipeline.finalize.load_epic_catalog", return_value=epic or {}),
+        patch("scripts.pipeline.pcgamingwiki_catalog.refresh_catalog", return_value=pgw or {}),
+    )
+
+
+def test_stub_init_creates_dirs_with_empty_latest(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    p1, p2, p3 = _patched_stub_catalogs(
+        gog={"7": "Meta Game"},
+        pgw={"pgwiki:1914:_The_Great_War": {"name": "1914"}},
+    )
+    with p1, p2, p3:
+        init_nonsteam_stub_dirs(data_dir)
+    # colon -> underscore layout, [] not {}
+    assert json.loads((data_dir / "gog_7" / "latest.json").read_text()) == []
+    assert json.loads((data_dir / "pgwiki_1914__The_Great_War" / "latest.json").read_text()) == []
+
+
+def test_stub_init_never_touches_existing_data(tmp_path):
+    data_dir = tmp_path / "data"
+    app = data_dir / "gog_7"
+    app.mkdir(parents=True)
+    (app / "latest.json").write_text('[{"rating": "gold"}]')
+    p1, p2, p3 = _patched_stub_catalogs(gog={"7": "Meta Game"})
+    with p1, p2, p3:
+        init_nonsteam_stub_dirs(data_dir)
+    # real report data must never be overwritten by the stub init
+    assert json.loads((app / "latest.json").read_text()) == [{"rating": "gold"}]
+
+
+def test_stub_dirs_do_not_pollute_index_keys(tmp_path):
+    # A stub dir holds only latest.json (reserved stem), so the disk-derived
+    # index keys must stay empty -- stubs must not appear as year entries.
+    data_dir = tmp_path / "data"
+    p1, p2, p3 = _patched_stub_catalogs(gog={"7": "Meta Game"})
+    data_dir.mkdir()
+    with p1, p2, p3:
+        init_nonsteam_stub_dirs(data_dir)
+    assert derive_index_keys_from_disk(data_dir) == set()

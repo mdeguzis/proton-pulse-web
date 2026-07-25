@@ -1160,6 +1160,52 @@ def generate_nonsteam_metadata(output_path: Path) -> None:
     log(f"[nonsteam-metadata] wrote {len(merged):,} aggregate entries to {out_file.name}")
 
 
+def init_nonsteam_stub_dirs(data_output_path: Path) -> None:
+    """Create data/{appId}/ with an empty latest.json ([]) for every
+    non-Steam catalog entry that has no data dir yet.
+
+    Catalog-only stubs (GOG/Epic/pgwiki games with zero reports) used to
+    have NO folder at all, so anything that dereferenced their data path
+    (Data Files link, per-app metadata.json fetch) hit a raw R2 404.
+    Initializing the dir gives every listed game a stable, linkable data
+    surface, and means the store-facts enricher below can write its
+    metadata.json for stubs too. latest.json is [] -- the empty report
+    array every consumer already expects -- NOT {}.
+
+    Steam stubs are deliberately excluded: they resolve through the live
+    ProtonDB fallback and number ~16k more dirs for no user-facing gain.
+    Scope check: ~19k non-Steam stubs x 2 tiny files, one-time cost; the
+    #392 delta sync only uploads them once (content never changes).
+    """
+    ids: list[str] = []
+    try:
+        ids += [f"gog:{pid}" for pid in load_gog_catalog()]
+    except Exception as exc:
+        log(f"[stub-init] WARN: GOG catalog unavailable: {exc}")
+    try:
+        ids += [f"epic:{ns}" for ns in load_epic_catalog()]
+    except Exception as exc:
+        log(f"[stub-init] WARN: Epic catalog unavailable: {exc}")
+    try:
+        # refresh_catalog reads the published pcgwiki-catalog cache from the
+        # output dir (data_output_path's parent is the pipeline output root).
+        from .pcgamingwiki_catalog import refresh_catalog
+        ids += list(refresh_catalog(data_output_path.parent).keys())
+    except Exception as exc:
+        log(f"[stub-init] WARN: PGWiki catalog unavailable: {exc}")
+
+    created = 0
+    for app_id in ids:
+        app_dir = data_output_path / app_id_to_dir(app_id)
+        latest = app_dir / "latest.json"
+        if latest.exists():
+            continue
+        app_dir.mkdir(parents=True, exist_ok=True)
+        latest.write_text("[]\n", encoding="utf-8")
+        created += 1
+    log(f"[stub-init] initialized {created:,} non-Steam stub dirs (of {len(ids):,} catalog ids)")
+
+
 def enrich_nonsteam_app_metadata(data_output_path: Path) -> None:
     """Write store facts into each non-Steam app's data/{appId}/metadata.json
     under a `store` key (#400): {genres, developers, publishers, os,
@@ -1918,6 +1964,8 @@ def finalize_output(output_dir, skip_probe: bool = False):
     enrich_search_index_with_release_years(output_path)
     phase("Non-Steam box art probe")
     generate_nonsteam_images(output_path)
+    phase("Init non-Steam stub dirs (empty latest.json)")
+    init_nonsteam_stub_dirs(data_output_path)
     phase("Non-Steam store facts (per-app metadata.json + aggregate)")
     enrich_nonsteam_app_metadata(data_output_path)
     generate_nonsteam_metadata(output_path)
