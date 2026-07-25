@@ -43,7 +43,7 @@ jobs:
       github.actor != 'github-actions[bot]' &&
       github.actor != github.repository_owner
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v7
         with:
