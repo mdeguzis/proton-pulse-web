@@ -202,3 +202,49 @@ def test_protondb_signal_stub_pass_is_noop_without_signal_titles(tmp_path):
     )
     entries = json.loads((tmp_path / "search-index.json").read_text())
     assert entries == [["480490", "Prey", "", 0, 0, "steam", None, None, False, ""]]
+
+
+# ---- demo stub dedup (GOG/Epic demos suppressed when the full game exists) --
+
+def test_gog_demo_stub_suppressed_when_full_game_present(tmp_path):
+    _data_dir(tmp_path)
+    generate_search_index(
+        index_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        gog_catalog={
+            "1514133152": "Coffee Noir - Business Detective Game",
+            "1379400066": "Coffee Noir - Business Detective Game DEMO",
+        },
+    )
+    entries = json.loads((tmp_path / "search-index.json").read_text())
+    ids = [e[0] for e in entries]
+    assert "gog:1514133152" in ids
+    assert "gog:1379400066" not in ids
+
+
+def test_demo_stub_kept_when_no_full_game(tmp_path):
+    # A demo whose full game is NOT in the catalog is the only entry for
+    # that title -- keep it searchable.
+    _data_dir(tmp_path)
+    generate_search_index(
+        index_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        gog_catalog={"42": "Orphan Game Demo"},
+    )
+    entries = json.loads((tmp_path / "search-index.json").read_text())
+    assert [e[0] for e in entries] == ["gog:42"]
+
+
+def test_demo_word_inside_title_not_treated_as_demo(tmp_path):
+    # 'Demo' must only match as a trailing variant marker, not inside a name.
+    _data_dir(tmp_path)
+    generate_search_index(
+        index_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        gog_catalog={"1": "Demolition Crew", "2": "Demolition"},
+    )
+    entries = json.loads((tmp_path / "search-index.json").read_text())
+    assert len(entries) == 2

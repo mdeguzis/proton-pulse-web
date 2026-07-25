@@ -914,17 +914,39 @@ def generate_search_index(
         entries.append([app_id, title, tier, pdb_count, pulse_count, app_type, None, None, adult, trend])
         seen_ids.add(app_id)
 
+    # Demo dedup for catalog stubs: GOG/Epic list demos as separate products
+    # ("Coffee Noir DEMO" next to "Coffee Noir"). A demo stub with zero
+    # reports is pure search noise when the full game is in the same
+    # catalog -- suppress it. Demos WITH reports still enter via the
+    # reported-apps loop above, and a demo whose full game is absent stays
+    # (it is the only entry for that title).
+    _DEMO_SUFFIX_RE = re.compile(r"\s*[-:(\[]?\s*\bdemo\b\s*[)\]]?\s*$", re.IGNORECASE)
+
+    def _demo_base_title(title: str) -> str | None:
+        """Base title when `title` is a demo variant, else None."""
+        stripped = _DEMO_SUFFIX_RE.sub("", title)
+        return stripped.strip() if stripped != title and stripped.strip() else None
+
+    def _skip_demo_stub(title: str, catalog_titles: set[str]) -> bool:
+        base = _demo_base_title(title)
+        return base is not None and base.lower() in catalog_titles
+
     if gog_catalog:
         # #112: read release-year map from the same catalog cache. Old
         # caches (pre-#112) have no `years` field so the map is empty
         # until the 7-day TTL expires and the next fetch populates it;
         # rows fall back to `None` in that transition period.
         gog_years = load_gog_release_years()
+        gog_titles_lower = {t.lower() for t in gog_catalog.values()}
         stubs = 0
         with_year = 0
+        demos_skipped = 0
         for pid, title in sorted(gog_catalog.items(), key=lambda kv: kv[1].lower()):
             canonical_id = f"gog:{pid}"
             if canonical_id not in seen_ids:
+                if _skip_demo_stub(title, gog_titles_lower):
+                    demos_skipped += 1
+                    continue
                 year = gog_years.get(str(pid))
                 # 9-column shape matches Steam stubs: [id, title, tier,
                 # pdb, pulse, appType, releaseYear, delisted, adult].
@@ -932,21 +954,30 @@ def generate_search_index(
                 stubs += 1
                 if year:
                     with_year += 1
+        if demos_skipped:
+            log(f"[search-index] Skipped {demos_skipped:,} GOG demo stubs whose full game is in the catalog")
         if stubs:
             log(f"[search-index] Added {stubs:,} GOG catalog stubs ({with_year:,} with release year)")
 
     if epic_catalog:
         epic_years = load_epic_release_years()
+        epic_titles_lower = {t.lower() for t in epic_catalog.values()}
         stubs = 0
         with_year = 0
+        demos_skipped = 0
         for namespace, title in sorted(epic_catalog.items(), key=lambda kv: kv[1].lower()):
             canonical_id = f"epic:{namespace}"
             if canonical_id not in seen_ids:
+                if _skip_demo_stub(title, epic_titles_lower):
+                    demos_skipped += 1
+                    continue
                 year = epic_years.get(namespace)
                 entries.append([canonical_id, title, "", 0, 0, "epic", year, None, False, ""])
                 stubs += 1
                 if year:
                     with_year += 1
+        if demos_skipped:
+            log(f"[search-index] Skipped {demos_skipped:,} Epic demo stubs whose full game is in the catalog")
         if stubs:
             log(f"[search-index] Added {stubs:,} Epic catalog stubs ({with_year:,} with release year)")
 
