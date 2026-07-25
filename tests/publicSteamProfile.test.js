@@ -147,10 +147,14 @@ describe('deploy plumbing', () => {
       expect(MANIFEST).toContain(f);
     }
   });
-  test('topbar nav gets the "Look up a Profile" entry on both desktop and mobile', () => {
-    expect(TOPBAR).toContain('href="lookup.html"');
-    expect(TOPBAR).toContain('id="nav-lookup"');
-    expect(TOPBAR).toContain('id="mobile-lookup"');
+  test('lookup page stays reachable via the inline profile-lookup link (nav entry removed by request)', () => {
+    // The Browse-menu nav item was removed 2026-07-25 (user request: the
+    // menu was crowded and lookups are a niche flow). The page itself
+    // remains deployed and linked from the inline profile-lookup panel.
+    expect(TOPBAR).not.toContain('id="nav-lookup"');
+    expect(TOPBAR).not.toContain('id="mobile-lookup"');
+    const inline = fs.readFileSync(path.join(__dirname, '..', 'js/shared/profile-lookup-inline.js'), 'utf8');
+    expect(inline).toContain('href="lookup.html"');
   });
 });
 
