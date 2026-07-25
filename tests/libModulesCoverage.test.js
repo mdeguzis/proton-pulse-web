@@ -257,6 +257,52 @@ describe('analytics.js track() core behavior', () => {
     expect(body.proton_pulse_user_id).toBeNull();
   });
 
+  test('securitypolicyviolation pushes WARN to the log buffer and a rate-limited error_event (#404)', async () => {
+    jest.resetModules();
+    const docListeners = {};
+    global.document = {
+      addEventListener: (event, fn) => { docListeners[event] = fn; },
+      querySelectorAll: () => [],
+    };
+    const pushed = [];
+    global.window.ppLogBuffer = { pushLog: (lvl, msg, ctx) => { pushed.push({ lvl, msg, ctx }); return true; } };
+    require('../js/lib/analytics.js');
+    expect(docListeners.securitypolicyviolation).toBeDefined();
+
+    fetchSpy.mockClear();
+    const violation = {
+      violatedDirective: 'connect-src',
+      blockedURI: 'https://api.github.com/repos/x/releases',
+      sourceFile: 'https://www.proton-pulse.com/js/shared/submit.js',
+      lineNumber: 928,
+    };
+    docListeners.securitypolicyviolation(violation);
+    docListeners.securitypolicyviolation(violation); // same signature -> cooldown
+    await new Promise((r) => setImmediate(r));
+
+    // Local buffer sees BOTH (visibility is the point); site_events sees one.
+    const warns = pushed.filter((p) => p.lvl === 'WARN' && p.ctx.event_type === 'csp_violation');
+    expect(warns).toHaveLength(2);
+    expect(warns[0].msg).toContain('connect-src');
+    expect(warns[0].msg).toContain('api.github.com');
+    expect(warns[0].ctx.blocked_uri).toBe('https://api.github.com/repos/x/releases');
+
+    // error_event POSTs: exactly one (second suppressed by cooldown). track()
+    // also pushes its own INFO entry into the buffer -- filter to the POST.
+    const errorPosts = fetchSpy.mock.calls.filter(([, init]) => JSON.parse(init.body).event_type === 'error_event');
+    expect(errorPosts).toHaveLength(1);
+    const body = JSON.parse(errorPosts[0][1].body);
+    expect(body.metadata.violated_directive).toBe('connect-src');
+    expect(body.metadata.source).toBe('securitypolicyviolation');
+
+    // A different directive/URI is a new signature -> posts again.
+    docListeners.securitypolicyviolation({ violatedDirective: 'style-src', blockedURI: 'https://fonts.googleapis.com/css2' });
+    await new Promise((r) => setImmediate(r));
+    const errorPosts2 = fetchSpy.mock.calls.filter(([, init]) => JSON.parse(init.body).event_type === 'error_event');
+    expect(errorPosts2).toHaveLength(2);
+    delete global.window.ppLogBuffer;
+  });
+
   test('DOMContentLoaded handler fires a page_view and wires auth_attempt links', async () => {
     jest.resetModules();
     let domReady;

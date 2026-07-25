@@ -54,6 +54,17 @@ describe('game page: ProtonDB live-only handling', () => {
     expect(src).not.toContain('${SB_URL}/rest/v1/report_moderation');
   });
 
+  test('NO fetch doubles the /rest/v1 prefix (#404: delete buttons 404ed)', () => {
+    // The delete-report and delete-config handlers built
+    // .../rest/v1/rest/v1/user_configs, so every delete from the game page
+    // 404ed. Config's SB_URL already ends in /rest/v1 -- appending it again
+    // anywhere in this module is always a bug.
+    expect(src).not.toContain('${SB_URL}/rest/v1/');
+    // The four repaired call sites still target the right tables.
+    expect(src).toContain('`${SB_URL}/user_configs?client_id=eq.');
+    expect(src).toContain('`${SB_URL}/user_proton_configs?voter_id=eq.');
+  });
+
   test('submit links use the ?app= param submit.html expects', () => {
     // The minimal stub was removed (#363); known no-report games now render the
     // full page whose Submit Report button uses submitHref (submit.html?app=...).

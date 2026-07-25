@@ -9,8 +9,8 @@ import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
 // page's data loading so the two surfaces can never diverge again.
 import { computeConfidence } from '../lib/scoring/gameStats.js?v=ac350c7f';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
-import { fetchProtonDbLive } from '../app/api/protondb.js?v=003a9b4d';
-import { fetchNativeReports } from '../app/api/supabase.js?v=01961c8d';
+import { fetchProtonDbLive } from '../app/api/protondb.js?v=65bc2638';
+import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
 
 (function () {
   const root = document.getElementById('cb-root');

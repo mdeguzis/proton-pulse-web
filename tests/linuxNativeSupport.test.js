@@ -75,6 +75,18 @@ describe('fetchLinuxNativeSupport', () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
 
+  test('non-Steam ids (gog:/epic:/pgwiki:) skip the fetch entirely (#404)', async () => {
+    // steam-appdetails only understands numeric Steam ids -- canonical
+    // store ids always 400'd and burned a request per page view.
+    global.fetch = jest.fn();
+    const { fetchLinuxNativeSupport, fetchMinRequirements } = loadModule();
+    await expect(fetchLinuxNativeSupport('gog:1514133152')).resolves.toBe(false);
+    await expect(fetchLinuxNativeSupport('epic:fortnite')).resolves.toBe(false);
+    await expect(fetchLinuxNativeSupport('pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay')).resolves.toBe(false);
+    await expect(fetchMinRequirements('gog:1514133152')).resolves.toBeNull();
+    expect(global.fetch).not.toHaveBeenCalled();
+  });
+
   test('sharing the appdetails cache: fetchMinRequirements + fetchLinuxNativeSupport hit Steam once', async () => {
     global.fetch = stubFetch({
       '367520': {
