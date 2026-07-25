@@ -584,3 +584,119 @@ def test_finalize_score_to_tier_platinum():
 
 def test_finalize_score_to_tier_borked():
     assert _score_to_tier(0.0) == "borked"
+
+
+# ── enrich_nonsteam_app_metadata (#400) ──────────────────────────────────────
+
+from scripts.pipeline.finalize import enrich_nonsteam_app_metadata
+
+
+def test_nonsteam_store_facts_written_into_app_metadata(tmp_path):
+    data_dir = tmp_path / "data"
+    (data_dir / "gog_7").mkdir(parents=True)
+    (data_dir / "gog_7" / "2024.json").write_text("[]")
+    # pre-existing provenance flags must survive the store-facts write
+    (data_dir / "gog_7" / "metadata.json").write_text(json.dumps({"official_dump": True, "protondb_live": False}))
+    facts = {"7": {"genres": ["Strategy"], "developers": ["DevCo"], "os": ["windows", "linux"]}}
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value=facts), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={}):
+        enrich_nonsteam_app_metadata(data_dir)
+    written = json.loads((data_dir / "gog_7" / "metadata.json").read_text())
+    assert written["store"] == facts["7"]
+    assert written["official_dump"] is True  # provenance preserved
+
+
+def test_nonsteam_store_facts_skip_catalog_only_ids(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value={"9": {"genres": ["X"]}}), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={}):
+        enrich_nonsteam_app_metadata(data_dir)
+    assert not (data_dir / "gog_9").exists()  # no dir created for stubs
+
+
+def test_nonsteam_store_facts_unchanged_file_not_rewritten(tmp_path):
+    data_dir = tmp_path / "data"
+    (data_dir / "gog_7").mkdir(parents=True)
+    facts = {"7": {"genres": ["Strategy"]}}
+    meta_path = data_dir / "gog_7" / "metadata.json"
+    meta_path.write_text(json.dumps({"store": facts["7"]}, indent=2, sort_keys=True) + "\n")
+    before = meta_path.stat().st_mtime_ns
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value=facts), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={}):
+        enrich_nonsteam_app_metadata(data_dir)
+    # byte-identity matters for the R2 delta sync -- unchanged = untouched
+    assert meta_path.stat().st_mtime_ns == before
+
+
+def test_update_app_metadata_preserves_store_block(tmp_path):
+    from scripts.pipeline.metadata import update_app_metadata
+    data_dir = tmp_path / "data"
+    (data_dir / "gog_7").mkdir(parents=True)
+    (data_dir / "gog_7" / "metadata.json").write_text(json.dumps({
+        "official_dump": False, "protondb_live": False,
+        "store": {"genres": ["Strategy"]},
+    }))
+    update_app_metadata(data_dir, "gog:7", protondb_live=True)
+    raw = json.loads((data_dir / "gog_7" / "metadata.json").read_text())
+    assert raw["protondb_live"] is True
+    assert raw["store"] == {"genres": ["Strategy"]}  # not dropped by the flag update
+
+
+def test_generate_nonsteam_metadata_aggregate(tmp_path):
+    from scripts.pipeline.finalize import generate_nonsteam_metadata
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value={"7": {"genres": ["Strategy"]}}), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={"ns1": {"developers": ["DevCo"]}}):
+        generate_nonsteam_metadata(tmp_path)
+    out = json.loads((tmp_path / "nonsteam-metadata.json").read_text())
+    assert out == {"gog:7": {"genres": ["Strategy"]}, "epic:ns1": {"developers": ["DevCo"]}}
+
+
+# ── init_nonsteam_stub_dirs (#Data Files 404 for catalog-only stubs) ─────────
+
+from scripts.pipeline.finalize import init_nonsteam_stub_dirs
+
+
+def _patched_stub_catalogs(gog=None, epic=None, pgw=None):
+    return (
+        patch("scripts.pipeline.finalize.load_gog_catalog", return_value=gog or {}),
+        patch("scripts.pipeline.finalize.load_epic_catalog", return_value=epic or {}),
+        patch("scripts.pipeline.pcgamingwiki_catalog.refresh_catalog", return_value=pgw or {}),
+    )
+
+
+def test_stub_init_creates_dirs_with_empty_latest(tmp_path):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    p1, p2, p3 = _patched_stub_catalogs(
+        gog={"7": "Meta Game"},
+        pgw={"pgwiki:1914:_The_Great_War": {"name": "1914"}},
+    )
+    with p1, p2, p3:
+        init_nonsteam_stub_dirs(data_dir)
+    # colon -> underscore layout, [] not {}
+    assert json.loads((data_dir / "gog_7" / "latest.json").read_text()) == []
+    assert json.loads((data_dir / "pgwiki_1914__The_Great_War" / "latest.json").read_text()) == []
+
+
+def test_stub_init_never_touches_existing_data(tmp_path):
+    data_dir = tmp_path / "data"
+    app = data_dir / "gog_7"
+    app.mkdir(parents=True)
+    (app / "latest.json").write_text('[{"rating": "gold"}]')
+    p1, p2, p3 = _patched_stub_catalogs(gog={"7": "Meta Game"})
+    with p1, p2, p3:
+        init_nonsteam_stub_dirs(data_dir)
+    # real report data must never be overwritten by the stub init
+    assert json.loads((app / "latest.json").read_text()) == [{"rating": "gold"}]
+
+
+def test_stub_dirs_do_not_pollute_index_keys(tmp_path):
+    # A stub dir holds only latest.json (reserved stem), so the disk-derived
+    # index keys must stay empty -- stubs must not appear as year entries.
+    data_dir = tmp_path / "data"
+    p1, p2, p3 = _patched_stub_catalogs(gog={"7": "Meta Game"})
+    data_dir.mkdir()
+    with p1, p2, p3:
+        init_nonsteam_stub_dirs(data_dir)
+    assert derive_index_keys_from_disk(data_dir) == set()

@@ -43,8 +43,8 @@ from .common import (
     is_adult_app_cached,
     log,
 )
-from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_release_years
-from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_release_years
+from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_meta, load_gog_release_years
+from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_meta, load_epic_release_years
 from .metadata import bootstrap_all_app_metadata, read_app_metadata
 from .data_manifest import write_data_manifest
 from .data_versions import write_data_versions_json
@@ -914,17 +914,39 @@ def generate_search_index(
         entries.append([app_id, title, tier, pdb_count, pulse_count, app_type, None, None, adult, trend])
         seen_ids.add(app_id)
 
+    # Demo dedup for catalog stubs: GOG/Epic list demos as separate products
+    # ("Coffee Noir DEMO" next to "Coffee Noir"). A demo stub with zero
+    # reports is pure search noise when the full game is in the same
+    # catalog -- suppress it. Demos WITH reports still enter via the
+    # reported-apps loop above, and a demo whose full game is absent stays
+    # (it is the only entry for that title).
+    _DEMO_SUFFIX_RE = re.compile(r"\s*[-:(\[]?\s*\bdemo\b\s*[)\]]?\s*$", re.IGNORECASE)
+
+    def _demo_base_title(title: str) -> str | None:
+        """Base title when `title` is a demo variant, else None."""
+        stripped = _DEMO_SUFFIX_RE.sub("", title)
+        return stripped.strip() if stripped != title and stripped.strip() else None
+
+    def _skip_demo_stub(title: str, catalog_titles: set[str]) -> bool:
+        base = _demo_base_title(title)
+        return base is not None and base.lower() in catalog_titles
+
     if gog_catalog:
         # #112: read release-year map from the same catalog cache. Old
         # caches (pre-#112) have no `years` field so the map is empty
         # until the 7-day TTL expires and the next fetch populates it;
         # rows fall back to `None` in that transition period.
         gog_years = load_gog_release_years()
+        gog_titles_lower = {t.lower() for t in gog_catalog.values()}
         stubs = 0
         with_year = 0
+        demos_skipped = 0
         for pid, title in sorted(gog_catalog.items(), key=lambda kv: kv[1].lower()):
             canonical_id = f"gog:{pid}"
             if canonical_id not in seen_ids:
+                if _skip_demo_stub(title, gog_titles_lower):
+                    demos_skipped += 1
+                    continue
                 year = gog_years.get(str(pid))
                 # 9-column shape matches Steam stubs: [id, title, tier,
                 # pdb, pulse, appType, releaseYear, delisted, adult].
@@ -932,21 +954,30 @@ def generate_search_index(
                 stubs += 1
                 if year:
                     with_year += 1
+        if demos_skipped:
+            log(f"[search-index] Skipped {demos_skipped:,} GOG demo stubs whose full game is in the catalog")
         if stubs:
             log(f"[search-index] Added {stubs:,} GOG catalog stubs ({with_year:,} with release year)")
 
     if epic_catalog:
         epic_years = load_epic_release_years()
+        epic_titles_lower = {t.lower() for t in epic_catalog.values()}
         stubs = 0
         with_year = 0
+        demos_skipped = 0
         for namespace, title in sorted(epic_catalog.items(), key=lambda kv: kv[1].lower()):
             canonical_id = f"epic:{namespace}"
             if canonical_id not in seen_ids:
+                if _skip_demo_stub(title, epic_titles_lower):
+                    demos_skipped += 1
+                    continue
                 year = epic_years.get(namespace)
                 entries.append([canonical_id, title, "", 0, 0, "epic", year, None, False, ""])
                 stubs += 1
                 if year:
                     with_year += 1
+        if demos_skipped:
+            log(f"[search-index] Skipped {demos_skipped:,} Epic demo stubs whose full game is in the catalog")
         if stubs:
             log(f"[search-index] Added {stubs:,} Epic catalog stubs ({with_year:,} with release year)")
 
@@ -1131,6 +1162,134 @@ def generate_extended_steam_index(
         f"({cached_adult:,} adult) | {hint_probed:,} hint-probed ({hint_adult:,} adult) | "
         f"{budget_probed:,} budget-probed of {budget} ({budget_adult:,} adult), "
         f"{budget_left:,} budget remaining"
+    )
+
+
+def generate_nonsteam_metadata(output_path: Path) -> None:
+    """Emit nonsteam-metadata.json: {canonical_id: store facts} for ALL
+    GOG/Epic catalog entries (#400).
+
+    Companion to enrich_nonsteam_app_metadata below: the per-app write only
+    covers apps with a data dir, and today every non-Steam entry on the
+    site is a catalog-only stub (zero reports -> zero dirs), so without
+    this aggregate the Metadata modal has no source at all for them. Same
+    single-fetch access pattern as nonsteam-images.json.
+    """
+    merged: dict[str, dict] = {}
+    try:
+        for pid, entry in load_gog_meta().items():
+            merged[f"gog:{pid}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: GOG meta unavailable: {exc}")
+    try:
+        for namespace, entry in load_epic_meta().items():
+            merged[f"epic:{namespace}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: Epic meta unavailable: {exc}")
+    out_file = output_path / "nonsteam-metadata.json"
+    out_file.write_text(json.dumps(merged, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+    log(f"[nonsteam-metadata] wrote {len(merged):,} aggregate entries to {out_file.name}")
+
+
+def init_nonsteam_stub_dirs(data_output_path: Path) -> None:
+    """Create data/{appId}/ with an empty latest.json ([]) for every
+    non-Steam catalog entry that has no data dir yet.
+
+    Catalog-only stubs (GOG/Epic/pgwiki games with zero reports) used to
+    have NO folder at all, so anything that dereferenced their data path
+    (Data Files link, per-app metadata.json fetch) hit a raw R2 404.
+    Initializing the dir gives every listed game a stable, linkable data
+    surface, and means the store-facts enricher below can write its
+    metadata.json for stubs too. latest.json is [] -- the empty report
+    array every consumer already expects -- NOT {}.
+
+    Steam stubs are deliberately excluded: they resolve through the live
+    ProtonDB fallback and number ~16k more dirs for no user-facing gain.
+    Scope check: ~19k non-Steam stubs x 2 tiny files, one-time cost; the
+    #392 delta sync only uploads them once (content never changes).
+    """
+    ids: list[str] = []
+    try:
+        ids += [f"gog:{pid}" for pid in load_gog_catalog()]
+    except Exception as exc:
+        log(f"[stub-init] WARN: GOG catalog unavailable: {exc}")
+    try:
+        ids += [f"epic:{ns}" for ns in load_epic_catalog()]
+    except Exception as exc:
+        log(f"[stub-init] WARN: Epic catalog unavailable: {exc}")
+    try:
+        # refresh_catalog reads the published pcgwiki-catalog cache from the
+        # output dir (data_output_path's parent is the pipeline output root).
+        from .pcgamingwiki_catalog import refresh_catalog
+        ids += list(refresh_catalog(data_output_path.parent).keys())
+    except Exception as exc:
+        log(f"[stub-init] WARN: PGWiki catalog unavailable: {exc}")
+
+    created = 0
+    for app_id in ids:
+        app_dir = data_output_path / app_id_to_dir(app_id)
+        latest = app_dir / "latest.json"
+        if latest.exists():
+            continue
+        app_dir.mkdir(parents=True, exist_ok=True)
+        latest.write_text("[]\n", encoding="utf-8")
+        created += 1
+    log(f"[stub-init] initialized {created:,} non-Steam stub dirs (of {len(ids):,} catalog ids)")
+
+
+def enrich_nonsteam_app_metadata(data_output_path: Path) -> None:
+    """Write store facts into each non-Steam app's data/{appId}/metadata.json
+    under a `store` key (#400): {genres, developers, publishers, os,
+    store_link}.
+
+    The catalog sweeps already receive these fields in the same payloads
+    they page for titles/covers -- this publishes them where all per-app
+    enrichment lives (same folder as year files, depots.json, and the
+    provenance flags already in metadata.json). The stores CORS-lock their
+    APIs to their own origins, so the browser can never fetch this itself;
+    the pipeline runs server-side where CORS does not apply.
+
+    Only apps that HAVE a data dir get the block -- catalog-only stubs have
+    no reports and no folder, and the game page's stub view has no Metadata
+    button. The tiny per-app writes ride the R2 delta sync: only apps whose
+    store facts actually changed re-upload.
+    """
+    facts: dict[str, dict] = {}
+    try:
+        for pid, entry in load_gog_meta().items():
+            facts[f"gog:{pid}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: GOG meta unavailable: {exc}")
+    try:
+        for namespace, entry in load_epic_meta().items():
+            facts[f"epic:{namespace}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: Epic meta unavailable: {exc}")
+
+    written = 0
+    skipped_no_dir = 0
+    for app_id, entry in facts.items():
+        app_dir = data_output_path / app_id_to_dir(app_id)
+        if not app_dir.is_dir():
+            skipped_no_dir += 1
+            continue
+        meta_path = app_dir / "metadata.json"
+        existing: dict = {}
+        if meta_path.exists():
+            try:
+                raw = json.loads(meta_path.read_text())
+                if isinstance(raw, dict):
+                    existing = raw
+            except (OSError, json.JSONDecodeError):
+                pass
+        if existing.get("store") == entry:
+            continue  # unchanged -- keep the file byte-identical for the delta sync
+        existing["store"] = entry
+        meta_path.write_text(json.dumps(existing, indent=2, sort_keys=True) + "\n")
+        written += 1
+    log(
+        f"[nonsteam-metadata] store facts: {written:,} metadata.json updated, "
+        f"{skipped_no_dir:,} catalog-only ids skipped (no data dir), source=gog+epic catalog caches"
     )
 
 
@@ -1836,6 +1995,11 @@ def finalize_output(output_dir, skip_probe: bool = False):
     enrich_search_index_with_release_years(output_path)
     phase("Non-Steam box art probe")
     generate_nonsteam_images(output_path)
+    phase("Init non-Steam stub dirs (empty latest.json)")
+    init_nonsteam_stub_dirs(data_output_path)
+    phase("Non-Steam store facts (per-app metadata.json + aggregate)")
+    enrich_nonsteam_app_metadata(data_output_path)
+    generate_nonsteam_metadata(output_path)
     phase("Coverage report")
     generate_coverage_report(
         full_index_keys,

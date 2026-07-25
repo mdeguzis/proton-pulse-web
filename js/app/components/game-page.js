@@ -1,5 +1,6 @@
 // game-page (components) for the app page. Relocated from app.js.
 
+import { appIdToDir } from '../../lib/app-id.js?v=f8129c09';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
@@ -15,7 +16,7 @@ import { renderCard } from './report-card.js?v=1ee75a46';
 import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=7ec2be23';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, dataFilesHref, storeLabelFromAppId } from '../config.js?v=cd6114a7';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=593229c5';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e6503ae7';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
@@ -215,15 +216,113 @@ function _openRuntimeHistoryModal(appId, combined) {
   });
 }
 
+// Non-Steam metadata renderer (#400). PGWiki entries carry a rich catalog
+// record (pcgwiki-catalog.json: name, engine, developers, publishers,
+// release_year, os, wiki_url); GOG/Epic render the facts we hold in the
+// search index plus a store link -- their APIs CORS-lock to their own
+// origins, so client-side enrichment is impossible without a proxy.
+async function _renderNonSteamMetadata(modal, appId, storeType) {
+  const body = modal.querySelector('#game-metadata-body');
+  if (!body) return;
+  const section = (title, html) => html
+    ? `<div class="gm-section"><div class="gm-section-title">${esc(title)}</div><div class="gm-section-body">${html}</div></div>`
+    : '';
+  const chips = (items) => (items || []).length
+    ? `<div class="gm-chips">${items.map(i => `<span class="gm-chip">${esc(i)}</span>`).join('')}</div>`
+    : '';
+
+  await loadSearchIndex();
+  const row = (searchIndex || []).find(r => String(r[0]) === String(appId)) || [];
+  const title = row[1] ? String(row[1]) : '';
+  const releaseYear = row[6] != null ? String(row[6]) : '';
+
+  if (storeType === 'pgwiki') {
+    let entry = null;
+    try {
+      const res = await fetch(await dataUrl('pcgwiki-catalog.json'));
+      const catalog = res.ok ? await res.json() : {};
+      entry = catalog?.[String(appId)] || null;
+    } catch { /* fall through to index-only render */ }
+    const osList = Array.isArray(entry?.os) ? entry.os.filter(Boolean) : [];
+    const wikiUrl = entry?.wiki_url && String(entry.wiki_url).startsWith('https://www.pcgamingwiki.com/')
+      ? String(entry.wiki_url) : pcgamingwikiSearchUrl(entry?.name || title);
+    body.innerHTML = [
+      section('Name', `<strong>${esc(entry?.name || title || String(appId))}</strong>`),
+      section('App ID', `<code>${esc(String(appId))}</code>`),
+      section('Store', '<span class="gm-plat">PCGamingWiki catalog entry</span> <span class="gm-mute" style="font-size:0.75rem">No store page -- catalogued abandonware / classic</span>'),
+      section('Engine', entry?.engine ? `<span>${esc(entry.engine)}</span>` : ''),
+      section('Developer', chips(entry?.developers)),
+      section('Publisher', chips(entry?.publishers)),
+      section('Release year', (entry?.release_year || releaseYear) ? `<code>${esc(String(entry?.release_year || releaseYear))}</code>` : ''),
+      section('Supported systems', chips(osList.map(o => humanPCGamingWikiOs(o)))),
+      section('Source', `<a href="${esc(wikiUrl)}" target="_blank" rel="noopener">PCGamingWiki article -&gt;</a> <span class="gm-mute" style="font-size:0.75rem">(CC BY-NC-SA 3.0)</span>`),
+    ].join('') || '<p class="rh-hint">No catalog data held for this entry.</p>';
+    return;
+  }
+
+  // GOG / Epic: the pipeline writes the store facts it receives from the
+  // catalog sweeps into this app's data/{appId}/metadata.json under a
+  // `store` key (#400) -- genres, developers, publishers, OS list, store
+  // link. Same folder as the year files and depots.json, fetched the same
+  // way. The browser cannot ask the stores directly (their APIs CORS-lock
+  // to their own origins); the pipeline runs server-side where that does
+  // not apply.
+  let store = null;
+  try {
+    const res = await fetch(await dataUrl(`data/${appIdToDir(appId)}/metadata.json`));
+    const raw = res.ok ? await res.json() : null;
+    if (raw && typeof raw.store === 'object') store = raw.store;
+  } catch { /* metadata.json absent for this app -- try the aggregate */ }
+  if (!store) {
+    // Catalog-only stubs (zero reports) have no data dir, so their facts
+    // live only in the aggregate nonsteam-metadata.json.
+    try {
+      const res = await fetch(await dataUrl('nonsteam-metadata.json'));
+      const map = res.ok ? await res.json() : null;
+      if (map && typeof map[String(appId)] === 'object') store = map[String(appId)];
+    } catch { /* aggregate absent too -- render index facts */ }
+  }
+
+  const bareId = String(appId).replace(/^(gog|epic):/, '');
+  const OS_LABEL = { windows: 'Windows', linux: 'Linux', osx: 'macOS', mac: 'macOS' };
+  const storeLink = (store?.store_link && /^https:\/\/(www\.gog\.com|store\.epicgames\.com)\//.test(store.store_link))
+    ? store.store_link
+    : (storeType === 'gog'
+      ? `https://www.gogdb.org/product/${encodeURIComponent(bareId)}`
+      : `https://store.epicgames.com/en-US/browse?q=${encodeURIComponent(title)}&sortBy=relevancy&sortDir=DESC`);
+  const storeLinkLabel = store?.store_link ? `Open on ${storeLabel(storeType)}`
+    : (storeType === 'gog' ? 'GOG DB product page' : 'Search the Epic store');
+  body.innerHTML = [
+    section('Name', title ? `<strong>${esc(title)}</strong>` : ''),
+    section('App ID', `<code>${esc(String(appId))}</code>`),
+    section('Store', `<span class="gm-plat">${esc(storeLabel(storeType))}</span>`),
+    section('Developer', chips(store?.developers)),
+    section('Publisher', chips(store?.publishers)),
+    section('Genres', chips(store?.genres)),
+    section('Supported systems', chips((store?.os || []).map(o => OS_LABEL[String(o).toLowerCase()] || o))),
+    section('Release year', releaseYear ? `<code>${esc(releaseYear)}</code>` : ''),
+    section('More details', `<a href="${esc(storeLink)}" target="_blank" rel="noopener">${esc(storeLinkLabel)} -&gt;</a>${store ? '' : `
+      <div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Store facts for this game have not been published by the pipeline yet (next nightly run picks them up).</div>`}`),
+  ].join('') || '<p class="rh-hint">No catalog data held for this entry.</p>';
+}
+
 // Metadata modal opened by the "Metadata" pill in the hub-links row.
 // Formats the Steam appdetails payload the same way SteamDB does: one
 // section per fact block (developer / publisher / systems / release
 // date / genres / metacritic). Fields that Steam did not return simply
 // omit their block so a partial response never looks like a bug.
+//
+// Non-Steam ids never reach the Steam path (#400): appdetails cannot
+// know a gog:/epic:/pgwiki: id, so the modal renders from the data we
+// hold client-side instead -- the pgwiki catalog is rich (engine, devs,
+// pubs, year, OS list, wiki url); GOG/Epic get the search-index facts
+// plus a store link, since both stores CORS-lock their APIs to their
+// own origins (verified: access-control-allow-origin pins gog.com).
 async function _openMetadataModal(appId) {
   const existing = document.getElementById('game-metadata-modal');
   if (existing) existing.remove();
 
+  const storeType = appTypeFromAppId(appId);
   const modal = document.createElement('div');
   modal.id = 'game-metadata-modal';
   modal.className = 'flag-modal-overlay';
@@ -231,7 +330,7 @@ async function _openMetadataModal(appId) {
     <div class="flag-modal game-metadata-modal">
       <h3 class="flag-modal-title">Metadata</h3>
       <div id="game-metadata-body" class="game-metadata-body">
-        <p class="rh-hint">Loading Steam metadata...</p>
+        <p class="rh-hint">Loading ${esc(storeLabel(storeType))} metadata...</p>
       </div>
       <div class="flag-modal-actions">
         <button class="action-btn" id="game-metadata-close">Close</button>
@@ -244,6 +343,11 @@ async function _openMetadataModal(appId) {
   document.addEventListener('keydown', function onKey(e) {
     if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); }
   });
+
+  if (storeType !== 'steam') {
+    await _renderNonSteamMetadata(modal, appId, storeType);
+    return;
+  }
 
   const [meta, depotInfo, newsInfo, antiCheat, pgw] = await Promise.all([
     fetchAppMetadata(appId).catch(() => null),

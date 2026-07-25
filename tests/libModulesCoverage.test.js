@@ -24,8 +24,8 @@ describe('appIdToDir', () => {
     expect(appIdToDir('epic:fortnite')).toBe('epic_fortnite');
   });
 
-  test('only the first colon is replaced (canonical ids only carry one)', () => {
-    expect(appIdToDir('gog:abc:def')).toBe('gog_abc:def');
+  test('replaces ALL colons (pgwiki slugs carry them)', () => {
+    expect(appIdToDir('gog:abc:def')).toBe('gog_abc_def');
   });
 });
 

@@ -106,7 +106,7 @@ jobs:
           FILES=(
             search-index.json search-index-steam-extended.json most_played.json
             recent-reports.json stats.json coverage-summary.json data-versions.json
-            game-images.json game-images-skip.json nonsteam-images.json
+            game-images.json game-images-skip.json nonsteam-images.json nonsteam-metadata.json
             deck-status.json proton-versions.json steam-catalog.json
             hardware-suggestions.json scoring-info.json form-schema.json
             app-id-redirects.json pcgamingwiki.json pcgwiki-catalog.json
@@ -119,6 +119,21 @@ jobs:
             else
               rm -f "/tmp/shell-out/$f"
               echo "skipping $f (absent on live site or HTML fallback)"
+            fi
+          done
+          # Plugin-repo-sourced files that the FULL pipeline curls from
+          # decky-proton-pulse. They may be absent on a fresh staging site
+          # that has never run a full pipeline. Fetch them as a fallback so
+          # the submit page and scoring tooltips never 404 on a shell push.
+          for pf in scoring-info.json form-schema.json; do
+            if [ ! -s "/tmp/shell-out/$pf" ]; then
+              if curl -sfL --max-time 15 \
+                "https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/$pf" \
+                -o "/tmp/shell-out/$pf" && [ -s "/tmp/shell-out/$pf" ]; then
+                echo "fetched $pf from plugin repo (live-target copy absent)"
+              else
+                rm -f "/tmp/shell-out/$pf"
+              fi
             fi
           done
 

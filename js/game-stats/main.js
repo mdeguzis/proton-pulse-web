@@ -4,7 +4,7 @@ import { pulseTierFromReports } from '../shared/scoring.js?v=5090f6d2';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=e6503ae7';
-import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
+import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,
 // pulls the same CDN data the main app page uses, then renders a thoughtful

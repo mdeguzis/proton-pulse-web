@@ -6,7 +6,7 @@ import {
   deleteDraft, deleteLocalDraft, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
 } from '../shared/drafts.js?v=d7011aa5';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
-import { appIdToDir } from '../lib/app-id.js?v=18a73fb7';
+import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
 import { esc } from '../app/utils.js?v=9a39c726';
 
 (async function() {

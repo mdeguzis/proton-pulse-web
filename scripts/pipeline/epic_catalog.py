@@ -41,6 +41,14 @@ _EPIC_QUERY = """
         title
         namespace
         releaseDate
+        developerDisplayName
+        publisherDisplayName
+        productSlug
+        catalogNs { mappings(pageType: "productHome") { pageSlug } }
+        tags {
+          name
+          groupName
+        }
         keyImages {
           type
           url
@@ -68,6 +76,9 @@ _epic_catalog_cache: dict[str, str] | None = None
 _epic_covers_cache: dict[str, str] | None = None
 # Parallel map {namespace: year_int} for release-year disambiguation (#112).
 _epic_years_cache: dict[str, int] | None = None
+# Parallel map {namespace: {genres, developers, publishers, store_link}}
+# (#400). All fields ride the same GraphQL pages -- zero extra requests.
+_epic_meta_cache: dict[str, dict] | None = None
 # keyImages types worth using as a header/box image, best first.
 _EPIC_COVER_TYPES = ("DieselStoreFrontWide", "OfferImageWide", "Featured", "DieselGameBoxWide")
 
@@ -83,7 +94,7 @@ def load_epic_catalog(
     Returns empty dict on failure so callers degrade gracefully. Cover image
     URLs load into a parallel cache; read them via load_epic_covers().
     """
-    global _epic_catalog_cache, _epic_covers_cache, _epic_years_cache
+    global _epic_catalog_cache, _epic_covers_cache, _epic_years_cache, _epic_meta_cache
     if _epic_catalog_cache is not None and not force_refresh:
         return _epic_catalog_cache
 
@@ -98,6 +109,8 @@ def load_epic_catalog(
                 # load fine; empty map until the 7-day TTL expires and the
                 # next fetch populates it.
                 _epic_years_cache = cached.get("years", {}) or {}
+                # `meta` added in #400; same forward-compat rule as years.
+                _epic_meta_cache = cached.get("meta", {}) or {}
                 log(
                     f"[epic-catalog] loaded {len(_epic_catalog_cache):,} entries"
                     f" ({len(_epic_covers_cache):,} covers, {len(_epic_years_cache):,} years) from cache (age {age / 3600:.1f}h)"
@@ -108,18 +121,19 @@ def load_epic_catalog(
 
     log("[epic-catalog] fetching full Epic catalog from store.epicgames.com ...")
     try:
-        catalog, covers, years = _fetch_all_pages()
+        catalog, covers, years, meta = _fetch_all_pages()
     except Exception as exc:
         log(f"[epic-catalog] WARN: catalog fetch failed: {exc}; search index will lack Epic stubs")
         _epic_catalog_cache = {}
         _epic_covers_cache = {}
         _epic_years_cache = {}
+        _epic_meta_cache = {}
         return _epic_catalog_cache
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
         json.dumps(
-            {"_ts": int(time.time()), "catalog": catalog, "covers": covers, "years": years},
+            {"_ts": int(time.time()), "catalog": catalog, "covers": covers, "years": years, "meta": meta},
             ensure_ascii=False,
         ),
         encoding="utf-8",
@@ -128,6 +142,7 @@ def load_epic_catalog(
     _epic_catalog_cache = catalog
     _epic_covers_cache = covers
     _epic_years_cache = years
+    _epic_meta_cache = meta
     return catalog
 
 
@@ -157,6 +172,21 @@ def load_epic_release_years(
     return _epic_years_cache or {}
 
 
+def load_epic_meta(
+    cache_path: Path = DEFAULT_EPIC_CATALOG_CACHE_PATH,
+    max_age_seconds: int = EPIC_CATALOG_CACHE_MAX_AGE_SECONDS,
+) -> dict[str, dict]:
+    """Return {namespace: {genres, developers, publishers, store_link}} (#400).
+
+    Empty dict when the cached catalog predates #400; the next fetch after
+    the TTL fills it.
+    """
+    global _epic_meta_cache
+    if _epic_meta_cache is None:
+        load_epic_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
+    return _epic_meta_cache or {}
+
+
 def _extract_year(release_date: str | None) -> int | None:
     """Pull a 19xx/20xx year out of Epic's releaseDate string. Epic
     returns ISO-8601 (e.g. `2017-05-05T04:00:00.000Z`), possibly null.
@@ -181,10 +211,11 @@ def _pick_cover(key_images: list) -> str:
     return ""
 
 
-def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
+def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int], dict[str, dict]]:
     catalog: dict[str, str] = {}
     covers: dict[str, str] = {}
     years: dict[str, int] = {}
+    meta: dict[str, dict] = {}
     start = 0
     total = None
 
@@ -214,6 +245,29 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
                 year = _extract_year(elem.get("releaseDate"))
                 if year is not None:
                     years[namespace] = year
+                # #400: store-facts sidecar for the Metadata modal.
+                entry: dict = {}
+                dev = (elem.get("developerDisplayName") or "").strip()
+                if dev:
+                    entry["developers"] = [dev]
+                pub = (elem.get("publisherDisplayName") or "").strip()
+                if pub:
+                    entry["publishers"] = [pub]
+                genres = [t.get("name") for t in (elem.get("tags") or [])
+                          if isinstance(t, dict) and t.get("groupName") == "genre" and t.get("name")]
+                if genres:
+                    entry["genres"] = genres
+                slug = (elem.get("productSlug") or "").strip().strip("/")
+                if not slug:
+                    mappings = ((elem.get("catalogNs") or {}).get("mappings") or [])
+                    for m in mappings:
+                        if isinstance(m, dict) and m.get("pageSlug"):
+                            slug = str(m["pageSlug"]).strip().strip("/")
+                            break
+                if slug:
+                    entry["store_link"] = f"https://store.epicgames.com/en-US/p/{slug}"
+                if entry:
+                    meta[namespace] = entry
 
         start += len(elements)
         if not elements or start >= total:
@@ -223,8 +277,8 @@ def _fetch_all_pages() -> tuple[dict[str, str], dict[str, str], dict[str, int]]:
             log(f"[epic-catalog] fetched {start}/{total} ({len(catalog):,} unique namespaces so far)")
         time.sleep(_INTER_PAGE_DELAY_SECONDS)
 
-    log(f"[epic-catalog] complete: {len(catalog):,} Epic games ({len(covers):,} covers, {len(years):,} years)")
-    return catalog, covers, years
+    log(f"[epic-catalog] complete: {len(catalog):,} Epic games ({len(covers):,} covers, {len(years):,} years, {len(meta):,} meta)")
+    return catalog, covers, years, meta
 
 
 def _fetch_page(start: int) -> dict:
@@ -261,6 +315,8 @@ def _fetch_page(start: int) -> dict:
 
 
 def flush_epic_catalog_cache() -> None:
-    global _epic_catalog_cache, _epic_covers_cache
+    global _epic_catalog_cache, _epic_covers_cache, _epic_years_cache, _epic_meta_cache
     _epic_catalog_cache = None
     _epic_covers_cache = None
+    _epic_years_cache = None
+    _epic_meta_cache = None

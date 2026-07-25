@@ -13,5 +13,9 @@
  * @returns {string}
  */
 export function appIdToDir(appId) {
-  return String(appId).replace(':', '_');
+  // replaceAll -- String.replace with a string literal only replaces the
+  // FIRST occurrence, so pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay
+  // kept the second colon and 404'd on R2. Must match the Python
+  // scripts/pipeline/common.py app_id_to_dir which uses str.replace.
+  return String(appId).replace(/:/g, '_');
 }
