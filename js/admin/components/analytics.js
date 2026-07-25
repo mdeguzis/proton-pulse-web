@@ -73,7 +73,14 @@ async function _probeDataFile(name) {
   // HEAD-equivalent fetch so the file body never lands in memory. Reads cache
   // and freshness headers from the response so the panel reflects the same
   // values the user's browser is honoring.
-  const url = `https://www.proton-pulse.com/${name}`;
+  //
+  // Same-origin on purpose: these top-level files ship with the Pages shell
+  // of WHICHEVER env the admin is on, so probing the prod hostname from
+  // staging both violated admin.html's connect-src (every row read 'Failed
+  // to fetch') and showed the wrong env's freshness. Same env-isolation
+  // principle as the shell-deploy preserve step.
+  const origin = (typeof window !== 'undefined' && window.location && window.location.origin) || '';
+  const url = `${origin}/${name}`;
   try {
     const resp = await fetch(url, { method: 'HEAD', cache: 'no-store' });
     const headers = resp.headers;
@@ -270,7 +277,7 @@ async function loadDataCacheTable() {
         </tr>`;
       }).join('')}</tbody>
     </table>
-    <p class="admin-empty" style="margin-top:8px;font-size:0.78rem">Probed via HEAD against the production CDN. Edge cache value reflects the most recent fetch from your client.</p>
+    <p class="admin-empty" style="margin-top:8px;font-size:0.78rem">Probed via HEAD against this site's own origin (env-isolated). Edge cache value reflects the most recent fetch from your client.</p>
   `;
 }
 
