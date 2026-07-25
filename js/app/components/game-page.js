@@ -1,6 +1,6 @@
 // game-page (components) for the app page. Relocated from app.js.
 
-import { appIdToDir } from '../../lib/app-id.js?v=18a73fb7';
+import { appIdToDir } from '../../lib/app-id.js?v=f8129c09';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
@@ -16,7 +16,7 @@ import { renderCard } from './report-card.js?v=1ee75a46';
 import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=7ec2be23';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=cd6114a7';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=593229c5';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e6503ae7';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
@@ -272,7 +272,16 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
     const res = await fetch(await dataUrl(`data/${appIdToDir(appId)}/metadata.json`));
     const raw = res.ok ? await res.json() : null;
     if (raw && typeof raw.store === 'object') store = raw.store;
-  } catch { /* metadata.json absent for this app -- render index facts */ }
+  } catch { /* metadata.json absent for this app -- try the aggregate */ }
+  if (!store) {
+    // Catalog-only stubs (zero reports) have no data dir, so their facts
+    // live only in the aggregate nonsteam-metadata.json.
+    try {
+      const res = await fetch(await dataUrl('nonsteam-metadata.json'));
+      const map = res.ok ? await res.json() : null;
+      if (map && typeof map[String(appId)] === 'object') store = map[String(appId)];
+    } catch { /* aggregate absent too -- render index facts */ }
+  }
 
   const bareId = String(appId).replace(/^(gog|epic):/, '');
   const OS_LABEL = { windows: 'Windows', linux: 'Linux', osx: 'macOS', mac: 'macOS' };

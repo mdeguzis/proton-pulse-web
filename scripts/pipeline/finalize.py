@@ -1134,6 +1134,32 @@ def generate_extended_steam_index(
     )
 
 
+def generate_nonsteam_metadata(output_path: Path) -> None:
+    """Emit nonsteam-metadata.json: {canonical_id: store facts} for ALL
+    GOG/Epic catalog entries (#400).
+
+    Companion to enrich_nonsteam_app_metadata below: the per-app write only
+    covers apps with a data dir, and today every non-Steam entry on the
+    site is a catalog-only stub (zero reports -> zero dirs), so without
+    this aggregate the Metadata modal has no source at all for them. Same
+    single-fetch access pattern as nonsteam-images.json.
+    """
+    merged: dict[str, dict] = {}
+    try:
+        for pid, entry in load_gog_meta().items():
+            merged[f"gog:{pid}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: GOG meta unavailable: {exc}")
+    try:
+        for namespace, entry in load_epic_meta().items():
+            merged[f"epic:{namespace}"] = entry
+    except Exception as exc:
+        log(f"[nonsteam-metadata] WARN: Epic meta unavailable: {exc}")
+    out_file = output_path / "nonsteam-metadata.json"
+    out_file.write_text(json.dumps(merged, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+    log(f"[nonsteam-metadata] wrote {len(merged):,} aggregate entries to {out_file.name}")
+
+
 def enrich_nonsteam_app_metadata(data_output_path: Path) -> None:
     """Write store facts into each non-Steam app's data/{appId}/metadata.json
     under a `store` key (#400): {genres, developers, publishers, os,
@@ -1892,8 +1918,9 @@ def finalize_output(output_dir, skip_probe: bool = False):
     enrich_search_index_with_release_years(output_path)
     phase("Non-Steam box art probe")
     generate_nonsteam_images(output_path)
-    phase("Non-Steam store facts into per-app metadata.json")
+    phase("Non-Steam store facts (per-app metadata.json + aggregate)")
     enrich_nonsteam_app_metadata(data_output_path)
+    generate_nonsteam_metadata(output_path)
     phase("Coverage report")
     generate_coverage_report(
         full_index_keys,

@@ -1,6 +1,8 @@
 // Environment constants and app-wide config.
 // Copied verbatim from app.js lines 1-39; do not paraphrase or "improve" them.
 
+import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
+
 export const SB_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1';
 export const SB_KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
 export const STEAM_IMG = id => `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`;
@@ -50,7 +52,9 @@ function _dataHost() {
   if (host === 'staging.proton-pulse.com') return 'https://staging-data.proton-pulse.com';
   return 'https://data.proton-pulse.com';
 }
-export const dataFilesHref = appId => `${_dataHost()}/data/${appId}/latest.json`;
+// appIdToDir matches the pipeline's on-disk layout (colon -> underscore);
+// a raw canonical id 404s on R2 for gog:/epic:/pgwiki: entries.
+export const dataFilesHref = appId => `${_dataHost()}/data/${appIdToDir(appId)}/latest.json`;
 
 // Fetch a pipeline data path from the current origin first; if it 404s,
 // retry once against production so a staging build that hasn't run the

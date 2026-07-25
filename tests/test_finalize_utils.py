@@ -641,3 +641,12 @@ def test_update_app_metadata_preserves_store_block(tmp_path):
     raw = json.loads((data_dir / "gog_7" / "metadata.json").read_text())
     assert raw["protondb_live"] is True
     assert raw["store"] == {"genres": ["Strategy"]}  # not dropped by the flag update
+
+
+def test_generate_nonsteam_metadata_aggregate(tmp_path):
+    from scripts.pipeline.finalize import generate_nonsteam_metadata
+    with patch("scripts.pipeline.finalize.load_gog_meta", return_value={"7": {"genres": ["Strategy"]}}), \
+         patch("scripts.pipeline.finalize.load_epic_meta", return_value={"ns1": {"developers": ["DevCo"]}}):
+        generate_nonsteam_metadata(tmp_path)
+    out = json.loads((tmp_path / "nonsteam-metadata.json").read_text())
+    assert out == {"gog:7": {"genres": ["Strategy"]}, "epic:ns1": {"developers": ["DevCo"]}}

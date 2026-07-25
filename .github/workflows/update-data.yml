@@ -550,6 +550,7 @@ jobs:
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
           cp /tmp/protondb-output/deck-status.json . 2>/dev/null || true
           cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-metadata.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/data-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
@@ -587,7 +588,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json nonsteam-metadata.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -635,6 +636,7 @@ jobs:
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
           cp /tmp/protondb-output/deck-status.json . 2>/dev/null || true
           cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-metadata.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/data-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
@@ -655,7 +657,7 @@ jobs:
           # cache if staging has none yet.
           bash /tmp/preserve-steam-type-cache.sh "$(pwd)" gh-pages || true
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json nonsteam-metadata.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -917,6 +919,7 @@ jobs:
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
           cp /tmp/protondb-output/deck-status.json . 2>/dev/null || true
           cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-metadata.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/data-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
@@ -951,7 +954,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json nonsteam-metadata.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do
@@ -1165,6 +1168,7 @@ jobs:
           cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
           cp /tmp/protondb-output/deck-status.json . 2>/dev/null || true
           cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
+          cp /tmp/protondb-output/nonsteam-metadata.json . 2>/dev/null || true
           cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/data-versions.json . 2>/dev/null || true
           cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
@@ -1199,7 +1203,7 @@ jobs:
           git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
           # add optional pipeline outputs (skip silently if a fresh checkout
           # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
+          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json nonsteam-metadata.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json; do
             [ -f "$f" ] && git add "$f"
           done
           while IFS= read -r path; do

@@ -63,3 +63,20 @@ describe('metadata modal store routing (#400)', () => {
     expect(fn).toContain('store.epicgames.com');
   });
 });
+
+
+describe('aggregate fallback for catalog-only stubs', () => {
+  test('modal falls back to nonsteam-metadata.json when per-app metadata.json is absent', () => {
+    const fn = SRC.slice(SRC.indexOf('async function _renderNonSteamMetadata'));
+    expect(fn).toContain("dataUrl('nonsteam-metadata.json')");
+    // per-app file is tried FIRST (colocation is the source of truth)
+    expect(fn.indexOf('metadata.json')).toBeLessThan(fn.indexOf('nonsteam-metadata.json'));
+  });
+
+  test('deploy plumbing ships the aggregate on every surface', () => {
+    const sh = fs.readFileSync(path.join(__dirname, '..', 'scripts/publish-cloudflare.sh'), 'utf8');
+    const shell = fs.readFileSync(path.join(__dirname, '..', '.github/workflows/publish-shell.yml'), 'utf8');
+    const data = fs.readFileSync(path.join(__dirname, '..', '.github/workflows/update-data.yml'), 'utf8');
+    for (const src of [sh, shell, data]) expect(src).toContain('nonsteam-metadata.json');
+  });
+});

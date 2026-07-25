@@ -28,15 +28,31 @@ describe('appIdToDir', () => {
     expect(appIdToDir('epic:fortnite')).toBe('epic_fortnite');
   });
 
-  test('only replaces the first colon (canonical IDs only have one)', () => {
+  test('replaces ALL colons so pgwiki titles match the pipeline fs layout', () => {
     const { appIdToDir } = loadMod();
-    // Defensive: even if a colon snuck into a tail segment, ensure we never
-    // emit a leading colon dir like /:foo
-    expect(appIdToDir('gog:abc:def')).toBe('gog_abc:def');
+    // pgwiki IDs carry colons in the wiki slug itself -- e.g.
+    // pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay.
+    // The pipeline's Python str.replace(':', '_') replaces them all;
+    // the JS side must too or the browser asks for a different path
+    // than what R2 has.
+    expect(appIdToDir('gog:abc:def')).toBe('gog_abc_def');
+    expect(appIdToDir('pgwiki:1914:_The_Great_War')).toBe('pgwiki_1914__The_Great_War');
   });
 
   test('handles numeric coercion safely', () => {
     const { appIdToDir } = loadMod();
     expect(appIdToDir(0)).toBe('0');
+  });
+});
+
+
+describe('dataFilesHref uses the shared appIdToDir (data-disconnect guard)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const CFG = fs.readFileSync(path.join(__dirname, '..', 'js/app/config.js'), 'utf8');
+
+  test('routes through appIdToDir, never the raw canonical id', () => {
+    expect(CFG).toMatch(/dataFilesHref = appId => .*appIdToDir\(appId\)/);
+    expect(CFG).toMatch(/import \{ appIdToDir \} from '\.\.\/lib\/app-id\.js/);
   });
 });
