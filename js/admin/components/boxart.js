@@ -1178,7 +1178,7 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     <div class="boxart-detail-grid">
       <div class="admin-card" style="padding:12px">
         <div class="admin-subhead">Preview</div>
-        <img id="boxart-detail-preview" referrerpolicy="no-referrer" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05)">
+        <a id="boxart-detail-preview-link" href="${escapeHtml(previewSrc)}" target="_blank" rel="noopener" title="Open full-size image in a new tab"><img id="boxart-detail-preview" referrerpolicy="no-referrer" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05); cursor: zoom-in"></a>
         <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${gameManagerLink}</p>
       </div>
 
@@ -1231,6 +1231,8 @@ function _wireAutoRefetch(row) {
       : await refetchNonSteamHeader(row.appId, row.cachedUrl || null);
     if (result?.ok && result.url) {
       img.src = result.url;
+      const link = document.getElementById('boxart-detail-preview-link');
+      if (link) link.href = result.url;
       img.style.opacity = 1;
       img.alt = 'header preview';
     } else {
@@ -1416,7 +1418,8 @@ export async function renderBoxartAdminDetail(appId) {
           setStatus('override set from SteamGridDB: ' + url);
           refreshBody();
           const prev = document.getElementById('boxart-detail-preview');
-          if (prev) { prev.src = url; prev.style.opacity = 1; }
+          if (prev) { prev.src = url;
+            { const _l = document.getElementById('boxart-detail-preview-link'); if (_l) _l.href = prev.src; } prev.style.opacity = 1; }
         } else {
           sgdbStatus('Set failed: ' + (res.error || 'unknown'), true);
         }
@@ -1507,7 +1510,8 @@ export async function renderBoxartAdminDetail(appId) {
           setStatus('override set from Steam CDN: ' + url);
           refreshBody();
           const prev = document.getElementById('boxart-detail-preview');
-          if (prev) { prev.src = url; prev.style.opacity = 1; }
+          if (prev) { prev.src = url;
+            { const _l = document.getElementById('boxart-detail-preview-link'); if (_l) _l.href = prev.src; } prev.style.opacity = 1; }
         } else {
           steamCdnStatus('Set failed: ' + (res.error || 'unknown'), true);
         }
@@ -1556,7 +1560,8 @@ export async function renderBoxartAdminDetail(appId) {
           }
           if (result?.ok && result.url) {
             const prev = document.getElementById('boxart-detail-preview');
-            if (prev) { prev.src = result.url; prev.style.opacity = 1; prev.alt = 'header preview'; }
+            if (prev) { prev.src = result.url;
+            { const _l = document.getElementById('boxart-detail-preview-link'); if (_l) _l.href = prev.src; } prev.style.opacity = 1; prev.alt = 'header preview'; }
           }
         } else {
           result = await refetchSgdbHeader(row.appId);
@@ -1596,7 +1601,8 @@ export async function renderBoxartAdminDetail(appId) {
             setStatus(`sgdb-first: box art override set from SteamGridDB (${pick.width || '?'}x${pick.height || '?'}).`);
             refreshBody();
             const prev = document.getElementById('boxart-detail-preview');
-            if (prev) { prev.src = pick.url; prev.style.opacity = 1; }
+            if (prev) { prev.src = pick.url;
+            { const _l = document.getElementById('boxart-detail-preview-link'); if (_l) _l.href = prev.src; } prev.style.opacity = 1; }
           } else {
             setStatus(`sgdb-first apply failed: ${applied.error || 'unknown'}`, true);
           }

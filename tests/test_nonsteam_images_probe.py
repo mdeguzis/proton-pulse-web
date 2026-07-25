@@ -121,3 +121,48 @@ def test_probe_respects_backlog_cap(tmp_path):
     assert m.call_count == 3
     cache = json.loads((tmp_path / "nonsteam-images-cache.json").read_text())
     assert len(cache) == 3  # the 7 unprobed ids are not in the cache yet
+
+
+# ---- missing-status retry (poisoned-cache fix) ------------------------------
+# A transient CDN failure during one probe run wrote status=missing for a
+# working URL (Coffee Noir, gog:1514133152) and the frontend map dropped the
+# cover for a month. Missing entries now retry after MISSING_RETRY_DAYS and
+# jump the backlog queue so the cap cannot starve them.
+
+def test_missing_entries_go_stale_fast():
+    from datetime import date, timedelta
+    from scripts.pipeline.nonsteam_images_probe import _is_stale, MISSING_RETRY_DAYS, STALE_DAYS
+    assert MISSING_RETRY_DAYS < STALE_DAYS
+    old_enough = (date.today() - timedelta(days=MISSING_RETRY_DAYS + 1)).isoformat()
+    fresh = date.today().isoformat()
+    assert _is_stale({"status": "missing", "probed_at": old_enough, "url": "x"}) is True
+    assert _is_stale({"status": "missing", "probed_at": fresh, "url": "x"}) is False
+    # OK entries keep the long TTL
+    assert _is_stale({"status": "ok", "probed_at": old_enough, "url": "x"}) is False
+
+
+def test_missing_retries_jump_the_backlog_queue(tmp_path, monkeypatch):
+    from datetime import date, timedelta
+    import scripts.pipeline.nonsteam_images_probe as probe_mod
+    stale_missing_day = (date.today() - timedelta(days=probe_mod.MISSING_RETRY_DAYS + 1)).isoformat()
+    cache = {
+        # a stale missing entry that must be retried FIRST
+        "gog:111": {"url": "https://cdn/m.png", "status": "missing", "probed_at": stale_missing_day},
+    }
+    probed_order = []
+    monkeypatch.setattr(probe_mod, "_load_cache", lambda _out: dict(cache))
+    monkeypatch.setattr(probe_mod, "_hot_ids", lambda _out: set())
+    monkeypatch.setattr(probe_mod, "_url_is_ok", lambda url, timeout=8: (probed_order.append(url), True)[1])
+    monkeypatch.setattr(probe_mod, "PROBE_CAP", 2)
+    monkeypatch.setattr(probe_mod.time, "sleep", lambda _s: None)
+    catalog = {
+        "gog:111": "https://cdn/m.png",
+        # two uncached entries that would fill a cap of 2 on their own
+        "gog:222": "https://cdn/a.png",
+        "gog:333": "https://cdn/b.png",
+    }
+    result = probe_mod.probe_nonsteam_images(tmp_path, catalog)
+    # the missing retry was probed first, within the cap
+    assert probed_order[0] == "https://cdn/m.png"
+    # and having succeeded, its cover is back in the frontend map
+    assert result["gog:111"] == "https://cdn/m.png"
