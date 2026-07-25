@@ -27,6 +27,10 @@
  *
  * Optional env vars:
  *   OPENAI_API_KEY  - enables semantic layer; wordlist-only if absent
+ *   VT_API_KEY      - enables layer 3 URL reputation lookups (#378);
+ *                     skipped if absent. Free tier 4 req/min -- calls are
+ *                     spaced 15.5s, deduped per run, capped by VT_URL_BUDGET
+ *   VT_URL_BUDGET   - max VT lookups per run (default: 20)
  *   LOOKBACK_HOURS  - scan window in hours (default: 5)
  *   APP_IDS         - restrict to a comma-separated list of Steam app IDs (#218 standard)
  *   APP_ID          - legacy singular alias for APP_IDS; still honored for backcompat
@@ -47,13 +51,24 @@ const APP_IDS      = (process.env.APP_IDS || process.env.APP_ID || '')
   .split(',').map((s) => s.trim()).filter(Boolean);
 const DRY_RUN      = process.env.DRY_RUN === 'true';
 
-if (!SUPABASE_URL || !SUPABASE_KEY) {
+// Entry-point detection: tests import this module for the pure helpers
+// (extractUrls, vtUrlId) and must not trigger the env guard or the scan.
+const IS_ENTRY = (() => {
+  try {
+    return import.meta.url === new URL(`file://${process.argv[1]}`).href;
+  } catch { return false; }
+})();
+
+if (IS_ENTRY && (!SUPABASE_URL || !SUPABASE_KEY)) {
   console.error('ERROR: SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required.');
   process.exit(1);
 }
 
-if (!OPENAI_KEY) {
+if (IS_ENTRY && !OPENAI_KEY) {
   console.warn('OPENAI_API_KEY not set - running wordlist-only mode.');
+}
+if (IS_ENTRY && !process.env.VT_API_KEY) {
+  console.warn('VT_API_KEY not set - URL reputation layer (#378) skipped.');
 }
 
 const SUPABASE_HEADERS = {
@@ -219,6 +234,91 @@ async function moderateWithOpenAI(text, rowId, retries = 3) {
 
     return { flagged: result.flagged, categories: flaggedCategories };
   }
+}
+
+// ---------------------------------------------------------------------------
+// Layer 3: VirusTotal URL scan (#378). Reports are invisible until the
+// pipeline's approval pass, so a malicious URL sits unrendered in
+// user_configs between submit and this scan -- the natural window to
+// catch it. Only runs when VT_API_KEY is set (same secret the issue
+// attachment scanner uses).
+//
+// VT free tier: 4 req/min. We only LOOK UP url ids (GET /urls/{id}),
+// never submit, so unknown URLs come back 404 = "no verdict" rather
+// than burning quota on analysis submissions. Per-run URL budget +
+// dedupe keep a spammy row from starving the rest of the scan.
+// ---------------------------------------------------------------------------
+
+const VT_KEY = process.env.VT_API_KEY;
+const VT_URL_BUDGET = parseInt(process.env.VT_URL_BUDGET ?? '20', 10);
+// Sleep between VT calls: free tier is 4/min -> 15.5s spacing.
+const VT_SPACING_MS = 15500;
+let _vtCallsUsed = 0;
+const _vtVerdictCache = new Map(); // url -> {malicious: bool, stats?: object}
+
+// Extract http(s) URLs from free text. Deliberately simple: scheme +
+// non-whitespace, trailing punctuation stripped. We only need candidates
+// for lookup, not perfect RFC parsing.
+const URL_RE = /https?:\/\/[^\s"'<>\])]+/gi;
+
+export function extractUrls(text) {
+  const found = String(text || '').match(URL_RE) || [];
+  const cleaned = found.map(u => u.replace(/[.,;:!?)]+$/, ''));
+  return [...new Set(cleaned)];
+}
+
+// VT URL ids are the url-safe base64 of the URL without padding.
+export function vtUrlId(url) {
+  return Buffer.from(url).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+async function lookupUrlVirusTotal(url, rowLabel) {
+  if (_vtVerdictCache.has(url)) return _vtVerdictCache.get(url);
+  if (_vtCallsUsed >= VT_URL_BUDGET) {
+    warn(`VT URL budget exhausted (${VT_URL_BUDGET}); skipping lookup`, { rowLabel, url });
+    return { skipped: true };
+  }
+  _vtCallsUsed++;
+  let verdict = { malicious: false };
+  try {
+    const res = await fetch(`https://www.virustotal.com/api/v3/urls/${vtUrlId(url)}`, {
+      headers: { 'x-apikey': VT_KEY },
+    });
+    if (res.status === 404) {
+      // Unknown to VT: no verdict. We do not submit for analysis (quota).
+      verdict = { malicious: false, unknown: true };
+    } else if (!res.ok) {
+      warn(`VT URL lookup failed`, { rowLabel, url, status: res.status });
+      verdict = { malicious: false, unavailable: true };
+    } else {
+      const data = await res.json();
+      const stats = data?.data?.attributes?.last_analysis_stats || {};
+      const bad = (stats.malicious || 0) + (stats.suspicious || 0);
+      verdict = { malicious: bad >= 2, stats };
+      log(`VT URL verdict`, { rowLabel, url, stats, flagged: verdict.malicious });
+    }
+  } catch (e) {
+    warn(`VT URL lookup error`, { rowLabel, url, message: e.message });
+    verdict = { malicious: false, unavailable: true };
+  }
+  _vtVerdictCache.set(url, verdict);
+  await new Promise(r => setTimeout(r, VT_SPACING_MS));
+  return verdict;
+}
+
+// Scan every URL in the row's text fields. Returns a hit descriptor or null.
+async function scanUrlsWithVirusTotal(fields, rowLabel) {
+  if (!VT_KEY) return null;
+  for (const { field, text } of fields) {
+    for (const url of extractUrls(text)) {
+      const verdict = await lookupUrlVirusTotal(url, rowLabel);
+      if (verdict.malicious) {
+        const bad = (verdict.stats?.malicious || 0) + (verdict.stats?.suspicious || 0);
+        return { field, url, engines: bad };
+      }
+    }
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
@@ -519,6 +619,15 @@ async function main() {
       await new Promise(r => setTimeout(r, 1050));
     }
 
+    // Layer 3: VirusTotal URL scan (#378) -- only if text layers passed.
+    if (!hitReason && VT_KEY) {
+      const urlHit = await scanUrlsWithVirusTotal(fields, row.id);
+      if (urlHit) {
+        hitReason = `vt_url:${urlHit.url} in ${urlHit.field} (${urlHit.engines} engines)`;
+        hitLayer = 'vt_url';
+      }
+    }
+
     scanned++;
 
     if (hitReason) {
@@ -595,4 +704,6 @@ async function main() {
   }
 }
 
-main().catch(e => { err('Fatal error', { message: e.message, stack: e.stack }); process.exit(1); });
+if (IS_ENTRY) {
+  main().catch(e => { err('Fatal error', { message: e.message, stack: e.stack }); process.exit(1); });
+}
