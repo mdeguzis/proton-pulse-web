@@ -78,13 +78,16 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
       ? String(entry.search_url) : 'https://flightlesssomething.ambrosia.one/';
     const rows = entry.benchmarks.slice(0, 10).map(b => {
       const url = String(b.url || '').startsWith('https://flightlesssomething.ambrosia.one/') ? String(b.url) : searchUrl;
+      const bid = Number(b.id) || 0;
       return `
         <tr>
           <td><a href="${esc(url)}" target="_blank" rel="noopener">${esc(String(b.title || 'Benchmark'))}</a></td>
           <td data-v="${Number(b.run_count) || 1}">${Number(b.run_count) || 1}</td>
           <td>${esc(String(b.specs || '').slice(0, 90))}</td>
           <td>${esc(String(b.created_at || '').slice(0, 10))}</td>
-        </tr>`;
+          <td>${bid ? `<button type="button" class="fl-expand-btn" data-fl-bench="${bid}">Show data &amp; graphs</button>` : ''}</td>
+        </tr>
+        ${bid ? `<tr class="fl-detail-row" data-fl-detail="${bid}" hidden><td colspan="5"><div class="fl-detail-host" data-fl-host="${bid}"></div></td></tr>` : ''}`;
     }).join('');
     const overflow = entry.benchmarks.length - 10;
     return `
@@ -100,7 +103,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
           confirmed FPS stats above.
         </div>
         <table class="gs-fps-table">
-          <thead><tr><th>Benchmark</th><th>Runs</th><th>System</th><th>Date</th></tr></thead>
+          <thead><tr><th>Benchmark</th><th>Runs</th><th>System</th><th>Date</th><th></th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
         <p style="font-size:0.78rem;margin-top:10px">
@@ -108,6 +111,117 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
           <a href="${esc(searchUrl)}" target="_blank" rel="noopener">FlightlessSomething -&gt;</a>
         </p>
       </section>`;
+  }
+
+  // #410: on-demand expansion of a FlightlessSomething benchmark into the
+  // same chart + table treatment the confirmed runs get. Fetches the
+  // per-run stats anonymously at click time (never during page load --
+  // ~10 benchmarks x full series would be megabytes) and renders each run
+  // as an FPS-over-time line via a dedicated Chart.js instance.
+  const _flDetailCache = new Map();
+  const _flCharts = new Map();
+
+  async function _fetchFlightlessRuns(benchId) {
+    if (_flDetailCache.has(benchId)) return _flDetailCache.get(benchId);
+    const p = (async () => {
+      // FS's REST API sends no CORS headers, so the browser cannot call it
+      // directly -- route through the flightless-benchmark edge fn proxy
+      // (same pattern as protondb-summary / steam-appdetails).
+      const r = await fetch(`https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/flightless-benchmark?id=${encodeURIComponent(benchId)}`);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const payload = await r.json();
+      const raw = Array.isArray(payload) ? payload : (payload.runs || []);
+      return raw.map((run, i) => {
+        const fps = (run.stats || {}).FPS || {};
+        // series.FPS is LTTB-downsampled [x, y] pairs (max 2000 points).
+        const pairs = Array.isArray(run.series?.FPS) ? run.series.FPS : [];
+        return {
+          name: String(run.label || `run ${i + 1}`),
+          color: _FS_PALETTE[i % _FS_PALETTE.length],
+          fpsMin: fps.min ?? null,
+          fpsAvg: fps.avg ?? null,
+          fpsMax: fps.max ?? null,
+          fpsP1: fps.p01 ?? null,
+          fpsP01: null,
+          sampleCount: Number(fps.count || run.totalDataPoints || 0),
+          series: pairs.map(pt => Number(Array.isArray(pt) ? pt[1] : pt)).filter(Number.isFinite),
+          specs: [run.specGPU, run.specCPU, run.specOS].filter(Boolean).join(' / '),
+        };
+      });
+    })();
+    _flDetailCache.set(benchId, p);
+    p.catch(() => _flDetailCache.delete(benchId));
+    return p;
+  }
+
+  function _renderFlightlessDetail(host, benchId, runs) {
+    const rows = runs.map(r => `
+      <tr>
+        <td><span class="dot" style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${r.color};margin-right:6px"></span>${esc(r.name)}</td>
+        <td>${r.fpsMin ?? '-'}</td><td>${r.fpsAvg ?? '-'}</td><td>${r.fpsMax ?? '-'}</td><td>${r.fpsP1 ?? '-'}</td>
+        <td>${r.sampleCount.toLocaleString()}</td>
+      </tr>`).join('');
+    host.innerHTML = `
+      <div class="gs-chart" style="margin-top:6px"><div class="gs-fps-canvas-wrap"><canvas id="fl-chart-${benchId}"></canvas></div></div>
+      <table class="gs-fps-table">
+        <thead><tr><th>Run</th><th>Min</th><th>Avg</th><th>Max</th><th>1% Low</th><th>Samples</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+    const canvas = host.querySelector(`#fl-chart-${CSS.escape(String(benchId))}`);
+    const withSeries = runs.filter(r => r.series.length > 1);
+    if (!canvas || typeof window.Chart !== 'function' || !withSeries.length) return;
+    const maxLen = Math.max(...withSeries.map(r => r.series.length));
+    _flCharts.get(benchId)?.destroy();
+    _flCharts.set(benchId, new window.Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: Array.from({ length: maxLen }, (_, i) => i + 1),
+        datasets: withSeries.map(r => ({
+          label: r.name, data: r.series, borderColor: r.color, backgroundColor: r.color + '22',
+          fill: false, borderWidth: 1.4, pointRadius: 0, pointHitRadius: 8, tension: 0.2,
+        })),
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, animation: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: _CHART_THEME.legend,
+          tooltip: { ..._CHART_THEME.tooltip, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} fps` } },
+        },
+        scales: {
+          x: _CHART_THEME.axis('sample (downsampled by FlightlessSomething)'),
+          y: { ..._CHART_THEME.axis('FPS'), beginAtZero: true },
+        },
+      },
+    }));
+  }
+
+  function wireFlightlessSection(rootEl) {
+    rootEl.querySelectorAll('.fl-expand-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const benchId = btn.dataset.flBench;
+        const detail = rootEl.querySelector(`[data-fl-detail="${benchId}"]`);
+        const host = rootEl.querySelector(`[data-fl-host="${benchId}"]`);
+        if (!detail || !host) return;
+        if (!detail.hidden) {
+          detail.hidden = true;
+          btn.textContent = 'Show data & graphs';
+          return;
+        }
+        detail.hidden = false;
+        btn.textContent = 'Hide data & graphs';
+        if (host.dataset.loaded === '1') return;
+        host.innerHTML = '<p style="font-size:0.8rem;color:var(--muted);padding:8px 0">Loading benchmark data from FlightlessSomething...</p>';
+        try {
+          const runs = await _fetchFlightlessRuns(benchId);
+          _renderFlightlessDetail(host, benchId, runs);
+          host.dataset.loaded = '1';
+          console.debug('[game-stats] flightless detail loaded', { benchId, runs: runs.length });
+        } catch (e) {
+          host.innerHTML = `<p style="font-size:0.8rem;color:var(--muted);padding:8px 0">Could not load benchmark data (${esc(String(e && e.message || e))}). <a href="https://flightlesssomething.ambrosia.one/benchmarks/${esc(String(benchId))}" target="_blank" rel="noopener">Open on FlightlessSomething -&gt;</a></p>`;
+        }
+      });
+    });
   }
 
   // --- Supabase native reports + configs (best effort, optional) ---
@@ -1054,7 +1168,11 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
           <p>${liveSummary ? 'No individual reports mirrored yet for this game.' : 'No reports or configs found for this game.'}</p>
           ${liveBlock}
         </div>
-      `;
+      ` + renderFlightlessSection(flightlessEntry);
+      // #410: title-matched community benchmarks still render on the
+      // no-reports stub -- a game with zero mirrored reports is exactly
+      // where an external performance signal helps most.
+      wireFlightlessSection(root);
       return;
     }
 
@@ -1110,7 +1228,11 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
           <a class="gs-slice-head-link" href="app.html#/app/${encodeURIComponent(String(appId))}#report-r${esc(String(reportId))}">View the report -&gt;</a>
         </div>`;
       // nosemgrep: javascript.browser.security.raw-html-concat.raw-html-concat — all user-derived values are escaped via esc()
-      root.innerHTML = previewBanner + sliceBanner + renderFpsRunsSection(sliceReport);
+      // No hardware-match banner in slice mode: nothing on this focused
+      // view scores against the viewer's system, so "Scoring against:
+      // <system>" would be a dead control. (The overall-stats hardware
+      // comparison area is #412.)
+      root.innerHTML = sliceBanner + renderFpsRunsSection(sliceReport);
       wireFpsRunsSection(root, appId, reportId);
       void enhanceHardwareBanner();
       return;
@@ -1123,6 +1245,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
     // Game-wide FPS section (bottom of the page): chart + download + table
     // sorting, same wiring as the slice, no report filter.
     wireFpsRunsSection(root, appId, null);
+    wireFlightlessSection(root);
     void enhanceHardwareBanner();
     // Deep links from other pages (e.g. the game page trend line -> #trend)
     // land after this async render, so the browser has already given up on the

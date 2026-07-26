@@ -496,6 +496,32 @@ h1 {
   color-scheme: dark;
 }
 .gs-fps-date:focus { border-color: var(--accent); }
+.fl-expand-btn {
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.fl-expand-btn:hover { border-color: var(--accent); background: rgba(102,192,244,0.08); }
+.fl-detail-row > td { padding: 0 0 14px; }
+.fl-banner {
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  background: rgba(20,32,44,0.55);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin: 8px 0 10px;
+}
+.fl-banner strong { color: var(--text); }
+.fl-banner a { color: var(--accent); }
 /* ProtonDB live summary block shown on the error state when we have aggregate
    data for a game but no individual reports mirrored yet (#219). */
 .gs-live-summary {
@@ -647,7 +673,7 @@ h1 {
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
 <script src="js/lib/analytics.js?v=4b6a7264"></script>
-<script type="module" src="js/game-stats/main.js?v=67902d35"></script>
+<script type="module" src="js/game-stats/main.js?v=7faebd6d"></script>
 
 </body>
 </html>

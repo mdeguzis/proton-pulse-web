@@ -109,8 +109,10 @@ describe('game-stats single-report slice (?report=)', () => {
     // series, a multi-line chart across runs (one toggleable line per
     // metric: Max / Average / 1% Low / Min). Both are type line.
     expect(GS_SRC).not.toContain("type: 'bar'");
-    expect((GS_SRC.match(/type: 'line'/g) || []).length).toBe(2);
-    expect((GS_SRC.match(/new window\.Chart\(canvas/g) || []).length).toBe(2);
+    // 3 line charts: series over time, no-series metric fallback, and the
+    // FlightlessSomething detail expansion.
+    expect((GS_SRC.match(/type: 'line'/g) || []).length).toBe(3);
+    expect((GS_SRC.match(/new window\.Chart\(canvas/g) || []).length).toBe(3);
     // The toolbar download icon must not inherit the generic chart-svg size.
     expect(GS_HTML).toContain('.gs-chart .gs-fps-dl svg { width: 15px; height: 15px;');
     // Download-as-JSON icon in the chart toolbar.
@@ -133,7 +135,7 @@ describe('game-stats single-report slice (?report=)', () => {
     // In report mode the game-wide sections are skipped entirely (early
     // return before the full renderAll output is used).
     expect(GS_SRC).toContain('Click here to view all game statistics');
-    expect(GS_SRC).toMatch(/root\.innerHTML = previewBanner \+ sliceBanner \+ renderFpsRunsSection\(sliceReport\);[\s\S]{0,200}return;/);
+    expect(GS_SRC).toMatch(/root\.innerHTML = sliceBanner \+ renderFpsRunsSection\(sliceReport\);[\s\S]{0,300}return;/);
     // Plain header line (no chips) + a link back to the report.
     expect(GS_SRC).toContain('gs-slice-head-title');
     expect(GS_SRC).not.toContain('gs-slice-fact ');
@@ -141,6 +143,9 @@ describe('game-stats single-report slice (?report=)', () => {
     expect(GS_SRC).toContain('View the report');
     // No-runs slice explains itself instead of a blank page.
     expect(GS_SRC).toContain('This report has no per-run MangoHud captures.');
+    // No hardware-match banner in slice mode -- nothing scores against the
+    // viewer's system on the focused view (#412 tracks the real consumer).
+    expect(GS_SRC).toContain('root.innerHTML = sliceBanner + renderFpsRunsSection(sliceReport);');
   });
 
   test('pulse reports load from user_configs, not the phantom native_reports table', () => {
@@ -218,7 +223,45 @@ describe('title-matched FlightlessSomething section on the stats page (#410)', (
     expect(GS_SRC).toContain("[['flightless-benchmarks', 'Community benchmarks']]");
   });
 
+  test('benchmarks render on the no-reports stub too (OW2 regression)', () => {
+    // OW2 had zero mirrored reports, so the early-return stub path skipped
+    // renderAll -- and the benchmarks section with it. The stub must append
+    // the section itself.
+    expect(GS_SRC).toContain("` + renderFlightlessSection(flightlessEntry);");
+  });
+
   test('benchmark links are origin-checked before rendering', () => {
     expect(GS_SRC).toMatch(/String\(entry\.search_url \|\| ''\)\.startsWith\('https:\/\/flightlesssomething\.ambrosia\.one\/'\)/);
+  });
+});
+
+describe('flightless benchmark expansion (#410)', () => {
+  test('each benchmark row carries a Show data & graphs toggle', () => {
+    expect(GS_SRC).toContain('fl-expand-btn');
+    expect(GS_SRC).toContain('Show data &amp; graphs');
+    expect(GS_SRC).toContain('Hide data & graphs');
+  });
+
+  test('detail fetch is on-demand, cached, and renders chart + table', () => {
+    // Never during page load; routed through the flightless-benchmark edge
+    // fn proxy because FS's REST API sends no CORS headers.
+    expect(GS_SRC).toContain('/functions/v1/flightless-benchmark?id=${encodeURIComponent(benchId)}');
+    expect(GS_SRC).not.toContain('fetch(`https://flightlesssomething.ambrosia.one');
+    expect(GS_SRC).toContain('_flDetailCache');
+    // FS series arrives as [x, y] pairs; we plot the y values.
+    expect(GS_SRC).toContain('Array.isArray(pt) ? pt[1] : pt');
+    expect(GS_SRC).toContain('_renderFlightlessDetail');
+    // Wired on BOTH render paths (stub + full page).
+    expect((GS_SRC.match(/wireFlightlessSection\(root\)/g) || []).length).toBe(2);
+  });
+
+  test('game-stats CSP does NOT need the FS host (proxy handles it)', () => {
+    expect(GS_HTML).not.toMatch(/connect-src[^;]*flightlesssomething/);
+    // The edge fn itself must be registered public (read-only proxy).
+    const CONFIG = fs.readFileSync(path.join(__dirname, '..', 'supabase', 'config.toml'), 'utf8');
+    expect(CONFIG).toContain('[functions.flightless-benchmark]');
+    const FN = fs.readFileSync(path.join(__dirname, '..', 'supabase', 'functions', 'flightless-benchmark', 'index.ts'), 'utf8');
+    expect(FN).toContain('isRateLimited');
+    expect(FN).toMatch(/\/\^\\d\{1,10\}\$\//);
   });
 });
