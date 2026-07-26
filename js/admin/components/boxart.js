@@ -155,7 +155,7 @@ async function _loadIndexes() {
   for (const row of (clientErrors || [])) {
     const aid = String(row?.app_id || '');
     if (!aid) continue;
-    if (aid.startsWith('gog:') || aid.startsWith('epic:') || aid.startsWith('pgwiki:')) {
+    if (aid.startsWith('gog:') || aid.startsWith('epic:') || aid.startsWith('pgwiki:') || aid.startsWith('pw_')) {
       // Any client-side load error marks non-Steam rows missing -- there is
       // no cheap pipeline probe for these stores, so real-browser failures
       // are the best signal. (pgwiki covers load with no-referrer; errors
@@ -238,7 +238,7 @@ function _buildRows({ searchIndex, extendedIndex, gameImages, nonSteam, override
     const appId = String(row[0]);
     if (seen.has(appId)) return;
     const title = String(row[1] || '');
-    const type  = row[5] || (appId.startsWith('gog:') ? 'gog' : appId.startsWith('epic:') ? 'epic' : appId.startsWith('pgwiki:') ? 'pgwiki' : 'steam');
+    const type  = row[5] || (appId.startsWith('gog:') ? 'gog' : appId.startsWith('epic:') ? 'epic' : (appId.startsWith('pgwiki:') || appId.startsWith('pw_')) ? 'pgwiki' : 'steam');
     if (store && store !== 'all' && store !== type) return;
     if (q && !title.toLowerCase().includes(q) && !appId.startsWith(q)) return;
     const override = overrideMap ? overrideMap[appId] : null;
@@ -376,10 +376,12 @@ function _storeHref(type, appId, title) {
     const num = String(appId).replace(/[^0-9]/g, '');
     return num ? `https://store.steampowered.com/app/${num}/` : null;
   }
-  // PGWiki ids carry the wiki page slug directly after the prefix, so we
-  // can deep-link to the exact article rather than a search.
+  // Legacy pgwiki: ids carry the wiki page slug after the prefix; #406
+  // pw_ hash ids resolve it from the loaded catalog's slug field.
   if (type === 'pgwiki') {
-    const slug = String(appId).replace(/^pgwiki:/, '');
+    const slug = String(appId).startsWith('pw_')
+      ? String(_cache?.pgwCatalog?.[String(appId)]?.slug || '')
+      : String(appId).replace(/^pgwiki:/, '');
     return slug ? `https://www.pcgamingwiki.com/wiki/${encodeURIComponent(slug)}` : null;
   }
   const q = encodeURIComponent(title || '');
@@ -1298,7 +1300,7 @@ export async function renderBoxartAdminDetail(appId) {
     content.innerHTML = `<p class="admin-error">App id <code>${escapeHtml(appId)}</code> not found in the search index.</p>`;
     return;
   }
-  const type = searchRow[5] || (String(appId).startsWith('gog:') ? 'gog' : String(appId).startsWith('epic:') ? 'epic' : String(appId).startsWith('pgwiki:') ? 'pgwiki' : 'steam');
+  const type = searchRow[5] || (String(appId).startsWith('gog:') ? 'gog' : String(appId).startsWith('epic:') ? 'epic' : (String(appId).startsWith('pgwiki:') || String(appId).startsWith('pw_')) ? 'pgwiki' : 'steam');
   const cachedUrl = type === 'steam' ? (indexes.gameImages[appId] || null) : (indexes.nonSteam[appId] || null);
   const override = indexes.overrideMap?.[appId] || null;
   // PGWiki catalog cover for the details panel only -- hotlink-blocked on

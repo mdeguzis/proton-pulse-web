@@ -29,7 +29,7 @@ function _reportMissingImage(appId, attemptedUrl) {
     console.debug('[steam-img] report skipped (no supabase env)', { appId: id });
     return;
   }
-  const storeType = id.startsWith('gog:') ? 'gog' : id.startsWith('epic:') ? 'epic' : id.startsWith('pgwiki:') ? 'pgwiki' : 'steam';
+  const storeType = id.startsWith('gog:') ? 'gog' : id.startsWith('epic:') ? 'epic' : (id.startsWith('pgwiki:') || id.startsWith('pw_')) ? 'pgwiki' : 'steam';
   const body = {
     app_id: id,
     store_type: storeType,
@@ -409,7 +409,7 @@ export async function loadSteamImg(el, appId) {
   // Non-Steam (GOG/Epic) games have no Steam CDN image. Resolve their cover
   // straight from the pipeline's nonsteam-images.json instead of walking the
   // Steam CDN chain (which would always 404 for a prefixed id).
-  if (id.startsWith('gog:') || id.startsWith('epic:') || id.startsWith('pgwiki:')) {
+  if (id.startsWith('gog:') || id.startsWith('epic:') || id.startsWith('pgwiki:') || id.startsWith('pw_')) {
     const nsMap = await _loadNonsteamImages();
     const nsUrl = nsMap[id];
     if (nsUrl) {
@@ -457,7 +457,7 @@ export async function loadSteamImg(el, appId) {
     // better sources all missed. Only fires for `pgwiki:` ids -- GOG / Epic
     // never had a PGWiki cover to begin with.
     let pgwikiCoverUrl = null;
-    if (id.startsWith('pgwiki:')) {
+    if (id.startsWith('pgwiki:') || id.startsWith('pw_')) {
       const catalog = await _loadPgwikiCatalog();
       const cover = catalog && catalog[id] && catalog[id].cover_url;
       if (cover && String(cover).startsWith('https://images.pcgamingwiki.com/')) {

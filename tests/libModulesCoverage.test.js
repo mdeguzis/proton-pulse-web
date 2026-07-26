@@ -27,6 +27,33 @@ describe('appIdToDir', () => {
   test('replaces ALL colons (pgwiki slugs carry them)', () => {
     expect(appIdToDir('gog:abc:def')).toBe('gog_abc_def');
   });
+
+  test('pw_ hash ids pass through unchanged (#406: no colons by design)', () => {
+    expect(appIdToDir('pw_xd71ad9b')).toBe('pw_xd71ad9b');
+  });
+});
+
+describe('pcgwSlugToPwId (#406)', () => {
+  const { pcgwSlugToPwId } = require('../js/lib/app-id.js');
+
+  test('matches the cross-language verified vectors (Python + SQL parity)', async () => {
+    // These exact outputs were verified byte-identical against
+    // scripts/pipeline/pcgamingwiki_catalog.py slug_to_pw_id and the
+    // pgcrypto SQL implementation in migration 20260726120000. A drift
+    // here breaks every legacy pgwiki: URL redirect.
+    await expect(pcgwSlugToPwId('The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay')).resolves.toBe('pw_xd71ad9b');
+    await expect(pcgwSlugToPwId('.kkrieger')).resolves.toBe('pw_sv4bfe7j');
+    await expect(pcgwSlugToPwId('0_A.D.')).resolves.toBe('pw_0zfciqa5');
+    await expect(pcgwSlugToPwId('Half-Life_2')).resolves.toBe('pw_v04maqpz');
+    await expect(pcgwSlugToPwId('Ünïcödé_Tîtle')).resolves.toBe('pw_vhlpoxdg');
+  });
+
+  test('is deterministic and produces the pw_ + 8 base36 shape', async () => {
+    const a = await pcgwSlugToPwId('Some_Game');
+    expect(a).toBe(await pcgwSlugToPwId('Some_Game'));
+    expect(a).toMatch(/^pw_[0-9a-z]{8}$/);
+    expect(a).not.toBe(await pcgwSlugToPwId('Some_Game_2'));
+  });
 });
 
 // ── js/lib/gpu-arch-detector.js ─────────────────────────────────────────────

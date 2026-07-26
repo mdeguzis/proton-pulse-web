@@ -1138,6 +1138,9 @@
   color: var(--muted);
   padding-top: 5px;
 }
+/* The notes privacy hint sits directly above the Save / Submit buttons --
+   give it breathing room so the warning does not crowd the actions. */
+.sf-notes-hint { margin-bottom: 16px; }
 @media (max-width: 560px) {
   .sf-row-hint {
     flex-basis: 100%;
@@ -1710,6 +1713,13 @@ button.hub-link:disabled { opacity: 0.5; cursor: default; }
 .md-editor > textarea {
   border-radius: 0 0 4px 4px;
   border-top: none;
+}
+/* The notes box must stay user-resizable after the md-editor wrapper moves
+   the textarea out of direct .sf-row reach, and start twice the old height
+   so multi-paragraph reports do not begin in a cramped 3-row strip. */
+.md-editor > textarea {
+  resize: vertical;
+  min-height: 140px;
 }
 .md-editor-preview {
   padding: 10px 12px;

@@ -762,8 +762,8 @@ export async function populateSubmitForm(el) {
       </div>
 
       <div class="sf-section-label" style="margin-top:16px">Notes ${notesFormattingHelpHtml()}</div>
-      <div class="sf-row"><textarea name="notes" rows="3" placeholder="How did it run? Any issues or tweaks?"></textarea></div>
-      <div class="sf-row-hint"><strong>Public and permanent.</strong> Notes stay on the report even if you delete your account. Do not put personal information in this field.</div>
+      <div class="sf-row"><textarea name="notes" rows="6" placeholder="How did it run? Any issues or tweaks?"></textarea></div>
+      <div class="sf-row-hint sf-notes-hint"><strong>Public and permanent.</strong> Notes stay on the report even if you delete your account. Do not put personal information in this field.</div>
 
       <!-- Submitted-from platform: detected from navigator.userAgent + touch
            signals in getWebSource() and stamped on the submission behind

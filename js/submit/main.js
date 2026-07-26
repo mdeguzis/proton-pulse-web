@@ -1,12 +1,12 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=5090f6d2';
-import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=49306cae';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=ec5de6cb';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=e66890c7';
 import {
   deleteDraft, deleteLocalDraft, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
 } from '../shared/drafts.js?v=d7011aa5';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
-import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
+import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { esc } from '../app/utils.js?v=9a39c726';
 
 (async function() {
@@ -119,7 +119,7 @@ import { esc } from '../app/utils.js?v=9a39c726';
   // title exists on multiple stores or after a replaced-by redirect (#199).
   const storeGuess = String(appId).startsWith('gog:')  ? 'GOG'
                      : String(appId).startsWith('epic:') ? 'Epic'
-                     : String(appId).startsWith('pgwiki:') ? 'PCGWiki'
+                     : (String(appId).startsWith('pgwiki:') || String(appId).startsWith('pw_')) ? 'PCGWiki'
                      : 'Steam';
   const subtitleEl = document.getElementById('game-subtitle');
   if (subtitleEl) {

@@ -110,6 +110,7 @@ jobs:
             deck-status.json proton-versions.json steam-catalog.json
             hardware-suggestions.json scoring-info.json form-schema.json
             app-id-redirects.json pcgamingwiki.json pcgwiki-catalog.json
+            pcgw-id-map.json
           )
           for f in "${FILES[@]}"; do
             if curl -sfL --max-time 30 "$LIVE_BASE/$f" -o "/tmp/shell-out/$f" \

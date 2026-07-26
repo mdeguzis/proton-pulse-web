@@ -1,10 +1,10 @@
 // game-page (components) for the app page. Relocated from app.js.
 
-import { appIdToDir } from '../../lib/app-id.js?v=f8129c09';
+import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
-import { getWebClientId } from '../../shared/submit.js?v=49306cae';
+import { getWebClientId } from '../../shared/submit.js?v=ec5de6cb';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=e66890c7';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=65bc2638';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
@@ -16,8 +16,8 @@ import { renderCard } from './report-card.js?v=74e792e4';
 import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=7ec2be23';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=593229c5';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e6503ae7';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ad2153bb';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
@@ -246,10 +246,21 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
     const osList = Array.isArray(entry?.os) ? entry.os.filter(Boolean) : [];
     const wikiUrl = entry?.wiki_url && String(entry.wiki_url).startsWith('https://www.pcgamingwiki.com/')
       ? String(entry.wiki_url) : pcgamingwikiSearchUrl(entry?.name || title);
+    // #406: the expanded catalog includes games that ALSO exist on Steam /
+    // GOG (this entry is where physical-copy reports live). Cross-link the
+    // digital storefront when PCGW knows it; only claim "no store page"
+    // when neither cross-ref exists.
+    const steamRef = entry?.steam_app_id && /^\d+$/.test(String(entry.steam_app_id))
+      ? `<a href="#/app/${esc(String(entry.steam_app_id))}">Also on Steam (app ${esc(String(entry.steam_app_id))}) -&gt;</a>` : '';
+    const gogRef = entry?.gog_id && /^\d+$/.test(String(entry.gog_id))
+      ? `<a href="#/app/gog:${esc(String(entry.gog_id))}">Also on GOG -&gt;</a>` : '';
+    const storeLine = (steamRef || gogRef)
+      ? `<span class="gm-plat">PCGamingWiki catalog entry</span> ${steamRef} ${gogRef}`
+      : '<span class="gm-plat">PCGamingWiki catalog entry</span> <span class="gm-mute" style="font-size:0.75rem">No store page -- catalogued abandonware / classic / physical release</span>';
     body.innerHTML = [
       section('Name', `<strong>${esc(entry?.name || title || String(appId))}</strong>`),
       section('App ID', `<code>${esc(String(appId))}</code>`),
-      section('Store', '<span class="gm-plat">PCGamingWiki catalog entry</span> <span class="gm-mute" style="font-size:0.75rem">No store page -- catalogued abandonware / classic</span>'),
+      section('Store', storeLine),
       section('Engine', entry?.engine ? `<span>${esc(entry.engine)}</span>` : ''),
       section('Developer', chips(entry?.developers)),
       section('Publisher', chips(entry?.publishers)),

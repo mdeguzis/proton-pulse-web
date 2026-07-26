@@ -2,7 +2,7 @@
 import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=5090f6d2';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
-import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
+import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 // #361/#376: the aggregate view must read the SAME inputs and the SAME
 // canonical confidence calc as the game-page headline. computeConfidence is
 // the single source; fetchNativeReports + fetchProtonDbLive mirror the game
