@@ -318,6 +318,27 @@ describe('mergeMyReportRows', () => {
       cloud: true, published: false, unpublished: true,
     }));
   });
+  test('owner-hidden web report stays in the list as unpublished (#408)', () => {
+    // Web reports have no cloud twin. When the owner unpublishes
+    // (is_hidden=true) the row must NOT vanish or read as Published.
+    const out = utils.mergeMyReportRows([
+      { id: 142, app_id: 'pgwiki:Riddick', title: 'Riddick', rating: 'platinum', is_hidden: true, created_at: '2026-07-25T00:00:00Z' },
+    ], []);
+    expect(out).toHaveLength(1);
+    expect(out[0]).toEqual(expect.objectContaining({
+      hidden: true, published: false, unpublished: true, published_id: 142,
+    }));
+  });
+  test('hidden published row + published cloud twin still counts as published', () => {
+    // Plugin flow: cloud config is still is_published even if the web row
+    // was hidden -- published wins so the badge matches the game page.
+    const out = utils.mergeMyReportRows(
+      [{ id: 9, app_id: '730', title: 'CS2', is_hidden: true, created_at: '2026-06-01T00:00:00Z' }],
+      [{ app_id: 730, app_name: 'CS2', updated_at: '2026-06-02T00:00:00Z', is_published: true }],
+    );
+    expect(out[0].published).toBe(true);
+    expect(out[0].unpublished).toBe(false);
+  });
   test('sorted by updated_at descending', () => {
     const out = utils.mergeMyReportRows([
       { app_id: '1', title: 'A', updated_at: '2026-01-01T00:00:00Z' },

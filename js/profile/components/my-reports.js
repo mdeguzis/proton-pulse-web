@@ -5,11 +5,11 @@ import {
   getProtonPulseUserIdFromSession, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows,
-} from '../utils.js?v=78ac95ab';
+} from '../utils.js?v=320d6b78';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
-  unpublishReport,
-} from '../api/configs.js?v=0c5650ed';
+  unpublishReport, republishReport,
+} from '../api/configs.js?v=2f08c67b';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=79558c3c';
 
@@ -105,15 +105,21 @@ export function initMyReports(ctx) {
             <p>${flaggedMessageHtml(row.flagged_reason)}</p>
           </details>`
         : '';
-      const isLive = row.published_id && !row.pending;
+      const isLive = row.published_id && !row.pending && !row.hidden;
       const actions = [
         isLive
           ? `<a class="profile-configs-view-link" href="${escapeHtml(viewHref)}">View</a>`
           : `<span class="profile-configs-view-link profile-configs-view-disabled" title="Not published yet">View</span>`,
-        row.cloud && row.unpublished
-          ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html%23section-my-reports">Publish</a>`
-          : '',
-        row.published_id
+        // #408: an owner-hidden report re-publishes in place (PATCH
+        // is_hidden=false) -- no round-trip through the submit form. Flagged
+        // rows are moderator-hidden; those go through edit-and-resubmit, so
+        // no republish button for them.
+        row.hidden && row.published_id && !row.flagged
+          ? `<button type="button" class="profile-configs-action profile-configs-publish-btn profile-configs-republish-btn" data-published-id="${escapeHtml(String(row.published_id))}">Publish</button>`
+          : row.cloud && row.unpublished
+            ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html%23section-my-reports">Publish</a>`
+            : '',
+        row.published_id && !row.hidden
           ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">${row.pending ? 'Cancel' : 'Unpublish'}</button>`
           : '',
         row.published_id
@@ -247,10 +253,20 @@ export function initMyReports(ctx) {
         return;
       }
 
+      if (action.classList.contains('profile-configs-republish-btn')) {
+        const publishedId = action.dataset.publishedId;
+        if (!publishedId) return;
+        action.textContent = 'Publishing...';
+        await republishReport(s, publishedId);
+        showMyConfigsStatus('Published', true);
+        await refreshMyConfigs();
+        return;
+      }
+
       if (action.classList.contains('profile-configs-unpublish-btn')) {
         const publishedId = action.dataset.publishedId;
         if (!publishedId) return;
-        if (!window.confirm('Remove this report from the public game page? Your cloud config will be kept.')) return;
+        if (!window.confirm('Hide this report from the public game page? You can publish it again from here any time.')) return;
         action.textContent = 'Unpublishing...';
         await unpublishReport(s, publishedId);
         showMyConfigsStatus('Unpublished', true);

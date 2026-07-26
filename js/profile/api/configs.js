@@ -107,12 +107,32 @@ export async function fetchReportHistory(reportId, session) {
 }
 
 export async function unpublishReport(session, publishedId) {
+  // #408: hide, never DELETE. Deleting was fine for plugin reports (their
+  // cloud-sync twin survives in user_proton_configs) but a web-submitted
+  // report has no twin -- Unpublish permanently destroyed it. is_hidden=true
+  // pulls the row from every public read via RLS ("public read non-hidden
+  // configs": only the owner still sees it) while keeping it recoverable.
   const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(publishedId)}`;
   const r = await fetch(url, {
-    method: 'DELETE',
+    method: 'PATCH',
     headers: { ...supabaseHeaders(session), Prefer: 'return=minimal' },
+    body: JSON.stringify({ is_hidden: true }),
   });
   if (!r.ok) throw new Error(`Unpublish failed: HTTP ${r.status}`);
+}
+
+export async function republishReport(session, publishedId) {
+  // #408: inverse of unpublishReport for rows hidden by their owner. Note a
+  // moderator hide also uses is_hidden -- but those rows carry is_flagged,
+  // and the UI only offers Publish on unflagged rows, so an owner cannot
+  // un-hide a moderated report this way (and RLS admins can re-hide anyway).
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${encodeURIComponent(publishedId)}`;
+  const r = await fetch(url, {
+    method: 'PATCH',
+    headers: { ...supabaseHeaders(session), Prefer: 'return=minimal' },
+    body: JSON.stringify({ is_hidden: false }),
+  });
+  if (!r.ok) throw new Error(`Publish failed: HTTP ${r.status}`);
 }
 
 export async function patchUserConfig(reportId, fields, session) {

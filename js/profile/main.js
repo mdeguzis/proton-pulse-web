@@ -9,17 +9,17 @@ import {
   getProtonPulseUserIdFromSession, getShowUsername, setShowUsername,
   escapeHtml, formatSystemUpdated, getWebClientIdProfile,
   getPluginLinkCodeFromLocation, getSteamIdFromSession,
-} from './utils.js?v=78ac95ab';
+} from './utils.js?v=320d6b78';
 import {
   deleteAllMyData, fetchAllMyData, checkMyDataExists,
-} from './api/configs.js?v=0c5650ed';
+} from './api/configs.js?v=2f08c67b';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
 } from './api/plugin-links.js?v=05003ae3';
 import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=5d9472de';
 import { initMyHardware } from './components/my-hardware.js?v=34fd810c';
 import { initSystems } from './components/systems.js?v=382fb770';
-import { initMyReports } from './components/my-reports.js?v=18b605b2';
+import { initMyReports } from './components/my-reports.js?v=9124ca19';
 import { initLibrary } from './components/library.js?v=fedd0b3a';
 
 (async function () {
@@ -353,7 +353,11 @@ import { initLibrary } from './components/library.js?v=fedd0b3a';
       if (user) {
         showUser(user, session);
         void refreshLinkedPlugins();
-        void library.loadCached();
+        // #266 renamed loadCached to per-section loaders; this call site was
+        // missed and threw on every auth event, silently skipping the cached
+        // library/wishlist render on sign-in.
+        void library.loadLibraryCached?.();
+        void library.loadWishlistCached?.();
       } else {
         showSignedOut();
       }

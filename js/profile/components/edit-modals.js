@@ -5,11 +5,11 @@ import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
   validateSysinfoText, validateDeviceId,
-} from '../utils.js?v=78ac95ab';
+} from '../utils.js?v=320d6b78';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
-} from '../api/configs.js?v=0c5650ed';
+} from '../api/configs.js?v=2f08c67b';
 import { updateSystem } from '../api/systems.js?v=770d14b7';
 import { notesFormattingHelpHtml } from '../../shared/submit.js?v=49306cae';
 
