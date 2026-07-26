@@ -97,6 +97,39 @@ def test_unrelated_title_matches_nothing():
     assert sim == 0.0
 
 
+def test_token_guard_keeps_ow1_benchmarks_off_ow2():
+    # Live regression: 'Overwatch proton-cachyos tests' leading-slice-matched
+    # 'overwatch 2' at 0.909 ('overwatch p' vs 'overwatch 2' -- one lucky
+    # char over the bar) and OW1 runs landed on the OW2 page. Every game
+    # token must appear in the benchmark title or the score caps below the
+    # auto-match bar.
+    titles = {"overwatch 2": ["2357570"]}
+    for t in ["Overwatch proton-cachyos tests", "Overwatch, Low Settings", "overwatch cake nightly"]:
+        _ids, _m, sim = match_benchmark_title(t, titles)
+        assert sim < MATCH_THRESHOLD, t
+    # The real thing still auto-matches -- including wordy settings
+    # suffixes (live regression: the half-the-tokens penalty knocked
+    # every 'Overwatch 2 - <settings>' benchmark into review, so only
+    # ONE of nine OW2 benchmarks attached).
+    for t in [
+        "Overwatch 2 Sched-ext",
+        "Overwatch 2 - EEVDF vs scx_cake",
+        "Overwatch 2 - linux-cachyos 6.17.5 vs linux-tkg-bore-llvm 6.17.5",
+        "Overwatch 2 - EEVDF vs bpfland Auto vs bpfland Gaming",
+    ]:
+        ids, _, sim = match_benchmark_title(t, titles)
+        assert ids == ["2357570"] and sim >= MATCH_THRESHOLD, t
+
+
+def test_single_token_common_word_titles_still_get_penalized():
+    # The long-suffix penalty now applies ONLY to single-token game titles
+    # ("Portal", "Control") where a prefix hit on a wordy benchmark is weak
+    # evidence. Multi-token titles with all tokens present are specific.
+    titles = {"control": ["870780"]}
+    _ids, _m, sim = match_benchmark_title("Control scheduler comparison testing run", titles)
+    assert sim < MATCH_THRESHOLD
+
+
 def test_multi_storefront_title_attaches_to_every_store_entry():
     # The same game on Steam + GOG + Epic: a benchmark cannot know which
     # store the runner used, so it self-assigns to all of them.

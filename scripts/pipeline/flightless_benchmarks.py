@@ -154,6 +154,13 @@ def match_benchmark_title(bench_title: str, index_titles: dict[str, list[str]]) 
             continue
         leading = norm_bench[:game_len]
         ratio = SequenceMatcher(None, norm_game, leading).ratio()
+        # Token-presence guard: every token of the game title must actually
+        # appear in the benchmark title. The leading slice cuts mid-token,
+        # so 'overwatch 2' vs 'overwatch p[roton...]' scored 0.909 -- one
+        # lucky char over the bar -- and OW1 benchmarks landed on OW2. A
+        # missing token (the '2') caps the score into the review band.
+        if not all(t in bench_tokens for t in game_tokens):
+            ratio = min(ratio, MATCH_THRESHOLD - 0.01)
         # Sequel guard: if the benchmark title continues the name right after
         # the matched slice with a digit or roman numeral ("dying light 2 ..."
         # vs game "dying light"), this is very likely a DIFFERENT game in the
@@ -162,10 +169,12 @@ def match_benchmark_title(bench_title: str, index_titles: dict[str, list[str]]) 
         next_token = rest.split(" ")[0] if rest else ""
         if next_token and (next_token.isdigit() or next_token in ("ii", "iii", "iv", "v", "vi", "vii")):
             ratio = min(ratio, MATCH_THRESHOLD - 0.01)
-        # Guard against tiny titles matching a long benchmark's prefix while
-        # ignoring most of it: the game title must account for at least half
-        # the benchmark title's tokens.
-        if len(game_tokens) * 2 < len(bench_tokens):
+        # Guard against SINGLE-token common-word titles ("Portal", "Control")
+        # prefix-matching a long benchmark that is mostly about something
+        # else. Multi-token game titles with every token present (enforced
+        # above) are already specific -- "Overwatch 2 - EEVDF vs scx_cake"
+        # must auto-match OW2 even though the settings suffix is wordy.
+        if len(game_tokens) == 1 and len(bench_tokens) > 2:
             ratio *= 0.75
         if (ratio, game_len) > (best[0], best[1]):
             best = (ratio, game_len, app_ids, norm_game)
