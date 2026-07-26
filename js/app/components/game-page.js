@@ -5,14 +5,14 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
 import { getWebClientId } from '../../shared/submit.js?v=49306cae';
-import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=a8d355d8';
-import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=003a9b4d';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=01961c8d';
+import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=e66890c7';
+import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=65bc2638';
+import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
-import { renderCard } from './report-card.js?v=1ee75a46';
+import { renderCard } from './report-card.js?v=74e792e4';
 import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=7ec2be23';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
@@ -1579,21 +1579,6 @@ export async function renderGamePage(appId) {
           castVote(aId, rKey, vote, btnGroup.querySelector('.vote-up'), btnGroup.querySelector('.vote-dn'));
         });
       });
-      el.querySelectorAll('.delete-report-btn').forEach(b => {
-        b.addEventListener('click', async ev => {
-          ev.stopPropagation();
-          if (!confirm('Delete your report for this game?')) return;
-          const clientId = getWebClientId();
-          const hdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
-          hdrs['x-client-id'] = clientId;
-          const r = await fetch(`${SB_URL}/rest/v1/user_configs?client_id=eq.${clientId}&app_id=eq.${appId}`, {
-            method: 'DELETE',
-            headers: hdrs,
-          });
-          if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
-          else { b.textContent = 'Failed'; }
-        });
-      });
       el.querySelectorAll('.delete-cfg-btn').forEach(b => {
         b.addEventListener('click', async ev => {
           ev.stopPropagation();
@@ -1603,7 +1588,7 @@ export async function renderGamePage(appId) {
           const cfgHdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
           cfgHdrs['x-client-id'] = voterId;
           const r = await fetch(
-            `${SB_URL}/rest/v1/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
+            `${SB_URL}/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
             { method: 'DELETE', headers: cfgHdrs }
           );
           if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
@@ -1774,21 +1759,6 @@ export async function renderGamePage(appId) {
       });
     });
 
-    el.querySelectorAll('.delete-report-btn').forEach(b => {
-      b.addEventListener('click', async e => {
-        e.stopPropagation();
-        if (!confirm('Delete your report for this game?')) return;
-        const clientId = getWebClientId();
-        const hdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
-        hdrs['x-client-id'] = clientId;
-        const r = await fetch(`${SB_URL}/rest/v1/user_configs?client_id=eq.${clientId}&app_id=eq.${appId}`, {
-          method: 'DELETE',
-          headers: hdrs,
-        });
-        if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
-        else { b.textContent = 'Failed'; }
-      });
-    });
 
     // Delete plugin config (user_proton_configs) — shown when voter_id matches this device's client ID
     el.querySelectorAll('.delete-cfg-btn').forEach(b => {
@@ -1800,7 +1770,7 @@ export async function renderGamePage(appId) {
         const cfgHdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
         cfgHdrs['x-client-id'] = voterId;
         const r = await fetch(
-          `${SB_URL}/rest/v1/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
+          `${SB_URL}/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
           { method: 'DELETE', headers: cfgHdrs }
         );
         console.log('[delete-cfg]', r.status, voterId, cfgAppId);

@@ -592,6 +592,20 @@ a.card:active { transform: translateY(1px); }
   font-weight: 600;
   letter-spacing: 0.06em;
 }
+/* #405: reporter's overall verdict ("would you recommend this to others?")
+   surfaced on the card face under the age row. Only rendered when the report
+   carries form_responses.verdict, so ProtonDB mirror cards show nothing. */
+.card .rec-verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.card .rec-verdict svg { flex-shrink: 0; }
+.card .rec-verdict--yes { color: #5fd463; }
+.card .rec-verdict--no  { color: #e07070; }
 .card .notes { font-size: 0.76rem; color: #a0b4c4; line-height: 1.4; }
 .card .right {
   display: flex;

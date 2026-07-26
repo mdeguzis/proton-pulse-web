@@ -1,7 +1,6 @@
 // report-card (components) for the app page. Relocated from app.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=5090f6d2';
-import { getWebClientId } from '../../shared/submit.js?v=49306cae';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { renderAuthorBlock } from './author.js?v=3a8cb3c7';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
@@ -20,6 +19,18 @@ export function renderPermalink(r) {
   return `<button class="permalink-btn" type="button" title="Copy permalink to this report" onclick="${fn}">
     <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M3.9 12c0-1.7 1.4-3.1 3.1-3.1h4V7H7c-2.8 0-5 2.2-5 5s2.2 5 5 5h4v-1.9H7c-1.7 0-3.1-1.4-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.7 0 3.1 1.4 3.1 3.1s-1.4 3.1-3.1 3.1h-4V17h4c2.8 0 5-2.2 5-5s-2.2-5-5-5z"/></svg>
   </button>`;
+}
+
+// #405: surface the reporter's overall verdict ("would you recommend this to
+// others?") on the card face instead of burying it behind Show Report
+// Responses. Pulse reports carry form_responses.verdict = 'yes' | 'no';
+// ProtonDB mirror rows and old reports have none and render no line at all.
+export function renderRecommendLine(r) {
+  const verdict = String(r.formResponses?.verdict || '').toLowerCase();
+  if (verdict !== 'yes' && verdict !== 'no') return '';
+  const yes = verdict === 'yes';
+  const thumb = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"${yes ? '' : ' style="transform:scaleY(-1)"'}><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>`;
+  return `<div class="rec-verdict rec-verdict--${yes ? 'yes' : 'no'}" title="The reporter's answer to: would you recommend this to others?">${thumb} ${yes ? 'Would recommend' : 'Would not recommend'}</div>`;
 }
 
 // - Render: report card ------------------------------
@@ -83,6 +94,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
           ${daysAgo(r.timestamp)}
           ${(r.durationMinutes != null || fmtDuration(r.duration)) ? `<span class="hours-inline" title="Steam playtime when the reporter submitted this report">  &middot;  ${r.durationMinutes != null ? fmtMinutes(r.durationMinutes) : fmtDuration(r.duration)} played</span>` : ''}
         </div>
+        ${renderRecommendLine(r)}
         ${renderSignalStrip(r)}
       </div>
       <div class="right">
@@ -120,14 +132,14 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       ${(() => { const fr = buildFormRows(r); return fr ? `<div class="all-details-panel fr-panel"><div class="fr-section">${fr}</div></div>` : ''; })()}
       <!-- All action buttons live in the footer in one uniform blue style:
            Show Report Responses (if there are any), All Hardware Details,
-           Permalink, JSON. Delete only shows for the report owner. -->
+           Permalink, JSON. Deleting your own report lives on the profile
+           page only (#405). -->
       <div class="card-footer">
         ${(() => { const fr = buildFormRows(r); return fr ? `<button class="action-btn" onclick="const p=this.closest('.card-summary').querySelector('.fr-panel');const open=p.classList.toggle('open');this.querySelector('.action-btn-verb').textContent=open?'Hide':'Show'"><span class="action-btn-verb">Show</span> Report Responses</button>` : ''; })()}
         <button class="action-btn" onclick="this.closest('.card-summary').querySelector('.hw-details-panel').classList.toggle('open');this.textContent=this.closest('.card-summary').querySelector('.hw-details-panel').classList.contains('open')?'Hide details':'All details'">All details</button>
         <button class="action-btn action-btn-icon" data-report-json='${JSON.stringify(r).replace(/'/g,"&#39;")}' title="Download as JSON"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg></button>
         <button class="action-btn action-btn-icon flag-report-btn${r.isFlagged ? ' flagged' : ''}" data-report-id="${r.reportId ?? ''}" data-app-id="${r.appId}" data-report-key="${esc(rKey)}" data-source="${esc(r.source || 'unknown')}" title="${r.isFlagged ? 'Flagged for review' : 'Flag this report'}"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg></button>
         ${renderPermalink(r)}
-        ${r.clientId && r.clientId === getWebClientId() ? `<button class="action-btn action-btn-danger delete-report-btn" data-app-id="${r.appId || ''}" title="Delete your report">Delete</button>` : ''}
       </div>
     </div>
     </div>`;

@@ -98,6 +98,21 @@ describe('API Explorer client + component', () => {
     expect(COMP).toContain('exploreStore(endpoint, { id: resolved.id, term: resolved.term })');
   });
 
+  test('name resolution falls back to all-tokens-any-order matching (#405 follow-up)', () => {
+    // "riddick butcher" must resolve "The Chronicles of Riddick: Escape from
+    // Butcher Bay" -- a plain substring test fails because no title contains
+    // that exact phrase. Pin the token-based fallback tier.
+    expect(COMP).toContain("ql.split(/\\s+/)");
+    expect(COMP).toMatch(/tokens\.every\(\(t\) => String\(r\[1\] \|\| ''\)\.toLowerCase\(\)\.includes\(t\)\)/);
+  });
+
+  test('PCGW no-match error points at the title-substring endpoint', () => {
+    // PCGW covers non-Steam games the appid resolver can never find; the
+    // dead-end error must redirect admins to the Cargo LIKE endpoint.
+    expect(COMP).toContain('Infobox_game by title substring');
+    expect(COMP).toMatch(/store === 'pcgamingwiki'\s*\n?\s*\? ' No Steam entry/);
+  });
+
   test('output has a word-wrap toggle, copy, download, and store-link controls', () => {
     expect(COMP).toContain('id="apix-wrap"');
     expect(COMP).toContain("classList.toggle('apix-wrap'");

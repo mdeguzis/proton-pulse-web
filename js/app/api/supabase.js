@@ -4,6 +4,10 @@ import { SB_KEY, SB_URL } from '../config.js?v=593229c5';
 import { configKey, latestPerClient } from '../utils.js?v=9a39c726';
 
 export async function fetchSupabase(appId) {
+  // #404: user_proton_configs.app_id is bigint (plugin configs are Steam
+  // only), so a gog:/epic:/pgwiki: id can never match -- PostgREST just
+  // 400s (22P02). Skip the request for non-numeric ids.
+  if (!/^\d+$/.test(String(appId))) return [];
   try {
     const r = await fetch(
       `${SB_URL}/user_proton_configs?app_id=eq.${appId}&is_published=eq.true&select=id,voter_id,app_id,app_name,config,updated_at,is_published&order=updated_at.desc`,

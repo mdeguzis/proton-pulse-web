@@ -143,6 +143,40 @@
     });
   });
 
+  // #404: CSP violations fire securitypolicyviolation, NOT window.onerror,
+  // so a misconfigured connect-src silently killed fetches with nothing in
+  // the admin Logging panel. Capture them as WARN + a rate-limited
+  // error_event. Reuses the error cooldown (signature = directive + URI) so
+  // an extension injecting a blocked stylesheet on every page cannot flood
+  // site_events.
+  document.addEventListener('securitypolicyviolation', function (e) {
+    if (!e) return;
+    var payload = {
+      message: 'CSP violation: ' + (e.violatedDirective || '?') + ' blocked ' + (e.blockedURI || '?'),
+      violated_directive: e.violatedDirective || '',
+      blocked_uri: (e.blockedURI || '').slice(0, 512),
+      source_file: (e.sourceFile || '').slice(0, 512),
+      line: e.lineNumber || 0,
+      source: 'securitypolicyviolation',
+    };
+    try {
+      if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') {
+        window.ppLogBuffer.pushLog('WARN', payload.message, {
+          event_type: 'csp_violation',
+          page: location.pathname,
+          blocked_uri: payload.blocked_uri,
+          violated_directive: payload.violated_directive,
+          source_file: payload.source_file,
+        });
+      }
+    } catch (_) { /* buffer failure must never break the listener */ }
+    var sig = payload.violated_directive + '|' + payload.blocked_uri;
+    var now = Date.now();
+    if (_errorCooldown[sig] && (now - _errorCooldown[sig]) < ERROR_COOLDOWN_MS) return;
+    _errorCooldown[sig] = now;
+    track('error_event', payload);
+  });
+
   document.addEventListener('DOMContentLoaded', function () {
     track('page_view', {});
 

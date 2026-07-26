@@ -47,6 +47,9 @@ const PROTONDB_PROXY_URL =
  */
 export async function fetchProtonDbLive(appId) {
   const key = String(appId);
+  // #404: ProtonDB only tracks Steam games, and the protondb-summary edge
+  // function 400s on non-numeric ids. Skip gog:/epic:/pgwiki: entirely.
+  if (!/^\d+$/.test(key)) return [];
   if (_protonDbLiveCache.has(key)) return _protonDbLiveCache.get(key);
   try {
     const r = await fetch(

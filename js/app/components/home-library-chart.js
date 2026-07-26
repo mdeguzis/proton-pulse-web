@@ -7,7 +7,7 @@ import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { loadSearchIndex, searchIndex } from './search.js?v=7ec2be23';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=593229c5';
 import { esc } from '../utils.js?v=9a39c726';
-import { loadDeckStatusMap } from '../api/deck-status.js?v=a8d355d8';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=e66890c7';
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
 const TIER_LABEL = {

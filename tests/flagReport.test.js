@@ -12,6 +12,22 @@ function loadApi(fetchImpl) {
   return { mod, calls };
 }
 
+describe('fetchSupabase', () => {
+  test('non-Steam ids skip the query (#404: bigint app_id column 400s on them)', async () => {
+    const { mod, calls } = loadApi(() => Promise.resolve({ ok: true, status: 200, json: async () => [] }));
+    await expect(mod.fetchSupabase('pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay')).resolves.toEqual([]);
+    await expect(mod.fetchSupabase('gog:1514133152')).resolves.toEqual([]);
+    expect(calls).toHaveLength(0);
+  });
+
+  test('numeric Steam ids still query user_proton_configs', async () => {
+    const { mod, calls } = loadApi(() => Promise.resolve({ ok: true, status: 200, json: async () => [] }));
+    await mod.fetchSupabase('730');
+    expect(calls).toHaveLength(1);
+    expect(calls[0].url).toContain('/user_proton_configs?app_id=eq.730');
+  });
+});
+
 describe('flagReport', () => {
   test('submits through the submit_flag RPC (upsert + re-open), not a raw insert', async () => {
     const { mod, calls } = loadApi(() => Promise.resolve({ ok: true, status: 204 }));

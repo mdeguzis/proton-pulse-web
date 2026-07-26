@@ -414,8 +414,23 @@ async function _resolveArg(store, endpointArg, input) {
     return sid.startsWith(prefix);
   };
   const exact = idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase() === ql);
-  const match = exact || idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase().includes(ql));
-  if (!match) return { error: `No ${store} game matched "${q}".` };
+  // Fallback tiers: full-phrase substring, then all-tokens-any-order so
+  // "riddick butcher" still resolves "The Chronicles of Riddick: Escape from
+  // Butcher Bay" (#405 follow-up: word-order-sensitive matching made the
+  // name-to-id resolve feel broken next to the Cargo LIKE endpoint).
+  const tokens = ql.split(/\s+/).filter(Boolean);
+  const match = exact
+    || idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase().includes(ql))
+    || idx.find((r) => inStore(r) && tokens.every((t) => String(r[1] || '').toLowerCase().includes(t)));
+  if (!match) {
+    // PCGW covers games with no Steam presence (delisted / GOG-only), which
+    // the appid endpoint can never reach. Point at the title endpoint
+    // instead of dead-ending.
+    const hint = store === 'pcgamingwiki'
+      ? ' No Steam entry -- try the "Infobox_game by title substring" endpoint instead.'
+      : '';
+    return { error: `No ${store} game matched "${q}".${hint}` };
+  }
   let id = String(match[0]);
   if (prefix && id.startsWith(prefix)) id = id.slice(prefix.length);
   return { id, title: String(match[1] || '') };

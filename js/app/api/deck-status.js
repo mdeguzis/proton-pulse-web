@@ -91,6 +91,10 @@ const _appBasicCache = {};
 
 function _fetchAppBasic(appId) {
   if (!appId) return Promise.resolve(null);
+  // #404: the steam-appdetails edge function only understands numeric Steam
+  // ids -- gog:/epic:/pgwiki: ids always 400. Steam has no data for those
+  // games anyway, so skip the request entirely.
+  if (!/^\d+$/.test(String(appId))) return Promise.resolve(null);
   if (_appBasicCache[appId] !== undefined) return _appBasicCache[appId];
   const p = (async () => {
     try {

@@ -31,6 +31,13 @@ describe('fetchProtonDbLive (proxy)', () => {
     expect(out[0]).toMatchObject({ appId: 730, tier: 'gold', total: 1945, source: 'protondb-live', _liveOnly: true });
   });
 
+  test('non-Steam ids skip the proxy entirely (#404: it 400s on them)', async () => {
+    const { mod, calls } = loadProtonDb(() => jsonResponse({ found: true, tier: 'gold' }));
+    await expect(mod.fetchProtonDbLive('gog:1514133152')).resolves.toEqual([]);
+    await expect(mod.fetchProtonDbLive('pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay')).resolves.toEqual([]);
+    expect(calls).toHaveLength(0);
+  });
+
   test('returns empty array when ProtonDB has no summary (found:false)', async () => {
     const { mod } = loadProtonDb(() => jsonResponse({ appId: '1', found: false }));
     const out = await mod.fetchProtonDbLive(1);
