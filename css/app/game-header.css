@@ -1655,6 +1655,31 @@ button.hub-link:disabled { opacity: 0.5; cursor: default; }
 .sf-fps-upload-btn:hover { background: #4c8ab0; }
 .sf-fps-upload-status { font-size: 0.72rem; color: var(--muted); flex-basis: 100%; }
 .sf-fps-upload-status--err { color: var(--red, #ff5566); }
+/* #410: accumulated MangoHud runs. One row per uploaded CSV / ZIP member;
+   the X removes just that run and the aggregate re-fills min/avg/max. */
+.sf-fps-runs { display: flex; flex-direction: column; gap: 4px; flex-basis: 100%; margin-top: 6px; }
+.sf-fps-run-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.72rem;
+}
+.sf-fps-run-name { color: var(--text); font-weight: 600; max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sf-fps-run-stats { color: var(--muted); font-family: var(--mono); }
+.sf-fps-run-remove {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.sf-fps-run-remove:hover { color: var(--red, #ff5566); }
 .sf-row input:focus, .sf-row select:focus, .sf-row textarea:focus { border-color: var(--accent); }
 .sf-row textarea { resize: vertical; }
 .sf-row--check { flex-direction: column; gap: 3px; }

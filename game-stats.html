@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=d8b73aa1">
-<link rel="stylesheet" href="css/app/game-header.css?v=6e92b467">
+<link rel="stylesheet" href="css/app/game-header.css?v=ed236cd4">
 <link rel="stylesheet" href="css/app/configs.css?v=90d5bed5">
-<link rel="stylesheet" href="css/app/reports.css?v=330059ca">
+<link rel="stylesheet" href="css/app/reports.css?v=e308c7e6">
 <link rel="stylesheet" href="css/app/modals.css?v=5e3db937">
 <link rel="stylesheet" href="css/app/home.css?v=3b655a71">
 <style>
@@ -317,6 +317,42 @@ h1 {
   font-family: var(--mono);
   color: var(--muted);
 }
+/* #410: single-report slice banner + per-run FPS section. */
+.gs-slice-banner {
+  margin: 0 0 18px;
+  padding: 10px 16px;
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  background: rgba(102,192,244,0.05);
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.gs-slice-banner a { color: var(--accent); }
+.gs-fps-table {
+  width: 100%;
+  margin-top: 14px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.gs-fps-table th {
+  text-align: left;
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border2);
+  user-select: none;
+}
+.gs-fps-table th[data-dir="asc"]::after { content: " \25B4"; }
+.gs-fps-table th[data-dir="desc"]::after { content: " \25BE"; }
+.gs-fps-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+}
+.gs-fps-table td:first-child { font-family: inherit; color: var(--text); }
 /* ProtonDB live summary block shown on the error state when we have aggregate
    data for a game but no individual reports mirrored yet (#219). */
 .gs-live-summary {
@@ -465,7 +501,7 @@ h1 {
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
 <script src="js/lib/analytics.js?v=4b6a7264"></script>
-<script type="module" src="js/game-stats/main.js?v=d1fe4acb"></script>
+<script type="module" src="js/game-stats/main.js?v=ac5ac483"></script>
 
 </body>
 </html>

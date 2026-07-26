@@ -1,6 +1,6 @@
 // config-cards (components) for the app page. Relocated from app.js.
 
-import { getWebClientId } from '../../shared/submit.js?v=ec5de6cb';
+import { getWebClientId } from '../../shared/submit.js?v=1e9cdc61';
 import { isNonSteamAppId } from '../config.js?v=a75604f5';
 import { cfgNa, configKey, esc, utcStamp } from '../utils.js?v=9a39c726';
 

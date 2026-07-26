@@ -990,3 +990,68 @@ a.card:active { transform: translateY(1px); }
   line-height: 1.6;
 }
 .state-box code { font-size: 0.85em; }
+
+/* #410: FlightlessSomething community benchmarks section. The banner is
+   required copy -- these runs are unverified-runtime (MangoHud is Linux,
+   but nothing says Proton or which version) and never feed stats. */
+.reports-section-sub { font-size: 0.75rem; color: var(--muted); margin-left: 10px; }
+.fl-banner {
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  background: var(--s1);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin: 8px 0 10px;
+}
+.fl-banner strong { color: var(--text); }
+.fl-bench-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.fl-bench-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--s2);
+  text-decoration: none;
+}
+.fl-bench-row:hover { border-color: var(--accent); }
+.fl-bench-title { color: var(--text); font-size: 0.85rem; font-weight: 600; }
+.fl-bench-meta { color: var(--muted); font-size: 0.72rem; font-family: var(--mono); }
+
+/* #410 variant B: FPS runs chip + inline expansion on report cards. Cap 5
+   rows inline; the rest live on the per-report All stats page. */
+.fps-row .fps-values { display: inline-flex; align-items: center; gap: 8px; }
+.fps-runs-chip {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  background: rgba(102,192,244,0.08);
+  border: 1px solid rgba(102,192,244,0.4);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 1px 8px;
+  cursor: pointer;
+}
+.fps-runs-chip.open .fps-runs-caret { display: inline-block; transform: rotate(180deg); }
+.fps-allstats-link {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+.fps-runs-panel { padding: 6px 0 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.fps-run-line {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  font-size: 0.74rem;
+  padding: 3px 0 3px 12px;
+}
+.fps-run-line-name { color: var(--text); max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fps-run-line-vals { font-family: var(--mono); color: var(--accent); }
+.fps-run-line-samples { font-family: var(--mono); color: var(--muted); margin-left: auto; }
+.fps-run-line-more { display: block; font-size: 0.72rem; color: var(--accent); padding: 4px 0 2px 12px; }

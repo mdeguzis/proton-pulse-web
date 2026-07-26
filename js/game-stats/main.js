@@ -525,9 +525,92 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
   // --- entry point ---
 
+  // #410: per-run FPS section for the single-report slice. Graph at the
+  // top (grouped min/avg/max bars per run), sortable table below. Runs come
+  // from form_responses.fpsRuns (multi-upload MangoHud captures).
+  function _sliceRuns(report) {
+    const fr = report?.form_responses || report?.formResponses || {};
+    const runs = Array.isArray(fr.fpsRuns) ? fr.fpsRuns.filter(x => x && typeof x === 'object') : [];
+    return runs.map((r, i) => ({
+      name: String(r.name || `run ${i + 1}`),
+      fpsMin: r.fpsMin != null ? Number(r.fpsMin) : null,
+      fpsAvg: r.fpsAvg != null ? Number(r.fpsAvg) : null,
+      fpsMax: r.fpsMax != null ? Number(r.fpsMax) : null,
+      sampleCount: Number(r.sampleCount || 0),
+    }));
+  }
+
+  function renderFpsRunsSection(report) {
+    const runs = _sliceRuns(report);
+    if (!runs.length) return '';
+    const maxFps = Math.max(...runs.flatMap(r => [r.fpsMax || 0, r.fpsAvg || 0]), 1);
+    const w = 720, barGroupH = 46, pad = 40;
+    const h = runs.length * barGroupH + 30;
+    const x = v => pad + (v / maxFps) * (w - pad - 20);
+    const bars = runs.map((r, i) => {
+      const y = i * barGroupH + 8;
+      const label = r.name.length > 30 ? r.name.slice(0, 28) + '…' : r.name;
+      return `
+        <text x="${pad - 6}" y="${y + 20}" fill="#7a9bb5" font-size="10" text-anchor="end">${esc(label)}</text>
+        ${r.fpsMax != null ? `<rect x="${pad}" y="${y}" width="${(x(r.fpsMax) - pad).toFixed(1)}" height="10" fill="#2a475e" rx="2"><title>max ${r.fpsMax}</title></rect>` : ''}
+        ${r.fpsAvg != null ? `<rect x="${pad}" y="${y + 12}" width="${(x(r.fpsAvg) - pad).toFixed(1)}" height="10" fill="#66c0f4" rx="2"><title>avg ${r.fpsAvg}</title></rect>` : ''}
+        ${r.fpsMin != null ? `<rect x="${pad}" y="${y + 24}" width="${(x(r.fpsMin) - pad).toFixed(1)}" height="10" fill="#5bd17a" rx="2"><title>min ${r.fpsMin}</title></rect>` : ''}
+        ${r.fpsAvg != null ? `<text x="${(x(r.fpsAvg) + 4).toFixed(1)}" y="${y + 21}" fill="#c7d5e0" font-size="10" font-family="monospace">${r.fpsAvg}</text>` : ''}`;
+    }).join('');
+    const rows = runs.map((r, i) => `
+      <tr data-run-row>
+        <td>${esc(r.name)}</td>
+        <td data-v="${r.fpsMin ?? ''}">${r.fpsMin ?? '-'}</td>
+        <td data-v="${r.fpsAvg ?? ''}">${r.fpsAvg ?? '-'}</td>
+        <td data-v="${r.fpsMax ?? ''}">${r.fpsMax ?? '-'}</td>
+        <td data-v="${r.sampleCount}">${r.sampleCount.toLocaleString()}</td>
+      </tr>`).join('');
+    return `
+      <section id="fps-runs">
+        <div class="gs-section-head"><span>FPS runs (${runs.length})</span></div>
+        <p style="font-size:0.78rem;color:var(--muted);margin:4px 0 10px">Per-capture MangoHud stats submitted with this report. Bars: <span style="color:#2a475e">max</span> / <span style="color:#66c0f4">avg</span> / <span style="color:#5bd17a">min</span>.</p>
+        <svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Per-run FPS bars">${bars}</svg>
+        <table class="gs-fps-table" id="fps-runs-table">
+          <thead><tr>
+            <th data-sort="text">Run</th><th data-sort="num">Min</th><th data-sort="num">Avg</th><th data-sort="num">Max</th><th data-sort="num">Samples</th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </section>`;
+  }
+
+  function wireFpsRunsSection(rootEl) {
+    const table = rootEl.querySelector('#fps-runs-table');
+    if (!table) return;
+    table.querySelectorAll('th').forEach((th, colIdx) => {
+      th.style.cursor = 'pointer';
+      th.title = 'Sort';
+      th.addEventListener('click', () => {
+        const tbody = table.querySelector('tbody');
+        const dir = th.dataset.dir === 'asc' ? -1 : 1;
+        table.querySelectorAll('th').forEach(t => delete t.dataset.dir);
+        th.dataset.dir = dir === 1 ? 'asc' : 'desc';
+        const numeric = th.dataset.sort === 'num';
+        Array.from(tbody.querySelectorAll('tr'))
+          .sort((a, b) => {
+            const av = a.cells[colIdx].dataset.v ?? a.cells[colIdx].textContent;
+            const bv = b.cells[colIdx].dataset.v ?? b.cells[colIdx].textContent;
+            return numeric ? dir * ((Number(av) || 0) - (Number(bv) || 0)) : dir * String(av).localeCompare(String(bv));
+          })
+          .forEach(tr => tbody.appendChild(tr));
+      });
+    });
+  }
+
   async function run() {
     const params = new URLSearchParams(location.search);
     const appId = params.get('app');
+    // #410: ?report=<id> renders the SAME stats page filtered down to one
+    // report -- graphs, sections, and (below) the per-run FPS table all
+    // compute from just that report's rows. Numeric-only, like the edit
+    // param on submit.html, so it cannot reflect into markup.
+    const reportRaw = params.get('report');
+    const reportId = (reportRaw && /^[0-9]+$/.test(reportRaw)) ? reportRaw : null;
     if (!appId) {
       root.innerHTML = `<div class="error-state">
         <p>No app id in URL.</p>
@@ -536,7 +619,9 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
       return;
     }
 
-    metaEl.textContent = `// app id ${appId} · live computation from CDN + Pulse data`;
+    metaEl.textContent = reportId
+      ? `// app id ${appId} · report #${reportId} · single-report slice`
+      : `// app id ${appId} · live computation from CDN + Pulse data`;
 
     // Pull search index in parallel with CDN + Pulse + live summary so the
     // page can still say something useful when the mirror is empty (#219).
@@ -555,7 +640,19 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
       if (hit && hit[1]) title = hit[1];
     }
 
-    const allReports = [...cdnReports, ...pulseReports];
+    let allReports = [...cdnReports, ...pulseReports];
+    // #410: single-report slice. Every section below computes from the
+    // filtered set, so the whole page becomes that report's stats.
+    let sliceReport = null;
+    if (reportId) {
+      sliceReport = allReports.find(r => String(r.id ?? r.reportId ?? '') === reportId) || null;
+      if (sliceReport) {
+        allReports = [sliceReport];
+        console.debug('[game-stats] single-report slice active', { appId, reportId, found: true });
+      } else {
+        console.debug('[game-stats] report id not found; falling back to full stats', { appId, reportId });
+      }
+    }
     if (allReports.length === 0 && configs.length === 0) {
       // Nothing mirrored -- but ProtonDB may still have an aggregate. Fall
       // through to a stub view that surfaces the live tier + total instead
@@ -612,8 +709,19 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
       protonDbCount: cdnReports.length,
       liveTotal: liveSummary?.total || 0,
     }, allReports);
+    // #410: slice chrome. A banner up top saying whose stats these are +
+    // the per-run FPS section (graph + sortable table) when the report
+    // carries MangoHud runs. renderFpsRunsSection escapes all values.
+    const sliceBanner = sliceReport ? `
+      <div class="gs-slice-banner">
+        Showing stats for <strong>report #${esc(String(reportId))}</strong> only
+        (${esc(String(sliceReport.proton_version || sliceReport.protonVersion || 'unknown Proton'))} &middot; ${esc(String(sliceReport.gpu || 'unknown GPU'))}).
+        <a href="game-stats.html?app=${esc(String(appId))}">See the full game stats -&gt;</a>
+      </div>` : '';
+    const fpsRunsHtml = sliceReport ? renderFpsRunsSection(sliceReport) : '';
     // nosemgrep: javascript.browser.security.raw-html-concat.raw-html-concat — all user-derived values are escaped via esc() inside renderAll() and renderPreviewHardwareBanner()
-    root.innerHTML = previewBanner + html;
+    root.innerHTML = previewBanner + sliceBanner + fpsRunsHtml + html;
+    wireFpsRunsSection(root);
     // wire() must run AFTER innerHTML so the hover helper sees real DOM rects.
     // Also surface the filter event for future consumers (a debug log for now)
     wire();

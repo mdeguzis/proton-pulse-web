@@ -68,7 +68,7 @@ describe('report card: FPS trio', () => {
     // The FPS row must live inside .card-summary before the .all-details-panel
     // section so it is visible without expanding the details panel.
     const summaryStart = CARD_SRC.indexOf('<div class="card-summary">');
-    const fpsIdx = CARD_SRC.indexOf('r.fpsMin != null || r.fpsAvg != null || r.fpsMax != null');
+    const fpsIdx = CARD_SRC.indexOf('${renderFpsRow(r)}');
     const detailsIdx = CARD_SRC.indexOf('all-details-panel hw-details-panel');
     expect(fpsIdx).toBeGreaterThan(summaryStart);
     expect(fpsIdx).toBeLessThan(detailsIdx);
@@ -76,7 +76,7 @@ describe('report card: FPS trio', () => {
 
   test('renders monospace values with dashes for missing readings', () => {
     expect(CARD_SRC).toContain('class="fps-values"');
-    expect(CARD_SRC).toMatch(/fpsMin != null \? Number\(r\.fpsMin\)\.toFixed\(1\) : '-'/);
+    expect(CARD_SRC).toContain("const fmt = v => (v != null ? Number(v).toFixed(1) : '-')");
   });
 });
 
