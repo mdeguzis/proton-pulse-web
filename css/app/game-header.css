@@ -2001,3 +2001,24 @@ button.hub-link:disabled { opacity: 0.5; cursor: default; }
   background: rgba(255,255,255,0.05);
 }
 .submit-replaced-link { color: var(--accent); font-weight: 600; }
+
+/* #389: 30-day edit window notice on the report edit screen. The expired
+   variant replaces the whole form; the countdown sits above it. */
+.submit-edit-window {
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  background: var(--s1);
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin: 0 0 14px;
+}
+.submit-edit-window strong { color: var(--text); }
+.submit-edit-window a { color: var(--accent); }
+.submit-edit-window--expired {
+  border-left-color: #d97706;
+  font-size: 0.88rem;
+  padding: 16px 18px;
+}

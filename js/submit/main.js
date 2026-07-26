@@ -419,6 +419,43 @@ import { esc } from '../app/utils.js?v=9a39c726';
       const rows = r.ok ? await r.json() : [];
       const rec = rows[0];
       if (rec) {
+        // #389: 30-day edit window. Reports are snapshots in time -- inside
+        // the window, show how long is left; past it, block the edit and
+        // point at the moderation path (an admin deletes or anonymizes; see
+        // the Content-Moderation wiki page). Client-side gate for now;
+        // server-side enforcement lands with the #389 schema work.
+        const EDIT_WINDOW_DAYS = 30;
+        const createdMs = rec.created_at ? Date.parse(rec.created_at) : NaN;
+        const daysLeft = Number.isFinite(createdMs)
+          ? EDIT_WINDOW_DAYS - Math.floor((Date.now() - createdMs) / 86400000)
+          : EDIT_WINDOW_DAYS;
+        const formHost = document.getElementById('submit-form-content');
+        if (daysLeft <= 0) {
+          console.debug('[submit] edit window expired', { editReportId, created_at: rec.created_at, daysLeft });
+          if (formHost) {
+            formHost.innerHTML = `
+              <div class="submit-edit-window submit-edit-window--expired">
+                <strong>This report can no longer be edited.</strong>
+                Reports are snapshots in time and lock ${EDIT_WINDOW_DAYS} days after submission
+                (this one was submitted ${escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}).
+                If it contains a mistake, ask a moderator on
+                <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener">Discord</a>
+                to delete or anonymize it, or submit a fresh report next time you play.
+                <p style="margin:10px 0 0"><a href="app.html#/app/${encodeURIComponent(String(appId))}">&larr; Back to the game page</a></p>
+              </div>`;
+          }
+          return;
+        }
+        if (formHost) {
+          const notice = document.createElement('div');
+          notice.className = 'submit-edit-window';
+          notice.innerHTML = `
+            <strong>${daysLeft} day${daysLeft !== 1 ? 's' : ''} left to edit.</strong>
+            Reports lock ${EDIT_WINDOW_DAYS} days after submission
+            (submitted ${escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))})
+            so the historical record stays honest. After that, corrections go through a moderator.`;
+          formHost.parentNode.insertBefore(notice, formHost);
+        }
         const form = el.querySelector('#submit-report-form');
         const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
         set('gameTitle', (rec.title && !/^App \d+$/.test(rec.title)) ? rec.title : title);
