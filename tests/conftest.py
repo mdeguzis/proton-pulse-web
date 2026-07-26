@@ -36,6 +36,12 @@ def _no_network_in_finalize():
         patch("scripts.pipeline.finalize.init_nonsteam_stub_dirs", return_value=None),
         # #410: sweeps the FlightlessSomething API when its cache is cold.
         patch("scripts.pipeline.finalize.run_flightless_benchmarks", return_value=None),
+        # Fetches LIVE Supabase user_configs rows. Unstubbed, any real report
+        # submitted "today" leaks a current-year file + metadata into the
+        # test fixtures (test_live_backfill started failing the day the
+        # first 2026 web report landed). Same rule as everything above:
+        # every network callee finalize touches gets stubbed here.
+        patch("scripts.pipeline.finalize.merge_pulse_into_data_dir", return_value=None),
         patch("scripts.pipeline.finalize.enrich_search_index_with_pcgamingwiki", return_value=None),
         patch("scripts.pipeline.finalize.merge_pcgwiki_catalog", return_value=None),
         patch("scripts.pipeline.finalize.enrich_search_index_with_anti_cheat", return_value=None),
