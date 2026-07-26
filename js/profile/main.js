@@ -353,7 +353,11 @@ import { initLibrary } from './components/library.js?v=fedd0b3a';
       if (user) {
         showUser(user, session);
         void refreshLinkedPlugins();
-        void library.loadCached();
+        // #266 renamed loadCached to per-section loaders; this call site was
+        // missed and threw on every auth event, silently skipping the cached
+        // library/wishlist render on sign-in.
+        void library.loadLibraryCached?.();
+        void library.loadWishlistCached?.();
       } else {
         showSignedOut();
       }
