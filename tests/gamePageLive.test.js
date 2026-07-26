@@ -60,8 +60,8 @@ describe('game page: ProtonDB live-only handling', () => {
     // 404ed. Config's SB_URL already ends in /rest/v1 -- appending it again
     // anywhere in this module is always a bug.
     expect(src).not.toContain('${SB_URL}/rest/v1/');
-    // The four repaired call sites still target the right tables.
-    expect(src).toContain('`${SB_URL}/user_configs?client_id=eq.');
+    // The repaired delete-config call sites still target the right table.
+    // (The user_configs delete moved to the profile page entirely, #405.)
     expect(src).toContain('`${SB_URL}/user_proton_configs?voter_id=eq.');
   });
 
