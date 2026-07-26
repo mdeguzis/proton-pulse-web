@@ -83,4 +83,26 @@ describe('extractCsvsFromZip', () => {
     const big = new ArrayBuffer(51 * 1024 * 1024);
     await expect(extractCsvsFromZip(big)).rejects.toThrow(/too large/);
   });
+
+  test('skips unsupported compression methods with a reason', async () => {
+    // Method 12 (bzip2) is valid ZIP but not supported by our reader.
+    const zip = buildZip({ 'exotic.csv': CSV }, { method: 12 });
+    const { files, skipped } = await extractCsvsFromZip(zip);
+    expect(files).toEqual([]);
+    expect(skipped).toHaveLength(1);
+    expect(skipped[0]).toContain('unsupported compression method 12');
+  });
+
+  test('skips members whose local header is corrupt', async () => {
+    const buf = Buffer.from(buildZip({ 'ok.csv': CSV, 'broken.csv': CSV }));
+    // Stomp the SECOND local file header signature (find its offset via the
+    // second occurrence of PK\x03\x04).
+    const sig = Buffer.from([0x50, 0x4b, 0x03, 0x04]);
+    const first = buf.indexOf(sig);
+    const second = buf.indexOf(sig, first + 4);
+    buf.writeUInt32LE(0xdeadbeef, second);
+    const { files, skipped } = await extractCsvsFromZip(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength));
+    expect(files.map(f => f.name)).toEqual(['ok.csv']);
+    expect(skipped[0]).toContain('corrupt header');
+  });
 });

@@ -256,3 +256,56 @@ def test_run_writes_metadata_flags(tmp_path):
     assert m730["has_flightlessmango_status"] is True
     m_elden = json.loads((data_dir / "1245620" / "metadata.json").read_text())
     assert m_elden["has_flightlessmango_status"] is False
+
+
+def test_http_get_json_returns_none_and_logs_on_failure():
+    # The wrapper swallows every fetch error into a WARN + None so a
+    # FlightlessSomething outage can never raise out of the pipeline.
+    from scripts.pipeline.flightless_benchmarks import _http_get_json
+    with patch("scripts.pipeline.flightless_benchmarks.urllib.request.urlopen",
+               side_effect=OSError("connection refused")):
+        assert _http_get_json("https://flightlesssomething.ambrosia.one/api/benchmarks") is None
+
+
+def test_match_skips_blank_and_oversized_candidate_titles():
+    # Empty normalized game titles and games far longer than the benchmark
+    # title are pre-filtered without scoring.
+    titles = {"": ["1"], "a very long game title that is much longer": ["2"], "outer wilds": ["3"]}
+    ids, matched, sim = match_benchmark_title("Outer Wilds", titles)
+    assert ids == ["3"] and sim == 1.0
+
+
+def test_run_respects_fresh_cache_and_skips_sweep(tmp_path):
+    import time as _time
+    (tmp_path / "search-index.json").write_text(json.dumps(INDEX))
+    (tmp_path / CACHE_FILENAME).write_text(json.dumps({
+        "fetched_at": int(_time.time()),  # fresh -> no sweep
+        "benchmarks": [_bench(1, "Outer Wilds")],
+    }))
+    with patch("scripts.pipeline.flightless_benchmarks.fetch_all_benchmarks") as sweep:
+        run_flightless_benchmarks(tmp_path)
+    sweep.assert_not_called()
+    per_app = json.loads((tmp_path / OUTPUT_FILENAME).read_text())
+    assert per_app["753640"]["count"] == 1
+
+
+def test_fetch_stops_on_empty_page():
+    responses = iter([{"benchmarks": [_bench(1, "A")], "total_pages": 0},
+                      {"benchmarks": []}])
+    with patch("scripts.pipeline.flightless_benchmarks._http_get_json", side_effect=lambda _u: next(responses)), \
+         patch("scripts.pipeline.flightless_benchmarks.time.sleep"):
+        out = fetch_all_benchmarks()
+    assert [b["id"] for b in out] == [1]
+
+
+def test_metadata_flags_skip_dirless_apps_and_malformed_json(tmp_path):
+    from scripts.pipeline.flightless_benchmarks import _update_metadata_flags
+    data_dir = tmp_path / "data"
+    (data_dir / "730").mkdir(parents=True)
+    (data_dir / "730" / "metadata.json").write_text("{not json")
+    # 999 matched but has no dir; 730 has a corrupt metadata file (treated
+    # as empty), both must not raise.
+    set_true, set_false = _update_metadata_flags(data_dir, {"999", "730"})
+    assert set_true == 1  # 730 written fresh
+    meta = json.loads((data_dir / "730" / "metadata.json").read_text())
+    assert meta["has_flightlessmango_status"] is True
