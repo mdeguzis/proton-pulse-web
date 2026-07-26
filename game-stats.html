@@ -353,6 +353,149 @@ h1 {
   font-family: var(--mono);
 }
 .gs-fps-table td:first-child { font-family: inherit; color: var(--text); }
+/* FlightlessSomething-style FPS chart chrome (#410, per MangoHudPy theme).
+   The chart body is Chart.js on a canvas; the toolbar carries the
+   download-as-JSON icon top right. */
+.gs-fps-chart-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.gs-fps-chart-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.gs-fps-dl {
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 5px 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+/* The generic .gs-chart svg { width:100%; height:260px } rule would blow the
+   download icon up to fill the toolbar -- pin it back to icon size. */
+.gs-chart .gs-fps-dl svg { width: 15px; height: 15px; display: block; }
+.gs-fps-dl:hover { border-color: var(--accent); background: rgba(102,192,244,0.08); }
+.gs-fps-canvas-wrap { position: relative; height: 340px; }
+.gs-fps-empty-agg { font-family: var(--mono); font-size: 0.85rem; margin-top: 10px; }
+/* Slice mode: the whole banner is the way back to full game stats. */
+.gs-slice-banner--link {
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--accent);
+}
+.gs-slice-banner--link:hover { border-color: var(--accent); background: rgba(102,192,244,0.1); }
+/* Slice header: one plain line -- report id, facts, view link. */
+.gs-slice-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.gs-slice-head-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--strong);
+}
+.gs-slice-head-facts { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+.gs-slice-head-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; margin-left: auto; }
+.gs-slice-head-link:hover { text-decoration: underline; }
+/* Jump-to-section dropdown, same shape as the profile page's (#285). */
+.gs-jump-nav { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; }
+.gs-jump-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.gs-jump-select {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  min-width: 200px;
+}
+.gs-jump-select:focus { border-color: var(--accent); }
+.gs-fps-summary {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(20, 32, 44, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px 16px;
+}
+.gs-fps-bar-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.gs-fps-bar-line { display: flex; align-items: center; gap: 10px; margin: 3px 0; }
+.gs-fps-bar-run { width: 180px; font-size: 0.76rem; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex-shrink: 0; }
+.gs-fps-bar-track { flex: 1; height: 12px; background: var(--bg); border-radius: 2px; overflow: hidden; }
+.gs-fps-bar-fill { height: 100%; }
+.gs-fps-bar-val { width: 74px; text-align: right; font-family: var(--mono); font-size: 0.76rem; color: var(--strong); font-weight: 700; flex-shrink: 0; }
+.gs-fps-filter {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 320px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  border-radius: 4px;
+  outline: none;
+}
+.gs-fps-filter:focus { border-color: var(--accent); }
+.gs-fps-filter-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.gs-fps-filter-row .gs-fps-filter { margin-top: 0; }
+.gs-fps-date-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.gs-fps-date {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  border-radius: 4px;
+  outline: none;
+  color-scheme: dark;
+}
+.gs-fps-date:focus { border-color: var(--accent); }
 /* ProtonDB live summary block shown on the error state when we have aggregate
    data for a game but no individual reports mirrored yet (#219). */
 .gs-live-summary {
@@ -498,10 +641,13 @@ h1 {
 
 <!-- Same module stack as confidence.html so data shapes line up -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<!-- Chart.js for the per-report FPS graphs (#410). Version pinned so an
+     upstream release is a conscious upgrade, matching the markdown-it rule. -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
 <script src="js/lib/analytics.js?v=4b6a7264"></script>
-<script type="module" src="js/game-stats/main.js?v=ac5ac483"></script>
+<script type="module" src="js/game-stats/main.js?v=67902d35"></script>
 
 </body>
 </html>

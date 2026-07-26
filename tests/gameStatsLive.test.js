@@ -14,7 +14,7 @@ describe('game-stats page: ProtonDB live summary integration (#219)', () => {
   });
 
   test('run() fetches the live summary in parallel with mirror data', () => {
-    expect(src).toMatch(/const \[cdnReports, searchIndex, pulseReports, configs, liveSummary\] = await Promise\.all\(\[/);
+    expect(src).toMatch(/const \[cdnReports, searchIndex, pulseReports, configs, liveSummary, flightlessEntry\] = await Promise\.all\(\[/);
     expect(src).toMatch(/loadProtonDbLive\(appId\),?/);
   });
 

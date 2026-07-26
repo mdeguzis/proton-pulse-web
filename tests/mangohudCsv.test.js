@@ -42,6 +42,26 @@ describe('parseMangohudCsv', () => {
     expect(out.fpsAvg).toBe(59.9);
   });
 
+  test('emits percentile lows and a downsampled series (#410)', () => {
+    // 1000 monotonically increasing samples: p1 lands near the low end,
+    // and the series buckets down to exactly 120 points.
+    const vals = Array.from({ length: 1000 }, (_, i) => (i + 1) / 10 + 1); // 1.1..101.0
+    const csv = 'fps\n' + vals.join('\n');
+    const out = parseMangohudCsv(csv);
+    expect(out.error).toBeUndefined();
+    expect(out.sampleCount).toBe(1000);
+    expect(out.fpsP1).toBeGreaterThanOrEqual(out.fpsMin);
+    expect(out.fpsP01).toBeLessThanOrEqual(out.fpsP1);
+    expect(out.series).toHaveLength(120);
+    // Bucket means preserve the trend: last point > first point.
+    expect(out.series[119]).toBeGreaterThan(out.series[0]);
+  });
+
+  test('short logs keep the raw series (no padding)', () => {
+    const out = parseMangohudCsv('fps\n60\n61\n62');
+    expect(out.series).toEqual([60, 61, 62]);
+  });
+
   test('picks the correct column when fps is not first', () => {
     const csv = [
       'frametime,cpu_load,fps',

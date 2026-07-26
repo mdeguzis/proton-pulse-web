@@ -96,17 +96,129 @@ describe('game-stats single-report slice (?report=)', () => {
 
   test('slice banner links back to the full game stats', () => {
     expect(GS_SRC).toContain('gs-slice-banner');
-    expect(GS_SRC).toContain('See the full game stats');
     expect(GS_HTML).toContain('.gs-slice-banner');
   });
 
-  test('per-run section renders an SVG graph and a sortable table', () => {
+  test('per-run section: Chart.js graph, JSON download, summary bars, sortable table', () => {
     expect(GS_SRC).toContain('renderFpsRunsSection');
-    expect(GS_SRC).toMatch(/<svg viewBox="0 0 \$\{w\} \$\{h\}"/);
+    // Interactive Chart.js line chart on a canvas (pinned CDN version).
+    expect(GS_SRC).toContain("new window.Chart(canvas");
+    expect(GS_SRC).toContain("interaction: { mode: 'index', intersect: false }");
+    expect(GS_HTML).toContain('chart.js@4.4.7');
+    // The graph ALWAYS renders: FPS-over-time lines with series; without
+    // series, a multi-line chart across runs (one toggleable line per
+    // metric: Max / Average / 1% Low / Min). Both are type line.
+    expect(GS_SRC).not.toContain("type: 'bar'");
+    expect((GS_SRC.match(/type: 'line'/g) || []).length).toBe(2);
+    expect((GS_SRC.match(/new window\.Chart\(canvas/g) || []).length).toBe(2);
+    // The toolbar download icon must not inherit the generic chart-svg size.
+    expect(GS_HTML).toContain('.gs-chart .gs-fps-dl svg { width: 15px; height: 15px;');
+    // Download-as-JSON icon in the chart toolbar.
+    expect(GS_SRC).toContain('id="fps-download-json"');
+    expect(GS_SRC).toContain('series_downsampled');
+    expect(GS_SRC).toContain('fps_p1_low');
+    // FlightlessSomething Summary-tab bars: Average / 1% Low / 0.1% Low.
+    expect(GS_SRC).toContain("{ label: '1% Low', get: r => r.fpsP1 ?? r.fpsMin");
+    expect(GS_SRC).toContain("'0.1% Low'");
+    // Filterable + sortable table.
+    expect(GS_SRC).toContain('id="fps-runs-filter"');
     expect(GS_SRC).toContain('id="fps-runs-table"');
     expect(GS_SRC).toContain('wireFpsRunsSection');
-    // Sorting wires both numeric and text comparators.
     expect(GS_SRC).toContain("th.dataset.sort === 'num'");
     expect(GS_HTML).toContain('.gs-fps-table');
+    expect(GS_HTML).toContain('.gs-fps-dl');
+  });
+
+  test('slice mode is FOCUSED: only report stats render, banner links to full stats', () => {
+    // In report mode the game-wide sections are skipped entirely (early
+    // return before the full renderAll output is used).
+    expect(GS_SRC).toContain('Click here to view all game statistics');
+    expect(GS_SRC).toMatch(/root\.innerHTML = previewBanner \+ sliceBanner \+ renderFpsRunsSection\(sliceReport\);[\s\S]{0,200}return;/);
+    // Plain header line (no chips) + a link back to the report.
+    expect(GS_SRC).toContain('gs-slice-head-title');
+    expect(GS_SRC).not.toContain('gs-slice-fact ');
+    expect(GS_SRC).toContain("facts.join(' · ')");
+    expect(GS_SRC).toContain('View the report');
+    // No-runs slice explains itself instead of a blank page.
+    expect(GS_SRC).toContain('This report has no per-run MangoHud captures.');
+  });
+
+  test('pulse reports load from user_configs, not the phantom native_reports table', () => {
+    // Regression: game-stats queried a native_reports table that does not
+    // exist, so Pulse reports (and the ?report= slice target) never loaded.
+    expect(GS_SRC).not.toContain("from('native_reports')");
+    expect(GS_SRC).toContain('/user_configs?app_id=eq.');
+    expect(GS_SRC).toContain('form_responses');
+    // Plugin config lookup skips non-numeric ids (bigint column).
+    expect(GS_SRC).toMatch(/if \(!\/\^\\d\+\$\/\.test\(String\(appId\)\)\) return \[\];/);
+  });
+});
+
+describe('game-wide stats mode (#410 follow-ups)', () => {
+  test('FPS section renders at the BOTTOM with all reports runs, report-prefixed', () => {
+    // Game mode merges every report's fpsRuns (no filter), prefixing each
+    // run with its report id so the table stays attributable.
+    expect(GS_SRC).toContain('const gameFpsRuns = allReports.filter');
+    expect(GS_SRC).toMatch(/name: `#\$\{rid \?\? '\?'\} \$\{run\.name \|\| 'run'\}`/);
+    // Section is appended after the two-col block, before the back link.
+    const fpsIdx = GS_SRC.indexOf('${fpsSectionHtml}');
+    const backIdx = GS_SRC.lastIndexOf('class="gs-back"');
+    const launchIdx = GS_SRC.lastIndexOf("'Launch options that work'");
+    expect(fpsIdx).toBeGreaterThan(launchIdx);
+    expect(fpsIdx).toBeLessThan(backIdx);
+    // Wired in game mode too (chart + download + sort).
+    expect(GS_SRC).toContain('wireFpsRunsSection(root, appId, null)');
+  });
+
+  test('jump-to-section dropdown mirrors the profile pattern', () => {
+    expect(GS_SRC).toContain('id="gs-jump-select"');
+    expect(GS_SRC).toContain("['current-state', 'Current state']");
+    expect(GS_SRC).toContain("['launch-options', 'Launch options']");
+    // FPS entry only when the section exists.
+    expect(GS_SRC).toContain("...(fpsSectionHtml ? [['fps-runs', 'FPS runs']] : [])");
+    // Select resets to the placeholder after each jump.
+    expect(GS_SRC).toContain("jumpSelect.value = ''");
+    expect(GS_HTML).toContain('.gs-jump-select');
+  });
+});
+
+describe('runs filters + legend fill (#410 polish)', () => {
+  test('legend squares fill when active and hollow when toggled off', () => {
+    expect(GS_SRC).toContain('generateLabels(chart)');
+    expect(GS_SRC).toContain("it.fillStyle = it.hidden ? 'transparent' : color");
+  });
+
+  test('date-range picker filters runs by filename date', () => {
+    expect(GS_SRC).toContain('_runDateFromName');
+    expect(GS_SRC).toContain('id="fps-runs-from"');
+    expect(GS_SRC).toContain('id="fps-runs-to"');
+    // Range check: hidden when outside [from, to]; undated rows stay visible.
+    expect(GS_SRC).toContain('const dateMiss = !!d && ((from && d < from) || (to && d > to))');
+    expect(GS_HTML).toContain('.gs-fps-date');
+  });
+});
+
+describe('title-matched FlightlessSomething section on the stats page (#410)', () => {
+  test('renders below the confirmed FPS section with the disclaimer', () => {
+    const fpsIdx = GS_SRC.indexOf('${fpsSectionHtml}');
+    const flIdx = GS_SRC.indexOf('${renderFlightlessSection(flightlessEntry)}');
+    expect(flIdx).toBeGreaterThan(fpsIdx);
+    // Required disclaimer copy: title-matched, unverified runtime, never
+    // counted in the confirmed stats.
+    expect(GS_SRC).toContain('Title-matched, unverified runtime.');
+    expect(GS_SRC).toContain('matched to this game by title only');
+    expect(GS_SRC).toContain('never counted in ratings, confidence, or the');
+    expect(GS_SRC).toContain('mangohud.com');
+  });
+
+  test('loads the pipeline map and joins the parallel fetch', () => {
+    expect(GS_SRC).toContain('loadFlightlessEntry(appId)');
+    expect(GS_SRC).toContain('flightless-benchmarks.json');
+    // Jump list entry appears only when benchmarks exist.
+    expect(GS_SRC).toContain("[['flightless-benchmarks', 'Community benchmarks']]");
+  });
+
+  test('benchmark links are origin-checked before rendering', () => {
+    expect(GS_SRC).toMatch(/String\(entry\.search_url \|\| ''\)\.startsWith\('https:\/\/flightlesssomething\.ambrosia\.one\/'\)/);
   });
 });

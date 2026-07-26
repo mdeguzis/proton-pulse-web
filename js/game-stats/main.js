@@ -51,27 +51,100 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
     } catch { return []; }
   }
 
+  // #410: title-matched FlightlessSomething benchmarks for this app. The
+  // pipeline map keys benchmarks by app id; empty object when the file has
+  // not been generated yet or the app has no matches.
+  async function loadFlightlessEntry(appId) {
+    try {
+      const url = IS_LOCAL_DEV
+        ? 'https://www.proton-pulse.com/flightless-benchmarks.json'
+        : `${location.origin}${SITE_BASE}/flightless-benchmarks.json`;
+      const r = await fetch(url);
+      if (!r.ok) return null;
+      const map = await r.json();
+      const entry = map?.[String(appId)] || null;
+      console.debug('[game-stats] flightless lookup', { appId, found: !!entry, count: entry?.count || 0 });
+      return entry;
+    } catch { return null; }
+  }
+
+  // Unverified-runtime FPS section: community benchmarks title-matched from
+  // FlightlessSomething. Always renders BELOW the confirmed (Pulse-report)
+  // FPS section, behind an explicit disclaimer -- these runs never say
+  // whether Proton was in play, so they are context, not stats.
+  function renderFlightlessSection(entry) {
+    if (!entry || !Array.isArray(entry.benchmarks) || !entry.benchmarks.length) return '';
+    const searchUrl = String(entry.search_url || '').startsWith('https://flightlesssomething.ambrosia.one/')
+      ? String(entry.search_url) : 'https://flightlesssomething.ambrosia.one/';
+    const rows = entry.benchmarks.slice(0, 10).map(b => {
+      const url = String(b.url || '').startsWith('https://flightlesssomething.ambrosia.one/') ? String(b.url) : searchUrl;
+      return `
+        <tr>
+          <td><a href="${esc(url)}" target="_blank" rel="noopener">${esc(String(b.title || 'Benchmark'))}</a></td>
+          <td data-v="${Number(b.run_count) || 1}">${Number(b.run_count) || 1}</td>
+          <td>${esc(String(b.specs || '').slice(0, 90))}</td>
+          <td>${esc(String(b.created_at || '').slice(0, 10))}</td>
+        </tr>`;
+    }).join('');
+    const overflow = entry.benchmarks.length - 10;
+    return `
+      <section id="flightless-benchmarks">
+        <div class="gs-section-head"><span>Community benchmarks (unverified runtime)</span></div>
+        <div class="fl-banner">
+          <strong>Title-matched, unverified runtime.</strong> These are community
+          <a href="https://mangohud.com/" target="_blank" rel="noopener">MangoHud</a> captures from
+          <a href="https://flightlesssomething.ambrosia.one/" target="_blank" rel="noopener">FlightlessSomething</a>,
+          matched to this game by title only. MangoHud is a Linux overlay so most runs are Proton or
+          native Linux, but the data does not say which (or on what Proton version). Shown as a helpful
+          signal for how this game may perform -- never counted in ratings, confidence, or the
+          confirmed FPS stats above.
+        </div>
+        <table class="gs-fps-table">
+          <thead><tr><th>Benchmark</th><th>Runs</th><th>System</th><th>Date</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <p style="font-size:0.78rem;margin-top:10px">
+          ${overflow > 0 ? `+${overflow} more on ` : 'Browse all on '}
+          <a href="${esc(searchUrl)}" target="_blank" rel="noopener">FlightlessSomething -&gt;</a>
+        </p>
+      </section>`;
+  }
+
   // --- Supabase native reports + configs (best effort, optional) ---
+
+  // Pulse reports live in user_configs (same query shape the game page's
+  // fetchNativeReports uses). The old code queried a 'native_reports' table
+  // that does not exist, so every Pulse report silently vanished from this
+  // page -- including the single-report slice target (#410).
+  const SB_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1';
+  const SB_KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
+  const SB_HEADERS = { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}` };
 
   async function loadPulseReports(appId) {
     try {
-      if (!window.protonPulseSupabase) return [];
-      const { data } = await window.protonPulseSupabase
-        .from('native_reports')
-        .select('*')
-        .eq('app_id', appId);
-      return data || [];
-    } catch { return []; }
+      const r = await fetch(
+        `${SB_URL}/user_configs?app_id=eq.${encodeURIComponent(appId)}&is_flagged=neq.true&select=id,app_id,gpu,cpu,os,kernel,proton_version,rating,notes,fps_min,fps_avg,fps_max,run_type,form_responses,created_at,source&order=created_at.desc`,
+        { headers: SB_HEADERS }
+      );
+      const rows = r.ok ? await r.json() : [];
+      console.debug('[game-stats] loadPulseReports', { appId, count: rows.length, source: 'user_configs' });
+      return rows;
+    } catch (e) {
+      console.debug('[game-stats] loadPulseReports failed', { appId, error: String(e && e.message || e) });
+      return [];
+    }
   }
 
   async function loadConfigs(appId) {
+    // user_proton_configs.app_id is bigint (plugin configs are Steam-only);
+    // non-numeric ids (pw_/gog:/epic:) would 400 -- skip them (#404 rule).
+    if (!/^\d+$/.test(String(appId))) return [];
     try {
-      if (!window.protonPulseSupabase) return [];
-      const { data } = await window.protonPulseSupabase
-        .from('pulse_configs')
-        .select('*')
-        .eq('app_id', appId);
-      return data || [];
+      const r = await fetch(
+        `${SB_URL}/user_proton_configs?app_id=eq.${encodeURIComponent(appId)}&is_published=eq.true&select=id,app_id,config,updated_at`,
+        { headers: SB_HEADERS }
+      );
+      return r.ok ? await r.json() : [];
     } catch { return []; }
   }
 
@@ -467,15 +540,58 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
   // Returns { html, wire }. wire() runs after the html is injected so any
   // chart helpers (hover targets, click-to-filter) can attach to live DOM
-  function renderAll(appId, title, stats, counts = {}, allReports = []) {
+  function renderAll(appId, title, stats, counts = {}, allReports = [], flightlessEntry = null) {
     // Each section carries an id so it can be deep-linked (e.g. the game page
     // trend line links to #trend). Anchor offset handled by scroll-margin-top
     // in CSS so the sticky-ish header does not cover the section title.
     const sectionHead = (icon, title, id = '') => `<div class="gs-section-head"${id ? ` id="${id}"` : ''}>${icon}<span>${title}</span></div>`;
     const chart = renderChart(stats.monthly);
 
+    // #410: game-wide FPS section = every report's MangoHud runs, no report
+    // filter. Sits at the BOTTOM of the page; the jump list gets it there.
+    const gameFpsRuns = allReports.filter(r => {
+      const fr = r?.form_responses || r?.formResponses || {};
+      return Array.isArray(fr.fpsRuns) && fr.fpsRuns.length;
+    });
+    const fpsSectionHtml = gameFpsRuns.length
+      ? renderFpsRunsSection({
+          form_responses: {
+            fpsRuns: gameFpsRuns.flatMap(r => {
+              const fr = r.form_responses || r.formResponses || {};
+              const rid = r.id ?? r.reportId;
+              // Prefix each run with its report so the merged table stays
+              // attributable (and the per-report slice link stays one click
+              // away via the report cards).
+              return fr.fpsRuns.map(run => ({ ...run, name: `#${rid ?? '?'} ${run.name || 'run'}` }));
+            }),
+          },
+        })
+      : '';
+
+    // Jump-to-section dropdown, same shape as the profile page's (#285).
+    const jumpSections = [
+      ['current-state', 'Current state'],
+      ['monthly', 'Monthly reports'],
+      ['distribution', 'Rating distribution'],
+      ['trend', 'Compatibility trend'],
+      ['confidence', 'Confidence factors'],
+      ['proton-versions', 'Per Proton version'],
+      ['launch-options', 'Launch options'],
+      ...(fpsSectionHtml ? [['fps-runs', 'FPS runs']] : []),
+      ...(flightlessEntry?.benchmarks?.length ? [['flightless-benchmarks', 'Community benchmarks']] : []),
+    ];
+    const jumpList = `
+      <div class="gs-jump-nav">
+        <label for="gs-jump-select" class="gs-jump-label">Jump to:</label>
+        <select id="gs-jump-select" class="gs-jump-select">
+          <option value="" selected>Section...</option>
+          ${jumpSections.map(([id, label]) => `<option value="${id}">${label}</option>`).join('')}
+        </select>
+      </div>`;
+
     const html = `
       ${renderHeader(appId, title, counts)}
+      ${jumpList}
       ${sectionHead(ICON.status, 'Current state', 'current-state')}
       ${renderStatusCards(stats)}
 
@@ -502,11 +618,21 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
         </div>
       </div>
 
+      ${fpsSectionHtml}
+      ${renderFlightlessSection(flightlessEntry)}
+
       <a class="gs-back" href="app.html#/app/${esc(appId)}">&larr; Back to game page</a>
     `;
 
     const wire = () => {
       chart.wire();
+      // Jump list: scroll to the picked section, then reset to "Section...".
+      const jumpSelect = document.getElementById('gs-jump-select');
+      jumpSelect?.addEventListener('change', () => {
+        const target = jumpSelect.value ? document.getElementById(jumpSelect.value) : null;
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        jumpSelect.value = '';
+      });
       // Click rating chips to dispatch a tier filter event. Future work will
       // listen for these on the report list below (task #73 follow-ups)
       attachClickToFilter({
@@ -525,61 +651,310 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
   // --- entry point ---
 
-  // #410: per-run FPS section for the single-report slice. Graph at the
-  // top (grouped min/avg/max bars per run), sortable table below. Runs come
-  // from form_responses.fpsRuns (multi-upload MangoHud captures).
+  // #410: per-run FPS section for the single-report slice, styled after
+  // FlightlessSomething / MangoHudPy (github.com/mdeguzis/MangoHudPy
+  // graph.py): an FPS-over-time line chart (one colored line per run,
+  // toggleable via the legend), the Summary-tab horizontal bars (Average /
+  // 1% Low / 0.1% Low per run), and a sortable + filterable table. Runs
+  // come from form_responses.fpsRuns; each may carry a downsampled
+  // `series` (new uploads) -- runs without one still get bars + table.
+  const _FS_PALETTE = ['#7cb5ec', '#90ed7d', '#f7a35c', '#8085e9', '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1', '#66c0f4'];
+
+  // MangoHud names its logs <Game>_YYYY-MM-DD_HH-MM-SS.csv -- pull the date
+  // out so the runs can be range-filtered. Null when the name has no date.
+  function _runDateFromName(name) {
+    const m = /(\d{4}-\d{2}-\d{2})/.exec(String(name || ''));
+    return m ? m[1] : null;
+  }
+
   function _sliceRuns(report) {
     const fr = report?.form_responses || report?.formResponses || {};
     const runs = Array.isArray(fr.fpsRuns) ? fr.fpsRuns.filter(x => x && typeof x === 'object') : [];
     return runs.map((r, i) => ({
       name: String(r.name || `run ${i + 1}`),
+      date: _runDateFromName(r.name),
+      color: _FS_PALETTE[i % _FS_PALETTE.length],
       fpsMin: r.fpsMin != null ? Number(r.fpsMin) : null,
       fpsAvg: r.fpsAvg != null ? Number(r.fpsAvg) : null,
       fpsMax: r.fpsMax != null ? Number(r.fpsMax) : null,
+      fpsP1: r.fpsP1 != null ? Number(r.fpsP1) : null,
+      fpsP01: r.fpsP01 != null ? Number(r.fpsP01) : null,
       sampleCount: Number(r.sampleCount || 0),
+      series: Array.isArray(r.series) ? r.series.map(Number).filter(Number.isFinite) : [],
     }));
+  }
+
+  // Chart.js canvas host. The chart itself is instantiated in
+  // wireFpsRunsSection (needs the live DOM); this emits the chrome:
+  // toolbar with the download-as-JSON icon top right, then the canvas.
+  // The graph ALWAYS renders: runs with a captured series get the
+  // FPS-over-time line chart; runs without one (pre-#410 uploads) get a
+  // grouped min / avg / 1% low / max bar chart from the stats they DO have.
+  function _renderFpsLineChart(runs) {
+    const withSeries = runs.filter(r => r.series.length > 1);
+    return `
+      <div class="gs-chart gs-fps-chart">
+        <div class="gs-fps-chart-toolbar">
+          <span class="gs-fps-chart-title">${withSeries.length ? 'FPS over time' : 'FPS per run (min / avg / 1% low / max)'}</span>
+          <button type="button" id="fps-download-json" class="gs-fps-dl" title="Download this report's FPS data as JSON">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg>
+          </button>
+        </div>
+        <div class="gs-fps-canvas-wrap"><canvas id="fps-runs-chart"></canvas></div>
+      </div>`;
+  }
+
+  function _renderFpsSummaryBars(runs) {
+    // FlightlessSomething "Summary" tab: Average / 1% Low / 0.1% Low.
+    const rows = [
+      { label: 'Average', get: r => r.fpsAvg, color: '#7cb5ec' },
+      { label: '1% Low', get: r => r.fpsP1 ?? r.fpsMin, color: '#90ed7d' },
+      { label: '0.1% Low', get: r => r.fpsP01 ?? r.fpsMin, color: '#f7a35c' },
+    ];
+    const maxV = Math.max(...runs.map(r => r.fpsAvg || 0), 1);
+    const groups = rows.map(row => {
+      const bars = runs.map(r => {
+        const v = row.get(r);
+        if (v == null) return '';
+        const pct = Math.max(1.5, (v / maxV) * 100);
+        return `<div class="gs-fps-bar-line">
+          <span class="gs-fps-bar-run" title="${esc(r.name)}">${esc(r.name.length > 26 ? r.name.slice(0, 24) + '…' : r.name)}</span>
+          <div class="gs-fps-bar-track"><div class="gs-fps-bar-fill" style="width:${pct.toFixed(1)}%;background:${row.color}"></div></div>
+          <span class="gs-fps-bar-val">${v.toFixed(1)} fps</span>
+        </div>`;
+      }).join('');
+      return `<div class="gs-fps-bar-group"><div class="gs-fps-bar-label">${row.label}</div>${bars}</div>`;
+    }).join('');
+    return `<div class="gs-fps-summary">${groups}</div>`;
   }
 
   function renderFpsRunsSection(report) {
     const runs = _sliceRuns(report);
-    if (!runs.length) return '';
-    const maxFps = Math.max(...runs.flatMap(r => [r.fpsMax || 0, r.fpsAvg || 0]), 1);
-    const w = 720, barGroupH = 46, pad = 40;
-    const h = runs.length * barGroupH + 30;
-    const x = v => pad + (v / maxFps) * (w - pad - 20);
-    const bars = runs.map((r, i) => {
-      const y = i * barGroupH + 8;
-      const label = r.name.length > 30 ? r.name.slice(0, 28) + '…' : r.name;
+    _fpsSectionRuns = runs;
+    if (!runs.length) {
+      // Focused slice with no MangoHud captures: say so instead of a blank
+      // page. The aggregate trio may still exist on the report row.
+      const agg = [report.fps_min ?? report.fpsMin, report.fps_avg ?? report.fpsAvg, report.fps_max ?? report.fpsMax];
+      const aggLine = agg.some(v => v != null)
+        ? `<p class="gs-fps-empty-agg">Reported FPS (min / avg / max): <code>${agg.map(v => v != null ? Number(v).toFixed(1) : '-').join(' / ')}</code></p>`
+        : '';
       return `
-        <text x="${pad - 6}" y="${y + 20}" fill="#7a9bb5" font-size="10" text-anchor="end">${esc(label)}</text>
-        ${r.fpsMax != null ? `<rect x="${pad}" y="${y}" width="${(x(r.fpsMax) - pad).toFixed(1)}" height="10" fill="#2a475e" rx="2"><title>max ${r.fpsMax}</title></rect>` : ''}
-        ${r.fpsAvg != null ? `<rect x="${pad}" y="${y + 12}" width="${(x(r.fpsAvg) - pad).toFixed(1)}" height="10" fill="#66c0f4" rx="2"><title>avg ${r.fpsAvg}</title></rect>` : ''}
-        ${r.fpsMin != null ? `<rect x="${pad}" y="${y + 24}" width="${(x(r.fpsMin) - pad).toFixed(1)}" height="10" fill="#5bd17a" rx="2"><title>min ${r.fpsMin}</title></rect>` : ''}
-        ${r.fpsAvg != null ? `<text x="${(x(r.fpsAvg) + 4).toFixed(1)}" y="${y + 21}" fill="#c7d5e0" font-size="10" font-family="monospace">${r.fpsAvg}</text>` : ''}`;
-    }).join('');
-    const rows = runs.map((r, i) => `
-      <tr data-run-row>
-        <td>${esc(r.name)}</td>
+        <section id="fps-runs">
+          <div class="gs-section-head"><span>FPS runs</span></div>
+          <div class="error-state" style="padding:24px">
+            <p>This report has no per-run MangoHud captures.</p>
+            ${aggLine}
+            <p style="font-size:0.78rem;color:var(--muted);margin-top:8px">Per-run graphs appear when a report is submitted with the Upload MangoHud CSV / ZIP button.</p>
+          </div>
+        </section>`;
+    }
+    const rows = runs.map(r => `
+      <tr data-run-row data-run-name="${esc(r.name.toLowerCase())}"${r.date ? ` data-run-date="${esc(r.date)}"` : ''}>
+        <td><span class="dot" style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${r.color};margin-right:6px"></span>${esc(r.name)}</td>
         <td data-v="${r.fpsMin ?? ''}">${r.fpsMin ?? '-'}</td>
         <td data-v="${r.fpsAvg ?? ''}">${r.fpsAvg ?? '-'}</td>
         <td data-v="${r.fpsMax ?? ''}">${r.fpsMax ?? '-'}</td>
+        <td data-v="${r.fpsP1 ?? ''}">${r.fpsP1 ?? '-'}</td>
+        <td data-v="${r.fpsP01 ?? ''}">${r.fpsP01 ?? '-'}</td>
         <td data-v="${r.sampleCount}">${r.sampleCount.toLocaleString()}</td>
       </tr>`).join('');
     return `
       <section id="fps-runs">
         <div class="gs-section-head"><span>FPS runs (${runs.length})</span></div>
-        <p style="font-size:0.78rem;color:var(--muted);margin:4px 0 10px">Per-capture MangoHud stats submitted with this report. Bars: <span style="color:#2a475e">max</span> / <span style="color:#66c0f4">avg</span> / <span style="color:#5bd17a">min</span>.</p>
-        <svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Per-run FPS bars">${bars}</svg>
+        <p style="font-size:0.78rem;color:var(--muted);margin:4px 0 10px">Per-capture MangoHud stats submitted with this report. Click a legend entry to hide / show its line; click table headers to sort.</p>
+        ${_renderFpsLineChart(runs)}
+        ${_renderFpsSummaryBars(runs)}
+        <div class="gs-fps-filter-row">
+          <input type="search" id="fps-runs-filter" class="gs-fps-filter" placeholder="Filter runs by name...">
+          <label class="gs-fps-date-label" for="fps-runs-from">From</label>
+          <input type="date" id="fps-runs-from" class="gs-fps-date">
+          <label class="gs-fps-date-label" for="fps-runs-to">To</label>
+          <input type="date" id="fps-runs-to" class="gs-fps-date">
+        </div>
         <table class="gs-fps-table" id="fps-runs-table">
           <thead><tr>
-            <th data-sort="text">Run</th><th data-sort="num">Min</th><th data-sort="num">Avg</th><th data-sort="num">Max</th><th data-sort="num">Samples</th>
+            <th data-sort="text">Run</th><th data-sort="num">Min</th><th data-sort="num">Avg</th><th data-sort="num">Max</th><th data-sort="num">1% Low</th><th data-sort="num">0.1% Low</th><th data-sort="num">Samples</th>
           </tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </section>`;
   }
 
-  function wireFpsRunsSection(rootEl) {
+  // Kept on the closure so wireFpsRunsSection can build the chart + the
+  // JSON download from the same data renderFpsRunsSection rendered.
+  let _fpsSectionRuns = [];
+  let _fpsChartInstance = null;
+
+  function _downloadFpsJson(appId, reportId) {
+    const payload = {
+      app_id: String(appId),
+      report_id: reportId != null ? String(reportId) : null,
+      generated_at: new Date().toISOString(),
+      source: 'proton-pulse report submission (MangoHud captures)',
+      runs: _fpsSectionRuns.map(r => ({
+        name: r.name,
+        fps_min: r.fpsMin, fps_avg: r.fpsAvg, fps_max: r.fpsMax,
+        fps_p1_low: r.fpsP1, fps_p01_low: r.fpsP01,
+        sample_count: r.sampleCount,
+        series_downsampled: r.series,
+      })),
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `proton-pulse-fps-${appId}${reportId ? `-report-${reportId}` : ''}.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    console.debug('[game-stats] fps json downloaded', { appId, reportId, runs: _fpsSectionRuns.length });
+  }
+
+  const _CHART_THEME = {
+    legend: {
+      position: 'bottom',
+      labels: {
+        color: '#c7d5e0',
+        boxWidth: 12,
+        boxHeight: 12,
+        font: { size: 11 },
+        // Filled square while the dataset is visible, hollow (border-only)
+        // once it is toggled off -- the fill state IS the on/off indicator.
+        generateLabels(chart) {
+          const items = window.Chart.defaults.plugins.legend.labels.generateLabels(chart);
+          for (const it of items) {
+            const ds = chart.data.datasets[it.datasetIndex] || {};
+            const color = typeof ds.borderColor === 'string' ? ds.borderColor : '#7cb5ec';
+            it.fillStyle = it.hidden ? 'transparent' : color;
+            it.strokeStyle = color;
+            it.lineWidth = 1.5;
+          }
+          return items;
+        },
+      },
+    },
+    tooltip: {
+      backgroundColor: '#1E1E1E',
+      borderColor: 'rgba(110,180,240,0.28)',
+      borderWidth: 1,
+      titleColor: '#c7d5e0',
+      bodyColor: '#c7d5e0',
+    },
+    axis: (titleText) => ({
+      title: { display: true, text: titleText, color: '#7a9bb5', font: { size: 10 } },
+      ticks: { color: '#7a9bb5', maxTicksLimit: 12, font: { size: 10 } },
+      grid: { color: 'rgba(255,255,255,0.07)' },
+    }),
+  };
+
+  function _buildFpsChart(rootEl) {
+    const canvas = rootEl.querySelector('#fps-runs-chart');
+    if (!canvas || typeof window.Chart !== 'function' || !_fpsSectionRuns.length) return;
+    const withSeries = _fpsSectionRuns.filter(r => r.series.length > 1);
+    if (_fpsChartInstance) { _fpsChartInstance.destroy(); _fpsChartInstance = null; }
+
+    if (withSeries.length) {
+      // FPS-over-time line chart, one line per run.
+      const maxLen = Math.max(...withSeries.map(r => r.series.length));
+      _fpsChartInstance = new window.Chart(canvas, {
+        type: 'line',
+        data: {
+          labels: Array.from({ length: maxLen }, (_, i) => i + 1),
+          datasets: withSeries.map(r => ({
+            label: r.name,
+            data: r.series,
+            borderColor: r.color,
+            backgroundColor: r.color + '22',
+            fill: true,
+            borderWidth: 1.5,
+            pointRadius: 0,
+            pointHitRadius: 8,
+            tension: 0.2,
+          })),
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: _CHART_THEME.legend,
+            tooltip: { ..._CHART_THEME.tooltip, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} fps` } },
+          },
+          scales: {
+            x: _CHART_THEME.axis('sample (downsampled)'),
+            y: { ..._CHART_THEME.axis('FPS'), beginAtZero: true },
+          },
+        },
+      });
+      return;
+    }
+
+    // No captured series (pre-#410 uploads): multi-line chart across runs --
+    // one toggleable line per metric (Min / 1% Low / Average / Max), x axis
+    // is the run. Chart.js legend clicks add/remove lines natively.
+    const metrics = [
+      { label: 'Max', get: r => r.fpsMax, color: '#8085e9' },
+      { label: 'Average', get: r => r.fpsAvg, color: '#7cb5ec' },
+      { label: '1% Low', get: r => r.fpsP1 ?? null, color: '#f7a35c' },
+      { label: 'Min', get: r => r.fpsMin, color: '#90ed7d' },
+    ].filter(m => _fpsSectionRuns.some(r => m.get(r) != null));
+    _fpsChartInstance = new window.Chart(canvas, {
+      type: 'line',
+      data: {
+        labels: _fpsSectionRuns.map(r => r.name.length > 26 ? r.name.slice(0, 24) + '…' : r.name),
+        datasets: metrics.map(m => ({
+          label: m.label,
+          data: _fpsSectionRuns.map(r => m.get(r)),
+          borderColor: m.color,
+          backgroundColor: m.color + '22',
+          fill: m.label === 'Min' ? 'origin' : false,
+          borderWidth: 1.6,
+          pointRadius: 3,
+          pointBackgroundColor: m.color,
+          pointHitRadius: 10,
+          tension: 0.25,
+          spanGaps: true,
+        })),
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: _CHART_THEME.legend,
+          tooltip: { ..._CHART_THEME.tooltip, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} fps` } },
+        },
+        scales: {
+          x: { ..._CHART_THEME.axis('run'), ticks: { color: '#7a9bb5', font: { size: 9 }, maxRotation: 40, autoSkip: false } },
+          y: { ..._CHART_THEME.axis('FPS'), beginAtZero: true },
+        },
+      },
+    });
+  }
+
+  function wireFpsRunsSection(rootEl, appId, reportId) {
+    _buildFpsChart(rootEl);
+    rootEl.querySelector('#fps-download-json')?.addEventListener('click', () => _downloadFpsJson(appId, reportId));
+    // Combined filters: name substring + date range (dates parsed from the
+    // MangoHud filename, YYYY-MM-DD). Rows without a parseable date stay
+    // visible under a date filter -- hiding them would silently drop runs.
+    const filter = rootEl.querySelector('#fps-runs-filter');
+    const fromEl = rootEl.querySelector('#fps-runs-from');
+    const toEl = rootEl.querySelector('#fps-runs-to');
+    const applyRunFilters = () => {
+      const q = (filter?.value || '').trim().toLowerCase();
+      const from = fromEl?.value || '';
+      const to = toEl?.value || '';
+      rootEl.querySelectorAll('#fps-runs-table [data-run-row]').forEach(tr => {
+        const nameMiss = !!q && !(tr.dataset.runName || '').includes(q);
+        const d = tr.dataset.runDate || '';
+        const dateMiss = !!d && ((from && d < from) || (to && d > to));
+        tr.hidden = nameMiss || dateMiss;
+      });
+    };
+    filter?.addEventListener('input', applyRunFilters);
+    fromEl?.addEventListener('change', applyRunFilters);
+    toEl?.addEventListener('change', applyRunFilters);
     const table = rootEl.querySelector('#fps-runs-table');
     if (!table) return;
     table.querySelectorAll('th').forEach((th, colIdx) => {
@@ -625,12 +1000,13 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
     // Pull search index in parallel with CDN + Pulse + live summary so the
     // page can still say something useful when the mirror is empty (#219).
-    const [cdnReports, searchIndex, pulseReports, configs, liveSummary] = await Promise.all([
+    const [cdnReports, searchIndex, pulseReports, configs, liveSummary, flightlessEntry] = await Promise.all([
       loadGame(appId),
       loadSearchIndex(),
       loadPulseReports(appId),
       loadConfigs(appId),
       loadProtonDbLive(appId),
+      loadFlightlessEntry(appId),
     ]);
 
     // Find the game's title - search index entries are [appId, title, ...] tuples
@@ -708,23 +1084,45 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
       pulseCount: pulseReports.length,
       protonDbCount: cdnReports.length,
       liveTotal: liveSummary?.total || 0,
-    }, allReports);
+    }, allReports, flightlessEntry);
     // #410: slice chrome. A banner up top saying whose stats these are +
     // the per-run FPS section (graph + sortable table) when the report
     // carries MangoHud runs. renderFpsRunsSection escapes all values.
-    const sliceBanner = sliceReport ? `
-      <div class="gs-slice-banner">
-        Showing stats for <strong>report #${esc(String(reportId))}</strong> only
-        (${esc(String(sliceReport.proton_version || sliceReport.protonVersion || 'unknown Proton'))} &middot; ${esc(String(sliceReport.gpu || 'unknown GPU'))}).
-        <a href="game-stats.html?app=${esc(String(appId))}">See the full game stats -&gt;</a>
-      </div>` : '';
-    const fpsRunsHtml = sliceReport ? renderFpsRunsSection(sliceReport) : '';
+    // #410: report-slice mode is FOCUSED -- the page shows ONLY that
+    // report's stats (banner link up top + report facts + the FPS graphs
+    // and table). The full game-wide sections render only in game mode.
+    if (sliceReport) {
+      // Plain header line, not chips: report id + the facts as one muted
+      // mono line, with the view-the-report link at the end.
+      const facts = [
+        String(sliceReport.proton_version || sliceReport.protonVersion || 'unknown Proton'),
+        String(sliceReport.gpu || 'unknown GPU'),
+        sliceReport.os ? String(sliceReport.os) : null,
+        sliceReport.rating ? String(sliceReport.rating).toUpperCase() : null,
+      ].filter(Boolean);
+      const sliceBanner = `
+        <a class="gs-slice-banner gs-slice-banner--link" href="game-stats.html?app=${esc(String(appId))}">
+          &#8592; Click here to view all game statistics for ${esc(title)}
+        </a>
+        <div class="gs-slice-head">
+          <span class="gs-slice-head-title">Report #${esc(String(reportId))}</span>
+          <span class="gs-slice-head-facts">${esc(facts.join(' · '))}</span>
+          <a class="gs-slice-head-link" href="app.html#/app/${encodeURIComponent(String(appId))}#report-r${esc(String(reportId))}">View the report -&gt;</a>
+        </div>`;
+      // nosemgrep: javascript.browser.security.raw-html-concat.raw-html-concat — all user-derived values are escaped via esc()
+      root.innerHTML = previewBanner + sliceBanner + renderFpsRunsSection(sliceReport);
+      wireFpsRunsSection(root, appId, reportId);
+      void enhanceHardwareBanner();
+      return;
+    }
     // nosemgrep: javascript.browser.security.raw-html-concat.raw-html-concat — all user-derived values are escaped via esc() inside renderAll() and renderPreviewHardwareBanner()
-    root.innerHTML = previewBanner + sliceBanner + fpsRunsHtml + html;
-    wireFpsRunsSection(root);
+    root.innerHTML = previewBanner + html;
     // wire() must run AFTER innerHTML so the hover helper sees real DOM rects.
     // Also surface the filter event for future consumers (a debug log for now)
     wire();
+    // Game-wide FPS section (bottom of the page): chart + download + table
+    // sorting, same wiring as the slice, no report filter.
+    wireFpsRunsSection(root, appId, null);
     void enhanceHardwareBanner();
     // Deep links from other pages (e.g. the game page trend line -> #trend)
     // land after this async render, so the browser has already given up on the

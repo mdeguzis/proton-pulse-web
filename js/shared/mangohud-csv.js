@@ -88,10 +88,33 @@ export function parseMangohudCsv(text) {
     sum += v;
   }
   const round1 = (n) => Math.round(n * 10) / 10;
+  // #410: percentile lows (FlightlessSomething / MangoHudPy summary style)
+  // and a downsampled series so the per-report stats page can draw the
+  // FPS-over-time line without storing every sample. ~120 bucket-averaged
+  // points keeps a run under ~1 KB inside form_responses.
+  const sorted = samples.slice().sort((a, b) => a - b);
+  const pctl = (p) => sorted[Math.max(0, Math.min(sorted.length - 1, Math.floor((p / 100) * sorted.length)))];
+  const SERIES_POINTS = 120;
+  let series = samples;
+  if (samples.length > SERIES_POINTS) {
+    series = [];
+    const bucket = samples.length / SERIES_POINTS;
+    for (let i = 0; i < SERIES_POINTS; i++) {
+      const start = Math.floor(i * bucket), end = Math.max(start + 1, Math.floor((i + 1) * bucket));
+      let s = 0;
+      for (let j = start; j < end; j++) s += samples[j];
+      series.push(round1(s / (end - start)));
+    }
+  } else {
+    series = samples.map(round1);
+  }
   return {
     fpsMin: round1(min),
     fpsAvg: round1(sum / samples.length),
     fpsMax: round1(max),
+    fpsP1: round1(pctl(1)),
+    fpsP01: round1(pctl(0.1)),
     sampleCount: samples.length,
+    series,
   };
 }

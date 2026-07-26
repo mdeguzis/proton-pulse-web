@@ -1293,7 +1293,15 @@ function wireFpsCsvUpload(container) {
         if (_fpsRuns.length >= MAX_FPS_RUNS) { problems.push(`run cap (${MAX_FPS_RUNS}) reached`); break; }
         const result = parseMangohudCsv(text);
         if (result.error) { problems.push(`${name}: ${result.error}`); continue; }
-        _fpsRuns.push({ name, fpsMin: result.fpsMin, fpsAvg: result.fpsAvg, fpsMax: result.fpsMax, sampleCount: result.sampleCount });
+        _fpsRuns.push({
+          name,
+          fpsMin: result.fpsMin, fpsAvg: result.fpsAvg, fpsMax: result.fpsMax,
+          // Percentile lows + downsampled series (#410): feeds the
+          // FlightlessSomething-style graphs on the per-report stats page.
+          fpsP1: result.fpsP1 ?? null, fpsP01: result.fpsP01 ?? null,
+          series: Array.isArray(result.series) ? result.series : null,
+          sampleCount: result.sampleCount,
+        });
         added += 1;
       }
       _applyFpsRuns(container);
