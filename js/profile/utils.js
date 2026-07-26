@@ -565,6 +565,7 @@ export function mergeMyReportRows(publishedRows, cloudRows) {
         cloud: false,
         published: false,
         unpublished: false,
+        hidden: false,
         flagged: false,
         flagged_reason: null,
       });
@@ -576,7 +577,12 @@ export function mergeMyReportRows(publishedRows, cloudRows) {
     const mergedRow = ensureRow(row.app_id);
     mergedRow.title = row.title || mergedRow.title;
     mergedRow.rating = row.rating || mergedRow.rating;
-    mergedRow.published = true;
+    // #408: an is_hidden row is owner-unpublished (or moderator-hidden) --
+    // it exists but is not publicly visible, so it must NOT count as
+    // published or the row shows a green Published badge while the game
+    // page shows nothing.
+    mergedRow.hidden = mergedRow.hidden || Boolean(row.is_hidden);
+    mergedRow.published = mergedRow.published || !row.is_hidden;
     mergedRow.flagged = mergedRow.flagged || Boolean(row.is_flagged);
     mergedRow.flagged_reason = mergedRow.flagged_reason || row.flagged_reason || null;
     mergedRow.published_at = row.created_at || mergedRow.published_at;
@@ -601,7 +607,10 @@ export function mergeMyReportRows(publishedRows, cloudRows) {
 
   for (const row of merged.values()) {
     row.published = row.published || row.cloud_published;
-    row.unpublished = row.cloud && !row.cloud_published && !row.published;
+    // Unpublished = exists somewhere but is not publicly visible: either a
+    // cloud config never published, or (#408) a published row the owner hid.
+    row.unpublished = (row.cloud && !row.cloud_published && !row.published)
+      || (row.hidden && !row.published);
   }
 
   return Array.from(merged.values()).sort((a, b) => {

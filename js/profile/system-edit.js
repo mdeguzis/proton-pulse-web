@@ -3,7 +3,7 @@ import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor, inferCpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel, escapeHtml,
   validateSysinfoText, validateDeviceId,
-} from './utils.js?v=78ac95ab';
+} from './utils.js?v=320d6b78';
 import { supabaseHeaders } from './api/supabase.js?v=4889c5e6';
 import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=770d14b7';
 

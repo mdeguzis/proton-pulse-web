@@ -60,7 +60,7 @@ function mockFetch(responses = []) {
 // ---------------------------------------------------------------------------
 
 describe('unpublishReport', () => {
-  test('sends DELETE to user_configs with correct id filter', async () => {
+  test('PATCHes is_hidden=true -- NEVER DELETE (#408: web reports have no cloud twin)', async () => {
     const fetch = mockFetch([{ url: 'user_configs', status: 204 }]);
     const ctx   = makeCtx(fetch);
     await vm.runInContext(`unpublishReport(${JSON.stringify(SESSION)}, ${PUBLISHED_ID})`, ctx);
@@ -68,7 +68,20 @@ describe('unpublishReport', () => {
     expect(fetch).toHaveBeenCalledTimes(1);
     const [url, opts] = fetch.mock.calls[0];
     expect(url).toMatch(`user_configs?id=eq.${PUBLISHED_ID}`);
-    expect(opts.method).toBe('DELETE');
+    expect(opts.method).toBe('PATCH');
+    expect(JSON.parse(opts.body)).toEqual({ is_hidden: true });
+  });
+
+  test('republishReport PATCHes is_hidden=false on the same row (#408)', async () => {
+    const fetch = mockFetch([{ url: 'user_configs', status: 204 }]);
+    const ctx   = makeCtx(fetch);
+    await vm.runInContext(`republishReport(${JSON.stringify(SESSION)}, ${PUBLISHED_ID})`, ctx);
+
+    expect(fetch).toHaveBeenCalledTimes(1);
+    const [url, opts] = fetch.mock.calls[0];
+    expect(url).toMatch(`user_configs?id=eq.${PUBLISHED_ID}`);
+    expect(opts.method).toBe('PATCH');
+    expect(JSON.parse(opts.body)).toEqual({ is_hidden: false });
   });
 
   test('sends Prefer: return=minimal header', async () => {
