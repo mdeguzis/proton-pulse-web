@@ -206,7 +206,7 @@ describe('runs filters + legend fill (#410 polish)', () => {
 describe('title-matched FlightlessSomething section on the stats page (#410)', () => {
   test('renders below the confirmed FPS section with the disclaimer', () => {
     const fpsIdx = GS_SRC.indexOf('${fpsSectionHtml}');
-    const flIdx = GS_SRC.indexOf('${renderFlightlessSection(flightlessEntry)}');
+    const flIdx = GS_SRC.indexOf('${renderFlightlessSection(flightlessEntry, title)}');
     expect(flIdx).toBeGreaterThan(fpsIdx);
     // Required disclaimer copy: title-matched, unverified runtime, never
     // counted in the confirmed stats.
@@ -219,15 +219,38 @@ describe('title-matched FlightlessSomething section on the stats page (#410)', (
   test('loads the pipeline map and joins the parallel fetch', () => {
     expect(GS_SRC).toContain('loadFlightlessEntry(appId)');
     expect(GS_SRC).toContain('flightless-benchmarks.json');
-    // Jump list entry appears only when benchmarks exist.
-    expect(GS_SRC).toContain("[['flightless-benchmarks', 'Community benchmarks']]");
+    // The section always renders (matched or empty state), so its jump-list
+    // entry is unconditional.
+    expect(GS_SRC).toContain("['flightless-benchmarks', 'Community benchmarks'],");
+  });
+
+  test('no-match empty state names FlightlessSomething and links the formatted search', () => {
+    // Games with zero matched benchmarks (e.g. Apex Legends) still get the
+    // section: a "nothing found" note plus the same ?search= link a matched
+    // game would have carried, so users can check or upload themselves.
+    expect(GS_SRC).toContain('No community benchmarks found on');
+    expect(GS_SRC).toContain('function flightlessSearchUrl(title)');
+    expect(GS_SRC).toMatch(/flightlesssomething\.ambrosia\.one\/\?search=\$\{norm/);
+    expect(GS_SRC).toContain('search for it yourself');
+  });
+
+  test('flightlessSearchUrl mirrors the pipeline normalization', () => {
+    // Same normalize + quote_plus shape as search_url_for_title in
+    // flightless_benchmarks.py: lowercase, alnum runs, + separators.
+    const fn = new Function('title', `
+      const norm = String(title || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+      return \`https://flightlesssomething.ambrosia.one/?search=\${norm.split(' ').filter(Boolean).join('+')}\`;
+    `);
+    expect(fn('Apex Legends')).toBe('https://flightlesssomething.ambrosia.one/?search=apex+legends');
+    expect(fn("Sid Meier's Civilization VI")).toBe('https://flightlesssomething.ambrosia.one/?search=sid+meier+s+civilization+vi');
+    expect(fn('OVERWATCH 2')).toBe('https://flightlesssomething.ambrosia.one/?search=overwatch+2');
   });
 
   test('benchmarks render on the no-reports stub too (OW2 regression)', () => {
     // OW2 had zero mirrored reports, so the early-return stub path skipped
     // renderAll -- and the benchmarks section with it. The stub must append
     // the section itself.
-    expect(GS_SRC).toContain("` + renderFlightlessSection(flightlessEntry);");
+    expect(GS_SRC).toContain("` + renderFlightlessSection(flightlessEntry, title);");
   });
 
   test('benchmark links are origin-checked before rendering', () => {
