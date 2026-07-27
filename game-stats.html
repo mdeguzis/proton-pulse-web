@@ -352,6 +352,9 @@ h1 {
   border-bottom: 1px solid var(--border);
   font-family: var(--mono);
 }
+/* Dates (YYYY-MM-DD) and action buttons never line-wrap; the System column
+   absorbs the squeeze instead. */
+.gs-fps-table td:nth-last-child(-n+2) { white-space: nowrap; }
 .gs-fps-table td:first-child { font-family: inherit; color: var(--text); }
 /* FlightlessSomething-style FPS chart chrome (#410, per MangoHudPy theme).
    The chart body is Chart.js on a canvas; the toolbar carries the
@@ -673,7 +676,7 @@ h1 {
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
 <script src="js/lib/analytics.js?v=4b6a7264"></script>
-<script type="module" src="js/game-stats/main.js?v=7faebd6d"></script>
+<script type="module" src="js/game-stats/main.js?v=c5c567b3"></script>
 
 </body>
 </html>

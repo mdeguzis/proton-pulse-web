@@ -11,7 +11,7 @@ import {
 import {
   renderBars, renderFreshness, renderFramegen, renderDonut,
   renderSparkline, renderTopGames, renderRatingsTrend,
-} from './charts.js?v=870157ea';
+} from './charts.js?v=dc8913d0';
 import {
   OPTIMIZATION_PATTERNS, FAULT_PATTERNS, TINKERING_PATTERNS,
   CONTROLLER_PATTERNS, ONLINE_NET_PATTERNS,

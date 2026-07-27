@@ -306,7 +306,9 @@ export function renderSparkline(byYear, byYearSource) {
 
   svg.querySelectorAll('.hover-target').forEach(rect => {
     rect.addEventListener('mouseenter', () => {
-      const y = rect.getAttribute('data-year');
+      // data-year flows into tooltip innerHTML below -- constrain it to a
+      // 4-digit year at the DOM boundary (CodeQL js/xss-through-dom).
+      const y = String(rect.getAttribute('data-year') || '').replace(/[^0-9]/g, '').slice(0, 4);
       const i = parseInt(rect.getAttribute('data-idx'), 10);
       const total = byYear[y] || 0;
       const pulse = byYearSource[y]?.pulse || 0;
@@ -455,7 +457,9 @@ export function renderRatingsTrend(byYearRating) {
   const guide = document.getElementById('trend-hover-guide');
   svg.querySelectorAll('.hover-target').forEach(rect => {
     rect.addEventListener('mouseenter', () => {
-      const y = rect.getAttribute('data-year');
+      // data-year flows into tooltip innerHTML below -- constrain it to a
+      // 4-digit year at the DOM boundary (CodeQL js/xss-through-dom).
+      const y = String(rect.getAttribute('data-year') || '').replace(/[^0-9]/g, '').slice(0, 4);
       const i = parseInt(rect.getAttribute('data-idx'), 10);
       const x = getX(i);
       guide.setAttribute('x1', x);

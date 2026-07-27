@@ -30,7 +30,12 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
     : `${location.origin}${SITE_BASE}/data`;
 
   function esc(s) {
-    return String(s == null ? '' : s).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+    // Full HTML entity escape INCLUDING quotes -- values land in attribute
+    // contexts (href="...", data-tier="...") where an unescaped quote breaks
+    // out of the attribute (CodeQL js/incomplete-html-attribute-sanitization).
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
   }
 
   // loadMyHardware lives in app-hardware.js so all pages share the same

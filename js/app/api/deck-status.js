@@ -87,6 +87,20 @@ export function loadDeckStatusMap() {
 // of the same payload) share a single network hit. We cache the in-flight
 // Promise, not just the resolved value, because concurrent callers (via
 // Promise.all) hit the cache lookup before the first fetch resolves.
+// Plain-text sanitizer for Steam HTML-ish fields (reviews, languages,
+// requirements). A single-pass <[^>]*> strip leaves nested payloads like
+// <<script>script> intact (CodeQL js/incomplete-multi-character-
+// sanitization), so loop until stable and then drop ANY leftover angle
+// bracket -- these fields never legitimately contain < or >. Tags are
+// removed with no replacement (not a space) because Steam nests markup
+// inside words: "English<strong>*</strong>," must stay "English*,".
+function _stripTags(input) {
+  let out = String(input);
+  let prev;
+  do { prev = out; out = out.replace(/<[^>]*>/g, ''); } while (out !== prev);
+  return out.replace(/[<>]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 const _appBasicCache = {};
 
 function _fetchAppBasic(appId) {
@@ -190,12 +204,12 @@ export async function fetchAppMetadata(appId) {
     metacriticScore:  app.metacritic?.score ?? null,
     metacriticUrl:    app.metacritic?.url   || null,
     reviewsSummary:   typeof app.reviews === 'string'
-      ? app.reviews.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 240)
+      ? _stripTags(app.reviews).slice(0, 240)
       : null,
     // System-level
     controllerSupport: app.controller_support || null,
     supportedLanguages: typeof app.supported_languages === 'string'
-      ? app.supported_languages.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
+      ? _stripTags(app.supported_languages)
       : null,
     hasAchievements:  !!app.achievements?.total,
     achievementCount: app.achievements?.total ?? 0,
@@ -284,7 +298,7 @@ export function fetchAppDepotInfo(appId) {
 
 function _reqPair(reqs) {
   if (!reqs || (typeof reqs === 'object' && !reqs.minimum && !reqs.recommended)) return null;
-  const strip = (s) => typeof s === 'string' ? s.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() : null;
+  const strip = (s) => typeof s === 'string' ? _stripTags(s) : null;
   return {
     minimum:     strip(reqs.minimum),
     recommended: strip(reqs.recommended),

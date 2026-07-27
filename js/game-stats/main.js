@@ -28,7 +28,12 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
     : `${location.origin}${SITE_BASE}/data`;
 
   function esc(s) {
-    return String(s == null ? '' : s).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+    // Full HTML entity escape INCLUDING quotes -- values land in attribute
+    // contexts (href="...", data-tier="...") where an unescaped quote breaks
+    // out of the attribute (CodeQL js/incomplete-html-attribute-sanitization).
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
   }
 
   // --- CDN loaders ---
@@ -289,7 +294,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
   // --- header rendering ---
 
   function renderHeader(appId, title, { pulseCount = 0, protonDbCount = 0, liveTotal = 0 } = {}) {
-    const headerImg = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appId}/header.jpg`;
+    const headerImg = `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${esc(appId)}/header.jpg`;
     const gameUrl = `app.html#/app/${esc(appId)}`;
     // Per-source split moved here from the game page hero so the numbers
     // still live SOMEWHERE without cluttering the hero on small screens.
@@ -307,7 +312,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
     return `
       <div class="gs-header">
         <a class="gs-header-link" href="${gameUrl}" title="Back to ${esc(title || `App ${appId}`)}">
-          <img src="${headerImg}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+          <img src="${headerImg}" data-appid="${esc(appId)}" alt="" onerror="window.__steamImgLoad(this)">
           <div class="gs-header-info">
             <div class="name">${esc(title || `App ${appId}`)}</div>
             <div class="sub">App ${esc(appId)}${sourceBit}</div>
@@ -1093,7 +1098,12 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
   async function run() {
     const params = new URLSearchParams(location.search);
-    const appId = params.get('app');
+    // App ids are numeric Steam ids or store-prefixed slugs (gog:, epic:,
+    // pw_..., legacy pgwiki:). Restrict to that alphabet at the boundary so
+    // the value can never carry markup into the innerHTML renders below
+    // (CodeQL js/xss).
+    const appRaw = params.get('app');
+    const appId = (appRaw && /^[A-Za-z0-9:._-]+$/.test(appRaw)) ? appRaw : null;
     // #410: ?report=<id> renders the SAME stats page filtered down to one
     // report -- graphs, sections, and (below) the per-run FPS table all
     // compute from just that report's rows. Numeric-only, like the edit

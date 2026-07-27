@@ -68,7 +68,7 @@ describe('#234: frontend permission vocabulary + tab gating', () => {
 
   test('main.js registers the tab loader with the render function', () => {
     expect(MAIN).toContain("import { renderGameManager }");
-    expect(MAIN).toContain("games: () => renderGameManager()");
+    expect(MAIN).toContain("['games', () => renderGameManager()");
   });
 
   test('gh-pages manifest lists both new client files', () => {

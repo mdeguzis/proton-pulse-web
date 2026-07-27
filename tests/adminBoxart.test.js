@@ -29,7 +29,7 @@ describe('Box Art Manager admin tab wiring', () => {
 
   test('admin main.js registers the loader + detail route in TAB_LOADERS', () => {
     expect(MAIN).toMatch(/import\s*\{\s*renderBoxartAdmin(?:,\s*renderBoxartAdminDetail)?\s*(?:,\s*[a-zA-Z_$][a-zA-Z0-9_$]*)*\s*\}\s*from\s*'\.\/components\/boxart\.js/);
-    expect(MAIN).toMatch(/boxart:\s*\(\)\s*=>\s*renderBoxartAdmin\(\)/);
+    expect(MAIN).toMatch(/\['boxart',\s*\(\)\s*=>\s*renderBoxartAdmin\(\)/);
     expect(MAIN).toContain('renderBoxartAdminDetail');
     expect(MAIN).toMatch(/params\.get\('boxart'\)/);
   });

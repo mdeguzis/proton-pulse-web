@@ -407,8 +407,10 @@ async function loadUserDetail(user) {
     const backBtn = content.querySelector('[data-action="back-to-users"]');
     if (backBtn) backBtn.textContent = `\u2190 Back to ${userDetailReturnTab.replace('-', ' ')}`;
   } catch (e) {
-    content.innerHTML = `<div class="admin-error">${e.message}</div>
-      <button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="back-to-users" style="margin-top:10px">\u2190 Back to ${userDetailReturnTab.replace('-', ' ')}</button>`;
+    // Escape both interpolations: e.message can carry API-echoed input and
+    // the tab name flows through innerHTML (CodeQL js/xss-through-dom).
+    content.innerHTML = `<div class="admin-error">${escapeHtml(e.message)}</div>
+      <button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="back-to-users" style="margin-top:10px">\u2190 Back to ${escapeHtml(userDetailReturnTab.replace('-', ' '))}</button>`;
   }
 }
 
@@ -490,32 +492,35 @@ async function loadAnalytics() {
   if (cacheContainer) renderCacheStatus(cacheContainer).catch(() => {});
 }
 
-// Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
-const TAB_LOADERS = {
-  'all-reports': loadAllReports,
-  flagged: loadFlagged,
-  banned: loadBanned,
-  users: loadUsers,
-  admins: loadAdmins,
-  phrases: loadPhrases,
-  analytics: loadAnalytics,
-  boxart: () => renderBoxartAdmin().catch(e => console.error('[boxart]', e)),
-  'api-explorer': () => renderApiExplorer({ canManageAdmins: can('manage_admins') }),
-  'depot-tracking': () => {
+// Maps each tab to its data loader so tab clicks and ?tab= restore share one
+// path. A real Map (not a plain object) because the key comes from the URL:
+// Map.get() can never dispatch to an inherited member like 'constructor'
+// (CodeQL js/unvalidated-dynamic-method-call).
+const TAB_LOADERS = new Map([
+  ['all-reports', loadAllReports],
+  ['flagged', loadFlagged],
+  ['banned', loadBanned],
+  ['users', loadUsers],
+  ['admins', loadAdmins],
+  ['phrases', loadPhrases],
+  ['analytics', loadAnalytics],
+  ['boxart', () => renderBoxartAdmin().catch(e => console.error('[boxart]', e))],
+  ['api-explorer', () => renderApiExplorer({ canManageAdmins: can('manage_admins') })],
+  ['depot-tracking', () => {
     const host = document.getElementById('depot-tracking-content');
     if (host) renderDepotTracking(host).catch(e => console.error('[depot-tracking]', e));
-  },
-  games: () => renderGameManager().catch(e => console.error('[game-manager]', e)),
-  logging: () => { try { renderLoggingTab(); } catch (e) { console.error('[logging]', e); } },
-  deployments: () => { renderDeploymentsTab().catch(e => console.error('[deployments]', e)); },
-};
+  }],
+  ['games', () => renderGameManager().catch(e => console.error('[game-manager]', e))],
+  ['logging', () => { try { renderLoggingTab(); } catch (e) { console.error('[logging]', e); } }],
+  ['deployments', () => { renderDeploymentsTab().catch(e => console.error('[deployments]', e)); }],
+]);
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a
 // refresh restores the same tab. Unknown names fall back to 'users' (the
 // default landing tab).
 function activateTab(tabName, { updateUrl = true } = {}) {
   if (tabName === 'pending') tabName = 'all-reports';
-  if (!TAB_LOADERS[tabName]) tabName = 'users';
+  if (!TAB_LOADERS.has(tabName)) tabName = 'users';
   // Never land on a tab this admin lacks access to (e.g. via a stale ?tab= URL).
   if (currentAdmin && !canSeeTab(currentAdmin.role, currentAdmin.permissions, tabName)) tabName = 'users';
   switchTab(tabName);
@@ -540,7 +545,8 @@ function activateTab(tabName, { updateUrl = true } = {}) {
     if (tabName !== 'users') url.searchParams.delete('search');
     history.replaceState(null, '', url);
   }
-  TAB_LOADERS[tabName]();
+  const loader = TAB_LOADERS.get(tabName) || TAB_LOADERS.get('users');
+  loader();
 }
 
 // ---------------------------------------------------------------------------
@@ -890,7 +896,7 @@ function wireEvents() {
       // refresh" bug).
       const params = new URLSearchParams(window.location.search);
       const t = params.get('tab');
-      if (t && TAB_LOADERS[t]) activateTab(t, { updateUrl: false });
+      if (t && TAB_LOADERS.has(t)) activateTab(t, { updateUrl: false });
     }
   });
 
@@ -1075,8 +1081,8 @@ function wireEvents() {
 function setupTableSort(tableId) {
   const table = document.getElementById(tableId);
   if (!table) return;
-  const ths = table.querySelectorAll('thead th[data-sort-col]');
-  ths.forEach(th => {
+  const headerCells = table.querySelectorAll('thead th[data-sort-col]');
+  headerCells.forEach(th => {
     const indicator = document.createElement('span');
     indicator.className = 'sort-indicator';
     indicator.setAttribute('aria-hidden', 'true');
@@ -1107,7 +1113,7 @@ function setupTableSort(tableId) {
       // active column toggle direction as before.
       const nowAsc    = wasActive ? th.dataset.sortDir !== 'asc' : false;
 
-      ths.forEach(h => {
+      headerCells.forEach(h => {
         h.dataset.sortActive = '';
         h.dataset.sortDir    = '';
         h.classList.remove('admin-th--sorted');
@@ -1219,7 +1225,7 @@ async function init() {
 
   // Restore the tab from ?tab= (written by activateTab) so a refresh keeps your place.
   const requestedTab = params.get('tab');
-  activateTab(TAB_LOADERS[requestedTab] ? requestedTab : 'users', { updateUrl: false });
+  activateTab(TAB_LOADERS.has(requestedTab) ? requestedTab : 'users', { updateUrl: false });
 }
 
 document.addEventListener('DOMContentLoaded', init);

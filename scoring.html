@@ -531,7 +531,12 @@ h2 small {
   const metaEl = document.getElementById('scoring-meta');
 
   function esc(s) {
-    return String(s == null ? '' : s).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+    // Full HTML entity escape INCLUDING quotes -- values land in attribute
+    // contexts (href="...", data-tier="...") where an unescaped quote breaks
+    // out of the attribute (CodeQL js/incomplete-html-attribute-sanitization).
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
   }
 
   // Bucket the weight keys into thematic groups so users can find what they
