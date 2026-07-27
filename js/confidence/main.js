@@ -16,19 +16,6 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
   const root = document.getElementById('cb-root');
   const metaEl = document.getElementById('cb-meta');
 
-  // CDN base - same fallback rule as app.js so the breakdown page works
-  // on localhost dev preview without local data
-  const SITE_BASE = (() => {
-    const parts = location.pathname.split('/').filter(Boolean);
-    if (parts[0] === 'proton-pulse-web-staging') return '/proton-pulse-web-staging';
-    if (parts[0] === 'proton-pulse-web') return '/proton-pulse-web';
-    return '';
-  })();
-  const IS_LOCAL_DEV = ['localhost', '127.0.0.1', '0.0.0.0'].includes(location.hostname);
-  const CDN_BASE = IS_LOCAL_DEV
-    ? 'https://www.proton-pulse.com/data'
-    : `${location.origin}${SITE_BASE}/data`;
-
   function esc(s) {
     // Full HTML entity escape INCLUDING quotes -- values land in attribute
     // contexts (href="...", data-tier="...") where an unescaped quote breaks
@@ -934,10 +921,7 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
 
   async function loadSearchIndexLocal() {
     try {
-      const url = _usesProdData
-        ? 'https://www.proton-pulse.com/search-index.json'
-        : `${location.origin}${SITE_BASE}/search-index.json`;
-      const r = await fetch(url);
+      const r = await fetch(await dataUrl('search-index.json'));
       return r.ok ? await r.json() : [];
     } catch { return []; }
   }

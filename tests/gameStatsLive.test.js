@@ -36,3 +36,20 @@ describe('game-stats page: ProtonDB live summary integration (#219)', () => {
     expect(src).toContain("liveTotal: liveSummary?.total || 0");
   });
 });
+
+describe('game-stats page: data loaders route through dataUrl (#380/#361)', () => {
+  test('loadGame fetches per-game buckets via dataUrl so R2 host is honored', () => {
+    expect(src).toMatch(/await\s+dataUrl\(`data\/\$\{appIdToDir\(appId\)\}\/latest\.json`\)/);
+  });
+
+  test('loadSearchIndex + loadFlightlessEntry also route through dataUrl', () => {
+    expect(src).toMatch(/await\s+dataUrl\('search-index\.json'\)/);
+    expect(src).toMatch(/await\s+dataUrl\('flightless-benchmarks\.json'\)/);
+  });
+
+  test('legacy CDN_BASE / SITE_BASE path-based routing is gone', () => {
+    expect(src).not.toMatch(/CDN_BASE/);
+    expect(src).not.toMatch(/SITE_BASE/);
+    expect(src).not.toMatch(/proton-pulse-web-staging/);
+  });
+});

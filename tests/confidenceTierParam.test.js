@@ -26,3 +26,16 @@ describe('confidence tier hand-off (#192)', () => {
     expect(CONF).toContain('if (!overallTier && n > 0)');
   });
 });
+
+describe('confidence page data loaders route through dataUrl (#380/#361)', () => {
+  test('loadSearchIndexLocal uses dataUrl, not the undefined _usesProdData branch', () => {
+    expect(CONF).toMatch(/await\s+dataUrl\('search-index\.json'\)/);
+    expect(CONF).not.toMatch(/_usesProdData/);
+  });
+
+  test('legacy CDN_BASE / SITE_BASE constants are gone', () => {
+    expect(CONF).not.toMatch(/const\s+CDN_BASE\s*=/);
+    expect(CONF).not.toMatch(/const\s+SITE_BASE\s*=/);
+    expect(CONF).not.toMatch(/proton-pulse-web-staging/);
+  });
+});

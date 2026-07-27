@@ -5,6 +5,7 @@ import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhance
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ad2153bb';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
+import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,
 // pulls the same CDN data the main app page uses, then renders a thoughtful
@@ -15,17 +16,6 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 (function () {
   const root = document.getElementById('gs-root');
   const metaEl = document.getElementById('gs-meta');
-
-  const SITE_BASE = (() => {
-    const parts = location.pathname.split('/').filter(Boolean);
-    if (parts[0] === 'proton-pulse-web-staging') return '/proton-pulse-web-staging';
-    if (parts[0] === 'proton-pulse-web') return '/proton-pulse-web';
-    return '';
-  })();
-  const IS_LOCAL_DEV = ['localhost', '127.0.0.1', '0.0.0.0'].includes(location.hostname);
-  const CDN_BASE = IS_LOCAL_DEV
-    ? 'https://www.proton-pulse.com/data'
-    : `${location.origin}${SITE_BASE}/data`;
 
   function esc(s) {
     // Full HTML entity escape INCLUDING quotes -- values land in attribute
@@ -39,8 +29,11 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
   // --- CDN loaders ---
 
   async function loadGame(appId) {
+    // Route through dataUrl() so per-env data host (R2) is honored. Direct
+    // origin fetches only worked on GH Pages paths and returned empty on
+    // staging.proton-pulse.com because data/ is not same-origin there.
     try {
-      const r = await fetch(`${CDN_BASE}/${appIdToDir(appId)}/latest.json`);
+      const r = await fetch(await dataUrl(`data/${appIdToDir(appId)}/latest.json`));
       if (!r.ok) return [];
       return await r.json();
     } catch { return []; }
@@ -48,10 +41,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
   async function loadSearchIndex() {
     try {
-      const url = IS_LOCAL_DEV
-        ? 'https://www.proton-pulse.com/search-index.json'
-        : `${location.origin}${SITE_BASE}/search-index.json`;
-      const r = await fetch(url);
+      const r = await fetch(await dataUrl('search-index.json'));
       return r.ok ? await r.json() : [];
     } catch { return []; }
   }
@@ -61,10 +51,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
   // not been generated yet or the app has no matches.
   async function loadFlightlessEntry(appId) {
     try {
-      const url = IS_LOCAL_DEV
-        ? 'https://www.proton-pulse.com/flightless-benchmarks.json'
-        : `${location.origin}${SITE_BASE}/flightless-benchmarks.json`;
-      const r = await fetch(url);
+      const r = await fetch(await dataUrl('flightless-benchmarks.json'));
       if (!r.ok) return null;
       const map = await r.json();
       const entry = map?.[String(appId)] || null;
@@ -73,12 +60,35 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
     } catch { return null; }
   }
 
+  // Mirror of the pipeline's search_url_for_title (flightless_benchmarks.py):
+  // lowercase, alnum runs joined by +, so the empty-state link lands on the
+  // exact search a matched game would have used.
+  function flightlessSearchUrl(title) {
+    const norm = String(title || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    return `https://flightlesssomething.ambrosia.one/?search=${norm.split(' ').filter(Boolean).join('+')}`;
+  }
+
   // Unverified-runtime FPS section: community benchmarks title-matched from
   // FlightlessSomething. Always renders BELOW the confirmed (Pulse-report)
   // FPS section, behind an explicit disclaimer -- these runs never say
-  // whether Proton was in play, so they are context, not stats.
-  function renderFlightlessSection(entry) {
-    if (!entry || !Array.isArray(entry.benchmarks) || !entry.benchmarks.length) return '';
+  // whether Proton was in play, so they are context, not stats. Renders an
+  // empty state (nothing found + the formatted search link) when no
+  // benchmark matched, so users know we looked and where to look themselves.
+  function renderFlightlessSection(entry, title) {
+    if (!entry || !Array.isArray(entry.benchmarks) || !entry.benchmarks.length) {
+      const url = flightlessSearchUrl(title);
+      return `
+      <section id="flightless-benchmarks">
+        <div class="gs-section-head"><span>Community benchmarks (unverified runtime)</span></div>
+        <div class="fl-banner">
+          No community benchmarks found on
+          <a href="https://flightlesssomething.ambrosia.one/" target="_blank" rel="noopener">FlightlessSomething</a>
+          for this title. You can
+          <a href="${esc(url)}" target="_blank" rel="noopener">search for it yourself -&gt;</a>
+          or upload your own MangoHud capture there.
+        </div>
+      </section>`;
+    }
     const searchUrl = String(entry.search_url || '').startsWith('https://flightlesssomething.ambrosia.one/')
       ? String(entry.search_url) : 'https://flightlesssomething.ambrosia.one/';
     const rows = entry.benchmarks.slice(0, 10).map(b => {
@@ -697,7 +707,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
       ['proton-versions', 'Per Proton version'],
       ['launch-options', 'Launch options'],
       ...(fpsSectionHtml ? [['fps-runs', 'FPS runs']] : []),
-      ...(flightlessEntry?.benchmarks?.length ? [['flightless-benchmarks', 'Community benchmarks']] : []),
+      ['flightless-benchmarks', 'Community benchmarks'],
     ];
     const jumpList = `
       <div class="gs-jump-nav">
@@ -738,7 +748,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
       </div>
 
       ${fpsSectionHtml}
-      ${renderFlightlessSection(flightlessEntry)}
+      ${renderFlightlessSection(flightlessEntry, title)}
 
       <a class="gs-back" href="app.html#/app/${esc(appId)}">&larr; Back to game page</a>
     `;
@@ -1178,7 +1188,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
           <p>${liveSummary ? 'No individual reports mirrored yet for this game.' : 'No reports or configs found for this game.'}</p>
           ${liveBlock}
         </div>
-      ` + renderFlightlessSection(flightlessEntry);
+      ` + renderFlightlessSection(flightlessEntry, title);
       // #410: title-matched community benchmarks still render on the
       // no-reports stub -- a game with zero mirrored reports is exactly
       // where an external performance signal helps most.
