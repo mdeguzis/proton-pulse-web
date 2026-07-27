@@ -19,6 +19,40 @@ import {
 import { renderPurposeChart, crossTabToCorrelation } from '../shared/purpose-charts.js?v=d383b3bd';
 import { renderLibraryTab } from './library-view.js?v=5881023e';
 
+// #417: stats dropdown open/close is a class toggle on the persistent
+// .filter-dropdown node (NOT a full re-render) so the shared clip-path drawer
+// animation in css/shared/filters.css can actually play. renderAll() still
+// rebuilds everything on a filter change, but opening/closing a dropdown must
+// leave the node in place or the transition never fires. Stats keeps .is-open
+// on the PARENT (not .open on the panel), so it never picks up the .open-scoped
+// mobile full-screen modal -- it stays a compact popover on phones (#417 01A).
+let _statsDropdownCloser = null;
+function _applyDropdownOpenState() {
+  const open = getOpenDropdown();
+  document.querySelectorAll('.filter-dropdown[data-dropdown-id]').forEach((dd) => {
+    const on = dd.getAttribute('data-dropdown-id') === open;
+    dd.classList.toggle('is-open', on);
+    const caret = dd.querySelector('.filter-caret');
+    if (caret) caret.textContent = on ? '▲' : '▾';
+  });
+}
+function setStatsDropdown(dim) {
+  setOpenDropdown(dim);
+  _applyDropdownOpenState();
+  if (_statsDropdownCloser) {
+    document.removeEventListener('click', _statsDropdownCloser);
+    _statsDropdownCloser = null;
+  }
+  if (dim) {
+    // Outside-click closes it (and animates the collapse). queueMicrotask so
+    // the opening click that bubbled to document does not immediately close it.
+    _statsDropdownCloser = (e) => {
+      if (!e.target.closest('[data-dropdown-id]')) setStatsDropdown(null);
+    };
+    queueMicrotask(() => document.addEventListener('click', _statsDropdownCloser));
+  }
+}
+
 // #207: purpose-chart instances so we destroy() before re-rendering on
 // filter change. Keyed by canvas id.
 const _purposeCharts = new Map();
@@ -439,13 +473,14 @@ function renderAll() {
     });
   }
 
-  // Wire dropdown toggle buttons
+  // Wire dropdown toggle buttons. Open/close toggles .is-open on the existing
+  // node (#417) so the shared clip-path drawer animation runs -- no renderAll,
+  // which would recreate the node and kill the transition.
   document.querySelectorAll('[data-dropdown-toggle]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const dim = btn.getAttribute('data-dropdown-toggle');
-      setOpenDropdown(getOpenDropdown() === dim ? null : dim);
-      renderAll();
+      setStatsDropdown(getOpenDropdown() === dim ? null : dim);
     });
   });
 
@@ -483,17 +518,11 @@ function renderAll() {
     });
   });
 
-  // Click outside any open dropdown panel closes it
-  if (getOpenDropdown()) {
-    const closer = (e) => {
-      if (!e.target.closest('[data-dropdown-id]')) {
-        setOpenDropdown(null);
-        document.removeEventListener('click', closer);
-        renderAll();
-      }
-    };
-    queueMicrotask(() => document.addEventListener('click', closer));
-  }
+  // Outside-click close is managed by setStatsDropdown() (#417) so it animates
+  // the collapse instead of re-rendering. If a dropdown is already open when
+  // renderAll runs (e.g. a checkbox change re-rendered the page), re-arm the
+  // closer against the fresh DOM.
+  if (getOpenDropdown()) setStatsDropdown(getOpenDropdown());
 }
 
 // Restore filter from URL on load

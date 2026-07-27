@@ -73,15 +73,14 @@
       </g>
       <path d="M12 8.4v11.8" stroke="#000" stroke-width="1.2"/>
     </symbol>
-    <!-- Library corner badge: a 2x2 collection grid, clean white tiles (no
-         outline) to match the picker mockup. The gaps between tiles read as
-         the store-pill color. Id kept for call-site stability (home.js
-         references #icon-book-open). -->
+    <!-- Library corner badge: three horizontal bars (a shelf / list), clean
+         white fill with no outline so it reads on any store-pill color at
+         11-13px. Replaced the old 2x2 collection grid. Id kept for call-site
+         stability (home.js references #icon-book-open). -->
     <symbol id="icon-book-open" viewBox="0 0 24 24" fill="#fff">
-      <rect x="3.4" y="3.4" width="7" height="7" rx="1.5"/>
-      <rect x="13.6" y="3.4" width="7" height="7" rx="1.5"/>
-      <rect x="3.4" y="13.6" width="7" height="7" rx="1.5"/>
-      <rect x="13.6" y="13.6" width="7" height="7" rx="1.5"/>
+      <rect x="3.5" y="4.8"  width="17" height="3.6" rx="1.8"/>
+      <rect x="3.5" y="10.2" width="17" height="3.6" rx="1.8"/>
+      <rect x="3.5" y="15.6" width="17" height="3.6" rx="1.8"/>
     </symbol>
     <!-- Steam Deck brand mark: dot nested in a right-facing crescent, traced
          from Valve's official mark (SteamGridDB 1920px source). Monochrome
@@ -628,42 +627,6 @@
       action: (isOpen && isMobile) ? 'portalToBody' : 'restoreOrNoop',
       source: '_handleOpenState',
     });
-    // #415 slice 2b drawer-flash diagnostic: sample computed styles that
-    // touch the animation right now, and again at +100ms and +250ms so a
-    // mid-transition snap shows up in the log. Only fires when the panel
-    // has an id (skip the observer's noise) and is a filter panel.
-    if (panel.id) _sampleDrawerState(panel, isOpen ? 'open' : 'close');
-  }
-
-  function _sampleDrawerState(panel, phase) {
-    const snap = (label) => {
-      try {
-        const cs = getComputedStyle(panel);
-        const rect = panel.getBoundingClientRect();
-        logFrontendEvent('DEBUG', '[drawer] ' + label, {
-          panelId: panel.id,
-          phase: phase,
-          classes: panel.className,
-          position: cs.position,
-          display: cs.display,
-          clipPath: cs.clipPath,
-          opacity: cs.opacity,
-          transform: cs.transform,
-          overflowY: cs.overflowY,
-          columns: cs.columns,
-          columnCount: cs.columnCount,
-          maxHeight: cs.maxHeight,
-          width: Math.round(rect.width),
-          height: Math.round(rect.height),
-          left: Math.round(rect.left),
-          top: Math.round(rect.top),
-        });
-      } catch { /* ignore */ }
-    };
-    snap('t0');
-    setTimeout(() => snap('t+100'), 100);
-    setTimeout(() => snap('t+250'), 250);
-    setTimeout(() => snap('t+400'), 400);
   }
   function wireFilterPanelClose() {
     // Portal each panel when its .open class flips on/off. game-page.js

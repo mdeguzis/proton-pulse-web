@@ -78,6 +78,48 @@
   max-width: 96vw;
 }
 
+/* ── Shared drawer animation (#417) ───────────────────────────────────────
+   ONE reveal contract for every filter surface: browse (.filter-panel--stack),
+   game-page (.filter-panel), index (.pg-filter-panel), and the stats dimension
+   dropdowns (.filter-dropdown .filter-panel). The panel stays in the DOM and is
+   hidden by clip-path + opacity, so opening/closing plays a downward drawer
+   reveal instead of a display:none pop. Panels are position:absolute so the
+   collapse never pushes siblings.
+
+   IMPORTANT: layout-defining properties (display, columns, width) must live on
+   the base panel selector on each page, never gated on .open / .is-open, or the
+   layout snaps mid-collapse -- that was the browse "narrow vertical" flash
+   (#415 slice 2b). This contract only animates clip-path / opacity / transform. */
+.filter-panel,
+.pg-filter-panel {
+  overflow: hidden;
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transform: translateY(-6px);
+  transform-origin: top center;
+  pointer-events: none;
+  transition:
+    clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Revealed state. The big panels flip .open on the panel itself (observed +
+   toggled per page); the stats dropdowns flip .is-open on the PARENT, which is
+   why stats never picks up the .open-scoped mobile-modal rules below and stays
+   a compact popover on phones (#417 decision). */
+.filter-panel.open,
+.pg-filter-panel.open,
+.filter-dropdown.is-open .filter-panel {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .filter-panel,
+  .pg-filter-panel { transition: none; }
+}
+
 /* Mobile filter modal (<=720px). The desktop dropdown behavior falls apart on
    phones -- it collides with the fixed topbar, overflows off-screen, and never
    feels native. So on mobile the open panel becomes a full-viewport modal with

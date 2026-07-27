@@ -151,6 +151,7 @@ export function renderLoggingTab() {
           <input type="checkbox" id="admin-log-debug" ${activeLevel() === 'DEBUG' ? 'checked' : ''} />
           Capture DEBUG
         </label>
+        <button id="admin-log-refresh" class="admin-btn" type="button" title="Re-read the session log buffer and redraw the table">Refresh</button>
         <button id="admin-log-copy" class="admin-btn" type="button">Copy JSON</button>
         <button id="admin-log-clear" class="admin-btn admin-btn--danger" type="button">Clear</button>
       </div>
@@ -183,6 +184,10 @@ export function renderLoggingTab() {
     });
     host.querySelector('#admin-log-debug').addEventListener('change', (e) => {
       setActiveLevel(e.target.checked ? 'DEBUG' : 'INFO');
+    });
+    host.querySelector('#admin-log-refresh').addEventListener('click', () => {
+      _refreshModuleOptions(host);
+      _renderTable(host);
     });
     host.querySelector('#admin-log-copy').addEventListener('click', () => {
       const payload = JSON.stringify(_filtered(), null, 2);

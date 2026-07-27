@@ -1610,38 +1610,6 @@ export async function renderGamePage(appId) {
       const now = new Date().toISOString().slice(11, 19);
       bar.textContent = `[${now}] ${msg}`;
     }
-    // #415 slice 2b debug: sample computed styles that touch the drawer
-    // animation on both toggle events so we can diagnose the "flash" bug
-    // if it recurs. Logs to the console AND to the ring buffer so the
-    // admin Logging tab captures it too. Remove once #415 slice 2b is
-    // signed off.
-    function _debugPanelState(label, panel) {
-      if (!panel) { console.debug('[filter-panel]', label, 'panel=null'); return; }
-      const cs = getComputedStyle(panel);
-      const rect = panel.getBoundingClientRect();
-      const state = {
-        classes: panel.className,
-        pos: cs.position,
-        display: cs.display,
-        clipPath: cs.clipPath,
-        opacity: cs.opacity,
-        transform: cs.transform,
-        overflowY: cs.overflowY,
-        width: Math.round(rect.width) + 'x' + Math.round(rect.height),
-        inViewport: rect.top >= 0 && rect.left >= 0 && rect.right <= window.innerWidth && rect.bottom <= window.innerHeight,
-        left: Math.round(rect.left),
-        top: Math.round(rect.top),
-        columns: cs.columns,
-        columnCount: cs.columnCount,
-      };
-      console.debug('[filter-panel]', label, state);
-      try {
-        if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') {
-          window.ppLogBuffer.pushLog('DEBUG', '[filter-panel] ' + label, state);
-        }
-      } catch { /* ring buffer optional */ }
-    }
-
     function _debugSnapshot(label, extra) {
       const active = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, source: filterSource, device: filterDevice, minPlaytime: filterMinPlaytime };
       const nonBlank = Object.fromEntries(Object.entries(active).filter(([, v]) => v !== '' && v !== 0));
@@ -1807,7 +1775,6 @@ export async function renderGamePage(appId) {
       if (!panel) return;
       const open = panel.classList.toggle('open');
       toggleEl()?.setAttribute('aria-expanded', String(open));
-      _debugPanelState(open ? 'toggle -> open' : 'toggle -> closed', panel);
     });
 
     // Dropdown filter change handlers. Each writes the picked value into the
@@ -1860,14 +1827,8 @@ export async function renderGamePage(appId) {
     document.getElementById('gp-filter-collapse')?.addEventListener('click', (e) => {
       e.stopPropagation();
       const p = panelEl();
-      _debugPanelState('collapse click (pre-remove)', p);
       p?.classList.remove('open');
       toggleEl()?.setAttribute('aria-expanded', 'false');
-      _debugPanelState('collapse click (post-remove)', p);
-      // Sample twice more during the transition so we can see if any
-      // property snaps between frames.
-      setTimeout(() => _debugPanelState('collapse +100ms', p), 100);
-      setTimeout(() => _debugPanelState('collapse +250ms', p), 250);
     });
 
     // Slice 2: "Apply across the site" checkbox. Changing it in-panel only

@@ -62,37 +62,9 @@
 }
 /* .filter-toggle-btn, .filter-badge -- base styles in css/shared/filters.css */
 /* .filter-panel base -- positioning, bg, border, radius, shadow in css/shared/filters.css */
-/* Drawer animation (#415 slice 2b polish): keep the panel in the DOM but
-   collapse it via max-height + opacity + transform so it plays a downward
-   expand instead of a display:none pop. Panel is position:absolute so this
-   never affects sibling flow. Mobile-modal state (.open @ <=720px) still
-   wins via specificity + position:fixed override in shared/filters.css. */
-.filter-panel {
-  display: block;
-  overflow: hidden;
-  /* Drawer via clip-path instead of max-height (#415 slice 2b fix): CSS
-     multi-column layout (.filter-panel--stack.open uses columns:5 200px)
-     reflows CONTINUOUSLY as the container height shrinks, so animating
-     max-height caused the content to spill into more and narrower columns
-     mid-close -- read as a "narrow vertical" flash. clip-path leaves the
-     content laid out at full open size and just hides the bottom edge, so
-     the drawer collapses cleanly without any relayout. */
-  clip-path: inset(0 0 100% 0);
-  opacity: 0;
-  transform: translateY(-6px);
-  transform-origin: top center;
-  pointer-events: none;
-  transition:
-    clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 260ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.filter-panel.open {
-  clip-path: inset(0 0 0 0);
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+/* Drawer animation (clip-path reveal) now lives in css/shared/filters.css as
+   the unified contract for every filter surface (#417). Layout stays here. */
+.filter-panel { display: block; }
 /* Mobile keeps the panel anchored as a fixed full-viewport layer even
    when closed. Without this, removing .open flips position:fixed back to
    position:absolute mid-transition and the panel flashes back to its
@@ -407,13 +379,17 @@
    raggedly. On wider screens lay the panel out as a single vertical column of
    full-width groups, each group an even pill grid so they align in tidy
    columns. Mobile keeps the compact stack from the max-width:560 rule above. */
-@media (min-width: 561px) {
-  /* Desktop: stretch the popover across the content width and flow the groups
-     into balanced masonry columns (CSS multi-column). The tall Tier group no
-     longer leaves empty pockets -- shorter groups pack in beside it so the
-     panel fills evenly and stays short, keeping the Save/Clear footer above
-     the fold. */
-  .filter-panel--stack.open {
+/* Desktop dropdown (>560px) has two regimes so a narrow desktop window does not
+   cram the groups into 2-3 thin masonry columns (#417 "stack when thin"):
+     - wide (>=900px): balanced masonry columns (CSS multi-column). The tall Tier
+       group no longer leaves empty pockets -- shorter groups pack in beside it.
+     - thin (561-899px): a single full-width column, one group per row.
+   Both keep their layout on the base .filter-panel--stack (NOT gated on .open)
+   so removing .open on close never snaps the layout mid-collapse -- that was the
+   #415 slice 2b "narrow vertical" flash, where the panel fell back to the base
+   display:flex shrink-to-fit (~459px) for the whole 360ms clip-path collapse. */
+@media (min-width: 900px) {
+  .filter-panel--stack {
     display: block;
     columns: 5 200px;
     column-gap: 26px;
@@ -422,12 +398,25 @@
     max-width: none;
   }
   .filter-panel--stack .filter-item,
-  .filter-panel--stack .pg-filter-group {
-    break-inside: avoid;
-    margin-bottom: 20px;
-    width: auto;
+  .filter-panel--stack .pg-filter-group { break-inside: avoid; }
+  .filter-panel--stack .filter-panel-footer--stack { column-span: all; break-inside: avoid; }
+}
+@media (min-width: 561px) and (max-width: 899px) {
+  .filter-panel--stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(560px, calc(100vw - 2 * var(--content-pad)));
     min-width: 0;
+    max-width: none;
   }
+  .filter-panel--stack .filter-item,
+  .filter-panel--stack .pg-filter-group { width: 100%; }
+}
+/* Inner layout shared by both desktop regimes (>560px). */
+@media (min-width: 561px) {
+  .filter-panel--stack .filter-item,
+  .filter-panel--stack .pg-filter-group { margin-bottom: 16px; min-width: 0; }
   .filter-panel--stack .home-filter-select { width: 100%; box-sizing: border-box; }
   /* Pills wrap at their natural width so long labels ("Unsupported",
      "Not Rated Yet") never clip. */
@@ -438,12 +427,7 @@
     align-content: start;
   }
   .filter-panel--stack .pg-filter-group-label { flex-basis: 100%; }
-  /* Footer spans the full width below the columns. */
-  .filter-panel--stack .filter-panel-footer--stack {
-    column-span: all;
-    break-inside: avoid;
-    margin: 4px 0 0;
-  }
+  .filter-panel--stack .filter-panel-footer--stack { margin: 4px 0 0; }
 }
 
 /* Squircle chips in the browse filter popover (picked over the pill shape).

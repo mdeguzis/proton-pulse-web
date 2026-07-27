@@ -17,6 +17,10 @@ const reportsCss = fs.readFileSync(
   path.join(__dirname, '..', 'css', 'app', 'reports.css'),
   'utf8'
 );
+const filtersCss = fs.readFileSync(
+  path.join(__dirname, '..', 'css', 'shared', 'filters.css'),
+  'utf8'
+);
 
 describe('#415 slice 2b: game-page filter state survives SPA nav', () => {
   test('module-level _ephemeralGameFilters exists and starts null (F5 clears)', () => {
@@ -62,16 +66,20 @@ describe('#415 slice 2b: game-page filter state survives SPA nav', () => {
 });
 
 describe('#415 slice 2b: filter panel drawer animation + accented dropdowns', () => {
-  test('base .filter-panel keeps display:block and animates via clip-path + opacity + transform', () => {
-    // clip-path replaces max-height so CSS multi-column layouts inside
-    // the panel do not reflow into more/narrower columns during the
-    // shrink -- see #415 slice 2b flash bug. Closed state is fully
-    // clipped from the bottom; open state clears the inset. Cubic-bezier
-    // easing keeps the drawer feeling considered.
-    expect(reportsCss).toMatch(/\.filter-panel\s*\{[^}]*display:\s*block[^}]*clip-path:\s*inset\(0 0 100% 0\)[^}]*opacity:\s*0/s);
-    expect(reportsCss).toMatch(/\.filter-panel\s*\{[\s\S]*?transition:[\s\S]*?clip-path[\s\S]*?opacity[\s\S]*?transform/);
-    expect(reportsCss).toMatch(/cubic-bezier\(0\.16,\s*1,\s*0\.3,\s*1\)/);
-    expect(reportsCss).toMatch(/\.filter-panel\.open\s*\{[^}]*clip-path:\s*inset\(0 0 0 0\)[^}]*opacity:\s*1/s);
+  test('the drawer animation is the shared contract in filters.css (#417), covering every panel', () => {
+    // #417: the clip-path drawer animation moved out of the app-only
+    // reports.css into shared/filters.css so browse, game-page, index
+    // (.pg-filter-panel) and the stats dropdowns (.filter-dropdown
+    // .filter-panel) all reveal the same way. clip-path (not max-height)
+    // keeps CSS multi-column layouts from reflowing into more/narrower
+    // columns during the collapse -- the #415 slice 2b flash bug.
+    // Closed state is fully clipped from the bottom; open clears the inset.
+    expect(filtersCss).toMatch(/\.filter-panel,\s*\.pg-filter-panel\s*\{[\s\S]*?clip-path:\s*inset\(0 0 100% 0\)[\s\S]*?opacity:\s*0/);
+    expect(filtersCss).toMatch(/\.filter-panel,\s*\.pg-filter-panel\s*\{[\s\S]*?transition:[\s\S]*?clip-path[\s\S]*?opacity[\s\S]*?transform/);
+    expect(filtersCss).toMatch(/cubic-bezier\(0\.16,\s*1,\s*0\.3,\s*1\)/);
+    // Unified reveal selector: big panels flip .open on the panel, stats
+    // flips .is-open on the parent -- all three reach the same open state.
+    expect(filtersCss).toMatch(/\.filter-panel\.open,[\s\S]*?\.pg-filter-panel\.open,[\s\S]*?\.filter-dropdown\.is-open \.filter-panel\s*\{[\s\S]*?clip-path:\s*inset\(0 0 0 0\)[\s\S]*?opacity:\s*1/);
   });
 
   test('mobile <=720px keeps the panel position:fixed even when closed so collapse does not flash the desktop popover', () => {
