@@ -69,7 +69,7 @@ describe('component fetches the right workflows', () => {
     expect(COMP_SRC).toContain("'Publish Shell to Cloudflare Pages'");
     expect(COMP_SRC).toContain("'Deploy Cloudflare Workers'");
     expect(COMP_SRC).toContain("'Build Site Data'");
-    expect(COMP_SRC).toContain("'Deploy Cloudflare Functions'");
+    expect(COMP_SRC).toContain("'Deploy Supabase Edge Functions'");
   });
 
   test('hits the public actions runs endpoint (no auth needed)', () => {

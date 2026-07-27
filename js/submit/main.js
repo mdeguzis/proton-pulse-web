@@ -440,15 +440,20 @@ import { esc } from '../app/utils.js?v=9a39c726';
           return;
         }
         if (formHost) {
+          // Variant C: countdown chip header + one icon-led line per
+          // message. Accent flips to warn-orange when <= 6 days remain.
+          const isWarn = daysLeft <= 6;
+          const submittedStr = escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }));
           const notice = document.createElement('div');
-          notice.className = 'submit-edit-window';
+          notice.className = `submit-edit-window submit-edit-window--c${isWarn ? ' submit-edit-window--warn' : ''}`;
           notice.innerHTML = `
-            <strong>${daysLeft} day${daysLeft !== 1 ? 's' : ''} left to edit.</strong>
-            Reports lock ${EDIT_WINDOW_DAYS} days after submission
-            (submitted ${escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))})
-            so the historical record stays honest. After that, corrections go through a moderator.
-            ${window.__editReportIsPublished ? '<br>Submitting an edit puts this report back into pending review until the daily pipeline re-approves it.' : ''}
-            <br><a href="https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing" target="_blank" rel="noopener">Read the full report editing policy -&gt;</a>`;
+            <div class="sew-head">
+              <span class="sew-chip">${daysLeft} DAY${daysLeft !== 1 ? 'S' : ''} LEFT TO EDIT</span>
+              <span class="sew-sub">submitted ${submittedStr} &middot; locks after ${EDIT_WINDOW_DAYS} days</span>
+            </div>
+            <div class="sew-line"><span class="sew-ico">&#9432;</span><span>Reports lock ${EDIT_WINDOW_DAYS} days after submission so the historical record stays honest. After that, corrections go through a moderator.</span></div>
+            ${window.__editReportIsPublished ? '<div class="sew-line"><span class="sew-ico">&#8635;</span><span>Submitting an edit puts this report back into <strong>pending review</strong> until the daily pipeline re-approves it.</span></div>' : ''}
+            <div class="sew-line sew-line--policy"><span class="sew-ico">&#128279;</span><a href="https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing" target="_blank" rel="noopener">Read the full report editing policy -&gt;</a></div>`;
           formHost.parentNode.insertBefore(notice, formHost);
         }
         const form = el.querySelector('#submit-report-form');

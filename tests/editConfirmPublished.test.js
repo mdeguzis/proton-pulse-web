@@ -32,8 +32,8 @@ describe('submit.html ?edit= flow: published-report notice (no popup)', () => {
 
   test('published state feeds the edit-window notice instead', () => {
     expect(SRC).toContain('window.__editReportIsPublished = preCheckRows.length > 0');
-    expect(SRC).toContain('back into pending review until the daily pipeline re-approves it.');
-    expect(SRC).toContain("window.__editReportIsPublished ? '<br>Submitting an edit puts this report");
+    expect(SRC).toContain('back into <strong>pending review</strong> until the daily pipeline re-approves it.');
+    expect(SRC).toContain("window.__editReportIsPublished ? '<div class=\"sew-line\">");
   });
 
   test('the pre-check stays best-effort (a network blip must not block editing)', () => {

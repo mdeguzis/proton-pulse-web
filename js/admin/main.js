@@ -22,7 +22,7 @@ import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.
 import { renderApiExplorer } from './components/api-explorer.js?v=1fc945bb';
 import { renderGameManager } from './components/gameManager.js?v=b1d1211c';
 import { renderLoggingTab } from './components/logging.js?v=05d0e3af';
-import { renderDeploymentsTab } from './components/deployments.js?v=d35aa7c8';
+import { renderDeploymentsTab } from './components/deployments.js?v=ce9fc002';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=b70317a6';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=0f587828';
 import { approveReport } from './api/pending.js?v=84292a58';

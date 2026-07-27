@@ -22,12 +22,20 @@ describe('30-day edit window (#389)', () => {
     expect(SUBMIT_MAIN).toMatch(/EDIT_WINDOW_DAYS - Math\.floor\(\(Date\.now\(\) - createdMs\) \/ 86400000\)/);
   });
 
-  test('inside the window: a notice says how many days are left', () => {
-    expect(SUBMIT_MAIN).toContain("left to edit.</strong>");
-    expect(SUBMIT_MAIN).toMatch(/\$\{daysLeft\} day\$\{daysLeft !== 1 \? 's' : ''\}/);
-    expect(SUBMIT_MAIN).toContain('submit-edit-window');
+  test('inside the window: chip header counts down, messages get their own lines', () => {
+    expect(SUBMIT_MAIN).toContain("DAY${daysLeft !== 1 ? 'S' : ''} LEFT TO EDIT");
+    expect(SUBMIT_MAIN).toContain('sew-chip');
+    expect(SUBMIT_MAIN).toContain('sew-line');
     // Countdown sits ABOVE the form, not instead of it.
     expect(SUBMIT_MAIN).toContain('formHost.parentNode.insertBefore(notice, formHost)');
+  });
+
+  test('accent stays blue until 6 days remain, then flips to warn (Mike rule)', () => {
+    expect(SUBMIT_MAIN).toContain('const isWarn = daysLeft <= 6;');
+    expect(SUBMIT_MAIN).toContain('submit-edit-window--warn');
+    const CSS2 = read('css/app/game-header.css');
+    expect(CSS2).toContain('.submit-edit-window--warn { border-left-color: #d97706; }');
+    expect(CSS2).toContain('.submit-edit-window--warn .sew-chip');
   });
 
   test('past the window: the form is replaced with the moderation path', () => {
@@ -56,7 +64,7 @@ describe('resubmit warning is inline, not a popup (#389 polish)', () => {
 
   test('the re-approval consequence rides in the edit-window notice', () => {
     expect(SUBMIT_MAIN).toContain('__editReportIsPublished');
-    expect(SUBMIT_MAIN).toContain('back into pending review until the daily pipeline re-approves it.');
+    expect(SUBMIT_MAIN).toContain('back into <strong>pending review</strong> until the daily pipeline re-approves it.');
   });
 
   test('both notice states link to the User-Policies wiki page', () => {
