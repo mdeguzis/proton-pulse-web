@@ -898,15 +898,21 @@ export async function renderGamePage(appId) {
   // list but never touch storage on their own. Presence of the storage key
   // is now the signal that a snapshot exists -- the older separate persist
   // toggle is retired.
-  const FILTER_STORAGE_KEY = 'proton-pulse:report-filters';
-  // Legacy per-page persist toggle. Retained ONLY so we can migrate silently:
-  // a value of '0' meant "do not restore", so on load we skip the snapshot in
-  // that case, then clean the key up on first Save. Any positive value falls
-  // through to the snapshot.
-  const FILTER_PERSIST_KEY = 'proton-pulse:report-filters-persist';
+  //
+  // The v2 suffix is deliberate: browsers with a snapshot from the pre-slice-1
+  // auto-save era would otherwise restore filters on every refresh even when
+  // the user never explicitly pressed Save. Bumping the key gives everyone a
+  // clean slate under the new explicit-Save regime; the legacy keys are
+  // wiped on load so we do not accumulate cruft.
+  const FILTER_STORAGE_KEY  = 'proton-pulse:report-filters-v2';
+  const _LEGACY_STORAGE_KEY = 'proton-pulse:report-filters';
+  const _LEGACY_PERSIST_KEY = 'proton-pulse:report-filters-persist';
   const persistedFilters = (() => {
     try {
-      if (localStorage.getItem(FILTER_PERSIST_KEY) === '0') return {};
+      // One-shot cleanup of the pre-v2 auto-save snapshot and its persist
+      // toggle. Both are dead keys under the explicit-Save model.
+      localStorage.removeItem(_LEGACY_STORAGE_KEY);
+      localStorage.removeItem(_LEGACY_PERSIST_KEY);
       return JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}') || {};
     } catch { return {}; }
   })();
@@ -955,7 +961,6 @@ export async function renderGamePage(appId) {
     try {
       const raw = localStorage.getItem(FILTER_STORAGE_KEY);
       if (!raw) return null;
-      if (localStorage.getItem(FILTER_PERSIST_KEY) === '0') return null;
       return JSON.parse(raw) || {};
     } catch { return null; }
   }
@@ -986,11 +991,6 @@ export async function renderGamePage(appId) {
   function _saveFiltersNow() {
     try {
       localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(_filterSnapshot()));
-      // Clear the legacy '0' opt-out marker now that the user is actively
-      // pressing Save; keeps loads honest.
-      if (localStorage.getItem(FILTER_PERSIST_KEY) === '0') {
-        localStorage.removeItem(FILTER_PERSIST_KEY);
-      }
     } catch { /* quota / disabled - ignore */ }
     _updateSaveButtonState();
   }
