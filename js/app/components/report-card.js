@@ -5,7 +5,7 @@ import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { renderAuthorBlock } from './author.js?v=3a8cb3c7';
 import { buildFormRows } from './config-cards.js?v=c67740f8';
 import { renderSignalStrip } from './signals.js?v=ff2ad4c9';
-import { RATING_COLORS, RATING_TEXT } from '../config.js?v=593229c5';
+import { RATING_COLORS, RATING_TEXT } from '../config.js?v=a75604f5';
 import { confColor, confTextColor, configKey, daysAgo, esc, renderNotes, fmtDuration, fmtMinutes, hashReportKey, reportKey } from '../utils.js?v=9a39c726';
 
 export function renderPermalink(r) {
@@ -31,6 +31,38 @@ export function renderRecommendLine(r) {
   const yes = verdict === 'yes';
   const thumb = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"${yes ? '' : ' style="transform:scaleY(-1)"'}><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>`;
   return `<div class="rec-verdict rec-verdict--${yes ? 'yes' : 'no'}" title="The reporter's answer to: would you recommend this to others?">${thumb} ${yes ? 'Would recommend' : 'Would not recommend'}</div>`;
+}
+
+// #410 variant B: FPS detail row. The aggregate min/avg/max is always
+// visible as a normal card row; when the report carries per-run MangoHud
+// captures (form_responses.fpsRuns from multi-upload) a "N runs" chip
+// expands up to 5 rows inline. Overflow beyond 5 (and graphs, filters,
+// the interactive table) lives on the per-report All stats page --
+// game-stats.html?app=X&report=Y, a filtered slice of the game stats.
+const FPS_RUNS_INLINE_CAP = 5;
+
+export function renderFpsRow(r) {
+  const hasAgg = r.fpsMin != null || r.fpsAvg != null || r.fpsMax != null;
+  const runs = Array.isArray(r.formResponses?.fpsRuns) ? r.formResponses.fpsRuns.filter(x => x && typeof x === 'object') : [];
+  if (!hasAgg && !runs.length) return '';
+  const fmt = v => (v != null ? Number(v).toFixed(1) : '-');
+  const chip = runs.length
+    ? `<button type="button" class="fps-runs-chip" onclick="const p=this.closest('.card-summary').querySelector('.fps-runs-panel');p.hidden=!p.hidden;this.classList.toggle('open',!p.hidden)">${runs.length} run${runs.length !== 1 ? 's' : ''} <span class="fps-runs-caret">&#9662;</span></button>`
+    : '';
+  const statsHref = r.appId != null
+    ? `game-stats.html?app=${encodeURIComponent(String(r.appId))}${r.reportId != null ? `&report=${encodeURIComponent(String(r.reportId))}` : ''}`
+    : '';
+  const allStatsBtn = statsHref && runs.length
+    ? `<a class="fps-allstats-link" href="${statsHref}" onclick="event.stopPropagation()" title="Full stats for this report: graphs, per-run table, filters">All stats</a>`
+    : '';
+  const shown = runs.slice(0, FPS_RUNS_INLINE_CAP);
+  const overflow = runs.length - shown.length;
+  const panel = runs.length ? `
+    <div class="fps-runs-panel" hidden>
+      ${shown.map(run => `<div class="fps-run-line"><span class="fps-run-line-name" title="${esc(String(run.name || ''))}">${esc(String(run.name || 'run'))}</span><span class="fps-run-line-vals">${fmt(run.fpsMin)} / ${fmt(run.fpsAvg)} / ${fmt(run.fpsMax)}</span><span class="fps-run-line-samples">${Number(run.sampleCount || 0).toLocaleString()} samples</span></div>`).join('')}
+      ${overflow > 0 ? `<a class="fps-run-line-more" href="${statsHref}">+${overflow} more run${overflow !== 1 ? 's' : ''} on the All stats page -&gt;</a>` : ''}
+    </div>` : '';
+  return `<div class="row fps-row"><span class="label">FPS (min / avg / max)</span><span class="fps-values" title="Reported frames-per-second measurements">${fmt(r.fpsMin)} / ${fmt(r.fpsAvg)} / ${fmt(r.fpsMax)}${chip}${allStatsBtn}</span></div>${panel}`;
 }
 
 // - Render: report card ------------------------------
@@ -114,7 +146,7 @@ export function renderCard(r, votes, userVotes = {}, configPlaytimeTotals = []) 
       <div class="row"><span class="label">OS</span><span>${na(esc(r.os))}</span></div>
       <div class="row"><span class="label">Proton</span><span>${na(esc(r.protonVersion))}</span></div>
       ${(r.durationMinutes != null || fmtDuration(r.duration)) ? `<div class="row"><span class="label">Steam playtime</span><span>${r.durationMinutes != null ? fmtMinutes(r.durationMinutes) : fmtDuration(r.duration)}</span></div>` : ''}
-      ${(r.fpsMin != null || r.fpsAvg != null || r.fpsMax != null) ? `<div class="row"><span class="label">FPS (min / avg / max)</span><span class="fps-values" title="Reported frames-per-second measurements">${r.fpsMin != null ? Number(r.fpsMin).toFixed(1) : '-'} / ${r.fpsAvg != null ? Number(r.fpsAvg).toFixed(1) : '-'} / ${r.fpsMax != null ? Number(r.fpsMax).toFixed(1) : '-'}</span></div>` : ''}
+      ${renderFpsRow(r)}
       ${(() => { const pt = r.configKey && configPlaytimeTotals.find(t => t.config_key === r.configKey); return pt ? `<div class="row"><span class="label">Config playtime</span><span title="${pt.session_count} session${pt.session_count !== 1 ? 's' : ''}">${fmtMinutes(pt.total_minutes)}</span></div>` : ''; })()}
       ${r.notes ? `<div class="row"><span class="label">Notes</span><div class="notes-full">${renderNotes(r.notes)}</div></div>` : ''}
       ${r.launchOptions ? `<div class="row"><span class="label">Launch Options</span><span class="launch-options-value">${esc(r.launchOptions)}</span></div>` : ''}

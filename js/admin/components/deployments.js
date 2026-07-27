@@ -8,14 +8,18 @@
 // human-scale panel viewing. If we ever move to authed fetches we would
 // use a fine-grained PAT scoped to Actions:Read.
 
-const GH_API = 'https://api.github.com/repos/mdeguzis/proton-pulse-web/actions/runs?per_page=40';
+// per_page=100 (API max): the runs feed interleaves EVERY workflow, and
+// the chatty non-deploy ones (CI, CodeQL, semgrep, Discord notify) can
+// crowd deploy runs out of a small window on a busy day -- 40 once left
+// only 4 whitelisted rows visible.
+const GH_API = 'https://api.github.com/repos/mdeguzis/proton-pulse-web/actions/runs?per_page=100';
 
 // Every workflow that deploys somewhere users can see.
 const WORKFLOW_WHITELIST = new Set([
   'Publish Shell to Cloudflare Pages',   // shell push per branch -> CF Pages
   'Deploy Cloudflare Workers',           // pp-edge-status worker
   'Build Site Data',                     // update-data pipeline (finalize deploys)
-  'Deploy Cloudflare Functions',         // Supabase edge fns via deploy-functions.yml
+  'Deploy Supabase Edge Functions',      // Supabase edge fns via deploy-functions.yml
 ]);
 
 // Rows shown after whitelist filter. 15 covers a couple of days of activity

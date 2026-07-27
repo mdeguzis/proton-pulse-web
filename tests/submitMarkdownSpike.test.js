@@ -94,4 +94,17 @@ describe('markdown editor CSS shape', () => {
     expect(GAME_CSS).toContain('.md-editor-preview code');
     expect(GAME_CSS).toContain('.md-editor-preview blockquote');
   });
+
+  test('notes textarea inside the md-editor stays resizable at double height', () => {
+    // The md-editor wrapper moved the textarea out of .sf-row reach, which
+    // silently dropped resize: vertical. Pin it on the wrapper selector,
+    // along with the doubled default height (rows=6 + 140px floor).
+    expect(GAME_CSS).toMatch(/\.md-editor > textarea \{[\s\S]{0,120}resize: vertical/);
+    expect(GAME_CSS).toMatch(/\.md-editor > textarea \{[\s\S]{0,120}min-height: 140px/);
+    const SUBMIT_SHARED = fs.readFileSync(path.join(ROOT, 'js', 'shared', 'submit.js'), 'utf8');
+    expect(SUBMIT_SHARED).toMatch(/name="notes" rows="6"/);
+    // The privacy hint gets breathing room above the Save / Submit buttons.
+    expect(SUBMIT_SHARED).toContain('sf-row-hint sf-notes-hint');
+    expect(GAME_CSS).toContain('.sf-notes-hint { margin-bottom: 16px; }');
+  });
 });

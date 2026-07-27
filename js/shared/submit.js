@@ -369,6 +369,11 @@ export async function submitReport(appId, title, form, editReportId = null) {
     framegenNotes: state.requiresFramegen === 'yes'
       ? (form.framegenNotes?.value || '').trim() || null
       : null,
+    // Per-run MangoHud captures (#410): each uploaded CSV (or ZIP member)
+    // keeps its own min/avg/max + sample count. The top-level fps_min/avg/
+    // max columns hold the cross-run aggregate; this preserves the detail
+    // for the per-report Stats view. Empty -> omitted, not [].
+    fpsRuns: getFpsRuns().length ? getFpsRuns() : null,
     summary:    null,
   };
   const body = {
@@ -670,10 +675,11 @@ export async function populateSubmitForm(el) {
       <div class="sf-row--fps-upload">
         <label class="sf-fps-upload-btn" for="fpsCsvInput">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z" style="transform:rotate(180deg);transform-origin:center"/></svg>
-          <span>Upload MangoHud CSV</span>
+          <span>Upload MangoHud CSV / ZIP</span>
         </label>
-        <input id="fpsCsvInput" name="fpsCsv" type="file" accept=".csv,text/csv" hidden>
+        <input id="fpsCsvInput" name="fpsCsv" type="file" accept=".csv,.zip,text/csv,application/zip" multiple hidden>
         <span class="sf-fps-upload-status" id="fpsCsvStatus"></span>
+        <div class="sf-fps-runs" id="fpsRunsList" hidden></div>
       </div>
       <div class="sf-row"><label>Launch Options</label><input name="launchOptions" placeholder="e.g. PROTON_USE_WINED3D=1 %command%"></div>
 
@@ -762,8 +768,8 @@ export async function populateSubmitForm(el) {
       </div>
 
       <div class="sf-section-label" style="margin-top:16px">Notes ${notesFormattingHelpHtml()}</div>
-      <div class="sf-row"><textarea name="notes" rows="3" placeholder="How did it run? Any issues or tweaks?"></textarea></div>
-      <div class="sf-row-hint"><strong>Public and permanent.</strong> Notes stay on the report even if you delete your account. Do not put personal information in this field.</div>
+      <div class="sf-row"><textarea name="notes" rows="6" placeholder="How did it run? Any issues or tweaks?"></textarea></div>
+      <div class="sf-row-hint sf-notes-hint"><strong>Public and permanent.</strong> Notes stay on the report even if you delete your account. Do not put personal information in this field.</div>
 
       <!-- Submitted-from platform: detected from navigator.userAgent + touch
            signals in getWebSource() and stamped on the submission behind
@@ -1191,33 +1197,118 @@ function wireRunTypeToggle(container) {
   }
 }
 
+// Accumulated MangoHud runs for THIS form session. Repeated uploads append
+// rows instead of overwriting (a benchmark session usually has several
+// captures), and the whole list ships in form_responses.fpsRuns. The three
+// visible min/avg/max fields hold the cross-run aggregate: true min of
+// mins, sample-weighted avg, true max of maxes.
+let _fpsRuns = [];
+const MAX_FPS_RUNS = 20;
+
+export function resetFpsRuns() { _fpsRuns = []; }
+export function getFpsRuns() { return _fpsRuns.slice(); }
+
+function _aggregateFpsRuns(runs) {
+  const valid = runs.filter(r => r.fpsAvg != null);
+  if (!valid.length) return null;
+  const totalSamples = valid.reduce((s, r) => s + (r.sampleCount || 1), 0);
+  const weightedAvg = valid.reduce((s, r) => s + r.fpsAvg * (r.sampleCount || 1), 0) / totalSamples;
+  return {
+    fpsMin: Math.min(...valid.filter(r => r.fpsMin != null).map(r => r.fpsMin)),
+    fpsAvg: Math.round(weightedAvg * 10) / 10,
+    fpsMax: Math.max(...valid.filter(r => r.fpsMax != null).map(r => r.fpsMax)),
+    sampleCount: totalSamples,
+  };
+}
+
+function _renderFpsRuns(container) {
+  const list = container.querySelector('#fpsRunsList');
+  if (!list) return;
+  if (!_fpsRuns.length) { list.hidden = true; list.innerHTML = ''; return; }
+  list.hidden = false;
+  list.innerHTML = _fpsRuns.map((r, i) => `
+    <div class="sf-fps-run-row">
+      <span class="sf-fps-run-name" title="${esc(r.name)}">${esc(r.name)}</span>
+      <span class="sf-fps-run-stats">${r.fpsMin ?? '-'} / ${r.fpsAvg ?? '-'} / ${r.fpsMax ?? '-'} fps &middot; ${(r.sampleCount || 0).toLocaleString()} samples</span>
+      <button type="button" class="sf-fps-run-remove" data-run-index="${i}" title="Remove this run">&times;</button>
+    </div>`).join('');
+  list.querySelectorAll('.sf-fps-run-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      _fpsRuns.splice(Number(btn.dataset.runIndex), 1);
+      _applyFpsRuns(container);
+    });
+  });
+}
+
+function _applyFpsRuns(container) {
+  const form = container.querySelector('#submit-report-form') || container.querySelector('form');
+  const agg = _aggregateFpsRuns(_fpsRuns);
+  if (form) {
+    if (form.fpsMin) form.fpsMin.value = agg?.fpsMin != null ? String(agg.fpsMin) : '';
+    if (form.fpsAvg) form.fpsAvg.value = agg?.fpsAvg != null ? String(agg.fpsAvg) : '';
+    if (form.fpsMax) form.fpsMax.value = agg?.fpsMax != null ? String(agg.fpsMax) : '';
+  }
+  _renderFpsRuns(container);
+  const status = container.querySelector('#fpsCsvStatus');
+  if (status && agg) {
+    status.textContent = `${_fpsRuns.length} run${_fpsRuns.length !== 1 ? 's' : ''} - ${agg.sampleCount.toLocaleString()} MangoHud samples total`;
+  } else if (status) {
+    status.textContent = '';
+  }
+}
+
 function wireFpsCsvUpload(container) {
   const input = container.querySelector('#fpsCsvInput');
   const status = container.querySelector('#fpsCsvStatus');
   if (!input || !status) return;
   input.addEventListener('change', async () => {
-    const file = input.files?.[0];
-    if (!file) return;
+    const files = Array.from(input.files || []);
+    if (!files.length) return;
     status.textContent = 'Parsing...';
     status.classList.remove('sf-fps-upload-status--err');
+    const problems = [];
     try {
-      const text = await file.text();
-      // Lazy-load the parser -- it is small but only relevant when someone
-      // actually uploads a file, and the module is separately testable.
+      // Lazy-load parsers -- only relevant when someone actually uploads.
       const { parseMangohudCsv } = await import('../shared/mangohud-csv.js');
-      const result = parseMangohudCsv(text);
-      if (result.error) {
-        status.textContent = result.error;
-        status.classList.add('sf-fps-upload-status--err');
-        return;
+      // Expand ZIPs (FlightlessSomething benchmark downloads are ZIPs of
+      // per-run CSVs) into their member CSV texts; plain CSVs pass through.
+      const csvs = [];
+      for (const file of files) {
+        if (/\.zip$/i.test(file.name)) {
+          try {
+            const { extractCsvsFromZip } = await import('../shared/zip-csv.js');
+            const { files: members, skipped } = await extractCsvsFromZip(await file.arrayBuffer());
+            if (!members.length) problems.push(`${file.name}: no CSV files inside`);
+            csvs.push(...members);
+            problems.push(...skipped.map(s => `${file.name}: skipped ${s}`));
+          } catch (e) {
+            problems.push(`${file.name}: ${(e && e.message) || 'unreadable ZIP'}`);
+          }
+        } else {
+          csvs.push({ name: file.name, text: await file.text() });
+        }
       }
-      const form = container.querySelector('#submit-report-form') || container.querySelector('form');
-      if (form) {
-        if (form.fpsMin && result.fpsMin != null) form.fpsMin.value = String(result.fpsMin);
-        if (form.fpsAvg && result.fpsAvg != null) form.fpsAvg.value = String(result.fpsAvg);
-        if (form.fpsMax && result.fpsMax != null) form.fpsMax.value = String(result.fpsMax);
+      let added = 0;
+      for (const { name, text } of csvs) {
+        if (_fpsRuns.length >= MAX_FPS_RUNS) { problems.push(`run cap (${MAX_FPS_RUNS}) reached`); break; }
+        const result = parseMangohudCsv(text);
+        if (result.error) { problems.push(`${name}: ${result.error}`); continue; }
+        _fpsRuns.push({
+          name,
+          fpsMin: result.fpsMin, fpsAvg: result.fpsAvg, fpsMax: result.fpsMax,
+          // Percentile lows + downsampled series (#410): feeds the
+          // FlightlessSomething-style graphs on the per-report stats page.
+          fpsP1: result.fpsP1 ?? null, fpsP01: result.fpsP01 ?? null,
+          series: Array.isArray(result.series) ? result.series : null,
+          sampleCount: result.sampleCount,
+        });
+        added += 1;
       }
-      status.textContent = `Filled from ${result.sampleCount.toLocaleString()} MangoHud samples`;
+      _applyFpsRuns(container);
+      if (problems.length) {
+        status.textContent = `${added ? `Added ${added} run(s). ` : ''}${problems[0]}${problems.length > 1 ? ` (+${problems.length - 1} more)` : ''}`;
+        if (!added) status.classList.add('sf-fps-upload-status--err');
+      }
     } catch (e) {
       status.textContent = `Could not read file: ${(e && e.message) || e}`;
       status.classList.add('sf-fps-upload-status--err');

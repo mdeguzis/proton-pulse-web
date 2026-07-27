@@ -1,4 +1,4 @@
-import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
+import { SupaAuth, SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=2668b2f0';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=7b4e356d';
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
@@ -18,12 +18,12 @@ import { fetchAnalytics } from './api/analytics.js?v=2f32672f';
 import { renderAnalytics } from './components/analytics.js?v=84f67795';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
-import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=01d63a72';
+import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=10543db7';
 import { renderApiExplorer } from './components/api-explorer.js?v=1fc945bb';
 import { renderGameManager } from './components/gameManager.js?v=b1d1211c';
 import { renderLoggingTab } from './components/logging.js?v=05d0e3af';
-import { renderDeploymentsTab } from './components/deployments.js?v=d35aa7c8';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=3a48e0ad';
+import { renderDeploymentsTab } from './components/deployments.js?v=ce9fc002';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=b70317a6';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=0f587828';
 import { approveReport } from './api/pending.js?v=84292a58';
 
@@ -213,6 +213,38 @@ async function loadReportDetail(id) {
               flagged_at: new Date().toISOString(),
             });
             updateAllReportsRow(rid, true, true, 'denied: ' + reason, false);
+          } else if (action === 'ar-delete') {
+            // #398: terminal resolution. Two paths, per policy (see the
+            // Content-Moderation wiki page): permanently delete, or
+            // anonymize-and-keep (data stays as a valid datapoint; identity
+            // scrubbed the same way account deletion scrubs it).
+            const choice = window.prompt(
+              'Resolve report #' + rid + ':\n\n' +
+              '  Type DELETE to permanently remove the report (data is gone).\n' +
+              '  Type ANON to keep the data but scrub the author -- it will\n' +
+              '  appear as if submitted by an anonymous user.\n\n' +
+              'Anything else cancels.'
+            );
+            const normalized = (choice || '').trim().toUpperCase();
+            if (normalized !== 'DELETE' && normalized !== 'ANON') { if (btn) btn.disabled = false; return; }
+            const rpcAction = normalized === 'DELETE' ? 'delete' : 'anonymize';
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/admin_resolve_report`, {
+              method: 'POST',
+              headers: {
+                apikey: SUPABASE_ANON_KEY,
+                Authorization: `Bearer ${currentSession.access_token}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ p_report_id: Number(rid), p_action: rpcAction }),
+            });
+            if (!res.ok) {
+              const body = await res.text().catch(() => '');
+              throw new Error(`admin_resolve_report failed: HTTP ${res.status}${body ? ' - ' + body.slice(0, 200) : ''}`);
+            }
+            console.debug('[admin] report resolved', { rid, action: rpcAction, source: 'admin_resolve_report' });
+            window.ppToast?.success(rpcAction === 'delete' ? `Report #${rid} permanently deleted.` : `Report #${rid} anonymized.`);
+            activateTab('all-reports');
+            return;
           }
           window.ppToast?.success('Report updated.');
         } catch (err) {
@@ -375,8 +407,10 @@ async function loadUserDetail(user) {
     const backBtn = content.querySelector('[data-action="back-to-users"]');
     if (backBtn) backBtn.textContent = `\u2190 Back to ${userDetailReturnTab.replace('-', ' ')}`;
   } catch (e) {
-    content.innerHTML = `<div class="admin-error">${e.message}</div>
-      <button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="back-to-users" style="margin-top:10px">\u2190 Back to ${userDetailReturnTab.replace('-', ' ')}</button>`;
+    // Escape both interpolations: e.message can carry API-echoed input and
+    // the tab name flows through innerHTML (CodeQL js/xss-through-dom).
+    content.innerHTML = `<div class="admin-error">${escapeHtml(e.message)}</div>
+      <button class="admin-btn admin-btn--ghost admin-btn--sm" type="button" data-action="back-to-users" style="margin-top:10px">\u2190 Back to ${escapeHtml(userDetailReturnTab.replace('-', ' '))}</button>`;
   }
 }
 
@@ -458,32 +492,35 @@ async function loadAnalytics() {
   if (cacheContainer) renderCacheStatus(cacheContainer).catch(() => {});
 }
 
-// Maps each tab to its data loader so tab clicks and ?tab= restore share one path.
-const TAB_LOADERS = {
-  'all-reports': loadAllReports,
-  flagged: loadFlagged,
-  banned: loadBanned,
-  users: loadUsers,
-  admins: loadAdmins,
-  phrases: loadPhrases,
-  analytics: loadAnalytics,
-  boxart: () => renderBoxartAdmin().catch(e => console.error('[boxart]', e)),
-  'api-explorer': () => renderApiExplorer({ canManageAdmins: can('manage_admins') }),
-  'depot-tracking': () => {
+// Maps each tab to its data loader so tab clicks and ?tab= restore share one
+// path. A real Map (not a plain object) because the key comes from the URL:
+// Map.get() can never dispatch to an inherited member like 'constructor'
+// (CodeQL js/unvalidated-dynamic-method-call).
+const TAB_LOADERS = new Map([
+  ['all-reports', loadAllReports],
+  ['flagged', loadFlagged],
+  ['banned', loadBanned],
+  ['users', loadUsers],
+  ['admins', loadAdmins],
+  ['phrases', loadPhrases],
+  ['analytics', loadAnalytics],
+  ['boxart', () => renderBoxartAdmin().catch(e => console.error('[boxart]', e))],
+  ['api-explorer', () => renderApiExplorer({ canManageAdmins: can('manage_admins') })],
+  ['depot-tracking', () => {
     const host = document.getElementById('depot-tracking-content');
     if (host) renderDepotTracking(host).catch(e => console.error('[depot-tracking]', e));
-  },
-  games: () => renderGameManager().catch(e => console.error('[game-manager]', e)),
-  logging: () => { try { renderLoggingTab(); } catch (e) { console.error('[logging]', e); } },
-  deployments: () => { renderDeploymentsTab().catch(e => console.error('[deployments]', e)); },
-};
+  }],
+  ['games', () => renderGameManager().catch(e => console.error('[game-manager]', e))],
+  ['logging', () => { try { renderLoggingTab(); } catch (e) { console.error('[logging]', e); } }],
+  ['deployments', () => { renderDeploymentsTab().catch(e => console.error('[deployments]', e)); }],
+]);
 
 // Activate a tab, load its data, and reflect it in the URL as ?tab=<name> so a
 // refresh restores the same tab. Unknown names fall back to 'users' (the
 // default landing tab).
 function activateTab(tabName, { updateUrl = true } = {}) {
   if (tabName === 'pending') tabName = 'all-reports';
-  if (!TAB_LOADERS[tabName]) tabName = 'users';
+  if (!TAB_LOADERS.has(tabName)) tabName = 'users';
   // Never land on a tab this admin lacks access to (e.g. via a stale ?tab= URL).
   if (currentAdmin && !canSeeTab(currentAdmin.role, currentAdmin.permissions, tabName)) tabName = 'users';
   switchTab(tabName);
@@ -508,7 +545,8 @@ function activateTab(tabName, { updateUrl = true } = {}) {
     if (tabName !== 'users') url.searchParams.delete('search');
     history.replaceState(null, '', url);
   }
-  TAB_LOADERS[tabName]();
+  const loader = TAB_LOADERS.get(tabName) || TAB_LOADERS.get('users');
+  loader();
 }
 
 // ---------------------------------------------------------------------------
@@ -858,7 +896,7 @@ function wireEvents() {
       // refresh" bug).
       const params = new URLSearchParams(window.location.search);
       const t = params.get('tab');
-      if (t && TAB_LOADERS[t]) activateTab(t, { updateUrl: false });
+      if (t && TAB_LOADERS.has(t)) activateTab(t, { updateUrl: false });
     }
   });
 
@@ -1043,8 +1081,8 @@ function wireEvents() {
 function setupTableSort(tableId) {
   const table = document.getElementById(tableId);
   if (!table) return;
-  const ths = table.querySelectorAll('thead th[data-sort-col]');
-  ths.forEach(th => {
+  const headerCells = table.querySelectorAll('thead th[data-sort-col]');
+  headerCells.forEach(th => {
     const indicator = document.createElement('span');
     indicator.className = 'sort-indicator';
     indicator.setAttribute('aria-hidden', 'true');
@@ -1075,7 +1113,7 @@ function setupTableSort(tableId) {
       // active column toggle direction as before.
       const nowAsc    = wasActive ? th.dataset.sortDir !== 'asc' : false;
 
-      ths.forEach(h => {
+      headerCells.forEach(h => {
         h.dataset.sortActive = '';
         h.dataset.sortDir    = '';
         h.classList.remove('admin-th--sorted');
@@ -1187,7 +1225,7 @@ async function init() {
 
   // Restore the tab from ?tab= (written by activateTab) so a refresh keeps your place.
   const requestedTab = params.get('tab');
-  activateTab(TAB_LOADERS[requestedTab] ? requestedTab : 'users', { updateUrl: false });
+  activateTab(TAB_LOADERS.has(requestedTab) ? requestedTab : 'users', { updateUrl: false });
 }
 
 document.addEventListener('DOMContentLoaded', init);

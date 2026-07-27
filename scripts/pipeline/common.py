@@ -376,12 +376,17 @@ def dir_to_app_id(dir_name: str) -> str:
 
 
 def app_type_from_id(app_id: str) -> str:
-    """Derive store type string from app_id prefix."""
+    """Derive store type string from app_id prefix.
+
+    `pw_` is the #406 short hash form for PCGamingWiki games; the legacy
+    `pgwiki:` slug prefix stays recognized until every stored row and URL
+    has been migrated.
+    """
     if app_id.startswith("gog:"):
         return "gog"
     if app_id.startswith("epic:"):
         return "epic"
-    if app_id.startswith("pgwiki:"):
+    if app_id.startswith("pgwiki:") or app_id.startswith("pw_"):
         return "pgwiki"
     return "steam"
 
@@ -393,4 +398,5 @@ def is_valid_app_id(app_id: str) -> bool:
         or app_id.startswith("gog:")
         or app_id.startswith("epic:")
         or app_id.startswith("pgwiki:")
+        or app_id.startswith("pw_")
     )

@@ -44,7 +44,7 @@ describe('Deployments tab is wired into the admin panel', () => {
 
   test('admin main.js imports the component + wires it into TAB_LOADERS', () => {
     expect(ADMIN_MAIN).toMatch(/import\s*\{\s*renderDeploymentsTab\s*\}\s*from\s*['"]\.\/components\/deployments\.js/);
-    expect(ADMIN_MAIN).toMatch(/deployments:\s*\(\)\s*=>\s*\{\s*renderDeploymentsTab\(\)/);
+    expect(ADMIN_MAIN).toMatch(/\['deployments',\s*\(\)\s*=>\s*\{\s*renderDeploymentsTab\(\)/);
   });
 
   test('gh-pages-manifest.txt includes the new component file', () => {
@@ -69,7 +69,7 @@ describe('component fetches the right workflows', () => {
     expect(COMP_SRC).toContain("'Publish Shell to Cloudflare Pages'");
     expect(COMP_SRC).toContain("'Deploy Cloudflare Workers'");
     expect(COMP_SRC).toContain("'Build Site Data'");
-    expect(COMP_SRC).toContain("'Deploy Cloudflare Functions'");
+    expect(COMP_SRC).toContain("'Deploy Supabase Edge Functions'");
   });
 
   test('hits the public actions runs endpoint (no auth needed)', () => {

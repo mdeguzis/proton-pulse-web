@@ -87,6 +87,7 @@ help:
 	@echo "  check-staging-sync  Verify staging SHA matches HEAD before a prod deploy (auto-runs)"
 	@echo "  gh-run              Trigger the full GitHub Actions update-data workflow via gh"
 	@echo "  gh-pages-only       Promote current main to production (requires staging to be in sync)"
+	@echo "  draft-release       Create/refresh a DRAFT GitHub release pre-filled with commits (auto-runs on prod deploys)"
 	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
 	@echo "  gh-staging-pipeline Run FULL pipeline against staging + deploy data to staging (#117, ~30 min)"
 	@echo "  gh-staging-finalize Skip probe/build, re-run finalize + stats against prod state, deploy to staging (#196, ~5 min)"
@@ -203,10 +204,17 @@ check-staging-sync:
 
 gh-run: gh-check check-staging-sync
 	gh workflow run $(GITHUB_WORKFLOW)
+	@bash scripts/draft-release.sh
 	@echo "Triggered $(GITHUB_WORKFLOW)"
+
+# Prod promotions leave a pre-filled DRAFT release (version title + commit
+# bullets + placeholder prose). Publishing is always a human action.
+draft-release:
+	@bash scripts/draft-release.sh
 
 gh-pages-only: gh-check check-staging-sync
 	gh workflow run $(GITHUB_WORKFLOW) --field pages_only=true
+	@bash scripts/draft-release.sh
 	@echo "Triggered $(GITHUB_WORKFLOW) with pages_only=true"
 	@echo "NOTE: this promotes shell files to the OLD gh-pages branch (rollback path only per #362). For prod CF Pages (www.proton-pulse.com) use \`make cf-prod\` -- but ideally you do not need to, since publish-shell.yml auto-deploys on every push to main."
 

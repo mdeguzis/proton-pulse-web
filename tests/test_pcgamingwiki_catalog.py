@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 from scripts.pipeline.pcgamingwiki_catalog import (
     CACHE_FILENAME,
+    ID_MAP_FILENAME,
     OUTPUT_FILENAME,
     _CARGO_WHERE,
     _build_entries,
@@ -20,7 +21,14 @@ from scripts.pipeline.pcgamingwiki_catalog import (
     _year_from_iso,
     merge_catalog_into_search_index,
     refresh_catalog,
+    slug_to_pw_id,
 )
+
+# Canonical fixture: the Riddick hash verified byte-identical across the
+# Python, JS (SubtleCrypto), and SQL (pgcrypto) implementations.
+RIDDICK_SLUG = "The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay"
+RIDDICK_PW_ID = "pw_xd71ad9b"
+
 
 
 def _row(page, appid=None, gogid=None, engines=None, available="Windows",
@@ -47,12 +55,30 @@ def _write_index(tmp_path: Path, entries: list) -> Path:
 # ---- WHERE clause + small helpers -----------------------------------------
 
 
-def test_where_clause_filters_steam_gog_and_requires_windows():
-    # Regression guard against a schema-drift edit that would loosen the query.
-    # Wrong criteria == thousands of unwanted DOS-only entries or duplicates.
-    assert "Steam_AppID__full IS NULL" in _CARGO_WHERE
-    assert "GOGcom_ID__full IS NULL" in _CARGO_WHERE
+def test_where_clause_requires_windows_and_no_longer_excludes_stores():
+    # #406: EVERY Windows game gets a PCGW entry (physical-copy owners need
+    # somewhere to report). The old Steam/GOG exclusion must stay gone.
     assert 'Available_on HOLDS "Windows"' in _CARGO_WHERE
+    assert "Steam_AppID" not in _CARGO_WHERE
+    assert "GOGcom_ID" not in _CARGO_WHERE
+
+
+def test_slug_to_pw_id_matches_verified_cross_language_vectors():
+    # These exact outputs were verified byte-identical against the JS
+    # (SubtleCrypto) and SQL (pgcrypto) implementations. If this test
+    # breaks, every stored pw_ id and redirect breaks with it.
+    assert slug_to_pw_id(RIDDICK_SLUG) == RIDDICK_PW_ID
+    assert slug_to_pw_id(".kkrieger") == "pw_sv4bfe7j"
+    assert slug_to_pw_id("0_A.D.") == "pw_0zfciqa5"
+    assert slug_to_pw_id("Half-Life_2") == "pw_v04maqpz"
+    assert slug_to_pw_id("\u00dcn\u00efc\u00f6d\u00e9_T\u00eetle") == "pw_vhlpoxdg"
+
+
+def test_slug_to_pw_id_shape_and_determinism():
+    a = slug_to_pw_id("Some_Game")
+    assert a == slug_to_pw_id("Some_Game")
+    assert a.startswith("pw_") and len(a) == 11
+    assert a != slug_to_pw_id("Some_Game_2")
 
 
 def test_slugify_page_name_matches_mediawiki_convention():
@@ -96,7 +122,8 @@ def test_build_entries_maps_riddick_shape_end_to_end():
         publishers="Company:Sierra Entertainment",
     )
     out = _build_entries([riddick])
-    entry = out["pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay"]
+    entry = out[RIDDICK_PW_ID]
+    assert entry["slug"] == RIDDICK_SLUG
     assert entry["name"] == "The Chronicles of Riddick: Escape from Butcher Bay"
     assert entry["engine"] == "Starbreeze Engine"
     assert entry["developers"] == ["Starbreeze Studios", "Tigon Studios"]
@@ -106,15 +133,19 @@ def test_build_entries_maps_riddick_shape_end_to_end():
     assert entry["wiki_url"].startswith("https://www.pcgamingwiki.com/wiki/The_Chronicles_of_Riddick")
 
 
-def test_build_entries_skips_rows_that_ended_up_with_a_steam_id():
-    # Belt-and-braces guard against Cargo schema drift that could relax our WHERE clause.
-    row = _row("Half-Life 2", appid="220", available="Windows,Linux")
-    assert _build_entries([row]) == {}
-
-
-def test_build_entries_skips_rows_with_gog_id():
-    row = _row("Some GOG game", gogid="123", available="Windows")
-    assert _build_entries([row]) == {}
+def test_build_entries_includes_steam_and_gog_games_with_cross_refs():
+    # #406: physical-copy owners report against the PCGW entry even when the
+    # game is also on Steam / GOG. The store ids ride along as cross-refs.
+    steam_row = _row("Half-Life 2", appid="220", available="Windows,Linux")
+    gog_row = _row("Some GOG game", gogid="123", available="Windows")
+    out = _build_entries([steam_row, gog_row])
+    assert len(out) == 2
+    hl2 = out[slug_to_pw_id("Half-Life_2")]
+    assert hl2["steam_app_id"] == "220"
+    assert hl2["gog_id"] is None
+    gog = out[slug_to_pw_id("Some_GOG_game")]
+    assert gog["gog_id"] == "123"
+    assert gog["steam_app_id"] is None
 
 
 def test_build_entries_requires_windows_in_available_on():
@@ -127,13 +158,13 @@ def test_build_entries_first_writer_wins_on_slug_collision():
     a = _row("Ambiguous", engines="Engine:A")
     b = _row("Ambiguous", engines="Engine:B")
     out = _build_entries([a, b])
-    assert out["pgwiki:Ambiguous"]["engine"] == "A"
+    assert out[slug_to_pw_id("Ambiguous")]["engine"] == "A"
 
 
 def test_build_entries_skips_non_dict_and_blank_pages():
     rows = [None, _row("", available="Windows"), _row("Ok", available="Windows")]
     out = _build_entries(rows)
-    assert list(out.keys()) == ["pgwiki:Ok"]
+    assert list(out.keys()) == [slug_to_pw_id("Ok")]
 
 
 # ---- refresh_catalog ------------------------------------------------------
@@ -142,29 +173,45 @@ def test_build_entries_skips_non_dict_and_blank_pages():
 def test_refresh_catalog_uses_disk_when_fresh(tmp_path):
     (tmp_path / CACHE_FILENAME).write_text(json.dumps({
         "fetched_at": 10 ** 12,  # far future -> always fresh
-        "entries": {"pgwiki:Foo": {"name": "Foo"}},
+        "entries": {"pw_abcdefgh": {"name": "Foo", "slug": "Foo"}},
     }))
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages") as m:
         result = refresh_catalog(tmp_path)
-    assert result == {"pgwiki:Foo": {"name": "Foo"}}
+    assert result == {"pw_abcdefgh": {"name": "Foo", "slug": "Foo"}}
     m.assert_not_called()
+
+
+def test_refresh_catalog_migrates_legacy_pgwiki_cache_and_forces_refetch(tmp_path):
+    # A pre-#406 cache is keyed pgwiki:<slug> and only holds the no-Steam
+    # subset. It must re-key to pw_ ids (so a network-down fallback still
+    # serves usable ids) AND read as stale so the expanded catalog fetches.
+    (tmp_path / CACHE_FILENAME).write_text(json.dumps({
+        "fetched_at": 10 ** 12,  # would be "fresh" without the migration
+        "entries": {"pgwiki:Foo": {"name": "Foo"}},
+    }))
+    rows = [_row("Foo", available="Windows"), _row("Bar", available="Windows")]
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=rows):
+        result = refresh_catalog(tmp_path)
+    assert slug_to_pw_id("Foo") in result
+    assert slug_to_pw_id("Bar") in result
+    assert not any(k.startswith("pgwiki:") for k in result)
 
 
 def test_refresh_catalog_falls_back_to_disk_on_network_failure(tmp_path):
     (tmp_path / CACHE_FILENAME).write_text(json.dumps({
         "fetched_at": 1,  # ancient
-        "entries": {"pgwiki:Fallback": {"name": "Fallback"}},
+        "entries": {"pw_fallback": {"name": "Fallback", "slug": "Fallback"}},
     }))
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None):
         result = refresh_catalog(tmp_path)
-    assert result == {"pgwiki:Fallback": {"name": "Fallback"}}
+    assert result == {"pw_fallback": {"name": "Fallback", "slug": "Fallback"}}
 
 
 def test_refresh_catalog_persists_new_data(tmp_path):
     rows = [_row("Foo", engines="Engine:Bar", available="Windows", relWin="2010")]
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=rows):
         result = refresh_catalog(tmp_path, force=True)
-    assert "pgwiki:Foo" in result
+    assert slug_to_pw_id("Foo") in result
     written = json.loads((tmp_path / CACHE_FILENAME).read_text())
     assert written["entries"] == result
     assert written["fetched_at"] > 0
@@ -190,7 +237,7 @@ def test_merge_appends_new_stub_rows_with_correct_shape(tmp_path):
     written = json.loads((tmp_path / "search-index.json").read_text())
     assert len(written) == 2
     stub = written[1]
-    assert stub[0] == "pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay"
+    assert stub[0] == RIDDICK_PW_ID
     assert stub[1] == "The Chronicles of Riddick: Escape from Butcher Bay"
     assert stub[2] == "pending"
     assert stub[3] == 0
@@ -203,7 +250,7 @@ def test_merge_appends_new_stub_rows_with_correct_shape(tmp_path):
 
 def test_merge_skips_ids_already_in_index(tmp_path):
     _write_index(tmp_path, [
-        ["pgwiki:Existing", "Existing", "pending", 0, 0, "pgwiki"],
+        [slug_to_pw_id("Existing"), "Existing", "pending", 0, 0, "pgwiki"],
     ])
     row = _row("Existing", available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
@@ -212,14 +259,34 @@ def test_merge_skips_ids_already_in_index(tmp_path):
     assert len(written) == 1
 
 
+def test_merge_drops_legacy_pgwiki_rows_and_rekeys(tmp_path):
+    # #406: rows from pre-hash runs are removed so a game never shows twice
+    # (once under pgwiki:<slug>, once under pw_<hash>).
+    _write_index(tmp_path, [
+        ["220", "Half-Life 2", "gold", 5, 2, "steam"],
+        ["pgwiki:Existing", "Existing", "pending", 0, 0, "pgwiki"],
+    ])
+    row = _row("Existing", available="Windows")
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
+        merge_catalog_into_search_index(tmp_path)
+    written = json.loads((tmp_path / "search-index.json").read_text())
+    ids = [r[0] for r in written]
+    assert ids == ["220", slug_to_pw_id("Existing")]
+
+
 def test_merge_publishes_catalog_json(tmp_path):
     _write_index(tmp_path, [])
     row = _row("Foo", engines="Engine:Bar", available="Windows", relWin="2010")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
         merge_catalog_into_search_index(tmp_path)
     published = json.loads((tmp_path / OUTPUT_FILENAME).read_text())
-    assert "pgwiki:Foo" in published
-    assert published["pgwiki:Foo"]["engine"] == "Bar"
+    foo_id = slug_to_pw_id("Foo")
+    assert foo_id in published
+    assert published[foo_id]["engine"] == "Bar"
+    # #406: the id map ships alongside, mapping pw_ id -> slug for redirects
+    # and the Supabase remap tooling.
+    id_map = json.loads((tmp_path / ID_MAP_FILENAME).read_text())
+    assert id_map == {foo_id: "Foo"}
 
 
 def test_merge_no_op_when_index_missing(tmp_path):
@@ -278,7 +345,8 @@ def test_build_entries_captures_cover_url_when_present():
         coverUrl="https://images.pcgamingwiki.com/9/96/The_Chronicles_of_Riddick_Escape_from_Butcher_Bay_cover.jpg",
     )
     out = _build_entries([riddick])
-    entry = out["pgwiki:The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay"]
+    entry = out[RIDDICK_PW_ID]
+    assert entry["slug"] == RIDDICK_SLUG
     assert entry["cover_url"] == "https://images.pcgamingwiki.com/9/96/The_Chronicles_of_Riddick_Escape_from_Butcher_Bay_cover.jpg"
 
 
@@ -286,8 +354,8 @@ def test_build_entries_leaves_cover_url_none_when_missing_or_off_cdn():
     a = _row("NoCover", available="Windows", coverUrl=None)
     b = _row("BadCover", available="Windows", coverUrl="http://evil/x.jpg")
     out = _build_entries([a, b])
-    assert out["pgwiki:NoCover"]["cover_url"] is None
-    assert out["pgwiki:BadCover"]["cover_url"] is None
+    assert out[slug_to_pw_id("NoCover")]["cover_url"] is None
+    assert out[slug_to_pw_id("BadCover")]["cover_url"] is None
 
 
 def test_common_recognizes_pgwiki_prefix():
@@ -297,6 +365,9 @@ def test_common_recognizes_pgwiki_prefix():
     from scripts.pipeline.common import app_type_from_id, is_valid_app_id
     assert app_type_from_id("pgwiki:The_Chronicles_of_Riddick") == "pgwiki"
     assert is_valid_app_id("pgwiki:Any_Slug")
+    # #406: the short hash form classifies identically.
+    assert app_type_from_id("pw_xd71ad9b") == "pgwiki"
+    assert is_valid_app_id("pw_xd71ad9b")
     # Existing prefixes unchanged.
     assert app_type_from_id("gog:12345") == "gog"
     assert app_type_from_id("epic:foo") == "epic"

@@ -1,23 +1,23 @@
 // game-page (components) for the app page. Relocated from app.js.
 
-import { appIdToDir } from '../../lib/app-id.js?v=f8129c09';
+import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
-import { getWebClientId } from '../../shared/submit.js?v=49306cae';
-import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=e66890c7';
+import { getWebClientId } from '../../shared/submit.js?v=540fa2c3';
+import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=65bc2638';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
-import { renderCard } from './report-card.js?v=74e792e4';
+import { renderCard } from './report-card.js?v=5e25c644';
 import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=7ec2be23';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=593229c5';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=e6503ae7';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ad2153bb';
 import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
@@ -246,10 +246,21 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
     const osList = Array.isArray(entry?.os) ? entry.os.filter(Boolean) : [];
     const wikiUrl = entry?.wiki_url && String(entry.wiki_url).startsWith('https://www.pcgamingwiki.com/')
       ? String(entry.wiki_url) : pcgamingwikiSearchUrl(entry?.name || title);
+    // #406: the expanded catalog includes games that ALSO exist on Steam /
+    // GOG (this entry is where physical-copy reports live). Cross-link the
+    // digital storefront when PCGW knows it; only claim "no store page"
+    // when neither cross-ref exists.
+    const steamRef = entry?.steam_app_id && /^\d+$/.test(String(entry.steam_app_id))
+      ? `<a href="#/app/${esc(String(entry.steam_app_id))}">Also on Steam (app ${esc(String(entry.steam_app_id))}) -&gt;</a>` : '';
+    const gogRef = entry?.gog_id && /^\d+$/.test(String(entry.gog_id))
+      ? `<a href="#/app/gog:${esc(String(entry.gog_id))}">Also on GOG -&gt;</a>` : '';
+    const storeLine = (steamRef || gogRef)
+      ? `<span class="gm-plat">PCGamingWiki catalog entry</span> ${steamRef} ${gogRef}`
+      : '<span class="gm-plat">PCGamingWiki catalog entry</span> <span class="gm-mute" style="font-size:0.75rem">No store page -- catalogued abandonware / classic / physical release</span>';
     body.innerHTML = [
       section('Name', `<strong>${esc(entry?.name || title || String(appId))}</strong>`),
       section('App ID', `<code>${esc(String(appId))}</code>`),
-      section('Store', '<span class="gm-plat">PCGamingWiki catalog entry</span> <span class="gm-mute" style="font-size:0.75rem">No store page -- catalogued abandonware / classic</span>'),
+      section('Store', storeLine),
       section('Engine', entry?.engine ? `<span>${esc(entry.engine)}</span>` : ''),
       section('Developer', chips(entry?.developers)),
       section('Publisher', chips(entry?.publishers)),
@@ -304,6 +315,66 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
     section('More details', `<a href="${esc(storeLink)}" target="_blank" rel="noopener">${esc(storeLinkLabel)} -&gt;</a>${store ? '' : `
       <div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Store facts for this game have not been published by the pipeline yet (next nightly run picks them up).</div>`}`),
   ].join('') || '<p class="rh-hint">No catalog data held for this entry.</p>';
+}
+
+// #410: FlightlessSomething community benchmarks section. Fetches the
+// pipeline-matched map and, when this app has entries, renders them between
+// the trend summary and the reports list. The info banner is REQUIRED copy:
+// MangoHud is a Linux overlay (mangohud.com) so most runs are Proton or
+// native Linux, but the data never says which -- these numbers are context
+// for how the game may perform, and deliberately excluded from confidence
+// and tier stats. FPS from our own report submissions is the confirmed tier
+// and renders separately.
+let _flightlessMapPromise = null;
+function _loadFlightlessMap() {
+  if (!_flightlessMapPromise) {
+    _flightlessMapPromise = (async () => {
+      try {
+        const res = await fetch(await dataUrl('flightless-benchmarks.json'));
+        return res.ok ? await res.json() : {};
+      } catch { return {}; }
+    })();
+  }
+  return _flightlessMapPromise;
+}
+
+async function _renderFlightlessSection(el, appId) {
+  const host = el.querySelector('#flightless-section');
+  if (!host) return;
+  const map = await _loadFlightlessMap();
+  const entry = map?.[String(appId)];
+  if (!entry || !Array.isArray(entry.benchmarks) || !entry.benchmarks.length) {
+    console.debug('[flightless] no benchmarks for app', { appId, source: 'flightless-benchmarks.json' });
+    return;
+  }
+  const searchUrl = String(entry.search_url || '').startsWith('https://flightlesssomething.ambrosia.one/')
+    ? String(entry.search_url) : 'https://flightlesssomething.ambrosia.one/';
+  const rows = entry.benchmarks.slice(0, 6).map(b => {
+    const url = String(b.url || '').startsWith('https://flightlesssomething.ambrosia.one/') ? String(b.url) : searchUrl;
+    return `<a class="fl-bench-row" href="${esc(url)}" target="_blank" rel="noopener">
+      <span class="fl-bench-title">${esc(String(b.title || 'Benchmark'))}</span>
+      <span class="fl-bench-meta">${Number(b.run_count) || 1} run${(Number(b.run_count) || 1) !== 1 ? 's' : ''}${b.specs ? ` &middot; ${esc(String(b.specs).slice(0, 90))}` : ''}</span>
+    </a>`;
+  }).join('');
+  host.innerHTML = `
+    <div class="reports-section-head">
+      <div class="reports-section-copy">
+        <span class="reports-section-title">Community Benchmarks</span>
+        <span class="reports-section-sub">${entry.count} benchmark${entry.count !== 1 ? 's' : ''} on FlightlessSomething</span>
+      </div>
+      <a class="hub-link" href="${esc(searchUrl)}" target="_blank" rel="noopener">Search on FlightlessSomething -&gt;</a>
+    </div>
+    <div class="fl-banner">
+      <strong>Unverified runtime.</strong> These are community
+      <a href="https://mangohud.com/" target="_blank" rel="noopener">MangoHud</a> captures shared on
+      <a href="https://flightlesssomething.ambrosia.one/" target="_blank" rel="noopener">FlightlessSomething</a>.
+      MangoHud is a Linux overlay, so most runs are Proton or native Linux, but the data does not say
+      which (or on what Proton version). They are shown as a helpful signal for how this game may
+      perform and are never counted in ratings or confidence.
+    </div>
+    <div class="fl-bench-list">${rows}</div>`;
+  host.hidden = false;
+  console.debug('[flightless] rendered benchmarks section', { appId, count: entry.count, shown: Math.min(6, entry.benchmarks.length) });
 }
 
 // Metadata modal opened by the "Metadata" pill in the hub-links row.
@@ -774,6 +845,16 @@ export async function renderGamePage(appId) {
         stubTitle = extHit?.[1] || null;
       } catch (e) { console.debug('[game-page] extended index stub lookup failed', { appId, error: String(e && e.message || e) }); }
     }
+    if (!stubTitle && appTypeFromAppId(appId) === 'pgwiki') {
+      // #406: a pw_ id can beat the regenerated search index to a browser
+      // (fresh shell + stale index). The PCGW catalog knows the title.
+      try {
+        const res = await fetch(await dataUrl('pcgwiki-catalog.json'));
+        const catalog = res.ok ? await res.json() : {};
+        stubTitle = catalog?.[String(appId)]?.name || null;
+        console.debug('[game-page] pgwiki catalog stub lookup', { appId, found: !!stubTitle, source: 'pcgwiki-catalog.json' });
+      } catch (e) { console.debug('[game-page] pgwiki catalog stub lookup failed', { appId, error: String(e && e.message || e) }); }
+    }
     // #363: only a GENUINELY unknown appId (no title in any index) gets the
     // minimal mirror-miss state. A KNOWN game with no reports yet falls through
     // to the full render below, which shows the complete page -- header art,
@@ -782,9 +863,12 @@ export async function renderGamePage(appId) {
     // and an empty reports state (the full render already degrades gracefully to
     // overallTier='pending' when there are zero reports).
     if (!stubTitle) {
+      // Last resort for the error copy: a ?title= param some inbound links
+      // carry. Never fabricate -- when truly unknown, only the id shows.
+      const titleParamFallback = new URLSearchParams(location.search).get('title') || '';
       el.innerHTML = `
         <div class="state-box">
-          <p style="margin:0 0 10px">This game (<strong>${esc(String(appId))}</strong>) is not in our cached ProtonDB mirror.</p>
+          <p style="margin:0 0 10px">This game${titleParamFallback ? ` <strong>${esc(titleParamFallback)}</strong>` : ''} (<strong>${esc(String(appId))}</strong>) is not in our cached ProtonDB mirror.</p>
           <p style="margin:0 0 14px;color:var(--muted);font-size:0.88rem">Our mirror updates periodically. You can check ProtonDB live, but please use this sparingly to avoid overloading their API.</p>
           <button id="live-check-btn" class="live-check-pill">Check ProtonDB Live</button>
           <span id="live-check-status" style="margin-left:10px;font-size:0.85rem;color:var(--muted)"></span>
@@ -1231,6 +1315,12 @@ export async function renderGamePage(appId) {
 
       ${trendSummary(reports, appId)}
 
+      <!-- #410: FlightlessSomething community benchmarks. Populated async by
+           _renderFlightlessSection when flightless-benchmarks.json has an
+           entry for this app; stays empty (display:none via [hidden]) when
+           not. Display-only context, never part of confidence/tier math. -->
+      <div id="flightless-section" hidden></div>
+
       <div class="reports-section-head" id="pulse-summary">
         <div class="reports-section-copy">
           <span class="reports-section-title">Community Configs &amp; Reports</span>
@@ -1425,6 +1515,8 @@ export async function renderGamePage(appId) {
       e.preventDefault();
       void _openMetadataModal(appId);
     });
+    // #410: community benchmarks section (async; hidden when no data).
+    void _renderFlightlessSection(el, appId);
     el.querySelectorAll('.source-summary-tile').forEach((tile) => {
       tile.addEventListener('click', () => {
         const targetId = tile.getAttribute('data-target');

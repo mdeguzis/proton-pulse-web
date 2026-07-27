@@ -1,14 +1,17 @@
 // router (entry) for the app page. Relocated from app.js.
 
-import { renderGamePage } from './components/game-page.js?v=0ad81217';
+import { pcgwSlugToPwId } from '../lib/app-id.js?v=6159afa9';
+import { renderGamePage } from './components/game-page.js?v=dab8e1a9';
 import { renderHomePage } from './components/home.js?v=71733e36';
 import { renderSearchPage } from './components/search.js?v=7ec2be23';
 
 export function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');
   // Steam ids are bare digits; catalog (non-Steam) ids are prefixed
-  // (gog:<productId>, epic:<namespace>). Match all three so GOG/Epic stub
-  // pages are reachable. Stop at the next path/query separator.
+  // (gog:<productId>, epic:<namespace>, pw_<hash>, legacy pgwiki:<slug>).
+  // Match all so stub pages are reachable. pgwiki slugs may contain
+  // colons of their own, hence the [^/?#]+ tail rather than a strict
+  // per-store shape. Stop at the next path/query separator.
   const m = h.match(/^app\/((?:gog:|epic:)?[^/?#]+)/);
   const q = new URLSearchParams(location.search).get('q')?.trim() || '';
   if (m) return { page: 'app', appId: decodeURIComponent(m[1]), query: q };
@@ -19,6 +22,16 @@ export function getRoute() {
 
 export async function route() {
   const r = getRoute();
+  // #406: PCGW games moved from pgwiki:<slug> ids to short pw_<hash> ids.
+  // Old bookmarks / shared links still carry the slug form -- hash it
+  // client-side (same sha256/base36 derivation as the pipeline) and
+  // replace the URL so the page loads under the canonical id.
+  if (r.page === 'app' && r.appId.startsWith('pgwiki:')) {
+    const pwId = await pcgwSlugToPwId(r.appId.slice('pgwiki:'.length));
+    console.debug('[router] legacy pgwiki: URL redirected', { from: r.appId, to: pwId, source: 'pcgwSlugToPwId' });
+    location.replace(`${location.pathname}${location.search}#/app/${pwId}`);
+    return;
+  }
   const routeSearchInput = document.getElementById('search');
   if (routeSearchInput) {
     routeSearchInput.value = r.page === 'search' ? r.query : '';

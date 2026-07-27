@@ -49,7 +49,8 @@ SMALL_DATA=(
   nonsteam-metadata.json deck-status.json
   proton-versions.json steam-catalog.json hardware-suggestions.json
   scoring-info.json form-schema.json app-id-redirects.json
-  pcgamingwiki.json pcgwiki-catalog.json
+  pcgamingwiki.json pcgwiki-catalog.json pcgw-id-map.json
+  flightless-benchmarks.json flightless-review-queue.json
 )
 
 log() { echo "[publish-cloudflare] $*"; }

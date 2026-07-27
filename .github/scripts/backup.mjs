@@ -56,7 +56,7 @@ export function redactPaths(str) {
     .replace(/\/home\/[^/\s]+/g, '/home/[redacted]')
     .replace(/\/Users\/[^/\s]+/g, '/Users/[redacted]')
     .replace(/C:\\Users\\[^\\\s]+/gi, 'C:\\Users\\[redacted]')
-    .replace(/\/root/g, '/root');
+    .replace(/\/root(?=\/|\s|$)/g, '/[redacted]');
 }
 
 export function sanitizeUserConfig(row, secret) {

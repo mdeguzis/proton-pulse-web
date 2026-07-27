@@ -3,7 +3,7 @@
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { loadSearchIndex, searchIndex } from './search.js?v=7ec2be23';
-import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=593229c5';
+import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=a75604f5';
 import { daysAgo, latestPerApp } from '../utils.js?v=9a39c726';
 import { renderGameCard } from '../lib/card.js?v=becad69c';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
@@ -15,7 +15,7 @@ import { renderHomeLibraryChart } from './home-library-chart.js?v=9b244db9';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLookup } from '../lib/saved-lookup.js?v=7c45ae8b';
-import { loadDeckStatusMap } from '../api/deck-status.js?v=e66890c7';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=0bbdc652';
 import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=5d9472de';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';

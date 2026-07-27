@@ -98,7 +98,7 @@ describe('All Reports detail panel toolbar (#146 + #148)', () => {
   });
 
   test('action delegate whitelist still includes ar-approve and ar-deny', () => {
-    expect(ALLREPS_CMP).toContain("['ar-flag','ar-hide','ar-release','ar-approve','ar-deny']");
+    expect(ALLREPS_CMP).toContain("['ar-flag','ar-hide','ar-release','ar-approve','ar-deny','ar-delete']");
   });
 
   test('detail status badge passes flagged_reason for the tooltip', () => {

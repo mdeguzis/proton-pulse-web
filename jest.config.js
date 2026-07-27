@@ -41,18 +41,19 @@ module.exports = {
     'js/shared/analytics-patterns.js',
     'js/shared/library-correlations.js',
     'js/shared/mangohud-csv.js',
+    'js/shared/zip-csv.js',
     'js/shared/purpose-charts.js',
   ],
   // Thresholds ratchet: raise them when coverage rises, never lower them
-  // to admit a regression. Current actuals (2026-07-25): 91.7 / 82.6 /
-  // 92.1 / 93.6 -- thresholds sit ~2 pts under to absorb line-count noise
+  // to admit a regression. Current actuals (2026-07-26): 92.2 / 83.0 /
+  // 92.2 / 94.1 -- thresholds sit ~2 pts under to absorb line-count noise
   // from refactors while still catching any real coverage drop.
   coverageThreshold: {
     global: {
-      statements: 89,
-      branches: 80,
+      statements: 90,
+      branches: 81,
       functions: 90,
-      lines: 91,
+      lines: 92,
     },
   },
 };

@@ -1,12 +1,12 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=5090f6d2';
-import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=49306cae';
-import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=e66890c7';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=540fa2c3';
+import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=0bbdc652';
 import {
   deleteDraft, deleteLocalDraft, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
 } from '../shared/drafts.js?v=d7011aa5';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
-import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
+import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { esc } from '../app/utils.js?v=9a39c726';
 
 (async function() {
@@ -119,7 +119,7 @@ import { esc } from '../app/utils.js?v=9a39c726';
   // title exists on multiple stores or after a replaced-by redirect (#199).
   const storeGuess = String(appId).startsWith('gog:')  ? 'GOG'
                      : String(appId).startsWith('epic:') ? 'Epic'
-                     : String(appId).startsWith('pgwiki:') ? 'PCGWiki'
+                     : (String(appId).startsWith('pgwiki:') || String(appId).startsWith('pw_')) ? 'PCGWiki'
                      : 'Steam';
   const subtitleEl = document.getElementById('game-subtitle');
   if (subtitleEl) {
@@ -391,19 +391,11 @@ import { esc } from '../app/utils.js?v=9a39c726';
         `${SUPABASE_URL}/rest/v1/report_approvals?report_id=eq.${editReportId}&select=approval_hash&limit=1`,
         { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
       );
+      // No confirm popup here -- the re-approval consequence rides in the
+      // 30-day edit-window notice below instead (one info surface, no
+      // modal interruption).
       const preCheckRows = preCheckRes.ok ? await preCheckRes.json() : [];
-      const isCurrentlyPublished = preCheckRows.length > 0;
-      if (isCurrentlyPublished) {
-        const proceed = window.confirm(
-          'This report is currently published. Editing it puts it back into ' +
-          'pending review until the daily pipeline re-approves it. Continue?'
-        );
-        if (!proceed) {
-          const dest = returnTo || `app.html#/app/${appId}`;
-          window.location.href = dest; // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
-          return;
-        }
-      }
+      window.__editReportIsPublished = preCheckRows.length > 0;
     } catch (err) {
       // Approval pre-check is best-effort. A network blip should not block
       // the edit flow; the form still loads and the inline banner below
@@ -419,6 +411,51 @@ import { esc } from '../app/utils.js?v=9a39c726';
       const rows = r.ok ? await r.json() : [];
       const rec = rows[0];
       if (rec) {
+        // #389: 30-day edit window. Reports are snapshots in time -- inside
+        // the window, show how long is left; past it, block the edit and
+        // point at the moderation path (an admin deletes or anonymizes; see
+        // the Content-Moderation wiki page). Client-side gate for now;
+        // server-side enforcement lands with the #389 schema work.
+        const EDIT_WINDOW_DAYS = 30;
+        const createdMs = rec.created_at ? Date.parse(rec.created_at) : NaN;
+        const daysLeft = Number.isFinite(createdMs)
+          ? EDIT_WINDOW_DAYS - Math.floor((Date.now() - createdMs) / 86400000)
+          : EDIT_WINDOW_DAYS;
+        const formHost = document.getElementById('submit-form-content');
+        if (daysLeft <= 0) {
+          console.debug('[submit] edit window expired', { editReportId, created_at: rec.created_at, daysLeft });
+          if (formHost) {
+            formHost.innerHTML = `
+              <div class="submit-edit-window submit-edit-window--expired">
+                <strong>This report can no longer be edited.</strong>
+                Reports are snapshots in time and lock ${EDIT_WINDOW_DAYS} days after submission
+                (this one was submitted ${escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}).
+                If it contains a mistake, ask a moderator on
+                <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener">Discord</a>
+                to delete or anonymize it, or submit a fresh report next time you play.
+                <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing" target="_blank" rel="noopener">Read the full report editing policy -&gt;</a>
+                <p style="margin:10px 0 0"><a href="app.html#/app/${encodeURIComponent(String(appId))}">&larr; Back to the game page</a></p>
+              </div>`;
+          }
+          return;
+        }
+        if (formHost) {
+          // Variant C: countdown chip header + one icon-led line per
+          // message. Accent flips to warn-orange when <= 6 days remain.
+          const isWarn = daysLeft <= 6;
+          const submittedStr = escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }));
+          const notice = document.createElement('div');
+          notice.className = `submit-edit-window submit-edit-window--c${isWarn ? ' submit-edit-window--warn' : ''}`;
+          notice.innerHTML = `
+            <div class="sew-head">
+              <span class="sew-chip">${daysLeft} DAY${daysLeft !== 1 ? 'S' : ''} LEFT TO EDIT</span>
+              <span class="sew-sub">submitted ${submittedStr} &middot; locks after ${EDIT_WINDOW_DAYS} days</span>
+            </div>
+            <div class="sew-line"><span class="sew-ico">&#9432;</span><span>Reports lock ${EDIT_WINDOW_DAYS} days after submission so the historical record stays honest. After that, corrections go through a moderator.</span></div>
+            ${window.__editReportIsPublished ? '<div class="sew-line"><span class="sew-ico">&#8635;</span><span>Submitting an edit puts this report back into <strong>pending review</strong> until the daily pipeline re-approves it.</span></div>' : ''}
+            <div class="sew-line sew-line--policy"><span class="sew-ico">&#128279;</span><a href="https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing" target="_blank" rel="noopener">Read the full report editing policy -&gt;</a></div>`;
+          formHost.parentNode.insertBefore(notice, formHost);
+        }
         const form = el.querySelector('#submit-report-form');
         const set = (name, val) => { if (form?.elements[name] && val != null) form.elements[name].value = val; };
         set('gameTitle', (rec.title && !/^App \d+$/.test(rec.title)) ? rec.title : title);
@@ -687,8 +724,14 @@ import { esc } from '../app/utils.js?v=9a39c726';
           if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
           // Clean up the saved draft now that the report is in. Applies to the
           // fromCloud publish flow too, since it now saves/restores drafts.
+          // BOTH copies must go: only the cloud row was deleted before, so
+          // the localStorage draft survived and loadBestDraft happily
+          // restored the just-submitted answers the next time the user
+          // opened "Submit a report" for the same game -- making a fresh
+          // submission look like an edit of the old one.
           if (!isEdit && session) {
             void deleteDraft(session, appId).catch(() => {});
+            deleteLocalDraft(session?.user?.id, appId);
           }
           const dest = returnTo || `app.html#/app/${appId}`;
           setTimeout(() => { window.location.href = dest; }, 900); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/

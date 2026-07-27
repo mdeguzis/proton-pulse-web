@@ -68,7 +68,7 @@ const redactPaths = context.redactPaths || function redactPaths(str) {
     .replace(/\/home\/[^/\s]+/g, '/home/[redacted]')
     .replace(/\/Users\/[^/\s]+/g, '/Users/[redacted]')
     .replace(/C:\\Users\\[^\\\s]+/gi, 'C:\\Users\\[redacted]')
-    .replace(/\/root/g, '/root');
+    .replace(/\/root(?=\/|\s|$)/g, '/[redacted]');
 };
 
 const hmacFn = context.hmac;
@@ -163,9 +163,12 @@ describe('redactPaths', () => {
     expect(redactPaths('C:\\Users\\Charlie\\AppData')).toBe('C:\\Users\\[redacted]\\AppData');
   });
 
-  test('does not alter /root (no username after it)', () => {
-    const result = redactPaths('/root/scripts');
-    expect(result).toContain('/root');
+  test('redacts /root home paths like the other home dirs', () => {
+    // The old rule replaced /root with itself (CodeQL js/identity-
+    // replacement) -- a root user's home is as identifying as /home/<user>.
+    expect(redactPaths('/root/scripts')).toBe('/[redacted]/scripts');
+    // Words merely containing "root" stay untouched.
+    expect(redactPaths('/usr/rootkit-scanner')).toBe('/usr/rootkit-scanner');
   });
 
   test('passes through unrelated paths unchanged', () => {

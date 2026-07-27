@@ -1,7 +1,7 @@
 // Environment constants and app-wide config.
 // Copied verbatim from app.js lines 1-39; do not paraphrase or "improve" them.
 
-import { appIdToDir } from '../lib/app-id.js?v=f8129c09';
+import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
 export const SB_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1';
 export const SB_KEY = 'sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V';
@@ -79,14 +79,15 @@ export async function fetchDataWithProdFallback(bustedName) {
 export const isNonSteamAppId = id => Number(id) > 10_000_000;
 
 // Catalog (non-Steam) games carry a prefixed canonical id: gog:<productId>,
-// epic:<namespace>, or pgwiki:<slug>. Steam ids are bare digits. Keep this
-// in lockstep with the pipeline helper app_type_from_id in
-// scripts/pipeline/common.py.
+// epic:<namespace>, or pw_<hash> for PCGamingWiki (#406; the legacy
+// pgwiki:<slug> form stays recognized until stored rows and links are all
+// migrated). Steam ids are bare digits. Keep this in lockstep with the
+// pipeline helper app_type_from_id in scripts/pipeline/common.py.
 export const appTypeFromAppId = id => {
   const s = String(id);
   if (s.startsWith('gog:')) return 'gog';
   if (s.startsWith('epic:')) return 'epic';
-  if (s.startsWith('pgwiki:')) return 'pgwiki';
+  if (s.startsWith('pgwiki:') || s.startsWith('pw_')) return 'pgwiki';
   return 'steam';
 };
 // Human-readable store label for the row source line on cards.

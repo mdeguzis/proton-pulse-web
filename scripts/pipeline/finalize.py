@@ -54,6 +54,7 @@ from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .steam_type import enrich_search_index_with_steam_type
 from .anti_cheat import enrich_search_index_with_anti_cheat
+from .flightless_benchmarks import run_flightless_benchmarks
 from .pcgamingwiki import enrich_search_index_with_pcgamingwiki
 from .pcgamingwiki_catalog import merge_catalog_into_search_index as merge_pcgwiki_catalog
 from .pulse import merge_pulse_into_data_dir
@@ -2060,6 +2061,11 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # same Cargo TTL if both are refreshing on the same run.
     phase("PCGamingWiki catalog stubs")
     merge_pcgwiki_catalog(output_path)
+    # #410: FlightlessSomething benchmark map. Display-only context -- never
+    # feeds confidence or tier math (MangoHud runs do not say whether Proton
+    # was in play). Runs after every index enricher so titles are final.
+    phase("FlightlessSomething benchmarks")
+    run_flightless_benchmarks(output_path, data_output_path=data_output_path)
     phase("Validate Steam app ids")
     validate_steam_app_ids(output_dir)
     # Issue #134: emit the extended Steam index AFTER the primary index has
