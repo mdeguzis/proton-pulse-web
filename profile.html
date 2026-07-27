@@ -321,6 +321,18 @@
             <input type="text" id="my-configs-search" class="profile-select" style="width:100%;padding-right:32px" placeholder="Search reports by game, rating, OS...">
             <button id="my-configs-search-clear" type="button" aria-label="Clear search" hidden style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--red);font-size:1rem;line-height:1;padding:0">&#x2715;</button>
           </div>
+          <div class="profile-reports-filters" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px">
+            <label for="my-configs-sort" class="profile-nav-label">Sort:</label>
+            <select id="my-configs-sort" class="profile-select" style="width:auto">
+              <option value="newest" selected>Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="name">Name</option>
+            </select>
+            <label for="my-configs-from" class="profile-nav-label">From</label>
+            <input type="date" id="my-configs-from" class="profile-select" style="width:auto;color-scheme:dark">
+            <label for="my-configs-to" class="profile-nav-label">To</label>
+            <input type="date" id="my-configs-to" class="profile-select" style="width:auto;color-scheme:dark">
+          </div>
           <div id="my-configs-empty" class="profile-field-hint" hidden>
             Nothing synced yet. Open a game in the Decky plugin and use <strong>Upload to Pulse</strong> or cloud sync, or submit a report from a game page.
           </div>

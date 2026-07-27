@@ -71,14 +71,31 @@ export function initMyReports(ctx) {
 
   function applySearch() {
     const q = (myConfigsSearch?.value || '').trim().toLowerCase();
-    const filtered = q ? allRows.filter(r => {
+    let filtered = q ? allRows.filter(r => {
       const hay = [r.title, r.app_id, r.rating, r.os, r.gpu, r.notes].filter(Boolean).join(' ').toLowerCase();
       return hay.includes(q);
-    }) : allRows;
+    }) : allRows.slice();
+    // Date range on the row's activity timestamp (updated_at falls back to
+    // created_at in the merge). Rows without any timestamp stay visible.
+    const from = document.getElementById('my-configs-from')?.value || '';
+    const to = document.getElementById('my-configs-to')?.value || '';
+    if (from || to) {
+      filtered = filtered.filter(r => {
+        const d = String(r.updated_at || r.created_at || '').slice(0, 10);
+        if (!d) return true;
+        return (!from || d >= from) && (!to || d <= to);
+      });
+    }
+    // Sort: newest (default, matches the old merge order), oldest, or name.
+    const sortMode = document.getElementById('my-configs-sort')?.value || 'newest';
+    const ts = r => new Date(r.updated_at || r.created_at || 0).getTime();
+    if (sortMode === 'oldest') filtered.sort((a, b) => ts(a) - ts(b));
+    else if (sortMode === 'name') filtered.sort((a, b) => String(a.title || '').localeCompare(String(b.title || '')));
+    else filtered.sort((a, b) => ts(b) - ts(a));
     if (!filtered.length) {
       myConfigsTable.hidden = true;
       myConfigsEmpty.hidden = false;
-      myConfigsEmpty.textContent = q ? 'No reports match your search.' : 'Nothing synced yet.';
+      myConfigsEmpty.textContent = (q || from || to) ? 'No reports match your filters.' : 'Nothing synced yet.';
       if (myConfigsPager) myConfigsPager.hidden = true;
       return;
     }
@@ -106,6 +123,15 @@ export function initMyReports(ctx) {
           </details>`
         : '';
       const isLive = row.published_id && !row.pending && !row.hidden;
+      // #389: 30-day edit window. Past it, a published report is locked --
+      // Edit / Delete / Unpublish render disabled; clicking one shows the
+      // policy notice (with the wiki User-Policies link) instead of acting.
+      const EDIT_WINDOW_DAYS = 30;
+      const createdMs = row.created_at ? Date.parse(row.created_at) : NaN;
+      const isLocked = !!row.published_id && Number.isFinite(createdMs)
+        && (Date.now() - createdMs) > EDIT_WINDOW_DAYS * 86400000;
+      const lockedBtn = (label) =>
+        `<button type="button" class="profile-configs-action profile-configs-locked-btn" data-locked-report="${escapeHtml(String(row.published_id))}" title="Locked ${EDIT_WINDOW_DAYS} days after submission">${label}</button>`;
       const actions = [
         isLive
           ? `<a class="profile-configs-view-link" href="${escapeHtml(viewHref)}">View</a>`
@@ -120,14 +146,18 @@ export function initMyReports(ctx) {
             ? `<a class="profile-configs-action profile-configs-publish-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html%23section-my-reports">Publish</a>`
             : '',
         row.published_id && !row.hidden
-          ? `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">${row.pending ? 'Cancel' : 'Unpublish'}</button>`
+          ? (isLocked ? lockedBtn(row.pending ? 'Cancel' : 'Unpublish')
+             : `<button type="button" class="profile-configs-action profile-configs-unpublish-btn" data-published-id="${escapeHtml(String(row.published_id))}">${row.pending ? 'Cancel' : 'Unpublish'}</button>`)
           : '',
         row.published_id
-          ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}&return=profile.html%23section-my-reports">Edit</a>`
+          ? (isLocked ? lockedBtn('Edit')
+             : `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&edit=${escapeHtml(String(row.published_id))}&return=profile.html%23section-my-reports">Edit</a>`)
           : row.cloud
             ? `<a class="profile-configs-action profile-configs-edit-btn" href="submit.html?app=${escapeHtml(String(row.app_id))}&fromCloud=1&return=profile.html%23section-my-reports">Edit</a>`
             : '',
-        `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
+        isLocked
+          ? lockedBtn('Delete')
+          : `<button type="button" class="profile-configs-action profile-configs-delete-btn" data-app-id="${escapeHtml(String(row.app_id))}">Delete</button>`,
       ].filter(Boolean).join('');
       return `
         <tr data-app-id="${escapeHtml(String(row.app_id))}">
@@ -206,6 +236,13 @@ export function initMyReports(ctx) {
     applySearch();
     if (searchClear) searchClear.hidden = !myConfigsSearch.value;
   });
+  // Sort + date-range filters re-run the same pipeline from page 1.
+  for (const id of ['my-configs-sort', 'my-configs-from', 'my-configs-to']) {
+    document.getElementById(id)?.addEventListener('change', () => {
+      currentPage = 1;
+      applySearch();
+    });
+  }
   searchClear?.addEventListener('click', () => {
     if (myConfigsSearch) { myConfigsSearch.value = ''; myConfigsSearch.focus(); }
     searchClear.hidden = true;
@@ -228,6 +265,13 @@ export function initMyReports(ctx) {
   myConfigsTbody?.addEventListener('click', (e) => {
     const target = e.target;
     if (!(target instanceof HTMLElement)) return;
+    // #389: locked (30-day window elapsed) buttons explain instead of act.
+    const locked = target.closest('.profile-configs-locked-btn');
+    if (locked instanceof HTMLElement) {
+      window.ppToast?.error('This report locked 30 days after submission. A moderator can delete or anonymize it.');
+      window.open('https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing', '_blank', 'noopener');
+      return;
+    }
     const action = target.closest('.profile-configs-publish-btn, .profile-configs-delete-btn, .profile-configs-edit-btn, .profile-configs-unpublish-btn');
     if (!(action instanceof HTMLElement)) return;
 

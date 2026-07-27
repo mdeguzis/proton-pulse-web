@@ -1,4 +1,4 @@
-import { SupaAuth, SUPABASE_URL } from './config.js?v=ffed3d84';
+import { SupaAuth, SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=2668b2f0';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=7b4e356d';
 import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
@@ -23,7 +23,7 @@ import { renderApiExplorer } from './components/api-explorer.js?v=1fc945bb';
 import { renderGameManager } from './components/gameManager.js?v=b1d1211c';
 import { renderLoggingTab } from './components/logging.js?v=05d0e3af';
 import { renderDeploymentsTab } from './components/deployments.js?v=d35aa7c8';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=3a48e0ad';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=b70317a6';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=0f587828';
 import { approveReport } from './api/pending.js?v=84292a58';
 
@@ -213,6 +213,38 @@ async function loadReportDetail(id) {
               flagged_at: new Date().toISOString(),
             });
             updateAllReportsRow(rid, true, true, 'denied: ' + reason, false);
+          } else if (action === 'ar-delete') {
+            // #398: terminal resolution. Two paths, per policy (see the
+            // Content-Moderation wiki page): permanently delete, or
+            // anonymize-and-keep (data stays as a valid datapoint; identity
+            // scrubbed the same way account deletion scrubs it).
+            const choice = window.prompt(
+              'Resolve report #' + rid + ':\n\n' +
+              '  Type DELETE to permanently remove the report (data is gone).\n' +
+              '  Type ANON to keep the data but scrub the author -- it will\n' +
+              '  appear as if submitted by an anonymous user.\n\n' +
+              'Anything else cancels.'
+            );
+            const normalized = (choice || '').trim().toUpperCase();
+            if (normalized !== 'DELETE' && normalized !== 'ANON') { if (btn) btn.disabled = false; return; }
+            const rpcAction = normalized === 'DELETE' ? 'delete' : 'anonymize';
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/admin_resolve_report`, {
+              method: 'POST',
+              headers: {
+                apikey: SUPABASE_ANON_KEY,
+                Authorization: `Bearer ${currentSession.access_token}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ p_report_id: Number(rid), p_action: rpcAction }),
+            });
+            if (!res.ok) {
+              const body = await res.text().catch(() => '');
+              throw new Error(`admin_resolve_report failed: HTTP ${res.status}${body ? ' - ' + body.slice(0, 200) : ''}`);
+            }
+            console.debug('[admin] report resolved', { rid, action: rpcAction, source: 'admin_resolve_report' });
+            window.ppToast?.success(rpcAction === 'delete' ? `Report #${rid} permanently deleted.` : `Report #${rid} anonymized.`);
+            activateTab('all-reports');
+            return;
           }
           window.ppToast?.success('Report updated.');
         } catch (err) {

@@ -391,19 +391,11 @@ import { esc } from '../app/utils.js?v=9a39c726';
         `${SUPABASE_URL}/rest/v1/report_approvals?report_id=eq.${editReportId}&select=approval_hash&limit=1`,
         { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${session.access_token}` } }
       );
+      // No confirm popup here -- the re-approval consequence rides in the
+      // 30-day edit-window notice below instead (one info surface, no
+      // modal interruption).
       const preCheckRows = preCheckRes.ok ? await preCheckRes.json() : [];
-      const isCurrentlyPublished = preCheckRows.length > 0;
-      if (isCurrentlyPublished) {
-        const proceed = window.confirm(
-          'This report is currently published. Editing it puts it back into ' +
-          'pending review until the daily pipeline re-approves it. Continue?'
-        );
-        if (!proceed) {
-          const dest = returnTo || `app.html#/app/${appId}`;
-          window.location.href = dest; // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
-          return;
-        }
-      }
+      window.__editReportIsPublished = preCheckRows.length > 0;
     } catch (err) {
       // Approval pre-check is best-effort. A network blip should not block
       // the edit flow; the form still loads and the inline banner below
@@ -441,6 +433,7 @@ import { esc } from '../app/utils.js?v=9a39c726';
                 If it contains a mistake, ask a moderator on
                 <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener">Discord</a>
                 to delete or anonymize it, or submit a fresh report next time you play.
+                <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing" target="_blank" rel="noopener">Read the full report editing policy -&gt;</a>
                 <p style="margin:10px 0 0"><a href="app.html#/app/${encodeURIComponent(String(appId))}">&larr; Back to the game page</a></p>
               </div>`;
           }
@@ -453,7 +446,9 @@ import { esc } from '../app/utils.js?v=9a39c726';
             <strong>${daysLeft} day${daysLeft !== 1 ? 's' : ''} left to edit.</strong>
             Reports lock ${EDIT_WINDOW_DAYS} days after submission
             (submitted ${escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))})
-            so the historical record stays honest. After that, corrections go through a moderator.`;
+            so the historical record stays honest. After that, corrections go through a moderator.
+            ${window.__editReportIsPublished ? '<br>Submitting an edit puts this report back into pending review until the daily pipeline re-approves it.' : ''}
+            <br><a href="https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing" target="_blank" rel="noopener">Read the full report editing policy -&gt;</a>`;
           formHost.parentNode.insertBefore(notice, formHost);
         }
         const form = el.querySelector('#submit-report-form');

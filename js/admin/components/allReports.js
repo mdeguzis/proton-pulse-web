@@ -229,6 +229,8 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     btn('ar-flag',    'Flag',    'warn',   isF,                'Already flagged'),
     btn('ar-hide',    'Hide',    'danger', isH,                'Already hidden'),
     btn('ar-release', 'Release', 'ok',    !(isF || isH),       'Nothing to release'),
+    // #398: terminal resolution -- opens a delete-vs-anonymize choice.
+    btn('ar-delete',  'Delete',  'danger', false, ''),
   ].join(' ');
 
   detail.innerHTML = `
@@ -273,7 +275,7 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     if (btn.disabled) return;
     const action = btn.dataset.action;
     const id     = btn.dataset.rid;
-    if (!['ar-flag','ar-hide','ar-release','ar-approve','ar-deny'].includes(action) || !id) return;
+    if (!['ar-flag','ar-hide','ar-release','ar-approve','ar-deny','ar-delete'].includes(action) || !id) return;
     btn.disabled = true;
     onAction?.(action, id, btn);
   });
