@@ -6,6 +6,7 @@ import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange }
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ad2153bb';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
+import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,
 // pulls the same CDN data the main app page uses, then renders a thoughtful
@@ -665,11 +666,166 @@ import { dataUrl } from '../lib/data-url.js?v=0de73aed';
     `;
   }
 
+  // --- hardware comparison (#412) ---
+  //
+  // Turns the "Scoring against: <system>" selector into a real signal by
+  // splitting the game's reports into three cohorts:
+  //   arch   - same GPU vendor AND same GPU arch as viewer hw
+  //   vendor - same GPU vendor, different arch
+  //   other  - different vendor or unknown
+  // and comparing tier distribution + working percentage of the arch cohort
+  // against the overall pool. Empty state when no arch matches.
+
+  const _TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
+  const _TIER_WORKING = new Set(['platinum', 'gold', 'silver']);
+  const _TIER_COLOR = {
+    platinum: '#b9f2ff', gold: '#ffd166', silver: '#c0c0c0',
+    bronze: '#cd7f32', borked: '#ef476f',
+  };
+
+  function _gpuVendorOf(g) {
+    if (!g) return '';
+    const l = String(g).toLowerCase();
+    if (/nvidia|geforce|rtx|gtx/.test(l)) return 'nvidia';
+    if (/\bamd\b|radeon/.test(l)) return 'amd';
+    if (/\bintel\b|iris|arc\b/.test(l)) return 'intel';
+    return '';
+  }
+
+  function _matchLevel(myHw, report) {
+    if (!myHw) return 'none';
+    const myVendor = (myHw.gpuVendor || _gpuVendorOf(myHw.gpu) || '').toLowerCase();
+    const rVendor = _gpuVendorOf(report.gpu);
+    if (!myVendor || !rVendor || myVendor !== rVendor) return 'none';
+    const myArch = detectGpuArch(myHw.gpu);
+    const rArch  = detectGpuArch(report.gpu);
+    if (myArch && rArch && myArch === rArch) return 'arch';
+    return 'vendor';
+  }
+
+  function _tierCounts(reports) {
+    const counts = { platinum: 0, gold: 0, silver: 0, bronze: 0, borked: 0, other: 0, total: reports.length };
+    for (const r of reports) {
+      const t = String(r.rating || '').toLowerCase();
+      if (counts[t] != null && t !== 'other') counts[t] += 1;
+      else counts.other += 1;
+    }
+    return counts;
+  }
+
+  function _workingPct(reports) {
+    const graded = reports.filter(r => _TIER_ORDER.includes(String(r.rating || '').toLowerCase()));
+    if (!graded.length) return null;
+    const working = graded.filter(r => _TIER_WORKING.has(String(r.rating || '').toLowerCase())).length;
+    return Math.round((working / graded.length) * 100);
+  }
+
+  function _modeTier(reports) {
+    const counts = _tierCounts(reports);
+    let best = null, bestN = 0;
+    for (const t of _TIER_ORDER) {
+      if (counts[t] > bestN) { best = t; bestN = counts[t]; }
+    }
+    return best;
+  }
+
+  function _tierBarHtml(counts) {
+    const total = _TIER_ORDER.reduce((n, t) => n + counts[t], 0);
+    if (!total) return '';
+    return `<div class="gs-hw-tier-bar">${_TIER_ORDER.map(t => {
+      const pct = Math.round((counts[t] / total) * 100);
+      if (!counts[t]) return '';
+      return `<span class="gs-hw-tier-seg" style="width:${pct}%;background:${_TIER_COLOR[t]}" title="${esc(t)}: ${counts[t]} (${pct}%)"></span>`;
+    }).join('')}</div>`;
+  }
+
+  function renderHwComparison(allReports, myHw) {
+    // Only render when we actually have a hw profile with a GPU. Nothing to
+    // score against otherwise, and the banner already invites the viewer to
+    // save specs on the profile page.
+    if (!myHw || !(myHw.gpu || myHw.gpuVendor)) return '';
+    const graded = allReports.filter(r => _TIER_ORDER.includes(String(r.rating || '').toLowerCase()));
+    if (!graded.length) return '';
+
+    const archCohort   = graded.filter(r => _matchLevel(myHw, r) === 'arch');
+    const vendorCohort = graded.filter(r => _matchLevel(myHw, r) === 'vendor');
+    const overallCounts = _tierCounts(graded);
+    const archCounts    = _tierCounts(archCohort);
+    const overallWorking = _workingPct(graded);
+    const archWorking    = _workingPct(archCohort);
+    const modeTier       = _modeTier(archCohort);
+
+    const myVendor = (myHw.gpuVendor || _gpuVendorOf(myHw.gpu) || '').toLowerCase();
+    const myArch   = detectGpuArch(myHw.gpu);
+    const label    = myHw.gpu || (myVendor ? myVendor.toUpperCase() : 'your system');
+    const previewNote = isPreviewHardware(myHw)
+      ? `<span class="gs-hw-preview-note">(Steam Deck preview -- <a href="profile.html">save your own specs</a> for a real match)</span>`
+      : '';
+
+    if (!archCohort.length) {
+      // No arch match. Fall back to vendor-only summary if we have any of those,
+      // otherwise say so plainly. Never a dead panel.
+      const vendorLine = vendorCohort.length
+        ? `<p class="gs-hw-empty-line">${vendorCohort.length} of ${graded.length} report${graded.length === 1 ? '' : 's'} run other <strong>${esc(myVendor.toUpperCase())}</strong> GPUs. Overall working rate: <strong>${overallWorking == null ? 'n/a' : overallWorking + '%'}</strong>.</p>`
+        : `<p class="gs-hw-empty-line">No report${graded.length === 1 ? '' : 's'} on this game match your <strong>${esc(label)}</strong>${myArch ? ' (' + esc(myArch) + ')' : ''}. Overall working rate: <strong>${overallWorking == null ? 'n/a' : overallWorking + '%'}</strong>.</p>`;
+      return `
+        <div class="gs-hw-comparison" id="hw-match-body">
+          <div class="gs-hw-head-row">
+            <span class="gs-hw-scoring-label">Scoring against <strong>${esc(label)}</strong>${myArch ? ' &middot; ' + esc(myArch) : ''}</span>
+            ${previewNote}
+          </div>
+          ${vendorLine}
+        </div>`;
+    }
+
+    const workingDelta = (archWorking != null && overallWorking != null)
+      ? archWorking - overallWorking : null;
+    const deltaClass = workingDelta == null ? '' : (workingDelta > 0 ? 'up' : workingDelta < 0 ? 'down' : 'flat');
+    const deltaText  = workingDelta == null ? '' :
+      (workingDelta > 0 ? `+${workingDelta} pts vs overall` :
+       workingDelta < 0 ? `${workingDelta} pts vs overall` : 'same as overall');
+
+    return `
+      <div class="gs-hw-comparison" id="hw-match-body">
+        <div class="gs-hw-head-row">
+          <span class="gs-hw-scoring-label">Scoring against <strong>${esc(label)}</strong>${myArch ? ' &middot; ' + esc(myArch) : ''}</span>
+          ${previewNote}
+        </div>
+        <div class="gs-hw-metric-row">
+          <div class="gs-hw-metric">
+            <span class="gs-hw-metric-label">Matching reports</span>
+            <span class="gs-hw-metric-value">${archCohort.length} <span class="gs-hw-metric-sub">of ${graded.length}</span></span>
+            ${vendorCohort.length ? `<span class="gs-hw-metric-note">+ ${vendorCohort.length} same-vendor</span>` : ''}
+          </div>
+          <div class="gs-hw-metric">
+            <span class="gs-hw-metric-label">Working on your arch</span>
+            <span class="gs-hw-metric-value">${archWorking == null ? 'n/a' : archWorking + '%'}</span>
+            ${deltaText ? `<span class="gs-hw-metric-note gs-hw-delta gs-hw-delta-${deltaClass}">${esc(deltaText)}</span>` : ''}
+          </div>
+          <div class="gs-hw-metric">
+            <span class="gs-hw-metric-label">Most likely tier</span>
+            <span class="gs-hw-metric-value gs-tier-badge" data-tier="${esc(modeTier || 'pending')}">${esc((modeTier || 'pending').toUpperCase())}</span>
+            <span class="gs-hw-metric-note">from ${archCohort.length} matching report${archCohort.length === 1 ? '' : 's'}</span>
+          </div>
+        </div>
+        <div class="gs-hw-bars">
+          <div class="gs-hw-bar-row">
+            <span class="gs-hw-bar-label">Your arch</span>
+            ${_tierBarHtml(archCounts)}
+          </div>
+          <div class="gs-hw-bar-row">
+            <span class="gs-hw-bar-label">Overall</span>
+            ${_tierBarHtml(overallCounts)}
+          </div>
+        </div>
+      </div>`;
+  }
+
   // --- assemble everything ---
 
   // Returns { html, wire }. wire() runs after the html is injected so any
   // chart helpers (hover targets, click-to-filter) can attach to live DOM
-  function renderAll(appId, title, stats, counts = {}, allReports = [], flightlessEntry = null) {
+  function renderAll(appId, title, stats, counts = {}, allReports = [], flightlessEntry = null, myHw = null) {
     // Each section carries an id so it can be deep-linked (e.g. the game page
     // trend line links to #trend). Anchor offset handled by scroll-margin-top
     // in CSS so the sticky-ish header does not cover the section title.
@@ -697,9 +853,14 @@ import { dataUrl } from '../lib/data-url.js?v=0de73aed';
         })
       : '';
 
+    // #412: hardware comparison section. Rendered when the viewer has a hw
+    // profile with a GPU; empty string otherwise so we don't add dead chrome.
+    const hwHtml = renderHwComparison(allReports, myHw);
+
     // Jump-to-section dropdown, same shape as the profile page's (#285).
     const jumpSections = [
       ['current-state', 'Current state'],
+      ...(hwHtml ? [['hw-match', 'How your system compares']] : []),
       ['monthly', 'Monthly reports'],
       ['distribution', 'Rating distribution'],
       ['trend', 'Compatibility trend'],
@@ -723,6 +884,8 @@ import { dataUrl } from '../lib/data-url.js?v=0de73aed';
       ${jumpList}
       ${sectionHead(ICON.status, 'Current state', 'current-state')}
       ${renderStatusCards(stats)}
+
+      ${hwHtml ? sectionHead(ICON.status, 'How your system compares', 'hw-match') + hwHtml : ''}
 
       ${sectionHead(ICON.chart, 'Monthly reports (last 5 years)', 'monthly')}
       ${chart.html}
@@ -1222,7 +1385,7 @@ import { dataUrl } from '../lib/data-url.js?v=0de73aed';
       pulseCount: pulseReports.length,
       protonDbCount: cdnReports.length,
       liveTotal: liveSummary?.total || 0,
-    }, allReports, flightlessEntry);
+    }, allReports, flightlessEntry, myHw);
     // #410: slice chrome. A banner up top saying whose stats these are +
     // the per-run FPS section (graph + sortable table) when the report
     // carries MangoHud runs. renderFpsRunsSection escapes all values.
