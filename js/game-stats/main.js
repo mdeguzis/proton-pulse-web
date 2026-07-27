@@ -5,6 +5,7 @@ import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhance
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ad2153bb';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
+import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,
 // pulls the same CDN data the main app page uses, then renders a thoughtful
@@ -15,17 +16,6 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 (function () {
   const root = document.getElementById('gs-root');
   const metaEl = document.getElementById('gs-meta');
-
-  const SITE_BASE = (() => {
-    const parts = location.pathname.split('/').filter(Boolean);
-    if (parts[0] === 'proton-pulse-web-staging') return '/proton-pulse-web-staging';
-    if (parts[0] === 'proton-pulse-web') return '/proton-pulse-web';
-    return '';
-  })();
-  const IS_LOCAL_DEV = ['localhost', '127.0.0.1', '0.0.0.0'].includes(location.hostname);
-  const CDN_BASE = IS_LOCAL_DEV
-    ? 'https://www.proton-pulse.com/data'
-    : `${location.origin}${SITE_BASE}/data`;
 
   function esc(s) {
     // Full HTML entity escape INCLUDING quotes -- values land in attribute
@@ -39,8 +29,11 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
   // --- CDN loaders ---
 
   async function loadGame(appId) {
+    // Route through dataUrl() so per-env data host (R2) is honored. Direct
+    // origin fetches only worked on GH Pages paths and returned empty on
+    // staging.proton-pulse.com because data/ is not same-origin there.
     try {
-      const r = await fetch(`${CDN_BASE}/${appIdToDir(appId)}/latest.json`);
+      const r = await fetch(await dataUrl(`data/${appIdToDir(appId)}/latest.json`));
       if (!r.ok) return [];
       return await r.json();
     } catch { return []; }
@@ -48,10 +41,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 
   async function loadSearchIndex() {
     try {
-      const url = IS_LOCAL_DEV
-        ? 'https://www.proton-pulse.com/search-index.json'
-        : `${location.origin}${SITE_BASE}/search-index.json`;
-      const r = await fetch(url);
+      const r = await fetch(await dataUrl('search-index.json'));
       return r.ok ? await r.json() : [];
     } catch { return []; }
   }
@@ -61,10 +51,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
   // not been generated yet or the app has no matches.
   async function loadFlightlessEntry(appId) {
     try {
-      const url = IS_LOCAL_DEV
-        ? 'https://www.proton-pulse.com/flightless-benchmarks.json'
-        : `${location.origin}${SITE_BASE}/flightless-benchmarks.json`;
-      const r = await fetch(url);
+      const r = await fetch(await dataUrl('flightless-benchmarks.json'));
       if (!r.ok) return null;
       const map = await r.json();
       const entry = map?.[String(appId)] || null;
