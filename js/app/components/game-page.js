@@ -27,6 +27,16 @@ import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
 import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
 
+// Module-level filter cache (#415 slice 2b). SPA navigation between game
+// pages does not reload this module, so a shared object here survives
+// hash-route transitions -- filter state you set on game A carries over
+// to game B without needing to press Save. F5 refresh reloads the module
+// and this resets to null, at which point the next render seeds fresh
+// from localStorage (Save's persistent home). That reconciles the
+// slice 1 contract ("unsaved filters clear on refresh") with the natural
+// expectation that browsing between games keeps context.
+let _ephemeralGameFilters = null;
+
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
   if (_steamCatalogCache !== null) return _steamCatalogCache;
@@ -909,13 +919,21 @@ export async function renderGamePage(appId) {
   const _LEGACY_STORAGE_KEY = 'proton-pulse:report-filters';
   const _LEGACY_PERSIST_KEY = 'proton-pulse:report-filters-persist';
   const persistedFilters = (() => {
+    // Session cache (module-level) wins so filter state survives SPA
+    // navigation between game pages. First entry in a session falls
+    // through to localStorage and seeds the cache.
+    if (_ephemeralGameFilters !== null) return _ephemeralGameFilters;
     try {
       // One-shot cleanup of the pre-v2 auto-save snapshot and its persist
       // toggle. Both are dead keys under the explicit-Save model.
       localStorage.removeItem(_LEGACY_STORAGE_KEY);
       localStorage.removeItem(_LEGACY_PERSIST_KEY);
-      return JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}') || {};
-    } catch { return {}; }
+      _ephemeralGameFilters = JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}') || {};
+      return _ephemeralGameFilters;
+    } catch {
+      _ephemeralGameFilters = {};
+      return _ephemeralGameFilters;
+    }
   })();
 
   // Scalar-per-filter state. Backward compat: older builds also wrote scalars,
@@ -1791,14 +1809,17 @@ export async function renderGamePage(appId) {
       _syncSelect('fPlaytime', filterMinPlaytime || 0);
     }
 
-    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
-    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
-    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
-    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
-    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
-    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
-    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
-    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    // Every change also writes into the module-level cache so navigating
+    // to another game page picks it up on next render (#415 slice 2b).
+    const _cacheField = (k, v) => { if (_ephemeralGameFilters) _ephemeralGameFilters[k] = v; };
+    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _cacheField('gpu', filterGpu); _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _cacheField('arch', filterArch); _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _cacheField('os', filterOs); _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _cacheField('rating', filterRating); _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _cacheField('runType', filterRunType); _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _cacheField('source', filterSource); _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _cacheField('device', filterDevice); _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _cacheField('minPlaytime', filterMinPlaytime); _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
 
     // Collapse: close the modal so the user sees the filtered reports. Uses
     // panelEl() so it finds the panel whether it is still in el or portalled
@@ -1847,6 +1868,18 @@ export async function renderGamePage(appId) {
       filterSource = '';
       filterDevice = '';
       filterMinPlaytime = 0;
+      // Also wipe the module-level session cache so navigating to another
+      // game page picks up the clear state, not the pre-clear filter set.
+      if (_ephemeralGameFilters) {
+        _ephemeralGameFilters.gpu = '';
+        _ephemeralGameFilters.arch = '';
+        _ephemeralGameFilters.os = '';
+        _ephemeralGameFilters.rating = '';
+        _ephemeralGameFilters.runType = '';
+        _ephemeralGameFilters.source = '';
+        _ephemeralGameFilters.device = '';
+        _ephemeralGameFilters.minPlaytime = 0;
+      }
       for (const id of ['fGpu', 'fArch', 'fOs', 'fRating', 'fRunType', 'fSource', 'fDevice']) {
         const s = document.getElementById(id);
         if (s) s.value = '';

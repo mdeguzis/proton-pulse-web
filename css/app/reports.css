@@ -62,8 +62,30 @@
 }
 /* .filter-toggle-btn, .filter-badge -- base styles in css/shared/filters.css */
 /* .filter-panel base -- positioning, bg, border, radius, shadow in css/shared/filters.css */
-.filter-panel { display: none; }
-.filter-panel.open { display: block; }
+/* Drawer animation (#415 slice 2b polish): keep the panel in the DOM but
+   collapse it via max-height + opacity + transform so it plays a downward
+   expand instead of a display:none pop. Panel is position:absolute so this
+   never affects sibling flow. Mobile-modal state (.open @ <=720px) still
+   wins via specificity + position:fixed override in shared/filters.css. */
+.filter-panel {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transform-origin: top center;
+  pointer-events: none;
+  transition:
+    max-height 240ms ease-out,
+    opacity 160ms ease-out,
+    transform 200ms ease-out;
+}
+.filter-panel.open {
+  max-height: 90vh;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 @media (min-width: 601px) {
   .filter-panel-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -84,8 +106,13 @@
   color: var(--muted);
 }
 .filter-item select {
+  /* #415 slice 2b polish: dropdowns picked up the panel background too
+     closely -- the 1px --border2 outline was almost invisible against
+     the panel gradient. Use --accent with reduced alpha so the field
+     stands out as an interactive control without shouting. Focus goes
+     to the full accent so the active field still reads as picked. */
   background: var(--bg);
-  border: 1px solid var(--border2);
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
   color: var(--text);
   padding: 5px 8px;
   font-size: 0.76rem;
@@ -93,9 +120,15 @@
   outline: none;
   cursor: pointer;
   border-radius: 4px;
-  transition: border-color .1s;
+  transition: border-color .1s, box-shadow .1s;
 }
-.filter-item select:focus { border-color: var(--accent); }
+.filter-item select:hover {
+  border-color: color-mix(in srgb, var(--accent) 75%, transparent);
+}
+.filter-item select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
+}
 .filter-panel-footer {
   display: flex;
   align-items: center;
@@ -185,8 +218,12 @@
 
 /* Browse-page filter panel: lay the groups (Sort / Tier / Source) out side by
    side so the popover is compact instead of one tall vertical column. Wraps to
-   a single column on narrow screens. */
-.filter-panel--stack { display: none; }
+   a single column on narrow screens.
+   Drawer animation override (#415 slice 2b): base .filter-panel above
+   already handles the fade + slide; --stack keeps that but swaps display
+   to flex WHEN open so groups sit side by side without breaking the
+   transition. */
+.filter-panel--stack:not(.open) { display: block; }
 .filter-panel--stack.open {
   display: flex;
   flex-direction: row;

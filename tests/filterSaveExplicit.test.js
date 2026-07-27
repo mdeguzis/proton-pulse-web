@@ -73,7 +73,7 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
   test('Clear filters does NOT write to localStorage anymore', () => {
     const idx = src.indexOf("document.getElementById('gp-filter-clear')");
     expect(idx).toBeGreaterThan(0);
-    const slice = src.slice(idx, idx + 900);
+    const slice = src.slice(idx, idx + 1600);
     expect(slice).not.toContain('localStorage.setItem');
     expect(slice).not.toContain('localStorage.removeItem');
     expect(slice).toContain('_updateSaveButtonState');
@@ -107,7 +107,7 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
     // Both cleanup calls sit in the persistedFilters IIFE
     const initIdx = src.indexOf('const persistedFilters = (() => {');
     expect(initIdx).toBeGreaterThan(0);
-    const initSlice = src.slice(initIdx, initIdx + 500);
+    const initSlice = src.slice(initIdx, initIdx + 1200);
     expect(initSlice).toContain('localStorage.removeItem(_LEGACY_STORAGE_KEY)');
     expect(initSlice).toContain('localStorage.removeItem(_LEGACY_PERSIST_KEY)');
   });
