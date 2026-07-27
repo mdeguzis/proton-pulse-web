@@ -14,6 +14,7 @@ const read = (p) => fs.readFileSync(path.join(__dirname, '..', p), 'utf8');
 const GS_SRC = read('js/game-stats/main.js');
 const GS_HTML = read('game-stats.html');
 const CARD_CSS = read('css/app/reports.css');
+const GP_SRC = read('js/app/components/game-page.js');
 
 function loadCard() {
   return loadEsm(['js/app/components/report-card.js'], {
@@ -222,6 +223,20 @@ describe('title-matched FlightlessSomething section on the stats page (#410)', (
     // The section always renders (matched or empty state), so its jump-list
     // entry is unconditional.
     expect(GS_SRC).toContain("['flightless-benchmarks', 'Community benchmarks'],");
+  });
+
+  test('community benchmarks live ONLY on the stats page, never on the game page', () => {
+    // User requirement (2026-07-26): benchmarks are display-only context and
+    // clutter the game reports page. They belong on the stats page next to
+    // FPS + trend, not next to the reports list. Regression guard against
+    // any future edit that reintroduces the section on the game page.
+    expect(GP_SRC).not.toMatch(/flightless-section/);
+    expect(GP_SRC).not.toMatch(/renderFlightless/);
+    expect(GP_SRC).not.toMatch(/_loadFlightlessMap/);
+    expect(GP_SRC).not.toMatch(/flightless-benchmarks\.json/);
+    // Sanity: the stats page still has its copy so nothing was accidentally
+    // stripped there instead.
+    expect(GS_SRC).toContain('flightless-benchmarks.json');
   });
 
   test('no-match empty state names FlightlessSomething and links the formatted search', () => {

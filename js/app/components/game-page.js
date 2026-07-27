@@ -317,66 +317,6 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
   ].join('') || '<p class="rh-hint">No catalog data held for this entry.</p>';
 }
 
-// #410: FlightlessSomething community benchmarks section. Fetches the
-// pipeline-matched map and, when this app has entries, renders them between
-// the trend summary and the reports list. The info banner is REQUIRED copy:
-// MangoHud is a Linux overlay (mangohud.com) so most runs are Proton or
-// native Linux, but the data never says which -- these numbers are context
-// for how the game may perform, and deliberately excluded from confidence
-// and tier stats. FPS from our own report submissions is the confirmed tier
-// and renders separately.
-let _flightlessMapPromise = null;
-function _loadFlightlessMap() {
-  if (!_flightlessMapPromise) {
-    _flightlessMapPromise = (async () => {
-      try {
-        const res = await fetch(await dataUrl('flightless-benchmarks.json'));
-        return res.ok ? await res.json() : {};
-      } catch { return {}; }
-    })();
-  }
-  return _flightlessMapPromise;
-}
-
-async function _renderFlightlessSection(el, appId) {
-  const host = el.querySelector('#flightless-section');
-  if (!host) return;
-  const map = await _loadFlightlessMap();
-  const entry = map?.[String(appId)];
-  if (!entry || !Array.isArray(entry.benchmarks) || !entry.benchmarks.length) {
-    console.debug('[flightless] no benchmarks for app', { appId, source: 'flightless-benchmarks.json' });
-    return;
-  }
-  const searchUrl = String(entry.search_url || '').startsWith('https://flightlesssomething.ambrosia.one/')
-    ? String(entry.search_url) : 'https://flightlesssomething.ambrosia.one/';
-  const rows = entry.benchmarks.slice(0, 6).map(b => {
-    const url = String(b.url || '').startsWith('https://flightlesssomething.ambrosia.one/') ? String(b.url) : searchUrl;
-    return `<a class="fl-bench-row" href="${esc(url)}" target="_blank" rel="noopener">
-      <span class="fl-bench-title">${esc(String(b.title || 'Benchmark'))}</span>
-      <span class="fl-bench-meta">${Number(b.run_count) || 1} run${(Number(b.run_count) || 1) !== 1 ? 's' : ''}${b.specs ? ` &middot; ${esc(String(b.specs).slice(0, 90))}` : ''}</span>
-    </a>`;
-  }).join('');
-  host.innerHTML = `
-    <div class="reports-section-head">
-      <div class="reports-section-copy">
-        <span class="reports-section-title">Community Benchmarks</span>
-        <span class="reports-section-sub">${entry.count} benchmark${entry.count !== 1 ? 's' : ''} on FlightlessSomething</span>
-      </div>
-      <a class="hub-link" href="${esc(searchUrl)}" target="_blank" rel="noopener">Search on FlightlessSomething -&gt;</a>
-    </div>
-    <div class="fl-banner">
-      <strong>Unverified runtime.</strong> These are community
-      <a href="https://mangohud.com/" target="_blank" rel="noopener">MangoHud</a> captures shared on
-      <a href="https://flightlesssomething.ambrosia.one/" target="_blank" rel="noopener">FlightlessSomething</a>.
-      MangoHud is a Linux overlay, so most runs are Proton or native Linux, but the data does not say
-      which (or on what Proton version). They are shown as a helpful signal for how this game may
-      perform and are never counted in ratings or confidence.
-    </div>
-    <div class="fl-bench-list">${rows}</div>`;
-  host.hidden = false;
-  console.debug('[flightless] rendered benchmarks section', { appId, count: entry.count, shown: Math.min(6, entry.benchmarks.length) });
-}
-
 // Metadata modal opened by the "Metadata" pill in the hub-links row.
 // Formats the Steam appdetails payload the same way SteamDB does: one
 // section per fact block (developer / publisher / systems / release
@@ -1315,12 +1255,6 @@ export async function renderGamePage(appId) {
 
       ${trendSummary(reports, appId)}
 
-      <!-- #410: FlightlessSomething community benchmarks. Populated async by
-           _renderFlightlessSection when flightless-benchmarks.json has an
-           entry for this app; stays empty (display:none via [hidden]) when
-           not. Display-only context, never part of confidence/tier math. -->
-      <div id="flightless-section" hidden></div>
-
       <div class="reports-section-head" id="pulse-summary">
         <div class="reports-section-copy">
           <span class="reports-section-title">Community Configs &amp; Reports</span>
@@ -1515,8 +1449,6 @@ export async function renderGamePage(appId) {
       e.preventDefault();
       void _openMetadataModal(appId);
     });
-    // #410: community benchmarks section (async; hidden when no data).
-    void _renderFlightlessSection(el, appId);
     el.querySelectorAll('.source-summary-tile').forEach((tile) => {
       tile.addEventListener('click', () => {
         const targetId = tile.getAttribute('data-target');
