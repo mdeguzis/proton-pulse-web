@@ -7,6 +7,7 @@ import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS }
 import { getWebClientId } from '../../shared/submit.js?v=540fa2c3';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=65bc2638';
+import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
@@ -924,10 +925,16 @@ export async function renderGamePage(appId) {
     if (Array.isArray(v)) return v.filter(Boolean)[0] || '';
     return v || '';
   }
+  // Fields that also live in the shared-across-site key (#415 slice 2)
+  // fall back to it when the per-page snapshot is empty. Per-page wins
+  // whenever it has a value, so a game where you deliberately narrowed
+  // to bronze does not get overwritten by a site-wide rating=platinum.
+  const _sharedRating = readSharedField('rating')[0] || '';
+  const _sharedSource = readSharedField('source')[0] || '';
   let filterGpu    = _restoreScalar(persistedFilters.gpu);
   let filterArch   = _restoreScalar(persistedFilters.arch);
   let filterOs     = _restoreScalar(persistedFilters.os);
-  let filterRating = _restoreScalar(persistedFilters.rating);
+  let filterRating = _restoreScalar(persistedFilters.rating) || _sharedRating;
   // Native vs Proton (or a specific proton wrapper). '' == any. Reports
   // without a run_type value are treated as unknown so they never
   // accidentally match a specific selection.
@@ -940,14 +947,20 @@ export async function renderGamePage(appId) {
   let filterMine = false;
 
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
-  // 'protondb', or '' for any.
+  // 'protondb', or '' for any. Falls back to the shared-across-site value
+  // when neither the per-page snapshot nor the profile default set anything.
   let filterSource = (() => {
     const rawArr = Array.isArray(persistedFilters.source) ? persistedFilters.source[0] : null;
-    const raw = rawArr || persistedFilters.source || localStorage.getItem('proton-pulse:config-type') || '';
+    const raw = rawArr || persistedFilters.source || localStorage.getItem('proton-pulse:config-type') || _sharedSource || '';
     if (raw === 'pulse-config' || raw === 'pulse-report') return 'pulse';
     if (raw === 'protondb-edited') return 'protondb';
     return raw;
   })();
+
+  // Slice 2 checkbox state: reflects whether the site-wide preference is
+  // currently on. Only affects future Save presses -- flipping the box
+  // does nothing until the user commits with Save.
+  let _shareAcrossSite = isSharedEnabled();
 
   function _filterSnapshot() {
     return {
@@ -966,6 +979,10 @@ export async function renderGamePage(appId) {
   }
 
   function _isDirty() {
+    // Slice 2: the "Apply across the site" flag is also part of the saved
+    // state. Flipping it without a Save press should visibly mark the
+    // button dirty so the user knows they have an uncommitted change.
+    if (_shareAcrossSite !== isSharedEnabled()) return true;
     const persisted = _getPersistedSnapshot();
     const current = _filterSnapshot();
     if (!persisted) {
@@ -992,6 +1009,14 @@ export async function renderGamePage(appId) {
     try {
       localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(_filterSnapshot()));
     } catch { /* quota / disabled - ignore */ }
+    // Slice 2: mirror the shared fields when the site-wide box is ticked, or
+    // drop the shared key entirely when it isn't. Save is the single commit
+    // point either way, matching the explicit-press contract from slice 1.
+    if (_shareAcrossSite) {
+      writeShared({ rating: filterRating, source: filterSource });
+    } else {
+      clearShared();
+    }
     _updateSaveButtonState();
   }
 
@@ -1445,6 +1470,10 @@ export async function renderGamePage(appId) {
                   <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
                   <span class="filter-collapse-text">Collapse</span>
                 </button>
+                <label class="filter-share-toggle" title="Also apply this filter's rating + source on the browse and other pages">
+                  <input type="checkbox" id="gp-filter-share" ${_shareAcrossSite ? 'checked' : ''}>
+                  <span>Apply across the site</span>
+                </label>
                 <button class="filter-save-btn" id="gp-filter-persist" type="button" aria-pressed="false" title="Save these filters so they apply next time you visit a game page. Shift-click to forget a saved snapshot.">Save filters</button>
                 <button class="filter-clear-btn" id="gp-filter-clear" type="button">Clear filters</button>
               </div>
@@ -1778,6 +1807,15 @@ export async function renderGamePage(appId) {
       e.stopPropagation();
       panelEl()?.classList.remove('open');
       toggleEl()?.setAttribute('aria-expanded', 'false');
+    });
+
+    // Slice 2: "Apply across the site" checkbox. Changing it in-panel only
+    // flips the in-memory flag; the actual localStorage write happens on
+    // the next explicit Save. Marking the button dirty gives a visible cue
+    // that the user has something to commit.
+    document.getElementById('gp-filter-share')?.addEventListener('change', (e) => {
+      _shareAcrossSite = !!e.target.checked;
+      _updateSaveButtonState();
     });
 
     // Save filters (#415 slice 1): explicit press-to-save. Clicking commits

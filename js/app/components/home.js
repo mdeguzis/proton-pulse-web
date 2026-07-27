@@ -11,6 +11,7 @@ import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewp
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
+import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=9b244db9';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
@@ -531,6 +532,10 @@ export async function renderHomePage() {
                 <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
                 <span class="filter-collapse-text">Collapse</span>
               </button>
+              <label class="filter-share-toggle" title="Also apply the tier + source + store filter on the game and other pages">
+                <input type="checkbox" id="home-filter-share">
+                <span>Apply across the site</span>
+              </label>
               <button class="filter-save-btn" id="home-filter-persist" type="button" aria-pressed="false">Save filters</button>
               <button class="filter-clear-btn" id="home-filter-clear" type="button">Clear filters</button>
             </div>
@@ -957,7 +962,16 @@ export async function renderHomePage() {
       } catch { /* ignore */ }
     }
     // Call after any filter change; only writes when the box is checked.
-    function _saveFiltersIfEnabled() { if (_persistOn()) _saveFilters(); }
+    function _saveFiltersIfEnabled() {
+      if (!_persistOn()) return;
+      _saveFilters();
+      // Slice 2: mirror the shared fields when the site-wide box is ticked
+      // so home's pill changes propagate to the game / other pages without
+      // an extra button press.
+      if (document.getElementById('home-filter-share')?.checked) {
+        _writeSharedIfEnabled();
+      }
+    }
     function _applyPillSelection(groupEl, values) {
       if (!groupEl) return;
       groupEl.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
@@ -1007,11 +1021,63 @@ export async function renderHomePage() {
       console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kinds: [...kindSel], text: textFilter });
       return true;
     }
+    // Slice 2: initialise the share checkbox from the shared-preference key
+    // so a previous ticking on this page (or the game page) restores it.
+    const shareBox = document.getElementById('home-filter-share');
+    if (shareBox) shareBox.checked = isSharedEnabled();
+
+    function _writeSharedIfEnabled() {
+      if (!shareBox?.checked) { clearShared(); return; }
+      // Home carries multi-select for tier + source + store. Serialise each
+      // as an array so the game page's single-select reader can `[0]` it.
+      writeShared({
+        rating: [...tierSel],
+        source: [...sourceSel],
+        store:  [...storeSel],
+      });
+    }
+
+    // Slice 2: read shared fields ON LOAD if the checkbox is on AND the
+    // per-page snapshot did not restore anything to those fields. Runs
+    // AFTER _restoreFilters (which already ran during render prep) so it
+    // only fills gaps.
+    if (isSharedEnabled()) {
+      if (!tierSel.size) {
+        const arr = readSharedField('rating');
+        if (arr.length) tierSel = new Set(arr);
+      }
+      if (!sourceSel.size) {
+        const arr = readSharedField('source');
+        if (arr.length) sourceSel = new Set(arr);
+      }
+      if (!storeSel.size) {
+        const arr = readSharedField('store');
+        if (arr.length) storeSel = new Set(arr);
+      }
+      _applyPillSelection(tierGroup, [...tierSel]);
+      _applyPillSelection(sourceGroup, [...sourceSel]);
+      _applyPillSelection(storeGroup, [...storeSel]);
+      updateFilterBadge();
+    }
+
+    shareBox?.addEventListener('change', () => {
+      // Only writes on the next Save press; here we just mirror the box
+      // state to storage so the flag is remembered. When the user unchecks
+      // and presses Save, _writeSharedIfEnabled clears the snapshot.
+      if (!_persistOn()) return;
+      _writeSharedIfEnabled();
+    });
+
     document.getElementById('home-filter-persist')?.addEventListener('click', () => {
       const on = !_persistOn();
       _setPersist(on);
-      if (on) _saveFilters();
-      else { try { localStorage.removeItem(FILTERS_KEY); } catch { /* ignore */ } }
+      if (on) {
+        _saveFilters();
+        _writeSharedIfEnabled();
+      } else {
+        try { localStorage.removeItem(FILTERS_KEY); } catch { /* ignore */ }
+        clearShared();
+      }
     });
 
     // Active-filter badge: count specific tier + source + store selections.

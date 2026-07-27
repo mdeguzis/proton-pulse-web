@@ -80,15 +80,21 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
     expect(slice).toContain('refreshReports');
   });
 
-  test('_saveFiltersNow only writes the current snapshot (no auto-side-effects)', () => {
+  test('_saveFiltersNow writes the per-page snapshot and honors the share flag', () => {
+    // Slice 2 added an intentional side-effect: when the share checkbox is
+    // ticked, _saveFiltersNow also mirrors rating + source to the shared
+    // storage key. When it isn't, it clears that key. The v2 key + legacy
+    // cleanup rules from slice 1 still stand.
     const idx = src.indexOf('function _saveFiltersNow');
     expect(idx).toBeGreaterThan(0);
-    const slice = src.slice(idx, idx + 400);
+    const slice = src.slice(idx, idx + 800);
     expect(slice).toContain('localStorage.setItem(FILTER_STORAGE_KEY');
     expect(slice).toContain('_updateSaveButtonState()');
-    // v2 storage key -> no FILTER_PERSIST_KEY writes anywhere (legacy cleanup
-    // happens once at module init, not on every Save).
     expect(slice).not.toMatch(/FILTER_PERSIST_KEY/);
+    // Slice 2 wiring is now part of the Save path
+    expect(slice).toContain('_shareAcrossSite');
+    expect(slice).toContain('writeShared');
+    expect(slice).toContain('clearShared');
   });
 
   test('storage key is bumped to v2 so pre-slice-1 auto-save snapshots are ignored', () => {

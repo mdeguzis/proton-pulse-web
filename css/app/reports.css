@@ -151,6 +151,25 @@
   border-color: var(--accent);
   filter: none;
 }
+/* #415 slice 2: Apply-across-site checkbox lives inside the same footer as
+   the Save + Clear buttons. Muted color so it does not compete with the
+   action pair; label stays clickable across its whole surface. */
+.filter-share-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.filter-share-toggle input {
+  accent-color: var(--accent);
+  cursor: pointer;
+  margin: 0;
+}
+.filter-share-toggle:hover { color: var(--text); }
 .filter-count { font-size: 0.72rem; color: var(--muted); }
 .filter-persist {
   display: inline-flex;

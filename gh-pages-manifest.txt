@@ -32,6 +32,7 @@ js/shared/submit.js
 js/shared/drafts.js
 js/shared/hardware.js
 js/shared/chart-interactions.js
+js/shared/filters-shared.js
 js/submit/main.js
 js/confidence/main.js
 js/game-stats/main.js
