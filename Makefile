@@ -7,7 +7,7 @@ COVERAGE_BACKFILL_ISSUE_TYPE ?=
 COVERAGE_BACKFILL_LIMIT ?= 0
 WATCH_INTERVAL ?= 10
 WATCH_ALL_WORKFLOWS ?= true
-STAGING_VERSION_URL ?= https://mdeguzis.github.io/proton-pulse-web-staging/version.json
+STAGING_VERSION_URL ?= https://staging.proton-pulse.com/version.json
 FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert r2-canary \
