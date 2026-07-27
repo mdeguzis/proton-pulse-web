@@ -7,7 +7,7 @@ so one paginated sweep per run is cheap.
 
 The API has NO game/app-id concept -- benchmarks are free-text titled
 ("Cyberpunk 2077 - Low settings - SCX-Scheds"), so association with our
-catalog is title matching with a strict bar (Mike's rule): a benchmark
+catalog is title matching with a strict bar: a benchmark
 self-assigns to a game only on an EXACT normalized-title match or a
 similarity of at least MATCH_THRESHOLD (0.90) between the game title and
 the leading portion of the benchmark title. Anything below the bar lands
@@ -71,7 +71,7 @@ REQUEST_DELAY_SEC = 1.0  # polite pacing; no documented read limit
 TIMEOUT_SEC = 30
 FRESH_TTL_SEC = 20 * 3600  # daily-ish; benchmarks accrue slowly
 
-# Mike's matching bar: exact normalized match, or >= 0.90 similarity
+# The matching bar: exact normalized match, or >= 0.90 similarity
 # between the game title and the leading slice of the benchmark title.
 MATCH_THRESHOLD = 0.90
 

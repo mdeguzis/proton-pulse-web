@@ -1,7 +1,7 @@
 """Tests for scripts/pipeline/flightless_benchmarks.py (#410).
 
 All network access is mocked; the fetch tests drive _http_get_json
-directly. Matching tests encode Mike's bar: exact or >= 0.90 similarity
+directly. Matching tests encode the matching bar: exact or >= 0.90 similarity
 auto-matches, near-misses go to review, unknown games get mango_ stubs.
 """
 import json

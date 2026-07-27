@@ -30,7 +30,7 @@ describe('30-day edit window (#389)', () => {
     expect(SUBMIT_MAIN).toContain('formHost.parentNode.insertBefore(notice, formHost)');
   });
 
-  test('accent stays blue until 6 days remain, then flips to warn (Mike rule)', () => {
+  test('accent stays blue until 6 days remain, then flips to warn', () => {
     expect(SUBMIT_MAIN).toContain('const isWarn = daysLeft <= 6;');
     expect(SUBMIT_MAIN).toContain('submit-edit-window--warn');
     const CSS2 = read('css/app/game-header.css');

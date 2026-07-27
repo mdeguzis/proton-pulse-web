@@ -12,7 +12,7 @@
 -- What the scrub redacts (belt and suspenders; current data has none of these):
 --   /home/<user> and /Users/<user> paths, IPv4 addresses, MAC addresses.
 -- Identity columns (proton_pulse_user_id, installation_id, steam_id) are nulled,
--- device_id and label are replaced so a device handle or a "Mike's Deck" label
+-- device_id and label are replaced so a device handle or a "<name>'s Deck" label
 -- cannot identify the former owner.
 
 alter table public.user_systems add column if not exists anonymized_at timestamptz;

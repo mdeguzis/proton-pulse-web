@@ -724,8 +724,14 @@ import { esc } from '../app/utils.js?v=9a39c726';
           if (typeof window.ppTrack === 'function') window.ppTrack('report_submit', { app_id: String(appId), is_edit: isEdit });
           // Clean up the saved draft now that the report is in. Applies to the
           // fromCloud publish flow too, since it now saves/restores drafts.
+          // BOTH copies must go: only the cloud row was deleted before, so
+          // the localStorage draft survived and loadBestDraft happily
+          // restored the just-submitted answers the next time the user
+          // opened "Submit a report" for the same game -- making a fresh
+          // submission look like an edit of the old one.
           if (!isEdit && session) {
             void deleteDraft(session, appId).catch(() => {});
+            deleteLocalDraft(session?.user?.id, appId);
           }
           const dest = returnTo || `app.html#/app/${appId}`;
           setTimeout(() => { window.location.href = dest; }, 900); // nosemgrep: javascript.browser.security.open-redirect.js-open-redirect - dest is validated by URL-parse + origin equality + filename allowlist (see returnTo sanitizer) or falls back to hardcoded app.html#/app/
