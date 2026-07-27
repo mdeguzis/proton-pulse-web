@@ -893,14 +893,20 @@ export async function renderGamePage(appId) {
   const totalSessionCount = playtimeTotals.reduce((s, r) => s + (r.session_count || 0), 0);
 
   let sortMode = 'recent';
-  // Filter state. Persisted to localStorage when the user ticks the "Save"
-  // checkbox - same shape works whether signed in or not (profile sync can
-  // layer on top later by mirroring this object to the user_configs row).
+  // Filter state. Persisted to localStorage only when the user explicitly
+  // presses Save (#415 slice 1). Dropdown changes apply live to the report
+  // list but never touch storage on their own. Presence of the storage key
+  // is now the signal that a snapshot exists -- the older separate persist
+  // toggle is retired.
   const FILTER_STORAGE_KEY = 'proton-pulse:report-filters';
+  // Legacy per-page persist toggle. Retained ONLY so we can migrate silently:
+  // a value of '0' meant "do not restore", so on load we skip the snapshot in
+  // that case, then clean the key up on first Save. Any positive value falls
+  // through to the snapshot.
   const FILTER_PERSIST_KEY = 'proton-pulse:report-filters-persist';
   const persistedFilters = (() => {
     try {
-      if (localStorage.getItem(FILTER_PERSIST_KEY) !== '1') return {};
+      if (localStorage.getItem(FILTER_PERSIST_KEY) === '0') return {};
       return JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}') || {};
     } catch { return {}; }
   })();
@@ -926,7 +932,6 @@ export async function renderGamePage(appId) {
   // it once" reports that don't reflect real-use compatibility
   let filterMinPlaytime = persistedFilters.minPlaytime || 0;
   let filterMine = false;
-  let persistFilters = localStorage.getItem(FILTER_PERSIST_KEY) === '1';
 
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
   // 'protondb', or '' for any.
@@ -938,12 +943,61 @@ export async function renderGamePage(appId) {
     return raw;
   })();
 
-  function saveFiltersIfEnabled() {
-    if (!persistFilters) return;
+  function _filterSnapshot() {
+    return {
+      gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating,
+      runType: filterRunType, device: filterDevice,
+      minPlaytime: filterMinPlaytime, source: filterSource,
+    };
+  }
+
+  function _getPersistedSnapshot() {
     try {
-      const snapshot = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, device: filterDevice, minPlaytime: filterMinPlaytime, source: filterSource };
-      localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(snapshot));
+      const raw = localStorage.getItem(FILTER_STORAGE_KEY);
+      if (!raw) return null;
+      if (localStorage.getItem(FILTER_PERSIST_KEY) === '0') return null;
+      return JSON.parse(raw) || {};
+    } catch { return null; }
+  }
+
+  function _isDirty() {
+    const persisted = _getPersistedSnapshot();
+    const current = _filterSnapshot();
+    if (!persisted) {
+      // No snapshot yet: dirty when any filter differs from the empty default
+      return Object.values(current).some(v => v && v !== 0);
+    }
+    // Compare each field to the persisted equivalent, normalising arrays and
+    // missing keys to '' so old + new formats match cleanly.
+    const norm = v => Array.isArray(v) ? (v[0] || '') : (v == null ? '' : v);
+    return Object.keys(current).some(k => norm(current[k]) !== norm(persisted[k]));
+  }
+
+  function _updateSaveButtonState() {
+    const btn = document.getElementById('gp-filter-persist');
+    if (!btn) return;
+    const dirty = _isDirty();
+    btn.classList.toggle('is-dirty', dirty);
+    btn.classList.toggle('is-clean', !dirty);
+    btn.setAttribute('aria-pressed', String(!dirty && !!_getPersistedSnapshot()));
+    btn.textContent = dirty ? 'Save filters' : (_getPersistedSnapshot() ? 'Saved' : 'Save filters');
+  }
+
+  function _saveFiltersNow() {
+    try {
+      localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(_filterSnapshot()));
+      // Clear the legacy '0' opt-out marker now that the user is actively
+      // pressing Save; keeps loads honest.
+      if (localStorage.getItem(FILTER_PERSIST_KEY) === '0') {
+        localStorage.removeItem(FILTER_PERSIST_KEY);
+      }
     } catch { /* quota / disabled - ignore */ }
+    _updateSaveButtonState();
+  }
+
+  function _forgetSavedFilters() {
+    try { localStorage.removeItem(FILTER_STORAGE_KEY); } catch { /* ignore */ }
+    _updateSaveButtonState();
   }
 
   const gpuVendor = g => {
@@ -1391,7 +1445,7 @@ export async function renderGamePage(appId) {
                   <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
                   <span class="filter-collapse-text">Collapse</span>
                 </button>
-                <button class="filter-save-btn${persistFilters?' is-active':''}" id="gp-filter-persist" type="button" aria-pressed="${persistFilters ? 'true' : 'false'}" title="Save these filters so they apply next time you visit a game page">Save filters</button>
+                <button class="filter-save-btn" id="gp-filter-persist" type="button" aria-pressed="false" title="Save these filters so they apply next time you visit a game page. Shift-click to forget a saved snapshot.">Save filters</button>
                 <button class="filter-clear-btn" id="gp-filter-clear" type="button">Clear filters</button>
               </div>
             </div>
@@ -1684,14 +1738,14 @@ export async function renderGamePage(appId) {
     // OS-native picker dismisses. Prior version called render() which does
     // el.innerHTML = ... on the whole subtree -- that tore down the
     // portalled panel and made it appear the modal closed on pick.
-    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
 
     // Collapse: close the modal so the user sees the filtered reports. Uses
     // panelEl() so it finds the panel whether it is still in el or portalled
@@ -1702,30 +1756,26 @@ export async function renderGamePage(appId) {
       toggleEl()?.setAttribute('aria-expanded', 'false');
     });
 
-    // Save filters: aria-pressed toggle button, matches browse. Persist
-    // key + snapshot format stays the same so existing users do not lose
-    // their saved state. The button lives inside the panel so it moves with
-    // the portal -- use document.getElementById to find it either way.
-    document.getElementById('gp-filter-persist')?.addEventListener('click', () => {
-      persistFilters = !persistFilters;
-      const btn = document.getElementById('gp-filter-persist');
-      if (btn) {
-        btn.setAttribute('aria-pressed', String(persistFilters));
-        btn.classList.toggle('is-active', persistFilters);
+    // Save filters (#415 slice 1): explicit press-to-save. Clicking commits
+    // the current filter state to localStorage and marks the button clean.
+    // No auto-save on dropdown change -- click-away / collapse do not touch
+    // storage. Shift+click clears the saved snapshot ("forget saved"),
+    // matching the pattern used by profile-page Save buttons that also
+    // support a clear gesture without cluttering the panel with a second
+    // button.
+    document.getElementById('gp-filter-persist')?.addEventListener('click', (e) => {
+      if (e.shiftKey && _getPersistedSnapshot()) {
+        _forgetSavedFilters();
+        return;
       }
-      try {
-        localStorage.setItem(FILTER_PERSIST_KEY, persistFilters ? '1' : '0');
-        if (persistFilters) saveFiltersIfEnabled();
-        else localStorage.removeItem(FILTER_STORAGE_KEY);
-      } catch { /* quota - ignore */ }
+      _saveFiltersNow();
     });
 
-    // Clear filters: reset every scalar + playtime, then partial re-render
-    // (same reason as the dropdown handlers -- keep the panel node intact
-    // so the modal does not flicker). Persist the cleared state too so a
-    // saved snapshot does not come back on reload. Also reset the visible
-    // <select> values so the panel reflects the cleared state without a
-    // full DOM rebuild.
+    // Clear filters: reset every scalar + playtime in-memory and refresh the
+    // reports list. Does NOT touch localStorage -- only Save writes to
+    // storage now (#415 slice 1). After Clear, if a saved snapshot exists,
+    // the Save button flips to "dirty" so the user can see they still have
+    // a persisted state that differs from the current (empty) one.
     document.getElementById('gp-filter-clear')?.addEventListener('click', () => {
       filterGpu = '';
       filterArch = '';
@@ -1741,9 +1791,13 @@ export async function renderGamePage(appId) {
       }
       const p = document.getElementById('fPlaytime');
       if (p) p.value = '0';
-      saveFiltersIfEnabled();
+      _updateSaveButtonState();
       refreshReports();
     });
+
+    // Seed initial button state so the first render reflects clean/dirty vs
+    // any persisted snapshot without waiting for a change event.
+    _updateSaveButtonState();
     // Match both the legacy .cfg-dl-btn (Pulse config cards) and the new
     // unified .action-btn (report cards) so the JSON download click works
     // regardless of which renderer produced the button

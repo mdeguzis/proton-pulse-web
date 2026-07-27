@@ -131,10 +131,25 @@
 }
 .filter-save-btn:hover,
 .filter-clear-btn:hover { filter: brightness(1.08); }
-.filter-save-btn.is-active {
+/* #415 slice 1: dirty state shows a bright accent fill (there is unsaved
+   change); clean state is a muted outline so a page whose filters already
+   match the persisted snapshot does not scream at the viewer. is-active
+   retained as an alias for the older solid-accent style. */
+.filter-save-btn.is-active,
+.filter-save-btn.is-dirty {
   background: var(--accent-hi);
   border-color: var(--accent-hi);
   color: #0a0c10;
+}
+.filter-save-btn.is-clean {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted);
+}
+.filter-save-btn.is-clean:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  filter: none;
 }
 .filter-count { font-size: 0.72rem; color: var(--muted); }
 .filter-persist {
