@@ -1338,7 +1338,7 @@ export async function renderGamePage(appId) {
           const gpuSel = availGpus.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fGpu">GPU</label>
-              <select id="fGpu" class="home-filter-select">
+              <select id="fGpu" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availGpus.map(v => `<option value="${v}" ${filterGpu===v?'selected':''}>${GPU_LABEL[v]||v}</option>`).join('')}
               </select>
@@ -1346,7 +1346,7 @@ export async function renderGamePage(appId) {
           const archSel = availArchs.length > 1 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fArch">Architecture</label>
-              <select id="fArch" class="home-filter-select">
+              <select id="fArch" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availArchs.map(v => `<option value="${esc(v)}" ${filterArch===v?'selected':''}>${esc(v)}</option>`).join('')}
               </select>
@@ -1354,7 +1354,7 @@ export async function renderGamePage(appId) {
           const osSel = availOs.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fOs">OS</label>
-              <select id="fOs" class="home-filter-select">
+              <select id="fOs" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availOs.map(v => `<option value="${esc(v)}" ${filterOs===v?'selected':''}>${esc(v)}</option>`).join('')}
               </select>
@@ -1362,7 +1362,7 @@ export async function renderGamePage(appId) {
           const ratingSel = availRatings.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fRating">Rating</label>
-              <select id="fRating" class="home-filter-select">
+              <select id="fRating" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availRatings.map(v => `<option value="${v}" ${filterRating===v?'selected':''}>${RATING_LABEL[v]||v}</option>`).join('')}
               </select>
@@ -1383,7 +1383,7 @@ export async function renderGamePage(appId) {
           const runTypeSel = availRunTypes.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fRunType">Runtime Type</label>
-              <select id="fRunType" class="home-filter-select">
+              <select id="fRunType" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${RUN_TYPE_LABEL[v]||v}</option>`).join('')}
               </select>
@@ -1391,7 +1391,7 @@ export async function renderGamePage(appId) {
           const srcSel = `
             <div class="filter-item">
               <label class="home-filter-label" for="fSource">Source</label>
-              <select id="fSource" class="home-filter-select">
+              <select id="fSource" class="home-filter-select" autocomplete="off">
                 <option value="">All</option>
                 <option value="protondb" ${filterSource==='protondb'?'selected':''}>ProtonDB</option>
                 <option value="pulse" ${filterSource==='pulse'?'selected':''}>Pulse</option>
@@ -1404,7 +1404,7 @@ export async function renderGamePage(appId) {
           const deviceSel = hasDeck ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fDevice">Device</label>
-              <select id="fDevice" class="home-filter-select">
+              <select id="fDevice" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 <option value="deck-any"  ${filterDevice==='deck-any'?'selected':''}>Steam Deck (any)</option>
                 <option value="deck-lcd"  ${filterDevice==='deck-lcd'?'selected':''}>Steam Deck LCD</option>
@@ -1416,7 +1416,7 @@ export async function renderGamePage(appId) {
           const playtimeSel = `
             <div class="filter-item">
               <label class="home-filter-label" for="fPlaytime">Min playtime</label>
-              <select id="fPlaytime" class="home-filter-select">
+              <select id="fPlaytime" class="home-filter-select" autocomplete="off">
                 <option value="0"   ${filterMinPlaytime===0?'selected':''}>Any</option>
                 <option value="60"  ${filterMinPlaytime===60?'selected':''}>1h+</option>
                 <option value="120" ${filterMinPlaytime===120?'selected':''}>2h+</option>
@@ -1738,6 +1738,30 @@ export async function renderGamePage(appId) {
     // OS-native picker dismisses. Prior version called render() which does
     // el.innerHTML = ... on the whole subtree -- that tore down the
     // portalled panel and made it appear the modal closed on pick.
+    // Force the DOM selects to reflect the JS state right after mount.
+    // Browsers (Firefox especially) sometimes restore <select> values from
+    // their own bfcache-adjacent form-state cache on refresh, ignoring the
+    // `selected` attributes in the rendered HTML AND autocomplete="off".
+    // Without this sync a fresh JS state ('') would render "Any" in HTML but
+    // the browser could paint the previously-chosen option on top -- the
+    // report list would look unfiltered but the dropdown would show a stale
+    // filter. Assign scalar filter vars back into the corresponding select
+    // so both sides match on first paint (#415 slice 1 refresh-clears bug).
+    {
+      const _syncSelect = (id, value) => {
+        const s = el.querySelector('#' + id);
+        if (s && s.value !== String(value)) s.value = String(value);
+      };
+      _syncSelect('fGpu',      filterGpu);
+      _syncSelect('fArch',     filterArch);
+      _syncSelect('fOs',       filterOs);
+      _syncSelect('fRating',   filterRating);
+      _syncSelect('fRunType',  filterRunType);
+      _syncSelect('fSource',   filterSource);
+      _syncSelect('fDevice',   filterDevice);
+      _syncSelect('fPlaytime', filterMinPlaytime || 0);
+    }
+
     el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
     el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
     el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });

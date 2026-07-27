@@ -106,6 +106,25 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
     expect(initSlice).toContain('localStorage.removeItem(_LEGACY_PERSIST_KEY)');
   });
 
+  test('every filter select carries autocomplete="off" to defeat browser form-restore', () => {
+    // Browser form-state cache would otherwise restore the previous
+    // <select> value on refresh even when localStorage is empty, making it
+    // look like an unsaved filter survived.
+    const selectMatches = src.match(/class="home-filter-select"/g) || [];
+    const autocompleteMatches = src.match(/class="home-filter-select" autocomplete="off"/g) || [];
+    expect(selectMatches.length).toBeGreaterThan(0);
+    expect(autocompleteMatches.length).toBe(selectMatches.length);
+  });
+
+  test('wire() force-syncs DOM select values back to JS state on mount', () => {
+    // Belt-and-braces for Firefox, which occasionally paints the restored
+    // select value on top of the rendered HTML even with autocomplete="off".
+    expect(src).toContain('const _syncSelect = (id, value)');
+    for (const id of ['fGpu', 'fArch', 'fOs', 'fRating', 'fRunType', 'fSource', 'fDevice', 'fPlaytime']) {
+      expect(src).toContain(`_syncSelect('${id}'`);
+    }
+  });
+
   test('_isDirty compares current snapshot to persisted', () => {
     expect(src).toContain('function _isDirty()');
     expect(src).toContain('_getPersistedSnapshot()');
