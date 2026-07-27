@@ -80,16 +80,30 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
     expect(slice).toContain('refreshReports');
   });
 
-  test('_saveFiltersNow writes the snapshot AND drops the legacy opt-out marker', () => {
-    // The '0' value on FILTER_PERSIST_KEY meant "do not restore on load".
-    // First explicit Save should remove it so a later load honors the new
-    // snapshot instead of ignoring it because of the legacy marker.
+  test('_saveFiltersNow only writes the current snapshot (no auto-side-effects)', () => {
     const idx = src.indexOf('function _saveFiltersNow');
     expect(idx).toBeGreaterThan(0);
-    const slice = src.slice(idx, idx + 600);
+    const slice = src.slice(idx, idx + 400);
     expect(slice).toContain('localStorage.setItem(FILTER_STORAGE_KEY');
-    expect(slice).toMatch(/localStorage\.removeItem\(FILTER_PERSIST_KEY\)/);
     expect(slice).toContain('_updateSaveButtonState()');
+    // v2 storage key -> no FILTER_PERSIST_KEY writes anywhere (legacy cleanup
+    // happens once at module init, not on every Save).
+    expect(slice).not.toMatch(/FILTER_PERSIST_KEY/);
+  });
+
+  test('storage key is bumped to v2 so pre-slice-1 auto-save snapshots are ignored', () => {
+    expect(src).toContain("FILTER_STORAGE_KEY  = 'proton-pulse:report-filters-v2'");
+  });
+
+  test('legacy storage + persist keys are wiped on module init so filters clear on refresh', () => {
+    expect(src).toContain("_LEGACY_STORAGE_KEY = 'proton-pulse:report-filters'");
+    expect(src).toContain("_LEGACY_PERSIST_KEY = 'proton-pulse:report-filters-persist'");
+    // Both cleanup calls sit in the persistedFilters IIFE
+    const initIdx = src.indexOf('const persistedFilters = (() => {');
+    expect(initIdx).toBeGreaterThan(0);
+    const initSlice = src.slice(initIdx, initIdx + 500);
+    expect(initSlice).toContain('localStorage.removeItem(_LEGACY_STORAGE_KEY)');
+    expect(initSlice).toContain('localStorage.removeItem(_LEGACY_PERSIST_KEY)');
   });
 
   test('_isDirty compares current snapshot to persisted', () => {
