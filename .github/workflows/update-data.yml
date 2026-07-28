@@ -204,7 +204,7 @@ jobs:
         run: uv sync
 
       - name: Download probe input artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: probe-input
           path: /tmp/protondb-output
@@ -305,7 +305,7 @@ jobs:
       # verifying a finalize / search-index shape change.
       - name: Download probe input artifact
         if: inputs.finalize_only != true && inputs.staging_with_finalize != true
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: probe-input
           path: /tmp/protondb-output
