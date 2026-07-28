@@ -7,7 +7,7 @@ import {
 } from '../shared/drafts.js?v=d7011aa5';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
-import { esc } from '../app/utils.js?v=9a39c726';
+import { esc } from '../app/utils.js?v=298cb9a5';
 
 (async function() {
   const params = new URLSearchParams(window.location.search);

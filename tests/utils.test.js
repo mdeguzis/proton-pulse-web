@@ -29,6 +29,7 @@ const {
   latestPerApp,
   withTimeout,
   latestPerClient,
+  mergeReportsById,
   fmtDuration,
   fmtMinutes,
   reportKey,
@@ -218,6 +219,72 @@ describe('latestPerClient', () => {
     // Each should be kept separately (random key)
     const result = latestPerClient(rows);
     expect(result).toHaveLength(2);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// mergeReportsById (#423 -- CDN mirror + live Supabase dedup)
+// ---------------------------------------------------------------------------
+
+describe('mergeReportsById', () => {
+  test('empty inputs produce empty output', () => {
+    expect(mergeReportsById([], [])).toEqual([]);
+    expect(mergeReportsById(null, null)).toEqual([]);
+    expect(mergeReportsById(undefined, undefined)).toEqual([]);
+  });
+
+  test('legacy ProtonDB rows (no pulseId) fall through with source stamped protondb', () => {
+    const cdn = [{ notes: 'legacy', timestamp: 1 }];
+    const merged = mergeReportsById(cdn, []);
+    expect(merged).toEqual([{ notes: 'legacy', timestamp: 1, source: 'protondb' }]);
+  });
+
+  test('CDN pulse mirror row with matching native reportId is dropped in favor of the live copy', () => {
+    // Repro of #423: r25 lives in both the CDN snapshot (as pulseId) and
+    // live Supabase (as reportId). The live copy must win, the mirror gets
+    // stripped out.
+    const cdn = [
+      { pulseId: 25, source: 'pulse', notes: 'stale copy', timestamp: 1000 },
+      { pulseId: 7, source: 'pulse', notes: 'orphan', timestamp: 500 },
+    ];
+    const native = [
+      { reportId: 25, notes: 'fresh copy', timestamp: 2000 },
+    ];
+    const merged = mergeReportsById(cdn, native);
+    // r25 appears once, as the live row; r7 orphan survives from CDN.
+    expect(merged).toHaveLength(2);
+    const r25 = merged.filter(r => r.reportId === 25 || r.pulseId === 25);
+    expect(r25).toHaveLength(1);
+    expect(r25[0].notes).toBe('fresh copy');
+    const r7 = merged.find(r => r.pulseId === 7);
+    expect(r7).toBeDefined();
+    expect(r7.source).toBe('pulse');
+  });
+
+  test('existing source on a CDN row is preserved, missing source defaults to protondb', () => {
+    const cdn = [
+      { pulseId: 100, source: 'pulse', notes: 'p' },
+      { notes: 'legacy protondb, no source field' },
+    ];
+    const merged = mergeReportsById(cdn, []);
+    expect(merged[0].source).toBe('pulse');
+    expect(merged[1].source).toBe('protondb');
+  });
+
+  test('native rows are appended after CDN rows in insertion order', () => {
+    const cdn = [{ notes: 'cdn-a' }, { notes: 'cdn-b' }];
+    const native = [{ reportId: 1, notes: 'live-a' }, { reportId: 2, notes: 'live-b' }];
+    const merged = mergeReportsById(cdn, native);
+    expect(merged.map(r => r.notes)).toEqual(['cdn-a', 'cdn-b', 'live-a', 'live-b']);
+  });
+
+  test('native rows with null reportId do not accidentally match null pulseId', () => {
+    // A CDN row missing pulseId (pre-#423 shape) must NOT be filtered just
+    // because a native row has a null reportId. Both should survive.
+    const cdn = [{ notes: 'no id' }];
+    const native = [{ reportId: null, notes: 'live no id' }];
+    const merged = mergeReportsById(cdn, native);
+    expect(merged).toHaveLength(2);
   });
 });
 

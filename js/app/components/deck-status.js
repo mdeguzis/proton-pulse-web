@@ -1,7 +1,7 @@
 // deck-status (components) for the app page. Relocated from app.js.
 
 import { getDeckStatusForApp } from '../api/deck-status.js?v=0bbdc652';
-import { esc } from '../utils.js?v=9a39c726';
+import { esc } from '../utils.js?v=298cb9a5';
 
 export const DECK_STATUS_LABELS = {
   verified:    'Verified',

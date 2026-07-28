@@ -3,7 +3,7 @@
 import { fetchAuthorAvatar, fetchAuthorStats, getAuthorIdentity } from '../api/author.js?v=0d33fd7b';
 import { CDN } from '../config.js?v=a75604f5';
 import { route } from '../router.js?v=cf79f6bc';
-import { esc } from '../utils.js?v=9a39c726';
+import { esc } from '../utils.js?v=298cb9a5';
 
 export const ATOM_ICON_SVG = `
   <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">

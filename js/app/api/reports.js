@@ -1,7 +1,7 @@
 // reports (api) for the app page. Relocated from app.js.
 
 import { SB_KEY, SB_URL } from '../config.js?v=a75604f5';
-import { latestPerApp } from '../utils.js?v=9a39c726';
+import { latestPerApp } from '../utils.js?v=298cb9a5';
 
 /**
  * Fetch the 200 most recent Pulse compatibility reports from the `user_configs` table,

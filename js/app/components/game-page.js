@@ -19,7 +19,7 @@ import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ad2153bb';
-import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
+import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=298cb9a5';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
@@ -770,10 +770,10 @@ export async function renderGamePage(appId) {
   const liveOnly = !!liveSummary && !cdn.length;
   const cdnMiss = !cdn.length && !(liveFetched || []).length;
 
-  const reports = [
-    ...cdn.map(r => ({ ...r, source: 'protondb' })),
-    ...nativeReports,
-  ];
+  // Unify plugin + web reports on Supabase user_configs.id. pulse.py stamps
+  // that as `pulseId` on the CDN snapshot; fetchNativeReports exposes the same
+  // id as `reportId`. See mergeReportsById in utils.js and #423.
+  const reports = mergeReportsById(cdn, nativeReports);
 
   // Hard miss: nothing in cache, nothing native, nothing from Pulse.
   // Check if we at least know this game from the search-index (title available)
@@ -892,7 +892,9 @@ export async function renderGamePage(appId) {
   // algorithm. This replaces the old "highest tier present" approach which was
   // misleading (1 platinum + 6 gold + 4 borked ≠ platinum). The live summary
   // tier is only used as a last resort when we have zero mirrored reports.
-  const allReportsForTier = [...cdn.map(r => ({ ...r, source: 'protondb' })), ...nativeReports];
+  // Same pulseId/reportId dedup as the render list so tier math isn't skewed
+  // by a report counted twice (once from the CDN snapshot, once live). #423.
+  const allReportsForTier = reports;
   const combinedTier = pulseTierFromReports(allReportsForTier, liveTotal > cdn.length ? liveTotal - cdn.length : 0);
   const protonDbTier = liveOnly
     ? String(liveSummary.tier || '').toLowerCase()
@@ -1610,6 +1612,38 @@ export async function renderGamePage(appId) {
       const now = new Date().toISOString().slice(11, 19);
       bar.textContent = `[${now}] ${msg}`;
     }
+    // #415 slice 2b debug: sample computed styles that touch the drawer
+    // animation on both toggle events so we can diagnose the "flash" bug
+    // if it recurs. Logs to the console AND to the ring buffer so the
+    // admin Logging tab captures it too. Remove once #415 slice 2b is
+    // signed off.
+    function _debugPanelState(label, panel) {
+      if (!panel) { console.debug('[filter-panel]', label, 'panel=null'); return; }
+      const cs = getComputedStyle(panel);
+      const rect = panel.getBoundingClientRect();
+      const state = {
+        classes: panel.className,
+        pos: cs.position,
+        display: cs.display,
+        clipPath: cs.clipPath,
+        opacity: cs.opacity,
+        transform: cs.transform,
+        overflowY: cs.overflowY,
+        width: Math.round(rect.width) + 'x' + Math.round(rect.height),
+        inViewport: rect.top >= 0 && rect.left >= 0 && rect.right <= window.innerWidth && rect.bottom <= window.innerHeight,
+        left: Math.round(rect.left),
+        top: Math.round(rect.top),
+        columns: cs.columns,
+        columnCount: cs.columnCount,
+      };
+      console.debug('[filter-panel]', label, state);
+      try {
+        if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') {
+          window.ppLogBuffer.pushLog('DEBUG', '[filter-panel] ' + label, state);
+        }
+      } catch { /* ring buffer optional */ }
+    }
+
     function _debugSnapshot(label, extra) {
       const active = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, source: filterSource, device: filterDevice, minPlaytime: filterMinPlaytime };
       const nonBlank = Object.fromEntries(Object.entries(active).filter(([, v]) => v !== '' && v !== 0));
@@ -1775,6 +1809,7 @@ export async function renderGamePage(appId) {
       if (!panel) return;
       const open = panel.classList.toggle('open');
       toggleEl()?.setAttribute('aria-expanded', String(open));
+      _debugPanelState(open ? 'toggle -> open' : 'toggle -> closed', panel);
     });
 
     // Dropdown filter change handlers. Each writes the picked value into the
@@ -1827,8 +1862,14 @@ export async function renderGamePage(appId) {
     document.getElementById('gp-filter-collapse')?.addEventListener('click', (e) => {
       e.stopPropagation();
       const p = panelEl();
+      _debugPanelState('collapse click (pre-remove)', p);
       p?.classList.remove('open');
       toggleEl()?.setAttribute('aria-expanded', 'false');
+      _debugPanelState('collapse click (post-remove)', p);
+      // Sample twice more during the transition so we can see if any
+      // property snaps between frames.
+      setTimeout(() => _debugPanelState('collapse +100ms', p), 100);
+      setTimeout(() => _debugPanelState('collapse +250ms', p), 250);
     });
 
     // Slice 2: "Apply across the site" checkbox. Changing it in-panel only

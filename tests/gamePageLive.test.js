@@ -48,6 +48,18 @@ describe('game page: ProtonDB live-only handling', () => {
     expect(src).toContain('checked live');
   });
 
+  test('CDN + live Supabase reports are unified through mergeReportsById (#423)', () => {
+    // The old inline merge (`...cdn.map(r => ({ ...r, source: 'protondb' }))`)
+    // duplicated any pulse row that lived in both the mirror and Supabase.
+    // Both callsites (rendered reports + tier calc) must go through the
+    // helper so dedup + source preservation stay consistent.
+    expect(src).toContain('mergeReportsById');
+    expect(src).toContain('const reports = mergeReportsById(cdn, nativeReports)');
+    expect(src).toContain('const allReportsForTier = reports');
+    // Guard: the old clobber pattern must not come back on either callsite.
+    expect(src).not.toMatch(/\.\.\.cdn\.map\(r => \(\{ \.\.\.r, source: 'protondb' \}\)\)/);
+  });
+
   test('report_moderation fetch does not double the /rest/v1 prefix', () => {
     // SB_URL already includes /rest/v1; the fetch must not add it again
     expect(src).toContain('`${SB_URL}/report_moderation?app_id=');
