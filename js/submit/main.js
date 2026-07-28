@@ -1,5 +1,5 @@
 // Entry module for submit.html. Migrated from the page's inline script.
-import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=5090f6d2';
+import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=852c9d97';
 import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=540fa2c3';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=0bbdc652';
 import {

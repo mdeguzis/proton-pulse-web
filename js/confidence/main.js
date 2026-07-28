@@ -1,5 +1,5 @@
 // Entry module for confidence.html. Migrated from the page's inline script.
-import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=5090f6d2';
+import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=852c9d97';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
@@ -672,8 +672,15 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
     let overallTier = TIER_ORDER.includes(_tierParam) ? _tierParam : null;
     if (!overallTier && n > 0) {
       const tierCounts = {};
-      for (const r of reports) if (counts[r.rating] != null) {
-        tierCounts[r.rating] = (tierCounts[r.rating] || 0) + 1;
+      // #427: normalize rating case here too. counts keys are lowercase
+      // (defined earlier as { platinum, gold, silver, bronze, borked }),
+      // so an uppercase r.rating from the CDN never satisfied
+      // counts[r.rating] != null and no tier ever got counted -- direct
+      // visits to /confidence?app=<id> without a tier param defaulted to
+      // 'platinum' (first in TIER_ORDER, only tier at 0 count).
+      for (const r of reports) {
+        const key = String(r.rating || '').toLowerCase();
+        if (counts[key] != null) tierCounts[key] = (tierCounts[key] || 0) + 1;
       }
       let bestCount = -1;
       for (const t of TIER_ORDER) {
@@ -708,10 +715,16 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
       for (const r of reports) {
         const days = Math.round((nowSec - (r.timestamp || 0)) / 86400);
         const bucket = RECENCY.find(b => days < b.max) || RECENCY[RECENCY.length - 1];
-        const sc = SCORE_MAP[r.rating] ?? 0.5;
+        // #427: normalize rating case so ProtonDB CDN's Capitalized ratings
+        // ("Borked") hit the lowercase SCORE_MAP keys. Without this every
+        // report defaults to 0.5 and the whyRating panel derives silver
+        // regardless of the true mix -- matching the same bug that made
+        // the game page badge disagree with cards + search.
+        const normRating = String(r.rating || '').toLowerCase();
+        const sc = SCORE_MAP[normRating] ?? 0.5;
         const w = sc * bucket.weight;
         wSum += w; wTotal += bucket.weight;
-        perRep.push({ rating: r.rating, days, recencyWeight: bucket.weight, score: sc, weighted: w, recencyLabel: bucket.label });
+        perRep.push({ rating: normRating, days, recencyWeight: bucket.weight, score: sc, weighted: w, recencyLabel: bucket.label });
       }
       const avg = wTotal > 0 ? wSum / wTotal : 0;
       const tiers = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
