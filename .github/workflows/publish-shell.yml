@@ -54,7 +54,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Full history so publish-cloudflare.sh can compute VERSION + SHA
           # and preserve-cert-monitor.sh can git-show from origin/gh-pages.
