@@ -287,50 +287,52 @@
    variants so the pills fit on one or two rows instead of running long
    vertically. */
 @media (min-width: 721px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 480px;
   }
 }
 @media (min-width: 900px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 680px;
   }
 }
 @media (min-width: 1200px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 920px;
   }
 }
 @media (min-width: 1440px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 1120px;
   }
 }
 @media (min-width: 1700px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 1320px;
   }
 }
 
-/* Stats page: per-dimension dropdown panels are narrow by design (single dim).
-   Override back to a sensible compact width and use 2-column on desktop. */
+/* Stats page: per-dimension dropdown panels. width:max-content sizes each
+   dropdown to its own longest value ("DESKTOP / OTHER", "STEAM DECK OLED"...)
+   so nothing truncates, with a floor for the short dimensions and a cap so one
+   very long value can't blow the panel across the page (it ellipsises past the
+   cap instead). Single column -- these are vendor/family-level counters with
+   only a handful of values, so each dropdown stays short (#417 follow-up). */
 .filter-dropdown .filter-panel {
-  min-width: 220px;
-  max-width: 420px;
+  width: max-content;
+  min-width: 240px;
+  max-width: 500px;
 }
-@media (min-width: 721px) {
-  .filter-dropdown.is-open .filter-panel {
-    column-count: 2;
-    column-gap: 0;
-    min-width: 340px;
-  }
-  .filter-panel-summary { column-span: all; }
+/* Rows are flex (not the base grid) so width:max-content reliably grows the
+   panel to the longest value across browsers; the count sits flush right and
+   the label only ellipsises once a value passes the max-width cap. */
+.filter-dropdown .filter-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+.filter-dropdown .filter-check-label { min-width: 0; }
+.filter-dropdown .filter-check-count { margin-left: auto; padding-left: 14px; }
 
 /* ── Pill filter group ────────────────────────────────────────────────────── */
 /* Shared across index.html, app.html (home), and stats.html. A group is a
