@@ -628,8 +628,42 @@
       action: (isOpen && isMobile) ? 'portalToBody' : 'restoreOrNoop',
       source: '_handleOpenState',
     });
-    if (isOpen && isMobile) _portalPanelToBody(panel);
-    else _restorePanel(panel);
+    // #415 slice 2b drawer-flash diagnostic: sample computed styles that
+    // touch the animation right now, and again at +100ms and +250ms so a
+    // mid-transition snap shows up in the log. Only fires when the panel
+    // has an id (skip the observer's noise) and is a filter panel.
+    if (panel.id) _sampleDrawerState(panel, isOpen ? 'open' : 'close');
+  }
+
+  function _sampleDrawerState(panel, phase) {
+    const snap = (label) => {
+      try {
+        const cs = getComputedStyle(panel);
+        const rect = panel.getBoundingClientRect();
+        logFrontendEvent('DEBUG', '[drawer] ' + label, {
+          panelId: panel.id,
+          phase: phase,
+          classes: panel.className,
+          position: cs.position,
+          display: cs.display,
+          clipPath: cs.clipPath,
+          opacity: cs.opacity,
+          transform: cs.transform,
+          overflowY: cs.overflowY,
+          columns: cs.columns,
+          columnCount: cs.columnCount,
+          maxHeight: cs.maxHeight,
+          width: Math.round(rect.width),
+          height: Math.round(rect.height),
+          left: Math.round(rect.left),
+          top: Math.round(rect.top),
+        });
+      } catch { /* ignore */ }
+    };
+    snap('t0');
+    setTimeout(() => snap('t+100'), 100);
+    setTimeout(() => snap('t+250'), 250);
+    setTimeout(() => snap('t+400'), 400);
   }
   function wireFilterPanelClose() {
     // Portal each panel when its .open class flips on/off. game-page.js
