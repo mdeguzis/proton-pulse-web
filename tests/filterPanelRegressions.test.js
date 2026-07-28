@@ -202,6 +202,26 @@ describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => 
     expect(topbarSrc).toMatch(/matchMedia\(MOBILE_MODAL_QUERY\)/);
   });
 
+  test('_handleOpenState actually calls the portal helpers, not just logs the decision (#425)', () => {
+    // Regression from #415 slice 2b: the debug logging was added and the
+    // `_portalPanelToBody(panel)` / `_restorePanel(panel)` calls were
+    // dropped in the same commit. The helpers still existed but nothing
+    // invoked them, so on mobile the modal never portaled and rendered
+    // beneath the fixed topbar. Assert both calls are present inside
+    // `_handleOpenState` in the exact isOpen/isMobile branching shape.
+    const topbarSrc = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'lib', 'topbar.js'),
+      'utf8'
+    );
+    // Grab the function body so a stray unrelated match elsewhere can't
+    // satisfy the assertion.
+    const fnMatch = topbarSrc.match(/function _handleOpenState\(panel\) \{([\s\S]*?)^\s{2}\}/m);
+    expect(fnMatch).not.toBeNull();
+    const body = fnMatch[1];
+    expect(body).toMatch(/if\s*\(\s*isOpen\s*&&\s*isMobile\s*\)\s*_portalPanelToBody\(panel\)/);
+    expect(body).toMatch(/else\s+_restorePanel\(panel\)/);
+  });
+
   test('home.js outside-click handler allows taps inside the (portaled) panel', () => {
     // When portaled, filterPanel is no longer a filterWrap descendant, so
     // filterWrap.contains(e.target) is false for every tap on a filter pill.

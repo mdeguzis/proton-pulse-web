@@ -627,6 +627,13 @@
       action: (isOpen && isMobile) ? 'portalToBody' : 'restoreOrNoop',
       source: '_handleOpenState',
     });
+    // Act on the decision the log line already announces (#425). Without
+    // these calls the panel stays inside .main-content's stacking context
+    // (z-index:2 in root), so its z-index:300 can't lift it above the
+    // topbar (z-index:200) -- the mobile modal appears "inline" under the
+    // topbar instead of overlaying the viewport.
+    if (isOpen && isMobile) _portalPanelToBody(panel);
+    else _restorePanel(panel);
   }
   function wireFilterPanelClose() {
     // Portal each panel when its .open class flips on/off. game-page.js
