@@ -244,24 +244,28 @@ cf-prod: gh-check
 	@echo "Triggered publish-shell.yml against main -- deploys to CF Pages 'proton-pulse-web' (www.proton-pulse.com). ~1-2 min."
 
 # Full-pipeline staging deploy (#117). Runs the whole pipeline against the
-# staging branch and deploys the resulting data + shell to the staging repo.
-# Slow (30+ min); only needed when a pipeline-data change needs end-to-end
-# verification before promoting to prod. Regular UI-only changes should
-# keep using `make gh-staging`.
+# staging branch and deploys the resulting data + shell to the CF Pages
+# staging project + staging R2 bucket. Slow (30+ min); only needed when a
+# pipeline-data change needs end-to-end verification before promoting to
+# prod. Regular UI-only changes should keep using `make cf-staging`.
+#
+# deploy_target=cloudflare is the workflow default but pass it explicitly
+# so a future default change cannot silently start double-pushing to the
+# retired gh-pages staging preview.
 gh-staging-pipeline: gh-check
 	@bash scripts/wait-for-remote.sh
-	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_pipeline=true
-	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_pipeline=true -- full pipeline against staging, ~30 min. Preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
+	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_pipeline=true --field deploy_target=cloudflare
+	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_pipeline=true + deploy_target=cloudflare -- full pipeline against staging, ~30 min. Preview at https://staging.proton-pulse.com/ (data via https://staging-data.proton-pulse.com)."
 
 # Fast staging deploy for finalize-only changes (#196). Skips build + probe
 # entirely; restores prod chunk state from gh-pages, reruns only finalize +
-# stats against it, and deploys to the staging repo. Use for changes that
+# stats against it, and deploys to CF Pages staging. Use for changes that
 # touch finalize.py or search-index shape without needing new probe data --
 # e.g. adding a column to search-index.json. Wall time: ~5 min instead of 30.
 gh-staging-finalize: gh-check
 	@bash scripts/wait-for-remote.sh
-	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_finalize=true
-	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_finalize=true -- finalize + stats only against prod chunk state, deploy to staging (~5 min). Preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
+	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_finalize=true --field deploy_target=cloudflare
+	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_finalize=true + deploy_target=cloudflare -- finalize + stats only against prod chunk state, deploy to CF Pages staging (~5 min). Preview at https://staging.proton-pulse.com/."
 
 # Resume a partial run (#171 Phase 3). Reads gh-pages/.pipeline-state/
 # manifest.json, subtracts chunks marked completed, and re-runs only the
