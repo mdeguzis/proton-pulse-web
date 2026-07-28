@@ -335,6 +335,17 @@ def normalize_whitespace(value):
     return value.strip() if isinstance(value, str) else ""
 
 
+def normalize_rating(value):
+    """Lowercase + strip a rating string so ProtonDB CDN ("Borked") and Supabase
+    ("borked") reports bucket the same downstream. Non-string / falsy input
+    returns ''. Applied at every ingest write path so downstream consumers
+    (search-index, latest.json, stats) never need to lowercase again (#427).
+    """
+    if not isinstance(value, str):
+        return ""
+    return value.strip().lower()
+
+
 def infer_duration(playtime_minutes):
     if not playtime_minutes or playtime_minutes <= 0:
         return "unreported"

@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .common import app_id_to_dir, is_valid_app_id, log
+from .common import app_id_to_dir, is_valid_app_id, log, normalize_rating
 
 
 SB_URL_DEFAULT = "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1"
@@ -93,7 +93,10 @@ def normalize_pulse_row(row: dict[str, Any]) -> dict[str, Any]:
         "os": row.get("os") or "",
         "kernel": row.get("kernel") or "",
         "protonVersion": row.get("proton_version") or "",
-        "rating": row.get("rating") or "",
+        # Supabase already stores ratings lowercase, but normalize on the way
+        # in so future ingest sources (partner imports, plugin bugs, manual
+        # backfills) can never smuggle a Capitalized rating past us (#427).
+        "rating": normalize_rating(row.get("rating")),
         "duration": row.get("duration") or "",
         "durationMinutes": row.get("duration_minutes"),
         "notes": row.get("notes") or "",
@@ -167,10 +170,15 @@ def merge_pulse_into_data_dir(data_output_path: Path) -> tuple[int, int]:
             )
         ]
 
-        # backfill source on legacy protondb records that haven't been re-tagged yet
+        # backfill source on legacy protondb records that haven't been re-tagged yet.
+        # Also lowercase any surviving Capitalized rating so a merge touching this
+        # year file heals it in place (#427). Cheap defensive rewrite, no schema change.
         for r in filtered:
-            if isinstance(r, dict) and "source" not in r:
-                r["source"] = "protondb"
+            if isinstance(r, dict):
+                if "source" not in r:
+                    r["source"] = "protondb"
+                if "rating" in r:
+                    r["rating"] = normalize_rating(r.get("rating"))
 
         filtered.extend(pulse_reports)
         year_file.write_text(json.dumps(filtered, indent=2))
