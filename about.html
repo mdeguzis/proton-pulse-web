@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
 <link rel="stylesheet" href="css/shared/cards.css?v=d8b73aa1">
-<link rel="stylesheet" href="css/index/index.css?v=de5b0f75">
+<link rel="stylesheet" href="css/index/index.css?v=c710f2a7">
 </head>
 <body>
 
@@ -46,16 +46,21 @@
       </p>
     </div>
 
-    <div class="about-quicklinks">
-      <a class="about-legend-btn" href="#data-sources">Where the data comes from</a>
-      <a class="about-legend-btn" href="#your-data">Your Data &amp; Privacy</a>
-      <a class="about-legend-btn" href="#safety">Safety &amp; Security</a>
-      <a class="about-legend-btn" href="#icons-signage">
-        <svg class="alb-glyph" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="9.4" cy="12" r="5.2" fill="#1b9fff"/><path d="M9.2 1.2A10.8 10.8 0 0 1 9.2 22.8L9.2 18.9A6.9 6.9 0 0 0 9.2 5.1Z" fill="#fff"/></svg>
-        Icons &amp; Signage
-      </a>
-      <a class="about-legend-btn" href="#compare">Compare Proton Pulse</a>
-      <a class="about-legend-btn" href="#mission">Mission</a>
+    <!-- Jump-to-section dropdown (#428). Matches the profile page's
+         `Jump to: [Section...]` pattern -- pill buttons wrapped to 3 rows
+         on a 414px phone and ate the fold. Same scroll-into-view behaviour
+         and reset-to-placeholder after each jump. -->
+    <div class="about-nav">
+      <label for="about-jump-select" class="about-nav-label">Jump to:</label>
+      <select id="about-jump-select" class="about-select">
+        <option value="" selected>Section...</option>
+        <option value="data-sources">Where the data comes from</option>
+        <option value="your-data">Your Data &amp; Privacy</option>
+        <option value="safety">Safety &amp; Security</option>
+        <option value="icons-signage">Icons &amp; Signage</option>
+        <option value="compare">Compare Proton Pulse</option>
+        <option value="mission">Mission</option>
+      </select>
     </div>
 
     <!-- Value props - what makes Proton Pulse its own thing, not a feature list -->
@@ -435,5 +440,6 @@
 <script src="js/lib/topbar.js?v=6b8ae607"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 <script src="js/about/version.js?v=dd0d91d0"></script>
+<script src="js/about/jump-nav.js?v=ebc19086"></script>
 </body>
 </html>

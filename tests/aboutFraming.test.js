@@ -32,8 +32,31 @@ describe('about.html framing (#324)', () => {
     expect(body).toMatch(/one of\s+several/i);
   });
 
-  test('quicklinks include a "Where the data comes from" jump so readers find the source list', () => {
-    expect(ABOUT).toMatch(/href="#data-sources"[^>]*>[^<]*Where the data comes from/);
+  test('jump-to-section navigation reaches "Where the data comes from" so readers find the source list', () => {
+    // #428: the six pill anchors were replaced by a Jump-to dropdown that
+    // scrolls the picked section into view on change. Assert the option
+    // is present in the select with the value matching the anchor id.
+    expect(ABOUT).toMatch(/<option value="data-sources"[^>]*>\s*Where the data comes from\s*<\/option>/);
+    // Section anchor still exists so the jump has something to land on.
+    expect(ABOUT).toMatch(/id="data-sources"/);
+  });
+
+  test('jump-to select covers every top-level section on the page (#428)', () => {
+    // Guard against a future section addition that forgets to add an
+    // option to the dropdown, or a rename that breaks the anchor id.
+    for (const [value, label] of [
+      ['data-sources',  'Where the data comes from'],
+      ['your-data',     'Your Data &amp; Privacy'],
+      ['safety',        'Safety &amp; Security'],
+      ['icons-signage', 'Icons &amp; Signage'],
+      ['compare',       'Compare Proton Pulse'],
+      ['mission',       'Mission'],
+    ]) {
+      const re = new RegExp(`<option value="${value}"[^>]*>\\s*${label}\\s*</option>`);
+      expect(ABOUT).toMatch(re);
+      // Every option must map to a real anchor id on the same page.
+      expect(ABOUT).toMatch(new RegExp(`id="${value}"`));
+    }
   });
 
   test('data-sources section exists and names every ingest', () => {
