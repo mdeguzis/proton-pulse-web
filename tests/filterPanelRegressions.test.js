@@ -229,6 +229,62 @@ describe('mobile filter modal (<= 720px) -- full-viewport modal pattern', () => 
     // panel don't trigger the outside-click close.
     expect(homeSrc).toMatch(/!filterPanel\.contains\(e\.target\)/);
   });
+
+  test('stats .filter-dropdown panels stay inside the viewport on mobile (#426)', () => {
+    // Repro: stats page dropdown button on the right half of a 414px viewport
+    // opened a panel positioned at left:0 with min-width:240px. The panel
+    // extended past the viewport right edge, the document grew to fit the
+    // overflow, and the whole page shifted horizontally off-screen.
+    // Fix: on mobile, promote the open panel to position:fixed with
+    // left/right margins so it can never exceed viewport width, with a
+    // --dropdown-top var set from JS pinning it under the tapped button.
+    expect(flat).toMatch(/@media \(max-width: 720px\)[\s\S]*?\.filter-dropdown\.is-open \.filter-panel[\s\S]*?position: fixed/);
+    expect(flat).toMatch(/\.filter-dropdown\.is-open \.filter-panel[\s\S]*?left: 8px/);
+    expect(flat).toMatch(/\.filter-dropdown\.is-open \.filter-panel[\s\S]*?right: 8px/);
+    expect(flat).toMatch(/\.filter-dropdown\.is-open \.filter-panel[\s\S]*?top: var\(--dropdown-top/);
+    // Height also gets clamped so a tall dropdown doesn't run off the bottom.
+    expect(flat).toMatch(/\.filter-dropdown\.is-open \.filter-panel[\s\S]*?max-height: calc\(100dvh/);
+  });
+
+  test('stats/main.js sets --dropdown-top on the panel when opening on mobile (#426)', () => {
+    const statsSrc = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'stats', 'main.js'),
+      'utf8'
+    );
+    // The mobile branch must measure the toggle button and pass its bottom
+    // edge to the panel as --dropdown-top so the fixed CSS positioning
+    // anchors correctly under the tapped button.
+    expect(statsSrc).toMatch(/matchMedia\(['"]\(max-width: 720px\)['"]\)/);
+    expect(statsSrc).toMatch(/getBoundingClientRect\(\)/);
+    expect(statsSrc).toMatch(/setProperty\(['"]--dropdown-top['"]/);
+  });
+
+  test('stats dropdown caret uses CSS rotation, not a textContent glyph swap (#426)', () => {
+    // '▾' (U+25BE) and '▲' (U+25B2) have different widths in Inter, so
+    // toggling caret.textContent between them changed the button's inline
+    // width every time a dropdown opened -- flex-wrap reflowed and every
+    // button shifted position. Guard: only one static glyph in the source,
+    // orientation comes from a CSS transform: rotate scoped to .is-open.
+    const statsSrc = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'stats', 'main.js'),
+      'utf8'
+    );
+    const filtersJsSrc = fs.readFileSync(
+      path.join(__dirname, '..', 'js', 'stats', 'filters.js'),
+      'utf8'
+    );
+    // No '▲' anywhere -- the "up" state is CSS-rotated from '▾'.
+    expect(statsSrc).not.toMatch(/\u25B2/);
+    expect(filtersJsSrc).not.toMatch(/\u25B2/);
+    // The runtime toggle must not restore the textContent swap.
+    expect(statsSrc).not.toMatch(/caret\.textContent\s*=/);
+    // stats.html holds the CSS rotation rule.
+    const statsHtml = fs.readFileSync(
+      path.join(__dirname, '..', 'stats.html'),
+      'utf8'
+    );
+    expect(statsHtml).toMatch(/\.filter-dropdown\.is-open \.filter-caret[\s\S]*?transform:\s*rotate\(180deg\)/);
+  });
 });
 
 describe('game-page filter panel adopts the browse modal framework (#360)', () => {

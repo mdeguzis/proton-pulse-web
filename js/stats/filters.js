@@ -126,7 +126,7 @@ export function renderDropdownButton(d, stats) {
   return `<div class="filter-dropdown ${isOpen ? 'is-open' : ''}" data-dropdown-id="${d.id}">
     <button class="filter-button ${activeCount > 0 ? 'is-active' : ''}" data-dropdown-toggle="${d.id}">
       ${buttonLabel}
-      <span class="filter-caret">${isOpen ? '▲' : '▾'}</span>
+      <span class="filter-caret" aria-hidden="true">▾</span>
     </button>
     <div class="filter-panel">
       ${summaryLine}

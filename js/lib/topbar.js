@@ -623,6 +623,12 @@
       isOpen: isOpen,
       isMobile: isMobile,
       viewportWidth: window.innerWidth,
+      // #426: when documentScrollWidth exceeds viewportWidth, something on
+      // the page is causing horizontal overflow (fixed-pixel min-widths,
+      // wide grids, unwrapped tables, etc.) and the whole layout will shift
+      // right on mobile. The diff pinpoints WHICH page has the culprit even
+      // if the panel itself is fine.
+      documentScrollWidth: document.documentElement ? document.documentElement.scrollWidth : null,
       mqQuery: MOBILE_MODAL_QUERY,
       action: (isOpen && isMobile) ? 'portalToBody' : 'restoreOrNoop',
       source: '_handleOpenState',

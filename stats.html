@@ -10,10 +10,10 @@
 <title>Stats - Proton Pulse</title>
 <meta name="description" content="Aggregate compatibility stats for Steam on Linux: ratings, GPU and CPU breakdowns, OS distribution, Proton version share, and top-reported games. Filter by hardware to drill in.">
 <meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="css/shared/base.css?v=e9bde13e">
+<link rel="stylesheet" href="css/shared/base.css?v=9e119a4e">
 <link rel="stylesheet" href="css/shared/topbar.css?v=e911094d">
 <link rel="stylesheet" href="css/shared/site.css?v=619dee5a">
-<link rel="stylesheet" href="css/shared/filters.css?v=32ea1cc8">
+<link rel="stylesheet" href="css/shared/filters.css?v=2af967b6">
 <link rel="stylesheet" href="css/shared/cards.css?v=d8b73aa1">
 <style>
 h1 {
@@ -109,7 +109,19 @@ h2 {
   display: inline-block;
 }
 /* .filter-button, .filter-btn-badge -- base styles in css/shared/filters.css */
-.filter-caret { font-size: 0.6rem; color: var(--muted); margin-left: 2px; }
+/* #426: caret is one glyph rotated 180deg on open, NOT a textContent swap
+   between '▾' and '▲'. Those two glyphs render at different widths in Inter,
+   so swapping them changed the button's inline width every time a dropdown
+   opened -- flex-wrap reflowed the whole filter-row and every button shifted
+   position. transform: rotate never affects layout, so the row stays put. */
+.filter-caret {
+  font-size: 0.6rem;
+  color: var(--muted);
+  margin-left: 2px;
+  display: inline-block;
+  transition: transform 0.15s ease, color 0.15s;
+}
+.filter-dropdown.is-open .filter-caret { transform: rotate(180deg); }
 .filter-button.is-active .filter-caret { color: var(--accent-hi); }
 
 /* The panel: hidden by default, revealed when parent has .is-open. Sits above
@@ -430,7 +442,10 @@ h2 {
 /* ── top games list ─────────────────────────────────────────────────── */
 .topgames {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  /* min() prevents the 360px min from forcing an overflow on <=360px phones
+     (very narrow) or when the .main-content container is already narrower
+     than 360px after padding. See #426. */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
   gap: 6px;
 }
 .topgames a {
@@ -457,10 +472,11 @@ h2 {
 .topgames .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 /* Worth-retesting + framegen rows show the title as the primary signal, so
    give it more breathing room. Drop the 360px min on those grids too so a
-   3-col row at 1400px gets ~460px per card and titles fit without ellipsis */
+   3-col row at 1400px gets ~460px per card and titles fit without ellipsis.
+   min() keeps the 420px floor from overflowing narrow viewports (#426). */
 #retesting.topgames,
 #fg-topgames.topgames {
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
 }
 #retesting.topgames .title,
 #fg-topgames.topgames .title {
@@ -746,7 +762,7 @@ h2 {
 <script src="js/lib/supabase-client.js?v=79bf62c6"></script>
 <script type="module" src="js/lib/log-buffer.js?v=6d7ce577"></script>
 <script src="js/lib/analytics.js?v=4b6a7264"></script>
-<script src="js/lib/topbar.js?v=cfc1cbc5"></script>
+<script src="js/lib/topbar.js?v=6b8ae607"></script>
 <script src="js/lib/toast.js?v=7bb23014"></script>
 
 <div class="main-content"><div class="main-inner">
@@ -761,6 +777,6 @@ h2 {
 </div></div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-<script type="module" src="js/stats/main.js?v=c6de7028"></script>
+<script type="module" src="js/stats/main.js?v=17d44415"></script>
 </body>
 </html>

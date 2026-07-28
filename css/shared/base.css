@@ -380,7 +380,16 @@
 /* Enforce hidden attribute — CSS display rules can override it otherwise */
 [hidden] { display: none !important; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* #426: body { overflow-x: hidden } alone is not sufficient on Chrome for
+     Android + iOS Safari. If any descendant overflows horizontally, the root
+     element still scrolls sideways and window.innerWidth reports the widened
+     layout viewport (e.g. 572 instead of 414 in the diagnostic log). Clipping
+     at html seals the leak without establishing a new scroll container the
+     way overflow-x: hidden would (which breaks position: sticky descendants). */
+  overflow-x: clip;
+}
 
 body {
   background:

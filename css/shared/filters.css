@@ -334,6 +334,32 @@
 .filter-dropdown .filter-check-label { min-width: 0; }
 .filter-dropdown .filter-check-count { margin-left: auto; padding-left: 14px; }
 
+/* Mobile fix for #426: on phones the compact popover positioned at left:0 of
+   its button overflows the right edge of the viewport when the button sits
+   past the horizontal midpoint (RATING on stats etc.). The overflow triggers
+   document-wide horizontal scroll which shifts the whole page off-screen.
+   Promote the open panel to position:fixed with viewport-relative left/right,
+   pinned vertically to just below the tapped button via --dropdown-top (set
+   by js/stats/main.js on open). Stats keeps its per-dimension compact-panel
+   feel -- the panel still opens right under the button -- but stays inside
+   the viewport instead of pushing the page. */
+@media (max-width: 720px) {
+  .filter-dropdown.is-open .filter-panel {
+    position: fixed;
+    top: var(--dropdown-top, 120px);
+    left: 8px;
+    right: 8px;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    max-height: calc(100dvh - var(--dropdown-top, 120px) - 8px);
+    overflow-y: auto;
+    /* Sit above the filter-row buttons + page content but below the mobile
+       full-viewport filter modal (which owns z-index 300). */
+    z-index: 250;
+  }
+}
+
 /* ── Pill filter group ────────────────────────────────────────────────────── */
 /* Shared across index.html, app.html (home), and stats.html. A group is a
    label row followed by a horizontal row of pills that wraps on overflow. */

@@ -7,7 +7,7 @@ import {
   applyFilter, getFilter, getOpenDropdown, setOpenDropdown,
   renderDropdownButton, toggleFilterValue, clearFilter,
   setFilterChangeCallback, restoreFilterFromUrl,
-} from './filters.js?v=f364d0eb';
+} from './filters.js?v=d6061857';
 import {
   renderBars, renderFreshness, renderFramegen, renderDonut,
   renderSparkline, renderTopGames, renderRatingsTrend,
@@ -29,11 +29,30 @@ import { renderLibraryTab } from './library-view.js?v=5881023e';
 let _statsDropdownCloser = null;
 function _applyDropdownOpenState() {
   const open = getOpenDropdown();
+  const isMobile = window.matchMedia('(max-width: 720px)').matches;
   document.querySelectorAll('.filter-dropdown[data-dropdown-id]').forEach((dd) => {
     const on = dd.getAttribute('data-dropdown-id') === open;
     dd.classList.toggle('is-open', on);
-    const caret = dd.querySelector('.filter-caret');
-    if (caret) caret.textContent = on ? '▲' : '▾';
+    // #426 follow-up: caret orientation is CSS-driven now (rotate 180deg on
+    // .is-open). Swapping the caret's textContent between the down and up
+    // Unicode triangle glyphs caused button width to flicker because the
+    // two chars have different font metrics -- flex-wrap then reflowed the
+    // whole filter-row on every open/close. Do NOT re-add the textContent
+    // swap.
+    // #426: mobile fix. Panels are position:absolute anchored to their button
+    // at left:0. On phones the button might sit near the right edge, so the
+    // panel (min-width 240px) overflows the viewport and pushes the whole
+    // document horizontally. On mobile-open, promote the panel to
+    // position:fixed via CSS and pin --dropdown-top to the button's bottom
+    // edge so it still visually anchors below the tapped button.
+    if (on && isMobile) {
+      const btn = dd.querySelector('[data-dropdown-toggle]');
+      const panel = dd.querySelector('.filter-panel');
+      if (btn && panel) {
+        const rect = btn.getBoundingClientRect();
+        panel.style.setProperty('--dropdown-top', `${Math.round(rect.bottom + 6)}px`);
+      }
+    }
   });
 }
 function setStatsDropdown(dim) {
