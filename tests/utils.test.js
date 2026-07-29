@@ -317,20 +317,23 @@ describe('withTimeout', () => {
 // ---------------------------------------------------------------------------
 
 describe('fmtDuration', () => {
+  // #12: shortened from "< 1 hour" to "< 1hr" etc. so bucket labels take less
+  // horizontal space in report card metadata rows. When durationMinutes is
+  // present callers should prefer fmtMinutes for the actual tracked time.
   test('underOneHour', () => {
-    expect(fmtDuration('underOneHour')).toBe('< 1 hour');
+    expect(fmtDuration('underOneHour')).toBe('< 1hr');
   });
 
   test('oneToFourHours', () => {
-    expect(fmtDuration('oneToFourHours')).toBe('1-4 hours');
+    expect(fmtDuration('oneToFourHours')).toBe('1-4 hrs');
   });
 
   test('fourToTenHours', () => {
-    expect(fmtDuration('fourToTenHours')).toBe('4-10 hours');
+    expect(fmtDuration('fourToTenHours')).toBe('4-10 hrs');
   });
 
   test('overTenHours', () => {
-    expect(fmtDuration('overTenHours')).toBe('10+ hours');
+    expect(fmtDuration('overTenHours')).toBe('10+ hrs');
   });
 
   test('returns raw string for unknown value', () => {

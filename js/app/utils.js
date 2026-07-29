@@ -121,10 +121,10 @@ export function mergeReportsById(cdn, nativeReports) {
  */
 export function fmtDuration(d) {
   switch (d) {
-    case 'underOneHour':   return '< 1 hour';
-    case 'oneToFourHours': return '1-4 hours';
-    case 'fourToTenHours': return '4-10 hours';
-    case 'overTenHours':   return '10+ hours';
+    case 'underOneHour':   return '< 1hr';
+    case 'oneToFourHours': return '1-4 hrs';
+    case 'fourToTenHours': return '4-10 hrs';
+    case 'overTenHours':   return '10+ hrs';
     default:               return d || null;
   }
 }

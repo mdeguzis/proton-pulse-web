@@ -1,7 +1,7 @@
 // supabase (api) for the app page. Relocated from app.js.
 
 import { SB_KEY, SB_URL } from '../config.js?v=a75604f5';
-import { configKey, latestPerClient } from '../utils.js?v=298cb9a5';
+import { configKey, latestPerClient } from '../utils.js?v=4630c3d5';
 
 export async function fetchSupabase(appId) {
   // #404: user_proton_configs.app_id is bigint (plugin configs are Steam
