@@ -32,6 +32,7 @@ js/shared/submit.js
 js/shared/drafts.js
 js/shared/hardware.js
 js/shared/chart-interactions.js
+js/shared/filters-shared.js
 js/submit/main.js
 js/confidence/main.js
 js/game-stats/main.js
@@ -167,6 +168,7 @@ CNAME
 gh-pages-manifest.txt
 gh-pages-exclude-manifest.txt
 js/about/version.js
+js/about/jump-nav.js
 js/app/lib/card.js
 js/app/lib/filter-group.js
 js/app/lib/page-nav.js

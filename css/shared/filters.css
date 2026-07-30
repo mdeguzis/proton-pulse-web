@@ -78,6 +78,48 @@
   max-width: 96vw;
 }
 
+/* ── Shared drawer animation (#417) ───────────────────────────────────────
+   ONE reveal contract for every filter surface: browse (.filter-panel--stack),
+   game-page (.filter-panel), index (.pg-filter-panel), and the stats dimension
+   dropdowns (.filter-dropdown .filter-panel). The panel stays in the DOM and is
+   hidden by clip-path + opacity, so opening/closing plays a downward drawer
+   reveal instead of a display:none pop. Panels are position:absolute so the
+   collapse never pushes siblings.
+
+   IMPORTANT: layout-defining properties (display, columns, width) must live on
+   the base panel selector on each page, never gated on .open / .is-open, or the
+   layout snaps mid-collapse -- that was the browse "narrow vertical" flash
+   (#415 slice 2b). This contract only animates clip-path / opacity / transform. */
+.filter-panel,
+.pg-filter-panel {
+  overflow: hidden;
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transform: translateY(-6px);
+  transform-origin: top center;
+  pointer-events: none;
+  transition:
+    clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Revealed state. The big panels flip .open on the panel itself (observed +
+   toggled per page); the stats dropdowns flip .is-open on the PARENT, which is
+   why stats never picks up the .open-scoped mobile-modal rules below and stays
+   a compact popover on phones (#417 decision). */
+.filter-panel.open,
+.pg-filter-panel.open,
+.filter-dropdown.is-open .filter-panel {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .filter-panel,
+  .pg-filter-panel { transition: none; }
+}
+
 /* Mobile filter modal (<=720px). The desktop dropdown behavior falls apart on
    phones -- it collides with the fixed topbar, overflows off-screen, and never
    feels native. So on mobile the open panel becomes a full-viewport modal with
@@ -245,49 +287,77 @@
    variants so the pills fit on one or two rows instead of running long
    vertically. */
 @media (min-width: 721px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 480px;
   }
 }
 @media (min-width: 900px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 680px;
   }
 }
 @media (min-width: 1200px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 920px;
   }
 }
 @media (min-width: 1440px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 1120px;
   }
 }
 @media (min-width: 1700px) {
-  .filter-panel:not(.filter-panel--stack),
-  .pg-filter-panel {
+  .filter-panel:not(.filter-panel--stack) {
     min-width: 1320px;
   }
 }
 
-/* Stats page: per-dimension dropdown panels are narrow by design (single dim).
-   Override back to a sensible compact width and use 2-column on desktop. */
+/* Stats page: per-dimension dropdown panels. width:max-content sizes each
+   dropdown to its own longest value ("DESKTOP / OTHER", "STEAM DECK OLED"...)
+   so nothing truncates, with a floor for the short dimensions and a cap so one
+   very long value can't blow the panel across the page (it ellipsises past the
+   cap instead). Single column -- these are vendor/family-level counters with
+   only a handful of values, so each dropdown stays short (#417 follow-up). */
 .filter-dropdown .filter-panel {
-  min-width: 220px;
-  max-width: 420px;
+  width: max-content;
+  min-width: 240px;
+  max-width: 500px;
 }
-@media (min-width: 721px) {
+/* Rows are flex (not the base grid) so width:max-content reliably grows the
+   panel to the longest value across browsers; the count sits flush right and
+   the label only ellipsises once a value passes the max-width cap. */
+.filter-dropdown .filter-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filter-dropdown .filter-check-label { min-width: 0; }
+.filter-dropdown .filter-check-count { margin-left: auto; padding-left: 14px; }
+
+/* Mobile fix for #426: on phones the compact popover positioned at left:0 of
+   its button overflows the right edge of the viewport when the button sits
+   past the horizontal midpoint (RATING on stats etc.). The overflow triggers
+   document-wide horizontal scroll which shifts the whole page off-screen.
+   Promote the open panel to position:fixed with viewport-relative left/right,
+   pinned vertically to just below the tapped button via --dropdown-top (set
+   by js/stats/main.js on open). Stats keeps its per-dimension compact-panel
+   feel -- the panel still opens right under the button -- but stays inside
+   the viewport instead of pushing the page. */
+@media (max-width: 720px) {
   .filter-dropdown.is-open .filter-panel {
-    column-count: 2;
-    column-gap: 0;
-    min-width: 340px;
+    position: fixed;
+    top: var(--dropdown-top, 120px);
+    left: 8px;
+    right: 8px;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    max-height: calc(100dvh - var(--dropdown-top, 120px) - 8px);
+    overflow-y: auto;
+    /* Sit above the filter-row buttons + page content but below the mobile
+       full-viewport filter modal (which owns z-index 300). */
+    z-index: 250;
   }
-  .filter-panel-summary { column-span: all; }
 }
 
 /* ── Pill filter group ────────────────────────────────────────────────────── */

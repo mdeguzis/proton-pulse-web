@@ -73,15 +73,14 @@
       </g>
       <path d="M12 8.4v11.8" stroke="#000" stroke-width="1.2"/>
     </symbol>
-    <!-- Library corner badge: a 2x2 collection grid, clean white tiles (no
-         outline) to match the picker mockup. The gaps between tiles read as
-         the store-pill color. Id kept for call-site stability (home.js
-         references #icon-book-open). -->
+    <!-- Library corner badge: three horizontal bars (a shelf / list), clean
+         white fill with no outline so it reads on any store-pill color at
+         11-13px. Replaced the old 2x2 collection grid. Id kept for call-site
+         stability (home.js references #icon-book-open). -->
     <symbol id="icon-book-open" viewBox="0 0 24 24" fill="#fff">
-      <rect x="3.4" y="3.4" width="7" height="7" rx="1.5"/>
-      <rect x="13.6" y="3.4" width="7" height="7" rx="1.5"/>
-      <rect x="3.4" y="13.6" width="7" height="7" rx="1.5"/>
-      <rect x="13.6" y="13.6" width="7" height="7" rx="1.5"/>
+      <rect x="3.5" y="4.8"  width="17" height="3.6" rx="1.8"/>
+      <rect x="3.5" y="10.2" width="17" height="3.6" rx="1.8"/>
+      <rect x="3.5" y="15.6" width="17" height="3.6" rx="1.8"/>
     </symbol>
     <!-- Steam Deck brand mark: dot nested in a right-facing crescent, traced
          from Valve's official mark (SteamGridDB 1920px source). Monochrome
@@ -624,10 +623,21 @@
       isOpen: isOpen,
       isMobile: isMobile,
       viewportWidth: window.innerWidth,
+      // #426: when documentScrollWidth exceeds viewportWidth, something on
+      // the page is causing horizontal overflow (fixed-pixel min-widths,
+      // wide grids, unwrapped tables, etc.) and the whole layout will shift
+      // right on mobile. The diff pinpoints WHICH page has the culprit even
+      // if the panel itself is fine.
+      documentScrollWidth: document.documentElement ? document.documentElement.scrollWidth : null,
       mqQuery: MOBILE_MODAL_QUERY,
       action: (isOpen && isMobile) ? 'portalToBody' : 'restoreOrNoop',
       source: '_handleOpenState',
     });
+    // Act on the decision the log line already announces (#425). Without
+    // these calls the panel stays inside .main-content's stacking context
+    // (z-index:2 in root), so its z-index:300 can't lift it above the
+    // topbar (z-index:200) -- the mobile modal appears "inline" under the
+    // topbar instead of overlaying the viewport.
     if (isOpen && isMobile) _portalPanelToBody(panel);
     else _restorePanel(panel);
   }

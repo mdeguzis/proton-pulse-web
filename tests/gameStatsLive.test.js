@@ -53,3 +53,25 @@ describe('game-stats page: data loaders route through dataUrl (#380/#361)', () =
     expect(src).not.toMatch(/proton-pulse-web-staging/);
   });
 });
+
+describe('game-stats page dedups CDN pulse mirror against live Supabase (#430)', () => {
+  // Same failure mode as the confidence page and #423 on the game page:
+  // CDN latest.json carries pulse-mirrored rows AND fetchNativeReports
+  // returns the same submission live. Naive spread double-counted them,
+  // inflating every downstream computeGameStats / computeConfidence.
+  test('imports mergeReportsById from app/utils.js', () => {
+    expect(src).toMatch(/import\s*\{\s*mergeReportsById\s*\}\s*from\s*['"]\.\.\/app\/utils\.js/);
+  });
+
+  test('allReports goes through mergeReportsById, not [ ...cdn, ...pulse ]', () => {
+    expect(src).toMatch(/let allReports = mergeReportsById\(cdnReports,\s*pulseReports\)/);
+    expect(src).not.toMatch(/let allReports = \[\.\.\.cdnReports,\s*\.\.\.pulseReports\]/);
+  });
+
+  test('loadPulseReports aliases id -> reportId so mergeReportsById can join', () => {
+    // mergeReportsById keys on native.reportId, CDN rows carry .pulseId. Without
+    // the alias the join fails silently and dedup collapses back into the
+    // pre-fix double-count. Assert the map is present in loadPulseReports.
+    expect(src).toMatch(/rows\.map\(\(r\)\s*=>\s*\(\s*\{\s*\.\.\.r,\s*reportId:\s*r\.id\s*\}\s*\)\)/);
+  });
+});

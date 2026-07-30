@@ -171,7 +171,14 @@ export async function populateScoringTooltip(el) {
  */
 export function tierFromReports(reports) {
   const counts = {};
-  for (const r of reports) counts[r.rating] = (counts[r.rating] || 0) + 1;
+  // ProtonDB CDN mirror emits Capitalized ratings ("Borked", "Gold"); Supabase
+  // submissions use lowercase. Normalize at lookup so both sources bucket the
+  // same tier. Without this, capitalized ratings never matched RATING_TIER_ORDER
+  // (all lowercase) and every game with only CDN reports returned 'pending' (#427).
+  for (const r of reports) {
+    const key = String(r && r.rating || '').toLowerCase();
+    if (key) counts[key] = (counts[key] || 0) + 1;
+  }
   for (const t of RATING_TIER_ORDER) if (counts[t]) return t;
   return 'pending';
 }
@@ -191,7 +198,10 @@ export const RATING_TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borke
 export function ratingMix(reports) {
   const counts = {};
   for (const r of reports || []) {
-    if (r && r.rating) counts[r.rating] = (counts[r.rating] || 0) + 1;
+    // Normalize rating case so ProtonDB CDN entries ("Borked") bucket into
+    // the same slot as Supabase entries ("borked"). See #427.
+    const key = r && r.rating ? String(r.rating).toLowerCase() : '';
+    if (key) counts[key] = (counts[key] || 0) + 1;
   }
   return RATING_TIER_ORDER
     .filter((t) => (counts[t] || 0) > 0)
@@ -230,7 +240,15 @@ export function pulseTierFromReports(reports, protonDbCount = 0) {  // eslint-di
       : days < 1095 ? 0.10
       : days < 1825 ? 0.05
       : 0.02;
-    const s = SCORE[r.rating] ?? 0.5;
+    // ProtonDB CDN emits Capitalized ratings; Supabase emits lowercase.
+    // Normalize at lookup or every CDN report falls through to the 0.5
+    // fallback, which averages to 0.5 = silver regardless of true rating
+    // mix. That was the 203140 (Hitman: Absolution) game page bug (#427):
+    // 14 Borked + 2 Gold from ~7yr ago should compute to borked (avg 0.10)
+    // but rendered as silver (fallback avg 0.50) on the game page badge
+    // while cards + confidence page correctly showed borked.
+    const key = String(r.rating || '').toLowerCase();
+    const s = SCORE[key] ?? 0.5;
     wSum += s * recency;
     wTotal += recency;
   }

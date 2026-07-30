@@ -87,6 +87,33 @@ export function latestPerClient(rows) {
 }
 
 /**
+ * Merges CDN-mirrored reports with live Supabase reports, deduplicating
+ * on the shared Supabase `user_configs.id` (surfaced as `pulseId` on CDN
+ * rows and `reportId` on native rows). Live rows always win, so edits and
+ * moderation state reflect current Supabase state (#423).
+ *
+ * Rows without a `source` fall back to `'protondb'` (the pre-pulse mirror
+ * default). Rows that already carry `source: 'pulse'` are preserved so
+ * orphaned pulse mirror entries still bucket correctly on the frontend.
+ *
+ * @param {Array<Object>} cdn - Rows from data/<appId>/latest.json.
+ * @param {Array<Object>} nativeReports - Rows from fetchNativeReports().
+ * @returns {Array<Object>} Deduplicated merge; CDN rows first, then native.
+ */
+export function mergeReportsById(cdn, nativeReports) {
+  const nativeIdSet = new Set(
+    (nativeReports || []).map(r => r && r.reportId).filter(id => id != null)
+  );
+  const cdnDeduped = (cdn || []).filter(
+    r => !(r && r.pulseId != null && nativeIdSet.has(r.pulseId))
+  );
+  return [
+    ...cdnDeduped.map(r => ({ ...r, source: r.source || 'protondb' })),
+    ...(nativeReports || []),
+  ];
+}
+
+/**
  * Converts a ProtonDB play-duration enum value to a human-readable string.
  *
  * @param {string} d - Enum value ('underOneHour' | 'oneToFourHours' | 'fourToTenHours' | 'overTenHours').
@@ -94,10 +121,10 @@ export function latestPerClient(rows) {
  */
 export function fmtDuration(d) {
   switch (d) {
-    case 'underOneHour':   return '< 1 hour';
-    case 'oneToFourHours': return '1-4 hours';
-    case 'fourToTenHours': return '4-10 hours';
-    case 'overTenHours':   return '10+ hours';
+    case 'underOneHour':   return '< 1hr';
+    case 'oneToFourHours': return '1-4 hrs';
+    case 'fourToTenHours': return '4-10 hrs';
+    case 'overTenHours':   return '10+ hrs';
     default:               return d || null;
   }
 }

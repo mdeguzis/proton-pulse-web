@@ -2,11 +2,12 @@
 
 import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
-import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=5090f6d2';
-import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=ac350c7f';
+import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=852c9d97';
+import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=a724b9b1';
 import { getWebClientId } from '../../shared/submit.js?v=540fa2c3';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
 import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=65bc2638';
+import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
@@ -18,13 +19,23 @@ import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ad2153bb';
-import { configKey, daysAgo, downloadJson, esc, reportKey } from '../utils.js?v=9a39c726';
+import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=4630c3d5';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
 import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
+
+// Module-level filter cache (#415 slice 2b). SPA navigation between game
+// pages does not reload this module, so a shared object here survives
+// hash-route transitions -- filter state you set on game A carries over
+// to game B without needing to press Save. F5 refresh reloads the module
+// and this resets to null, at which point the next render seeds fresh
+// from localStorage (Save's persistent home). That reconciles the
+// slice 1 contract ("unsaved filters clear on refresh") with the natural
+// expectation that browsing between games keeps context.
+let _ephemeralGameFilters = null;
 
 let _steamCatalogCache = null;
 async function _fetchSteamCatalog() {
@@ -759,10 +770,10 @@ export async function renderGamePage(appId) {
   const liveOnly = !!liveSummary && !cdn.length;
   const cdnMiss = !cdn.length && !(liveFetched || []).length;
 
-  const reports = [
-    ...cdn.map(r => ({ ...r, source: 'protondb' })),
-    ...nativeReports,
-  ];
+  // Unify plugin + web reports on Supabase user_configs.id. pulse.py stamps
+  // that as `pulseId` on the CDN snapshot; fetchNativeReports exposes the same
+  // id as `reportId`. See mergeReportsById in utils.js and #423.
+  const reports = mergeReportsById(cdn, nativeReports);
 
   // Hard miss: nothing in cache, nothing native, nothing from Pulse.
   // Check if we at least know this game from the search-index (title available)
@@ -881,7 +892,9 @@ export async function renderGamePage(appId) {
   // algorithm. This replaces the old "highest tier present" approach which was
   // misleading (1 platinum + 6 gold + 4 borked ≠ platinum). The live summary
   // tier is only used as a last resort when we have zero mirrored reports.
-  const allReportsForTier = [...cdn.map(r => ({ ...r, source: 'protondb' })), ...nativeReports];
+  // Same pulseId/reportId dedup as the render list so tier math isn't skewed
+  // by a report counted twice (once from the CDN snapshot, once live). #423.
+  const allReportsForTier = reports;
   const combinedTier = pulseTierFromReports(allReportsForTier, liveTotal > cdn.length ? liveTotal - cdn.length : 0);
   const protonDbTier = liveOnly
     ? String(liveSummary.tier || '').toLowerCase()
@@ -893,16 +906,36 @@ export async function renderGamePage(appId) {
   const totalSessionCount = playtimeTotals.reduce((s, r) => s + (r.session_count || 0), 0);
 
   let sortMode = 'recent';
-  // Filter state. Persisted to localStorage when the user ticks the "Save"
-  // checkbox - same shape works whether signed in or not (profile sync can
-  // layer on top later by mirroring this object to the user_configs row).
-  const FILTER_STORAGE_KEY = 'proton-pulse:report-filters';
-  const FILTER_PERSIST_KEY = 'proton-pulse:report-filters-persist';
+  // Filter state. Persisted to localStorage only when the user explicitly
+  // presses Save (#415 slice 1). Dropdown changes apply live to the report
+  // list but never touch storage on their own. Presence of the storage key
+  // is now the signal that a snapshot exists -- the older separate persist
+  // toggle is retired.
+  //
+  // The v2 suffix is deliberate: browsers with a snapshot from the pre-slice-1
+  // auto-save era would otherwise restore filters on every refresh even when
+  // the user never explicitly pressed Save. Bumping the key gives everyone a
+  // clean slate under the new explicit-Save regime; the legacy keys are
+  // wiped on load so we do not accumulate cruft.
+  const FILTER_STORAGE_KEY  = 'proton-pulse:report-filters-v2';
+  const _LEGACY_STORAGE_KEY = 'proton-pulse:report-filters';
+  const _LEGACY_PERSIST_KEY = 'proton-pulse:report-filters-persist';
   const persistedFilters = (() => {
+    // Session cache (module-level) wins so filter state survives SPA
+    // navigation between game pages. First entry in a session falls
+    // through to localStorage and seeds the cache.
+    if (_ephemeralGameFilters !== null) return _ephemeralGameFilters;
     try {
-      if (localStorage.getItem(FILTER_PERSIST_KEY) !== '1') return {};
-      return JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}') || {};
-    } catch { return {}; }
+      // One-shot cleanup of the pre-v2 auto-save snapshot and its persist
+      // toggle. Both are dead keys under the explicit-Save model.
+      localStorage.removeItem(_LEGACY_STORAGE_KEY);
+      localStorage.removeItem(_LEGACY_PERSIST_KEY);
+      _ephemeralGameFilters = JSON.parse(localStorage.getItem(FILTER_STORAGE_KEY) || '{}') || {};
+      return _ephemeralGameFilters;
+    } catch {
+      _ephemeralGameFilters = {};
+      return _ephemeralGameFilters;
+    }
   })();
 
   // Scalar-per-filter state. Backward compat: older builds also wrote scalars,
@@ -912,10 +945,16 @@ export async function renderGamePage(appId) {
     if (Array.isArray(v)) return v.filter(Boolean)[0] || '';
     return v || '';
   }
+  // Fields that also live in the shared-across-site key (#415 slice 2)
+  // fall back to it when the per-page snapshot is empty. Per-page wins
+  // whenever it has a value, so a game where you deliberately narrowed
+  // to bronze does not get overwritten by a site-wide rating=platinum.
+  const _sharedRating = readSharedField('rating')[0] || '';
+  const _sharedSource = readSharedField('source')[0] || '';
   let filterGpu    = _restoreScalar(persistedFilters.gpu);
   let filterArch   = _restoreScalar(persistedFilters.arch);
   let filterOs     = _restoreScalar(persistedFilters.os);
-  let filterRating = _restoreScalar(persistedFilters.rating);
+  let filterRating = _restoreScalar(persistedFilters.rating) || _sharedRating;
   // Native vs Proton (or a specific proton wrapper). '' == any. Reports
   // without a run_type value are treated as unknown so they never
   // accidentally match a specific selection.
@@ -926,24 +965,84 @@ export async function renderGamePage(appId) {
   // it once" reports that don't reflect real-use compatibility
   let filterMinPlaytime = persistedFilters.minPlaytime || 0;
   let filterMine = false;
-  let persistFilters = localStorage.getItem(FILTER_PERSIST_KEY) === '1';
 
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
-  // 'protondb', or '' for any.
+  // 'protondb', or '' for any. Falls back to the shared-across-site value
+  // when neither the per-page snapshot nor the profile default set anything.
   let filterSource = (() => {
     const rawArr = Array.isArray(persistedFilters.source) ? persistedFilters.source[0] : null;
-    const raw = rawArr || persistedFilters.source || localStorage.getItem('proton-pulse:config-type') || '';
+    const raw = rawArr || persistedFilters.source || localStorage.getItem('proton-pulse:config-type') || _sharedSource || '';
     if (raw === 'pulse-config' || raw === 'pulse-report') return 'pulse';
     if (raw === 'protondb-edited') return 'protondb';
     return raw;
   })();
 
-  function saveFiltersIfEnabled() {
-    if (!persistFilters) return;
+  // Slice 2 checkbox state: reflects whether the site-wide preference is
+  // currently on. Only affects future Save presses -- flipping the box
+  // does nothing until the user commits with Save.
+  let _shareAcrossSite = isSharedEnabled();
+
+  function _filterSnapshot() {
+    return {
+      gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating,
+      runType: filterRunType, device: filterDevice,
+      minPlaytime: filterMinPlaytime, source: filterSource,
+    };
+  }
+
+  function _getPersistedSnapshot() {
     try {
-      const snapshot = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, device: filterDevice, minPlaytime: filterMinPlaytime, source: filterSource };
-      localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(snapshot));
+      const raw = localStorage.getItem(FILTER_STORAGE_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw) || {};
+    } catch { return null; }
+  }
+
+  function _isDirty() {
+    // Slice 2: the "Apply across the site" flag is also part of the saved
+    // state. Flipping it without a Save press should visibly mark the
+    // button dirty so the user knows they have an uncommitted change.
+    if (_shareAcrossSite !== isSharedEnabled()) return true;
+    const persisted = _getPersistedSnapshot();
+    const current = _filterSnapshot();
+    if (!persisted) {
+      // No snapshot yet: dirty when any filter differs from the empty default
+      return Object.values(current).some(v => v && v !== 0);
+    }
+    // Compare each field to the persisted equivalent, normalising arrays and
+    // missing keys to '' so old + new formats match cleanly.
+    const norm = v => Array.isArray(v) ? (v[0] || '') : (v == null ? '' : v);
+    return Object.keys(current).some(k => norm(current[k]) !== norm(persisted[k]));
+  }
+
+  function _updateSaveButtonState() {
+    const btn = document.getElementById('gp-filter-persist');
+    if (!btn) return;
+    const dirty = _isDirty();
+    btn.classList.toggle('is-dirty', dirty);
+    btn.classList.toggle('is-clean', !dirty);
+    btn.setAttribute('aria-pressed', String(!dirty && !!_getPersistedSnapshot()));
+    btn.textContent = dirty ? 'Save filters' : (_getPersistedSnapshot() ? 'Saved' : 'Save filters');
+  }
+
+  function _saveFiltersNow() {
+    try {
+      localStorage.setItem(FILTER_STORAGE_KEY, JSON.stringify(_filterSnapshot()));
     } catch { /* quota / disabled - ignore */ }
+    // Slice 2: mirror the shared fields when the site-wide box is ticked, or
+    // drop the shared key entirely when it isn't. Save is the single commit
+    // point either way, matching the explicit-press contract from slice 1.
+    if (_shareAcrossSite) {
+      writeShared({ rating: filterRating, source: filterSource });
+    } else {
+      clearShared();
+    }
+    _updateSaveButtonState();
+  }
+
+  function _forgetSavedFilters() {
+    try { localStorage.removeItem(FILTER_STORAGE_KEY); } catch { /* ignore */ }
+    _updateSaveButtonState();
   }
 
   const gpuVendor = g => {
@@ -1284,7 +1383,7 @@ export async function renderGamePage(appId) {
           const gpuSel = availGpus.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fGpu">GPU</label>
-              <select id="fGpu" class="home-filter-select">
+              <select id="fGpu" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availGpus.map(v => `<option value="${v}" ${filterGpu===v?'selected':''}>${GPU_LABEL[v]||v}</option>`).join('')}
               </select>
@@ -1292,7 +1391,7 @@ export async function renderGamePage(appId) {
           const archSel = availArchs.length > 1 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fArch">Architecture</label>
-              <select id="fArch" class="home-filter-select">
+              <select id="fArch" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availArchs.map(v => `<option value="${esc(v)}" ${filterArch===v?'selected':''}>${esc(v)}</option>`).join('')}
               </select>
@@ -1300,7 +1399,7 @@ export async function renderGamePage(appId) {
           const osSel = availOs.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fOs">OS</label>
-              <select id="fOs" class="home-filter-select">
+              <select id="fOs" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availOs.map(v => `<option value="${esc(v)}" ${filterOs===v?'selected':''}>${esc(v)}</option>`).join('')}
               </select>
@@ -1308,7 +1407,7 @@ export async function renderGamePage(appId) {
           const ratingSel = availRatings.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fRating">Rating</label>
-              <select id="fRating" class="home-filter-select">
+              <select id="fRating" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availRatings.map(v => `<option value="${v}" ${filterRating===v?'selected':''}>${RATING_LABEL[v]||v}</option>`).join('')}
               </select>
@@ -1329,7 +1428,7 @@ export async function renderGamePage(appId) {
           const runTypeSel = availRunTypes.length > 0 ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fRunType">Runtime Type</label>
-              <select id="fRunType" class="home-filter-select">
+              <select id="fRunType" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${RUN_TYPE_LABEL[v]||v}</option>`).join('')}
               </select>
@@ -1337,7 +1436,7 @@ export async function renderGamePage(appId) {
           const srcSel = `
             <div class="filter-item">
               <label class="home-filter-label" for="fSource">Source</label>
-              <select id="fSource" class="home-filter-select">
+              <select id="fSource" class="home-filter-select" autocomplete="off">
                 <option value="">All</option>
                 <option value="protondb" ${filterSource==='protondb'?'selected':''}>ProtonDB</option>
                 <option value="pulse" ${filterSource==='pulse'?'selected':''}>Pulse</option>
@@ -1350,7 +1449,7 @@ export async function renderGamePage(appId) {
           const deviceSel = hasDeck ? `
             <div class="filter-item">
               <label class="home-filter-label" for="fDevice">Device</label>
-              <select id="fDevice" class="home-filter-select">
+              <select id="fDevice" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
                 <option value="deck-any"  ${filterDevice==='deck-any'?'selected':''}>Steam Deck (any)</option>
                 <option value="deck-lcd"  ${filterDevice==='deck-lcd'?'selected':''}>Steam Deck LCD</option>
@@ -1362,7 +1461,7 @@ export async function renderGamePage(appId) {
           const playtimeSel = `
             <div class="filter-item">
               <label class="home-filter-label" for="fPlaytime">Min playtime</label>
-              <select id="fPlaytime" class="home-filter-select">
+              <select id="fPlaytime" class="home-filter-select" autocomplete="off">
                 <option value="0"   ${filterMinPlaytime===0?'selected':''}>Any</option>
                 <option value="60"  ${filterMinPlaytime===60?'selected':''}>1h+</option>
                 <option value="120" ${filterMinPlaytime===120?'selected':''}>2h+</option>
@@ -1391,7 +1490,11 @@ export async function renderGamePage(appId) {
                   <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
                   <span class="filter-collapse-text">Collapse</span>
                 </button>
-                <button class="filter-save-btn${persistFilters?' is-active':''}" id="gp-filter-persist" type="button" aria-pressed="${persistFilters ? 'true' : 'false'}" title="Save these filters so they apply next time you visit a game page">Save filters</button>
+                <label class="filter-share-toggle" title="Also apply this filter's rating + source on the browse and other pages">
+                  <input type="checkbox" id="gp-filter-share" ${_shareAcrossSite ? 'checked' : ''}>
+                  <span>Apply across the site</span>
+                </label>
+                <button class="filter-save-btn" id="gp-filter-persist" type="button" aria-pressed="false" title="Save these filters so they apply next time you visit a game page. Shift-click to forget a saved snapshot.">Save filters</button>
                 <button class="filter-clear-btn" id="gp-filter-clear" type="button">Clear filters</button>
               </div>
             </div>
@@ -1509,6 +1612,38 @@ export async function renderGamePage(appId) {
       const now = new Date().toISOString().slice(11, 19);
       bar.textContent = `[${now}] ${msg}`;
     }
+    // #415 slice 2b debug: sample computed styles that touch the drawer
+    // animation on both toggle events so we can diagnose the "flash" bug
+    // if it recurs. Logs to the console AND to the ring buffer so the
+    // admin Logging tab captures it too. Remove once #415 slice 2b is
+    // signed off.
+    function _debugPanelState(label, panel) {
+      if (!panel) { console.debug('[filter-panel]', label, 'panel=null'); return; }
+      const cs = getComputedStyle(panel);
+      const rect = panel.getBoundingClientRect();
+      const state = {
+        classes: panel.className,
+        pos: cs.position,
+        display: cs.display,
+        clipPath: cs.clipPath,
+        opacity: cs.opacity,
+        transform: cs.transform,
+        overflowY: cs.overflowY,
+        width: Math.round(rect.width) + 'x' + Math.round(rect.height),
+        inViewport: rect.top >= 0 && rect.left >= 0 && rect.right <= window.innerWidth && rect.bottom <= window.innerHeight,
+        left: Math.round(rect.left),
+        top: Math.round(rect.top),
+        columns: cs.columns,
+        columnCount: cs.columnCount,
+      };
+      console.debug('[filter-panel]', label, state);
+      try {
+        if (window.ppLogBuffer && typeof window.ppLogBuffer.pushLog === 'function') {
+          window.ppLogBuffer.pushLog('DEBUG', '[filter-panel] ' + label, state);
+        }
+      } catch { /* ring buffer optional */ }
+    }
+
     function _debugSnapshot(label, extra) {
       const active = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, source: filterSource, device: filterDevice, minPlaytime: filterMinPlaytime };
       const nonBlank = Object.fromEntries(Object.entries(active).filter(([, v]) => v !== '' && v !== 0));
@@ -1674,6 +1809,7 @@ export async function renderGamePage(appId) {
       if (!panel) return;
       const open = panel.classList.toggle('open');
       toggleEl()?.setAttribute('aria-expanded', String(open));
+      _debugPanelState(open ? 'toggle -> open' : 'toggle -> closed', panel);
     });
 
     // Dropdown filter change handlers. Each writes the picked value into the
@@ -1684,48 +1820,87 @@ export async function renderGamePage(appId) {
     // OS-native picker dismisses. Prior version called render() which does
     // el.innerHTML = ... on the whole subtree -- that tore down the
     // portalled panel and made it appear the modal closed on pick.
-    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
-    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); saveFiltersIfEnabled(); refreshReports(); });
+    // Force the DOM selects to reflect the JS state right after mount.
+    // Browsers (Firefox especially) sometimes restore <select> values from
+    // their own bfcache-adjacent form-state cache on refresh, ignoring the
+    // `selected` attributes in the rendered HTML AND autocomplete="off".
+    // Without this sync a fresh JS state ('') would render "Any" in HTML but
+    // the browser could paint the previously-chosen option on top -- the
+    // report list would look unfiltered but the dropdown would show a stale
+    // filter. Assign scalar filter vars back into the corresponding select
+    // so both sides match on first paint (#415 slice 1 refresh-clears bug).
+    {
+      const _syncSelect = (id, value) => {
+        const s = el.querySelector('#' + id);
+        if (s && s.value !== String(value)) s.value = String(value);
+      };
+      _syncSelect('fGpu',      filterGpu);
+      _syncSelect('fArch',     filterArch);
+      _syncSelect('fOs',       filterOs);
+      _syncSelect('fRating',   filterRating);
+      _syncSelect('fRunType',  filterRunType);
+      _syncSelect('fSource',   filterSource);
+      _syncSelect('fDevice',   filterDevice);
+      _syncSelect('fPlaytime', filterMinPlaytime || 0);
+    }
+
+    // Every change also writes into the module-level cache so navigating
+    // to another game page picks it up on next render (#415 slice 2b).
+    const _cacheField = (k, v) => { if (_ephemeralGameFilters) _ephemeralGameFilters[k] = v; };
+    el.querySelector('#fGpu')?.addEventListener('change', e => { filterGpu    = e.target.value; _cacheField('gpu', filterGpu); _debugSnapshot('change fGpu -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fArch')?.addEventListener('change', e => { filterArch   = e.target.value; _cacheField('arch', filterArch); _debugSnapshot('change fArch -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fOs')?.addEventListener('change',  e => { filterOs     = e.target.value; _cacheField('os', filterOs); _debugSnapshot('change fOs -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fRating')?.addEventListener('change', e => { filterRating = e.target.value; _cacheField('rating', filterRating); _debugSnapshot('change fRating -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fRunType')?.addEventListener('change', e => { filterRunType = e.target.value; _cacheField('runType', filterRunType); _debugSnapshot('change fRunType -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _cacheField('source', filterSource); _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _cacheField('device', filterDevice); _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _cacheField('minPlaytime', filterMinPlaytime); _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
 
     // Collapse: close the modal so the user sees the filtered reports. Uses
     // panelEl() so it finds the panel whether it is still in el or portalled
     // to body -- prior version did el.querySelector and did nothing on mobile.
     document.getElementById('gp-filter-collapse')?.addEventListener('click', (e) => {
       e.stopPropagation();
-      panelEl()?.classList.remove('open');
+      const p = panelEl();
+      _debugPanelState('collapse click (pre-remove)', p);
+      p?.classList.remove('open');
       toggleEl()?.setAttribute('aria-expanded', 'false');
+      _debugPanelState('collapse click (post-remove)', p);
+      // Sample twice more during the transition so we can see if any
+      // property snaps between frames.
+      setTimeout(() => _debugPanelState('collapse +100ms', p), 100);
+      setTimeout(() => _debugPanelState('collapse +250ms', p), 250);
     });
 
-    // Save filters: aria-pressed toggle button, matches browse. Persist
-    // key + snapshot format stays the same so existing users do not lose
-    // their saved state. The button lives inside the panel so it moves with
-    // the portal -- use document.getElementById to find it either way.
-    document.getElementById('gp-filter-persist')?.addEventListener('click', () => {
-      persistFilters = !persistFilters;
-      const btn = document.getElementById('gp-filter-persist');
-      if (btn) {
-        btn.setAttribute('aria-pressed', String(persistFilters));
-        btn.classList.toggle('is-active', persistFilters);
+    // Slice 2: "Apply across the site" checkbox. Changing it in-panel only
+    // flips the in-memory flag; the actual localStorage write happens on
+    // the next explicit Save. Marking the button dirty gives a visible cue
+    // that the user has something to commit.
+    document.getElementById('gp-filter-share')?.addEventListener('change', (e) => {
+      _shareAcrossSite = !!e.target.checked;
+      _updateSaveButtonState();
+    });
+
+    // Save filters (#415 slice 1): explicit press-to-save. Clicking commits
+    // the current filter state to localStorage and marks the button clean.
+    // No auto-save on dropdown change -- click-away / collapse do not touch
+    // storage. Shift+click clears the saved snapshot ("forget saved"),
+    // matching the pattern used by profile-page Save buttons that also
+    // support a clear gesture without cluttering the panel with a second
+    // button.
+    document.getElementById('gp-filter-persist')?.addEventListener('click', (e) => {
+      if (e.shiftKey && _getPersistedSnapshot()) {
+        _forgetSavedFilters();
+        return;
       }
-      try {
-        localStorage.setItem(FILTER_PERSIST_KEY, persistFilters ? '1' : '0');
-        if (persistFilters) saveFiltersIfEnabled();
-        else localStorage.removeItem(FILTER_STORAGE_KEY);
-      } catch { /* quota - ignore */ }
+      _saveFiltersNow();
     });
 
-    // Clear filters: reset every scalar + playtime, then partial re-render
-    // (same reason as the dropdown handlers -- keep the panel node intact
-    // so the modal does not flicker). Persist the cleared state too so a
-    // saved snapshot does not come back on reload. Also reset the visible
-    // <select> values so the panel reflects the cleared state without a
-    // full DOM rebuild.
+    // Clear filters: reset every scalar + playtime in-memory and refresh the
+    // reports list. Does NOT touch localStorage -- only Save writes to
+    // storage now (#415 slice 1). After Clear, if a saved snapshot exists,
+    // the Save button flips to "dirty" so the user can see they still have
+    // a persisted state that differs from the current (empty) one.
     document.getElementById('gp-filter-clear')?.addEventListener('click', () => {
       filterGpu = '';
       filterArch = '';
@@ -1735,15 +1910,31 @@ export async function renderGamePage(appId) {
       filterSource = '';
       filterDevice = '';
       filterMinPlaytime = 0;
+      // Also wipe the module-level session cache so navigating to another
+      // game page picks up the clear state, not the pre-clear filter set.
+      if (_ephemeralGameFilters) {
+        _ephemeralGameFilters.gpu = '';
+        _ephemeralGameFilters.arch = '';
+        _ephemeralGameFilters.os = '';
+        _ephemeralGameFilters.rating = '';
+        _ephemeralGameFilters.runType = '';
+        _ephemeralGameFilters.source = '';
+        _ephemeralGameFilters.device = '';
+        _ephemeralGameFilters.minPlaytime = 0;
+      }
       for (const id of ['fGpu', 'fArch', 'fOs', 'fRating', 'fRunType', 'fSource', 'fDevice']) {
         const s = document.getElementById(id);
         if (s) s.value = '';
       }
       const p = document.getElementById('fPlaytime');
       if (p) p.value = '0';
-      saveFiltersIfEnabled();
+      _updateSaveButtonState();
       refreshReports();
     });
+
+    // Seed initial button state so the first render reflects clean/dirty vs
+    // any persisted snapshot without waiting for a change event.
+    _updateSaveButtonState();
     // Match both the legacy .cfg-dl-btn (Pulse config cards) and the new
     // unified .action-btn (report cards) so the JSON download click works
     // regardless of which renderer produced the button

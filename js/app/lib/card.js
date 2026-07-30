@@ -1,7 +1,7 @@
 // Unified game card renderer. Single source of truth for the
 // thumbnail | title + sub | badge card layout used everywhere.
 import { STEAM_IMG } from '../config.js?v=a75604f5';
-import { esc } from '../utils.js?v=9a39c726';
+import { esc } from '../utils.js?v=4630c3d5';
 import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=ad2153bb';
 
 const TIER_COLORS = {

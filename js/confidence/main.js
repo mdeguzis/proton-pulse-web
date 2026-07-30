@@ -1,5 +1,5 @@
 // Entry module for confidence.html. Migrated from the page's inline script.
-import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=5090f6d2';
+import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=852c9d97';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
@@ -7,10 +7,11 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 // canonical confidence calc as the game-page headline. computeConfidence is
 // the single source; fetchNativeReports + fetchProtonDbLive mirror the game
 // page's data loading so the two surfaces can never diverge again.
-import { computeConfidence } from '../lib/scoring/gameStats.js?v=ac350c7f';
+import { computeConfidence } from '../lib/scoring/gameStats.js?v=a724b9b1';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { fetchProtonDbLive } from '../app/api/protondb.js?v=65bc2638';
 import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
+import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
 
 (function () {
   const root = document.getElementById('cb-root');
@@ -370,7 +371,9 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
       const d = new Date(r.timestamp * 1000);
       const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
       if (!rawBuckets[key]) rawBuckets[key] = { pos: 0, neg: 0 };
-      if (['platinum','gold','silver'].includes(r.rating)) rawBuckets[key].pos++;
+      // #427: normalize rating case so a Capitalized value from any legacy
+      // source still counts on the positive side of the month bucket.
+      if (['platinum','gold','silver'].includes(String(r.rating || '').toLowerCase())) rawBuckets[key].pos++;
       else rawBuckets[key].neg++;
     }
 
@@ -531,7 +534,7 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
     const RATING_VAL = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
     const recent = reports.filter(r => r.timestamp && now - r.timestamp < 90 * 86400);
     const prior  = reports.filter(r => r.timestamp && now - r.timestamp >= 90 * 86400 && now - r.timestamp < 270 * 86400);
-    const avg = arr => arr.reduce((s, r) => s + (RATING_VAL[r.rating] || 3), 0) / arr.length;
+    const avg = arr => arr.reduce((s, r) => s + (RATING_VAL[String(r.rating || '').toLowerCase()] || 3), 0) / arr.length;
     if (recent.length >= 2 && prior.length >= 2) {
       const diff = avg(recent) - avg(prior);
       return { dir: diff > 0.3 ? 'improving' : diff < -0.3 ? 'declining' : 'stable', diff, recentCount: recent.length, priorCount: prior.length };
@@ -545,7 +548,7 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
       const ver = r.protonVersion || r.proton_version || 'Unknown';
       if (!map[ver]) map[ver] = { total: 0, pos: 0 };
       map[ver].total++;
-      if (['platinum','gold','silver'].includes(r.rating)) map[ver].pos++;
+      if (['platinum','gold','silver'].includes(String(r.rating || '').toLowerCase())) map[ver].pos++;
     }
     return Object.entries(map)
       .map(([ver, s]) => ({ ver, total: s.total, pct: Math.round((s.pos / s.total) * 100) }))
@@ -672,8 +675,15 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
     let overallTier = TIER_ORDER.includes(_tierParam) ? _tierParam : null;
     if (!overallTier && n > 0) {
       const tierCounts = {};
-      for (const r of reports) if (counts[r.rating] != null) {
-        tierCounts[r.rating] = (tierCounts[r.rating] || 0) + 1;
+      // #427: normalize rating case here too. counts keys are lowercase
+      // (defined earlier as { platinum, gold, silver, bronze, borked }),
+      // so an uppercase r.rating from the CDN never satisfied
+      // counts[r.rating] != null and no tier ever got counted -- direct
+      // visits to /confidence?app=<id> without a tier param defaulted to
+      // 'platinum' (first in TIER_ORDER, only tier at 0 count).
+      for (const r of reports) {
+        const key = String(r.rating || '').toLowerCase();
+        if (counts[key] != null) tierCounts[key] = (tierCounts[key] || 0) + 1;
       }
       let bestCount = -1;
       for (const t of TIER_ORDER) {
@@ -708,10 +718,16 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
       for (const r of reports) {
         const days = Math.round((nowSec - (r.timestamp || 0)) / 86400);
         const bucket = RECENCY.find(b => days < b.max) || RECENCY[RECENCY.length - 1];
-        const sc = SCORE_MAP[r.rating] ?? 0.5;
+        // #427: normalize rating case so ProtonDB CDN's Capitalized ratings
+        // ("Borked") hit the lowercase SCORE_MAP keys. Without this every
+        // report defaults to 0.5 and the whyRating panel derives silver
+        // regardless of the true mix -- matching the same bug that made
+        // the game page badge disagree with cards + search.
+        const normRating = String(r.rating || '').toLowerCase();
+        const sc = SCORE_MAP[normRating] ?? 0.5;
         const w = sc * bucket.weight;
         wSum += w; wTotal += bucket.weight;
-        perRep.push({ rating: r.rating, days, recencyWeight: bucket.weight, score: sc, weighted: w, recencyLabel: bucket.label });
+        perRep.push({ rating: normRating, days, recencyWeight: bucket.weight, score: sc, weighted: w, recencyLabel: bucket.label });
       }
       const avg = wTotal > 0 ? wSum / wTotal : 0;
       const tiers = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
@@ -962,9 +978,17 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
     ]);
     const liveSummary = (liveFetched || []).find(r => r._liveOnly) || null;
     const liveTotal = liveSummary ? (liveSummary.total || 0) : 0;
+    // #430: use the same deduped merge the game page uses via
+    // mergeReportsById so CDN pulse mirror rows are not double-counted with
+    // their live Supabase counterparts. The #361/#376 comment above ("same
+    // helper, same inputs as the game-page headline") was accurate for the
+    // helper but the inputs had drifted: game page dedups on
+    // pulseId/reportId, confidence page did not, so the aggregate confidence
+    // ran higher than the game-page dial for any game with mirrored pulse
+    // rows.
     const reports = wantsPerReport
       ? cdnReports
-      : [...cdnReports.map(r => ({ ...r, source: r.source || 'protondb' })), ...(nativeReports || [])];
+      : mergeReportsById(cdnReports, nativeReports || []);
     const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
     const gameTitle = reports[0]?.title || indexHit?.[1] || `App ${appId}`;
 

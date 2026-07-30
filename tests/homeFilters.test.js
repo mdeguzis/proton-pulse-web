@@ -197,7 +197,14 @@ describe('home page browse -- Save filters (persist)', () => {
   });
 
   test('only writes when the box is checked', () => {
-    expect(homeSrc).toContain('function _saveFiltersIfEnabled() { if (_persistOn()) _saveFilters(); }');
+    // Slice 2 expanded _saveFiltersIfEnabled to also mirror to the shared
+    // storage key when the share checkbox is on. The core gate (only run
+    // when the persist button is on) still applies.
+    expect(homeSrc).toContain('function _saveFiltersIfEnabled()');
+    const idx = homeSrc.indexOf('function _saveFiltersIfEnabled()');
+    const slice = homeSrc.slice(idx, idx + 500);
+    expect(slice).toContain('if (!_persistOn()) return');
+    expect(slice).toContain('_saveFilters();');
   });
 
   test('unchecking the box removes the saved state', () => {

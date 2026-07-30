@@ -42,6 +42,7 @@ from .common import (
     is_adult_app,
     is_adult_app_cached,
     log,
+    normalize_rating,
 )
 from .gog_catalog import load_gog_catalog, load_gog_covers, load_gog_meta, load_gog_release_years
 from .epic_catalog import load_epic_catalog, load_epic_covers, load_epic_meta, load_epic_release_years
@@ -85,6 +86,52 @@ def log_summary(
     log(f"[summary] Main index file         : {(output_path / 'data-index.html').resolve()}")
     log(f"[summary] Total time              : {total_elapsed:.1f}s")
     log(f"[summary] Output dir              : {data_output_path.resolve()}")
+
+
+def backfill_lowercase_ratings(data_output_path: Path) -> tuple[int, int, int]:
+    """One-shot heal-in-place for #427: lowercase every rating string in every
+    year file that still has a capitalized ProtonDB-style value. Idempotent --
+    files already normalized are skipped without rewriting (json.dumps output
+    would be byte-identical, but explicit skip avoids churning R2 content
+    hashes for the ~44k files that are already lowercase).
+
+    Returns (files_scanned, files_rewritten, ratings_lowercased). Runs before
+    generate_latest_files so latest.json inherits the normalized content on
+    the same pipeline pass.
+    """
+    scanned = 0
+    rewritten = 0
+    lowercased = 0
+    for app_dir in data_output_path.iterdir():
+        if not app_dir.is_dir():
+            continue
+        for year_file in app_dir.glob("*.json"):
+            if year_file.stem in {"latest", "index", "votes", "metadata"}:
+                continue
+            scanned += 1
+            try:
+                reports = json.loads(year_file.read_text())
+            except (json.JSONDecodeError, OSError) as exc:
+                log(f"[backfill-ratings] {year_file} unreadable, skipping: {exc}", debug=True)
+                continue
+            if not isinstance(reports, list):
+                continue
+            changed = False
+            for r in reports:
+                if not isinstance(r, dict) or "rating" not in r:
+                    continue
+                original = r.get("rating")
+                if not isinstance(original, str):
+                    continue
+                normalized = normalize_rating(original)
+                if normalized != original:
+                    r["rating"] = normalized
+                    lowercased += 1
+                    changed = True
+            if changed:
+                year_file.write_text(json.dumps(reports, indent=2))
+                rewritten += 1
+    return scanned, rewritten, lowercased
 
 
 def generate_latest_files(data_output_path: Path) -> None:
@@ -1934,6 +1981,17 @@ def finalize_output(output_dir, skip_probe: bool = False):
             protondb_counts = None
     except Exception as exc:
         log(f"[protondb-counts] Failed to fetch counts.json: {exc}")
+
+    # #427 one-shot heal: lowercase every rating in every year file that
+    # still has a capitalized ProtonDB value. Runs BEFORE generate_latest_files
+    # so latest.json inherits the normalized content on the same pass. Idempotent
+    # -- after the first pass rewrites the ~47k historic files, subsequent runs
+    # scan them and skip (0 rewrites, near-zero cost). Safe to leave in the
+    # pipeline permanently as defense against future partner imports that
+    # smuggle in Capitalized ratings.
+    phase("Backfill: lowercase ratings across every year file (#427)")
+    scanned, rewritten, lowercased = backfill_lowercase_ratings(data_output_path)
+    log(f"[backfill-ratings] scanned {scanned:,} year files, rewrote {rewritten:,}, lowercased {lowercased:,} ratings")
 
     phase("latest.json for every app dir (disk walk, quiet)")
     generate_latest_files(data_output_path)

@@ -574,11 +574,32 @@
 /* Unified Filters popover for the popular section */
 .pg-filter-wrap { position: relative; }
 /* .pg-filter-toggle-btn, .pg-filter-badge -- base styles in css/shared/filters.css */
-/* .pg-filter-panel base -- in css/shared/filters.css */
-.pg-filter-panel { display: none; flex-direction: column; gap: 14px; }
-.pg-filter-panel.open { display: flex; }
+/* .pg-filter-panel base + shared drawer animation -- in css/shared/filters.css
+   (#417). display MUST stay constant (never gated on .open) or the layout snaps
+   mid-collapse; the shared clip-path + opacity keeps it hidden when closed. */
+.pg-filter-panel { display: flex; flex-direction: column; gap: 14px; }
 @media (min-width: 601px) {
-  .pg-filter-panel.open { flex-direction: row; gap: 24px; }
+  .pg-filter-panel { flex-direction: row; gap: 24px; }
+}
+/* Mobile: keep the panel a fixed full-viewport layer even when closed so
+   removing .open doesn't flip position:fixed -> absolute mid-collapse and flash
+   the tiny popover shape (mirrors css/app/reports.css for .filter-panel). The
+   open full-screen modal treatment itself lives in css/shared/filters.css. */
+@media (max-width: 720px) {
+  .pg-filter-panel {
+    position: fixed;
+    inset: 0;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: 100dvh;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    background: var(--bg-bot);
+    overflow-y: hidden;
+  }
 }
 /* .pg-filter-group, .pg-filter-group-label, .pg-filter, .pg-filter--active,
    .pg-filter-count -- all in css/shared/filters.css */
@@ -1018,29 +1039,39 @@
 
 /* ---- Icons & Signage legend (about page, #272) ---- */
 /* Anchor targets clear the fixed topbar so the heading isn't hidden under it. */
-#icons-signage, #compare, #mission { scroll-margin-top: 90px; }
-.about-quicklinks {
+#data-sources, #your-data, #safety, #icons-signage, #compare, #mission {
+  scroll-margin-top: 90px;
+}
+
+/* Jump-to-section dropdown (#428). Same shape as the profile page's
+   `Jump to: [Section...]` select -- six pills on a phone wrapped to three
+   rows and pushed real content below the fold. */
+.about-nav {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   margin: 18px 0 28px;
 }
-.about-legend-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 15px;
-  border: 1.5px solid var(--border2);
-  border-radius: 999px;
-  background: var(--s1);
+.about-nav-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.about-select {
+  flex: 1;
+  min-width: 0;
+  max-width: 320px;
+  background: var(--card-bg, var(--s1));
+  border: 1px solid var(--border2);
+  border-radius: 6px;
   color: var(--text);
   font-size: 0.82rem;
   font-weight: 600;
-  text-decoration: none;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  padding: 7px 12px;
 }
-.about-legend-btn:hover { border-color: var(--accent); color: var(--strong); background: var(--s2); }
-.about-legend-btn .alb-glyph { width: 18px; height: 18px; flex: 0 0 auto; }
+.about-select:focus { outline: none; border-color: var(--accent); }
 
 /* Your Data & Privacy section on About: three cards laid out on a responsive
    grid. Cards adopt the same neutral surface as .explore-item so the section

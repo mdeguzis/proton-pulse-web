@@ -175,19 +175,26 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
   });
 
   test('days are returned in ascending order', async () => {
+    // Use isoDaysAgo so the fixture tracks wall-clock time and stays inside
+    // the daysBack=30 window. The hardcoded dates this replaces started
+    // failing on 2026-07-30 when the 32-days-ago row (originally 2026-06-28)
+    // fell outside the rolling window and got padded out of the output.
+    const oldest = isoDaysAgo(20);
+    const middle = isoDaysAgo(15);
+    const newest = isoDaysAgo(5);
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-07-01T01:00:00Z', source: 'web' },
-        { created_at: '2026-06-28T01:00:00Z', source: 'web' },
-        { created_at: '2026-06-30T01:00:00Z', source: 'web' },
+        { created_at: `${newest}T01:00:00Z`, source: 'web' },
+        { created_at: `${oldest}T01:00:00Z`, source: 'web' },
+        { created_at: `${middle}T01:00:00Z`, source: 'web' },
       ],
     });
     const result = await fetchAnalytics(makeSession());
-    // The zero-padded window also emits 2026-06-29; assert only that the
-    // days with data appear in ascending order.
+    // The zero-padded window also emits every intermediate day at count 0;
+    // assert only that the days with data appear in ascending order.
     expect(result.reports_by_day.filter(r => r.count > 0).map((r) => r.day))
-      .toEqual(['2026-06-28', '2026-06-30', '2026-07-01']);
+      .toEqual([oldest, middle, newest]);
   });
 
   test('rows missing created_at are skipped silently', async () => {

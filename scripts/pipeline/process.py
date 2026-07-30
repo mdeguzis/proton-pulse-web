@@ -9,7 +9,7 @@ from pathlib import Path
 
 import ijson  # pylint: disable=import-error
 
-from .common import app_id_to_dir, log
+from .common import app_id_to_dir, log, normalize_rating
 from .metadata import update_app_metadata
 from .state import pipeline_state_path, write_pipeline_state
 
@@ -55,6 +55,15 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
         # future archives may already carry one (e.g. partner imports).
         report.setdefault("source", "protondb")
 
+        # #427: ProtonDB archives emit Capitalized ratings ("Borked", "Gold",
+        # "Platinum"). Downstream tier scoring keyed against lowercase tables
+        # and silently fell through to a 0.5 fallback, so any game with only
+        # CDN reports rendered silver on the game page while cards + search
+        # index (Python-side, which lowercased at consume) correctly showed
+        # the true tier. Normalize on ingest so every consumer sees one shape.
+        if "rating" in report:
+            report["rating"] = normalize_rating(report.get("rating"))
+
         buffer[(str(app_id), year)].append(report)
         count += 1
 
@@ -82,9 +91,13 @@ def parse_and_split(file_handle, data_output_path, source_label="?"):
                 existing = []
 
         # Backfill source on legacy reports written before the field existed.
-        # These came from ProtonDB archives originally, so the default is safe
+        # These came from ProtonDB archives originally, so the default is safe.
+        # Also lowercase any rating still cased from a pre-#427 run so a
+        # rewrite of an existing year file heals old capitalization in place.
         for report in existing:
             report.setdefault("source", "protondb")
+            if "rating" in report:
+                report["rating"] = normalize_rating(report.get("rating"))
 
         seen_timestamps = {r.get("timestamp") for r in existing}
         added = 0
