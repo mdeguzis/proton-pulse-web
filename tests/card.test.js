@@ -195,3 +195,92 @@ describe('renderGameCard keeps type/demo markers OFF the tile (#251 follow-up)',
     expect(html).toContain('game-card-store-tag');
   });
 });
+
+// #431: library / wishlist icons ride along with the store banner in every
+// placement so the user sees them next to the store icon whether the pill
+// shows text + icon or icon-only. Because only ONE store-badge variant is
+// visible at a time (per data-store-pill-pos), embedding the same owner
+// badges in EACH variant guarantees they show up in the visible one without
+// duplicating anywhere else on-screen.
+describe('renderGameCard owner-badge placement (#431)', () => {
+  const renderGameCard = loadCard();
+  const OWNER_BADGES = '<span class="game-card-owner-badge">L</span>';
+
+  test('owner badges are embedded inside .game-card-store-tag (art placement)', () => {
+    const html = renderGameCard({
+      href: '#/app/1', appId: '1', title: 'X', sub: '',
+      storePill: 'Steam',
+      ownerBadges: OWNER_BADGES,
+    });
+    const m = html.match(/<span class="game-card-store-tag[^"]*"[^>]*>([\s\S]*?)<\/span>\s*<span class="game-card-replaced-tag/);
+    // The store-tag span content up to its closing tag; use a coarser slice
+    // in case the inner has no replaced-tag sibling.
+    const tagBlock = html.match(/game-card-store-tag[^"]*"[^>]*>([\s\S]*?)<\/span>/);
+    expect(tagBlock).not.toBeNull();
+    expect(tagBlock[1]).toContain('game-card-owner-badge');
+  });
+
+  test('owner badges are embedded inside .game-card-corner-tag (art-corner)', () => {
+    const html = renderGameCard({
+      href: '#/app/1', appId: '1', title: 'X', sub: '',
+      storePill: 'Steam',
+      ownerBadges: OWNER_BADGES,
+    });
+    const m = html.match(/game-card-corner-tag[^"]*"[^>]*>([\s\S]*?)<\/span>/);
+    expect(m).not.toBeNull();
+    expect(m[1]).toContain('game-card-owner-badge');
+  });
+
+  test('owner badges are embedded inside .game-card-store-pill (right / bar-inline)', () => {
+    const html = renderGameCard({
+      href: '#/app/1', appId: '1', title: 'X', sub: '',
+      storePill: 'Steam',
+      ownerBadges: OWNER_BADGES,
+    });
+    const m = html.match(/game-card-store-pill\b[^"]*"[^>]*>([\s\S]*?)<\/span>/);
+    expect(m).not.toBeNull();
+    expect(m[1]).toContain('game-card-owner-badge');
+  });
+
+  test('owner badges are embedded inside .game-card-strip-store (bar-segment)', () => {
+    const html = renderGameCard({
+      href: '#/app/1', appId: '1', title: 'X', sub: '',
+      storePill: 'Steam',
+      ownerBadges: OWNER_BADGES,
+    });
+    const m = html.match(/game-card-strip-store[^"]*"[^>]*>([\s\S]*?)<\/span>/);
+    expect(m).not.toBeNull();
+    expect(m[1]).toContain('game-card-owner-badge');
+  });
+
+  test('owner badges are embedded inside .combo-store (combo layout)', () => {
+    const html = renderGameCard({
+      href: '#/app/1', appId: '1', title: 'X', sub: '',
+      storePill: 'Steam',
+      tier: 'gold',
+      ownerBadges: OWNER_BADGES,
+    });
+    const m = html.match(/<span class="combo-store">([\s\S]*?)<\/span>/);
+    expect(m).not.toBeNull();
+    expect(m[1]).toContain('game-card-owner-badge');
+  });
+
+  test('no standalone .game-card-owner-corner element is emitted (design revised)', () => {
+    // The earlier separate-corner approach is retired. Owner icons live
+    // alongside the store banner so they follow the user's chosen placement.
+    const html = renderGameCard({
+      href: '#/app/1', appId: '1', title: 'X', sub: '',
+      storePill: 'Steam',
+      ownerBadges: OWNER_BADGES,
+    });
+    expect(html).not.toContain('game-card-owner-corner');
+  });
+
+  test('owner badges do not render at all when ownerBadges is empty', () => {
+    const html = renderGameCard({
+      href: '#/app/1', appId: '1', title: 'X', sub: '',
+      storePill: 'Steam',
+    });
+    expect(html).not.toContain('game-card-owner-badge');
+  });
+});
