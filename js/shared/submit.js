@@ -682,6 +682,7 @@ export async function populateSubmitForm(el) {
         <div class="sf-fps-runs" id="fpsRunsList" hidden></div>
       </div>
       <div class="sf-row"><label>Launch Options</label><input name="launchOptions" placeholder="e.g. PROTON_USE_WINED3D=1 %command%"></div>
+      <div class="sf-row-hint">Only fill this in if you personally know what each flag does. Copy-pasting launch options from strangers is the number one source of "works for me" reports that don't reproduce, and Pulse discounts tinker reports slightly (see <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/Scoring-Algorithm#tinker-penalty-433" target="_blank" rel="noopener">why</a>).</div>
 
       <div class="sf-section-label" style="margin-top:16px">Compatibility Questions</div>
 
@@ -700,6 +701,7 @@ export async function populateSubmitForm(el) {
 
       <div class="sf-question sf-hidden" id="q-tinkering">
         <div class="sf-q-label">Did you need to tinker? <span style="font-weight:400;color:var(--muted)">(select all that apply)</span></div>
+        <div class="sf-q-hint">Be honest here even if it feels like it "lowers" your report. Tinker reports still count and can still reach platinum, but their per-report confidence drops slightly since tinker workflows are harder for other players to reproduce.</div>
         <div class="sf-tink-grid">${tinkerMethods}</div>
       </div>
 
