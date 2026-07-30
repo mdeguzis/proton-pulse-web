@@ -35,20 +35,25 @@ export const PRIOR_WINDOW_DAYS = 270;  // 90-270d is the prior bucket for trend
 
 /**
  * Returns true if rating is a positive compatibility outcome (platinum, gold, silver).
+ * Case-insensitive so a stray Capitalized rating from a legacy backup or
+ * partner import cannot silently return false and skew every compat-trend /
+ * version-success count downstream. Backs up the pipeline-side lowercase
+ * invariant (#427) with a read-side defense.
  * @param {string} rating
  * @returns {boolean}
  */
 export function isPositive(rating) {
-  return POSITIVE_TIERS.includes(rating);
+  return POSITIVE_TIERS.includes(String(rating || '').toLowerCase());
 }
 
 /**
  * Returns true if rating is a negative compatibility outcome (bronze, borked).
+ * Case-insensitive (see isPositive for rationale).
  * @param {string} rating
  * @returns {boolean}
  */
 export function isNegative(rating) {
-  return NEGATIVE_TIERS.includes(rating);
+  return NEGATIVE_TIERS.includes(String(rating || '').toLowerCase());
 }
 
 /**
@@ -285,7 +290,9 @@ export function computeConfidence(allReports, liveExcess = 0) {
   if (summaryOnly) {
     consistencyFactor = 0.5;
   } else {
-    const vals = allReports.map(r => RATING_VAL[r.rating] || 3);
+    // #427: normalize rating case so a Capitalized rating survives the lookup
+    // rather than falling through to the ||3 neutral fallback.
+    const vals = allReports.map(r => RATING_VAL[String(r.rating || '').toLowerCase()] || 3);
     const mean = vals.reduce((s, v) => s + v, 0) / vals.length;
     const variance = vals.reduce((s, v) => s + (v - mean) ** 2, 0) / vals.length;
     const stdDev = Math.sqrt(variance);

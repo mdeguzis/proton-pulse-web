@@ -7,10 +7,11 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 // canonical confidence calc as the game-page headline. computeConfidence is
 // the single source; fetchNativeReports + fetchProtonDbLive mirror the game
 // page's data loading so the two surfaces can never diverge again.
-import { computeConfidence } from '../lib/scoring/gameStats.js?v=ac350c7f';
+import { computeConfidence } from '../lib/scoring/gameStats.js?v=a724b9b1';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { fetchProtonDbLive } from '../app/api/protondb.js?v=65bc2638';
 import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
+import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
 
 (function () {
   const root = document.getElementById('cb-root');
@@ -370,7 +371,9 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
       const d = new Date(r.timestamp * 1000);
       const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
       if (!rawBuckets[key]) rawBuckets[key] = { pos: 0, neg: 0 };
-      if (['platinum','gold','silver'].includes(r.rating)) rawBuckets[key].pos++;
+      // #427: normalize rating case so a Capitalized value from any legacy
+      // source still counts on the positive side of the month bucket.
+      if (['platinum','gold','silver'].includes(String(r.rating || '').toLowerCase())) rawBuckets[key].pos++;
       else rawBuckets[key].neg++;
     }
 
@@ -531,7 +534,7 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
     const RATING_VAL = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
     const recent = reports.filter(r => r.timestamp && now - r.timestamp < 90 * 86400);
     const prior  = reports.filter(r => r.timestamp && now - r.timestamp >= 90 * 86400 && now - r.timestamp < 270 * 86400);
-    const avg = arr => arr.reduce((s, r) => s + (RATING_VAL[r.rating] || 3), 0) / arr.length;
+    const avg = arr => arr.reduce((s, r) => s + (RATING_VAL[String(r.rating || '').toLowerCase()] || 3), 0) / arr.length;
     if (recent.length >= 2 && prior.length >= 2) {
       const diff = avg(recent) - avg(prior);
       return { dir: diff > 0.3 ? 'improving' : diff < -0.3 ? 'declining' : 'stable', diff, recentCount: recent.length, priorCount: prior.length };
@@ -545,7 +548,7 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
       const ver = r.protonVersion || r.proton_version || 'Unknown';
       if (!map[ver]) map[ver] = { total: 0, pos: 0 };
       map[ver].total++;
-      if (['platinum','gold','silver'].includes(r.rating)) map[ver].pos++;
+      if (['platinum','gold','silver'].includes(String(r.rating || '').toLowerCase())) map[ver].pos++;
     }
     return Object.entries(map)
       .map(([ver, s]) => ({ ver, total: s.total, pct: Math.round((s.pos / s.total) * 100) }))
@@ -975,9 +978,17 @@ import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
     ]);
     const liveSummary = (liveFetched || []).find(r => r._liveOnly) || null;
     const liveTotal = liveSummary ? (liveSummary.total || 0) : 0;
+    // #430: use the same deduped merge the game page uses via
+    // mergeReportsById so CDN pulse mirror rows are not double-counted with
+    // their live Supabase counterparts. The #361/#376 comment above ("same
+    // helper, same inputs as the game-page headline") was accurate for the
+    // helper but the inputs had drifted: game page dedups on
+    // pulseId/reportId, confidence page did not, so the aggregate confidence
+    // ran higher than the game-page dial for any game with mirrored pulse
+    // rows.
     const reports = wantsPerReport
       ? cdnReports
-      : [...cdnReports.map(r => ({ ...r, source: r.source || 'protondb' })), ...(nativeReports || [])];
+      : mergeReportsById(cdnReports, nativeReports || []);
     const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
     const gameTitle = reports[0]?.title || indexHit?.[1] || `App ${appId}`;
 

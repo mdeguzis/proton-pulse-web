@@ -1,6 +1,7 @@
 // Entry module for game-stats.html. Migrated from game-stats.js.
-import { computeGameStats } from '../lib/scoring/gameStats.js?v=ac350c7f';
+import { computeGameStats } from '../lib/scoring/gameStats.js?v=a724b9b1';
 import { pulseTierFromReports } from '../shared/scoring.js?v=852c9d97';
+import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ad2153bb';
@@ -258,7 +259,11 @@ import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
       );
       const rows = r.ok ? await r.json() : [];
       console.debug('[game-stats] loadPulseReports', { appId, count: rows.length, source: 'user_configs' });
-      return rows;
+      // #430: alias the Supabase primary key as `reportId` so mergeReportsById
+      // can dedup against CDN pulse mirror rows (which carry `pulseId`).
+      // Without this alias the merge helper cannot join and reports are
+      // double-counted, same failure mode the confidence page had.
+      return rows.map((r) => ({ ...r, reportId: r.id }));
     } catch (e) {
       console.debug('[game-stats] loadPulseReports failed', { appId, error: String(e && e.message || e) });
       return [];
@@ -1313,7 +1318,10 @@ import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
       if (hit && hit[1]) title = hit[1];
     }
 
-    let allReports = [...cdnReports, ...pulseReports];
+    // #430: dedup CDN pulse mirror against live Pulse rows the same way the
+    // game page does. Both surfaces feed computeGameStats/computeConfidence
+    // downstream; without dedup the same submission is counted twice.
+    let allReports = mergeReportsById(cdnReports, pulseReports);
     // #410: single-report slice. Every section below computes from the
     // filtered set, so the whole page becomes that report's stats.
     let sliceReport = null;

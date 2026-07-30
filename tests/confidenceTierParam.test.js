@@ -39,3 +39,21 @@ describe('confidence page data loaders route through dataUrl (#380/#361)', () =>
     expect(CONF).not.toMatch(/proton-pulse-web-staging/);
   });
 });
+
+describe('confidence page dedups CDN pulse mirror against live Supabase (#430)', () => {
+  // #430 was the sister bug to #423: game page dedups on pulseId/reportId via
+  // mergeReportsById, confidence page did NOT and merged CDN + native naively.
+  // Every game with a mirrored pulse row ended up double-counting the same
+  // submission, so the aggregate confidence % ran higher than the game-page
+  // dial for the same app. Guard the import + call-site here so a future
+  // refactor cannot silently drift back to the raw-spread merge.
+  test('imports mergeReportsById from app/utils.js', () => {
+    expect(CONF).toMatch(/import\s*\{\s*mergeReportsById\s*\}\s*from\s*['"]\.\.\/app\/utils\.js/);
+  });
+
+  test('reports merge goes through mergeReportsById, not a raw spread', () => {
+    expect(CONF).toMatch(/mergeReportsById\(cdnReports,\s*nativeReports\s*\|\|\s*\[\]\)/);
+    // The old naive form must be gone -- catches a "just spread them" revert.
+    expect(CONF).not.toMatch(/\[\.\.\.cdnReports\.map\([^)]*\),\s*\.\.\.\(nativeReports/);
+  });
+});
