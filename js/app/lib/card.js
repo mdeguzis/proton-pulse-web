@@ -57,8 +57,12 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // inside each variant so CSS visibility rules don't need to know about
   // them separately.
   const ownerBadgesHtml = ownerBadges || '';
-  // Both the text pill (game-card-store-tag) and the round icon are rendered
-  // so CSS can pick which the user prefers via data-store-display on <html>.
+  // #431: owner badges (library / wishlist) live INSIDE every store-badge
+  // variant so they always ride along with the store banner wherever the
+  // user placed it. Only one variant renders visibly at a time (per
+  // data-store-pill-pos), so embedding the same badges in each is a no-cost
+  // way to guarantee they show up next to the store icon in every layout,
+  // whether the pill is text + icon or icon-only.
   const storeTag = storePill
     ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}">${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
@@ -85,7 +89,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   }
   const badgeHtml = `<span class="game-card-badge${isNoRating ? ' game-card-badge--unrated' : ''}" ${badgeStyle}>${esc(label)}</span>`;
   const storePillHtml = storePill
-    ? `<span class="game-card-store-pill game-card-store-pill--${storeKey}"><span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-store-pill game-card-store-pill--${storeKey}">${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Trend arrow. Only 'improving' and 'declining' render; stable and
   // insufficient are absent by design so a card stays quiet when nothing has
@@ -120,14 +124,15 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // 'bar-segment' (last 1/4 of the bar in the store color, two-tone with
   // the tier).
   const stripStoreHtml = storePill
-    ? `<span class="game-card-strip-store store-icon store-icon--${storeKey}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg><span class="store-text">${esc(storePill)}</span></span>`
+    ? `<span class="game-card-strip-store store-icon store-icon--${storeKey}">${ownerBadgesHtml}<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg><span class="store-text">${esc(storePill)}</span></span>`
     : '';
   const stripHtml = `<div class="game-card-strip" data-tier="${esc(stripTier)}" data-store="${storeKey}"><span class="game-card-strip-tier">${esc(stripLabel)}</span>${storePillHtml}${stripStoreHtml}</div>`;
 
   // Card-level corner tag for the 'art-corner' placement. Direct child of
   // <a class="game-card"> so absolute positioning anchors to the card's
   // top-right edge (not just the thumbnail). Hidden by default; shown when
-  // data-store-pill-pos="art-corner".
+  // data-store-pill-pos="art-corner". Owner badges embedded so they ride
+  // along with the store banner (#431).
   const cornerTagHtml = storePill
     ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}">${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
@@ -138,7 +143,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const comboTier = tier ? String(tier).toLowerCase() : '';
   const comboTierLabel = tier ? tier.toUpperCase() : (badge || 'NO RATING');
   const comboTagHtml = (storePill || tier || badge)
-    ? `<span class="game-card-combo-tag" data-tier="${esc(comboTier)}" data-store="${storeKey}"><span class="combo-tier">${esc(comboTierLabel)}</span>${storePill ? `<span class="combo-store">${esc(storePill)}</span>` : ''}</span>`
+    ? `<span class="game-card-combo-tag" data-tier="${esc(comboTier)}" data-store="${storeKey}"><span class="combo-tier">${esc(comboTierLabel)}</span>${storePill ? `<span class="combo-store">${ownerBadgesHtml}${esc(storePill)}</span>` : ''}</span>`
     : '';
   // Strip is a sibling of the row (not inside the body) so it can extend
   // the full card width including under the thumbnail when strip mode is on.

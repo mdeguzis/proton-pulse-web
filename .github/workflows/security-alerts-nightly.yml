@@ -1,0 +1,81 @@
+name: Security Alerts Nightly
+
+# Nightly poll of GitHub's Security tab for open Dependabot / code-scanning /
+# secret-scanning alerts. CI already fails PRs on npm audit + CodeQL analyze
+# + semgrep + grype during the build, but alerts that persist in the
+# Security tab do NOT fail any build -- they just sit there until someone
+# looks. This workflow is the "someone looks" surrogate.
+#
+# Fails the workflow run when at least one critical or high severity alert
+# is open. That causes GitHub to email the repo owner via the standard
+# Actions failure notification, so the maintainer sees it in the normal
+# inbox path without any additional secret plumbing.
+#
+# Deliberately NO Discord / Slack / other public-channel notification here.
+# Broadcasting the affected package + advisory to a chat channel accelerates
+# exploitation before the fix ships. Advisories stay inside GitHub until
+# they are patched or dismissed. See ~/.claude/rules/proton-pulse-web.md
+# "GitHub Security advisories" rule and the wiki Security-Guardrails page.
+
+on:
+  schedule:
+    # 08:00 UTC every day. Timing keeps it late-evening PT so the maintainer
+    # sees the failure email during the morning inbox pass, before any
+    # promote-to-prod work.
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  # Read-only: dependabot + code-scanning + secret-scanning APIs are all
+  # queried via gh api with the built-in GITHUB_TOKEN. No writes.
+  contents: read
+  security-events: read
+
+concurrency:
+  group: security-alerts-nightly
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+
+      - name: Ensure gh + jq are available
+        run: |
+          gh --version
+          jq --version
+
+      - name: Run security-check
+        env:
+          # gh cli uses GH_TOKEN for auth in Actions. GITHUB_TOKEN alone is
+          # scoped to this workflow's permissions block above (contents:read,
+          # security-events:read) which is enough for the three alert APIs.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          # Human format goes to the job log; also emit JSON as an artifact
+          # so future comparisons + trend graphs are possible.
+          FORMAT: human
+        run: bash scripts/check-github-security.sh | tee security-summary.txt
+
+      - name: Emit JSON artifact
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          FORMAT: json
+          # Never fail this step regardless of severity -- the previous step
+          # is the authoritative fail. This step only serialises the same
+          # data for the artifact.
+          SEVERITY_FAIL: ""
+        run: bash scripts/check-github-security.sh > security-summary.json || true
+
+      - name: Upload summary artifact
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: security-summary
+          path: |
+            security-summary.txt
+            security-summary.json
+          retention-days: 30

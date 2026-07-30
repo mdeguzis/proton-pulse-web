@@ -12,7 +12,7 @@ FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert r2-canary \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
-	cf-staging cf-prod \
+	cf-staging cf-prod security-check \
 	build serve smoke smoke-live pre-push coverage deploy-worker
 
 build:
@@ -178,6 +178,15 @@ gh-check:
 		exit 1; \
 	}
 	gh auth status
+
+# Poll GitHub Security tab for open Dependabot / code scanning / secret
+# scanning alerts. CI already fails PRs on npm audit + CodeQL + semgrep +
+# grype, but alerts that persist in the Security tab do NOT fail any build
+# -- this target surfaces them so they can be reviewed at the start of a
+# security-relevant session and before promoting staging -> main.
+# Exit 1 if any critical / high alert is open. Override via SEVERITY_FAIL.
+security-check: gh-check
+	@bash scripts/check-github-security.sh
 
 check-staging-sync:
 	@if [ -n "$(FORCE_DEPLOY)" ]; then \
