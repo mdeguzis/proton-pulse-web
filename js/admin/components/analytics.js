@@ -513,6 +513,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     { id: 'sec-reports',    label: 'Reports' },
     { id: 'sec-pages',      label: 'Pages' },
     { id: 'sec-sources',    label: 'Sources' },
+    { id: 'sec-cloudflare', label: 'Cloudflare' },
     { id: 'sec-games',      label: 'Games' },
     { id: 'sec-summary',    label: 'Summary' },
     { id: 'sec-sw-cache',   label: 'SW Cache' },
@@ -577,7 +578,12 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
         ${renderSourcesTable(data.top_sources)}
       </div>
     </div>
-    <p class="chart-caption">Where traffic comes from. Referrers are the external site that linked here (same-origin navigation is dropped). Campaign sources are utm_source tags on inbound links. Staging traffic is excluded and page paths are normalized, so /, /index.html and clean URLs count as one page. For full server-side bot and referrer data that also catches crawlers which never run JavaScript, see Cloudflare Web Analytics.</p>
+    <p class="chart-caption">Where traffic comes from. Referrers are the external site that linked here (same-origin navigation is dropped). Campaign sources are utm_source tags on inbound links. Staging traffic is excluded and page paths are normalized, so /, /index.html and clean URLs count as one page. These numbers come from the in-page tracker, which only sees visitors that run JavaScript.</p>
+    <div id="sec-cloudflare" style="margin-top:20px">
+      <div class="analytics-section-title">Cloudflare Web Analytics</div>
+      <p class="chart-caption" style="margin-top:0">The site runs on Cloudflare Pages, which records traffic at the edge: page views, referrers, and bot vs human, including crawlers that never execute the in-page tracker above. That is the fuller, server-side picture of who visits. It lives in the Cloudflare dashboard, not this table.</p>
+      <a class="admin-btn" href="https://dash.cloudflare.com/?to=/:account/web-analytics" target="_blank" rel="noopener">Open Cloudflare Web Analytics</a>
+    </div>
     <div id="sec-games" style="margin-top:20px">
       <div class="analytics-section-title">Top games viewed</div>
       ${renderGamesTable(data.top_games)}
