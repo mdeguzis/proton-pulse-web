@@ -11,6 +11,9 @@ function loadApi(fetchImpl, { approvalsImpl } = {}) {
   const ctx = {
     SUPABASE_URL: 'https://sb.example',
     supabaseHeaders: (s, extra = {}) => ({ Authorization: 'Bearer tok', apikey: 'anon', ...extra }),
+    // #437: title fallback repair now goes through the batch API. These tests
+    // use real titles, so an empty map (no patching) is the right stub.
+    getGamesByIds: async () => new Map(),
     fetch: (url, opts) => {
       calls.push({ url, opts });
       if (url.includes('/report_approvals')) {

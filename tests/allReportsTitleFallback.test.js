@@ -1,11 +1,11 @@
 /**
  * Tests for #147: rows whose title was stored as a fallback ("App <id>",
- * empty, or equal to the app_id) get their title replaced from
- * search-index.json at fetch time.
+ * empty, or equal to the app_id) get their title replaced at fetch time.
  *
- * Behavioral tests load the api module into a vm context with a stub
- * fetch that hands back canned user_configs / report_approvals rows
- * plus a search-index payload.
+ * #437: the source is the search-games batch API (getGamesByIds) instead of
+ * the full search-index.json blob. Behavioral tests load the api module into a
+ * vm context with a stub fetch for the Supabase rows plus a stub getGamesByIds
+ * that resolves the canned title map for the ids it is asked about.
  */
 
 const fs = require('fs');
@@ -16,12 +16,23 @@ const { stripModuleSyntax } = require('./_esm-vm.js');
 const ROOT = path.join(__dirname, '..');
 const API_SRC = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'api', 'allReports.js'), 'utf8');
 
-function loadApi(rowsByUrl) {
+// gamesById: { '<appId>': { appId, title } }. getGamesByIds returns a Map of
+// only the requested ids that exist, mirroring the real batch wrapper.
+function makeCtx(rowsByUrl, gamesById, counters = {}) {
   const ctx = {
     fetch: async (url) => {
       const hit = Object.entries(rowsByUrl).find(([prefix]) => url.startsWith(prefix));
       if (!hit) return { ok: true, json: async () => [] };
       return { ok: true, json: async () => hit[1] };
+    },
+    getGamesByIds: async (ids) => {
+      counters.batchCalls = (counters.batchCalls || 0) + 1;
+      const map = new Map();
+      for (const id of (ids || [])) {
+        const g = gamesById[String(id)];
+        if (g) map.set(String(id), g);
+      }
+      return map;
     },
     SUPABASE_URL: 'https://test.supabase.co',
     supabaseHeaders: () => ({ apikey: 'x', Authorization: 'Bearer x' }),
@@ -36,17 +47,18 @@ function loadApi(rowsByUrl) {
   return ctx;
 }
 
-const SEARCH_INDEX_URL = 'https://www.proton-pulse.com/search-index.json';
+function loadApi(rowsByUrl, gamesById = {}) {
+  return makeCtx(rowsByUrl, gamesById);
+}
 
-describe('fetchAllReports fallback-title repair (#147)', () => {
-  test('rewrites "App <id>" title from search-index.json', async () => {
+describe('fetchAllReports fallback-title repair (#147, via batch API #437)', () => {
+  test('rewrites "App <id>" title from the batch API', async () => {
     const ctx = loadApi({
       'https://test.supabase.co/rest/v1/user_configs': [
         { id: 23, app_id: '2881370', title: 'App 2881370', is_flagged: false, is_hidden: false, flagged_reason: null },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      [SEARCH_INDEX_URL]: [['2881370', 'Thank You For Your Application', '', 0, 0, 'steam']],
-    });
+    }, { '2881370': { appId: '2881370', title: 'Thank You For Your Application' } });
     const rows = await ctx.fetchAllReports({}, { status: '' });
     expect(rows[0].title).toBe('Thank You For Your Application');
   });
@@ -57,8 +69,7 @@ describe('fetchAllReports fallback-title repair (#147)', () => {
         { id: 1, app_id: '570', title: '', is_flagged: false, is_hidden: false, flagged_reason: null },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      [SEARCH_INDEX_URL]: [['570', 'Dota 2', 'platinum', 100, 5, 'steam']],
-    });
+    }, { '570': { appId: '570', title: 'Dota 2' } });
     const rows = await ctx.fetchAllReports({}, { status: '' });
     expect(rows[0].title).toBe('Dota 2');
   });
@@ -69,8 +80,7 @@ describe('fetchAllReports fallback-title repair (#147)', () => {
         { id: 1, app_id: '730', title: '730', is_flagged: false, is_hidden: false, flagged_reason: null },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      [SEARCH_INDEX_URL]: [['730', 'Counter-Strike 2', 'platinum', 1000, 0, 'steam']],
-    });
+    }, { '730': { appId: '730', title: 'Counter-Strike 2' } });
     const rows = await ctx.fetchAllReports({}, { status: '' });
     expect(rows[0].title).toBe('Counter-Strike 2');
   });
@@ -81,63 +91,46 @@ describe('fetchAllReports fallback-title repair (#147)', () => {
         { id: 1, app_id: '570', title: 'Dota 2', is_flagged: false, is_hidden: false, flagged_reason: null },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      [SEARCH_INDEX_URL]: [['570', 'Dota: Definitive', 'gold', 100, 0, 'steam']],
-    });
+    }, { '570': { appId: '570', title: 'Dota: Definitive' } });
     const rows = await ctx.fetchAllReports({}, { status: '' });
-    // Real title takes precedence -- the index is not authoritative when
-    // the DB row already has a non-fallback value.
+    // Real title takes precedence -- the index is not authoritative when the
+    // DB row already has a non-fallback value.
     expect(rows[0].title).toBe('Dota 2');
   });
 
-  test('falls through gracefully when the app is not in the index', async () => {
+  test('falls through gracefully when the app is not returned by the batch API', async () => {
     const ctx = loadApi({
       'https://test.supabase.co/rest/v1/user_configs': [
         { id: 1, app_id: '99999', title: 'App 99999', is_flagged: false, is_hidden: false, flagged_reason: null },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      [SEARCH_INDEX_URL]: [['570', 'Dota 2', 'platinum', 100, 0, 'steam']],
-    });
+    }, { '570': { appId: '570', title: 'Dota 2' } });
     const rows = await ctx.fetchAllReports({}, { status: '' });
     expect(rows[0].title).toBe('App 99999'); // unchanged when no hit
   });
 
-  test('skips the search-index fetch entirely when every row has a real title', async () => {
-    let indexCalls = 0;
-    const ctx = {
-      fetch: async (url) => {
-        if (url === SEARCH_INDEX_URL) indexCalls += 1;
-        if (url.startsWith('https://test.supabase.co/rest/v1/user_configs')) {
-          return { ok: true, json: async () => [
-            { id: 1, app_id: '570', title: 'Dota 2', is_flagged: false, is_hidden: false, flagged_reason: null },
-            { id: 2, app_id: '730', title: 'Counter-Strike 2', is_flagged: false, is_hidden: false, flagged_reason: null },
-          ]};
-        }
-        return { ok: true, json: async () => [] };
-      },
-      SUPABASE_URL: 'https://test.supabase.co',
-      supabaseHeaders: () => ({ apikey: 'x' }),
-      location: { hostname: 'localhost' },
-      console,
-      Promise, JSON, Object, Array, Number, String, Date, Math, Map, Set, RegExp,
-      setTimeout, clearTimeout,
-      encodeURIComponent,
-    };
-    vm.createContext(ctx);
-    vm.runInContext(stripModuleSyntax(API_SRC), ctx);
+  test('skips the batch API entirely when every row has a real title', async () => {
+    const counters = {};
+    const ctx = makeCtx({
+      'https://test.supabase.co/rest/v1/user_configs': [
+        { id: 1, app_id: '570', title: 'Dota 2', is_flagged: false, is_hidden: false, flagged_reason: null },
+        { id: 2, app_id: '730', title: 'Counter-Strike 2', is_flagged: false, is_hidden: false, flagged_reason: null },
+      ],
+      'https://test.supabase.co/rest/v1/report_approvals': [],
+    }, {}, counters);
     await ctx.fetchAllReports({}, { status: '' });
-    expect(indexCalls).toBe(0);
+    expect(counters.batchCalls || 0).toBe(0);
   });
 });
 
 describe('fetchReportById applies the same fallback repair (#147)', () => {
-  test('detail fetch also pulls from search-index for fallback titles', async () => {
+  test('detail fetch also uses the batch API for fallback titles', async () => {
     const ctx = loadApi({
       'https://test.supabase.co/rest/v1/user_configs': [
         { id: 23, app_id: '2881370', title: 'App 2881370', is_flagged: false, is_hidden: false, flagged_reason: null, flagged_at: null },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      [SEARCH_INDEX_URL]: [['2881370', 'Thank You For Your Application', '', 0, 0, 'steam']],
-    });
+    }, { '2881370': { appId: '2881370', title: 'Thank You For Your Application' } });
     const r = await ctx.fetchReportById({}, 23);
     expect(r.title).toBe('Thank You For Your Application');
   });

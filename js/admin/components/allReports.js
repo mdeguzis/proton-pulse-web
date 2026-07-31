@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
-import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=0f587828';
+import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=b4e046fd';
 import { formatReportSourceLabel } from '../lib/reportSource.js?v=c366fc24';
 
 // Summary strip of exact per-status counts above the table. Each tile is a
