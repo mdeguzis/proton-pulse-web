@@ -5,9 +5,10 @@ import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../ap
 import { renderGamePage } from './game-page.js?v=55f47743';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=a75604f5';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=4630c3d5';
-import { renderGameCard } from '../lib/card.js?v=50339b3b';
+import { renderGameCard } from '../lib/card.js?v=41dcabfc';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { filterAdultEntries, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
+import { filterDelistedEntries, countHiddenDelisted } from '../../lib/delisted-filter.js?v=42858e22';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
 
 // Search index + results UX -- factored out of app.js.
@@ -32,10 +33,10 @@ const _matchEntries = matchEntries;
 // --- searchIndexMatches ---
 export function searchIndexMatches(query, limit) {
   const q = query.trim();
-  // Drop adult-flagged rows unless the user's "Show adult games" pref is on.
-  // filterAdultEntries is a no-op for rows without the adult column so
+  // Drop adult- and delisted-flagged rows unless the corresponding user
+  // pref is on. Both helpers are no-ops for rows lacking the column so
   // pre-pipeline-run indices stay visible.
-  return filterAdultEntries(_matchEntries(searchIndex, q, limit));
+  return filterDelistedEntries(filterAdultEntries(_matchEntries(searchIndex, q, limit)));
 }
 
 // --- searchExtendedSteamMatches ---
@@ -43,7 +44,7 @@ export function searchIndexMatches(query, limit) {
 // loadExtendedSteamIndex() first when you want the long-tail Steam catalog.
 export function searchExtendedSteamMatches(query, limit) {
   const q = query.trim();
-  return filterAdultEntries(_matchEntries(extendedSteamIndex, q, limit));
+  return filterDelistedEntries(filterAdultEntries(_matchEntries(extendedSteamIndex, q, limit)));
 }
 
 // --- renderPulseSearchResult ---
@@ -55,21 +56,32 @@ export function renderPulseSearchResult(row) {
 
 // --- renderIndexSearchResult ---
 export function renderIndexSearchResult(entry, displayTitleOverride) {
-  // search-index entries: [appId, title, tier, protondbCount, pulseCount, appType, releaseYear, delisted]
-  // Destructure defensively so older deploys keep rendering
+  // search-index entries: [appId, title, tier, protondbCount, pulseCount, appType, releaseYear, delisted, adult, trend, replacedBy, ...]
+  // Destructure defensively so older deploys keep rendering.
   const [appId, title, tier, protondbCount, pulseCount, appType] = entry;
-  // Build a counts subline only when at least one count is present
+  const delisted = entry.length > 7 && entry[7] === true;
+  // col 10 replaced_by carries "steam:<appid>" for PCGW-only rows the
+  // cross-check flagged (#434). Non-steam-prefixed values are the
+  // Steam-side replaced_by (#199 follow-up) and stay in that lane.
+  const rbRaw = entry.length > 10 ? entry[10] : null;
+  const delistedSteamAppId = (typeof rbRaw === 'string' && rbRaw.startsWith('steam:'))
+    ? rbRaw.slice(6)
+    : '';
   const counts = [];
   if (protondbCount) counts.push(`${protondbCount} ProtonDB`);
   if (pulseCount) counts.push(`${pulseCount} Pulse`);
   const meta = counts.length
     ? counts.join(' + ') + ' report' + ((protondbCount + pulseCount) === 1 ? '' : 's')
-    : `ProtonDB data indexed for app ${esc(appId)}.`;
-  // Prefer the appType column from the index; fall back to deriving from the id
-  // so legacy 5-tuple entries still get a store pill.
+    : delisted
+      ? `Delisted from Steam${delistedSteamAppId ? ` (was app ${esc(delistedSteamAppId)})` : ''} - no ProtonDB reports.`
+      : `ProtonDB data indexed for app ${esc(appId)}.`;
   const store = appType === 'gog' ? 'GOG' : appType === 'epic' ? 'Epic' : appType === 'steam' ? 'Steam' : storeLabelFromAppId(appId);
   const displayTitle = displayTitleOverride || title;
-  return renderGameCard({ href: `#/app/${appId}`, appId, title: displayTitle, sub: meta, tier: tier || undefined, storePill: store });
+  return renderGameCard({
+    href: `#/app/${appId}`, appId, title: displayTitle, sub: meta,
+    tier: tier || undefined, storePill: store,
+    delisted, delistedSteamAppId,
+  });
 }
 
 // --- renderSearchPage ---
@@ -90,11 +102,13 @@ export async function renderSearchPage(query) {
   // and only loads on this deliberate Enter-to-search path.
   await Promise.all([loadSearchIndex(), loadExtendedSteamIndex()]);
   const pulseResults = await withTimeout(fetchMatchingPulseConfigs(q), 2500, []);
-  // Count adult-hidden hits so the summary line can call them out. Runs
-  // the raw match once to get the unfiltered set, then applies the
-  // filter for display. showAdultAllowed()=true means nothing is hidden.
+  // Count adult- and delisted-hidden hits so the summary line can call
+  // them out. Runs the raw match once, applies each filter, and diffs
+  // to compute what was suppressed. showAdultAllowed()/showDelisted
+  // Allowed()=true short-circuits the corresponding count to 0.
   const primaryRaw = _matchEntries(searchIndex, q, 24);
-  const primaryResults = filterAdultEntries(primaryRaw);
+  const primaryAfterAdult = filterAdultEntries(primaryRaw);
+  const primaryResults = filterDelistedEntries(primaryAfterAdult);
   const primaryIds = new Set(primaryResults.map(([id]) => String(id)));
   const extendedRoom = Math.max(0, 48 - primaryResults.length);
   const extendedRaw = extendedRoom
@@ -102,9 +116,12 @@ export async function renderSearchPage(query) {
         .filter(([id]) => !primaryIds.has(String(id)))
         .slice(0, extendedRoom)
     : [];
-  const extendedResults = filterAdultEntries(extendedRaw);
-  const hiddenAdultCount = (primaryRaw.length - primaryResults.length)
-                         + (extendedRaw.length - extendedResults.length);
+  const extendedAfterAdult = filterAdultEntries(extendedRaw);
+  const extendedResults = filterDelistedEntries(extendedAfterAdult);
+  const hiddenAdultCount = (primaryRaw.length - primaryAfterAdult.length)
+                         + (extendedRaw.length - extendedAfterAdult.length);
+  const hiddenDelistedCount = countHiddenDelisted(primaryAfterAdult)
+                            + countHiddenDelisted(extendedAfterAdult);
   const indexResults = [...primaryResults, ...extendedResults];
   // Disambiguate same-name games (e.g. Prey 2006 vs Prey 2017) with a "(YEAR)"
   // suffix when the pipeline supplied a releaseYear (column 7 of search-index).
@@ -118,11 +135,18 @@ export async function renderSearchPage(query) {
   const adultNote = hiddenAdultCount > 0
     ? `<div class="search-adult-note">${hiddenAdultCount} adult result${hiddenAdultCount === 1 ? '' : 's'} hidden by your <a href="options.html#opt-show-adult">Show adult games</a> preference.</div>`
     : '';
+  // Delisted notice mirrors the adult one. Includes a one-shot button
+  // that flips the pp:show-delisted pref on and re-renders so the user
+  // can see the hidden matches without leaving the page (#434).
+  const delistedNote = hiddenDelistedCount > 0
+    ? `<div class="search-delisted-note">${hiddenDelistedCount} delisted game${hiddenDelistedCount === 1 ? '' : 's'} matching "<strong>${esc(q)}</strong>" hidden. <button type="button" class="search-note-action" id="search-show-delisted">Show delisted</button> or update your <a href="options.html#opt-show-delisted">preference</a> to always show them.</div>`
+    : '';
   el.innerHTML = `
     <div class="search-summary">
       Search results for <strong>${esc(q)}</strong> - ${total} grouped hit${total === 1 ? '' : 's'}${pulseResults.length === 0 && indexResults.length > 0 ? ' - Proton Pulse config search may still be catching up' : ''}
     </div>
     ${adultNote}
+    ${delistedNote}
     <div class="search-groups">
       <section class="search-group">
         <div class="search-group-head">
@@ -144,6 +168,19 @@ export async function renderSearchPage(query) {
           : '<div class="search-group-empty">No static index entries matched this query.</div>'}
       </section>
     </div>`;
+
+  // "Show delisted" one-shot from the delisted notice (#434). Flips the
+  // pp:show-delisted pref on locally then re-renders the same query so
+  // the hidden matches appear inline. We deliberately do NOT sync this
+  // to the account -- it is an ad-hoc reveal; the site option page is
+  // where the durable preference lives.
+  const showDelistedBtn = document.getElementById('search-show-delisted');
+  if (showDelistedBtn) {
+    showDelistedBtn.addEventListener('click', () => {
+      try { localStorage.setItem('pp:show-delisted', 'on'); } catch {}
+      renderSearchPage(q);
+    });
+  }
 
   // #143: track which result card was clicked + which group + position.
   // Tells us whether the extended Steam index (group=extended) actually

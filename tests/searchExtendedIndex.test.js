@@ -45,6 +45,11 @@ function stubsForSearch(extraFetch) {
     // exercise the raw match logic without needing localStorage.
     filterAdultEntries: (rows) => rows,
     isAdultEntry: () => false,
+    // Same pass-through for the delisted-filter helpers (#434) -- these
+    // tests exercise the raw match logic; pref-gated hiding has its own
+    // dedicated suite in delistedFilter.test.js.
+    filterDelistedEntries: (rows) => rows,
+    countHiddenDelisted: () => 0,
     // Pure fuzzy-match helper factored out of search.js so it can be
     // unit-tested independently -- wire the real impl in so this suite
     // exercises the same logic search.js does at runtime.

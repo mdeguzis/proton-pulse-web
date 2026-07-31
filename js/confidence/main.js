@@ -7,7 +7,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 // canonical confidence calc as the game-page headline. computeConfidence is
 // the single source; fetchNativeReports + fetchProtonDbLive mirror the game
 // page's data loading so the two surfaces can never diverge again.
-import { computeConfidence } from '../lib/scoring/gameStats.js?v=a724b9b1';
+import { computeConfidence } from '../lib/scoring/gameStats.js?v=6a63af50';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { fetchProtonDbLive } from '../app/api/protondb.js?v=65bc2638';
 import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';

@@ -123,6 +123,30 @@
 }
 .search-adult-note a { color: var(--accent, #5c8bd6); }
 
+/* Delisted-hidden strip. Same visual weight as .search-adult-note; the
+   inline "Show delisted" button is a plain text-style button so it does
+   not draw the eye more than the results themselves. #434 */
+.search-delisted-note {
+  margin: -6px 0 18px;
+  padding: 8px 14px;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-top: none;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.search-delisted-note a { color: var(--accent, #5c8bd6); }
+.search-delisted-note .search-note-action {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent, #5c8bd6);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.search-delisted-note .search-note-action:hover { color: var(--strong); }
+
 .search-groups {
   display: flex;
   flex-direction: column;

@@ -158,6 +158,29 @@
   align-items: center;
   gap: 4px;
 }
+/* Delisted chip (#434): rides along inside every store-badge variant,
+   left of the owner badges + store text. Small, high-contrast pill that
+   uses currentColor + a CSS variable so both themes stay legible. Kept
+   quiet visually (subtle red) so it does not compete with the tier pill
+   for attention. */
+.game-card-delisted-chip {
+  display: inline-block;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: 0.62em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  background: var(--delisted-chip-bg, rgba(200, 80, 80, 0.9));
+  color: var(--delisted-chip-fg, #fff);
+  white-space: nowrap;
+}
+[data-theme="light"] .game-card-delisted-chip {
+  background: var(--delisted-chip-bg, rgba(200, 80, 80, 0.95));
+  color: var(--delisted-chip-fg, #fff);
+}
+
 /* Owner badges (Subaru "Badge of Ownership" style): dark chrome chips
    attached to the LEFT of the colored store pill. Each chip is its own
    small rounded rectangle with a white icon on a dark background, so the

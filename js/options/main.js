@@ -5,8 +5,9 @@
 import {
   setShowAdult, pullShowAdult, readShowAdultLocal,
   setShowOwnerBadges, pullShowOwnerBadges, readShowOwnerBadgesLocal,
+  setShowDelisted, pullShowDelisted, readShowDelistedLocal,
   readOwnerBadgeSizeLocal, writeOwnerBadgeSizeLocal, OWNER_BADGE_SIZE_DEFAULT,
-} from '../lib/user-prefs.js?v=5d9472de';
+} from '../lib/user-prefs.js?v=09b673c8';
 import { getPageSizePref, setPageSizePref, PAGE_SIZE_KEY } from '../lib/pagination-prefs.js?v=15d0747d';
 
 const MOTION_KEY = 'proton-pulse:motion';
@@ -85,6 +86,20 @@ if (adultToggle) {
   adultToggle.addEventListener('change', () => {
     setShowAdult(adultToggle.checked).then(({ synced }) => {
       console.log('[options] show-adult:', adultToggle.checked, 'synced-to-account:', synced);
+    });
+  });
+}
+
+// Delisted-game visibility (#434). Same pattern as show-adult: fast
+// local read for zero-flash, async pull from account to catch cross-
+// device changes, on-change upsert back to the user_preferences bag.
+const delistedToggle = document.getElementById('opt-show-delisted');
+if (delistedToggle) {
+  delistedToggle.checked = readShowDelistedLocal();
+  pullShowDelisted().then(({ changed, value }) => { if (changed) delistedToggle.checked = value; });
+  delistedToggle.addEventListener('change', () => {
+    setShowDelisted(delistedToggle.checked).then(({ synced }) => {
+      console.log('[options] show-delisted:', delistedToggle.checked, 'synced-to-account:', synced);
     });
   });
 }

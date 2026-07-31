@@ -298,6 +298,77 @@ def _build_entries(rows: list[dict]) -> dict[str, dict]:
     return out
 
 
+def _normalize_title_tokens(title: str) -> frozenset[str]:
+    """Lowercase + strip punctuation + split into whitespace tokens.
+
+    Used by the delisted cross-check to compare a PCGW title against
+    the current Steam title for the same appid. Non-word chars collapse
+    to spaces so "Solo Leveling: Arise" and "solo leveling arise" tokenize
+    identically. Empty tokens dropped so a trailing punctuation does not
+    inflate the set size and drag Jaccard down.
+    """
+    lower = (title or "").lower()
+    normalized = re.sub(r"[^a-z0-9]+", " ", lower)
+    return frozenset(t for t in normalized.split() if t)
+
+
+# Title-token Jaccard threshold for the "Steam appid was repurposed"
+# case (Rule B in the delisted cross-check). PCGW's "Solo Leveling:
+# Arise" vs Steam's current "Solo Leveling: ARISE OVERDRIVE" scores 3/4
+# = 0.75, so the SLA/SLA:O case sits at the border and needs a slightly
+# generous threshold to catch it while not over-triggering on a mere
+# subtitle addition. First-run candidates are logged verbose so the
+# threshold can be reviewed against real data before tightening.
+_RULE_B_JACCARD_THRESHOLD = 0.75
+
+
+def _pcgw_steam_delisted_status(
+    entry: dict,
+    steam_title_by_appid: dict[str, str],
+    rule_b_candidates: list[dict],
+) -> tuple[bool, str | None]:
+    """Return (delisted, replaced_by) for a PCGW catalog entry.
+
+    Rule A: PCGW knows a Steam appid but Steam side of the search-index
+    does not include it. Steam removed the app entirely, or the appid
+    was never a real listing. Mark delisted and record the historical
+    appid in replaced_by as "steam:<appid>" so the frontend can link out
+    to steamdb historical page.
+
+    Rule B: The Steam appid IS in the index but under a title that
+    diverges from PCGW's title beyond the Jaccard threshold. Steam kept
+    the appid but repurposed it for a different game (the SLA / SLA:O
+    remake case). Mark delisted and record replaced_by the same way.
+    Candidates are appended to rule_b_candidates for human review.
+
+    When PCGW has no Steam appid at all, or the appid is present with a
+    matching title, returns (False, None).
+    """
+    steam_app_id = str(entry.get("steam_app_id") or "").strip() or None
+    if not steam_app_id:
+        return False, None
+    steam_title = steam_title_by_appid.get(steam_app_id)
+    if steam_title is None:
+        # Rule A: PCGW claims a Steam appid but Steam has no row for it.
+        return True, f"steam:{steam_app_id}"
+    pcgw_tokens = _normalize_title_tokens(entry.get("name") or "")
+    steam_tokens = _normalize_title_tokens(steam_title)
+    if not pcgw_tokens or not steam_tokens:
+        return False, None
+    union = pcgw_tokens | steam_tokens
+    inter = pcgw_tokens & steam_tokens
+    jaccard = len(inter) / len(union) if union else 0.0
+    if jaccard < _RULE_B_JACCARD_THRESHOLD:
+        rule_b_candidates.append({
+            "pcgw_title": entry.get("name"),
+            "steam_title": steam_title,
+            "steam_app_id": steam_app_id,
+            "jaccard": round(jaccard, 3),
+        })
+        return True, f"steam:{steam_app_id}"
+    return False, None
+
+
 def _clean_cover_url(value) -> str | None:
     """PGWiki ships `Cover_URL` as a pre-resolved HTTPS URL. Belt-and-braces:
     require https:// on the images.pcgamingwiki.com host and reject anything
@@ -349,6 +420,17 @@ def merge_catalog_into_search_index(output_dir: Path) -> None:
     sensible defaults for a stub game (tier=pending, 0 reports, Windows
     OS list from PCGW). Existing rows are left alone so a re-run does
     not duplicate an entry.
+
+    #434 delisted cross-check: every PCGW entry with a Steam appid gets
+    checked against the Steam side of the search-index. Two rules mark
+    the pw_ row as delisted:
+      - Rule A: PCGW's steam_app_id is not in the Steam side of the
+        index. Steam removed it, or it never existed.
+      - Rule B: The Steam appid IS in the index but under a title that
+        diverges from PCGW's title beyond a token-Jaccard threshold.
+        That is the "appid repurposed" case (SLA / SLA:O -- Netmarble
+        reused 2373990 for the OVERDRIVE remake).
+    Rule B candidates are logged verbose so a first run can be reviewed.
     """
     output_dir = Path(output_dir)
     index_path = output_dir / "search-index.json"
@@ -381,10 +463,63 @@ def merge_catalog_into_search_index(output_dir: Path) -> None:
     if dropped:
         log(f"[pcgwiki-catalog] dropped {dropped} legacy pgwiki: rows (re-keyed to pw_ ids)")
 
-    existing_ids = {str(row[0]) for row in entries_index if isinstance(row, list) and row}
+    # Build a title lookup from the Steam side so the cross-check does
+    # not do a linear scan per pw_ entry. Keys are the raw appid strings.
+    steam_title_by_appid: dict[str, str] = {}
+    for row in entries_index:
+        if not (isinstance(row, list) and len(row) >= 6):
+            continue
+        if row[5] == "steam":
+            steam_title_by_appid[str(row[0])] = str(row[1] or "")
+
+    # Two-track pass: pw_ rows already in the index need their delisted
+    # flag re-evaluated (otherwise a game like Solo Leveling: Arise that
+    # was stubbed on a prior run never picks up the Rule B flag when we
+    # ship the cross-check later). New pw_ rows still append.
+    existing_ids: set[str] = set()
+    existing_pw_indices: dict[str, int] = {}
+    for i, row in enumerate(entries_index):
+        if not (isinstance(row, list) and row):
+            continue
+        rid = str(row[0])
+        existing_ids.add(rid)
+        if rid.startswith("pw_"):
+            existing_pw_indices[rid] = i
+
     added = 0
+    updated = 0
+    delisted_A = 0
+    delisted_B = 0
+    rule_b_candidates: list[dict] = []
     for canonical_id, entry in sorted(catalog.items()):
+        delisted, replaced_by = _pcgw_steam_delisted_status(
+            entry, steam_title_by_appid, rule_b_candidates,
+        )
+        if delisted:
+            # Rule A vs Rule B tally: A fires only when the PCGW-known
+            # steam_app_id is missing from the Steam side of the index;
+            # B fires when it is present but title diverges. Both encode
+            # replaced_by as "steam:<appid>" so we distinguish here by
+            # re-checking membership rather than inspecting the string.
+            sid = str(entry.get("steam_app_id") or "").strip()
+            if sid and sid in steam_title_by_appid:
+                delisted_B += 1
+            else:
+                delisted_A += 1
+        if canonical_id in existing_pw_indices:
+            # Update in place. Pad legacy short rows to full 16-col shape.
+            idx = existing_pw_indices[canonical_id]
+            row = entries_index[idx]
+            while len(row) < 16:
+                row.append(None)
+            new_flag = delisted if delisted else None
+            if row[7] != new_flag or row[10] != replaced_by:
+                row[7] = new_flag
+                row[10] = replaced_by
+                updated += 1
+            continue
         if canonical_id in existing_ids:
+            # A non-pw_ row somehow collided on id -- leave it alone.
             continue
         row = [
             canonical_id,                      # 0: id
@@ -394,10 +529,10 @@ def merge_catalog_into_search_index(output_dir: Path) -> None:
             0,                                  # 4: pulse reports
             "pgwiki",                          # 5: source
             entry.get("release_year"),         # 6: releaseYear
-            None,                               # 7: delisted
+            delisted if delisted else None,    # 7: delisted (#434 cross-check)
             False,                              # 8: adult
             "",                                 # 9: trend
-            None,                               # 10: replaced_by
+            replaced_by,                        # 10: replaced_by ("steam:<appid>" when delisted, else None)
             None,                               # 11: steam_type
             None,                               # 12: ac_status
             None,                               # 13: ac_vendors
@@ -408,7 +543,26 @@ def merge_catalog_into_search_index(output_dir: Path) -> None:
         added += 1
 
     index_path.write_text(json.dumps(entries_index, separators=(",", ":")), encoding="utf-8")
-    log(f"[pcgwiki-catalog] merged {added} new rows (skipped {len(catalog) - added} already present)")
+    log(
+        f"[pcgwiki-catalog] merged {added} new rows, updated {updated} existing pw_ rows "
+        f"(skipped {len(catalog) - added - updated} unchanged)"
+    )
+    if delisted_A or delisted_B:
+        log(
+            f"[pcgwiki-catalog] delisted cross-check: rule A (steam appid missing)={delisted_A}, "
+            f"rule B (title diverged on same appid)={delisted_B}"
+        )
+    # Publish Rule B candidates verbose so we can review the divergence
+    # threshold before hardening. Small file; skipped when empty.
+    if rule_b_candidates:
+        candidates_path = output_dir / "pcgw-delisted-candidates.json"
+        candidates_path.write_text(
+            json.dumps(rule_b_candidates, indent=2), encoding="utf-8"
+        )
+        log(
+            f"[pcgwiki-catalog] wrote {len(rule_b_candidates)} rule-B candidates to "
+            f"{candidates_path.name} for review"
+        )
 
     # Publish the full catalog so the game page can render richer stubs
     # (developers, publishers, wiki_url) without a separate fetch per app.

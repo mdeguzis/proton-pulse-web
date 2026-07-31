@@ -149,6 +149,7 @@ js/lib/cert.js
 js/lib/tile-pad.js
 js/lib/pagination-prefs.js
 js/lib/adult-filter.js
+js/lib/delisted-filter.js
 js/lib/user-prefs.js
 js/lib/card-badges.js
 js/lib/store-url-parser.js

@@ -995,17 +995,28 @@
     function _showAdultAllowed() {
       try { return localStorage.getItem('pp:show-adult') === 'on'; } catch (e) { return false; }
     }
+    // Delisted gate mirrors the adult one. KEEP IN SYNC with
+    // js/lib/delisted-filter.js: pref key pp:show-delisted, delisted flag
+    // at search-index column 7 (DELISTED_COL_SEARCH_INDEX). Pref off
+    // (default) hides delisted rows from the topbar dropdown so the
+    // dropdown matches the search results page and browse lists (#434).
+    function _showDelistedAllowed() {
+      try { return localStorage.getItem('pp:show-delisted') === 'on'; } catch (e) { return false; }
+    }
 
     function match(q, limit) {
       if (!q) return [];
       const ql = q.toLowerCase();
       const asAppId = /^\d+$/.test(q);
       const showAdult = _showAdultAllowed();
+      const showDelisted = _showDelistedAllowed();
       const out = [];
       for (let i = 0; i < index.length && out.length < limit; i++) {
         const row = index[i];
         // Hide Steam-classified adult games unless the user opted in.
         if (!showAdult && row[8] === true) continue;
+        // Hide delisted games unless the user opted in (#434).
+        if (!showDelisted && row[7] === true) continue;
         const id = String(row[0]);
         const title = String(row[1] || '');
         if (asAppId ? id.startsWith(q) : title.toLowerCase().indexOf(ql) !== -1) {

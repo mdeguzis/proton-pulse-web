@@ -4,7 +4,7 @@
 // Steam Machine / SteamOS compatibility breakdowns of the library.
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
-import { loadSearchIndex, searchIndex } from './search.js?v=7ec2be23';
+import { loadSearchIndex, searchIndex } from './search.js?v=ca9641e8';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=a75604f5';
 import { esc } from '../utils.js?v=4630c3d5';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=0bbdc652';

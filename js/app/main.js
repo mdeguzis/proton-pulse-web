@@ -1,7 +1,7 @@
 // Entry point for the app page: bootstraps routing and search wiring.
 // (Replaces the inline bootstrap that lived at the top/bottom of app.js.)
 import { route } from './router.js?v=cf79f6bc';
-import { wireSearch } from './components/search.js?v=7ec2be23';
+import { wireSearch } from './components/search.js?v=ca9641e8';
 
 // Reset scroll on every hash navigation so a click on a card from
 // halfway down a long browse list (My Library / My Wishlist) doesn't
