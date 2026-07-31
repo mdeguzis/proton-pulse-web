@@ -30,8 +30,11 @@ test-js:
 coverage:
 	@npx jest --coverage
 
-# Full pre-push gate: cache-bust, Jest (with coverage), smoke
-pre-push: build coverage smoke
+# Full pre-push gate: cache-bust, Jest (with coverage), Python tests
+# + coverage gate, smoke. #434 miss: pre-push used to be JS-only, which
+# let a sub-90%-coverage Python change reach CI unflagged. Python is
+# now first-class in the gate so the same CI check runs locally.
+pre-push: build coverage test-py smoke
 
 # Render-path smoke test: serves a staged copy of the site (with an error
 # catcher injected at the top of every <head>) and drives headless Firefox
