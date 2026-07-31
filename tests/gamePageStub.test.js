@@ -33,7 +33,7 @@ describe('game-page renders the full page for known no-report games (#363)', () 
     const branch = SRC.slice(start, end);
     expect(start).toBeGreaterThan(-1);
     expect(end).toBeGreaterThan(start);
-    expect(branch).toMatch(/loadSearchIndex\(\)/);
+    expect(branch).toMatch(/_indexRowFor\(appId\)/);
     expect(branch).toMatch(/_fetchSteamCatalog\(\)/);
     expect(branch).toMatch(/loadExtendedSteamIndex\(\)/);
     // Only a genuinely unknown appId short-circuits to the mirror-miss state.
