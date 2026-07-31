@@ -163,12 +163,14 @@ describe('renderAnalytics', () => {
     expect(store.html).toContain('No campaign');
   });
 
-  test('renders sticky jump-nav with all section buttons', () => {
+  test('renders the jump-to-section dropdown with all section options', () => {
     ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
     expect(store.html).toContain('analytics-jump-nav');
-    // One button per major section -- a missing one means the nav is out of sync
+    expect(store.html).toContain('id="analytics-jump-select"');
+    expect(store.html).toContain('Jump to section...');
+    // One option per major section -- a missing one means the nav is out of sync
     ['sec-daily', 'sec-reports', 'sec-pages', 'sec-sources', 'sec-games', 'sec-summary', 'sec-sw-cache', 'sec-data-cache', 'sec-img-routes', 'sec-img-timings']
-      .forEach(id => expect(store.html).toContain(`data-target="${id}"`));
+      .forEach(id => expect(store.html).toContain(`value="${id}"`));
   });
 
   test('renders data-cache section placeholder and refresh button', () => {

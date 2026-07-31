@@ -366,12 +366,14 @@ function renderImgRoutes() {
   <p class="admin-empty" style="margin-top:8px;font-size:0.78rem">Primary akamai CDN successes are not counted (no fallback fires on success). A low fallback total means most images load on the first try.</p>`;
 }
 
-function wireJumpNav(root, sections) {
-  root.querySelectorAll('.analytics-jump-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = root.querySelector(`#${btn.dataset.target}`);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+function wireJumpNav(root) {
+  const sel = root.querySelector('#analytics-jump-select');
+  if (!sel) return;
+  sel.addEventListener('change', () => {
+    const target = sel.value && root.querySelector(`#${sel.value}`);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Reset so picking the same section twice in a row still scrolls.
+    sel.value = '';
   });
 }
 
@@ -505,7 +507,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
   const content = document.getElementById('analytics-content');
 
   // Anchor ids drive the sticky jump-nav at the top. Adding a new section
-  // means adding a row to NAV_SECTIONS so it gets a button.
+  // means adding a row to NAV_SECTIONS so it gets an option in the dropdown.
   const NAV_SECTIONS = [
     { id: 'sec-daily',      label: 'Activity' },
     { id: 'sec-reports',    label: 'Reports' },
@@ -518,11 +520,13 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     { id: 'sec-img-routes', label: 'Image Routes' },
     { id: 'sec-img-timings', label: 'Image Timings' },
   ];
-  const navHtml = `<div class="analytics-jump-nav" id="analytics-jump-nav">${
-    NAV_SECTIONS.map(s =>
-      `<button type="button" class="analytics-jump-btn" data-target="${s.id}">${escapeHtml(s.label)}</button>`
-    ).join('')
-  }</div>`;
+  const navHtml = `<div class="analytics-jump-nav" id="analytics-jump-nav">
+    <label class="admin-sort-label" for="analytics-jump-select">Jump to:</label>
+    <select id="analytics-jump-select" class="admin-select analytics-jump-select">
+      <option value="">Jump to section...</option>
+      ${NAV_SECTIONS.map(s => `<option value="${s.id}">${escapeHtml(s.label)}</option>`).join('')}
+    </select>
+  </div>`;
 
   content.innerHTML = `
     ${navHtml}
@@ -604,7 +608,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     </div>
   `;
 
-  wireJumpNav(content, NAV_SECTIONS);
+  wireJumpNav(content);
   loadDataCacheTable();
   renderImgRoutesChart();
   content.querySelector('#data-cache-refresh')?.addEventListener('click', loadDataCacheTable);

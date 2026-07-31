@@ -1088,28 +1088,14 @@ pre.flag-raw-json {
   top: 0;
   z-index: 5;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  align-items: center;
+  gap: 8px;
   padding: 8px 0;
   margin: -8px 0 12px;
+  background: var(--bg, #0e141b);
 }
-.analytics-jump-btn {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--text, #c7d5e0);
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background 0.12s ease, border-color 0.12s ease;
-}
-.analytics-jump-btn:hover {
-  background: rgba(102, 192, 244, 0.12);
-  border-color: var(--accent, #66c0f4);
-  color: var(--strong, #fff);
+.analytics-jump-select {
+  max-width: 220px;
 }
 
 /* One-liner explanation under a chart so the reader doesn't have to guess
