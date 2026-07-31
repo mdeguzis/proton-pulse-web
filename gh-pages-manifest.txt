@@ -105,6 +105,7 @@ js/admin/api/admins.js
 js/admin/api/phrases.js
 js/admin/api/userDetail.js
 js/admin/api/analytics.js
+js/admin/api/search-analytics.js
 js/admin/lib/reportSource.js
 js/admin/api/boxart.js
 js/admin/components/boxart.js
@@ -123,6 +124,7 @@ js/admin/components/admins.js
 js/admin/components/phrases.js
 js/admin/components/userDetail.js
 js/admin/components/analytics.js
+js/admin/components/search-analytics.js
 js/admin/components/cache-status.js
 js/admin/components/logging.js
 js/admin/components/deployments.js

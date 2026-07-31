@@ -14,7 +14,7 @@ import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
 import { renderCard } from './report-card.js?v=5e25c644';
-import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=2ceb95e3';
+import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=b41eaffb';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
@@ -1272,31 +1272,30 @@ export async function renderGamePage(appId) {
     const _flagStarter = 'What looks wrong:\n\nWhat I expected:\n\n';
     const flagUrl = `https://github.com/mdeguzis/proton-pulse-web/issues/new?template=game_report.yml&game_name=${encodeURIComponent(title)}&app_id=${encodeURIComponent(String(appId))}&description=${encodeURIComponent(_flagStarter)}`;
 
-    // Replaced-by banner: this appid was superseded by a newer one. Point new
-    // submits at the new appid so they land where users can find them, but
-    // leave a fallback link for people who still play the exact old version.
+    // Replaced-by banner: this appid was superseded by a newer one. Kept
+    // as the ONLY replacement UI signal on the page (#434 followup): the
+    // REPLACED chip next to the title and the "Old build?" fallback link
+    // next to Submit are gone because the banner already communicates
+    // the state clearly and duplication reads as noise. Submit goes to
+    // the appid the user is looking at -- if they are on the SLA page,
+    // they are playing SLA (the old build), so their report lands here.
+    // The banner offers the new-app link inline for users who realize
+    // they meant to be on the replacement.
     const replacedBanner = replacedBy
       ? `<div class="game-replaced-banner">
           <strong>This app has been replaced.</strong>
           Steam now sells this title as <a class="game-replaced-link" href="#/app/${esc(replacedBy)}">${esc(replacedByTitle)}</a>.
           Old app id: <code>${esc(String(appId))}</code>, new app id: <code>${esc(replacedBy)}</code>.
-          New reports go to the new app automatically. Old reports on this page still apply if you're playing the original build.
+          Reports on this page cover the original build; if you meant to report on the current version, use the link above.
         </div>`
       : '';
-    const submitHref = replacedBy
-      ? `submit.html?app=${esc(replacedBy)}&title=${encodeURIComponent(replacedByTitle || title)}`
-      : `submit.html?app=${appId}&title=${encodeURIComponent(title)}`;
-    const submitBtnTitle = replacedBy
-      ? `Submit a report against the current appid (${replacedBy}) so it lands where users of the new version will find it`
-      : '';
-    const submitOldFallback = replacedBy
-      ? ` <a class="submit-report-legacy" href="submit.html?app=${appId}&title=${encodeURIComponent(title)}" title="Submit a report against the original appid (${appId}) instead of the replacement">Old build?</a>`
-      : '';
+    const submitHref = `submit.html?app=${appId}&title=${encodeURIComponent(title)}`;
+    const submitBtnTitle = '';
 
     el.innerHTML = `
       <div class="game-header">
         ${replacedBanner}
-        <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry maps to">(${esc(storeLabelFromAppId(appId) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${replacedBy ? ` <span class="game-title-replaced-pill" title="Replaced by app ${esc(replacedBy)}: ${esc(replacedByTitle)}">REPLACED</span>` : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
+        <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry maps to">(${esc(storeLabelFromAppId(appId) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
             <img class="game-header-art" src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
@@ -1331,7 +1330,7 @@ export async function renderGamePage(appId) {
             <a class="info-btn info-btn-flag" id="flag-game-btn" href="${flagUrl}" target="_blank" rel="noopener" title="Flag a problem with this game entry (opens the Game Report template)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#e0554f"><path d="M14.4 6l-.4-2H5v17h2v-7h5.6l.4 2h7V6z"/></svg></a>
             <a class="info-btn info-btn-labeled" id="stats-btn" href="game-stats.html?app=${appId}" title="Per-game compatibility stats: confidence factors, trend, Proton version success rates, launch option frequency, and proven launch options"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="12" width="4" height="9" rx="1"/></svg><span>Stats</span></a>
             ${renderDeckStatusButton(appId)}
-            <a class="submit-report-btn" href="${submitHref}" title="${esc(submitBtnTitle)}">Submit Report</a>${submitOldFallback}
+            <a class="submit-report-btn" href="${submitHref}" title="${esc(submitBtnTitle)}">Submit Report</a>
           </div>
         </div>
         <div class="info-tooltip" id="deck-status-tip">

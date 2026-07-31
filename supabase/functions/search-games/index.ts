@@ -35,6 +35,37 @@ const corsHeaders = {
 const SB_URL = Deno.env.get("SUPABASE_URL") || "";
 const SB_SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 
+// Fire-and-forget analytics write. Any failure gets swallowed -- we
+// never want a metrics hiccup to affect the search response. Retention
+// is trimmed by a probabilistic trigger inside the DB so no manual
+// cleanup step is needed here. Table shape defined in
+// supabase/migrations/20260730210000_search_analytics.sql.
+function logSearchAnalytics(row: {
+  query: string;
+  store: string;
+  result_count: number;
+  hidden_delisted: number;
+  hidden_adult: number;
+  took_ms: number;
+  include_delisted: boolean;
+  include_adult: boolean;
+  is_numeric: boolean;
+  status: string;
+  error?: string;
+}) {
+  if (!SB_URL || !SB_SERVICE_KEY) return;
+  fetch(`${SB_URL}/rest/v1/search_analytics`, {
+    method: "POST",
+    headers: {
+      apikey: SB_SERVICE_KEY,
+      Authorization: `Bearer ${SB_SERVICE_KEY}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify(row),
+  }).catch(() => { /* swallow */ });
+}
+
 const VALID_STORES = new Set(["steam", "gog", "epic", "pgwiki", "all"]);
 const DEFAULT_LIMIT = 24;
 const MAX_LIMIT = 100;
@@ -149,7 +180,15 @@ async function fetchMatches(
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
-  if (isRateLimited("search-games", getClientIp(req))) return rateLimitResponse(corsHeaders);
+  if (isRateLimited("search-games", getClientIp(req))) {
+    logSearchAnalytics({
+      query: (new URL(req.url).searchParams.get("q") || "").slice(0, 120),
+      store: "all", result_count: 0, hidden_delisted: 0, hidden_adult: 0,
+      took_ms: 0, include_delisted: false, include_adult: false,
+      is_numeric: false, status: "ratelimit",
+    });
+    return rateLimitResponse(corsHeaders);
+  }
 
   const started = Date.now();
   const url = new URL(req.url);
@@ -196,11 +235,31 @@ Deno.serve(async (req: Request) => {
       query: q,
       took_ms: Date.now() - started,
     };
+    logSearchAnalytics({
+      query: q, store,
+      result_count: results.length,
+      hidden_delisted: hiddenDelisted,
+      hidden_adult: hiddenAdult,
+      took_ms: body.took_ms,
+      include_delisted: includeDelisted,
+      include_adult: includeAdult,
+      is_numeric: /^\d+$/.test(q),
+      status: "ok",
+    });
     console.log(`[search-games] q=${JSON.stringify(q)} store=${store} results=${results.length} hidden={d:${hiddenDelisted},a:${hiddenAdult}} took=${body.took_ms}ms`);
     return Response.json(body, { headers: corsHeaders });
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     console.error(`[search-games] q=${JSON.stringify(q)} error=${msg}`);
+    logSearchAnalytics({
+      query: q, store,
+      result_count: 0, hidden_delisted: 0, hidden_adult: 0,
+      took_ms: Date.now() - started,
+      include_delisted: includeDelisted,
+      include_adult: includeAdult,
+      is_numeric: /^\d+$/.test(q),
+      status: "error", error: msg.slice(0, 200),
+    });
     return Response.json(
       { error: "search backend error", query: rawQ, took_ms: Date.now() - started },
       { status: 502, headers: corsHeaders },

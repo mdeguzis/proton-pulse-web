@@ -15,6 +15,7 @@ import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965
 import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=28cb08af';
 import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
 import { fetchAnalytics } from './api/analytics.js?v=2f32672f';
+import { renderSearchAnalytics } from './components/search-analytics.js?v=5f4fd969';
 import { renderAnalytics } from './components/analytics.js?v=84f67795';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
@@ -490,6 +491,15 @@ async function loadAnalytics() {
   }
   const cacheContainer = document.getElementById('cache-status-content');
   if (cacheContainer) renderCacheStatus(cacheContainer).catch(() => {});
+  // #434 followup: search API performance panel renders into its own
+  // slot so a search-analytics fetch failure never disturbs the main
+  // analytics render.
+  const searchAnalyticsContainer = document.getElementById('search-analytics-content');
+  if (searchAnalyticsContainer) {
+    renderSearchAnalytics(searchAnalyticsContainer, currentSession, { daysBack: analyticsDays }).catch((e) => {
+      console.error('[search-analytics]', e);
+    });
+  }
 }
 
 // Maps each tab to its data loader so tab clicks and ?tab= restore share one

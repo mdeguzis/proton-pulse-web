@@ -117,14 +117,14 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-06-30T01:00:00Z', source: 'cli-import' },
-        { created_at: '2026-06-30T02:00:00Z', source: '' },
-        { created_at: '2026-06-30T03:00:00Z', source: null },
+        { created_at: `${isoDaysAgo(5)}T01:00:00Z`, source: 'cli-import' },
+        { created_at: `${isoDaysAgo(5)}T02:00:00Z`, source: '' },
+        { created_at: `${isoDaysAgo(5)}T03:00:00Z`, source: null },
       ],
     });
     const result = await fetchAnalytics(makeSession());
     expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
-      { day: '2026-06-30', count: 3, web: 0, plugin: 0, other: 3 },
+      { day: isoDaysAgo(5), count: 3, web: 0, plugin: 0, other: 3 },
     ]);
   });
 
@@ -136,14 +136,14 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-06-30T01:00:00Z', source: 'user',           installation_id: 'iid-a' },
-        { created_at: '2026-06-30T02:00:00Z', source: 'protondb',       installation_id: 'iid-b' },
-        { created_at: '2026-06-30T03:00:00Z', source: 'protondb-local', installation_id: 'iid-c' },
+        { created_at: `${isoDaysAgo(5)}T01:00:00Z`, source: 'user',           installation_id: 'iid-a' },
+        { created_at: `${isoDaysAgo(5)}T02:00:00Z`, source: 'protondb',       installation_id: 'iid-b' },
+        { created_at: `${isoDaysAgo(5)}T03:00:00Z`, source: 'protondb-local', installation_id: 'iid-c' },
       ],
     });
     const result = await fetchAnalytics(makeSession());
     expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
-      { day: '2026-06-30', count: 3, web: 0, plugin: 3, other: 0 },
+      { day: isoDaysAgo(5), count: 3, web: 0, plugin: 3, other: 0 },
     ]);
   });
 
@@ -151,13 +151,13 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-06-30T01:00:00Z', source: 'user' },
-        { created_at: '2026-06-30T02:00:00Z', source: 'protondb' },
+        { created_at: `${isoDaysAgo(5)}T01:00:00Z`, source: 'user' },
+        { created_at: `${isoDaysAgo(5)}T02:00:00Z`, source: 'protondb' },
       ],
     });
     const result = await fetchAnalytics(makeSession());
     expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
-      { day: '2026-06-30', count: 2, web: 0, plugin: 0, other: 2 },
+      { day: isoDaysAgo(5), count: 2, web: 0, plugin: 0, other: 2 },
     ]);
   });
 
@@ -165,13 +165,13 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
-        { created_at: '2026-06-30T01:00:00Z', source: 'WEB-LINUX' },
-        { created_at: '2026-06-30T02:00:00Z', source: 'Plugin-Steamdeck' },
+        { created_at: `${isoDaysAgo(5)}T01:00:00Z`, source: 'WEB-LINUX' },
+        { created_at: `${isoDaysAgo(5)}T02:00:00Z`, source: 'Plugin-Steamdeck' },
       ],
     });
     const result = await fetchAnalytics(makeSession());
     const nonZero = result.reports_by_day.filter(r => r.count > 0);
-    expect(nonZero[0]).toEqual({ day: '2026-06-30', count: 2, web: 1, plugin: 1, other: 0 });
+    expect(nonZero[0]).toEqual({ day: isoDaysAgo(5), count: 2, web: 1, plugin: 1, other: 0 });
   });
 
   test('days are returned in ascending order', async () => {
@@ -202,31 +202,34 @@ describe('fetchReportsByDay source bucketing (via fetchAnalytics)', () => {
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/user_configs': [
         { source: 'web' },
-        { created_at: '2026-06-30T01:00:00Z', source: 'web' },
+        { created_at: `${isoDaysAgo(5)}T01:00:00Z`, source: 'web' },
       ],
     });
     const result = await fetchAnalytics(makeSession());
     expect(result.reports_by_day.filter(r => r.count > 0)).toEqual([
-      { day: '2026-06-30', count: 1, web: 1, plugin: 0, other: 0 },
+      { day: isoDaysAgo(5), count: 1, web: 1, plugin: 0, other: 0 },
     ]);
   });
 
   test('every day in the range is emitted as at least a zero row (padding)', async () => {
-    jest.useFakeTimers({ now: new Date('2026-06-30T18:00:00Z') });
+    // Compute the day labels BEFORE freezing the clock: once useFakeTimers
+    // is active, isoDaysAgo() would compute against the fake now and drift
+    // relative to what the code returns. Freeze at N days ago so the four
+    // expected days are the fake-now day plus three preceding days.
+    const dayNow  = isoDaysAgo(5);
+    const dayN1   = isoDaysAgo(6);
+    const dayN2   = isoDaysAgo(7);
+    const dayN3   = isoDaysAgo(8);
+    jest.useFakeTimers({ now: new Date(`${dayNow}T18:00:00Z`) });
     try {
       global.fetch = routedFetch({
         'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
         'https://test.supabase.co/rest/v1/user_configs': [
-          { created_at: '2026-06-30T01:00:00Z', source: 'web' },
+          { created_at: `${dayNow}T01:00:00Z`, source: 'web' },
         ],
       });
       const result = await fetchAnalytics(makeSession(), { daysBack: 3 });
-      // 3-day window ending 2026-06-30 covers 06-27, 06-28, 06-29, 06-30.
-      // Every day must be present so the chart line reaches zero on empty
-      // days instead of skipping them.
-      expect(result.reports_by_day.map(r => r.day)).toEqual([
-        '2026-06-27', '2026-06-28', '2026-06-29', '2026-06-30',
-      ]);
+      expect(result.reports_by_day.map(r => r.day)).toEqual([dayN3, dayN2, dayN1, dayNow]);
       expect(result.reports_by_day.slice(0, 3).every(r => r.count === 0)).toBe(true);
     } finally {
       jest.useRealTimers();
@@ -239,8 +242,8 @@ describe('sw_cache aggregation', () => {
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/site_events': [
-        { metadata: null, created_at: '2026-06-30T01:00:00Z' },
-        { metadata: { hits: 4, misses: 0 }, created_at: '2026-06-30T02:00:00Z' },
+        { metadata: null, created_at: `${isoDaysAgo(5)}T01:00:00Z` },
+        { metadata: { hits: 4, misses: 0 }, created_at: `${isoDaysAgo(5)}T02:00:00Z` },
       ],
     });
     const result = await fetchAnalytics(makeSession());
@@ -261,16 +264,18 @@ describe('sw_cache aggregation', () => {
   });
 
   test('per-day hit_rate rounds correctly', async () => {
+    const dayA = isoDaysAgo(6);
+    const dayB = isoDaysAgo(5);
     global.fetch = routedFetch({
       'https://test.supabase.co/rest/v1/rpc/admin_analytics': { totals: {} },
       'https://test.supabase.co/rest/v1/site_events': [
-        { metadata: { hits: 3, misses: 1 }, created_at: '2026-06-29T01:00:00Z' },
-        { metadata: { hits: 2, misses: 8 }, created_at: '2026-06-30T01:00:00Z' },
+        { metadata: { hits: 3, misses: 1 }, created_at: `${dayA}T01:00:00Z` },
+        { metadata: { hits: 2, misses: 8 }, created_at: `${dayB}T01:00:00Z` },
       ],
     });
     const result = await fetchAnalytics(makeSession());
     const byDay = Object.fromEntries(result.sw_cache.by_day.map((d) => [d.day, d.hit_rate]));
-    expect(byDay['2026-06-29']).toBe(75);
-    expect(byDay['2026-06-30']).toBe(20);
+    expect(byDay[dayA]).toBe(75);
+    expect(byDay[dayB]).toBe(20);
   });
 });
