@@ -10,6 +10,7 @@ js/app/api/supabase.js
 js/app/api/protondb.js
 js/app/api/votes.js
 js/app/api/reports.js
+js/app/api/search-games.js
 js/app/api/deck-status.js
 js/app/api/author.js
 js/app/components/home.js

@@ -8,8 +8,10 @@ import { daysAgo, esc, withTimeout } from '../utils.js?v=4630c3d5';
 import { renderGameCard } from '../lib/card.js?v=41dcabfc';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { filterAdultEntries, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
-import { filterDelistedEntries, countHiddenDelisted } from '../../lib/delisted-filter.js?v=42858e22';
+import { filterDelistedEntries, countHiddenDelisted, showDelistedAllowed } from '../../lib/delisted-filter.js?v=42858e22';
+import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
+import { searchGames } from '../api/search-games.js?v=76dd0dfb';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its globals
@@ -31,20 +33,60 @@ export let searchFocusIdx         = -1;
 const _matchEntries = matchEntries;
 
 // --- searchIndexMatches ---
+// LEGACY blob-based match kept for callers that still need synchronous
+// lookups (nothing in the site currently). Search UX went API-backed
+// in #434; the blob only stays loaded for home.js browse aggregation
+// (trend arrows, replaced_by lookups) and topbar dropdown falls back
+// to it if the API fetch fails. Prefer searchGamesAPI() for new code.
 export function searchIndexMatches(query, limit) {
   const q = query.trim();
-  // Drop adult- and delisted-flagged rows unless the corresponding user
-  // pref is on. Both helpers are no-ops for rows lacking the column so
-  // pre-pipeline-run indices stay visible.
   return filterDelistedEntries(filterAdultEntries(_matchEntries(searchIndex, q, limit)));
 }
 
 // --- searchExtendedSteamMatches ---
-// Synchronous match against the already-loaded extended index. Call
-// loadExtendedSteamIndex() first when you want the long-tail Steam catalog.
+// LEGACY. Deprecated with #434 -- the API now hits the full Postgres
+// index so the extended-steam blob file no longer earns its keep.
+// Retained for the transition window; safe to delete once nothing
+// references it.
 export function searchExtendedSteamMatches(query, limit) {
   const q = query.trim();
   return filterDelistedEntries(filterAdultEntries(_matchEntries(extendedSteamIndex, q, limit)));
+}
+
+// --- searchGamesAPI ---
+// #434: API-backed search returning array-shape rows (matching the
+// search-index.json blob shape) so existing renderers can consume the
+// result without a shape change. Applies the same adult/delisted gates
+// on the API side so hidden counts come back accurate.
+export async function searchGamesAPI(query, { limit = 24, store = 'all' } = {}) {
+  const body = await searchGames(query, {
+    limit,
+    store,
+    includeDelisted: showDelistedAllowed(),
+    includeAdult: showAdultAllowed(),
+  });
+  // Coerce API rows back to the legacy array shape so existing
+  // renderIndexSearchResult / _lookupTrend / etc. keep working.
+  const asRows = body.results.map((r) => [
+    r.appId,
+    r.title,
+    r.tier,
+    r.protondbCount,
+    r.pulseCount,
+    r.source,
+    r.releaseYear,
+    r.delisted,
+    r.adult,
+    '',
+    r.replacedBy,
+    r.steamType,
+  ]);
+  return {
+    rows: asRows,
+    hiddenDelisted: body.hiddenDelisted,
+    hiddenAdult: body.hiddenAdult,
+    tookMs: body.tookMs,
+  };
 }
 
 // --- renderPulseSearchResult ---
@@ -95,34 +137,18 @@ export async function renderSearchPage(query) {
   if (q && typeof window.ppTrack === 'function') {
     void window.ppTrack('search_query', { q: q.slice(0, 120), source: 'app' });
   }
-  // Issue #134: load the extended Steam catalog alongside the primary index
-  // so long-tail Steam games (apps that ProtonDB knows about but the curated
-  // signal export does not) are findable from the grouped results page. The
-  // extended file is large, so it stays out of the dropdown (onSearchInput)
-  // and only loads on this deliberate Enter-to-search path.
-  await Promise.all([loadSearchIndex(), loadExtendedSteamIndex()]);
-  const pulseResults = await withTimeout(fetchMatchingPulseConfigs(q), 2500, []);
-  // Count adult- and delisted-hidden hits so the summary line can call
-  // them out. Runs the raw match once, applies each filter, and diffs
-  // to compute what was suppressed. showAdultAllowed()/showDelisted
-  // Allowed()=true short-circuits the corresponding count to 0.
-  const primaryRaw = _matchEntries(searchIndex, q, 24);
-  const primaryAfterAdult = filterAdultEntries(primaryRaw);
-  const primaryResults = filterDelistedEntries(primaryAfterAdult);
-  const primaryIds = new Set(primaryResults.map(([id]) => String(id)));
-  const extendedRoom = Math.max(0, 48 - primaryResults.length);
-  const extendedRaw = extendedRoom
-    ? _matchEntries(extendedSteamIndex, q, extendedRoom + primaryIds.size)
-        .filter(([id]) => !primaryIds.has(String(id)))
-        .slice(0, extendedRoom)
-    : [];
-  const extendedAfterAdult = filterAdultEntries(extendedRaw);
-  const extendedResults = filterDelistedEntries(extendedAfterAdult);
-  const hiddenAdultCount = (primaryRaw.length - primaryAfterAdult.length)
-                         + (extendedRaw.length - extendedAfterAdult.length);
-  const hiddenDelistedCount = countHiddenDelisted(primaryAfterAdult)
-                            + countHiddenDelisted(extendedAfterAdult);
-  const indexResults = [...primaryResults, ...extendedResults];
+  // #434: search UX now hits the search-games edge function. Server does
+  // FTS + adult/delisted gate + store filter in one round trip, returns
+  // ~2KB per query instead of the pre-#434 12MB blob download. Extended
+  // Steam index no longer needed -- the API queries the full Postgres
+  // catalog directly. Fires in parallel with the User Configs lookup.
+  const [pulseResults, apiResp] = await Promise.all([
+    withTimeout(fetchMatchingPulseConfigs(q), 2500, []),
+    searchGamesAPI(q, { limit: 48 }),
+  ]);
+  const indexResults = apiResp.rows;
+  const hiddenAdultCount = apiResp.hiddenAdult;
+  const hiddenDelistedCount = apiResp.hiddenDelisted;
   // Disambiguate same-name games (e.g. Prey 2006 vs Prey 2017) with a "(YEAR)"
   // suffix when the pipeline supplied a releaseYear (column 7 of search-index).
   // window.__buildTitleOverrides is registered globally by topbar.js.
@@ -183,10 +209,10 @@ export async function renderSearchPage(query) {
   }
 
   // #143: track which result card was clicked + which group + position.
-  // Tells us whether the extended Steam index (group=extended) actually
-  // earns its keep on the long-tail catalog. Uses a delegated handler
-  // so it stays in O(1) DOM listeners regardless of result count.
-  const primaryIdSet = new Set(primaryResults.map(([id]) => String(id)));
+  // Since #434 the API returns a single unified result set (no primary vs
+  // extended distinction), so group is 'index' for anything not from the
+  // User Configs section. Delegated handler stays O(1) in DOM listeners.
+  const indexIdSet = new Set(indexResults.map(([id]) => String(id)));
   const pulseIdSet = new Set(pulseResults.map((r) => String(r.appId)));
   el.addEventListener('click', (ev) => {
     const card = ev.target instanceof Element ? ev.target.closest('a[href^="#/app/"]') : null;
@@ -194,10 +220,9 @@ export async function renderSearchPage(query) {
     const m = card.getAttribute('href').match(/^#\/app\/(.+)$/);
     if (!m) return;
     const clickedId = String(m[1]);
-    let group = 'extended';
+    let group = 'other';
     if (pulseIdSet.has(clickedId)) group = 'pulse';
-    else if (primaryIdSet.has(clickedId)) group = 'primary';
-    // Position is the index of the card among rendered result anchors.
+    else if (indexIdSet.has(clickedId)) group = 'index';
     const cards = Array.from(el.querySelectorAll('a[href^="#/app/"]'));
     const position = cards.indexOf(card);
     if (typeof window.ppTrack === 'function') {
@@ -274,17 +299,43 @@ export function renderSearchResults(q) {
 }
 
 // --- onSearchInput ---
+// #434: dropdown quick-match now hits the search-games edge fn instead of
+// the pre-#434 blob load + local substring scan. Debounced by the caller
+// (input event is fired per keystroke, but the abort signal cancels the
+// previous in-flight request so we never render stale results on top of
+// fresh ones).
+let _dropdownAbortCtrl = null;
 export async function onSearchInput() {
   const q = searchInput.value.trim();
   if (!q) { closeSearch(); return; }
-  await loadSearchIndex();
   positionSearchResults();
   const MAX = 8;
 
-  // Filter: numeric queries match only on app ID prefix; text matches title or ID
-  const matches = searchIndexMatches(q, MAX);
-  // Check which matched apps have Pulse configs AND/OR Pulse reports. Either
-  // one is enough to earn the Pulse badge in the dropdown
+  // Abort any in-flight dropdown fetch so keystroke N+1 supersedes N.
+  if (_dropdownAbortCtrl) _dropdownAbortCtrl.abort();
+  _dropdownAbortCtrl = new AbortController();
+  const signal = _dropdownAbortCtrl.signal;
+
+  // Kick off the three fetches in parallel: API index match, matching
+  // Pulse configs, matching Pulse report app-ids. All time-bounded so a
+  // slow backend does not lock the dropdown into a permanent "..." state.
+  let apiRows = [];
+  try {
+    const apiResp = await searchGames(q, {
+      limit: MAX,
+      includeDelisted: showDelistedAllowed(),
+      includeAdult: showAdultAllowed(),
+      signal,
+    });
+    apiRows = apiResp.results;
+  } catch (err) {
+    if (err && err.name === 'AbortError') return; // superseded, drop silently
+    console.warn('[search] dropdown API failed:', err);
+  }
+  const matches = apiRows.map((r) => [
+    r.appId, r.title, r.tier, r.protondbCount, r.pulseCount, r.source,
+    r.releaseYear, r.delisted, r.adult, '', r.replacedBy, r.steamType,
+  ]);
   const [pulseResults, pulseReportAppIds] = await Promise.all([
     withTimeout(fetchMatchingPulseConfigs(q), 1500, []),
     withTimeout(fetchMatchingPulseReportAppIds(q), 1500, new Set()),

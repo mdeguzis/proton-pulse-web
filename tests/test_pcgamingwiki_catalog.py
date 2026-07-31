@@ -399,7 +399,7 @@ def test_merge_flags_rule_b_when_steam_title_diverged(tmp_path):
     assert len(candidates) == 1
     assert candidates[0]["pcgw_title"] == "Solo Leveling: Arise"
     assert candidates[0]["steam_app_id"] == "2373990"
-    assert candidates[0]["jaccard"] < 0.75
+    assert candidates[0]["jaccard"] <= 0.75
 
 
 def test_merge_leaves_active_pcgw_entries_alone(tmp_path):

@@ -314,12 +314,12 @@ def _normalize_title_tokens(title: str) -> frozenset[str]:
 
 # Title-token Jaccard threshold for the "Steam appid was repurposed"
 # case (Rule B in the delisted cross-check). PCGW's "Solo Leveling:
-# Arise" vs Steam's current "Solo Leveling: ARISE OVERDRIVE" scores 3/4
-# = 0.75, so the SLA/SLA:O case sits at the border and needs a slightly
-# generous threshold to catch it while not over-triggering on a mere
-# subtitle addition. First-run candidates are logged verbose so the
-# threshold can be reviewed against real data before tightening.
-_RULE_B_JACCARD_THRESHOLD = 0.75
+# Arise" vs Steam's current "Solo Leveling: ARISE OVERDRIVE" scores
+# 3/4 = 0.75. Comparison is inclusive so SLA-vs-OVERDRIVE (a real
+# remake, not a rename) trips the rule. First-run candidates are
+# logged verbose so the threshold can be reviewed against real data
+# before tightening.
+_RULE_B_JACCARD_THRESHOLD = 0.75  # jaccard <= this fires the rule
 
 
 def _pcgw_steam_delisted_status(
@@ -358,7 +358,7 @@ def _pcgw_steam_delisted_status(
     union = pcgw_tokens | steam_tokens
     inter = pcgw_tokens & steam_tokens
     jaccard = len(inter) / len(union) if union else 0.0
-    if jaccard < _RULE_B_JACCARD_THRESHOLD:
+    if jaccard <= _RULE_B_JACCARD_THRESHOLD:
         rule_b_candidates.append({
             "pcgw_title": entry.get("name"),
             "steam_title": steam_title,

@@ -70,17 +70,17 @@ describe('search events (#143)', () => {
     expect(SEARCH_SRC).toContain('position,');
   });
 
-  test('group is one of pulse / primary / extended', () => {
-    // Pin the group taxonomy. If a new group is added, this test should
-    // fail and the new value should be explicitly added here so admin
-    // charts continue to break the source apart cleanly.
+  test('group is one of pulse / index / other', () => {
+    // Pin the group taxonomy. #434 collapsed primary+extended into a
+    // single API-backed "index" bucket since the server returns a unified
+    // result set. Anything unmatched (defensive) reports as "other".
     const block = SEARCH_SRC.slice(
-      SEARCH_SRC.indexOf("let group = 'extended'"),
+      SEARCH_SRC.indexOf("let group = 'other'"),
       SEARCH_SRC.indexOf("'search_result_click'")
     );
-    expect(block).toContain("group = 'extended'");
+    expect(block).toContain("group = 'other'");
     expect(block).toContain("group = 'pulse'");
-    expect(block).toContain("group = 'primary'");
+    expect(block).toContain("group = 'index'");
   });
 
   test('click delegate uses a single listener on the content root', () => {

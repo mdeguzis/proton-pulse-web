@@ -58,6 +58,7 @@ from .anti_cheat import enrich_search_index_with_anti_cheat
 from .flightless_benchmarks import run_flightless_benchmarks
 from .pcgamingwiki import enrich_search_index_with_pcgamingwiki
 from .pcgamingwiki_catalog import merge_catalog_into_search_index as merge_pcgwiki_catalog
+from .sync_search_index import sync_search_index
 from .pulse import merge_pulse_into_data_dir
 from .write_depot_files import write_depot_files
 from .state import read_pipeline_state
@@ -2131,6 +2132,13 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # primary id set we read back is the final one.
     phase("Extended Steam index")
     generate_extended_steam_index(output_path, steam_catalog=steam_catalog)
+    # #434 search API: mirror the finalized search-index.json into the
+    # Supabase `search_index` Postgres table so supabase/functions/
+    # search-games/ can serve queries without shipping the 12MB blob
+    # to every client. Runs LAST so every enrichment step above has
+    # already landed. Non-blocking: sync failure logs + continues.
+    phase("Sync search index to Supabase (#434)")
+    sync_search_index(output_path)
     _backfill_most_played_header_images(output_path, overrides)
     write_proton_versions_json(output_path)
     # #237: emit per-Steam-app depots.json under {data}/{appId}/. Reads the

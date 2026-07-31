@@ -9,6 +9,7 @@ on:
     branches: [main, staging]
     paths:
       - 'supabase/functions/**'
+      - 'supabase/config.toml'
       - '.github/workflows/deploy-functions.yml'
   workflow_dispatch:
 

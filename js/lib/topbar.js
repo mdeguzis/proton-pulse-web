@@ -972,69 +972,60 @@
     const dropdown = document.getElementById('search-dropdown');
     if (!input || !dropdown) return;
 
-    let index = null;
-    let indexLoading = null;
     let focusIdx = -1;
     let visible = [];
 
-    function loadIndex() {
-      if (index) return Promise.resolve(index);
-      if (indexLoading) return indexLoading;
-      indexLoading = fetch('search-index.json')
-        .then(function (r) { return r.ok ? r.json() : []; })
-        .catch(function () { return []; })
-        .then(function (data) { index = Array.isArray(data) ? data : []; return index; });
-      return indexLoading;
-    }
+    // #434: topbar autocomplete goes through the search-games edge fn so
+    // the pre-#434 12MB search-index.json blob no longer has to load
+    // before the first keystroke can render. Kept as a classic <script>
+    // so no ES import; direct fetch instead.
+    const SEARCH_API_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/search-games';
 
-    // Adult-content gate. Topbar is a classic <script> and can't ES-import
-    // js/lib/adult-filter.js, so this inlines the same rule. KEEP IN SYNC:
-    // pref key pp:show-adult, adult flag at search-index column 8
-    // (ADULT_COL_SEARCH_INDEX). When the pref is off (default) adult-flagged
-    // games are hidden from the autocomplete, matching the results page.
+    // Adult / delisted gates read locally so the server can honor the same
+    // hidden-row policy without a round-trip on every keystroke to fetch
+    // the pref. KEEP IN SYNC with js/lib/adult-filter.js + delisted-filter.js.
     function _showAdultAllowed() {
       try { return localStorage.getItem('pp:show-adult') === 'on'; } catch (e) { return false; }
     }
-    // Delisted gate mirrors the adult one. KEEP IN SYNC with
-    // js/lib/delisted-filter.js: pref key pp:show-delisted, delisted flag
-    // at search-index column 7 (DELISTED_COL_SEARCH_INDEX). Pref off
-    // (default) hides delisted rows from the topbar dropdown so the
-    // dropdown matches the search results page and browse lists (#434).
     function _showDelistedAllowed() {
       try { return localStorage.getItem('pp:show-delisted') === 'on'; } catch (e) { return false; }
     }
 
-    function match(q, limit) {
-      if (!q) return [];
-      const ql = q.toLowerCase();
-      const asAppId = /^\d+$/.test(q);
-      const showAdult = _showAdultAllowed();
-      const showDelisted = _showDelistedAllowed();
-      const out = [];
-      for (let i = 0; i < index.length && out.length < limit; i++) {
-        const row = index[i];
-        // Hide Steam-classified adult games unless the user opted in.
-        if (!showAdult && row[8] === true) continue;
-        // Hide delisted games unless the user opted in (#434).
-        if (!showDelisted && row[7] === true) continue;
-        const id = String(row[0]);
-        const title = String(row[1] || '');
-        if (asAppId ? id.startsWith(q) : title.toLowerCase().indexOf(ql) !== -1) {
-          // extra columns may not exist on older deployments - fall back gracefully.
-          // Column 7 (releaseYear) is set only when the pipeline could resolve a
-          // year and powers same-name disambiguation (Prey 2006 vs Prey 2017).
-          out.push({
-            appId: id,
-            title: title,
-            tier: row[2] || '',
-            protondbCount: row[3] || 0,
-            pulseCount: row[4] || 0,
-            appType: row[5] || '',
-            releaseYear: row[6] || null,
+    // In-flight abort controller so a fast typer supersedes their own
+    // earlier keystroke without stacking renders on the dropdown.
+    let _searchAbort = null;
+
+    // Returns a promise resolving to the array-shaped row set the render()
+    // path expects. On abort, resolves to null so the caller can bail.
+    function searchAPI(q, limit) {
+      if (_searchAbort) _searchAbort.abort();
+      _searchAbort = new AbortController();
+      const url = new URL(SEARCH_API_URL);
+      url.searchParams.set('q', q.slice(0, 120));
+      url.searchParams.set('limit', String(limit));
+      if (_showDelistedAllowed()) url.searchParams.set('include_delisted', 'true');
+      if (_showAdultAllowed()) url.searchParams.set('include_adult', 'true');
+      return fetch(url.toString(), { signal: _searchAbort.signal })
+        .then(function (r) { return r.ok ? r.json() : { results: [] }; })
+        .then(function (body) {
+          if (!body || !Array.isArray(body.results)) return [];
+          return body.results.map(function (r) {
+            return {
+              appId: r.appId,
+              title: r.title,
+              tier: r.tier || '',
+              protondbCount: r.protondbCount || 0,
+              pulseCount: r.pulseCount || 0,
+              appType: r.source || '',
+              releaseYear: r.releaseYear || null,
+            };
           });
-        }
-      }
-      return out;
+        })
+        .catch(function (err) {
+          if (err && err.name === 'AbortError') return null;
+          console.warn('[topbar-search] API failed:', err);
+          return [];
+        });
     }
 
     function steamHeader(appId) {
@@ -1163,12 +1154,18 @@
       const q = input.value.trim();
       clearTimeout(timer);
       timer = setTimeout(function () {
-        loadIndex().then(function () { render(match(q, 8), q); });
+        if (!q) { render([], ''); return; }
+        searchAPI(q, 8).then(function (rows) {
+          if (rows === null) return; // aborted by a newer keystroke
+          render(rows, q);
+        });
       }, 120);
     });
     input.addEventListener('focus', function () {
       const q = input.value.trim();
-      if (q) loadIndex().then(function () { render(match(q, 8), q); });
+      if (q) searchAPI(q, 8).then(function (rows) {
+        if (rows !== null) render(rows, q);
+      });
     });
     input.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); setFocus(focusIdx + 1); }

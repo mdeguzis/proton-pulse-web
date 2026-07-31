@@ -123,10 +123,12 @@ describe('topbar autocomplete delisted gate (#434)', () => {
   const path = require('path');
   const TOPBAR = fs.readFileSync(path.join(__dirname, '..', 'js', 'lib', 'topbar.js'), 'utf8');
 
-  test('match() skips delisted rows (column 7) unless the pref is on', () => {
-    // Inlined mirror of delisted-filter.js since topbar is a classic script.
+  test('topbar reads pp:show-delisted locally and forwards to search API', () => {
+    // #434: search moved to the search-games edge fn. Topbar still reads
+    // the pref locally so it can forward the include_delisted flag; the
+    // server enforces the filter against the Postgres index.
     expect(TOPBAR).toContain("localStorage.getItem('pp:show-delisted') === 'on'");
-    expect(TOPBAR).toContain('const showDelisted = _showDelistedAllowed()');
-    expect(TOPBAR).toContain('if (!showDelisted && row[7] === true) continue');
+    expect(TOPBAR).toContain('_showDelistedAllowed()');
+    expect(TOPBAR).toContain("url.searchParams.set('include_delisted', 'true')");
   });
 });

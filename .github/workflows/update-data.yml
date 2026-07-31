@@ -455,6 +455,10 @@ jobs:
           # without seeding overrides.
           SUPABASE_URL:      ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          # #434: search API sync step at end of finalize needs the
+          # service-role key to upsert into search_index (RLS-locked
+          # against anon writes). Falls back to skip when unset.
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           # #387: PCGamingWiki bot password (Special:BotPasswords under the
           # owner's SSO account, Basic rights only -- PCGW staff confirmed
           # this is the supported API auth). Either unset = anonymous reads,
