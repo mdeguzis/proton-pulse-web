@@ -807,6 +807,20 @@
         dd.classList.toggle('is-open', !wasOpen);
         toggle.setAttribute('aria-expanded', String(!wasOpen));
       });
+      // #439: a click pins the panel open via .is-open. Without clearing that
+      // pin when the pointer moves to a sibling, CSS :hover opens the second
+      // panel while the pinned one stays open -- two panels stacked. Clearing
+      // the pin on any dropdown mouseenter leaves hover as the single source
+      // of truth while the mouse is in the nav.
+      dd.addEventListener('mouseenter', function () {
+        dropdowns.forEach(function (other) {
+          if (other !== dd) {
+            other.classList.remove('is-open');
+            const t = other.querySelector('.nav-dropdown-toggle');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
     });
     document.addEventListener('click', function (e) {
       // close all when clicking anywhere outside a dropdown
