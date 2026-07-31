@@ -12,7 +12,7 @@
 // lookup immediately, so results are shareable and the plugin can
 // deep-link into a profile.
 
-import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=9b244db9';
+import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=65bf9f7a';
 import { loadSearchIndex, searchIndex } from '../app/components/search.js?v=b5c03324';
 import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=a75604f5';
 import { esc } from '../app/utils.js?v=4630c3d5';
