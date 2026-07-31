@@ -2,7 +2,7 @@
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { loadSearchIndex, searchIndex } from './search.js?v=b41eaffb';
+import { loadSearchIndex, searchIndex } from './search.js?v=822869ce';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=a75604f5';
 import { daysAgo, latestPerApp } from '../utils.js?v=4630c3d5';
 import { renderGameCard } from '../lib/card.js?v=41dcabfc';

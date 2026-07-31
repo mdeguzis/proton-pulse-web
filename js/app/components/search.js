@@ -2,7 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=852c9d97';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=003f23c0';
-import { renderGamePage } from './game-page.js?v=b5047472';
+import { renderGamePage } from './game-page.js?v=1be73158';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=a75604f5';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=4630c3d5';
 import { renderGameCard } from '../lib/card.js?v=41dcabfc';
@@ -117,7 +117,17 @@ export function renderIndexSearchResult(entry, displayTitleOverride) {
     : delisted
       ? `Delisted from Steam${delistedSteamAppId ? ` (was app ${esc(delistedSteamAppId)})` : ''} - no ProtonDB reports.`
       : `ProtonDB data indexed for app ${esc(appId)}.`;
-  const store = appType === 'gog' ? 'GOG' : appType === 'epic' ? 'Epic' : appType === 'steam' ? 'Steam' : storeLabelFromAppId(appId);
+  // #434 followup: a pgwiki-source row that carries a delisted-steam
+  // appid was ORIGINALLY a Steam listing; PCGWiki is just where the
+  // metadata came from. Show STEAM as the store tag so the card reads
+  // "Steam + Delisted" (accurate: the game was on Steam, now it is
+  // not). Non-delisted pgwiki rows keep the PCGWiki store label.
+  let store;
+  if (appType === 'gog') store = 'GOG';
+  else if (appType === 'epic') store = 'Epic';
+  else if (appType === 'steam') store = 'Steam';
+  else if (appType === 'pgwiki' && delistedSteamAppId) store = 'Steam';
+  else store = storeLabelFromAppId(appId);
   const displayTitle = displayTitleOverride || title;
   return renderGameCard({
     href: `#/app/${appId}`, appId, title: displayTitle, sub: meta,

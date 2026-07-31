@@ -14,7 +14,7 @@ import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
 import { renderCard } from './report-card.js?v=5e25c644';
-import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=b41eaffb';
+import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=822869ce';
 import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
@@ -54,6 +54,18 @@ async function _fetchSteamCatalog() {
 }
 
 const DISCORD_URL = 'https://discord.gg/UdPaEsMtd';
+
+// Store label for the (parenthesised) tag next to the game title.
+// #434 followup: a pgwiki-source row that carries a delisted-steam
+// appid (replaced_by = "steam:<appid>") was ORIGINALLY a Steam game;
+// PCGWiki is just where we sourced metadata after the delisting. Show
+// "Steam" so the tag reads as "Steam + Delisted" -- accurate for the
+// game's actual store history. Non-delisted pgwiki rows keep their
+// PCGWiki label because those really are PCGW-catalog games.
+function _titleStoreLabel(appId, replacedBy) {
+  if (typeof replacedBy === 'string' && replacedBy.startsWith('steam:')) return 'Steam';
+  return storeLabelFromAppId(appId);
+}
 
 // Report key used to match a ProtonDB mirror report against a suppression row.
 // Must stay identical to the key the admin flag flow stores (api/flagged.js).
@@ -1295,7 +1307,7 @@ export async function renderGamePage(appId) {
     el.innerHTML = `
       <div class="game-header">
         ${replacedBanner}
-        <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry maps to">(${esc(storeLabelFromAppId(appId) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
+        <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry originated from">(${esc(_titleStoreLabel(appId, replacedBy) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
             <img class="game-header-art" src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
