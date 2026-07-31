@@ -16,7 +16,7 @@ const vm = require('vm');
 const ROOT = path.join(__dirname, '..');
 const ANALYTICS_SRC = fs.readFileSync(path.join(ROOT, 'js', 'lib', 'analytics.js'), 'utf8');
 
-function loadAnalytics({ session, fetchImpl, userAgent } = {}) {
+function loadAnalytics({ session, fetchImpl, userAgent, webdriver, referrer, search, host } = {}) {
   const sessionStorageMap = {};
   const localStorageMap = {};
   const docListeners = [];
@@ -35,12 +35,20 @@ function loadAnalytics({ session, fetchImpl, userAgent } = {}) {
       getItem: (k) => Object.prototype.hasOwnProperty.call(localStorageMap, k) ? localStorageMap[k] : null,
       setItem: (k, v) => { localStorageMap[k] = String(v); },
     },
-    navigator: { userAgent: userAgent || 'Mozilla/5.0 (X11; Linux x86_64)' },
+    navigator: { userAgent: userAgent || 'Mozilla/5.0 (X11; Linux x86_64)', webdriver: webdriver || false },
     document: {
       addEventListener: (event, fn) => docListeners.push({ event, fn }),
       querySelectorAll: () => [],
+      // #436: referrer feeds the traffic-source detection on page_view.
+      referrer: referrer || '',
     },
-    location: { pathname: '/app.html' },
+    // #436: search (utm params) + host (staging exclusion) participate in the
+    // traffic-source and env tagging. host defaults empty so the base-meta
+    // exact-match asserts stay clean.
+    location: { pathname: '/app.html', search: search || '', host: host || '' },
+    // URL / URLSearchParams are browser globals the tracker leans on to parse
+    // the referrer host and utm query. Node exposes them globally.
+    URL, URLSearchParams,
     console,
     Promise, JSON, Object, Math, Date,
     setTimeout, clearTimeout,
@@ -137,7 +145,7 @@ describe('analytics.js track()', () => {
     const { ctx } = loadAnalytics({ session: null, fetchImpl });
     await ctx.window.ppTrack('page_view', {});
     const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
-    expect(body.metadata).toEqual({ device: 'desktop' });
+    expect(body.metadata).toEqual({ device: 'desktop', bot: false });
   });
 
   test('merges device with caller metadata', async () => {
@@ -145,7 +153,7 @@ describe('analytics.js track()', () => {
     const { ctx } = loadAnalytics({ session: null, fetchImpl });
     await ctx.window.ppTrack('report_submit', { app_id: '730', is_edit: true });
     const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
-    expect(body.metadata).toEqual({ device: 'desktop', app_id: '730', is_edit: true });
+    expect(body.metadata).toEqual({ device: 'desktop', bot: false, app_id: '730', is_edit: true });
   });
 
   test('attaches client_id from proton-pulse:web-client-id (#202)', async () => {
@@ -367,6 +375,108 @@ describe('analytics.js client-side error reporting (#143)', () => {
     await flushAsync();
     const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
     expect(body.metadata.stack.length).toBeLessThanOrEqual(2048);
+  });
+});
+
+describe('analytics.js bot detection + traffic source (#436)', () => {
+  function firePageView(docListeners) {
+    const dcl = docListeners.find((l) => l.event === 'DOMContentLoaded');
+    if (dcl) dcl.fn();
+  }
+
+  test('flags every event with bot:false for a normal browser UA', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({ session: null, fetchImpl });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.bot).toBe(false);
+  });
+
+  test('flags bot:true for a self-identifying crawler UA', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null, fetchImpl,
+      userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.bot).toBe(true);
+  });
+
+  test('flags bot:true when navigator.webdriver is set (automation)', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({ session: null, fetchImpl, webdriver: true });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.bot).toBe(true);
+  });
+
+  test('flags bot:true for headless Chrome', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({
+      session: null, fetchImpl,
+      userAgent: 'Mozilla/5.0 (X11; Linux x86_64) HeadlessChrome/120.0',
+    });
+    await ctx.window.ppTrack('page_view', {});
+    expect(JSON.parse(fetchImpl.mock.calls[0][1].body).metadata.bot).toBe(true);
+  });
+
+  test('attaches host to metadata when the location exposes one (staging exclusion)', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { ctx } = loadAnalytics({ session: null, fetchImpl, host: 'staging.proton-pulse.com' });
+    await ctx.window.ppTrack('page_view', {});
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.host).toBe('staging.proton-pulse.com');
+  });
+
+  test('page_view attaches the external referrer host, stripping www.', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { docListeners } = loadAnalytics({
+      session: null, fetchImpl,
+      referrer: 'https://www.google.com/search?q=proton+pulse',
+      host: 'www.proton-pulse.com',
+    });
+    firePageView(docListeners);
+    await flushAsync();
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.event_type).toBe('page_view');
+    expect(body.metadata.referrer).toBe('google.com');
+  });
+
+  test('page_view drops same-origin referrers (internal navigation is not a source)', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { docListeners } = loadAnalytics({
+      session: null, fetchImpl,
+      referrer: 'https://www.proton-pulse.com/app.html',
+      host: 'www.proton-pulse.com',
+    });
+    firePageView(docListeners);
+    await flushAsync();
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.referrer).toBeUndefined();
+  });
+
+  test('page_view parses utm params into a compact source/medium/campaign object', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { docListeners } = loadAnalytics({
+      session: null, fetchImpl,
+      search: '?utm_source=bluesky&utm_medium=social&utm_campaign=launch&x=1',
+      host: 'www.proton-pulse.com',
+    });
+    firePageView(docListeners);
+    await flushAsync();
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.utm).toEqual({ source: 'bluesky', medium: 'social', campaign: 'launch' });
+  });
+
+  test('page_view omits referrer + utm entirely for a direct visit', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true });
+    const { docListeners } = loadAnalytics({ session: null, fetchImpl, host: 'www.proton-pulse.com' });
+    firePageView(docListeners);
+    await flushAsync();
+    const body = JSON.parse(fetchImpl.mock.calls[0][1].body);
+    expect(body.metadata.referrer).toBeUndefined();
+    expect(body.metadata.utm).toBeUndefined();
   });
 });
 

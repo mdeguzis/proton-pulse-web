@@ -46,6 +46,50 @@
   }
   var DEVICE = classifyDevice();
 
+  // #436: flag automated traffic so admin analytics can split humans from
+  // bots. Client-side JS only ever sees the crawlers that execute scripts
+  // (headless Chrome, scrapers, link-preview fetchers) -- most search-engine
+  // crawlers never run this at all, so this is a floor on bot traffic, not a
+  // full count. navigator.webdriver catches automation frameworks; the UA
+  // regex catches the self-identifying bots. A missing UA is itself a signal.
+  function classifyBot() {
+    try { if (navigator && navigator.webdriver) return true; } catch (e) { /* ignore */ }
+    var ua = (navigator && navigator.userAgent) || '';
+    if (!ua) return true;
+    return /bot\b|crawl|spider|slurp|mediapartners|bingpreview|facebookexternalhit|embedly|pinterest|redditbot|vkshare|w3c_validator|whatsapp|telegrambot|discordbot|slackbot|twitterbot|linkedinbot|applebot|googlebot|bingbot|yandex|baiduspider|duckduckbot|semrushbot|ahrefsbot|mj12bot|dotbot|petalbot|dataforseo|headlesschrome|phantomjs|puppeteer|playwright|lighthouse|gtmetrix|pagespeed|python-requests|curl\/|wget\/|axios\/|node-fetch|go-http-client|scrapy/i.test(ua);
+  }
+  var IS_BOT = classifyBot();
+
+  // #436: derive the traffic source for a page_view. referrerSource returns
+  // the referring host with same-origin navigation dropped (internal clicks
+  // are not a traffic source) and the leading www. stripped so google.com and
+  // www.google.com collapse. Only the host is kept -- never the full URL --
+  // so we do not store query strings or paths from wherever the visitor came.
+  function referrerSource() {
+    try {
+      var ref = (typeof document !== 'undefined' && document.referrer) || '';
+      if (!ref) return '';
+      var u = new URL(ref);
+      if (u.host === (location && location.host)) return '';
+      return u.host.replace(/^www\./, '');
+    } catch (e) { return ''; }
+  }
+
+  // #436: campaign attribution from utm_* query params. Stored under short
+  // keys (source/medium/campaign) and capped so a crafted link cannot bloat
+  // the row. Absent params yield an empty object so the page_view stays clean.
+  function utmParams() {
+    var out = {};
+    try {
+      var p = new URLSearchParams((location && location.search) || '');
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+        var v = p.get(k);
+        if (v) out[k.replace('utm_', '')] = String(v).slice(0, 80);
+      });
+    } catch (e) { /* ignore */ }
+    return out;
+  }
+
   // #142: the daily Unique users chart on admin/analytics counts distinct
   // proton_pulse_user_id from site_events. Until this patch, track() never
   // attached the id, so the chart effectively measured logouts per day. Now
@@ -81,8 +125,12 @@
     var session = await getCurrentSession();
     var protonPulseUserId = session && session.user ? session.user.id : null;
     var accessToken = session && session.access_token ? session.access_token : null;
-    // Always attach device. If the caller passed metadata, fold it in.
-    var meta = Object.assign({ device: DEVICE }, metadata || {});
+    // Always attach device + bot flag. If the caller passed metadata, fold it
+    // in. #436: host lets admin_analytics exclude staging (staging.proton-
+    // pulse.com) from prod counts even though its paths are clean; only added
+    // when the environment exposes one so the tracker unit tests stay tidy.
+    var meta = Object.assign({ device: DEVICE, bot: IS_BOT }, metadata || {});
+    try { if (location && location.host) meta.host = location.host; } catch (e) { /* ignore */ }
     var payload = {
       event_type: eventType,
       page: location.pathname,
@@ -178,7 +226,15 @@
   });
 
   document.addEventListener('DOMContentLoaded', function () {
-    track('page_view', {});
+    // #436: attach traffic source to the page_view so admin analytics can
+    // answer "where did this visit come from". Empty fields are omitted so a
+    // direct, campaign-less visit still posts a clean payload.
+    var pv = {};
+    var src = referrerSource();
+    if (src) pv.referrer = src;
+    var utm = utmParams();
+    if (Object.keys(utm).length) pv.utm = utm;
+    track('page_view', pv);
 
     document.querySelectorAll('a').forEach(function (a) {
       if (a.href && a.href.indexOf('steam-callback') !== -1) {

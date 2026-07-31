@@ -354,6 +354,8 @@ function renderStatRows(totals) {
     { label: 'Total events',     value: totals.total_events      ?? 0 },
     { label: 'Sessions',         value: totals.total_sessions    ?? 0 },
     { label: 'Unique visitors',  value: totals.unique_visitors   ?? totals.authed_users ?? 0 },
+    { label: 'Human visitors',   value: totals.human_visitors    ?? '-' },
+    { label: 'Bot visitors',     value: totals.bot_visitors      ?? '-' },
     { label: 'Logged in users',  value: totals.authed_users      ?? 0 },
     { label: 'New users',        value: totals.new_users         ?? 0 },
     { label: 'Logins',           value: totals.auth_success      ?? 0 },
@@ -376,6 +378,29 @@ function renderPagesTable(rows) {
     <thead><tr><th>Page</th><th>Views</th></tr></thead>
     <tbody>${rows.map(r =>
       `<tr><td>${escapeHtml(r.page || '(unknown)')}</td><td>${escapeHtml(String(r.views))}</td></tr>`
+    ).join('')}</tbody>
+  </table>`;
+}
+
+// #436: external referring hosts (google.com, protondb.com, ...). Empty when
+// every visit was direct or internal, which is normal for a young site.
+function renderReferrersTable(rows) {
+  if (!rows || !rows.length) return `<p class="admin-empty">No external referrers yet. Visits are direct or internal.</p>`;
+  return `<table class="admin-table">
+    <thead><tr><th>Referrer</th><th>Visits</th></tr></thead>
+    <tbody>${rows.map(r =>
+      `<tr><td>${escapeHtml(r.referrer || '(unknown)')}</td><td>${escapeHtml(String(r.visits))}</td></tr>`
+    ).join('')}</tbody>
+  </table>`;
+}
+
+// #436: utm_source campaign tags off inbound links.
+function renderSourcesTable(rows) {
+  if (!rows || !rows.length) return `<p class="admin-empty">No campaign (utm_source) tagged visits yet.</p>`;
+  return `<table class="admin-table">
+    <thead><tr><th>Campaign source</th><th>Visits</th></tr></thead>
+    <tbody>${rows.map(r =>
+      `<tr><td>${escapeHtml(r.source || '(unknown)')}</td><td>${escapeHtml(String(r.visits))}</td></tr>`
     ).join('')}</tbody>
   </table>`;
 }
@@ -433,6 +458,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     { id: 'sec-daily',      label: 'Activity' },
     { id: 'sec-reports',    label: 'Reports' },
     { id: 'sec-pages',      label: 'Pages' },
+    { id: 'sec-sources',    label: 'Sources' },
     { id: 'sec-games',      label: 'Games' },
     { id: 'sec-summary',    label: 'Summary' },
     { id: 'sec-sw-cache',   label: 'SW Cache' },
@@ -485,6 +511,17 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
         ${renderEventTypesTable(data.event_types)}
       </div>
     </div>
+    <div id="sec-sources" class="analytics-two-col" style="margin-top:20px">
+      <div>
+        <div class="analytics-section-title">Top referrers</div>
+        ${renderReferrersTable(data.top_referrers)}
+      </div>
+      <div>
+        <div class="analytics-section-title">Campaign sources</div>
+        ${renderSourcesTable(data.top_sources)}
+      </div>
+    </div>
+    <p class="chart-caption">Where traffic comes from. Referrers are the external site that linked here (same-origin navigation is dropped). Campaign sources are utm_source tags on inbound links. Staging traffic is excluded and page paths are normalized, so /, /index.html and clean URLs count as one page. For full server-side bot and referrer data that also catches crawlers which never run JavaScript, see Cloudflare Web Analytics.</p>
     <div id="sec-games" style="margin-top:20px">
       <div class="analytics-section-title">Top games viewed</div>
       ${renderGamesTable(data.top_games)}
