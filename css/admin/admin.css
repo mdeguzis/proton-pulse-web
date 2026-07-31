@@ -1005,6 +1005,15 @@ pre.flag-raw-json {
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
+/* Compact card grid used by the Search API totals + latency percentiles.
+   Without an explicit grid these .analytics-stat cards fell back to full-width
+   block stacking, so four percentiles ate four tall rows (#436 review). */
+.analytics-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
 .analytics-stat {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
@@ -1013,6 +1022,8 @@ pre.flag-raw-json {
   min-width: 110px;
   text-align: center;
 }
+.analytics-stat-grid .analytics-stat { padding: 10px 14px; }
+.analytics-stat-grid .analytics-stat-value { font-size: 1.25rem; }
 .analytics-stat-value {
   font-size: 1.5rem;
   font-weight: 700;

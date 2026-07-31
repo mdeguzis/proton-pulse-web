@@ -217,6 +217,36 @@ describe('renderAnalytics', () => {
   });
 });
 
+// The pipeline data cache probe is host-aware after the #436 review: it must
+// work on Cloudflare Pages (no Last-Modified, max-age 0, ETag validation)
+// where the old HEAD + Last-Modified assumptions produced an all-'?' table.
+describe('pipeline data cache probe is host-aware (#436 review)', () => {
+  const fs   = require('fs');
+  const path = require('path');
+  const SRC = fs.readFileSync(path.join(__dirname, '..', 'js', 'admin', 'components', 'analytics.js'), 'utf8');
+
+  test('probes with GET, not HEAD (Cloudflare omits Content-Length on HEAD)', () => {
+    expect(SRC).toMatch(/fetch\(url,\s*\{\s*method:\s*'GET'/);
+    expect(SRC).not.toMatch(/method:\s*'HEAD'/);
+  });
+
+  test('captures ETag and falls back to measuring body size when Content-Length is absent', () => {
+    expect(SRC).toContain("headers.get('etag')");
+    expect(SRC).toContain('arrayBuffer()).byteLength');
+  });
+
+  test('table exposes Size + ETag columns and degrades Age to "revalidates"', () => {
+    expect(SRC).toContain('<th>Size</th>');
+    expect(SRC).toContain('<th>ETag</th>');
+    expect(SRC).toContain('revalidates');
+  });
+
+  test('chart falls back to file size when no age data is available', () => {
+    expect(SRC).toContain('const haveAge =');
+    expect(SRC).toContain("label: 'Size (KB)'");
+  });
+});
+
 // ── renderUserDetail ─────────────────────────────────────────────────────────
 
 describe('renderUserDetail', () => {
