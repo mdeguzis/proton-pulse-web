@@ -7,6 +7,7 @@ import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange }
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ad2153bb';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
+import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,
@@ -38,13 +39,6 @@ import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
       const r = await fetch(await dataUrl(`data/${appIdToDir(appId)}/latest.json`));
       if (!r.ok) return [];
       return await r.json();
-    } catch { return []; }
-  }
-
-  async function loadSearchIndex() {
-    try {
-      const r = await fetch(await dataUrl('search-index.json'));
-      return r.ok ? await r.json() : [];
     } catch { return []; }
   }
 
@@ -1302,21 +1296,19 @@ import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
     // Pull search index in parallel with CDN + Pulse + live summary so the
     // page can still say something useful when the mirror is empty (#219).
-    const [cdnReports, searchIndex, pulseReports, configs, liveSummary, flightlessEntry] = await Promise.all([
+    const [cdnReports, idxRow, pulseReports, configs, liveSummary, flightlessEntry] = await Promise.all([
       loadGame(appId),
-      loadSearchIndex(),
+      // #437: one id via the batch API (~2KB) instead of the 11.8MB blob.
+      getGamesByIds([appId]).then(m => m.get(String(appId)) || null),
       loadPulseReports(appId),
       loadConfigs(appId),
       loadProtonDbLive(appId),
       loadFlightlessEntry(appId),
     ]);
 
-    // Find the game's title - search index entries are [appId, title, ...] tuples
+    // The game's title comes from that one search-index row.
     let title = `App ${appId}`;
-    if (Array.isArray(searchIndex)) {
-      const hit = searchIndex.find(row => Array.isArray(row) && String(row[0]) === String(appId));
-      if (hit && hit[1]) title = hit[1];
-    }
+    if (idxRow && idxRow.title) title = idxRow.title;
 
     // #430: dedup CDN pulse mirror against live Pulse rows the same way the
     // game page does. Both surfaces feed computeGameStats/computeConfidence
