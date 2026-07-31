@@ -76,7 +76,7 @@ const MAX_LIMIT = 100;
 const MAX_IDS = 500;
 
 const SELECT_COLS =
-  "app_id,title,tier,source,protondb_count,pulse_count,release_year,delisted,adult,replaced_by,steam_type";
+  "app_id,title,tier,source,protondb_count,pulse_count,release_year,delisted,adult,replaced_by,steam_type,trend";
 
 // Browse ordering. popular (report count) is the default; alpha + year let the
 // browse grid offer the same sorts the old client-side index did.
@@ -111,6 +111,7 @@ interface Row {
   adult: boolean | null;
   replaced_by: string | null;
   steam_type: string | null;
+  trend: string | null;
 }
 
 function shapeRow(r: Row) {
@@ -126,6 +127,7 @@ function shapeRow(r: Row) {
     adult: r.adult === true,
     replacedBy: r.replaced_by,
     steamType: r.steam_type,
+    trend: r.trend || "",
   };
 }
 
