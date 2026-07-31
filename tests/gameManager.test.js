@@ -133,8 +133,11 @@ describe('#234: component renders three sections + wires row actions', () => {
     expect(COMP).toContain("el.addEventListener('click'");
   });
 
-  test('title map from search-index is used to render titles alongside raw ids', () => {
-    expect(COMP).toContain('_titleMap()');
-    expect(COMP).toContain("dataUrl('search-index.json')");
+  test('titles come from the batch API for the shown ids, not the full blob (#437)', () => {
+    expect(COMP).toContain('_titleMapForRows(');
+    expect(COMP).toContain('getGamesByIds([...ids])');
+    // The 11.8MB blob load is gone.
+    expect(COMP).not.toContain("dataUrl('search-index.json')");
+    expect(COMP).not.toContain('_titleMap()');
   });
 });

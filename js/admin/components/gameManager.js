@@ -15,7 +15,7 @@
 // (frontend filter, pipeline bake) are a follow-up ticket; this MVP just
 // gives moderators the write path.
 
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { getGamesByIds } from '../../app/api/search-games.js?v=0e14d3ff';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   listGameHides, upsertGameHide, deleteGameHide,
@@ -23,25 +23,22 @@ import {
   loadPipelineSuspects,
 } from '../api/gameManager.js?v=596babe0';
 
-// Small in-memory cache of the search-index so we can render titles next
-// to raw app ids. Fetched once when the tab mounts.
-let _searchIndex = null;
-async function _loadIndex() {
-  if (_searchIndex) return _searchIndex;
-  try {
-    const res = await fetch(await dataUrl('search-index.json'));
-    _searchIndex = res.ok ? await res.json() : [];
-  } catch { _searchIndex = []; }
-  return _searchIndex;
-}
-
-// Map { app_id -> title } for O(1) lookups when rendering rows.
-async function _titleMap() {
-  const idx = await _loadIndex();
-  const out = new Map();
-  for (const row of idx) {
-    if (Array.isArray(row) && row[0]) out.set(String(row[0]), String(row[1] || ''));
+// Title lookup for the ids actually shown in the panel (hide / remap / suspect
+// rows). #437: batch just those ids through the search-games API instead of
+// downloading the whole 11.8MB search-index.json blob. Non-numeric ids (e.g.
+// gog:123) are dropped by the batch endpoint's digits-only guard and fall back
+// to "App <id>", same as before when the index lacked the row.
+async function _titleMapForRows(hides, remaps, suspects) {
+  const ids = new Set();
+  for (const h of (hides || [])) if (h && h.app_id) ids.add(String(h.app_id));
+  for (const r of (remaps || [])) {
+    if (r && r.from_app_id) ids.add(String(r.from_app_id));
+    if (r && r.to_app_id) ids.add(String(r.to_app_id));
   }
+  for (const k of Object.keys(suspects || {})) ids.add(String(k));
+  const byId = await getGamesByIds([...ids]);
+  const out = new Map();
+  for (const [id, row] of byId) out.set(id, row.title || '');
   return out;
 }
 
@@ -64,12 +61,13 @@ export async function renderGameManager() {
   if (!el) return;
   el.innerHTML = `<div class="admin-loading">Loading Game Manager...</div>`;
 
-  const [hides, remaps, suspects, titleMap] = await Promise.all([
+  const [hides, remaps, suspects] = await Promise.all([
     listGameHides(),
     listGameRemaps(),
     loadPipelineSuspects(),
-    _titleMap(),
   ]);
+  // Titles need the ids the rows reference, so batch after they land.
+  const titleMap = await _titleMapForRows(hides, remaps, suspects);
 
   el.innerHTML = `
     <div class="admin-card gm-card">
