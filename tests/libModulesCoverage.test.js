@@ -206,7 +206,7 @@ describe('analytics.js track() core behavior', () => {
     const [, init] = fetchSpy.mock.calls[0];
     const body = JSON.parse(init.body);
     expect(body.proton_pulse_user_id).toBe('pp-user-1');
-    expect(body.metadata).toEqual({ device: 'desktop', app_id: '730' });
+    expect(body.metadata).toEqual({ device: 'desktop', bot: false, app_id: '730' });
     expect(init.headers.Authorization).toBe('Bearer tok_xyz');
   });
 

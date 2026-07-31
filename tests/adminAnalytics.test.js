@@ -76,11 +76,14 @@ describe('renderAnalytics', () => {
     totals: {
       total_events: 42, total_sessions: 10, authed_users: 5,
       new_users: 2, auth_success: 8, auth_failure: 1, reports_submitted: 3,
+      unique_visitors: 30, human_visitors: 26, bot_visitors: 4,
     },
     daily:       [{ day: '2026-06-01', events: 5, sessions: 2, unique_users: 1 }],
     top_pages:   [{ page: '/app.html', views: 7 }],
     top_games:   [{ app_id: '730', title: 'Counter-Strike 2', views: 4 }],
     event_types: [{ event_type: 'page_view', total: 7 }],
+    top_referrers: [{ referrer: 'google.com', visits: 12 }],
+    top_sources:   [{ source: 'bluesky', visits: 5 }],
   };
 
   test('renders stat rows with correct values', () => {
@@ -138,12 +141,36 @@ describe('renderAnalytics', () => {
     expect(store.html).toContain('Summary');
   });
 
-  test('renders sticky jump-nav with all section buttons', () => {
+  test('renders the human vs bot split in the summary (#436)', () => {
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('Human visitors');
+    expect(store.html).toContain('Bot visitors');
+    expect(store.html).toContain('26');
+    expect(store.html).toContain('>4<');
+  });
+
+  test('renders the traffic sources section: referrers + campaign sources (#436)', () => {
+    ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('Top referrers');
+    expect(store.html).toContain('google.com');
+    expect(store.html).toContain('Campaign sources');
+    expect(store.html).toContain('bluesky');
+  });
+
+  test('traffic sources show empty states when there is no source data (#436)', () => {
+    ctx.renderAnalytics({ ...sampleData, top_referrers: [], top_sources: [] }, { daysBack: 30, onChangeDays: noop });
+    expect(store.html).toContain('No external referrers yet');
+    expect(store.html).toContain('No campaign');
+  });
+
+  test('renders the jump-to-section dropdown with all section options', () => {
     ctx.renderAnalytics(sampleData, { daysBack: 30, onChangeDays: noop });
     expect(store.html).toContain('analytics-jump-nav');
-    // One button per major section -- a missing one means the nav is out of sync
-    ['sec-daily', 'sec-reports', 'sec-pages', 'sec-games', 'sec-summary', 'sec-sw-cache', 'sec-data-cache', 'sec-img-routes', 'sec-img-timings']
-      .forEach(id => expect(store.html).toContain(`data-target="${id}"`));
+    expect(store.html).toContain('id="analytics-jump-select"');
+    expect(store.html).toContain('Jump to section...');
+    // One option per major section -- a missing one means the nav is out of sync
+    ['sec-daily', 'sec-reports', 'sec-pages', 'sec-sources', 'sec-games', 'sec-summary', 'sec-sw-cache', 'sec-data-cache', 'sec-img-routes', 'sec-img-timings']
+      .forEach(id => expect(store.html).toContain(`value="${id}"`));
   });
 
   test('renders data-cache section placeholder and refresh button', () => {
@@ -189,6 +216,36 @@ describe('renderAnalytics', () => {
     }, { daysBack: 30, onChangeDays: noop });
     expect(store.html).toContain('href="app.html#/app/12345"');
     expect(store.html).not.toContain('href="/app.html');
+  });
+});
+
+// The pipeline data cache probe is host-aware after the #436 review: it must
+// work on Cloudflare Pages (no Last-Modified, max-age 0, ETag validation)
+// where the old HEAD + Last-Modified assumptions produced an all-'?' table.
+describe('pipeline data cache probe is host-aware (#436 review)', () => {
+  const fs   = require('fs');
+  const path = require('path');
+  const SRC = fs.readFileSync(path.join(__dirname, '..', 'js', 'admin', 'components', 'analytics.js'), 'utf8');
+
+  test('probes with GET, not HEAD (Cloudflare omits Content-Length on HEAD)', () => {
+    expect(SRC).toMatch(/fetch\(url,\s*\{\s*method:\s*'GET'/);
+    expect(SRC).not.toMatch(/method:\s*'HEAD'/);
+  });
+
+  test('captures ETag and falls back to measuring body size when Content-Length is absent', () => {
+    expect(SRC).toContain("headers.get('etag')");
+    expect(SRC).toContain('arrayBuffer()).byteLength');
+  });
+
+  test('table exposes Size + ETag columns and degrades Age to "revalidates"', () => {
+    expect(SRC).toContain('<th>Size</th>');
+    expect(SRC).toContain('<th>ETag</th>');
+    expect(SRC).toContain('revalidates');
+  });
+
+  test('chart falls back to file size when no age data is available', () => {
+    expect(SRC).toContain('const haveAge =');
+    expect(SRC).toContain("label: 'Size (KB)'");
   });
 });
 

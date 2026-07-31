@@ -70,26 +70,35 @@ function _formatSize(bytes) {
 }
 
 async function _probeDataFile(name) {
-  // HEAD-equivalent fetch so the file body never lands in memory. Reads cache
-  // and freshness headers from the response so the panel reflects the same
-  // values the user's browser is honoring.
+  // GET (not HEAD) because Cloudflare Pages omits Content-Length on HEAD
+  // responses; we only read the body when the header is absent so large files
+  // do not always land in memory. Freshness headers differ by host and the
+  // render degrades gracefully: GitHub Pages sends Last-Modified + a real
+  // max-age; Cloudflare Pages sends no Last-Modified and max-age=0, validating
+  // via ETag on every request instead. Before this the panel assumed GitHub
+  // Pages semantics and every cell read '?' on Cloudflare (#436 review).
   //
   // Same-origin on purpose: these top-level files ship with the Pages shell
   // of WHICHEVER env the admin is on, so probing the prod hostname from
-  // staging both violated admin.html's connect-src (every row read 'Failed
-  // to fetch') and showed the wrong env's freshness. Same env-isolation
-  // principle as the shell-deploy preserve step.
+  // staging both violated admin.html's connect-src and showed the wrong env.
   const origin = (typeof window !== 'undefined' && window.location && window.location.origin) || '';
   const url = `${origin}/${name}`;
   try {
-    const resp = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+    const resp = await fetch(url, { method: 'GET', cache: 'no-store' });
     const headers = resp.headers;
     const lastModRaw = headers.get('last-modified');
     const lastMod = lastModRaw ? new Date(lastModRaw) : null;
-    const sizeRaw = headers.get('content-length');
+    let sizeBytes = headers.get('content-length') ? parseInt(headers.get('content-length'), 10) : null;
+    if (sizeBytes == null && resp.ok) {
+      // Cloudflare compressed the response or dropped the header; measure the
+      // decoded body so the Size column is never blank.
+      try { sizeBytes = (await resp.clone().arrayBuffer()).byteLength; } catch (e) { /* ignore */ }
+    }
     const cc = headers.get('cache-control') || '';
     const maxAgeMatch = cc.match(/max-age=(\d+)/);
     const maxAge = maxAgeMatch ? parseInt(maxAgeMatch[1], 10) : null;
+    const etag = (headers.get('etag') || '').replace(/^W\//, '').replace(/"/g, '');
+    const mustRevalidate = /must-revalidate|no-cache/.test(cc) || maxAge === 0;
     const edge = headers.get('x-proxy-cache') || headers.get('x-cache') || headers.get('cf-cache-status') || '';
     return {
       name,
@@ -98,7 +107,9 @@ async function _probeDataFile(name) {
       lastMod,
       ageSecs: lastMod ? (Date.now() - lastMod.getTime()) / 1000 : null,
       maxAge,
-      sizeBytes: sizeRaw ? parseInt(sizeRaw, 10) : null,
+      mustRevalidate,
+      etag,
+      sizeBytes,
       edge,
     };
   } catch (e) {
@@ -110,13 +121,40 @@ function _renderDataCacheChart(rows) {
   const canvas = document.getElementById('data-cache-chart');
   if (!canvas || typeof Chart === 'undefined') return;
   if (dataCacheChartInstance) { dataCacheChartInstance.destroy(); dataCacheChartInstance = null; }
+  const labels = rows.map(r => r.name);
+
+  // The age-vs-TTL view only works where the host sends Last-Modified + a real
+  // max-age (GitHub Pages). On Cloudflare Pages neither exists, so that chart
+  // is all-grey and useless -- fall back to plotting file size, which is
+  // always available, so the panel stays informative on both hosts (#436).
+  const haveAge = rows.some(r => r.ok && r.ageSecs != null && r.maxAge);
+
+  if (!haveAge) {
+    const kb = rows.map(r => (r.ok && r.sizeBytes) ? Math.round(r.sizeBytes / 1024) : 0);
+    dataCacheChartInstance = new Chart(canvas, {
+      type: 'bar',
+      data: { labels, datasets: [{ label: 'Size (KB)', data: kb, backgroundColor: '#5c8bd6', borderWidth: 0 }] },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => _formatSize(rows[ctx.dataIndex].sizeBytes) } },
+        },
+        scales: {
+          x: { min: 0, ticks: { color: '#888', callback: v => v + ' KB' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { ticks: { color: '#888', font: { size: 11 } }, grid: { display: false } },
+        },
+      },
+    });
+    return;
+  }
+
   // Bars are "age as % of max-age". Pipeline data files routinely sit far
   // past their 10min Cache-Control header (search-index updates every few
   // hours, max-age is for CDN edge churn). Visualizing 1200% would just
   // produce a single dominant bar, so we clamp display at 200% (= 2x stale)
   // and surface the true value in the tooltip. The 100% mark is implicit
   // as "anything red is stale". Files without max-age render at 0 in grey.
-  const labels = rows.map(r => r.name);
   const truePcts = rows.map(r => {
     if (!r.ok || r.ageSecs == null || !r.maxAge) return 0;
     return Math.round((r.ageSecs / r.maxAge) * 100);
@@ -250,34 +288,48 @@ async function loadDataCacheTable() {
   // once the probes resolve so the synchronous initial render is stable.
   const rows = await Promise.all(DATA_FILES.map(_probeDataFile));
   _renderDataCacheChart(rows);
+  const muted = 'color:var(--text-muted,#888)';
   target.innerHTML = `
     <table class="admin-table">
       <thead><tr>
-        <th>File</th><th>Status</th><th>Last modified</th><th>Age</th>
-        <th>Max-age</th><th>Stale?</th><th>Size</th><th>Edge cache</th>
+        <th>File</th><th>Status</th><th>Size</th><th>ETag</th>
+        <th>Last modified</th><th>Age</th><th>Cache-Control</th><th>Edge</th>
       </tr></thead>
       <tbody>${rows.map(r => {
         if (!r.ok) {
           return `<tr><td>${escapeHtml(r.name)}</td><td colspan="7" style="color:var(--red,#ff5566)">${escapeHtml(r.error || ('HTTP ' + r.status))}</td></tr>`;
         }
-        const stale = r.maxAge != null && r.ageSecs != null && r.ageSecs > r.maxAge;
-        const staleCell = stale
-          ? `<span style="color:var(--red,#ff5566)">yes (${_formatAge(r.ageSecs - r.maxAge)} past)</span>`
-          : `<span style="color:#4caf80">no</span>`;
-        const lm = r.lastMod ? r.lastMod.toLocaleString() : '?';
+        // Age is only meaningful when the host sends Last-Modified. On
+        // Cloudflare Pages (no Last-Modified, max-age=0 + must-revalidate) the
+        // file is revalidated on every request, so show that instead of a
+        // red/green staleness the age model cannot compute.
+        let ageCell;
+        if (r.ageSecs != null && r.maxAge) {
+          const stale = r.ageSecs > r.maxAge;
+          ageCell = stale
+            ? `<span style="color:var(--red,#ff5566)">${_formatAge(r.ageSecs)} (${_formatAge(r.ageSecs - r.maxAge)} past TTL)</span>`
+            : `<span style="color:#4caf80">${_formatAge(r.ageSecs)}</span>`;
+        } else if (r.mustRevalidate) {
+          ageCell = `<span style="color:#4caf80">revalidates</span>`;
+        } else {
+          ageCell = `<span style="${muted}">-</span>`;
+        }
+        const lm = r.lastMod ? `<span style="font-size:0.78rem">${escapeHtml(r.lastMod.toLocaleString())}</span>` : `<span style="${muted}">n/a</span>`;
+        const etag = r.etag ? `<code style="font-size:0.72rem">${escapeHtml(r.etag.slice(0, 10))}</code>` : `<span style="${muted}">-</span>`;
+        const cacheCtl = r.maxAge != null ? `max-age ${_formatAge(r.maxAge)}` : '-';
         return `<tr>
           <td>${escapeHtml(r.name)}</td>
           <td>HTTP ${r.status}</td>
-          <td style="font-size:0.78rem">${escapeHtml(lm)}</td>
-          <td>${_formatAge(r.ageSecs)}</td>
-          <td>${r.maxAge != null ? _formatAge(r.maxAge) : '?'}</td>
-          <td>${staleCell}</td>
           <td>${_formatSize(r.sizeBytes)}</td>
+          <td>${etag}</td>
+          <td>${lm}</td>
+          <td>${ageCell}</td>
+          <td style="font-size:0.78rem">${escapeHtml(cacheCtl)}</td>
           <td style="font-size:0.78rem">${escapeHtml(r.edge || '-')}</td>
         </tr>`;
       }).join('')}</tbody>
     </table>
-    <p class="admin-empty" style="margin-top:8px;font-size:0.78rem">Probed via HEAD against this site's own origin (env-isolated). Edge cache value reflects the most recent fetch from your client.</p>
+    <p class="admin-empty" style="margin-top:8px;font-size:0.78rem">Probed via GET against this site's own origin (env-isolated). GitHub Pages reports Last-Modified so Age is real; Cloudflare Pages sends no Last-Modified and max-age 0, so files revalidate via ETag on every request and Age reads "revalidates".</p>
   `;
 }
 
@@ -314,12 +366,14 @@ function renderImgRoutes() {
   <p class="admin-empty" style="margin-top:8px;font-size:0.78rem">Primary akamai CDN successes are not counted (no fallback fires on success). A low fallback total means most images load on the first try.</p>`;
 }
 
-function wireJumpNav(root, sections) {
-  root.querySelectorAll('.analytics-jump-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = root.querySelector(`#${btn.dataset.target}`);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+function wireJumpNav(root) {
+  const sel = root.querySelector('#analytics-jump-select');
+  if (!sel) return;
+  sel.addEventListener('change', () => {
+    const target = sel.value && root.querySelector(`#${sel.value}`);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Reset so picking the same section twice in a row still scrolls.
+    sel.value = '';
   });
 }
 
@@ -354,6 +408,8 @@ function renderStatRows(totals) {
     { label: 'Total events',     value: totals.total_events      ?? 0 },
     { label: 'Sessions',         value: totals.total_sessions    ?? 0 },
     { label: 'Unique visitors',  value: totals.unique_visitors   ?? totals.authed_users ?? 0 },
+    { label: 'Human visitors',   value: totals.human_visitors    ?? '-' },
+    { label: 'Bot visitors',     value: totals.bot_visitors      ?? '-' },
     { label: 'Logged in users',  value: totals.authed_users      ?? 0 },
     { label: 'New users',        value: totals.new_users         ?? 0 },
     { label: 'Logins',           value: totals.auth_success      ?? 0 },
@@ -376,6 +432,29 @@ function renderPagesTable(rows) {
     <thead><tr><th>Page</th><th>Views</th></tr></thead>
     <tbody>${rows.map(r =>
       `<tr><td>${escapeHtml(r.page || '(unknown)')}</td><td>${escapeHtml(String(r.views))}</td></tr>`
+    ).join('')}</tbody>
+  </table>`;
+}
+
+// #436: external referring hosts (google.com, protondb.com, ...). Empty when
+// every visit was direct or internal, which is normal for a young site.
+function renderReferrersTable(rows) {
+  if (!rows || !rows.length) return `<p class="admin-empty">No external referrers yet. Visits are direct or internal.</p>`;
+  return `<table class="admin-table">
+    <thead><tr><th>Referrer</th><th>Visits</th></tr></thead>
+    <tbody>${rows.map(r =>
+      `<tr><td>${escapeHtml(r.referrer || '(unknown)')}</td><td>${escapeHtml(String(r.visits))}</td></tr>`
+    ).join('')}</tbody>
+  </table>`;
+}
+
+// #436: utm_source campaign tags off inbound links.
+function renderSourcesTable(rows) {
+  if (!rows || !rows.length) return `<p class="admin-empty">No campaign (utm_source) tagged visits yet.</p>`;
+  return `<table class="admin-table">
+    <thead><tr><th>Campaign source</th><th>Visits</th></tr></thead>
+    <tbody>${rows.map(r =>
+      `<tr><td>${escapeHtml(r.source || '(unknown)')}</td><td>${escapeHtml(String(r.visits))}</td></tr>`
     ).join('')}</tbody>
   </table>`;
 }
@@ -428,11 +507,12 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
   const content = document.getElementById('analytics-content');
 
   // Anchor ids drive the sticky jump-nav at the top. Adding a new section
-  // means adding a row to NAV_SECTIONS so it gets a button.
+  // means adding a row to NAV_SECTIONS so it gets an option in the dropdown.
   const NAV_SECTIONS = [
     { id: 'sec-daily',      label: 'Activity' },
     { id: 'sec-reports',    label: 'Reports' },
     { id: 'sec-pages',      label: 'Pages' },
+    { id: 'sec-sources',    label: 'Sources' },
     { id: 'sec-games',      label: 'Games' },
     { id: 'sec-summary',    label: 'Summary' },
     { id: 'sec-sw-cache',   label: 'SW Cache' },
@@ -440,11 +520,13 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     { id: 'sec-img-routes', label: 'Image Routes' },
     { id: 'sec-img-timings', label: 'Image Timings' },
   ];
-  const navHtml = `<div class="analytics-jump-nav" id="analytics-jump-nav">${
-    NAV_SECTIONS.map(s =>
-      `<button type="button" class="analytics-jump-btn" data-target="${s.id}">${escapeHtml(s.label)}</button>`
-    ).join('')
-  }</div>`;
+  const navHtml = `<div class="analytics-jump-nav" id="analytics-jump-nav">
+    <label class="admin-sort-label" for="analytics-jump-select">Jump to:</label>
+    <select id="analytics-jump-select" class="admin-select analytics-jump-select">
+      <option value="">Jump to section...</option>
+      ${NAV_SECTIONS.map(s => `<option value="${s.id}">${escapeHtml(s.label)}</option>`).join('')}
+    </select>
+  </div>`;
 
   content.innerHTML = `
     ${navHtml}
@@ -485,6 +567,17 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
         ${renderEventTypesTable(data.event_types)}
       </div>
     </div>
+    <div id="sec-sources" class="analytics-two-col" style="margin-top:20px">
+      <div>
+        <div class="analytics-section-title">Top referrers</div>
+        ${renderReferrersTable(data.top_referrers)}
+      </div>
+      <div>
+        <div class="analytics-section-title">Campaign sources</div>
+        ${renderSourcesTable(data.top_sources)}
+      </div>
+    </div>
+    <p class="chart-caption">Where traffic comes from. Referrers are the external site that linked here (same-origin navigation is dropped). Campaign sources are utm_source tags on inbound links. Staging traffic is excluded and page paths are normalized, so /, /index.html and clean URLs count as one page. For full server-side bot and referrer data that also catches crawlers which never run JavaScript, see Cloudflare Web Analytics.</p>
     <div id="sec-games" style="margin-top:20px">
       <div class="analytics-section-title">Top games viewed</div>
       ${renderGamesTable(data.top_games)}
@@ -500,7 +593,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     <div id="sec-data-cache" style="margin-top:20px">
       <div class="analytics-section-title">Pipeline data cache <button type="button" class="admin-sort-btn" id="data-cache-refresh" style="margin-left:10px;font-size:0.72rem">Refresh</button></div>
       <div class="analytics-chart-wrap" style="height:200px"><canvas id="data-cache-chart"></canvas></div>
-      <p class="chart-caption">Each bar is one pipeline JSON file. Length is age divided by Cache-Control max-age. Green &lt;50%, yellow 50&ndash;100%, red &gt;100% (past TTL). Bars clamp at 200% so a single very-stale file does not squash the rest; hover for the true number.</p>
+      <p class="chart-caption">One bar per pipeline JSON file. On GitHub Pages the bar is age as a percent of Cache-Control max-age (green under 50%, yellow 50 to 100%, red over 100% past TTL, clamped at 200%; hover for the true number). On Cloudflare Pages there is no Last-Modified and max-age is 0, so the bar shows file size instead.</p>
       <div id="data-cache-table"><p class="admin-empty">Probing data files...</p></div>
     </div>
     <div id="sec-img-routes" style="margin-top:20px">
@@ -515,7 +608,7 @@ export function renderAnalytics(data, { daysBack, onChangeDays }) {
     </div>
   `;
 
-  wireJumpNav(content, NAV_SECTIONS);
+  wireJumpNav(content);
   loadDataCacheTable();
   renderImgRoutesChart();
   content.querySelector('#data-cache-refresh')?.addEventListener('click', loadDataCacheTable);
