@@ -76,11 +76,13 @@ describe('topbar autocomplete adult gate', () => {
   const path = require('path');
   const TOPBAR = fs.readFileSync(path.join(__dirname, '..', 'js', 'lib', 'topbar.js'), 'utf8');
 
-  test('match() skips adult-flagged rows (column 8) unless the pref is on', () => {
-    // Inlined mirror of adult-filter.js since topbar is a classic script.
+  test('topbar reads pp:show-adult locally and forwards to search API', () => {
+    // #434: topbar autocomplete stopped scanning a client-side blob and
+    // now hits the search-games edge fn. It still reads the pref locally
+    // so it can forward the include_adult flag on the URL.
     expect(TOPBAR).toContain("localStorage.getItem('pp:show-adult') === 'on'");
-    expect(TOPBAR).toContain('const showAdult = _showAdultAllowed()');
-    expect(TOPBAR).toContain('if (!showAdult && row[8] === true) continue');
+    expect(TOPBAR).toContain('_showAdultAllowed()');
+    expect(TOPBAR).toContain("url.searchParams.set('include_adult', 'true')");
   });
 });
 

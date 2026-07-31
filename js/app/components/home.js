@@ -2,14 +2,15 @@
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { loadSearchIndex, searchIndex } from './search.js?v=7ec2be23';
+import { loadSearchIndex, searchIndex } from './search.js?v=b5c03324';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=a75604f5';
 import { daysAgo, latestPerApp } from '../utils.js?v=4630c3d5';
-import { renderGameCard } from '../lib/card.js?v=50339b3b';
+import { renderGameCard } from '../lib/card.js?v=41dcabfc';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=ad4b114d';
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
 import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
+import { filterDelisted } from '../../lib/delisted-filter.js?v=42858e22';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { renderHomeLibraryChart } from './home-library-chart.js?v=9b244db9';
@@ -17,7 +18,7 @@ import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLookup } from '../lib/saved-lookup.js?v=7c45ae8b';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=0bbdc652';
-import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=5d9472de';
+import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=09b673c8';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
 
@@ -248,6 +249,33 @@ function _buildTrendMap() {
   }
 }
 
+// Delisted flag lookup by appId. Search-index column 7. Used to tag
+// recent / popular rows so the shared filterDelisted() gate can hide
+// them when the user pref is off. Powers the "Delisted" chip inside
+// the store-badge row on cards (#434).
+let _delistedByAppId = null;
+function _isDelisted(appId) {
+  if (!_delistedByAppId || appId == null) return false;
+  return _delistedByAppId.has(String(appId));
+}
+function _buildDelistedSet() {
+  if (_delistedByAppId) return;
+  _delistedByAppId = new Set();
+  if (!Array.isArray(searchIndex)) return;
+  for (const row of searchIndex) {
+    if (!Array.isArray(row) || row.length < 8) continue;
+    if (row[7] === true) _delistedByAppId.add(String(row[0]));
+  }
+}
+// Historical Steam appid for PCGW-only rows the cross-check marked as
+// delisted. Pipeline stores it as "steam:<appid>" in col 10 replaced_by
+// so we do not need a separate column just for this rare case.
+function _lookupDelistedSteamAppId(appId) {
+  const rb = _lookupReplacedBy(appId);
+  if (!rb || typeof rb !== 'string') return '';
+  return rb.startsWith('steam:') ? rb.slice(6) : '';
+}
+
 // Replaced-by lookup by appId. Search-index column 10 (added by
 // enrich_search_index_with_delisted); empty for older payloads or games that
 // were never replaced. Powers the REPLACED badge on cards (#199 follow-up).
@@ -356,6 +384,8 @@ function _recentCardHtml(r) {
     trend: _lookupTrend(r.appId),
     replacedBy: _lookupReplacedBy(r.appId),
     steamType: _lookupSteamType(r.appId),
+    delisted: r.delisted === true || _isDelisted(r.appId),
+    delistedSteamAppId: _lookupDelistedSteamAppId(r.appId),
   });
 }
 
@@ -388,13 +418,22 @@ export async function renderHomePage() {
     _trendByAppId = null;
     _replacedByAppId = null;
     _steamTypeByAppId = null;
+    _delistedByAppId = null;
     _buildTrendMap();
     _buildReplacedByMap();
     _buildSteamTypeMap();
+    _buildDelistedSet();
 
     let allRecentReports = [];
     if (recentResp && recentResp.ok) {
       allRecentReports = await recentResp.json().catch(() => []);
+    }
+    // Tag delisted rows so the shared filterDelisted() call in the
+    // filter chain hides them when the user pref is off. Object rows
+    // do not carry the flag natively -- they come from most_played.json
+    // / recent-reports.json which only enrich Steam-facing fields.
+    for (const r of allRecentReports) {
+      if (r && r.appId != null && _isDelisted(r.appId)) r.delisted = true;
     }
 
     // Drop admin-hidden games from every browse array (#234 bug follow-up).
@@ -665,6 +704,7 @@ export async function renderHomePage() {
               appId: row[0], title: row[1],
               tier: KNOWN_TIERS.has(t) ? t : 'pending',
               protondbCount: row[3] || 0, pulseCount: row[4] || 0, appType: row[5],
+              delisted: row[7] === true,
             };
           });
       } else {
@@ -681,10 +721,10 @@ export async function renderHomePage() {
         // filter treats them consistently with recent reports.
         asReports = pool.map(g => {
           const t = String(g.rating || '').toLowerCase();
-          return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending' };
+          return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending', delisted: _isDelisted(g.appId) };
         });
       }
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter));
+      const filtered = filterDelisted(filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter)));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -745,6 +785,8 @@ export async function renderHomePage() {
         tier: _cardTier(g.tier), storePill: storeLabel(g.appType || appTypeFromAppId(g.appId)),
         trend: _lookupTrend(g.appId),
         steamType: _lookupSteamType(g.appId),
+        delisted: g.delisted === true || _isDelisted(g.appId),
+        delistedSteamAppId: _lookupDelistedSteamAppId(g.appId),
       });
     }
 
@@ -820,7 +862,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter));
+      const filtered = filterDelisted(filterAdult(_filterByText(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), textFilter)));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');

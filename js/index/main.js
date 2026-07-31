@@ -3,7 +3,8 @@ import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ad2153b
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=ad4b114d';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
-import { renderGameCard } from '../app/lib/card.js?v=50339b3b';
+import { filterDelisted } from '../lib/delisted-filter.js?v=42858e22';
+import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -219,6 +220,7 @@ import { renderGameCard } from '../app/lib/card.js?v=50339b3b';
           .map(row => ({
             appId: row[0], title: row[1], rating: row[2] || '', appType: row[5],
             protondbCount: row[3] || 0, pulseCount: row[4] || 0,
+            delisted: row[7] === true,
           }));
         out.push(...rows);
       }
@@ -227,7 +229,7 @@ import { renderGameCard } from '../app/lib/card.js?v=50339b3b';
       // from a title match in the Steam most-played map.
       const peakOf = g => g.peak || steamPeakByTitle.get(normTitle(g.title)) || 0;
       const countOf = g => (g.protondbCount || 0) + (g.pulseCount || 0);
-      return filterAdult(out).sort((a, b) =>
+      return filterDelisted(filterAdult(out)).sort((a, b) =>
         peakOf(b) - peakOf(a) || countOf(b) - countOf(a) || (a.title || '').localeCompare(b.title || ''));
     }
 

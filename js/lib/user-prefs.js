@@ -172,6 +172,15 @@ export function readShowOwnerBadgesLocal() { return readPrefBoolLocal('show-owne
 export function setShowOwnerBadges(on)     { return setPrefBool('show-owner-badges', on); }
 export function pullShowOwnerBadges()      { return pullPrefBool('show-owner-badges', false); }
 
+// Delisted-game visibility (#434). Off by default so browse views hide
+// games Steam has removed or PCGW cross-check flagged. Signed-in users
+// sync via the same user_preferences bag; signed-out stays local-only.
+// KEEP IN SYNC with js/lib/delisted-filter.js (localStorage read path).
+export const SHOW_DELISTED_KEY = 'pp:show-delisted';
+export function readShowDelistedLocal() { return readPrefBoolLocal('show-delisted', false); }
+export function setShowDelisted(on)     { return setPrefBool('show-delisted', on); }
+export function pullShowDelisted()      { return pullPrefBool('show-delisted', false); }
+
 // ---------- Store tag icon size (px, local-only tuning setting) -----------
 // A number the user can nudge in Site Options until the corner store-tag icon
 // feels right. Stored under pp:owner-badge-size and applied as the

@@ -358,6 +358,112 @@ def test_build_entries_leaves_cover_url_none_when_missing_or_off_cdn():
     assert out[slug_to_pw_id("BadCover")]["cover_url"] is None
 
 
+# ---- #434 delisted cross-check ---------------------------------------------
+
+
+def test_merge_flags_rule_a_when_steam_appid_absent(tmp_path):
+    """Rule A: PCGW knows a Steam appid but Steam side of index has no row
+    for it. The pw_ stub lands with delisted=True + replaced_by=steam:<appid>.
+    """
+    _write_index(tmp_path, [])  # zero Steam rows -> every appid is absent
+    row = _row("Ghost Game", appid="9999999", available="Windows")
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
+        merge_catalog_into_search_index(tmp_path)
+    written = json.loads((tmp_path / "search-index.json").read_text())
+    stub = written[0]
+    assert stub[5] == "pgwiki"
+    assert stub[7] is True                    # delisted col
+    assert stub[10] == "steam:9999999"        # replaced_by col
+
+
+def test_merge_flags_rule_b_when_steam_title_diverged(tmp_path):
+    """Rule B: Steam appid IS in the index but under a title that scores
+    below the Jaccard threshold. Real-world trigger: PCGW keeps 'Solo
+    Leveling: Arise' pointing at appid 2373990, while Steam now lists
+    'Solo Leveling: ARISE OVERDRIVE Prologue Bundle Complete' at that
+    appid.
+    """
+    _write_index(tmp_path, [
+        ["2373990", "Solo Leveling ARISE OVERDRIVE Prologue Bundle Complete", "gold", 11, 0, "steam"],
+    ])
+    row = _row("Solo Leveling: Arise", appid="2373990", available="Windows")
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
+        merge_catalog_into_search_index(tmp_path)
+    written = json.loads((tmp_path / "search-index.json").read_text())
+    assert len(written) == 2  # steam row stays + pw_ stub gets added
+    stub = next(r for r in written if r[5] == "pgwiki")
+    assert stub[7] is True
+    assert stub[10] == "steam:2373990"
+    # Candidates file exists + captures the divergence
+    candidates = json.loads((tmp_path / "pcgw-delisted-candidates.json").read_text())
+    assert len(candidates) == 1
+    assert candidates[0]["pcgw_title"] == "Solo Leveling: Arise"
+    assert candidates[0]["steam_app_id"] == "2373990"
+    assert candidates[0]["jaccard"] <= 0.75
+
+
+def test_merge_leaves_active_pcgw_entries_alone(tmp_path):
+    """When PCGW's title matches Steam's current title (Jaccard >= 0.75),
+    the pw_ stub stays not-delisted -- the game is still on Steam and a
+    remake / rename has not happened."""
+    _write_index(tmp_path, [
+        ["220", "Half-Life 2", "gold", 5, 2, "steam"],
+    ])
+    row = _row("Half-Life 2", appid="220", available="Windows")
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
+        merge_catalog_into_search_index(tmp_path)
+    written = json.loads((tmp_path / "search-index.json").read_text())
+    stub = next(r for r in written if r[5] == "pgwiki")
+    assert stub[7] is None                    # not delisted
+    assert stub[10] is None                   # no replaced_by
+    # No candidates file written when nothing hit Rule B
+    assert not (tmp_path / "pcgw-delisted-candidates.json").exists()
+
+
+def test_merge_updates_existing_pw_row_delisted_flag_in_place(tmp_path):
+    """A pw_ row that landed on a previous run (before the cross-check
+    shipped) must get its delisted flag re-evaluated when the merge is
+    run again -- otherwise Solo Leveling: Arise (pw_v5qtvk77 already in
+    the index) never picks up its Rule B flag.
+    """
+    pwid = slug_to_pw_id("Solo_Leveling:_Arise")
+    _write_index(tmp_path, [
+        # Steam side: appid 2373990 now titled OVERDRIVE (the remake).
+        ["2373990", "Solo Leveling ARISE OVERDRIVE Prologue Bundle", "gold", 11, 0, "steam"],
+        # pw_ row from a prior run: no delisted flag, no replaced_by.
+        [pwid, "Solo Leveling: Arise", "pending", 0, 0, "pgwiki",
+         2024, None, False, "", None, None, None, None, ["windows"], "Unity"],
+    ])
+    row = _row("Solo Leveling: Arise", appid="2373990", available="Windows")
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
+        merge_catalog_into_search_index(tmp_path)
+    written = json.loads((tmp_path / "search-index.json").read_text())
+    # Still exactly 2 rows -- no duplicate appended.
+    assert len(written) == 2
+    pw_row = next(r for r in written if r[5] == "pgwiki")
+    # Cross-check ran on the existing row and updated the flag in place.
+    assert pw_row[7] is True
+    assert pw_row[10] == "steam:2373990"
+    # Non-delisted fields untouched.
+    assert pw_row[1] == "Solo Leveling: Arise"
+    assert pw_row[6] == 2024
+    assert pw_row[14] == ["windows"]
+
+
+def test_merge_no_steam_appid_never_delists(tmp_path):
+    """PCGW entries with no steam_app_id at all (physical CD-only games,
+    for example) are never delisted -- the cross-check has nothing to
+    compare against, so the pw_ stub stays neutral."""
+    _write_index(tmp_path, [])
+    row = _row("Physical Only Game", appid=None, available="Windows")
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
+        merge_catalog_into_search_index(tmp_path)
+    written = json.loads((tmp_path / "search-index.json").read_text())
+    stub = written[0]
+    assert stub[7] is None
+    assert stub[10] is None
+
+
 def test_common_recognizes_pgwiki_prefix():
     # Slice 3 hinges on the pipeline + frontend recognizing pgwiki: IDs. If
     # this test breaks, the whole catalog gets classified as "steam" and the

@@ -54,3 +54,10 @@ verify_jwt = false
 # since the whole point is to check a public profile without an account.
 # Only reads Steam data; never writes to our DB.
 verify_jwt = false
+
+[functions.search-games]
+# Public site search (#434) -- topbar dropdown + grouped results page hit
+# this on every keystroke. Server-side FTS over the search_index table
+# so clients no longer download the 12MB search-index.json blob. Per-IP
+# rate limit inside the function protects against scrape abuse.
+verify_jwt = false

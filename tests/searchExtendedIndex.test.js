@@ -45,6 +45,11 @@ function stubsForSearch(extraFetch) {
     // exercise the raw match logic without needing localStorage.
     filterAdultEntries: (rows) => rows,
     isAdultEntry: () => false,
+    // Same pass-through for the delisted-filter helpers (#434) -- these
+    // tests exercise the raw match logic; pref-gated hiding has its own
+    // dedicated suite in delistedFilter.test.js.
+    filterDelistedEntries: (rows) => rows,
+    countHiddenDelisted: () => 0,
     // Pure fuzzy-match helper factored out of search.js so it can be
     // unit-tested independently -- wire the real impl in so this suite
     // exercises the same logic search.js does at runtime.
@@ -175,33 +180,32 @@ describe('extended Steam search index lazy-load', () => {
   });
 });
 
-describe('renderSearchPage source shape (#134 regression guards)', () => {
+describe('renderSearchPage source shape (#434 API-backed search)', () => {
   const src = fs.readFileSync(SEARCH_JS_PATH, 'utf8');
 
-  test('loads primary + extended indexes in parallel via Promise.all', () => {
-    // Removing the extended branch would silently regress to the pre-#134
-    // behavior where Steam apps outside the ProtonDB signal export are
-    // invisible. Pin the parallel load shape so a future refactor either
-    // updates this assertion or breaks it.
-    expect(src).toMatch(/Promise\.all\(\s*\[\s*loadSearchIndex\(\)\s*,\s*loadExtendedSteamIndex\(\)\s*\]\s*\)/);
+  test('search UX goes through the search-games API in parallel with Pulse configs', () => {
+    // #434: the pre-#134 primary + extended blob-load pattern is gone.
+    // Both the primary and long-tail catalog now live in the Postgres
+    // search_index table hit via searchGamesAPI; fires in parallel with
+    // the Pulse-config fetch so both round-trips overlap.
+    expect(src).toMatch(/Promise\.all\(\s*\[[\s\S]*withTimeout\(fetchMatchingPulseConfigs\(q\)[\s\S]*searchGamesAPI\(q/);
   });
 
-  test('merges extended matches into indexResults and dedupes by appId', () => {
-    // The dedupe is what stops a Steam app that has both primary + extended
-    // representation from rendering twice. renderSearchPage inlines the raw
-    // _matchEntries call so the adult-hidden count can be computed against
-    // the pre-filter set; the dedupe pattern is unchanged.
-    expect(src).toContain('primaryIds.has(String(id))');
-    expect(src).toContain('_matchEntries(extendedSteamIndex, q,');
+  test('searchGamesAPI is the single source of truth for grouped results', () => {
+    // Removing the API call would regress to shipping the 12MB blob. Lock
+    // the shape so any refactor either updates this assertion or breaks it.
+    expect(src).toContain('searchGamesAPI(q');
+    expect(src).toContain("import { searchGames } from '../api/search-games.js");
   });
 
-  test('onSearchInput (dropdown) does NOT load the extended index', () => {
-    // Cost discipline: the dropdown stays on the small primary file so
-    // typing never triggers a multi-megabyte fetch. Comprehensive search
-    // is the job of the Enter-to-search grouped page.
+  test('onSearchInput (dropdown) uses the API, not the blob', () => {
+    // Cost discipline: dropdown must never trigger the multi-megabyte blob
+    // fetch. Verify searchGames is called and loadSearchIndex is not.
     const onInputStart = src.indexOf('export async function onSearchInput');
     const onInputEnd = src.indexOf('// topbar.js injects', onInputStart);
     const onInputBody = src.slice(onInputStart, onInputEnd);
+    expect(onInputBody).toContain('searchGames(');
     expect(onInputBody).not.toContain('loadExtendedSteamIndex');
+    expect(onInputBody).not.toContain('await loadSearchIndex()');
   });
 });

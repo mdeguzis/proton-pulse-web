@@ -47,6 +47,35 @@ export function isPositive(rating) {
 }
 
 /**
+ * Returns true if the report required tinker steps (launch options, custom
+ * Proton, tweaks). Rhedox in the ProtonDB Discord flagged that cargo-cult
+ * copy-pasting of random env vars inflates false "works fine" reports, so
+ * tinker reports carry less confidence than clean out-of-box reports at
+ * the same tier (#433). Signals in priority order:
+ *   1. Pulse form response `isTinker === true` -- explicit user answer.
+ *   2. Pulse `tinkeringMethods` array with any entry -- form answer path.
+ *   3. Non-empty `launchOptions` beyond a bare `%command%` -- fallback that
+ *      catches ProtonDB CDN imports with no form responses attached.
+ * @param {object} r - Report object (Pulse or CDN shape).
+ * @returns {boolean}
+ */
+export function hasTinkerSteps(r) {
+  if (!r) return false;
+  const fr = r.formResponses;
+  if (fr && typeof fr === 'object') {
+    if (fr.isTinker === true) return true;
+    if (Array.isArray(fr.tinkeringMethods) && fr.tinkeringMethods.length > 0) return true;
+  }
+  const lo = (r.launchOptions || r.launch_options || '').trim();
+  if (!lo) return false;
+  // Bare `%command%` or the auto-generated Proton wrapper alone does not
+  // count -- the user (or plugin) didn't add anything meaningful. Strip
+  // the token and see if anything else survives.
+  const stripped = lo.replace(/%command%/g, '').trim();
+  return stripped.length > 0;
+}
+
+/**
  * Returns true if rating is a negative compatibility outcome (bronze, borked).
  * Case-insensitive (see isPositive for rationale).
  * @param {string} rating
@@ -332,8 +361,19 @@ export function computeConfidence(allReports, liveExcess = 0) {
     : medianDays < 2920 ? 0.40
     : 0.25;
 
+  // Tinker share (#433, Rhedox in ProtonDB Discord). Reports that required
+  // tinker steps are more prone to cargo-cult contamination -- random env vars
+  // get copy-pasted between games and produce false "works fine" reports.
+  // Multiplier ramps from 1.0 (nobody tinkered) to 0.85 (everybody tinkered)
+  // so a mostly-clean game keeps its confidence and a mostly-hacked game
+  // takes a modest hit. Summary-only games skip the factor -- we can't
+  // measure tinker share on data we don't have.
+  const tinkerCount = summaryOnly ? 0 : allReports.filter(hasTinkerSteps).length;
+  const tinkerShare = summaryOnly ? 0 : (tinkerCount / n);
+  const tinkerFactor = summaryOnly ? 1.0 : (1.0 - (tinkerShare * 0.15));
+
   const rawConf = sampleFactor * 0.45 + consistencyFactor * 0.35 + freshnessFactor * 0.20;
-  const confidencePct = Math.min(95, Math.round(rawConf * 100 * stalenessCap));
+  const confidencePct = Math.min(95, Math.round(rawConf * 100 * stalenessCap * tinkerFactor));
 
   const medianHuman = medianDays < 30 ? `${Math.round(medianDays)} days`
     : medianDays < 365 ? `${Math.round(medianDays / 30)} months`
@@ -351,6 +391,13 @@ export function computeConfidence(allReports, liveExcess = 0) {
       label: 'Staleness cap',
       value: Math.round(stalenessCap * 100),
       detail: `median report is ${medianHuman} old; overall confidence capped at ${Math.round(stalenessCap * 100)}%`,
+    });
+  }
+  if (!summaryOnly && tinkerFactor < 1.0) {
+    confFactors.push({
+      label: 'Tinker share cap',
+      value: Math.round(tinkerFactor * 100),
+      detail: `${tinkerCount} of ${n} report${n !== 1 ? 's' : ''} needed tinker steps (${Math.round(tinkerShare * 100)}%); confidence multiplied by ${tinkerFactor.toFixed(2)} to reflect cargo-cult risk (#433)`,
     });
   }
   if (summaryOnly) {
