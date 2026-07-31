@@ -13,13 +13,27 @@
 // deep-link into a profile.
 
 import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=65bf9f7a';
-import { loadSearchIndex, searchIndex } from '../app/components/search.js?v=b5c03324';
+import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
 import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=a75604f5';
 import { esc } from '../app/utils.js?v=4630c3d5';
 // localStorage keys the /lookup page reads + writes are defined in the
 // shared module so the inline "Library" panel + the nav fallback + this
 // page never drift on the key name.
 import { LS_INPUT_KEY, LS_STEAMID_KEY } from '../shared/lookup-storage.js?v=7b8989d7';
+
+// #437: tier rows for just the looked-up library / wishlist ids via the batch
+// API instead of the whole 11.8MB search-index.json blob. Chunked by 500 and
+// shaped into the [appId, title, tier] rows computeLibraryTierCounts takes.
+async function _tierRowsFor(appIds) {
+  if (!appIds || appIds.size === 0) return [];
+  const ids = [...appIds];
+  const rows = [];
+  for (let i = 0; i < ids.length; i += 500) {
+    const byId = await getGamesByIds(ids.slice(i, i + 500));
+    for (const r of byId.values()) rows.push([r.appId, r.title, r.tier]);
+  }
+  return rows;
+}
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
 const TIER_LABEL = {
@@ -106,13 +120,14 @@ function setLoading(on) {
 // agree by construction. Only the tier view is rendered here; the home
 // page's chart chip (Library / Wishlist / Deck / ...) has no meaning for a
 // public lookup so it is intentionally omitted.
-function renderTierChart(mount, appIds, total, { title, noun }) {
+async function renderTierChart(mount, appIds, total, { title, noun }) {
   if (!mount) return;
   if (!appIds || appIds.size === 0) {
     mount.innerHTML = '';
     return;
   }
-  const counts = computeLibraryTierCounts(appIds, searchIndex);
+  const tierRows = await _tierRowsFor(appIds);
+  const counts = computeLibraryTierCounts(appIds, tierRows);
   const rated = TIER_ORDER.reduce((sum, t) => sum + (counts[t] || 0), 0);
   const maxBar = Math.max(1, ...TIER_ORDER.map((t) => counts[t] || 0));
   const bars = TIER_ORDER.map((tier) => {
@@ -181,12 +196,9 @@ async function runLookup(input, { persist = false } = {}) {
   els.privateEl().hidden = true;
 
   try {
-    // We need the search index for tier counts. Kick it off in parallel with
-    // the profile call so users don't wait for a serial round-trip.
-    const [payload] = await Promise.all([
-      fetchLookup(input),
-      loadSearchIndex().catch(() => null),
-    ]);
+    // #437: tier counts now come from the batch API per-chart, so the lookup
+    // is just the profile call. Charts fetch their own ids after it resolves.
+    const payload = await fetchLookup(input);
     if (!payload.ok) {
       showError(payload.error || 'Lookup failed. Try again in a moment.');
       return;
@@ -221,14 +233,14 @@ async function runLookup(input, { persist = false } = {}) {
     // public, and vice versa.
     if (!profile?.isPublic || gameCount === 0) {
       els.privateEl().hidden = false;
-      renderTierChart(els.chartMount(), new Set(), 0, { title: 'Library at a glance', noun: 'owned' });
+      await renderTierChart(els.chartMount(), new Set(), 0, { title: 'Library at a glance', noun: 'owned' });
     } else {
       const appIds = new Set(games.map((g) => Number(g.appid)).filter(Number.isFinite));
-      renderTierChart(els.chartMount(), appIds, gameCount, { title: 'Library at a glance', noun: 'owned' });
+      await renderTierChart(els.chartMount(), appIds, gameCount, { title: 'Library at a glance', noun: 'owned' });
     }
     if (wishlistCount > 0 && Array.isArray(wishlist)) {
       const wishAppIds = new Set(wishlist.map((w) => Number(w.appid)).filter(Number.isFinite));
-      renderTierChart(els.wishlistMount(), wishAppIds, wishlistCount, { title: 'Wishlist at a glance', noun: 'wishlisted' });
+      await renderTierChart(els.wishlistMount(), wishAppIds, wishlistCount, { title: 'Wishlist at a glance', noun: 'wishlisted' });
     } else {
       const wm = els.wishlistMount();
       if (wm) wm.innerHTML = '';
