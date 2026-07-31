@@ -794,16 +794,36 @@
 
   function wireDropdowns() {
     const dropdowns = document.querySelectorAll('.nav-dropdown');
+    function closeOtherDropdowns(active, fromPointer) {
+      dropdowns.forEach(function (other) {
+        if (other === active) return;
+        other.classList.remove('is-open');
+        const otherToggle = other.querySelector('.nav-dropdown-toggle');
+        if (otherToggle) {
+          otherToggle.setAttribute('aria-expanded', 'false');
+          // Hover should take over from click-pin state; blur focused sibling
+          // toggles so :focus-within does not keep stale panels visible.
+          if (fromPointer && other.contains(document.activeElement)) {
+            const active = document.activeElement;
+            if (active && typeof active.blur === 'function') active.blur();
+            else otherToggle.blur();
+          }
+        }
+      });
+    }
     dropdowns.forEach(function (dd) {
       const toggle = dd.querySelector('.nav-dropdown-toggle');
       if (!toggle) return;
+      dd.addEventListener('mouseenter', function () {
+        // If one dropdown was pinned open by click, hovering a sibling should
+        // clear that pin so only one panel can be visible at a time.
+        closeOtherDropdowns(dd, true);
+      });
       toggle.addEventListener('click', function (e) {
         e.preventDefault();
         const wasOpen = dd.classList.contains('is-open');
         // close any other open dropdown first
-        dropdowns.forEach(function (other) {
-          if (other !== dd) other.classList.remove('is-open');
-        });
+        closeOtherDropdowns(dd, false);
         dd.classList.toggle('is-open', !wasOpen);
         toggle.setAttribute('aria-expanded', String(!wasOpen));
       });
