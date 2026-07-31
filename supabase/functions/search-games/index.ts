@@ -67,8 +67,37 @@ function logSearchAnalytics(row: {
 }
 
 const VALID_STORES = new Set(["steam", "gog", "epic", "pgwiki", "all"]);
+const VALID_SORTS = new Set(["popular", "alpha", "year"]);
 const DEFAULT_LIMIT = 24;
 const MAX_LIMIT = 100;
+// Batch lookup cap. Library synth passes the visitor's owned appids; a big
+// Steam library is a few thousand, but 500 per call keeps the URL and the
+// PostgREST `in.()` list bounded -- callers page through larger sets.
+const MAX_IDS = 500;
+
+const SELECT_COLS =
+  "app_id,title,tier,source,protondb_count,pulse_count,release_year,delisted,adult,replaced_by,steam_type";
+
+// Browse ordering. popular (report count) is the default; alpha + year let the
+// browse grid offer the same sorts the old client-side index did.
+function orderClause(sort: string): string {
+  switch (sort) {
+    case "alpha": return "title.asc";
+    case "year":  return "release_year.desc.nullslast,title.asc";
+    case "popular":
+    default:      return "protondb_count.desc,pulse_count.desc,title.asc";
+  }
+}
+
+function pgHeaders(extra: Record<string, string> = {}) {
+  return {
+    apikey: SB_SERVICE_KEY,
+    Authorization: `Bearer ${SB_SERVICE_KEY}`,
+    Accept: "application/json",
+    "Accept-Profile": "public",
+    ...extra,
+  };
+}
 
 interface Row {
   app_id: string;
@@ -178,6 +207,57 @@ async function fetchMatches(
   return { rows, hiddenDelisted, hiddenAdult };
 }
 
+// #437: batch lookup by app id. Replaces the pattern where home.js + the
+// library synth downloaded the whole 11.8MB search-index.json just to map a
+// known set of appids to their tier/title/counts. No adult/delisted gate --
+// the caller already holds these ids (owned library, recent-report cards), so
+// hiding a row here would just blank a card the visitor asked for.
+async function fetchByIds(ids: string[]): Promise<Row[]> {
+  const url = new URL(`${SB_URL}/rest/v1/search_index`);
+  url.searchParams.set("select", SELECT_COLS);
+  url.searchParams.set("app_id", `in.(${ids.join(",")})`);
+  url.searchParams.set("limit", String(ids.length));
+  const res = await fetch(url.toString(), { headers: pgHeaders() });
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`postgrest ${res.status}: ${body.slice(0, 200)}`);
+  }
+  return await res.json();
+}
+
+// #437: browse mode. Same query as search minus the FTS filter, plus offset
+// pagination and a true total via PostgREST's exact count header, so the
+// non-Steam grid (and any future browse surface) can page the server instead
+// of slicing the full blob client-side.
+async function fetchBrowse(
+  storeFilter: string,
+  sort: string,
+  includeDelisted: boolean,
+  includeAdult: boolean,
+  limit: number,
+  offset: number,
+): Promise<{ rows: Row[]; total: number }> {
+  const url = new URL(`${SB_URL}/rest/v1/search_index`);
+  url.searchParams.set("select", SELECT_COLS);
+  if (storeFilter !== "all") url.searchParams.set("source", `eq.${storeFilter}`);
+  if (!includeDelisted) url.searchParams.set("delisted", "not.eq.true");
+  if (!includeAdult) url.searchParams.set("adult", "not.eq.true");
+  url.searchParams.set("order", orderClause(sort));
+  url.searchParams.set("limit", String(limit));
+  url.searchParams.set("offset", String(offset));
+  // count=exact makes PostgREST return the full match count in Content-Range
+  // ("0-47/12345") so the client can size its pager without a second query.
+  const res = await fetch(url.toString(), { headers: pgHeaders({ Prefer: "count=exact" }) });
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`postgrest ${res.status}: ${body.slice(0, 200)}`);
+  }
+  const rows: Row[] = await res.json();
+  const cr = res.headers.get("content-range") || "";
+  const total = Number(cr.split("/")[1]) || rows.length;
+  return { rows, total };
+}
+
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   if (isRateLimited("search-games", getClientIp(req))) {
@@ -198,6 +278,50 @@ Deno.serve(async (req: Request) => {
   const includeAdult = url.searchParams.get("include_adult") === "true";
   const rawLimit = Number(url.searchParams.get("limit") || DEFAULT_LIMIT);
   const limit = Number.isFinite(rawLimit) ? Math.max(1, Math.min(MAX_LIMIT, Math.trunc(rawLimit))) : DEFAULT_LIMIT;
+
+  // #437 batch mode: ?ids=10,220,570 -> shaped rows for exactly those appids.
+  // Digits-only filter is the injection guard; the list is capped at MAX_IDS.
+  const idsParam = url.searchParams.get("ids");
+  if (idsParam !== null) {
+    const ids = idsParam.split(",").map((s) => s.trim()).filter((s) => /^\d+$/.test(s)).slice(0, MAX_IDS);
+    if (ids.length === 0) {
+      return Response.json({ results: [], total: 0, mode: "batch", took_ms: 0 }, { headers: corsHeaders });
+    }
+    try {
+      const results = (await fetchByIds(ids)).map(shapeRow);
+      console.log(`[search-games] batch ids=${ids.length} results=${results.length} took=${Date.now() - started}ms`);
+      return Response.json({ results, total: results.length, mode: "batch", took_ms: Date.now() - started }, { headers: corsHeaders });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      console.error(`[search-games] batch error=${msg}`);
+      return Response.json({ error: "search backend error", mode: "batch", took_ms: Date.now() - started }, { status: 502, headers: corsHeaders });
+    }
+  }
+
+  // #437 browse mode: ?browse=1&store=gog&sort=popular&limit=48&offset=0 ->
+  // paginated list with a true total, no query required.
+  const browse = url.searchParams.get("browse");
+  if (browse === "1" || browse === "true") {
+    if (!VALID_STORES.has(store)) {
+      return Response.json({ error: `store must be one of: ${[...VALID_STORES].join(", ")}` }, { status: 400, headers: corsHeaders });
+    }
+    const sort = (url.searchParams.get("sort") || "popular").toLowerCase();
+    if (!VALID_SORTS.has(sort)) {
+      return Response.json({ error: `sort must be one of: ${[...VALID_SORTS].join(", ")}` }, { status: 400, headers: corsHeaders });
+    }
+    const rawOffset = Number(url.searchParams.get("offset") || 0);
+    const offset = Number.isFinite(rawOffset) ? Math.max(0, Math.trunc(rawOffset)) : 0;
+    try {
+      const { rows, total } = await fetchBrowse(store, sort, includeDelisted, includeAdult, limit, offset);
+      const results = rows.map(shapeRow);
+      console.log(`[search-games] browse store=${store} sort=${sort} limit=${limit} offset=${offset} results=${results.length} total=${total} took=${Date.now() - started}ms`);
+      return Response.json({ results, total, offset, limit, mode: "browse", took_ms: Date.now() - started }, { headers: corsHeaders });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      console.error(`[search-games] browse error=${msg}`);
+      return Response.json({ error: "search backend error", mode: "browse", took_ms: Date.now() - started }, { status: 502, headers: corsHeaders });
+    }
+  }
 
   // Guardrails: reject blank + oversize queries early. A 200-char query
   // would fill the URL bar with junk and the tsvector cost is O(q length)
