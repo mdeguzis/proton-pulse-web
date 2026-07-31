@@ -235,6 +235,16 @@
   text-transform: uppercase;
 }
 .game-card-body { flex: 1; min-width: 0; }
+/* #434 followup: the art-corner store tag is absolute-positioned in
+   the card's top-right corner and floats above the title text. Without
+   reserving space the title runs UNDERNEATH the tag on narrow cards
+   (mobile especially) and the last few letters are unreadable. Reserve
+   room proportional to the badge size so ellipsis triggers before the
+   tag. Only applies when the corner-tag placement is active; other
+   placements do not overlap the title. */
+[data-store-pill-pos="art-corner"] .game-card-body {
+  padding-right: calc(var(--owner-badge-size, 18px) * 4.5);
+}
 .game-card-title {
   font-size: 0.95rem;
   font-weight: 600;
