@@ -150,38 +150,75 @@
 .search-groups {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
 }
 
 .search-group {
-  border: 1px solid var(--border);
-  background: var(--s1);
+  border: none;
+  background: none;
 }
 
 .search-group-head {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 16px;
-  background: var(--s2);
-  border-bottom: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  align-items: baseline;
+  gap: 10px;
+  padding: 0 4px 10px;
+  background: none;
+  border: none;
 }
 
 .search-group-title {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
+  font-size: 1.25rem;
+  letter-spacing: 0.005em;
+  color: var(--strong);
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .search-group-count {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   color: var(--muted);
   font-family: var(--mono);
+  font-weight: 400;
 }
+
+/* #434 followup: unified store filter row above Index Data Hits.
+   Chips read as tight per-store toggles: label + count, current
+   selection filled with the accent. Clicking any chip hides result
+   items whose data-store doesn't match. */
+.search-store-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 4px 12px;
+}
+.search-store-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--s1);
+  color: var(--strong);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.search-store-chip:hover { border-color: var(--accent); }
+.search-store-chip--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.search-store-chip-n {
+  font-family: var(--mono);
+  font-weight: 400;
+  opacity: 0.75;
+  font-size: 0.72rem;
+}
+.search-store-chip--active .search-store-chip-n { opacity: 0.9; }
 
 .search-group-empty {
   padding: 14px 16px;

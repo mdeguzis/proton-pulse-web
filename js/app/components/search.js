@@ -136,6 +136,36 @@ export function renderIndexSearchResult(entry, displayTitleOverride) {
   });
 }
 
+// #434 followup: single flat Index Data Hits list with an inline store
+// filter chip row at the top. Grouping into per-store sections was
+// distracting; a filter that hides everything but the chosen store
+// gives the same "focus on Steam only" outcome without breaking the
+// results into loose wells. A pgwiki row whose replaced_by=steam:
+// <appid> counts as Steam so it stays visible under the Steam filter.
+const _STORE_FILTER_ORDER = ['steam', 'gog', 'epic', 'pgwiki'];
+const _STORE_FILTER_LABEL = { steam: 'Steam', gog: 'GOG', epic: 'Epic', pgwiki: 'PCGWiki' };
+function _effectiveStoreForFilter(entry) {
+  const src = entry[5];
+  const rb  = entry.length > 10 ? entry[10] : null;
+  if (src === 'pgwiki' && typeof rb === 'string' && rb.startsWith('steam:')) return 'steam';
+  return src || 'other';
+}
+function _renderStoreFilterRow(indexResults) {
+  if (!indexResults.length) return '';
+  const counts = { steam: 0, gog: 0, epic: 0, pgwiki: 0 };
+  for (const entry of indexResults) {
+    const s = _effectiveStoreForFilter(entry);
+    if (s in counts) counts[s]++;
+  }
+  const chips = [
+    `<button type="button" class="search-store-chip search-store-chip--active" data-store="all">All <span class="search-store-chip-n">${indexResults.length}</span></button>`,
+    ..._STORE_FILTER_ORDER
+      .filter(s => counts[s] > 0)
+      .map(s => `<button type="button" class="search-store-chip" data-store="${s}">${esc(_STORE_FILTER_LABEL[s])} <span class="search-store-chip-n">${counts[s]}</span></button>`),
+  ];
+  return `<div class="search-store-filter">${chips.join('')}</div>`;
+}
+
 // --- renderSearchPage ---
 export async function renderSearchPage(query) {
   const el = document.getElementById('content');
@@ -199,11 +229,30 @@ export async function renderSearchPage(query) {
           <span class="search-group-title">Index Data Hits</span>
           <span class="search-group-count">${indexResults.length} app${indexResults.length === 1 ? '' : 's'}</span>
         </div>
+        ${_renderStoreFilterRow(indexResults)}
         ${indexResults.length
-          ? `<div class="search-result-list">${indexResults.map((entry, i) => renderIndexSearchResult(entry, indexOverrides.get(i))).join('')}</div>`
+          ? `<div class="search-result-list" id="search-index-list">${indexResults.map((entry, i) => `<div class="search-result-item" data-store="${_effectiveStoreForFilter(entry)}">${renderIndexSearchResult(entry, indexOverrides.get(i))}</div>`).join('')}</div>`
           : '<div class="search-group-empty">No static index entries matched this query.</div>'}
       </section>
     </div>`;
+
+  // #434 followup: store-filter chip row above Index Data Hits. Toggles
+  // per-item visibility via data-store rather than re-rendering, so it
+  // stays cheap on long result lists.
+  const filterRow = el.querySelector('.search-store-filter');
+  if (filterRow) {
+    filterRow.addEventListener('click', (ev) => {
+      const btn = ev.target instanceof Element ? ev.target.closest('.search-store-chip') : null;
+      if (!btn) return;
+      const store = btn.getAttribute('data-store') || 'all';
+      filterRow.querySelectorAll('.search-store-chip').forEach(c => {
+        c.classList.toggle('search-store-chip--active', c === btn);
+      });
+      el.querySelectorAll('.search-result-item').forEach(item => {
+        item.hidden = store !== 'all' && item.getAttribute('data-store') !== store;
+      });
+    });
+  }
 
   // "Show delisted" one-shot from the delisted notice (#434). Flips the
   // pp:show-delisted pref on locally then re-renders the same query so

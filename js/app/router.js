@@ -3,7 +3,7 @@
 import { pcgwSlugToPwId } from '../lib/app-id.js?v=6159afa9';
 import { renderGamePage } from './components/game-page.js?v=1be73158';
 import { renderHomePage } from './components/home.js?v=62e3085c';
-import { renderSearchPage } from './components/search.js?v=822869ce';
+import { renderSearchPage } from './components/search.js?v=b5c03324';
 
 export function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');
