@@ -11,7 +11,7 @@ import { filterAdultEntries, isAdultEntry } from '../../lib/adult-filter.js?v=e4
 import { filterDelistedEntries, countHiddenDelisted, showDelistedAllowed } from '../../lib/delisted-filter.js?v=42858e22';
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
-import { searchGames } from '../api/search-games.js?v=76dd0dfb';
+import { searchGames } from '../api/search-games.js?v=0e14d3ff';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its globals
