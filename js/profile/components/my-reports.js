@@ -11,6 +11,7 @@ import {
   unpublishReport, republishReport,
 } from '../api/configs.js?v=2f08c67b';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { getGamesByIds } from '../../app/api/search-games.js?v=0e14d3ff';
 import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=79558c3c';
 
 /**
@@ -186,21 +187,19 @@ export function initMyReports(ctx) {
     try {
       const protonPulseUserId = getProtonPulseUserIdFromSession(s);
       const cid  = getWebClientIdProfile();
-      const [[publishedRows, cloudRows], searchIndex] = await Promise.all([
-        Promise.all([
-          fetchMyUserConfigs(protonPulseUserId, cid, s),
-          fetchMyCloudConfigs(protonPulseUserId, s),
-        ]),
-        dataUrl('search-index.json').then(u => fetch(u)).then(r => r.ok ? r.json() : []).catch(() => []),
+      const [publishedRows, cloudRows] = await Promise.all([
+        fetchMyUserConfigs(protonPulseUserId, cid, s),
+        fetchMyCloudConfigs(protonPulseUserId, s),
       ]);
       const merged = mergeMyReportRows(publishedRows, cloudRows);
-      if (Array.isArray(searchIndex) && searchIndex.length) {
-        const titleMap = new Map(searchIndex.map(([id, t]) => [String(id), t]));
-        for (const row of merged) {
-          if (!row.title || /^App \d+$/.test(row.title)) {
-            const resolved = titleMap.get(String(row.app_id));
-            if (resolved) row.title = resolved;
-          }
+      // #437: patch fallback titles ("App <id>") via the batch API for just the
+      // rows that need it, instead of downloading the full search-index blob.
+      const _needTitle = merged.filter(row => !row.title || /^App \d+$/.test(row.title));
+      if (_needTitle.length) {
+        const byId = await getGamesByIds(_needTitle.map(row => row.app_id));
+        for (const row of _needTitle) {
+          const hit = byId.get(String(row.app_id));
+          if (hit && hit.title) row.title = hit.title;
         }
       }
       // Check approval status for published reports

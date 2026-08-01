@@ -73,11 +73,10 @@ describe('API Explorer client + component', () => {
   });
 
   test('ProtonDB name lookup reuses the Steam appid index (#280)', () => {
-    // ProtonDB is keyed by Steam appid upstream, so typing a game name in
-    // the ProtonDB tab must resolve against the same rows as the Steam
-    // tab. Regression: initial version only matched "store === 'steam'"
-    // and left ProtonDB name lookups returning "no match".
-    expect(COMP).toMatch(/store === 'steam' \|\| store === 'protondb'/);
+    // ProtonDB is keyed by Steam appid upstream, so typing a game name in the
+    // ProtonDB tab must resolve against Steam rows. #437: name resolution now
+    // goes through searchGames, and non-gog/epic stores map to the Steam store.
+    expect(COMP).toMatch(/const apiStore = \(store === 'gog' \|\| store === 'epic'\) \? store : 'steam'/);
   });
 
   test('ProtonDB fields are documented so the "Field descriptions" popup works', () => {
@@ -93,17 +92,17 @@ describe('API Explorer client + component', () => {
     expect(COMP).toMatch(/export function renderApiExplorer\(/);
     expect(COMP).toContain('async function _resolveArg(');
     expect(COMP).toContain('/^\\d+$/.test(q)');           // numeric passes through
-    expect(COMP).toContain("dataUrl('search-index.json')"); // name resolution source
+    expect(COMP).toContain('searchGames(q, { store: apiStore'); // #437 name resolution via API
+    expect(COMP).not.toContain("dataUrl('search-index.json')");
     expect(COMP).toContain("id = id.slice(prefix.length)"); // strips gog:/epic: prefix
     expect(COMP).toContain('exploreStore(endpoint, { id: resolved.id, term: resolved.term })');
   });
 
-  test('name resolution falls back to all-tokens-any-order matching (#405 follow-up)', () => {
-    // "riddick butcher" must resolve "The Chronicles of Riddick: Escape from
-    // Butcher Bay" -- a plain substring test fails because no title contains
-    // that exact phrase. Pin the token-based fallback tier.
-    expect(COMP).toContain("ql.split(/\\s+/)");
-    expect(COMP).toMatch(/tokens\.every\(\(t\) => String\(r\[1\] \|\| ''\)\.toLowerCase\(\)\.includes\(t\)\)/);
+  test('name resolution uses FTS token matching via searchGames (#437)', () => {
+    // "riddick butcher" resolving "The Chronicles of Riddick..." is now handled
+    // server-side by plainto_tsquery (token AND matching), so the client just
+    // takes the top-ranked result, preferring an exact title match.
+    expect(COMP).toMatch(/results\.find\(\(r\) => String\(r\.title \|\| ''\)\.toLowerCase\(\) === ql\) \|\| results\[0\]/);
   });
 
   test('PCGW no-match error points at the title-substring endpoint', () => {
