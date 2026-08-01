@@ -14,11 +14,13 @@ const HOME_JS = read('js/app/components/home.js');
 const INDEX_JS = read('js/index/main.js');
 
 describe('home.js forwards trend into every card', () => {
-  test('exposes a _lookupTrend / _buildTrendMap pair keyed off searchIndex', () => {
+  test('exposes a _lookupTrend helper fed by the batch enrichment loader (#437)', () => {
     expect(HOME_JS).toMatch(/function _lookupTrend/);
-    expect(HOME_JS).toMatch(/function _buildTrendMap/);
-    // The map must key off column 9 of search-index rows (see finalize.py).
-    expect(HOME_JS).toMatch(/row\[9\]/);
+    expect(HOME_JS).toMatch(/function _addEnrichmentRows/);
+    expect(HOME_JS).toMatch(/async function _loadEnrichment/);
+    // Trend comes from the API row's trend field now, not blob column 9.
+    expect(HOME_JS).toMatch(/r\.trend === 'improving'/);
+    expect(HOME_JS).not.toMatch(/function _buildTrendMap/);
   });
 
   test('every renderGameCard call in home.js passes a trend option', () => {
@@ -29,14 +31,11 @@ describe('home.js forwards trend into every card', () => {
     }
   });
 
-  test('trend map is built after loadSearchIndex resolves, before rendering', () => {
-    // _buildTrendMap must appear after the Promise.all block that awaits
-    // loadSearchIndex, otherwise the first paint has no arrows.
-    const buildIdx = HOME_JS.indexOf('_buildTrendMap();');
-    const loadIdx = HOME_JS.indexOf('loadSearchIndex()');
-    expect(buildIdx).toBeGreaterThan(-1);
-    expect(loadIdx).toBeGreaterThan(-1);
-    expect(buildIdx).toBeGreaterThan(loadIdx);
+  test('enrichment is loaded from the shown appids before rendering (#437)', () => {
+    // _loadEnrichment must run in the render flow so the first paint has arrows.
+    expect(HOME_JS).toMatch(/await _loadEnrichment\(\[/);
+    // The full-blob loader is gone.
+    expect(HOME_JS).not.toMatch(/loadSearchIndex\(\)/);
   });
 });
 

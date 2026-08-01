@@ -62,10 +62,11 @@ describe('store filter group in the home Filters popover', () => {
     expect(homeSrc).toContain('tierSel.size + sourceSel.size + storeSel.size');
     expect(homeSrc).toContain('storeSel = new Set();');
   });
-  test('renderHomePage preloads the search index so GOG/Epic filters can pull stubs', () => {
-    // Without this, storeSel = Set(['gog'|'epic']) hits the wantNonSteamOnly
-    // path against a null searchIndex and renders no results.
-    expect(homeSrc).toContain('loadSearchIndex().catch(() => null)');
+  test('non-Steam store selection fetches its browse slice before rendering (#437)', () => {
+    // storeSel = Set(['gog'|'epic']) must pull the browse rows via the API so
+    // the wantNonSteamOnly path has data instead of scanning the full blob.
+    expect(homeSrc).toContain('await _ensureHomeNonSteam([...storeSel])');
+    expect(homeSrc).not.toContain('loadSearchIndex');
   });
 });
 

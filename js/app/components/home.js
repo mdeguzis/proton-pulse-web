@@ -2,7 +2,7 @@
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { loadSearchIndex, searchIndex } from './search.js?v=b5c03324';
+import { browseGames, getGamesByIds } from '../api/search-games.js?v=0e14d3ff';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=a75604f5';
 import { daysAgo, latestPerApp } from '../utils.js?v=4630c3d5';
 import { renderGameCard } from '../lib/card.js?v=41dcabfc';
@@ -230,22 +230,42 @@ function _allShownNote(count) {
   return `<p class="home-results-note">Showing all ${count} result${count === 1 ? '' : 's'}</p>`;
 }
 
-// Trend direction lookup by appId. Populated from search-index column 9
-// after loadSearchIndex resolves. Empty for older payloads that predate the
-// trend column so cards render neutral (no arrow) until the pipeline catches up.
+// Trend direction lookup by appId. Populated by _loadEnrichment from the
+// batch API's trend field (#437). Empty for games with no trend direction so
+// cards render neutral (no arrow).
 let _trendByAppId = null;
 function _lookupTrend(appId) {
   if (!_trendByAppId || appId == null) return '';
   return _trendByAppId.get(String(appId)) || '';
 }
-function _buildTrendMap() {
-  if (_trendByAppId) return;
+// #437: the four enrichment maps (trend / delisted / replaced-by / steam-type)
+// used to be scanned out of the full 11.8MB search-index.json. Now the page
+// batches getGamesByIds() for exactly the appids it renders and fills all four
+// maps from those rows. _resetEnrichment() must run before _loadEnrichment so
+// stale entries from a previous view (e.g. My Library then back to browse)
+// do not linger.
+function _resetEnrichment() {
   _trendByAppId = new Map();
-  if (!Array.isArray(searchIndex)) return;
-  for (const row of searchIndex) {
-    if (!Array.isArray(row) || row.length < 10) continue;
-    const t = row[9];
-    if (t === 'improving' || t === 'declining') _trendByAppId.set(String(row[0]), t);
+  _delistedByAppId = new Set();
+  _replacedByAppId = new Map();
+  _steamTypeByAppId = new Map();
+}
+function _addEnrichmentRows(rows) {
+  if (!_trendByAppId) _resetEnrichment();
+  for (const r of rows) {
+    if (!r || r.appId == null) continue;
+    const id = String(r.appId);
+    if (r.trend === 'improving' || r.trend === 'declining') _trendByAppId.set(id, r.trend);
+    if (r.delisted === true) _delistedByAppId.add(id);
+    if (r.replacedBy) _replacedByAppId.set(id, String(r.replacedBy));
+    if (r.steamType) _steamTypeByAppId.set(id, String(r.steamType));
+  }
+}
+async function _loadEnrichment(appIds) {
+  const ids = [...new Set((appIds || []).filter(v => v != null).map(String))];
+  for (let i = 0; i < ids.length; i += 500) {
+    const byId = await getGamesByIds(ids.slice(i, i + 500));
+    _addEnrichmentRows([...byId.values()]);
   }
 }
 
@@ -257,15 +277,6 @@ let _delistedByAppId = null;
 function _isDelisted(appId) {
   if (!_delistedByAppId || appId == null) return false;
   return _delistedByAppId.has(String(appId));
-}
-function _buildDelistedSet() {
-  if (_delistedByAppId) return;
-  _delistedByAppId = new Set();
-  if (!Array.isArray(searchIndex)) return;
-  for (const row of searchIndex) {
-    if (!Array.isArray(row) || row.length < 8) continue;
-    if (row[7] === true) _delistedByAppId.add(String(row[0]));
-  }
 }
 // Historical Steam appid for PCGW-only rows the cross-check marked as
 // delisted. Pipeline stores it as "steam:<appid>" in col 10 replaced_by
@@ -284,17 +295,6 @@ function _lookupReplacedBy(appId) {
   if (!_replacedByAppId || appId == null) return '';
   return _replacedByAppId.get(String(appId)) || '';
 }
-function _buildReplacedByMap() {
-  if (_replacedByAppId) return;
-  _replacedByAppId = new Map();
-  if (!Array.isArray(searchIndex)) return;
-  for (const row of searchIndex) {
-    if (!Array.isArray(row) || row.length < 11) continue;
-    const rb = row[10];
-    if (rb) _replacedByAppId.set(String(row[0]), String(rb));
-  }
-}
-
 // Steam app kind lookup by appId. Search-index column 11 (added by
 // enrich_search_index_with_steam_type in the pipeline). Empty for older
 // payloads or non-Steam ids -- fall back to treating them as 'game' so
@@ -303,16 +303,6 @@ let _steamTypeByAppId = null;
 function _lookupSteamType(appId) {
   if (!_steamTypeByAppId || appId == null) return '';
   return _steamTypeByAppId.get(String(appId)) || '';
-}
-function _buildSteamTypeMap() {
-  if (_steamTypeByAppId) return;
-  _steamTypeByAppId = new Map();
-  if (!Array.isArray(searchIndex)) return;
-  for (const row of searchIndex) {
-    if (!Array.isArray(row) || row.length < 12) continue;
-    const t = row[11];
-    if (t) _steamTypeByAppId.set(String(row[0]), String(t));
-  }
 }
 
 // Corner ownership badges (#266 refinement): small library / wishlist
@@ -409,25 +399,27 @@ export async function renderHomePage() {
     const [recentResp, mostPlayedResp] = await Promise.all([
       fetch(recentUrl).catch(() => null),
       fetch(mostPlayedUrl).catch(() => null),
-      loadSearchIndex().catch(() => null),
     ]);
-
-    // searchIndex is available now that loadSearchIndex resolved (Promise.all
-     // above). Build the appId -> trend map once so every card renderer below
-     // gets the arrow via a single Map.get instead of re-scanning the array.
-    _trendByAppId = null;
-    _replacedByAppId = null;
-    _steamTypeByAppId = null;
-    _delistedByAppId = null;
-    _buildTrendMap();
-    _buildReplacedByMap();
-    _buildSteamTypeMap();
-    _buildDelistedSet();
 
     let allRecentReports = [];
     if (recentResp && recentResp.ok) {
       allRecentReports = await recentResp.json().catch(() => []);
     }
+    let mostPlayedAll = [];
+    if (mostPlayedResp && mostPlayedResp.ok) {
+      mostPlayedAll = await mostPlayedResp.json().catch(() => []);
+    }
+
+    // #437: enrichment (trend / delisted / replaced-by / steam-type) for exactly
+    // the appids this page renders, batched through the search-games API instead
+    // of scanning the full 11.8MB search-index.json. Must run before the
+    // delisted tagging + card renders below that read the maps.
+    _resetEnrichment();
+    await _loadEnrichment([
+      ...allRecentReports.map(r => r && r.appId),
+      ...mostPlayedAll.map(g => g && g.appId),
+    ]);
+
     // Tag delisted rows so the shared filterDelisted() call in the
     // filter chain hides them when the user pref is off. Object rows
     // do not carry the flag natively -- they come from most_played.json
@@ -446,8 +438,8 @@ export async function renderHomePage() {
 
     const seenIds = new Set(allRecentReports.map(r => String(r.appId)));
     let ratedGames = [], unratedGames = [];
-    if (mostPlayedResp && mostPlayedResp.ok) {
-      const all = (await mostPlayedResp.json().catch(() => []))
+    {
+      const all = mostPlayedAll
         .filter(g => !seenIds.has(String(g.appId)) && !_hideSet.has(String(g.appId)));
       ratedGames = all.filter(g => KNOWN_TIERS.has(String(g.rating || '').toLowerCase()));
       unratedGames = all.filter(g => ['pending', 'catalog'].includes(String(g.rating || '').toLowerCase()));
@@ -660,6 +652,36 @@ export async function renderHomePage() {
     let kindSel = new Set();   // Steam app kind ('game'/'dlc'/'mod'/'demo'/'software'); empty => all (#250)
     let currentLayout = 'grid';
 
+    // #437: non-Steam browse rows (GOG / Epic / PCGamingWiki) for the Popular
+    // section. Fetched via browseGames when a non-Steam-only store filter turns
+    // on, instead of scanning the full 11.8MB index. Bounded top slice; 0-count
+    // catalog games sort alphabetically, matching the old ordering. Rows are
+    // pre-shaped to what applyPopularFilters expects.
+    const HOME_NONSTEAM_CAP = 500;
+    let _homeNonSteamRows = [];
+    const _homeNonSteamFetched = new Set();
+    async function _ensureHomeNonSteam(stores) {
+      for (const store of stores.filter(s => s !== 'steam' && s !== 'all' && !_homeNonSteamFetched.has(s))) {
+        let offset = 0;
+        while (offset < HOME_NONSTEAM_CAP) {
+          const { results } = await browseGames({ store, sort: 'popular', limit: 100, offset });
+          for (const r of results) {
+            const t = String(r.tier || '').toLowerCase();
+            _homeNonSteamRows.push({
+              appId: r.appId, title: r.title,
+              tier: KNOWN_TIERS.has(t) ? t : 'pending',
+              protondbCount: r.protondbCount || 0, pulseCount: r.pulseCount || 0,
+              appType: r.source, delisted: r.delisted === true,
+            });
+          }
+          _addEnrichmentRows(results); // trend / replaced-by / steam-type for these cards
+          offset += 100;
+          if (results.length < 100) break;
+        }
+        _homeNonSteamFetched.add(store);
+      }
+    }
+
     // The previous super-condensed list-row renderer is gone -- the two
     // layouts now are 'list' (horizontal cards from _recentCardHtml /
     // popular item) and 'grid' (the same cards re-flowed into Steam-
@@ -687,25 +709,17 @@ export async function renderHomePage() {
         const steamPeakByTitle = new Map(
           [...ratedGames, ...unratedGames].map(g => [normTitle(g.title), g.peak || 0])
         );
-        asReports = (searchIndex || [])
-          .filter(row => row[5] && storeSel.has(row[5]))
+        asReports = _homeNonSteamRows
+          .filter(r => r.appType && storeSel.has(r.appType))
+          .slice()
           .sort((a, b) => {
-            const peakA = steamPeakByTitle.get(normTitle(a[1])) || 0;
-            const peakB = steamPeakByTitle.get(normTitle(b[1])) || 0;
+            const peakA = steamPeakByTitle.get(normTitle(a.title)) || 0;
+            const peakB = steamPeakByTitle.get(normTitle(b.title)) || 0;
             if (peakB !== peakA) return peakB - peakA;
-            const countA = (a[3] || 0) + (a[4] || 0);
-            const countB = (b[3] || 0) + (b[4] || 0);
+            const countA = (a.protondbCount || 0) + (a.pulseCount || 0);
+            const countB = (b.protondbCount || 0) + (b.pulseCount || 0);
             if (countB !== countA) return countB - countA;
-            return (a[1] || '').localeCompare(b[1] || '');
-          })
-          .map(row => {
-            const t = String(row[2] || '').toLowerCase();
-            return {
-              appId: row[0], title: row[1],
-              tier: KNOWN_TIERS.has(t) ? t : 'pending',
-              protondbCount: row[3] || 0, pulseCount: row[4] || 0, appType: row[5],
-              delisted: row[7] === true,
-            };
+            return (a.title || '').localeCompare(b.title || '');
           });
       } else {
         // Build the candidate pool from the tier selection. Rated games show by
@@ -1146,8 +1160,12 @@ export async function renderHomePage() {
     if (sourceGroup) _wirePillGroup(sourceGroup, { onChange: sel => {
       sourceSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
-    if (storeGroup) _wirePillGroup(storeGroup, { onChange: sel => {
-      storeSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+    if (storeGroup) _wirePillGroup(storeGroup, { onChange: async sel => {
+      storeSel = sel; updateFilterBadge();
+      // #437: pull the non-Steam browse slice before rendering when a non-Steam
+      // store is selected, so the Popular section has its rows.
+      if ([...storeSel].some(s => s !== 'steam' && s !== 'all')) await _ensureHomeNonSteam([...storeSel]);
+      applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
     // Library group holds both "My games" and "On wishlist" chips (#266
     // consolidation). Mutual-exclusion in the group prevents nonsense
@@ -1337,7 +1355,17 @@ export async function renderHomePage() {
       // would just repeat the same rows.
       const scopeIds = isWishlist ? wishlistAppIds : libraryAppIds;
       if (scopeIds && scopeIds.size > 0) {
-        const synth = synthesizeMyLibrary(scopeIds, allRecentReports, searchIndex);
+        // #437: fetch tiers for the owned / wishlist ids via the batch API
+        // (chunked by 500), shaped into the array rows synthesizeMyLibrary
+        // takes, plus fold them into the enrichment maps for the synth cards.
+        const _scopeIds = [...scopeIds].map(String);
+        const _scopeRows = [];
+        for (let i = 0; i < _scopeIds.length; i += 500) {
+          const byId = await getGamesByIds(_scopeIds.slice(i, i + 500));
+          _addEnrichmentRows([...byId.values()]);
+          for (const r of byId.values()) _scopeRows.push([r.appId, r.title, r.tier, r.protondbCount, r.pulseCount, r.source]);
+        }
+        const synth = synthesizeMyLibrary(scopeIds, allRecentReports, _scopeRows);
         allRecentReports = synth.rows;
         console.debug(isWishlist ? '[my-wishlist] synthesized dataset' : '[my-library] synthesized library dataset', {
           source: 'search-index+stubs',
@@ -1395,6 +1423,11 @@ export async function renderHomePage() {
       _saveFiltersIfEnabled();
     }
 
+    // #437: if a non-Steam store filter was restored from saved filters or the
+    // URL, fetch its browse slice before the first Popular render.
+    if ([...storeSel].some(s => s !== 'steam' && s !== 'all')) {
+      await _ensureHomeNonSteam([...storeSel]);
+    }
     applyRecentFilters();
     applyPopularFilters();
 
@@ -1424,18 +1457,16 @@ export async function renderHomePage() {
 }
 
 export async function renderHomeFallback() {
-  const [pulseReports] = await Promise.all([
-    fetchRecentPulseReports(),
-    loadSearchIndex(),
-  ]);
   const popularIds = ['730', '570', '440', '292030', '1245620', '1091500', '1174180', '413150'];
-  const titleById = new Map((searchIndex || []).map(([id, title]) => [String(id), title]));
-  _trendByAppId = null;
-  _replacedByAppId = null;
-  _steamTypeByAppId = null;
-  _buildTrendMap();
-  _buildReplacedByMap();
-  _buildSteamTypeMap();
+  // #437: titles + trend/replaced/steam-type for the eight fixed popular ids
+  // via the batch API instead of the full index.
+  const [pulseReports, byId] = await Promise.all([
+    fetchRecentPulseReports(),
+    getGamesByIds(popularIds),
+  ]);
+  _resetEnrichment();
+  _addEnrichmentRows([...byId.values()]);
+  const titleById = new Map([...byId.values()].map(r => [String(r.appId), r.title]));
   const popularCards = popularIds
     .map((appId) => ({ appId, title: titleById.get(appId) || `App ${appId}` }))
     .filter((row) => row.title)
