@@ -41,10 +41,11 @@ describe('home.js forwards trend into every card', () => {
 });
 
 describe('index/main.js (browse) forwards trend into pgCardHtml', () => {
-  test('has a trend lookup helper backed by search-index column 9', () => {
+  test('has a trend lookup helper backed by the batch API trend field (#437)', () => {
     expect(INDEX_JS).toMatch(/function _lookupTrend/);
-    expect(INDEX_JS).toMatch(/function _buildTrendMap/);
-    expect(INDEX_JS).toMatch(/row\[9\]/);
+    expect(INDEX_JS).toMatch(/function _addTrend/);
+    // Trend now comes from the API row's trend field, not blob column 9.
+    expect(INDEX_JS).toMatch(/_addTrend\(r\.appId, r\.trend\)/);
   });
 
   test('pgCardHtml passes trend through to renderGameCard', () => {
@@ -55,9 +56,10 @@ describe('index/main.js (browse) forwards trend into pgCardHtml', () => {
     expect(match[0]).toMatch(/trend: _lookupTrend/);
   });
 
-  test('search-index is loaded in parallel with most_played so first paint has arrows', () => {
-    // Must live inside the Promise.all with the most_played fetch; otherwise
-    // Steam-only mode paints without arrows and the user gets a flash.
-    expect(INDEX_JS).toMatch(/Promise\.all\(\[[\s\S]*?loadSearchIndex\(\)[\s\S]*?\]\)/);
+  test('Steam trend is batched from most_played appids before first paint (#437)', () => {
+    // Awaited after most_played resolves (its appids feed the batch), so the
+    // first paint still has arrows in Steam-only mode without loading the blob.
+    expect(INDEX_JS).toMatch(/await _loadSteamTrend\(games\.map\(g => g\.appId\)\)/);
+    expect(INDEX_JS).not.toMatch(/loadSearchIndex/);
   });
 });

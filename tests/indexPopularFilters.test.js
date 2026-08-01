@@ -53,16 +53,21 @@ describe('index page popular games rating filters', () => {
     expect(indexSrc).toContain("return storeSel.size === 0 ? ['steam', 'gog', 'epic'] : [...storeSel];");
   });
 
-  test('currentList merges Steam most_played with non-Steam search-index rows', () => {
+  test('currentList merges Steam most_played with non-Steam browse rows (#437)', () => {
     expect(indexSrc).toContain("if (stores.includes('steam'))");
     expect(indexSrc).toContain("const nonSteam = stores.filter(s => s !== 'steam')");
-    expect(indexSrc).toContain('.filter(row => nonSteam.includes(row[5]))');
+    // Non-Steam rows now come from the browse API cache, not a blob scan.
+    expect(indexSrc).toContain('nonSteamRows');
+    expect(indexSrc).toContain('.filter(r => nonSteam.includes(r.appType))');
+    expect(indexSrc).not.toContain('.filter(row => nonSteam.includes(row[5]))');
   });
 
-  test('rating chip counts reflect the selected stores, not just Steam', () => {
+  test('rating chip counts reflect the selected stores, not just Steam (#437)', () => {
     expect(indexSrc).toContain('function updateRatingCounts()');
     expect(indexSrc).toContain("if (stores.includes('steam')) { rated += ratedGames.length; unrated += unratedGames.length; }");
-    expect(indexSrc).toContain('if (KNOWN_TIERS.has(String(row[2] || \'\').toLowerCase())) rated++; else unrated++;');
+    // Non-Steam counts use the browse true total per store, not a blob scan.
+    expect(indexSrc).toContain('nonSteamTotals.get(s)');
+    expect(indexSrc).not.toContain('if (KNOWN_TIERS.has(String(row[2]');
     // counts refresh when the store selection changes
     expect(indexSrc).toContain('updateRatingCounts();');
   });
@@ -77,9 +82,12 @@ describe('index page popular games rating filters', () => {
     expect(indexSrc).not.toContain("state.rated = key === 'rated'");
   });
 
-  test('selecting any non-Steam store loads the search index once', () => {
-    expect(indexSrc).toContain("effectiveStores().some(s => s !== 'steam') && !searchIndexCache");
-    expect(indexSrc).toContain('await loadSearchIndex()');
+  test('selecting any non-Steam store fetches its browse data once (#437)', () => {
+    expect(indexSrc).toContain("effectiveStores().some(s => s !== 'steam')");
+    expect(indexSrc).toContain('await _ensureNonSteamData(effectiveStores())');
+    // The full-blob loader is gone.
+    expect(indexSrc).not.toContain('loadSearchIndex');
+    expect(indexSrc).not.toContain('searchIndexCache');
   });
 
   test('popular list pages with a load more button', () => {
