@@ -10,6 +10,7 @@
 // pick them up.
 
 import { normalizeSearchable } from './search-match.js?v=dd1b70b2';
+import { getGamesByIds, searchGames } from '../api/search-games.js?v=0e14d3ff';
 
 const _CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
 
@@ -185,14 +186,16 @@ function _loadPgwikiCatalog() {
   return _pgwikiCatalogPromise;
 }
 
-// Cache the search index so repeated title-match probes don't re-fetch it.
-// The gog/epic fallback path can run many times per page (a full library
-// grid can be hundreds of cards), so memoize the promise the same way we
-// do for game-images / nonsteam-images.
-let _searchIndexPromise = null;
-function _loadSearchIndex() {
-  if (!_searchIndexPromise) _searchIndexPromise = _fetchWithFallback('search-index.json');
-  return _searchIndexPromise;
+// #437: per-id row cache. The gog/epic box-art fallback can fire for many
+// cards on a library grid, so memoize the targeted batch lookups instead of
+// loading the whole 11.8MB search-index.json blob once and scanning it.
+const _rowCache = new Map();
+async function _rowForId(id) {
+  const key = String(id);
+  if (_rowCache.has(key)) return _rowCache.get(key);
+  const row = (await getGamesByIds([key])).get(key) || null;
+  _rowCache.set(key, row);
+  return row;
 }
 
 // Same-title Steam CDN fallback for non-Steam entries (#375). Many
@@ -207,29 +210,24 @@ function _loadSearchIndex() {
 // so titles that differ only in punctuation ("Divinity: Original Sin" vs
 // "Divinity Original Sin") still match.
 async function _findSteamAppIdByMatchingTitle(nonSteamId) {
-  const idx = await _loadSearchIndex();
-  if (!Array.isArray(idx)) return null;
-  const source = idx.find(r => Array.isArray(r) && String(r[0]) === nonSteamId);
-  if (!source) return null;
-  const targetNorm = normalizeSearchable(String(source[1] || ''));
+  const source = await _rowForId(nonSteamId);
+  const targetNorm = normalizeSearchable(String(source?.title || ''));
   if (!targetNorm) return null;
-  const steamMatch = idx.find(r => {
-    if (!Array.isArray(r)) return false;
-    const rid = String(r[0]);
-    if (!/^\d+$/.test(rid)) return false; // steam ids are bare digits
-    return normalizeSearchable(String(r[1] || '')) === targetNorm;
-  });
-  return steamMatch ? String(steamMatch[0]) : null;
+  // #437: title search via the API, then an exact normalized-title match on a
+  // Steam result (bare-digit appid), instead of scanning the full index.
+  const { results } = await searchGames(source.title, { store: 'steam', limit: 24 });
+  const hit = (results || []).find(r =>
+    /^\d+$/.test(String(r.appId)) && normalizeSearchable(String(r.title || '')) === targetNorm
+  );
+  return hit ? String(hit.appId) : null;
 }
 
-// Return the entry title from the search index for a given canonical id.
-// Used by the SGDB final fallback so we can pass the game title to the
-// image-refetch edge function's sgdb_search action.
+// Return the entry title from the index for a given canonical id. Used by the
+// SGDB final fallback so we can pass the game title to the image-refetch edge
+// function's sgdb_search action.
 async function _titleForAppId(appId) {
-  const idx = await _loadSearchIndex();
-  if (!Array.isArray(idx)) return '';
-  const row = idx.find(r => Array.isArray(r) && String(r[0]) === appId);
-  return row && row[1] ? String(row[1]) : '';
+  const row = await _rowForId(appId);
+  return row?.title || '';
 }
 
 // SGDB final fallback (#375). When both the pipeline's nonsteam-images.json

@@ -86,7 +86,9 @@ describe('steam title match helper', () => {
 
   test('title match filters to bare-digit Steam ids', () => {
     // Without this, gog:foo could "match" itself and re-fetch its own broken URL.
-    expect(SRC).toMatch(/\/\^\\d\+\$\/\.test\(rid\)/);
+    // #437: the match runs over searchGames() API results now (r.appId).
+    expect(SRC).toMatch(/\/\^\\d\+\$\/\.test\(String\(r\.appId\)\)/);
+    expect(SRC).toContain("searchGames(source.title, { store: 'steam'");
   });
 });
 

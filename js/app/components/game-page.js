@@ -35,7 +35,7 @@ async function _indexRowFor(id) {
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ad2153bb';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=5adc7e54';
 import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=4630c3d5';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';

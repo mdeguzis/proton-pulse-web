@@ -28,8 +28,9 @@ describe('confidence tier hand-off (#192)', () => {
 });
 
 describe('confidence page data loaders route through dataUrl (#380/#361)', () => {
-  test('loadSearchIndexLocal uses dataUrl, not the undefined _usesProdData branch', () => {
-    expect(CONF).toMatch(/await\s+dataUrl\('search-index\.json'\)/);
+  test('the game title comes from the batch API, not the search-index blob (#437)', () => {
+    expect(CONF).toMatch(/getGamesByIds\(\[appId\]\)/);
+    expect(CONF).not.toMatch(/dataUrl\('search-index\.json'\)/);
     expect(CONF).not.toMatch(/_usesProdData/);
   });
 
