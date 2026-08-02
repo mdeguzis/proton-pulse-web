@@ -594,17 +594,23 @@
   width: 16px;
   height: 16px;
 }
-/* Text mode: the store label gets a brand-colored pill so it stays
-   readable against any tier strip color. */
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store > .store-text {
+/* Text mode: the WHOLE strip-store span becomes the brand-colored pill so
+   the library / wishlist owner badges (and the delisted chip) ride INSIDE
+   it, right next to the store label, the same way they do in every other
+   placement. Before, only the .store-text child got the pill, so the owner
+   icons sat on the bare tier strip to the left of the pill and read as
+   detached. Scoped with :not(icon) so icon mode keeps its transparent
+   parent and just shows the round brand glyph. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip-store {
   padding: 2px 8px;
   border-radius: 999px;
   color: #fff;
   line-height: 1.4;
+  gap: 2px;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="steam"] .game-card-strip-store > .store-text { background: #1689d0; }
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="gog"]   .game-card-strip-store > .store-text { background: #7a3fcf; }
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="epic"]  .game-card-strip-store > .store-text { background: #2a2a2a; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip[data-store="steam"] .game-card-strip-store { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip[data-store="gog"]   .game-card-strip-store { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip[data-store="epic"]  .game-card-strip-store { background: #2a2a2a; }
 .load-more-btn {
   display: block;
   margin: 12px auto 0;

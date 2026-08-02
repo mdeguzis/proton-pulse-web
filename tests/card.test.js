@@ -284,3 +284,29 @@ describe('renderGameCard owner-badge placement (#431)', () => {
     expect(html).not.toContain('game-card-owner-badge');
   });
 });
+
+describe('bar-inline store pill wraps the owner badge (CSS)', () => {
+  // The markup already nests the owner badge inside .game-card-strip-store in
+  // every placement; the bug was CSS. In bar-inline TEXT mode the brand pill
+  // background used to sit on the .store-text child only, so the owner badge
+  // (a sibling inside the transparent parent) rendered on the bare tier strip
+  // to the left of the pill. The fix paints the whole .game-card-strip-store
+  // span so the badge rides inside the colored pill like every other layout.
+  const fs = require('fs');
+  const path = require('path');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css/shared/cards.css'), 'utf8');
+
+  test('brand color is applied to the strip-store span, not just the store-text child', () => {
+    // steam blue on the whole span in text mode (:not icon)
+    expect(css).toMatch(/\[data-store-pill-pos="bar-inline"\]:not\(\[data-store-display="icon"\]\) \.game-card-strip\[data-store="steam"\] \.game-card-strip-store \{ background: #1689d0; \}/);
+    // and the old child-only pill background is gone
+    expect(css).not.toContain('.game-card-strip-store > .store-text { background: #1689d0; }');
+  });
+
+  test('the strip-store span itself carries the pill padding + radius in text mode', () => {
+    const block = css.match(/\[data-store-pill-pos="bar-inline"\]:not\(\[data-store-display="icon"\]\) \.game-card-strip-store \{([\s\S]*?)\}/);
+    expect(block).not.toBeNull();
+    expect(block[1]).toContain('border-radius: 999px');
+    expect(block[1]).toContain('padding: 2px 8px');
+  });
+});
