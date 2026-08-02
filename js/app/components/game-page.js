@@ -14,7 +14,7 @@ import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
 import { renderCard } from './report-card.js?v=5e25c644';
-import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=b5c03324';
+import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
 import { getGamesByIds } from '../api/search-games.js?v=0e14d3ff';
 
 // #437: the game page only ever needs ONE search-index row (the current game,

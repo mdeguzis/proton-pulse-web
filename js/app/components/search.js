@@ -14,14 +14,19 @@ import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
 import { searchGames } from '../api/search-games.js?v=0e14d3ff';
 
 // Search index + results UX -- factored out of app.js.
-// Loaded as a classic script BEFORE app.js so its globals
-// (searchIndex, searchFocusIdx, loadSearchIndex, searchIndexMatches,
-// renderSearchPage, renderSearchResults, closeSearch, etc.) are
-// available when app.js runs. Depends on app-scoring.js for
+// Loaded as a classic script BEFORE app.js so its exports
+// (searchFocusIdx, renderSearchPage, renderSearchResults, closeSearch,
+// etc.) are available when app.js runs. Depends on app-scoring.js for
 // estimateScore (not currently called from here but available).
+//
+// #437: the primary search-index.json blob loader (loadSearchIndex,
+// searchIndex, searchIndexMatches) was removed once every consumer moved
+// to the search-games edge fn. Search UX is API-only; the only remaining
+// blob reader is the admin box-art tool, which needs the full catalog.
+// The lazy extended-Steam index below is a separate, smaller file still
+// used by the game page for long-tail stub lookups.
 
 // --- search index state vars ---
-export let searchIndex            = null;   // primary: [[appId, title, tier, pdb, pulse, appType, releaseYear?, delisted?], ...]
 export let extendedSteamIndex     = null;   // lazy: [[appId, title, "", 0, 0, "steam"], ...]
 export let extendedSteamLoadingP  = null;   // in-flight Promise so concurrent searches share one fetch
 export let searchFocusIdx         = -1;
@@ -31,17 +36,6 @@ export let searchFocusIdx         = -1;
 // matching rules can be unit-tested without pulling this whole search
 // component + its DOM / Supabase transitive imports.
 const _matchEntries = matchEntries;
-
-// --- searchIndexMatches ---
-// LEGACY blob-based match kept for callers that still need synchronous
-// lookups (nothing in the site currently). Search UX went API-backed
-// in #434; the blob only stays loaded for home.js browse aggregation
-// (trend arrows, replaced_by lookups) and topbar dropdown falls back
-// to it if the API fetch fails. Prefer searchGamesAPI() for new code.
-export function searchIndexMatches(query, limit) {
-  const q = query.trim();
-  return filterDelistedEntries(filterAdultEntries(_matchEntries(searchIndex, q, limit)));
-}
 
 // --- searchExtendedSteamMatches ---
 // LEGACY. Deprecated with #434 -- the API now hits the full Postgres
@@ -293,20 +287,6 @@ export async function renderSearchPage(query) {
       });
     }
   });
-}
-
-// --- loadSearchIndex ---
-export async function loadSearchIndex() {
-  if (searchIndex !== null) return;
-  try {
-    // Local dev has no /data dir, so USES_PROD_DATA=true routes to prod.
-    // Staging + prod fetch from their own origin first via
-    // fetchDataWithProdFallback -- if staging hasn't run a pipeline yet
-    // the helper falls back to prod so search still works (#117).
-    const bustedName = await dataUrl('search-index.json');
-    const r = await fetchDataWithProdFallback(bustedName);
-    searchIndex = r.ok ? await r.json() : [];
-  } catch { searchIndex = []; }
 }
 
 // --- loadExtendedSteamIndex ---
