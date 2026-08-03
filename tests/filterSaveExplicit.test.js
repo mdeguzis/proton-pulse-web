@@ -73,7 +73,10 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
   test('Clear filters does NOT write to localStorage anymore', () => {
     const idx = src.indexOf("document.getElementById('gp-filter-clear')");
     expect(idx).toBeGreaterThan(0);
-    const slice = src.slice(idx, idx + 1600);
+    // Slice must span the whole handler body. Bumped from 1600 -> 2400 after
+    // #445 added confidence-range slider resets that pushed
+    // _updateSaveButtonState past the original window.
+    const slice = src.slice(idx, idx + 2400);
     expect(slice).not.toContain('localStorage.setItem');
     expect(slice).not.toContain('localStorage.removeItem');
     expect(slice).toContain('_updateSaveButtonState');

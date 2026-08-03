@@ -989,6 +989,11 @@ export async function renderGamePage(appId) {
   // Minimum reporter playtime in minutes (0 = any). Useful to skip "launched
   // it once" reports that don't reflect real-use compatibility
   let filterMinPlaytime = persistedFilters.minPlaytime || 0;
+  // Confidence range 0-100 (#445). Defaults 0/100 = no filter. When narrowed
+  // (min>0 or max<100) the filter step drops configs entirely, matching how
+  // filterRating drops non-report rows -- configs carry no score.
+  let filterConfidenceMin = Number.isFinite(persistedFilters.confidenceMin) ? persistedFilters.confidenceMin : 0;
+  let filterConfidenceMax = Number.isFinite(persistedFilters.confidenceMax) ? persistedFilters.confidenceMax : 100;
   let filterMine = false;
 
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
@@ -1012,6 +1017,7 @@ export async function renderGamePage(appId) {
       gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating,
       runType: filterRunType, device: filterDevice,
       minPlaytime: filterMinPlaytime, source: filterSource,
+      confidenceMin: filterConfidenceMin, confidenceMax: filterConfidenceMax,
     };
   }
 
@@ -1031,8 +1037,14 @@ export async function renderGamePage(appId) {
     const persisted = _getPersistedSnapshot();
     const current = _filterSnapshot();
     if (!persisted) {
-      // No snapshot yet: dirty when any filter differs from the empty default
-      return Object.values(current).some(v => v && v !== 0);
+      // No snapshot yet: dirty when any filter differs from its default.
+      // confidenceMin defaults to 0 (clean) and confidenceMax defaults to 100
+      // (clean) -- treat those explicitly since 100 is truthy.
+      return Object.entries(current).some(([k, v]) => {
+        if (k === 'confidenceMin') return v !== 0;
+        if (k === 'confidenceMax') return v !== 100;
+        return v && v !== 0;
+      });
     }
     // Compare each field to the persisted equivalent, normalising arrays and
     // missing keys to '' so old + new formats match cleanly.
@@ -1133,6 +1145,13 @@ export async function renderGamePage(appId) {
         if (r.durationMinutes != null) return r.durationMinutes >= filterMinPlaytime;
         const m = DUR_MIN[r.duration];
         return m != null && m >= filterMinPlaytime;
+      });
+    }
+    if (filterConfidenceMin > 0 || filterConfidenceMax < 100) {
+      arr = arr.filter(r => {
+        if (r._kind !== 'report') return false;
+        const s = Math.min(100, Math.max(0, Number(r.score) || 0));
+        return s >= filterConfidenceMin && s <= filterConfidenceMax;
       });
     }
     // Rating filter only makes sense for reports. Configs don't carry a rating,
@@ -1493,8 +1512,25 @@ export async function renderGamePage(appId) {
                 <option value="600" ${filterMinPlaytime===600?'selected':''}>10h+</option>
               </select>
             </div>`;
+          const confidenceRange = `
+            <div class="filter-item">
+              <label class="home-filter-label">Confidence</label>
+              <div class="filter-range">
+                <div class="filter-range-row">
+                  <span class="filter-range-row-label">Min</span>
+                  <input id="fConfidenceMin" class="filter-range-input" type="range" min="0" max="100" step="1" value="${filterConfidenceMin}" aria-label="Minimum confidence percent">
+                  <span class="filter-range-value" id="fConfidenceMinValue">${filterConfidenceMin}%</span>
+                </div>
+                <div class="filter-range-row">
+                  <span class="filter-range-row-label">Max</span>
+                  <input id="fConfidenceMax" class="filter-range-input" type="range" min="0" max="100" step="1" value="${filterConfidenceMax}" aria-label="Maximum confidence percent">
+                  <span class="filter-range-value" id="fConfidenceMaxValue">${filterConfidenceMax}%</span>
+                </div>
+              </div>
+            </div>`;
 
-          const activeCount = [filterGpu, filterArch, filterOs, filterRating, filterRunType, filterSource, filterDevice, filterMinPlaytime > 0 ? '1' : ''].filter(Boolean).length;
+          const confRangeActive = filterConfidenceMin > 0 || filterConfidenceMax < 100;
+          const activeCount = [filterGpu, filterArch, filterOs, filterRating, filterRunType, filterSource, filterDevice, filterMinPlaytime > 0 ? '1' : '', confRangeActive ? '1' : ''].filter(Boolean).length;
           const anyActive = activeCount > 0;
 
           return `
@@ -1508,7 +1544,7 @@ export async function renderGamePage(appId) {
                 <span class="filter-panel-mobile-title">Filters</span>
                 <button type="button" class="filter-panel-close" aria-label="Close filters">&times;</button>
               </div>
-              ${srcSel}${gpuSel}${archSel}${osSel}${ratingSel}${runTypeSel}${deviceSel}${playtimeSel}
+              ${srcSel}${gpuSel}${archSel}${osSel}${ratingSel}${runTypeSel}${deviceSel}${playtimeSel}${confidenceRange}
               <div class="filter-panel-footer filter-panel-footer--stack">
                 <button class="filter-collapse-btn" id="gp-filter-collapse" type="button" aria-label="Collapse filters">
                   <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
@@ -1669,8 +1705,12 @@ export async function renderGamePage(appId) {
     }
 
     function _debugSnapshot(label, extra) {
-      const active = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, source: filterSource, device: filterDevice, minPlaytime: filterMinPlaytime };
-      const nonBlank = Object.fromEntries(Object.entries(active).filter(([, v]) => v !== '' && v !== 0));
+      const active = { gpu: filterGpu, arch: filterArch, os: filterOs, rating: filterRating, runType: filterRunType, source: filterSource, device: filterDevice, minPlaytime: filterMinPlaytime, confidenceMin: filterConfidenceMin, confidenceMax: filterConfidenceMax };
+      const nonBlank = Object.fromEntries(Object.entries(active).filter(([k, v]) => {
+        if (k === 'confidenceMin') return v !== 0;
+        if (k === 'confidenceMax') return v !== 100;
+        return v !== '' && v !== 0;
+      }));
       const parts = [label, `filters=${JSON.stringify(nonBlank)}`];
       if (extra) parts.push(extra);
       const line = parts.join(' · ');
@@ -1783,7 +1823,8 @@ export async function renderGamePage(appId) {
       // Filter chrome: active count on the toggle button + optional
       // "N of M shown" counter. Both live outside .cards so we update them
       // directly rather than re-rendering the reports-controls-row.
-      const activeCount = [filterGpu, filterArch, filterOs, filterRating, filterRunType, filterSource, filterDevice, filterMinPlaytime > 0 ? '1' : ''].filter(Boolean).length;
+      const _confRangeActive = filterConfidenceMin > 0 || filterConfidenceMax < 100;
+      const activeCount = [filterGpu, filterArch, filterOs, filterRating, filterRunType, filterSource, filterDevice, filterMinPlaytime > 0 ? '1' : '', _confRangeActive ? '1' : ''].filter(Boolean).length;
       const tb = document.getElementById('filterToggle');
       if (tb) {
         tb.classList.toggle('has-filters', activeCount > 0);
@@ -1866,6 +1907,8 @@ export async function renderGamePage(appId) {
       _syncSelect('fSource',   filterSource);
       _syncSelect('fDevice',   filterDevice);
       _syncSelect('fPlaytime', filterMinPlaytime || 0);
+      _syncSelect('fConfidenceMin', filterConfidenceMin);
+      _syncSelect('fConfidenceMax', filterConfidenceMax);
     }
 
     // Every change also writes into the module-level cache so navigating
@@ -1879,6 +1922,46 @@ export async function renderGamePage(appId) {
     el.querySelector('#fSource')?.addEventListener('change', e => { filterSource = e.target.value; _cacheField('source', filterSource); _debugSnapshot('change fSource -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
     el.querySelector('#fDevice')?.addEventListener('change', e => { filterDevice = e.target.value; _cacheField('device', filterDevice); _debugSnapshot('change fDevice -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
     el.querySelector('#fPlaytime')?.addEventListener('change', e => { filterMinPlaytime = parseInt(e.target.value, 10) || 0; _cacheField('minPlaytime', filterMinPlaytime); _debugSnapshot('change fPlaytime -> ' + JSON.stringify(e.target.value)); _updateSaveButtonState(); refreshReports(); });
+    // Confidence range sliders: use 'input' so dragging updates live, not just
+    // on release. Each slider enforces the invariant that min <= max by nudging
+    // the other slider when the user crosses over. Value labels update inline
+    // even mid-drag; refreshReports() re-runs the report list against the new
+    // bounds. #445.
+    const _clampConfidence = (v) => Math.max(0, Math.min(100, parseInt(v, 10) || 0));
+    el.querySelector('#fConfidenceMin')?.addEventListener('input', e => {
+      filterConfidenceMin = _clampConfidence(e.target.value);
+      if (filterConfidenceMin > filterConfidenceMax) {
+        filterConfidenceMax = filterConfidenceMin;
+        const maxEl = document.getElementById('fConfidenceMax');
+        if (maxEl) maxEl.value = String(filterConfidenceMax);
+        _cacheField('confidenceMax', filterConfidenceMax);
+      }
+      const minLbl = document.getElementById('fConfidenceMinValue');
+      if (minLbl) minLbl.textContent = filterConfidenceMin + '%';
+      const maxLbl = document.getElementById('fConfidenceMaxValue');
+      if (maxLbl) maxLbl.textContent = filterConfidenceMax + '%';
+      _cacheField('confidenceMin', filterConfidenceMin);
+      _debugSnapshot('input fConfidenceMin -> ' + filterConfidenceMin);
+      _updateSaveButtonState();
+      refreshReports();
+    });
+    el.querySelector('#fConfidenceMax')?.addEventListener('input', e => {
+      filterConfidenceMax = _clampConfidence(e.target.value);
+      if (filterConfidenceMax < filterConfidenceMin) {
+        filterConfidenceMin = filterConfidenceMax;
+        const minEl = document.getElementById('fConfidenceMin');
+        if (minEl) minEl.value = String(filterConfidenceMin);
+        _cacheField('confidenceMin', filterConfidenceMin);
+      }
+      const minLbl = document.getElementById('fConfidenceMinValue');
+      if (minLbl) minLbl.textContent = filterConfidenceMin + '%';
+      const maxLbl = document.getElementById('fConfidenceMaxValue');
+      if (maxLbl) maxLbl.textContent = filterConfidenceMax + '%';
+      _cacheField('confidenceMax', filterConfidenceMax);
+      _debugSnapshot('input fConfidenceMax -> ' + filterConfidenceMax);
+      _updateSaveButtonState();
+      refreshReports();
+    });
 
     // Collapse: close the modal so the user sees the filtered reports. Uses
     // panelEl() so it finds the panel whether it is still in el or portalled
@@ -1934,6 +2017,8 @@ export async function renderGamePage(appId) {
       filterSource = '';
       filterDevice = '';
       filterMinPlaytime = 0;
+      filterConfidenceMin = 0;
+      filterConfidenceMax = 100;
       // Also wipe the module-level session cache so navigating to another
       // game page picks up the clear state, not the pre-clear filter set.
       if (_ephemeralGameFilters) {
@@ -1945,6 +2030,8 @@ export async function renderGamePage(appId) {
         _ephemeralGameFilters.source = '';
         _ephemeralGameFilters.device = '';
         _ephemeralGameFilters.minPlaytime = 0;
+        _ephemeralGameFilters.confidenceMin = 0;
+        _ephemeralGameFilters.confidenceMax = 100;
       }
       for (const id of ['fGpu', 'fArch', 'fOs', 'fRating', 'fRunType', 'fSource', 'fDevice']) {
         const s = document.getElementById(id);
@@ -1952,6 +2039,14 @@ export async function renderGamePage(appId) {
       }
       const p = document.getElementById('fPlaytime');
       if (p) p.value = '0';
+      const cmin = document.getElementById('fConfidenceMin');
+      if (cmin) cmin.value = '0';
+      const cmax = document.getElementById('fConfidenceMax');
+      if (cmax) cmax.value = '100';
+      const cminLbl = document.getElementById('fConfidenceMinValue');
+      if (cminLbl) cminLbl.textContent = '0%';
+      const cmaxLbl = document.getElementById('fConfidenceMaxValue');
+      if (cmaxLbl) cmaxLbl.textContent = '100%';
       _updateSaveButtonState();
       refreshReports();
     });
