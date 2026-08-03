@@ -122,6 +122,24 @@ jobs:
               echo "skipping $f (absent on live site or HTML fallback)"
             fi
           done
+          # coverage.html + data-index.html are the two pipeline-rendered HTML
+          # pages linked from the Browse nav (#447). They obviously start with
+          # '<' so the JSON preservation loop above rejects them. Fetch each
+          # separately and keep only if the <title> is NOT the marketing
+          # homepage fallback, which is how CF Pages responds when the file
+          # is missing. Without this the nav items land on the SPA fallback
+          # instead of the real report.
+          HTML_FILES=(coverage.html data-index.html)
+          for f in "${HTML_FILES[@]}"; do
+            if curl -sfL --max-time 30 "$LIVE_BASE/$f" -o "/tmp/shell-out/$f" \
+               && [ -s "/tmp/shell-out/$f" ] \
+               && ! grep -q '<title>Proton Pulse | Smart Proton Launch Configurations' "/tmp/shell-out/$f"; then
+              echo "preserved $f from $LIVE_BASE"
+            else
+              rm -f "/tmp/shell-out/$f"
+              echo "skipping $f (absent on live site or SPA marketing fallback)"
+            fi
+          done
           # Plugin-repo-sourced files that the FULL pipeline curls from
           # decky-proton-pulse. They may be absent on a fresh staging site
           # that has never run a full pipeline. Fetch them as a fallback so

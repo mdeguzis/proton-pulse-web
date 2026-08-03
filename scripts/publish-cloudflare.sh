@@ -42,6 +42,12 @@ DATA_BASE="${DATA_BASE:-https://data.proton-pulse.com}"
 # Top-level data files that ship WITH the shell on Pages (everything the site
 # fetches by a bare name, i.e. not under data/). Mirrors the gh-pages deploy's
 # optional-file list. data/ is deliberately excluded -- it goes to R2.
+#
+# coverage.html + data-index.html are pipeline-rendered top-level pages (linked
+# from the Browse nav dropdown). They are NOT in gh-pages-manifest.txt because
+# they do not exist in source -- finalize.py writes them straight into
+# OUTPUT_DIR. Ship them the same way as the JSON blobs so the nav items stop
+# falling back to the SPA marketing page on CF Pages (#447).
 SMALL_DATA=(
   search-index.json search-index-steam-extended.json most_played.json
   recent-reports.json stats.json coverage-summary.json data-versions.json
@@ -51,6 +57,7 @@ SMALL_DATA=(
   scoring-info.json form-schema.json app-id-redirects.json
   pcgamingwiki.json pcgwiki-catalog.json pcgw-id-map.json
   flightless-benchmarks.json flightless-review-queue.json
+  coverage.html data-index.html
 )
 
 log() { echo "[publish-cloudflare] $*"; }

@@ -141,6 +141,24 @@ describe('publish job wires the deploy correctly', () => {
     expect(RAW).toMatch(/head -c 1 .*grep -qv '<'/);
   });
 
+  test('coverage.html + data-index.html are preserved with a SPA-fallback title check (#447)', () => {
+    // These two pages are pipeline-rendered HTML, linked from the Browse nav.
+    // The JSON preservation loop rejects them because they start with '<'.
+    // The dedicated HTML loop uses a <title> check to reject the marketing
+    // homepage fallback that CF Pages serves when the file is missing --
+    // otherwise a shell push after a missed pipeline deploy would clobber
+    // real content with SPA HTML and hide the breakage until someone clicked
+    // the nav item and got the wrong page.
+    expect(RAW).toContain('HTML_FILES=(coverage.html data-index.html)');
+    expect(RAW).toMatch(/grep -q '<title>Proton Pulse \| Smart Proton Launch Configurations/);
+    // And the SMALL_DATA list in publish-cloudflare.sh must ship them out.
+    const cfSh = fs.readFileSync(
+      path.join(__dirname, '..', 'scripts', 'publish-cloudflare.sh'),
+      'utf8'
+    );
+    expect(cfSh).toMatch(/coverage\.html\s+data-index\.html/);
+  });
+
   test('cert-status.json + cert-history.json are handled via publish-cloudflare.sh', () => {
     // Those two files live under a separate script (preserve-cert-monitor.sh)
     // which publish-cloudflare.sh invokes internally -- so this workflow
