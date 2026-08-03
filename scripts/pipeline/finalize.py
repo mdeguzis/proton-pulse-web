@@ -66,6 +66,91 @@ from .stats import write_stats_json
 from .validate_app_ids import validate_steam_app_ids
 
 
+# CSS + JS the pipeline-generated top-level pages (data-index.html,
+# coverage.html) share with the rest of the site. Historically these pages
+# linked bare "site.css" + "topbar.js" at the repo root, which worked before
+# the CSS/JS reorg into css/shared/ + js/lib/. Post-reorg the requests 404
+# and CF Pages serves the SPA fallback -- pages render unstyled with no
+# topbar (#448). Keep this list in the same order as about.html so the
+# cascade matches every other page.
+_SHARED_CSS = (
+    "css/shared/base.css",
+    "css/shared/topbar.css",
+    "css/shared/site.css",
+    "css/shared/cards.css",
+)
+# Trailing scripts: topbar.js needs the ring buffer + analytics loaded first,
+# and the supabase client is a hard dep of the topbar user chip. Mirrors the
+# tail of about.html. No ?v= cache-bust suffix -- these pages are pipeline-
+# regenerated on every finalize, so a fresh file goes out the moment content
+# changes; source pages keep their cache-bust for editor-time churn.
+_SHARED_SCRIPTS = (
+    ('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/'
+     'dist/umd/supabase.min.js"></script>'),
+    '<script src="js/lib/supabase-client.js"></script>',
+    '<script type="module" src="js/lib/log-buffer.js"></script>',
+    '<script src="js/lib/analytics.js"></script>',
+    '<script src="js/lib/topbar.js"></script>',
+    '<script src="js/lib/toast.js"></script>',
+)
+# Same Content-Security-Policy the shipped HTML files declare. Pipeline pages
+# are same-origin and pull the same third-party CDN (Supabase) plus the same
+# image + connect origins, so they must inherit the same CSP or the browser
+# blocks their scripts.
+_SHARED_CSP = (
+    "default-src 'self'; "
+    "script-src 'self' https://static.cloudflareinsights.com 'unsafe-inline' "
+    "https://cdn.jsdelivr.net; "
+    "style-src 'self' 'unsafe-inline'; "
+    "img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com "
+    "https://cdn.cloudflare.steamstatic.com https://media.steampowered.com "
+    "https://*.gog.com https://*.gog-statics.com https://cdn.steamgriddb.com "
+    "https://cdn2.steamgriddb.com https://www.steamgriddb.com "
+    "https://images.pcgamingwiki.com https://cdn1.epicgames.com "
+    "https://cdn2.unrealengine.com data:; "
+    "connect-src 'self' https://cloudflareinsights.com "
+    "https://data.proton-pulse.com https://staging-data.proton-pulse.com "
+    "https://ilsgdshkaocrmibwdezk.supabase.co "
+    "https://pp-edge-status.mdeguzis.workers.dev; "
+    "font-src 'self'; frame-src 'none'; object-src 'none';"
+)
+
+
+def _pipeline_page_head(title: str, extra_style: str = "") -> list[str]:
+    """Return the standard <head> block for a pipeline-generated top-level HTML page.
+
+    Emits the same CSP + shared CSS + meta tags as about.html so the pages
+    inherit the site theme and security posture. extra_style is inlined into
+    the head so page-specific rules (table layouts, filter chrome) can live
+    next to the standard shell.
+    """
+    lines = [
+        "<!DOCTYPE html>",
+        '<html lang="en">',
+        "<head>",
+        '<meta charset="utf-8">',
+        f'<meta http-equiv="Content-Security-Policy" content="{_SHARED_CSP}">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        '<meta name="color-scheme" content="dark">',
+        f"<title>{title}</title>",
+    ]
+    for href in _SHARED_CSS:
+        lines.append(f'<link rel="stylesheet" href="{href}">')
+    if extra_style:
+        lines.append(f"<style>{extra_style}</style>")
+    lines.append("</head>")
+    return lines
+
+
+def _pipeline_page_scripts() -> list[str]:
+    """Return the trailing shared script tags for a pipeline-generated page.
+
+    Placed just before </body> so the topbar script fires after the DOM the
+    rest of the page has emitted -- same ordering as about.html.
+    """
+    return list(_SHARED_SCRIPTS)
+
+
 def log_summary(
     parsed_count: int,
     data_output_path: Path,
@@ -325,20 +410,8 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     .json-pane .tok-nl { color: var(--muted); }
 """
 
-    lines = [
-        "<!DOCTYPE html>",
-        '<html lang="en">',
-        "<head>",
-        '  <meta charset="utf-8">',
-        '  <meta name="viewport" content="width=device-width, initial-scale=1">',
-        '  <meta name="color-scheme" content="dark">',
-        "  <title>Data Index - Proton Pulse</title>",
-        '  <link rel="stylesheet" href="site.css">',
-        f'  <style>{page_style}</style>',
-        "</head>",
+    lines = _pipeline_page_head("Data Index - Proton Pulse", extra_style=page_style) + [
         "<body>",
-        # topbar.js injects the shared banner + nav at body start
-        '<script src="topbar.js"></script>',
         '<div class="main-content"><div class="main-inner">',
 
         # ── grid view ──
@@ -599,11 +672,9 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
   routeFromHash();
 })();
 </script>""",
-        '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>',
-        '<script src="supabase-client.js"></script>',
-        "</body>",
-        "</html>",
     ]
+    lines += _pipeline_page_scripts()
+    lines += ["</body>", "</html>"]
 
     index_file = output_path / "data-index.html"
     index_file.write_text("\n".join(lines) + "\n")
@@ -1478,50 +1549,42 @@ def generate_coverage_report(
             f'{1 if steam_catalog_hit else 0},"{" ".join(flags)}",{1 if indexed else 0}]'
         )
 
-    html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coverage Report - Proton Pulse</title>
-<meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="site.css">
-<style>
+    coverage_style = """
 /* coverage page only - table + stats layout that lives below the shared topbar */
-table {{ border-collapse: collapse; width: 100%; }}
-th, td {{ border: 1px solid var(--border); padding: 6px 10px; text-align: left; }}
-th {{ background: var(--s2); color: var(--text); cursor: pointer; user-select: none; position: relative; padding-right: 22px; transition: background .12s, color .12s; }}
-th:hover {{ background: var(--s3); color: var(--accent-hi); }}
-th::after {{ content: '\\2195'; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85em; opacity: 0.4; }}
-th.sort-asc::after {{ content: '\\25B2'; color: var(--accent); opacity: 1; }}
-th.sort-desc::after {{ content: '\\25BC'; color: var(--accent); opacity: 1; }}
-tr:nth-child(even) {{ background: var(--s1); }}
-tr:nth-child(odd) {{ background: rgba(0,0,0,0.1); }}
-.yes {{ color: var(--green-hi); font-weight: bold; }}
-.no {{ color: var(--muted); }}
-.stats {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 1.5em; }}
-@media (max-width: 1100px) {{ .stats {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} }}
-@media (max-width: 640px) {{ .stats {{ grid-template-columns: 1fr; }} }}
-.stat-card {{ background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45)); border: 1px solid var(--border); padding: 14px 18px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }}
-.stat-card .label {{ font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; }}
-.stat-card .value {{ font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--accent-hi); margin: 4px 0; text-shadow: 0 0 14px var(--accent-glow); }}
-.stat-card .detail {{ font-size: 0.78rem; color: var(--muted); }}
-.pct {{ color: var(--green-hi); }}
-.filters {{ margin-bottom: 1em; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }}
-#filter {{ padding: 8px 10px; width: 320px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); }}
-#filter:focus {{ border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }}
-.toggle {{ padding: 6px 14px; border: 1px solid var(--border2); background: transparent; color: var(--muted); cursor: pointer; font-weight: 600; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; transition: color .12s, border-color .12s, background .12s; }}
-.toggle:hover {{ color: var(--text); border-color: var(--accent); }}
-.toggle.active {{ background: var(--accent-soft); color: var(--accent-hi); border-color: var(--accent); }}
-.pager {{ margin: 1em 0; display: flex; gap: 8px; align-items: center; }}
-.pager button {{ padding: 6px 14px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); cursor: pointer; font-family: inherit; font-size: 0.82rem; }}
-.pager button:hover {{ background: var(--s2); border-color: var(--accent); }}
-.coverage-meta {{ color: var(--muted); margin-bottom: 1em; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; }}
-</style>
-</head>
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+th { background: var(--s2); color: var(--text); cursor: pointer; user-select: none; position: relative; padding-right: 22px; transition: background .12s, color .12s; }
+th:hover { background: var(--s3); color: var(--accent-hi); }
+th::after { content: '\\2195'; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85em; opacity: 0.4; }
+th.sort-asc::after { content: '\\25B2'; color: var(--accent); opacity: 1; }
+th.sort-desc::after { content: '\\25BC'; color: var(--accent); opacity: 1; }
+tr:nth-child(even) { background: var(--s1); }
+tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
+.yes { color: var(--green-hi); font-weight: bold; }
+.no { color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 1.5em; }
+@media (max-width: 1100px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .stats { grid-template-columns: 1fr; } }
+.stat-card { background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45)); border: 1px solid var(--border); padding: 14px 18px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }
+.stat-card .label { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; }
+.stat-card .value { font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--accent-hi); margin: 4px 0; text-shadow: 0 0 14px var(--accent-glow); }
+.stat-card .detail { font-size: 0.78rem; color: var(--muted); }
+.pct { color: var(--green-hi); }
+.filters { margin-bottom: 1em; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+#filter { padding: 8px 10px; width: 320px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); }
+#filter:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.toggle { padding: 6px 14px; border: 1px solid var(--border2); background: transparent; color: var(--muted); cursor: pointer; font-weight: 600; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; transition: color .12s, border-color .12s, background .12s; }
+.toggle:hover { color: var(--text); border-color: var(--accent); }
+.toggle.active { background: var(--accent-soft); color: var(--accent-hi); border-color: var(--accent); }
+.pager { margin: 1em 0; display: flex; gap: 8px; align-items: center; }
+.pager button { padding: 6px 14px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); cursor: pointer; font-family: inherit; font-size: 0.82rem; }
+.pager button:hover { background: var(--s2); border-color: var(--accent); }
+.coverage-meta { color: var(--muted); margin-bottom: 1em; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; }
+"""
+    head_html = "\n".join(_pipeline_page_head("Coverage Report - Proton Pulse", extra_style=coverage_style))
+    scripts_html = "\n".join(_pipeline_page_scripts())
+    html = f"""{head_html}
 <body>
-<!-- shared topbar (banner + nav + drawer) injected by topbar.js -->
-<script src="topbar.js"></script>
 <div class="main-content"><div class="main-inner">
 <h1 style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.02em;margin-bottom:0.4em">Coverage Report</h1>
 <p class="coverage-meta">// Generated: {now}</p>
@@ -1730,6 +1793,7 @@ apply(false);
 updateSortIndicator();
 </script>
 </div></div>
+{scripts_html}
 </body></html>
 """
     report_file = output_path / "coverage.html"
