@@ -8,7 +8,7 @@
 // goes through the steam-explore edge function because the stores are
 // CORS-blocked from the browser.
 
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { searchGames } from '../../app/api/search-games.js?v=0e14d3ff';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import { exploreStore } from '../api/steam-explore.js?v=17281b89';
 import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';
@@ -366,18 +366,6 @@ function _formatHopTrace(hops) {
   return lines.join('\n').trimEnd();
 }
 
-let _index = null;
-async function _loadIndex() {
-  if (_index) return _index;
-  try {
-    const r = await fetch(await dataUrl('search-index.json'));
-    _index = r.ok ? await r.json() : [];
-  } catch {
-    _index = [];
-  }
-  return _index;
-}
-
 // Resolve the input for the current store + endpoint arg. 'term' endpoints pass
 // the text straight through. 'id' endpoints take a numeric id, or a name that we
 // match against the search index (scoped to the store; GOG/Epic ids are stored
@@ -400,28 +388,15 @@ async function _resolveArg(store, endpointArg, input) {
     return { vanityurl: q };
   }
   if (/^\d+$/.test(q)) return { id: q };
-  const idx = await _loadIndex();
-  const ql = q.toLowerCase();
+  // #437: resolve the typed name to an appid via the search API's FTS (token
+  // matching, ranked) instead of loading the full search-index blob. ProtonDB
+  // + PCGamingWiki are keyed by Steam appid, so they search the Steam store.
   const prefix = store === 'gog' ? 'gog:' : store === 'epic' ? 'epic:' : '';
-  const inStore = (r) => {
-    if (!Array.isArray(r)) return false;
-    const sid = String(r[0]);
-    // ProtonDB (#280) + PCGamingWiki (#377) are both keyed by Steam appid,
-    // so a name-to-id resolve for those tabs walks the Steam entries.
-    if (store === 'steam' || store === 'protondb' || store === 'pcgamingwiki') {
-      return r[5] === 'steam' || /^\d+$/.test(sid);
-    }
-    return sid.startsWith(prefix);
-  };
-  const exact = idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase() === ql);
-  // Fallback tiers: full-phrase substring, then all-tokens-any-order so
-  // "riddick butcher" still resolves "The Chronicles of Riddick: Escape from
-  // Butcher Bay" (#405 follow-up: word-order-sensitive matching made the
-  // name-to-id resolve feel broken next to the Cargo LIKE endpoint).
-  const tokens = ql.split(/\s+/).filter(Boolean);
-  const match = exact
-    || idx.find((r) => inStore(r) && String(r[1] || '').toLowerCase().includes(ql))
-    || idx.find((r) => inStore(r) && tokens.every((t) => String(r[1] || '').toLowerCase().includes(t)));
+  const apiStore = (store === 'gog' || store === 'epic') ? store : 'steam';
+  const ql = q.toLowerCase();
+  const { results } = await searchGames(q, { store: apiStore, limit: 24 });
+  // Prefer an exact title match, else the top-ranked FTS hit.
+  const match = results.find((r) => String(r.title || '').toLowerCase() === ql) || results[0];
   if (!match) {
     // PCGW covers games with no Steam presence (delisted / GOG-only), which
     // the appid endpoint can never reach. Point at the title endpoint
@@ -431,9 +406,9 @@ async function _resolveArg(store, endpointArg, input) {
       : '';
     return { error: `No ${store} game matched "${q}".${hint}` };
   }
-  let id = String(match[0]);
+  let id = String(match.appId);
   if (prefix && id.startsWith(prefix)) id = id.slice(prefix.length);
-  return { id, title: String(match[1] || '') };
+  return { id, title: String(match.title || '') };
 }
 
 // #221: `canManageAdmins` gates the three keyed Steam Web API endpoints

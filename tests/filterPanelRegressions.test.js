@@ -83,22 +83,20 @@ describe('home (app.html browse) -- GOG/Epic store filter regression guards', ()
   // Bug: renderHomePage never called loadSearchIndex, so searchIndex stayed
   // null. Clicking GOG or Epic hit the wantNonSteamOnly path against a null
   // index and rendered no results. Lock in the preload.
-  test('renderHomePage preloads loadSearchIndex in its initial Promise.all', () => {
-    expect(homeSrc).toContain('loadSearchIndex().catch(() => null)');
-    // Must be inside the renderHomePage function, before applyPopularFilters
-    // gets a chance to read searchIndex. Cheap proxy: the call appears before
-    // the wantNonSteamOnly branch reads searchIndex.
-    const preloadIdx = homeSrc.indexOf('loadSearchIndex().catch(() => null)');
-    const readIdx = homeSrc.indexOf('asReports = (searchIndex || [])');
-    expect(preloadIdx).toBeGreaterThan(0);
-    expect(preloadIdx).toBeLessThan(readIdx);
+  test('renderHomePage batch-enriches the shown appids instead of preloading the blob (#437)', () => {
+    expect(homeSrc).toContain('await _loadEnrichment([');
+    expect(homeSrc).not.toContain('loadSearchIndex');
+    // Enrichment runs before the popular render reads the maps.
+    const enrichIdx = homeSrc.indexOf('await _loadEnrichment([');
+    const readIdx = homeSrc.indexOf('asReports = _homeNonSteamRows');
+    expect(enrichIdx).toBeGreaterThan(0);
+    expect(enrichIdx).toBeLessThan(readIdx);
   });
 
-  test('wantNonSteamOnly path reads row[5] (appType column) from searchIndex', () => {
-    // The pipeline writes [appId, title, tier, protondbCount, pulseCount, appType]
-    // -- column 5 is the store type ('steam'|'gog'|'epic'). If anyone reshapes
-    // the index they must also update this filter.
-    expect(homeSrc).toContain('.filter(row => row[5] && storeSel.has(row[5]))');
+  test('wantNonSteamOnly path reads appType from the browse cache rows (#437)', () => {
+    // browseGames rows carry .appType (source store); the filter keys off it.
+    expect(homeSrc).toContain('.filter(r => r.appType && storeSel.has(r.appType))');
+    expect(homeSrc).not.toContain('.filter(row => row[5] && storeSel.has(row[5]))');
   });
 });
 

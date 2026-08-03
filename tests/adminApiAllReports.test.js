@@ -129,16 +129,16 @@ describe('fetchAllReports fallback title repair (#147)', () => {
     jest.resetModules();
   });
 
-  test('"App <id>" titles get rewritten from search-index.json', async () => {
+  const SEARCH_API = 'https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/search-games';
+
+  test('"App <id>" titles get rewritten via the batch API', async () => {
     const { fetchAllReports: fresh } = require('../js/admin/api/allReports.js');
     global.fetch = makeFetchStub({
       'https://test.supabase.co/rest/v1/user_configs': [
         { id: 23, app_id: '2881370', title: 'App 2881370', is_flagged: false, is_hidden: false },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      'https://www.proton-pulse.com/search-index.json': [
-        ['2881370', 'Thank You For Your Application', '', 0, 0, 'steam'],
-      ],
+      [SEARCH_API]: { results: [{ appId: '2881370', title: 'Thank You For Your Application' }] },
     });
     const result = await fresh(makeSession(), { status: '' });
     expect(result[0].title).toBe('Thank You For Your Application');
@@ -151,13 +151,13 @@ describe('fetchAllReports fallback title repair (#147)', () => {
         { id: 1, app_id: '570', title: 'Dota 2', is_flagged: false, is_hidden: false },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      'https://www.proton-pulse.com/search-index.json': [['570', 'Dota: Other Name']],
+      [SEARCH_API]: { results: [{ appId: '570', title: 'Dota: Other Name' }] },
     });
     const result = await fresh(makeSession(), { status: '' });
     expect(result[0].title).toBe('Dota 2');
   });
 
-  test('all-real-titles skips the search-index fetch entirely', async () => {
+  test('all-real-titles skips the batch API entirely', async () => {
     const { fetchAllReports: fresh } = require('../js/admin/api/allReports.js');
     const fetchSpy = jest.fn(async (url) => {
       if (url.startsWith('https://test.supabase.co/rest/v1/user_configs')) {
@@ -169,20 +169,18 @@ describe('fetchAllReports fallback title repair (#147)', () => {
     });
     global.fetch = fetchSpy;
     await fresh(makeSession(), { status: '' });
-    const sawIndex = fetchSpy.mock.calls.some(
-      ([url]) => url === 'https://www.proton-pulse.com/search-index.json'
-    );
+    const sawIndex = fetchSpy.mock.calls.some(([url]) => url.startsWith(SEARCH_API));
     expect(sawIndex).toBe(false);
   });
 
-  test('rows with no matching index entry keep the fallback title', async () => {
+  test('rows with no matching batch entry keep the fallback title', async () => {
     const { fetchAllReports: fresh } = require('../js/admin/api/allReports.js');
     global.fetch = makeFetchStub({
       'https://test.supabase.co/rest/v1/user_configs': [
         { id: 1, app_id: '99999', title: 'App 99999', is_flagged: false, is_hidden: false },
       ],
       'https://test.supabase.co/rest/v1/report_approvals': [],
-      'https://www.proton-pulse.com/search-index.json': [['570', 'Dota 2']],
+      [SEARCH_API]: { results: [] },
     });
     const result = await fresh(makeSession(), { status: '' });
     expect(result[0].title).toBe('App 99999');

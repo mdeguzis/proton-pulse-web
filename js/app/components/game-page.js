@@ -14,11 +14,28 @@ import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
 import { renderCard } from './report-card.js?v=5e25c644';
-import { loadSearchIndex, searchIndex, loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=b5c03324';
-import { showAdultAllowed, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
+import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
+import { getGamesByIds } from '../api/search-games.js?v=0e14d3ff';
+
+// #437: the game page only ever needs ONE search-index row (the current game,
+// or a replaced-by target), so batch that id through the search-games API
+// instead of downloading the whole 11.8MB search-index.json blob and scanning
+// it. Memoized per id since several branches on the page resolve the same one.
+// The extended index (search-index-steam-extended.json) is a separate lazy
+// file and stays as the long-tail fallback.
+const _indexRowCache = new Map();
+async function _indexRowFor(id) {
+  const key = String(id);
+  if (_indexRowCache.has(key)) return _indexRowCache.get(key);
+  const byId = await getGamesByIds([key]);
+  const row = byId.get(key) || null;
+  _indexRowCache.set(key, row);
+  return row;
+}
+import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=ad2153bb';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=5adc7e54';
 import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=4630c3d5';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
@@ -254,10 +271,9 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
     ? `<div class="gm-chips">${items.map(i => `<span class="gm-chip">${esc(i)}</span>`).join('')}</div>`
     : '';
 
-  await loadSearchIndex();
-  const row = (searchIndex || []).find(r => String(r[0]) === String(appId)) || [];
-  const title = row[1] ? String(row[1]) : '';
-  const releaseYear = row[6] != null ? String(row[6]) : '';
+  const row = await _indexRowFor(appId);
+  const title = row?.title ? String(row.title) : '';
+  const releaseYear = row?.releaseYear != null ? String(row.releaseYear) : '';
 
   if (storeType === 'pgwiki') {
     let entry = null;
@@ -694,10 +710,9 @@ export async function renderGamePage(appId) {
   // instead of loading reports. The block page offers a one-click
   // reveal that turns the pref on and reloads.
   if (!showAdultAllowed()) {
-    await loadSearchIndex();
-    const entry = (searchIndex || []).find(row => String(row[0]) === String(appId));
-    if (entry && isAdultEntry(entry)) {
-      const title = String(entry[1] || `App ${appId}`).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+    const entry = await _indexRowFor(appId);
+    if (entry && entry.adult === true) {
+      const title = String(entry.title || `App ${appId}`).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
       el.innerHTML = `
         <div class="state-box" style="max-width:520px;margin:40px auto;text-align:center">
           <h2 style="margin-top:0">${title} is hidden</h2>
@@ -791,9 +806,8 @@ export async function renderGamePage(appId) {
   // Check if we at least know this game from the search-index (title available)
   // so we can show a stub state instead of the generic mirror-miss message.
   if (!reports.length && !configs.length && !liveSummary) {
-    await loadSearchIndex();
-    const stubHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
-    let stubTitle = stubHit?.[1];
+    const stubHit = await _indexRowFor(appId);
+    let stubTitle = stubHit?.title;
     if (!stubTitle) {
       const catalog = await _fetchSteamCatalog();
       stubTitle = catalog?.[String(appId)] || null;
@@ -863,9 +877,8 @@ export async function renderGamePage(appId) {
   //   4. steam-catalog lookup (covers live-only apps that are not in our
   //      search-index but still on Steam -- the #115 case)
   //   5. bare "App <id>" -- last resort when nothing else can resolve a name
-  await loadSearchIndex();
-  const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
-  let resolvedTitle = reports[0]?.title || configs[0]?.appName || indexHit?.[1];
+  const indexHit = await _indexRowFor(appId);
+  let resolvedTitle = reports[0]?.title || configs[0]?.appName || indexHit?.title;
   if (!resolvedTitle && /^\d+$/.test(String(appId))) {
     const catalog = await _fetchSteamCatalog();
     resolvedTitle = catalog?.[String(appId)] || null;
@@ -884,14 +897,14 @@ export async function renderGamePage(appId) {
   // pulled from the store. Reports remain valid (people still own it via
   // family share, backups, or regional accounts) -- we just flag it so the
   // visitor knows there is no Steam page to visit.
-  const isDelisted = !!indexHit?.[7];
+  const isDelisted = !!indexHit?.delisted;
   // Column 10 (added by game_images.py + enrich_search_index_with_delisted):
   // Steam replaced this appid with a newer one (e.g. 5488 -> 45700 for Devil
   // May Cry 4, Hitman 1/2 -> World of Assassination). Powers a banner + card
   // badge so users see the current appid and new submits land there instead.
-  const replacedBy = indexHit?.[10] ? String(indexHit[10]) : '';
+  const replacedBy = indexHit?.replacedBy ? String(indexHit.replacedBy) : '';
   const replacedByTitle = replacedBy
-    ? (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`
+    ? (await _indexRowFor(replacedBy))?.title || `App ${replacedBy}`
     : '';
   // Effective ProtonDB report count: MAX of mirrored count and live aggregate
   // (#219). ProtonDB's mirror often lags -- Hollow Knight has thousands of

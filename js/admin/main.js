@@ -16,16 +16,16 @@ import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=28cb0
 import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
 import { fetchAnalytics } from './api/analytics.js?v=2f32672f';
 import { renderSearchAnalytics } from './components/search-analytics.js?v=5f4fd969';
-import { renderAnalytics } from './components/analytics.js?v=f1e13b78';
+import { renderAnalytics } from './components/analytics.js?v=0cfa27af';
 import { renderCacheStatus } from './components/cache-status.js?v=0c6c0cb7';
 import { renderDepotTracking } from './components/depotTracking.js?v=8ce33fc6';
 import { renderBoxartAdmin, renderBoxartAdminDetail } from './components/boxart.js?v=10543db7';
-import { renderApiExplorer } from './components/api-explorer.js?v=1fc945bb';
-import { renderGameManager } from './components/gameManager.js?v=b1d1211c';
+import { renderApiExplorer } from './components/api-explorer.js?v=93bf51e6';
+import { renderGameManager } from './components/gameManager.js?v=74dfb888';
 import { renderLoggingTab } from './components/logging.js?v=ccf92cf8';
 import { renderDeploymentsTab } from './components/deployments.js?v=ce9fc002';
 import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=b70317a6';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=0f587828';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=b4e046fd';
 import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------

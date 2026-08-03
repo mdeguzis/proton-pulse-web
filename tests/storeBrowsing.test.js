@@ -62,10 +62,11 @@ describe('store filter group in the home Filters popover', () => {
     expect(homeSrc).toContain('tierSel.size + sourceSel.size + storeSel.size');
     expect(homeSrc).toContain('storeSel = new Set();');
   });
-  test('renderHomePage preloads the search index so GOG/Epic filters can pull stubs', () => {
-    // Without this, storeSel = Set(['gog'|'epic']) hits the wantNonSteamOnly
-    // path against a null searchIndex and renders no results.
-    expect(homeSrc).toContain('loadSearchIndex().catch(() => null)');
+  test('non-Steam store selection fetches its browse slice before rendering (#437)', () => {
+    // storeSel = Set(['gog'|'epic']) must pull the browse rows via the API so
+    // the wantNonSteamOnly path has data instead of scanning the full blob.
+    expect(homeSrc).toContain('await _ensureHomeNonSteam([...storeSel])');
+    expect(homeSrc).not.toContain('loadSearchIndex');
   });
 });
 
@@ -113,14 +114,22 @@ describe('non-Steam box art', () => {
   });
 });
 
-describe('search index loads from prod on staging', () => {
-  test('loadSearchIndex uses USES_PROD_DATA + SITE_ROOT, not a hardcoded host check', () => {
-    expect(searchSrc).toContain('USES_PROD_DATA');
-    // Routes through dataUrl() for cache-busting (#119). The prod URL is
-    // built from SITE_ROOT + the cache-busted filename, not a hardcoded
-    // host.
-    expect(searchSrc).toContain('SITE_ROOT');
-    expect(searchSrc).toMatch(/dataUrl\(['"]search-index\.json['"]\)/);
+describe('extended Steam index loads from prod on staging', () => {
+  // #437 removed the primary search-index.json blob loader (loadSearchIndex)
+  // once every consumer moved to the search-games edge fn. The lazy
+  // extended-Steam stub index is the only blob-style loader left in this
+  // file, and it must keep the same prod-fallback behavior so staging (which
+  // may not have run a pipeline) still resolves long-tail games.
+  test('loadExtendedSteamIndex routes through dataUrl + prod fallback, not a hardcoded host', () => {
+    expect(searchSrc).toContain('loadExtendedSteamIndex');
+    expect(searchSrc).toMatch(/dataUrl\(['"]search-index-steam-extended\.json['"]\)/);
+    expect(searchSrc).toContain('fetchDataWithProdFallback');
     expect(searchSrc).not.toContain("'https://www.proton-pulse.com/search-index.json'");
+  });
+  test('the primary search-index.json blob loader is gone (#437)', () => {
+    // Guard the migration: nothing in the app search module should fetch the
+    // 11.8MB primary blob anymore. Only the admin box-art tool may.
+    expect(searchSrc).not.toContain('function loadSearchIndex');
+    expect(searchSrc).not.toMatch(/dataUrl\(['"]search-index\.json['"]\)/);
   });
 });

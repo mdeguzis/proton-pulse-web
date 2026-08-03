@@ -1,10 +1,11 @@
 // Entry module for index.html (homepage). Migrated from index.js.
-import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=ad2153bb';
+import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=5adc7e54';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=ad4b114d';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
 import { filterDelisted } from '../lib/delisted-filter.js?v=42858e22';
-import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
+import { renderGameCard } from '../app/lib/card.js?v=db950b95';
+import { browseGames, getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -17,14 +18,14 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
   const root = document.getElementById('store-counts');
   if (!root) return;
   try {
-    const resp = await fetch(await dataUrl('search-index.json'));
-    if (!resp.ok) return;
-    const rows = await resp.json();
-    const counts = { steam: 0, gog: 0, epic: 0 };
-    for (const row of rows) {
-      const t = row[5];
-      if (t === 'steam' || t === 'gog' || t === 'epic') counts[t]++;
-    }
+    // #437: per-store totals via the browse API's exact count (limit 1, read
+    // total) instead of scanning the full 11.8MB search-index.json blob.
+    const [steam, gog, epic] = await Promise.all([
+      browseGames({ store: 'steam', limit: 1 }),
+      browseGames({ store: 'gog',   limit: 1 }),
+      browseGames({ store: 'epic',  limit: 1 }),
+    ]);
+    const counts = { steam: steam.total || 0, gog: gog.total || 0, epic: epic.total || 0 };
     const total = counts.steam + counts.gog + counts.epic;
     if (!total) return;
     document.getElementById('store-count-steam').textContent = counts.steam.toLocaleString();
@@ -79,27 +80,25 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
 
   let currentLayout = 'grid';
   let storeSel = new Set(['steam']); // multi-select store filter; defaults to Steam
-  let searchIndexCache = null;
   let steamPeakByTitle = new Map();
-  // appId -> trend direction ('improving'|'declining'). Built once search-index
-  // is available. Steam-only browse does not need the full index to render its
-  // list, but the trend column lives there, so we lazy-fetch and re-render when
-  // it lands (or, when already cached from a non-Steam filter, it's already in
-  // hand and the arrows show on the first paint).
+  // appId -> trend direction ('improving'|'declining'). #437: populated from
+  // the search-games API -- a batch call for the Steam most-played ids, plus
+  // whatever the non-Steam browse pages return -- instead of the full blob.
   let trendByAppId = new Map();
+  // #437: shaped non-Steam rows for the stores the user has selected, fetched
+  // via browseGames, plus per-store true totals for the rated/unrated chip
+  // counts. Bounded because the landing grid only ever shows the top slice.
+  const NONSTEAM_BROWSE_CAP = 500;
+  let nonSteamRows = [];
+  const nonSteamTotals = new Map();  // store -> true total (count=exact)
+  const _nonSteamFetched = new Set(); // stores already pulled, to avoid refetch
 
   function normTitle(s) {
     return String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   }
 
-  function _buildTrendMap() {
-    trendByAppId = new Map();
-    if (!Array.isArray(searchIndexCache)) return;
-    for (const row of searchIndexCache) {
-      if (!Array.isArray(row) || row.length < 10) continue;
-      const t = row[9];
-      if (t === 'improving' || t === 'declining') trendByAppId.set(String(row[0]), t);
-    }
+  function _addTrend(appId, trend) {
+    if (trend === 'improving' || trend === 'declining') trendByAppId.set(String(appId), trend);
   }
 
   function _lookupTrend(appId) {
@@ -107,16 +106,40 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
     return trendByAppId.get(String(appId)) || '';
   }
 
-  async function loadSearchIndex() {
-    if (searchIndexCache) return searchIndexCache;
-    try {
-      const resp = await fetch(await dataUrl('search-index.json'));
-      if (resp.ok) {
-        searchIndexCache = await resp.json();
-        _buildTrendMap();
+  // Trend arrows for the Steam cards. Their appids are known from
+  // most_played.json, so batch them (chunked by 500) rather than scanning the
+  // whole index.
+  async function _loadSteamTrend(appIds) {
+    const ids = [...new Set(appIds.filter(Boolean).map(String))];
+    for (let i = 0; i < ids.length; i += 500) {
+      const byId = await getGamesByIds(ids.slice(i, i + 500));
+      for (const r of byId.values()) _addTrend(r.appId, r.trend);
+    }
+  }
+
+  // Fetch the top slice of each selected non-Steam store via browseGames (0-count
+  // catalog games sort alphabetically, matching the old blob ordering), shaped
+  // into the same row objects the grid used from the index. Records the true
+  // per-store total for the chip counts and folds in any trend directions.
+  async function _ensureNonSteamData(stores) {
+    for (const store of stores.filter(s => s !== 'steam' && !_nonSteamFetched.has(s))) {
+      let offset = 0;
+      while (offset < NONSTEAM_BROWSE_CAP) {
+        const { results, total } = await browseGames({ store, sort: 'popular', limit: 100, offset });
+        nonSteamTotals.set(store, total);
+        for (const r of results) {
+          nonSteamRows.push({
+            appId: r.appId, title: r.title, rating: r.tier || '', appType: r.source,
+            protondbCount: r.protondbCount || 0, pulseCount: r.pulseCount || 0,
+            delisted: r.delisted === true,
+          });
+          _addTrend(r.appId, r.trend);
+        }
+        offset += 100;
+        if (results.length < 100) break;
       }
-    } catch (_) {}
-    return searchIndexCache || [];
+      _nonSteamFetched.add(store);
+    }
   }
 
   // #125: homepage cards render through the shared renderGameCard helper so the
@@ -148,14 +171,7 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
   // cards re-flowed into Steam-style vertical tiles by CSS).
 
   try {
-    // Kick off search-index in parallel so trend arrows are ready on the very
-    // first paint even when the user stays on Steam-only. loadSearchIndex
-    // itself no-ops when the cache is already populated (e.g. from a
-    // non-Steam filter earlier in the session).
-    const [resp] = await Promise.all([
-      fetch(await dataUrl('most_played.json')),
-      loadSearchIndex(),
-    ]);
+    const resp = await fetch(await dataUrl('most_played.json'));
     if (!resp.ok) {
       console.debug('[popular-games] most_played.json fetch not ok', { status: resp.status });
       return;
@@ -172,6 +188,12 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
     console.debug('[popular-games] loaded most_played.json', {
       total: games.length, rated: ratedGames.length, unrated: unratedGames.length, source: 'most_played.json',
     });
+
+    // #437: trend arrows for the Steam cards via the batch API, and the
+    // non-Steam slice if a non-Steam store is already selected. Awaited so the
+    // first paint has arrows + counts, matching the old parallel-blob timing.
+    await _loadSteamTrend(games.map(g => g.appId));
+    await _ensureNonSteamData(effectiveStores());
 
     section.hidden = false;
 
@@ -214,14 +236,9 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
       }
       const nonSteam = stores.filter(s => s !== 'steam');
       if (nonSteam.length) {
-        const rows = (searchIndexCache || [])
-          .filter(row => nonSteam.includes(row[5]))
-          .filter(row => ratingPasses(KNOWN_TIERS.has(String(row[2] || '').toLowerCase())))
-          .map(row => ({
-            appId: row[0], title: row[1], rating: row[2] || '', appType: row[5],
-            protondbCount: row[3] || 0, pulseCount: row[4] || 0,
-            delisted: row[7] === true,
-          }));
+        const rows = nonSteamRows
+          .filter(r => nonSteam.includes(r.appType))
+          .filter(r => ratingPasses(KNOWN_TIERS.has(String(r.rating || '').toLowerCase())));
         out.push(...rows);
       }
       // Rank the merged list: Steam peak-player rank first, then report count,
@@ -239,16 +256,20 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
       const stores = effectiveStores();
       let rated = 0, unrated = 0;
       if (stores.includes('steam')) { rated += ratedGames.length; unrated += unratedGames.length; }
+      // #437: non-Steam counts come from the browse true total per store. Rated
+      // non-Steam games (report count > 0) sort first in the fetched slice, so
+      // any that exist are already counted in nonSteamRows; the rest of the
+      // store total is unrated.
       const nonSteam = stores.filter(s => s !== 'steam');
-      if (nonSteam.length && searchIndexCache) {
-        for (const row of searchIndexCache) {
-          if (!nonSteam.includes(row[5])) continue;
-          if (KNOWN_TIERS.has(String(row[2] || '').toLowerCase())) rated++; else unrated++;
-        }
+      for (const s of nonSteam) {
+        const total = nonSteamTotals.get(s) || 0;
+        const fetchedRated = nonSteamRows.filter(r => r.appType === s && KNOWN_TIERS.has(String(r.rating || '').toLowerCase())).length;
+        rated += fetchedRated;
+        unrated += Math.max(0, total - fetchedRated);
       }
       if (ratedCountEl) ratedCountEl.textContent = String(rated);
       if (unratedCountEl) unratedCountEl.textContent = String(unrated);
-      console.debug('[popular-games] rating counts updated', { stores, rated, unrated, source: nonSteam.length ? 'most_played+search-index' : 'most_played' });
+      console.debug('[popular-games] rating counts updated', { stores, rated, unrated, source: nonSteam.length ? 'most_played+browse-api' : 'most_played' });
     }
 
     function renderPopular() {
@@ -380,10 +401,10 @@ import { renderGameCard } from '../app/lib/card.js?v=41dcabfc';
         b.classList.toggle('pg-filter--active', v === 'all' ? allActive : storeSel.has(v));
       });
       syncSectionLabel();
-      if (effectiveStores().some(s => s !== 'steam') && !searchIndexCache) {
+      if (effectiveStores().some(s => s !== 'steam')) {
         list.innerHTML = '<div class="pg-empty">Loading...</div>';
-        await loadSearchIndex();
-        console.debug('[popular-games] search-index loaded', { stores: effectiveStores(), entries: (searchIndexCache || []).length });
+        await _ensureNonSteamData(effectiveStores());
+        console.debug('[popular-games] non-steam data loaded', { stores: effectiveStores(), rows: nonSteamRows.length });
       }
       updateRatingCounts();
       updateFilterBadge();

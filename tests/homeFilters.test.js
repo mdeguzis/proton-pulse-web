@@ -97,10 +97,12 @@ describe('home page popular section -- store-aware label and pool', () => {
     expect(homeSrc).toContain('labelEl.textContent = _popularSectionLabel(storeSel)');
   });
 
-  test('non-Steam-only store selection pulls from searchIndex stubs', () => {
+  test('non-Steam-only store selection pulls from the browse cache (#437)', () => {
     expect(homeSrc).toContain("const wantNonSteamOnly = storeSel.size > 0 && !storeSel.has('all') && !storeSel.has('steam')");
-    expect(homeSrc).toContain('(searchIndex || [])');
-    expect(homeSrc).toContain('.filter(row => row[5] && storeSel.has(row[5]))');
+    // Rows now come from the browseGames-populated cache, not a blob scan.
+    expect(homeSrc).toContain('asReports = _homeNonSteamRows');
+    expect(homeSrc).toContain('.filter(r => r.appType && storeSel.has(r.appType))');
+    expect(homeSrc).not.toContain('.filter(row => row[5] && storeSel.has(row[5]))');
   });
 
   test('Steam/all path still uses wantUnrated and unratedGames for tier compat', () => {

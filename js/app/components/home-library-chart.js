@@ -4,7 +4,24 @@
 // Steam Machine / SteamOS compatibility breakdowns of the library.
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
-import { loadSearchIndex, searchIndex } from './search.js?v=b5c03324';
+import { getGamesByIds } from '../api/search-games.js?v=0e14d3ff';
+
+// #437: tier rows for just the owned / wishlist ids via the batch API, in
+// place of the whole 11.8MB search-index.json blob. Chunked by 500 (the batch
+// endpoint cap) so a large Steam library still resolves. Shaped back into the
+// [appId, title, tier] array rows computeLibraryTierCounts already expects, so
+// that helper and its tests stay unchanged. Device views (deck/machine/frame)
+// read deckMap, not tiers, so they skip the fetch entirely.
+async function _tierRowsFor(view, appIds) {
+  if (DEVICE[view] || !appIds || appIds.size === 0) return [];
+  const ids = [...appIds];
+  const rows = [];
+  for (let i = 0; i < ids.length; i += 500) {
+    const byId = await getGamesByIds(ids.slice(i, i + 500));
+    for (const r of byId.values()) rows.push([r.appId, r.title, r.tier]);
+  }
+  return rows;
+}
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=a75604f5';
 import { esc } from '../utils.js?v=4630c3d5';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=0bbdc652';
@@ -151,7 +168,7 @@ function _rowHref(view, bucket) {
   return `app.html?filter=${scope}&tier=${encodeURIComponent(bucket)}&view=${view}`;
 }
 
-function _renderChartHtml(view, appIds, deckMap) {
+function _renderChartHtml(view, appIds, deckMap, tierRows) {
   const copy = _copyFor(view);
   const chipsHtml = _renderChipsHtml(view);
   const deviceClass = DEVICE[view] ? ' home-library-chart--device' : '';
@@ -184,7 +201,7 @@ function _renderChartHtml(view, appIds, deckMap) {
       return _bar(cfg.label[k], bg, fg, pct, n, n > 0 ? _rowHref(view, k) : null);
     }).join('');
   } else {
-    const counts = computeLibraryTierCounts(appIds, searchIndex);
+    const counts = computeLibraryTierCounts(appIds, tierRows || []);
     const rated = TIER_ORDER.reduce((sum, t) => sum + (counts[t] || 0), 0);
     const maxBar = Math.max(1, ...TIER_ORDER.map((t) => counts[t] || 0));
     subtitle = `${rated.toLocaleString()} of ${total.toLocaleString()} ${esc(copy.noun)} games have compatibility data.`;
@@ -250,7 +267,6 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
     }
     useSavedLookup = true;
   }
-  await loadSearchIndex().catch(() => null);
   // Nav-driven override maps the ?filter= hint into the view chip.
   let view = preferredSource === 'library' || preferredSource === 'wishlist'
     ? preferredSource
@@ -260,7 +276,8 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
     _fetchAppIds(view, { useSavedLookup }),
     loadDeckStatusMap().catch(() => ({})),
   ]);
-  mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap);
+  let tierRows = await _tierRowsFor(view, appIds);
+  mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap, tierRows);
   mountEl.addEventListener('click', async (e) => {
     const btn = e.target.closest('.hlc-chip');
     if (!btn) return;
@@ -271,6 +288,7 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
     const busy = mountEl.querySelector('.hlc-bars, .hlc-empty-body');
     if (busy) busy.style.opacity = '0.4';
     appIds = await _fetchAppIds(view, { useSavedLookup });
-    mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap);
+    tierRows = await _tierRowsFor(view, appIds);
+    mountEl.innerHTML = _renderChartHtml(view, appIds, deckMap, tierRows);
   });
 }

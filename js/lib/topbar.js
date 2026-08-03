@@ -794,13 +794,34 @@
 
   function wireDropdowns() {
     const dropdowns = document.querySelectorAll('.nav-dropdown');
+    // #439: on a device with hover (desktop mouse), the panels are hover-only.
+    // A click must NOT pin them: the CSS opens on :hover, :focus-within AND
+    // .is-open, so a mouse click otherwise sticks the panel open two ways (the
+    // .is-open class plus the focus the click leaves behind). Only touch, which
+    // has no hover, still needs click to open.
+    const canHover = !!(window.matchMedia && window.matchMedia('(hover: hover)').matches);
+    function closeAll() {
+      dropdowns.forEach(function (dd) {
+        dd.classList.remove('is-open');
+        const t = dd.querySelector('.nav-dropdown-toggle');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
     dropdowns.forEach(function (dd) {
       const toggle = dd.querySelector('.nav-dropdown-toggle');
       if (!toggle) return;
       toggle.addEventListener('click', function (e) {
         e.preventDefault();
+        if (canHover) {
+          // Desktop: hover is the only open affordance. Drop any pin + the
+          // click-focus so the panel closes the moment the pointer leaves.
+          // Keyboard users still get :focus-within by tabbing (no click fires).
+          closeAll();
+          toggle.blur();
+          return;
+        }
+        // Touch: no hover, so click toggles the panel.
         const wasOpen = dd.classList.contains('is-open');
-        // close any other open dropdown first
         dropdowns.forEach(function (other) {
           if (other !== dd) other.classList.remove('is-open');
         });

@@ -329,8 +329,13 @@
   line-height: 1;
 }
 .game-card-trend svg { width: 12px; height: 12px; }
-.game-card-trend--improving { color: #3aaa5b; }
-.game-card-trend--declining { color: #d9534f; }
+/* Improving uses the Steam Verified green (#51ae40, same green as the
+   Verified badge). Declining uses a red-leaning Steam orange (#e0652b) that
+   stays distinct from the gold tier bar and pops on the dark strips. Both
+   read as good / bad at a glance, and neither collides with a tier color
+   (no green tier; the gold tier is a softer yellow-gold, not this orange). */
+.game-card-trend--improving { color: #51ae40; }
+.game-card-trend--declining { color: #e0652b; }
 /* Site preference: hide the arrow entirely when the user turned it off. */
 [data-trend-arrow="off"] .game-card-trend { display: none; }
 
@@ -545,11 +550,27 @@
 [data-card-layout="strip"] .game-card-strip[data-tier="bronze"]   { background: linear-gradient(90deg, #b07d4f, #cf9e6f); color: #0a0c10; }
 [data-card-layout="strip"] .game-card-strip[data-tier="borked"]   { background: linear-gradient(90deg, #884444, #b25555); color: #fff; }
 [data-card-layout="strip"] .game-card-strip-tier {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
+}
+/* The trend arrow nested in the tier label scales with the tier text (1em)
+   so the triangle stands as tall as the GOLD / SILVER caps beside it instead
+   of a tiny fixed-px speck. Container hugs the glyph (auto, not the 18px
+   pills-row box) and a hair of negative top keeps it optically centered. */
+[data-card-layout="strip"] .game-card-strip-tier .game-card-trend {
+  width: auto;
+  height: auto;
+  margin-top: -1px;
+}
+[data-card-layout="strip"] .game-card-strip-tier .game-card-trend svg {
+  width: 1.2em;
+  height: 1.2em;
 }
 [data-card-layout="strip"] .game-card-strip .game-card-store-pill {
   /* Knock the store pill darker so it reads as a chip on top of the
@@ -594,17 +615,23 @@
   width: 16px;
   height: 16px;
 }
-/* Text mode: the store label gets a brand-colored pill so it stays
-   readable against any tier strip color. */
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip-store > .store-text {
+/* Text mode: the WHOLE strip-store span becomes the brand-colored pill so
+   the library / wishlist owner badges (and the delisted chip) ride INSIDE
+   it, right next to the store label, the same way they do in every other
+   placement. Before, only the .store-text child got the pill, so the owner
+   icons sat on the bare tier strip to the left of the pill and read as
+   detached. Scoped with :not(icon) so icon mode keeps its transparent
+   parent and just shows the round brand glyph. */
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip-store {
   padding: 2px 8px;
   border-radius: 999px;
   color: #fff;
   line-height: 1.4;
+  gap: 2px;
 }
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="steam"] .game-card-strip-store > .store-text { background: #1689d0; }
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="gog"]   .game-card-strip-store > .store-text { background: #7a3fcf; }
-[data-card-layout="strip"][data-store-pill-pos="bar-inline"] .game-card-strip[data-store="epic"]  .game-card-strip-store > .store-text { background: #2a2a2a; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip[data-store="steam"] .game-card-strip-store { background: #1689d0; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip[data-store="gog"]   .game-card-strip-store { background: #7a3fcf; }
+[data-card-layout="strip"][data-store-pill-pos="bar-inline"]:not([data-store-display="icon"]) .game-card-strip[data-store="epic"]  .game-card-strip-store { background: #2a2a2a; }
 .load-more-btn {
   display: block;
   margin: 12px auto 0;

@@ -14,7 +14,7 @@ describe('game-stats page: ProtonDB live summary integration (#219)', () => {
   });
 
   test('run() fetches the live summary in parallel with mirror data', () => {
-    expect(src).toMatch(/const \[cdnReports, searchIndex, pulseReports, configs, liveSummary, flightlessEntry\] = await Promise\.all\(\[/);
+    expect(src).toMatch(/const \[cdnReports, idxRow, pulseReports, configs, liveSummary, flightlessEntry\] = await Promise\.all\(\[/);
     expect(src).toMatch(/loadProtonDbLive\(appId\),?/);
   });
 
@@ -42,8 +42,10 @@ describe('game-stats page: data loaders route through dataUrl (#380/#361)', () =
     expect(src).toMatch(/await\s+dataUrl\(`data\/\$\{appIdToDir\(appId\)\}\/latest\.json`\)/);
   });
 
-  test('loadSearchIndex + loadFlightlessEntry also route through dataUrl', () => {
-    expect(src).toMatch(/await\s+dataUrl\('search-index\.json'\)/);
+  test('title comes from the batch API and loadFlightlessEntry routes through dataUrl', () => {
+    // #437: the game title no longer pulls the full search-index.json blob.
+    expect(src).toMatch(/getGamesByIds\(\[appId\]\)/);
+    expect(src).not.toMatch(/dataUrl\('search-index\.json'\)/);
     expect(src).toMatch(/await\s+dataUrl\('flightless-benchmarks\.json'\)/);
   });
 

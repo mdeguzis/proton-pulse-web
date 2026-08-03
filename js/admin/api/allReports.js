@@ -1,5 +1,6 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=2668b2f0';
+import { getGamesByIds } from '../../app/api/search-games.js?v=0e14d3ff';
 
 // #48: flagged_reason on rows so the All Reports table can surface why a
 // row was flagged. flagged_at on detail to show when the flag landed.
@@ -103,35 +104,10 @@ export async function fetchAllReports(session, { search = '', status = 'clean', 
 }
 
 // Title was stored as the fallback "App <id>" (or empty) at submit time
-// because the resolver could not find the app yet. Patch in-memory from
-// search-index.json so the table cell shows the real game name. Cached
-// behind a module-level promise so repeat fetches are free.
-let _searchIndexPromise = null;
-function _loadSearchIndexForTitles() {
-  if (!_searchIndexPromise) {
-    // Safe under tests where location is not defined. In a browser the
-    // hostname check picks the prod CDN when we are on localhost/gh-io
-    // staging.
-    const host = (typeof location !== 'undefined' && location.hostname) || '';
-    const url = /^localhost|\.github\.io$/.test(host)
-      ? 'https://www.proton-pulse.com/search-index.json'
-      : '/search-index.json';
-    _searchIndexPromise = fetch(url)
-      .then(r => r.ok ? r.json() : [])
-      .then(entries => {
-        const map = new Map();
-        if (Array.isArray(entries)) {
-          for (const e of entries) {
-            if (Array.isArray(e) && e[0] != null && e[1]) map.set(String(e[0]), e[1]);
-          }
-        }
-        return map;
-      })
-      .catch(() => new Map());
-  }
-  return _searchIndexPromise;
-}
-
+// because the resolver could not find the app yet. Patch in-memory via the
+// search-games batch API (#437) so the table cell shows the real game name.
+// Only the ids that actually need a title are fetched, instead of pulling the
+// whole 11.8MB search-index.json blob.
 function _isFallbackTitle(t, appId) {
   if (!t) return true;
   if (t === String(appId)) return true;
@@ -141,10 +117,10 @@ function _isFallbackTitle(t, appId) {
 async function resolveFallbackTitles(rows) {
   const needs = rows.filter(r => _isFallbackTitle(r.title, r.app_id));
   if (!needs.length) return;
-  const map = await _loadSearchIndexForTitles();
+  const byId = await getGamesByIds(needs.map(r => r.app_id));
   for (const r of needs) {
-    const real = map.get(String(r.app_id));
-    if (real) r.title = real;
+    const row = byId.get(String(r.app_id));
+    if (row && row.title) r.title = row.title;
   }
 }
 

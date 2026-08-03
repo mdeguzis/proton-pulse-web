@@ -8,6 +8,7 @@ import {
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { esc } from '../app/utils.js?v=4630c3d5';
+import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
 
 (async function() {
   const params = new URLSearchParams(window.location.search);
@@ -59,22 +60,20 @@ import { esc } from '../app/utils.js?v=4630c3d5';
   backLink.href = `app.html#/app/${appId}`;
 
   let title = titleParam;
-  // Search-index lookup: always run so we can also read column 10
-  // (replaced_by) for the warning banner, not just fall back for missing
-  // titles. Cached to a shared variable so the replaced_by check reuses it.
-  let searchIndex = null;
-  let indexHit = null;
-  try {
-    const searchUrl = /^localhost/.test(location.host)
-      ? 'https://www.proton-pulse.com/search-index.json'
-      : 'search-index.json';
-    const resp = await fetch(searchUrl);
-    if (resp.ok) {
-      searchIndex = await resp.json();
-      indexHit = Array.isArray(searchIndex) && searchIndex.find(row => String(row[0]) === String(appId));
-      if (!title && indexHit) title = indexHit[1] || '';
-    }
-  } catch {}
+  // #437: resolve the game's own row through the batch search API instead of
+  // downloading the whole 11.8MB search-index.json blob just to read one
+  // title + the replaced_by column. The batch endpoint is keyed by Steam
+  // appid, which is also the only place replaced_by is meaningful (it's a
+  // Steam-catalog supersede). Non-Steam ids (gog:/epic:/pgwiki:) skip the
+  // call and rely on the title URL param + the latest.json fallback below.
+  let indexRow = null;
+  if (/^\d+$/.test(String(appId))) {
+    try {
+      const byId = await getGamesByIds([appId]);
+      indexRow = byId.get(String(appId)) || null;
+      if (!title && indexRow) title = indexRow.title || '';
+    } catch {}
+  }
   if (!title) {
     if (!title) {
       // Last-ditch: per-app data file. Use latest.json (real path) rather
@@ -128,12 +127,19 @@ import { esc } from '../app/utils.js?v=4630c3d5';
   }
 
   // Replaced-by warning banner: if this appid was superseded by a newer one
-  // (search-index column 10, populated by game_images.py), tell the user their
+  // (replaced_by field, populated by game_images.py), tell the user their
   // report will land on an old build. Renders above the form so they see it
-  // before answering anything. (#199 follow-up)
-  const replacedBy = indexHit && indexHit[10] ? String(indexHit[10]) : '';
+  // before answering anything. (#199 follow-up). #437: the replaced-by title
+  // is resolved with a second batch call rather than a blob scan.
+  const replacedBy = indexRow && indexRow.replacedBy ? String(indexRow.replacedBy) : '';
   if (replacedBy) {
-    const replacedTitle = (searchIndex || []).find(row => String(row[0]) === replacedBy)?.[1] || `App ${replacedBy}`;
+    let replacedTitle = `App ${replacedBy}`;
+    if (/^\d+$/.test(replacedBy)) {
+      try {
+        const byId = await getGamesByIds([replacedBy]);
+        replacedTitle = byId.get(replacedBy)?.title || replacedTitle;
+      } catch {}
+    }
     const holder = document.querySelector('.main-inner');
     const formHost = document.getElementById('submit-form-content');
     if (holder && formHost) {

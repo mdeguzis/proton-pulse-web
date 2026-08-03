@@ -9,6 +9,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 // page's data loading so the two surfaces can never diverge again.
 import { computeConfidence } from '../lib/scoring/gameStats.js?v=6a63af50';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
+import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
 import { fetchProtonDbLive } from '../app/api/protondb.js?v=65bc2638';
 import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
 import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
@@ -935,13 +936,6 @@ import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
     return [];
   }
 
-  async function loadSearchIndexLocal() {
-    try {
-      const r = await fetch(await dataUrl('search-index.json'));
-      return r.ok ? await r.json() : [];
-    } catch { return []; }
-  }
-
   async function run() {
     const params = new URLSearchParams(location.search);
     const appId = params.get('app');
@@ -969,11 +963,12 @@ import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
     // aggregate view previously computed from CDN reports alone, which is
     // why it disagreed with the game-page headline. Native + live loads are
     // best-effort: on failure the breakdown still renders from CDN data.
-    const [cdnReports, nativeReports, liveFetched, searchIndex, scoringData] = await Promise.all([
+    const [cdnReports, nativeReports, liveFetched, indexHit, scoringData] = await Promise.all([
       loadGame(appId, reportYear),
       wantsPerReport ? Promise.resolve([]) : fetchNativeReports(appId).catch(() => []),
       wantsPerReport ? Promise.resolve([]) : fetchProtonDbLive(appId).catch(() => []),
-      loadSearchIndexLocal(),
+      // #437: one id via the batch API instead of the 11.8MB blob.
+      getGamesByIds([appId]).then(m => m.get(String(appId)) || null),
       wantsPerReport ? loadScoringInfo() : Promise.resolve(null),
     ]);
     const liveSummary = (liveFetched || []).find(r => r._liveOnly) || null;
@@ -989,8 +984,7 @@ import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
     const reports = wantsPerReport
       ? cdnReports
       : mergeReportsById(cdnReports, nativeReports || []);
-    const indexHit = (searchIndex || []).find(row => String(row[0]) === String(appId));
-    const gameTitle = reports[0]?.title || indexHit?.[1] || `App ${appId}`;
+    const gameTitle = reports[0]?.title || indexHit?.title || `App ${appId}`;
 
     // Tag the meta line based on whether we're using saved or preview hw
     const hwLabel = isPreviewHardware(myHw)

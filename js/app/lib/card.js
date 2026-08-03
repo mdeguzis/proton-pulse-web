@@ -2,7 +2,7 @@
 // thumbnail | title + sub | badge card layout used everywhere.
 import { STEAM_IMG } from '../config.js?v=a75604f5';
 import { esc } from '../utils.js?v=4630c3d5';
-import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=ad2153bb';
+import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=5adc7e54';
 
 const TIER_COLORS = {
   platinum: { bg: '#b4c7dc', color: '#0a0c10' },
@@ -109,10 +109,19 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // insufficient are absent by design so a card stays quiet when nothing has
   // changed. aria-label carries the plain-English direction for AT users.
   const trendKey = trend === 'improving' || trend === 'declining' ? trend : '';
+  // Simple up / down triangle. Colors carry the meaning: improving is the
+  // Steam Verified green, declining is a Steam orange (set on
+  // .game-card-trend--* in cards.css via currentColor).
+  // Triangle fills most of the 12x12 viewBox (y 1..11) so, sized in em, it
+  // reads as tall as the tier caps it sits beside. A thin dark outline keeps
+  // it distinct on the light gold / silver tier bars where the green / orange
+  // fill would otherwise wash out; on the dark strips the outline just blends
+  // and the fill carries the color. stroke-width 0.8 in a 12-unit box stays
+  // inside the viewBox so nothing clips.
   const trendGlyph = trendKey === 'improving'
-    ? '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 2 L10 8 L2 8 Z" fill="currentColor"/></svg>'
+    ? '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1 L11 11 L1 11 Z" fill="currentColor" stroke="#1b2838" stroke-width="0.8" stroke-linejoin="round"/></svg>'
     : trendKey === 'declining'
-      ? '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 10 L10 4 L2 4 Z" fill="currentColor"/></svg>'
+      ? '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 11 L11 1 L1 1 Z" fill="currentColor" stroke="#1b2838" stroke-width="0.8" stroke-linejoin="round"/></svg>'
       : '';
   const trendLabel = trendKey === 'improving'
     ? 'Compatibility trending up'
@@ -140,7 +149,12 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const stripStoreHtml = storePill
     ? `<span class="game-card-strip-store store-icon store-icon--${storeKey}">${delistedChip}${ownerBadgesHtml}<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg><span class="store-text">${esc(storePill)}</span></span>`
     : '';
-  const stripHtml = `<div class="game-card-strip" data-tier="${esc(stripTier)}" data-store="${storeKey}"><span class="game-card-strip-tier">${esc(stripLabel)}</span>${storePillHtml}${stripStoreHtml}</div>`;
+  // The trend arrow rides INSIDE the tier label in the strip. The pills-row
+  // copy above only shows in the 'right' card layout; in strip layout (the
+  // default) the whole right column is display:none, so without this the
+  // arrow never rendered. Nesting it in the tier span (rather than as a
+  // sibling) keeps the bar-segment 2-column grid intact.
+  const stripHtml = `<div class="game-card-strip" data-tier="${esc(stripTier)}" data-store="${storeKey}"><span class="game-card-strip-tier">${esc(stripLabel)}${trendHtml}</span>${storePillHtml}${stripStoreHtml}</div>`;
 
   // Card-level corner tag for the 'art-corner' placement. Direct child of
   // <a class="game-card"> so absolute positioning anchors to the card's

@@ -84,4 +84,21 @@ describe('about.html framing (#324)', () => {
     expect(ABOUT).toMatch(/id="compare"/);
     expect(ABOUT).toMatch(/Proton Pulse vs ProtonDB/);
   });
+
+  test('icons legend documents the trend arrows with their card colors', () => {
+    // The up/down trend triangle on cards needs a legend entry or users
+    // have no idea what the little colored triangle means. Colors must
+    // match card.js / cards.css: Steam Verified green up, Steam orange down.
+    const legend = ABOUT.match(/id="icons-signage"[\s\S]*?<div class="section-label" id="compare"/);
+    expect(legend).toBeTruthy();
+    const body = legend[0];
+    expect(body).toContain('Compatibility trend');
+    expect(body).toContain('Trending up');
+    expect(body).toContain('Trending down');
+    // the actual triangle glyphs, colored to match the card
+    expect(body).toContain('M6 1 L11 11 L1 11 Z" fill="#51ae40"');
+    expect(body).toContain('M6 11 L11 1 L1 1 Z" fill="#e0652b"');
+    // and the explanation names the 90-day comparison window
+    expect(body).toMatch(/90 to 270 days/);
+  });
 });
