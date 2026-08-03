@@ -38,4 +38,9 @@ describe('trend arrow site pref', () => {
   test('cards.css hides .game-card-trend when data-trend-arrow="off"', () => {
     expect(CARDS_CSS).toMatch(/\[data-trend-arrow="off"\] \.game-card-trend \{ display: none/);
   });
+
+  test('trend arrows: Steam Verified green up, Steam orange down', () => {
+    expect(CARDS_CSS).toMatch(/\.game-card-trend--improving \{ color: #51ae40; \}/);
+    expect(CARDS_CSS).toMatch(/\.game-card-trend--declining \{ color: #e0652b; \}/);
+  });
 });

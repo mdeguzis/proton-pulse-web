@@ -116,6 +116,30 @@ describe('renderGameCard trend arrow', () => {
     expect(pills).toContain('game-card-trend--improving');
   });
 
+  test('the trend glyph is an up / down triangle', () => {
+    const up = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', trend: 'improving' });
+    const down = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'gold', trend: 'declining' });
+    expect(up).toContain('fill="currentColor"');
+    expect(up).toContain('M6 1 L11 11 L1 11 Z');   // up triangle, fills the viewBox
+    expect(down).toContain('M6 11 L11 1 L1 1 Z');  // down triangle, fills the viewBox
+    // thin dark outline so the fill stays distinct on the light tier bars
+    expect(up).toContain('stroke="#1b2838"');
+    expect(up).toContain('stroke-linejoin="round"');
+  });
+
+  test('the trend arrow also renders inside the strip tier label (strip is the default layout)', () => {
+    // Regression: in strip layout the right-column pills row is display:none,
+    // so the pills-row copy of the arrow is invisible. The strip must carry
+    // its own copy nested in .game-card-strip-tier or the arrow never shows
+    // on the default cards.
+    const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'silver', storePill: 'Steam', trend: 'improving' });
+    const tierStart = html.indexOf('game-card-strip-tier');
+    expect(tierStart).toBeGreaterThan(-1);
+    // slice from the tier span to the end of that span
+    const tierSpan = html.slice(tierStart, html.indexOf('</span>', tierStart));
+    expect(tierSpan).toContain('game-card-trend game-card-trend--improving');
+  });
+
   test('trend "declining" renders the down-arrow span', () => {
     const html = renderGameCard({ href: '#/app/1', appId: '1', title: 'X', sub: '', tier: 'bronze', trend: 'declining' });
     expect(html).toContain('game-card-trend game-card-trend--declining');

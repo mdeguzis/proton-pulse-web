@@ -329,8 +329,13 @@
   line-height: 1;
 }
 .game-card-trend svg { width: 12px; height: 12px; }
-.game-card-trend--improving { color: #3aaa5b; }
-.game-card-trend--declining { color: #d9534f; }
+/* Improving uses the Steam Verified green (#51ae40, same green as the
+   Verified badge). Declining uses a red-leaning Steam orange (#e0652b) that
+   stays distinct from the gold tier bar and pops on the dark strips. Both
+   read as good / bad at a glance, and neither collides with a tier color
+   (no green tier; the gold tier is a softer yellow-gold, not this orange). */
+.game-card-trend--improving { color: #51ae40; }
+.game-card-trend--declining { color: #e0652b; }
 /* Site preference: hide the arrow entirely when the user turned it off. */
 [data-trend-arrow="off"] .game-card-trend { display: none; }
 
@@ -545,11 +550,27 @@
 [data-card-layout="strip"] .game-card-strip[data-tier="bronze"]   { background: linear-gradient(90deg, #b07d4f, #cf9e6f); color: #0a0c10; }
 [data-card-layout="strip"] .game-card-strip[data-tier="borked"]   { background: linear-gradient(90deg, #884444, #b25555); color: #fff; }
 [data-card-layout="strip"] .game-card-strip-tier {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.2;
+}
+/* The trend arrow nested in the tier label scales with the tier text (1em)
+   so the triangle stands as tall as the GOLD / SILVER caps beside it instead
+   of a tiny fixed-px speck. Container hugs the glyph (auto, not the 18px
+   pills-row box) and a hair of negative top keeps it optically centered. */
+[data-card-layout="strip"] .game-card-strip-tier .game-card-trend {
+  width: auto;
+  height: auto;
+  margin-top: -1px;
+}
+[data-card-layout="strip"] .game-card-strip-tier .game-card-trend svg {
+  width: 1.2em;
+  height: 1.2em;
 }
 [data-card-layout="strip"] .game-card-strip .game-card-store-pill {
   /* Knock the store pill darker so it reads as a chip on top of the
