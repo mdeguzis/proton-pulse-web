@@ -358,13 +358,13 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     .pager button:hover:not(:disabled) { background: var(--s2); border-color: var(--accent); }
     .pager button:disabled { opacity: 0.4; cursor: not-allowed; }
     #index-page-info { color: var(--muted); }
-    ul#index-results { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 8px; }
-    ul#index-results > li { display: contents; }
-    ul#index-results a.row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: linear-gradient(180deg, rgba(27,40,56,0.5), rgba(11,17,22,0.4)); border: 1px solid var(--border); color: var(--text); transition: border-color .12s, background .12s, transform .12s, box-shadow .12s; }
+    ul#index-results { list-style: none; padding: 0; margin: 12px 0; display: flex; flex-direction: column; gap: 6px; }
+    ul#index-results > li { display: block; }
+    ul#index-results a.row { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: linear-gradient(180deg, rgba(27,40,56,0.5), rgba(11,17,22,0.4)); border: 1px solid var(--border); color: var(--text); transition: border-color .12s, background .12s, transform .12s, box-shadow .12s; }
     ul#index-results a.row:hover { border-color: var(--accent); background: linear-gradient(180deg, rgba(102,192,244,0.08), rgba(11,17,22,0.5)); box-shadow: 0 0 18px -6px var(--accent-glow); transform: translateY(-1px); text-decoration: none; }
-    ul#index-results .appid { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 80px; flex-shrink: 0; }
-    ul#index-results .title { flex: 1; color: var(--text); }
-    ul#index-results .years { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); flex-shrink: 0; }
+    ul#index-results .appid { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); min-width: 100px; flex-shrink: 0; }
+    ul#index-results .title { flex: 1; color: var(--text); font-size: 0.95rem; }
+    ul#index-results .years { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); flex-shrink: 0; letter-spacing: 0.04em; }
 
     /* detail view: master/detail split with years on the left, JSON on the right */
     .detail-view { display: none; }
