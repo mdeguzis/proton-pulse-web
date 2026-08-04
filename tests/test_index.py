@@ -753,6 +753,55 @@ def test_generate_coverage_report_uses_shared_filter_pill_class(tmp_path):
     assert 'id="source-filter"' in html
 
 
+def test_generate_index_html_loads_data_config_and_uses_dataBase(tmp_path):
+    """data-index master/detail view must prefix data/ fetches with
+    config.dataBase (set to the R2 origin on CF Pages) -- otherwise
+    latest.json fetches hit the SPA fallback and JSON.parse breaks. #451."""
+    keys = {("730", "2024")}
+    generate_index_html(keys, tmp_path)
+    html = (tmp_path / "data-index.html").read_text()
+    # Config lookup + prefixing helpers both ship.
+    assert "fetch('data-config.json'" in html
+    assert 'function dataFileUrl' in html
+    # loadYear routes through dataFileUrl instead of hitting the same origin.
+    assert "dataFileUrl('data/' + appId + '/' + file)" in html
+    # The old direct fetch on 'data/' + appId + '/' + file is gone.
+    assert "fetch('data/' + appId + '/' + file)" not in html
+
+
+def test_generate_index_html_popular_titles_link_via_hash(tmp_path):
+    """Popular-titles list must route through the hash router (#/{id}) instead
+    of a raw data/{id}/latest.json download that 404s on CF Pages. #451."""
+    from scripts.pipeline.metadata import update_app_metadata as _update_meta
+    data_dir = tmp_path / "data"
+    (data_dir / "730").mkdir(parents=True)
+    (data_dir / "730" / "latest.json").write_text('[{"title":"Counter-Strike 2"}]')
+    keys = {("730", "2024")}
+    generate_index_html(keys, tmp_path)
+    html = (tmp_path / "data-index.html").read_text()
+    # Popular titles list an in-app hash link, not a raw JSON path.
+    assert '<a href="#/730">' in html
+    assert '<a href="data/730/latest.json">' not in html
+
+
+def test_generate_coverage_report_indexed_link_routes_via_data_index(tmp_path):
+    """Coverage 'Indexed' cells must link to data-index.html#/{id} instead of
+    a raw data/{id}/ path -- R2 does not auto-serve directory indexes, so a
+    bare data/{id}/ link 404s on CF Pages. #451."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    assert 'data-index.html#/${id}' in html
+    assert '`<a href="data/${id}/">index</a>`' not in html
+
+
 def test_generate_coverage_report_store_column_and_labels(tmp_path):
     """Store column header renders + JS STORE_LABELS lookup ships so each row
     prints a readable store name (Steam / GOG / Epic / PCGamingWiki)."""

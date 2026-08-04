@@ -338,7 +338,11 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     sample_entries = []
     for app_id, name in sample_apps.items():
         if app_id in app_years:
-            sample_entries.append(f'<a href="data/{app_id}/latest.json">{name}</a> ({app_id})')
+            # Hash-link into the master/detail view rather than a raw JSON
+            # download. Raw-JSON links 404 on CF Pages (per-game data lives in
+            # R2, not on Pages) and read as a broken page instead of a shortcut
+            # to the app's detail view. #451.
+            sample_entries.append(f'<a href="#/{app_id}">{name}</a> ({app_id})')
 
     # Page-specific styles. Site-wide identity comes from site.css; this block only
     # adds what data-index needs (grid rows, detail split, json tinting). All colors
@@ -574,15 +578,33 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
   // scripts/pipeline/pulse.py), so we just render whatever is in the file.
   // Each record carries a source field ("protondb" or "pulse") so consumers
   // can filter cleanly.
+  // Per-game data buckets can live on a separate host (R2) when the deploy
+  // target is Cloudflare -- data-config.json.dataBase carries that base URL.
+  // Fetch once at page load; empty on gh-pages deploys so data stays same
+  // origin there. Any data/ fetch below prefixes with this base when set.
+  // #451 -- without this the master/detail view hit the CF Pages SPA
+  // fallback for every latest.json and printed a JSON.parse error.
+  let dataBasePromise = fetch('data-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : {})
+    .catch(() => ({}))
+    .then(cfg => (cfg && cfg.dataBase) ? String(cfg.dataBase).replace(/\\/$/, '') : '');
+
+  function dataFileUrl(path) {
+    // path is 'data/{id}/{file}' -- return a Promise that resolves to the
+    // fully-qualified URL, prefixed with dataBase when Cloudflare-hosted.
+    return dataBasePromise.then(base => base ? base + '/' + path : path);
+  }
+
   let activeFetch = null;
   function loadYear(appId, file) {
-    pathEl.textContent = '/data/' + appId + '/' + file;
+    const displayPath = '/data/' + appId + '/' + file;
+    pathEl.textContent = displayPath;
     statusEl.textContent = 'loading';
     contentEl.textContent = '';
-    const url = 'data/' + appId + '/' + file;
     const token = Symbol();
     activeFetch = token;
-    fetch(url).then(r => r.ok ? r.json() : Promise.reject(r.status))
+    dataFileUrl('data/' + appId + '/' + file)
+      .then(url => fetch(url).then(r => r.ok ? r.json() : Promise.reject(r.status)))
       .then(data => {
         if (activeFetch !== token) return;
         const list = Array.isArray(data) ? data : [];
@@ -596,7 +618,7 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
       .catch(err => {
         if (activeFetch !== token) return;
         statusEl.textContent = 'error';
-        contentEl.textContent = 'Failed to load ' + url + ' (' + err + ')';
+        contentEl.textContent = 'Failed to load ' + displayPath + ' (' + err + ')';
       });
   }
 
@@ -1874,7 +1896,11 @@ function render(){{
     const psc=ps?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const scc=sc?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const tsc=TITLE_SOURCE_LABELS[ts]||ts.replace(/-/g,' ');
-    const ixc=ix?`<a href="data/${{id}}/">index</a>`:'<span class="no">\u2014</span>';
+    // Route Indexed clicks through data-index.html's master/detail view --
+    // linking to a raw data/{id}/ path 404s on CF Pages because per-game
+    // data lives on R2, not on Pages, and R2 does not auto-serve directory
+    // indexes anyway. #451.
+    const ixc=ix?`<a href="data-index.html#/${{id}}">index</a>`:'<span class="no">\u2014</span>';
     h.push(`<tr><td>${{ac}}</td><td>${{sl}}</td><td>${{tc}}</td><td>${{tsc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{psc}}</td><td>${{scc}}</td><td>${{ixc}}</td></tr>`);
   }}
   tb.innerHTML=h.join("");
