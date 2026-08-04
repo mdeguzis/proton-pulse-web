@@ -1653,12 +1653,15 @@ tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
 .stat-card .value { font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--accent-hi); margin: 4px 0; text-shadow: 0 0 14px var(--accent-glow); }
 .stat-card .detail { font-size: 0.78rem; color: var(--muted); }
 .pct { color: var(--green-hi); }
-/* Filter chrome: shared .pg-filter pill styling comes from css/shared/filters.css,
-   so the coverage page picks up the same pill look the home + game pages use.
-   Only page-scoped rules here: the search input + the group container spacing. */
-.filter-groups { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1em; }
-.filter-groups .pg-filter-group { padding: 4px 0; }
-#filter { padding: 8px 10px; width: 320px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); font-family: inherit; font-size: 0.88rem; }
+/* Filter chrome: shared .filter-wrap + .filter-panel modal from
+   css/shared/filters.css so the coverage page opens the same dropdown /
+   mobile modal as the home browse page. Only page-scoped rules here: the
+   wrap positioning (so the panel anchors under the toggle), the search
+   input, and small overrides. */
+.filter-wrap { position: relative; display: inline-block; margin-bottom: 1em; }
+.filter-panel .filter-item { padding: 4px 0; }
+.filter-panel .pg-filter-group { padding: 4px 0; }
+#filter { width: 100%; box-sizing: border-box; padding: 8px 10px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); font-family: inherit; font-size: 0.88rem; }
 #filter:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
 .pager { margin: 1em 0; display: flex; gap: 8px; align-items: center; }
 .pager button { padding: 6px 14px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); cursor: pointer; font-family: inherit; font-size: 0.82rem; }
@@ -1704,24 +1707,41 @@ tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
   <div class="detail">Total apps tracked in this report</div>
 </div>
 </div>
-<div class="filter-groups">
-<div><input id="filter" placeholder="Filter by App ID or title\u2026" oninput="onFilter()"></div>
-<div class="pg-filter-group" id="store-filter" aria-label="Filter by store">
-  <span class="pg-filter-group-label">Store</span>
-  <button class="pg-filter pg-filter--active" type="button" data-src="all">All</button>
-  <button class="pg-filter" type="button" data-src="store-steam">Steam ({store_counts["steam"]:,})</button>
-  <button class="pg-filter" type="button" data-src="store-gog">GOG ({store_counts["gog"]:,})</button>
-  <button class="pg-filter" type="button" data-src="store-epic">Epic ({store_counts["epic"]:,})</button>
-  <button class="pg-filter" type="button" data-src="store-pgwiki">PCGWiki ({store_counts["pgwiki"]:,})</button>
-</div>
-<div class="pg-filter-group" id="source-filter" aria-label="Filter by data source">
-  <span class="pg-filter-group-label">Data source</span>
-  <button class="pg-filter" type="button" data-src="official">Official dump only</button>
-  <button class="pg-filter" type="button" data-src="backfill">Live backfill only</button>
-  <button class="pg-filter" type="button" data-src="no-data">No data</button>
-  <button class="pg-filter" type="button" data-src="missing-title">Missing title</button>
-  <button class="pg-filter" type="button" data-src="bad-appid">Bad App ID</button>
-</div>
+<div class="filter-wrap" id="coverage-filter-wrap">
+  <button class="filter-toggle-btn" id="coverage-filter-toggle" type="button" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39C20.25 4.95 19.8 4 18.95 4H5.04C4.2 4 3.74 4.95 4.25 5.61z"/></svg>
+    Filters<span class="filter-badge" id="coverage-filter-badge" hidden></span>
+  </button>
+  <div class="filter-panel filter-panel--stack" id="coverage-filter-panel">
+    <div class="filter-panel-mobile-header">
+      <span class="filter-panel-mobile-title">Filters</span>
+      <button type="button" class="filter-panel-close" aria-label="Close filters">&times;</button>
+    </div>
+    <div class="filter-item"><input id="filter" placeholder="Filter by App ID or title\u2026" oninput="onFilter()"></div>
+    <div class="pg-filter-group" id="store-filter" aria-label="Filter by store">
+      <span class="pg-filter-group-label">Store</span>
+      <button class="pg-filter pg-filter--active" type="button" data-src="all">All</button>
+      <button class="pg-filter" type="button" data-src="store-steam">Steam ({store_counts["steam"]:,})</button>
+      <button class="pg-filter" type="button" data-src="store-gog">GOG ({store_counts["gog"]:,})</button>
+      <button class="pg-filter" type="button" data-src="store-epic">Epic ({store_counts["epic"]:,})</button>
+      <button class="pg-filter" type="button" data-src="store-pgwiki">PCGWiki ({store_counts["pgwiki"]:,})</button>
+    </div>
+    <div class="pg-filter-group" id="source-filter" aria-label="Filter by data source">
+      <span class="pg-filter-group-label">Data source</span>
+      <button class="pg-filter" type="button" data-src="official">Official dump only</button>
+      <button class="pg-filter" type="button" data-src="backfill">Live backfill only</button>
+      <button class="pg-filter" type="button" data-src="no-data">No data</button>
+      <button class="pg-filter" type="button" data-src="missing-title">Missing title</button>
+      <button class="pg-filter" type="button" data-src="bad-appid">Bad App ID</button>
+    </div>
+    <div class="filter-panel-footer filter-panel-footer--stack">
+      <button class="filter-collapse-btn" id="coverage-filter-collapse" type="button" aria-label="Collapse filters">
+        <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
+        <span class="filter-collapse-text">Collapse</span>
+      </button>
+      <button class="filter-clear-btn" id="coverage-filter-clear" type="button">Clear filters</button>
+    </div>
+  </div>
 </div>
 <div class="pager">
 <button onclick="goPage(-1)">&larr; Prev</button>
@@ -1817,15 +1837,63 @@ function toggleSrc(s){{
   document.querySelectorAll(".pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",activeSrc.has(b.dataset.src)));
   apply();
 }}
-// Delegated click wiring for the new .pg-filter pills. The toggle() call
-// above still owns the state math; the pills only need to route clicks
-// into it. Uses event delegation so both filter groups pick up their
-// clicks from one listener.
+// Delegated click wiring for the .pg-filter pills inside the modal. Both
+// groups (Store + Data source) route clicks through the same toggleSrc()
+// state machine. Scoped to #coverage-filter-panel so a stray .pg-filter
+// elsewhere on the site does not fire it.
 document.addEventListener("click",e=>{{
-  const btn=e.target.closest(".filter-groups .pg-filter");
+  const btn=e.target.closest("#coverage-filter-panel .pg-filter");
   if(!btn||!btn.dataset.src)return;
   toggleSrc(btn.dataset.src);
 }});
+
+// Filter modal chrome (#452). Matches the home browse pattern: toggle
+// button opens/closes the panel, outside click closes, X + Collapse
+// buttons close, badge reflects the active filter count. topbar.js's
+// shared observer takes care of portaling to <body> on mobile.
+(function wireCoverageFilterPanel(){{
+  const wrap=document.getElementById("coverage-filter-wrap");
+  const toggle=document.getElementById("coverage-filter-toggle");
+  const panel=document.getElementById("coverage-filter-panel");
+  const badge=document.getElementById("coverage-filter-badge");
+  if(!wrap||!toggle||!panel)return;
+  function setOpen(open){{
+    panel.classList.toggle("open",open);
+    toggle.setAttribute("aria-expanded",String(open));
+  }}
+  toggle.addEventListener("click",e=>{{
+    e.stopPropagation();
+    setOpen(!panel.classList.contains("open"));
+  }});
+  document.addEventListener("click",e=>{{
+    if(!panel.classList.contains("open"))return;
+    if(wrap.contains(e.target)||panel.contains(e.target))return;
+    setOpen(false);
+  }});
+  document.getElementById("coverage-filter-collapse")?.addEventListener("click",e=>{{
+    e.stopPropagation();setOpen(false);
+  }});
+  panel.querySelector(".filter-panel-close")?.addEventListener("click",e=>{{
+    e.stopPropagation();setOpen(false);
+  }});
+  document.getElementById("coverage-filter-clear")?.addEventListener("click",e=>{{
+    e.stopPropagation();
+    activeSrc=new Set(["all"]);
+    document.querySelectorAll("#coverage-filter-panel .pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",b.dataset.src==="all"));
+    const inp=document.getElementById("filter");if(inp)inp.value="";
+    apply();
+  }});
+  window.updateFilterBadge=function(){{
+    if(!badge)return;
+    // Badge counts active non-"all" chips + a text-filter query if present.
+    const nonAll=[...activeSrc].filter(s=>s!=="all").length;
+    const q=(document.getElementById("filter")?.value||"").trim();
+    const count=nonAll+(q?1:0);
+    badge.textContent=String(count);
+    badge.hidden=count===0;
+    toggle.classList.toggle("has-filters",count>0);
+  }};
+}})();
 function onFilter(){{clearTimeout(filterTimer);filterTimer=setTimeout(()=>apply(),200)}}
 function apply(resetPage=true){{
   const q=document.getElementById("filter").value.toLowerCase();
@@ -1845,6 +1913,7 @@ function apply(resetPage=true){{
   if(sortCol>=0)doSortFiltered();
   if(resetPage) page=0;
   render();
+  if(typeof updateFilterBadge==="function")updateFilterBadge();
 }}
 function doSort(c){{
   if(sortCol===c)sortAsc*=-1;else{{sortCol=c;sortAsc=1}}

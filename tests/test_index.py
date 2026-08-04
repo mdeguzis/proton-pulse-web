@@ -728,6 +728,43 @@ def test_generate_coverage_report_tags_each_row_with_a_store(tmp_path):
     assert 'bad-appid' not in gog_row
 
 
+def test_generate_coverage_report_uses_shared_filter_panel_modal(tmp_path):
+    """Coverage filter groups must live inside the shared .filter-panel modal
+    chrome (matching home browse) rather than rendering inline. #452.
+
+    Guards the modal wrap, toggle button + badge, mobile header + close X,
+    footer with Collapse + Clear, and that topbar.js's mobile-modal
+    observer (which keys on `.filter-panel.open`) will pick it up."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    # Wrap + toggle + panel with the exact shared classes.
+    assert 'class="filter-wrap"' in html
+    assert 'id="coverage-filter-wrap"' in html
+    assert 'class="filter-toggle-btn"' in html
+    assert 'id="coverage-filter-toggle"' in html
+    assert 'aria-expanded="false"' in html
+    assert 'id="coverage-filter-badge"' in html
+    assert 'class="filter-panel filter-panel--stack"' in html
+    assert 'id="coverage-filter-panel"' in html
+    # Mobile modal chrome (header + close X + footer) mirrors home browse.
+    assert 'class="filter-panel-mobile-header"' in html
+    assert 'class="filter-panel-close"' in html
+    assert 'aria-label="Close filters"' in html
+    assert 'class="filter-panel-footer filter-panel-footer--stack"' in html
+    assert 'id="coverage-filter-collapse"' in html
+    assert 'id="coverage-filter-clear"' in html
+    # No orphan .filter-groups container from the pre-modal layout.
+    assert 'class="filter-groups"' not in html
+
+
 def test_generate_coverage_report_uses_shared_filter_pill_class(tmp_path):
     """Coverage page must use the shared .pg-filter class from css/shared/filters.css
     instead of the old bespoke .toggle chips, so the pill look matches the home +
