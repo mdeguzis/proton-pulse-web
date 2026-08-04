@@ -38,4 +38,15 @@ describe('mobile nav drawer accordion', () => {
     // collapseGroups runs inside the open branch of the toggle handler.
     expect(SRC).toMatch(/if \(open\) \{[\s\S]*collapseGroups\(\);/);
   });
+
+  test('opening a folded group auto-closes any other open group (#460)', () => {
+    // Accordion pattern: only one section expanded at a time. Without this
+    // opening Browse then tapping Resources leaves both expanded and pushes
+    // every item off the bottom of the viewport.
+    expect(SRC).toContain(".mnav-group.mnav-open");
+    // Guard the exact contract: on expand (i.e. when the clicked parent is
+    // NOT already expanded), iterate the open groups and reset them.
+    expect(SRC).toMatch(/if\s*\(!expanded\)\s*\{[\s\S]*mnav-open[\s\S]*openGroup\.classList\.remove\(['"]mnav-open['"]\)/);
+    expect(SRC).toMatch(/openBtn\.setAttribute\(['"]aria-expanded['"],\s*['"]false['"]\)/);
+  });
 });
