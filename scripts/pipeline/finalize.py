@@ -1455,6 +1455,24 @@ def generate_nonsteam_images(output_path: Path) -> None:
     )
 
 
+def _coverage_store_for(app_id: str) -> str:
+    """Bucket a coverage-report app id into a store label.
+
+    Steam ids are numeric, non-Steam ids are namespaced 'gog:'/'epic:'/'pgwiki:'.
+    Anything unrecognized falls back to 'other' so a stray id never crashes
+    the store filter chip. #450.
+    """
+    if app_id.isdigit():
+        return "steam"
+    if app_id.startswith("gog:"):
+        return "gog"
+    if app_id.startswith("epic:"):
+        return "epic"
+    if app_id.startswith("pgwiki:"):
+        return "pgwiki"
+    return "other"
+
+
 def generate_coverage_report(
     index_keys: set,
     backfilled_keys: set,
@@ -1463,6 +1481,9 @@ def generate_coverage_report(
     steam_catalog: dict[str, str] | None = None,
     protondb_signal_catalog: dict[str, str] | None = None,
     protondb_counts: dict | None = None,
+    gog_catalog: dict[str, str] | None = None,
+    epic_catalog: dict[str, str] | None = None,
+    pcgwiki_catalog: dict[str, str] | None = None,
 ) -> None:
     indexed_app_ids = {app_id for app_id, _ in index_keys}
     all_app_ids = set(indexed_app_ids)
@@ -1471,10 +1492,21 @@ def generate_coverage_report(
     steam_catalog_app_ids = set((steam_catalog or {}).keys())
     steam_protondb_overlap = steam_catalog_app_ids & protondb_signal_app_ids
 
+    # Non-Steam catalog entries live under namespaced ids so they never
+    # collide with numeric Steam app ids. Store keys use raw ids that we
+    # namespace here into the same format the rest of the pipeline uses.
+    # #450: coverage was Steam-only until this change.
+    gog_app_ids = {f"gog:{pid}" for pid in (gog_catalog or {}).keys()}
+    epic_app_ids = {f"epic:{ns}" for ns in (epic_catalog or {}).keys()}
+    pcgwiki_app_ids = set((pcgwiki_catalog or {}).keys())  # already carry the pgwiki: prefix
+
     if steam_catalog:
         all_app_ids.update(steam_catalog.keys())
     all_app_ids.update(protondb_signal_app_ids)
     all_app_ids.update(state_backfill_app_ids)
+    all_app_ids.update(gog_app_ids)
+    all_app_ids.update(epic_app_ids)
+    all_app_ids.update(pcgwiki_app_ids)
 
     log(f"[coverage] Indexed app IDs           : {len(indexed_app_ids):,}")
     log(f"[coverage] Backfill app IDs          : {len(state_backfill_app_ids):,}")
@@ -1482,7 +1514,25 @@ def generate_coverage_report(
     if steam_catalog:
         log(f"[coverage] Steam catalog app IDs     : {len(steam_catalog_app_ids):,}")
         log(f"[coverage] Steam ∩ ProtonDB signals  : {len(steam_protondb_overlap):,}")
+    if gog_app_ids:
+        log(f"[coverage] GOG catalog app IDs       : {len(gog_app_ids):,}")
+    if epic_app_ids:
+        log(f"[coverage] Epic catalog app IDs      : {len(epic_app_ids):,}")
+    if pcgwiki_app_ids:
+        log(f"[coverage] PCGWiki catalog app IDs   : {len(pcgwiki_app_ids):,}")
     log(f"[coverage] Final coverage universe   : {len(all_app_ids):,}")
+
+    # Non-Steam title lookup: use the catalog dict for the matching store.
+    # These titles never override an indexed local title; they're the
+    # fallback when _resolve_coverage_title returns "" for a namespaced id.
+    def _non_steam_title(app_id: str) -> tuple[str, str]:
+        if app_id.startswith("gog:"):
+            return (gog_catalog or {}).get(app_id[4:], ""), "gog-catalog"
+        if app_id.startswith("epic:"):
+            return (epic_catalog or {}).get(app_id[5:], ""), "epic-catalog"
+        if app_id.startswith("pgwiki:"):
+            return (pcgwiki_catalog or {}).get(app_id, ""), "pcgwiki-catalog"
+        return "", "none"
 
     rows = []
     for app_id in sorted(all_app_ids, key=lambda a: (0, int(a)) if a.isdigit() else (1, a)):
@@ -1498,8 +1548,12 @@ def generate_coverage_report(
             protondb_signal_catalog=protondb_signal_catalog,
             steam_catalog=steam_catalog,
         )
+        if not title:
+            title, title_source = _non_steam_title(app_id)
+        store = _coverage_store_for(app_id)
         rows.append((
             app_id,
+            store,
             title,
             title_source,
             official,
@@ -1510,8 +1564,8 @@ def generate_coverage_report(
         ))
 
     now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    official_count = sum(1 for row in rows if row[3])
-    backfill_count = sum(1 for row in rows if row[4])
+    official_count = sum(1 for row in rows if row[4])
+    backfill_count = sum(1 for row in rows if row[5])
     indexed_count = len(indexed_app_ids)
     steam_count = len(steam_catalog_app_ids) if steam_catalog else 0
     protondb_unique_games = (protondb_counts or {}).get("uniqueGames", 0) if protondb_counts else 0
@@ -1519,13 +1573,20 @@ def generate_coverage_report(
     pct_of_protondb_total = (indexed_count / protondb_unique_games * 100) if protondb_unique_games else 0
     pct_of_steam = (indexed_count / steam_count * 100) if steam_count else 0
     protondb_pct_of_steam = (protondb_unique_games / steam_count * 100) if (steam_count and protondb_unique_games) else 0
+    store_counts = {"steam": 0, "gog": 0, "epic": 0, "pgwiki": 0, "other": 0}
+    for row in rows:
+        store_counts[row[1]] = store_counts.get(row[1], 0) + 1
 
-    # Build JS data array instead of HTML rows
+    # Build JS data array. The store field is index 1 so it drives the store
+    # filter chip without a second lookup. bad-appid used to key on "not
+    # numeric" which now matches every legitimate non-Steam id -- switched
+    # to detecting truly malformed values (empty, whitespace, unrecognised
+    # namespace) so gog:/epic:/pgwiki: rows do NOT get flagged.
     # Format:
-    # [appId, title, titleSource, official, backfill, protondbSignal, steamCatalog, "flags", indexed]
+    # [appId, store, title, titleSource, official, backfill, protondbSignal, steamCatalog, "flags", indexed]
     js_rows = []
-    for app_id, title, title_source, official, backfill, protondb_signal, steam_catalog_hit, indexed in rows:
-        flags = []
+    for app_id, store, title, title_source, official, backfill, protondb_signal, steam_catalog_hit, indexed in rows:
+        flags = [f"store-{store}"]
         if official:
             flags.append("official")
         if backfill:
@@ -1536,7 +1597,7 @@ def generate_coverage_report(
             flags.append("steam-catalog")
         if not title:
             flags.append("missing-title")
-        if not app_id.isdigit():
+        if store == "other" or not app_id.strip():
             flags.append("bad-appid")
         if not official and not backfill and not indexed:
             flags.append("no-data")
@@ -1544,7 +1605,7 @@ def generate_coverage_report(
         safe_title = title.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
         safe_title_source = title_source.replace("\\", "\\\\").replace('"', '\\"')
         js_rows.append(
-            f'["{app_id}","{safe_title}","{safe_title_source}",'
+            f'["{app_id}","{store}","{safe_title}","{safe_title_source}",'
             f'{1 if official else 0},{1 if backfill else 0},{1 if protondb_signal else 0},'
             f'{1 if steam_catalog_hit else 0},"{" ".join(flags)}",{1 if indexed else 0}]'
         )
@@ -1570,12 +1631,13 @@ tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
 .stat-card .value { font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--accent-hi); margin: 4px 0; text-shadow: 0 0 14px var(--accent-glow); }
 .stat-card .detail { font-size: 0.78rem; color: var(--muted); }
 .pct { color: var(--green-hi); }
-.filters { margin-bottom: 1em; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-#filter { padding: 8px 10px; width: 320px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); }
+/* Filter chrome: shared .pg-filter pill styling comes from css/shared/filters.css,
+   so the coverage page picks up the same pill look the home + game pages use.
+   Only page-scoped rules here: the search input + the group container spacing. */
+.filter-groups { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1em; }
+.filter-groups .pg-filter-group { padding: 4px 0; }
+#filter { padding: 8px 10px; width: 320px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); font-family: inherit; font-size: 0.88rem; }
 #filter:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
-.toggle { padding: 6px 14px; border: 1px solid var(--border2); background: transparent; color: var(--muted); cursor: pointer; font-weight: 600; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; transition: color .12s, border-color .12s, background .12s; }
-.toggle:hover { color: var(--text); border-color: var(--accent); }
-.toggle.active { background: var(--accent-soft); color: var(--accent-hi); border-color: var(--accent); }
 .pager { margin: 1em 0; display: flex; gap: 8px; align-items: center; }
 .pager button { padding: 6px 14px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); cursor: pointer; font-family: inherit; font-size: 0.82rem; }
 .pager button:hover { background: var(--s2); border-color: var(--accent); }
@@ -1620,14 +1682,24 @@ tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
   <div class="detail">Total apps tracked in this report</div>
 </div>
 </div>
-<div class="filters">
-<input id="filter" placeholder="Filter by App ID or title\u2026" oninput="onFilter()">
-<button class="toggle active" data-src="all" onclick="toggleSrc('all')">All</button>
-<button class="toggle" data-src="official" onclick="toggleSrc('official')">Official dump only</button>
-<button class="toggle" data-src="backfill" onclick="toggleSrc('backfill')">Live backfill only</button>
-<button class="toggle" data-src="no-data" onclick="toggleSrc('no-data')">No data</button>
-<button class="toggle" data-src="missing-title" onclick="toggleSrc('missing-title')">Missing title</button>
-<button class="toggle" data-src="bad-appid" onclick="toggleSrc('bad-appid')">Bad App ID</button>
+<div class="filter-groups">
+<div><input id="filter" placeholder="Filter by App ID or title\u2026" oninput="onFilter()"></div>
+<div class="pg-filter-group" id="store-filter" aria-label="Filter by store">
+  <span class="pg-filter-group-label">Store</span>
+  <button class="pg-filter pg-filter--active" type="button" data-src="all">All</button>
+  <button class="pg-filter" type="button" data-src="store-steam">Steam ({store_counts["steam"]:,})</button>
+  <button class="pg-filter" type="button" data-src="store-gog">GOG ({store_counts["gog"]:,})</button>
+  <button class="pg-filter" type="button" data-src="store-epic">Epic ({store_counts["epic"]:,})</button>
+  <button class="pg-filter" type="button" data-src="store-pgwiki">PCGWiki ({store_counts["pgwiki"]:,})</button>
+</div>
+<div class="pg-filter-group" id="source-filter" aria-label="Filter by data source">
+  <span class="pg-filter-group-label">Data source</span>
+  <button class="pg-filter" type="button" data-src="official">Official dump only</button>
+  <button class="pg-filter" type="button" data-src="backfill">Live backfill only</button>
+  <button class="pg-filter" type="button" data-src="no-data">No data</button>
+  <button class="pg-filter" type="button" data-src="missing-title">Missing title</button>
+  <button class="pg-filter" type="button" data-src="bad-appid">Bad App ID</button>
+</div>
 </div>
 <div class="pager">
 <button onclick="goPage(-1)">&larr; Prev</button>
@@ -1637,12 +1709,13 @@ tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
 <table id="coverage">
 <thead><tr>
 <th onclick="doSort(0)">App ID</th>
-<th onclick="doSort(1)">Title (ProtonDB)</th>
-<th onclick="doSort(2)">Title Source</th>
-<th onclick="doSort(3)">Official ProtonDB Dump</th>
-<th onclick="doSort(4)">Live Backfill</th>
-<th onclick="doSort(5)">Seen on ProtonDB</th>
-<th onclick="doSort(6)">Seen in Steam Catalog</th>
+<th onclick="doSort(1)">Store</th>
+<th onclick="doSort(2)">Title (ProtonDB)</th>
+<th onclick="doSort(3)">Title Source</th>
+<th onclick="doSort(4)">Official ProtonDB Dump</th>
+<th onclick="doSort(5)">Live Backfill</th>
+<th onclick="doSort(6)">Seen on ProtonDB</th>
+<th onclick="doSort(7)">Seen in Steam Catalog</th>
 <th>Indexed</th>
 </tr></thead>
 <tbody id="tbody"></tbody>
@@ -1671,7 +1744,17 @@ const TITLE_SOURCE_LABELS={{
   "steam-store-empty-name":"Steam Store (empty name)",
   "steam-store-unsuccessful":"Steam Store (unsuccessful)",
   "steam-store-error":"Steam Store (error)",
+  "gog-catalog":"GOG Catalog",
+  "epic-catalog":"Epic Catalog",
+  "pcgwiki-catalog":"PCGamingWiki Catalog",
   "none":"None"
+}};
+const STORE_LABELS={{
+  "steam":"Steam",
+  "gog":"GOG",
+  "epic":"Epic",
+  "pgwiki":"PCGamingWiki",
+  "other":"Other"
 }};
 
 function getStateFromUrl(){{
@@ -1709,18 +1792,28 @@ function saveStateToUrl(){{
 function toggleSrc(s){{
   if(s==="all"){{activeSrc.clear();activeSrc.add("all")}}
   else{{activeSrc.delete("all");activeSrc.has(s)?activeSrc.delete(s):activeSrc.add(s);if(!activeSrc.size)activeSrc.add("all")}}
-  document.querySelectorAll(".toggle").forEach(b=>b.classList.toggle("active",activeSrc.has(b.dataset.src)));
+  document.querySelectorAll(".pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",activeSrc.has(b.dataset.src)));
   apply();
 }}
+// Delegated click wiring for the new .pg-filter pills. The toggle() call
+// above still owns the state math; the pills only need to route clicks
+// into it. Uses event delegation so both filter groups pick up their
+// clicks from one listener.
+document.addEventListener("click",e=>{{
+  const btn=e.target.closest(".filter-groups .pg-filter");
+  if(!btn||!btn.dataset.src)return;
+  toggleSrc(btn.dataset.src);
+}});
 function onFilter(){{clearTimeout(filterTimer);filterTimer=setTimeout(()=>apply(),200)}}
 function apply(resetPage=true){{
   const q=document.getElementById("filter").value.toLowerCase();
   const all=activeSrc.has("all");
   filtered=DATA.filter(r=>{{
-    if(!all&&![...activeSrc].some(s=>r[7].split(" ").includes(s)))return false;
+    // Flags moved from index 7 to 8 with the store column addition (#450).
+    if(!all&&![...activeSrc].some(s=>r[8].split(" ").includes(s)))return false;
     if(q){{
       const queryIsNumeric=/^\\d+$/.test(q);
-      const haystack=(r[0]+" "+r[1]).toLowerCase();
+      const haystack=(r[0]+" "+r[2]).toLowerCase();
       if(queryIsNumeric){{
         if(r[0]!==q)return false;
       }} else if(!haystack.includes(q)) return false;
@@ -1744,9 +1837,11 @@ function updateSortIndicator(){{
 }}
 function doSortFiltered(){{
   const c=sortCol,d=sortAsc;
+  // Numeric-yes/no columns moved to 4..7 (was 3..6) after adding the store
+  // column. App ID sort still lives at col 0 and is numeric-parse aware.
   filtered.sort((a,b)=>{{
     if(c===0)return d*(parseInt(a[0]||"0")-parseInt(b[0]||"0"));
-    if(c>=3&&c<=6)return d*(b[c]-a[c]);
+    if(c>=4&&c<=7)return d*(b[c]-a[c]);
     return d*String(a[c]).localeCompare(String(b[c]));
   }});
 }}
@@ -1767,17 +1862,20 @@ function render(){{
   document.getElementById("pageInfo2").textContent=info;
   const h=[];
   for(const r of safeSlice){{
-    const id=r[0],t=r[1],ts=r[2],o=r[3],b=r[4],ps=r[5],sc=r[6],ix=r[8];
-    const isNum=id.length>0&&[...id].every(c=>c>='0'&&c<='9');
-    const ac=isNum?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
-    const tc=isNum&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
+    // New schema: [id, store, title, titleSource, official, backfill,
+    // protondbSignal, steamCatalog, flags, indexed]
+    const id=r[0],store=r[1],t=r[2],ts=r[3],o=r[4],b=r[5],ps=r[6],sc=r[7],ix=r[9];
+    const isSteam=store==="steam";
+    const ac=isSteam?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
+    const tc=isSteam&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
+    const sl=STORE_LABELS[store]||store;
     const oc=o?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const bc=b?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const psc=ps?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const scc=sc?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const tsc=TITLE_SOURCE_LABELS[ts]||ts.replace(/-/g,' ');
     const ixc=ix?`<a href="data/${{id}}/">index</a>`:'<span class="no">\u2014</span>';
-    h.push(`<tr><td>${{ac}}</td><td>${{tc}}</td><td>${{tsc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{psc}}</td><td>${{scc}}</td><td>${{ixc}}</td></tr>`);
+    h.push(`<tr><td>${{ac}}</td><td>${{sl}}</td><td>${{tc}}</td><td>${{tsc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{psc}}</td><td>${{scc}}</td><td>${{ixc}}</td></tr>`);
   }}
   tb.innerHTML=h.join("");
   saveStateToUrl();
@@ -1788,7 +1886,7 @@ activeSrc=initialState.src;
 sortCol=initialState.sort;
 sortAsc=initialState.dir;
 page=initialState.page;
-document.querySelectorAll(".toggle").forEach(b=>b.classList.toggle("active",activeSrc.has(b.dataset.src)));
+document.querySelectorAll(".pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",activeSrc.has(b.dataset.src)));
 apply(false);
 updateSortIndicator();
 </script>
@@ -2125,6 +2223,16 @@ def finalize_output(output_dir, skip_probe: bool = False):
     enrich_nonsteam_app_metadata(data_output_path)
     generate_nonsteam_metadata(output_path)
     phase("Coverage report")
+    # Load the published PCGWiki catalog snapshot so coverage can include
+    # PCGWiki entries alongside Steam/GOG/Epic (#450). refresh_catalog is a
+    # cheap read against the pipeline output dir; failures fall back to an
+    # empty dict so a missing snapshot never breaks the coverage report.
+    pcgwiki_catalog_for_coverage: dict[str, str] = {}
+    try:
+        from .pcgamingwiki_catalog import refresh_catalog as _refresh_pcgwiki
+        pcgwiki_catalog_for_coverage = _refresh_pcgwiki(output_path)
+    except Exception as exc:
+        log(f"[coverage] PCGWiki catalog unavailable: {exc}")
     generate_coverage_report(
         full_index_keys,
         state["backfilled_keys"],
@@ -2136,6 +2244,9 @@ def finalize_output(output_dir, skip_probe: bool = False):
             **(protondb_probe_catalog or {}),
         },
         protondb_counts=protondb_counts,
+        gog_catalog=gog_catalog,
+        epic_catalog=epic_catalog,
+        pcgwiki_catalog=pcgwiki_catalog_for_coverage,
     )
     # Walk the data tree (post pulse merge) and emit stats.json that powers the
     # /stats.html page. Tiny output regardless of dataset size since everything
