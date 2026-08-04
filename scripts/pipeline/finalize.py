@@ -78,6 +78,11 @@ _SHARED_CSS = (
     "css/shared/topbar.css",
     "css/shared/site.css",
     "css/shared/cards.css",
+    # #457: filters.css owns .filter-panel + .filter-toggle-btn + .pg-filter
+    # + the mobile-modal chrome that topbar.js's observer keys on. Without
+    # this link the coverage page's filter modal rendered inline and every
+    # pill lost its site-consistent styling.
+    "css/shared/filters.css",
 )
 # Trailing scripts: topbar.js needs the ring buffer + analytics loaded first,
 # and the supabase client is a hard dep of the topbar user chip. Mirrors the

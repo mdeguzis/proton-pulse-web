@@ -24,6 +24,9 @@ def test_head_links_the_shared_css_bundle():
     assert 'href="css/shared/topbar.css"' in head
     assert 'href="css/shared/site.css"' in head
     assert 'href="css/shared/cards.css"' in head
+    # #457: filters.css owns .filter-panel + .pg-filter chrome; without it
+    # the coverage page's filter modal rendered inline and unstyled.
+    assert 'href="css/shared/filters.css"' in head
 
 
 def test_head_no_bare_root_paths():
