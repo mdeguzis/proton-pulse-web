@@ -96,15 +96,17 @@ describe('#415 slice 2b: filter panel drawer animation + accented dropdowns', ()
   test('filter-panel--stack keeps a single display value regardless of .open', () => {
     // Toggling display:block <-> flex on open/close reflows the content
     // instantly, which was the "portrait mode flash" bug during collapse.
-    // Desktop stays flex, mobile stays block (matches shared/filters.css
-    // modal !important). Neither depends on .open.
-    expect(reportsCss).toMatch(/\.filter-panel--stack\s*\{[^}]*display:\s*flex[^}]*flex-direction:\s*row/s);
-    expect(reportsCss).not.toContain('.filter-panel--stack:not(.open)');
-    expect(reportsCss).not.toMatch(/\.filter-panel--stack\.open\s*\{[^}]*display:\s*flex/s);
+    // Desktop stays flex, mobile stays block. Neither depends on .open.
+    // Rules moved from reports.css to shared/filters.css in #458 so the
+    // coverage report can inherit the same modal without pulling in the
+    // whole app-page stylesheet.
+    expect(filtersCss).toMatch(/\.filter-panel--stack\s*\{[^}]*display:\s*flex[^}]*flex-direction:\s*row/s);
+    expect(filtersCss).not.toContain('.filter-panel--stack:not(.open)');
+    expect(filtersCss).not.toMatch(/\.filter-panel--stack\.open\s*\{[^}]*display:\s*flex/s);
     // Mobile keeps block to match the shared modal's !important rule.
-    const mobileIdx = reportsCss.indexOf('@media (max-width: 720px)');
+    const mobileIdx = filtersCss.indexOf('@media (max-width: 720px)');
     expect(mobileIdx).toBeGreaterThan(0);
-    expect(reportsCss.slice(mobileIdx)).toMatch(/\.filter-panel--stack\s*\{[^}]*display:\s*block/s);
+    expect(filtersCss.slice(mobileIdx)).toMatch(/\.filter-panel--stack\s*\{[^}]*display:\s*block/s);
   });
 
   test('filter-item select uses an accent-tinted border so it stands out from the panel', () => {
