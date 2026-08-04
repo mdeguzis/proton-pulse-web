@@ -502,8 +502,15 @@ describe('game-page confidence range filter (#445)', () => {
 
 describe('home (app.html browse) -- XL card size parity with index.html', () => {
   // Bug: XL only existed on index.html. Browse view should match.
-  test('SIZES array includes xl alongside sm/md/lg', () => {
-    expect(homeSrc).toContain("const SIZES = ['sm', 'md', 'lg', 'xl']");
+  // #459 -- the SIZES array + apply pipeline live in the shared
+  // js/lib/card-size.js helper so home + index consume one implementation.
+  const cardSizeSrc = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'lib', 'card-size.js'),
+    'utf8'
+  );
+
+  test('shared helper exports the SIZES list with xl alongside sm/md/lg', () => {
+    expect(cardSizeSrc).toContain("export const CARD_SIZES = ['sm', 'md', 'lg', 'xl']");
   });
 
   test('XL button is rendered with the desktop-only modifier class', () => {

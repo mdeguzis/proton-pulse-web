@@ -30,7 +30,13 @@ describe('homepage cards use the shared renderer + shared grid CSS (#125)', () =
   });
 
   test('homepage container toggles the shared grid classes, not pg-list--', () => {
-    expect(INDEX_JS).toMatch(/classList\.add\(`cards--\$\{size\}`\)/);
+    // The cards--<size> class swap moved into the shared card-size helper in
+    // #459, so INDEX_JS no longer contains the literal template string; the
+    // shared helper does. Assert both: helper owns the swap, and index.js
+    // consumes the helper.
+    const CARD_SIZE_JS = read('js/lib/card-size.js');
+    expect(CARD_SIZE_JS).toMatch(/classList\.add\(`cards--\$\{size\}`\)/);
+    expect(INDEX_JS).toMatch(/import \{ initCardSizeToggle/);
     expect(INDEX_JS).toMatch(/classList\.toggle\('home-cards-tile-mode'/);
     expect(INDEX_JS).not.toMatch(/pg-list--\$\{size\}/);
     expect(INDEX_JS).not.toMatch(/'pg-list--tile-mode'/);

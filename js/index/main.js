@@ -6,6 +6,7 @@ import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
 import { filterDelisted } from '../lib/delisted-filter.js?v=42858e22';
 import { renderGameCard } from '../app/lib/card.js?v=db950b95';
 import { browseGames, getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
+import { initCardSizeToggle, setCardSizeButtonsEnabled } from '../lib/card-size.js?v=3402f405';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
 // search dropdown, auth indicator) lives in topbar.js.
@@ -415,37 +416,20 @@ import { browseGames, getGamesByIds } from '../app/api/search-games.js?v=0e14d3f
       btn.addEventListener('click', () => toggleStore(btn.dataset.store));
     });
 
-    // S/M/L card size (saved preference, shared key with app page)
-    const SIZE_KEY = 'pp:grid-size';
-    const SIZES = ['sm', 'md', 'lg', 'xl'];
-    // Default 'lg' on desktop so wider viewports get roomier cards by default;
-    // mobile stays on 'md' to keep more rows on screen.
-    const DEFAULT_SIZE = window.matchMedia('(min-width: 760px)').matches ? 'lg' : 'md';
-    function savedSize() {
-      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : DEFAULT_SIZE; } catch { return DEFAULT_SIZE; }
-    }
-    function applySize(size) {
-      SIZES.forEach(s => list.classList.remove(`cards--${s}`));
-      list.classList.add(`cards--${size}`);
-      document.querySelectorAll('.pg-size-btn').forEach(b => b.classList.toggle('active', b.dataset.size === size));
-      // The size class changes the column count, so the previously rendered
-      // item count no longer fills whole rows -- the last row goes ragged and
-      // the grid only looked even because of the initial full-rows render.
-      // Refill to whole rows for the new width and re-render so S/M/L/XL each
-      // land an even 5 rows without needing a page refresh.
-      shownCount = pageSizeForFullRows(list, targetRowsForViewport());
-      renderPopular();
-    }
-    function setSizeEnabled(enabled) {
-      document.querySelectorAll('.pg-size-btn').forEach(b => { b.disabled = !enabled; });
-      document.getElementById('pg-size-toggle')?.classList.toggle('pg-size-toggle--disabled', !enabled);
-    }
-    document.querySelectorAll('.pg-size-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        try { localStorage.setItem(SIZE_KEY, btn.dataset.size); } catch { /* ignore */ }
-        applySize(btn.dataset.size);
-      });
+    // S/M/L/XL card size (saved preference, shared key with app page) via the
+    // shared card-size helper. #459. The size class changes column count, so
+    // onApply refills the visible grid to whole rows for the new width.
+    const applySize = initCardSizeToggle({
+      containers: [list],
+      buttonSelector: '.pg-size-btn',
+      onApply: () => {
+        shownCount = pageSizeForFullRows(list, targetRowsForViewport());
+        renderPopular();
+      },
     });
+    function setSizeEnabled(enabled) {
+      setCardSizeButtonsEnabled(enabled, '.pg-size-btn', 'pg-size-toggle');
+    }
 
     // Layout: 'list' (horizontal cards, the new default) or 'grid'
     // (Steam-style vertical tile grid). Both layouts use the same card
@@ -476,7 +460,7 @@ import { browseGames, getGamesByIds } from '../app/api/search-games.js?v=0e14d3f
     });
 
     updateRatingCounts(); // seed the rating chip counts for the default (Steam)
-    applySize(savedSize());
+    // initCardSizeToggle already applied the saved size on mount above.
     applyLayout(savedLayout());
   } catch (err) {
     console.debug('[popular-games] failed to load most_played.json', { error: String(err) });

@@ -5,6 +5,10 @@ const read = (p) => fs.readFileSync(path.join(__dirname, '..', p), 'utf8');
 describe('configurable card size (S/M/L)', () => {
   const homeSrc = read('js/app/components/home.js');
   const cssSrc = read('css/app/home.css');
+  // #459 -- shared card-size helper. The SIZES / SIZE_KEY / DEFAULT_SIZE
+  // constants + savedSize / applyCardSize / initCardSizeToggle helpers live
+  // here so home + index consume one implementation instead of duplicating.
+  const cardSizeSrc = read('js/lib/card-size.js');
 
   test('renders an S/M/L size toggle', () => {
     expect(homeSrc).toContain('id="home-size-toggle"');
@@ -14,11 +18,14 @@ describe('configurable card size (S/M/L)', () => {
   });
 
   test('size is a saved user preference; default picks lg on desktop, md on mobile', () => {
-    expect(homeSrc).toContain("const SIZE_KEY = 'pp:grid-size'");
-    expect(homeSrc).toContain('localStorage.setItem(SIZE_KEY, size)');
-    expect(homeSrc).toContain("window.matchMedia('(min-width: 760px)').matches ? 'lg' : 'md'");
-    expect(homeSrc).toContain('SIZES.includes(s) ? s : _DEFAULT_SIZE');
-    expect(homeSrc).toContain('applyGridSize(_savedSize())');
+    // Constants + storage key live in the shared helper now.
+    expect(cardSizeSrc).toContain("export const CARD_SIZE_KEY = 'pp:grid-size'");
+    expect(cardSizeSrc).toContain("export const CARD_SIZES = ['sm', 'md', 'lg', 'xl']");
+    expect(cardSizeSrc).toContain("window.matchMedia('(min-width: 760px)').matches ? 'lg' : 'md'");
+    expect(cardSizeSrc).toContain('localStorage.setItem(CARD_SIZE_KEY');
+    // Home consumes the helper -- no local duplicate.
+    expect(homeSrc).toContain("import { initCardSizeToggle");
+    expect(homeSrc).toContain('initCardSizeToggle({');
   });
 
   test('list/grid layout is also a saved preference, restored on load', () => {
@@ -28,8 +35,11 @@ describe('configurable card size (S/M/L)', () => {
   });
 
   test('size class is applied to both card lists', () => {
-    expect(homeSrc).toContain("['cards-recent', 'cards-popular'].forEach");
-    expect(homeSrc).toContain('el2.classList.add(`cards--${size}`)');
+    // Home hands both card lists as containers into the shared apply pipeline;
+    // the helper does the classList swap once per container.
+    expect(homeSrc).toContain("document.getElementById('cards-recent')");
+    expect(homeSrc).toContain("document.getElementById('cards-popular')");
+    expect(cardSizeSrc).toContain('el.classList.add(`cards--${size}`)');
   });
 
   test('CSS defines the three card sizes', () => {
@@ -39,9 +49,13 @@ describe('configurable card size (S/M/L)', () => {
   });
 
   test('S/M/L/XL stay enabled in both layouts (tile mode uses size as column width)', () => {
+    // Home delegates the enable/disable to the shared setCardSizeButtonsEnabled
+    // so the same logic can be reused by index and any future consumer.
+    expect(homeSrc).toContain("import { initCardSizeToggle, setCardSizeButtonsEnabled }");
     expect(homeSrc).toContain('function _setSizeEnabled(enabled)');
-    expect(homeSrc).toContain('b.disabled = !enabled');
+    expect(homeSrc).toContain("setCardSizeButtonsEnabled(enabled, '.home-size-btn', 'home-size-toggle')");
     expect(homeSrc).toContain('_setSizeEnabled(true)');
+    expect(cardSizeSrc).toContain('b.disabled = !enabled');
     expect(cssSrc).toContain('.home-size-btn:disabled');
   });
 

@@ -21,6 +21,7 @@ import { loadDeckStatusMap } from '../api/deck-status.js?v=0bbdc652';
 import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=09b673c8';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
+import { initCardSizeToggle, setCardSizeButtonsEnabled } from '../../lib/card-size.js?v=3402f405';
 
 // #323 followup helpers: every place that used to call
 // getMyLibraryAppIds / getMyWishlistAppIds directly now goes through these
@@ -1247,9 +1248,9 @@ export async function renderHomePage() {
     });
 
     // S/M/L only make sense for the card (grid) view; disable them in list mode.
+    // Delegates to the shared helper so home + index share one implementation.
     function _setSizeEnabled(enabled) {
-      document.querySelectorAll('.home-size-btn').forEach(b => { b.disabled = !enabled; });
-      document.getElementById('home-size-toggle')?.classList.toggle('home-size-toggle--disabled', !enabled);
+      setCardSizeButtonsEnabled(enabled, '.home-size-btn', 'home-size-toggle');
     }
 
     // Layout: 'list' (horizontal cards, default) or 'grid' (Steam-style
@@ -1284,36 +1285,15 @@ export async function renderHomePage() {
       });
     });
 
-    // Card size (S/M/L) is a saved user preference. Applies the cards--<size>
-    // class to both card lists; default medium.
-    const SIZE_KEY = 'pp:grid-size';
-    const SIZES = ['sm', 'md', 'lg', 'xl'];
-    // Desktop has the room for larger cards, so the default steps up to 'lg'
-    // there; mobile stays on 'md' to keep more rows on screen.
-    const _DEFAULT_SIZE = window.matchMedia('(min-width: 760px)').matches ? 'lg' : 'md';
-    function _savedSize() {
-      try { const s = localStorage.getItem(SIZE_KEY); return SIZES.includes(s) ? s : _DEFAULT_SIZE; } catch { return _DEFAULT_SIZE; }
-    }
-    function applyGridSize(size) {
-      ['cards-recent', 'cards-popular'].forEach(id => {
-        const el2 = document.getElementById(id);
-        if (el2) { SIZES.forEach(s => el2.classList.remove(`cards--${s}`)); el2.classList.add(`cards--${size}`); }
-      });
-      document.querySelectorAll('.home-size-btn').forEach(b => b.classList.toggle('active', b.dataset.size === size));
-      // The size class changes the column count, so re-render both grids to
-      // refill whole rows for the new width. Without this the last row goes
-      // ragged on a size change until the next full re-render.
-      applyRecentFilters();
-      applyPopularFilters();
-    }
-    document.querySelectorAll('.home-size-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const size = btn.dataset.size;
-        try { localStorage.setItem(SIZE_KEY, size); } catch { /* ignore */ }
-        applyGridSize(size);
-      });
+    // Card size (S/M/L/XL) via the shared card-size helper. Two containers
+    // (cards-recent + cards-popular) each get the cards--<size> class; on
+    // change the two card sections re-render so the last row refills to
+    // whole rows for the new column width. #459.
+    const applyGridSize = initCardSizeToggle({
+      containers: [document.getElementById('cards-recent'), document.getElementById('cards-popular')],
+      buttonSelector: '.home-size-btn',
+      onApply: () => { applyRecentFilters(); applyPopularFilters(); },
     });
-    applyGridSize(_savedSize());
     applyLayout(_savedLayout()); // restore saved list/grid before first render
 
     _restoreFilters(); // re-apply a saved filter set (if any) before first render
