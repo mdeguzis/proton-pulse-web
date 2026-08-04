@@ -474,6 +474,16 @@ describe('game-page confidence range filter (#445)', () => {
     expect(gamePageSrc).toMatch(/if\s*\(filterConfidenceMin\s*>\s*0\s*\|\|\s*filterConfidenceMax\s*<\s*100\)/);
   });
 
+  test('filter falls back to estimateScore when r.score is missing so it matches the card display (#461)', () => {
+    // report-card.js renders `r.score || estimateScore(r)`. Without the same
+    // fallback in the filter, mirrored ProtonDB reports (no persisted score)
+    // read as 0 and get dropped even when their displayed pill sat well inside
+    // the min/max range. Both the import and the fallback expression are
+    // asserted so a future refactor cannot silently regress either half.
+    expect(gamePageSrc).toContain("import { populateScoringTooltip, pulseTierFromReports, estimateScore }");
+    expect(gamePageSrc).toMatch(/Number\(r\.score\)\s*\|\|\s*estimateScore\(r\)/);
+  });
+
   test('confidence range contributes to the active-filters badge count', () => {
     // Two places count: initial render and refreshReports. Both must include
     // the range check so the badge stays accurate as the user drags.

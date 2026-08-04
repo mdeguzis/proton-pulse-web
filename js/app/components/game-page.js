@@ -2,7 +2,7 @@
 
 import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
-import { populateScoringTooltip, pulseTierFromReports } from '../../shared/scoring.js?v=852c9d97';
+import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../../shared/scoring.js?v=852c9d97';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
 import { getWebClientId } from '../../shared/submit.js?v=ba876a15';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
@@ -1150,7 +1150,13 @@ export async function renderGamePage(appId) {
     if (filterConfidenceMin > 0 || filterConfidenceMax < 100) {
       arr = arr.filter(r => {
         if (r._kind !== 'report') return false;
-        const s = Math.min(100, Math.max(0, Number(r.score) || 0));
+        // Match report-card.js's display formula (r.score || estimateScore(r))
+        // so the number that gates the row is the same number the card shows.
+        // Without the estimateScore fallback, ProtonDB-mirrored reports with
+        // no persisted score were dropped even when their displayed pill sat
+        // well inside the range. #461.
+        const raw = Number(r.score) || estimateScore(r);
+        const s = Math.min(100, Math.max(0, Number(raw) || 0));
         return s >= filterConfidenceMin && s <= filterConfidenceMax;
       });
     }
