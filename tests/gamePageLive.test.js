@@ -130,7 +130,9 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
 
   test('box art is preserved in the header grid', () => {
     expect(src).toContain('class="game-header-art"');
-    expect(src).toContain('src="${STEAM_IMG(appId)}"');
+    // Header art now prefers the pgwiki cover_url when the appId is a
+    // pw_ id, falling back to the Steam CDN for everything else. #463.
+    expect(src).toContain('src="${esc(pgwikiEntry?.cover_url || STEAM_IMG(appId))}"');
   });
 
   test('ProtonDB tier appears as an inline chip inside the confidence line (#219)', () => {
