@@ -528,8 +528,16 @@ describe('home (app.html browse) -- XL card size parity with index.html', () => 
     expect(homeSrc).toMatch(/data-size="xl"/);
   });
 
-  test('home.css defines the cards--xl size and a thumb width override', () => {
-    expect(homeCss).toMatch(/\.cards--xl\s+\.game-card-thumb\s*\{[^}]*width:/);
+  test('cards.css defines the cards--xl size and home.css keeps the toggle button modifier', () => {
+    // .cards--<size> sizing rules moved from css/app/home.css to
+    // css/shared/cards.css in #464 so home landing (index.html) picks
+    // them up too. home.css keeps the size-toggle button modifier
+    // since that button + its disabled state are browse-specific.
+    const cardsCss = fs.readFileSync(
+      path.join(__dirname, '..', 'css', 'shared', 'cards.css'),
+      'utf8'
+    );
+    expect(cardsCss).toMatch(/\.cards--xl\s+\.game-card-thumb\s*\{[^}]*width:/);
     expect(homeCss).toMatch(/\.home-size-btn--desktop-only/);
   });
 });
