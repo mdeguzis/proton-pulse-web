@@ -32,6 +32,29 @@ async function _indexRowFor(id) {
   _indexRowCache.set(key, row);
   return row;
 }
+
+// #463: pgwiki appIds (pw_*) never hit the search-games API, so
+// _indexRowFor returns null and the game page renders "App pw_xxx" as the
+// title with a broken Steam-CDN header image. Fetch pcgwiki-catalog.json
+// once at module scope and hand callers back the row so the title + cover
+// resolve from the same source the search dropdown uses.
+let _pgwikiCatalogPromise = null;
+async function _loadPgwikiCatalog() {
+  if (!_pgwikiCatalogPromise) {
+    _pgwikiCatalogPromise = (async () => {
+      try {
+        const res = await fetch(await dataUrl('pcgwiki-catalog.json'));
+        return res.ok ? await res.json() : {};
+      } catch { return {}; }
+    })();
+  }
+  return _pgwikiCatalogPromise;
+}
+async function _pgwikiEntryFor(appId) {
+  if (appTypeFromAppId(appId) !== 'pgwiki') return null;
+  const catalog = await _loadPgwikiCatalog();
+  return catalog?.[String(appId)] || null;
+}
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
@@ -825,12 +848,11 @@ export async function renderGamePage(appId) {
     if (!stubTitle && appTypeFromAppId(appId) === 'pgwiki') {
       // #406: a pw_ id can beat the regenerated search index to a browser
       // (fresh shell + stale index). The PCGW catalog knows the title.
-      try {
-        const res = await fetch(await dataUrl('pcgwiki-catalog.json'));
-        const catalog = res.ok ? await res.json() : {};
-        stubTitle = catalog?.[String(appId)]?.name || null;
-        console.debug('[game-page] pgwiki catalog stub lookup', { appId, found: !!stubTitle, source: 'pcgwiki-catalog.json' });
-      } catch (e) { console.debug('[game-page] pgwiki catalog stub lookup failed', { appId, error: String(e && e.message || e) }); }
+      // Routed through the shared _pgwikiEntryFor helper so we hit the
+      // same memoized catalog fetch the full render below uses. #463.
+      const entry = await _pgwikiEntryFor(appId);
+      stubTitle = entry?.name || null;
+      console.debug('[game-page] pgwiki catalog stub lookup', { appId, found: !!stubTitle, source: 'pcgwiki-catalog.json' });
     }
     // #363: only a GENUINELY unknown appId (no title in any index) gets the
     // minimal mirror-miss state. A KNOWN game with no reports yet falls through
@@ -878,11 +900,17 @@ export async function renderGamePage(appId) {
   //      search-index but still on Steam -- the #115 case)
   //   5. bare "App <id>" -- last resort when nothing else can resolve a name
   const indexHit = await _indexRowFor(appId);
+  // #463: fetch the pgwiki catalog row for pgwiki appIds so both the title
+  // fallback below and the header art below can use it. Same source the
+  // search dropdown reads, so titles + widescreen covers now match across
+  // the search dropdown and the game page.
+  const pgwikiEntry = await _pgwikiEntryFor(appId);
   let resolvedTitle = reports[0]?.title || configs[0]?.appName || indexHit?.title;
   if (!resolvedTitle && /^\d+$/.test(String(appId))) {
     const catalog = await _fetchSteamCatalog();
     resolvedTitle = catalog?.[String(appId)] || null;
   }
+  if (!resolvedTitle && pgwikiEntry?.name) resolvedTitle = pgwikiEntry.name;
   if (!resolvedTitle) {
     // #363: a no-report game that fell through from the stub branch is only in
     // the extended index. Resolve its real title from there (already loaded
@@ -1348,7 +1376,7 @@ export async function renderGamePage(appId) {
         <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry originated from">(${esc(_titleStoreLabel(appId, replacedBy) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
-            <img class="game-header-art" src="${STEAM_IMG(appId)}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+            <img class="game-header-art" src="${esc(pgwikiEntry?.cover_url || STEAM_IMG(appId))}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
           </div>
           ${ratingPanel}
           <!-- Uniform tag row under the artwork: OS chips + user-context
