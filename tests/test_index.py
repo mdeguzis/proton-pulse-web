@@ -532,7 +532,10 @@ def test_generate_coverage_report_uses_persisted_metadata_for_provenance(tmp_pat
     assert "Official ProtonDB Dump" in html
     assert "Live Backfill" in html
     assert '<div class="value">1</div>' in html
-    assert '"indexed-data",1,1,1,1,"official backfill protondb-signal steam-catalog",1' in html
+    # Schema updated in #450: store field added at index 1, flags gain a
+    # store-<name> prefix so the store filter chips can key on the same row
+    # payload the source filter uses.
+    assert '"steam","Counter-Strike 2","indexed-data",1,1,1,1,"store-steam official backfill protondb-signal steam-catalog",1' in html
 
 
 def test_generate_coverage_report_includes_no_data_filter_and_flag(tmp_path):
@@ -551,7 +554,8 @@ def test_generate_coverage_report_includes_no_data_filter_and_flag(tmp_path):
     html = (tmp_path / "coverage.html").read_text()
     assert 'data-src="no-data"' in html
     assert ">No data<" in html
-    assert '"steam-catalog",0,0,0,1,"steam-catalog no-data",0' in html
+    # Schema updated in #450: store field + store-<name> flag prefix.
+    assert '"steam","Steam-only Game","steam-catalog",0,0,0,1,"store-steam steam-catalog no-data",0' in html
 
 
 def test_generate_coverage_report_persists_filter_state_in_url(tmp_path):
@@ -667,3 +671,191 @@ def test_generate_coverage_report_bad_app_id_flag(tmp_path):
     )
     out = (tmp_path / "coverage.html").read_text()
     assert "bad-appid" in out
+
+
+# #450 -- coverage now spans all stores + uses shared filter pills
+
+def test_generate_coverage_report_includes_gog_epic_pcgwiki_rows(tmp_path):
+    """Non-Steam catalog entries must land in the coverage universe with their
+    catalog titles + store tag so the store filter chips can partition them."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "Counter-Strike 2"},
+        gog_catalog={"1207658691": "Witcher 3"},
+        epic_catalog={"fortnite": "Fortnite"},
+        pcgwiki_catalog={"pgwiki:half-life-2": "Half-Life 2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    # Each store's canonical id shape appears somewhere in the emitted DATA array.
+    assert '"gog:1207658691"' in html
+    assert '"epic:fortnite"' in html
+    assert '"pgwiki:half-life-2"' in html
+    # Catalog titles carry through so the store rows are readable, not opaque.
+    assert "Witcher 3" in html
+    assert "Fortnite" in html
+    assert "Half-Life 2" in html
+
+
+def test_generate_coverage_report_tags_each_row_with_a_store(tmp_path):
+    """Store field lives at row index 1 so filter chips can key on it without
+    a second lookup. Non-Steam ids must NOT get flagged as bad-appid anymore."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+        gog_catalog={"1207658691": "Witcher 3"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    # Row payload includes the store literal right after the id.
+    assert '["730","steam"' in html
+    assert '["gog:1207658691","gog"' in html
+    # Flag string carries the store-<name> prefix used by the store filter chip.
+    assert 'store-steam' in html
+    assert 'store-gog' in html
+    # gog:/epic:/pgwiki: are LEGIT ids -- they must not be flagged bad-appid.
+    row_start = html.index('["gog:1207658691","gog"')
+    row_end = html.index(']', row_start)
+    gog_row = html[row_start:row_end + 1]
+    assert 'bad-appid' not in gog_row
+
+
+def test_generate_coverage_report_uses_shared_filter_panel_modal(tmp_path):
+    """Coverage filter groups must live inside the shared .filter-panel modal
+    chrome (matching home browse) rather than rendering inline. #452.
+
+    Guards the modal wrap, toggle button + badge, mobile header + close X,
+    footer with Collapse + Clear, and that topbar.js's mobile-modal
+    observer (which keys on `.filter-panel.open`) will pick it up."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    # Wrap + toggle + panel with the exact shared classes.
+    assert 'class="filter-wrap"' in html
+    assert 'id="coverage-filter-wrap"' in html
+    assert 'class="filter-toggle-btn"' in html
+    assert 'id="coverage-filter-toggle"' in html
+    assert 'aria-expanded="false"' in html
+    assert 'id="coverage-filter-badge"' in html
+    assert 'class="filter-panel filter-panel--stack"' in html
+    assert 'id="coverage-filter-panel"' in html
+    # Mobile modal chrome (header + close X + footer) mirrors home browse.
+    assert 'class="filter-panel-mobile-header"' in html
+    assert 'class="filter-panel-close"' in html
+    assert 'aria-label="Close filters"' in html
+    assert 'class="filter-panel-footer filter-panel-footer--stack"' in html
+    assert 'id="coverage-filter-collapse"' in html
+    assert 'id="coverage-filter-clear"' in html
+    # No orphan .filter-groups container from the pre-modal layout.
+    assert 'class="filter-groups"' not in html
+
+
+def test_generate_coverage_report_uses_shared_filter_pill_class(tmp_path):
+    """Coverage page must use the shared .pg-filter class from css/shared/filters.css
+    instead of the old bespoke .toggle chips, so the pill look matches the home +
+    game page filters."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    # New shared classes are present.
+    assert 'class="pg-filter pg-filter--active"' in html
+    assert 'class="pg-filter-group"' in html
+    # Old bespoke toggle class is gone from the filter row markup.
+    assert 'class="toggle active"' not in html
+    assert 'class="toggle"' not in html
+    # And the two dedicated filter groups (Store, Data source) both render.
+    assert 'id="store-filter"' in html
+    assert 'id="source-filter"' in html
+
+
+def test_generate_index_html_loads_data_config_and_uses_dataBase(tmp_path):
+    """data-index master/detail view must prefix data/ fetches with
+    config.dataBase (set to the R2 origin on CF Pages) -- otherwise
+    latest.json fetches hit the SPA fallback and JSON.parse breaks. #451."""
+    keys = {("730", "2024")}
+    generate_index_html(keys, tmp_path)
+    html = (tmp_path / "data-index.html").read_text()
+    # Config lookup + prefixing helpers both ship.
+    assert "fetch('data-config.json'" in html
+    assert 'function dataFileUrl' in html
+    # loadYear routes through dataFileUrl instead of hitting the same origin.
+    assert "dataFileUrl('data/' + appId + '/' + file)" in html
+    # The old direct fetch on 'data/' + appId + '/' + file is gone.
+    assert "fetch('data/' + appId + '/' + file)" not in html
+
+
+def test_generate_index_html_popular_titles_link_via_hash(tmp_path):
+    """Popular-titles list must route through the hash router (#/{id}) instead
+    of a raw data/{id}/latest.json download that 404s on CF Pages. #451."""
+    from scripts.pipeline.metadata import update_app_metadata as _update_meta
+    data_dir = tmp_path / "data"
+    (data_dir / "730").mkdir(parents=True)
+    (data_dir / "730" / "latest.json").write_text('[{"title":"Counter-Strike 2"}]')
+    keys = {("730", "2024")}
+    generate_index_html(keys, tmp_path)
+    html = (tmp_path / "data-index.html").read_text()
+    # Popular titles list an in-app hash link, not a raw JSON path.
+    assert '<a href="#/730">' in html
+    assert '<a href="data/730/latest.json">' not in html
+
+
+def test_generate_coverage_report_indexed_link_routes_via_data_index(tmp_path):
+    """Coverage 'Indexed' cells must link to data-index.html#/{id} instead of
+    a raw data/{id}/ path -- R2 does not auto-serve directory indexes, so a
+    bare data/{id}/ link 404s on CF Pages. #451."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    assert 'data-index.html#/${id}' in html
+    assert '`<a href="data/${id}/">index</a>`' not in html
+
+
+def test_generate_coverage_report_store_column_and_labels(tmp_path):
+    """Store column header renders + JS STORE_LABELS lookup ships so each row
+    prints a readable store name (Steam / GOG / Epic / PCGamingWiki)."""
+    from scripts.pipeline.finalize import generate_coverage_report
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(),
+        backfilled_keys=set(),
+        data_output_path=tmp_path / "data",
+        output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    # Store column header in the sortable table.
+    assert '>Store</th>' in html
+    # Store label lookup embedded so the render function can convert
+    # short store tokens to human names.
+    assert 'STORE_LABELS' in html
+    for label in ('"Steam"', '"GOG"', '"Epic"', '"PCGamingWiki"'):
+        assert label in html

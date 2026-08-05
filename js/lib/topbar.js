@@ -968,11 +968,21 @@
     });
     // Accordion parents (Browse / Resources): toggle their sub-list open;
     // clicking a parent must NOT close the whole drawer, so it's handled
-    // before the link handler below and stops there.
+    // before the link handler below and stops there. Opening a group
+    // auto-closes any other expanded group (#460) so two accordions can
+    // never both push their items down the drawer at once.
     drawer.querySelectorAll('.mnav-parent').forEach(function (btn) {
       btn.addEventListener('click', function () {
         const group = btn.closest('.mnav-group');
         const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if (!expanded) {
+          drawer.querySelectorAll('.mnav-group.mnav-open').forEach(function (openGroup) {
+            if (openGroup === group) return;
+            openGroup.classList.remove('mnav-open');
+            const openBtn = openGroup.querySelector('.mnav-parent');
+            if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+          });
+        }
         btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         if (group) group.classList.toggle('mnav-open', !expanded);
       });

@@ -73,7 +73,10 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
   test('Clear filters does NOT write to localStorage anymore', () => {
     const idx = src.indexOf("document.getElementById('gp-filter-clear')");
     expect(idx).toBeGreaterThan(0);
-    const slice = src.slice(idx, idx + 1600);
+    // Slice must span the whole handler body. Bumped from 1600 -> 2400 after
+    // #445 added confidence-range slider resets that pushed
+    // _updateSaveButtonState past the original window.
+    const slice = src.slice(idx, idx + 2400);
     expect(slice).not.toContain('localStorage.setItem');
     expect(slice).not.toContain('localStorage.removeItem');
     expect(slice).toContain('_updateSaveButtonState');
@@ -138,11 +141,17 @@ describe('#415 slice 1: filter Save is explicit press-to-save', () => {
   });
 
   test('CSS ships dirty AND clean state variants for the save button', () => {
-    expect(reportsCss).toContain('.filter-save-btn.is-dirty');
-    expect(reportsCss).toContain('.filter-save-btn.is-clean');
+    // Save button styling moved to shared/filters.css in #458 so the
+    // coverage report inherits it without pulling app-page reports.css.
+    const filtersCss = fs.readFileSync(
+      path.join(__dirname, '..', 'css', 'shared', 'filters.css'),
+      'utf8'
+    );
+    expect(filtersCss).toContain('.filter-save-btn.is-dirty');
+    expect(filtersCss).toContain('.filter-save-btn.is-clean');
     // is-active alias retained so existing DOM inspectors + tests do not
     // suddenly see a missing selector.
-    expect(reportsCss).toContain('.filter-save-btn.is-active');
+    expect(filtersCss).toContain('.filter-save-btn.is-active');
   });
 
   test('button HTML no longer templates a persistFilters conditional class or aria-pressed', () => {

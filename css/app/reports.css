@@ -129,61 +129,9 @@
   border-color: var(--accent);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
 }
-.filter-panel-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-}
-/* Save filters and Clear filters share one pill shape: same size, text size,
-   and border thickness. Only the colors differ. */
-.filter-save-btn,
-.filter-clear-btn {
-  font-size: 0.72rem;
-  font-weight: 600;
-  font-family: inherit;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border-width: 1.5px;
-  border-style: solid;
-  cursor: pointer;
-  transition: color .1s, border-color .1s, background .1s;
-}
-/* Save + Clear are solid accent-filled pills so they read as normal action
-   buttons. Collapse stays orange as the standout; these two are the neutral
-   "do the thing" pair. */
-.filter-save-btn,
-.filter-clear-btn {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #0a0c10;
-}
-.filter-save-btn:hover,
-.filter-clear-btn:hover { filter: brightness(1.08); }
-/* #415 slice 1: dirty state shows a bright accent fill (there is unsaved
-   change); clean state is a muted outline so a page whose filters already
-   match the persisted snapshot does not scream at the viewer. is-active
-   retained as an alias for the older solid-accent style. */
-.filter-save-btn.is-active,
-.filter-save-btn.is-dirty {
-  background: var(--accent-hi);
-  border-color: var(--accent-hi);
-  color: #0a0c10;
-}
-.filter-save-btn.is-clean {
-  background: transparent;
-  border-color: var(--border);
-  color: var(--muted);
-}
-.filter-save-btn.is-clean:hover {
-  color: var(--text);
-  border-color: var(--accent);
-  filter: none;
-}
+/* .filter-panel-footer / .filter-save-btn / .filter-clear-btn moved to
+   css/shared/filters.css (#458) so the coverage report inherits them
+   without pulling in the browse-specific rules below. */
 /* #415 slice 2: Apply-across-site checkbox lives inside the same footer as
    the Save + Clear buttons. Muted color so it does not compete with the
    action pair; label stays clickable across its whole surface. */
@@ -216,92 +164,17 @@
 .filter-persist:hover { color: var(--text); }
 .filter-persist input { accent-color: var(--accent); cursor: pointer; }
 
-/* Browse-page filter panel: lay the groups (Sort / Tier / Source) out side by
-   side so the popover is compact instead of one tall vertical column. Wraps to
-   a single column on narrow screens.
-   Drawer animation (#415 slice 2b): display MUST stay flex regardless of
-   .open. Toggling display:block <-> flex mid-transition caused a hard
-   reflow that flashed a stacked-block layout ("portrait mode") on the
-   way down. Content is clipped by max-height:0 + overflow:hidden while
-   closed, so the flex layout is invisible until the panel opens. */
-.filter-panel--stack {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 16px 24px;
-}
-/* Mobile modal treatment on --stack (from shared/filters.css) forces
-   display:block !important when .open. Match that in the closed state
-   too so the transition never sees a flex->block flip mid-collapse. */
+/* .filter-panel--stack layout + widening + .filter-collapse-btn / caret +
+   .filter-panel-footer--stack moved to css/shared/filters.css (#458). Mobile
+   footer flex-wrap for .filter-share-toggle stays here because share-toggle
+   is browse/game-page specific. */
 @media (max-width: 720px) {
-  .filter-panel--stack {
-    display: block;
-  }
-}
-.filter-panel--stack .filter-item { gap: 4px; min-width: 130px; }
-.filter-panel--stack .pg-filter-group { min-width: 120px; }
-.filter-panel-footer--stack {
-  flex-basis: 100%;
-  width: 100%;
-  margin-top: 2px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-  justify-content: flex-end;
-  gap: 8px;
-}
-/* Mobile footer: Collapse + Apply-across-site + Save + Clear all in one
-   row was too crowded on phones (label text overlapped the buttons).
-   Wrap the "Apply across the site" checkbox onto its own row above the
-   three buttons so each control has room to breathe. */
-@media (max-width: 720px) {
-  .filter-panel-footer,
-  .filter-panel-footer--stack {
-    flex-wrap: wrap;
-    row-gap: 10px;
-  }
   .filter-panel-footer .filter-share-toggle,
   .filter-panel-footer--stack .filter-share-toggle {
     flex-basis: 100%;
     order: -1;
     white-space: normal;
   }
-}
-/* Collapse button sits on the left of the footer while Save + Clear stay
-   on the right (justify-content:flex-end on the row + margin-right:auto on
-   the collapse pushes it to the opposite edge). Uses the same pill shape
-   as the other footer buttons so the row reads as three peer actions. */
-.filter-collapse-btn {
-  margin-right: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  font-family: inherit;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 6px 14px;
-  border-radius: 999px;
-  /* Steam warm-orange fill so Collapse reads as the primary "shrink this
-     back down" action, distinct from Save and Clear which are neutral. */
-  border: 1.5px solid #d97706;
-  background: #d97706;
-  color: #0a0c10;
-  cursor: pointer;
-  transition: color .1s, border-color .1s, background .1s, filter .1s;
-}
-.filter-collapse-btn:hover {
-  filter: brightness(1.08);
-}
-.filter-collapse-caret {
-  font-size: 0.72rem;
-  line-height: 1;
-  display: inline-block;
-  transform: translateY(-1px);
-}
-@media (max-width: 560px) {
-  .filter-panel--stack.open { flex-direction: column; gap: 14px; }
 }
 .filter-panel--stack .home-filter-select {
   background: var(--bg);
@@ -375,64 +248,12 @@
   .filter-item--mobile-only { display: flex; flex-direction: column; gap: 4px; }
 }
 
-/* Desktop: the narrow row-wrap of groups made the variable-width pills wrap
-   raggedly. On wider screens lay the panel out as a single vertical column of
-   full-width groups, each group an even pill grid so they align in tidy
-   columns. Mobile keeps the compact stack from the max-width:560 rule above. */
-/* Desktop dropdown (>560px) has two regimes so a narrow desktop window does not
-   cram the groups into 2-3 thin masonry columns (#417 "stack when thin"):
-     - wide (>=900px): balanced masonry columns (CSS multi-column). The tall Tier
-       group no longer leaves empty pockets -- shorter groups pack in beside it.
-     - thin (561-899px): a single full-width column, one group per row.
-   Both keep their layout on the base .filter-panel--stack (NOT gated on .open)
-   so removing .open on close never snaps the layout mid-collapse -- that was the
-   #415 slice 2b "narrow vertical" flash, where the panel fell back to the base
-   display:flex shrink-to-fit (~459px) for the whole 360ms clip-path collapse. */
-@media (min-width: 900px) {
-  .filter-panel--stack {
-    display: block;
-    columns: 5 200px;
-    column-gap: 26px;
-    width: min(calc(100vw - 2 * var(--content-pad)), calc(var(--content-max) - 2 * var(--content-pad)));
-    min-width: 0;
-    max-width: none;
-  }
-  .filter-panel--stack .filter-item,
-  .filter-panel--stack .pg-filter-group { break-inside: avoid; }
-  .filter-panel--stack .filter-panel-footer--stack { column-span: all; break-inside: avoid; }
-}
-@media (min-width: 561px) and (max-width: 899px) {
-  .filter-panel--stack {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: min(560px, calc(100vw - 2 * var(--content-pad)));
-    min-width: 0;
-    max-width: none;
-  }
-  .filter-panel--stack .filter-item,
-  .filter-panel--stack .pg-filter-group { width: 100%; }
-}
-/* Inner layout shared by both desktop regimes (>560px). */
+/* Desktop widening + squircle chips for .filter-panel--stack moved to
+   css/shared/filters.css (#458). Browse-only .home-filter-select sizing
+   inside the stack stays here since .home-filter-select is browse chrome. */
 @media (min-width: 561px) {
-  .filter-panel--stack .filter-item,
-  .filter-panel--stack .pg-filter-group { margin-bottom: 16px; min-width: 0; }
   .filter-panel--stack .home-filter-select { width: 100%; box-sizing: border-box; }
-  /* Pills wrap at their natural width so long labels ("Unsupported",
-     "Not Rated Yet") never clip. */
-  .filter-panel--stack .pg-filter-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-content: start;
-  }
-  .filter-panel--stack .pg-filter-group-label { flex-basis: 100%; }
-  .filter-panel--stack .filter-panel-footer--stack { margin: 4px 0 0; }
 }
-
-/* Squircle chips in the browse filter popover (picked over the pill shape).
-   Scoped to the filter panel so other pg-filter pills keep their look. */
-.filter-panel--stack .pg-filter { border-radius: 7px; }
 
 /* .filter-checks / .filter-check removed -- filter groups now use
    .pg-filter-group + .pg-filter pill buttons (css/shared/filters.css) */

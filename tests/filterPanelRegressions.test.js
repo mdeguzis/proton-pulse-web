@@ -440,10 +440,87 @@ describe('game-page render() cleans up portalled panel before re-rendering (#358
   });
 });
 
+describe('game-page confidence range filter (#445)', () => {
+  const gamePageSrc = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'),
+    'utf8'
+  );
+
+  test('shared filters.css defines the .filter-range slider control', () => {
+    const flat = flatten(filtersCss);
+    expect(flat).toMatch(/\.filter-range\s*\{[^}]*flex-direction:\s*column/);
+    expect(flat).toMatch(/\.filter-range-input\s*\{[^}]*accent-color:\s*var\(--accent\)/);
+    expect(flat).toMatch(/\.filter-range-value\s*\{[^}]*font-variant-numeric:\s*tabular-nums/);
+  });
+
+  test('game-page renders paired min/max sliders with 0-100 range and default values', () => {
+    expect(gamePageSrc).toMatch(/id="fConfidenceMin"[^>]*type="range"[^>]*min="0"[^>]*max="100"/);
+    expect(gamePageSrc).toMatch(/id="fConfidenceMax"[^>]*type="range"[^>]*min="0"[^>]*max="100"/);
+    // Value labels are id'd so the input handler can update them without a
+    // full re-render.
+    expect(gamePageSrc).toContain('id="fConfidenceMinValue"');
+    expect(gamePageSrc).toContain('id="fConfidenceMaxValue"');
+  });
+
+  test('defaults are 0 (min) and 100 (max) so the filter is a no-op on load', () => {
+    expect(gamePageSrc).toMatch(/filterConfidenceMin\s*=\s*Number\.isFinite\(persistedFilters\.confidenceMin\)\s*\?\s*persistedFilters\.confidenceMin\s*:\s*0/);
+    expect(gamePageSrc).toMatch(/filterConfidenceMax\s*=\s*Number\.isFinite\(persistedFilters\.confidenceMax\)\s*\?\s*persistedFilters\.confidenceMax\s*:\s*100/);
+  });
+
+  test('filter step is a no-op until the range is narrowed (min>0 OR max<100)', () => {
+    // The filter must NOT drop rows when the sliders are at their defaults --
+    // otherwise every game-page load would filter out configs (no _kind='report')
+    // and every report with score=0 would disappear.
+    expect(gamePageSrc).toMatch(/if\s*\(filterConfidenceMin\s*>\s*0\s*\|\|\s*filterConfidenceMax\s*<\s*100\)/);
+  });
+
+  test('filter falls back to estimateScore when r.score is missing so it matches the card display (#461)', () => {
+    // report-card.js renders `r.score || estimateScore(r)`. Without the same
+    // fallback in the filter, mirrored ProtonDB reports (no persisted score)
+    // read as 0 and get dropped even when their displayed pill sat well inside
+    // the min/max range. Both the import and the fallback expression are
+    // asserted so a future refactor cannot silently regress either half.
+    expect(gamePageSrc).toContain("import { populateScoringTooltip, pulseTierFromReports, estimateScore }");
+    expect(gamePageSrc).toMatch(/Number\(r\.score\)\s*\|\|\s*estimateScore\(r\)/);
+  });
+
+  test('confidence range contributes to the active-filters badge count', () => {
+    // Two places count: initial render and refreshReports. Both must include
+    // the range check so the badge stays accurate as the user drags.
+    const badgeMatches = gamePageSrc.match(/confRangeActive|_confRangeActive/g) || [];
+    expect(badgeMatches.length).toBeGreaterThanOrEqual(2);
+  });
+
+  test('input handlers use the "input" event (not "change") for live drag updates', () => {
+    // "change" only fires on pointer release; users expect live feedback while
+    // dragging on both desktop and Steam Deck touch.
+    expect(gamePageSrc).toMatch(/'#fConfidenceMin'\)\?\.addEventListener\('input'/);
+    expect(gamePageSrc).toMatch(/'#fConfidenceMax'\)\?\.addEventListener\('input'/);
+  });
+
+  test('Clear filters resets both sliders and their value labels to defaults', () => {
+    // Clear must reset the JS state, the DOM slider values, and the visible
+    // value labels -- otherwise the UI shows stale numbers after clear.
+    expect(gamePageSrc).toMatch(/filterConfidenceMin\s*=\s*0;/);
+    expect(gamePageSrc).toMatch(/filterConfidenceMax\s*=\s*100;/);
+    expect(gamePageSrc).toMatch(/cmin\.value\s*=\s*'0'/);
+    expect(gamePageSrc).toMatch(/cmax\.value\s*=\s*'100'/);
+    expect(gamePageSrc).toMatch(/cminLbl\.textContent\s*=\s*'0%'/);
+    expect(gamePageSrc).toMatch(/cmaxLbl\.textContent\s*=\s*'100%'/);
+  });
+});
+
 describe('home (app.html browse) -- XL card size parity with index.html', () => {
   // Bug: XL only existed on index.html. Browse view should match.
-  test('SIZES array includes xl alongside sm/md/lg', () => {
-    expect(homeSrc).toContain("const SIZES = ['sm', 'md', 'lg', 'xl']");
+  // #459 -- the SIZES array + apply pipeline live in the shared
+  // js/lib/card-size.js helper so home + index consume one implementation.
+  const cardSizeSrc = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'lib', 'card-size.js'),
+    'utf8'
+  );
+
+  test('shared helper exports the SIZES list with xl alongside sm/md/lg', () => {
+    expect(cardSizeSrc).toContain("export const CARD_SIZES = ['sm', 'md', 'lg', 'xl']");
   });
 
   test('XL button is rendered with the desktop-only modifier class', () => {

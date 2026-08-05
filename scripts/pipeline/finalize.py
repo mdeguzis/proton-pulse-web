@@ -66,6 +66,96 @@ from .stats import write_stats_json
 from .validate_app_ids import validate_steam_app_ids
 
 
+# CSS + JS the pipeline-generated top-level pages (data-index.html,
+# coverage.html) share with the rest of the site. Historically these pages
+# linked bare "site.css" + "topbar.js" at the repo root, which worked before
+# the CSS/JS reorg into css/shared/ + js/lib/. Post-reorg the requests 404
+# and CF Pages serves the SPA fallback -- pages render unstyled with no
+# topbar (#448). Keep this list in the same order as about.html so the
+# cascade matches every other page.
+_SHARED_CSS = (
+    "css/shared/base.css",
+    "css/shared/topbar.css",
+    "css/shared/site.css",
+    "css/shared/cards.css",
+    # #457: filters.css owns .filter-panel + .filter-toggle-btn + .pg-filter
+    # + the mobile-modal chrome that topbar.js's observer keys on. Without
+    # this link the coverage page's filter modal rendered inline and every
+    # pill lost its site-consistent styling.
+    "css/shared/filters.css",
+)
+# Trailing scripts: topbar.js needs the ring buffer + analytics loaded first,
+# and the supabase client is a hard dep of the topbar user chip. Mirrors the
+# tail of about.html. No ?v= cache-bust suffix -- these pages are pipeline-
+# regenerated on every finalize, so a fresh file goes out the moment content
+# changes; source pages keep their cache-bust for editor-time churn.
+_SHARED_SCRIPTS = (
+    ('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/'
+     'dist/umd/supabase.min.js"></script>'),
+    '<script src="js/lib/supabase-client.js"></script>',
+    '<script type="module" src="js/lib/log-buffer.js"></script>',
+    '<script src="js/lib/analytics.js"></script>',
+    '<script src="js/lib/topbar.js"></script>',
+    '<script src="js/lib/toast.js"></script>',
+)
+# Same Content-Security-Policy the shipped HTML files declare. Pipeline pages
+# are same-origin and pull the same third-party CDN (Supabase) plus the same
+# image + connect origins, so they must inherit the same CSP or the browser
+# blocks their scripts.
+_SHARED_CSP = (
+    "default-src 'self'; "
+    "script-src 'self' https://static.cloudflareinsights.com 'unsafe-inline' "
+    "https://cdn.jsdelivr.net; "
+    "style-src 'self' 'unsafe-inline'; "
+    "img-src 'self' https://*.steamstatic.com https://avatars.steamstatic.com "
+    "https://cdn.cloudflare.steamstatic.com https://media.steampowered.com "
+    "https://*.gog.com https://*.gog-statics.com https://cdn.steamgriddb.com "
+    "https://cdn2.steamgriddb.com https://www.steamgriddb.com "
+    "https://images.pcgamingwiki.com https://cdn1.epicgames.com "
+    "https://cdn2.unrealengine.com data:; "
+    "connect-src 'self' https://cloudflareinsights.com "
+    "https://data.proton-pulse.com https://staging-data.proton-pulse.com "
+    "https://ilsgdshkaocrmibwdezk.supabase.co "
+    "https://pp-edge-status.mdeguzis.workers.dev; "
+    "font-src 'self'; frame-src 'none'; object-src 'none';"
+)
+
+
+def _pipeline_page_head(title: str, extra_style: str = "") -> list[str]:
+    """Return the standard <head> block for a pipeline-generated top-level HTML page.
+
+    Emits the same CSP + shared CSS + meta tags as about.html so the pages
+    inherit the site theme and security posture. extra_style is inlined into
+    the head so page-specific rules (table layouts, filter chrome) can live
+    next to the standard shell.
+    """
+    lines = [
+        "<!DOCTYPE html>",
+        '<html lang="en">',
+        "<head>",
+        '<meta charset="utf-8">',
+        f'<meta http-equiv="Content-Security-Policy" content="{_SHARED_CSP}">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        '<meta name="color-scheme" content="dark">',
+        f"<title>{title}</title>",
+    ]
+    for href in _SHARED_CSS:
+        lines.append(f'<link rel="stylesheet" href="{href}">')
+    if extra_style:
+        lines.append(f"<style>{extra_style}</style>")
+    lines.append("</head>")
+    return lines
+
+
+def _pipeline_page_scripts() -> list[str]:
+    """Return the trailing shared script tags for a pipeline-generated page.
+
+    Placed just before </body> so the topbar script fires after the DOM the
+    rest of the page has emitted -- same ordering as about.html.
+    """
+    return list(_SHARED_SCRIPTS)
+
+
 def log_summary(
     parsed_count: int,
     data_output_path: Path,
@@ -253,7 +343,11 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     sample_entries = []
     for app_id, name in sample_apps.items():
         if app_id in app_years:
-            sample_entries.append(f'<a href="data/{app_id}/latest.json">{name}</a> ({app_id})')
+            # Hash-link into the master/detail view rather than a raw JSON
+            # download. Raw-JSON links 404 on CF Pages (per-game data lives in
+            # R2, not on Pages) and read as a broken page instead of a shortcut
+            # to the app's detail view. #451.
+            sample_entries.append(f'<a href="#/{app_id}">{name}</a> ({app_id})')
 
     # Page-specific styles. Site-wide identity comes from site.css; this block only
     # adds what data-index needs (grid rows, detail split, json tinting). All colors
@@ -273,13 +367,13 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     .pager button:hover:not(:disabled) { background: var(--s2); border-color: var(--accent); }
     .pager button:disabled { opacity: 0.4; cursor: not-allowed; }
     #index-page-info { color: var(--muted); }
-    ul#index-results { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 8px; }
-    ul#index-results > li { display: contents; }
-    ul#index-results a.row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: linear-gradient(180deg, rgba(27,40,56,0.5), rgba(11,17,22,0.4)); border: 1px solid var(--border); color: var(--text); transition: border-color .12s, background .12s, transform .12s, box-shadow .12s; }
+    ul#index-results { list-style: none; padding: 0; margin: 12px 0; display: flex; flex-direction: column; gap: 6px; }
+    ul#index-results > li { display: block; }
+    ul#index-results a.row { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: linear-gradient(180deg, rgba(27,40,56,0.5), rgba(11,17,22,0.4)); border: 1px solid var(--border); color: var(--text); transition: border-color .12s, background .12s, transform .12s, box-shadow .12s; }
     ul#index-results a.row:hover { border-color: var(--accent); background: linear-gradient(180deg, rgba(102,192,244,0.08), rgba(11,17,22,0.5)); box-shadow: 0 0 18px -6px var(--accent-glow); transform: translateY(-1px); text-decoration: none; }
-    ul#index-results .appid { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); min-width: 80px; flex-shrink: 0; }
-    ul#index-results .title { flex: 1; color: var(--text); }
-    ul#index-results .years { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); flex-shrink: 0; }
+    ul#index-results .appid { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); min-width: 100px; flex-shrink: 0; }
+    ul#index-results .title { flex: 1; color: var(--text); font-size: 0.95rem; }
+    ul#index-results .years { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); flex-shrink: 0; letter-spacing: 0.04em; }
 
     /* detail view: master/detail split with years on the left, JSON on the right */
     .detail-view { display: none; }
@@ -325,20 +419,8 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
     .json-pane .tok-nl { color: var(--muted); }
 """
 
-    lines = [
-        "<!DOCTYPE html>",
-        '<html lang="en">',
-        "<head>",
-        '  <meta charset="utf-8">',
-        '  <meta name="viewport" content="width=device-width, initial-scale=1">',
-        '  <meta name="color-scheme" content="dark">',
-        "  <title>Data Index - Proton Pulse</title>",
-        '  <link rel="stylesheet" href="site.css">',
-        f'  <style>{page_style}</style>',
-        "</head>",
+    lines = _pipeline_page_head("Data Index - Proton Pulse", extra_style=page_style) + [
         "<body>",
-        # topbar.js injects the shared banner + nav at body start
-        '<script src="topbar.js"></script>',
         '<div class="main-content"><div class="main-inner">',
 
         # ── grid view ──
@@ -501,15 +583,33 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
   // scripts/pipeline/pulse.py), so we just render whatever is in the file.
   // Each record carries a source field ("protondb" or "pulse") so consumers
   // can filter cleanly.
+  // Per-game data buckets can live on a separate host (R2) when the deploy
+  // target is Cloudflare -- data-config.json.dataBase carries that base URL.
+  // Fetch once at page load; empty on gh-pages deploys so data stays same
+  // origin there. Any data/ fetch below prefixes with this base when set.
+  // #451 -- without this the master/detail view hit the CF Pages SPA
+  // fallback for every latest.json and printed a JSON.parse error.
+  let dataBasePromise = fetch('data-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : {})
+    .catch(() => ({}))
+    .then(cfg => (cfg && cfg.dataBase) ? String(cfg.dataBase).replace(/\\/$/, '') : '');
+
+  function dataFileUrl(path) {
+    // path is 'data/{id}/{file}' -- return a Promise that resolves to the
+    // fully-qualified URL, prefixed with dataBase when Cloudflare-hosted.
+    return dataBasePromise.then(base => base ? base + '/' + path : path);
+  }
+
   let activeFetch = null;
   function loadYear(appId, file) {
-    pathEl.textContent = '/data/' + appId + '/' + file;
+    const displayPath = '/data/' + appId + '/' + file;
+    pathEl.textContent = displayPath;
     statusEl.textContent = 'loading';
     contentEl.textContent = '';
-    const url = 'data/' + appId + '/' + file;
     const token = Symbol();
     activeFetch = token;
-    fetch(url).then(r => r.ok ? r.json() : Promise.reject(r.status))
+    dataFileUrl('data/' + appId + '/' + file)
+      .then(url => fetch(url).then(r => r.ok ? r.json() : Promise.reject(r.status)))
       .then(data => {
         if (activeFetch !== token) return;
         const list = Array.isArray(data) ? data : [];
@@ -523,7 +623,7 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
       .catch(err => {
         if (activeFetch !== token) return;
         statusEl.textContent = 'error';
-        contentEl.textContent = 'Failed to load ' + url + ' (' + err + ')';
+        contentEl.textContent = 'Failed to load ' + displayPath + ' (' + err + ')';
       });
   }
 
@@ -599,11 +699,9 @@ def generate_index_html(index_keys: set, output_path: Path) -> None:
   routeFromHash();
 })();
 </script>""",
-        '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>',
-        '<script src="supabase-client.js"></script>',
-        "</body>",
-        "</html>",
     ]
+    lines += _pipeline_page_scripts()
+    lines += ["</body>", "</html>"]
 
     index_file = output_path / "data-index.html"
     index_file.write_text("\n".join(lines) + "\n")
@@ -1384,6 +1482,24 @@ def generate_nonsteam_images(output_path: Path) -> None:
     )
 
 
+def _coverage_store_for(app_id: str) -> str:
+    """Bucket a coverage-report app id into a store label.
+
+    Steam ids are numeric, non-Steam ids are namespaced 'gog:'/'epic:'/'pgwiki:'.
+    Anything unrecognized falls back to 'other' so a stray id never crashes
+    the store filter chip. #450.
+    """
+    if app_id.isdigit():
+        return "steam"
+    if app_id.startswith("gog:"):
+        return "gog"
+    if app_id.startswith("epic:"):
+        return "epic"
+    if app_id.startswith("pgwiki:"):
+        return "pgwiki"
+    return "other"
+
+
 def generate_coverage_report(
     index_keys: set,
     backfilled_keys: set,
@@ -1392,6 +1508,9 @@ def generate_coverage_report(
     steam_catalog: dict[str, str] | None = None,
     protondb_signal_catalog: dict[str, str] | None = None,
     protondb_counts: dict | None = None,
+    gog_catalog: dict[str, str] | None = None,
+    epic_catalog: dict[str, str] | None = None,
+    pcgwiki_catalog: dict[str, str] | None = None,
 ) -> None:
     indexed_app_ids = {app_id for app_id, _ in index_keys}
     all_app_ids = set(indexed_app_ids)
@@ -1400,10 +1519,21 @@ def generate_coverage_report(
     steam_catalog_app_ids = set((steam_catalog or {}).keys())
     steam_protondb_overlap = steam_catalog_app_ids & protondb_signal_app_ids
 
+    # Non-Steam catalog entries live under namespaced ids so they never
+    # collide with numeric Steam app ids. Store keys use raw ids that we
+    # namespace here into the same format the rest of the pipeline uses.
+    # #450: coverage was Steam-only until this change.
+    gog_app_ids = {f"gog:{pid}" for pid in (gog_catalog or {}).keys()}
+    epic_app_ids = {f"epic:{ns}" for ns in (epic_catalog or {}).keys()}
+    pcgwiki_app_ids = set((pcgwiki_catalog or {}).keys())  # already carry the pgwiki: prefix
+
     if steam_catalog:
         all_app_ids.update(steam_catalog.keys())
     all_app_ids.update(protondb_signal_app_ids)
     all_app_ids.update(state_backfill_app_ids)
+    all_app_ids.update(gog_app_ids)
+    all_app_ids.update(epic_app_ids)
+    all_app_ids.update(pcgwiki_app_ids)
 
     log(f"[coverage] Indexed app IDs           : {len(indexed_app_ids):,}")
     log(f"[coverage] Backfill app IDs          : {len(state_backfill_app_ids):,}")
@@ -1411,7 +1541,25 @@ def generate_coverage_report(
     if steam_catalog:
         log(f"[coverage] Steam catalog app IDs     : {len(steam_catalog_app_ids):,}")
         log(f"[coverage] Steam ∩ ProtonDB signals  : {len(steam_protondb_overlap):,}")
+    if gog_app_ids:
+        log(f"[coverage] GOG catalog app IDs       : {len(gog_app_ids):,}")
+    if epic_app_ids:
+        log(f"[coverage] Epic catalog app IDs      : {len(epic_app_ids):,}")
+    if pcgwiki_app_ids:
+        log(f"[coverage] PCGWiki catalog app IDs   : {len(pcgwiki_app_ids):,}")
     log(f"[coverage] Final coverage universe   : {len(all_app_ids):,}")
+
+    # Non-Steam title lookup: use the catalog dict for the matching store.
+    # These titles never override an indexed local title; they're the
+    # fallback when _resolve_coverage_title returns "" for a namespaced id.
+    def _non_steam_title(app_id: str) -> tuple[str, str]:
+        if app_id.startswith("gog:"):
+            return (gog_catalog or {}).get(app_id[4:], ""), "gog-catalog"
+        if app_id.startswith("epic:"):
+            return (epic_catalog or {}).get(app_id[5:], ""), "epic-catalog"
+        if app_id.startswith("pgwiki:"):
+            return (pcgwiki_catalog or {}).get(app_id, ""), "pcgwiki-catalog"
+        return "", "none"
 
     rows = []
     for app_id in sorted(all_app_ids, key=lambda a: (0, int(a)) if a.isdigit() else (1, a)):
@@ -1427,8 +1575,12 @@ def generate_coverage_report(
             protondb_signal_catalog=protondb_signal_catalog,
             steam_catalog=steam_catalog,
         )
+        if not title:
+            title, title_source = _non_steam_title(app_id)
+        store = _coverage_store_for(app_id)
         rows.append((
             app_id,
+            store,
             title,
             title_source,
             official,
@@ -1439,8 +1591,8 @@ def generate_coverage_report(
         ))
 
     now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    official_count = sum(1 for row in rows if row[3])
-    backfill_count = sum(1 for row in rows if row[4])
+    official_count = sum(1 for row in rows if row[4])
+    backfill_count = sum(1 for row in rows if row[5])
     indexed_count = len(indexed_app_ids)
     steam_count = len(steam_catalog_app_ids) if steam_catalog else 0
     protondb_unique_games = (protondb_counts or {}).get("uniqueGames", 0) if protondb_counts else 0
@@ -1448,13 +1600,20 @@ def generate_coverage_report(
     pct_of_protondb_total = (indexed_count / protondb_unique_games * 100) if protondb_unique_games else 0
     pct_of_steam = (indexed_count / steam_count * 100) if steam_count else 0
     protondb_pct_of_steam = (protondb_unique_games / steam_count * 100) if (steam_count and protondb_unique_games) else 0
+    store_counts = {"steam": 0, "gog": 0, "epic": 0, "pgwiki": 0, "other": 0}
+    for row in rows:
+        store_counts[row[1]] = store_counts.get(row[1], 0) + 1
 
-    # Build JS data array instead of HTML rows
+    # Build JS data array. The store field is index 1 so it drives the store
+    # filter chip without a second lookup. bad-appid used to key on "not
+    # numeric" which now matches every legitimate non-Steam id -- switched
+    # to detecting truly malformed values (empty, whitespace, unrecognised
+    # namespace) so gog:/epic:/pgwiki: rows do NOT get flagged.
     # Format:
-    # [appId, title, titleSource, official, backfill, protondbSignal, steamCatalog, "flags", indexed]
+    # [appId, store, title, titleSource, official, backfill, protondbSignal, steamCatalog, "flags", indexed]
     js_rows = []
-    for app_id, title, title_source, official, backfill, protondb_signal, steam_catalog_hit, indexed in rows:
-        flags = []
+    for app_id, store, title, title_source, official, backfill, protondb_signal, steam_catalog_hit, indexed in rows:
+        flags = [f"store-{store}"]
         if official:
             flags.append("official")
         if backfill:
@@ -1465,7 +1624,7 @@ def generate_coverage_report(
             flags.append("steam-catalog")
         if not title:
             flags.append("missing-title")
-        if not app_id.isdigit():
+        if store == "other" or not app_id.strip():
             flags.append("bad-appid")
         if not official and not backfill and not indexed:
             flags.append("no-data")
@@ -1473,55 +1632,51 @@ def generate_coverage_report(
         safe_title = title.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
         safe_title_source = title_source.replace("\\", "\\\\").replace('"', '\\"')
         js_rows.append(
-            f'["{app_id}","{safe_title}","{safe_title_source}",'
+            f'["{app_id}","{store}","{safe_title}","{safe_title_source}",'
             f'{1 if official else 0},{1 if backfill else 0},{1 if protondb_signal else 0},'
             f'{1 if steam_catalog_hit else 0},"{" ".join(flags)}",{1 if indexed else 0}]'
         )
 
-    html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coverage Report - Proton Pulse</title>
-<meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="site.css">
-<style>
+    coverage_style = """
 /* coverage page only - table + stats layout that lives below the shared topbar */
-table {{ border-collapse: collapse; width: 100%; }}
-th, td {{ border: 1px solid var(--border); padding: 6px 10px; text-align: left; }}
-th {{ background: var(--s2); color: var(--text); cursor: pointer; user-select: none; position: relative; padding-right: 22px; transition: background .12s, color .12s; }}
-th:hover {{ background: var(--s3); color: var(--accent-hi); }}
-th::after {{ content: '\\2195'; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85em; opacity: 0.4; }}
-th.sort-asc::after {{ content: '\\25B2'; color: var(--accent); opacity: 1; }}
-th.sort-desc::after {{ content: '\\25BC'; color: var(--accent); opacity: 1; }}
-tr:nth-child(even) {{ background: var(--s1); }}
-tr:nth-child(odd) {{ background: rgba(0,0,0,0.1); }}
-.yes {{ color: var(--green-hi); font-weight: bold; }}
-.no {{ color: var(--muted); }}
-.stats {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 1.5em; }}
-@media (max-width: 1100px) {{ .stats {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} }}
-@media (max-width: 640px) {{ .stats {{ grid-template-columns: 1fr; }} }}
-.stat-card {{ background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45)); border: 1px solid var(--border); padding: 14px 18px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }}
-.stat-card .label {{ font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; }}
-.stat-card .value {{ font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--accent-hi); margin: 4px 0; text-shadow: 0 0 14px var(--accent-glow); }}
-.stat-card .detail {{ font-size: 0.78rem; color: var(--muted); }}
-.pct {{ color: var(--green-hi); }}
-.filters {{ margin-bottom: 1em; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }}
-#filter {{ padding: 8px 10px; width: 320px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); }}
-#filter:focus {{ border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }}
-.toggle {{ padding: 6px 14px; border: 1px solid var(--border2); background: transparent; color: var(--muted); cursor: pointer; font-weight: 600; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.04em; transition: color .12s, border-color .12s, background .12s; }}
-.toggle:hover {{ color: var(--text); border-color: var(--accent); }}
-.toggle.active {{ background: var(--accent-soft); color: var(--accent-hi); border-color: var(--accent); }}
-.pager {{ margin: 1em 0; display: flex; gap: 8px; align-items: center; }}
-.pager button {{ padding: 6px 14px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); cursor: pointer; font-family: inherit; font-size: 0.82rem; }}
-.pager button:hover {{ background: var(--s2); border-color: var(--accent); }}
-.coverage-meta {{ color: var(--muted); margin-bottom: 1em; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; }}
-</style>
-</head>
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+th { background: var(--s2); color: var(--text); cursor: pointer; user-select: none; position: relative; padding-right: 22px; transition: background .12s, color .12s; }
+th:hover { background: var(--s3); color: var(--accent-hi); }
+th::after { content: '\\2195'; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 0.85em; opacity: 0.4; }
+th.sort-asc::after { content: '\\25B2'; color: var(--accent); opacity: 1; }
+th.sort-desc::after { content: '\\25BC'; color: var(--accent); opacity: 1; }
+tr:nth-child(even) { background: var(--s1); }
+tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
+.yes { color: var(--green-hi); font-weight: bold; }
+.no { color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 1.5em; }
+@media (max-width: 1100px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .stats { grid-template-columns: 1fr; } }
+.stat-card { background: linear-gradient(180deg, rgba(27,40,56,0.55), rgba(11,17,22,0.45)); border: 1px solid var(--border); padding: 14px 18px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }
+.stat-card .label { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; }
+.stat-card .value { font-family: var(--mono); font-size: 1.7rem; font-weight: 600; color: var(--accent-hi); margin: 4px 0; text-shadow: 0 0 14px var(--accent-glow); }
+.stat-card .detail { font-size: 0.78rem; color: var(--muted); }
+.pct { color: var(--green-hi); }
+/* Filter chrome: shared .filter-wrap + .filter-panel modal from
+   css/shared/filters.css so the coverage page opens the same dropdown /
+   mobile modal as the home browse page. Only page-scoped rules here: the
+   wrap positioning (so the panel anchors under the toggle), the search
+   input, and small overrides. */
+.filter-wrap { position: relative; display: inline-block; margin-bottom: 1em; }
+.filter-panel .filter-item { padding: 4px 0; }
+.filter-panel .pg-filter-group { padding: 4px 0; }
+#filter { width: 100%; box-sizing: border-box; padding: 8px 10px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); font-family: inherit; font-size: 0.88rem; }
+#filter:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.pager { margin: 1em 0; display: flex; gap: 8px; align-items: center; }
+.pager button { padding: 6px 14px; background: rgba(11,17,22,0.6); color: var(--text); border: 1px solid var(--border2); cursor: pointer; font-family: inherit; font-size: 0.82rem; }
+.pager button:hover { background: var(--s2); border-color: var(--accent); }
+.coverage-meta { color: var(--muted); margin-bottom: 1em; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; }
+"""
+    head_html = "\n".join(_pipeline_page_head("Coverage Report - Proton Pulse", extra_style=coverage_style))
+    scripts_html = "\n".join(_pipeline_page_scripts())
+    html = f"""{head_html}
 <body>
-<!-- shared topbar (banner + nav + drawer) injected by topbar.js -->
-<script src="topbar.js"></script>
 <div class="main-content"><div class="main-inner">
 <h1 style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.02em;margin-bottom:0.4em">Coverage Report</h1>
 <p class="coverage-meta">// Generated: {now}</p>
@@ -1557,14 +1712,41 @@ tr:nth-child(odd) {{ background: rgba(0,0,0,0.1); }}
   <div class="detail">Total apps tracked in this report</div>
 </div>
 </div>
-<div class="filters">
-<input id="filter" placeholder="Filter by App ID or title\u2026" oninput="onFilter()">
-<button class="toggle active" data-src="all" onclick="toggleSrc('all')">All</button>
-<button class="toggle" data-src="official" onclick="toggleSrc('official')">Official dump only</button>
-<button class="toggle" data-src="backfill" onclick="toggleSrc('backfill')">Live backfill only</button>
-<button class="toggle" data-src="no-data" onclick="toggleSrc('no-data')">No data</button>
-<button class="toggle" data-src="missing-title" onclick="toggleSrc('missing-title')">Missing title</button>
-<button class="toggle" data-src="bad-appid" onclick="toggleSrc('bad-appid')">Bad App ID</button>
+<div class="filter-wrap" id="coverage-filter-wrap">
+  <button class="filter-toggle-btn" id="coverage-filter-toggle" type="button" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39C20.25 4.95 19.8 4 18.95 4H5.04C4.2 4 3.74 4.95 4.25 5.61z"/></svg>
+    Filters<span class="filter-badge" id="coverage-filter-badge" hidden></span>
+  </button>
+  <div class="filter-panel filter-panel--stack" id="coverage-filter-panel">
+    <div class="filter-panel-mobile-header">
+      <span class="filter-panel-mobile-title">Filters</span>
+      <button type="button" class="filter-panel-close" aria-label="Close filters">&times;</button>
+    </div>
+    <div class="filter-item"><input id="filter" placeholder="Filter by App ID or title\u2026" oninput="onFilter()"></div>
+    <div class="pg-filter-group" id="store-filter" aria-label="Filter by store">
+      <span class="pg-filter-group-label">Store</span>
+      <button class="pg-filter pg-filter--active" type="button" data-src="all">All</button>
+      <button class="pg-filter" type="button" data-src="store-steam">Steam ({store_counts["steam"]:,})</button>
+      <button class="pg-filter" type="button" data-src="store-gog">GOG ({store_counts["gog"]:,})</button>
+      <button class="pg-filter" type="button" data-src="store-epic">Epic ({store_counts["epic"]:,})</button>
+      <button class="pg-filter" type="button" data-src="store-pgwiki">PCGWiki ({store_counts["pgwiki"]:,})</button>
+    </div>
+    <div class="pg-filter-group" id="source-filter" aria-label="Filter by data source">
+      <span class="pg-filter-group-label">Data source</span>
+      <button class="pg-filter" type="button" data-src="official">Official dump only</button>
+      <button class="pg-filter" type="button" data-src="backfill">Live backfill only</button>
+      <button class="pg-filter" type="button" data-src="no-data">No data</button>
+      <button class="pg-filter" type="button" data-src="missing-title">Missing title</button>
+      <button class="pg-filter" type="button" data-src="bad-appid">Bad App ID</button>
+    </div>
+    <div class="filter-panel-footer filter-panel-footer--stack">
+      <button class="filter-collapse-btn" id="coverage-filter-collapse" type="button" aria-label="Collapse filters">
+        <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
+        <span class="filter-collapse-text">Collapse</span>
+      </button>
+      <button class="filter-clear-btn" id="coverage-filter-clear" type="button">Clear filters</button>
+    </div>
+  </div>
 </div>
 <div class="pager">
 <button onclick="goPage(-1)">&larr; Prev</button>
@@ -1574,12 +1756,13 @@ tr:nth-child(odd) {{ background: rgba(0,0,0,0.1); }}
 <table id="coverage">
 <thead><tr>
 <th onclick="doSort(0)">App ID</th>
-<th onclick="doSort(1)">Title (ProtonDB)</th>
-<th onclick="doSort(2)">Title Source</th>
-<th onclick="doSort(3)">Official ProtonDB Dump</th>
-<th onclick="doSort(4)">Live Backfill</th>
-<th onclick="doSort(5)">Seen on ProtonDB</th>
-<th onclick="doSort(6)">Seen in Steam Catalog</th>
+<th onclick="doSort(1)">Store</th>
+<th onclick="doSort(2)">Title (ProtonDB)</th>
+<th onclick="doSort(3)">Title Source</th>
+<th onclick="doSort(4)">Official ProtonDB Dump</th>
+<th onclick="doSort(5)">Live Backfill</th>
+<th onclick="doSort(6)">Seen on ProtonDB</th>
+<th onclick="doSort(7)">Seen in Steam Catalog</th>
 <th>Indexed</th>
 </tr></thead>
 <tbody id="tbody"></tbody>
@@ -1608,7 +1791,17 @@ const TITLE_SOURCE_LABELS={{
   "steam-store-empty-name":"Steam Store (empty name)",
   "steam-store-unsuccessful":"Steam Store (unsuccessful)",
   "steam-store-error":"Steam Store (error)",
+  "gog-catalog":"GOG Catalog",
+  "epic-catalog":"Epic Catalog",
+  "pcgwiki-catalog":"PCGamingWiki Catalog",
   "none":"None"
+}};
+const STORE_LABELS={{
+  "steam":"Steam",
+  "gog":"GOG",
+  "epic":"Epic",
+  "pgwiki":"PCGamingWiki",
+  "other":"Other"
 }};
 
 function getStateFromUrl(){{
@@ -1646,18 +1839,76 @@ function saveStateToUrl(){{
 function toggleSrc(s){{
   if(s==="all"){{activeSrc.clear();activeSrc.add("all")}}
   else{{activeSrc.delete("all");activeSrc.has(s)?activeSrc.delete(s):activeSrc.add(s);if(!activeSrc.size)activeSrc.add("all")}}
-  document.querySelectorAll(".toggle").forEach(b=>b.classList.toggle("active",activeSrc.has(b.dataset.src)));
+  document.querySelectorAll(".pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",activeSrc.has(b.dataset.src)));
   apply();
 }}
+// Delegated click wiring for the .pg-filter pills inside the modal. Both
+// groups (Store + Data source) route clicks through the same toggleSrc()
+// state machine. Scoped to #coverage-filter-panel so a stray .pg-filter
+// elsewhere on the site does not fire it.
+document.addEventListener("click",e=>{{
+  const btn=e.target.closest("#coverage-filter-panel .pg-filter");
+  if(!btn||!btn.dataset.src)return;
+  toggleSrc(btn.dataset.src);
+}});
+
+// Filter modal chrome (#452). Matches the home browse pattern: toggle
+// button opens/closes the panel, outside click closes, X + Collapse
+// buttons close, badge reflects the active filter count. topbar.js's
+// shared observer takes care of portaling to <body> on mobile.
+(function wireCoverageFilterPanel(){{
+  const wrap=document.getElementById("coverage-filter-wrap");
+  const toggle=document.getElementById("coverage-filter-toggle");
+  const panel=document.getElementById("coverage-filter-panel");
+  const badge=document.getElementById("coverage-filter-badge");
+  if(!wrap||!toggle||!panel)return;
+  function setOpen(open){{
+    panel.classList.toggle("open",open);
+    toggle.setAttribute("aria-expanded",String(open));
+  }}
+  toggle.addEventListener("click",e=>{{
+    e.stopPropagation();
+    setOpen(!panel.classList.contains("open"));
+  }});
+  document.addEventListener("click",e=>{{
+    if(!panel.classList.contains("open"))return;
+    if(wrap.contains(e.target)||panel.contains(e.target))return;
+    setOpen(false);
+  }});
+  document.getElementById("coverage-filter-collapse")?.addEventListener("click",e=>{{
+    e.stopPropagation();setOpen(false);
+  }});
+  panel.querySelector(".filter-panel-close")?.addEventListener("click",e=>{{
+    e.stopPropagation();setOpen(false);
+  }});
+  document.getElementById("coverage-filter-clear")?.addEventListener("click",e=>{{
+    e.stopPropagation();
+    activeSrc=new Set(["all"]);
+    document.querySelectorAll("#coverage-filter-panel .pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",b.dataset.src==="all"));
+    const inp=document.getElementById("filter");if(inp)inp.value="";
+    apply();
+  }});
+  window.updateFilterBadge=function(){{
+    if(!badge)return;
+    // Badge counts active non-"all" chips + a text-filter query if present.
+    const nonAll=[...activeSrc].filter(s=>s!=="all").length;
+    const q=(document.getElementById("filter")?.value||"").trim();
+    const count=nonAll+(q?1:0);
+    badge.textContent=String(count);
+    badge.hidden=count===0;
+    toggle.classList.toggle("has-filters",count>0);
+  }};
+}})();
 function onFilter(){{clearTimeout(filterTimer);filterTimer=setTimeout(()=>apply(),200)}}
 function apply(resetPage=true){{
   const q=document.getElementById("filter").value.toLowerCase();
   const all=activeSrc.has("all");
   filtered=DATA.filter(r=>{{
-    if(!all&&![...activeSrc].some(s=>r[7].split(" ").includes(s)))return false;
+    // Flags moved from index 7 to 8 with the store column addition (#450).
+    if(!all&&![...activeSrc].some(s=>r[8].split(" ").includes(s)))return false;
     if(q){{
       const queryIsNumeric=/^\\d+$/.test(q);
-      const haystack=(r[0]+" "+r[1]).toLowerCase();
+      const haystack=(r[0]+" "+r[2]).toLowerCase();
       if(queryIsNumeric){{
         if(r[0]!==q)return false;
       }} else if(!haystack.includes(q)) return false;
@@ -1667,6 +1918,7 @@ function apply(resetPage=true){{
   if(sortCol>=0)doSortFiltered();
   if(resetPage) page=0;
   render();
+  if(typeof updateFilterBadge==="function")updateFilterBadge();
 }}
 function doSort(c){{
   if(sortCol===c)sortAsc*=-1;else{{sortCol=c;sortAsc=1}}
@@ -1681,9 +1933,11 @@ function updateSortIndicator(){{
 }}
 function doSortFiltered(){{
   const c=sortCol,d=sortAsc;
+  // Numeric-yes/no columns moved to 4..7 (was 3..6) after adding the store
+  // column. App ID sort still lives at col 0 and is numeric-parse aware.
   filtered.sort((a,b)=>{{
     if(c===0)return d*(parseInt(a[0]||"0")-parseInt(b[0]||"0"));
-    if(c>=3&&c<=6)return d*(b[c]-a[c]);
+    if(c>=4&&c<=7)return d*(b[c]-a[c]);
     return d*String(a[c]).localeCompare(String(b[c]));
   }});
 }}
@@ -1704,17 +1958,24 @@ function render(){{
   document.getElementById("pageInfo2").textContent=info;
   const h=[];
   for(const r of safeSlice){{
-    const id=r[0],t=r[1],ts=r[2],o=r[3],b=r[4],ps=r[5],sc=r[6],ix=r[8];
-    const isNum=id.length>0&&[...id].every(c=>c>='0'&&c<='9');
-    const ac=isNum?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
-    const tc=isNum&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
+    // New schema: [id, store, title, titleSource, official, backfill,
+    // protondbSignal, steamCatalog, flags, indexed]
+    const id=r[0],store=r[1],t=r[2],ts=r[3],o=r[4],b=r[5],ps=r[6],sc=r[7],ix=r[9];
+    const isSteam=store==="steam";
+    const ac=isSteam?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
+    const tc=isSteam&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
+    const sl=STORE_LABELS[store]||store;
     const oc=o?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const bc=b?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const psc=ps?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const scc=sc?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const tsc=TITLE_SOURCE_LABELS[ts]||ts.replace(/-/g,' ');
-    const ixc=ix?`<a href="data/${{id}}/">index</a>`:'<span class="no">\u2014</span>';
-    h.push(`<tr><td>${{ac}}</td><td>${{tc}}</td><td>${{tsc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{psc}}</td><td>${{scc}}</td><td>${{ixc}}</td></tr>`);
+    // Route Indexed clicks through data-index.html's master/detail view --
+    // linking to a raw data/{id}/ path 404s on CF Pages because per-game
+    // data lives on R2, not on Pages, and R2 does not auto-serve directory
+    // indexes anyway. #451.
+    const ixc=ix?`<a href="data-index.html#/${{id}}">index</a>`:'<span class="no">\u2014</span>';
+    h.push(`<tr><td>${{ac}}</td><td>${{sl}}</td><td>${{tc}}</td><td>${{tsc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{psc}}</td><td>${{scc}}</td><td>${{ixc}}</td></tr>`);
   }}
   tb.innerHTML=h.join("");
   saveStateToUrl();
@@ -1725,11 +1986,12 @@ activeSrc=initialState.src;
 sortCol=initialState.sort;
 sortAsc=initialState.dir;
 page=initialState.page;
-document.querySelectorAll(".toggle").forEach(b=>b.classList.toggle("active",activeSrc.has(b.dataset.src)));
+document.querySelectorAll(".pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",activeSrc.has(b.dataset.src)));
 apply(false);
 updateSortIndicator();
 </script>
 </div></div>
+{scripts_html}
 </body></html>
 """
     report_file = output_path / "coverage.html"
@@ -2061,6 +2323,16 @@ def finalize_output(output_dir, skip_probe: bool = False):
     enrich_nonsteam_app_metadata(data_output_path)
     generate_nonsteam_metadata(output_path)
     phase("Coverage report")
+    # Load the published PCGWiki catalog snapshot so coverage can include
+    # PCGWiki entries alongside Steam/GOG/Epic (#450). refresh_catalog is a
+    # cheap read against the pipeline output dir; failures fall back to an
+    # empty dict so a missing snapshot never breaks the coverage report.
+    pcgwiki_catalog_for_coverage: dict[str, str] = {}
+    try:
+        from .pcgamingwiki_catalog import refresh_catalog as _refresh_pcgwiki
+        pcgwiki_catalog_for_coverage = _refresh_pcgwiki(output_path)
+    except Exception as exc:
+        log(f"[coverage] PCGWiki catalog unavailable: {exc}")
     generate_coverage_report(
         full_index_keys,
         state["backfilled_keys"],
@@ -2072,6 +2344,9 @@ def finalize_output(output_dir, skip_probe: bool = False):
             **(protondb_probe_catalog or {}),
         },
         protondb_counts=protondb_counts,
+        gog_catalog=gog_catalog,
+        epic_catalog=epic_catalog,
+        pcgwiki_catalog=pcgwiki_catalog_for_coverage,
     )
     # Walk the data tree (post pulse merge) and emit stats.json that powers the
     # /stats.html page. Tiny output regardless of dataset size since everything
