@@ -33,10 +33,11 @@ describe('game-page pgwiki title + cover fallback (#463)', () => {
   });
 
   test('header art prefers pgwiki cover_url when present, falls back to Steam CDN', () => {
-    // Search dropdown shows the widescreen cover for pgwiki entries; game
-    // page must match. Steam CDN URL stays as the fallback so numeric Steam
-    // appids keep their old behaviour.
-    expect(SRC).toMatch(/src="\$\{esc\(pgwikiEntry\?\.cover_url \|\| STEAM_IMG\(appId\)\)\}"/);
+    // #466 chained the SGDB widescreen cover ahead of the pgwiki cover_url
+    // so the visible order is: sgdb > pgwiki > STEAM_IMG(appId). pgwiki
+    // still wins over the Steam CDN fallback for any pgwiki id that misses
+    // an SGDB hit.
+    expect(SRC).toMatch(/src="\$\{esc\(sgdbCover \|\| pgwikiEntry\?\.cover_url \|\| STEAM_IMG\(appId\)\)\}"/);
   });
 
   test('stub-branch pgwiki lookup routes through the shared helper too', () => {

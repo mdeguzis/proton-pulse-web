@@ -1482,6 +1482,95 @@ def generate_nonsteam_images(output_path: Path) -> None:
     )
 
 
+def generate_sgdb_covers(
+    output_path: Path,
+    data_output_path: Path,
+    gog_catalog: dict[str, str] | None = None,
+    epic_catalog: dict[str, str] | None = None,
+    pcgwiki_catalog: dict[str, str | dict] | None = None,
+) -> None:
+    """Emit sgdb-covers.json: {canonical_id: sgdb_grid_url} for non-Steam games.
+
+    Steam games get header art from the Steam CDN by app id; non-Steam games
+    (gog:*, epic:*, pgwiki:pw_*) fall back to whatever their store catalog
+    provided -- often a portrait Steam-style cover or nothing. This step
+    asks SteamGridDB for a 460x215 widescreen grid using a title search so
+    every game can render in the same widescreen slot on the game page.
+
+    Cached in sgdb-covers-cache.json under the pipeline output dir: entries
+    keep their probed_at date and only refresh after STALE_DAYS to protect
+    the SGDB free tier from unnecessary lookups. Fetch failures are recorded
+    as {"url": null, "probed_at": today} so a broken lookup is remembered
+    for STALE_DAYS instead of retried every run.
+
+    Skipped entirely when SGDB_API_KEY is unset (identical to how the Steam
+    SGDB fallback in game_images.py behaves). #466.
+    """
+    import os as _os
+    from datetime import date as _date, timedelta as _timedelta
+    from .game_images import _fetch_sgdb_by_name, SGDB_API_KEY, STALE_DAYS
+
+    if not SGDB_API_KEY:
+        log("[sgdb-covers] SGDB_API_KEY unset -- skipping name-search fallback")
+        return
+
+    cache_path = output_path / "sgdb-covers-cache.json"
+    cache: dict[str, dict] = {}
+    if cache_path.exists():
+        try:
+            cache = json.loads(cache_path.read_text(encoding="utf-8")) or {}
+        except Exception as exc:
+            log(f"[sgdb-covers] cache read failed, starting fresh: {exc}")
+            cache = {}
+
+    today = _date.today().isoformat()
+    stale_before = (_date.today() - _timedelta(days=STALE_DAYS)).isoformat()
+
+    # Assemble {canonical_id: title} for every non-Steam entry in the catalogs.
+    targets: dict[str, str] = {}
+    for pid, title in (gog_catalog or {}).items():
+        if title:
+            targets[f"gog:{pid}"] = title
+    for ns, title in (epic_catalog or {}).items():
+        if title:
+            targets[f"epic:{ns}"] = title
+    for canonical_id, entry in (pcgwiki_catalog or {}).items():
+        # pcgwiki-catalog values are dicts; the GOG/Epic loaders return
+        # {id: title}. Handle both shapes.
+        name = entry.get("name") if isinstance(entry, dict) else entry
+        if name:
+            targets[canonical_id] = name
+
+    log(f"[sgdb-covers] {len(targets):,} non-Steam candidates to consider")
+
+    covers: dict[str, str] = {}
+    probed = 0
+    reused = 0
+    for canonical_id in sorted(targets.keys()):
+        name = targets[canonical_id]
+        cached = cache.get(canonical_id)
+        if cached and cached.get("probed_at", "") >= stale_before:
+            reused += 1
+            if cached.get("url"):
+                covers[canonical_id] = cached["url"]
+            continue
+        url = _fetch_sgdb_by_name(name)
+        cache[canonical_id] = {"url": url, "probed_at": today, "name": name}
+        if url:
+            covers[canonical_id] = url
+        probed += 1
+        if probed % 100 == 0:
+            log(f"[sgdb-covers] progress {probed}/{len(targets)} probed ({reused} reused from cache)")
+
+    cache_path.write_text(json.dumps(cache, separators=(",", ":")) + "\n", encoding="utf-8")
+    out_file = output_path / "sgdb-covers.json"
+    out_file.write_text(json.dumps(covers, separators=(",", ":")) + "\n", encoding="utf-8")
+    log(
+        f"[sgdb-covers] wrote {len(covers):,} widescreen covers to {out_file} "
+        f"(probed {probed}, reused {reused}, cache size {len(cache):,})"
+    )
+
+
 def _coverage_store_for(app_id: str) -> str:
     """Bucket a coverage-report app id into a store label.
 
@@ -2344,6 +2433,14 @@ def finalize_output(output_dir, skip_probe: bool = False):
             **(protondb_probe_catalog or {}),
         },
         protondb_counts=protondb_counts,
+        gog_catalog=gog_catalog,
+        epic_catalog=epic_catalog,
+        pcgwiki_catalog=pcgwiki_catalog_for_coverage,
+    )
+    phase("SGDB widescreen covers for non-Steam games (#466)")
+    generate_sgdb_covers(
+        output_path,
+        data_output_path,
         gog_catalog=gog_catalog,
         epic_catalog=epic_catalog,
         pcgwiki_catalog=pcgwiki_catalog_for_coverage,
