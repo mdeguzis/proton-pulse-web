@@ -1332,7 +1332,16 @@ export async function renderGamePage(appId) {
     // out of the hero cuts the noise on small screens.
     const newestTs = allReports.length ? Math.max(...allReports.map((r) => r.timestamp || 0)) : 0;
     const _freshBit = newestTs ? `newest report: <strong>${daysAgo(newestTs)}</strong>` : '';
-    const _metaBits = [`App ${esc(String(appId))}`, _freshBit].filter(Boolean).join(' &middot; ');
+    // Store-aware ID label so non-Steam entries don't read as "App gog:XYZ"
+    // or "App pw_XYZ" -- those aren't Steam apps. Match the title chip's
+    // (Steam / GOG / Epic / PCGamingWiki) storefront word so the meta line
+    // reinforces where this row came from. #465.
+    const _idStoreType = appTypeFromAppId(appId);
+    const _idPrefix = _idStoreType === 'gog' ? 'GOG id'
+      : _idStoreType === 'epic' ? 'Epic id'
+      : _idStoreType === 'pgwiki' ? 'PCGamingWiki id'
+      : 'App';
+    const _metaBits = [`${_idPrefix} ${esc(String(appId))}`, _freshBit].filter(Boolean).join(' &middot; ');
     const _confWhy = hasAnyReports
       ? ` <a class="grp-why conf-link" href="confidence.html?app=${appId}&tier=${overallTier}" title="See the factor-by-factor breakdown of this aggregate confidence">why?</a>`
       : '';
