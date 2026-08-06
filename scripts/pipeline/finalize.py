@@ -1497,18 +1497,33 @@ def generate_sgdb_covers(
     asks SteamGridDB for a 460x215 widescreen grid using a title search so
     every game can render in the same widescreen slot on the game page.
 
-    Cached in sgdb-covers-cache.json under the pipeline output dir: entries
-    keep their probed_at date and only refresh after STALE_DAYS to protect
-    the SGDB free tier from unnecessary lookups. Fetch failures are recorded
-    as {"url": null, "probed_at": today} so a broken lookup is remembered
-    for STALE_DAYS instead of retried every run.
+    Rate-limited (#467): each _fetch_sgdb_by_name call sleeps
+    SGDB_REQUEST_DELAY (default 1.1s) between requests to stay under the
+    free-tier per-second cap; retries once on 429 with backoff. Probes are
+    bounded by SGDB_PROBE_CAP per run so a cold cache does not sit in the
+    API for hours -- successive runs pick up where the previous left off
+    via the cache. Prioritises entries that have real data on disk (a
+    data/{id}/ dir exists) so the games most likely to be viewed get
+    covers first.
 
-    Skipped entirely when SGDB_API_KEY is unset (identical to how the Steam
-    SGDB fallback in game_images.py behaves). #466.
+    Cached in sgdb-covers-cache.json under the pipeline output dir. Each
+    entry keeps its probed_at + last_error, so:
+      - Successful lookups skip re-probing until STALE_DAYS.
+      - Rate-limited misses (http_429_gave_up) are NOT cached long -- we
+        retry them next run so a transient rate hit isn't remembered as
+        a permanent miss.
+      - Genuine misses (no_matches) get the full STALE_DAYS TTL.
+
+    Skipped entirely when SGDB_API_KEY is unset. #466 / #467.
     """
-    import os as _os
     from datetime import date as _date, timedelta as _timedelta
-    from .game_images import _fetch_sgdb_by_name, SGDB_API_KEY, STALE_DAYS
+    from .common import app_id_to_dir
+    from .game_images import (
+        _fetch_sgdb_by_name,
+        SGDB_API_KEY,
+        SGDB_PROBE_CAP,
+        STALE_DAYS,
+    )
 
     if not SGDB_API_KEY:
         log("[sgdb-covers] SGDB_API_KEY unset -- skipping name-search fallback")
@@ -1535,39 +1550,79 @@ def generate_sgdb_covers(
         if title:
             targets[f"epic:{ns}"] = title
     for canonical_id, entry in (pcgwiki_catalog or {}).items():
-        # pcgwiki-catalog values are dicts; the GOG/Epic loaders return
-        # {id: title}. Handle both shapes.
         name = entry.get("name") if isinstance(entry, dict) else entry
         if name:
             targets[canonical_id] = name
 
-    log(f"[sgdb-covers] {len(targets):,} non-Steam candidates to consider")
+    # Prioritise entries with data on disk. A game visited by real users has
+    # a data/{id}/ dir; those are the covers that actually get rendered.
+    # #467: rank ranked-first so the SGDB_PROBE_CAP budget goes to the games
+    # that matter first.
+    def _has_data(canonical_id: str) -> bool:
+        return (data_output_path / app_id_to_dir(canonical_id)).is_dir()
+
+    hot = sorted(cid for cid in targets if _has_data(cid))
+    cold = sorted(cid for cid in targets if not _has_data(cid))
+    ordered = hot + cold
+
+    log(
+        f"[sgdb-covers] {len(targets):,} candidates ({len(hot):,} hot / "
+        f"{len(cold):,} cold), cap={SGDB_PROBE_CAP} probes/run"
+    )
 
     covers: dict[str, str] = {}
     probed = 0
     reused = 0
-    for canonical_id in sorted(targets.keys()):
+    rate_limited = 0
+    # First-N error samples so the log surfaces the actual failure mode
+    # instead of the earlier silent "0 hits" mystery.
+    err_samples: list[str] = []
+    for canonical_id in ordered:
         name = targets[canonical_id]
         cached = cache.get(canonical_id)
-        if cached and cached.get("probed_at", "") >= stale_before:
+        # Only skip if the cached entry is fresh AND wasn't a transient
+        # rate-limit failure -- we want to retry those next run.
+        if cached and cached.get("probed_at", "") >= stale_before \
+                and cached.get("last_error") != "http_429_gave_up":
             reused += 1
             if cached.get("url"):
                 covers[canonical_id] = cached["url"]
             continue
-        url = _fetch_sgdb_by_name(name)
-        cache[canonical_id] = {"url": url, "probed_at": today, "name": name}
+        if probed >= SGDB_PROBE_CAP:
+            # Preserve existing cached URL (if any) but don't refresh.
+            if cached and cached.get("url"):
+                covers[canonical_id] = cached["url"]
+            continue
+        url, err = _fetch_sgdb_by_name(name)
+        cache[canonical_id] = {
+            "url": url,
+            "probed_at": today,
+            "name": name,
+            "last_error": err,
+        }
         if url:
             covers[canonical_id] = url
+        else:
+            if err == "http_429_gave_up":
+                rate_limited += 1
+            if len(err_samples) < 5 and err:
+                err_samples.append(f"{canonical_id}={err}")
         probed += 1
-        if probed % 100 == 0:
-            log(f"[sgdb-covers] progress {probed}/{len(targets)} probed ({reused} reused from cache)")
+        if probed % 50 == 0:
+            log(
+                f"[sgdb-covers] progress {probed}/{SGDB_PROBE_CAP} probed "
+                f"({reused} reused, {rate_limited} rate-limited)"
+            )
 
     cache_path.write_text(json.dumps(cache, separators=(",", ":")) + "\n", encoding="utf-8")
     out_file = output_path / "sgdb-covers.json"
     out_file.write_text(json.dumps(covers, separators=(",", ":")) + "\n", encoding="utf-8")
+    if err_samples:
+        log(f"[sgdb-covers] error samples: {', '.join(err_samples)}")
     log(
         f"[sgdb-covers] wrote {len(covers):,} widescreen covers to {out_file} "
-        f"(probed {probed}, reused {reused}, cache size {len(cache):,})"
+        f"(probed {probed}, reused {reused}, rate-limited {rate_limited}, "
+        f"cache size {len(cache):,})"
     )
 
 

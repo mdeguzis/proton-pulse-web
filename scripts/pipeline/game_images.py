@@ -26,6 +26,7 @@ game-images-skip.json entries are migrated into the unified cache automatically.
 import json
 import os
 import time
+import urllib.error
 import urllib.request
 from datetime import date, timedelta
 from pathlib import Path
@@ -62,6 +63,16 @@ STALE_DAYS = 30           # re-probe hot games whose cache entry is older than t
 # id during a run, Steam's storefront is wobbling and we must not flag anything
 # as delisted. Half-Life 2 (220) has been continuously listed since 2004.
 CANARY_APPID = "220"
+# #467: SGDB is a free-tier public API; we must not burst. 1.1s between calls
+# stays under any reasonable per-second cap and leaves headroom for jitter.
+# Retry once on 429 with backoff so a stray rate-limit doesn't get remembered
+# as a permanent None in the cache. SGDB_PROBE_CAP bounds how many entries
+# we newly probe per run so the cold-cache case doesn't sit in the SGDB API
+# for hours -- successive runs chip through the backlog via the cache.
+SGDB_REQUEST_DELAY = float(os.environ.get("SGDB_REQUEST_DELAY", "1.1"))
+SGDB_PROBE_CAP     = int(os.environ.get("SGDB_PROBE_CAP", "500"))
+SGDB_MAX_RETRIES   = 2  # extra tries after the first 429
+SGDB_BACKOFF_BASE  = 2.0  # seconds, doubled per retry
 
 
 def _standard_header_url(app_id: str) -> str:
@@ -155,61 +166,88 @@ def _fetch_sgdb_header(app_id: str, timeout: int = 8) -> str | None:
     return grids[0].get("url")
 
 
-def _fetch_sgdb_by_name(name: str, timeout: int = 8) -> str | None:
-    """Ask SteamGridDB for a header-shaped grid using a title-search fallback.
+def _sgdb_request(url: str, timeout: int = 8) -> tuple[dict | None, str | None]:
+    """One SGDB GET with 429 retry + exponential backoff.
 
-    Used by generate_sgdb_covers for non-Steam games (pgwiki:pw_*, gog:*,
-    epic:*) that have no Steam appId. Uses the autocomplete search endpoint
-    to find the best matching SGDB game id, then reuses SGDB_GRIDS_URL to
-    pull a 460x215 static grid -- same widescreen shape as the Steam
-    header slot on the game page so the frontend can drop it in without a
-    layout change.
+    Returns (body, error_reason). On success: (parsed JSON dict, None).
+    On failure: (None, "http_401" / "http_429" / "http_500" / "timeout" /
+    "network:<detail>"). Callers use the reason string in log lines so
+    the pipeline surfaces the real failure mode instead of a silent None
+    -- #466 shipped generate_sgdb_covers with a bare except that hid
+    every 429 and made SGDB look like it was returning zero matches.
 
-    Returns the URL or None on any failure (empty API key, empty name,
-    no matches, no grids). Silent on error so the outer generator can
-    fall through to whatever the store catalog provided.
+    Sleeps SGDB_REQUEST_DELAY BEFORE the first call so the caller does
+    not have to remember. Retries on 429 with SGDB_BACKOFF_BASE * 2**i
+    backoff, up to SGDB_MAX_RETRIES extra attempts, then gives up.
     """
-    if not SGDB_API_KEY or not name or not name.strip():
-        return None
-    from urllib.parse import quote
+    if not SGDB_API_KEY:
+        return None, "no_api_key"
     hdrs = {"Authorization": f"Bearer {SGDB_API_KEY}"}
-    # Step 1: name search -> take the top match (SGDB ranks by relevance).
-    try:
-        req = urllib.request.Request(
-            SGDB_SEARCH_URL.format(name=quote(name.strip(), safe="")),
-            headers=hdrs,
-        )
-        # URL from hardcoded SGDB_SEARCH_URL constant + URL-encoded name
-        with urllib.request.urlopen(req, timeout=timeout) as r:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
-            body = json.loads(r.read())
-    except Exception:
-        return None
+    for attempt in range(SGDB_MAX_RETRIES + 1):
+        time.sleep(SGDB_REQUEST_DELAY)
+        req = urllib.request.Request(url, headers=hdrs)
+        try:
+            # URL comes from a hardcoded SGDB_* format string with URL-quoted args.
+            with urllib.request.urlopen(req, timeout=timeout) as r:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+                return json.loads(r.read()), None
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < SGDB_MAX_RETRIES:
+                backoff = SGDB_BACKOFF_BASE * (2 ** attempt)
+                log(f"[sgdb] 429 rate-limited, retry {attempt + 1}/{SGDB_MAX_RETRIES} in {backoff:.1f}s")
+                time.sleep(backoff)
+                continue
+            # Final attempt was a 429 -- surface a distinct reason so the
+            # cache knows this is a transient rate-limit (should retry
+            # next run) rather than a real no-hit.
+            if e.code == 429:
+                return None, "http_429_gave_up"
+            return None, f"http_{e.code}"
+        except urllib.error.URLError as e:
+            return None, f"network:{e.reason}"
+        except Exception as e:
+            return None, f"other:{type(e).__name__}"
+    return None, "http_429_gave_up"
+
+
+def _fetch_sgdb_by_name(name: str, timeout: int = 8) -> tuple[str | None, str | None]:
+    """SGDB title search -> best-match game id -> 460x215 grid URL.
+
+    Returns (url, error_reason). See _sgdb_request for the reason strings.
+    Empty API key / empty name short-circuits with a specific reason so
+    the caller can distinguish "we didn't try" from "we tried and got no
+    hit" in logs and cache entries. #467.
+    """
+    if not SGDB_API_KEY:
+        return None, "no_api_key"
+    if not name or not name.strip():
+        return None, "empty_name"
+    from urllib.parse import quote
+    search_url = SGDB_SEARCH_URL.format(name=quote(name.strip(), safe=""))
+    body, err = _sgdb_request(search_url, timeout=timeout)
+    if err:
+        return None, err
     if not body.get("success"):
-        return None
+        return None, "search_success_false"
     matches = body.get("data") or []
     if not matches:
-        return None
+        return None, "no_matches"
     game_id = matches[0].get("id")
     if not game_id:
-        return None
-    # Step 2: pull 460x215 static grids for that game id (same call the
-    # Steam-appId path uses).
-    try:
-        req = urllib.request.Request(SGDB_GRIDS_URL.format(game_id=game_id), headers=hdrs)
-        # URL from hardcoded SGDB_GRIDS_URL constant + validated game_id
-        with urllib.request.urlopen(req, timeout=timeout) as r:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
-            body = json.loads(r.read())
-    except Exception:
-        return None
+        return None, "no_game_id"
+    grids_url = SGDB_GRIDS_URL.format(game_id=game_id)
+    body, err = _sgdb_request(grids_url, timeout=timeout)
+    if err:
+        return None, err
     if not body.get("success"):
-        return None
+        return None, "grids_success_false"
     grids = body.get("data") or []
     if not grids:
-        return None
+        return None, "no_grids"
     for g in grids:
         if "png" in (g.get("mime") or "") and g.get("url"):
-            return g["url"]
-    return grids[0].get("url")
+            return g["url"], None
+    first = grids[0].get("url")
+    return (first, None) if first else (None, "no_url_in_grids")
 
 
 def _url_is_ok(url: str, timeout: int = 8) -> bool:
