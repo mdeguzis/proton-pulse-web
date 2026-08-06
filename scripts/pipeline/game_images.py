@@ -39,6 +39,11 @@ from .common import log
 SGDB_API_KEY = os.environ.get("SGDB_API_KEY", "").strip()
 SGDB_STEAM_LOOKUP = "https://www.steamgriddb.com/api/v2/games/steam/{appid}"
 SGDB_GRIDS_URL    = "https://www.steamgriddb.com/api/v2/grids/game/{game_id}?dimensions=460x215&types=static"
+# #466: non-Steam games (pgwiki:pw_*, gog:*, epic:*) have no Steam appId, so
+# the Steam-appId lookup above doesn't help. Autocomplete gives us the best
+# matching SGDB game id from a raw title string, from which we can pull the
+# same 460x215 grid the Steam path uses.
+SGDB_SEARCH_URL = "https://www.steamgriddb.com/api/v2/search/autocomplete/{name}"
 
 # Admin overrides: box_art_overrides table on Supabase. Reads use the
 # anon key -- the table's RLS grants SELECT to anon so the pipeline
@@ -144,6 +149,63 @@ def _fetch_sgdb_header(app_id: str, timeout: int = 8) -> str | None:
     if not grids:
         return None
     # Prefer PNG (transparent + lossless). Otherwise SGDB returns top-voted first.
+    for g in grids:
+        if "png" in (g.get("mime") or "") and g.get("url"):
+            return g["url"]
+    return grids[0].get("url")
+
+
+def _fetch_sgdb_by_name(name: str, timeout: int = 8) -> str | None:
+    """Ask SteamGridDB for a header-shaped grid using a title-search fallback.
+
+    Used by generate_sgdb_covers for non-Steam games (pgwiki:pw_*, gog:*,
+    epic:*) that have no Steam appId. Uses the autocomplete search endpoint
+    to find the best matching SGDB game id, then reuses SGDB_GRIDS_URL to
+    pull a 460x215 static grid -- same widescreen shape as the Steam
+    header slot on the game page so the frontend can drop it in without a
+    layout change.
+
+    Returns the URL or None on any failure (empty API key, empty name,
+    no matches, no grids). Silent on error so the outer generator can
+    fall through to whatever the store catalog provided.
+    """
+    if not SGDB_API_KEY or not name or not name.strip():
+        return None
+    from urllib.parse import quote
+    hdrs = {"Authorization": f"Bearer {SGDB_API_KEY}"}
+    # Step 1: name search -> take the top match (SGDB ranks by relevance).
+    try:
+        req = urllib.request.Request(
+            SGDB_SEARCH_URL.format(name=quote(name.strip(), safe="")),
+            headers=hdrs,
+        )
+        # URL from hardcoded SGDB_SEARCH_URL constant + URL-encoded name
+        with urllib.request.urlopen(req, timeout=timeout) as r:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+            body = json.loads(r.read())
+    except Exception:
+        return None
+    if not body.get("success"):
+        return None
+    matches = body.get("data") or []
+    if not matches:
+        return None
+    game_id = matches[0].get("id")
+    if not game_id:
+        return None
+    # Step 2: pull 460x215 static grids for that game id (same call the
+    # Steam-appId path uses).
+    try:
+        req = urllib.request.Request(SGDB_GRIDS_URL.format(game_id=game_id), headers=hdrs)
+        # URL from hardcoded SGDB_GRIDS_URL constant + validated game_id
+        with urllib.request.urlopen(req, timeout=timeout) as r:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+            body = json.loads(r.read())
+    except Exception:
+        return None
+    if not body.get("success"):
+        return None
+    grids = body.get("data") or []
+    if not grids:
+        return None
     for g in grids:
         if "png" in (g.get("mime") or "") and g.get("url"):
             return g["url"]

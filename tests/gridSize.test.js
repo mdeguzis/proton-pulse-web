@@ -43,9 +43,13 @@ describe('configurable card size (S/M/L)', () => {
   });
 
   test('CSS defines the three card sizes', () => {
-    expect(cssSrc).toContain('.cards--sm .game-card-thumb');
-    expect(cssSrc).toContain('.cards--md .game-card-thumb');
-    expect(cssSrc).toContain('.cards--lg .game-card-thumb');
+    // Card size rules moved to css/shared/cards.css in #464 so home
+    // landing (index.html) picks them up too. Assert the shared file
+    // now owns them.
+    const sharedCards = read('css/shared/cards.css');
+    expect(sharedCards).toContain('.cards--sm .game-card-thumb');
+    expect(sharedCards).toContain('.cards--md .game-card-thumb');
+    expect(sharedCards).toContain('.cards--lg .game-card-thumb');
   });
 
   test('S/M/L/XL stay enabled in both layouts (tile mode uses size as column width)', () => {
@@ -83,8 +87,11 @@ describe('configurable card size (S/M/L)', () => {
   });
 
   test('CSS reshapes the card container into a Steam-style tile grid', () => {
-    expect(cssSrc).toContain('.home-cards-tile-mode');
-    expect(cssSrc).toContain('grid-template-columns: repeat(auto-fill, minmax');
-    expect(cssSrc).toContain('aspect-ratio: 460 / 215');
+    // Tile-mode CSS moved to css/shared/cards.css in #464 so home
+    // landing (index.html) picks it up too.
+    const sharedCards = read('css/shared/cards.css');
+    expect(sharedCards).toContain('.home-cards-tile-mode');
+    expect(sharedCards).toContain('grid-template-columns: repeat(auto-fill, minmax');
+    expect(sharedCards).toContain('aspect-ratio: 460 / 215');
   });
 });

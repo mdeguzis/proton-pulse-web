@@ -49,7 +49,9 @@ describe('game-page renders the full page for known no-report games (#363)', () 
 
   test('the full-render title resolution also consults the extended index', () => {
     const idx = SRC.indexOf('let resolvedTitle');
-    const after = SRC.slice(idx, idx + 600);
+    // Slice bumped from 600 -> 1100 after #463 inserted the pgwiki fallback
+    // (comment + entry lookup + conditional) inside the same title chain.
+    const after = SRC.slice(idx, idx + 1100);
     expect(idx).toBeGreaterThan(-1);
     expect(after).toMatch(/loadExtendedSteamIndex\(\)/);
     expect(after).toMatch(/extendedSteamIndex/);
