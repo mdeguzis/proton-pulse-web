@@ -313,7 +313,17 @@
   align-self: start;
   width: 100%;
   max-width: 100%;
+  /* Steam header ratio (460x215) normalises the slot so a Steam header
+     and a taller pgwiki cover both render at the same rectangle. Without
+     the aspect-ratio a portrait pgwiki cover would render very tall
+     (image scales to full width, height auto) and read as stretched
+     compared to Steam-header games. object-fit: cover crops non-matching
+     aspects to fill the frame; background sits behind any letterbox
+     from very narrow images. #465. */
+  aspect-ratio: 460 / 215;
+  object-fit: cover;
   height: auto;
+  background: var(--s1);
   display: block;
   border: 1px solid var(--border);
   border-radius: 6px;
