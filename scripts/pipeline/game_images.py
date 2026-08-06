@@ -70,7 +70,11 @@ CANARY_APPID = "220"
 # we newly probe per run so the cold-cache case doesn't sit in the SGDB API
 # for hours -- successive runs chip through the backlog via the cache.
 SGDB_REQUEST_DELAY = float(os.environ.get("SGDB_REQUEST_DELAY", "1.1"))
-SGDB_PROBE_CAP     = int(os.environ.get("SGDB_PROBE_CAP", "500"))
+# Lowered 500 -> 100 so worst-case (2 sleeps per successful lookup) tops out
+# at ~4 min for the SGDB step, well under any implicit runner budget.
+# Successive pipeline runs chip through the backlog via the cache; 100 hot
+# games per run is still ~30k covers over ~5 months of daily runs.
+SGDB_PROBE_CAP     = int(os.environ.get("SGDB_PROBE_CAP", "100"))
 SGDB_MAX_RETRIES   = 2  # extra tries after the first 429
 SGDB_BACKOFF_BASE  = 2.0  # seconds, doubled per retry
 
