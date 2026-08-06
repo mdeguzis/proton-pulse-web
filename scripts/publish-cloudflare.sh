@@ -58,6 +58,7 @@ SMALL_DATA=(
   pcgamingwiki.json pcgwiki-catalog.json pcgw-id-map.json
   flightless-benchmarks.json flightless-review-queue.json
   coverage.html data-index.html
+  sgdb-covers.json
 )
 
 log() { echo "[publish-cloudflare] $*"; }
