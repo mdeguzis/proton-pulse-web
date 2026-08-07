@@ -136,7 +136,12 @@ def _fetch_sgdb_header(app_id: str, timeout: int = 8) -> str | None:
     """
     if not SGDB_API_KEY:
         return None
-    hdrs = {"Authorization": f"Bearer {SGDB_API_KEY}"}
+    # #467 follow-up: real User-Agent so Cloudflare doesn't 403 us as a bot.
+    hdrs = {
+        "Authorization": f"Bearer {SGDB_API_KEY}",
+        "User-Agent": "proton-pulse-web pipeline (+https://github.com/mdeguzis/proton-pulse-web)",
+        "Accept": "application/json",
+    }
     # Step 1: Steam appId -> SGDB game id.
     try:
         req = urllib.request.Request(SGDB_STEAM_LOOKUP.format(appid=app_id), headers=hdrs)
@@ -186,7 +191,15 @@ def _sgdb_request(url: str, timeout: int = 8) -> tuple[dict | None, str | None]:
     """
     if not SGDB_API_KEY:
         return None, "no_api_key"
-    hdrs = {"Authorization": f"Bearer {SGDB_API_KEY}"}
+    # #467 follow-up: SGDB sits behind Cloudflare which returns 403 for the
+    # default Python urllib User-Agent (bot heuristic). Set a real UA so
+    # search + grids endpoints reach the app server. Verified by curl
+    # returning 401 (auth-shape) with a real UA vs 403 (blocked) without.
+    hdrs = {
+        "Authorization": f"Bearer {SGDB_API_KEY}",
+        "User-Agent": "proton-pulse-web pipeline (+https://github.com/mdeguzis/proton-pulse-web)",
+        "Accept": "application/json",
+    }
     for attempt in range(SGDB_MAX_RETRIES + 1):
         time.sleep(SGDB_REQUEST_DELAY)
         req = urllib.request.Request(url, headers=hdrs)
