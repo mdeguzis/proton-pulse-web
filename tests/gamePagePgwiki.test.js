@@ -40,6 +40,13 @@ describe('game-page pgwiki title + cover fallback (#463)', () => {
     expect(SRC).toMatch(/src="\$\{esc\(sgdbCover \|\| pgwikiEntry\?\.cover_url \|\| STEAM_IMG\(appId\)\)\}"/);
   });
 
+  test('header art ships referrerpolicy=no-referrer so PCGW Cloudflare stops 1011ing us (#469)', () => {
+    // images.pcgamingwiki.com's Cloudflare returns 1011 Access Denied on
+    // any hotlink that ships a Referer. Same guard the boxart preview uses.
+    // Harmless for Steam CDN / SGDB CDN which don't care about the header.
+    expect(SRC).toMatch(/class="game-header-art" src="[^"]*" referrerpolicy="no-referrer"/);
+  });
+
   test('stub-branch pgwiki lookup routes through the shared helper too', () => {
     // Prior code fetched pcgwiki-catalog.json inline in the stub branch AND
     // again during the full render. Now both paths share the memoized
