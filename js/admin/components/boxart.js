@@ -1207,7 +1207,13 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     <div class="boxart-detail-grid">
       <div class="admin-card" style="padding:12px">
         <div class="admin-subhead">Preview</div>
-        <a id="boxart-detail-preview-link" href="${escapeHtml(previewSrc)}" target="_blank" rel="noopener" title="Open full-size image in a new tab"><img id="boxart-detail-preview" referrerpolicy="no-referrer" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05); cursor: zoom-in"></a>
+        <!-- rel="noopener noreferrer": clicking the preview opens the raw
+             image URL in a new tab. images.pcgamingwiki.com Cloudflare
+             returns 1011 Access Denied on any request that ships a Referer,
+             so a bare rel="noopener" click 1011s for pgwiki-sourced covers.
+             The img itself already ships referrerpolicy="no-referrer" and
+             loads fine; only the click-through was broken. #470. -->
+        <a id="boxart-detail-preview-link" href="${escapeHtml(previewSrc)}" target="_blank" rel="noopener noreferrer" title="Open full-size image in a new tab"><img id="boxart-detail-preview" referrerpolicy="no-referrer" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05); cursor: zoom-in"></a>
         <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${gameManagerLink}</p>
       </div>
 
