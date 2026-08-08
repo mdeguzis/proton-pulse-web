@@ -32,12 +32,17 @@ describe('game-page pgwiki title + cover fallback (#463)', () => {
     expect(SRC).toContain('if (!resolvedTitle && pgwikiEntry?.name) resolvedTitle = pgwikiEntry.name');
   });
 
-  test('header art prefers pgwiki cover_url when present, falls back to Steam CDN', () => {
-    // #466 chained the SGDB widescreen cover ahead of the pgwiki cover_url
-    // so the visible order is: sgdb > pgwiki > STEAM_IMG(appId). pgwiki
-    // still wins over the Steam CDN fallback for any pgwiki id that misses
-    // an SGDB hit.
-    expect(SRC).toMatch(/src="\$\{esc\(sgdbCover \|\| pgwikiEntry\?\.cover_url \|\| STEAM_IMG\(appId\)\)\}"/);
+  test('header art src omits pgwiki cover_url so we never flash a broken hotlink (#471)', () => {
+    // #471 dropped pgwikiEntry.cover_url from the direct src fallback:
+    // portrait Steam-format covers stretch/crop badly in the widescreen
+    // slot, and Cloudflare 1011 blocks hotlinks reliably enough that
+    // the initial img load fails and the placeholder wins. The pgwiki
+    // cover still shows as the LAST fallback via __steamImgLoad's
+    // loadSteamImg chain (steam-img.js line 452-471), so a game with
+    // no SGDB match still gets its cover -- just after the widescreen
+    // sources have been tried.
+    expect(SRC).toMatch(/src="\$\{esc\(sgdbCover \|\| STEAM_IMG\(appId\)\)\}"/);
+    expect(SRC).not.toMatch(/src="\$\{esc\(sgdbCover \|\| pgwikiEntry\?\.cover_url/);
   });
 
   test('header art ships referrerpolicy=no-referrer so PCGW Cloudflare stops 1011ing us (#469)', () => {

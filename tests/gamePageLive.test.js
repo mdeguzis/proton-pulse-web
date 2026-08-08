@@ -130,10 +130,10 @@ describe('game page: rating panel (dial + per-tier bars + flag)', () => {
 
   test('box art is preserved in the header grid', () => {
     expect(src).toContain('class="game-header-art"');
-    // Header art fallback chain: SGDB widescreen cover (#466) wins over
-    // pgwiki cover_url (#463) wins over Steam CDN (default). SGDB is
-    // preferred because it's guaranteed 460x215, matching the header slot.
-    expect(src).toContain('src="${esc(sgdbCover || pgwikiEntry?.cover_url || STEAM_IMG(appId))}"');
+    // Header art fallback chain: SGDB widescreen cover (#466) then Steam CDN
+    // (default). pgwiki cover_url was dropped from the primary src (#471);
+    // it still shows as __steamImgLoad's LAST fallback via loadSteamImg.
+    expect(src).toContain('src="${esc(sgdbCover || STEAM_IMG(appId))}"');
   });
 
   test('ProtonDB tier appears as an inline chip inside the confidence line (#219)', () => {
