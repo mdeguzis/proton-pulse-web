@@ -108,6 +108,19 @@ describe('Missing Box Art component contract', () => {
     expect(COMP).toMatch(/highlight:\s*currentSource === 'override'/);
   });
 
+  test('pgwiki previewSrc falls back to pgwikiCoverUrl before akamai (#472)', () => {
+    // Stub pgwiki rows (pw_*) have no nonsteam-images.json entry, and
+    // _resolveCurrentLive deliberately skips pgwikiCoverUrl (server-side
+    // probes always 403). Without a pgwiki-specific tail, previewSrc lands
+    // on akamaiUrl for a pw_* id, which is a guaranteed 404 -> the preview
+    // shows "preview failed to load; refetch also failed" even though the
+    // PCGWiki cover renders fine client-side with referrerpolicy=no-referrer.
+    expect(COMP).toMatch(/previewSrc\s*=\s*currentLiveUrl\s*\|\|\s*override\?\.image_url\s*\|\|\s*cachedUrl\s*\|\|\s*\(type === 'pgwiki' \? pgwikiCoverUrl : akamaiUrl\)/);
+    // pgwikiCoverUrl must still be excluded from the server-side live
+    // resolver (probes 403), so it never shows as the "live source".
+    expect(COMP).not.toMatch(/probeImageUrl\(row\.pgwikiCoverUrl\)/);
+  });
+
   test('set-url modal + hidden file input for uploads live in admin.html', () => {
     // Moved out of the component so both list and detail views share
     // one instance. The component only references these by ID.
