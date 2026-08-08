@@ -1190,7 +1190,13 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
   const fastlyUrl     = type === 'steam' ? `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
   const cloudflareUrl = type === 'steam' ? `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
 
-  const previewSrc = currentLiveUrl || override?.image_url || cachedUrl || akamaiUrl || '';
+  // pgwikiCoverUrl is the last-tier fallback for pgwiki rows (#472). It renders
+  // fine in-browser with referrerpolicy="no-referrer"; it is deliberately
+  // excluded from _resolveCurrentLive (server-side probes 403) so it never
+  // appears as a "live source" in the URL table below. Without this the
+  // preview for a stub pgwiki row lands on akamaiUrl (a guaranteed 404 for a
+  // pw_* id) and shows "preview failed to load; refetch also failed".
+  const previewSrc = currentLiveUrl || override?.image_url || cachedUrl || (type === 'pgwiki' ? pgwikiCoverUrl : akamaiUrl) || '';
 
   const overrideMeta = override
     ? `<span class="admin-badge admin-badge--ok" title="Preserved on every pipeline run">Admin override</span>
