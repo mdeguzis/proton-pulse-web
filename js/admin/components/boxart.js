@@ -1306,6 +1306,15 @@ async function _resolveCurrentLive(row) {
     }
     return { url: null, source: null };
   }
+  // pgwiki: trust the pipeline URL and skip the probe (#472). images.pcgamingwiki.com
+  // 403s any request with a Referer, and probeImageUrl's fetch(mode:'cors') always
+  // sends one -- so probing pgwiki URLs always fails even when the URL loads fine
+  // in a no-referrer <img>. Probing then re-painting with a null resolver would
+  // abort the in-flight img fetch and race the retry, which iOS Safari sometimes
+  // resolves as an error event -> triggers auto-refetch -> "preview failed to load".
+  if (row.type === 'pgwiki' && row.cachedUrl) {
+    return { url: row.cachedUrl, source: 'pipeline' };
+  }
   // GOG / Epic: only the pipeline URL exists as a candidate.
   if (row.cachedUrl) {
     const r = await probeImageUrl(row.cachedUrl);
@@ -1352,9 +1361,16 @@ export async function renderBoxartAdminDetail(appId) {
   document.getElementById('boxart-detail-title').textContent = `Box Art: ${row.title || row.appId} - ${row.type} - App ${row.appId}`;
 
   // Initial paint uses cached URL as preview; then swap once _resolveCurrentLive returns.
+  // The re-paint only runs when the resolver picked a URL that differs from what
+  // the initial paint would use -- otherwise the innerHTML replacement destroys
+  // the img#1 mid-flight and re-issues an identical fetch, which races the
+  // retry (#472). No-op re-paint means the initial img loads cleanly.
   document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, null, null);
+  const initialPreview = row.override?.image_url || row.cachedUrl || (row.type === 'pgwiki' ? row.pgwikiCoverUrl : null);
   const live = await _resolveCurrentLive(row).catch(() => ({ url: null, source: null }));
-  document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, live.url, live.source);
+  if (live.url && live.url !== initialPreview) {
+    document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, live.url, live.source);
+  }
   // Auto-refetch on preview load failure. `_resolveCurrentLive` only probes
   // plain CDN URLs; games whose header ships under a Steam content hash
   // (e.g. .../<appid>/<hash>/header.jpg) 404 on the plain path and the
