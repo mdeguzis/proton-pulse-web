@@ -378,3 +378,138 @@
   border: 1px solid rgba(160,120,200,0.4);
   color: #c0a8e0;
 }
+
+/* What Works? modal (#440). Full-viewport backdrop; centered panel that
+   holds three sections (notes fixes, proton versions, launch options).
+   Uses the same dim-backdrop pattern as .flag-modal-overlay but with its
+   own class so styling stays independent. */
+.ww-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 12, 20, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+.ww-modal-backdrop[hidden] { display: none; }
+.ww-modal {
+  background: var(--card, #17222f);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  max-width: 720px;
+  width: 100%;
+  max-height: min(80vh, 800px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.ww-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ww-modal-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.ww-close {
+  background: transparent;
+  border: 0;
+  color: var(--muted, #9aa5b1);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.ww-close:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.ww-modal-body {
+  padding: 16px 20px 22px;
+  overflow-y: auto;
+}
+.ww-loading, .ww-empty {
+  color: var(--muted, #9aa5b1);
+  font-size: 0.9rem;
+  padding: 20px 0;
+  text-align: center;
+}
+.ww-summary {
+  color: var(--muted, #9aa5b1);
+  font-size: 0.8rem;
+  margin: 0 0 14px;
+}
+.ww-section { margin-bottom: 20px; }
+.ww-section:last-child { margin-bottom: 0; }
+.ww-section-title {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.ww-section-note {
+  margin: 0 0 10px;
+  color: var(--muted, #9aa5b1);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+.ww-empty-section {
+  color: var(--muted, #9aa5b1);
+  font-size: 0.8rem;
+  margin: 0;
+  font-style: italic;
+}
+.ww-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ww-row {
+  display: grid;
+  grid-template-columns: 1fr auto minmax(80px, 120px) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.06);
+  font-size: 0.85rem;
+}
+.ww-row:last-child { border-bottom: 0; }
+.ww-label {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.ww-count {
+  color: var(--muted, #9aa5b1);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  min-width: 2.5em;
+  text-align: right;
+}
+.ww-bar {
+  background: rgba(255,255,255,0.06);
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  display: block;
+}
+.ww-bar-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #6ea86e, #b7c86a);
+  border-radius: 3px;
+}
+.ww-ratio {
+  color: var(--muted, #9aa5b1);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  min-width: 3em;
+  text-align: right;
+}

@@ -1106,6 +1106,36 @@
   text-decoration: none;
 }
 
+/* What Works? CTA (#440). Sits between Deck Status and Submit Report in the
+   header-actions row. Filled pill so it reads as a primary action but a
+   different accent from Submit Report so the two do not compete. */
+.what-works-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 1.5px solid var(--accent, #66c0f4);
+  color: var(--accent, #66c0f4);
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.12s ease, color 0.12s ease, transform 0.06s ease;
+}
+.what-works-btn:hover {
+  background: var(--accent, #66c0f4);
+  color: #0b1116;
+}
+.what-works-btn svg { stroke: currentColor; }
+
+
 /* Save = Steam green, Save Draft = orange, Publish keeps the accent blue.
    Flat fills, no glow. */
 .submit-report-btn--save {
