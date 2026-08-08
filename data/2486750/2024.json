@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2486750",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 480 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.9.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.6-manjaro1.1",
+    "kernel": "6.9.0-1-MANJARO",
+    "notes": "Worked on my fedora install but not anymore, despite trying serveral proton versions. It briefly shows a unity crash window and then closes everything",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1716471363,
+    "title": "Beecarbonize",
+    "source": "protondb"
+  }
+]

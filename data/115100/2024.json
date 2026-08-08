@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "115100",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 16.0.6, DRM 3.57, 6.7.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.1-arch1.1",
+    "kernel": "6.7.6-arch1-1",
+    "notes": "Works great out of the box if you're ok with 30 fps",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1720987080,
+    "title": "Costume Quest",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1455390",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "with the native proton in the 10.0-2 version it worked, but with ge-proton it did not. Unsure why",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1757190528,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "300570",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 418.197.02",
+    "kernel": "4.19.0-17-amd64",
+    "notes": "Doesn't start.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1632060437,
+    "title": "",
+    "source": "protondb"
+  }
+]

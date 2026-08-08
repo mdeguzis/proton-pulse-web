@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "326340",
+    "cpu": "Intel Core i5-8500 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Pro WX3100",
+    "gpuDriver": "4.6 Mesa 20.1.8",
+    "kernel": "5.8.12-arch1-1",
+    "notes": "\u6e38\u620f\u53ef\u4ee5\u542f\u52a8\uff0c\u4f46\u662f\u952e\u76d8\u8f93\u5165\u6ca1\u6709\u4efb\u4f55\u53cd\u5e94\u3002",
+    "os": "Arch Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "5.0-9",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1601536147,
+    "title": "",
+    "source": "protondb"
+  }
+]

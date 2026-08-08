@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1195460",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Pro WX2100",
+    "gpuDriver": "4.5 Mesa 19.0.2",
+    "kernel": "5.3.0-15.1-liquorix-amd64",
+    "notes": "Borked",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1575989131,
+    "title": "",
+    "source": "protondb"
+  }
+]

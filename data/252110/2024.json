@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "252110",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 17.0.6, DRM 3.54, 6.5.0-25-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.5.0-25-generic",
+    "notes": "Had to force proton experimental. Otherwise steam controller with USB connection would not be detected.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1710358853,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  },
+  {
+    "appId": "252110",
+    "cpu": "NAME=\"Linux Mint\"",
+    "duration": "severalHours",
+    "gpu": "lsusb -t",
+    "gpuDriver": "Dev 1, Class=root_hub, Driver=xhci_hcd/6p, 5000M",
+    "kernel": "+-02.0  Intel Corporation UHD Graphics 620",
+    "notes": "",
+    "os": "lspci -tv",
+    "protonVersion": "9.0-1",
+    "ram": "wpctl status",
+    "rating": "gold",
+    "timestamp": 1715252877,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  },
+  {
+    "appId": "252110",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.4.0-117-generic",
+    "notes": "Only works with Proton 7.x - newer versions could not open the game, so had to force this older version.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1727765330,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  }
+]

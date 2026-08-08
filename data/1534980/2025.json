@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1534980",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.60, 6.13.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.4-arch1-1",
+    "notes": "Had to refund.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1758296528,
+    "title": "Terminus: Zombie Survivors",
+    "source": "protondb"
+  }
+]

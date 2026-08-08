@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "464350",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "5.3.11-arch1-1",
+    "notes": "Native version of the game crashes after typing something, proton version crashes before displaying the main screen.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1574367613,
+    "title": "",
+    "source": "protondb"
+  }
+]

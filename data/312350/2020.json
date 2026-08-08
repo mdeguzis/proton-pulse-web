@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312350",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-40-generic",
+    "notes": "Intro works perfectly afterwards the game crashed.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1595097768,
+    "title": "",
+    "source": "protondb"
+  }
+]

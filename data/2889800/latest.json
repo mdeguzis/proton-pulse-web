@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2889800",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "working perfect!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1735860606,
+    "title": "Purpose 1951",
+    "source": "protondb"
+  },
+  {
+    "appId": "2889800",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Not the best experience but it's only 1 hour long",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1746648079,
+    "title": "Purpose 1951",
+    "source": "protondb"
+  },
+  {
+    "appId": "2889800",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.7-108.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.7-108.bazzite.fc41.x86_64",
+    "notes": "Runs fine in 4K",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1747386415,
+    "title": "Purpose 1951",
+    "source": "protondb"
+  }
+]

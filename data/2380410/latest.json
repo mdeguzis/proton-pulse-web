@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2380410",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.14-300.fc38.x86_64",
+    "notes": "Like native",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1683825494,
+    "title": "",
+    "source": "protondb"
+  }
+]

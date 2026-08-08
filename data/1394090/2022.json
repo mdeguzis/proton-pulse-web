@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1394090",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 455.46.04",
+    "kernel": "5.10.81",
+    "notes": "I've seen a similar problem on other games, but for the life of me couldn't figure out the cause(s) or any potential solutions. For posterity, the error had something to do with the Graphics_DisplayM.cpp file, with HRESULT: 0x80004005.",
+    "os": "NixOS 22.05 (Quokka)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646477427,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1394090",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.29",
+    "notes": "Disregard my previous report, I'm a fool who somehow had the wrong drivers installed. Everything works fine, as far as I could tell.",
+    "os": "NixOS 22.05 (Quokka)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1648349227,
+    "title": "",
+    "source": "protondb"
+  }
+]

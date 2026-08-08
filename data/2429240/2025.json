@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2429240",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.0-41-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.1 - kisak-mesa PPA",
+    "kernel": "6.8.0-41-generic",
+    "notes": "The significant slowdown after only a few levels renders this game unplayable for me.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1742355556,
+    "title": "",
+    "source": "protondb"
+  }
+]

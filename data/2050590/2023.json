@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2050590",
+    "cpu": "AMD Ryzen 3 3250U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 3 (raven2, LLVM 16.0.6, DRM 3.54, 6.6.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.4-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1702259333,
+    "title": "Fhtagn Simulator",
+    "source": "protondb"
+  }
+]

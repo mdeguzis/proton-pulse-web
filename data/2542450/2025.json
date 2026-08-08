@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2542450",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.6-arch1-1",
+    "notes": "Works exactly like its Windows counterpart.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752817913,
+    "title": "",
+    "source": "protondb"
+  }
+]

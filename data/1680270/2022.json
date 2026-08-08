@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1680270",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.15-76051515-generic",
+    "notes": "Launching game causes file explorer window to open.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645250239,
+    "title": "SaberStyle",
+    "source": "protondb"
+  }
+]

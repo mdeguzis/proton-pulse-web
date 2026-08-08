@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "893840",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.6.3-arch1-1",
+    "notes": "Crashing during startup on Archlinux with Proton 5.0-9",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1596398015,
+    "title": "",
+    "source": "protondb"
+  }
+]

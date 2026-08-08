@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1330460",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.0",
+    "kernel": "5.8.14-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602298681,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1330460",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.83-1-lts",
+    "notes": "Everything worked exactly as it would on windows.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1608146996,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "698910",
+    "cpu": "Intel Xeon           X5660  @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.8.16-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1604079972,
+    "title": "Cliffstone Manor",
+    "source": "protondb"
+  }
+]

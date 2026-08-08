@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2524930",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (raphael_mendocino, LLVM 15.0.7, DRM 3.52, 6.4.6-76060406-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.4 (git-8b0202e4b4)",
+    "kernel": "6.4.6-76060406-generic",
+    "notes": "",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1725723746,
+    "title": "",
+    "source": "protondb"
+  }
+]

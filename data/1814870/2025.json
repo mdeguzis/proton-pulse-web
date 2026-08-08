@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1814870",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.8-arch3-1)",
+    "gpuDriver": "4.6 Mesa 25.3.0-devel (git-86557cace1)",
+    "kernel": "6.16.8-arch3-1",
+    "notes": "Does not work with Proton. found workaround with Lutris",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "28 GB",
+    "rating": "platinum",
+    "timestamp": 1761271332,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1294810",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-109-generic",
+    "notes": "Game is playable with medium settings",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682997115,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1294810",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1683011617,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1294810",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Run very fine on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1700826529,
+    "title": "",
+    "source": "protondb"
+  }
+]

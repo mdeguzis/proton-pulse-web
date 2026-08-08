@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12364",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.8-arch1-1",
+    "notes": "Its BMT what do you expect",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1778310888,
+    "title": "Big Mutha Truckers",
+    "source": "protondb"
+  }
+]

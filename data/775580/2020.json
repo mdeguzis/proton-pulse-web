@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "775580",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Runs without a problem",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1596644960,
+    "title": "",
+    "source": "protondb"
+  }
+]

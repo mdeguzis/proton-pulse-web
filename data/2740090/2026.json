@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2740090",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "I've tried switching to other versions of Proton as well as using GE-Proton but the game still crashes.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771709331,
+    "title": "Oil Strike '75",
+    "source": "protondb"
+  }
+]

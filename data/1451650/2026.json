@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1451650",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-22-generic",
+    "notes": "Forced proton hotfix",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1776249300,
+    "title": "",
+    "source": "protondb"
+  }
+]

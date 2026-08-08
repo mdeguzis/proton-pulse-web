@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2774190",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.17.0-8-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-8-generic",
+    "notes": "Don't bother - Unplayable.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1767399257,
+    "title": "",
+    "source": "protondb"
+  }
+]

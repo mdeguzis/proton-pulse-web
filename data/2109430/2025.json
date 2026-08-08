@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2109430",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.15.6-201.nobara.fc42.x86_64",
+    "notes": "Low framerates out the box",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1756673173,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1812620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "you can install and get the setup, nothing else",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1716480660,
+    "title": "DSX",
+    "source": "protondb"
+  },
+  {
+    "appId": "1812620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "ds4 shows but try do something, crash program",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1724586603,
+    "title": "DSX",
+    "source": "protondb"
+  },
+  {
+    "appId": "1812620",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.4-zen1-1-zen",
+    "notes": "Written in the .NET framework by a scummy developer so support for Linux is unlikely",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1734014272,
+    "title": "DSX",
+    "source": "protondb"
+  }
+]

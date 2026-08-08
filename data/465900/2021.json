@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "465900",
+    "cpu": "AMD FX-9590 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Using Proton experimental, it installed and ran with no fuss; played to completion with no noticeable technical problems.",
+    "os": "Linux Mint 20",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1625503778,
+    "title": "",
+    "source": "protondb"
+  }
+]

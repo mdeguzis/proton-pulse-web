@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2080950",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.59, 6.12.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Games Borked",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1738112821,
+    "title": "",
+    "source": "protondb"
+  }
+]

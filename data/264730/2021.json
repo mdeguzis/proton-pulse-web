@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "264730",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3 - kisak-mesa PPA",
+    "kernel": "5.4.0-72-generic",
+    "notes": "Game runs fine for awhile but it really lags once the more zombies come DXVK_ASYNC=1 PROTON_HEAP_DELAY_FREE=1 has no effect to it.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-3",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1620415435,
+    "title": "",
+    "source": "protondb"
+  }
+]

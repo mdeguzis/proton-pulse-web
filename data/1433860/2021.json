@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1433860",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "4.15.0-159-generic",
+    "notes": "Just black screen (just the mouse pointer changed shape)",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "6.3-7",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1634912695,
+    "title": "",
+    "source": "protondb"
+  }
+]

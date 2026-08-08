@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1084790",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-29-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589578970,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1084790",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.40-1-MANJARO",
+    "notes": "The Launcher may throw an error at launch. Ignore and proceed. The game itself runs perfectly fine. Nothing to report.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593363729,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1084790",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607609940,
+    "title": "",
+    "source": "protondb"
+  }
+]

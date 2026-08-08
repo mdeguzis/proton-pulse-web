@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1092700",
+    "cpu": "Intel Core i5-8500 @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "Runs very well, no issues.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1768138145,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1981610",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.2-arch1-1",
+    "notes": "Works out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1711716188,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1981610",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.1, DRM 3.57, 6.8.9-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.7",
+    "kernel": "6.8.9-300.fc40.x86_64",
+    "notes": "Perfect",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1716132378,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1981610",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.11-200.fc39.x86_64",
+    "notes": "Works out of the box",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1734585423,
+    "title": "",
+    "source": "protondb"
+  }
+]

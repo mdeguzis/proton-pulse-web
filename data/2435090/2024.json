@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2435090",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.2-manjaro1.1",
+    "kernel": "6.8.8-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1715642349,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2435090",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Layout Changes improved accuracy of direction changes",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1727965847,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2435090",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa NV134",
+    "gpuDriver": "4.3 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1735237741,
+    "title": "",
+    "source": "protondb"
+  }
+]

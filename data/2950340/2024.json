@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2950340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1728910377,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2950340",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 18.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.2.4-arch1.1",
+    "kernel": "6.6.56-1-lts",
+    "notes": "Worked flawlessly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1729187568,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2950340",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.8.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1730498947,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "588930",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 17.0.2, DRM 3.54, 6.5.6-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.6-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1724675467,
+    "title": "",
+    "source": "protondb"
+  }
+]

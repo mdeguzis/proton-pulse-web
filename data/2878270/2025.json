@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2878270",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.7.4-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.4-200.fsync.fc39.x86_64",
+    "notes": "Quest 2 through ALVR. I've tried several different versions of Proton (Experimental, 9.0-4, GE-Proton9-23, GE-Proton9-7) including blowing away the prefix and trying GE-Proton9-7 again with a fresh prefix, but I always get the black screen. Interestingly, if I look at my monitor, I can see the mouse cursor switching to what the game uses but after installing vcrun2015 the cursor stays as my KDE one. Updating ALVR also didn't help.",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1737871898,
+    "title": "Metal: Hellsinger VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "2878270",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 550.144.03",
+    "kernel": "6.6.65-1-MANJARO",
+    "notes": "Couldn't get the game to work.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1738263124,
+    "title": "Metal: Hellsinger VR",
+    "source": "protondb"
+  }
+]

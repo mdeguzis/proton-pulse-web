@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "915320",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-73-generic",
+    "notes": "Normal experience for me. Pretty good fps, around 60, which is a good thing, given my hardware.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-4",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1622578450,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "915320",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.13.0-19-generic",
+    "notes": "The game says running and nothing starts up",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1635281431,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "915320",
+    "cpu": "DG1002FGF84HT",
+    "duration": "unreported",
+    "gpu": "AMD Liverpool (PS4) (LIVERPOOL, DRM 3.19.0, 4.14.93-g538e75632e3b-dirty, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel",
+    "kernel": "4.14.93-g538e75632e3b-dirty",
+    "notes": "",
+    "os": "Linux 4.14",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1640086423,
+    "title": "",
+    "source": "protondb"
+  }
+]

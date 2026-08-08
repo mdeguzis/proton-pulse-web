@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "35480",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.5-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1672533619,
+    "title": "Dwarfs!?",
+    "source": "protondb"
+  },
+  {
+    "appId": "35480",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "5.15.108-1-MANJARO",
+    "notes": "No succes in starting or playing the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "10 GB",
+    "rating": "borked",
+    "timestamp": 1688929480,
+    "title": "Dwarfs!?",
+    "source": "protondb"
+  },
+  {
+    "appId": "35480",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1703545699,
+    "title": "Dwarfs!?",
+    "source": "protondb"
+  }
+]

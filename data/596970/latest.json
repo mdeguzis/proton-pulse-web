@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "596970",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.19-2-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "GE installation is necessary and this is not trivial for non-techy users",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1725158413,
+    "title": "",
+    "source": "protondb"
+  }
+]

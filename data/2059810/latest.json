@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2059810",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u8fdb\u5165\u5c4f\u5e55\u5927\u5c0f\u9009\u62e9\u540e\u5c31\u4f1a\u95ea\u9000",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1768617988,
+    "title": "Richman 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2059810",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.0-2-cachyos",
+    "notes": "\u9009\u62e9\u7a97\u53e3\u6216\u5168\u5c4f\u542f\u52a8\u6e38\u620f\u540e\u9ed1\u5c4f\u95ea\u9000",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1771229249,
+    "title": "Richman 4",
+    "source": "protondb"
+  },
+  {
+    "appId": "2059810",
+    "cpu": "13th Gen Intel Core i9-13980HX",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.9-arch1-1",
+    "notes": "It needs to install GE Proton. It does not work out of box.",
+    "os": "Arch Linux\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1776864243,
+    "title": "Richman 4",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2408120",
+    "cpu": "12th Gen Intel Core i5-1235U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "6.0.10-300.fc37.x86_64",
+    "notes": "Doesn't launch.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1691000033,
+    "title": "",
+    "source": "protondb"
+  }
+]

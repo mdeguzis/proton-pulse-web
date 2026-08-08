@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "347940",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Still opens and closes right away. does not work at all.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612117874,
+    "title": "",
+    "source": "protondb"
+  }
+]

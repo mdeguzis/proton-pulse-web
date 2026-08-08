@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "439490",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.98",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "Runs natively with no issues.",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1692491301,
+    "title": "",
+    "source": "protondb"
+  }
+]

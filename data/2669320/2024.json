@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2669320",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game shows an error then: \"... Wine, Proton, Steam Deck is not supported\" and then exit!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1726862298,
+    "title": "EA SPORTS FC 25",
+    "source": "protondb"
+  },
+  {
+    "appId": "2669320",
+    "cpu": "Intel Core i5-14400F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.8.0-47-generic",
+    "notes": "Quite easy to install the EA App but can't really play the game so I have to stick to dual booting zorin os and w11 for it to be playable.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1729700925,
+    "title": "EA SPORTS FC 25",
+    "source": "protondb"
+  },
+  {
+    "appId": "2669320",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Does not work. Probably isn't fixable unless EA changes their mind.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1732827003,
+    "title": "EA SPORTS FC 25",
+    "source": "protondb"
+  }
+]

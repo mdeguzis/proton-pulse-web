@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1845670",
+    "cpu": "Intel Core i3-7020U @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2F)",
+    "gpuDriver": "4.6 Mesa 24.2.2 - kisak-mesa PPA",
+    "kernel": "6.8.0-44-generic",
+    "notes": "The game launches but you can't press any buttons beside \"Enter\" and \"F1-F12\" so it's unplayable.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1728384011,
+    "title": "",
+    "source": "protondb"
+  }
+]

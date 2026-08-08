@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3028330",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.17.4-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.17.4-200.fc42.x86_64",
+    "notes": "The program encountered E111000B at 00002303 during initialization. Wine, Proton, and Steam Deck are not supported by this application!",
+    "os": "Fedora Linux 42.20251027.0 (Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1761709284,
+    "title": "Battlefield\u2122 REDSEC",
+    "source": "protondb"
+  },
+  {
+    "appId": "3028330",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 20.1.6, DRM 3.61, 6.14.8-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.14.8-273-tkg-bore",
+    "notes": "Game fails to launch, specifically saying it doesn't run in wine, proton, or steam deck",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1761714096,
+    "title": "Battlefield\u2122 REDSEC",
+    "source": "protondb"
+  },
+  {
+    "appId": "3028330",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.17.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.2-arch1-1",
+    "notes": "Error: Wine, Proton, and Steam Deck are not supported by this application!",
+    "os": "Arch Linux\uff0864\u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1761794290,
+    "title": "Battlefield\u2122 REDSEC",
+    "source": "protondb"
+  }
+]

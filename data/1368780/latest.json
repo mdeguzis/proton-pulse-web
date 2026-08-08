@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1368780",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "X.Org Radeon RX550/550 (POLARIS12, DRM 3.35.0, 5.4.50-gentoo, LLVM 10.0.0)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.50-gentoo",
+    "notes": "Game black screens shortly after starting",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1621800486,
+    "title": "",
+    "source": "protondb"
+  }
+]

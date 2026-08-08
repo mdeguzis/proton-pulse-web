@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "449140",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "Doesn't work",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597634513,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "449140",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.0-3-MANJARO",
+    "notes": "Native fails to launch due to the following error: \"Harfbuzz version too old (1.2.7)\". Proton it launches to a white screen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1601847765,
+    "title": "",
+    "source": "protondb"
+  }
+]

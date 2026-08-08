@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "349060",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-72-generic",
+    "notes": "Game doesn't start",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-10",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1576529578,
+    "title": "",
+    "source": "protondb"
+  }
+]

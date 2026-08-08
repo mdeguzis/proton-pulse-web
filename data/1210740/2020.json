@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1210740",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.11-200.fc31.x86_64",
+    "notes": "Works fine out of the box",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589919955,
+    "title": "Lumin's Path",
+    "source": "protondb"
+  }
+]

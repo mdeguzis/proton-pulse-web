@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2304640",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "5.4.0-166-generic",
+    "notes": "Works OK as long as you avoid tutorial mode.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1700608562,
+    "title": "",
+    "source": "protondb"
+  }
+]

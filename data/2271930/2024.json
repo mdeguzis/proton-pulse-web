@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2271930",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.1.0-27-amd64",
+    "notes": "The game runs smoothly after making minor adjustments. However, occasionally the fishing GUI doesn't disappear as it should.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1731748931,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2271930",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.2.0-34-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1735334720,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1115690",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.7.7-201.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.7.7-201.fsync.fc39.x86_64",
+    "notes": "Runs perfectly, no issues",
+    "os": "Fedora Linux 39.20240306.0 (Bazzite)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1709933771,
+    "title": "",
+    "source": "protondb"
+  }
+]

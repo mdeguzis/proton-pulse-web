@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2754660",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-91-generic",
+    "notes": "It launches by going to it's install folder and launching the game there with Wine. Then it works well.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1720099434,
+    "title": "Deal of the Dead Final Cut",
+    "source": "protondb"
+  },
+  {
+    "appId": "2754660",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-41-generic",
+    "notes": "Game works well now",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1728036651,
+    "title": "Deal of the Dead Final Cut",
+    "source": "protondb"
+  }
+]

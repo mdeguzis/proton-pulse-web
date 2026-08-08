@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1100160",
+    "cpu": "AMD Ryzen 7 5800XT 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.8, DRM 3.64, 6.19.11-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.11-200.fc43.x86_64",
+    "notes": "Perfect OOTB, though thcrap and vpatch need a few extra steps",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1775853055,
+    "title": "",
+    "source": "protondb"
+  }
+]

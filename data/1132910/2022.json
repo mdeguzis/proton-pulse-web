@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1132910",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.14-1-MANJARO",
+    "notes": "Perfectly playable out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1649001677,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1132910",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.12-3-MANJARO",
+    "notes": "\u043f\u0440\u043e\u0448\u0435\u043b \u0446\u0435\u043b\u0438\u043a\u043e\u043c \u0431\u0435\u0437 \u043a\u0430\u043a\u0438\u0445-\u043b\u0438\u0431\u043e \u043f\u0440\u043e\u0431\u043b\u0435\u043c",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1660997864,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1132910",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u0438\u0434\u0435\u0442 \u043e\u0442\u043b\u0438\u0447\u043d\u043e",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1661000057,
+    "title": "",
+    "source": "protondb"
+  }
+]

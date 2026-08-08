@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1518810",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Resizing is weird and it may freeze in time when minimized. Except for that, runs without issues.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1734706215,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4359800",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-arch1-1",
+    "notes": "Game loads but after main menu stuck at 1FPS and whole system laggs",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1775244176,
+    "title": "",
+    "source": "protondb"
+  }
+]

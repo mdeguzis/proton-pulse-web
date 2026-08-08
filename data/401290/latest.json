@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "401290",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "5.15.0-88-generic",
+    "notes": "Installed via steam and ran without any issues. Did not require any special configuration.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1700278353,
+    "title": "",
+    "source": "protondb"
+  }
+]

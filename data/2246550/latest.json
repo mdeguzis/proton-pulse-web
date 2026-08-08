@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2246550",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 17.0.0, DRM 3.52, 6.3.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.2.0-devel (git-5266bb0211)",
+    "kernel": "6.3.5-zen1-1-zen",
+    "notes": "Tried various proton versions including GE, couldn't get it to run.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685655813,
+    "title": "Interkosmos 2000",
+    "source": "protondb"
+  }
+]

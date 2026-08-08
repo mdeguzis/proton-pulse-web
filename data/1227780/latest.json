@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1227780",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 13.0.1, DRM 3.44, 5.17.8-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.17.8-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1653064217,
+    "title": "Taur",
+    "source": "protondb"
+  },
+  {
+    "appId": "1227780",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.4.0-70-generic",
+    "notes": "Works perfectly out of the box",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1657354912,
+    "title": "Taur",
+    "source": "protondb"
+  },
+  {
+    "appId": "1227780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The main game is playable but the supporting features on the main screen are not usable unless youve played the game before due to the text",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1663506436,
+    "title": "Taur",
+    "source": "protondb"
+  }
+]

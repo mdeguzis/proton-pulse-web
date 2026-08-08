@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1754840",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.63, 6.15.0-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.1.1-arch1.1",
+    "kernel": "6.15.0-1-cachyos",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "platinum",
+    "timestamp": 1748522756,
+    "title": "Hacker Simulator",
+    "source": "protondb"
+  }
+]

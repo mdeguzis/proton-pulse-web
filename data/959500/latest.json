@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "959500",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, ACO, DRM 3.63, 6.15.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.15.7-arch1-1",
+    "notes": "o jogo funciona bem, apesar de n\u00e3o ir tela cheia",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1753213610,
+    "title": "",
+    "source": "protondb"
+  }
+]

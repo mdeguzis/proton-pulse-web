@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2447310",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 16.0.6, DRM 3.54, 6.6.26-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.2-manjaro1.1",
+    "kernel": "6.6.26-1-MANJARO",
+    "notes": "Zero issues, played nicely out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1714141312,
+    "title": "",
+    "source": "protondb"
+  }
+]

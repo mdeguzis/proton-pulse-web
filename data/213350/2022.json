@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "213350",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 14.0.6, DRM 3.48, 6.0.12-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.2.4 (git-80df10f902)",
+    "kernel": "6.0.12-300.fc37.x86_64",
+    "notes": "Can't play: no textures in menu, in game. Souds and music works though and there are no stability issues",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1671472560,
+    "title": "MDK2 HD",
+    "source": "protondb"
+  }
+]

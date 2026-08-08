@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "603420",
+    "cpu": "AMD Ryzen 7 PRO 4750G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.49, 6.2.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "La version nativa tiene un problema con los controles pero funciona, Si quiere jugar sin problemas use la version con proton",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-6",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1679867059,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1829270",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.17.3-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.2",
+    "kernel": "6.17.3-3-cachyos",
+    "notes": "Crashes systematically after a few minutes",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1760819832,
+    "title": "",
+    "source": "protondb"
+  }
+]

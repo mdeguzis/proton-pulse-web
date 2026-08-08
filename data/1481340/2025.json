@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1481340",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.6, DRM 3.63, 6.15.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.1",
+    "kernel": "6.15.1-273-tkg-eevdf",
+    "notes": "Works perfectly fine out the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1751057563,
+    "title": "\u98c4\u6d41\u5e7b\u5883M",
+    "source": "protondb"
+  }
+]

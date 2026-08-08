@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2141810",
+    "cpu": "00]-+-00.0  Advanced Micro Devices, Inc. [AMD] Renoir/Cezanne Root Complex",
+    "duration": "unreported",
+    "gpu": "coredumpctl -r --since -10d",
+    "gpuDriver": "TIME                          PID  UID  GID SIG    COREFILE EXE                                                                                                       SIZE",
+    "kernel": "Dev 2, If 0, Class=Mass Storage, Driver=uas, 10000M",
+    "notes": "",
+    "os": "lsusb -t",
+    "protonVersion": "9.0-4",
+    "ram": "journalctl -b 0",
+    "rating": "silver",
+    "timestamp": 1757177183,
+    "title": "GUN KING",
+    "source": "protondb"
+  }
+]

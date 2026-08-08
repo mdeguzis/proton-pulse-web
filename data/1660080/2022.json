@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1660080",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Once I found a working Proton version and got past initial graphical weirdness, the game was perfectly playable.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1658451592,
+    "title": "",
+    "source": "protondb"
+  }
+]

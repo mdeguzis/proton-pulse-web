@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1507420",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.10.16-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.16-arch1-1",
+    "notes": "Saving did not work, so game is unplayable.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1614039374,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1507420",
+    "cpu": "AMD Ryzen 9 4900H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-50-generic",
+    "notes": "I think that a standard expectation would be that the motion appears reasonably fluid and natural.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1620836394,
+    "title": "",
+    "source": "protondb"
+  }
+]

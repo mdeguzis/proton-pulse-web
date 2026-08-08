@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1614740",
+    "cpu": "AMD Ryzen 3 PRO 4350G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.42.0, 5.15.0-46-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-46-generic",
+    "notes": "Works really well on Linux, too bad that there is no native Linux version though since it was made using the Unity game engine.",
+    "os": "KDE neon User - 5.25",
+    "protonVersion": "7.0-4",
+    "ram": "23 GB",
+    "rating": "platinum",
+    "timestamp": 1666486713,
+    "title": "Ink Paper Minesweeper",
+    "source": "protondb"
+  }
+]

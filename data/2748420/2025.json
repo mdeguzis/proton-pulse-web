@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2748420",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "My initial impression is that this game is fully compatible with proton, and runs very well.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1758388910,
+    "title": "Ascent: Rivals",
+    "source": "protondb"
+  },
+  {
+    "appId": "2748420",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.16.7-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.2.2-arch1.2",
+    "kernel": "6.16.7-zen1-1-zen",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1758815841,
+    "title": "Ascent: Rivals",
+    "source": "protondb"
+  }
+]

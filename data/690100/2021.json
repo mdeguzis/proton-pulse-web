@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "690100",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.9-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.9-arch1-1",
+    "notes": "Runs out of the box on patch 0.54.18 on Proton experimental",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628780459,
+    "title": "TwoKinds Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "690100",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.5-76051505-generic",
+    "notes": "Works Out-Of-The-Box perfectly. No issues, no audio problems, nothing. Works the same as the Windows version.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639728113,
+    "title": "TwoKinds Online",
+    "source": "protondb"
+  }
+]

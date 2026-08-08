@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1058200",
+    "cpu": "Intel Core i7-7700T @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.4.0-126-generic",
+    "notes": "With a setup similar to mine, the version of Proton I used (7.0-4) should make game the run perfectly",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1666516215,
+    "title": "",
+    "source": "protondb"
+  }
+]

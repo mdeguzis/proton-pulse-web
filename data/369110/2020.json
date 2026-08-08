@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "369110",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.15.0-20-generic",
+    "notes": "Works out of the box. An unofficial native is available in beta mode, but has some bugs.",
+    "os": "Linux Mint 19 Tara (64\u00a0bits)",
+    "protonVersion": "5.0-5",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1585942262,
+    "title": "The Swindle",
+    "source": "protondb"
+  },
+  {
+    "appId": "369110",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-46-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1586728065,
+    "title": "The Swindle",
+    "source": "protondb"
+  },
+  {
+    "appId": "369110",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "Enable the [linuxtest] beta branch and you're good to go.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593362436,
+    "title": "The Swindle",
+    "source": "protondb"
+  }
+]

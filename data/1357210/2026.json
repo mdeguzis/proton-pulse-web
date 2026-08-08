@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1357210",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.6-2-cachyos",
+    "notes": "Work's perfectly out of the box. No tinkering needed for me.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1769531980,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1021770",
+    "cpu": "AMD Ryzen 5 4500U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.57, 6.8.0-79-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-79-generic",
+    "notes": "Runs perfectly out of the box. Easy as.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1763086971,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4077800",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.19.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch1.1",
+    "kernel": "6.19.6-arch1-1",
+    "notes": ":(",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772949830,
+    "title": "",
+    "source": "protondb"
+  }
+]

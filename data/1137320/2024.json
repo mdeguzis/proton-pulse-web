@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1137320",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-zen1-1-zen",
+    "notes": "Unbearably high CPU usage and low speed, can't even complete the first level of the tutorial.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1735044112,
+    "title": "",
+    "source": "protondb"
+  }
+]

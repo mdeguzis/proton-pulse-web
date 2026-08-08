@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1011420",
+    "cpu": "AMD A8-3870 APU with Radeon HD Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.7-050607-generic",
+    "notes": "If you don't mine the low FPS or have a super powerful machine, then it works. Otherwise, maybe a patch will fix it.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589629182,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3959890",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.19.0-rc8-1-cachyos-rc)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.19.0-rc8-1-cachyos-rc",
+    "notes": "Unusable for the lack of transparency, which is this game's main selling point.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1770482059,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3959890",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.11-arch1-1",
+    "notes": "Transparency is lacking and input is broken by default in wayland",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1776163437,
+    "title": "",
+    "source": "protondb"
+  }
+]

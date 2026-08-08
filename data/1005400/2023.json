@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1005400",
+    "cpu": "11th Gen Intel Core i5-11260H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.1.0-10-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1691344200,
+    "title": "",
+    "source": "protondb"
+  }
+]

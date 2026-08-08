@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1402020",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Same issue that prevents Bonelab, Phasmophobia and Devour from launching in VR.\nIf you can't launch these games, you won't be able to launch this.\n\nI've tried many workarounds, nothing worked.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1671993994,
+    "title": "",
+    "source": "protondb"
+  }
+]

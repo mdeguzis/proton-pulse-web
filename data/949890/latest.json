@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "949890",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.1.4-arch1-1",
+    "notes": "Switch to Proton 4.11-13",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "4.11-13",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1674008816,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "949890",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Without it, its just a black screen but with the BGM on. The game runs with 4.11-13, though it stutters. In a game like this its not the end of the world, but its definetly noticable.",
+    "os": "SteamOS Holo",
+    "protonVersion": "4.11-13",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1675349365,
+    "title": "",
+    "source": "protondb"
+  }
+]

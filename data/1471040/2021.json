@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1471040",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.11-230-tkg-pds",
+    "notes": "While the voice audio is very quiet to almost inaudible, all conversations have subtitles, so you do not miss any information",
+    "os": "Garuda Linux",
+    "protonVersion": "experimental",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1640538320,
+    "title": "Base One",
+    "source": "protondb"
+  }
+]

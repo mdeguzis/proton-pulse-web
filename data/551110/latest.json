@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "551110",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.13.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.5-arch1-1",
+    "notes": "No issues",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1741018994,
+    "title": "Wayout",
+    "source": "protondb"
+  }
+]

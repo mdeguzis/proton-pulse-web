@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1110910",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.19.6+deb14-amd64)",
+    "gpuDriver": "4.6 Mesa 26.0.2-1",
+    "kernel": "6.19.6+deb14-amd64",
+    "notes": "Works Out of the Box",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1775870453,
+    "title": "",
+    "source": "protondb"
+  }
+]

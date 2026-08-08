@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1387150",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.0-0.bpo.5-amd64",
+    "notes": "Used Proton 5.13-6. Worked like a charm. Game has a Covid-19 option. :D",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1619266497,
+    "title": "A Case of the Crabs: Rehash",
+    "source": "protondb"
+  },
+  {
+    "appId": "1387150",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Works fine.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627596717,
+    "title": "A Case of the Crabs: Rehash",
+    "source": "protondb"
+  }
+]

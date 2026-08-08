@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1094050",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD VERDE (DRM 2.50.0, 5.15.36_1, LLVM 12.0.1)",
+    "gpuDriver": "4.5 Mesa 21.3.7",
+    "kernel": "5.15.36_1",
+    "notes": "This game works out of the box on proton, I only needed \"PROTON_USE_WINED3D11=1\" because my system doesn't support Vulkan.",
+    "os": "Void Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1651199551,
+    "title": "",
+    "source": "protondb"
+  }
+]

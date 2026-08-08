@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4283360",
+    "cpu": "AMD Ryzen 9 9955HX3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5080 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.1-1-cachyos",
+    "notes": "Works out of the box. No issues at this time",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777400960,
+    "title": "Legionbound",
+    "source": "protondb"
+  }
+]

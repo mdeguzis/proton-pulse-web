@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3869500",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-64-generic",
+    "notes": "Although the game's in alpha it plays fine under regular Proton, as well as GE. Didn't need to add any lauch options, and seems stable.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1755383654,
+    "title": "",
+    "source": "protondb"
+  }
+]

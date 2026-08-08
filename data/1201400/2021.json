@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1201400",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.13-xanmod1-1",
+    "notes": "Very simple, just downloaded the game and selected GloriousEggroll's version of proton and it just worked",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634725305,
+    "title": "",
+    "source": "protondb"
+  }
+]

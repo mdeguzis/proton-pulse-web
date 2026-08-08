@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "867660",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.16.15-arch1-1",
+    "notes": "Runs fine, saves are fickle / controller issues, possibly just a buggy game (regardless of Proton)",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1649932777,
+    "title": "",
+    "source": "protondb"
+  }
+]

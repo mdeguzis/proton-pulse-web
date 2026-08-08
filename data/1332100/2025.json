@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1332100",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.8.0-64-generic",
+    "notes": "I'm not sure if it's just my setup, but this game runs very very poorly performance wise on my rig. Probably the maxed out VRAM.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1753730034,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1332100",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.8, DRM 3.64, 6.17.0-8-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.6 - kisak-mesa PPA",
+    "kernel": "6.17.0-8-generic",
+    "notes": "A work in progress - very good, but significant FPS issues.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767060645,
+    "title": "",
+    "source": "protondb"
+  }
+]

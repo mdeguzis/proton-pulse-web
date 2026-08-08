@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1233510",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 430.26",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Game does not start.",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1582991375,
+    "title": "",
+    "source": "protondb"
+  }
+]

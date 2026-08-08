@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "617480",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 14.0.6, DRM 3.49, 6.2.0)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "6.2.0",
+    "notes": "The game works well, but do take heed of some issues with performance.",
+    "os": "NixOS 22.11 (Raccoon)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1679615662,
+    "title": "",
+    "source": "protondb"
+  }
+]

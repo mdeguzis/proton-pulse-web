@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "949600",
+    "cpu": "AMD Ryzen 9 3900XT 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.8, DRM 3.59, 6.11.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel (git-c243970d50)",
+    "kernel": "6.11.6-arch1-1",
+    "notes": "Works well enough once you add the launch options",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735657782,
+    "title": "",
+    "source": "protondb"
+  }
+]

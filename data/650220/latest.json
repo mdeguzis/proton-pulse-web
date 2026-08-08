@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "650220",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.12-200.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1776965387,
+    "title": "",
+    "source": "protondb"
+  }
+]

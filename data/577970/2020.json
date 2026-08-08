@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "577970",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 620 (Kaby Lake GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.5",
+    "kernel": "5.4.24-1-MANJARO",
+    "notes": "Unless your computer is significantly better, I don't think it would be a good idea to play this game on Linux",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1584717475,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "577970",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.12-1-MANJARO",
+    "notes": "Installed and ran beautifully on my desktop. Nothing to complain about or any issues of note.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1590784268,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "577970",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Runs well without any issues. Haven't get to play online due non-existent palyerbase",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605881171,
+    "title": "",
+    "source": "protondb"
+  }
+]

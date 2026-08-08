@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "548340",
+    "cpu": "Intel Core i7-12700",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RX 9070 XT 16GB",
+    "gpuDriver": "Mesa 26.0.5",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "Game only crashes on boot. Otherwise, it works well!",
+    "os": "CachyOS + KDE plasma",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1776873893,
+    "title": "Abode",
+    "source": "protondb"
+  }
+]

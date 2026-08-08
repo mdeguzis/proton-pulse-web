@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "730580",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.3.1-2-default",
+    "notes": "Native version is borked",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1684070092,
+    "title": "",
+    "source": "protondb"
+  }
+]

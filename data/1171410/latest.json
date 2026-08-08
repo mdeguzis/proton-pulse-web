@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1171410",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.42.0, 5.15.25-1-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.15.25-1-MANJARO",
+    "notes": "Played game for 15 minutes with no issues, but warning: game is unfinished/abandoned so you can't progress far even on Windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1660107573,
+    "title": "",
+    "source": "protondb"
+  }
+]

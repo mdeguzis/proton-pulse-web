@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3469910",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.9-76070009-generic",
+    "notes": "Demo version.. Played fine.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1781385972,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3469910",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.9-200.nobara.fc43.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1781860003,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3469910",
+    "cpu": "13th Gen Intel Core i7-13700H",
+    "duration": "unreported",
+    "gpu": "Mesa zink Vulkan 1.4(NVIDIA GeForce RTX 4060 Laptop GPU (NVIDIA_PROPRIETARY))",
+    "gpuDriver": "4.6 Mesa 26.1.3-arch1.2",
+    "kernel": "7.1.1-1-MANJARO",
+    "notes": "No issues with the demo",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1782006036,
+    "title": "",
+    "source": "protondb"
+  }
+]

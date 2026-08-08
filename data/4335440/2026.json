@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4335440",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Doesn't run",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1775171196,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1612780",
+    "cpu": "AMD Ryzen 7 PRO 4750U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (LLVM 13.0.1, DRM 3.42, 5.15.0-30-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-30-generic",
+    "notes": "Video and gameplay works fine with Proton-GE",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1652401885,
+    "title": "The Centennial Case : A Shijima Story",
+    "source": "protondb"
+  },
+  {
+    "appId": "1612780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1652574098,
+    "title": "The Centennial Case : A Shijima Story",
+    "source": "protondb"
+  },
+  {
+    "appId": "1612780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1652843411,
+    "title": "The Centennial Case : A Shijima Story",
+    "source": "protondb"
+  }
+]

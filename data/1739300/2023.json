@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1739300",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1687400869,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1739300",
+    "cpu": "Intel Core i5-8365U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.1 (git-fa55e3c026)",
+    "kernel": "6.4.3-1-liquorix-amd64",
+    "notes": "I am unfamiliar with tricks to make Windows games run on Linux. But the default settings for Steam to run Windows games on Linux, I couldn't run Smack Studio. A UE4 Bug report immediately shows upon starting the game.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1689633731,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1739300",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game runs fine on deck. I found no real issues with it.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1691005679,
+    "title": "",
+    "source": "protondb"
+  }
+]

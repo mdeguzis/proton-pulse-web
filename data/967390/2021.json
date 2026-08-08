@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "967390",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 5500 XT",
+    "gpuDriver": "4.6 Mesa 20.2.3",
+    "kernel": "5.9.12-arch1-1",
+    "notes": "An intro cinematic bug and one minor rendering issue; otherwise runs great.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1612559288,
+    "title": "Chronos: Before the Ashes",
+    "source": "protondb"
+  }
+]

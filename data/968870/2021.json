@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "968870",
+    "cpu": "AMD Ryzen 7 PRO 4750G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RENOIR (DRM 3.40.0, 5.11.13-200.fc33.x86_64, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.11.13-200.fc33.x86_64",
+    "notes": "Game uses low resolution textures",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-2",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1618647832,
+    "title": "Close To The Sun",
+    "source": "protondb"
+  },
+  {
+    "appId": "968870",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.12.12-zen1-1-zen, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.3",
+    "kernel": "5.12.12-zen1-1-zen",
+    "notes": "Some performance issues, but still playable",
+    "os": "RebornOS Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1624497775,
+    "title": "Close To The Sun",
+    "source": "protondb"
+  }
+]

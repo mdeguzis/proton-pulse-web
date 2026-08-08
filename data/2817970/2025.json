@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2817970",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.86.15",
+    "kernel": "6.12.11-205.bazzite.fc41.x86_64",
+    "notes": "Very weird little game, but the devs put in the work to make it work just as flawlessly as it does under Windows. Very cool.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1738647822,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3570060",
+    "cpu": "12th Gen Intel Core i5-1235U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Gamescope seemingly required for proper input handling, *without* it you're not playing a game, but fighting to be able to play at all.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1772116344,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3570060",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Seems to work fine.",
+    "os": "Pop!_OS 22.04",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1776470371,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3570060",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777580876,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4132330",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.12-1-cachyos",
+    "notes": "Demo runs and is playable, but with one visual bug",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1781817202,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "4132330",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.8-1-cachyos-eevdf",
+    "notes": "Played in DEMO version. Texture issues is not big problem, in main location (kitchen) without any problems",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1782079476,
+    "title": "",
+    "source": "protondb"
+  }
+]

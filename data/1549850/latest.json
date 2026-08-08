@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1549850",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 16.0.6, DRM 3.54, 6.6.16-1-lts)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.6.16-1-lts",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1744994267,
+    "title": "Virtual Hunter",
+    "source": "protondb"
+  }
+]

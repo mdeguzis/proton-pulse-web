@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2135320",
+    "cpu": "AMD Ryzen 9 PRO 6950H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (rembrandt, LLVM 16.0.6, DRM 3.54, 6.6.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.7-arch1-1",
+    "notes": "Stuck on a black screen, with just the game cursor.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1702830662,
+    "title": "Castle Warriors",
+    "source": "protondb"
+  }
+]

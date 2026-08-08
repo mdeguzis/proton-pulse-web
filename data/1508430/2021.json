@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1508430",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.15.11-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.11-200.fc35.x86_64",
+    "notes": "Won't start, tried different Proton versions but still nothing",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640808730,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "317710",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, ACO, DRM 3.64, 7.0.4-200.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.6",
+    "kernel": "7.0.4-200.fc44.x86_64",
+    "notes": "Recommended to use Experimental. Other than that, works flawlessly",
+    "os": "Fedora Linux 44 (i3)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1779086730,
+    "title": "",
+    "source": "protondb"
+  }
+]

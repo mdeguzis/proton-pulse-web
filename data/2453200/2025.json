@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2453200",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.4-arch1.1",
+    "kernel": "6.12.25-1-lts",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1745903803,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2453200",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.14.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.3-arch1.1",
+    "kernel": "6.14.1-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752341634,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2453200",
+    "cpu": "AMD Ryzen 5 8600G w/ Radeon 760M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 20.1.7, DRM 3.63, 6.15.9-201.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.9-201.fc42.x86_64",
+    "notes": "Great game and great performance, multiplayer works really good.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1755190547,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "310870",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.14.7-zen1-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.14.7-zen1-1-zen",
+    "notes": "Due to graphical artefacts, the game isn't very playable. The game seems to run perfectly fine otherwise.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1632954243,
+    "title": "",
+    "source": "protondb"
+  }
+]

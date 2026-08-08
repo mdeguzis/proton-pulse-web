@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1377920",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.9-zen1-1-zen",
+    "notes": "Flashes black screen and exits",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1611346037,
+    "title": "",
+    "source": "protondb"
+  }
+]

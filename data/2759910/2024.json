@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2759910",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 15.0.7, DRM 3.54, 6.5.0-21-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-21-generic",
+    "notes": "",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1709586953,
+    "title": "",
+    "source": "protondb"
+  }
+]

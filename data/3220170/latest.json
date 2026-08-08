@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3220170",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.7, DRM 3.64, 6.17.10)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.17.10",
+    "notes": "Marche sur steam par defaut, aucun probleme rencontre.",
+    "os": "GLF-OS (Phoenix) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771344939,
+    "title": "",
+    "source": "protondb"
+  }
+]

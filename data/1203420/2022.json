@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1203420",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.11.0-44-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.3 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641810800,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1203420",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 470.94",
+    "kernel": "5.15.17_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643899649,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1203420",
+    "cpu": "Intel Pentium Silver N6000 @ 1.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (JSL)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.15.41-1-lts",
+    "notes": "I enjoy match 3 games and this game caught my attention...",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1658204965,
+    "title": "",
+    "source": "protondb"
+  }
+]

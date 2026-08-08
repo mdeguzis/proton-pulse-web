@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "45200",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Runs out of the box.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1633440499,
+    "title": "Defense of the Oasis",
+    "source": "protondb"
+  }
+]

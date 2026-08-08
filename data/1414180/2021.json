@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1414180",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-64-generic",
+    "notes": "Since this is a FMV game, broken video playback makes this game unplayable.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613338491,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1414180",
+    "cpu": "Intel Core i7-6600U @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.0 - kisak-mesa PPA",
+    "kernel": "5.11.0-25-generic",
+    "notes": "",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628985613,
+    "title": "",
+    "source": "protondb"
+  }
+]

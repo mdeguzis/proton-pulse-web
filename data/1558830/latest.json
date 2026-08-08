@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1558830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1709209780,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1558830",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.54, 6.5.0-17-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-17-generic",
+    "notes": "Works like a charm",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-5",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1712363063,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1558830",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.7.4-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.4-200.fc39.x86_64",
+    "notes": "Runs out of the box",
+    "os": "Fedora Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1713836868,
+    "title": "",
+    "source": "protondb"
+  }
+]

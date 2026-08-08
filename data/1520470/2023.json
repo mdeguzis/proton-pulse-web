@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1520470",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 15.0.2, DRM 3.47, 5.19.0-26-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "5.19.0-26-generic",
+    "notes": "Jogo abre mais fica extremamente lento, n\u00e3o da pra jogar, testei varias vers\u00f5es do proton, sem sucesso.",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1699726751,
+    "title": "",
+    "source": "protondb"
+  }
+]

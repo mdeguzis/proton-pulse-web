@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3531640",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 21.1.8, DRM 3.61, 6.12.58-gentoo)",
+    "gpuDriver": "4.6 Mesa 25.2.8",
+    "kernel": "6.12.58-gentoo",
+    "notes": "Works without any issues",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1770413478,
+    "title": "You Shouldn't Be Here",
+    "source": "protondb"
+  }
+]

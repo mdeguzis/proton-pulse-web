@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "723760",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-22-generic",
+    "notes": "Starts with media test screen, custom mouse cursor . No more progress.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625997921,
+    "title": "",
+    "source": "protondb"
+  }
+]

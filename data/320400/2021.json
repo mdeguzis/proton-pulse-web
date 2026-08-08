@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "320400",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.1-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.1-1-MANJARO",
+    "notes": "Running whithout any problem. Just a crash when closing the game",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1614774251,
+    "title": "",
+    "source": "protondb"
+  }
+]

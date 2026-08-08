@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2407300",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.2-arch1-1",
+    "notes": "/usr/lib/libcurl-gnutls.so.4: no version information available",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1725180537,
+    "title": "",
+    "source": "protondb"
+  }
+]

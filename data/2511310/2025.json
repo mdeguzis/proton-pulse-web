@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2511310",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 17.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.3.1+git2412042345.54adfc351f9~n~mesarc3",
+    "kernel": "6.14.2-061402-generic",
+    "notes": "Aucun r\u00e9glage n\u00e9cessaire.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1749139082,
+    "title": "Pro Cycling Manager 25",
+    "source": "protondb"
+  },
+  {
+    "appId": "2511310",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.9",
+    "notes": "You need beefy hardware now that it runs on UE5. But it works flawlessly",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1749144845,
+    "title": "Pro Cycling Manager 25",
+    "source": "protondb"
+  },
+  {
+    "appId": "2511310",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 570.172.08",
+    "kernel": "6.14.0-33-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1759777331,
+    "title": "Pro Cycling Manager 25",
+    "source": "protondb"
+  }
+]

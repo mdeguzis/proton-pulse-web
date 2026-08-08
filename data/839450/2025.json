@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839450",
+    "cpu": "AMD Ryzen 7 5800 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.15.7-200.nobara.fc42.x86_64",
+    "notes": "Doesn't crash like when playing it on Windows",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1753979800,
+    "title": "",
+    "source": "protondb"
+  }
+]

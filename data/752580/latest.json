@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "752580",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.3",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1775412902,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "752580",
+    "cpu": "AMD Ryzen 7 PRO 8840HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 20.1.2, DRM 3.64, 6.17.0-23-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-23-generic",
+    "notes": "",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1778154498,
+    "title": "",
+    "source": "protondb"
+  }
+]

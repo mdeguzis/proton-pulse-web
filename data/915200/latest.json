@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "915200",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.44.0, 5.17.0-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.17.0-1-MANJARO",
+    "notes": "Borked AF",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645587052,
+    "title": "",
+    "source": "protondb"
+  }
+]

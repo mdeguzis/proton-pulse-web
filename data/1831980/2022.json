@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1831980",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "6.0.2-76060002-generic",
+    "notes": "My error:\nSwitching to resolution 1024x768 failed\nScreen: DX11 could not switch resolution (1024x768 fs=0 hz=0)",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1667048912,
+    "title": "",
+    "source": "protondb"
+  }
+]

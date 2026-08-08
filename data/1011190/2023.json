@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1011190",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.44.0, 5.16.12-246-tkg-bmq, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.12-246-tkg-bmq",
+    "notes": "Everything works great after you fix it with protontricks",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1678326791,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1011190",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Ended up with the blackscreen right after picking a path. Tried forcing experimental, Proton 8.0.1 and Proton 8.0 with no luck of getting past the black screen.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1682418919,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1011190",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.6.1-1-cachyos-lto)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.1-1-cachyos-lto",
+    "notes": "Crashes too much.",
+    "os": "CachyOS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1699826770,
+    "title": "",
+    "source": "protondb"
+  }
+]

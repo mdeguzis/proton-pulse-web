@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1565860",
+    "cpu": "Intel Core i3 530 @ 2.93GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 535.247.01",
+    "kernel": "6.1.0-37-amd64",
+    "notes": "Spielbar unter Linux. BUGS sind meiner Meinung nach bereits im Spiel enthalten und keine Folge von Proton",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1754915769,
+    "title": "",
+    "source": "protondb"
+  }
+]

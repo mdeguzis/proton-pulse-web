@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1082710",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Works perfectly out of the box with Proton 8.0-5. Newer versions of Proton Experimental don't work anymore.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1754498793,
+    "title": "",
+    "source": "protondb"
+  }
+]

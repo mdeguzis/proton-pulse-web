@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2578910",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.7.7-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.7.7-200.fc39.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727492623,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2578910",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.6, DRM 3.57, 6.10.10-cb1.0.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.10.10-cb1.0.fc40.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727874534,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2578910",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1735166151,
+    "title": "",
+    "source": "protondb"
+  }
+]

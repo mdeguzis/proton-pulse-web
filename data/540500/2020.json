@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "540500",
+    "cpu": "Intel Core i7-3930K @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 455.23.04",
+    "kernel": "5.8.13-arch1-1",
+    "notes": "The game seems to run absolutely perfectly on the Valve Index, though it's not very fun.",
+    "os": "Antergos Linux",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1602100082,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1219590",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.14-1-default",
+    "notes": "the game try to start then a Launcher error",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627153478,
+    "title": "HEAT REBORN",
+    "source": "protondb"
+  }
+]

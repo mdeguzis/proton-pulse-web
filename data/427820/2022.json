@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "427820",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Both native and Proton play perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1651055183,
+    "title": "Hitman GO: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "427820",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.18.14-arch1-1",
+    "notes": "Works out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1659198918,
+    "title": "Hitman GO: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "427820",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 22.1.7",
+    "kernel": "5.19.10-200.fc36.x86_64",
+    "notes": "Not really a great expirence would stick with windows verson.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1671378851,
+    "title": "Hitman GO: Definitive Edition",
+    "source": "protondb"
+  }
+]

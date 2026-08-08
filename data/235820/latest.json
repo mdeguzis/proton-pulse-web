@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "235820",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 450.51.06",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Native issue. Ran it quickly with Proton, no issues at all.",
+    "os": "Zorin OS 15.3",
+    "protonVersion": "5.0-9",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1600961528,
+    "title": "",
+    "source": "protondb"
+  }
+]

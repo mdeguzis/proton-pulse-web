@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "906510",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "5.7.6-arch1-1",
+    "notes": "Same as previous report. Nothing happens when starting game. Error message when starting launcher.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1593339751,
+    "title": "",
+    "source": "protondb"
+  }
+]

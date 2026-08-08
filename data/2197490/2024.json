@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2197490",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.14-200.fc38.x86_64",
+    "notes": "Works \"out of the box\" without any issues.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728591560,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "583950",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.6, DRM 3.49, 6.1.0-18-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "",
+    "os": "LMDE 6 (faye) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-5",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1708942637,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "583950",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.4 - kisak-mesa PPA",
+    "kernel": "6.5.0-26-generic",
+    "notes": "Fun.Card deck construction deeply.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1713423844,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "583950",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-arch1-1",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726883765,
+    "title": "",
+    "source": "protondb"
+  }
+]

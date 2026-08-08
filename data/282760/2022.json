@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "282760",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.0, DRM 3.47, 5.19.16-200.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.16-200.fc36.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1667138480,
+    "title": "",
+    "source": "protondb"
+  }
+]

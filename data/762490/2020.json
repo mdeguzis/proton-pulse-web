@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "762490",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "5.4.44-1-MANJARO",
+    "notes": "Game loads to an initial construct, but nothing after that",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1596009828,
+    "title": "",
+    "source": "protondb"
+  }
+]

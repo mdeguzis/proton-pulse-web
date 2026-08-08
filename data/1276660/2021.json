@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1276660",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Runs well enough with glorous eggroll",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611322276,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1276660",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.0-kali4-amd64",
+    "notes": "",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1617137241,
+    "title": "",
+    "source": "protondb"
+  }
+]

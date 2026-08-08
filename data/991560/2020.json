@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "991560",
+    "cpu": "Intel Pentium Gold G5420 @ 3.80GHz",
+    "duration": "underOneHour",
+    "gpu": "X.Org Radeon RX550/550 (POLARIS12, DRM 3.35.0, 5.4.0-47-generic, LLVM 10.0.0)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-47-generic",
+    "notes": "The game doesn't even run, it opens with a screen written about \"anti cheats\".",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1600047261,
+    "title": "",
+    "source": "protondb"
+  }
+]

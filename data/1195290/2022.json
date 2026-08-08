@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1195290",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.42.0, 5.15.8-76051508-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Works great",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641245126,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1195290",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.12-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.12-1-MANJARO",
+    "notes": "Gameplay almost entirely unaffected except for 1 ingame TV that should show a video that gives a hint but only shows static.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1655529133,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1195290",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.46, 5.18.5-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.5-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1655676430,
+    "title": "",
+    "source": "protondb"
+  }
+]

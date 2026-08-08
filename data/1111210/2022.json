@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1111210",
+    "cpu": "Intel Celeron  N3150  @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 400 (Braswell)",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-18-amd64",
+    "notes": "Game configuration booted up then died after pressing start",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1642196760,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1111210",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-27-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-27-generic",
+    "notes": "The native version does not work, but it runs pretty well using proton",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1652007689,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1111210",
+    "cpu": "AMD Ryzen 3 5300U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (LLVM 14.0.6, DRM 3.47, 5.19.1-arch2-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.1-arch2-1",
+    "notes": "Not smooth, but playable.",
+    "os": "ArcoLinux",
+    "protonVersion": "7.0-4",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1660739343,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1599560",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.44.0, 5.16.15-arch1-1, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.15-arch1-1",
+    "notes": "Playable at lower quality than expected, but cannot say it is enjoyable. I had to stop after less than 30 minutes.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1647896613,
+    "title": "Wanderer",
+    "source": "protondb"
+  },
+  {
+    "appId": "1599560",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.44, 5.17.8-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.17.8-zen1-1-zen",
+    "notes": "The game itself runs perfectly fine, but a video playback issue prevents you from continuing after about an hour of gameplay.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1653422912,
+    "title": "Wanderer",
+    "source": "protondb"
+  },
+  {
+    "appId": "1599560",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "No media in game plays. A VHS tape not playing causes inability to progress.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1665261874,
+    "title": "Wanderer",
+    "source": "protondb"
+  }
+]

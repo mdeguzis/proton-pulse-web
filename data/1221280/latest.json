@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1221280",
+    "cpu": "Intel Core i3-4150 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.0-6-amd64",
+    "notes": "Works normally.",
+    "os": "SparkyLinux 6 (Po-Tolo)",
+    "protonVersion": "6.3-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1618687866,
+    "title": "Run Dude",
+    "source": "protondb"
+  }
+]

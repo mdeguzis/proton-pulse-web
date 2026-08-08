@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1422180",
+    "cpu": "AMD FX-9370 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.3-1-default",
+    "notes": "Does not launch due to a SharpDX error. Have tried Proton Experimental and 6.8-GE-2.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1621643973,
+    "title": "Galactic Crew II",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "42220",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Game launches to black screen and hangs never progressing.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625780711,
+    "title": "Nancy Drew\u00ae: The Captive Curse",
+    "source": "protondb"
+  }
+]

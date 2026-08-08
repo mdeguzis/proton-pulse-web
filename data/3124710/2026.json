@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3124710",
+    "cpu": "Intel Core i5-7300U @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-22-generic",
+    "notes": "While the game is technically \"playable\", the graphical issues make it impossible to actually enjoy as compared to Windows.",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1779075628,
+    "title": "",
+    "source": "protondb"
+  }
+]

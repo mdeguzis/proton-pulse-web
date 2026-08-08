@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2570810",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u4f0a\u8607\uff1a\u5317\u5883\u6b77\u96aa\u5728Steam Deck\u4e0a\u5b8c\u7f8e\u904b\u884c\u3002",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1740135584,
+    "title": "",
+    "source": "protondb"
+  }
+]

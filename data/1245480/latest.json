@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1245480",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.7-2-cachyos",
+    "notes": "After receiving the error, the user is stuck in a loop. Upon starting the game from the main menu, a prompt appears stating that a sortie is in progress.  The only option is to reconnect to the failed sortie, which results in the same error, which returns the user to the main menu.  I have yet to play the game I purchased.  As I purchased the game from a store other than Steam, I am unable to refund it.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1769632350,
+    "title": "",
+    "source": "protondb"
+  }
+]

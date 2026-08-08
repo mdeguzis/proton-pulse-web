@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1223750",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.9-200.fc32.x86_64",
+    "notes": "Runs well! Definitely some bugs, but I think these are more due to the early access state of the game",
+    "os": "Fedora 32",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600659845,
+    "title": "Cloud Meadow",
+    "source": "protondb"
+  },
+  {
+    "appId": "1223750",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.1.8 - kisak-mesa PPA",
+    "kernel": "5.8.11-xanmod1",
+    "notes": "The game run very well without any tweaks, Fantastic!!",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600991314,
+    "title": "Cloud Meadow",
+    "source": "protondb"
+  },
+  {
+    "appId": "1223750",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.1 - kisak-mesa PPA",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "The game run very well on proton 5.0.9 but after the update 5.13.1 apperead some bugs.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1602810332,
+    "title": "Cloud Meadow",
+    "source": "protondb"
+  }
+]

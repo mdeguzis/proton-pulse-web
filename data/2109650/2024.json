@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2109650",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-107-generic",
+    "notes": "Installed and ran, worked great for me",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1716659449,
+    "title": "",
+    "source": "protondb"
+  }
+]

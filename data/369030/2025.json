@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "369030",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Still no progress. \"Made in Unity\" appears, then menu flashes for a split second before the entire game crashes. Tried experimental and the latest GE Proton.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1738435490,
+    "title": "Vinyl",
+    "source": "protondb"
+  }
+]

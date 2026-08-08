@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "844670",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 14.0.6, DRM 3.48, 6.0.8-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.8-1-MANJARO",
+    "notes": "Runs perfectly with Proton-GE and only missing the credits video with other versions",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1669388341,
+    "title": "",
+    "source": "protondb"
+  }
+]

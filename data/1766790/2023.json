@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1766790",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Works fine.",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1690245161,
+    "title": "",
+    "source": "protondb"
+  }
+]

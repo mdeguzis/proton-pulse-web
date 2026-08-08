@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1174090",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.9-246-tkg-pds, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.9-246-tkg-pds",
+    "notes": "Absolutely fine out of the box. No issues found that weren't *also* present on Windows",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1644926999,
+    "title": "",
+    "source": "protondb"
+  }
+]

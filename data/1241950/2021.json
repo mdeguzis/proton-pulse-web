@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1241950",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Just get the linux native version. It's not available on steam",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1628387076,
+    "title": "",
+    "source": "protondb"
+  }
+]

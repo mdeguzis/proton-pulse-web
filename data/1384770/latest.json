@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1384770",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.17.0-6-generic",
+    "notes": "Works well with proton 10.0-3",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB DDR5",
+    "rating": "gold",
+    "timestamp": 1764414825,
+    "title": "Scrutinized",
+    "source": "protondb"
+  }
+]

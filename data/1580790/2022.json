@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1580790",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.21-2-MANJARO",
+    "notes": "As with my NG Sigma report, It's nowhere near as good as the 360 original, but they tried to save it.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1642644229,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1580790",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.44.0, 5.16.11-76051611-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.11-76051611-generic",
+    "notes": "Works just fine out of the box. No changes needed.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1647290701,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1580790",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "This shouldn't be marked as Verified",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1656785181,
+    "title": "",
+    "source": "protondb"
+  }
+]

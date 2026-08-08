@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1433570",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 20.1.6, DRM 3.63, 6.15.4-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.15.4-200.fc42.x86_64",
+    "notes": "Works fine, tutorial videos don't show up but you don't need them to play",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757272896,
+    "title": "",
+    "source": "protondb"
+  }
+]

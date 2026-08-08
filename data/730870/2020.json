@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "730870",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.6-201.fc32.x86_64",
+    "notes": "This runs as if on native, all options work as intended",
+    "os": "Fedora 32 KDE Plasma",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1594329544,
+    "title": "",
+    "source": "protondb"
+  }
+]

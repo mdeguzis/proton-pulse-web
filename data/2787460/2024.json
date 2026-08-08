@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2787460",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 18.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.3.1-arch1.2",
+    "kernel": "6.12.3-arch1-1",
+    "notes": "Crashes on new game start, wouldn't even launch on more recent Proton versions",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1733942777,
+    "title": "",
+    "source": "protondb"
+  }
+]

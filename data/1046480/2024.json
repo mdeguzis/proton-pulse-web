@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1046480",
+    "cpu": "Intel Core i3-9100 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 24.1.0-devel (git-0fcdf7bf33)",
+    "kernel": "6.5.0-35-generic",
+    "notes": "DON'T USE D3D12 MODE! THE GAME IN D3D11 MODE RUNS PERFECTLY!",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1717571357,
+    "title": "",
+    "source": "protondb"
+  }
+]

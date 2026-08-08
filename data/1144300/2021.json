@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1144300",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.7-3-MANJARO",
+    "notes": "Works out of box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1611313967,
+    "title": "ef - the first tale. (All Ages)",
+    "source": "protondb"
+  },
+  {
+    "appId": "1144300",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.9-arch1-1",
+    "notes": "Previously reported text problems were fixed in Proton 5.13",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1612190088,
+    "title": "ef - the first tale. (All Ages)",
+    "source": "protondb"
+  },
+  {
+    "appId": "1144300",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD SIENNA_CICHLID (DRM 3.40.0, 5.11.15-xanmod1.0.fc34, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.11.15-xanmod1.0.fc34",
+    "notes": "Font are fix now",
+    "os": "fedora 34 kde",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1618722288,
+    "title": "ef - the first tale. (All Ages)",
+    "source": "protondb"
+  }
+]

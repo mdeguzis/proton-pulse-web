@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2015240",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 16.0.6, DRM 3.57, 6.7.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.7.4-arch1-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1707516733,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2015240",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.3 (git-b235da6781)",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1727557821,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2015240",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Leaderboards may have a formatting issue, but it may be this way on windows. I'm not sure. It's still 100% readable and useable.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1728763396,
+    "title": "",
+    "source": "protondb"
+  }
+]

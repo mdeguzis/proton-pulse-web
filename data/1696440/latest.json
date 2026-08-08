@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1696440",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Only worked on experimental",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1771290493,
+    "title": "",
+    "source": "protondb"
+  }
+]

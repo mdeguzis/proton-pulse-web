@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "899310",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 14.0.6, DRM 3.49, 6.2.0)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "6.2.0",
+    "notes": "Works well, but performance isn't the greatest.",
+    "os": "NixOS 22.11 (Raccoon)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1678673512,
+    "title": "",
+    "source": "protondb"
+  }
+]

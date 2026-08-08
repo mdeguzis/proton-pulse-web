@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1524790",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.12.0-gentoo",
+    "notes": "Unplayable as it crashes constantly",
+    "os": "Gentoo Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1619922553,
+    "title": "",
+    "source": "protondb"
+  }
+]

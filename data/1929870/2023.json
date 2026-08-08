@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1929870",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5600M (navi10, LLVM 14.0.5, DRM 3.48, 6.0.14-201.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.14-201.fsync.fc36.x86_64",
+    "notes": "Works out of the box, I encountered no issues",
+    "os": "Nobara Linux 36 (Thirty Six)",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1672931608,
+    "title": "Nomad Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "1929870",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.6-200.fsync.fc38.x86_64",
+    "notes": "Low FPS",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1699878232,
+    "title": "Nomad Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "1929870",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Interface is hard to navigate but it's playable",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1702411651,
+    "title": "Nomad Survival",
+    "source": "protondb"
+  }
+]

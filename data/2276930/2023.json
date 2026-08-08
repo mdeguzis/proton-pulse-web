@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2276930",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.52, 6.4.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.4.12-arch1-1",
+    "notes": "Runs without any issues",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1694193749,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2276930",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works fine out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1694313189,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2276930",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.52, 6.4.10-202.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.7",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "Demo works perfectly",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1694524110,
+    "title": "",
+    "source": "protondb"
+  }
+]

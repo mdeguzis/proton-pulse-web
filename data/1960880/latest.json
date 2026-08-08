@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1960880",
+    "cpu": "Intel Core i7-14650HX",
+    "duration": "allTheTime",
+    "gpu": "Mesa NV197",
+    "gpuDriver": "4.3 Mesa 25.0.7-2",
+    "kernel": "6.12.86+deb13-amd64",
+    "notes": "\u9700\u8981\u4f7f\u7528 GE-Proton\u3002",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1780607065,
+    "title": "",
+    "source": "protondb"
+  }
+]

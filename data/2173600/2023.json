@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2173600",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.182.03",
+    "kernel": "6.1.26-1-MANJARO",
+    "notes": "Doesnt start",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1688665539,
+    "title": "",
+    "source": "protondb"
+  }
+]

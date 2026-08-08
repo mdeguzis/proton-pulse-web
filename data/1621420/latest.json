@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1621420",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-64-generic",
+    "notes": "Crashes on start, after intro videos",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1645796911,
+    "title": "",
+    "source": "protondb"
+  }
+]

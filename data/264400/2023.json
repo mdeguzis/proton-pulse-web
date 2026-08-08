@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "264400",
+    "cpu": "Intel Core i7-1065G7 @ 1.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Iris Plus (ICL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.1.49-1-MANJARO",
+    "notes": "The game works perfectly. I have only changed the resolution. By default it is not correct.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1694293280,
+    "title": "",
+    "source": "protondb"
+  }
+]

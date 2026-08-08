@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1617220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "plays great",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1704319094,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1617220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Has softlocked on me multiple times.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1705294204,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1617220",
+    "cpu": "AMD Ryzen 9 6900HX with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 17.0.6, DRM 3.57, 6.8.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.5-arch1.1",
+    "kernel": "6.8.5-arch1-1",
+    "notes": "No issues on KDE fullscreen",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1713585106,
+    "title": "",
+    "source": "protondb"
+  }
+]

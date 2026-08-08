@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1379200",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.6.1-1-cachyos-lto)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.1-1-cachyos-lto",
+    "notes": "Played through entire game with a friend without issues.",
+    "os": "CachyOS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704371388,
+    "title": "",
+    "source": "protondb"
+  }
+]

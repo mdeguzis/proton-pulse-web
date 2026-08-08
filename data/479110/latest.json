@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "479110",
+    "cpu": "AMD Ryzen 7 PRO 4750G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.49, 6.2.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "El juego funciona bien con proton",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "14 GB",
+    "rating": "platinum",
+    "timestamp": 1685860403,
+    "title": "",
+    "source": "protondb"
+  }
+]

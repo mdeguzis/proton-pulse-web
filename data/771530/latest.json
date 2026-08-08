@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "771530",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.12.17_1",
+    "notes": "i prereffed Proton 6.3-5 worked perfect",
+    "os": "Void Linux",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1628353335,
+    "title": "",
+    "source": "protondb"
+  }
+]

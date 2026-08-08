@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "334830",
+    "cpu": "Intel Core i7         920  @ 2.67GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.15-100.fc31.x86_64",
+    "notes": "Crashes immediately after clicking \"Start Game\"",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-9",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1602368466,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "334830",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 620 (KBL GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-48-generic",
+    "notes": "throws the same exception as the other person said",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602813158,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "334830",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.6.19-159.current",
+    "notes": "Same issue as the rest",
+    "os": "Solus",
+    "protonVersion": "5.0-10",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1605194356,
+    "title": "",
+    "source": "protondb"
+  }
+]

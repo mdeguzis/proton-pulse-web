@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "359190",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, LLVM 20.1.7, DRM 3.63, 6.15.4-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.4-200.nobara.fc42.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1751885738,
+    "title": "",
+    "source": "protondb"
+  }
+]

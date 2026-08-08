@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1346070",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.16-200.fc33.x86_64",
+    "notes": "Works well",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1614167602,
+    "title": "Sign of Silence",
+    "source": "protondb"
+  },
+  {
+    "appId": "1346070",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.8.0-38-generic",
+    "notes": "Works fine on my system.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1622918831,
+    "title": "Sign of Silence",
+    "source": "protondb"
+  },
+  {
+    "appId": "1346070",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1636773446,
+    "title": "Sign of Silence",
+    "source": "protondb"
+  }
+]

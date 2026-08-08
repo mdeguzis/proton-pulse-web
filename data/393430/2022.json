@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "393430",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.44.0, 5.16.4-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.4-arch1-1",
+    "notes": "Works out of the box without ANY tricks or tinkering. Stable and performance is great!",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643648754,
+    "title": "Ice Lakes",
+    "source": "protondb"
+  }
+]

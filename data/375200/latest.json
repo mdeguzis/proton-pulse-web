@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "375200",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.8.6-1-MANJARO",
+    "notes": "Native and works as intended.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1600833845,
+    "title": "Sakura Fantasy",
+    "source": "protondb"
+  }
+]

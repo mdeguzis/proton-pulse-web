@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "983240",
+    "cpu": "Intel Xeon E3-1230 V2 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.4.13-201.fc31.x86_64",
+    "notes": "",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1584303380,
+    "title": "",
+    "source": "protondb"
+  }
+]

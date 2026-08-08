@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1126750",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.1.2 - kisak-mesa PPA",
+    "kernel": "4.15.0-108-generic",
+    "notes": "Unplayable unless you \"delete\" movie folder, no in-game audio.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593274223,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1126750",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT",
+    "gpuDriver": "4.6 Mesa 20.2.0",
+    "kernel": "5.8.12-artix1-1",
+    "notes": "Easy to get working just need to install wmp11",
+    "os": "Artix Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602716259,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1126750",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.9.1-zen2-1-zen",
+    "notes": "Works out of the box with Proton 5.13-1.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1603827056,
+    "title": "",
+    "source": "protondb"
+  }
+]

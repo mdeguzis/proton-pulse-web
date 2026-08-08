@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2490210",
+    "cpu": "AMD Ryzen 9 5950x turbo",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX TURB0",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "6.8.0-60",
+    "notes": "Not even tries to boot up . ( tested on protons : 4,5,6,7,8,9,10, EXP ) \nall AMD rig , 2025 JUNE",
+    "os": "KDE Ubuntu 24.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1749307767,
+    "title": "Blitz Runner",
+    "source": "protondb"
+  }
+]

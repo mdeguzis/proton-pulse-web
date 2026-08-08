@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2470990",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "5.13.0-51-generic",
+    "notes": "Worked right out of the box with Proton Hotfix",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1749415437,
+    "title": "",
+    "source": "protondb"
+  }
+]

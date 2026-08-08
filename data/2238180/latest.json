@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2238180",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 21.1.6, DRM 3.64, 6.18.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.6",
+    "kernel": "6.18.6-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769091290,
+    "title": "Idle Dice 2",
+    "source": "protondb"
+  }
+]

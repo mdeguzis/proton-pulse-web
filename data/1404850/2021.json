@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1404850",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.12.10-182.current, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.2",
+    "kernel": "5.12.10-182.current",
+    "notes": "v. 0.7.8 update borked",
+    "os": "Solus",
+    "protonVersion": "6.3-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1624125012,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1404850",
+    "cpu": "Intel Xeon E-2276M  @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.1.2",
+    "kernel": "5.10.42-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "128 GB",
+    "rating": "gold",
+    "timestamp": 1626197309,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1404850",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD CAICOS",
+    "gpuDriver": "3.1 Mesa 21.1.5",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "Seems like it will run for about 5 seconds before it crashes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628414210,
+    "title": "",
+    "source": "protondb"
+  }
+]

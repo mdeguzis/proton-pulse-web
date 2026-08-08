@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2859200",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.64, 6.18.3-100.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.18.3-100.fc42.x86_64",
+    "notes": "Unplayable with white screen bug.",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1768615216,
+    "title": "Alex Hill: Whispers at White Oak Inn",
+    "source": "protondb"
+  },
+  {
+    "appId": "2859200",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.64, 6.18.3-100.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.18.3-100.fc42.x86_64",
+    "notes": "Unplayable with white screen bug",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1768617564,
+    "title": "Alex Hill: Whispers at White Oak Inn",
+    "source": "protondb"
+  }
+]

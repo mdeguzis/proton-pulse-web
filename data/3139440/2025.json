@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3139440",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.0-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.3",
+    "kernel": "6.18.0-3-cachyos",
+    "notes": "Whenever I try to launch the game I always get the \"Please launch through Steam launcher\" error. I used GE-Proton10-25 and GE-Proton10-26, CachyOS Proton, Proton Hotfix, Proton Experimental I even tried from the earliest version of Proton up to the latest version of Proton to date but still no luck.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1765471971,
+    "title": "GunZ: The Duel",
+    "source": "protondb"
+  },
+  {
+    "appId": "3139440",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "For the playtest, the game does not get past the EAC startup menu. It says \"please start the game throught the Steam client\"",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1765509068,
+    "title": "GunZ: The Duel",
+    "source": "protondb"
+  },
+  {
+    "appId": "3139440",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 20.1.2, DRM 3.61, 6.14.0-35-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-35-generic",
+    "notes": "In the playtest, launching the EAC splash screen appears then immediately closes. Afterwards there is an error window that says \"Please run it through the Steam launcher\". Hopefully this is fixed for full release.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1765513696,
+    "title": "GunZ: The Duel",
+    "source": "protondb"
+  }
+]

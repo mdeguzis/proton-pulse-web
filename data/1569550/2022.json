@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1569550",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.44.0, 5.16.2, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.3 (git-a65ad66c47)",
+    "kernel": "5.16.2",
+    "notes": "Mostly ok, but only 5/7 games work flawlessly. 2/7 are unplayable.",
+    "os": "Freedesktop.org 21.08.9 (Flatpak runtime)",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1648554290,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1569550",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 14.0.0, DRM 3.44, 5.17.7-301.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.0-git",
+    "kernel": "5.17.7-301.fsync.fc36.x86_64",
+    "notes": "Not all the games were playable",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1653850780,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1569550",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 14.0.0, DRM 3.44, 5.17.13-301.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.0-git",
+    "kernel": "5.17.13-301.fsync.fc36.x86_64",
+    "notes": "Game appears to work now out of the box including the videos",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1655410643,
+    "title": "",
+    "source": "protondb"
+  }
+]

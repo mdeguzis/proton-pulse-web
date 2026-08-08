@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1770440",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.12-1-MANJARO",
+    "notes": "Retro computer emulator VICE fails to start, otherwise OOTB",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1642574470,
+    "title": "",
+    "source": "protondb"
+  }
+]

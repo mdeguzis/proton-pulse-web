@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1654890",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.54, 6.6.46)",
+    "gpuDriver": "4.6 Mesa 24.1.5",
+    "kernel": "6.6.46",
+    "notes": "Sometimes i just hear sound that it opened, sometimes (10%) it's a open game menu. And after some time it crashes. Feels like noone tested it on Linux",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1740351081,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "315860",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.10-arch1-1",
+    "notes": "Works perfectly under Proton",
+    "os": "ArcoLinux",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1681125664,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "315860",
+    "cpu": "Intel Celeron  N2840  @ 2.16GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD (BYT)",
+    "gpuDriver": "4.2 Mesa 22.2.5",
+    "kernel": "5.15.0-69-generic",
+    "notes": "Works",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1681196928,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "315860",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Better than native",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "7812M",
+    "rating": "gold",
+    "timestamp": 1681207478,
+    "title": "",
+    "source": "protondb"
+  }
+]

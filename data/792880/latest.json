@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "792880",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.7-1-default",
+    "notes": "Works with Proton experimental, but without cutscenes.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611604540,
+    "title": "",
+    "source": "protondb"
+  }
+]

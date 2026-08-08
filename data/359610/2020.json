@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "359610",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.7.0-3-MANJARO",
+    "notes": "You'll have to quit Uplay in order for Steam to know you exited the game and disable Uplay overlay, as it's glitchy.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1594416817,
+    "title": "",
+    "source": "protondb"
+  }
+]

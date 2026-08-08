@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1998340",
+    "cpu": "13th Gen Intel Core i9-13900KS",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "Newest proton version seems to have issues",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1716970842,
+    "title": "",
+    "source": "protondb"
+  }
+]

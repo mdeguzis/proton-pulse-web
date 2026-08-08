@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3606690",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.11.11-valve19-1-neptune-611-g88b36d49a5e3)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-8d0948917e)",
+    "kernel": "6.11.11-valve19-1-neptune-611-g88b36d49a5e3",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1768492075,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3606690",
+    "cpu": "Intel Core i5-14500HX",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-14-generic",
+    "notes": "",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1771002780,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "733210",
+    "cpu": "Intel Core i5-8600K @ 4.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.3.0-53-generic",
+    "notes": "After menu and game-loading icon, screen stays black. (No in-game sounds behind black screen)",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1590073989,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "733210",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.5",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "Installs and starts, but only provides background audio for main menu",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1590165405,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "733210",
+    "cpu": "Intel Core i7-4771 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.3",
+    "kernel": "5.6.0-1-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-7",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1590179391,
+    "title": "",
+    "source": "protondb"
+  }
+]

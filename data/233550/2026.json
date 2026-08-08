@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "233550",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.61, 6.12.74+deb13+1-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.74+deb13+1-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1775967656,
+    "title": "",
+    "source": "protondb"
+  }
+]

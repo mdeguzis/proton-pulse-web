@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1124260",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.4.89-1-MANJARO",
+    "notes": "The game felt stable. There were a few bugs, though this game is early access and I assume the issues are the same on Windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1611761043,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1124260",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.4.89-1-MANJARO",
+    "notes": "The game felt stable. There were a few bugs, though this game is early access and I assume the issues are the same on Windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1611861373,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1124260",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Game launched without tweaks. Played 3 hours and didn't encounter any issue. Game is early access but it's definitely playable on Linux.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1612144159,
+    "title": "",
+    "source": "protondb"
+  }
+]

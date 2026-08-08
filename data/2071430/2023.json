@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2071430",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 14.0.6, DRM 3.46, 5.18.0-3-amd64)",
+    "gpuDriver": "4.6 Mesa 22.2.0-rc1",
+    "kernel": "5.18.0-3-amd64",
+    "notes": "Compatibility mode was required.  The game is incomplete still, but it runs.  Noticed a bit of a delay loading new screens",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1676603355,
+    "title": "",
+    "source": "protondb"
+  }
+]

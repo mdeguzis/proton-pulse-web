@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1880620",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.8, DRM 3.64, 6.17.9-76061709-generic)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "Works Out of the Box",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1771274893,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1880620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1773887615,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1880620",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.19.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "works great on the deck!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776453285,
+    "title": "",
+    "source": "protondb"
+  }
+]

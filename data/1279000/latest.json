@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1279000",
+    "cpu": "AMD A10-7300 Radeon R6, 10 Compute Cores 4C+6G",
+    "duration": "unreported",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 20.0.8",
+    "kernel": "5.3.0-62-generic",
+    "notes": "Game didn't recognize keyboard input",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.13-1",
+    "ram": "11 GB",
+    "rating": "borked",
+    "timestamp": 1604267907,
+    "title": "",
+    "source": "protondb"
+  }
+]

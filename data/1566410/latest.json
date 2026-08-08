@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1566410",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.7-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.18.7-200.nobara.fc43.x86_64",
+    "notes": "Runs fine with some minor issues",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1769582673,
+    "title": "",
+    "source": "protondb"
+  }
+]

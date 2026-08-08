@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4057050",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX9060XT 16GB (radeonsi, gfx1200, LLVM 20.1.8, DRM 3.64, 6.17.7-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.17.7-200.nobara.fc42.x86_64",
+    "notes": "The game relies on cutscenes, which don't play with default proton or experimental, i used GE-Proton 10-24 (Latest)",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1763850166,
+    "title": "",
+    "source": "protondb"
+  }
+]

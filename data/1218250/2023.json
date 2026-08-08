@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1218250",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works, if you tinker with it enough, and if you're lucky to not encounter crashes in the process.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1693298657,
+    "title": "We Went Back",
+    "source": "protondb"
+  },
+  {
+    "appId": "1218250",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.4-76060504-generic",
+    "notes": "Had absolutly no problems with it",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1699648870,
+    "title": "We Went Back",
+    "source": "protondb"
+  },
+  {
+    "appId": "1218250",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.1.53-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1700690345,
+    "title": "We Went Back",
+    "source": "protondb"
+  }
+]

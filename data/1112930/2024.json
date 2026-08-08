@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1112930",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "Each launch I get an \"error\" signal and then \"TestPlatformer\" window appears with the following text: \"???? ??? ??????????????Command /? ???????????????\"",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1719899660,
+    "title": "",
+    "source": "protondb"
+  }
+]

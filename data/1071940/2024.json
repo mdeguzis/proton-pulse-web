@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1071940",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-40-generic",
+    "notes": "Can't run the game at all",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1729018700,
+    "title": "Streamer's Life",
+    "source": "protondb"
+  }
+]

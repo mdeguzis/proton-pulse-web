@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "370480",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.10-051110-generic",
+    "notes": "it works as if natively supported.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1629345018,
+    "title": "Pixel Galaxy",
+    "source": "protondb"
+  }
+]

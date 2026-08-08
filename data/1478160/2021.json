@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1478160",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.5-arch1-1",
+    "notes": "Worked out of the box with Proton 6.3-2",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1619944076,
+    "title": "Nyaruru Fishy Fight",
+    "source": "protondb"
+  }
+]

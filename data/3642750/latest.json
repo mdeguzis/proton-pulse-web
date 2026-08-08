@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3642750",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.18.9-2-cachyos",
+    "notes": "Runs with no tinkering at all on steam",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770722969,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3642750",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.6.126-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1772898975,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3642750",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA RTX A2000 12GB",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.3-1-cachyos",
+    "notes": "Less stutter than on Windows. Besides the graphical issue which was easily solved, it works great.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1778424482,
+    "title": "",
+    "source": "protondb"
+  }
+]

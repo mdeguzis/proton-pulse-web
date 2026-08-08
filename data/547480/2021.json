@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "547480",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.11.0-40-generic",
+    "notes": "Game is not able to interact with steamVR",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1638297279,
+    "title": "Carly and the Reaperman - Escape from the Underworld",
+    "source": "protondb"
+  }
+]

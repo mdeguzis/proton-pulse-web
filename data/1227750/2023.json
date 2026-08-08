@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1227750",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.2.0-34-generic",
+    "notes": "After a few years, I cannot launch the game with latest update",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1697239080,
+    "title": "Puzzle - LINES AND KNOTS",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "431830",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-45-generic",
+    "notes": "The game doesn't load past the loading screen. No tinkering, no proton, supposidly native however it fails to launch. I have swapped to forcing proton experimental and it worked for me.",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1728592237,
+    "title": "Drift Into Eternity",
+    "source": "protondb"
+  }
+]

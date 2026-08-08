@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "296790",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-43-generic",
+    "notes": "Using Proton 7.0.3, no changes to the config necessary. Runs like a charm. Awesome little game for those longing for Super Off-Road vibes.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1660054202,
+    "title": "",
+    "source": "protondb"
+  }
+]

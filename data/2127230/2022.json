@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2127230",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD PITCAIRN (LLVM 14.0.6, DRM 2.50, 5.17.5-300.fc36.x86_64)",
+    "gpuDriver": "4.5 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.17.5-300.fc36.x86_64",
+    "notes": "Works right out of the box.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1663779728,
+    "title": "",
+    "source": "protondb"
+  }
+]

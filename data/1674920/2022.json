@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1674920",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.9-1-MANJARO",
+    "notes": "Does not launch. Nothing happens. I tried GE Proton 37 and Experimental, but didn't test with any other settings.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1666488562,
+    "title": "Sovereign Syndicate",
+    "source": "protondb"
+  }
+]

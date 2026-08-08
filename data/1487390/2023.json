@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1487390",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (polaris10, LLVM 14.0.6, DRM 3.48, 6.0.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "6.0.0-1-MANJARO",
+    "notes": "it will render the first \"video\" for long enough to give us a image before erroring out and freezing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1686986205,
+    "title": "",
+    "source": "protondb"
+  }
+]

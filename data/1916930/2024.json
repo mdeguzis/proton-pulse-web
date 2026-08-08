@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1916930",
+    "cpu": "11th Gen Intel Core i5-11400 @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (RKL GT1)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.10.12-200.fc40.x86_64",
+    "notes": "12-oct-2024 works fine.",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728685440,
+    "title": "Astral Slider",
+    "source": "protondb"
+  }
+]

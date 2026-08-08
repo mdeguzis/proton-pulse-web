@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1547890",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "completely fine, no changes needed",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1681161787,
+    "title": "Let's Build a Zoo",
+    "source": "protondb"
+  },
+  {
+    "appId": "1547890",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.8-1-default",
+    "notes": "Worked straight out of the box.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1692346883,
+    "title": "Let's Build a Zoo",
+    "source": "protondb"
+  },
+  {
+    "appId": "1547890",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.54, 6.5.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.5.0-1-MANJARO",
+    "notes": "No real issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1693560556,
+    "title": "Let's Build a Zoo",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1376760",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.1, DRM 3.57, 6.10.0_rc1_tkg_eevdf)",
+    "gpuDriver": "4.6 Mesa 24.0.8",
+    "kernel": "6.10.0_rc1_tkg_eevdf",
+    "notes": "Works perfectly fine so far.",
+    "os": "Fedora release 40 (Forty)",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1727099664,
+    "title": "",
+    "source": "protondb"
+  }
+]

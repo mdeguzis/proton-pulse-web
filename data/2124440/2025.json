@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2124440",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "WebView2 appears to not be compatible with Linux/Proton. The game will not work without a workaround.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1735892917,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2124440",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Force Linux Runtime and Enable Fullscreen",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1735941287,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2124440",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.4-zen2-1-zen",
+    "notes": "Ive checked the tree first missions, works as expected",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737056619,
+    "title": "",
+    "source": "protondb"
+  }
+]

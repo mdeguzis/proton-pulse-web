@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1885930",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Works out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1763056579,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1885930",
+    "cpu": "AMD Ryzen 7 8700G w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.17.7)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.7",
+    "notes": "Works out of the box",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1763290763,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1885930",
+    "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7600S (radeonsi, navi33, ACO, DRM 3.64, 6.18.0-rc7-1-mainline)",
+    "gpuDriver": "4.6 Mesa 26.0.0-devel (git-37c7d19e46)",
+    "kernel": "6.18.0-rc7-1-mainline",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1764119222,
+    "title": "",
+    "source": "protondb"
+  }
+]

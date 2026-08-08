@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2019680",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.17.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.1-arch1-1",
+    "notes": "Could not start the game",
+    "os": "Arch Linux\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1762698142,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3223160",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "platinum",
+    "timestamp": 1758708477,
+    "title": "",
+    "source": "protondb"
+  }
+]

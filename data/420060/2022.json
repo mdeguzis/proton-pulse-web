@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "420060",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.5",
+    "kernel": "5.4.35-1-MANJARO",
+    "notes": "Too much hassle reinstalling and replacing save for the typical gamer? Not the typical linux gamer though, I would imagine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1645454225,
+    "title": "Candle",
+    "source": "protondb"
+  }
+]

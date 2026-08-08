@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "570420",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.0-19.1-liquorix-amd64",
+    "notes": "Proton 5.0-9, Valve Index. Game crashes right at the start, taking SteamVR with it.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1593113710,
+    "title": "X Rebirth VR Edition",
+    "source": "protondb"
+  }
+]

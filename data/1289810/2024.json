@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1289810",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.1.80",
+    "notes": "This game is playable, but because openssl 1.1 is marked unsafe, you won't be able to run the game without insecure/ some extra libs.",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1710629592,
+    "title": "Siralim Ultimate",
+    "source": "protondb"
+  }
+]

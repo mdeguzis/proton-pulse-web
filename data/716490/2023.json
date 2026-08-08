@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "716490",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.5-arch1-1",
+    "notes": "When I launch Exapunks, during the loading screen, the sound starts stuttering more and more until the game just crashes and Steam as well.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1702764599,
+    "title": "",
+    "source": "protondb"
+  }
+]

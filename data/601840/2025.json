@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "601840",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 15.0.7, DRM 3.61, 6.14.10-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 25.0.5 - kisak-mesa PPA",
+    "kernel": "6.14.10-x64v3-xanmod1",
+    "notes": "",
+    "os": "Linux Mint 21.2 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1750429849,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "601840",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.2-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1751103039,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "601840",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.6, DRM 3.58, 6.11.0-200.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.1",
+    "kernel": "6.11.0-200.fsync.fc40.x86_64",
+    "notes": "Flawless, handled frequent Alt-Tab-ing without a hitch.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1759673374,
+    "title": "",
+    "source": "protondb"
+  }
+]

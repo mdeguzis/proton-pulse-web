@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2087610",
+    "cpu": "AMD Ryzen 5 6600HS Creator Edition",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 18.1.8, DRM 3.59, 6.12.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.1",
+    "kernel": "6.12.8-arch1-1",
+    "notes": "Simply install and play, zero tinkering required.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1738173686,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2087610",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "No issues on the steam deck or cloud save between this and my desktop.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1761097757,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2087610",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.51-1-lts",
+    "notes": "Works fine. 100% it on my linux desktop.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1761097817,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1194610",
+    "cpu": "Intel Core i5-9400 @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.10.0-14-amd64",
+    "notes": "Works well with 7.0-3",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1656615526,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1048350",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.1.6-arch1-1",
+    "notes": "Saving is broken",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1703909057,
+    "title": "",
+    "source": "protondb"
+  }
+]

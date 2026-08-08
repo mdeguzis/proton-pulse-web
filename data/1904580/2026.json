@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1904580",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.1",
+    "kernel": "6.18.3-arch1-1",
+    "notes": "Game works fine depending on resolution setting.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1768164748,
+    "title": "Dungeons & Dragons: Dark Sun Series",
+    "source": "protondb"
+  },
+  {
+    "appId": "1904580",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 21.1.5, DRM 3.64, 6.17.10-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.17.10-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1776540701,
+    "title": "Dungeons & Dragons: Dark Sun Series",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "800120",
+    "cpu": "Pentium Dual-Core       T4500  @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Mobile Intel GM45 Express Chipset (CTG)",
+    "gpuDriver": "2.1 Mesa 22.0.0 - kisak-mesa PPA",
+    "kernel": "5.13.0-36-generic",
+    "notes": "BGM is missing. Can't resize window. Fullscreen will break the game.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "4 GB",
+    "rating": "silver",
+    "timestamp": 1647435803,
+    "title": "Lonely Yuri",
+    "source": "protondb"
+  },
+  {
+    "appId": "800120",
+    "cpu": "Pentium Dual-Core       T4500  @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Mobile Intel GM45 Express Chipset (CTG)",
+    "gpuDriver": "2.1 Mesa 22.0.0 - kisak-mesa PPA",
+    "kernel": "5.13.0-36-generic",
+    "notes": "Can't resize window. Fullscreen will break the game.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1647438588,
+    "title": "Lonely Yuri",
+    "source": "protondb"
+  }
+]

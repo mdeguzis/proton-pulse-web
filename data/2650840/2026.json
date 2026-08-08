@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2650840",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.3-artix1-2)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch1.1",
+    "kernel": "7.0.3-artix1-2",
+    "notes": "The game can't launch, i tries many different proton version and many workaround suggested by ChatGPT and nothing seems to works. Not even protontricks.\n\nIt is to be noted that the game engine is RPG Bakin which is well-known to be problem with Proton since Proton push DirectX to Vulkan. But as for OpenGL that's another story!",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1778039033,
+    "title": "",
+    "source": "protondb"
+  }
+]

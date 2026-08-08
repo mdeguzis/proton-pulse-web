@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "495980",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.13-100.fc38.x86_64",
+    "notes": "Native version is b0rked, but recent Proton works great",
+    "os": "Fedora release 38 (Thirty Eight)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1707647310,
+    "title": "",
+    "source": "protondb"
+  }
+]

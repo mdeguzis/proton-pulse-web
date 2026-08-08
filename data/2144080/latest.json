@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2144080",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.7-zen1-2-zen",
+    "notes": "Runs perfectly",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1691056967,
+    "title": "Half Hour Hexagon",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1075400",
+    "cpu": "Intel Core i7-7820X @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-arch1-2-ARCH",
+    "notes": "Only starts if the Vive Wands are turned off. Once on the game menu with keeping them off and you turn the wands on, it crashes the game.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-8",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1573641601,
+    "title": "",
+    "source": "protondb"
+  }
+]

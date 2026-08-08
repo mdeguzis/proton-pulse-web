@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1043340",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.8-3-cachyos",
+    "notes": "Very playable on keyboard+mouse. Native is more performant, wine has slightly less graphical bugs.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1770317749,
+    "title": "",
+    "source": "protondb"
+  }
+]

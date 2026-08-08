@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2850190",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.3",
+    "kernel": "6.8.4-cachyos",
+    "notes": "Please use Proton instead of native version",
+    "os": "NixOS 24.05 (Uakari)\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "9.0-4",
+    "ram": "40 GB",
+    "rating": "platinum",
+    "timestamp": 1742027175,
+    "title": "",
+    "source": "protondb"
+  }
+]

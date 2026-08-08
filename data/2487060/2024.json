@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2487060",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.5.0-18-generic",
+    "notes": "",
+    "os": "Zorin OS 17",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1711641989,
+    "title": "Anonymous Hacker Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2487060",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.8.9-arch1-2)",
+    "gpuDriver": "4.6 Mesa 24.0.7-arch1.3",
+    "kernel": "6.8.9-arch1-2",
+    "notes": "Just started. but vary good game so far. the newest update and playing around with proton fixed most of the bugs for me. fun game so far",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-1",
+    "ram": "48 GB",
+    "rating": "silver",
+    "timestamp": 1716016103,
+    "title": "Anonymous Hacker Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2487060",
+    "cpu": "12th Gen Intel Core i7-1255U",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.7.6-201.fsync.fc39.x86_64",
+    "notes": "Also tried PROTON_USE_WINED3D11=1",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1716430878,
+    "title": "Anonymous Hacker Simulator",
+    "source": "protondb"
+  }
+]

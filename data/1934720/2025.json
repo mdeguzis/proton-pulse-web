@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1934720",
+    "cpu": "13th Gen Intel Core i7-13700KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.8-2-cachyos",
+    "notes": "Works well with Proton 10.0-2 (beta). The game is suppose to be native linux, but at first start it launch an wine and the game wont start.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1759161110,
+    "title": "",
+    "source": "protondb"
+  }
+]

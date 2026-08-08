@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1857090",
+    "cpu": "AMD Ryzen 7 5800X",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "570.153.02",
+    "kernel": "6.17.5-gnu",
+    "notes": "Marking this report as borked because, although it technically launches and runs \"fine\" and can start a new game just fine, it just shows a black screen and that's it. In the menu, the options themselves also have black squares overlaid.",
+    "os": "Guix System",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1777975615,
+    "title": "",
+    "source": "protondb"
+  }
+]

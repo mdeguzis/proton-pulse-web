@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1081800",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.5.2",
+    "notes": "Requires VR Headset",
+    "os": "NixOS 20.03 (Markhor)",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1581790967,
+    "title": "",
+    "source": "protondb"
+  }
+]

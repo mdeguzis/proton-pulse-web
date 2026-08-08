@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2103140",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 555.52.04",
+    "kernel": "6.9.4-2-cachyos",
+    "notes": "Everything works!",
+    "os": "CachyOS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1718566706,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2103140",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, navi33, LLVM 15.0.7, DRM 3.54, 6.5.0-26-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.4 - kisak-mesa PPA",
+    "kernel": "6.5.0-26-generic",
+    "notes": "Worked out of the box",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1719990695,
+    "title": "",
+    "source": "protondb"
+  }
+]

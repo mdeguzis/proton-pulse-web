@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1133320",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.16-300.fc31.x86_64",
+    "notes": "Game does not start or show anything on screen",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577286694,
+    "title": "",
+    "source": "protondb"
+  }
+]

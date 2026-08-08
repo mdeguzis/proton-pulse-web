@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2746630",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.2-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-3-cachyos",
+    "notes": "Flawless",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1773349740,
+    "title": "Holly-Day Ice-Spionage",
+    "source": "protondb"
+  }
+]

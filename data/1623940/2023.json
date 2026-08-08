@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1623940",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.49, 6.1.25-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.1.25-1-MANJARO",
+    "notes": "Game runs great. Cutscenes could be afffected.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-1",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1682939307,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1623940",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.6, DRM 3.48, 6.0.6-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.6-1-MANJARO",
+    "notes": "Due to the cutscene not playing, I ended up finishing the game on Windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1683596569,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1623940",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.2.0-36-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1700219355,
+    "title": "",
+    "source": "protondb"
+  }
+]

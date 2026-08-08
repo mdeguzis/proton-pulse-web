@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "790290",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "6.5.0-25-generic",
+    "notes": "use protontricks to fix the game!",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1727216699,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1325860",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.5-200.fc40.x86_64",
+    "notes": "The required webcame setup is quite a bit of work for the average person to figure out, but if you don't mind tinkering, it's only one time",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1724296343,
+    "title": "VTube Studio",
+    "source": "protondb"
+  }
+]

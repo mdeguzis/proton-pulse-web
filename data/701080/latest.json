@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "701080",
+    "cpu": "Intel Xeon E5-1650 v3 @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-31-generic",
+    "notes": "",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1608516982,
+    "title": "Supersonic Tank Cats",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1198510",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.2",
+    "kernel": "5.5.13-arch1-1",
+    "notes": "Demo version, works perfectly.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1585593674,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1198510",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-37-generic",
+    "notes": "Multiplayer doesn't work, game is flawless otherwise",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1590797327,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1198510",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.10-arch1-1",
+    "notes": "Perfect",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1601479036,
+    "title": "",
+    "source": "protondb"
+  }
+]

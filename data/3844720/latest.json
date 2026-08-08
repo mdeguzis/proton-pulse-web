@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3844720",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.14.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-36-generic",
+    "notes": "This game is very nostalgic, but the lack of sound in Proton really breaks que experience.",
+    "os": "KDE neon User Edition",
+    "protonVersion": "10.0-3",
+    "ram": "23 GB",
+    "rating": "borked",
+    "timestamp": 1766274738,
+    "title": "",
+    "source": "protondb"
+  }
+]

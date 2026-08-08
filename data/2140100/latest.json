@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2140100",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.54, 6.6.83)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.6.83",
+    "notes": "Works out of the box. After the initial play through, the characters voices stops working when outside the mission.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "10.0-3",
+    "ram": "30 GB",
+    "rating": "gold",
+    "timestamp": 1774441404,
+    "title": "Whisker Squadron: Survivor",
+    "source": "protondb"
+  }
+]

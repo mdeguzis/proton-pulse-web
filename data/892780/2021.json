@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "892780",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.41.0, 5.13.4-182-tkg-pds, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.4-182-tkg-pds",
+    "notes": "Works OOTB for most",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627316748,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2697560",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.5, DRM 3.64, 6.17.9-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.9-200.nobara.fc43.x86_64",
+    "notes": "Works OOTB on Latest Proton-GE",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771694075,
+    "title": "",
+    "source": "protondb"
+  }
+]

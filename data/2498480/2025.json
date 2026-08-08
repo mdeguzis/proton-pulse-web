@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2498480",
+    "cpu": "Intel Core i7-5650U @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 6000 (BDW GT3)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Crashes way too often but that's about it",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1740016671,
+    "title": "",
+    "source": "protondb"
+  }
+]

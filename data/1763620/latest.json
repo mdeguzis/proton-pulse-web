@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1763620",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.16-200.fc36.x86_64",
+    "notes": "Steam says it's running, but the game is not showing up at all. Some tinkering might help, but out of the box it's borked.",
+    "os": "Fedora release 36 (Thirty Six)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1660933603,
+    "title": "",
+    "source": "protondb"
+  }
+]

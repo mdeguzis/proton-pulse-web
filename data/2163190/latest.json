@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2163190",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 15.0.7, DRM 3.49, 6.2.12-200.fsync.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.12-200.fsync.fc37.x86_64",
+    "notes": "works, but it uses a lot of gpu for some reason",
+    "os": "Nobara Linux 37 (Thirty Seven)",
+    "protonVersion": "8.0-2",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1684943317,
+    "title": "Liber Prologue",
+    "source": "protondb"
+  }
+]

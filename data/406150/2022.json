@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "406150",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 13.0.1, DRM 3.44, 5.17.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.4-arch1-1",
+    "notes": "The native version isn't playable because while it runs fine, it often crashes at random.",
+    "os": "Arch Linux\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "7.0-2",
+    "ram": "15971Mb",
+    "rating": "gold",
+    "timestamp": 1651336811,
+    "title": "Refunct",
+    "source": "protondb"
+  },
+  {
+    "appId": "406150",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Worked flawlessly out of the box on a Steam Deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1653100365,
+    "title": "Refunct",
+    "source": "protondb"
+  },
+  {
+    "appId": "406150",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "ran great, beat it no problems",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1659414327,
+    "title": "Refunct",
+    "source": "protondb"
+  }
+]

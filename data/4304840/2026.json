@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4304840",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-arch1-2",
+    "notes": "Low framerate, frequent freezes, some crashes",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1773026935,
+    "title": "",
+    "source": "protondb"
+  }
+]

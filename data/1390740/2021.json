@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1390740",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.40.0, 5.10.26-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.10.26-1-MANJARO",
+    "notes": "Game images are missing, instead of them artifacts",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1618744709,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390740",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.10.32-1-MANJARO",
+    "notes": "Game images are missing",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1619700615,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390740",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.1",
+    "kernel": "5.15.8-1-default",
+    "notes": "I came, so can you!",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1640407781,
+    "title": "",
+    "source": "protondb"
+  }
+]

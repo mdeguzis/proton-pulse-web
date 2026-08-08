@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1945770",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.1.42",
+    "notes": "The slowness makes it difficult to react quickly, and frustrating to learn the ropes.",
+    "os": "NixOS 23.05 (Stoat)",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1695214393,
+    "title": "",
+    "source": "protondb"
+  }
+]

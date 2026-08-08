@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1580240",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "5.15.0-76-generic",
+    "notes": "Worked right out of the gate.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1688494037,
+    "title": "",
+    "source": "protondb"
+  }
+]

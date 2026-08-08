@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1792820",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.52, 6.4.1-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.1 (git-fa55e3c026)",
+    "kernel": "6.4.1-zen2-1-zen",
+    "notes": "\u6253\u5f00\u6e38\u620fLauncher\u663e\u793a\u4e0d\u5168\u6ca1\u529e\u6cd5\u70b9\u9009\u5f00\u59cb\u6e38\u620f\uff0c\u53ef\u4ee5\u9760\u590d\u5236ResJM.Lib.chs\u4e3aResJM.Lib\u7136\u540e\u76f4\u63a5\u542f\u52a8ComeOn.exe\uff0c\u9700\u8981\u5173\u95edSteam\u6e38\u620f\u5185\u8986\u76d6\u624d\u80fd\u6b63\u5e38\u64cd\u4f5c\u4e3b\u83dc\u5355\uff0c\u4f46\u662f\u5f00\u59cb\u6e38\u620f\u70b9\u51fb\u4eba\u7269\u540e\u4e00\u76f4\u9ed1\u5c4f\u3002\u5c1d\u8bd5\u4f7f\u7528Protontriks\u5b89\u88c5ffdshow\u65e0\u6cd5\u6b63\u5e38\u5b89\u88c5\uff0c\u89c6\u9891\u65e0\u6cd5\u64ad\u653e\u3002",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1688562053,
+    "title": "",
+    "source": "protondb"
+  }
+]

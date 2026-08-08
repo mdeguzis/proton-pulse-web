@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4177880",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.2",
+    "kernel": "6.18.5-arch1-1",
+    "notes": "Works perfectly",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768518764,
+    "title": "",
+    "source": "protondb"
+  }
+]

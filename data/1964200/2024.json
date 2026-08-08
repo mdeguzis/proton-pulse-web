@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1964200",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.0-48-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.7 - kisak-mesa PPA",
+    "kernel": "6.8.0-48-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1732099683,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1575870",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.5-arch1.1",
+    "kernel": "6.8.5-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1712990726,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1575870",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.6.45-1-lts",
+    "notes": "Slight problems but is fine!",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1726523520,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "12600",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 19.1.7, DRM 3.61, 6.14.7-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.1.1-arch1.1",
+    "kernel": "6.14.7-arch2-1",
+    "notes": "Got it to launch and play letting steam tinker launch's automatic config.\nCutscenes will crash game. Missing textures, seems random.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1748815389,
+    "title": "Midnight Outlaw: 6 Hours to SunUp",
+    "source": "protondb"
+  },
+  {
+    "appId": "12600",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.8.0-64-generic",
+    "notes": "I can install the game, but it doesn't run.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1754928502,
+    "title": "Midnight Outlaw: 6 Hours to SunUp",
+    "source": "protondb"
+  }
+]

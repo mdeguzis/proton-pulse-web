@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "443190",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.15.0-106-generic",
+    "notes": "black screen at start of launch",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592778620,
+    "title": "",
+    "source": "protondb"
+  }
+]

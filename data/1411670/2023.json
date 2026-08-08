@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1411670",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.3-200.fsync.fc38.x86_64",
+    "notes": "Given this largely an FMV game, and they are broken, it is mostly an unplayable title. I did mess with a few versions of proton Which would lead me to a test looking output or GE Proton 8-15 which worked better in that the video would try to play but is too fast and locks up.",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1695038406,
+    "title": "",
+    "source": "protondb"
+  }
+]

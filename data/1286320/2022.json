@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1286320",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.4.0-121-generic",
+    "notes": "Strarts up, black screens, then crashes to desktop.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1657205952,
+    "title": "Exoprimal",
+    "source": "protondb"
+  }
+]

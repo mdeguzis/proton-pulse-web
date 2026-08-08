@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2963540",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.6, DRM 3.63, 6.15.2-2-cachyos-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.1.3-cachyos1.4",
+    "kernel": "6.15.2-2-cachyos-eevdf",
+    "notes": "Runs fine in a window",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "bronze",
+    "timestamp": 1750481642,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2963540",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-200.nobara.fc42.x86_64",
+    "notes": "Works fine, minor graphical issues",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1763409111,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2963540",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-200.nobara.fc42.x86_64",
+    "notes": "The game technically runs fine, but the graphical issues are keeping me at bay, personally.",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1763595032,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1274490",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.11-200.fc33.x86_64",
+    "notes": "Hangs after showing the \"Unity\" startup screen",
+    "os": "Freedesktop.org 20.08.6 (Flatpak runtime)",
+    "protonVersion": "6.3-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1617438150,
+    "title": "",
+    "source": "protondb"
+  }
+]

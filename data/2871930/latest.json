@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2871930",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.54, 6.5.8-100.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.5.8-100.fc37.x86_64",
+    "notes": "Took a while on initial launch but I was able to play it flawlessly",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1724621499,
+    "title": "Astro Looter: Survivor",
+    "source": "protondb"
+  }
+]

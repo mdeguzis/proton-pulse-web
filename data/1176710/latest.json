@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1176710",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.14.3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.4",
+    "kernel": "6.14.3-cachyos",
+    "notes": "Doesn't save the game, but switching to Proton Experemental from the naitive version fixed it.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1750015474,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1176710",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.4-arch2-1",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751333218,
+    "title": "",
+    "source": "protondb"
+  }
+]

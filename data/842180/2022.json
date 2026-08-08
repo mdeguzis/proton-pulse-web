@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "842180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Overall this game is fun, I enjoy it on my Steam Deck, despite some errors I wrote up. I would definitely recommend to try this out.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1657607756,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "842180",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.8.0-48-generic",
+    "notes": "Works now OK out of box.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1663451750,
+    "title": "",
+    "source": "protondb"
+  }
+]

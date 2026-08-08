@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1246950",
+    "cpu": "Intel Celeron J3455 @ 1.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 500 (APL 2)",
+    "gpuDriver": "4.6 Mesa 21.1.7",
+    "kernel": "5.13.12-200.fc34.x86_64",
+    "notes": "The very small resolution can be annoying",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1630145298,
+    "title": "",
+    "source": "protondb"
+  }
+]

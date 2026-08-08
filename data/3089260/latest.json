@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3089260",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.6, DRM 3.57, 6.8.5-301.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.8.5-301.fc40.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1722756034,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "973230",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.13.5-xanmod1",
+    "notes": "Works out of the box",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751065708,
+    "title": "",
+    "source": "protondb"
+  }
+]

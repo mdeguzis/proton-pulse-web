@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "327880",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.57, 6.9.12_1)",
+    "gpuDriver": "4.6 Mesa 24.1.4",
+    "kernel": "6.9.12_1",
+    "notes": "Game has problems taking in inputs, and doesn't even properly start when playing natively.",
+    "os": "Void Linux",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1723403432,
+    "title": "Sublevel Zero Redux",
+    "source": "protondb"
+  }
+]

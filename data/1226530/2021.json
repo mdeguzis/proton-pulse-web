@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1226530",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "Works perfectly, so does the official patch",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1616958533,
+    "title": "Trap Legend",
+    "source": "protondb"
+  }
+]

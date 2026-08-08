@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1452250",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.7.9-amd64)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1",
+    "kernel": "6.7.9-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1719788178,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1452250",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "message d'erreur runtime au demarrage",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1730465093,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1452250",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "I was able to get to main menu, then to the intro and thats it, black screen.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1731087853,
+    "title": "",
+    "source": "protondb"
+  }
+]

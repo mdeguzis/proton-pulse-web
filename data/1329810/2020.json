@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1329810",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.6 Mesa 20.2.2 - kisak-mesa PPA",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Requires symlink outside of game directory",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1607700533,
+    "title": "",
+    "source": "protondb"
+  }
+]

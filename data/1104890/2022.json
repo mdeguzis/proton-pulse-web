@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1104890",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.35.0, 5.4.0-100-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-100-generic",
+    "notes": "Ran great, No crashes; bugs or glitches. Used Proton 7.0-1",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1646498664,
+    "title": "",
+    "source": "protondb"
+  }
+]

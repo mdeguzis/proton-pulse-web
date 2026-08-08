@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1171270",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.6.0-1055-oem",
+    "notes": "Failed to enter menu",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1620445457,
+    "title": "",
+    "source": "protondb"
+  }
+]

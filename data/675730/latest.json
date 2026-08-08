@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "675730",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.5",
+    "kernel": "5.4.35-1-MANJARO",
+    "notes": "Game not playable past the first half hour or so.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1643217749,
+    "title": "Katharsis",
+    "source": "protondb"
+  }
+]

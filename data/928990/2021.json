@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "928990",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.10-arch1-1",
+    "notes": "No Video with the Proton experimantal",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1633900696,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "928990",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.11.22-2-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.11.22-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1637426795,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "928990",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.11.0-37-generic",
+    "notes": "Much of the story appears to be explained outside of the cutscenes. I enjoyed it but missing those does suck.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1637617127,
+    "title": "",
+    "source": "protondb"
+  }
+]

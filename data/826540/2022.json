@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "826540",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1661738873,
+    "title": "Audio Trip",
+    "source": "protondb"
+  },
+  {
+    "appId": "826540",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.0.12-arch1-1",
+    "notes": "Quite playable on Quest 2 with ALVR",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1670775930,
+    "title": "Audio Trip",
+    "source": "protondb"
+  }
+]

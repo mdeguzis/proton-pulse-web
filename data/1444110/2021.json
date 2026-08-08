@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1444110",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.12.17-1-ck-zen2",
+    "notes": "#### Flawless out-of-the-box experience.\n\n\nGame appears to be quite GPU intensive. Regarding compatibility, I'd give it a _Platinum_ rating.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627145360,
+    "title": "",
+    "source": "protondb"
+  }
+]

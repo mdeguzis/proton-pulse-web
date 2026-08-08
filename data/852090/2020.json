@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "852090",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-53-generic",
+    "notes": "Didn't start with Proton 5.13-2, but seemed to run well with forced 5.0-10. Took a while before the loading screen appeared.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1605564051,
+    "title": "",
+    "source": "protondb"
+  }
+]

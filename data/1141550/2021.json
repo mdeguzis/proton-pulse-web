@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1141550",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.39.0, 5.9.13-arch1-1, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.0",
+    "kernel": "5.9.13-arch1-1",
+    "notes": "Very realistic.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1620057320,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1141550",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.10.45-1-lts",
+    "notes": "Game is running okay, but buying this game feels so realistic after playing this.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-4",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1624258340,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1141550",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-8-amd64",
+    "notes": "runs around 15-20 fps enough for the human eye to be fully emersed in this masterpiece",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-6",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1630136105,
+    "title": "",
+    "source": "protondb"
+  }
+]

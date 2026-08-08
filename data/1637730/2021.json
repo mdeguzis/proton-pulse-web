@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1637730",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Doesn't launch with latest proton-ge or experimental",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1633362513,
+    "title": "",
+    "source": "protondb"
+  }
+]

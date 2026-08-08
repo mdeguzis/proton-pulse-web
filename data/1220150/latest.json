@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1220150",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.8-pikaos",
+    "notes": "Tried multiple proton versions but game refuses to launch.",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1767307718,
+    "title": "Blue Fire",
+    "source": "protondb"
+  }
+]

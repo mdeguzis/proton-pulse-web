@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1020780",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-26-generic",
+    "notes": "Al dar play, dan los siguientes errores: // Error in the begining. \n\n1. https://ibb.co/5jTD9QD",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1597802061,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1020780",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "Fails with all current Protons",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1598488281,
+    "title": "",
+    "source": "protondb"
+  }
+]

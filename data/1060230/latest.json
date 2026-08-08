@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1060230",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-arch1-2",
+    "notes": "Amount of artifacts all over the screen made it almost unplayable",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1772576463,
+    "title": "Sapiens",
+    "source": "protondb"
+  }
+]

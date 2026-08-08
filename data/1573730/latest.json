@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1573730",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.40.0, 5.12.2-153-tkg-bmq, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.12.2-153-tkg-bmq",
+    "notes": "Good experience, if it does not work out of the box try running with Proton Experimental.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1622400073,
+    "title": "",
+    "source": "protondb"
+  }
+]

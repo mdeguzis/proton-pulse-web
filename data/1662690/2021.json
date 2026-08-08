@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1662690",
+    "cpu": "Intel Xeon E5-2640 0 @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "runs flawlessly if u dont try to change the graphic if u change tha graphic just close and open again.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1628643024,
+    "title": "Twin Stones: The Journey of Bukka",
+    "source": "protondb"
+  }
+]

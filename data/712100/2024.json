@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "712100",
+    "cpu": "AMD Ryzen 9 6900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 15.0.7, DRM 3.54, 6.5.0-27-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.5.0-27-generic",
+    "notes": "Not playable on Ubuntu 22 out of the box. Frequent crashed and constant graphical artecats.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "8.0-5",
+    "ram": "30 GB",
+    "rating": "borked",
+    "timestamp": 1712645507,
+    "title": "",
+    "source": "protondb"
+  }
+]

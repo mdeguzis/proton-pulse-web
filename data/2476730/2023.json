@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2476730",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "7.0-6",
+    "ram": "48 GB",
+    "rating": "silver",
+    "timestamp": 1700156316,
+    "title": "Myriad Mayhem",
+    "source": "protondb"
+  }
+]

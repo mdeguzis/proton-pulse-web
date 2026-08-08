@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2170890",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.11.0-40-generic",
+    "notes": "Seemed to work with no issues.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673911302,
+    "title": "",
+    "source": "protondb"
+  }
+]

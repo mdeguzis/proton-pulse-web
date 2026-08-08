@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1948700",
+    "cpu": "AMD Ryzen 7 5800U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.6, DRM 3.57, 6.9.10)",
+    "gpuDriver": "4.6 Mesa 24.3.1 (git-c815d651b8)",
+    "kernel": "6.9.10",
+    "notes": "Works out of the box on Batocera v41, occasional frame drops, may need to try vulkan or in game graphics tweaks to sort out frame drops.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1737321741,
+    "title": "",
+    "source": "protondb"
+  }
+]

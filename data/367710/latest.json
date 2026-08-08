@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "367710",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-7634-generic",
+    "notes": "Game runs perfectly aside from one tiny issue with the settings menu. Buttons hide some settings.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1595213050,
+    "title": "Afterlife Empire",
+    "source": "protondb"
+  }
+]

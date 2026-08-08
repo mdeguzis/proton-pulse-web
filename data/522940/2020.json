@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "522940",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.66.07",
+    "kernel": "5.3.0-7642-generic",
+    "notes": "Game runs much slower than it should. Possibly not a Proton issue as Windows users have reported similar problems.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1587013794,
+    "title": "GUN GODZ",
+    "source": "protondb"
+  },
+  {
+    "appId": "522940",
+    "cpu": "Intel Core i3-2370M @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.4",
+    "kernel": "5.5.16-1-MANJARO",
+    "notes": "Juego funciona bien pero algo lento en el nivel 3",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-8",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1591563123,
+    "title": "GUN GODZ",
+    "source": "protondb"
+  },
+  {
+    "appId": "522940",
+    "cpu": "Intel Celeron 847 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 2000 (SNB GT1)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "como dije en windows a veces se ponia lento, pero en linux igual pero un poco peor, pero es pasable.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "2 GB",
+    "rating": "gold",
+    "timestamp": 1598549264,
+    "title": "GUN GODZ",
+    "source": "protondb"
+  }
+]

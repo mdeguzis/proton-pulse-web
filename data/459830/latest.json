@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "459830",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "It works, but you need Proton 7.0-6 and join Steam",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1770267294,
+    "title": "",
+    "source": "protondb"
+  }
+]

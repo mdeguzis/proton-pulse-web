@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2328750",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "5.19.0-46-generic",
+    "notes": "Really great game. The demo is short as expected but it was enough to make me want to play the  full version.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1690237267,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2328750",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "All the controls work as expected on the steam deck, game is pretty lightweight too so you can run it for a while",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1700044093,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2328750",
+    "cpu": "AMD 4700S 8-Core Desktop Kit",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.1.57-gentoo-dist",
+    "notes": "its a great game",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1700153425,
+    "title": "",
+    "source": "protondb"
+  }
+]

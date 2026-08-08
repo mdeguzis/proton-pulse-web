@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1343240",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.7, DRM 3.63, 6.15.7-gentoo)",
+    "gpuDriver": "4.6 Mesa 25.1.6",
+    "kernel": "6.15.7-gentoo",
+    "notes": "Installs and plays without issues",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1752936661,
+    "title": "",
+    "source": "protondb"
+  }
+]

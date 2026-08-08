@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2737070",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-37-generic",
+    "notes": "I spent a VERY long time troubleshooting and it didn't work. I tried multiple proton versions, GE versions, launch commands, and more. The only time I got into the menu was running proton 9 and it crashed 30 seconds later and then didn't work again. I hate Linux Mint and will be switching to a different distro shortly.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1772259679,
+    "title": "Crime Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2737070",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.13-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1773940230,
+    "title": "Crime Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2737070",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Worked out of the box. haven't tried co-op",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1774127943,
+    "title": "Crime Simulator",
+    "source": "protondb"
+  }
+]

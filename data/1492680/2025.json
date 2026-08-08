@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1492680",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Slight shader compilation stutters. Splash screen every time you start the game telling you you're below minimum specs (I'm not).",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1756776940,
+    "title": "The Pathless",
+    "source": "protondb"
+  }
+]

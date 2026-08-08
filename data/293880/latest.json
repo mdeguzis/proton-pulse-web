@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "293880",
+    "cpu": "12th Gen Intel Core i5-12600KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.42, 5.15.48-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.15.48-1-MANJARO",
+    "notes": "Works great ootb (out of the box)",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1712430172,
+    "title": "",
+    "source": "protondb"
+  }
+]

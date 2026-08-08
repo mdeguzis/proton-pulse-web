@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2071530",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba01.fc43.x86_64",
+    "notes": "Buttons are a bit weird and native is dead, but it's otherwise A-OK",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1763858516,
+    "title": "",
+    "source": "protondb"
+  }
+]

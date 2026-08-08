@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1262040",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Jogo rodou perfeitamente. Apenas cliquei em instalar e jogar, sem nenhum erro.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1771707041,
+    "title": "",
+    "source": "protondb"
+  }
+]

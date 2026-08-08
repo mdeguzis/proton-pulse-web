@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1543280",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.21-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.21-1-MANJARO",
+    "notes": "Cannot start game :(",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645580184,
+    "title": "Espresso Tycoon",
+    "source": "protondb"
+  }
+]

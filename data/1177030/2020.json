@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1177030",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "5.2.0",
+    "notes": "Launch is great but crash after one minute. On every available Proton Version",
+    "os": "Gentoo Base System release 2.6",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1594756104,
+    "title": "",
+    "source": "protondb"
+  }
+]

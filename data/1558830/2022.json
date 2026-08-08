@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1558830",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.9-arch2-1",
+    "notes": "Worked right out of the box with no issues, some frame drops but it is in alpha so I can't say that's unexpected.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1654405527,
+    "title": "",
+    "source": "protondb"
+  }
+]

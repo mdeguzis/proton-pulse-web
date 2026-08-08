@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1981820",
+    "cpu": "AMD Ryzen 7 5800X (16) @ 3.800GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Lite Hash Rate",
+    "gpuDriver": "nvidia-driver-580-open",
+    "kernel": "6.8.0-86-generic",
+    "notes": "Bugs are frequent but very minor and don't seem to ever affect gameplay.",
+    "os": "Linux Mint 22.2 Cinnamon",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "bronze",
+    "timestamp": 1761242942,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1981820",
+    "cpu": "Intel Core i9-10900 @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.5-2-cachyos",
+    "notes": "Perfect OOTB. No issues!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1766126516,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1981820",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Works out of the box",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1766913567,
+    "title": "",
+    "source": "protondb"
+  }
+]

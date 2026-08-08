@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2325860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "On launch simply displays a Windows Explorer shell. Press the green Up arrow to back one directory, then double click the application in that dir (can use Steam+trackpad and steam+trigger). The game will now launch to main menu. \nPut shadows to low and everything else to medium achieves 30-40fps. Set a keyboard and mouse config.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1687485866,
+    "title": "",
+    "source": "protondb"
+  }
+]

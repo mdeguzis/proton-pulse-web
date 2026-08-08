@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3449040",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Works fine",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1771232714,
+    "title": "Machick 2",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1158970",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.6-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.6-1-MANJARO",
+    "notes": "Did run fine out of the box when I last played it (some time ago)",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1617476327,
+    "title": "Westmark Manor",
+    "source": "protondb"
+  }
+]

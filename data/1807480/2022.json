@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1807480",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.44.0, 5.16.4-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.4-arch1-1",
+    "notes": "Does not launch in VR",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1643945419,
+    "title": "Vertical Shift",
+    "source": "protondb"
+  }
+]

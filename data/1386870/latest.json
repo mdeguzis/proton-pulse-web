@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1386870",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.11-76060111-generic",
+    "notes": "Game functions perfectly.  Subtitles don't, but it's hardly a deal-breaker",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1679179689,
+    "title": "Wraith: The Oblivion - Afterlife",
+    "source": "protondb"
+  }
+]

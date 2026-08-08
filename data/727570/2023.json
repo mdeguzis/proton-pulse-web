@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "727570",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.6, DRM 3.35, 5.4.0-135-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.2 - kisak-mesa PPA",
+    "kernel": "5.4.0-135-generic",
+    "notes": "Fails to launch. No error messages.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1672995278,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "727570",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.6, DRM 3.35, 5.4.0-135-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.2 - kisak-mesa PPA",
+    "kernel": "5.4.0-135-generic",
+    "notes": "Game opens a window, but immediately crashes",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1673189726,
+    "title": "",
+    "source": "protondb"
+  }
+]

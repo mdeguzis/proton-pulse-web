@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "354620",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.42, 5.15.50-216.current)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.50-216.current",
+    "notes": "Doesn't start",
+    "os": "Solus",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1657616525,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "354620",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.4.0-122-generic",
+    "notes": "Here is the console from Steam after launching it with \"steam -console\".\n-\nCould not connect to X session manager: None of the authentication protocols specified are supported\nCould not connect to X session manager: None of the authentication protocols specified are supported\nGameAction [AppID 354620, ActionID 2] : LaunchApp changed task to ProcessingInstallScript with \"\"\nGameAction [AppID 354620, ActionID 2] : LaunchApp changed task to SiteLicenseSeatCheckout with \"\"\nGameAction [AppID 354620, ActionID 2] : LaunchApp changed task to CreatingProcess with \"\"\nGameAction [AppID 354620, ActionID 2] : LaunchApp waiting for user response to CreatingProcess \"\"\nGameAction [AppID 354620, ActionID 2] : LaunchApp continues with user response \"CreatingProcess\"\nGame process added : AppID 354620 \"/home/skythegreatone/.steam/debian-installation/ubuntu12_32/reaper SteamLaunch AppId=354620 -- '/home/skythegreatone/.steam/debian-installation/steamapps/common/SteamLinuxRuntime_soldier'/_v2-entry-point --verb=waitforexitandrun -- '/home/skythegreatone/.steam/debian-installation/steamapps/common/Proton - Experimental'/proton waitforexitandrun  '/home/skythegreatone/.steam/debian-installation/steamapps/common/MinerWarfare/Miner Warfare.exe'\", ProcID 180327, IP 0.0.0.0:0\nGameAction [AppID 354620, ActionID 2] : LaunchApp changed task to WaitingGameWindow with \"\"\nGameAction [AppID 354620, ActionID 2] : LaunchApp changed task to Completed with \"\"\nThreadGetProcessExitCode: no such process 180441\nThreadGetProcessExitCode: no such process 180439\nThreadGetProcessExitCode: no such process 180438\nThreadGetProcessExitCode: no such process 180437\nThreadGetProcessExitCode: no such process 180330\nGame process updated : AppID 354620 \"/home/skythegreatone/.steam/debian-installation/ubuntu12_32/reaper SteamLaunch AppId=354620 -- '/home/skythegreatone/.steam/debian-installation/steamapps/common/SteamLinuxRuntime_soldier'/_v2-entry-point --verb=waitforexitandrun -- '/home/skythegreatone/.steam/debian-installation/steamapps/common/Proton - Experimental'/proton waitforexitandrun  '/home/skythegreatone/.steam/debian-installation/steamapps/common/MinerWarfare/Miner Warfare.exe'\", ProcID 180440, IP 0.0.0.0:0\nThreadGetProcessExitCode: no such process 180444\nThreadGetProcessExitCode: no such process 180523\nThreadGetProcessExitCode: no such process 180504\nThreadGetProcessExitCode: no such process 180489\nThreadGetProcessExitCode: no such process 180483\nThreadGetProcessExitCode: no such process 180477\nThreadGetProcessExitCode: no such process 180449\nThreadGetProcessExitCode: no such process 180446\nThreadGetProcessExitCode: no such process 180436\nGame process removed: AppID 354620 \"/home/skythegreatone/.steam/debian-installation/ubuntu12_32/reaper SteamLaunch AppId=354620 -- '/home/skythegreatone/.steam/debian-installation/steamapps/common/SteamLinuxRuntime_soldier'/_v2-entry-point --verb=waitforexitandrun -- '/home/skythegreatone/.steam/debian-installation/steamapps/common/Proton - Experimental'/proton waitforexitandrun  '/home/skythegreatone/.steam/debian-installation/steamapps/common/MinerWarfare/Miner Warfare.exe'\", ProcID 180440 \nThreadGetProcessExitCode: no such process 180458\nThreadGetProcessExitCode: no such process 180440\nThreadGetProcessExitCode: no such process 180329\nThreadGetProcessExitCode: no such process 180328",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1657778333,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "354620",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.14-1-MANJARO",
+    "notes": "Even switching to proton-ge the game still doesn't open.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1659706401,
+    "title": "",
+    "source": "protondb"
+  }
+]

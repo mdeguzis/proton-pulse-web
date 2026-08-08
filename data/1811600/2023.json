@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1811600",
+    "cpu": "AMD A12-9720P RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon R7 (carrizo, LLVM 13.0.1, DRM 3.42, 5.15.41-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.4",
+    "kernel": "5.15.41-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "11 GB",
+    "rating": "gold",
+    "timestamp": 1692381103,
+    "title": "",
+    "source": "protondb"
+  }
+]

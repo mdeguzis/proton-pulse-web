@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3204390",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 18.1.8, DRM 3.54, 6.6.52-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.6.52-200.fc40.x86_64",
+    "notes": "Works out of the box, completed full playthrough without any issues",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727203261,
+    "title": "A THOUSAND MOUTHS TO SCREAM",
+    "source": "protondb"
+  }
+]

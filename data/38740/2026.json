@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "38740",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.1-arch1-2)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.2",
+    "kernel": "6.18.1-arch1-2",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1768638744,
+    "title": "EDGE",
+    "source": "protondb"
+  }
+]

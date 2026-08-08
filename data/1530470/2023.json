@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1530470",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.52, 6.4.10-202.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.4.10-202.fsync.fc38.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1692806055,
+    "title": "",
+    "source": "protondb"
+  }
+]

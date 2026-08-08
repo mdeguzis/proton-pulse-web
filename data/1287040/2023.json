@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1287040",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Works out of the box",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "7812M",
+    "rating": "gold",
+    "timestamp": 1681549299,
+    "title": "Gun Devil",
+    "source": "protondb"
+  },
+  {
+    "appId": "1287040",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.10-arch1-1",
+    "notes": "Works perfectly",
+    "os": "ArcoLinux",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1681739910,
+    "title": "Gun Devil",
+    "source": "protondb"
+  }
+]

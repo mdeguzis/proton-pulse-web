@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2110540",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 16.0.6, DRM 3.54, 6.6.26-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.2-manjaro1.1",
+    "kernel": "6.6.26-1-MANJARO",
+    "notes": "The main menu and settings work after launching. Clicking start fades out the screen, then fades in to a pure white screen with a typewriter clack sound playing in the background occasionally. Doesn't seem to react to any inputs.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1721109329,
+    "title": "",
+    "source": "protondb"
+  }
+]

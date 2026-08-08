@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3159570",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.8.0-47-generic",
+    "notes": "Runs perfectly under Linux without any further settings. Maximum graphics settings",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "14 GB",
+    "rating": "platinum",
+    "timestamp": 1729669662,
+    "title": "",
+    "source": "protondb"
+  }
+]

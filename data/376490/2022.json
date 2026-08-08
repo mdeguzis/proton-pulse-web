@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "376490",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon VII (VEGA20, DRM 3.41.0, 5.13.19-2-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Game winsow appears then disappears after a second, no menus seen.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-12",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1669930107,
+    "title": "",
+    "source": "protondb"
+  }
+]

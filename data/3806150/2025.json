@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3806150",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.8.0-86-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1762461776,
+    "title": "",
+    "source": "protondb"
+  }
+]

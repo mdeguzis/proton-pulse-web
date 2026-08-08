@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1684660",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 20.0.2",
+    "kernel": "5.4.53",
+    "notes": "My GPU have peoblem with Vulkan, lack of \"VK_KHR_surface\", \"'VK_KHR_win32_surface\" makes this game unable to load menu...",
+    "os": "Linux 5.4",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1636111293,
+    "title": "",
+    "source": "protondb"
+  }
+]

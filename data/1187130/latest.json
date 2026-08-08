@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1187130",
+    "cpu": "AMD Ryzen 7 4800HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 525.105.17",
+    "kernel": "6.1.0-10-amd64",
+    "notes": "Everything seems to work fine, but performance issues make the game unplayable.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1689266419,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1839950",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.7-arch1.1",
+    "kernel": "6.5.2-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1759704434,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3229980",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, ACO, DRM 3.64, 6.19.7-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch2.3",
+    "kernel": "6.19.7-1-cachyos",
+    "notes": "Just plays with no issues, up to and after final boss.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778680262,
+    "title": "",
+    "source": "protondb"
+  }
+]

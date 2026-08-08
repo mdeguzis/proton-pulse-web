@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3333330",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.19.7)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.19.7",
+    "notes": "Not a native Linux game. Select a Proton version in the Compatibility tab to run the game.",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1773957821,
+    "title": "You Are The Code",
+    "source": "protondb"
+  }
+]

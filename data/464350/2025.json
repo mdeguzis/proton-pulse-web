@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "464350",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "It wont lauch, it just shows the \"running\" label for a few seconds and then it stops.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1765839746,
+    "title": "",
+    "source": "protondb"
+  }
+]

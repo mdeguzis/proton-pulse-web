@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1860510",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVI23 (navi23, LLVM 15.0.7, DRM 3.42, 5.15.89-xanmod1)",
+    "gpuDriver": "4.6 Mesa 22.3.4 - kisak-mesa PPA",
+    "kernel": "5.15.89-xanmod1",
+    "notes": "\u0417\u0430\u0440\u0430\u0431\u043e\u0442\u0430\u043b\u043e \u0438\u0437 \u043a\u043e\u0440\u043e\u0431\u043a\u0438.",
+    "os": "Linux Mint 20.3 (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1675712817,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1860510",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.1.12-1-MANJARO",
+    "notes": "UE ... Out of the Box ... perfect :)",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686855846,
+    "title": "",
+    "source": "protondb"
+  }
+]

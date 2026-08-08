@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "871920",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.8-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.8-3-cachyos",
+    "notes": "Game starts fine but unable to interact with customers or kitchen",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1770173678,
+    "title": "",
+    "source": "protondb"
+  }
+]

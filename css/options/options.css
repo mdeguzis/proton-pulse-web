@@ -1,0 +1,166 @@
+/* Site options page: settings rows with a toggle switch. */
+.options-list {
+  max-width: 640px;
+  margin-top: 10px;
+}
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+.option-text { flex: 1 1 auto; min-width: 0; }
+.option-title {
+  font-weight: 600;
+  color: var(--strong);
+  margin-bottom: 4px;
+}
+.option-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Toggle switch */
+.option-switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 46px;
+  height: 26px;
+  cursor: pointer;
+}
+.option-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.option-switch-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 0.15s;
+}
+.option-switch-track::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+.option-switch input:checked + .option-switch-track {
+  background: var(--accent);
+}
+.option-switch input:checked + .option-switch-track::before {
+  transform: translateX(20px);
+}
+.option-switch input:focus-visible + .option-switch-track {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.option-row--block { align-items: flex-start; flex-direction: column; gap: 12px; }
+.option-radio-group { display: flex; gap: 10px; flex-wrap: wrap; }
+/* Checkbox group mirrors the radio pill visual so the two look consistent
+   even though the semantics differ (independent toggles, not one-of). */
+.option-checkbox-group { display: flex; gap: 10px; flex-wrap: wrap; }
+.option-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 0.12s, color 0.12s;
+}
+.option-checkbox:has(input:checked) { border-color: var(--accent); color: var(--accent); }
+.option-checkbox input { display: none; }
+.option-checkbox:has(input:checked) .option-default-tag { color: var(--accent); opacity: 0.7; }
+.option-inline-inputs { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+.option-inline-input { display: inline-flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--muted); }
+.option-inline-input input[type="number"] {
+  width: 84px;
+  padding: 6px 10px;
+  background: var(--s1);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
+.option-inline-input input[type="number"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.option-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 0.12s, color 0.12s;
+}
+.option-radio:has(input:checked) { border-color: var(--accent); color: var(--accent); }
+.option-radio input { display: none; }
+.option-radio--disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.option-default-tag {
+  font-size: 0.78em;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 2px;
+}
+.option-radio:has(input:checked) .option-default-tag { color: var(--accent); opacity: 0.7; }
+/* The viewport-specific default tags exist on both options at once in the
+   markup; CSS hides whichever one doesn't apply at the current width.
+   Mirrors the 760px breakpoint that topbar.js uses to pick the default. */
+@media (max-width: 759px) { .option-default-tag--desktop { display: none; } }
+@media (min-width: 760px) { .option-default-tag--mobile  { display: none; } }
+.option-default-note { font-size: 0.78rem; color: var(--muted); margin-top: 4px; flex-basis: 100%; }
+
+.options-reset { margin-top: 24px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.options-reset-btn {
+  font: inherit;
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s;
+}
+.options-reset-btn:hover, .options-reset-btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+}
+.options-reset-note { font-size: 0.82rem; color: var(--muted); }
+
+/* Numeric option control (store tag icon size). Native number input keeps its
+   up/down spinner for quick nudging. */
+.option-number { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.option-number input[type="number"] {
+  width: 66px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  outline: none;
+}
+.option-number input[type="number"]:focus { border-color: var(--accent); }
+.option-number-unit { color: var(--muted); font-size: 0.82rem; font-family: var(--mono); }

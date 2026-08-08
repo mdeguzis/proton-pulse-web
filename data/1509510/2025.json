@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1509510",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.6, DRM 3.63, 6.15.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.1.5-cachyos1.3",
+    "kernel": "6.15.6-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1752828313,
+    "title": "",
+    "source": "protondb"
+  }
+]

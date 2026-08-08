@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2137560",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.6, DRM 3.42, 5.15.0-60-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.15.0-60-generic",
+    "notes": "RPGMaker game",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1677093639,
+    "title": "Touhou - Reimus Awesome Holiday",
+    "source": "protondb"
+  },
+  {
+    "appId": "2137560",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.15-200.fc38.x86_64",
+    "notes": "Menu music but black screen steam please fix",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1695002675,
+    "title": "Touhou - Reimus Awesome Holiday",
+    "source": "protondb"
+  }
+]

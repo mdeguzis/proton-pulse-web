@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "885910",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.10.4-xanmod1-MANJARO, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.3",
+    "kernel": "5.10.4-xanmod1-MANJARO",
+    "notes": "The game starts but completely freezes shortly after",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1610997833,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "885910",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR (DRM 3.41.0, 5.13.13-zen1-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.13-zen1-1-zen",
+    "notes": "The game will start and allow you to start playing, but will crash at a random time a few minutes into play",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1630427594,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "885910",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.0-0.rc5.20211216git2b14864acbaa.37.fc36.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.1",
+    "kernel": "5.16.0-0.rc5.20211216git2b14864acbaa.37.fc36.x86_64",
+    "notes": "Game freezes after a couple minutes.",
+    "os": "Fedora release 36 (Rawhide)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1640336565,
+    "title": "",
+    "source": "protondb"
+  }
+]

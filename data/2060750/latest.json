@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2060750",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.52, 6.4.10-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-zen2-1-zen",
+    "notes": "Worked out of the box. No tinkering needed.",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1711898125,
+    "title": "Star Survivor",
+    "source": "protondb"
+  }
+]

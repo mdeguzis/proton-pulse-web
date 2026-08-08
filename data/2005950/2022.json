@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2005950",
+    "cpu": "AMD Athlon 200GE with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 3 (raven, LLVM 14.0.6, DRM 3.48, 6.0.10-Xanmod-Custom-xanmod1)",
+    "gpuDriver": "4.6 Mesa 22.3.0",
+    "kernel": "6.0.10-Xanmod-Custom-xanmod1",
+    "notes": "0",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1670602636,
+    "title": "The Rabbit's Scroll",
+    "source": "protondb"
+  }
+]

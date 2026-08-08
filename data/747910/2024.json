@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "747910",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.6",
+    "kernel": "6.10.6-200.fc40.x86_64",
+    "notes": "Runs pretty much like it would on Windows.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1725292162,
+    "title": "",
+    "source": "protondb"
+  }
+]

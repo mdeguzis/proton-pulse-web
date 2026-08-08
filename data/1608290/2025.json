@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1608290",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "Ran perfectly",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1763420491,
+    "title": "GNOSIA",
+    "source": "protondb"
+  },
+  {
+    "appId": "1608290",
+    "cpu": "AMD Ryzen 9 4900HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.14.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-36-generic",
+    "notes": "minor problems regarding mouse controls and text display (moreso the former), but nothing hindering actual gameplay",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1764485797,
+    "title": "GNOSIA",
+    "source": "protondb"
+  },
+  {
+    "appId": "1608290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1766366237,
+    "title": "GNOSIA",
+    "source": "protondb"
+  }
+]

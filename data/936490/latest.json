@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936490",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 535.216.01",
+    "kernel": "6.1.0-32-amd64",
+    "notes": "Takes forever to actually \"load\" when new game is pressed, then fades to grey part way through the tutorial which hard locks your game. \n\nGame \"technically\" runs and plays, but since it locks you during the tutorial with no ability to recover, and doesn't let you skip the tutorial, I'm marking as a can't play.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1743973047,
+    "title": "Counter Terrorist Agency",
+    "source": "protondb"
+  }
+]

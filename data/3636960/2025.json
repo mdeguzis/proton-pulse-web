@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3636960",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, ACO, DRM 3.64, 6.17.8-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.0-devel",
+    "kernel": "6.17.8-300.fc43.x86_64",
+    "notes": "All the games in the bundle work out of the box",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764017300,
+    "title": "",
+    "source": "protondb"
+  }
+]

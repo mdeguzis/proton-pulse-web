@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1472660",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1611332092,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1472660",
+    "cpu": "Intel Core i5-3350P @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-43-generic",
+    "notes": "Game is unplayable unfortunately. To slow. It cab't be controlled.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613864223,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1472660",
+    "cpu": "AMD FX-8320E Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.13-300.fc34.x86_64",
+    "notes": "",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1625180988,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2114990",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.4.0-150600.23.7-default",
+    "notes": "GOG.com version w/o any drm/account. Installed via Steam, changed executable path and environ path to the install path,Proton to GE9.27.",
+    "os": "openSUSE Leap 15.6",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1757113465,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2114990",
+    "cpu": "Intel Core i7-10510U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa virgl (Mesa Intel UHD (CML GT2))",
+    "gpuDriver": "4.6 Mesa 25.2.0-devel (git-453ecaddb5)",
+    "kernel": "6.1.129-17460-g8b804e0205bb",
+    "notes": "",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1757319470,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2114990",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-79-generic",
+    "notes": "Works fine OOTB.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1757921736,
+    "title": "",
+    "source": "protondb"
+  }
+]

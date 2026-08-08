@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1031510",
+    "cpu": "AMD FX-9830P RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon R7 (carrizo, LLVM 15.0.2, DRM 3.47, 5.19.0-23-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "5.19.0-23-generic",
+    "notes": "Everything works fine without modification.",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1668243383,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4565060",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.11-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch2.2",
+    "kernel": "6.19.11-1-cachyos",
+    "notes": "I can't figure out how to install this for proton.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776210316,
+    "title": "The Cloudberry Abyss",
+    "source": "protondb"
+  },
+  {
+    "appId": "4565060",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.11-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch2.2",
+    "kernel": "6.19.11-1-cachyos",
+    "notes": "The Microsoft Edge WebView2 dependency is annoying",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776266591,
+    "title": "The Cloudberry Abyss",
+    "source": "protondb"
+  }
+]

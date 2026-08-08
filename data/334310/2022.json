@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "334310",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Saves are broken, making it unreasonable to play.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "7.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1651462071,
+    "title": "",
+    "source": "protondb"
+  }
+]

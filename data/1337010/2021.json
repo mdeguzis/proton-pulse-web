@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1337010",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Great game which runs so well it might as well have been native.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1627482235,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1337010",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.8.0-63-generic",
+    "notes": "Runned great using proton experimental. Didn't work otherwise.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1630540485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1337010",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.11.0-43-generic",
+    "notes": "Worked really well and could use my DualSense  without a problem",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640518301,
+    "title": "",
+    "source": "protondb"
+  }
+]

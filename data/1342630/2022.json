@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1342630",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.161.03",
+    "kernel": "5.13.0-52-generic",
+    "notes": "You need nProtect I think.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1671216432,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1342630",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.161.03",
+    "kernel": "5.13.0-52-generic",
+    "notes": "I tried Proton GE, Experimental, 7.0-4, 7.0-5, and the 6.x.x versions. Nothing will make the game start.  I might have to start messing around with startup settings.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1672193705,
+    "title": "",
+    "source": "protondb"
+  }
+]

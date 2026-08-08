@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1011190",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.11.15-200.fc33.x86_64",
+    "notes": "Black screen right after choosing the path to play",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1619808980,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1011190",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.1-arch1-1",
+    "notes": "Gme hangs after selecting role.",
+    "os": "GamerOS 23\u3000(48bc215)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1621461392,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1011190",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.8-arch1-1",
+    "notes": "Black screen",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1629824826,
+    "title": "",
+    "source": "protondb"
+  }
+]

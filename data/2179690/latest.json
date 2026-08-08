@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2179690",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.5.0-27-generic",
+    "notes": "Game brings up the unity window full screen and then flickers and forces itself into the foreground with a flickering/invisible window. With the flickering I was able to see, it didn't appear to be accepting any input to get past the initial screen.  \nDesktop was completely unusable even on the second monitor. I couldn't switch apps or bring up the restart/shutdown menu.  \nBest way I found to exit is changing TTY with ctrl+alt+f3 to access the terminal and reboot",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1714173892,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2179690",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.5.0-27-generic",
+    "notes": "(My previous report was for X11, this is for wayland, using KDE plasma 5.27.8)  \nGame brings up the unity window full screen and then has a constant flicker. I was able to see the game despite the flickering, but it didn't seem to accept any input at least with the mouse.  \nI was able to exit the app easily and use the rest of my desktop now that I tried it on wayland.",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1714174634,
+    "title": "",
+    "source": "protondb"
+  }
+]

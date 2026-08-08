@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "284180",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "5.10.0-0.bpo.5-amd64",
+    "notes": "Use protontricks to install necessary drivers",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1619287886,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "284180",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.3.1",
+    "kernel": "5.4.6-arch1-1",
+    "notes": "The main menu launches. Fatal error occurs after starting a new game.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1620899411,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "284180",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.38.0, 5.8.0-63-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6 - kisak-mesa PPA",
+    "kernel": "5.8.0-63-generic",
+    "notes": "Have to use protontricks to get game working",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "4.11-13",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1627872825,
+    "title": "",
+    "source": "protondb"
+  }
+]

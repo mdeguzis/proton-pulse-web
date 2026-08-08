@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "784950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Just goes to white after loading. Animated loading screen works, see the menu for half a second then it goes white. No tinkering tried to get it to work",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1655387147,
+    "title": "SUPREMACY: WORLD WAR 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "784950",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.8 (git-813ee839be)",
+    "kernel": "5.15.0-30-generic",
+    "notes": "Loads up to main menu then white screen.",
+    "os": "Freedesktop.org 21.08.14 (Flatpak runtime)",
+    "protonVersion": "7.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1657642630,
+    "title": "SUPREMACY: WORLD WAR 3",
+    "source": "protondb"
+  }
+]

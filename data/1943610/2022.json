@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1943610",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.6, DRM 3.42, 5.15.62-1-lts)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.15.62-1-lts",
+    "notes": "Anti cheat doesn't support the Linux.",
+    "os": "AwooOS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1661495627,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1281200",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.44.0, 5.16.2, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.3 (git-a65ad66c47)",
+    "kernel": "5.16.2",
+    "notes": "Works perfectly",
+    "os": "Freedesktop.org 21.08.9 (Flatpak runtime)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1659615670,
+    "title": "",
+    "source": "protondb"
+  }
+]

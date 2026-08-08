@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1996420",
+    "cpu": "12th Gen Intel Core i7-12700F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.7.6-201.fsync.fc39.x86_64",
+    "notes": "Until the beggining of February 2024 everything worked great. Now the Main Menu is completley broken and you cannot play it anymore. It broke somewhere between the 2nd and the 19th of February 2024. Reinstalling did not help.",
+    "os": "Fedora Linux 39.20240301.0 (Bazzite GNOME)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1709466366,
+    "title": "",
+    "source": "protondb"
+  }
+]

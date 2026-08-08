@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "628160",
+    "cpu": "%s1",
+    "duration": "underOneHour",
+    "gpu": "Red Hat virgl",
+    "gpuDriver": "3.1 Mesa 19.2.8",
+    "kernel": "5.4.157-17191-g6575d22de694",
+    "notes": "program run well",
+    "os": "Debian GNU/Linux 10 (buster)\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "6.3-8",
+    "ram": "2777Mb",
+    "rating": "silver",
+    "timestamp": 1643229317,
+    "title": "",
+    "source": "protondb"
+  }
+]

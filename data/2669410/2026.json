@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2669410",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Max-Q / Mobile",
+    "gpuDriver": "Nvidia 560.35.03",
+    "kernel": "6.11.2-202.fsync.fc40.x86_64",
+    "notes": "Performance is so bad you may as well not play it. Monado/WiVRn saves it, if you're willing to spend an hour each time you play",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "10.0-3",
+    "ram": "16GB",
+    "rating": "borked",
+    "timestamp": 1770485854,
+    "title": "",
+    "source": "protondb"
+  }
+]

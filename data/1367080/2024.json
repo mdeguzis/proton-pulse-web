@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1367080",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Still hangs on a black screen after the EAC splash screen",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1720476335,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1367080",
+    "cpu": "Intel Core i9-9900KF @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.1",
+    "kernel": "6.5.5-zen1-1-zen",
+    "notes": "EAC still isn't enabled for linux and bandai seems to have zero intention of doing so (and probably anything else for the pc port)",
+    "os": "Garuda Linux",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1727193301,
+    "title": "",
+    "source": "protondb"
+  }
+]

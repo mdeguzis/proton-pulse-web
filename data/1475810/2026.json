@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1475810",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769870779,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1475810",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Single digit FPS even on lowest settings",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1771922248,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1475810",
+    "cpu": "Intel Core i5-9400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Easy to get working",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "47 GB",
+    "rating": "gold",
+    "timestamp": 1772645642,
+    "title": "",
+    "source": "protondb"
+  }
+]

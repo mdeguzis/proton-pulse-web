@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2507610",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Playable with a little change.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1720773912,
+    "title": "The Quintessential Quintuplets - Memories of a Quintessential Summer",
+    "source": "protondb"
+  },
+  {
+    "appId": "2507610",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Don't use the official layout.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1723403508,
+    "title": "The Quintessential Quintuplets - Memories of a Quintessential Summer",
+    "source": "protondb"
+  },
+  {
+    "appId": "2507610",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "After the initial experience, when I went to play again I was unable to play the game; only menus responded. I tried changing controller configuration again, switching back to the one from the Developer, turning off Steam Input API, nothing. I could play the game *once* and since then it's borked.\n\nI'll reach out to the Developer (if I can) and see if they respond, as I'm not the first and I doubt the last who will have this issue. If I post a ***3rd*** review, it'll at least be good news... Clearly I spoke too soon after being excited to get the game working, and I did get some enjoyment out of it before it was booked again; that only rubbed more salt in the wound.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1723571268,
+    "title": "The Quintessential Quintuplets - Memories of a Quintessential Summer",
+    "source": "protondb"
+  }
+]

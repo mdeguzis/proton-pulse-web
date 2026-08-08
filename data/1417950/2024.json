@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1417950",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.76",
+    "kernel": "6.8.7-arch1-1",
+    "notes": "Unplayably poor performance. Did not experience any other significant bugs.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1714172429,
+    "title": "",
+    "source": "protondb"
+  }
+]

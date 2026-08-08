@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1190150",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.1",
+    "kernel": "5.15.10-arch1-1",
+    "notes": "The stuttering is too unbearable to play with.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1670483738,
+    "title": "",
+    "source": "protondb"
+  }
+]

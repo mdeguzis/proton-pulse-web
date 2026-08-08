@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2096580",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.182.03",
+    "kernel": "5.19.0-38-generic",
+    "notes": "I just tried the latest version of Proton(7.0-6) and it worked with no issues.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1681492947,
+    "title": "",
+    "source": "protondb"
+  }
+]

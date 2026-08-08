@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1487230",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 Super with Max-Q Design",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.4.0-81-generic",
+    "notes": "There are some performance drops, but the overall playing experience doesn't change to the Win10 version.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1630044653,
+    "title": "",
+    "source": "protondb"
+  }
+]

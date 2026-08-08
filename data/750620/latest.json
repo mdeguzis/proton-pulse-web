@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "750620",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.8.0-83-generic",
+    "notes": "but sounds do work at least...",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1759379462,
+    "title": "",
+    "source": "protondb"
+  }
+]

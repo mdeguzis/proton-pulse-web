@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3629290",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 660M (radeonsi, rembrandt, ACO, DRM 3.64, 7.0.12-1-cachyos) + NVIDIA RTX 2050 4GB",
+    "gpuDriver": "4.6 Mesa 26.1.2-arch2.1",
+    "kernel": "7.0.12-1-cachyos",
+    "notes": "If you ever had any of the \"I SPY\" books as a kid, it's like that but with the occasional suspense and jump scare.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1781689680,
+    "title": "",
+    "source": "protondb"
+  }
+]

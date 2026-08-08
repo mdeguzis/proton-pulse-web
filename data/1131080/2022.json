@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1131080",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 500 (Broxton 2x6)",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.16.18-pa2-1bp5",
+    "notes": "Instale el juego lo inicie y nunca inicio se quedo en la ventana de steam diciendo \"Preparandose para iniciar Deadswitch\" sin mas...",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "2 GB",
+    "rating": "borked",
+    "timestamp": 1641082798,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1131080",
+    "cpu": "AMD Athlon Gold 3150U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 3 (RAVEN2, DRM 3.42.0, 5.15.0-48-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-48-generic",
+    "notes": "Game playable on Proton 7.0-4 without any tinkering. Just expect slight \"flickering\" on some UI elements and maybe some performance minuses.",
+    "os": "KDE neon User - 5.25",
+    "protonVersion": "7.0-4",
+    "ram": "6 GB",
+    "rating": "silver",
+    "timestamp": 1664012217,
+    "title": "",
+    "source": "protondb"
+  }
+]

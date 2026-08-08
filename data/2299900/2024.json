@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2299900",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.2-arch2-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1712475765,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2299900",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 17.0.6, DRM 3.54, 6.6.27_1)",
+    "gpuDriver": "4.6 Mesa 24.0.5",
+    "kernel": "6.6.27_1",
+    "notes": "Works perfectly fine out of the box.",
+    "os": "Void Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1713771001,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2299900",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Incredible game, even more on SteamDeck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1714767868,
+    "title": "",
+    "source": "protondb"
+  }
+]

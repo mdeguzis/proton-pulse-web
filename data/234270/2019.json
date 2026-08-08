@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "234270",
+    "cpu": "AMD Ryzen 7 1700x Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "unkown",
+    "notes": "Had to use proton for my controller to work. With native my controller did not work",
+    "os": "GamerOs Update 7",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1574380506,
+    "title": "",
+    "source": "protondb"
+  }
+]

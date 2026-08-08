@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2856090",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.8.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.3-arch1.2",
+    "kernel": "6.8.1-arch1-1",
+    "notes": "Exact error message:\n\n<br />\nError\n\nFailed to initialize graphics.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1711402090,
+    "title": "Cyan's Snow House",
+    "source": "protondb"
+  }
+]

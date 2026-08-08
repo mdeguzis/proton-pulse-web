@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1101400",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "It is unplayable in current state.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1634357283,
+    "title": "",
+    "source": "protondb"
+  }
+]

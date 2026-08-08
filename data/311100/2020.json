@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "311100",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Crash on start. Tried running protontricks win7 since I read it was stable on windows 7, but no luck.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1593565301,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "843200",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "Using the launcher exe brings a black box, while launching the game results in a crash. The launcher is interactable, but crashes",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1750302576,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2695270",
+    "cpu": "11th Gen Intel Core i7-1195G7 @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.8.7-1-default",
+    "notes": "it's kinda fun to play (don't forget to download the free DLC)",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1714567695,
+    "title": "",
+    "source": "protondb"
+  }
+]

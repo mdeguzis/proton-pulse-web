@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1054050",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "The game crashes frequently,so I couldn't even play with it for only 5 minutes.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1635596214,
+    "title": "Hero must die. again",
+    "source": "protondb"
+  }
+]

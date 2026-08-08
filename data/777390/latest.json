@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "777390",
+    "cpu": "12th Gen Intel Core i5-12600KF",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.1, DRM 3.61, 6.14.2-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.14.2-300.fc42.x86_64",
+    "notes": "It worked perfectly out of the box if you are just using a mouse.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1747349080,
+    "title": "",
+    "source": "protondb"
+  }
+]

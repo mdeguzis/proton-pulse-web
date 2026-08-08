@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "337930",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.2-2-cachyos",
+    "notes": "Besides the minor issue that the game doesn't start in windowed mode wit the selected resolution, this game is absolutely enjoyable on Linux",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1771457219,
+    "title": "",
+    "source": "protondb"
+  }
+]

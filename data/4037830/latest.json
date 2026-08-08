@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4037830",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "Aside from an initial window sizing issue, the game ran just fine with no other noticeable problems.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767999606,
+    "title": "",
+    "source": "protondb"
+  }
+]

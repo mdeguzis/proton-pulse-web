@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1403310",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Only Proton version I used was 8.0-2. You may have to wait for vulkan shaders to load before game starts, thats it.",
+    "os": "Zorin OS 16.2",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1688931111,
+    "title": "",
+    "source": "protondb"
+  }
+]

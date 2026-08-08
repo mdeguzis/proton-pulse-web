@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2715780",
+    "cpu": "13th Gen Intel Core i5-1340P",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (RPL-P)",
+    "gpuDriver": "4.6 Mesa 25.1.1-cachyos1.2",
+    "kernel": "6.15.0-2-cachyos",
+    "notes": "Native does not launch; proton works",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1748468174,
+    "title": "Minesweeper Twist",
+    "source": "protondb"
+  }
+]

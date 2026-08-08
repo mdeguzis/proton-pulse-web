@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2610770",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "1745876290",
+    "gpuDriver": "Disabled",
+    "kernel": "6.8.0-60-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1781550591,
+    "title": "Dust Front RTS",
+    "source": "protondb"
+  },
+  {
+    "appId": "2610770",
+    "cpu": "AMD Ryzen 5 7500F 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 7.0.12-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.2-arch2.1",
+    "kernel": "7.0.12-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1781725123,
+    "title": "Dust Front RTS",
+    "source": "protondb"
+  },
+  {
+    "appId": "2610770",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 580.159.04",
+    "kernel": "7.0.12-1-cachyos",
+    "notes": "\u042d\u0442\u043e \u0438\u0433\u0440\u0430 \u043f\u043e\u043d\u0440\u0430\u0432\u0438\u0442\u0441\u044f \u0432\u0441\u0435\u043c! \u041e\u0441\u043e\u0431\u0435\u043d\u043d\u043e, \u043a\u0442\u043e \u0441\u043e\u0441\u043a\u0443\u0447\u0438\u043b\u0441\u044f \u043f\u043e \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u043c RTS, \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e \u043d\u0430 Linux --- \u0437\u0434\u0435\u0441\u044c \u043e\u043d\u0430 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u043a\u0430\u043a \u0447\u0430\u0441\u044b",
+    "os": "CachyOS (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1781732334,
+    "title": "Dust Front RTS",
+    "source": "protondb"
+  }
+]

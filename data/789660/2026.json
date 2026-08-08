@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "789660",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-arch2-1",
+    "notes": "Works right out of the box, no changes necessary",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1769250199,
+    "title": "",
+    "source": "protondb"
+  }
+]

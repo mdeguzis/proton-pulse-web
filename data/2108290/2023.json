@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2108290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1672914620,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2108290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673168910,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2108290",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD SIENNA_CICHLID (DRM 3.40.0, 5.10.0-20-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-20-amd64",
+    "notes": "Zu viel Text",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1674515418,
+    "title": "",
+    "source": "protondb"
+  }
+]

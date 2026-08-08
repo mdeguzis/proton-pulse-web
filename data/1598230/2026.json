@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1598230",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Every time i try to open the game right now it goes into the initial loading screen, stops partway and boots me out. If anyone can figure out a way to get it working on Deck i'd love to know about it",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1771014103,
+    "title": "KILLER INN",
+    "source": "protondb"
+  },
+  {
+    "appId": "1598230",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "Essentially infinite loading screen with computer unusable while \"loading\" forever.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771128177,
+    "title": "KILLER INN",
+    "source": "protondb"
+  },
+  {
+    "appId": "1598230",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.8-2-cachyos",
+    "notes": "If you can stomach the crashes and restarts.  The game is playable.  Should note that sometimes requires multiple attempts to launch.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1771561285,
+    "title": "KILLER INN",
+    "source": "protondb"
+  }
+]

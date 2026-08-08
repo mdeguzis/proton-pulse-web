@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1505010",
+    "cpu": "12th Gen Intel Core i5-1235U",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.3 (git-c3afa2a74f)",
+    "kernel": "6.12.29_1",
+    "notes": "Tested with Proton 7.0-6, 8.0-5, 9.0-4, Experimental, Hotfix, GE 10-3. None of them were able to open the game.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1748203557,
+    "title": "",
+    "source": "protondb"
+  }
+]

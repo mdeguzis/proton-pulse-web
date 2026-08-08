@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2802720",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.59, 6.12.10-76061203-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.3 (git-c3afa2a74f)",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "It hangs Pop_OS on startup, sometimes it gets to the main menu, most of the time not even that.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1746583170,
+    "title": "",
+    "source": "protondb"
+  }
+]

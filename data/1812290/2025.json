@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1812290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1736970712,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1812290",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.2-arch1-1",
+    "notes": "Game works great but some audio is missing",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1745595056,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1812290",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.8-200.fc42.x86_64",
+    "notes": "It's a DOSBox game, it runs, so yeah",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1765378416,
+    "title": "",
+    "source": "protondb"
+  }
+]

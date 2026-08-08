@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1502970",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980M",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-43-generic",
+    "notes": "Runs fine after dxvk.conf workaround file added to the installation directory.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1619103829,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1502970",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.40.0, 5.11.14-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.0-devel (git-db538bde71)",
+    "kernel": "5.11.14-arch1-1",
+    "notes": "Running great",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1619312880,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1502970",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.10.68-1-MANJARO",
+    "notes": "ran perfectly without me needing to do any extra work such as messing with a dxvk.conf file like others mention",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1638844703,
+    "title": "",
+    "source": "protondb"
+  }
+]

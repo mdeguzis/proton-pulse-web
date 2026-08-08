@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1158370",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.5.3-chos1-chimeraos-1)",
+    "gpuDriver": "4.6 Mesa",
+    "kernel": "6.5.3-chos1-chimeraos-1",
+    "notes": "Worksperfectly fine",
+    "os": "ChimeraOS 44 (c3670dd)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704411562,
+    "title": "Aragami 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1158370",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1705181100,
+    "title": "Aragami 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1158370",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.6-arch1-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1731103600,
+    "title": "Aragami 2",
+    "source": "protondb"
+  }
+]

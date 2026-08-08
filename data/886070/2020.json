@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "886070",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 5500 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.6.18-155.current",
+    "notes": "Runs perfectly out of the box. 100% completed with no problems.",
+    "os": "Solus",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1593706398,
+    "title": "",
+    "source": "protondb"
+  }
+]

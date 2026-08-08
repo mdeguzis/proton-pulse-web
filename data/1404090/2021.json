@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1404090",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-22-generic",
+    "notes": "Works great, no Problem running with Proton-6.3-8",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640728516,
+    "title": "",
+    "source": "protondb"
+  }
+]

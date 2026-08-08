@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "589780",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.4.0-80-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1644523519,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "589780",
+    "cpu": "Intel Core i7-4910MQ @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.1 Mesa 22.0.1",
+    "kernel": "5.15.0-25-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04 LTS (64\u00a0bits)",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1650741848,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "589780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works Fine out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663638064,
+    "title": "",
+    "source": "protondb"
+  }
+]

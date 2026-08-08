@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1165990",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-20-generic",
+    "notes": "On startup a single window opens with title, \"The Game has crashed and will close,\" and contents, \"LowLevelFatalError [File:C:\\dfp-kiln-r\\Common\\UE5\\Engine\\Platforms\\WinGDK\\Source\\Runtime\\Core\\Private\\WinGDKPlatformMisc.cpp] [Line: 10] \nGDK runtime is not available\"",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1775845811,
+    "title": "Kiln",
+    "source": "protondb"
+  },
+  {
+    "appId": "1165990",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.11-1-cachyos",
+    "notes": "THE GAME IS NOT YET RELEASED\nI tried downloading and playing the Open Beta for Kiln but every time I attempt to launch I get a \"LowLevelFatalError - GDK runtime is not available\" I don't know enough about tinkering to make many changes. I tried asking Claude AI for help, which led me through a few different protontricks commands that ultimately didn't work.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1775925083,
+    "title": "Kiln",
+    "source": "protondb"
+  },
+  {
+    "appId": "1165990",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.10-2-cachyos",
+    "notes": "Not currently supported by devs https://www.doublefine.com/games/support/known-issues-kiln-release",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1781455384,
+    "title": "Kiln",
+    "source": "protondb"
+  }
+]

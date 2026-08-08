@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2536840",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Playable until the end, although OP and ED movies didn't play at all.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1705470684,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2536840",
+    "cpu": "AMD Ryzen 7 7735U with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 18.1.1, DRM 3.57, 6.8.9-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.8",
+    "kernel": "6.8.9-300.fc40.x86_64",
+    "notes": "Performance is relative to GINKA",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1718834011,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2536840",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "With a Good Controller Layout, GINKA is Phenomenal on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1718834387,
+    "title": "",
+    "source": "protondb"
+  }
+]

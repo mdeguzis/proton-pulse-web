@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2788870",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game run OK, but the control feels clunky on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1714757909,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2788870",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.7-zen1-2-zen)",
+    "gpuDriver": "4.6 Mesa 24.0.6-arch1.2",
+    "kernel": "6.8.7-zen1-2-zen",
+    "notes": "Great game, very cool concept and reminded me a bit of factorio bus management.",
+    "os": "Artix Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1717912162,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2788870",
+    "cpu": "Intel Core i7-10870H @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Great experience out of the box",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720381341,
+    "title": "",
+    "source": "protondb"
+  }
+]

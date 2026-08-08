@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4106390",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.5, DRM 3.64, 6.17.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.8-arch1-1",
+    "notes": "Its Unplayable unfortunatley",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1763910819,
+    "title": "",
+    "source": "protondb"
+  }
+]

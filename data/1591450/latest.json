@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1591450",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.11.0-40-generic",
+    "notes": "Experienced a couple of issues, but they don't seem to be Linux-related and are being worked on. I found the game very enjoyable anyway.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673286666,
+    "title": "",
+    "source": "protondb"
+  }
+]

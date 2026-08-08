@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1330430",
+    "cpu": "Intel Xeon W-2125 @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA Quadro M4000",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-22-generic",
+    "notes": "Runs great with Proton 9.0-4",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777135652,
+    "title": "",
+    "source": "protondb"
+  }
+]

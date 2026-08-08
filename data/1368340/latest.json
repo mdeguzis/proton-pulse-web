@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1368340",
+    "cpu": "13th Gen Intel Core i3-1315U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-U)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Works well through ScummVM, if you don't use that or another wrapper it won't do well",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1770159771,
+    "title": "",
+    "source": "protondb"
+  }
+]

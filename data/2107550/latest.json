@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2107550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.3.2-cachyos1.2",
+    "kernel": "6.12.7-2-cachyos",
+    "notes": "Slight performance issues, but to an expected degree given my hardware",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1740594013,
+    "title": "",
+    "source": "protondb"
+  }
+]

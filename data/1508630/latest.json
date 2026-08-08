@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1508630",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.0-arch1-1",
+    "notes": "Crashing after a short time.",
+    "os": "Archcraft",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1642767311,
+    "title": "",
+    "source": "protondb"
+  }
+]

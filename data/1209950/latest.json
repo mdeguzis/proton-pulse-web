@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1209950",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770568487,
+    "title": "Race Condition",
+    "source": "protondb"
+  }
+]

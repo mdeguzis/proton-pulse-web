@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "285900",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, ACO, DRM 3.64, 6.19.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch2.3",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1773418395,
+    "title": "Gang Beasts",
+    "source": "protondb"
+  },
+  {
+    "appId": "285900",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.54, 6.6.107-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.6.107-1-MANJARO",
+    "notes": "Works great",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1773952361,
+    "title": "Gang Beasts",
+    "source": "protondb"
+  },
+  {
+    "appId": "285900",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1776945064,
+    "title": "Gang Beasts",
+    "source": "protondb"
+  }
+]

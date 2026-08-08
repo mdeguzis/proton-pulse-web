@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1843540",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 19.1.5, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.1 (git-c815d651b8)",
+    "kernel": "6.8.0-51-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773032899,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1843540",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.12.85",
+    "notes": "",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1779059722,
+    "title": "",
+    "source": "protondb"
+  }
+]

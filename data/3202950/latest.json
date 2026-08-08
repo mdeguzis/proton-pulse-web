@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3202950",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.7, DRM 3.63, 6.15.3-gentoo-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 25.2.0",
+    "kernel": "6.15.3-gentoo-gentoo-dist",
+    "notes": "If the controller had worked it would have been a perfect linux experience",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1756323325,
+    "title": "Fresh Tracks",
+    "source": "protondb"
+  }
+]

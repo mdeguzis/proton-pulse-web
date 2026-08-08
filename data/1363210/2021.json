@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1363210",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.10-arch1-1",
+    "notes": "Game runs perfectly out of the box.  Tested with Proton 6.3-8 and 4.2-9.  Flawless in both cases.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1640988262,
+    "title": "",
+    "source": "protondb"
+  }
+]

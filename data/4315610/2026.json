@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4315610",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 20.1.8, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Ran perfectly without any changes, played through the whole game. Made with Godot, but no Linux build at this time.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1773509086,
+    "title": "",
+    "source": "protondb"
+  }
+]

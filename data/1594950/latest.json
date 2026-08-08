@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1594950",
+    "cpu": "AMD Ryzen 9 3900 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.44.0, 5.16.8-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.8-arch1-1",
+    "notes": "Worked out of the box",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1645207711,
+    "title": "Overgrown",
+    "source": "protondb"
+  }
+]

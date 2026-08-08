@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1150890",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "4.19.85-1-lts",
+    "notes": "No erorrs, just doesn't start.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577315468,
+    "title": "",
+    "source": "protondb"
+  }
+]

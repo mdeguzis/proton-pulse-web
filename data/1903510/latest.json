@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1903510",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (polaris10, LLVM 12.0.0, DRM 3.41, 5.13.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-rc1",
+    "kernel": "5.13.0-40-generic",
+    "notes": "It's playable so far despite some missing textures and stutters",
+    "os": "KDE neon User - 5.24",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1663265121,
+    "title": "Technicity: Prologue",
+    "source": "protondb"
+  }
+]

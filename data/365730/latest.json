@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "365730",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (renoir, LLVM 16.0.6, DRM 3.54, 6.6.0-0.rc6.246.vanilla.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.8",
+    "kernel": "6.6.0-0.rc6.246.vanilla.fc38.x86_64",
+    "notes": "It was so good to the point were I was able to use gamepad to control whole game of course it required to enable Steam Input.",
+    "os": "Fedora release 38 (Thirty Eight)",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1698099133,
+    "title": "Gilbert Goodmate and the Mushroom of Phungoria",
+    "source": "protondb"
+  }
+]

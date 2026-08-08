@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2435090",
+    "cpu": "Intel Core i7-10700 @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 19.1.5, DRM 3.59, 6.12.12-203.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.3",
+    "kernel": "6.12.12-203.bazzite.fc41.x86_64",
+    "notes": "Runs great with no issues. Fun game.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1740996792,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2435090",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.11.0-24-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1745056270,
+    "title": "",
+    "source": "protondb"
+  }
+]

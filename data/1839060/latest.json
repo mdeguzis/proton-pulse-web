@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1839060",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.5.0-14-generic",
+    "notes": "X360 controler is not recognized in game",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1704366375,
+    "title": "",
+    "source": "protondb"
+  }
+]

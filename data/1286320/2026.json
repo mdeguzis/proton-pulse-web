@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1286320",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-arch1-1",
+    "notes": "Runs without issues OOTB",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "126 GB",
+    "rating": "gold",
+    "timestamp": 1773606689,
+    "title": "Exoprimal",
+    "source": "protondb"
+  }
+]

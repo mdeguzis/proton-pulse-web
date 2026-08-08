@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2186320",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-21-amd64",
+    "notes": "Works great right out of box",
+    "os": "LMDE 5 (elsie)",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1679206431,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2186320",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Ran well right out the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1689365348,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2186320",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.1.46-gentoo-dist",
+    "notes": "it works perfect",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1700498997,
+    "title": "",
+    "source": "protondb"
+  }
+]

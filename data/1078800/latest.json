@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1078800",
+    "cpu": "AMD A6-3400M APU with Radeon HD Graphics",
+    "duration": "unreported",
+    "gpu": "AMD SUMO",
+    "gpuDriver": "3.1 Mesa 20.3.5",
+    "kernel": "5.11.14-200.fc33.x86_64",
+    "notes": "",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "6.3-2",
+    "ram": "11 GB",
+    "rating": "borked",
+    "timestamp": 1618963911,
+    "title": "",
+    "source": "protondb"
+  }
+]

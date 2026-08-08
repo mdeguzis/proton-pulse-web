@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2336430",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-300.fc43.x86_64",
+    "notes": "Passable on desktop, only issue with mouse.",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1765673722,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "269370",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-42-generic",
+    "notes": "Won't launch through Native or Proton. Tried same hardware on Pop!_OS 19.10 and still failed.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1584891359,
+    "title": "",
+    "source": "protondb"
+  }
+]

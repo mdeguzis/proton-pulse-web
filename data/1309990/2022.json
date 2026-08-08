@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1309990",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 13.0.1, DRM 3.44, 5.13.0-30-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Won't load the demo!",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1645643135,
+    "title": "",
+    "source": "protondb"
+  }
+]

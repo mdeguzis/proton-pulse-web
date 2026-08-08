@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2734270",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.8.0-100-generic",
+    "notes": "Works on Experimental with gamemoderun",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771702156,
+    "title": "Sector Unknown",
+    "source": "protondb"
+  }
+]

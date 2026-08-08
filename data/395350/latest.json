@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "395350",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.6-2-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.6-2-MANJARO",
+    "notes": "Runs out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641694694,
+    "title": "Doors",
+    "source": "protondb"
+  }
+]

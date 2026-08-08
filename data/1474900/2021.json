@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1474900",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.40.0, 5.12.2-153-tkg-bmq, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.12.2-153-tkg-bmq",
+    "notes": "Runs out of the box, even in VR (with Valve Index). Doesn't support knuckles though.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627772441,
+    "title": "",
+    "source": "protondb"
+  }
+]

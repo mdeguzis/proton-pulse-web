@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1388130",
+    "cpu": "AMD Ryzen 3 PRO 5450U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.54, 6.5.0-35-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.8.0-40-generic",
+    "notes": "Runs well like it's running on Windows",
+    "os": "KDE neon 6.1",
+    "protonVersion": "9.0-2",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1724936365,
+    "title": "Religion inc.",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2852700",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.9.3-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.9-manjaro1.1",
+    "kernel": "6.9.3-1-MANJARO",
+    "notes": "Runs fine",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1718220803,
+    "title": "BUS: Bro u Survived",
+    "source": "protondb"
+  }
+]

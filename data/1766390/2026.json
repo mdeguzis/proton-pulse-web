@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1766390",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2) (+NVidia 3060)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA (+nvidia-driver-580-open)",
+    "kernel": "6.17.0-8-generic",
+    "notes": "Startup was weird (just a grey horizontal bar until you click), no audio.",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1771896900,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314660",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.4-1-default",
+    "notes": "Runs but with occasional crashes",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1610324278,
+    "title": "",
+    "source": "protondb"
+  }
+]

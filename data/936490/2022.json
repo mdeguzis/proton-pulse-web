@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936490",
+    "cpu": "Intel Xeon E5-2470 0 @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 550 Ti",
+    "gpuDriver": "NVIDIA 390.154",
+    "kernel": "5.19.2-1-default",
+    "notes": "O jogo n\u00e3o funcionou nem no proton 7.0-4 nativo steam",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1662555734,
+    "title": "Counter Terrorist Agency",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1290220",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.46",
+    "notes": "Technically playable, but menus failing to render makes it practically impossible to do anything except play levels in order",
+    "os": "NixOS 20.03 (Markhor)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593190184,
+    "title": "Elasto Mania Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "1290220",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 418.113",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "Menus are missing (not rendered) once the game has started. Still playable, but a lot of features are practically inaccessible.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1593716632,
+    "title": "Elasto Mania Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "1290220",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Works perfectly out of the box",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1604691628,
+    "title": "Elasto Mania Remastered",
+    "source": "protondb"
+  }
+]

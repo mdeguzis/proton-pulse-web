@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2165620",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.5, DRM 3.49, 6.1.31-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.1.31-gentoo-x86_64",
+    "notes": "It's not an overly demanding game, but still - it runs great!",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1698106669,
+    "title": "Pool Cleaning Simulator",
+    "source": "protondb"
+  }
+]

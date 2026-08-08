@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1866300",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.6-200.fc43.x86_64",
+    "notes": "Game loads and runs flawlessly out of the box. Very occasionaly crashes (first one after about an hour and 40, but happens on Windows too.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776479131,
+    "title": "",
+    "source": "protondb"
+  }
+]

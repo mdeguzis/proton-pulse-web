@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2715810",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.9-200.fc37.x86_64",
+    "notes": "Game simply does not present any UI when launched natively or using Proton-GE 9.11",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1725097589,
+    "title": "AirlineSim",
+    "source": "protondb"
+  }
+]

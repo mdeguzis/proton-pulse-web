@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1252600",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "Doesn't work",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1747411647,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1252600",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-7-generic",
+    "notes": "wanted to play the FFIX event, it no work",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1765478498,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4223390",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.18.1-273-tkg-eevdf",
+    "notes": "WiVRn doesn't work, ALVR and Steam Link work. Gameplay: https://youtu.be/di1fcPIRMP8",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1774191841,
+    "title": "",
+    "source": "protondb"
+  }
+]

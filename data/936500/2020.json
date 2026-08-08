@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "936500",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Only showed splash screen before freezing",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1598645337,
+    "title": "Transport INC",
+    "source": "protondb"
+  },
+  {
+    "appId": "936500",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.12-arch1-1",
+    "notes": "Two splash screen, but no menu.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1599068947,
+    "title": "Transport INC",
+    "source": "protondb"
+  },
+  {
+    "appId": "936500",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1599536666,
+    "title": "Transport INC",
+    "source": "protondb"
+  }
+]

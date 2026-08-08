@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "435410",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.19.9-1-cachyos",
+    "notes": "Both demo and pre-alpha are native, and can be ran out of the box flawlessly.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1774385524,
+    "title": "Fractal Space",
+    "source": "protondb"
+  }
+]

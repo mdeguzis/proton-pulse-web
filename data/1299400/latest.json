@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1299400",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.3",
+    "kernel": "5.18.14-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1674334215,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1299400",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works well, but designed for use with mouse, not controller",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1682513329,
+    "title": "",
+    "source": "protondb"
+  }
+]

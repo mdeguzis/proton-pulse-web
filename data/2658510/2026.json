@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2658510",
+    "cpu": "AMD Ryzen 5 7640HS w/ Radeon 760M Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.19.9-1-cachyos",
+    "notes": "Game runs great out of the box.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1774430293,
+    "title": "",
+    "source": "protondb"
+  }
+]

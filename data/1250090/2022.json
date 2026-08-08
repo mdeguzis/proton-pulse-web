@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1250090",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.35.0, 5.4.0-88-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3 - kisak-mesa PPA",
+    "kernel": "5.4.0-88-generic",
+    "notes": "I tried proton ecperimental, 7 and then 6, but the game booted up to the menu, i could change the settings, but when i press start game, it gets stuck in the loading screen.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "7.0-3",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1655429149,
+    "title": "",
+    "source": "protondb"
+  }
+]

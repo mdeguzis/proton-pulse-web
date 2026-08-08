@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1058650",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.5",
+    "notes": "No change with 6.3-8. EAC prebvents from playing.\nBackground momovies also not played (test video).",
+    "os": "ChimeraOS 28",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1639005932,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1058650",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "The Game launches but you can not join multiplayer",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1639256093,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1058650",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "EAC",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1640039827,
+    "title": "",
+    "source": "protondb"
+  }
+]

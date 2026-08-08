@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3506800",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.2-273-tkg-bmq",
+    "notes": "Works no problem",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1756507781,
+    "title": "Walking Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "3506800",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "Download and play",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1756582587,
+    "title": "Walking Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "3506800",
+    "cpu": "Intel Core i3-8130U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.38+kali-amd64",
+    "notes": "Runs like it should, without tinkering",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1758057259,
+    "title": "Walking Survival",
+    "source": "protondb"
+  }
+]

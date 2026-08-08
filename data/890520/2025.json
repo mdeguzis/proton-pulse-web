@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "890520",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 19.1.4, DRM 3.61, 6.12.48_1)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.12.48_1",
+    "notes": "Very early alpha",
+    "os": "Void Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1760180899,
+    "title": "",
+    "source": "protondb"
+  }
+]

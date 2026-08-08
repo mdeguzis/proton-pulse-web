@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1724190",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1709671614,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1724190",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 16.0.6, DRM 3.54, 6.6.17-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.1-arch10.1",
+    "kernel": "6.6.17-1-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1717457553,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2336980",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 15.0.7, DRM 3.64, 6.17.9-76061709-generic)",
+    "gpuDriver": "4.6 Mesa 25.1.5-1pop0~1756399231~22.04~b84bab8",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "Worked flawlessly OOTB",
+    "os": "Pop!_OS 22.04 LTS\uff0864\u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771557159,
+    "title": "",
+    "source": "protondb"
+  }
+]

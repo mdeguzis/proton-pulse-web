@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1656930",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.2, DRM 3.59, 6.11.0-24-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.11.0-24-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "129 GB",
+    "rating": "silver",
+    "timestamp": 1763332032,
+    "title": "",
+    "source": "protondb"
+  }
+]

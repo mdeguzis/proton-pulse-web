@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2760560",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.57-1-lts",
+    "notes": "Was able to boot up and play no problem",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776546080,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2760560",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, ACO, DRM 3.64, 6.19.12-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.2.0-devel",
+    "kernel": "6.19.12-200.fc43.x86_64",
+    "notes": "Works out of the box, completed a full playthrough, there were some performance issues",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776628221,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2760560",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.57-1-lts",
+    "notes": "Very cool game - But significant bugs made it impossible to finish.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1777664142,
+    "title": "",
+    "source": "protondb"
+  }
+]

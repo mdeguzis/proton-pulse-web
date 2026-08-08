@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "742230",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc A770M (DG2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.25.04.2",
+    "kernel": "6.14.0-33-generic",
+    "notes": "It is plausable that it's a GPU issue as the game seems to not of been updated since 2017-2018, and so perhaps a person with a older GPU and some tinkering skills could get the game to run.",
+    "os": "Ubuntu 25.04",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1759953203,
+    "title": "",
+    "source": "protondb"
+  }
+]

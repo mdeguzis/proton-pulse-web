@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1514930",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 20.1.6, DRM 3.54, 6.6.100-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.6.100-1-MANJARO",
+    "notes": "Still a black screen",
+    "os": "BigCommunity",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1754271432,
+    "title": "",
+    "source": "protondb"
+  }
+]

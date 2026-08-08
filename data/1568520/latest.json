@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1568520",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.13-200.fc35.x86_64",
+    "notes": "Worked out of the box",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1643073953,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1448610",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 21.1.6, DRM 3.64, 6.19.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Works perfectly out of the box. No configuration or tinkering required, just install and play.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1774366970,
+    "title": "",
+    "source": "protondb"
+  }
+]

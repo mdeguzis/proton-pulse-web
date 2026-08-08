@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "440310",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-89-generic",
+    "notes": "The game crashed multiple times, and my Switch Pro Controller wasn't working. It ran very smoothly otherwise.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1636797592,
+    "title": "",
+    "source": "protondb"
+  }
+]

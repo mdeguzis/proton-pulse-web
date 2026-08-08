@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1697700",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.13-zen1-1-zen, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.13-zen1-1-zen",
+    "notes": "As long as y ou use 6.3-8 you wont have any issues and everything works from what i tested",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1647742336,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1697700",
+    "cpu": "11th Gen Intel Core i5-11400 @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.4.0-104-generic",
+    "notes": "You lose some important things because you can't use the Daemon. But you can play a lot of it.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1650244322,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1697700",
+    "cpu": "AMD FX-6300 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-107-generic",
+    "notes": "I recommend virtualbox or a win10 computer for this one, because on linux you can't access about half the content",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1650929006,
+    "title": "",
+    "source": "protondb"
+  }
+]

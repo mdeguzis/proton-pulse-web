@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "818520",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-7626-generic",
+    "notes": "Black screen on start. Cursor appeared while clicking only. Could not proceed.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1590966514,
+    "title": "Builders of Egypt",
+    "source": "protondb"
+  },
+  {
+    "appId": "818520",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD BONAIRE",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-59-generic",
+    "notes": "The cursor appears for few seconds, the screen turns black and the CPU is heavily loaded resulting in 17 fps at 1080 of black screen.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592391297,
+    "title": "Builders of Egypt",
+    "source": "protondb"
+  }
+]

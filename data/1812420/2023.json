@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1812420",
+    "cpu": "Linux",
+    "duration": "underOneHour",
+    "gpu": "Nvidia GPU 99 HDMI/DP",
+    "gpuDriver": "Memory",
+    "kernel": "4.6",
+    "notes": "The game booted and opening graphics and sound began. It seemed to be struggling, lagging very badly before crashing.",
+    "os": "AMD RENOIR (renoir, LLVM 15.0.7, DRM 3.54, 6.5.6-76060506-generic)",
+    "protonVersion": "8.0-4",
+    "ram": "None detected",
+    "rating": "borked",
+    "timestamp": 1702104407,
+    "title": "",
+    "source": "protondb"
+  }
+]

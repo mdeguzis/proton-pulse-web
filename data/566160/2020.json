@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "566160",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.9.0-1-MANJARO",
+    "notes": "Works overall. Takes around 15-20 seconds to launch but then it runs smooth.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1600004154,
+    "title": "",
+    "source": "protondb"
+  }
+]

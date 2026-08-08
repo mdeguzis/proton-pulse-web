@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2954030",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.9-arch1-1",
+    "notes": "Unity splash plays, \"PREPARING\" text fades in and out, and the game stops responding. Tested with Proton Experimental and Proton GE.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1737303482,
+    "title": "",
+    "source": "protondb"
+  }
+]

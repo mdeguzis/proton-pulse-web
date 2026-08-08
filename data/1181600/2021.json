@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1181600",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.14-arch1-1",
+    "notes": "The game doesn't even open.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1609856005,
+    "title": "",
+    "source": "protondb"
+  }
+]

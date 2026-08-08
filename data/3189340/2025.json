@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3189340",
+    "cpu": "13th Gen Intel Core i9-13900KF",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Loaded fine but contolers would not work at all.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1761781527,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3189340",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.1-arch1-2",
+    "notes": "I was able to get this to work with my OG Vive with Index controllers",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766172595,
+    "title": "",
+    "source": "protondb"
+  }
+]

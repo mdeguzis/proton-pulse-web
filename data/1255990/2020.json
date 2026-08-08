@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1255990",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.1",
+    "kernel": "5.5.8-arch1-1",
+    "notes": "Tried out the demo in the steam game festival, and the game worked out of the box. No tinkering needed.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1584796499,
+    "title": "",
+    "source": "protondb"
+  }
+]

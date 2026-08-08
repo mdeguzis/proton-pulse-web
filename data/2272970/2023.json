@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2272970",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.15.0-46-generic",
+    "notes": "Works perfectly fine, as far as i can tell. This game isn't graphically complex, so older versions of proton would probably work fine too.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-2",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1683741319,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2272970",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.15.0-46-generic",
+    "notes": "Works perfectly without tinkering.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1683764665,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2272970",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.15.0-58-generic",
+    "notes": "0 problems, surprised it isn't a native linux game",
+    "os": "Linux Mint 21",
+    "protonVersion": "8.0-2",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1683781559,
+    "title": "",
+    "source": "protondb"
+  }
+]

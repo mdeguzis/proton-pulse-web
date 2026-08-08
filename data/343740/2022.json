@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "343740",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Does not use controllers, uses headset movement instead. Must nod down deeply for Valve Index headset to be recognized for starting game.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1657988890,
+    "title": "InMind VR",
+    "source": "protondb"
+  }
+]

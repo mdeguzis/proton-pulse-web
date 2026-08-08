@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1371720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Incredible experience on Steam Deck, almost like it's the way to be played!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1739763720,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1371720",
+    "cpu": "AMD Ryzen 5 7640U w/ Radeon 760M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 760M (radeonsi, phoenix, LLVM 20.1.6, DRM 3.63, 6.15.4-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.4-200.fc42.x86_64",
+    "notes": "Flawless out of the box, even with an Xbox controller.",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "56 GB",
+    "rating": "gold",
+    "timestamp": 1752180846,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1371720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1759019550,
+    "title": "",
+    "source": "protondb"
+  }
+]

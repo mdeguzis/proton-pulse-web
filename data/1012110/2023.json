@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1012110",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.1-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-5",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1672665955,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1012110",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.2-arch1-1",
+    "notes": "you crash after playing for a few minutes",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1673365540,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1012110",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.15.7-201.fsync.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.1",
+    "kernel": "5.15.7-201.fsync.fc35.x86_64",
+    "notes": "",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1673554527,
+    "title": "",
+    "source": "protondb"
+  }
+]

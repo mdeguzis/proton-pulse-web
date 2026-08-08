@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1668340",
+    "cpu": "AMD Ryzen 5 7600X3D 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.3)",
+    "gpuDriver": "4.6 Mesa 25.0.4",
+    "kernel": "6.14.3",
+    "notes": "Developers have shut off EAC support for Linux systems.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1774727732,
+    "title": "Eternal Tombs",
+    "source": "protondb"
+  }
+]

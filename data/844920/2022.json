@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "844920",
+    "cpu": "Intel Core i3-10100 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.13.0-28-generic",
+    "notes": "Works good out of the box.",
+    "os": "Ubuntu 21.10 (x64)",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1645321689,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1090390",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-42-generic",
+    "notes": "Game runs perfectly in Lutris out-of-the-box.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-2",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1585258198,
+    "title": "",
+    "source": "protondb"
+  }
+]

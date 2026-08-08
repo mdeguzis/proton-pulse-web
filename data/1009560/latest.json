@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1009560",
+    "cpu": "AMD Ryzen 3 7330U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.57, 6.8.0-59-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.5 (git-a89e404408)",
+    "kernel": "6.8.0-59-generic",
+    "notes": "It worked well for me, as I run it on Linux/Zorin OS 17.3 on a AMD Ryzen3, the iGPU handled it well, V-sync was disabled, no issues",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1749062695,
+    "title": "",
+    "source": "protondb"
+  }
+]

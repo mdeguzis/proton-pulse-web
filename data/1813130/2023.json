@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1813130",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5-1-MANJARO",
+    "notes": "Everything worked out of the box with proton 8.0-3",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1695868630,
+    "title": "",
+    "source": "protondb"
+  }
+]

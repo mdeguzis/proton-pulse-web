@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "378610",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.42.0, 5.11.0-38-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.0-devel",
+    "kernel": "5.11.0-38-generic",
+    "notes": "Native version crashes randomly, proton version (6.3-7 and/or 6.20-GE-1) crashes when loading the level after Titan Rock.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1635859441,
+    "title": "Valley",
+    "source": "protondb"
+  }
+]

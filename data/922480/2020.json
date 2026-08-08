@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "922480",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 850M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-45-generic",
+    "notes": "No inicia se queda en el 100% y se bloquea",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1587209011,
+    "title": "",
+    "source": "protondb"
+  }
+]

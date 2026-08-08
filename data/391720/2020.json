@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "391720",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.6",
+    "kernel": "5.6.11-1-MANJARO",
+    "notes": "Native version was sometimes not rendering some objects. It also had micro stutters. Proton version has none of those issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589401010,
+    "title": "Layers of Fear (2016)",
+    "source": "protondb"
+  }
+]

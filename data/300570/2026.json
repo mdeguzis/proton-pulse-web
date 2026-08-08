@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "300570",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Native is broken. Works perfectly upon swapping to Proton Experimental",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1774316597,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "650350",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-22-generic",
+    "notes": "Doesn't run good on Linux. But it also doesn't run good on Windows either. Always Crashes.",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640640363,
+    "title": "",
+    "source": "protondb"
+  }
+]

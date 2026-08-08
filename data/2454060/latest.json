@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2454060",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.5.5-1-MANJARO",
+    "notes": "doesn't work at all",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1698930941,
+    "title": "",
+    "source": "protondb"
+  }
+]

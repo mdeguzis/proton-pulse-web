@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "337410",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.15.21-xanmod1-1",
+    "notes": "\u041f\u0440\u043e\u0441\u0442\u043e \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u044e \u0438 \u043d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043f\u0440\u043e\u0438\u0441\u0445\u043e\u0434\u0438\u0442.",
+    "os": "Arch Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1657059088,
+    "title": "",
+    "source": "protondb"
+  }
+]

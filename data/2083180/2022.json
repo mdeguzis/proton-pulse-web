@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2083180",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 14.0.5, DRM 3.48, 6.0.5-201.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.2.2",
+    "kernel": "6.0.5-201.fsync.fc36.x86_64",
+    "notes": "Runs great! Saw this game on Reddit and had to give it a try. Running via Steam Play and using Proton Experimental, no issues to report yet!",
+    "os": "Nobara Linux 36 (Thirty Six)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1667517379,
+    "title": "",
+    "source": "protondb"
+  }
+]

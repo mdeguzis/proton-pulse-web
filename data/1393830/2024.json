@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1393830",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.78-1-MANJARO",
+    "notes": "The beta is broken on Linux, at least with default Proton.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1714181576,
+    "title": "",
+    "source": "protondb"
+  }
+]

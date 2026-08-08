@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1165530",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX110",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.8-163-tkg-pds",
+    "notes": "The game doesn't even try to start",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-4",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1622732779,
+    "title": "",
+    "source": "protondb"
+  }
+]

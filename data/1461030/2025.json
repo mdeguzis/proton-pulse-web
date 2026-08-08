@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1461030",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Actualmente he probado con Proton Hotfix, Proton Experimenta, Proton 9.0-4, Proton 8.0-5 y Proton 7.0-6. No funciona con ninguno, al menos sin hacer ninguna modificaci\u00f3n extra",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1738276418,
+    "title": "Carnivores: Dinosaur Hunt",
+    "source": "protondb"
+  },
+  {
+    "appId": "1461030",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, navi32, LLVM 15.0.7, DRM 3.59, 6.11.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Es jugable pero no va 100% bien, habria que solucionar un par de detalles pero puedes jugar si dejas cargar.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1741219462,
+    "title": "Carnivores: Dinosaur Hunt",
+    "source": "protondb"
+  }
+]

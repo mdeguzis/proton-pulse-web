@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "796330",
+    "cpu": "Intel Core i7-8700K @ 4.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 455.23.04",
+    "kernel": "5.8.14-towo.1-siduction-amd64",
+    "notes": "Runs fine but is very blurry",
+    "os": "Siduction (Debian sid) KDE 5.17.5",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB @3600 CL16",
+    "rating": "bronze",
+    "timestamp": 1602618489,
+    "title": "Widower's Sky",
+    "source": "protondb"
+  }
+]

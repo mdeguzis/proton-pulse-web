@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1323060",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.12-210.fsync.fc40.x86_64",
+    "notes": "Wild Planet Demo crashes as soon as you start a game after creating a character.",
+    "os": "Bazzite 40 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1729490037,
+    "title": "",
+    "source": "protondb"
+  }
+]

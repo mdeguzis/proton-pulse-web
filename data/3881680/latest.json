@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3881680",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.12.44-3-MANJARO",
+    "notes": "Worked out of the box with minor stability issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1761072296,
+    "title": "",
+    "source": "protondb"
+  }
+]

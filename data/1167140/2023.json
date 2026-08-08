@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1167140",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX350",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.1-zen2-1-zen",
+    "notes": "Tudo funcionou diretamente, sem qualquer necessidade de ajuste adicional. Minha GPU \u00e9 b\u00e1sica, mas o desempenho foi satisfat\u00f3rio.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1684030425,
+    "title": "",
+    "source": "protondb"
+  }
+]

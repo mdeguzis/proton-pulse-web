@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2650840",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Tinkered a bit with it, no dice. Switching to Proton Experimmental got the game to actually open to a black screen, but beyond that, nothing I tried gave it life. No video, no sound, have to close it via the Steam library page. Borked on linux.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1755535166,
+    "title": "",
+    "source": "protondb"
+  }
+]

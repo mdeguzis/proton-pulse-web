@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3215560",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.8-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-273-tkg-eevdf",
+    "notes": "Works out of the box on the Meta Quest 3. Gameplay here: https://www.youtube.com/watch?v=M8VV8wwy98I",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1762675654,
+    "title": "",
+    "source": "protondb"
+  }
+]

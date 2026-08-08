@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1097200",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.8-arch1-1",
+    "notes": "almost perfect work out of box",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1736361060,
+    "title": "",
+    "source": "protondb"
+  }
+]

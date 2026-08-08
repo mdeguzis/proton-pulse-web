@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1320550",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-27-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-27-generic",
+    "notes": "The game runs very well overall",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1652006531,
+    "title": "",
+    "source": "protondb"
+  }
+]

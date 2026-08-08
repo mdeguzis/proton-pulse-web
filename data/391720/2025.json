@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "391720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Another creepy, dark, puzzle game to give you fits and nightmares",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1736659630,
+    "title": "Layers of Fear (2016)",
+    "source": "protondb"
+  },
+  {
+    "appId": "391720",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.13.9-103.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "%$s1 MB",
+    "rating": "platinum",
+    "timestamp": 1746562646,
+    "title": "Layers of Fear (2016)",
+    "source": "protondb"
+  },
+  {
+    "appId": "391720",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.3-cachyos1.3",
+    "kernel": "6.16.8-2-cachyos",
+    "notes": "Worked great OOTB with Cachy Proton",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1758928917,
+    "title": "Layers of Fear (2016)",
+    "source": "protondb"
+  }
+]

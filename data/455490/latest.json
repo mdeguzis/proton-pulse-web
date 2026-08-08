@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "455490",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "X.Org Radeon RX550/550 (POLARIS12, DRM 3.38.0, 5.8.0-50-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-50-generic",
+    "notes": "The main menu loads on 6.3-2 and experimental, but then it crashes. All other versions refuse to load.",
+    "os": "Kubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1620048301,
+    "title": "",
+    "source": "protondb"
+  }
+]

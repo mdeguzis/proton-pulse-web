@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2017080",
+    "cpu": "Intel Core i9-10885H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "5.15.0-105-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1714634040,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2017080",
+    "cpu": "12th Gen Intel Core i9-12900KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.5.0-41-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1719694534,
+    "title": "",
+    "source": "protondb"
+  }
+]

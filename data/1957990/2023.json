@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1957990",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Ran perfectly.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1676084945,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1957990",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.23-1-MANJARO",
+    "notes": "Works out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1681584038,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1957990",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.6-zen2-1-zen",
+    "notes": "works perfect out of the box",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1696949866,
+    "title": "",
+    "source": "protondb"
+  }
+]

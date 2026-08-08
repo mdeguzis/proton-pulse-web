@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1944780",
+    "cpu": "Intel Xeon E5-1650 v4 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M4000",
+    "gpuDriver": "NVIDIA 470.182.03",
+    "kernel": "5.19.0-46-generic",
+    "notes": "It shows that error in a popup before anything else appears, then exits.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1688190034,
+    "title": "",
+    "source": "protondb"
+  }
+]

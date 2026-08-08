@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2067470",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.9.10-x64v3-xanmod1",
+    "notes": "The Linux native port is broken. Use Proton instead. V-sync is absent thus launch option required.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1721878905,
+    "title": "",
+    "source": "protondb"
+  }
+]

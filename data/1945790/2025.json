@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1945790",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.6.57-gentoo-dist",
+    "notes": "Tested different proton versions.",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1759581415,
+    "title": "",
+    "source": "protondb"
+  }
+]

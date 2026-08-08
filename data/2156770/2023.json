@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2156770",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5-1-MANJARO",
+    "notes": "I tried all verions of Proton, verifying files, and reinstalling. I was able to get it to launch to the splash screen, but it froze and crashed right away.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1697979154,
+    "title": "Ghost Signal: A Stellaris Game",
+    "source": "protondb"
+  }
+]

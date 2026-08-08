@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2455140",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\uc544\ubb34\ub7f0 \uc124\uc815\uc5c6\uc774 \uc798\ub429\ub2c8\ub2e4. \ub2e4\ub9cc \uc804\ud22c\uc911\uc77c\ub54c\ub294 30~45FPS\uc73c\ub85c \uc791\ub3d9\ud569\ub2c8\ub2e4.\nIt works fine without any settings. However, during combat, it operates at 30 to 45 FPS.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1721744269,
+    "title": "",
+    "source": "protondb"
+  }
+]

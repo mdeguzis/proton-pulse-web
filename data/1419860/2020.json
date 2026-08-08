@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1419860",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro M2000M",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-53-generic",
+    "notes": "No issues with Proton 5.0-10 (didn't work with the currently newest version).",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1606169418,
+    "title": "Tukoni: Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "1419860",
+    "cpu": "Intel Xeon           X5450  @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.4.0-54-generic",
+    "notes": "140",
+    "os": "Ubuntu 18.04.5 LTS (64-\u0440\u043e\u0437\u0440\u044f\u0434\u043d\u0430)",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1606572987,
+    "title": "Tukoni: Prologue",
+    "source": "protondb"
+  },
+  {
+    "appId": "1419860",
+    "cpu": "Intel Core i7-10710U @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-62-generic",
+    "notes": "Runs out of the box.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1606850061,
+    "title": "Tukoni: Prologue",
+    "source": "protondb"
+  }
+]

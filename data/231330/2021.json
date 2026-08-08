@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "231330",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "HD7790 1gb AMD BONAIRE (DRM 2.50.0, 5.10.53-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.5 Mesa 21.1.5",
+    "kernel": "5.10.53-1-MANJARO",
+    "notes": "Game has native linux version, but it wont launched for me so i had to use proton 4.2-9 that was the only version worked",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628164125,
+    "title": "",
+    "source": "protondb"
+  }
+]

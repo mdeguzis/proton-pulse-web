@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3308190",
+    "cpu": "Intel Core i5-4590T @ 2.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.4-arch1-1",
+    "notes": "Says it is running for around a minute and then closes with no message",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1741646467,
+    "title": "Ringer",
+    "source": "protondb"
+  },
+  {
+    "appId": "3308190",
+    "cpu": "Intel Core i5-4590T @ 2.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.4-arch1-1",
+    "notes": "When I select launch it shows as running then after around a minute it stops showing as playing",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1741647525,
+    "title": "Ringer",
+    "source": "protondb"
+  }
+]

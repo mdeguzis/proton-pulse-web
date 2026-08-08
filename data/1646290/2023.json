@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1646290",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.2.15-300.fc38.x86_64",
+    "notes": "Completely Borked.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1687817228,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1646290",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.2.15-300.fc38.x86_64",
+    "notes": "Cant Do Anything asides form launch the game and stare at it, no keys work and rebinding them seems to do nothing",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1687817432,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1646290",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.2.15-300.fc38.x86_64",
+    "notes": "This Isnt Proton Specific (as seen for users here : https://steamcommunity.com/app/1646290/discussions/0/3805026824430992418/ ) but you need to set your ship name as 1 and captain name as 2 or any controls aside from the esc button dont work. neither do controller or remapping the keys. \nAside from that, there seems to be 0 compatabilty problems with proton.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1687818032,
+    "title": "",
+    "source": "protondb"
+  }
+]

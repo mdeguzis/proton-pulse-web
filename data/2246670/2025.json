@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2246670",
+    "cpu": "Intel Core i5-4460 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-34-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1761904390,
+    "title": "Tales of Xillia Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "2246670",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.63, 6.15.8-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.0",
+    "kernel": "6.15.8-200.nobara.fc42.x86_64",
+    "notes": "The game currently has several visual bugs and broken settings (VSync and Anti-Aliasing both do nothing)",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1762380668,
+    "title": "Tales of Xillia Remastered",
+    "source": "protondb"
+  },
+  {
+    "appId": "2246670",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.6-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.6-103.bazzite.fc41.x86_64",
+    "notes": "\u0418\u0433\u0440\u0430 \u043f\u0440\u043e\u0441\u0442\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442. \u0418 \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0445\u043e\u0440\u043e\u0448\u043e",
+    "os": "Bazzite 41 (FROM Fedora Kinoite) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1762704692,
+    "title": "Tales of Xillia Remastered",
+    "source": "protondb"
+  }
+]

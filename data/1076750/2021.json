@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1076750",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.42.01",
+    "kernel": "5.10.49-1-MANJARO",
+    "notes": "Running just fine with proton-6.3-5",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626451806,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1076750",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 470.42.01",
+    "kernel": "5.12.16-1-MANJARO",
+    "notes": "the game is good, except the GPU is hot",
+    "os": "Manjaro Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "6.3-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1626570878,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1076750",
+    "cpu": "Intel Core i7-8665U @ 1.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "3.0 Mesa 21.1.2 - kisak-mesa PPA",
+    "kernel": "5.0.0-23-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1628516102,
+    "title": "",
+    "source": "protondb"
+  }
+]

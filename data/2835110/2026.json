@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2835110",
+    "cpu": "AMD Ryzen 7 5800XT 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "It just works",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768314234,
+    "title": "",
+    "source": "protondb"
+  }
+]

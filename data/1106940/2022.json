@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1106940",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R9 200 (HAWAII, DRM 3.42.0, 5.15.21-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.21-1-MANJARO",
+    "notes": "Some window mode issues under Wayland",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1645486550,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2698780",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.12.73+deb13-amd64",
+    "notes": "It can be improved, even if it's not the kind of game you'd expect to see running on Linux.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771815530,
+    "title": "",
+    "source": "protondb"
+  }
+]

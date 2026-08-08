@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3696410",
+    "cpu": "AMD Ryzen 5 7500F 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.7, DRM 3.64, 6.17.12-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.1",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "Plays perfect",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766796014,
+    "title": "",
+    "source": "protondb"
+  }
+]

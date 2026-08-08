@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1284080",
+    "cpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx (raven2, LLVM 15.0.6, DRM 3.42, 5.15.0-71-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.15.0-71-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "platinum",
+    "timestamp": 1744977323,
+    "title": "",
+    "source": "protondb"
+  }
+]

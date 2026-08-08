@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1803190",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.2-2-MANJARO",
+    "notes": "Crashes when loading into level",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639962783,
+    "title": "",
+    "source": "protondb"
+  }
+]

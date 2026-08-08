@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2931680",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 18.1.1, DRM 3.57, 6.8.10-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel",
+    "kernel": "6.8.10-300.fc40.x86_64",
+    "notes": "Game works but has some bugs. May need launch option to fix graphical glitches.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1716754211,
+    "title": "",
+    "source": "protondb"
+  }
+]

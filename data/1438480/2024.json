@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1438480",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.2-arch2-1)",
+    "gpuDriver": "4.6 Mesa 24.0.4-arch1.2",
+    "kernel": "6.8.2-arch2-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1712743750,
+    "title": "",
+    "source": "protondb"
+  }
+]

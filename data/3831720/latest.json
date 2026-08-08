@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3831720",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.5-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1778797634,
+    "title": "",
+    "source": "protondb"
+  }
+]

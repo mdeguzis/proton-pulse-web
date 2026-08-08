@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1169100",
+    "cpu": "Intel Xeon           W3530  @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "ATI Technologies Inc. ATI FirePro V(FireGL V) Adapter",
+    "gpuDriver": "4.6.13572 Compatibility Profile Context FireGL",
+    "kernel": "5.3.9-050309-generic",
+    "notes": "Worked with the latest proton experimental out of the box.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "6.3-8",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1644039291,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1169100",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.0, DRM 3.46, 5.18.15-051815-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0-rc1",
+    "kernel": "5.18.15-051815-generic",
+    "notes": "Excellent game with only a strange full-screen bug that won't happen when you don't touch the setting or reboot after it gets botched.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1660062935,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1169100",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "severalHours",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.42.0, 5.15.0-53-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-53-generic",
+    "notes": "Works great. No problems",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1670168018,
+    "title": "",
+    "source": "protondb"
+  }
+]

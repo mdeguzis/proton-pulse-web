@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1920960",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, ACO, DRM 3.64, 7.0.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch1.1",
+    "kernel": "7.0.5-arch1-1",
+    "notes": "Windows only sadly",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1778824704,
+    "title": "VPet-Simulator",
+    "source": "protondb"
+  }
+]

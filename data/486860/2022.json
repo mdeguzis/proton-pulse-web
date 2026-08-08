@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "486860",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "Mise \u00e0 part un probl\u00e8me avec le clic droit de la souris si vous avez un second \u00e9cran le jeu fonctionne tr\u00e8s correctement.",
+    "os": "Pop!_OS 22.04 LTS (64\u00a0bits)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1665304073,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3672600",
+    "cpu": "AMD Ryzen 5 3500X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 570.169",
+    "kernel": "6.14.0-28-generic",
+    "notes": "Jogo crashou e abriu uma janela de fatal erro!",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1762885058,
+    "title": "",
+    "source": "protondb"
+  }
+]

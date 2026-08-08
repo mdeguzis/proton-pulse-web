@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1772530",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.7-2-cachyos",
+    "notes": "Everything works perfectly",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1752967409,
+    "title": "",
+    "source": "protondb"
+  }
+]

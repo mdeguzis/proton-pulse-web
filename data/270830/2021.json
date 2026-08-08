@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "270830",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.7-arch1-1",
+    "notes": "After click on \"play\" nothing happens.",
+    "os": "EndeavourOS Linux (64\u00a0bits)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1616346531,
+    "title": "",
+    "source": "protondb"
+  }
+]

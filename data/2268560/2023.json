@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2268560",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-16-amd64",
+    "notes": "Works perfect :)\nTested with Proton Experimental and ProtonGE8-25",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1703957445,
+    "title": "",
+    "source": "protondb"
+  }
+]

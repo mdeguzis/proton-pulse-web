@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2960250",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-59-generic",
+    "notes": "Quando tenta abrir o jogo, s\u00f3 aparece uma telinha de fatal error. Sendo que eu testei do proton 8 at\u00e9 o hofix",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1746209522,
+    "title": "",
+    "source": "protondb"
+  }
+]

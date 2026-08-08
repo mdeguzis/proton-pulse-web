@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "675610",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "The game plays fine in fullscreen, though I've only been playing for an hour.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1735537608,
+    "title": "Memories Off",
+    "source": "protondb"
+  }
+]

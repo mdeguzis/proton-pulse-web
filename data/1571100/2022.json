@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1571100",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.3-arch1-1",
+    "notes": "Initial menu loads, the demo not.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1655209804,
+    "title": "",
+    "source": "protondb"
+  }
+]

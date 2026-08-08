@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2392520",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6400 (radeonsi, navi24, LLVM 16.0.6, DRM 3.61, 6.13.6-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch.3",
+    "kernel": "6.13.6-1",
+    "notes": "It works well but very unpredictable crashing that could happen at any time because of how the game is made.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1741743240,
+    "title": "",
+    "source": "protondb"
+  }
+]

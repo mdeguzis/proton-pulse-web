@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1355650",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.52, 6.3.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.5-arch1-1",
+    "notes": "Works out of the box.",
+    "os": "EndeavourOS Linux (64\u00a0bits)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686093475,
+    "title": "",
+    "source": "protondb"
+  }
+]

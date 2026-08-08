@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1142830",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.11.15-zen1-2-zen",
+    "notes": "",
+    "os": "Artix Linux",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "bronze",
+    "timestamp": 1619109388,
+    "title": "9-nine-:Episode 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "1142830",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R5 M330 on AMDGPU",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.12.1-zen2-1-zen",
+    "notes": "Kirikiri is shit",
+    "os": "Artix Linux",
+    "protonVersion": "6.3-3",
+    "ram": "8 GB",
+    "rating": "bronze",
+    "timestamp": 1620837840,
+    "title": "9-nine-:Episode 3",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2918930",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.10-200.fc43.x86_64",
+    "notes": "native linux, run perfectly with some issue",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "bronze",
+    "timestamp": 1771741561,
+    "title": "",
+    "source": "protondb"
+  }
+]

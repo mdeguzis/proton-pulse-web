@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3681810",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.6, DRM 3.59, 6.13.0-pf5)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.13.0-pf5",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1768038248,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3681810",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 6.18.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.18.4-arch1-1",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1768174742,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3681810",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "Works fine",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777707926,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1368820",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.38.0, 5.8.0-48-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.8.0-48-generic",
+    "notes": "The game installs and launches just fine, but it stutters heavily whenever i try and move the camera around",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1618162745,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1368820",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1633549744,
+    "title": "",
+    "source": "protondb"
+  }
+]

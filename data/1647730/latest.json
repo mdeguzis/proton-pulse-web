@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1647730",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 560.28.03",
+    "kernel": "5.14.0-427.28.1.el9_4.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777685923,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3367520",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.19.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch1.1",
+    "kernel": "6.19.10-arch1-1",
+    "notes": "The mouse Problems means frequent restarts or not beeing able to play. This is the only game I noticed it on.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1775216058,
+    "title": "",
+    "source": "protondb"
+  }
+]

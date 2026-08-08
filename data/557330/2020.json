@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "557330",
+    "cpu": "Intel Core i7-6500U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.0.0-31-generic",
+    "notes": "Low FPS, interface problems, and soft-lock on game start",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1593301626,
+    "title": "",
+    "source": "protondb"
+  }
+]

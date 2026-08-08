@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1656820",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, ACO, DRM 3.64, 6.17.7-ba28.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "Workarounds needs to be applied once and JamesDSP can make some troubles. Besides that, everything works flawlessly.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1774390971,
+    "title": "",
+    "source": "protondb"
+  }
+]

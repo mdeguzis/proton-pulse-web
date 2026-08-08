@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1100160",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.7, DRM 3.59, 6.13.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.1-arch1-1",
+    "notes": "Works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1763321732,
+    "title": "",
+    "source": "protondb"
+  }
+]

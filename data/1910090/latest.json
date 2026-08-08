@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1910090",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.16.9-200.nobara.fc42.x86_64",
+    "notes": "Same issue with Proton-GE Latest, Proton 9.0-4, Proton 10.02 (beta), Proton Hotfix, and TKG-experimental.bleeding.edge.10.0.249778.20251002",
+    "os": "Nobara Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1759985927,
+    "title": "",
+    "source": "protondb"
+  }
+]

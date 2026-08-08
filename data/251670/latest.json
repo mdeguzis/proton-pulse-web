@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "251670",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.13.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.6-arch1-1",
+    "notes": "The New Modern Implimentation of the Game Runs Native on Linux, Ignore Reviews From Years Ago",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1753019299,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "251670",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great with only one control fix",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1755726190,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "251670",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 20.1.2, DRM 3.61, 6.14.0-34-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-34-generic",
+    "notes": "",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1762261062,
+    "title": "",
+    "source": "protondb"
+  }
+]

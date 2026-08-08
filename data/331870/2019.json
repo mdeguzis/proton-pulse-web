@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "331870",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.3.0-19-generic",
+    "notes": "AER Native doesn't work, but runs in Proton flawlessly",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-8",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1573737583,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "331870",
+    "cpu": "AMD Ryzen 7 1700x Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "unkown",
+    "notes": "Native opens a black screen. Proton 4.11 plays it perfectly",
+    "os": "GamerOs Update 7",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1573873840,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "331870",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.2",
+    "kernel": "5.2.21-1-MANJARO",
+    "notes": "Runs great under Proton 4.11.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575394036,
+    "title": "",
+    "source": "protondb"
+  }
+]

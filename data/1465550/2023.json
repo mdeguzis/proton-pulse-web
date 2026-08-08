@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1465550",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (gfx1100, LLVM 15.0.7, DRM 3.52, 6.3.7-200.fsync.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.0",
+    "kernel": "6.3.7-200.fsync.fc37.x86_64",
+    "notes": "Works out of the box steam proton default. No tinkering.",
+    "os": "Nobara Linux 37 (Thirty Seven)",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1687802321,
+    "title": "One Lonely Outpost",
+    "source": "protondb"
+  },
+  {
+    "appId": "1465550",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.4.0-48-generic",
+    "notes": "",
+    "os": "Linux Mint 20",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1687818113,
+    "title": "One Lonely Outpost",
+    "source": "protondb"
+  },
+  {
+    "appId": "1465550",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.7, DRM 3.49, 6.2.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.2.6-arch1-1",
+    "notes": "Works flawlessely out of the box on proton experimental",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1687940812,
+    "title": "One Lonely Outpost",
+    "source": "protondb"
+  }
+]

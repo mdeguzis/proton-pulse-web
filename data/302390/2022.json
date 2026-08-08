@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "302390",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-109-generic",
+    "notes": "Basically unplayable because of mouse issues",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1664569359,
+    "title": "",
+    "source": "protondb"
+  }
+]

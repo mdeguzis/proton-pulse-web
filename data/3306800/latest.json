@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3306800",
+    "cpu": "13th Gen Intel Core i5-13420H",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2050",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.16.0-7-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1755340898,
+    "title": "FREEFLOW",
+    "source": "protondb"
+  }
+]

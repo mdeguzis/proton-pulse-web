@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "451020",
+    "cpu": "Intel Core i9-14900KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "Forced Windows Version",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1777053503,
+    "title": "",
+    "source": "protondb"
+  }
+]

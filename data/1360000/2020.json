@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1360000",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Funktioniert Out of the Box, keine Anpassungen n\u00f6tig",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1597872449,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1360000",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.6.13-300.fc32.x86_64",
+    "notes": "Works out of the box.",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598006313,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1360000",
+    "cpu": "AMD A12-9800 RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-62-generic",
+    "notes": "Works excellently right out of the box.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600568561,
+    "title": "",
+    "source": "protondb"
+  }
+]

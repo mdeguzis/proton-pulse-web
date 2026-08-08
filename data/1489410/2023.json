@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1489410",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.8-arch1-1",
+    "notes": "Works well with default settings. No issues with controller recognition either.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1675111432,
+    "title": "",
+    "source": "protondb"
+  }
+]

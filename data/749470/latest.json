@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "749470",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-44-generic",
+    "notes": "Use the \"native Linux\" installation. Running under any Proton variant did not deliver good results.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1673114000,
+    "title": "",
+    "source": "protondb"
+  }
+]

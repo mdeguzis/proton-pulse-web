@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1460050",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.14-arch1-1",
+    "notes": "It opens just with a black screen",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616547560,
+    "title": "Adventure Bit",
+    "source": "protondb"
+  }
+]

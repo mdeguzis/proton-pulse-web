@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "329970",
+    "cpu": "AMD Ryzen 5 7640U w/ Radeon 760M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 16.0.6, DRM 3.54, 6.6.20-1-lts)",
+    "gpuDriver": "4.6 Mesa 24.0.2-arch1.1",
+    "kernel": "6.6.20-1-lts",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "36 GB",
+    "rating": "platinum",
+    "timestamp": 1709635624,
+    "title": "",
+    "source": "protondb"
+  }
+]

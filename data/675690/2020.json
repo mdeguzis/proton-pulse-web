@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "675690",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.9.3-1-MANJARO",
+    "notes": "Won't start up",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-10",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1605207359,
+    "title": "Tribal Wars",
+    "source": "protondb"
+  }
+]

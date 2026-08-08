@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2688680",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 15.0.7, DRM 3.42, 5.15.0-119-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "5.15.0-119-generic",
+    "notes": "Works Perfectly",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1751557887,
+    "title": "",
+    "source": "protondb"
+  }
+]

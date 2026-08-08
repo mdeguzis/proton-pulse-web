@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1122690",
+    "cpu": "Intel Xeon E5-1620 0 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.18.0-arch1-1",
+    "notes": "This runs just fine with proton under Linux,  no issues at all.",
+    "os": "ArcoLinux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1653857296,
+    "title": "",
+    "source": "protondb"
+  }
+]

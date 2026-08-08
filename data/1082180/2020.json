@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1082180",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.31-1-MANJARO",
+    "notes": "It was basically unplayable for me. Apart from very low FPS even on low settings, the game crashes after a few minutes ingame.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1587198422,
+    "title": "TT Isle of Man: Ride on the Edge 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1082180",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-456e810 2020-06-10 focal-oibaf-ppa)",
+    "kernel": "5.4.0-37-generic",
+    "notes": "Not working",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592094162,
+    "title": "TT Isle of Man: Ride on the Edge 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1082180",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.2.0 - kisak-mesa PPA",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Very low framerate.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1601558151,
+    "title": "TT Isle of Man: Ride on the Edge 2",
+    "source": "protondb"
+  }
+]

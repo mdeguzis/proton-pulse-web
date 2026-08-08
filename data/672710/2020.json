@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "672710",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD TAHITI",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Game lags right after menu",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-11",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1577860470,
+    "title": "Traffic Giant",
+    "source": "protondb"
+  }
+]

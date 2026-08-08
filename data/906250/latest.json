@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "906250",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.0-1-MANJARO",
+    "notes": "The game works fine, windowed mode is off upon launch on KDE Plasma, putting the window in fullscreen mode then back to normal mode fixes it",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1734326828,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1148760",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.5-201.fsync.fc39.x86_64",
+    "notes": "Solid!",
+    "os": "Fedora release 39 (Thirty Nine)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1713744186,
+    "title": "I Was a Teenage Exocolonist",
+    "source": "protondb"
+  },
+  {
+    "appId": "1148760",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.5-arch1.1",
+    "kernel": "6.8.7-arch1-1",
+    "notes": "No issues",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1715605430,
+    "title": "I Was a Teenage Exocolonist",
+    "source": "protondb"
+  },
+  {
+    "appId": "1148760",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD RENOIR (renoir, LLVM 14.0.0, DRM 3.47, 5.19.0-76051900-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1726014551,
+    "title": "I Was a Teenage Exocolonist",
+    "source": "protondb"
+  }
+]

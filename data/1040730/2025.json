@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1040730",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 535.216.01",
+    "kernel": "6.1.0-34-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1746728741,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1040730",
+    "cpu": "13th Gen Intel Core i5-13500",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 525.105.17",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1750857630,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1040730",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "I would say it is definetly playable, most likely with tinkering there is also fixes for the problems I stated.",
+    "os": "Pop!_OS",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1755271971,
+    "title": "",
+    "source": "protondb"
+  }
+]

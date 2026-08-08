@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1139890",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.5",
+    "kernel": "6.11.5-300.fc41.x86_64",
+    "notes": "Natively supported, runs normally.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1732792001,
+    "title": "",
+    "source": "protondb"
+  }
+]

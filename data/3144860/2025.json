@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3144860",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 21.1.6, DRM 3.64, 6.18.2-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-3-cachyos",
+    "notes": "90 fps with medium settings and balanced upscaling.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1766779458,
+    "title": "WILL: Follow The Light",
+    "source": "protondb"
+  }
+]

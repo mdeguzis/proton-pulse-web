@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "448850",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "great game, runs smooth on deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1709071653,
+    "title": "Overload",
+    "source": "protondb"
+  },
+  {
+    "appId": "448850",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 18.1.2, DRM 3.57, 6.8.1-1-default)",
+    "gpuDriver": "4.6 Mesa 24.0.3",
+    "kernel": "6.8.1-1-default",
+    "notes": "Just works.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1723210687,
+    "title": "Overload",
+    "source": "protondb"
+  }
+]

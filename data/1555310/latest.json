@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1555310",
+    "cpu": "12th Gen Intel Core i5-1240P",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.4 (git-8b0202e4b4)",
+    "kernel": "6.4.8-zen1-1-zen",
+    "notes": "Overall runs great in proton. Game is in development, so bugs are to be expected. Dev is very active and quick to fix reported issues.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1694601002,
+    "title": "Castle Constructor",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1046470",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.54, 6.6.11-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.3",
+    "kernel": "6.6.11-200.fc39.x86_64",
+    "notes": "Works well on Nvidia hybrid graphics laptop",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1706347940,
+    "title": "",
+    "source": "protondb"
+  }
+]

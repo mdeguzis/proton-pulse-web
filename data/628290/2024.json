@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "628290",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 555.42.02",
+    "kernel": "6.9.5-x64v3-xanmod1",
+    "notes": "Runs nicely performance-wise, but very jank",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1720671637,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "628290",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.9-205.fsync.fc40.x86_64",
+    "notes": "unplayable due to low fps",
+    "os": "Bazzite 40.20240722.0 (From Fedora Silverblue)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1730545963,
+    "title": "",
+    "source": "protondb"
+  }
+]

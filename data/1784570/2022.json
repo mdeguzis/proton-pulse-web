@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1784570",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.0, DRM 3.44, 5.17.14-300.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.17.14-300.fc36.x86_64",
+    "notes": "Main game works as expected",
+    "os": "Fedora release 36 (Thirty Six)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1655479716,
+    "title": "Trainz Railroad Simulator 2022",
+    "source": "protondb"
+  }
+]

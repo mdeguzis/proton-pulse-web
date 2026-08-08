@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2657030",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 18.1.8, DRM 3.54, 6.6.52)",
+    "gpuDriver": "4.6 Mesa 24.2.2",
+    "kernel": "6.6.52",
+    "notes": "",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1729749655,
+    "title": "",
+    "source": "protondb"
+  }
+]

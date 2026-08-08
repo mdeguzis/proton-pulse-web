@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1722840",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.5.0-45-generic",
+    "notes": "Works Great with older proton verison",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1723075024,
+    "title": "",
+    "source": "protondb"
+  }
+]

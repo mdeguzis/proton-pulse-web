@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "896520",
+    "cpu": "11th Gen Intel Core i5-11400 @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.4.0-104-generic",
+    "notes": "It seems to run just fine, but the experience is not great due to weird bugs.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1669426967,
+    "title": "",
+    "source": "protondb"
+  }
+]

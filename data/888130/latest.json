@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "888130",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.6 Mesa 20.1.1",
+    "kernel": "5.7.1-gentoo",
+    "notes": "Menu options seem to work as expected, campaign and sandbox play as expected too.",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1592017363,
+    "title": "",
+    "source": "protondb"
+  }
+]

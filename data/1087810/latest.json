@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1087810",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.5.9-arch2-1",
+    "notes": "Works without issues with Proton 8.0-4",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1699707725,
+    "title": "",
+    "source": "protondb"
+  }
+]

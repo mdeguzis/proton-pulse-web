@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1732060",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.11-200.fc35.x86_64",
+    "notes": "No Problems encountered. Seems to work like intended",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1652549654,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1732060",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.46, 5.18.10-76051810-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.18.10-76051810-generic",
+    "notes": "Works flawlessly out of the box.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1658883741,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1732060",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.0, DRM 3.48, 6.0.6-76060006-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.6-76060006-generic",
+    "notes": "Plays great right outta the box",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1672046180,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2519560",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 GRE (gfx1100, LLVM 16.0.6, DRM 3.52, 6.4.14-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.0-devel",
+    "kernel": "6.4.14-200.fc38.x86_64",
+    "notes": "Played through the whole game without issues",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1695054147,
+    "title": "",
+    "source": "protondb"
+  }
+]

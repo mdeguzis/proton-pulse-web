@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1948430",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.15.50-1-MANJARO",
+    "notes": "Works perfectly using proton experimental",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1657333230,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1948430",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 12.0.1, DRM 3.48, 6.0.11_1)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "6.0.11_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1670759567,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1264250",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "Installed with latest Proton and played, no issues dtected.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1603217921,
+    "title": "",
+    "source": "protondb"
+  }
+]

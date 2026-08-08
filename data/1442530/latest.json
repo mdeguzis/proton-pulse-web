@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1442530",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 21.1.2, DRM 3.64, 6.17.5-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.5",
+    "kernel": "6.17.5-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1762082352,
+    "title": "",
+    "source": "protondb"
+  }
+]

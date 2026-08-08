@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1178780",
+    "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 8060S (radeonsi, gfx1151, LLVM 21.1.7, DRM 3.64, 6.17.7-ba22.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.1",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "Works perfect. Steam VR with a MQ3 with the steam link app",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1768109545,
+    "title": "",
+    "source": "protondb"
+  }
+]

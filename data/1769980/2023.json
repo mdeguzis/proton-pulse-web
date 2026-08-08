@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1769980",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.6-200.fc39.x86_64",
+    "notes": "Works great with X11 + Nvidia",
+    "os": "Fedora release 39 (Thirty Nine)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1703560446,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1685960",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.13.0-22-generic",
+    "notes": "run with lot of lags",
+    "os": "Ubuntu 21.10 (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1641289980,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1685960",
+    "cpu": "AMD Athlon X4 880K Quad Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.94",
+    "kernel": "5.15.11-gentoo-dist",
+    "notes": "Game works out of the box. Load times are long, but once everything is loaded it smoothed out.",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643078994,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1685960",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.10-otakux-3",
+    "notes": "seems something relative to EAC again.",
+    "os": "Ubuntu 20.04.4 LTS (64 \u4f4d\u5143)",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1646718923,
+    "title": "",
+    "source": "protondb"
+  }
+]

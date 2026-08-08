@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3151830",
+    "cpu": "AMD Ryzen 3 5300U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.59, 6.12.4-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.4",
+    "kernel": "6.12.4-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1734710481,
+    "title": "",
+    "source": "protondb"
+  }
+]

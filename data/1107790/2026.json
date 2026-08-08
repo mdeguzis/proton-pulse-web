@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1107790",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "Generally works but some freezes might happen",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771854653,
+    "title": "",
+    "source": "protondb"
+  }
+]

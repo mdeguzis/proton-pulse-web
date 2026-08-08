@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3393070",
+    "cpu": "AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-4-cachyos",
+    "notes": "El juego funciona sin ning\u00fan tipo de error usando Proton CachyOS 10.0 (20250714). Excelente rendimiento",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "23 GB",
+    "rating": "gold",
+    "timestamp": 1759713402,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3393070",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "6.2.0-27-generic",
+    "notes": "Works perfectly out of the box without tinkering.\nSome light lag in home menu and loading screens.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1761160074,
+    "title": "",
+    "source": "protondb"
+  }
+]

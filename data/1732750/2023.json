@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1732750",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.1-1-MANJARO",
+    "notes": "It's a UE4 game according to the developer on steam, so it should be a easy fix",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1673308565,
+    "title": "",
+    "source": "protondb"
+  }
+]

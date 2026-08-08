@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1740530",
+    "cpu": "Intel Core i5-9400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-43-generic",
+    "notes": "Game is not open",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1659285248,
+    "title": "",
+    "source": "protondb"
+  }
+]

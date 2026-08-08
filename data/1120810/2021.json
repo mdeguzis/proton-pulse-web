@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1120810",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.10.16-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.16-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1640429140,
+    "title": "",
+    "source": "protondb"
+  }
+]

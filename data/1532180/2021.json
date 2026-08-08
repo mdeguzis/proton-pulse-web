@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1532180",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.1-arch1-1",
+    "notes": "Runs very good with 5.21-GE-1. \nWith Proton 5.13-6 as well playable, but intro and cut scenes are missing because of media foundation.",
+    "os": "GamerOS 23\u3000(48bc215)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1616947006,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1532180",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.4-2-ck-skylake",
+    "notes": "Aside from the opening cutscene the game runs perfectly fine",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1621403827,
+    "title": "",
+    "source": "protondb"
+  }
+]

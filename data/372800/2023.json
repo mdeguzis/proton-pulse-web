@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "372800",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.8-arch1-1",
+    "notes": "Tested on KDE Plasma.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1675009655,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "372800",
+    "cpu": "Intel",
+    "duration": "underOneHour",
+    "gpu": "Mesa 15.0.5",
+    "gpuDriver": "4.6",
+    "kernel": "5.19.0-41-generic",
+    "notes": "If this is your first time playing RPG MO, i would use steam. It's really smooth gameplay.",
+    "os": "Elementary os 7",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1683164007,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "372800",
+    "cpu": "Intel",
+    "duration": "underOneHour",
+    "gpu": "Nvidia Geforce 1050 Ti",
+    "gpuDriver": "525.105.17",
+    "kernel": "5.19.0-41-generic",
+    "notes": "I do recommend this game as a Linux user.",
+    "os": "Elementary os 7",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1683221727,
+    "title": "",
+    "source": "protondb"
+  }
+]

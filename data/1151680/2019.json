@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1151680",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "4.15.0-70-generic",
+    "notes": "Valve Index: at language select screen, I can see the controllers but am unable to make a selection.",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-8",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1574366621,
+    "title": "",
+    "source": "protondb"
+  }
+]

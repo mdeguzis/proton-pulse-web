@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2100980",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Menu screen for 1 second and then crash",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1742727921,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1910130",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "This did not work on any version of proton I have tryed. It might work with some configuation options but I have not tried any.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1725985361,
+    "title": "",
+    "source": "protondb"
+  }
+]

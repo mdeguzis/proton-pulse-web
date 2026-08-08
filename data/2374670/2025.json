@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2374670",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "Worked fine with proton experimental",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1763072210,
+    "title": "Duncrush",
+    "source": "protondb"
+  }
+]

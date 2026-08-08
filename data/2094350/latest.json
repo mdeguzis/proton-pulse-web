@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2094350",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.11-arch1-1",
+    "notes": "Gives you JavaScript errors seemingly about networking no matter what Proton version",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1667702550,
+    "title": "Soulforged",
+    "source": "protondb"
+  }
+]

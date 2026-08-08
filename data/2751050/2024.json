@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2751050",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-107-generic",
+    "notes": "I had to switch to **Proton Experimental**, otherwise this was crashing whever you tried to buy something from the shop.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1717849075,
+    "title": "clickyland",
+    "source": "protondb"
+  },
+  {
+    "appId": "2751050",
+    "cpu": "Z590 UD AC",
+    "duration": "unreported",
+    "gpu": "\"Fedora Linux 40 (Workstation Edition)\" (64 bit)",
+    "gpuDriver": "Linux",
+    "kernel": "0x6",
+    "notes": "",
+    "os": "GenuineIntel",
+    "protonVersion": "9.0-3",
+    "ram": "Realtek ALC897",
+    "rating": "gold",
+    "timestamp": 1727349131,
+    "title": "clickyland",
+    "source": "protondb"
+  }
+]

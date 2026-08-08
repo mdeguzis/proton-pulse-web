@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1015370",
+    "cpu": "Intel Core i5-5257U @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris 6100 (BDW GT3)",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-33-generic",
+    "notes": "Doesn't start or do anything",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1591199286,
+    "title": "",
+    "source": "protondb"
+  }
+]

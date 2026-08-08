@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1264520",
+    "cpu": "%s1",
+    "duration": "severalHours",
+    "gpu": "Mesa/X.org virgl",
+    "gpuDriver": "3.1 Mesa 20.3.5",
+    "kernel": "5.4.157-17191-g6575d22de694",
+    "notes": "Its Native and it runs great.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-1",
+    "ram": "7 GB",
+    "rating": "silver",
+    "timestamp": 1649525030,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1264520",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs amazingly on deck. Default configuration works well without any changes needed.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1651550910,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1264520",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works great on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1670433118,
+    "title": "",
+    "source": "protondb"
+  }
+]

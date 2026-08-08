@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1131080",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.4.11-arch2-1)",
+    "gpuDriver": "4.6 Mesa 23.1.6",
+    "kernel": "6.4.11-arch2-1",
+    "notes": "tested Proton 7, 8, experimental, and GE8-13, none succeed in launching the game",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1692808707,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1131080",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game starts but no window shows up",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1701622283,
+    "title": "",
+    "source": "protondb"
+  }
+]

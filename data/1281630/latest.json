@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1281630",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6400 (radeonsi, navi24, LLVM 19.1.7, DRM 3.61, 6.12.57+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.57+deb13-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1767568880,
+    "title": "",
+    "source": "protondb"
+  }
+]

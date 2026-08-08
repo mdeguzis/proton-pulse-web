@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1556200",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "this'll change my game lib as I refuse to go back to Windoze",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1717690425,
+    "title": "Predator: Hunting Grounds",
+    "source": "protondb"
+  }
+]

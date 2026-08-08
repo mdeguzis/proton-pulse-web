@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1352910",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-3-cachyos",
+    "notes": "While it is an amazing game and I loved playing it on windows for some reason  the game would slow to an unplayable speed",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1767474716,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1352910",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.6-200.fc43.x86_64",
+    "notes": "Runs poorly (down to about 48fps from 144) in some scenes on Proton 10.0-4.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773500236,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1352910",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.6-200.fc43.x86_64",
+    "notes": "Generally runs worse, up to 30% of the original performance in the worst case - makes some scenes take ages. Recommend Proton 10.0-4.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773660253,
+    "title": "",
+    "source": "protondb"
+  }
+]

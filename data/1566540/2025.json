@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1566540",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.11.0-13-generic",
+    "notes": "worked completely fine, as-is.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "94 GB",
+    "rating": "gold",
+    "timestamp": 1737937257,
+    "title": "",
+    "source": "protondb"
+  }
+]

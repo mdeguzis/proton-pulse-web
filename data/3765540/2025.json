@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3765540",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 20.1.5, DRM 3.61, 6.14.9-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.14.9-300.fc42.x86_64",
+    "notes": "Playable but there are issues with the save game progress",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1749747768,
+    "title": "",
+    "source": "protondb"
+  }
+]

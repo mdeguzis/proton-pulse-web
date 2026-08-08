@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1599070",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.8.0-44-generic",
+    "notes": "Just crashes on startup.\nTried with Proton 9.0-2 and Proton Experimental.\nDoesn't work for me.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1726395332,
+    "title": "Stardiver",
+    "source": "protondb"
+  }
+]

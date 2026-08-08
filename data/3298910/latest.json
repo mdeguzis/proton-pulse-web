@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3298910",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 7.0.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch1.1",
+    "kernel": "7.0.5-arch1-1",
+    "notes": "Runs, doesn't crash, but gameplay gets stuck constantly - unplayable at the moment",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "126 GB",
+    "rating": "borked",
+    "timestamp": 1782434204,
+    "title": "Once a Pawn a King",
+    "source": "protondb"
+  }
+]

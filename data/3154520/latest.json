@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3154520",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "5.15.0-130-generic",
+    "notes": "With the above Preferences line I was able to start the game but would get one frame every 5-10 seconds.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1737959250,
+    "title": "",
+    "source": "protondb"
+  }
+]

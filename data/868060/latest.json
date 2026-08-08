@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "868060",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Installed and ran without issues.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1625194512,
+    "title": "",
+    "source": "protondb"
+  }
+]

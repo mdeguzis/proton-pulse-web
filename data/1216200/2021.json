@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1216200",
+    "cpu": "Intel Core i7-8559U @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD (Coffeelake 3x8 GT3)",
+    "gpuDriver": "3.0 Mesa 19.3.4",
+    "kernel": "5.5.13-arch1-1",
+    "notes": "I managed to launch it once but it crashed after a few seconds. On other attempts it didn't even start.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613945503,
+    "title": "Coloring Game 2",
+    "source": "protondb"
+  }
+]

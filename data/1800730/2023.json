@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1800730",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux x86_64",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682244124,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1800730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1698376352,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1800730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works pefectly after swaping to proton.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1699861231,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "489020",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.4.0-81-generic",
+    "notes": "Game crashes on launch",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1629383078,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "826540",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.10-arch1-1",
+    "notes": "Works out of the box with Valve Index",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1584786593,
+    "title": "Audio Trip",
+    "source": "protondb"
+  }
+]

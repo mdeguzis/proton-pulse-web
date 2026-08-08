@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3900940",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-60-generic",
+    "notes": "(Demo version) Bugged camera unfortunately doesn't allow you to play the game properly",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1772213292,
+    "title": "",
+    "source": "protondb"
+  }
+]

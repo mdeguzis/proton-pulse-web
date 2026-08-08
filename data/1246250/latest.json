@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1246250",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, ACO, DRM 3.64, 6.19.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch2.3",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "Works OK!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1778450936,
+    "title": "",
+    "source": "protondb"
+  }
+]

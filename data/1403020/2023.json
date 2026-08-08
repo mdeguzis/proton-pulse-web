@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1403020",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-58-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1674292122,
+    "title": "",
+    "source": "protondb"
+  }
+]

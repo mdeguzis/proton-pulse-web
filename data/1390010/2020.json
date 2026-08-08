@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1390010",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 20.1.5",
+    "kernel": "5.7.9-arch1-1",
+    "notes": "Works perfectly, no issues!",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598945472,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390010",
+    "cpu": "Intel Core i7         920  @ 2.67GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.15-100.fc31.x86_64",
+    "notes": "Runs slow, but works",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.13-1",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1603006115,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390010",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-53-generic",
+    "notes": "It's playable.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1605478203,
+    "title": "",
+    "source": "protondb"
+  }
+]

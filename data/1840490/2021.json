@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1840490",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.6-2-MANJARO",
+    "notes": "Crashes after it time jumps 20 years",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1639753966,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1840490",
+    "cpu": "AMD Ryzen 7 5950X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.10.15-xanmod1",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-8",
+    "ram": "6.400254156346346e+24 GB",
+    "rating": "gold",
+    "timestamp": 1640208634,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "908770",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (polaris10, LLVM 15.0.7, DRM 3.52, 6.4.7-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.4 (git-8b0202e4b4)",
+    "kernel": "6.4.7-200.fc38.x86_64",
+    "notes": "",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1693465767,
+    "title": "",
+    "source": "protondb"
+  }
+]

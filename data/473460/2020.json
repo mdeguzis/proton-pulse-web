@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "473460",
+    "cpu": "AMD A10-7300 Radeon R6, 10 Compute Cores 4C+6G",
+    "duration": "underOneHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-46-generic",
+    "notes": "Runs flawlessly out of box, but troublesome issues exist",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-9",
+    "ram": "11 GB",
+    "rating": "silver",
+    "timestamp": 1593470743,
+    "title": "",
+    "source": "protondb"
+  }
+]

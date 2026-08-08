@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1390740",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.2-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.0.4-arch1.2",
+    "kernel": "6.8.2-zen2-1-zen",
+    "notes": "Same as on Windows tbh",
+    "os": "Artix Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1714298491,
+    "title": "",
+    "source": "protondb"
+  }
+]

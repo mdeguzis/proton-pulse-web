@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "233150",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.12.35)",
+    "gpuDriver": "4.6 Mesa 25.1.5",
+    "kernel": "6.12.35",
+    "notes": "",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "47 GB",
+    "rating": "silver",
+    "timestamp": 1752014865,
+    "title": "",
+    "source": "protondb"
+  }
+]

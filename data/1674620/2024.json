@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1674620",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.1, DRM 3.57, 6.8.8-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.5",
+    "kernel": "6.8.8-300.fc40.x86_64",
+    "notes": "I used the latest Proton Experimental (bleeding edge)",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1714754290,
+    "title": "Construct VR - The Volumetric Movie",
+    "source": "protondb"
+  }
+]

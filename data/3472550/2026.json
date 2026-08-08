@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3472550",
+    "cpu": "Intel Core i9-14900HX",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-22-generic",
+    "notes": "The game works fine out of the box",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777319636,
+    "title": "The Mr. Rabbit Magic Show",
+    "source": "protondb"
+  }
+]

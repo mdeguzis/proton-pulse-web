@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "667610",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.2.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "6.2.0-36-generic",
+    "notes": "Not playable, game will not even start without below launch options",
+    "os": "KDE neon 5.27",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1720264989,
+    "title": "",
+    "source": "protondb"
+  }
+]

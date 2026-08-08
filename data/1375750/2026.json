@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1375750",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.19.14-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch1.1",
+    "kernel": "6.19.14-arch1-1",
+    "notes": "Works perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1777461595,
+    "title": "Regions of Ruin: Runegate",
+    "source": "protondb"
+  }
+]

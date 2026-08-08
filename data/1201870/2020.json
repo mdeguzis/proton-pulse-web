@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1201870",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.6.3-2-MANJARO",
+    "notes": "Crashes at Launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1586675735,
+    "title": "",
+    "source": "protondb"
+  }
+]

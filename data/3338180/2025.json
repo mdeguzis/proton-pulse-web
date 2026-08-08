@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3338180",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.7, DRM 3.59, 6.13.1-arch2-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.1-arch2-1",
+    "notes": "Demo works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739060623,
+    "title": "Inconceivable Rat Endeavour",
+    "source": "protondb"
+  }
+]

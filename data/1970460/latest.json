@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1970460",
+    "cpu": "Intel Core Ultra 7 265KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "Works out of the box for me.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1770745565,
+    "title": "",
+    "source": "protondb"
+  }
+]

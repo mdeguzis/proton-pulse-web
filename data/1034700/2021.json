@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1034700",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-45-generic",
+    "notes": "Able to install, but get nothing but black box.  Nothing loads",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616036201,
+    "title": "",
+    "source": "protondb"
+  }
+]

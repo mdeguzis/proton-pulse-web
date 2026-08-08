@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1842690",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.7, DRM 3.54, 6.5.3-200.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.7",
+    "kernel": "6.5.3-200.fsync.fc38.x86_64",
+    "notes": "It is the port of the mobile game without the microtransaction. If you like the mobile game, you like this one. Typical kairosoft game",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1696057364,
+    "title": "",
+    "source": "protondb"
+  }
+]

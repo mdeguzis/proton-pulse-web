@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1846340",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.10.6-10-MANJARO",
+    "notes": "Couldn't start the game. After reaching out to the developer they confirmed that it is indeed impossible to start the game under version of wine or proton due to their DRM. They said they'd look into using Steam's DRM for the Steam version which would make it possible to launch the Steam version under proton so there is some hope.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1725618983,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3408850",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "Does not boot beyond a small black box for ~3 seconds",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1748659164,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3147430",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.7-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.1.1-arch1.1",
+    "kernel": "6.14.7-arch2-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1748340964,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3147430",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.63, 6.12.10-76061203-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1~bpo12+1pop1~1744225826~22.04~b077665",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "Ran with no issues, no tinkering",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1760560619,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3147430",
+    "cpu": "Intel Core i5-14500",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon Pro W6400 (radeonsi, navi24, LLVM 20.1.8, DRM 3.64, 6.16.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.5",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1760825685,
+    "title": "",
+    "source": "protondb"
+  }
+]

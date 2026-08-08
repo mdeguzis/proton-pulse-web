@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "727660",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.40.0, 5.12.14-zen1-pineapple, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.0-devel (git-63e80d441a)",
+    "kernel": "5.12.14-zen1-pineapple",
+    "notes": "Currently in alpha avoid Fsync for this one",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "6.3-5",
+    "ram": "28 GB",
+    "rating": "bronze",
+    "timestamp": 1626429442,
+    "title": "",
+    "source": "protondb"
+  }
+]

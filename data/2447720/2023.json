@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2447720",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.15-300.fc38.x86_64",
+    "notes": "Works perfectly OOTB",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1693382987,
+    "title": "",
+    "source": "protondb"
+  }
+]

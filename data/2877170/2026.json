@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2877170",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 21.1.6, DRM 3.61, 6.12.73-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.12.73-1-lts",
+    "notes": "Works fine with Proton 10.0-4, Proton Experimental, and GE-Proton10-29. Unlike Touhou FDF 2, this has full gamepad support.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1771683381,
+    "title": "TouHou Makuka Sai ~ Fantastic Danmaku Festival Part III",
+    "source": "protondb"
+  }
+]

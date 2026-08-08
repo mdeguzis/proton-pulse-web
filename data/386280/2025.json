@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "386280",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.15.0-2-cachyos",
+    "notes": "It works flawlessly, except when you have played for awhile and alt-tab out, then it is impossible to get back to the game.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1749233990,
+    "title": "Vendetta - Curse of Raven's Cry",
+    "source": "protondb"
+  }
+]

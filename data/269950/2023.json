@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "269950",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.0.16-300.fc37.x86_64",
+    "notes": "I will try running with Proton",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1673018097,
+    "title": "X-Plane 11",
+    "source": "protondb"
+  }
+]

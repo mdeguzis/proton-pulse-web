@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "428180",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.5, DRM 3.64, 6.17.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.9-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1764536899,
+    "title": "Islet Online",
+    "source": "protondb"
+  }
+]

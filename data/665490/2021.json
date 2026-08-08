@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "665490",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA P106-100",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.11.16-arch1-1",
+    "notes": "Full play-through, no issues",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1619424046,
+    "title": "",
+    "source": "protondb"
+  }
+]

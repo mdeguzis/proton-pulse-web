@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2109460",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "Need to see if this even works in winblows",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1669391542,
+    "title": "",
+    "source": "protondb"
+  }
+]

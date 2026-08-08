@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2865670",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 25.2.1",
+    "kernel": "6.16.4-107.bazzite.fc42.x86_64",
+    "notes": "Works exactly how I'd expect - very minor issues, but 99% fine",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1757624145,
+    "title": "JETRUNNER",
+    "source": "protondb"
+  }
+]

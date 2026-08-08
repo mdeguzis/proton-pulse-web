@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1512590",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.8.0-38-generic",
+    "notes": "Works with wine",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1611446682,
+    "title": "",
+    "source": "protondb"
+  }
+]

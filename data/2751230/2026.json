@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2751230",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.8, DRM 3.64, 6.18.20-valve1-1-neptune-618-ge8d678fdb3fc)",
+    "gpuDriver": "4.6 Mesa 25.3.0 (git-59b552c765)",
+    "kernel": "6.18.20-valve1-1-neptune-618-ge8d678fdb3fc",
+    "notes": "game runs using regular controls and handheld mode",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1775963652,
+    "title": "Hole io",
+    "source": "protondb"
+  }
+]

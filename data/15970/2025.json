@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "15970",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "GeForce MX110",
+    "gpuDriver": "4.6 Mesa 25.0.3 (git-c3afa2a74f)",
+    "kernel": "6.12.21-4-MANJARO",
+    "notes": "Runs perfectly fine - even better than Windows",
+    "os": "Manjaro 25 Zetar",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1744765351,
+    "title": "Luxor",
+    "source": "protondb"
+  }
+]

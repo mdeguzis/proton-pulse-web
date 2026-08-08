@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "727570",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 15.0.7, DRM 3.42, 5.15.0-91-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.3 - kisak-mesa PPA",
+    "kernel": "5.15.0-91-generic",
+    "notes": "Gave another try due to recent updates to both the game and Proton. Still broken OotB.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1705593042,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "727570",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 15.0.7, DRM 3.42, 5.15.0-97-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.2 - kisak-mesa PPA",
+    "kernel": "5.15.0-97-generic",
+    "notes": "Made another attempt after 9.0 (beta) became an option for Proton version. Remains borked OotB.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1709546300,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "727570",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.6.63-1-lts",
+    "notes": "I tried some ways to run it, even using older Proton versions <5\nAlso tried to install .net to get it running. No joy. This game won't run",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1733416714,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1163340",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.1, DRM 3.42, 5.15.0-39-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0 - kisak-mesa PPA",
+    "kernel": "5.15.0-39-generic",
+    "notes": "I have tried it from Ubuntu 22.04 and Fedora 36. The game does not start with the normal Proton configuration or using previous ones.",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1656241808,
+    "title": "",
+    "source": "protondb"
+  }
+]

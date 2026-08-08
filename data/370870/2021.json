@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "370870",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.14-arch1-1",
+    "notes": "Random crash back to desktop after 15-20 min of gameplay",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1612402841,
+    "title": "Dark Future: Blood Red States (Classic)",
+    "source": "protondb"
+  },
+  {
+    "appId": "370870",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-22-generic",
+    "notes": "OOTB no issues",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626538399,
+    "title": "Dark Future: Blood Red States (Classic)",
+    "source": "protondb"
+  },
+  {
+    "appId": "370870",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.40.0, 5.10.0-8-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-8-amd64",
+    "notes": "Seems to work fine.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1629434173,
+    "title": "Dark Future: Blood Red States (Classic)",
+    "source": "protondb"
+  }
+]

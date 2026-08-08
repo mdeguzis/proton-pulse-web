@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1003480",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 25.2.7",
+    "kernel": "6.19.12-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1773449637,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1003480",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 25.2.7",
+    "kernel": "Linux 6.19.6-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1773450181,
+    "title": "",
+    "source": "protondb"
+  }
+]

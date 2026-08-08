@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "662680",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.36-1-MANJARO",
+    "notes": "-- Didn\u2019t work with Steam Proton : starting, but intro movie crash, alt+F4.\n++ No issue at all so far with custom Proton 59GE6ST",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602352198,
+    "title": "",
+    "source": "protondb"
+  }
+]

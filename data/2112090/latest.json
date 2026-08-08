@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2112090",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.6-200.fc40.x86_64",
+    "notes": "Native doesn't open, but runs in proton",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1724533210,
+    "title": "",
+    "source": "protondb"
+  }
+]

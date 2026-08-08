@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "38080",
+    "cpu": "AMD Ryzen 3 3200U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 3 (RAVEN2, DRM 3.40.0, 5.11.0-7620-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "7.0-1",
+    "ram": "10 GB",
+    "rating": "silver",
+    "timestamp": 1648052087,
+    "title": "Build-A-Lot",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1205270",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-37-generic",
+    "notes": "Game (Demo) has black screen after selection the game type",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592676366,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1205270",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-37-generic",
+    "notes": "With the custom proton kernel is finally playable",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592683277,
+    "title": "",
+    "source": "protondb"
+  }
+]

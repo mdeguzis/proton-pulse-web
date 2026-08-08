@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1571460",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.13.0-51-generic",
+    "notes": "Works well with out of the box :)",
+    "os": "Freedesktop.org 21.08.14 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1762606546,
+    "title": "",
+    "source": "protondb"
+  }
+]

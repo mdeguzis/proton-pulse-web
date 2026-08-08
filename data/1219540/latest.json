@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1219540",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Game was excelent. recommended",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1713972982,
+    "title": "Last Slice",
+    "source": "protondb"
+  },
+  {
+    "appId": "1219540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Work perfect on Steamdeck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1720611922,
+    "title": "Last Slice",
+    "source": "protondb"
+  },
+  {
+    "appId": "1219540",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 2000 (SNB GT1)",
+    "gpuDriver": "3.3 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-118-generic",
+    "notes": "This game is completely PERFECT\ni advise to play it",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "10 GB",
+    "rating": "platinum",
+    "timestamp": 1723845884,
+    "title": "Last Slice",
+    "source": "protondb"
+  }
+]

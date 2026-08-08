@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2085970",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.42, 5.15.142-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "5.15.142-1-MANJARO",
+    "notes": "Works flawlessly, including DLCs",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1703379533,
+    "title": "",
+    "source": "protondb"
+  }
+]

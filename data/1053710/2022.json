@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1053710",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.0, DRM 3.35, 5.4.0-91-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-658b2ca 2021-12-21 focal-oibaf-ppa)",
+    "kernel": "5.4.0-91-generic",
+    "notes": "Loads forever when starting new game",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1647799723,
+    "title": "The Red Lantern",
+    "source": "protondb"
+  }
+]

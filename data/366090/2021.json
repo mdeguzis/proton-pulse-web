@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "366090",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Running on Proton 5.12-5 it works perfectly! no issues on maximum settings.",
+    "os": "Zorin OS 15.3",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1610899204,
+    "title": "Colony Survival",
+    "source": "protondb"
+  }
+]

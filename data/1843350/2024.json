@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1843350",
+    "cpu": "Intel Xeon E5-2630 v2 @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, LLVM 16.0.6, DRM 3.57, 6.7.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.2-arch1.1",
+    "kernel": "6.7.7-arch1-1",
+    "notes": "difficult rage game! theres a bullet hell part",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1710142285,
+    "title": "",
+    "source": "protondb"
+  }
+]

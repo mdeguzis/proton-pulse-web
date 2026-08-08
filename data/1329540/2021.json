@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1329540",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX550/550 (POLARIS12, DRM 3.40.0, 5.10.16-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.10.16-arch1-1",
+    "notes": "Wine\u3060\u3068\u30bf\u30a4\u30de\u30fc\u304c999\u306e\u307e\u307e\u306b\u306a\u3063\u3066\u6575\u304c\u51fa\u3066\u3053\u306a\u3044\u3068\u304b\u304c\u3042\u308a\u307e\u3057\u305f\u304cProton\u306f\u6b63\u5e38\u3067\u3059",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1627163116,
+    "title": "",
+    "source": "protondb"
+  }
+]

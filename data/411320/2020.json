@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "411320",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "4.19.0-6-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1588875961,
+    "title": "Codename: Panzers, Phase Two",
+    "source": "protondb"
+  }
+]

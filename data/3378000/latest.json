@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3378000",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 20.1.6, DRM 3.63, 6.15.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.2",
+    "kernel": "6.15.2-arch1-1",
+    "notes": "\u53ef\u4ee5\u6b63\u5e38\u6e38\u73a9\uff0c\u5207\u6362\u7a97\u53e3\u6a21\u5f0f\u4f1a\u9047\u5230\u95ee\u9898",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751443688,
+    "title": "",
+    "source": "protondb"
+  }
+]

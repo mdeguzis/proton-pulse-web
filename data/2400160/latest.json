@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2400160",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 21.1.8, DRM 3.61, 6.12.68)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.12.68",
+    "notes": "",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770415605,
+    "title": "Glyphica: Typing Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "2400160",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1771402538,
+    "title": "Glyphica: Typing Survival",
+    "source": "protondb"
+  },
+  {
+    "appId": "2400160",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.6, DRM 3.64, 6.19.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Works generally well on linux, the one issue is when you set to full screen, or a high display resolution, then the game will become hidden.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771902027,
+    "title": "Glyphica: Typing Survival",
+    "source": "protondb"
+  }
+]

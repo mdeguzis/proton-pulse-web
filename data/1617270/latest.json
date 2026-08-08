@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1617270",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-99-generic",
+    "notes": "The game installs, but it wants to install Microsoft C++ and then it won't run after that.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1644732666,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1617270",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.4.0-107-generic",
+    "notes": "plays like it does normally on Windows once ProtonTricks with Visual C++ is added.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1649152413,
+    "title": "",
+    "source": "protondb"
+  }
+]

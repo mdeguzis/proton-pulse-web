@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1736090",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.42.0, 5.14.8-203-tkg-bmq, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.8-203-tkg-bmq",
+    "notes": "Worked right out of the box with great performance at maximum settings. Valve Index.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1634587052,
+    "title": "",
+    "source": "protondb"
+  }
+]

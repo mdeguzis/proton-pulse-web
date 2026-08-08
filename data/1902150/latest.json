@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1902150",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6950 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.46, 5.18.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.3-arch1-1",
+    "notes": "I haven't done a ton of testing yet, but I can confirm that attempting to run the game in VR using the Valve Index does not currently work. The game launches on my desktop as expected (it warns that the main menu does not work in VR yet), but when I attempt to start playing, it never displays on my headset. I'll update when I've had a chance to run the game in regular desktop mode to see if that works.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1660914043,
+    "title": "STRANGER",
+    "source": "protondb"
+  }
+]

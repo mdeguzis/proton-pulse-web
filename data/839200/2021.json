@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839200",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.10.0-7-amd64",
+    "notes": "There was a splash screen, it downloaded something, and then crashed.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1624553590,
+    "title": "",
+    "source": "protondb"
+  }
+]

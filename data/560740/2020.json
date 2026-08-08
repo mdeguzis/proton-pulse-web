@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "560740",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-29-generic",
+    "notes": "Company logos are shown, black screen after that.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1582101388,
+    "title": "",
+    "source": "protondb"
+  }
+]

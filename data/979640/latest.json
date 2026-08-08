@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "979640",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.7-arch2-1",
+    "notes": "Not in the current itteration. The game have previously run perfectly fine. The game crashing is a new experience",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1748179159,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "979640",
+    "cpu": "Intel Core i7-3770S @ 3.10GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-60-generic",
+    "notes": "tried updating drivers and all just didn't work",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1749329819,
+    "title": "",
+    "source": "protondb"
+  }
+]

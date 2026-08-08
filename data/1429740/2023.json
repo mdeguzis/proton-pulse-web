@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1429740",
+    "cpu": "Intel Core i7-8850H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX130",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.6-200.fc39.x86_64",
+    "notes": "The game stucks at almost every other frame. Although inital video was ok but coming to playing you just can't.",
+    "os": "Fedora release 39 (Thirty Nine)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1703342280,
+    "title": "",
+    "source": "protondb"
+  }
+]

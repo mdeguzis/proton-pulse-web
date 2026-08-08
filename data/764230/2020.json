@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "764230",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-19-generic",
+    "notes": "its load it up but crash instantly",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1582294196,
+    "title": "",
+    "source": "protondb"
+  }
+]

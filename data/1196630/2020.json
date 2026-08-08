@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1196630",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.3.0-46-generic",
+    "notes": "Game works perfectly with Proton.  No tweaks needed.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1600180359,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196630",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.1",
+    "kernel": "4.19.91-1-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1609357593,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196630",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Had to use version 5.0.10 to launch the game other versions would crash on start up.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1609389500,
+    "title": "",
+    "source": "protondb"
+  }
+]

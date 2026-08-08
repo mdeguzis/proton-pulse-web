@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1118350",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 (POLARIS11, DRM 3.44.0, 5.16.5-zen1-1-zen, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.5-zen1-1-zen",
+    "notes": "I was not able to start this game. It might be doable by tinkering around tho.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645051985,
+    "title": "",
+    "source": "protondb"
+  }
+]

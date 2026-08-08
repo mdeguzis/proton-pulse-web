@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2774190",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Some videos play, but when the scene changes the video goes black. You can retrigger the video by opening the menu and then clicking continue, but it will skip the entire scene. Works on Windows PC, but not on Steam Deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1722196185,
+    "title": "",
+    "source": "protondb"
+  }
+]

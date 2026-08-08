@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1183470",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.11-76051511-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.15.11-76051511-generic",
+    "notes": "Cursor not functional",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1642781447,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1183470",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.11-76051511-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.15.11-76051511-generic",
+    "notes": "If you can Play without Sound",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1643620294,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1183470",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 510.108.03",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Mouse issues can be prevented, but I've found no solution for the lack of sound",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1672183099,
+    "title": "",
+    "source": "protondb"
+  }
+]

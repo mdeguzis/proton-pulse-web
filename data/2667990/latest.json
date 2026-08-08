@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2667990",
+    "cpu": "Intel Core i5-3330 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 470.223.02",
+    "kernel": "5.4.0-167-generic",
+    "notes": "O jogo roda liso usando a \u00faltima vers\u00e3o do proton. Eu testei com vers\u00f5es mais antigas mas ele n\u00e3o rodou.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1753111877,
+    "title": "",
+    "source": "protondb"
+  }
+]

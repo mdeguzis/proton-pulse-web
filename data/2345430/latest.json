@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2345430",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.4",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Appears to work just fine. My partner disconnected twice, but I think that was on her end.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1781214096,
+    "title": "",
+    "source": "protondb"
+  }
+]

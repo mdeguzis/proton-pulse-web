@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1641650",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.17.7-zen1-1-zen",
+    "notes": "After startup, it pops up a box saying \"Internet connection is required to play Airline Manager 4.\". After clicking OK, it pops up: \"Unhandled exception has occured [...]\".\n\nAfter confirming the warning, it crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1652636705,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1641650",
+    "cpu": "Intel Core i5-7300U @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.13-arch1-1",
+    "notes": "Game freezes after startup, GNOME shows app not responding dialog",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1665148124,
+    "title": "",
+    "source": "protondb"
+  }
+]

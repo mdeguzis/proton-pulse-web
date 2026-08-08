@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1991300",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 16.0.6, DRM 3.49, 6.1.0-13-amd64)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "Nextfest demo",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1718605009,
+    "title": "",
+    "source": "protondb"
+  }
+]

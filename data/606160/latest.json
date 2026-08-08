@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "606160",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.61, 6.12.69-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.12.69-1-lts",
+    "notes": "Ran perfect except that it Crashed once due to a 'Unreal Engine' Error",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1770841665,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606160",
+    "cpu": "Intel Core i7-4960X @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.8.0-101-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773274658,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "606160",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.10-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "Runs out of the box, pretty good scary 8h game",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1775059309,
+    "title": "",
+    "source": "protondb"
+  }
+]

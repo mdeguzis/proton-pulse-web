@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2899980",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 460 (radeonsi, polaris11, ACO, DRM 3.64, 6.18.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.2",
+    "kernel": "6.18.5-zen1-1-zen",
+    "notes": "Playable with no critical issues",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "platinum",
+    "timestamp": 1768793496,
+    "title": "Graces: Posthumous Wish",
+    "source": "protondb"
+  }
+]

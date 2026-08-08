@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "332610",
+    "cpu": "AMD Ryzen 7 4700U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.7, DRM 3.42, 5.15.0-91-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-91-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1728571275,
+    "title": "",
+    "source": "protondb"
+  }
+]

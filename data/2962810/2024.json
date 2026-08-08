@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2962810",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.1-arch1-1",
+    "notes": "Native Steam: downloaded and 'installed' just fine, when clicking 'play' no process is created and after a few seconds steam realizes this and just shows the green play button again.\n\nWith GE-Proton9-15 the game starts but does not respond an trying to load an existing safegame. A new safegame runs for a few second then freezes.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1727902634,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2962810",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Game main window appears and then freezes/process hangs within a few seconds regardless of behavior (whether left sitting on main menu, starting a new game, or loading a save game).",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1733508115,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2962810",
+    "cpu": "AMD FX-7500 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "unreported",
+    "gpu": "AMD KAVERI (radeonsi, , LLVM 18.1.8, DRM 2.50, 6.12.4-arch1-1)",
+    "gpuDriver": "4.5 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "11 GB",
+    "rating": "platinum",
+    "timestamp": 1734955918,
+    "title": "",
+    "source": "protondb"
+  }
+]

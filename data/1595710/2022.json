@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1595710",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.4.0-109-generic",
+    "notes": "Game worked like it would on Windows without messing with anything.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1653206475,
+    "title": "Chased by Darkness",
+    "source": "protondb"
+  },
+  {
+    "appId": "1595710",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.49-1-MANJARO",
+    "notes": "Game looked great and ran really well, had fun and would say it felt no different then how I imagine it would feel on Windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1656479809,
+    "title": "Chased by Darkness",
+    "source": "protondb"
+  },
+  {
+    "appId": "1595710",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.11-1-default",
+    "notes": "Works perfectly",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1666812839,
+    "title": "Chased by Darkness",
+    "source": "protondb"
+  }
+]

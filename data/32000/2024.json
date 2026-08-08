@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "32000",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 18.1.6, DRM 3.57, 6.9.8-201.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.8-201.fsync.fc40.x86_64",
+    "notes": "Works well enough to play",
+    "os": "Fedora Linux 40.20240712.0 (Bazzite)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1720922243,
+    "title": "Raycatcher",
+    "source": "protondb"
+  }
+]

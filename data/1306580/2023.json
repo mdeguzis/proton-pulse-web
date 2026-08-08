@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1306580",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.9-xanmod1",
+    "notes": "A jump and run without platforms and a visual novel with half of the text missing isnt fun",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1688570068,
+    "title": "Left on Read",
+    "source": "protondb"
+  }
+]

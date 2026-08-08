@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17530",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.6",
+    "kernel": "5.3.13-arch1-1",
+    "notes": "Multiplayer Source SDK 2007 mods do not support multiplayer mods through proton.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1585554883,
+    "title": "D.I.P.R.I.P. Warm Up",
+    "source": "protondb"
+  }
+]

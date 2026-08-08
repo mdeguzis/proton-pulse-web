@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "762930",
+    "cpu": "AMD A10-7300 Radeon R6, 10 Compute Cores 4C+6G",
+    "duration": "underOneHour",
+    "gpu": "AMD KAVERI",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "4.15.0-54-generic",
+    "notes": "Font didn't rendered correctly",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "5.0-2",
+    "ram": "11 GB",
+    "rating": "borked",
+    "timestamp": 1581745071,
+    "title": "",
+    "source": "protondb"
+  }
+]

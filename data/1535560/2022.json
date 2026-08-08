@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1535560",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.4-100.fc33.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.0-devel",
+    "kernel": "5.13.4-100.fc33.x86_64",
+    "notes": "Hangs at 'Made with Unity' screen",
+    "os": "Linux 5.x",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1671508767,
+    "title": "Farmer Against Potatoes Idle",
+    "source": "protondb"
+  }
+]

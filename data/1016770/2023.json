@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1016770",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.76-1-MANJARO",
+    "notes": "Worked perfectly fine. No issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1679614122,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1016770",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "A very niche game I would say for those who like investigations game. Lots of reading and logic but also have a more accesible difficulty",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1685037149,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1016770",
+    "cpu": "Intel Core i9-9900 @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.15.55-1-MANJARO",
+    "notes": "Works perfectly, even in ultrawide resolutions.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1690035763,
+    "title": "",
+    "source": "protondb"
+  }
+]

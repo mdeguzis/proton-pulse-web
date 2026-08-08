@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1903620",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.9.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.3-arch1-1",
+    "notes": "Runs perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1717784778,
+    "title": "Killer Frequency",
+    "source": "protondb"
+  },
+  {
+    "appId": "1903620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly with default joysticks",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1719452460,
+    "title": "Killer Frequency",
+    "source": "protondb"
+  },
+  {
+    "appId": "1903620",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "runs perfectly",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725983403,
+    "title": "Killer Frequency",
+    "source": "protondb"
+  }
+]

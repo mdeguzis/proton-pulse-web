@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3055480",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.6-zen1-1-zen",
+    "notes": "Horrible",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1755751708,
+    "title": "Live Lens Bodycam",
+    "source": "protondb"
+  }
+]

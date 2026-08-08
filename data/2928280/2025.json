@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2928280",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.7-arch2-1",
+    "notes": "Significat perfomance issues, but improves after some time...",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1748188764,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2928280",
+    "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 19.1.7, DRM 3.59, 6.12.10-76061203-generic)",
+    "gpuDriver": "4.6 Mesa 25.1.3 (git-ba95e694fe)",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "After playing with in game settings, the game ran flawless",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1752332356,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2928280",
+    "cpu": "Intel Core i7-1065G7 @ 1.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Plus (ICL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1765802068,
+    "title": "",
+    "source": "protondb"
+  }
+]

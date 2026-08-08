@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2635500",
+    "cpu": "Intel Core i9-14900KF",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.3-2-cachyos",
+    "notes": "Works perfectly fine without any tinkering",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1756906629,
+    "title": "City Defense Z",
+    "source": "protondb"
+  },
+  {
+    "appId": "2635500",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.4-107.bazzite.fc42.x86_64",
+    "notes": "You cant do anything or select any of the menu items, you can only alt+F4 out.",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1758192415,
+    "title": "City Defense Z",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1233270",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.0",
+    "kernel": "5.9.14-arch1-1",
+    "notes": "Window does not open, tried proton 4 and 5",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "10 GB",
+    "rating": "borked",
+    "timestamp": 1610183588,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1233270",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "Just downloaded/installed it, and it ran. no trouble, just like native.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626636242,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1233270",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.10.79-1-MANJARO",
+    "notes": "Didn't have any issues. Runs flawlessly",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1637892488,
+    "title": "",
+    "source": "protondb"
+  }
+]

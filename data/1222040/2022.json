@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1222040",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.44.0, 5.16.11-arch1-2, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.11-arch1-2",
+    "notes": "Windowed mode is buggy",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1646703251,
+    "title": "Offroad Mania",
+    "source": "protondb"
+  },
+  {
+    "appId": "1222040",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.44.0, 5.16.7-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.7-1-MANJARO",
+    "notes": "Works well",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1647116175,
+    "title": "Offroad Mania",
+    "source": "protondb"
+  },
+  {
+    "appId": "1222040",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works on the Deck with no tinkering",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1660452411,
+    "title": "Offroad Mania",
+    "source": "protondb"
+  }
+]

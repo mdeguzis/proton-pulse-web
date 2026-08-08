@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2060000",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.3-arch1-1",
+    "notes": "It works out of the box.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774301957,
+    "title": "Great Deceiver",
+    "source": "protondb"
+  }
+]

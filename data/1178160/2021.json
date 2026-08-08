@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1178160",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-65-generic",
+    "notes": "A mobile table-top game, works fine on multiple platforms. No issues encountered starting from zero",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "5.13-6",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1614995155,
+    "title": "",
+    "source": "protondb"
+  }
+]

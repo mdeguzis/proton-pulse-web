@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1016770",
+    "cpu": "AMD Ryzen 5 PRO 5650U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.7, DRM 3.61, 6.13.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.5-arch1-1",
+    "notes": "Worked great at first try - started flawlessly and had no issues.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1744151368,
+    "title": "",
+    "source": "protondb"
+  }
+]

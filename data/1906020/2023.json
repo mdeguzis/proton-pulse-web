@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1906020",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5-1-MANJARO",
+    "notes": "I tried switching to every version of Proton. With Experimental and v8, I was able to see the splash screen and a loading dialog box appeared. The game crashed right after this.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1697319397,
+    "title": "Drums Rock",
+    "source": "protondb"
+  }
+]

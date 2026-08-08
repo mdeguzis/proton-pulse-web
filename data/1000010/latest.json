@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1000010",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Ryzen Z1 Extreme (radeonsi, phoenix, ACO, DRM 3.64, 6.17.7-ba29.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.4",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Use GE-Proton10-25",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "13 GB",
+    "rating": "platinum",
+    "timestamp": 1778179651,
+    "title": "",
+    "source": "protondb"
+  }
+]

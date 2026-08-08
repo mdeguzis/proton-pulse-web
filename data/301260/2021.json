@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "301260",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 470 (POLARIS10, DRM 3.35.0, 5.4.0-74-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-74-generic",
+    "notes": "Exactly as Windows.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1628095481,
+    "title": "",
+    "source": "protondb"
+  }
+]

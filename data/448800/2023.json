@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "448800",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.19.0-32-generic",
+    "notes": "everything works fine with controller support.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1676727668,
+    "title": "",
+    "source": "protondb"
+  }
+]

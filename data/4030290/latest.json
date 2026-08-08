@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4030290",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.12-1-cachyos",
+    "notes": "Runs great OOTB!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1776529812,
+    "title": "",
+    "source": "protondb"
+  }
+]

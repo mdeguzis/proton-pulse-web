@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3922310",
+    "cpu": "11th Gen Intel Core i5-1145G7 @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch2.2",
+    "kernel": "7.0.3-1-cachyos",
+    "notes": "Very laggy, very buggy.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1778443623,
+    "title": "",
+    "source": "protondb"
+  }
+]

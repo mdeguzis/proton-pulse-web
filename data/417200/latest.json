@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "417200",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (DIMGREY_CAVEFISH, DRM 3.42.0, 5.14.21-210.current, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.4",
+    "kernel": "5.14.21-210.current",
+    "notes": "",
+    "os": "Solus",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1644182430,
+    "title": "Make Sail",
+    "source": "protondb"
+  }
+]

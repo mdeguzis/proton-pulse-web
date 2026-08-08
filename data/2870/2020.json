@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2870",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.2",
+    "kernel": "5.4.0-21-generic",
+    "notes": "Crashes before Main Menu",
+    "os": "Ubuntu Focal Fossa (development branch)",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1585957625,
+    "title": "X Rebirth",
+    "source": "protondb"
+  }
+]

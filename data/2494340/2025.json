@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2494340",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 14.0.6, DRM 3.42, 5.15.0-53-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.2 - kisak-mesa PPA",
+    "kernel": "5.15.0-53-generic",
+    "notes": "Wasn't able to test the multiplayer, as tdf 2025 is already out and I think all the live events are closed forever.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1750097927,
+    "title": "Tour de France 2024",
+    "source": "protondb"
+  }
+]

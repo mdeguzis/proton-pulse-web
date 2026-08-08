@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2069310",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.14.0-1054-oem",
+    "notes": "\"KEError 75912: Unexpected activation result: - 1073741819\" Displayed",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1678119738,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2069310",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.14.0-1054-oem",
+    "notes": "Can't be run",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1678180424,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2069310",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 15.0.7, DRM 3.49, 6.2.0-23-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.0-23-generic",
+    "notes": "Installed OK but failed to start giving an activation error dialog box. Have seen reports of similar issue with RF9.5.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1686943624,
+    "title": "",
+    "source": "protondb"
+  }
+]

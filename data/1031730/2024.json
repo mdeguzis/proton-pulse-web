@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1031730",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 535.154.05",
+    "kernel": "5.15.0-97-generic",
+    "notes": "The game will not start up.I have tried several older versions of Proton with no luck. I get the below error being thrown every time it boots.\n\nFATAL ERROR in Fragment Shader compilation",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1709832256,
+    "title": "",
+    "source": "protondb"
+  }
+]

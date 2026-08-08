@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1180380",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.4.2-1-MANJARO",
+    "notes": "A lot of graphic bugs and full screen not working. Needs more testing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1575900603,
+    "title": "Stay Out",
+    "source": "protondb"
+  },
+  {
+    "appId": "1180380",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.0",
+    "kernel": "5.4.3-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-10",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1576539707,
+    "title": "Stay Out",
+    "source": "protondb"
+  }
+]

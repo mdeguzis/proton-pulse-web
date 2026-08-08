@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1915510",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.10-2-cachyos",
+    "notes": "Works perfectly out of the box.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1780544339,
+    "title": "",
+    "source": "protondb"
+  }
+]

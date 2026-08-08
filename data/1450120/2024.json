@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1450120",
+    "cpu": "12th Gen Intel Core i7-1265U",
+    "duration": "allTheTime",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 23.3.0-devel (git-e7d393b1d7)",
+    "kernel": "6.1.55-06866-g0ae6faaa0d86",
+    "notes": "I've launched the game with the 64bit beta launcher button in the controller settings tool. So far, I did not have any noticeable issues.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "8.0-5",
+    "ram": "30 GB",
+    "rating": "gold",
+    "timestamp": 1707967728,
+    "title": "",
+    "source": "protondb"
+  }
+]

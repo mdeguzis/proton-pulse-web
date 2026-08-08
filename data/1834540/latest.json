@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1834540",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 15.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-21-amd64",
+    "notes": "Just install and go",
+    "os": "BunsenLabs GNU/Linux 12 (Boron)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720277714,
+    "title": "",
+    "source": "protondb"
+  }
+]

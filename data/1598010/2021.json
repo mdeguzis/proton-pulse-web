@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1598010",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Game runs pretty much perfect no problems.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1623411369,
+    "title": "Wild Dive",
+    "source": "protondb"
+  },
+  {
+    "appId": "1598010",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.12.9-300.fc34.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.0-devel",
+    "kernel": "5.12.9-300.fc34.x86_64",
+    "notes": "work out of box. not play videos. need GE version of Prothon",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1623696561,
+    "title": "Wild Dive",
+    "source": "protondb"
+  }
+]

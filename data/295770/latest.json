@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "295770",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-74-generic",
+    "notes": "Works great, aside from sound bugs and performance hiccups",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-11",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1578961848,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "295770",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.0-devel (git-d55573a 2020-01-17 bionic-oibaf-ppa)",
+    "kernel": "5.0.0-37-generic",
+    "notes": "Audio issues and periodic freezes, but performs well outside that",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "bronze",
+    "timestamp": 1579297822,
+    "title": "",
+    "source": "protondb"
+  }
+]

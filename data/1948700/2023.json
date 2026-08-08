@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1948700",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.3-1-MANJARO",
+    "notes": "unlike most unity engine games, it has a preformance problem",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1685216891,
+    "title": "",
+    "source": "protondb"
+  }
+]

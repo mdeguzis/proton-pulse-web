@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2963830",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "5.10.25",
+    "notes": "Newer or experimental Proton versions not working, but this specify is working flawlesly.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1752950407,
+    "title": "",
+    "source": "protondb"
+  }
+]

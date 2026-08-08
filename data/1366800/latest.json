@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1366800",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.14.7-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.1.1-arch1.1",
+    "kernel": "6.14.7-arch2-1",
+    "notes": "Does not start.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1748444473,
+    "title": "Crosshair X",
+    "source": "protondb"
+  },
+  {
+    "appId": "1366800",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.65.06",
+    "kernel": "6.14.0-32-generic",
+    "notes": "Steam believes its launched but nothing ever pops up",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1760685057,
+    "title": "Crosshair X",
+    "source": "protondb"
+  }
+]

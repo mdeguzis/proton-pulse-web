@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1271050",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.9-xanmod1",
+    "notes": "Native complains about missing/wrong-version/.. libraries, proton just works",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1689180358,
+    "title": "Shrine",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "937130",
+    "cpu": "11th Gen Intel Core i5-11500 @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 15.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-23-amd64",
+    "notes": "Does not launch (tried Proton latest & Proton 3)",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1725024800,
+    "title": "Color Guardian",
+    "source": "protondb"
+  }
+]

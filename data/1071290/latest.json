@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1071290",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-74-generic",
+    "notes": "Lag varies from 0-2 seconds. The game's fine on a Windows machine. I've clocked 22 hours on Windows; 5 minutes on Linux.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1623497042,
+    "title": "Wild West and Wizards",
+    "source": "protondb"
+  },
+  {
+    "appId": "1071290",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.11.0-25-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-25-generic",
+    "notes": "It worked fine for me out of the box.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1631753510,
+    "title": "Wild West and Wizards",
+    "source": "protondb"
+  }
+]

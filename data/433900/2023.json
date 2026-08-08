@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "433900",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-58-generic",
+    "notes": "It works. Same issues with Windows.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1675828195,
+    "title": "Helium",
+    "source": "protondb"
+  }
+]

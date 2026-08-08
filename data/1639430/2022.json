@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1639430",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.19.13-arch1-1",
+    "notes": "The game runs somewhat OK with DXVK-ASYNC and NVAPI enabled but only at \"High\" settings with shadows set to \"Low\". Any other changes to the video settings and it starts running at 5 FPS tops.\nI saw the game comes with PhysX installer, UE4PrereqSetup_x64.exe and other stuff but IDK how to install these into the compatdata directory.",
+    "os": "ArcoLinux (64  \u0431\u0438\u0442\u0430)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1665497389,
+    "title": "",
+    "source": "protondb"
+  }
+]

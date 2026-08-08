@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "768170",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.5.19-1-MANJARO",
+    "notes": "It takes a bit to start, but once it starts it works fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1596145993,
+    "title": "",
+    "source": "protondb"
+  }
+]

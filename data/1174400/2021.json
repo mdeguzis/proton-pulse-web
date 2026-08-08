@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1174400",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-16-generic",
+    "notes": "This game will only run with Proton 5.0.10 with Esync disabled, otherwise it will fail to play.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1620436157,
+    "title": "",
+    "source": "protondb"
+  }
+]

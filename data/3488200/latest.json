@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3488200",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 21.1.8, DRM 3.64, 6.19.10-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.10-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1775749092,
+    "title": "",
+    "source": "protondb"
+  }
+]

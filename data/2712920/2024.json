@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2712920",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.3-arch1-1",
+    "notes": "the game works perfectly, it's nice to see native linux gaming for once!",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714305158,
+    "title": "Band of Brigands",
+    "source": "protondb"
+  },
+  {
+    "appId": "2712920",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "as with the pc version, plays natively!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1714305987,
+    "title": "Band of Brigands",
+    "source": "protondb"
+  },
+  {
+    "appId": "2712920",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 550.76",
+    "kernel": "6.8.7-arch1-2",
+    "notes": "plays natively which is nice for a change!",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714306935,
+    "title": "Band of Brigands",
+    "source": "protondb"
+  }
+]

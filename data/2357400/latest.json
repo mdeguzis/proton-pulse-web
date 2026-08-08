@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2357400",
+    "cpu": "11th Gen Intel Core i5-11600KF @ 3.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.6-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1719579330,
+    "title": "Mary Skelter Finale",
+    "source": "protondb"
+  },
+  {
+    "appId": "2357400",
+    "cpu": "11th Gen Intel Core i5-11600KF @ 3.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 555.58",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1719982325,
+    "title": "Mary Skelter Finale",
+    "source": "protondb"
+  },
+  {
+    "appId": "2357400",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1727624891,
+    "title": "Mary Skelter Finale",
+    "source": "protondb"
+  }
+]

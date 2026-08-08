@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1069740",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.41.0, 5.4.0-87-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0-devel",
+    "kernel": "5.4.0-87-generic",
+    "notes": "\u0423\u0441\u043f\u0435\u0448\u043d\u043e \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u0435\u0442\u0441\u044f \u043d\u0430 Proton 7.0-1",
+    "os": "Ubuntu 18.04.6 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-1",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1650201146,
+    "title": "Seen",
+    "source": "protondb"
+  }
+]

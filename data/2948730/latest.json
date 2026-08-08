@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2948730",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.5, DRM 3.59, 6.12.8-201.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.8-201.bazzite.fc41.x86_64",
+    "notes": "All works well.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1742495865,
+    "title": "",
+    "source": "protondb"
+  }
+]

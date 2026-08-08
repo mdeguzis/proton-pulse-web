@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3080530",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-84-generic",
+    "notes": "Awesome remake of 1990`s Amiga Clasic",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1755646382,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3080530",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game is natively supported. No issues whatsoever! The game runs out of the box at 90hz",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1755885360,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3080530",
+    "cpu": "Intel Core i5-8500 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "needed to disable  steam input to use ps4 controller",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1766467924,
+    "title": "",
+    "source": "protondb"
+  }
+]

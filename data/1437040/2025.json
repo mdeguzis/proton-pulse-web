@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1437040",
+    "cpu": "AMD Ryzen AI 9 HX 370 w/ Radeon 890M",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 890M (radeonsi, gfx1150, LLVM 21.1.2, DRM 3.61, 6.12.59)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.12.59",
+    "notes": "A very unique  and funny platform game, but the controls are not ideal",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "10.0-3",
+    "ram": "128 GB",
+    "rating": "silver",
+    "timestamp": 1765057121,
+    "title": "",
+    "source": "protondb"
+  }
+]

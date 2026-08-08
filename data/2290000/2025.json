@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2290000",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.1, DRM 3.57, 6.8.0-60-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-60-generic",
+    "notes": "activate proton and have fun",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1750615560,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2290000",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.7-200.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1753643189,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2290000",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.1, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-52-generic",
+    "notes": "An incredibly relaxing game well worth the purchase. Works both in single-player and multiplayer co-op.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1759903457,
+    "title": "",
+    "source": "protondb"
+  }
+]

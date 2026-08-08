@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1605850",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.4-200.nobara.fc41.x86_64",
+    "notes": "Worked out of the box for me",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1752695162,
+    "title": "ZeroSpace",
+    "source": "protondb"
+  }
+]

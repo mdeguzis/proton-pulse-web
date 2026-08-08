@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2893820",
+    "cpu": "AMD Ryzen 7 7435HS",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.3-201.nobara.fc43.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1767997525,
+    "title": "Of Ash and Steel",
+    "source": "protondb"
+  },
+  {
+    "appId": "2893820",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Not too sure, TBH. Maybe if played on a Linux desktop with good specs",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1771118216,
+    "title": "Of Ash and Steel",
+    "source": "protondb"
+  },
+  {
+    "appId": "2893820",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1771867232,
+    "title": "Of Ash and Steel",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1672880",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.182.03",
+    "kernel": "5.4.0-150-generic",
+    "notes": "too much lag or too low fps or atleast that was my experience.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1687553708,
+    "title": "Hookah Cafe Simulator",
+    "source": "protondb"
+  }
+]

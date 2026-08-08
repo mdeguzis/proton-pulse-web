@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2591410",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "Runs as expected",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1765637260,
+    "title": "Moose Miners",
+    "source": "protondb"
+  }
+]

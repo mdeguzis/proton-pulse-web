@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "549390",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-48-generic",
+    "notes": "the game would sync steam cloud, start to run, then immediately crash",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1664591498,
+    "title": "Storage Inc 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "549390",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 770",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.15.0-48-generic",
+    "notes": "It's more of a party game / indie game than a play for fun game",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1664665149,
+    "title": "Storage Inc 2",
+    "source": "protondb"
+  }
+]

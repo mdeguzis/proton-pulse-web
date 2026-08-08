@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1711520",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 24.2.5-arch1.1",
+    "kernel": "6.11.5-arch1-1",
+    "notes": "Game sometimes is starting, sometime freezes on the load. When it comes to load 3D preview of the level, game freeze entirely.\n\nIs better to load from discrete GPU but its still unplayable",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1730014168,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1220150",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works Great. No technical problems, but change the ingame resolution.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1676082279,
+    "title": "Blue Fire",
+    "source": "protondb"
+  },
+  {
+    "appId": "1220150",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.6-arch1-1",
+    "notes": "Overall perfect experience without any tinkering. Played with a ps4 controller, finished the game and got all achievements.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1687340756,
+    "title": "Blue Fire",
+    "source": "protondb"
+  },
+  {
+    "appId": "1220150",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.3.13_1",
+    "notes": "Works flawlessly",
+    "os": "Void Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1696205566,
+    "title": "Blue Fire",
+    "source": "protondb"
+  }
+]

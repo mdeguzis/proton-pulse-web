@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1721870",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04 (64\u00a0bits)",
+    "protonVersion": "7.0-1",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1647775885,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1721870",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 22.0.2",
+    "kernel": "5.17.3-arch1-1",
+    "notes": "No problems at all",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1651381571,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1721870",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.15.38-1-MANJARO",
+    "notes": "Works as expected!",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1653333187,
+    "title": "",
+    "source": "protondb"
+  }
+]

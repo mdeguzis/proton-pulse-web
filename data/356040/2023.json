@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "356040",
+    "cpu": "Intel Core i5-3470S @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 15.0.0, DRM 3.40, 5.10.118-generic-2rosa2021.1-x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.10.118-generic-2rosa2021.1-x86_64",
+    "notes": "Starts well",
+    "os": "ROSA Fresh Desktop 12.2, platform 2021.1 (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-5",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1672821502,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "356040",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.1.38-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1695437886,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "356040",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great but you have to enable controller support in the in-game options.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1698171651,
+    "title": "",
+    "source": "protondb"
+  }
+]

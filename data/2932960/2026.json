@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2932960",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-arch1-1",
+    "notes": "No Windows to compare it to, but the game doesn't look or run as good as the videos and screenshots show.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1768649708,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3516890",
+    "cpu": "discharging",
+    "duration": "unreported",
+    "gpu": "7550",
+    "gpuDriver": "0300",
+    "kernel": "4500",
+    "notes": "game does not start",
+    "os": "MST AMCP",
+    "protonVersion": "9.0-4",
+    "ram": "kernel",
+    "rating": "borked",
+    "timestamp": 1761753391,
+    "title": "Drop Dead: The Cabin",
+    "source": "protondb"
+  },
+  {
+    "appId": "3516890",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.8-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-273-tkg-eevdf",
+    "notes": "With current experimental branch bleeding edge, it works. Gameplay: https://www.youtube.com/watch?v=szokXHkbtG4",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1762675375,
+    "title": "Drop Dead: The Cabin",
+    "source": "protondb"
+  }
+]

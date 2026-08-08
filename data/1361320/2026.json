@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1361320",
+    "cpu": "AMD Ryzen 5 PRO 4650U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.19.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "runs fine on bottles with gaming profile",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1773244130,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1361320",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.9-201.nobara.fc43.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1774974517,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1361320",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1775181867,
+    "title": "",
+    "source": "protondb"
+  }
+]

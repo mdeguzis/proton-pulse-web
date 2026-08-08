@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1304510",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.4-arch1.1",
+    "kernel": "6.14.4-arch1-1",
+    "notes": "Switch to the Proton testing branch, otherwise the game will always crash",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1748223083,
+    "title": "SCP: Nine-Tailed Fox",
+    "source": "protondb"
+  },
+  {
+    "appId": "1304510",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-48-generic",
+    "notes": "Of course obviously the game itself could be broken -- it's an SCP mod usually you expect that to happen. I've tried every Proton version I have on deck from Proton 6, experimental, and GE-Proton-10-9. Always crashed without startup with Memory Access Violation. Go figure. Might try my luck with a Bottles environment because I got multiple SCP CB mods working there. Very disappointing. The mod is abandoned anyways (as of writing nearly a year of silence and no updates) so don't expect nothing from the dev side of things. Download the mod off ModDB.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1757024404,
+    "title": "SCP: Nine-Tailed Fox",
+    "source": "protondb"
+  },
+  {
+    "appId": "1304510",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Very playable, with the right config",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1766005871,
+    "title": "SCP: Nine-Tailed Fox",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2545650",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.9-arch1-1",
+    "notes": "Overall surprisingly easy to run on Linux, I've had trouble getting game editors to run in the past.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1723628010,
+    "title": "",
+    "source": "protondb"
+  }
+]

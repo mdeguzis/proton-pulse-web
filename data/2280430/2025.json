@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2280430",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.5, DRM 3.64, 6.17.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1763575856,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2280430",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1763808506,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2280430",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.5, DRM 3.64, 6.17.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.8-2-cachyos",
+    "notes": "Game starts but is basically unplayable due to freezing when taking screenshots or tabbing out. And within 8 minutes steam crashed which also freezed my game.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1763843656,
+    "title": "",
+    "source": "protondb"
+  }
+]

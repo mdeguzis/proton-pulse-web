@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1290260",
+    "cpu": "AMD A12-9720P RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R7 (CARRIZO, DRM 3.40.0, 5.10.0-8-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-8-amd64",
+    "notes": "Main menu is bugged, no way to select any option inside the menu, neither with keyboard nor mouse",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-6",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1630357562,
+    "title": "Dark Roll: Free Kick Challenge",
+    "source": "protondb"
+  }
+]

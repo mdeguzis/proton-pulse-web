@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "358130",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 6.17.7-ba22.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.1",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "Did not work on default settings, needed to select Proto 9 in compatibility settings.",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1768173427,
+    "title": "",
+    "source": "protondb"
+  }
+]

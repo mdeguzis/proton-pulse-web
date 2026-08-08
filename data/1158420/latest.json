@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1158420",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.8.0-48-generic",
+    "notes": "Works 100% out of box.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1649927524,
+    "title": "SimCasino",
+    "source": "protondb"
+  },
+  {
+    "appId": "1158420",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 560 (POLARIS11, DRM 3.40.0, 5.10.109-1-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8",
+    "kernel": "5.10.109-1-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1651957923,
+    "title": "SimCasino",
+    "source": "protondb"
+  }
+]

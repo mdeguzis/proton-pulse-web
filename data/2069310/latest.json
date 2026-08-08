@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2069310",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Initially had issues getting this to launch, but using Proton 10.0-4 has made it run perfectly.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1771408757,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2069310",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.1-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch2.2",
+    "kernel": "7.0.1-1-cachyos",
+    "notes": "Runs better than on windows; RC transmitter using joystick HID mode works better for all axes functioning",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1777069878,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2069310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Performance is great; requires start button + mouse to navigate menus. RC transmitter setup can be fiddly (Note: also true in windows)",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777070363,
+    "title": "",
+    "source": "protondb"
+  }
+]

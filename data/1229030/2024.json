@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1229030",
+    "cpu": "AMD Ryzen 7 4800HS with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.7, DRM 3.42, 5.15.0-113-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-113-generic",
+    "notes": "worked perfectly out-of-the-box",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1731219218,
+    "title": "",
+    "source": "protondb"
+  }
+]

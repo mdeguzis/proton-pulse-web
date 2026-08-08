@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2113570",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 560.31.02",
+    "kernel": "6.10.4-1-cachyos-eevdf",
+    "notes": "Works perfect out of the box.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1730940296,
+    "title": "",
+    "source": "protondb"
+  }
+]

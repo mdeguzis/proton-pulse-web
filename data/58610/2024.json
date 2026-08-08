@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "58610",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 18.1.1, DRM 3.57, 6.8.10-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.8",
+    "kernel": "6.8.10-300.fc40.x86_64",
+    "notes": "Native install has some bad grtaphical glitches. Proton won't launch a mission, but GE works fine.",
+    "os": "Fedora release 40 (Forty)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1719360945,
+    "title": "Wargame: European Escalation",
+    "source": "protondb"
+  }
+]

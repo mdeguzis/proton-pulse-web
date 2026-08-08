@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1675140",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.12.9-300.fc34.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.0-devel",
+    "kernel": "5.12.9-300.fc34.x86_64",
+    "notes": "Work out of box. Some slow. Game based on  Unity.",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626610971,
+    "title": "Reminiscence",
+    "source": "protondb"
+  }
+]

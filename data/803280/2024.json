@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "803280",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.42, 5.15.0-91-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-91-generic",
+    "notes": "Works as expected",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1704243371,
+    "title": "Briquid",
+    "source": "protondb"
+  }
+]

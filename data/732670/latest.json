@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "732670",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.42.0, 5.15.2-1-default, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-1-default",
+    "notes": "Native version is broke. With proton isn't better",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "30 GB",
+    "rating": "borked",
+    "timestamp": 1641029910,
+    "title": "",
+    "source": "protondb"
+  }
+]

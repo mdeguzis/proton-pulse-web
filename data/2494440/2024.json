@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2494440",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.0, DRM 3.59, 6.11.6-300.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.6",
+    "kernel": "6.11.6-300.fc41.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1731272524,
+    "title": "Toy Trains",
+    "source": "protondb"
+  }
+]

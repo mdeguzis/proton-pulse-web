@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1074180",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 530 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.6-arch1.2",
+    "kernel": "6.8.9-arch1-2",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1716575952,
+    "title": "Smart City Plan",
+    "source": "protondb"
+  }
+]

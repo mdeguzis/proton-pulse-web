@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1184480",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.8.0-55-generic",
+    "notes": "Platinum. But start-up time takes 3 minutes.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626063625,
+    "title": "",
+    "source": "protondb"
+  }
+]

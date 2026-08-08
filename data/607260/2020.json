@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "607260",
+    "cpu": "Intel Core i3-3250 @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon R7 240",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-2cc51b0 2020-06-21 focal-oibaf-ppa)",
+    "kernel": "5.4.0-37-generic",
+    "notes": "The game will only run at 60fps if you run the native version, but running the game on Proton will solve all your problems.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1592931409,
+    "title": "",
+    "source": "protondb"
+  }
+]

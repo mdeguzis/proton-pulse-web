@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1234260",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.2.1",
+    "kernel": "5.9.3-1-MANJARO",
+    "notes": "Game starts with black screen",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-10",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1605171461,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1058450",
+    "cpu": "Intel Xeon E3-1225 v3 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD P4600/P4700 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.6",
+    "kernel": "5.13.0-28-generic",
+    "notes": "doesn't work enough to be playable",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1645233260,
+    "title": "",
+    "source": "protondb"
+  }
+]

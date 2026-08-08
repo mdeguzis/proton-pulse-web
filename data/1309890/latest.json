@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1309890",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega 8",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 540X",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.4-arch1-1",
+    "notes": "Runs out of the box.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1638649068,
+    "title": "",
+    "source": "protondb"
+  }
+]

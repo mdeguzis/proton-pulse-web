@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "983150",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Game cannot start up. No meaningful log was given by Steam.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1632674082,
+    "title": "",
+    "source": "protondb"
+  }
+]

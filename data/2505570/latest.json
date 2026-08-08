@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2505570",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA Quadro RTX 3000",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.18.0-3-cachyos",
+    "notes": "Just disable vsync, works flawlessly without",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1768862961,
+    "title": "",
+    "source": "protondb"
+  }
+]

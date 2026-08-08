@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1374930",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.11-pikaos)",
+    "gpuDriver": "4.6 Mesa 26.0.4 - PikaOS YellowBirb Mesa Stable (git-d9e5e36b19)",
+    "kernel": "6.19.11-pikaos",
+    "notes": "Small performance problems, but otherwise a solid native build.",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1775906166,
+    "title": "Black Geyser: Couriers of Darkness",
+    "source": "protondb"
+  }
+]

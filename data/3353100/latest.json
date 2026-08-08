@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3353100",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-20-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1775441245,
+    "title": "Passant: A Chess Roguelike",
+    "source": "protondb"
+  }
+]

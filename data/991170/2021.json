@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "991170",
+    "cpu": "Intel Core m5-6Y54 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.12.8-051208-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.12.8-051208-generic",
+    "notes": "Menu works, but starting new game - doesn't",
+    "os": "Ubuntu 21.04 (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1622384960,
+    "title": "",
+    "source": "protondb"
+  }
+]

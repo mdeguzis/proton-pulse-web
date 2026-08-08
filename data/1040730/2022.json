@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1040730",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-47-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-47-generic",
+    "notes": "ZusiDisplay nicht unterst\u00fctzt und Startet nicht.. Da ich keine fehlermeldung und keine Logeintr\u00e4ge finden kann, bleibt es ein r\u00e4tsel..",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1665421724,
+    "title": "",
+    "source": "protondb"
+  }
+]

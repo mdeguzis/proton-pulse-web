@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1076500",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 21.2.6",
+    "kernel": "5.15.0-67-generic",
+    "notes": "Proton: 1603141982 proton-5.0-10b\n\nProton log: https://www.dropbox.com/s/qz0w2p0lbzq4a95/steam-1076500.7z?dl=0",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1679231141,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1076500",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.7 (git-98d9d5f5a3)",
+    "kernel": "6.5.5-arch1-1",
+    "notes": "IDK if it's proton or the game itself, but this game is not a fun experience",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1696734504,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1469370",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "4.15.0-118-generic",
+    "notes": "All worked as expected for me",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1643543120,
+    "title": "Lighthouse Keeper",
+    "source": "protondb"
+  }
+]

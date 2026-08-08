@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "496390",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "4.15.0-76-generic",
+    "notes": "Generally okay",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1580340888,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "496390",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-37-generic",
+    "notes": "Runs out of the Box!",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592379162,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "496390",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.8-200.fc31.x86_64",
+    "notes": "",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1599388075,
+    "title": "",
+    "source": "protondb"
+  }
+]

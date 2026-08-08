@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "248860",
+    "cpu": "AMD A4-9120C RADEON R4, 5 COMPUTE CORES 2C+3G",
+    "duration": "underOneHour",
+    "gpu": "Mesa virgl (AMD Radeon R3 (stoney, LLVM 15.0.7, DRM 3.4...)",
+    "gpuDriver": "4.5 Mesa 24.2.0-devel (git-9bce6f5cc4)",
+    "kernel": "6.1.110-15658-gba00b5a51c84",
+    "notes": "Game runs well on chromeos with only occasional and slight performance issues to be expected for the hardware.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-3",
+    "ram": "3 GB",
+    "rating": "silver",
+    "timestamp": 1732045196,
+    "title": "",
+    "source": "protondb"
+  }
+]

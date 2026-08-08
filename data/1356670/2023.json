@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1356670",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.0, DRM 3.49, 6.2.10-1-default)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.10-1-default",
+    "notes": "Works perfectly with Wine after setup.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682165228,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1356670",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.4.1-arch2-1",
+    "notes": "Works out of the box and runs like native.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688744874,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1108370",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 430.40",
+    "kernel": "4.19.66-1-MANJARO",
+    "notes": "Works perfectly out of the box with no tweaks.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1572933309,
+    "title": "",
+    "source": "protondb"
+  }
+]

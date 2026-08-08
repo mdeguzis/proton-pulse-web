@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1105590",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.7-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.1",
+    "kernel": "5.15.7-200.fc35.x86_64",
+    "notes": "Stock proton won't run video sequences (works great otherwise) and with proton-ge-custom everything works flawlessly.",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1639565677,
+    "title": "",
+    "source": "protondb"
+  }
+]

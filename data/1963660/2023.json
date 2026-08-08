@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1963660",
+    "cpu": "AMD Ryzen 7 PRO 5750G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.6, DRM 3.49, 6.1.11-76060111-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.4",
+    "kernel": "6.1.11-76060111-generic",
+    "notes": "Appears to work just as intended. Checked Proton 7.0-6 and GE7-49, both run perfectly",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1677871761,
+    "title": "",
+    "source": "protondb"
+  }
+]

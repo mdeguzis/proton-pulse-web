@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2413050",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Menu loads normally, but the actual game only starts with the visual quality set to 0% (lowest)",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1737411723,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2413050",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.0-3-cachyos",
+    "notes": "Working perfectly out of the box!",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1739107076,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2413050",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-84-generic",
+    "notes": "Runs perfectly",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1740880811,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1268110",
+    "cpu": "Intel Core i3-4030U @ 1.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.3.7",
+    "kernel": "5.16.14-arch1-1",
+    "notes": "Runs out of the box after installation.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-1",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1647622998,
+    "title": "",
+    "source": "protondb"
+  }
+]

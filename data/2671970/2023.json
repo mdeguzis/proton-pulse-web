@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2671970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Everything works right out of the box, except for the store scroll. It has to be done by touch, and it is not a pleasant experience.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1701344755,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2671970",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.9-201.fsync.fc38.x86_64",
+    "notes": "Works great",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1702224100,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2671970",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.7-arch1-1",
+    "notes": "Runs perfectly. If you play on multiple devices or operating systems, you'll need to create a new profile for each of them though.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703362835,
+    "title": "",
+    "source": "protondb"
+  }
+]

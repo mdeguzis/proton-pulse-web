@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2293410",
+    "cpu": "Intel Core i3-7100U @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "si alguien tiene tiempo de probar que version de proton le va bien que me avise",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1708724831,
+    "title": "",
+    "source": "protondb"
+  }
+]

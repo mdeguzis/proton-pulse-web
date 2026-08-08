@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "685420",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "the game start and close",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597392694,
+    "title": "Grace of Zordan",
+    "source": "protondb"
+  }
+]

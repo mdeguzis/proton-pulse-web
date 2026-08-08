@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2348610",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "99% of the time game runs seamlessly - plug and play: a perfect choice to play on Steam Deck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1744577767,
+    "title": "Slime 3K: Rise Against Despot",
+    "source": "protondb"
+  },
+  {
+    "appId": "2348610",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game is what I would consider playable, but notably isn't always the best experience",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1749269002,
+    "title": "Slime 3K: Rise Against Despot",
+    "source": "protondb"
+  },
+  {
+    "appId": "2348610",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 20.1.8, DRM 3.63, 6.15.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.15.9-arch1-1",
+    "notes": "Nothing to add, runs well, no issue even when map is packed full.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1754304548,
+    "title": "Slime 3K: Rise Against Despot",
+    "source": "protondb"
+  }
+]

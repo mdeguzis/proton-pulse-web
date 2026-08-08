@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2348090",
+    "cpu": "12th Gen Intel Core i7-1260P",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Game didn't run natively (probably wayland), but worked after launching in directx mode and running through proton.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1735878766,
+    "title": "Crop Rotation",
+    "source": "protondb"
+  },
+  {
+    "appId": "2348090",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.16.10-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.16.10-200.fc42.x86_64",
+    "notes": "No issues with the native version",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1760224327,
+    "title": "Crop Rotation",
+    "source": "protondb"
+  }
+]

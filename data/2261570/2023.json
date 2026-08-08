@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2261570",
+    "cpu": "AMD Ryzen 3 3100 4-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.3",
+    "notes": "Works fine on my machine without any modifications. I guess occasional performance problems are expected at this early stage.",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1695809980,
+    "title": "",
+    "source": "protondb"
+  }
+]

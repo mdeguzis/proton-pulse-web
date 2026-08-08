@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2851770",
+    "cpu": "AMD Ryzen 3 5300U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.10.7-100.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.3 (git-b235da6781)",
+    "kernel": "6.10.7-100.fc39.x86_64",
+    "notes": "Works perfectly fine.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1728616203,
+    "title": "Purgatory -NARAKU-",
+    "source": "protondb"
+  }
+]

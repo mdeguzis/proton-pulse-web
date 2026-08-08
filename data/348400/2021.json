@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "348400",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD CYPRESS",
+    "gpuDriver": "3.1 Mesa 20.3.4",
+    "kernel": "5.11.4-133-tkg-bmq",
+    "notes": "Game does not start",
+    "os": "Garuda Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1615346015,
+    "title": "",
+    "source": "protondb"
+  }
+]

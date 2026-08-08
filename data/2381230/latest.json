@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2381230",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.1-arch1.1",
+    "kernel": "6.7.5-arch1-1",
+    "notes": "yeah, I know, I'm the developer of the game. BUT this game runs exactly as it should be whether on Windows or Linux (based on my experience)",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1709031723,
+    "title": "",
+    "source": "protondb"
+  }
+]

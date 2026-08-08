@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "824600",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.8-arch1-1",
+    "notes": "Audio not working.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1592414632,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "824600",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.0-2-tkg-pds",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593400674,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "824600",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.10-1-MANJARO",
+    "notes": "Except for the lack of audio I did not experience any issues playing the demo.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607362289,
+    "title": "",
+    "source": "protondb"
+  }
+]

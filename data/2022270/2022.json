@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2022270",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.49-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1656539950,
+    "title": "Bakso Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2022270",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Being early access, performance can definitely change for better or worse",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1661139511,
+    "title": "Bakso Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2022270",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "I didn't experience any problem, although i lose interest to play this game after ~15 minutes",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1665382775,
+    "title": "Bakso Simulator",
+    "source": "protondb"
+  }
+]

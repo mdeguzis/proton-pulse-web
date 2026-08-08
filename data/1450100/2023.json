@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1450100",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.7, DRM 3.49, 6.1.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.3",
+    "kernel": "6.1.8-arch1-1",
+    "notes": "Half the screen messed up",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1675512478,
+    "title": "",
+    "source": "protondb"
+  }
+]
