@@ -1412,12 +1412,18 @@ export async function renderGamePage(appId) {
         <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry originated from">(${esc(_titleStoreLabel(appId, replacedBy) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
-            <!-- referrerpolicy="no-referrer": images.pcgamingwiki.com sits
-                 behind Cloudflare which returns 1011 Access Denied on any
-                 hotlink that ships a Referer. Same guard the boxart preview
-                 uses. Harmless for Steam CDN / SGDB CDN which don't care
-                 about the referrer. #469. -->
-            <img class="game-header-art" src="${esc(sgdbCover || pgwikiEntry?.cover_url || STEAM_IMG(appId))}" referrerpolicy="no-referrer" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+            <!-- referrerpolicy="no-referrer" for the images.pcgamingwiki.com
+                 hotlink case (Cloudflare 1011 on any Referer). #469.
+                 Src fallback intentionally omits pgwikiEntry.cover_url: PCGW
+                 covers are portrait Steam-format that stretch/crop badly in
+                 the widescreen slot, and the CF hotlink guard is fragile.
+                 Instead, __steamImgLoad's fallback chain (steam-img.js
+                 loadSteamImg for pgwiki: / pw_ ids) already tries SGDB then
+                 falls back to the pgwiki cover as its FINAL tier -- so the
+                 portrait cover is still shown when nothing better exists,
+                 just never as the first-choice src that would flash a
+                 broken image on load. #471. -->
+            <img class="game-header-art" src="${esc(sgdbCover || STEAM_IMG(appId))}" referrerpolicy="no-referrer" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
           </div>
           ${ratingPanel}
           <!-- Uniform tag row under the artwork: OS chips + user-context
