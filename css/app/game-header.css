@@ -1109,30 +1109,14 @@
 /* What Works? CTA (#440). Sits between Deck Status and Submit Report in the
    header-actions row. Filled pill so it reads as a primary action but a
    different accent from Submit Report so the two do not compete. */
-.what-works-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: transparent;
-  border: 1.5px solid var(--accent, #66c0f4);
-  color: var(--accent, #66c0f4);
-  font-size: 0.78rem;
-  line-height: 1;
-  padding: 8px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  font-family: inherit;
-  white-space: nowrap;
-  transition: background 0.12s ease, color 0.12s ease, transform 0.06s ease;
-}
-.what-works-btn:hover {
-  background: var(--accent, #66c0f4);
-  color: #0b1116;
-}
+/* What Works? sits in .game-header-actions alongside Stats and Steam Deck, so
+   it wears the same .info-btn.info-btn-labeled chrome they do rather than its
+   own bespoke outlined pill -- the row has to read as one set of controls.
+   Everything visual comes from those two classes; this block only carries the
+   font-family reset a <button> needs (the siblings are <a> elements) and the
+   hover, which the shared .info-btn rule already supplies. */
+.what-works-btn { font-family: inherit; }
+.what-works-btn:hover { background: rgba(59, 130, 246, 0.2); border-color: rgba(95, 156, 250, 0.6); }
 .what-works-btn svg { stroke: currentColor; }
 
 

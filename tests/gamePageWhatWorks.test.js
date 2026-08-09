@@ -32,9 +32,11 @@ describe('game-page What Works? modal wiring (#440)', () => {
     expect(SRC).toMatch(/import\s*\{\s*computeWhatWorks\s*\}\s*from\s*'\.\.\/lib\/what-works\.js/);
   });
 
-  test('ships a prominent What Works? button in the header-actions row', () => {
+  test('ships a What Works? button styled like the rest of the actions row', () => {
     expect(SRC).toContain('id="what-works-btn"');
-    expect(SRC).toContain('class="what-works-btn"');
+    // It must wear the shared row chrome (.info-btn.info-btn-labeled), the same
+    // as Stats and Steam Deck, not a bespoke pill -- the row reads as one set.
+    expect(SRC).toContain('class="info-btn info-btn-labeled what-works-btn"');
     expect(SRC).toContain('What Works?');
     // Must sit inside game-header-actions -- otherwise it lands somewhere
     // random on the page and the "top-right prominent" intent is lost.
