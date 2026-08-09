@@ -25,10 +25,11 @@ describe('game-page SGDB cover fallback (#466)', () => {
     expect(SRC).toContain('const sgdbCover = await _sgdbCoverFor(appId)');
   });
 
-  test('header art fallback order: sgdb -> pgwiki cover_url -> Steam CDN', () => {
-    // SGDB is preferred because it is guaranteed 460x215 shape; pgwiki
-    // covers can be portrait Steam-style. Steam CDN stays as the base
-    // fallback for numeric Steam ids that never get an SGDB hit.
-    expect(SRC).toMatch(/src="\$\{esc\(sgdbCover \|\| pgwikiEntry\?\.cover_url \|\| STEAM_IMG\(appId\)\)\}"/);
+  test('header art fallback order: sgdb -> Steam CDN (#471 dropped pgwiki from primary)', () => {
+    // #471: pgwiki cover_url was dropped from the direct src fallback
+    // because Cloudflare 1011s hotlinks unreliably and portrait covers
+    // stretch badly in the widescreen slot. pgwiki still shows as
+    // __steamImgLoad's LAST fallback tier (loadSteamImg for pgwiki: ids).
+    expect(SRC).toMatch(/src="\$\{esc\(sgdbCover \|\| STEAM_IMG\(appId\)\)\}"/);
   });
 });

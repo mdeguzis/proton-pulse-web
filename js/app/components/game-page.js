@@ -16,6 +16,7 @@ import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, 
 import { renderCard } from './report-card.js?v=5e25c644';
 import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
 import { getGamesByIds } from '../api/search-games.js?v=0e14d3ff';
+import { computeWhatWorks } from '../lib/what-works.js?v=fc499ba6';
 
 // #437: the game page only ever needs ONE search-index row (the current game,
 // or a replaced-by target), so batch that id through the search-games API
@@ -414,6 +415,62 @@ async function _renderNonSteamMetadata(modal, appId, storeType) {
 // pubs, year, OS list, wiki url); GOG/Epic get the search-index facts
 // plus a store link, since both stores CORS-lock their APIs to their
 // own origins (verified: access-control-allow-origin pins gog.com).
+// #440: renders the What Works? modal contents from an already-loaded
+// reports[] array. The modal chrome lives inline in the game-header
+// template (hidden by default); this fills its body on first open and
+// wires close on backdrop click + Escape.
+function _openWhatWorksModal(el, reports, appId) {
+  const modal = el.querySelector('#what-works-modal');
+  if (!modal) return;
+  if (!modal.dataset.filled) {
+    const body = modal.querySelector('#what-works-body');
+    if (body) body.innerHTML = _renderWhatWorksBody(reports, appId);
+    modal.dataset.filled = '1';
+  }
+  modal.hidden = false;
+  modal.setAttribute('aria-hidden', 'false');
+  const close = () => {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+  };
+  modal.querySelector('#what-works-close')?.addEventListener('click', close, { once: true });
+  const backdrop = (e) => { if (e.target === modal) { close(); modal.removeEventListener('click', backdrop); } };
+  modal.addEventListener('click', backdrop);
+  const onKey = (e) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', onKey); } };
+  document.addEventListener('keydown', onKey);
+}
+
+function _renderWhatWorksBody(reports, appId) {
+  const agg = computeWhatWorks(reports || [], { topN: 10 });
+  const { notesTerms, protonVersions, launchOptions, totals } = agg;
+  if (!totals.reports) {
+    return `<p class="ww-empty">No reports yet for this game -- nothing to summarize.</p>`;
+  }
+  const pct = (r) => `${Math.round(r * 100)}%`;
+  const bar = (r) => `<span class="ww-bar" title="${pct(r)} of reports carrying this were gold or platinum"><span class="ww-bar-fill" style="width:${pct(r)}"></span></span>`;
+  const row = (label, count, ratio) => `
+    <li class="ww-row">
+      <span class="ww-label">${esc(label)}</span>
+      <span class="ww-count">${count}</span>
+      ${bar(ratio)}
+      <span class="ww-ratio">${pct(ratio)}</span>
+    </li>`;
+  const section = (title, note, rows) => `
+    <section class="ww-section">
+      <h3 class="ww-section-title">${esc(title)}</h3>
+      <p class="ww-section-note">${esc(note)}</p>
+      ${rows.length
+        ? `<ul class="ww-list">${rows.join('')}</ul>`
+        : `<p class="ww-empty-section">Nothing recurring in this game's reports yet.</p>`}
+    </section>`;
+  return `
+    <p class="ww-summary">${totals.reports} report${totals.reports === 1 ? '' : 's'} analyzed &middot; ${totals.positive} gold or platinum</p>
+    ${section('Fixes mentioned in notes',      'Curated terms found in report notes, sorted by how often they show up.', notesTerms.map(t => row(t.term, t.count, t.positive_ratio)))}
+    ${section('Proton versions that worked',   'Normalized Proton version buckets across every report; the bar shows the share of gold-or-platinum outcomes.', protonVersions.map(t => row(t.version, t.count, t.positive_ratio)))}
+    ${section('Launch options that worked',    'Tokens from launch options on silver-or-better reports; bar again shows the gold-or-platinum share.', launchOptions.map(t => row(t.token, t.count, t.positive_ratio)))}
+  `;
+}
+
 async function _openMetadataModal(appId) {
   const existing = document.getElementById('game-metadata-modal');
   if (existing) existing.remove();
@@ -1412,7 +1469,18 @@ export async function renderGamePage(appId) {
         <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry originated from">(${esc(_titleStoreLabel(appId, replacedBy) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
-            <img class="game-header-art" src="${esc(sgdbCover || pgwikiEntry?.cover_url || STEAM_IMG(appId))}" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+            <!-- referrerpolicy="no-referrer" for the images.pcgamingwiki.com
+                 hotlink case (Cloudflare 1011 on any Referer). #469.
+                 Src fallback intentionally omits pgwikiEntry.cover_url: PCGW
+                 covers are portrait Steam-format that stretch/crop badly in
+                 the widescreen slot, and the CF hotlink guard is fragile.
+                 Instead, __steamImgLoad's fallback chain (steam-img.js
+                 loadSteamImg for pgwiki: / pw_ ids) already tries SGDB then
+                 falls back to the pgwiki cover as its FINAL tier -- so the
+                 portrait cover is still shown when nothing better exists,
+                 just never as the first-choice src that would flash a
+                 broken image on load. #471. -->
+            <img class="game-header-art" src="${esc(sgdbCover || STEAM_IMG(appId))}" referrerpolicy="no-referrer" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
           </div>
           ${ratingPanel}
           <!-- Uniform tag row under the artwork: OS chips + user-context
@@ -1444,11 +1512,23 @@ export async function renderGamePage(appId) {
             <a class="info-btn info-btn-flag" id="flag-game-btn" href="${flagUrl}" target="_blank" rel="noopener" title="Flag a problem with this game entry (opens the Game Report template)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#e0554f"><path d="M14.4 6l-.4-2H5v17h2v-7h5.6l.4 2h7V6z"/></svg></a>
             <a class="info-btn info-btn-labeled" id="stats-btn" href="game-stats.html?app=${appId}" title="Per-game compatibility stats: confidence factors, trend, Proton version success rates, launch option frequency, and proven launch options"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="18" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="12" width="4" height="9" rx="1"/></svg><span>Stats</span></a>
             ${renderDeckStatusButton(appId)}
+            <button type="button" class="info-btn info-btn-labeled what-works-btn" id="what-works-btn" title="See what fixes, Proton versions, and launch options have worked for this game (#440)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span>What Works?</span></button>
             <a class="submit-report-btn" href="${submitHref}" title="${esc(submitBtnTitle)}">Submit Report</a>
           </div>
         </div>
         <div class="info-tooltip" id="deck-status-tip">
           <div class="info-tooltip-inner" id="deck-status-content">${renderDeckStatusModalContent(appId)}</div>
+        </div>
+        <div class="ww-modal-backdrop" id="what-works-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="what-works-title">
+          <div class="ww-modal" role="document">
+            <div class="ww-modal-header">
+              <h2 class="ww-modal-title" id="what-works-title">What Works?</h2>
+              <button type="button" class="ww-close" id="what-works-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="ww-modal-body" id="what-works-body">
+              <div class="ww-loading">Building summary from ${reports.length} report${reports.length === 1 ? '' : 's'}...</div>
+            </div>
+          </div>
         </div>
         <!-- External link footer lives inside the game-header banner so it
              reads as part of the game's metadata strip. The links flex to fill
@@ -1677,6 +1757,10 @@ export async function renderGamePage(appId) {
       // status badge + summary sentence + per-criterion checklist
       el.querySelector('#deck-status-tip')?.classList.toggle('open');
     });
+    // What Works? (#440) opens a per-game modal that aggregates fixes /
+    // proton versions / launch options from the loaded reports.
+    const wwOpen = () => _openWhatWorksModal(el, reports, appId);
+    el.querySelector('#what-works-btn')?.addEventListener('click', wwOpen);
     // Metadata hub link opens the SteamDB-style metadata modal.
     el.querySelector('#hub-metadata-btn')?.addEventListener('click', (e) => {
       e.preventDefault();

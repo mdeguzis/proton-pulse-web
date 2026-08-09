@@ -229,7 +229,7 @@ function _deriveStatus(type, appId, cachedUrl, hasOverride, knownMissingSteam, k
 }
 
 // search-index shape: [appId, title, tier, pdb, pulse, appType, releaseYear, delisted, adult]
-function _buildRows({ searchIndex, extendedIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam }, { store, textFilter, scope, status }) {
+function _buildRows({ searchIndex, extendedIndex, gameImages, nonSteam, overrideMap, knownMissingSteam, knownMissingNonSteam }, { store, textFilter, scope, status, delisted }) {
   const q = String(textFilter || '').trim().toLowerCase();
   const rows = [];
   const seen = new Set();
@@ -241,6 +241,15 @@ function _buildRows({ searchIndex, extendedIndex, gameImages, nonSteam, override
     const type  = row[5] || (appId.startsWith('gog:') ? 'gog' : appId.startsWith('epic:') ? 'epic' : (appId.startsWith('pgwiki:') || appId.startsWith('pw_')) ? 'pgwiki' : 'steam');
     if (store && store !== 'all' && store !== type) return;
     if (q && !title.toLowerCase().includes(q) && !appId.startsWith(q)) return;
+    // #441: expose the delisted flag from search-index column 7 so admin
+    // can see which rows are pipeline-flagged delisted (either Steam
+    // appdetails returned success=false + store 302, or PCGW cross-check
+    // said Steam no longer lists this title). Default state shows all
+    // rows (admin needs to manage every game's cover); optional filter
+    // narrows to only-delisted or hides them.
+    const isDelisted = row.length > 7 && row[7] === true;
+    if (delisted === 'hide' && isDelisted) return;
+    if (delisted === 'only' && !isDelisted) return;
     const override = overrideMap ? overrideMap[appId] : null;
     let cachedUrl = null;
     if (type === 'steam') cachedUrl = gameImages[appId] || null;
@@ -255,7 +264,7 @@ function _buildRows({ searchIndex, extendedIndex, gameImages, nonSteam, override
     // status filter: exact match against derived status label.
     if (status && status !== 'all' && status !== derivedStatus) return;
     seen.add(appId);
-    rows.push({ appId, title, type, cachedUrl, derivedStatus, override });
+    rows.push({ appId, title, type, cachedUrl, derivedStatus, override, delisted: isDelisted });
   };
   for (const row of searchIndex) pushRow(row);
   // #363: only when the admin is actually searching, fold in matching long-tail
@@ -319,6 +328,11 @@ function _renderShell() {
         <option value="fallback_cached">Fallback cached (Steam, pipeline saved URL)</option>
         <option value="cached">Cached (GOG/Epic with catalog URL)</option>
         <option value="missing">Missing (GOG/Epic with no URL)</option>
+      </select>
+      <select id="boxart-delisted" class="admin-select" title="Delisted filter: show every row (default -- admin still manages delisted covers), hide delisted, or narrow to only delisted rows">
+        <option value="all">All (incl. delisted)</option>
+        <option value="hide">Hide delisted</option>
+        <option value="only">Only delisted</option>
       </select>
       <details class="admin-dropdown" id="boxart-actions">
         <summary class="admin-btn admin-btn--primary">Actions <span class="admin-dropdown-caret">▾</span></summary>
@@ -396,15 +410,22 @@ function _renderRow(r) {
     ? `<a href="${escapeHtml(r.cachedUrl)}" target="_blank" rel="noopener" class="admin-link" title="${escapeHtml(r.cachedUrl)}">cached</a>`
     : '<span class="admin-muted">(none)</span>';
   const titleHtml = escapeHtml(r.title || '(no title)');
+  // #441: DELISTED badge riding beside the title so admins can see at a
+  // glance which rows are pipeline-flagged as delisted -- these still
+  // need cover art managed but the store link may 302 to the homepage
+  // and the standard CDN header may 404.
+  const delistedBadge = r.delisted
+    ? ' <span class="admin-badge admin-badge--warn" title="Pipeline flagged this Steam entry as delisted -- store page 302s to the homepage. Cover art still worth managing since many users own the game.">DELISTED</span>'
+    : '';
   const storeHref = _storeHref(r.type, r.appId, r.title);
   const storeBadge = `<span class="admin-badge admin-badge--info">${r.type}</span>`;
   const storeCell = storeHref
     ? `<a href="${escapeHtml(storeHref)}" target="_blank" rel="noopener" class="admin-link" title="Open on ${escapeHtml(r.type)} store">${storeBadge}</a>`
     : storeBadge;
   return `
-    <tr data-appid="${escapeHtml(r.appId)}" data-store="${escapeHtml(r.type)}" data-cached="${escapeHtml(r.cachedUrl || '')}">
+    <tr data-appid="${escapeHtml(r.appId)}" data-store="${escapeHtml(r.type)}" data-cached="${escapeHtml(r.cachedUrl || '')}" data-delisted="${r.delisted ? '1' : '0'}">
       <td class="admin-col-title">
-        <a href="${_appHref(r.appId)}" target="_blank" rel="noopener" class="admin-link admin-user-name-link">${titleHtml}</a>
+        <a href="${_appHref(r.appId)}" target="_blank" rel="noopener" class="admin-link admin-user-name-link">${titleHtml}</a>${delistedBadge}
       </td>
       <td>${storeCell}</td>
       <td><code>${escapeHtml(r.appId)}</code></td>
@@ -564,6 +585,7 @@ export async function renderBoxartAdmin() {
     textFilter: _initialParams.get('bxq') || '',
     scope:      _initialParams.get('bxsc') || 'all',
     status:     _initialParams.get('bxst') || 'all',
+    delisted:   _initialParams.get('bxd') || 'all',
     page:       Math.max(0, parseInt(_initialParams.get('bxp') || '0', 10) || 0),
     rows: [],
   };
@@ -580,6 +602,7 @@ export async function renderBoxartAdmin() {
     set('bxq',  state.textFilter, '');
     set('bxsc', state.scope,      'all');
     set('bxst', state.status,     'all');
+    set('bxd',  state.delisted,   'all');
     set('bxp',  state.page > 0 ? String(state.page) : '', '');
     const qs = p.toString();
     const url = `${window.location.pathname}${qs ? '?' + qs : ''}${window.location.hash}`;
@@ -592,6 +615,7 @@ export async function renderBoxartAdmin() {
       textFilter: state.textFilter,
       scope: state.scope,
       status: state.status,
+      delisted: state.delisted,
     });
     state.page = 0;
     _syncStateToUrl();
@@ -602,6 +626,7 @@ export async function renderBoxartAdmin() {
   const storeEl   = document.getElementById('boxart-store');
   const scopeEl   = document.getElementById('boxart-scope');
   const statusEl  = document.getElementById('boxart-status');
+  const delistedEl = document.getElementById('boxart-delisted');
   const visBtn    = document.getElementById('boxart-probe-visible-btn');
   const allBtn    = document.getElementById('boxart-probe-all-btn');
   const sgdbAllBtn = document.getElementById('boxart-sgdb-first-all-btn');
@@ -649,6 +674,7 @@ export async function renderBoxartAdmin() {
   if (storeEl)  storeEl.value  = state.store;
   if (scopeEl)  scopeEl.value  = state.scope;
   if (statusEl) statusEl.value = state.status;
+  if (delistedEl) delistedEl.value = state.delisted;
 
   let debounce = null;
   searchEl.addEventListener('input', () => {
@@ -658,6 +684,7 @@ export async function renderBoxartAdmin() {
   storeEl.addEventListener('change', () => { state.store = storeEl.value; refilter(); });
   scopeEl.addEventListener('change', () => { state.scope = scopeEl.value; refilter(); });
   statusEl.addEventListener('change', () => { state.status = statusEl.value; refilter(); });
+  if (delistedEl) delistedEl.addEventListener('change', () => { state.delisted = delistedEl.value; refilter(); });
 
   function setBatchRunning(running) {
     visBtn.disabled = running;
@@ -1163,7 +1190,13 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
   const fastlyUrl     = type === 'steam' ? `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
   const cloudflareUrl = type === 'steam' ? `https://cdn.cloudflare.steamstatic.com/steam/apps/${encodeURIComponent(appId)}/header.jpg` : null;
 
-  const previewSrc = currentLiveUrl || override?.image_url || cachedUrl || akamaiUrl || '';
+  // pgwikiCoverUrl is the last-tier fallback for pgwiki rows (#472). It renders
+  // fine in-browser with referrerpolicy="no-referrer"; it is deliberately
+  // excluded from _resolveCurrentLive (server-side probes 403) so it never
+  // appears as a "live source" in the URL table below. Without this the
+  // preview for a stub pgwiki row lands on akamaiUrl (a guaranteed 404 for a
+  // pw_* id) and shows "preview failed to load; refetch also failed".
+  const previewSrc = currentLiveUrl || override?.image_url || cachedUrl || (type === 'pgwiki' ? pgwikiCoverUrl : akamaiUrl) || '';
 
   const overrideMeta = override
     ? `<span class="admin-badge admin-badge--ok" title="Preserved on every pipeline run">Admin override</span>
@@ -1180,7 +1213,13 @@ function _detailBodyHtml(row, currentLiveUrl, currentSource) {
     <div class="boxart-detail-grid">
       <div class="admin-card" style="padding:12px">
         <div class="admin-subhead">Preview</div>
-        <a id="boxart-detail-preview-link" href="${escapeHtml(previewSrc)}" target="_blank" rel="noopener" title="Open full-size image in a new tab"><img id="boxart-detail-preview" referrerpolicy="no-referrer" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05); cursor: zoom-in"></a>
+        <!-- rel="noopener noreferrer": clicking the preview opens the raw
+             image URL in a new tab. images.pcgamingwiki.com Cloudflare
+             returns 1011 Access Denied on any request that ships a Referer,
+             so a bare rel="noopener" click 1011s for pgwiki-sourced covers.
+             The img itself already ships referrerpolicy="no-referrer" and
+             loads fine; only the click-through was broken. #470. -->
+        <a id="boxart-detail-preview-link" href="${escapeHtml(previewSrc)}" target="_blank" rel="noopener noreferrer" title="Open full-size image in a new tab"><img id="boxart-detail-preview" referrerpolicy="no-referrer" src="${escapeHtml(previewSrc)}" alt="header preview" data-appid="${escapeHtml(appId)}" data-type="${escapeHtml(type)}" data-auto-refetch-tried="0" style="width:100%; height:auto; display:block; border-radius:6px; background: rgba(255,255,255,0.05); cursor: zoom-in"></a>
         <p class="admin-hint" style="margin:8px 0 0">${gamePageLink} &middot; ${storeLink} &middot; ${gameManagerLink}</p>
       </div>
 
@@ -1267,6 +1306,15 @@ async function _resolveCurrentLive(row) {
     }
     return { url: null, source: null };
   }
+  // pgwiki: trust the pipeline URL and skip the probe (#472). images.pcgamingwiki.com
+  // 403s any request with a Referer, and probeImageUrl's fetch(mode:'cors') always
+  // sends one -- so probing pgwiki URLs always fails even when the URL loads fine
+  // in a no-referrer <img>. Probing then re-painting with a null resolver would
+  // abort the in-flight img fetch and race the retry, which iOS Safari sometimes
+  // resolves as an error event -> triggers auto-refetch -> "preview failed to load".
+  if (row.type === 'pgwiki' && row.cachedUrl) {
+    return { url: row.cachedUrl, source: 'pipeline' };
+  }
   // GOG / Epic: only the pipeline URL exists as a candidate.
   if (row.cachedUrl) {
     const r = await probeImageUrl(row.cachedUrl);
@@ -1313,9 +1361,16 @@ export async function renderBoxartAdminDetail(appId) {
   document.getElementById('boxart-detail-title').textContent = `Box Art: ${row.title || row.appId} - ${row.type} - App ${row.appId}`;
 
   // Initial paint uses cached URL as preview; then swap once _resolveCurrentLive returns.
+  // The re-paint only runs when the resolver picked a URL that differs from what
+  // the initial paint would use -- otherwise the innerHTML replacement destroys
+  // the img#1 mid-flight and re-issues an identical fetch, which races the
+  // retry (#472). No-op re-paint means the initial img loads cleanly.
   document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, null, null);
+  const initialPreview = row.override?.image_url || row.cachedUrl || (row.type === 'pgwiki' ? row.pgwikiCoverUrl : null);
   const live = await _resolveCurrentLive(row).catch(() => ({ url: null, source: null }));
-  document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, live.url, live.source);
+  if (live.url && live.url !== initialPreview) {
+    document.getElementById('boxart-detail-body').innerHTML = _detailBodyHtml(row, live.url, live.source);
+  }
   // Auto-refetch on preview load failure. `_resolveCurrentLive` only probes
   // plain CDN URLs; games whose header ships under a Steam content hash
   // (e.g. .../<appid>/<hash>/header.jpg) 404 on the plain path and the

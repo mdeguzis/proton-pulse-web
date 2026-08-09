@@ -108,6 +108,38 @@ describe('Missing Box Art component contract', () => {
     expect(COMP).toMatch(/highlight:\s*currentSource === 'override'/);
   });
 
+  test('pgwiki previewSrc falls back to pgwikiCoverUrl before akamai (#472)', () => {
+    // Stub pgwiki rows (pw_*) have no nonsteam-images.json entry, and
+    // _resolveCurrentLive deliberately skips pgwikiCoverUrl (server-side
+    // probes always 403). Without a pgwiki-specific tail, previewSrc lands
+    // on akamaiUrl for a pw_* id, which is a guaranteed 404 -> the preview
+    // shows "preview failed to load; refetch also failed" even though the
+    // PCGWiki cover renders fine client-side with referrerpolicy=no-referrer.
+    expect(COMP).toMatch(/previewSrc\s*=\s*currentLiveUrl\s*\|\|\s*override\?\.image_url\s*\|\|\s*cachedUrl\s*\|\|\s*\(type === 'pgwiki' \? pgwikiCoverUrl : akamaiUrl\)/);
+    // pgwikiCoverUrl must still be excluded from the server-side live
+    // resolver (probes 403), so it never shows as the "live source".
+    expect(COMP).not.toMatch(/probeImageUrl\(row\.pgwikiCoverUrl\)/);
+  });
+
+  test('pgwiki _resolveCurrentLive trusts cachedUrl without probing (#472)', () => {
+    // probeImageUrl uses fetch(mode:'cors') which sends Referer, and
+    // pcgamingwiki 403s any referred request -- so probing pgwiki URLs
+    // always fails even when the same URL loads in a no-referrer <img>.
+    // The pgwiki branch in _resolveCurrentLive must skip the probe.
+    expect(COMP).toMatch(/if \(row\.type === 'pgwiki' && row\.cachedUrl\) \{\s*return \{ url: row\.cachedUrl, source: 'pipeline' \};/);
+  });
+
+  test('detail re-paint only runs when live URL differs from initial paint (#472)', () => {
+    // The initial paint uses cachedUrl (or pgwikiCoverUrl) as the src.
+    // If _resolveCurrentLive resolves to that same URL, re-painting would
+    // destroy the in-flight img fetch and race the retry -- which iOS
+    // Safari sometimes surfaces as a spurious error event -> triggers
+    // auto-refetch -> "preview failed to load; refetch also failed".
+    // Guard: only re-paint when live.url is set AND differs from initial.
+    expect(COMP).toMatch(/const initialPreview = row\.override\?\.image_url \|\| row\.cachedUrl \|\| \(row\.type === 'pgwiki' \? row\.pgwikiCoverUrl : null\)/);
+    expect(COMP).toMatch(/if \(live\.url && live\.url !== initialPreview\)/);
+  });
+
   test('set-url modal + hidden file input for uploads live in admin.html', () => {
     // Moved out of the component so both list and detail views share
     // one instance. The component only references these by ID.

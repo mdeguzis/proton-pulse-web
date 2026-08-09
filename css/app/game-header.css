@@ -1106,6 +1106,20 @@
   text-decoration: none;
 }
 
+/* What Works? CTA (#440). Sits between Deck Status and Submit Report in the
+   header-actions row. Filled pill so it reads as a primary action but a
+   different accent from Submit Report so the two do not compete. */
+/* What Works? sits in .game-header-actions alongside Stats and Steam Deck, so
+   it wears the same .info-btn.info-btn-labeled chrome they do rather than its
+   own bespoke outlined pill -- the row has to read as one set of controls.
+   Everything visual comes from those two classes; this block only carries the
+   font-family reset a <button> needs (the siblings are <a> elements) and the
+   hover, which the shared .info-btn rule already supplies. */
+.what-works-btn { font-family: inherit; }
+.what-works-btn:hover { background: rgba(59, 130, 246, 0.2); border-color: rgba(95, 156, 250, 0.6); }
+.what-works-btn svg { stroke: currentColor; }
+
+
 /* Save = Steam green, Save Draft = orange, Publish keeps the accent blue.
    Flat fills, no glow. */
 .submit-report-btn--save {
