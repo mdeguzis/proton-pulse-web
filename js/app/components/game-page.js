@@ -6,7 +6,7 @@ import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
 import { getWebClientId } from '../../shared/submit.js?v=ba876a15';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
-import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=65bc2638';
+import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=74c67492';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';

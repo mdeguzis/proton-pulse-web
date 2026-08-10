@@ -19,7 +19,12 @@ export async function fetchCdn(appId) {
     const url = await dataUrl(`data/${appIdToDir(appId)}/latest.json`);
     const r = await fetch(url);
     if (!r.ok) return [];
-    return await r.json();
+    const rows = await r.json();
+    if (!Array.isArray(rows)) return [];
+    // Decoupled from ProtonDB (#474): archive rows still live in data/ but
+    // must not surface as report cards. The live "Check ProtonDB" button
+    // still works because it goes through fetchProtonDbLive, not fetchCdn.
+    return rows.filter(row => row && (row.source || '').toLowerCase() === 'pulse');
   } catch { return []; }
 }
 
