@@ -723,10 +723,15 @@ export async function renderHomePage() {
             return (a.title || '').localeCompare(b.title || '');
           });
       } else {
-        // Build the candidate pool from the tier selection. Rated games show by
-        // default; the unrated catalog games (no reports yet) only appear when
-        // "Not Rated Yet" (or "All") is selected, so they stay hidden otherwise.
-        const wantUnrated = tierSel.has('all') || tierSel.has('unrated');
+        // Build the candidate pool from the tier selection. Empty selection
+        // (no tier filter applied) shows every popular Steam game regardless
+        // of whether it has Pulse reports yet -- that is the default browse
+        // experience. Unrated games are hidden only when the user has picked
+        // one or more specific rated tiers (e.g. "gold" only). See #474: with
+        // ProtonDB decoupled, most popular games are "pending" until Pulse
+        // reports catch up, so hiding them by default emptied the panel.
+        const noTierFilter = tierSel.size === 0 || tierSel.has('all');
+        const wantUnrated = noTierFilter || tierSel.has('unrated');
         const onlyUnrated = tierSel.size === 1 && tierSel.has('unrated');
         const pool = [
           ...(onlyUnrated ? [] : ratedGames),

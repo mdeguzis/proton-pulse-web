@@ -62,8 +62,12 @@ describe('home page browse filters (multi-select)', () => {
     expect(homeSrc).toContain('_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel)');
   });
 
-  test('Not Rated Yet surfaces unrated catalog games in the popular section', () => {
-    expect(homeSrc).toContain("const wantUnrated = tierSel.has('all') || tierSel.has('unrated')");
+  test('unrated games appear by default in the popular section (#474)', () => {
+    // Empty tier selection (or "all") shows every popular Steam game
+    // regardless of Pulse rating. Only picking specific rated tiers
+    // (e.g. "gold" only) hides the pending ones.
+    expect(homeSrc).toContain("const noTierFilter = tierSel.size === 0 || tierSel.has('all')");
+    expect(homeSrc).toContain("const wantUnrated = noTierFilter || tierSel.has('unrated')");
     expect(homeSrc).toContain('...(wantUnrated ? unratedGames : [])');
     // legacy separate unrated toggle is gone
     expect(homeSrc).not.toContain("id=\"unrated-toggle\"");
@@ -106,7 +110,7 @@ describe('home page popular section -- store-aware label and pool', () => {
   });
 
   test('Steam/all path still uses wantUnrated and unratedGames for tier compat', () => {
-    expect(homeSrc).toContain("const wantUnrated = tierSel.has('all') || tierSel.has('unrated')");
+    expect(homeSrc).toContain("const wantUnrated = noTierFilter || tierSel.has('unrated')");
     expect(homeSrc).toContain('...(wantUnrated ? unratedGames : [])');
   });
 });

@@ -19,10 +19,14 @@ describe('index page popular games rating filters', () => {
     expect(indexHtml).toMatch(/id="pg-filter-unrated"[^>]*>Not Rated /);
   });
 
-  test('Rated is active (pressed) by default, Not Rated is not', () => {
-    expect(indexHtml).toMatch(/id="pg-filter-rated"[^>]*aria-pressed="true"/);
-    expect(indexHtml).toMatch(/id="pg-filter-unrated"[^>]*aria-pressed="false"/);
-    expect(indexHtml).toMatch(/pg-filter pg-filter--active" id="pg-filter-rated"/);
+  test('Not Rated is active (pressed) by default, Rated is not (#474)', () => {
+    // Flipped from rated -> unrated after the ProtonDB decouple. With
+    // Pulse-only rating, every popular Steam game starts under Not Rated,
+    // so the default active pill has to be Not Rated or the grid renders
+    // empty on first visit.
+    expect(indexHtml).toMatch(/id="pg-filter-rated"[^>]*aria-pressed="false"/);
+    expect(indexHtml).toMatch(/id="pg-filter-unrated"[^>]*aria-pressed="true"/);
+    expect(indexHtml).toMatch(/pg-filter pg-filter--active" id="pg-filter-unrated"/);
   });
 
   test('main.js splits rated vs unrated using KNOWN_TIERS', () => {
@@ -31,8 +35,8 @@ describe('index page popular games rating filters', () => {
     expect(indexSrc).toContain('const unratedGames = games.filter((g) => !KNOWN_TIERS.has(String(g.rating || \'\').toLowerCase()))');
   });
 
-  test('default state shows rated and hides unrated', () => {
-    expect(indexSrc).toContain('const state = { rated: true, unrated: false }');
+  test('default state shows unrated and hides rated (#474)', () => {
+    expect(indexSrc).toContain('const state = { rated: false, unrated: true }');
   });
 
   test('store is multi-select via a Set, not a single currentStore string', () => {
