@@ -395,11 +395,14 @@ def test_compute_game_summary_non_list_year_file(tmp_path):
 
 
 def test_compute_game_summary_non_dict_report(tmp_path):
+    # Decoupled from ProtonDB (#474): pulse source needed to exercise the
+    # non-dict-filter branch since protondb rows are now dropped upstream.
     app_dir = tmp_path / "730"
     app_dir.mkdir()
-    (app_dir / "2024.json").write_text(json.dumps(["not-a-dict", {"rating": "gold", "source": "protondb"}]))
+    (app_dir / "2024.json").write_text(json.dumps(["not-a-dict", {"rating": "gold", "source": "pulse"}]))
     tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
-    assert pdb == 1
+    assert pdb == 0
+    assert pulse == 1
 
 
 # ── update_protondb_probe_cache probe_protondb raises (lines 1195-1196) ───────

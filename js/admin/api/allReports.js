@@ -74,7 +74,16 @@ export async function fetchAllReports(session, { search = '', status = 'clean', 
   if (dateFrom) url += `&created_at=gte.${encodeURIComponent(dateFrom)}`;
   if (dateTo)   url += `&created_at=lte.${encodeURIComponent(dateTo + 'T23:59:59')}`;
 
-  const [res, approvalRes] = await Promise.all([
+  // Orphan flag rows -- flagged_reports entries whose report_key does not
+  // resolve back to a live user_configs row (deleted report, account cleanup,
+  // stale CDN mirror). Moderation history is permanent: a flag has to remain
+  // reviewable + countable even if the underlying report is gone. Fetched
+  // whenever the Flagged status is requested (or no filter at all so the
+  // "all statuses" view surfaces them too). See migration
+  // 20260811010000_flagged_reports_include_orphans.sql.
+  const wantOrphans = status === 'flagged' || status === '';
+
+  const [res, approvalRes, orphanRes] = await Promise.all([
     fetch(url, { headers: supabaseHeaders(session) }),
     // Approval rows are keyed by report_id. Existence = approved at least once.
     // The public app additionally compares the stored hash to the row's current
@@ -84,6 +93,13 @@ export async function fetchAllReports(session, { search = '', status = 'clean', 
     fetch(`${SUPABASE_URL}/rest/v1/report_approvals?select=report_id`, {
       headers: supabaseHeaders(session),
     }).catch(() => ({ ok: false })),
+    wantOrphans
+      ? fetch(`${SUPABASE_URL}/rest/v1/rpc/get_orphan_flag_reports`, {
+          method: 'POST',
+          headers: supabaseHeaders(session, { 'Content-Type': 'application/json' }),
+          body: JSON.stringify({ p_app_id: search && /^\d+$/.test(search.trim()) ? search.trim() : null }),
+        }).catch(() => ({ ok: false }))
+      : Promise.resolve({ ok: false }),
   ]);
   if (!res.ok) throw new Error(`Failed to fetch reports: ${res.status}`);
 
@@ -98,9 +114,66 @@ export async function fetchAllReports(session, { search = '', status = 'clean', 
   // Repair the display title at fetch time so admins see the real name.
   await resolveFallbackTitles(rows);
 
-  if (status === 'pending') return rows.filter(r => r.is_pending);
-  if (status === 'clean')   return rows.filter(r => !r.is_pending);
-  return rows;
+  let out;
+  if (status === 'pending')      out = rows.filter(r => r.is_pending);
+  else if (status === 'clean')   out = rows.filter(r => !r.is_pending);
+  else                            out = rows;
+
+  // Merge orphan flags. Synthesize rows in the same shape the render expects,
+  // marked with is_orphan_flag=true so the UI can badge them and route detail
+  // clicks to the Flagged Reports tab (the underlying user_configs row is
+  // gone -- there is no report detail to open, only the flag record).
+  if (wantOrphans && orphanRes && orphanRes.ok) {
+    let orphans = [];
+    try { orphans = await orphanRes.json(); } catch { orphans = []; }
+    // Optional client-side filters that were server-side above.
+    if (appType) orphans = orphans.filter(o => (o.app_type || '') === appType || appType === 'steam');
+    if (dateFrom) orphans = orphans.filter(o => o.flagged_at >= dateFrom);
+    if (dateTo) orphans = orphans.filter(o => o.flagged_at <= dateTo + 'T23:59:59');
+    if (search) {
+      const s = search.trim().toLowerCase();
+      orphans = orphans.filter(o => String(o.app_id || '').includes(s));
+    }
+    const synthetic = orphans.map(o => {
+      // Parse the JS reportKey() format: "<int-epoch>:<gpu[:20]>:<proton[:15]>".
+      // Fills the title cell with what the admin actually cares about (which
+      // GPU + Proton got flagged) instead of a scary "deleted" label. The
+      // report may or may not actually be deleted -- it might just be a stale
+      // CDN mirror snapshot whose backing user_configs row is gone; either
+      // way, the flag is real and the admin needs the details.
+      const parts = String(o.report_key || '').split(':');
+      const gpu = (parts[1] || '').trim();
+      const proton = (parts[2] || '').trim();
+      const titleBits = [];
+      if (gpu) titleBits.push(gpu);
+      if (proton) titleBits.push(proton);
+      const title = titleBits.length ? titleBits.join(' / ') : '(no report details)';
+      return {
+        // Namespace the id so it never collides with a real user_configs.id.
+        // The row-detail path checks is_orphan_flag before treating id as numeric.
+        id: `flag-${o.id}`,
+        app_id: o.app_id,
+        title,
+        source: o.source,
+        app_type: 'steam',
+        client_id: o.reporter_client_id || null,
+        proton_pulse_user_id: null,
+        installation_id: null,
+        rating: null,
+        is_flagged: true,
+        is_hidden: false,
+        is_pending: false,
+        flagged_reason: o.reason_category || o.reason_text || null,
+        flagged_at: o.flagged_at,
+        created_at: o.flagged_at,
+        report_key: o.report_key,
+        reason_text: o.reason_text || null,
+        is_orphan_flag: true,
+      };
+    });
+    out = [...synthetic, ...out];
+  }
+  return out;
 }
 
 // Title was stored as the fallback "App <id>" (or empty) at submit time

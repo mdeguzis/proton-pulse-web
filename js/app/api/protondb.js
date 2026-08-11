@@ -19,13 +19,32 @@ export async function fetchCdn(appId) {
     const url = await dataUrl(`data/${appIdToDir(appId)}/latest.json`);
     const r = await fetch(url);
     if (!r.ok) return [];
-    return await r.json();
+    const rows = await r.json();
+    if (!Array.isArray(rows)) return [];
+    // Decoupled from ProtonDB (#474): archive rows still live in data/ but
+    // must not surface as report cards. The live "Check ProtonDB" button
+    // still works because it goes through fetchProtonDbLive, not fetchCdn.
+    return rows.filter(row => row && (row.source || '').toLowerCase() === 'pulse');
   } catch { return []; }
 }
 
 // Session cache for user-triggered live ProtonDB checks. Keyed by appId so
 // repeat visits within the session skip the network hit without auto-fetching.
 export const _protonDbLiveCache = new Map();
+
+// Cache-only lookup for game-page render (#474). Returns the previously
+// fetched live summary for this session without hitting the network. Used
+// after a button click has populated the cache and re-triggered a render;
+// on a cold load returns [], so the game page renders as pulse-only.
+/**
+ * Read the ProtonDB live cache for a game without triggering a fetch.
+ * @param {string|number} appId
+ * @returns {Array<object>} Cached summary or empty array.
+ */
+export function readProtonDbLiveCache(appId) {
+  const cached = _protonDbLiveCache.get(String(appId));
+  return Array.isArray(cached) ? cached : [];
+}
 
 // ProtonDB's summaries API only allows its own origin (CORS), so the browser
 // cannot fetch it directly from our static site. We go through the

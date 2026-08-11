@@ -207,7 +207,11 @@ import { initCardSizeToggle, setCardSizeButtonsEnabled } from '../lib/card-size.
     // Row target is 5 complete rows on every viewport (page size = cols * rows,
     // so the grid always ends on a whole row and stays even across S/M/L/XL).
     // See pageSizeForFullRows + targetRowsForViewport in lib/tile-pad.js.
-    const state = { rated: true, unrated: false };
+    // Default flipped from rated -> unrated (#474). With ProtonDB decoupled,
+    // rated=Pulse-only means the rated bucket is ~0 while every popular
+    // Steam game sits under "Not Rated" until Pulse volume catches up. Start
+    // on Not Rated so the page renders games instead of an empty grid.
+    const state = { rated: false, unrated: true };
     let shownCount = pageSizeForFullRows(list, targetRowsForViewport());
     // Guards a one-shot re-render when the grid CSS hasn't applied yet on the
     // very first paint (see renderPopular). Without it the column count reads 1

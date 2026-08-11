@@ -225,15 +225,18 @@ def test_compute_game_summary_platinum(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
     (app_dir / "2023.json").write_text(json.dumps([
-        {"rating": "platinum", "source": "protondb"},
-        {"rating": "platinum", "source": "protondb"},
+        {"rating": "platinum", "source": "pulse"},
+        {"rating": "platinum", "source": "pulse"},
     ]))
     tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert tier == "platinum"
-    assert pdb == 2
-    assert pulse == 0
+    # Decoupled from ProtonDB (#474): protondb never contributes; pulse counts here.
+    assert pdb == 0
+    assert pulse == 2
 
 def test_compute_game_summary_mixed_sources(tmp_path):
+    # Decoupled from ProtonDB (#474): a mixed year file should only count pulse.
+    # Single gold pulse -> score 0.8 -> 80% -> platinum by the score->tier map.
     app_dir = tmp_path / "730"
     app_dir.mkdir()
     (app_dir / "2023.json").write_text(json.dumps([
@@ -241,8 +244,23 @@ def test_compute_game_summary_mixed_sources(tmp_path):
         {"rating": "gold", "source": "pulse"},
     ]))
     tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
-    assert pdb == 1
+    assert pdb == 0
     assert pulse == 1
+    assert tier == "platinum"
+
+def test_compute_game_summary_protondb_only_is_pending(tmp_path):
+    # Decoupled from ProtonDB (#474): a game with only archive rows must not
+    # produce a tier or any counts -- the pipeline treats it as having no data.
+    app_dir = tmp_path / "730"
+    app_dir.mkdir()
+    (app_dir / "2023.json").write_text(json.dumps([
+        {"rating": "platinum", "source": "protondb"},
+        {"rating": "borked", "source": "protondb"},
+    ]))
+    tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
+    assert tier == "pending"
+    assert pdb == 0
+    assert pulse == 0
 
 def test_compute_game_summary_no_data(tmp_path):
     app_dir = tmp_path / "missing"
@@ -253,15 +271,15 @@ def test_compute_game_summary_no_data(tmp_path):
 def test_compute_game_summary_unrated(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
-    (app_dir / "2023.json").write_text(json.dumps([{"rating": "pending", "source": "protondb"}]))
+    (app_dir / "2023.json").write_text(json.dumps([{"rating": "pending", "source": "pulse"}]))
     tier, pdb, pulse, _trend = _compute_game_summary(app_dir)
     assert tier == "pending"
 
 def test_compute_game_summary_skips_reserved(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
-    (app_dir / "latest.json").write_text(json.dumps([{"rating": "platinum", "source": "protondb"}]))
-    (app_dir / "2023.json").write_text(json.dumps([{"rating": "borked", "source": "protondb"}]))
+    (app_dir / "latest.json").write_text(json.dumps([{"rating": "platinum", "source": "pulse"}]))
+    (app_dir / "2023.json").write_text(json.dumps([{"rating": "borked", "source": "pulse"}]))
     tier, _, _, _ = _compute_game_summary(app_dir)
     assert tier == "borked"  # latest.json was skipped
 
@@ -276,12 +294,13 @@ def test_compute_game_summary_small_stale_sample_returns_pending(tmp_path):
     app_dir = tmp_path / "976310"
     app_dir.mkdir()
     (app_dir / "2018.json").write_text(json.dumps(
-        [{"rating": "borked", "source": "protondb", "timestamp": stale_ts}] * 11
+        [{"rating": "borked", "source": "pulse", "timestamp": stale_ts}] * 11
     ))
     tier, pdb, pulse, _ = _compute_game_summary(app_dir, now_ts=now_ts)
     assert tier == "pending"
-    assert pdb == 11
-    assert pulse == 0
+    # Decoupled from ProtonDB (#474): counts are pulse-only now.
+    assert pdb == 0
+    assert pulse == 11
 
 
 def test_compute_game_summary_small_recent_sample_keeps_tier(tmp_path):
@@ -292,7 +311,7 @@ def test_compute_game_summary_small_recent_sample_keeps_tier(tmp_path):
     app_dir = tmp_path / "12345"
     app_dir.mkdir()
     (app_dir / "2026.json").write_text(json.dumps(
-        [{"rating": "silver", "source": "protondb", "timestamp": recent_ts}] * 5
+        [{"rating": "silver", "source": "pulse", "timestamp": recent_ts}] * 5
     ))
     tier, _, _, _ = _compute_game_summary(app_dir, now_ts=now_ts)
     # silver's score is exactly 60, which hits the "gold" threshold in
@@ -310,7 +329,7 @@ def test_compute_game_summary_large_stale_sample_keeps_tier(tmp_path):
     app_dir = tmp_path / "99999"
     app_dir.mkdir()
     (app_dir / "2020.json").write_text(json.dumps(
-        [{"rating": "silver", "source": "protondb", "timestamp": stale_ts}] * 30
+        [{"rating": "silver", "source": "pulse", "timestamp": stale_ts}] * 30
     ))
     tier, _, _, _ = _compute_game_summary(app_dir, now_ts=now_ts)
     # 30 silver reports -> 60% score -> gold. Key check: the staleness guard
@@ -324,7 +343,7 @@ def test_compute_game_summary_large_stale_sample_keeps_tier(tmp_path):
 def _reports_at(now_ts, offsets_ratings):
     """Build a report list where each entry is (days_ago, rating)."""
     return [
-        {"rating": rating, "source": "protondb", "timestamp": now_ts - days * 86400}
+        {"rating": rating, "source": "pulse", "timestamp": now_ts - days * 86400}
         for days, rating in offsets_ratings
     ]
 
@@ -391,7 +410,7 @@ def test_compute_game_summary_trend_disabled_without_now_ts(tmp_path):
     app_dir = tmp_path / "1"
     app_dir.mkdir()
     (app_dir / "2023.json").write_text(json.dumps([
-        {"rating": "platinum", "source": "protondb", "timestamp": 1_700_000_000},
+        {"rating": "platinum", "source": "pulse", "timestamp": 1_700_000_000},
     ]))
     tier, _, _, trend = _compute_game_summary(app_dir)
     assert tier == "platinum"
@@ -403,7 +422,7 @@ def test_compute_game_summary_trend_disabled_without_now_ts(tmp_path):
 def test_generate_search_index_basic(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
-    (app_dir / "2023.json").write_text(json.dumps([{"rating": "gold", "source": "protondb", "title": "CS2"}]))
+    (app_dir / "2023.json").write_text(json.dumps([{"rating": "gold", "source": "pulse", "title": "CS2"}]))
     (app_dir / "latest.json").write_text(json.dumps([{"title": "CS2"}]))
 
     keys = {("730", "2023")}
@@ -481,7 +500,7 @@ def test_generate_search_index_epic_with_reports_not_duplicated(tmp_path):
 def test_generate_search_index_skips_no_title(tmp_path):
     app_dir = tmp_path / "730"
     app_dir.mkdir()
-    (app_dir / "2023.json").write_text(json.dumps([{"rating": "gold", "source": "protondb"}]))
+    (app_dir / "2023.json").write_text(json.dumps([{"rating": "gold", "source": "pulse"}]))
     # no latest.json -> _extract_title returns ""
 
     keys = {("730", "2023")}
@@ -498,7 +517,7 @@ def test_generate_recent_reports_basic(tmp_path):
     app_dir = data_dir / "730"
     app_dir.mkdir()
     (app_dir / "2025.json").write_text(json.dumps([
-        {"title": "CS2", "rating": "gold", "source": "protondb", "timestamp": 1750000000}
+        {"title": "CS2", "rating": "gold", "source": "pulse", "timestamp": 1750000000}
     ]))
 
     search_index = [["730", "CS2", "gold", 1, 0]]
@@ -511,6 +530,8 @@ def test_generate_recent_reports_basic(tmp_path):
     assert result[0]["title"] == "CS2"
 
 def test_generate_recent_reports_sorted_by_date(tmp_path):
+    # Decoupled from ProtonDB (#474): every fixture needs source=pulse now
+    # or the walker skips it -- ProtonDB rows never contribute to Recent Reports.
     data_dir = tmp_path / "data"
     data_dir.mkdir()
 
@@ -518,10 +539,10 @@ def test_generate_recent_reports_sorted_by_date(tmp_path):
         d = data_dir / app_id
         d.mkdir()
         (d / "2025.json").write_text(json.dumps([
-            {"title": f"Game {app_id}", "timestamp": ts}
+            {"title": f"Game {app_id}", "timestamp": ts, "source": "pulse"}
         ]))
 
-    search_index = [["730", "CS2", "gold", 1, 0], ["570", "Dota 2", "platinum", 1, 0]]
+    search_index = [["730", "CS2", "gold", 0, 1], ["570", "Dota 2", "platinum", 0, 1]]
     (tmp_path / "search-index.json").write_text(json.dumps(search_index))
 
     generate_recent_reports(data_dir, tmp_path)
@@ -533,7 +554,9 @@ def test_generate_recent_reports_skips_no_title(tmp_path):
     data_dir.mkdir()
     app_dir = data_dir / "730"
     app_dir.mkdir()
-    (app_dir / "2025.json").write_text(json.dumps([{"timestamp": 1750000000}]))
+    (app_dir / "2025.json").write_text(json.dumps([
+        {"timestamp": 1750000000, "source": "pulse"}
+    ]))
 
     # No search-index entry -> no title -> skipped
     (tmp_path / "search-index.json").write_text("[]")
@@ -548,13 +571,35 @@ def test_generate_recent_reports_respects_limit(tmp_path):
     for i in range(20):
         d = data_dir / str(1000 + i)
         d.mkdir()
-        (d / "2025.json").write_text(json.dumps([{"timestamp": 1750000000 + i}]))
-        index.append([str(1000 + i), f"Game {i}", "gold", 1, 0])
+        (d / "2025.json").write_text(json.dumps([
+            {"timestamp": 1750000000 + i, "source": "pulse"}
+        ]))
+        index.append([str(1000 + i), f"Game {i}", "gold", 0, 1])
 
     (tmp_path / "search-index.json").write_text(json.dumps(index))
     generate_recent_reports(data_dir, tmp_path, limit=5)
     result = json.loads((tmp_path / "recent-reports.json").read_text())
     assert len(result) == 5
+
+
+def test_generate_recent_reports_skips_protondb_only(tmp_path):
+    # Decoupled from ProtonDB (#474): a game whose only rows are protondb
+    # rows must NOT resurrect onto the Recent Reports panel, even if a
+    # search-index row exists for it.
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    d = data_dir / "730"
+    d.mkdir()
+    (d / "2025.json").write_text(json.dumps([
+        {"title": "CS2", "timestamp": 1750000000, "source": "protondb"}
+    ]))
+    (tmp_path / "search-index.json").write_text(json.dumps([
+        ["730", "CS2", "gold", 0, 0]
+    ]))
+
+    generate_recent_reports(data_dir, tmp_path)
+    result = json.loads((tmp_path / "recent-reports.json").read_text())
+    assert result == []
 
 
 # ── reindex_apps ──────────────────────────────────────────────────────────────

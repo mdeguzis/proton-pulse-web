@@ -43,6 +43,20 @@ export async function fetchFlaggedReports(session, { search, type, dateFrom, dat
 }
 
 
+// Single-row fetch for deep-linking into flag detail from the Reports panel's
+// orphan "Details" button. Same select + shape mapping as fetchFlaggedReports.
+export async function fetchFlaggedReportById(session, id) {
+  const url = `${SUPABASE_URL}/rest/v1/flagged_reports`
+    + `?id=eq.${encodeURIComponent(id)}`
+    + `&select=id,app_id,report_key,source,reason_category,reason_text,status,reporter_client_id,flagged_at,updated_at&limit=1`;
+  const res = await fetch(url, { headers: supabaseHeaders(session) });
+  if (!res.ok) throw new Error(`Fetch flagged report failed: ${res.status}`);
+  const rows = await res.json();
+  if (!rows.length) throw new Error('Flag not found');
+  const r = rows[0];
+  return { ...r, title: `App ${r.app_id}`, flagged_reason: r.reason_category || null, is_hidden: false, _author: null };
+}
+
 export async function updateFlagStatus(session, id, status) {
   const url = `${SUPABASE_URL}/rest/v1/flagged_reports?id=eq.${id}`;
   const res = await fetch(url, {

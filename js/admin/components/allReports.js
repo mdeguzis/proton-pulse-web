@@ -1,5 +1,5 @@
 import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
-import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=b4e046fd';
+import { fetchAllReports, fetchStatusCounts } from '../api/allReports.js?v=62a9ae9f';
 import { formatReportSourceLabel } from '../lib/reportSource.js?v=c366fc24';
 
 // Summary strip of exact per-status counts above the table. Each tile is a
@@ -103,7 +103,18 @@ export async function renderAllReports(session) {
             : `<a class="admin-link" href="app.html#/app/${appId}" target="_blank" title="Open the game's report list">App ${appId}</a>`)
         : 'Unknown';
       const rid    = escapeHtml(String(r.id));
-      const title  = escapeHtml(r.title || '');
+      // Orphan flag rows: flagged_reports entries whose report_key does not
+      // resolve back to a live user_configs row. This can mean the user_configs
+      // row was deleted OR the row is still visible on the site via a stale
+      // CDN mirror snapshot -- we cannot tell from here. Label accordingly:
+      // "no user row" is factually correct; the tooltip explains both cases.
+      // Detail button routes to the Flagged Reports tab (raw flag record +
+      // resolve/dismiss controls) since there is no report-detail row to open.
+      const isOrphan = r.is_orphan_flag === true;
+      const orphanBadge = isOrphan
+        ? '<span class="admin-badge admin-badge--muted" title="No matching user_configs row. Could be a deleted report, a deleted account, or a stale CDN mirror snapshot. The flag details below (GPU / Proton) come from the flag record itself.">no user row</span> '
+        : '';
+      const title  = orphanBadge + escapeHtml(r.title || '');
       // Structural signature detection: a row is only labelled 'plugin' if
       // installation_id is set (the Deck-plugin submit path populates it;
       // the web submit path never does). Rows with source='user' but no
@@ -122,8 +133,18 @@ export async function renderAllReports(session) {
       const flaggedReasonAttr = r.flagged_reason
         ? ` data-flagged-reason="${escapeHtml(String(r.flagged_reason))}"`
         : '';
-      return `<tr data-rid="${rid}" data-pending="${r.is_pending ? '1' : '0'}"${flaggedReasonAttr}>
-        <td><button class="admin-link-btn" data-action="ar-view-detail" data-rid="${rid}">#${rid}</button></td>
+      // Every row gets a Details button in the trailing Actions column so
+      // the Reports panel behaves like every other admin list view. Non-
+      // orphan rows open the standard report-detail via ar-view-detail;
+      // orphan rows open the flag-detail inline via ar-view-flag-detail
+      // (main.js routes the click to loadFlagDetail with back=all-reports
+      // so the admin stays inside the Reports panel context).
+      const detailAction = isOrphan
+        ? `data-action="ar-view-flag-detail" data-flagid="${escapeHtml(String(r.id).replace(/^flag-/, ''))}"`
+        : `data-action="ar-view-detail" data-rid="${rid}"`;
+      const detailsBtn = `<button class="admin-btn admin-btn--ghost admin-btn--sm" ${detailAction}>Details</button>`;
+      return `<tr data-rid="${rid}" data-pending="${r.is_pending ? '1' : '0'}"${flaggedReasonAttr}${isOrphan ? ' data-orphan="1"' : ''}>
+        <td>#${rid}</td>
         <td>${appLink}</td>
         <td>${title}</td>
         <td>${source}</td>
@@ -131,6 +152,7 @@ export async function renderAllReports(session) {
         <td>${userBtn}</td>
         <td>${date}</td>
         <td class="ar-status">${statusBadges(r.is_flagged, r.is_hidden, r.is_pending, r.flagged_reason)}</td>
+        <td>${detailsBtn}</td>
       </tr>`;
     }).join('');
 

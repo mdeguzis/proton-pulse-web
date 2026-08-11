@@ -1,7 +1,7 @@
 import { SupaAuth, SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js?v=ffed3d84';
 import { supabaseHeaders, escapeHtml } from './utils.js?v=2668b2f0';
 import { effectivePermissions, hasPermission, canSeeTab, resolveRoleLabel, PERMISSION_LABELS, presetFor, addPermission, removePermission } from './permissions.js?v=7b4e356d';
-import { fetchFlaggedReports, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=9359a45e';
+import { fetchFlaggedReports, fetchFlaggedReportById, updateFlagStatus, deleteFlaggedReport, fetchFlagReportContent, findPulseConfigId, shadowBanReport, releaseReportContent, deleteReportContent, suppressMirrorReport, unsuppressMirrorReport, fetchReportState } from './api/flagged.js?v=78d2a857';
 import { renderFlagged, renderFlagDetail } from './components/flagged.js?v=5e2c6b60';
 import { fetchBannedUsers, banUser, unbanUser } from './api/banned.js?v=0d6ec118';
 import { renderBanned } from './components/banned.js?v=7bb95620';
@@ -24,8 +24,8 @@ import { renderApiExplorer } from './components/api-explorer.js?v=93bf51e6';
 import { renderGameManager } from './components/gameManager.js?v=74dfb888';
 import { renderLoggingTab } from './components/logging.js?v=ccf92cf8';
 import { renderDeploymentsTab } from './components/deployments.js?v=ce9fc002';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=b70317a6';
-import { patchReportFlags, fetchReportById } from './api/allReports.js?v=b4e046fd';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=5d8cf789';
+import { patchReportFlags, fetchReportById } from './api/allReports.js?v=62a9ae9f';
 import { approveReport } from './api/pending.js?v=84292a58';
 
 // ---------------------------------------------------------------------------
@@ -630,7 +630,7 @@ function wireEvents() {
     const action = btn.dataset.action;
 
     if (action === 'back-to-flagged') {
-      activateTab('flagged');
+      activateTab('all-reports');
       return;
     }
 
@@ -668,7 +668,7 @@ function wireEvents() {
       try {
         await deleteFlaggedReport(currentSession, id);
         flaggedRows = flaggedRows.filter(r => String(r.id) !== id);
-        activateTab('flagged');
+        activateTab('all-reports');
         window.ppToast?.success('Flag entry deleted.');
       } catch (err) {
         btn.disabled = false;
@@ -745,6 +745,22 @@ function wireEvents() {
       const rid = btn.dataset.rid;
       if (!rid) return;
       loadReportDetail(rid);
+      return;
+    }
+
+    // Orphan-flag Details button on the Reports panel. Fetch the raw
+    // flagged_reports row and hand it to loadFlagDetail so the admin sees
+    // the same detail view they would from a live report -- without ever
+    // leaving the Reports panel context.
+    if (action === 'ar-view-flag-detail') {
+      const flagid = btn.dataset.flagid;
+      if (!flagid) return;
+      try {
+        const row = await fetchFlaggedReportById(currentSession, flagid);
+        await loadFlagDetail(row);
+      } catch (e) {
+        console.error('[all-reports] flag detail fetch failed', e);
+      }
     }
   });
 
@@ -896,7 +912,7 @@ function wireEvents() {
   // dropdown stayed blank.
   window.addEventListener('popstate', e => {
     if (!document.getElementById('tab-user-detail').hidden) activateTab(userDetailReturnTab);
-    else if (!document.getElementById('tab-flag-detail').hidden) activateTab('flagged');
+    else if (!document.getElementById('tab-flag-detail').hidden) activateTab('all-reports');
     else if (!document.getElementById('tab-report-detail').hidden) activateTab('all-reports');
     else if (!document.getElementById('tab-boxart-detail').hidden) activateTab('boxart');
     else {
@@ -1204,8 +1220,9 @@ async function init() {
         return;
       }
     } catch (_) {}
-    // flagid present but no cached row - fall through to flagged tab
-    activateTab('flagged', { updateUrl: false });
+    // flagid present but no cached row - fall through to the Reports panel
+    // (Flagged tab was removed; orphan flags now surface in the Reports list).
+    activateTab('all-reports', { updateUrl: false });
     return;
   }
 
