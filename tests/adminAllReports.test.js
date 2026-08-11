@@ -239,9 +239,14 @@ describe('Reports admin wiring', () => {
   const HTML = fs.readFileSync(path.join(__dirname, '..', 'admin.html'), 'utf8');
   const COMP = fs.readFileSync(path.join(__dirname, '..', 'js', 'admin', 'components', 'allReports.js'), 'utf8');
 
-  test('standalone Flagged Reports menu option is removed (covered by Reports filter)', () => {
+  test('standalone Flagged Reports menu option is removed (Reports panel now surfaces orphans)', () => {
+    // After fetchAllReports learned to merge orphan flagged_reports rows
+    // into the Reports listing (with a "no user row" badge + Details
+    // button routing to the same flag-detail view), the separate Flagged
+    // Reports dropdown option became redundant. Everything lives on the
+    // Reports panel now.
     expect(HTML).not.toContain('<option value="flagged">Flagged Reports</option>');
-    // the Reports panel still has a "Flagged" status filter
+    // The Reports panel keeps its own "Flagged" status filter.
     expect(HTML).toContain('<option value="flagged">Flagged</option>');
   });
 

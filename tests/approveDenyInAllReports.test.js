@@ -12,33 +12,38 @@ const ALLREPS_CMP   = fs.readFileSync(path.join(ROOT, 'js', 'admin', 'components
 const ADMIN_CSS     = fs.readFileSync(path.join(ROOT, 'css', 'admin', 'admin.css'), 'utf8');
 const ADMIN_HTML    = fs.readFileSync(path.join(ROOT, 'admin.html'), 'utf8');
 
-describe('All Reports table row layout (#148 follow-up: Actions column removed)', () => {
-  test('actionBtns function and ar-actions cell are gone (actions live in detail only)', () => {
+describe('All Reports table row layout (Actions column restored for far-right Details)', () => {
+  // Superseded #148 follow-up: every row now needs a Details button on the
+  // far right so the Reports panel matches every other admin list view.
+  // Orphan rows route to the flag-detail view via ar-view-flag-detail; live
+  // rows keep the ar-view-detail path. The Details button lives in a
+  // trailing Actions column, not inline in the ID cell.
+  test('actionBtns function (bulk row-inline actions) stays gone -- actions live in detail', () => {
     expect(ALLREPS_CMP).not.toContain('function actionBtns');
     expect(ALLREPS_CMP).not.toContain('class="ar-actions"');
   });
 
-  test('row template still emits #NNN, app link, title, source, store, user, date, status', () => {
-    // 8 <td> cells per row, no Actions cell at the end.
+  test('row template emits 9 cells (#NNN, app, title, source, store, user, date, status, Actions)', () => {
     const rowTmpl = ALLREPS_CMP.slice(
       ALLREPS_CMP.indexOf('return `<tr data-rid='),
-      ALLREPS_CMP.indexOf('return `<tr data-rid=') + 1200
+      ALLREPS_CMP.indexOf('return `<tr data-rid=') + 1500
     );
-    expect((rowTmpl.match(/<td/g) || []).length).toBe(8);
+    expect((rowTmpl.match(/<td/g) || []).length).toBe(9);
     expect(rowTmpl).toContain('ar-status');
-    expect(rowTmpl).not.toContain('ar-actions');
+    // Details button is emitted via the detailsBtn variable produced just
+    // above the return; check its wiring on the full source instead.
+    expect(ALLREPS_CMP).toContain('data-action="ar-view-detail"');
+    expect(ALLREPS_CMP).toContain('data-action="ar-view-flag-detail"');
   });
 
-  test('all-reports-table thead drops the Actions <th>', () => {
-    // Other admin tables (flagged, banned, etc.) still have Actions; only
-    // the All Reports table loses the column.
+  test('all-reports-table thead includes the Actions <th> at the end', () => {
     const start = ADMIN_HTML.indexOf('id="all-reports-table"');
     const end = ADMIN_HTML.indexOf('</thead>', start);
     const arHead = ADMIN_HTML.slice(start, end);
-    expect(arHead).not.toMatch(/<th>Actions<\/th>/);
+    expect(arHead).toMatch(/<th>Actions<\/th>/);
   });
 
-  test('updateAllReportsRow no longer touches an actions cell', () => {
+  test('updateAllReportsRow still avoids the row-inline actions cell', () => {
     expect(ALLREPS_CMP).toContain('export function updateAllReportsRow(id, isF, isH, flaggedReason, isPending)');
     expect(ALLREPS_CMP).not.toContain("row.querySelector('.ar-actions')");
   });

@@ -250,6 +250,82 @@ describe('fetchReportById', () => {
   });
 });
 
+describe('fetchAllReports orphan-flag merge (#474 follow-up)', () => {
+  beforeEach(() => { delete global.location; global.location = { hostname: 'localhost' }; });
+
+  const makeOrphanRoutes = (orphans) => ({
+    'https://test.supabase.co/rest/v1/user_configs': [],
+    'https://test.supabase.co/rest/v1/report_approvals': [],
+    'https://test.supabase.co/rest/v1/rpc/get_orphan_flag_reports': orphans,
+  });
+
+  test('status=flagged calls get_orphan_flag_reports RPC', async () => {
+    const fetchSpy = makeFetchStub(makeOrphanRoutes([]));
+    global.fetch = fetchSpy;
+    await fetchAllReports(makeSession(), { status: 'flagged' });
+    const called = fetchSpy.mock.calls.some(([url]) => url.includes('rpc/get_orphan_flag_reports'));
+    expect(called).toBe(true);
+  });
+
+  test('non-flagged statuses skip the orphan RPC (avoid unnecessary work)', async () => {
+    const fetchSpy = makeFetchStub(makeOrphanRoutes([]));
+    global.fetch = fetchSpy;
+    await fetchAllReports(makeSession(), { status: 'clean' });
+    const called = fetchSpy.mock.calls.some(([url]) => url.includes('rpc/get_orphan_flag_reports'));
+    expect(called).toBe(false);
+  });
+
+  test('orphan rows are prepended with parsed report_key details in the title', async () => {
+    const orphan = {
+      id: 16, app_id: '2358720', source: 'pulse', status: 'open',
+      reason_category: 'spam', reason_text: 'Test', reporter_client_id: 'cli-abc',
+      report_key: '1779759584:VanGogh [AMD Custom :Proton Experime',
+      flagged_at: '2026-08-11T01:12:00Z',
+    };
+    global.fetch = makeFetchStub(makeOrphanRoutes([orphan]));
+    const out = await fetchAllReports(makeSession(), { status: 'flagged' });
+    expect(out[0]).toMatchObject({
+      id: 'flag-16',
+      app_id: '2358720',
+      is_orphan_flag: true,
+      is_flagged: true,
+      is_hidden: false,
+      is_pending: false,
+      flagged_reason: 'spam',
+    });
+    // Title carries the actual flag detail (GPU / Proton) parsed from
+    // report_key, not a scary "deleted" placeholder. Admin needs to see what
+    // got flagged regardless of whether the user_configs row is gone.
+    expect(out[0].title).toBe('VanGogh [AMD Custom / Proton Experime');
+  });
+
+  test('orphan title falls back gracefully when report_key is empty', async () => {
+    const orphan = {
+      id: 99, app_id: '730', source: 'pulse', status: 'open',
+      report_key: '', flagged_at: '2026-01-01T00:00:00Z',
+    };
+    global.fetch = makeFetchStub(makeOrphanRoutes([orphan]));
+    const out = await fetchAllReports(makeSession(), { status: 'flagged' });
+    expect(out[0].title).toBe('(no report details)');
+  });
+
+  test('orphan id is namespaced with the flag- prefix so it cannot collide with user_configs.id', async () => {
+    const orphan = { id: 42, app_id: '730', source: 'pulse', status: 'open', report_key: 'x', flagged_at: '2026-01-01T00:00:00Z' };
+    global.fetch = makeFetchStub(makeOrphanRoutes([orphan]));
+    const out = await fetchAllReports(makeSession(), { status: 'flagged' });
+    expect(out[0].id).toBe('flag-42');
+    expect(typeof out[0].id).toBe('string');
+  });
+
+  test('orphan RPC failure does not break the fetch (best-effort)', async () => {
+    global.fetch = jest.fn(async (url) => {
+      if (url.includes('rpc/get_orphan_flag_reports')) return { ok: false, status: 500, json: async () => ({}) };
+      return { ok: true, json: async () => [] };
+    });
+    await expect(fetchAllReports(makeSession(), { status: 'flagged' })).resolves.toEqual([]);
+  });
+});
+
 describe('patchReportFlags', () => {
   test('PATCHes the row with the supplied body and Prefer:return=minimal', async () => {
     const fetchSpy = jest.fn(async () => ({ ok: true, json: async () => [] }));

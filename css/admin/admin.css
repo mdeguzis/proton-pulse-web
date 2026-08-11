@@ -957,9 +957,15 @@
   font-style: italic;
 }
 
-/* Raw field dump inside flag detail */
+/* Raw field dump inside flag detail. Horizontal scroll on the section so
+   long report_key values, JSON blobs, or wide two-column tables never
+   push the page off-screen on mobile -- matches the .admin-table-scroll
+   wrapper the list-view tables use. */
 .flag-raw-section {
   margin-bottom: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 .flag-raw-title {
   font-size: 0.7rem;
@@ -994,8 +1000,24 @@
 pre.flag-raw-json {
   margin: 0;
   white-space: pre-wrap;
+  word-break: break-word;
   font-size: 0.75rem;
   color: var(--text-muted, #aaa);
+}
+
+/* Mobile: guarantee horizontal scroll on the flag detail page. Any child
+   that overflows (long report_key column, wide raw-json block) scrolls
+   inside the section, matching the list-view scroll behavior. */
+@media (max-width: 720px) {
+  #tab-flag-detail {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #tab-flag-detail #flag-detail-content {
+    /* min-width: 0 lets flex/grid children shrink instead of forcing
+       the parent to expand and clip. */
+    min-width: 0;
+  }
 }
 
 /* Analytics tab */
