@@ -311,9 +311,12 @@ def _make_year_file(data_path, app_id, year, reports):
 
 
 def test_compute_stats_basic(tmp_path):
+    # Decoupled from ProtonDB (#474): fixtures use source=pulse now. The
+    # aggregation logic being verified here is source-agnostic; a separate
+    # test below covers the protondb-filter behavior explicitly.
     _make_year_file(tmp_path, "730", "2023", [
         {"rating": "gold", "gpu": "RTX 3080", "cpu": "Intel Core i7", "os": "Arch Linux",
-         "protonVersion": "9.0-4", "source": "protondb", "timestamp": 1700000000},
+         "protonVersion": "9.0-4", "source": "pulse", "timestamp": 1700000000},
     ])
     stats = compute_stats(tmp_path)
     assert stats["total_reports"] == 1
@@ -323,7 +326,37 @@ def test_compute_stats_basic(tmp_path):
     assert stats["by_cpu_brand"]["intel"] == 1
     assert stats["by_os_family"]["arch"] == 1
     assert stats["by_proton_type"]["proton-stable"] == 1
-    assert stats["by_source"]["protondb"] == 1
+    assert stats["by_source"]["pulse"] == 1
+
+
+def test_compute_stats_ignores_protondb_source(tmp_path):
+    # Decoupled from ProtonDB (#474): archive rows still on disk must not
+    # contribute anything to stats.
+    _make_year_file(tmp_path, "730", "2023", [
+        {"rating": "gold", "source": "protondb", "timestamp": 1700000000,
+         "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
+        {"rating": "borked", "source": "protondb", "timestamp": 1700000001,
+         "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
+    ])
+    stats = compute_stats(tmp_path)
+    assert stats["total_reports"] == 0
+    assert stats["total_games"] == 0
+    assert "protondb" not in stats["by_source"]
+
+
+def test_compute_stats_mixed_source_counts_pulse_only(tmp_path):
+    # Decoupled from ProtonDB (#474): a year file that mixes both sources
+    # only counts the pulse row.
+    _make_year_file(tmp_path, "730", "2023", [
+        {"rating": "gold", "source": "protondb", "timestamp": 1700000000,
+         "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
+        {"rating": "platinum", "source": "pulse", "timestamp": 1700000001,
+         "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
+    ])
+    stats = compute_stats(tmp_path)
+    assert stats["total_reports"] == 1
+    assert stats["by_rating"].get("platinum") == 1
+    assert stats["by_rating"].get("gold", 0) == 0
 
 
 def test_compute_stats_empty_dir(tmp_path):
@@ -369,7 +402,7 @@ def test_compute_stats_framegen(tmp_path):
 
 def test_compute_stats_stale_borked(tmp_path):
     _make_year_file(tmp_path, "730", "2020", [
-        {"rating": "borked", "source": "protondb", "timestamp": 1577836800,
+        {"rating": "borked", "source": "pulse", "timestamp": 1577836800,
          "title": "Broken Game", "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
     ])
     stats = compute_stats(tmp_path)
@@ -379,7 +412,7 @@ def test_compute_stats_stale_borked(tmp_path):
 def test_compute_stats_cross_tabs(tmp_path):
     _make_year_file(tmp_path, "730", "2023", [
         {"rating": "platinum", "gpu": "RTX 3080", "cpu": "", "os": "",
-         "source": "protondb", "timestamp": 1700000000, "protonVersion": ""},
+         "source": "pulse", "timestamp": 1700000000, "protonVersion": ""},
     ])
     stats = compute_stats(tmp_path)
     assert "nvidia" in stats["by_rating_x_gpu_vendor"]
@@ -388,7 +421,7 @@ def test_compute_stats_cross_tabs(tmp_path):
 
 def test_compute_stats_year_bucketing(tmp_path):
     _make_year_file(tmp_path, "730", "2023", [
-        {"rating": "gold", "source": "protondb", "timestamp": 1700000000,
+        {"rating": "gold", "source": "pulse", "timestamp": 1700000000,
          "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
     ])
     stats = compute_stats(tmp_path)
@@ -399,7 +432,7 @@ def test_compute_stats_year_bucketing(tmp_path):
 def test_compute_stats_top_games(tmp_path):
     for i in range(3):
         _make_year_file(tmp_path, f"10{i}", "2023",
-                        [{"rating": "gold", "source": "protondb", "timestamp": 1700000000 + i,
+                        [{"rating": "gold", "source": "pulse", "timestamp": 1700000000 + i,
                           "title": f"Game {i}", "gpu": "", "cpu": "", "os": "", "protonVersion": ""}] * (i + 1))
     stats = compute_stats(tmp_path)
     assert len(stats["top_games"]) <= 50
@@ -409,7 +442,7 @@ def test_write_stats_json(tmp_path):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
     _make_year_file(data_dir, "730", "2023", [
-        {"rating": "gold", "source": "protondb", "timestamp": 1700000000,
+        {"rating": "gold", "source": "pulse", "timestamp": 1700000000,
          "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
     ])
     write_stats_json(data_dir, tmp_path)
@@ -429,7 +462,7 @@ def test_compute_stats_by_year_source(tmp_path):
 
 def test_compute_stats_device_family(tmp_path):
     _make_year_file(tmp_path, "730", "2023", [
-        {"rating": "gold", "source": "protondb", "timestamp": 1700000000,
+        {"rating": "gold", "source": "pulse", "timestamp": 1700000000,
          "cpu": "AMD Custom APU 0405", "gpu": "AMD Custom GPU 0405",
          "os": "", "protonVersion": ""},
     ])
@@ -453,7 +486,7 @@ def test_compute_stats_skips_non_directory_files(tmp_path):
     # Place a file (not dir) directly in data_path to hit the `continue` branch
     (tmp_path / "notadir.txt").write_text("hello")
     _make_year_file(tmp_path, "730", "2024", [
-        {"rating": "gold", "source": "protondb", "timestamp": 1700000000,
+        {"rating": "gold", "source": "pulse", "timestamp": 1700000000,
          "gpu": "", "cpu": "", "os": "", "protonVersion": ""},
     ])
     stats = compute_stats(tmp_path)

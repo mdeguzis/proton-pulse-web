@@ -57,3 +57,83 @@ describe('fetchProtonDbLive (proxy)', () => {
     expect(calls).toHaveLength(1);
   });
 });
+
+// Decoupled from ProtonDB (#474): fetchCdn must return only pulse-sourced
+// rows even when the CDN JSON still contains archive rows.
+function loadProtonDbForCdn(fetchImpl) {
+  const calls = [];
+  const ctx = {
+    console: { log() {}, debug() {}, error() {} },
+    fetch: (url, opts) => { calls.push({ url, opts }); return fetchImpl(url, opts); },
+    // Stub the two imports fetchCdn depends on; the ESM loader strips imports.
+    dataUrl: async (p) => `https://cdn.example/${p}`,
+    appIdToDir: (id) => String(id),
+  };
+  const mod = loadEsm(['js/app/api/protondb.js'], ctx);
+  return { mod, calls };
+}
+
+describe('fetchCdn (#474 decouple)', () => {
+  test('drops rows with source=protondb', async () => {
+    const rows = [
+      { rating: 'gold',     source: 'protondb', timestamp: 1 },
+      { rating: 'platinum', source: 'pulse',    timestamp: 2 },
+      { rating: 'silver',   source: 'pulse',    timestamp: 3 },
+    ];
+    const { mod } = loadProtonDbForCdn(() => jsonResponse(rows));
+    const out = await mod.fetchCdn(730);
+    expect(out).toHaveLength(2);
+    expect(out.every(r => r.source === 'pulse')).toBe(true);
+  });
+
+  test('rows with missing/unknown source are dropped (legacy default is protondb)', async () => {
+    const rows = [
+      { rating: 'gold' },                          // no source -> archive default
+      { rating: 'gold', source: '' },              // empty -> archive default
+      { rating: 'gold', source: 'other-import' },  // unknown -> not pulse
+      { rating: 'platinum', source: 'pulse' },
+    ];
+    const { mod } = loadProtonDbForCdn(() => jsonResponse(rows));
+    const out = await mod.fetchCdn(730);
+    expect(out).toHaveLength(1);
+    expect(out[0].rating).toBe('platinum');
+  });
+
+  test('returns [] when CDN payload is not an array', async () => {
+    const { mod } = loadProtonDbForCdn(() => jsonResponse({ oops: true }));
+    const out = await mod.fetchCdn(730);
+    expect(out).toEqual([]);
+  });
+
+  test('returns [] on non-ok CDN response', async () => {
+    const { mod } = loadProtonDbForCdn(() => jsonResponse({}, false, 404));
+    const out = await mod.fetchCdn(730);
+    expect(out).toEqual([]);
+  });
+});
+
+// Decoupled from ProtonDB (#474): readProtonDbLiveCache is a cache-only read
+// used by the game page + confidence page so a cold render does not auto-fetch
+// ProtonDB. Only warm cache (populated by a previous button click that ran
+// fetchProtonDbLive) returns data.
+describe('readProtonDbLiveCache (#474 decouple)', () => {
+  test('returns [] on cold cache', () => {
+    const { mod } = loadProtonDb(() => jsonResponse({}));
+    expect(mod.readProtonDbLiveCache(730)).toEqual([]);
+  });
+
+  test('returns cached array after a fetchProtonDbLive call warms it', async () => {
+    const { mod } = loadProtonDb(() => jsonResponse({ found: true, tier: 'gold', total: 42 }));
+    await mod.fetchProtonDbLive(730);
+    const out = mod.readProtonDbLiveCache(730);
+    expect(out).toHaveLength(1);
+    expect(out[0]).toMatchObject({ tier: 'gold', total: 42, _liveOnly: true });
+  });
+
+  test('does not hit the network on read', () => {
+    const { mod, calls } = loadProtonDb(() => jsonResponse({}));
+    mod.readProtonDbLiveCache(999);
+    mod.readProtonDbLiveCache(999);
+    expect(calls).toHaveLength(0);
+  });
+});

@@ -6,14 +6,17 @@ const src = fs.readFileSync(
   'utf8'
 );
 
-describe('game-stats page: ProtonDB live summary integration (#219)', () => {
-  test('loadProtonDbLive hits the same edge fn the game page uses', () => {
-    expect(src).toContain("PROTONDB_LIVE_URL");
-    expect(src).toContain("functions/v1/protondb-summary");
-    expect(src).toContain("async function loadProtonDbLive(appId)");
+describe('game-stats page: ProtonDB live summary integration (#219, decoupled #474)', () => {
+  test('loadProtonDbLive is a no-op after ProtonDB decouple (#474)', () => {
+    // Was originally an edge-fn call; the site is decoupled from ProtonDB
+    // and no longer auto-fetches the live summary on the stats page.
+    expect(src).not.toContain("PROTONDB_LIVE_URL");
+    expect(src).not.toContain("functions/v1/protondb-summary");
+    expect(src).toMatch(/async function loadProtonDbLive\(_appId\) \{\s*return null;/);
+    expect(src).toContain("Decoupled from ProtonDB (#474)");
   });
 
-  test('run() fetches the live summary in parallel with mirror data', () => {
+  test('run() still keeps the liveSummary slot for structural continuity', () => {
     expect(src).toMatch(/const \[cdnReports, idxRow, pulseReports, configs, liveSummary, flightlessEntry\] = await Promise\.all\(\[/);
     expect(src).toMatch(/loadProtonDbLive\(appId\),?/);
   });

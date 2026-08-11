@@ -324,6 +324,16 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
     for app_id, year, reports in _iter_year_files(data_output_path):
         if not reports:
             continue
+        # Decoupled from ProtonDB (#474): only pulse rows count toward any
+        # aggregate. Games with zero pulse rows do not appear in per_game,
+        # games_with_any_report, or the leaderboards -- they might as well
+        # not exist for stats purposes.
+        pulse_rows = [
+            r for r in reports
+            if isinstance(r, dict) and (r.get("source") or "protondb").lower() == "pulse"
+        ]
+        if not pulse_rows:
+            continue
         games_with_any_report.add(app_id)
         # cache the first non-empty title we see for this app + accumulators for
         # newest report year (used for stale-borked detection later) and tallies
@@ -342,9 +352,7 @@ def compute_stats(data_output_path: Path) -> dict[str, Any]:
         if year_int > per_game[app_id]["newest_year"]:
             per_game[app_id]["newest_year"] = year_int
 
-        for r in reports:
-            if not isinstance(r, dict):
-                continue
+        for r in pulse_rows:
             total += 1
 
             src = normalize_source(r)

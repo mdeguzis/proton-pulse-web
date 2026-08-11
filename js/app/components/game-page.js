@@ -6,7 +6,7 @@ import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
 import { getWebClientId } from '../../shared/submit.js?v=ba876a15';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
-import { fetchCdn, fetchProtonDbLive } from '../api/protondb.js?v=65bc2638';
+import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/protondb.js?v=b7ff6a75';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
@@ -870,11 +870,13 @@ export async function renderGamePage(appId) {
     safeFetch(() => fetchUserVotes(appId), 'fetchUserVotes', {}),
     safeFetch(() => fetchConfigPlaytimeTotals(appId), 'fetchConfigPlaytimeTotals', []),
     safeFetch(() => _fetchReportModeration(appId), 'reportModeration', new Set()),
-    // Auto-fetch the ProtonDB live summary on every page load so aggregate
-    // stats (tier + total) stay accurate even when our CDN mirror is sparse
-    // or missing entirely (#219). The proxy is cached per-appId per-session
-    // so re-renders don't re-hit the network.
-    safeFetch(() => fetchProtonDbLive(appId), 'fetchProtonDbLive', []),
+    // Decoupled from ProtonDB (#474): no auto-fetch. If the user clicked the
+    // "Check ProtonDB Live" button on a stub page (or in a prior session
+    // load) the cache is warm and readProtonDbLiveCache returns it; otherwise
+    // this is [] and the aggregate / tier stay Pulse-only. Auto-fetching
+    // here was what surfaced the "moderate confidence via ProtonDB live"
+    // headline on pages we intended to render Pulse-only.
+    safeFetch(async () => readProtonDbLiveCache(appId), 'readProtonDbLiveCache', []),
   ]);
 
   // Drop ProtonDB mirror reports an admin has shadow-banned or deleted. Pulse

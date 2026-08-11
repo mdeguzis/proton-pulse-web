@@ -10,7 +10,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { computeConfidence } from '../lib/scoring/gameStats.js?v=6a63af50';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
-import { fetchProtonDbLive } from '../app/api/protondb.js?v=65bc2638';
+import { readProtonDbLiveCache } from '../app/api/protondb.js?v=b7ff6a75';
 import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
 import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
 
@@ -966,7 +966,8 @@ import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
     const [cdnReports, nativeReports, liveFetched, indexHit, scoringData] = await Promise.all([
       loadGame(appId, reportYear),
       wantsPerReport ? Promise.resolve([]) : fetchNativeReports(appId).catch(() => []),
-      wantsPerReport ? Promise.resolve([]) : fetchProtonDbLive(appId).catch(() => []),
+      // Decoupled from ProtonDB (#474): cache-only read; no auto-fetch.
+      wantsPerReport ? Promise.resolve([]) : Promise.resolve(readProtonDbLiveCache(appId)),
       // #437: one id via the batch API instead of the 11.8MB blob.
       getGamesByIds([appId]).then(m => m.get(String(appId)) || null),
       wantsPerReport ? loadScoringInfo() : Promise.resolve(null),

@@ -866,10 +866,11 @@ def _compute_game_summary(app_dir: Path, now_ts: float | None = None) -> tuple[s
             if not isinstance(r, dict):
                 continue
             source = (r.get("source") or "protondb").lower()
-            if source == "pulse":
-                pulse_count += 1
-            else:
-                protondb_count += 1
+            if source != "pulse":
+                # Decoupled from ProtonDB (#474): archive rows still sit in
+                # data/ but must not contribute to tiers, counts, or trend.
+                continue
+            pulse_count += 1
             rating = (r.get("rating") or "").lower()
             if rating in _RATING_SCORES:
                 total_score += _RATING_SCORES[rating]
@@ -931,10 +932,22 @@ def generate_recent_reports(data_output_path: Path, output_path: Path, limit: in
         if not year_files:
             continue
         try:
-            rows = json.loads(year_files[-1].read_text(encoding="utf-8"))
-            if not isinstance(rows, list):
-                continue
-            latest_ts = max((int(r.get("timestamp", 0)) for r in rows if r.get("timestamp")), default=0)
+            # Decoupled from ProtonDB (#474): recent-reports only surfaces
+            # games with actual pulse submissions. Legacy ProtonDB rows in
+            # data/ must not resurrect stale games onto the home page.
+            latest_ts = 0
+            for f in year_files:
+                rows = json.loads(f.read_text(encoding="utf-8"))
+                if not isinstance(rows, list):
+                    continue
+                for r in rows:
+                    if not isinstance(r, dict):
+                        continue
+                    if (r.get("source") or "protondb").lower() != "pulse":
+                        continue
+                    ts = int(r.get("timestamp", 0) or 0)
+                    if ts > latest_ts:
+                        latest_ts = ts
             if not latest_ts:
                 continue
             last_date = datetime.fromtimestamp(latest_ts, tz=timezone.utc).strftime("%Y-%m-%d")

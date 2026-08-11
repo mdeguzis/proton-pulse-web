@@ -277,28 +277,13 @@ import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
     } catch { return []; }
   }
 
-  // ProtonDB live summary via the same edge fn the game page uses. Gives us
-  // an aggregate tier + total count so the stats page can still say something
-  // useful when our CDN mirror has no reports for a game (#219 follow-up).
-  const PROTONDB_LIVE_URL =
-    'https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/protondb-summary';
-  async function loadProtonDbLive(appId) {
-    try {
-      const r = await fetch(`${PROTONDB_LIVE_URL}?appId=${encodeURIComponent(appId)}`, { headers: { Accept: 'application/json' } });
-      if (!r.ok) {
-        console.debug(`[game-stats] ProtonDB live check not ok | appId=${appId} status=${r.status} source=protondb-summary-proxy`);
-        return null;
-      }
-      const data = await r.json();
-      if (!data || data.found === false || !data.tier) {
-        console.debug(`[game-stats] ProtonDB live check empty | appId=${appId} source=protondb-summary-proxy`);
-        return null;
-      }
-      return { tier: data.tier, total: data.total || 0, score: data.score || 0, confidence: data.confidence || '' };
-    } catch (e) {
-      console.debug(`[game-stats] ProtonDB live check failed | appId=${appId} error=${e.message} source=protondb-summary-proxy`);
-      return null;
-    }
+  // Decoupled from ProtonDB (#474): stats page no longer auto-fetches the
+  // ProtonDB live summary. The edge-function proxy still exists (see
+  // fetchProtonDbLive in js/app/api/protondb.js) and remains available for
+  // the game page's user-triggered stub button; the stats page just does
+  // not participate in that auto-injection anymore.
+  async function loadProtonDbLive(_appId) {
+    return null;
   }
 
   // --- header rendering ---

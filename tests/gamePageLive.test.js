@@ -35,10 +35,14 @@ describe('game page: ProtonDB live-only handling', () => {
     expect(src).toContain("const combinedTier = pulseTierFromReports(allReportsForTier,");
   });
 
-  test('ProtonDB live summary is auto-fetched in the parallel Promise.all (#219)', () => {
-    // #219: the live summary must load automatically on every page render
-    // so aggregate stats reflect ProtonDB reality, not just what we mirror.
-    expect(src).toContain("safeFetch(() => fetchProtonDbLive(appId), 'fetchProtonDbLive', [])");
+  test('ProtonDB live is cache-only in the parallel Promise.all (#219 auto-fetch removed by #474)', () => {
+    // #474 decouple: the parallel load no longer auto-fetches ProtonDB. It
+    // reads the session cache instead (populated by a user clicking the
+    // "Check ProtonDB Live" button on stub pages), so populated game pages
+    // never show a "moderate confidence via ProtonDB live" headline.
+    expect(src).toContain("safeFetch(async () => readProtonDbLiveCache(appId), 'readProtonDbLiveCache', [])");
+    expect(src).not.toContain("safeFetch(() => fetchProtonDbLive(appId), 'fetchProtonDbLive', [])");
+    expect(src).toContain("Decoupled from ProtonDB (#474)");
   });
 
   test('live-only shows an explanatory note in the cards area, not fake cards', () => {
