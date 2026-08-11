@@ -17,7 +17,7 @@
     "jest-environment-jsdom": "^30.4.1",
     "js-yaml": "^5.2.3",
     "supabase": "^2.111.0",
-    "vite": "^8.2.0"
+    "vite": "^8.2.1"
   },
   "overrides": {
     "brace-expansion@1": "^1.1.16"
