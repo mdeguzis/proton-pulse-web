@@ -44,7 +44,15 @@ def _resolve_credentials() -> tuple[str, str]:
 
 
 def fetch_pulse_rows(limit: int = 10000) -> list[dict[str, Any]]:
-    """Pull all user_configs rows from Supabase via PostgREST."""
+    """Pull all user_configs rows from Supabase via PostgREST.
+
+    Raises on network / HTTP / parse failure so a broken SUPABASE_URL,
+    down Supabase, or 4xx from an anon-key rotation FAILS THE PIPELINE
+    instead of silently republishing search_index with tier='pending' on
+    games that actually have submissions. Prior behaviour swallowed the
+    exception and returned [], which produced weeks of stale search
+    results before anyone noticed. See ~/.claude/rules/no-silent-failures.md.
+    """
     base, key = _resolve_credentials()
     url = f"{base}/user_configs?select=*&order=created_at.desc&limit={limit}"
     req = urllib.request.Request(url, headers={"apikey": key, "Accept": "application/json"})
@@ -53,8 +61,8 @@ def fetch_pulse_rows(limit: int = 10000) -> list[dict[str, Any]]:
         with urllib.request.urlopen(req, timeout=30) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             payload = json.loads(resp.read().decode("utf-8"))
     except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, OSError) as exc:
-        log(f"[pulse] Failed to fetch user_configs from Supabase: {exc}")
-        return []
+        log(f"[pulse] Failed to fetch user_configs from Supabase: {type(exc).__name__}: {exc}")
+        raise
 
     if not isinstance(payload, list):
         log(f"[pulse] Unexpected payload shape from Supabase: {type(payload).__name__}")

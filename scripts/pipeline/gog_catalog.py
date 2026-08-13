@@ -91,12 +91,28 @@ def load_gog_catalog(
     try:
         catalog, covers, years, meta = _fetch_all_pages()
     except Exception as exc:
-        log(f"[gog-catalog] WARN: catalog fetch failed: {exc}; search index will lack GOG stubs")
-        _gog_catalog_cache = {}
-        _gog_covers_cache = {}
-        _gog_years_cache = {}
-        _gog_meta_cache = {}
-        return _gog_catalog_cache
+        # Same pattern as epic_catalog.load_epic_catalog: reuse last-known
+        # good cache on network failure rather than silently wiping every
+        # GOG entry from the search index. Raise when there is no cache
+        # so the pipeline fails visibly instead of shipping an empty catalog.
+        # See no-silent-failures.md.
+        log(f"[gog-catalog] catalog fetch failed: {type(exc).__name__}: {exc}")
+        if cache_path.exists():
+            try:
+                stale = json.loads(cache_path.read_text(encoding="utf-8"))
+                _gog_catalog_cache = stale.get("catalog", {}) or {}
+                _gog_covers_cache = stale.get("covers", {}) or {}
+                _gog_years_cache = stale.get("years", {}) or {}
+                _gog_meta_cache = stale.get("meta", {}) or {}
+                stale_age = time.time() - stale.get("_ts", 0)
+                log(
+                    f"[gog-catalog] degraded: reusing stale cache "
+                    f"({len(_gog_catalog_cache):,} entries, age {stale_age/3600:.1f}h)"
+                )
+                return _gog_catalog_cache
+            except (OSError, json.JSONDecodeError, KeyError) as cache_exc:
+                log(f"[gog-catalog] stale cache also unreadable: {type(cache_exc).__name__}: {cache_exc}")
+        raise
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(

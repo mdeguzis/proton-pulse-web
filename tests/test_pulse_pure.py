@@ -293,3 +293,42 @@ def test_resolve_credentials_strips_trailing_slash(monkeypatch):
     from scripts.pipeline.pulse import _resolve_credentials
     url, _ = _resolve_credentials()
     assert url == "https://example.supabase.co/rest/v1"
+
+
+# ── fetch_pulse_rows: failure MUST raise, not silently return [] ──────────────
+
+def test_fetch_pulse_rows_raises_on_http_error(monkeypatch):
+    # Silent return [] on a 4xx / 5xx was the pulse.py bug that silently
+    # republished stale search-index data for weeks. Test pins the fix.
+    from urllib.error import HTTPError
+    import io
+    def _raising_urlopen(*a, **kw):
+        raise HTTPError("http://fake", 404, "Not Found", {}, io.BytesIO(b""))
+    from scripts.pipeline import pulse
+    monkeypatch.setattr(pulse.urllib.request, "urlopen", _raising_urlopen)
+    import pytest
+    with pytest.raises(HTTPError):
+        pulse.fetch_pulse_rows()
+
+
+def test_fetch_pulse_rows_raises_on_url_error(monkeypatch):
+    from urllib.error import URLError
+    def _raising_urlopen(*a, **kw):
+        raise URLError("connection refused")
+    from scripts.pipeline import pulse
+    monkeypatch.setattr(pulse.urllib.request, "urlopen", _raising_urlopen)
+    import pytest
+    with pytest.raises(URLError):
+        pulse.fetch_pulse_rows()
+
+
+def test_fetch_pulse_rows_raises_on_bad_json(monkeypatch):
+    class _FakeResp:
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def read(self): return b"<html>not json</html>"
+    from scripts.pipeline import pulse
+    monkeypatch.setattr(pulse.urllib.request, "urlopen", lambda *a, **kw: _FakeResp())
+    import pytest
+    with pytest.raises(pulse.json.JSONDecodeError):
+        pulse.fetch_pulse_rows()
