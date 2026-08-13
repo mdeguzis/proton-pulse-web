@@ -267,3 +267,29 @@ def test_merge_gog_creates_underscore_dir(tmp_path):
     assert reports == 1
     assert (tmp_path / "gog_1234567890" / "2025.json").exists()
     assert not (tmp_path / "gog:1234567890").exists()
+
+
+# ── _resolve_credentials: SUPABASE_URL normalisation ─────────────────────────
+
+def test_resolve_credentials_appends_rest_v1_when_bare_host(monkeypatch):
+    # A common misconfig: CI secret set to the bare Supabase host without
+    # /rest/v1. pulse.py used to append user_configs directly, which 404'd
+    # and silently disabled the pulse merge for every scheduled run.
+    monkeypatch.setenv("SUPABASE_URL", "https://example.supabase.co")
+    from scripts.pipeline.pulse import _resolve_credentials
+    url, _ = _resolve_credentials()
+    assert url == "https://example.supabase.co/rest/v1"
+
+
+def test_resolve_credentials_preserves_full_rest_url(monkeypatch):
+    monkeypatch.setenv("SUPABASE_URL", "https://example.supabase.co/rest/v1")
+    from scripts.pipeline.pulse import _resolve_credentials
+    url, _ = _resolve_credentials()
+    assert url == "https://example.supabase.co/rest/v1"
+
+
+def test_resolve_credentials_strips_trailing_slash(monkeypatch):
+    monkeypatch.setenv("SUPABASE_URL", "https://example.supabase.co/")
+    from scripts.pipeline.pulse import _resolve_credentials
+    url, _ = _resolve_credentials()
+    assert url == "https://example.supabase.co/rest/v1"

@@ -28,8 +28,17 @@ SB_ANON_KEY_DEFAULT = "sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V"
 
 
 def _resolve_credentials() -> tuple[str, str]:
-    """Allow overrides via env vars for staging / forks. Defaults to the prod project."""
+    """Allow overrides via env vars for staging / forks. Defaults to the prod project.
+
+    Accept either the full REST base ('https://<proj>.supabase.co/rest/v1')
+    or the bare project host ('https://<proj>.supabase.co'). CI secrets are
+    sometimes set to the bare host, which produced '.../user_configs' urls
+    that 404'd and quietly disabled the pulse merge for every scheduled
+    run. Append /rest/v1 when it's missing so both forms work.
+    """
     url = os.environ.get("SUPABASE_URL", SB_URL_DEFAULT).rstrip("/")
+    if not url.endswith("/rest/v1"):
+        url = f"{url}/rest/v1"
     key = os.environ.get("SUPABASE_ANON_KEY", SB_ANON_KEY_DEFAULT)
     return url, key
 
