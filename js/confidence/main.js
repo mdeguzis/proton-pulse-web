@@ -930,7 +930,14 @@ import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
         const r = await fetch(url);
         if (!r.ok) continue;
         const data = await r.json();
-        if (Array.isArray(data) && data.length) return data;
+        if (Array.isArray(data) && data.length) {
+          // Decoupled from ProtonDB (#474): same pulse-only filter that
+          // fetchCdn applies on the game page. Without this the confidence
+          // breakdown counts stale protondb-sourced rows the game page has
+          // already hidden -- e.g. "1 Gold, 1 Silver across 2 reports" on
+          // a game whose game page reads "1 report / silver".
+          return data.filter(row => row && (row.source || '').toLowerCase() === 'pulse');
+        }
       } catch { continue; }
     }
     return [];
