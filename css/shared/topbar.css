@@ -536,6 +536,7 @@ html[data-motion="off"] *::after {
 .search-dropdown .sd-combo .sd-combo-store { background: #1689d0; color: #fff; }
 .search-dropdown .sd-combo[data-store="gog"]  .sd-combo-store { background: #7a3fcf; }
 .search-dropdown .sd-combo[data-store="epic"] .sd-combo-store { background: #2a2a2a; }
+.search-dropdown .sd-combo[data-store="pgwiki"] .sd-combo-store { background: #9c6bd0; }
 @media (max-width: 540px) {
   .search-dropdown .sd-appid { font-size: 0.62rem; }
   .search-dropdown .sd-combo { font-size: 0.55rem; }

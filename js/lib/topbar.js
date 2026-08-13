@@ -1130,13 +1130,19 @@
           return { '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c];
         });
         const idStr = String(r.appId);
+        // PCGamingWiki ids carry a `pw_<hash>` prefix (or the legacy
+        // `pgwiki:<slug>` form). Without this branch they fell through to
+        // 'steam' and got a STEAM badge on the dropdown, contradicting
+        // the game page and site cards that render them as PCGWiki.
         const inferredStore = r.appType
           ? r.appType
           : (idStr.startsWith('gog:') ? 'gog'
             : idStr.startsWith('epic:') ? 'epic'
+            : (idStr.startsWith('pw_') || idStr.startsWith('pgwiki:')) ? 'pgwiki'
             : 'steam');
         const storeLabel = inferredStore === 'gog' ? 'GOG'
                          : inferredStore === 'epic' ? 'Epic'
+                         : inferredStore === 'pgwiki' ? 'PCGWiki'
                          : 'Steam';
         // Split chip on the trailing edge that mirrors the .game-card combo
         // corner chip (tier color on the left, store color on the right).
