@@ -255,11 +255,18 @@ export function renderAllReportsDetail(report, { onAction, onBack } = {}) {
     btn('ar-delete',  'Delete',  'danger', false, ''),
   ].join(' ');
 
+  // H2 with the report's game title so a moderator lands on a page that
+  // says WHAT they are looking at, not just a bare "Report Detail" section
+  // heading. Falls back to "App <id>" if title is missing, and always shows
+  // the numeric report id so the anchor is obvious.
+  const reportTitle = report.title ? String(report.title) : `App ${report.app_id ?? ''}`;
+  const titleHtml = `<h2 style="margin:0 0 4px;font-size:1.25rem;font-weight:700;color:var(--text,#eee)">${escapeHtml(reportTitle)}</h2>
+    <div class="admin-sub" style="margin-bottom:12px">Report #${escapeHtml(String(report.id))}${report.app_id ? ` &middot; App ${escapeHtml(String(report.app_id))}` : ''}</div>`;
   detail.innerHTML = `
     <button class="admin-btn admin-btn--sm admin-btn--ghost" data-action="ar-back" style="margin-bottom:12px">&#8592; Back to list</button>
     <div class="admin-card">
       <div class="ar-detail-header">
-        <div class="admin-subhead" style="margin:0">Report Detail</div>
+        <div>${titleHtml}</div>
         <div id="ar-detail-actions" class="ar-detail-actions">${actionHtml}</div>
       </div>
       <div id="ar-detail-status" style="margin:10px 0">${statusBadges(isF, isH, isP, report.flagged_reason)}</div>
