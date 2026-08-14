@@ -146,8 +146,8 @@ describe('home page browse -- text filter box', () => {
     // Recent and Popular sections must both honor the text box. Both chains
     // end in `..., textFilter)`. The intermediate filters are exercised in
     // dedicated deck/wishlist/library tests -- here we just pin the outer
-    // shape (text is outermost, and inside it kind wraps the trio).
-    const matches = homeSrc.match(/_filterByText\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\([^]*?, textFilter\)/g) || [];
+    // shape (text is outermost, then vr, and inside those kind wraps the trio).
+    const matches = homeSrc.match(/_filterByText\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\([^]*?, textFilter\)/g) || [];
     expect(matches.length).toBe(2);
   });
 
@@ -162,8 +162,9 @@ describe('home page browse -- text filter box', () => {
   test('text filter counts toward the active-filter badge when non-empty', () => {
     // The badge count sums every filter set + a 1 for a non-empty text
     // query. Wishlist (#266 Phase 1) + Deck (#266 Phase 2) both slot in
-    // ahead of kind. Pin the outer shape rather than the exact chain.
-    expect(homeSrc).toContain('deckSel.size + machineSel.size + steamosSel.size + kindSel.size + (textFilter.trim() ? 1 : 0)');
+    // ahead of kind; VR (#246) sits after it. Pin the outer shape rather
+    // than the exact chain.
+    expect(homeSrc).toContain('deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + (textFilter.trim() ? 1 : 0)');
   });
 
   test('clear filters resets BOTH the desktop and mobile inputs', () => {
@@ -330,11 +331,11 @@ describe('home page browse -- text filter searches all titles', () => {
     // then slices for the current page. So typing "cyber" narrows the
     // 714-row dataset to matching titles across every page, not just the
     // 50 visible tiles.
-    // Chain shape: text is applied AFTER kind, and kind is applied AFTER the
-    // deck/wishlist/library trio -- the exact intermediate filters between
-    // kind and library keep growing (#266 added Wishlist + Deck), so we
-    // pin the two edges instead of the whole chain.
-    expect(homeSrc).toMatch(/_filterByText\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\(/);
+    // Chain shape: text is applied AFTER vr and kind, and kind is applied
+    // AFTER the deck/wishlist/library trio -- the exact intermediate filters
+    // between kind and library keep growing (#266 added Wishlist + Deck,
+    // #246 added VR), so we pin the two edges instead of the whole chain.
+    expect(homeSrc).toMatch(/_filterByText\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\(/);
     expect(homeSrc).toMatch(/_filterByWishlist\(_filterByLibrary\(/);
     // Placeholder wording matches the actual behavior (previous text
     // "Filter loaded list" implied only visible items).
@@ -475,5 +476,38 @@ describe('#290 clickable chart rows: URL-param prefilter', () => {
     expect(homeSrc).toContain("_urlParams.get('view')");
     expect(homeSrc).toMatch(/VALID_CHART_VIEWS\s*=\s*new Set\(\['library', 'wishlist', 'deck', 'machine', 'steamos'\]\)/);
     expect(homeSrc).toContain('_urlView && VALID_CHART_VIEWS.has(_urlView)');
+  });
+});
+
+describe('home page browse -- VR filter (#246)', () => {
+  test('VR chip group is rendered in the filter panel', () => {
+    expect(homeSrc).toContain('id="home-vr-checks"');
+    expect(homeSrc).toContain('<span class="pg-filter-group-label">VR</span>');
+  });
+
+  test('offers all four VR states', () => {
+    for (const value of ['all', 'vr', 'only', 'flat']) {
+      expect(homeSrc).toContain(`data-value="${value}"`);
+    }
+  });
+
+  test('the VR map is fetched lazily, only when the chip leaves All', () => {
+    // vr-index.json is a whole extra request; the Deck chips use the same
+    // lazy pattern so a user who never touches the filter never pays for it.
+    expect(homeSrc).toContain('if (needMap && !vrMap) vrMap = await loadVrIndex()');
+  });
+
+  test('clear filters resets the VR selection and its chip group', () => {
+    expect(homeSrc).toContain('vrSel = new Set();');
+    expect(homeSrc).toContain('kindGroup, vrGroup].forEach');
+  });
+
+  test('VR selection is persisted alongside the other saved filters', () => {
+    expect(homeSrc).toContain('vr: [...vrSel]');
+    expect(homeSrc).toContain('vrSel = new Set(saved.vr || [])');
+  });
+
+  test('cards receive the VR capability so the chip can render', () => {
+    expect(homeSrc).toContain('vr: _lookupVr(');
   });
 });

@@ -2,6 +2,7 @@ import json
 import math
 import os
 import re
+import subprocess
 import time
 import urllib.error
 import urllib.request
@@ -58,6 +59,19 @@ from .anti_cheat import enrich_search_index_with_anti_cheat
 from .flightless_benchmarks import run_flightless_benchmarks
 from .pcgamingwiki import enrich_search_index_with_pcgamingwiki
 from .pcgamingwiki_catalog import merge_catalog_into_search_index as merge_pcgwiki_catalog
+# Module-level, not a local import inside finalize_output: a local import
+# resolves through the source module, so tests could only neutralize it by
+# patching pcgamingwiki_catalog itself -- which also broke that module's own
+# tests. Imported here, it stubs like every other enricher.
+from .pcgamingwiki_catalog import refresh_catalog as refresh_pcgwiki_catalog
+from .vrdb import (
+    backfill_vr_categories,
+    build_vrdb_index,
+    clone_or_update_vrdb,
+    enrich_search_index_with_vr,
+    vr_capable_app_ids,
+    write_vrdb_json,
+)
 from .sync_search_index import sync_search_index
 from .pulse import merge_pulse_into_data_dir
 from .write_depot_files import write_depot_files
@@ -2486,8 +2500,7 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # empty dict so a missing snapshot never breaks the coverage report.
     pcgwiki_catalog_for_coverage: dict[str, str] = {}
     try:
-        from .pcgamingwiki_catalog import refresh_catalog as _refresh_pcgwiki
-        pcgwiki_catalog_for_coverage = _refresh_pcgwiki(output_path)
+        pcgwiki_catalog_for_coverage = refresh_pcgwiki_catalog(output_path)
     except Exception as exc:
         log(f"[coverage] PCGWiki catalog unavailable: {exc}")
     generate_coverage_report(
@@ -2560,6 +2573,30 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # same Cargo TTL if both are refreshing on the same run.
     phase("PCGamingWiki catalog stubs")
     merge_pcgwiki_catalog(output_path)
+    # #246: VR capability column + the VRDB compatibility panel data. Runs
+    # after the catalog stubs so every row that could be flagged exists. The
+    # VRDB half is display-only context with its own 1-5 scale (lower is
+    # better, inverted from a Pulse tier) -- it never feeds tier or confidence
+    # math. A VRDB outage degrades to the Steam-categories half rather than
+    # failing the run, but a format change upstream raises (see build_vrdb_index).
+    phase("VR support + VRDB ingest")
+    try:
+        vrdb_repo = clone_or_update_vrdb()
+        vrdb_index = build_vrdb_index(vrdb_repo)
+        write_vrdb_json(output_path, vrdb_index)
+        vr_ids = vr_capable_app_ids(vrdb_repo)
+        # Fill in Steam's only-vs-supported answer for VR titles that lack it.
+        # Capped per run; without it the "VR Only" filter stays empty for a
+        # month while the descriptors cache TTL rolls over.
+        backfill_vr_categories(vr_ids)
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as exc:
+        # Upstream unavailable. Steam categories still flag VR titles, so the
+        # filter keeps working with a thinner source; the panel just has no
+        # new data this run. Logged with the exception TYPE so a persistent
+        # clone failure is visible rather than looking like "no VR games".
+        log(f"[vrdb] ingest unavailable, falling back to Steam categories only: {type(exc).__name__}: {exc}")
+        vr_ids = set()
+    enrich_search_index_with_vr(output_path, vr_app_ids=vr_ids)
     # #410: FlightlessSomething benchmark map. Display-only context -- never
     # feeds confidence or tier math (MangoHud runs do not say whether Proton
     # was in play). Runs after every index enricher so titles are final.

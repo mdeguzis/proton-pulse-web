@@ -2,16 +2,16 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=852c9d97';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=003f23c0';
-import { renderGamePage } from './game-page.js?v=17293706';
+import { renderGamePage } from './game-page.js?v=adfa8bf4';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=a75604f5';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=4630c3d5';
-import { renderGameCard } from '../lib/card.js?v=db950b95';
+import { renderGameCard } from '../lib/card.js?v=287d13ce';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { filterAdultEntries, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { filterDelistedEntries, countHiddenDelisted, showDelistedAllowed } from '../../lib/delisted-filter.js?v=42858e22';
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
-import { searchGames } from '../api/search-games.js?v=0e14d3ff';
+import { searchGames } from '../api/search-games.js?v=0b6c4bb3';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its exports

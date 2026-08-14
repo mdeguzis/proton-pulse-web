@@ -4,7 +4,7 @@
 // Steam Machine / SteamOS compatibility breakdowns of the library.
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
-import { getGamesByIds } from '../api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 
 // #437: tier rows for just the owned / wishlist ids via the batch API, in
 // place of the whole 11.8MB search-index.json blob. Chunked by 500 (the batch

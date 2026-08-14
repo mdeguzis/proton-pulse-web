@@ -10,7 +10,7 @@
 // pick them up.
 
 import { normalizeSearchable } from './search-match.js?v=dd1b70b2';
-import { getGamesByIds, searchGames } from '../api/search-games.js?v=0e14d3ff';
+import { getGamesByIds, searchGames } from '../api/search-games.js?v=0b6c4bb3';
 
 const _CDN2 = id => `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`;
 

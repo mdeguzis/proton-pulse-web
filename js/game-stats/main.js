@@ -7,7 +7,7 @@ import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange }
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=5adc7e54';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
-import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Per-game stats page (game-stats.html). Reads ?app=APPID from the URL,

@@ -3,6 +3,7 @@
 import { SupaAuth } from './config.js?v=f6f2c00a';
 import { FAULT_KEYS_WEB, deriveRatingFromState, inferProtonType } from './scoring.js?v=852c9d97';
 import { RUN_TYPES, normalizeRunType, validateRuntimeVersion } from './run-type.js?v=bef9bd4d';
+import { VR_HEADSETS, VR_RUNTIMES, VR_RUNTIME_KEYS, normalizePlayMode, normalizeVrRuntime } from './vr.js?v=8759ee7d';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 
 // Form submission + populate-submit-form -- factored out of app.js.
@@ -104,6 +105,36 @@ export function suggestionsForRunType(entries, runTypeKey, query = '', limit = 1
     .filter(e => (lq ? e.value.toLowerCase().includes(lq) : true));
   ranked.sort((a, b) => (a.rank - b.rank) || (a.i - b.i));
   return ranked.slice(0, limit).map(e => e.value);
+}
+
+/**
+ * Extract the VR columns from a submit form (#246).
+ *
+ * Exported for tests and so the plugin's payload builder can share the same
+ * rule. The vr_* fields are only ever populated for a VR report: on a
+ * flatscreen report they are explicitly null rather than omitted, so an EDIT
+ * that switches VR -> Flatscreen clears the old values instead of leaving
+ * them behind (a PATCH that omits a key leaves the column untouched).
+ *
+ * @param {HTMLFormElement|object} form - The submit form (or a stub in tests).
+ * @returns {{play_mode: string|null, vr_runtime: string|null, vr_device: string|null}}
+ */
+export function vrFieldsFromForm(form) {
+  const rawMode = form?.playMode?.value
+    ?? (typeof form?.querySelector === 'function'
+      ? form.querySelector('input[name="playMode"]:checked')?.value
+      : undefined);
+  const playMode = normalizePlayMode(rawMode);
+  if (playMode !== 'vr') {
+    return { play_mode: playMode || null, vr_runtime: null, vr_device: null };
+  }
+  const rawDevice = form?.vrDevice?.value || '';
+  const device = rawDevice === '__other' ? (form?.vrDeviceOther?.value || '') : rawDevice;
+  return {
+    play_mode: 'vr',
+    vr_runtime: normalizeVrRuntime(form?.vrRuntime?.value) || null,
+    vr_device: String(device).trim().slice(0, 64) || null,
+  };
 }
 
 // lightweight sysinfo parser for the system picker. profile.js has the
@@ -490,6 +521,11 @@ export async function submitReport(appId, title, form, editReportId = null) {
     // Normalize whatever the toggle carries into the canonical taxonomy so
     // a rogue pipeline value or a stale draft cannot land unclassified.
     run_type: normalizeRunType(form.runType?.value) || null,
+    // #246: how the reporter played, kept separate from run_type (which
+    // runtime) and from the game's own VR capability. The vr_* fields are
+    // nulled unless play_mode is 'vr' so a mid-form change of mind cannot
+    // leave a flatscreen report claiming a headset.
+    ...vrFieldsFromForm(form),
     game_owned: true,  // authenticated web users own the game by definition
     owner_verified: await isAppIdInMyLibrary(appId, session),
     form_responses: formResponses,
@@ -700,6 +736,35 @@ export async function populateSubmitForm(el) {
         </div>
       </div>
       <div class="sf-row-hint sf-runtime-version-warn" id="sf-runtime-version-warn" hidden></div>
+      <div class="sf-row sf-row--play-mode">
+        <label>Play Mode *</label>
+        <div class="sf-yn" id="sf-play-mode">
+          <label class="sf-yn-btn"><input type="radio" name="playMode" value="flat" checked> Flatscreen</label>
+          <label class="sf-yn-btn"><input type="radio" name="playMode" value="vr"> VR</label>
+        </div>
+      </div>
+      <div class="sf-row sf-row--vr" id="sf-vr-runtime-row" hidden>
+        <label>VR Runtime *</label>
+        <select name="vrRuntime" id="sf-vr-runtime-select">
+          ${VR_RUNTIME_KEYS.map(k => `<option value="${esc(k)}">${esc(VR_RUNTIMES[k].label)} -- ${esc(VR_RUNTIMES[k].subtitle)}</option>`).join('')}
+        </select>
+      </div>
+      <div class="sf-row sf-row--vr" id="sf-vr-device-row" hidden>
+        <label>Headset</label>
+        <select name="vrDevice" id="sf-vr-device-select">
+          <option value="">Not specified</option>
+          ${VR_HEADSETS.map(h => `<option value="${esc(h)}">${esc(h)}</option>`).join('')}
+          <option value="__other">Other (type it in)</option>
+        </select>
+      </div>
+      <div class="sf-row sf-row--vr" id="sf-vr-device-other-row" hidden>
+        <label>Headset name</label>
+        <input name="vrDeviceOther" maxlength="64" placeholder="e.g. Somniumvr1" autocomplete="off">
+      </div>
+      <div class="sf-row-hint sf-vr-hint" id="sf-vr-hint" hidden>
+        VR reports are kept separate from flatscreen ones -- "runs great" means
+        something different at 90Hz in stereo, so they are never averaged together.
+      </div>
       <div class="sf-row sf-row--also-linux" id="sf-also-linux-row" hidden>
         <label>Also tested Linux?</label>
         <div class="sf-also-linux-body">
@@ -1140,6 +1205,7 @@ export async function populateSubmitForm(el) {
   wireFpsInfoButtons(container);
   wireFpsCsvUpload(container);
   wireRunTypeToggle(container);
+  wirePlayModeToggle(container);
 }
 
 // Native vs Proton toggle at the top of the report. When "Native" is
@@ -1183,6 +1249,51 @@ export function setRunTypeNativeAvailable(container, isAvailable) {
     // we know the answer.
     sel.dispatchEvent(new Event('change'));
   }
+}
+
+/**
+ * Progressive reveal for the Play Mode row (#246): picking VR opens the
+ * runtime + headset rows, picking Flatscreen hides and clears them so a
+ * flatscreen report can never carry a stale vr_runtime from a mid-form
+ * change of mind. Headset "Other" opens a free-text box.
+ * @param {Element} container - The form container.
+ */
+function wirePlayModeToggle(container) {
+  const radios = container.querySelectorAll('input[name="playMode"]');
+  if (!radios.length) return;
+  const vrRows = container.querySelectorAll('.sf-row--vr');
+  const hint = container.querySelector('#sf-vr-hint');
+  const runtimeSel = container.querySelector('#sf-vr-runtime-select');
+  const deviceSel = container.querySelector('#sf-vr-device-select');
+  const otherRow = container.querySelector('#sf-vr-device-other-row');
+  const otherInput = container.querySelector('input[name="vrDeviceOther"]');
+
+  const syncOtherRow = () => {
+    if (!otherRow) return;
+    const isVr = container.querySelector('input[name="playMode"]:checked')?.value === 'vr';
+    const wantsOther = deviceSel?.value === '__other';
+    otherRow.hidden = !(isVr && wantsOther);
+    if (otherRow.hidden && otherInput) otherInput.value = '';
+  };
+
+  const apply = () => {
+    const isVr = container.querySelector('input[name="playMode"]:checked')?.value === 'vr';
+    for (const row of vrRows) row.hidden = !isVr;
+    if (hint) hint.hidden = !isVr;
+    if (runtimeSel) runtimeSel.required = isVr;
+    if (!isVr) {
+      // Clear rather than just hide: a hidden-but-populated field would still
+      // be picked up by snapshotFormData and land on a flatscreen report.
+      if (runtimeSel) runtimeSel.value = VR_RUNTIME_KEYS[0];
+      if (deviceSel) deviceSel.value = '';
+      if (otherInput) otherInput.value = '';
+    }
+    syncOtherRow();
+  };
+
+  for (const radio of radios) radio.addEventListener('change', apply);
+  deviceSel?.addEventListener('change', syncOtherRow);
+  apply();
 }
 
 function wireRunTypeToggle(container) {

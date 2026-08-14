@@ -15,7 +15,7 @@
 // (frontend filter, pipeline bake) are a follow-up ticket; this MVP just
 // gives moderators the write path.
 
-import { getGamesByIds } from '../../app/api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../../app/api/search-games.js?v=0b6c4bb3';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   listGameHides, upsertGameHide, deleteGameHide,

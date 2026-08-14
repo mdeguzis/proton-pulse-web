@@ -1,6 +1,6 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=852c9d97';
-import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=127e7e5f';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=5bf5d430';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=0bbdc652';
 import {
   deleteDraft, deleteLocalDraft, draftStampSuffix as stampSuffix, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
@@ -8,7 +8,7 @@ import {
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { esc } from '../app/utils.js?v=4630c3d5';
-import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
 
 (async function() {
   const params = new URLSearchParams(window.location.search);

@@ -7,7 +7,7 @@
 // Response contract (matches supabase/functions/search-games/index.ts):
 //   {
 //     results: [{ appId, title, tier, source, protondbCount, pulseCount,
-//                 releaseYear, delisted, adult, replacedBy, steamType }],
+//                 releaseYear, delisted, adult, replacedBy, steamType, vr }],
 //     total, hiddenDelisted, hiddenAdult, query, took_ms
 //   }
 //
@@ -27,6 +27,7 @@ export async function searchGames(query, {
   limit = 24,
   includeDelisted = false,
   includeAdult = false,
+  vr = 'any',
   signal,
 } = {}) {
   const q = String(query || '').trim();
@@ -37,6 +38,8 @@ export async function searchGames(query, {
   url.searchParams.set('limit', String(Math.min(100, Math.max(1, limit))));
   if (includeDelisted) url.searchParams.set('include_delisted', 'true');
   if (includeAdult) url.searchParams.set('include_adult', 'true');
+  // #246: 'any' is the server default, so only send a real filter.
+  if (vr && vr !== 'any') url.searchParams.set('vr', vr);
   try {
     const res = await fetch(url.toString(), { signal });
     if (!res.ok) {
@@ -73,6 +76,7 @@ export async function browseGames({
   offset = 0,
   includeDelisted = false,
   includeAdult = false,
+  vr = 'any',
   signal,
 } = {}) {
   const url = new URL(SEARCH_URL);
@@ -83,6 +87,7 @@ export async function browseGames({
   url.searchParams.set('offset', String(Math.max(0, offset)));
   if (includeDelisted) url.searchParams.set('include_delisted', 'true');
   if (includeAdult) url.searchParams.set('include_adult', 'true');
+  if (vr && vr !== 'any') url.searchParams.set('vr', vr);
   try {
     const res = await fetch(url.toString(), { signal });
     if (!res.ok) {

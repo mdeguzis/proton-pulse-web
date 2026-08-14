@@ -9,7 +9,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 // page's data loading so the two surfaces can never diverge again.
 import { computeConfidence } from '../lib/scoring/gameStats.js?v=6a63af50';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
-import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
 import { readProtonDbLiveCache } from '../app/api/protondb.js?v=b7ff6a75';
 import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
 import { mergeReportsById } from '../app/utils.js?v=4630c3d5';

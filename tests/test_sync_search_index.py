@@ -301,3 +301,37 @@ def test_sync_stale_delete_failure_is_non_fatal(tmp_path, monkeypatch):
         # First call (upsert) succeeds; second call (list for diff-delete) throws.
         m.side_effect = [upsert_resp, Exception("connection reset")]
         sync_search_index(tmp_path)  # must NOT raise
+
+
+# ── VR column (#246) ─────────────────────────────────────────────────────────
+
+def test_row_to_dict_maps_the_vr_column():
+    # Col 16 sits past anti-cheat (12-13) and PCGamingWiki (14-15).
+    row = ["620980", "Beat Saber", "gold", 1, 0, "steam", 2019, None, False, "",
+           None, "game", None, None, None, None, "only"]
+    assert _row_to_dict(row)["vr"] == "only"
+
+
+def test_row_to_dict_vr_is_null_on_a_short_row():
+    # Most rows never reach col 16 -- an enricher only pads the ones it flags.
+    row = ["730", "CS2", "gold", 5, 1, "steam"]
+    assert _row_to_dict(row)["vr"] is None
+
+
+def test_row_to_dict_drops_a_vr_value_the_db_would_reject():
+    # search_index_vr_chk allows only 'supported' / 'only'. Coercing here keeps
+    # one hand-edited row from failing the whole batch upsert.
+    row = ["1", "T", "gold", 0, 0, "steam", None, None, False, "",
+           None, None, None, None, None, None, "bogus"]
+    assert _row_to_dict(row)["vr"] is None
+
+
+def test_row_to_dict_normalizes_vr_case_and_whitespace():
+    row = ["1", "T", "gold", 0, 0, "steam", None, None, False, "",
+           None, None, None, None, None, None, "  ONLY  "]
+    assert _row_to_dict(row)["vr"] == "only"
+
+
+def test_vr_is_in_the_synced_column_list():
+    from scripts.pipeline.sync_search_index import COLUMNS
+    assert "vr" in COLUMNS

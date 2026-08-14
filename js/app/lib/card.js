@@ -34,7 +34,7 @@ const TIER_COLORS = {
 //   Anything other than "game" renders a small corner tag on the thumbnail so
 //   users scanning a library grid can pick out the DLC bundles and mods at a
 //   glance. Empty / "game" render no tag.
-export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges, delisted, delistedSteamAppId }) {
+export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges, delisted, delistedSteamAppId, vr }) {
   const primarySrc = imgUrl || (appId ? STEAM_IMG(appId) : '');
   const aid = appId != null ? String(appId) : '';
   const thumbInner = primarySrc
@@ -71,6 +71,13 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const delistedChip = delisted
     ? `<span class="game-card-delisted-chip" title="${delistedTitle}" aria-label="Delisted">Delisted</span>`
     : '';
+  // #246: VR chip rides in the same strip as the delisted chip. "VR Only" is
+  // called out separately from "VR" because a headset requirement is the thing
+  // a flatscreen player needs to see before clicking through.
+  const vrKey = vr === 'only' || vr === 'supported' ? vr : '';
+  const vrChip = vrKey
+    ? `<span class="game-card-vr-chip game-card-vr-chip--${vrKey}" title="${vrKey === 'only' ? 'Requires a VR headset' : 'Playable in VR or on a monitor'}" aria-label="${vrKey === 'only' ? 'VR only' : 'VR supported'}">${vrKey === 'only' ? 'VR Only' : 'VR'}</span>`
+    : '';
   // #431: owner badges (library / wishlist) live INSIDE every store-badge
   // variant so they always ride along with the store banner wherever the
   // user placed it. Only one variant renders visibly at a time (per
@@ -78,7 +85,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // way to guarantee they show up next to the store icon in every layout,
   // whether the pill is text + icon or icon-only.
   const storeTag = storePill
-    ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}">${delistedChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Steam-side appid replacement (e.g. 5488 -> 45700). Small tag over the
   // thumbnail so browse lists visually mark the old entry.
@@ -103,7 +110,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   }
   const badgeHtml = `<span class="game-card-badge${isNoRating ? ' game-card-badge--unrated' : ''}" ${badgeStyle}>${esc(label)}</span>`;
   const storePillHtml = storePill
-    ? `<span class="game-card-store-pill game-card-store-pill--${storeKey}">${delistedChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-store-pill game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Trend arrow. Only 'improving' and 'declining' render; stable and
   // insufficient are absent by design so a card stays quiet when nothing has
@@ -147,7 +154,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // 'bar-segment' (last 1/4 of the bar in the store color, two-tone with
   // the tier).
   const stripStoreHtml = storePill
-    ? `<span class="game-card-strip-store store-icon store-icon--${storeKey}">${delistedChip}${ownerBadgesHtml}<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg><span class="store-text">${esc(storePill)}</span></span>`
+    ? `<span class="game-card-strip-store store-icon store-icon--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg><span class="store-text">${esc(storePill)}</span></span>`
     : '';
   // The trend arrow rides INSIDE the tier label in the strip. The pills-row
   // copy above only shows in the 'right' card layout; in strip layout (the
@@ -162,7 +169,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // data-store-pill-pos="art-corner". Owner badges embedded so they ride
   // along with the store banner (#431).
   const cornerTagHtml = storePill
-    ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}">${delistedChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Combined corner chip for the 'combo' card layout. Two-tone pill at the
   // top-right edge of the card with the tier on the left and the store on
@@ -171,7 +178,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const comboTier = tier ? String(tier).toLowerCase() : '';
   const comboTierLabel = tier ? tier.toUpperCase() : (badge || 'NO RATING');
   const comboTagHtml = (storePill || tier || badge)
-    ? `<span class="game-card-combo-tag" data-tier="${esc(comboTier)}" data-store="${storeKey}"><span class="combo-tier">${esc(comboTierLabel)}</span>${storePill ? `<span class="combo-store">${delistedChip}${ownerBadgesHtml}${esc(storePill)}</span>` : ''}</span>`
+    ? `<span class="game-card-combo-tag" data-tier="${esc(comboTier)}" data-store="${storeKey}"><span class="combo-tier">${esc(comboTierLabel)}</span>${storePill ? `<span class="combo-store">${delistedChip}${vrChip}${ownerBadgesHtml}${esc(storePill)}</span>` : ''}</span>`
     : '';
   // Strip is a sibling of the row (not inside the body) so it can extend
   // the full card width including under the thumbnail when strip mode is on.
