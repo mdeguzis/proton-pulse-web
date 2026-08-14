@@ -1,0 +1,92 @@
+/**
+ * Every top-level data file the frontend fetches must actually be deployed.
+ *
+ * Found via #246: vr-index.json and vrdb.json were written by the pipeline,
+ * listed in gh-pages-manifest.txt and the update-data.yml copy loops, and
+ * still never reached the site -- because the Cloudflare publish path
+ * (#362) keeps its OWN list in publish-cloudflare.sh, a third registration
+ * point that is easy to miss.
+ *
+ * The failure mode is what makes this worth a test: Cloudflare Pages answers
+ * an unknown path with the SPA fallback, so the fetch gets HTTP 200 and an
+ * HTML body. Every one of these loaders treats a bad payload as "no data" and
+ * renders nothing, so a missing file looks exactly like a game having no
+ * entry. anti-cheat.json had been broken on PROD this way since the migration
+ * and nothing surfaced it.
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const REPO = path.join(__dirname, '..');
+const PUBLISH_SH = fs.readFileSync(path.join(REPO, 'scripts', 'publish-cloudflare.sh'), 'utf8');
+
+// Files fetched through dataUrl() that are deliberately NOT shipped to the
+// site root. Each needs a reason -- this list is the escape hatch, so an
+// unexplained entry defeats the point of the test.
+const KNOWN_UNSHIPPED = new Map([
+  // Served by the pp-edge-status Worker, not the pipeline (see the CSP
+  // connect-src entry on status.html), so there is no artifact to publish.
+  ['edge-status.json', 'served by the edge-status Worker, not the pipeline'],
+  // Admin-only box-art tooling. These are large probe caches; the admin page
+  // degrades to "no cache data" rather than breaking, and shipping tens of MB
+  // of cache to every visitor to serve one admin screen is the wrong trade.
+  ['game-images-cache.json', 'admin-only probe cache, too large to ship'],
+  ['nonsteam-images-cache.json', 'admin-only probe cache, too large to ship'],
+  // Profile app-type breakdown. Same reasoning: a large cache behind one
+  // optional widget that already handles absence.
+  ['steam-type-cache.json', 'large cache behind an optional profile widget'],
+]);
+
+function requestedDataFiles() {
+  const files = new Set();
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(full); continue; }
+      if (!entry.name.endsWith('.js')) continue;
+      const src = fs.readFileSync(full, 'utf8');
+      for (const m of src.matchAll(/dataUrl\(\s*'([^']+)'\s*\)/g)) files.add(m[1]);
+    }
+  };
+  walk(path.join(REPO, 'js'));
+  return [...files].sort();
+}
+
+describe('pipeline data files reach the deployed site', () => {
+  const requested = requestedDataFiles();
+
+  test('the scan finds the known data fetches', () => {
+    // Guard the guard: if dataUrl() is renamed or the call shape changes, the
+    // scan would silently match nothing and every assertion below would pass.
+    expect(requested.length).toBeGreaterThan(10);
+    expect(requested).toContain('search-index.json');
+  });
+
+  test.each(requested.filter((f) => !f.startsWith('data/')))(
+    '%s is in publish-cloudflare.sh SMALL_DATA (or documented as unshipped)',
+    (file) => {
+      if (KNOWN_UNSHIPPED.has(file)) {
+        expect(KNOWN_UNSHIPPED.get(file)).toBeTruthy();
+        return;
+      }
+      // Word-boundary match so 'game-images.json' does not satisfy
+      // 'game-images-cache.json'.
+      const listed = new RegExp(`(^|\\s)${file.replace(/[.]/g, '\\.')}(\\s|$)`, 'm').test(PUBLISH_SH);
+      expect(listed).toBe(true);
+    },
+  );
+
+  test('the #246 files and the anti-cheat regression are covered', () => {
+    for (const f of ['vr-index.json', 'vrdb.json', 'anti-cheat.json']) {
+      expect(PUBLISH_SH).toMatch(new RegExp(`(^|\\s)${f.replace(/[.]/g, '\\.')}(\\s|$)`, 'm'));
+    }
+  });
+
+  test('data/ paths are exempt because they reroute to R2', () => {
+    // dataUrl() only rewrites the host for data/ prefixed paths; those are
+    // synced wholesale by publish-cloudflare.sh rather than named individually.
+    const dataPaths = requested.filter((f) => f.startsWith('data/'));
+    for (const f of dataPaths) expect(f.startsWith('data/')).toBe(true);
+  });
+});

@@ -59,6 +59,16 @@ SMALL_DATA=(
   flightless-benchmarks.json flightless-review-queue.json
   coverage.html data-index.html
   sgdb-covers.json
+  # #246 VR capability map + VRDB compatibility panel data.
+  vr-index.json vrdb.json
+  # anti-cheat.json was missed when #362 moved publishing to Cloudflare: the
+  # pipeline writes it, nothing shipped it, and Pages answers the request with
+  # the SPA fallback -- HTML with a 200. loadAntiCheatMap() treats any bad
+  # response as {} and renders no panel, so the game page has been quietly
+  # showing no anti-cheat data on prod ever since. Adding a file here is the
+  # THIRD registration point for pipeline data (gh-pages-manifest.txt and the
+  # update-data.yml copy loops are the others); missing this one fails silently.
+  anti-cheat.json
 )
 
 log() { echo "[publish-cloudflare] $*"; }
