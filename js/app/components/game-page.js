@@ -1517,7 +1517,16 @@ export async function renderGamePage(appId) {
                  portrait cover is still shown when nothing better exists,
                  just never as the first-choice src that would flash a
                  broken image on load. #471. -->
-            <img class="game-header-art" src="${esc(sgdbCover || STEAM_IMG(appId))}" referrerpolicy="no-referrer" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+            <div class="game-header-art-wrap">
+              <img class="game-header-art" src="${esc(sgdbCover || STEAM_IMG(appId))}" referrerpolicy="no-referrer" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+              <!-- #246: the same badges the browse cards show (In library, On
+                   wishlist, VR), overlaid on the artwork. Pinned top-right
+                   regardless of the store-pill position preference: that pref
+                   moves the STORE pill around a grid of small cards, but on
+                   the detail page there is one large artwork and a single
+                   predictable corner is easier to read than a moving target. -->
+              <div class="game-header-art-badges" id="game-art-badges" hidden aria-label="Game badges"></div>
+            </div>
           </div>
           ${ratingPanel}
           <!-- Uniform tag row under the artwork: OS chips + user-context
@@ -2334,6 +2343,47 @@ export async function renderGamePage(appId) {
       host.innerHTML = badges.map((b) =>
         `<span class="game-tag game-tag--user" data-badge="${b.key}" style="background:${b.color}">${b.label}</span>`,
       ).join('');
+    })();
+
+    // Artwork badge overlay (#246). Separate from the tag row above because
+    // it renders for signed-out users too: VR capability is a property of the
+    // game, not of the viewer, so gating it behind sign-in would hide it from
+    // most visitors. Owner badges still require a session.
+    void (async () => {
+      const host = el.querySelector('#game-art-badges');
+      if (!host) return;
+      const parts = [];
+
+      const vr = vrForApp(await loadVrIndex().catch(() => ({})), appId);
+      if (vr) {
+        const only = vr === 'only';
+        parts.push(
+          `<span class="game-card-vr-chip game-card-vr-chip--${only ? 'only' : 'supported'}"`
+          + ` title="${only ? 'Requires a VR headset' : 'Playable in VR or on a monitor'}"`
+          + ` aria-label="${only ? 'VR only' : 'VR supported'}">${only ? 'VR Only' : 'VR'}</span>`,
+        );
+      }
+
+      try {
+        const session = await window.SupaAuth?.getSession?.();
+        if (session && session.user) {
+          const [libraryAppIds, wishlistAppIds] = await Promise.all([
+            getMyLibraryAppIds().catch(() => new Set()),
+            getMyWishlistAppIds().catch(() => new Set()),
+          ]);
+          const numericId = Number(appId);
+          if (libraryAppIds && libraryAppIds.has(numericId)) {
+            parts.push('<span class="game-card-owner-badge game-card-owner-badge--library" title="In your Steam library" aria-label="In library"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book-open"/></svg></span>');
+          }
+          if (wishlistAppIds && wishlistAppIds.has(numericId)) {
+            parts.push('<span class="game-card-owner-badge game-card-owner-badge--wishlist" title="On your Steam wishlist" aria-label="On wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wishlist-heart"/></svg></span>');
+          }
+        }
+      } catch { /* signed out -- VR chip alone is still worth showing */ }
+
+      if (!parts.length) return;
+      host.innerHTML = parts.join('');
+      host.hidden = false;
     })();
 
     // fetch real Steam Deck compat + min requirements and patch the UI.

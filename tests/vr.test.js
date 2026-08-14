@@ -173,3 +173,60 @@ describe('matchesVrFilter', () => {
     expect(matchesVrFilter('only', 'bogus')).toBe(true);
   });
 });
+
+describe('game page artwork badges (#246)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const src = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(
+    path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('the overlay lives inside a positioned wrapper on the artwork', () => {
+    expect(src).toContain('game-header-art-wrap');
+    expect(src).toContain('id="game-art-badges"');
+    expect(css).toMatch(/\.game-header-art-wrap\s*\{[^}]*position:\s*relative/);
+  });
+
+  test('badges pin top-right and are not driven by the store-pill preference', () => {
+    const block = css.match(/\.game-header-art-badges\s*\{[^}]*\}/)[0];
+    expect(block).toMatch(/position:\s*absolute/);
+    expect(block).toMatch(/top:\s*8px/);
+    expect(block).toMatch(/right:\s*8px/);
+    // The pref moves the store pill around browse cards; the detail page keeps
+    // one predictable corner. Strip comments before checking -- the comment
+    // above the rule names the attribute precisely to say it is NOT used, and
+    // a raw scan matches that prose instead of a real selector.
+    const noComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
+    const rules = noComments.match(/[^{}]+(?=\{)/g) || [];
+    const badgeRules = rules.filter((sel) => sel.includes('.game-header-art-badges'));
+    expect(badgeRules.length).toBeGreaterThan(0);
+    expect(badgeRules.some((sel) => sel.includes('data-store-pill-pos'))).toBe(false);
+  });
+
+  test('the overlay reuses the card badge classes so it matches browse', () => {
+    expect(src).toContain('game-card-vr-chip game-card-vr-chip--');
+    expect(src).toContain('game-card-owner-badge game-card-owner-badge--library');
+    expect(src).toContain('game-card-owner-badge game-card-owner-badge--wishlist');
+  });
+
+  test('VR renders for signed-out visitors; owner badges do not', () => {
+    // VR capability is a property of the game, not the viewer. Gating it
+    // behind a session would hide it from most visitors.
+    const block = src.slice(src.indexOf("el.querySelector('#game-art-badges')"));
+    const vrIdx = block.indexOf('vrForApp');
+    const sessionIdx = block.indexOf('SupaAuth?.getSession');
+    expect(vrIdx).toBeGreaterThan(-1);
+    expect(sessionIdx).toBeGreaterThan(vrIdx);
+  });
+
+  test('the VR chip is sized to the 18px icon box, not the delisted chip em', () => {
+    const cards = fs.readFileSync(
+      path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+    const chip = cards.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+    // 0.62em resolved against the store pill's 0.7rem rendered at ~0.43rem,
+    // which read as a footnote next to the 18px icons beside it.
+    expect(chip).not.toMatch(/font-size:\s*0\.62em/);
+    expect(chip).toMatch(/line-height:\s*18px/);
+  });
+});

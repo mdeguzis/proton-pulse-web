@@ -721,6 +721,38 @@ export async function renderHomePage() {
       }
     }
 
+    // #246: VR browse pool. most_played.json is Steam's top ~55 chart, so
+    // filtering it for VR yields a handful of games while the catalog has
+    // ~1,300. Picking a VR filter therefore BROWSES rather than narrowing:
+    // the search API already supports a server-side vr filter, so ask it for
+    // VR titles the same way the non-Steam stores do above. Without this,
+    // "VR" reads as "VR games that happen to be trending right now".
+    const HOME_VR_CAP = 500;
+    let _homeVrRows = [];
+    const _homeVrFetched = new Set();
+    async function _ensureHomeVr(filter) {
+      if (!filter || filter === 'all' || _homeVrFetched.has(filter)) return;
+      const rows = [];
+      let offset = 0;
+      while (offset < HOME_VR_CAP) {
+        const { results } = await browseGames({ sort: 'popular', limit: 100, offset, vr: filter });
+        for (const r of results) {
+          const t = String(r.tier || '').toLowerCase();
+          rows.push({
+            appId: r.appId, title: r.title,
+            tier: KNOWN_TIERS.has(t) ? t : 'pending',
+            protondbCount: r.protondbCount || 0, pulseCount: r.pulseCount || 0,
+            appType: r.source, delisted: r.delisted === true,
+          });
+        }
+        _addEnrichmentRows(results);
+        offset += 100;
+        if (results.length < 100) break;
+      }
+      _homeVrRows = rows;
+      _homeVrFetched.add(filter);
+    }
+
     // The previous super-condensed list-row renderer is gone -- the two
     // layouts now are 'list' (horizontal cards from _recentCardHtml /
     // popular item) and 'grid' (the same cards re-flowed into Steam-
@@ -771,15 +803,23 @@ export async function renderHomePage() {
         const noTierFilter = tierSel.size === 0 || tierSel.has('all');
         const wantUnrated = noTierFilter || tierSel.has('unrated');
         const onlyUnrated = tierSel.size === 1 && tierSel.has('unrated');
-        const pool = [
-          ...(onlyUnrated ? [] : ratedGames),
-          ...(wantUnrated ? unratedGames : []),
-        ];
+        // #246: with a VR filter on, browse the catalog slice the API returned
+        // instead of the top-55 chart. _filterByVr below still runs and is a
+        // no-op on these rows (they already match), which keeps the chain
+        // uniform and still filters the chart rows when the fetch failed.
+        const vrFilterActive = vrSel.size > 0 && !vrSel.has('all');
+        const pool = vrFilterActive && _homeVrRows.length
+          ? _homeVrRows
+          : [
+            ...(onlyUnrated ? [] : ratedGames),
+            ...(wantUnrated ? unratedGames : []),
+          ];
         // Map rating -> tier ('pending' for unrated) so the shared Set-based tier
         // filter treats them consistently with recent reports.
         asReports = pool.map(g => {
-          const t = String(g.rating || '').toLowerCase();
-          return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending', delisted: _isDelisted(g.appId) };
+          // Chart rows carry `rating`; API-browsed VR rows already carry `tier`.
+          const t = String(g.rating || g.tier || '').toLowerCase();
+          return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending', delisted: g.delisted === true || _isDelisted(g.appId) };
         });
       }
       const filtered = filterDelisted(filterAdult(_filterByText(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), textFilter)));
@@ -1266,6 +1306,10 @@ export async function renderHomePage() {
       vrSel = sel;
       const needMap = sel && sel.size > 0 && !sel.has('all');
       if (needMap && !vrMap) vrMap = await loadVrIndex().catch(() => ({}));
+      // Browse the catalog for VR titles rather than narrowing the top-55
+      // chart. Failure leaves _homeVrRows empty and the chart-filter path
+      // takes over, which is thin but never blank.
+      if (needMap) await _ensureHomeVr([...sel][0]).catch(() => {});
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
 

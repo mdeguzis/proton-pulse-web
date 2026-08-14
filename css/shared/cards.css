@@ -185,15 +185,21 @@
    in the same strip. Two variants: "VR" (playable either way) stays quiet in
    the Steam cyan family, "VR Only" is warmer because a headset requirement is
    a hard gate for a flatscreen player, not a nice-to-have. */
+/* Sized to the 18px box the store icon and owner badges use, not to the
+   delisted chip's 0.62em. That em is relative to the store pill's 0.7rem, so
+   it rendered at ~0.43rem and read as a footnote next to the icons it sits
+   beside. line-height carries the height so the box matches without a
+   min-height fighting the flex row. */
 .game-card-vr-chip {
-  display: inline-block;
-  padding: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 6px;
   border-radius: 3px;
-  font-size: 0.62em;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 18px;
   white-space: nowrap;
 }
 .game-card-vr-chip--supported {
