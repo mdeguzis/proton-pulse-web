@@ -601,3 +601,36 @@ def test_drain_ignores_non_steam_ids_when_counting(monkeypatch):
     out = drain_vr_categories({"gog:1", "epic:x"}, sleep=lambda _s: None)
     assert out["pending_before"] == 0
     assert out["stopped"] == "nothing pending"
+
+
+def test_backfill_probes_reported_games_before_the_rest(monkeypatch):
+    """Priority ordering (#246 follow-up).
+
+    A plain sort walks the numerically smallest app ids, which are arbitrary.
+    The first staging drain left Beat Saber and Half-Life: Alyx labelled
+    "supported" when Steam lists both as VR Only, because neither is in the
+    low 200 by id. Reported games are what users actually look up.
+    """
+    calls = []
+    monkeypatch.setattr("scripts.pipeline.common.fetch_steam_content_descriptors",
+                        lambda a, force_refresh=False: calls.append(a) or [])
+    monkeypatch.setattr("scripts.pipeline.common.vr_support_cached",
+                        lambda a: "" if a in calls else None)
+    monkeypatch.setattr("scripts.pipeline.common.flush_steam_descriptors_cache", lambda: None)
+
+    ids = {"1000", "1001", "1002", "620980", "546560"}
+    backfill_vr_categories(ids, probe_cap=2, request_delay=0,
+                           priority_ids={"620980", "546560"})
+    assert set(calls) == {"546560", "620980"}
+
+
+def test_backfill_falls_back_to_id_order_without_priorities(monkeypatch):
+    calls = []
+    monkeypatch.setattr("scripts.pipeline.common.fetch_steam_content_descriptors",
+                        lambda a, force_refresh=False: calls.append(a) or [])
+    monkeypatch.setattr("scripts.pipeline.common.vr_support_cached",
+                        lambda a: "" if a in calls else None)
+    monkeypatch.setattr("scripts.pipeline.common.flush_steam_descriptors_cache", lambda: None)
+    backfill_vr_categories({"30", "1000", "200"}, probe_cap=2, request_delay=0)
+    # Numeric, not lexical: "1000" must not sort before "30".
+    assert calls == ["30", "200"]

@@ -2588,7 +2588,9 @@ def finalize_output(output_dir, skip_probe: bool = False):
         # Fill in Steam's only-vs-supported answer for VR titles that lack it.
         # Capped per run; without it the "VR Only" filter stays empty for a
         # month while the descriptors cache TTL rolls over.
-        backfill_vr_categories(vr_ids)
+        # Games VRDB actually has reports for are probed first -- those are
+        # the ones users look up and the ones with a VR panel on the page.
+        backfill_vr_categories(vr_ids, priority_ids=set(vrdb_index))
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError) as exc:
         # Upstream unavailable. Steam categories still flag VR titles, so the
         # filter keeps working with a thinner source; the panel just has no

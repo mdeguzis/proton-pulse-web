@@ -215,10 +215,13 @@ def main():
         # Only touches the shared appdetails cache -- no site data is written
         # here. The next finalize reads the filled-in VR answers and publishes
         # them, so this workflow never needs a deploy step.
-        from .vrdb import clone_or_update_vrdb, drain_vr_categories, vr_capable_app_ids
+        from .vrdb import (
+            build_vrdb_index, clone_or_update_vrdb, drain_vr_categories, vr_capable_app_ids,
+        )
         repo = clone_or_update_vrdb()
         summary = drain_vr_categories(
             vr_capable_app_ids(repo),
+            priority_ids=set(build_vrdb_index(repo)),
             total_cap=args.total_cap,
             pass_cap=args.pass_cap,
             cooldown_seconds=args.cooldown,

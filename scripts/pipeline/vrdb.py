@@ -328,6 +328,7 @@ def backfill_vr_categories(
     vr_app_ids: set[str],
     probe_cap: int = VR_PROBE_CAP,
     request_delay: float = VR_REQUEST_DELAY,
+    priority_ids: set[str] | None = None,
 ) -> int:
     """Fetch Steam VR categories for VRDB-known apps missing them. Returns count fetched.
 
@@ -348,7 +349,15 @@ def backfill_vr_categories(
         vr_support_cached,
     )
 
-    pending = sorted(a for a in vr_app_ids if a.isdigit() and vr_support_cached(a) is None)
+    # Games VRDB has actual reports for go first. A plain sort walks the
+    # numerically smallest app ids, which are arbitrary -- the drain would
+    # spend its first several runs on games nobody searches while Beat Saber
+    # and Half-Life: Alyx sat mislabelled "supported" instead of "VR Only".
+    # Reported games are both the ones users look up and the ones whose game
+    # page has a VR panel to sit next to.
+    priority_ids = priority_ids or set()
+    pending_all = [a for a in vr_app_ids if a.isdigit() and vr_support_cached(a) is None]
+    pending = sorted(pending_all, key=lambda a: (a not in priority_ids, int(a)))
     if not pending:
         log("[vrdb] VR category backfill: nothing pending")
         return 0
@@ -397,6 +406,7 @@ def drain_vr_categories(
     pass_cap: int = VR_PROBE_CAP,
     cooldown_seconds: float = 300.0,
     request_delay: float = VR_REQUEST_DELAY,
+    priority_ids: set[str] | None = None,
     sleep=time.sleep,
 ) -> dict:
     """Drain the VR-category backlog over multiple passes. Returns a summary dict.
@@ -433,7 +443,8 @@ def drain_vr_categories(
     while remaining_cap > 0:
         this_pass = min(pass_cap, remaining_cap)
         probed = backfill_vr_categories(
-            vr_app_ids, probe_cap=this_pass, request_delay=request_delay
+            vr_app_ids, probe_cap=this_pass, request_delay=request_delay,
+            priority_ids=priority_ids,
         )
         summary["passes"] += 1
         summary["probed"] += probed
