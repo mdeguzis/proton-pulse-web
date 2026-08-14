@@ -185,3 +185,31 @@ describe('publish job wires the deploy correctly', () => {
     expect(RAW).toContain('CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}');
   });
 });
+
+describe('gh-pages deploy targets stay removed', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const MK = fs.readFileSync(path.join(__dirname, '..', 'Makefile'), 'utf8');
+
+  test('no gh-pages-only or gh-staging target exists', () => {
+    // Removed 2026-08-14. They pushed to the gh-pages branch + staging repo
+    // that #362 replaced with Cloudflare Pages, and both read like the
+    // obvious command while publishing somewhere nobody looks -- `make
+    // gh-staging` deployed to the rollback repo while the reviewer waited on
+    // staging.proton-pulse.com.
+    expect(MK).not.toMatch(/^gh-pages-only:/m);
+    expect(MK).not.toMatch(/^gh-staging:/m);
+  });
+
+  test('the Cloudflare targets are the replacement', () => {
+    expect(MK).toMatch(/^cf-staging:/m);
+    expect(MK).toMatch(/^cf-prod:/m);
+  });
+
+  test('the gh-* PIPELINE targets are untouched', () => {
+    // Unrelated to gh-pages: these dispatch update-data.yml.
+    for (const t of ['gh-run', 'gh-staging-pipeline', 'gh-staging-finalize', 'gh-resume']) {
+      expect(MK).toMatch(new RegExp(`^${t}:`, 'm'));
+    }
+  });
+});
