@@ -205,7 +205,7 @@ describe('game page artwork badges (#246)', () => {
   });
 
   test('the overlay reuses the card badge classes so it matches browse', () => {
-    expect(src).toContain('game-card-vr-chip game-card-vr-chip--');
+    expect(src).toContain('game-card-vr-chip');
     expect(src).toContain('game-card-owner-badge game-card-owner-badge--library');
     expect(src).toContain('game-card-owner-badge game-card-owner-badge--wishlist');
   });
@@ -228,5 +228,55 @@ describe('game page artwork badges (#246)', () => {
     // which read as a footnote next to the 18px icons beside it.
     expect(chip).not.toMatch(/font-size:\s*0\.62em/);
     expect(chip).toMatch(/line-height:\s*18px/);
+  });
+});
+
+describe('VR chip is one variant, VR-only is a banner (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const cardSrc = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'lib', 'card.js'), 'utf8');
+  const pageSrc = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const cardsCss = fs.readFileSync(path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+
+  test('cards render a single VR label, never VR Only', () => {
+    // One badge fits a card, and "VR ONLY" doubled the strip width at the S
+    // size. The requirement is stated on the detail page instead.
+    expect(cardSrc).not.toContain('VR Only<');
+    expect(cardSrc).toMatch(/>VR<\/span>/);
+  });
+
+  test('the only/supported distinction survives in the tooltip and the data', () => {
+    // Dropping the second chip must not drop the information: the filter and
+    // the banner both still depend on vr === 'only'.
+    expect(cardSrc).toContain("vrKey === 'only' ? 'VR only: requires a headset'");
+    expect(cardSrc).toContain("vr === 'only' || vr === 'supported'");
+  });
+
+  test('no VR chip colour variants remain in CSS', () => {
+    expect(cardsCss).not.toContain('.game-card-vr-chip--only');
+    expect(cardsCss).not.toContain('.game-card-vr-chip--supported');
+  });
+
+  test('the chip is amber so it does not merge with the store pill', () => {
+    // Every store colour is blue/purple/grey: Steam #1689d0, GOG #7a3fcf,
+    // PCGWiki #4d5f9c, Epic #555. The first version was a muted blue against
+    // the Steam pill.
+    const chip = cardsCss.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+    expect(chip).toMatch(/#e8a33d/i);
+  });
+
+  test('the game page carries a VR-only banner element', () => {
+    expect(pageSrc).toContain('id="game-vr-banner"');
+    expect(pageSrc).toContain('This game is VR only.');
+    // Hidden by default so a non-VR game never renders an empty banner.
+    expect(pageSrc).toMatch(/id="game-vr-banner" hidden/);
+  });
+
+  test('the banner only fires for VR-only games', () => {
+    const block = pageSrc.slice(pageSrc.indexOf("const vr = vrForApp("));
+    const onlyIdx = block.indexOf('if (only) {');
+    const bannerIdx = block.indexOf("#game-vr-banner");
+    expect(onlyIdx).toBeGreaterThan(-1);
+    expect(bannerIdx).toBeGreaterThan(onlyIdx);
   });
 });

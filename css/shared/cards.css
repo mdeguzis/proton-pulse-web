@@ -181,15 +181,15 @@
   color: var(--delisted-chip-fg, #fff);
 }
 
-/* #246 VR chip. Same geometry as the delisted chip so the two stack cleanly
-   in the same strip. Two variants: "VR" (playable either way) stays quiet in
-   the Steam cyan family, "VR Only" is warmer because a headset requirement is
-   a hard gate for a flatscreen player, not a nice-to-have. */
-/* Sized to the 18px box the store icon and owner badges use, not to the
-   delisted chip's 0.62em. That em is relative to the store pill's 0.7rem, so
-   it rendered at ~0.43rem and read as a footnote next to the icons it sits
-   beside. line-height carries the height so the box matches without a
-   min-height fighting the flex row. */
+/* #246 VR chip. Sized to the 18px box the store icon and owner badges use.
+   Amber because the chip sits directly against the store pill, and every
+   store colour is in the blue/purple/grey family: Steam #1689d0, GOG #7a3fcf,
+   PCGWiki #4d5f9c, Epic #555. The first version was a muted blue and read as
+   part of the Steam pill rather than a separate badge. Amber is also unused
+   elsewhere in the card chrome and does not collide with any tier colour.
+   One variant only -- VR-only games say so in a banner on the detail page,
+   not with a second chip colour that says "different somehow" without
+   saying how. */
 .game-card-vr-chip {
   display: inline-flex;
   align-items: center;
@@ -201,20 +201,8 @@
   text-transform: uppercase;
   line-height: 18px;
   white-space: nowrap;
-}
-.game-card-vr-chip--supported {
-  background: var(--vr-chip-bg, rgba(65, 122, 155, 0.92));
-  color: var(--vr-chip-fg, #fff);
-}
-.game-card-vr-chip--only {
-  background: var(--vr-only-chip-bg, rgba(150, 95, 175, 0.92));
-  color: var(--vr-only-chip-fg, #fff);
-}
-[data-theme="light"] .game-card-vr-chip--supported {
-  background: var(--vr-chip-bg, rgba(55, 105, 135, 0.95));
-}
-[data-theme="light"] .game-card-vr-chip--only {
-  background: var(--vr-only-chip-bg, rgba(130, 80, 155, 0.95));
+  background: var(--vr-chip-bg, #e8a33d);
+  color: var(--vr-chip-fg, #16130c);
 }
 
 /* Owner badges (Subaru "Badge of Ownership" style): dark chrome chips

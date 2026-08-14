@@ -4,7 +4,7 @@ import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=ad4b114d';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
 import { filterDelisted } from '../lib/delisted-filter.js?v=42858e22';
-import { renderGameCard } from '../app/lib/card.js?v=287d13ce';
+import { renderGameCard } from '../app/lib/card.js?v=bdeb653b';
 import { browseGames, getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
 import { initCardSizeToggle, setCardSizeButtonsEnabled } from '../lib/card-size.js?v=3402f405';
 

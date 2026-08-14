@@ -2074,6 +2074,21 @@ button.hub-link:disabled { opacity: 0.5; cursor: default; }
 .sf-draft-restore button:hover { background: rgba(102, 192, 244, 0.1); }
 
 /* Replaced-by banner + REPLACED pill on the game header (#199 follow-up) */
+/* #246: VR-only notice. Same shape as the replaced banner but in the VR
+   chip's colour family so the banner and the badge read as the same feature.
+   Informational, not a warning: VR-only is a fact about the game, not a
+   problem with it. */
+.game-vr-banner {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--vr-banner-border, rgba(232, 163, 61, 0.38));
+  background: var(--vr-banner-bg, rgba(232, 163, 61, 0.10));
+  color: var(--text);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
 .game-replaced-banner {
   margin-bottom: 12px;
   padding: 10px 14px;

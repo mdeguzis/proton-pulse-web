@@ -1497,12 +1497,19 @@ export async function renderGamePage(appId) {
           Reports on this page cover the original build; if you meant to report on the current version, use the link above.
         </div>`
       : '';
+    // #246: VR-only games get a banner instead of a second chip variant. On a
+    // card there is room for one badge and "VR" is the useful bit; the
+    // headset REQUIREMENT is a detail-page concern, and a sentence says it
+    // unambiguously where a second colour of chip did not. Populated async
+    // below so a slow vr-index fetch never delays the header.
+    const vrOnlyBanner = '<div class="game-vr-banner" id="game-vr-banner" hidden></div>';
     const submitHref = `submit.html?app=${appId}&title=${encodeURIComponent(title)}`;
     const submitBtnTitle = '';
 
     el.innerHTML = `
       <div class="game-header">
         ${replacedBanner}
+        ${vrOnlyBanner}
         <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry originated from">(${esc(_titleStoreLabel(appId, replacedBy) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
@@ -2358,10 +2365,19 @@ export async function renderGamePage(appId) {
       if (vr) {
         const only = vr === 'only';
         parts.push(
-          `<span class="game-card-vr-chip game-card-vr-chip--${only ? 'only' : 'supported'}"`
-          + ` title="${only ? 'Requires a VR headset' : 'Playable in VR or on a monitor'}"`
-          + ` aria-label="${only ? 'VR only' : 'VR supported'}">${only ? 'VR Only' : 'VR'}</span>`,
+          '<span class="game-card-vr-chip"'
+          + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}"`
+          + ` aria-label="${only ? 'VR only' : 'VR supported'}">VR</span>`,
         );
+        if (only) {
+          const banner = el.querySelector('#game-vr-banner');
+          if (banner) {
+            banner.innerHTML = '<strong>This game is VR only.</strong> '
+              + 'It requires a VR headset and cannot be played on a monitor. '
+              + 'Reports here describe VR play.';
+            banner.hidden = false;
+          }
+        }
       }
 
       try {
