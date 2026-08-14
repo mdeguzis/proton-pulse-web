@@ -4,7 +4,7 @@ import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../../shared/scoring.js?v=852c9d97';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
-import { getWebClientId } from '../../shared/submit.js?v=ba876a15';
+import { getWebClientId } from '../../shared/submit.js?v=127e7e5f';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
 import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/protondb.js?v=b7ff6a75';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
@@ -117,7 +117,7 @@ async function _fetchSteamCatalog() {
   return _steamCatalogCache;
 }
 
-const DISCORD_URL = 'https://discord.gg/UdPaEsMtd';
+const DISCORD_URL = 'https://discord.gg/3XskyBRswp';
 
 // Store label for the (parenthesised) tag next to the game title.
 // #434 followup: a pgwiki-source row that carries a delisted-steam

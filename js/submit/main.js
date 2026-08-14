@@ -1,10 +1,10 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=852c9d97';
-import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=ba876a15';
+import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=127e7e5f';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=0bbdc652';
 import {
-  deleteDraft, deleteLocalDraft, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
-} from '../shared/drafts.js?v=d7011aa5';
+  deleteDraft, deleteLocalDraft, draftStampSuffix as stampSuffix, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
+} from '../shared/drafts.js?v=9f4cdcaf';
 import { SupaAuth } from '../shared/config.js?v=f6f2c00a';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { esc } from '../app/utils.js?v=4630c3d5';
@@ -264,8 +264,8 @@ import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
     if (!info) { saveDraftStatus.textContent = ''; saveDraftStatus.hidden = true; return; }
     saveDraftStatus.hidden = false;
     if (info.state === 'saving') saveDraftStatus.textContent = 'Saving...';
-    else if (info.state === 'saved' && info.where === 'cloud') saveDraftStatus.textContent = 'Saved to your account.';
-    else if (info.state === 'saved' && info.where === 'local') saveDraftStatus.textContent = 'Auto-saved to this browser.';
+    else if (info.state === 'saved' && info.where === 'cloud') saveDraftStatus.textContent = `Saved to your account${stampSuffix(info.updated_at)}`;
+    else if (info.state === 'saved' && info.where === 'local') saveDraftStatus.textContent = `Auto-saved to this browser${stampSuffix(info.updated_at)}`;
     else if (info.state === 'error') saveDraftStatus.textContent = `Auto-save failed: ${info.error || 'unknown'}`;
     else saveDraftStatus.textContent = '';
   };
@@ -317,7 +317,14 @@ import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
         if (res.where === 'cloud') window.ppToast?.success('Draft saved.');
         else if (res.where === 'local') window.ppToast?.info('Saved locally. Cloud sync failed; will retry on next auto-save.');
         else window.ppToast?.error(`Failed to save draft: ${res.error || 'unknown'}`);
-        renderDraftStatus({ state: res.where ? 'saved' : 'error', where: res.where, error: res.error });
+        renderDraftStatus({
+          state: res.where ? 'saved' : 'error',
+          where: res.where,
+          error: res.error,
+          // saveDraft does not echo a server timestamp, so stamp the moment the
+          // write returned -- close enough to be useful and never blank.
+          updated_at: res.where ? new Date().toISOString() : null,
+        });
         if (res.where) {
           hideRestoreBanner();
           const dest = returnTo || `app.html#/app/${appId}`;
@@ -437,7 +444,7 @@ import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
                 Reports are snapshots in time and lock ${EDIT_WINDOW_DAYS} days after submission
                 (this one was submitted ${escHtml(new Date(createdMs).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))}).
                 If it contains a mistake, ask a moderator on
-                <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener">Discord</a>
+                <a href="https://discord.gg/3XskyBRswp" target="_blank" rel="noopener">Discord</a>
                 to delete or anonymize it, or submit a fresh report next time you play.
                 <a href="https://github.com/mdeguzis/proton-pulse-web/wiki/User-Policies#report-editing" target="_blank" rel="noopener">Read the full report editing policy -&gt;</a>
                 <p style="margin:10px 0 0"><a href="app.html#/app/${encodeURIComponent(String(appId))}">&larr; Back to the game page</a></p>

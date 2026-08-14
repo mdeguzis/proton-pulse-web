@@ -12,6 +12,22 @@ const SB_URL = () => _g.SUPABASE_URL;
 const SB_KEY = () => _g.SUPABASE_ANON_KEY;
 const REST = () => `${SB_URL()}/rest/v1/user_report_drafts`;
 
+/**
+ * Trailing " at <ISO>." for the draft status line, so the user can tell a
+ * save that just happened from one that ran ten minutes ago. Seconds-precision
+ * ISO 8601 UTC, matching how timestamps read everywhere else on the site.
+ * Falls back to a bare period when the timestamp is missing or unparseable --
+ * the sentence still terminates, it just loses the stamp.
+ * @param {string|null|undefined} iso - ISO timestamp from the autosaver.
+ * @returns {string}
+ */
+export function draftStampSuffix(iso) {
+  if (!iso) return '.';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '.';
+  return ` at ${d.toISOString().replace(/\.\d+Z$/, 'Z')}.`;
+}
+
 function headers(session, extra) {
   const h = {
     apikey: SB_KEY(),

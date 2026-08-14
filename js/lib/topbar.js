@@ -275,7 +275,7 @@
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg>
             <span>Contact</span>
           </a>
-          <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener" title="Join the Proton Pulse Discord">
+          <a href="https://discord.gg/3XskyBRswp" target="_blank" rel="noopener" title="Join the Proton Pulse Discord">
             <svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg>
             <span>Discord</span>
           </a>
@@ -353,7 +353,7 @@
       <a href="scoring.html" data-page="scoring"><svg class="nav-icon" aria-hidden="true"><use href="#icon-scoring"/></svg> Scoring</a>
       <a href="https://github.com/mdeguzis/decky-proton-pulse" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-gamepad"/></svg> Decky Plugin</a>
       <a href="https://github.com/mdeguzis/proton-pulse-web/issues/new/choose" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-contact"/></svg> Contact</a>
-      <a href="https://discord.gg/UdPaEsMtd" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
+      <a href="https://discord.gg/3XskyBRswp" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-discord"/></svg> Discord</a>
       <a href="https://ko-fi.com/mikeyd64" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-kofi"/></svg> Ko-Fi</a>
       <a href="https://github.com/mdeguzis/proton-pulse-web" target="_blank" rel="noopener"><svg class="nav-icon" aria-hidden="true"><use href="#icon-github"/></svg> GitHub</a>
     </div>

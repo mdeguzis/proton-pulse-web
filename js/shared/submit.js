@@ -27,6 +27,85 @@ if (typeof window._ppSubmitGlobalsReady === 'undefined') {
   }
 }
 
+// Runtime Version suggestion ranking. Lower wins. The official release
+// feeds (GitHub) are authoritative and current; the hardcoded fallback only
+// exists so the dropdown is not empty before the network settles; the
+// pipeline-harvested list is whatever users have already submitted, which
+// includes typos and joke versions ("Proton 99.0-1"), so it sorts last.
+export const VERSION_RANK = Object.freeze({ live: 0, fallback: 1, harvested: 2 });
+
+/**
+ * Convert a ValveSoftware/Proton release tag into the label the form uses.
+ * Accepts a trailing revision letter ("proton-11.0-1b") because Valve ships
+ * those as the current stable, and rejects beta tags ("proton-11.0-1-beta5")
+ * so the dropdown only offers releases a user can actually pick in Steam.
+ * @param {string} tag - GitHub release tag.
+ * @returns {string|null} Display label, or null when the tag is not a stable release.
+ */
+export function protonTagToLabel(tag) {
+  const m = String(tag || '').match(/^proton-(\d+\.\d+-\d+[a-z]?)$/i);
+  return m ? `Proton ${m[1]}` : null;
+}
+
+/**
+ * Merge version strings into a ranked entry list, keeping the best (lowest)
+ * rank when the same version arrives from more than one source.
+ * @param {Array<{value: string, rank: number}>} entries - Existing entries (not mutated).
+ * @param {string[]} values - Version strings to add.
+ * @param {number} rank - Rank to record for these values (see VERSION_RANK).
+ * @returns {Array<{value: string, rank: number}>} New merged list, insertion order preserved.
+ */
+export function mergeVersionEntries(entries, values, rank) {
+  const out = Array.isArray(entries) ? entries.slice() : [];
+  const byKey = new Map(out.map((e, i) => [e.value.trim().toLowerCase(), i]));
+  for (const raw of values || []) {
+    const value = String(raw == null ? '' : raw).trim();
+    if (!value) continue;
+    // Collapse the "Proton - Experimental" / "Proton-Experimental" variants
+    // the pipeline emits into one canonical label.
+    const canon = /^proton[\s-]+experimental$/i.test(value) ? 'Proton Experimental' : value;
+    const key = canon.toLowerCase();
+    const seen = byKey.get(key);
+    if (seen === undefined) {
+      byKey.set(key, out.length);
+      out.push({ value: canon, rank });
+    } else if (rank < out[seen].rank) {
+      out[seen] = { value: out[seen].value, rank };
+    }
+  }
+  return out;
+}
+
+/**
+ * Pick the version suggestions to show for a runtime type.
+ *
+ * Filtering uses the canonical `versionPattern` from run-type.js, so picking
+ * "Proton GE" stops offering Valve's Proton builds (and vice-versa). Results
+ * are ordered by source rank first so the current official release heads the
+ * list instead of whatever happened to be appended first -- the bug that left
+ * GE-Proton9-27 as the top GE suggestion long after GE-Proton11 shipped.
+ *
+ * @param {Array<{value: string, rank: number}>} entries - Ranked candidates.
+ * @param {string} runTypeKey - Canonical run type key (see RUN_TYPES).
+ * @param {string} [query] - What the user has typed so far (substring match).
+ * @param {number} [limit] - Max suggestions to return.
+ * @returns {string[]} Version labels, best match first.
+ */
+export function suggestionsForRunType(entries, runTypeKey, query = '', limit = 10) {
+  const key = runTypeKey || 'proton';
+  if (key === 'native') return [];
+  const pattern = RUN_TYPES[key]?.versionPattern || null;
+  const lq = String(query || '').trim().toLowerCase();
+  const ranked = (entries || [])
+    .map((e, i) => ({ ...e, i }))
+    // No pattern (unknown runtime) means we cannot judge -- offer everything
+    // rather than an empty dropdown.
+    .filter(e => (pattern ? pattern.test(e.value) : true))
+    .filter(e => (lq ? e.value.toLowerCase().includes(lq) : true));
+  ranked.sort((a, b) => (a.rank - b.rank) || (a.i - b.i));
+  return ranked.slice(0, limit).map(e => e.value);
+}
+
 // lightweight sysinfo parser for the system picker. profile.js has the
 // full version, but that file only loads on profile.html. keep this
 // self-contained so the submit form works on app.html without it
@@ -914,52 +993,72 @@ export async function populateSubmitForm(el) {
   const protonInput = container.querySelector('input[name="protonVersion"]');
   const suggList   = container.querySelector('.sf-suggestions');
   if (protonInput && suggList) {
-    const CACHE_KEY = 'pp_proton_versions_v1';
+    // v2: entries are now {value, rank} objects, not bare strings, so a stale
+    // v1 payload must not be read back in.
+    const CACHE_KEY = 'pp_proton_versions_v2';
     const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
-    const PROTON_FALLBACK = ['Proton Experimental','Proton 10.0-4','Proton 9.0-4','Proton 8.0-5','GE-Proton9-27','GE-Proton9-20','GE-Proton8-32'];
-    const tagToLabel = tag => { const m = tag.match(/^proton-(\d+\.\d+-\d+)$/i); return m ? `Proton ${m[1]}` : null; };
+    // Only a seed for the first paint. Deliberately short: the live release
+    // feeds below supply the current builds, and a long hardcoded list just
+    // goes stale in the repo.
+    const PROTON_FALLBACK = ['Proton Experimental', 'Proton 10.0-4', 'Proton 9.0-4', 'GE-Proton9-27'];
+    const runTypeSel = container.querySelector('#sf-run-type-select');
 
-    // Seed from fallback + schema immediately so suggestions work before network
-    let protonVersions = [...new Set([...PROTON_FALLBACK, ...(schema.knownProtonVersions || [])])];
+    let versionEntries = mergeVersionEntries([], PROTON_FALLBACK, VERSION_RANK.fallback);
+    versionEntries = mergeVersionEntries(versionEntries, schema.knownProtonVersions || [], VERSION_RANK.harvested);
 
     // Load cached list from localStorage if fresh
     try {
       const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-      if (cached?.ts && Date.now() - cached.ts < CACHE_TTL && Array.isArray(cached.versions)) {
-        protonVersions = [...new Set([...protonVersions, ...cached.versions])];
+      if (cached?.ts && Date.now() - cached.ts < CACHE_TTL && Array.isArray(cached.entries)) {
+        for (const e of cached.entries) {
+          if (e?.value) versionEntries = mergeVersionEntries(versionEntries, [e.value], Number(e.rank) || VERSION_RANK.harvested);
+        }
       }
     } catch {}
 
     // Async: fetch live releases + pipeline-harvested versions, extend, and persist to cache
     const pvUrl = /^localhost/.test(location.host) ? 'https://www.proton-pulse.com/proton-versions.json' : 'proton-versions.json';
+    const ghReleases = (url, label) => fetch(url)
+      .then(r => {
+        // GitHub rate-limits unauthenticated browser calls at 60/hr per IP, so
+        // this genuinely fails in the wild. Log which feed died -- silently
+        // falling back to the stale hardcoded list is what made this look like
+        // "suggestions are just wrong" instead of "the feed did not load".
+        if (!r.ok) throw new Error(`${label} releases HTTP ${r.status}`);
+        return r.json();
+      })
+      .catch(err => { console.warn('[submit] runtime version feed failed', { feed: label, url, error: String(err) }); return []; });
+
     Promise.allSettled([
-      fetch('https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases?per_page=20')
-        .then(r => r.ok ? r.json() : [])
-        .then(rels => { for (const rel of rels) protonVersions.push(rel.tag_name); }),
-      fetch('https://api.github.com/repos/ValveSoftware/Proton/releases?per_page=20')
-        .then(r => r.ok ? r.json() : [])
-        .then(rels => { for (const rel of rels) { const l = tagToLabel(rel.tag_name); if (l) protonVersions.push(l); } }),
-      fetch(pvUrl).then(r => r.ok ? r.json() : []).then(vs => { if (Array.isArray(vs)) for (const v of vs) if (v) protonVersions.push(v); }).catch(() => {}),
+      ghReleases('https://api.github.com/repos/GloriousEggroll/proton-ge-custom/releases?per_page=20', 'proton-ge')
+        .then(rels => { versionEntries = mergeVersionEntries(versionEntries, rels.map(r => r.tag_name), VERSION_RANK.live); }),
+      ghReleases('https://api.github.com/repos/ValveSoftware/Proton/releases?per_page=20', 'proton')
+        .then(rels => { versionEntries = mergeVersionEntries(versionEntries, rels.map(r => protonTagToLabel(r.tag_name)).filter(Boolean), VERSION_RANK.live); }),
+      fetch(pvUrl).then(r => r.ok ? r.json() : [])
+        .then(vs => { if (Array.isArray(vs)) versionEntries = mergeVersionEntries(versionEntries, vs, VERSION_RANK.harvested); })
+        .catch(err => { console.warn('[submit] runtime version feed failed', { feed: 'pipeline', url: pvUrl, error: String(err) }); }),
     ]).then(() => {
-      // Collapse the "Proton - Experimental" / "Proton-Experimental" variants
-      // (the pipeline emits both) into one canonical label so the datalist does
-      // not show two near-identical Experimental entries.
-      const canon = v => (/^proton[\s-]+experimental$/i.test(String(v).trim()) ? 'Proton Experimental' : v);
-      protonVersions = [...new Set(protonVersions.map(canon))];
-      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), versions: protonVersions })); } catch {}
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), entries: versionEntries })); } catch {}
+      // The feeds land after first paint; repaint an already-open dropdown so
+      // the user does not sit looking at the fallback list.
+      if (suggList.style.display === 'block') showSuggestions(protonInput.value);
     });
 
-    const showSuggestions = (q) => {
-      const lq = q.toLowerCase();
-      const matches = lq ? protonVersions.filter(v => v.toLowerCase().includes(lq)).slice(0, 10) : protonVersions.slice(0, 10);
+    function showSuggestions(q) {
+      const matches = suggestionsForRunType(versionEntries, runTypeSel?.value || 'proton', q);
       if (!matches.length) { suggList.style.display = 'none'; return; }
       suggList.innerHTML = matches.map(v => `<li style="padding:8px 12px;cursor:pointer;font-size:0.82rem;color:var(--text);border-bottom:1px solid var(--border);">${esc(v)}</li>`).join('');
       suggList.style.display = 'block';
-    };
+    }
     const hideSuggestions = () => { suggList.style.display = 'none'; };
 
     protonInput.addEventListener('focus', () => showSuggestions(protonInput.value));
     protonInput.addEventListener('input', () => showSuggestions(protonInput.value));
+    // Switching runtime type changes which versions are valid, so an open
+    // dropdown must re-filter rather than keep showing the old runtime's builds.
+    runTypeSel?.addEventListener('change', () => {
+      if (suggList.style.display === 'block') showSuggestions(protonInput.value);
+    });
     suggList.addEventListener('mousedown', e => {
       const li = e.target.closest('li');
       if (li) { protonInput.value = li.textContent; hideSuggestions(); protonInput.dispatchEvent(new Event('change')); }

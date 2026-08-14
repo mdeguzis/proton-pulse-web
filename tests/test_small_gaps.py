@@ -53,10 +53,12 @@ from scripts.pipeline.most_played import fetch_most_played, build_most_played
 
 
 def test_fetch_most_played_network_error():
+    # Must raise, not return [] -- an empty most_played.json blanks the
+    # homepage 'Popular on Steam' section with no error surfaced.
     import urllib.error
     with patch("scripts.pipeline.most_played.urllib.request.urlopen", side_effect=urllib.error.URLError("timeout")):
-        result = fetch_most_played(timeout=1)
-    assert result == []
+        with pytest.raises(urllib.error.URLError):
+            fetch_most_played(timeout=1)
 
 def test_fetch_most_played_returns_ranks():
     payload = {"response": {"ranks": [{"appid": 730, "peak_in_game": 100}]}}
@@ -91,13 +93,15 @@ from scripts.pipeline.pulse import fetch_pulse_rows
 
 
 def test_fetch_pulse_rows_url_error():
+    # Must raise, not return [] -- swallowing this republished search_index
+    # with tier='pending' on games that had real submissions.
     import urllib.error
     with (
         patch("scripts.pipeline.pulse._resolve_credentials", return_value=("https://example.com", "token")),
         patch("scripts.pipeline.pulse.urllib.request.urlopen", side_effect=urllib.error.URLError("timeout")),
     ):
-        result = fetch_pulse_rows()
-    assert result == []
+        with pytest.raises(urllib.error.URLError):
+            fetch_pulse_rows()
 
 def test_fetch_pulse_rows_non_list_payload():
     mock_resp = MagicMock()
