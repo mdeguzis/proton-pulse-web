@@ -71,13 +71,23 @@ jobs:
 
       - name: Drain VR category backlog
         id: drain
+        # Inputs come in through env, NOT ${{ }} interpolation inside run:.
+        # Interpolation substitutes the value into the script text before the
+        # shell sees it, so a crafted input becomes executable code
+        # (semgrep yaml.github-actions.security.run-shell-injection). As env
+        # vars they are just strings, and argparse rejects anything non-numeric.
+        env:
+          TOTAL_CAP: ${{ inputs.total_cap }}
+          PASS_CAP: ${{ inputs.pass_cap }}
+          COOLDOWN: ${{ inputs.cooldown }}
+          REQUEST_DELAY: ${{ inputs.request_delay }}
         run: |
           set -euo pipefail
           uv run python scripts/split_reports.py vr-backfill \
-            --total-cap "${{ inputs.total_cap }}" \
-            --pass-cap "${{ inputs.pass_cap }}" \
-            --cooldown "${{ inputs.cooldown }}" \
-            --request-delay "${{ inputs.request_delay }}" \
+            --total-cap "$TOTAL_CAP" \
+            --pass-cap "$PASS_CAP" \
+            --cooldown "$COOLDOWN" \
+            --request-delay "$REQUEST_DELAY" \
             | tee /tmp/vr-backfill-summary.json
 
       - name: Save pipeline cache

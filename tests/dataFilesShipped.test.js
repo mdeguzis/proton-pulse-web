@@ -21,6 +21,29 @@ const path = require('path');
 const REPO = path.join(__dirname, '..');
 const PUBLISH_SH = fs.readFileSync(path.join(REPO, 'scripts', 'publish-cloudflare.sh'), 'utf8');
 
+// Parse the SMALL_DATA array into a set of filenames. Tokenizing beats
+// regex-matching the raw file on two counts: it checks the actual shipping
+// list rather than any mention anywhere in the script, and it needs no
+// escaping of the filename (building a regex from a string and escaping only
+// dots is what CodeQL flags as incomplete string escaping).
+// Line-based, not a `\(([\s\S]*?)\)` match: a non-greedy scan for the closing
+// paren stops at the first ')' anywhere in the block, including one inside a
+// comment, which silently truncates the list and makes this test pass for
+// files that are NOT shipped.
+const SHIPPED = (() => {
+  const lines = PUBLISH_SH.split('\n');
+  const start = lines.findIndex((l) => /^\s*SMALL_DATA=\(/.test(l));
+  if (start === -1) throw new Error('SMALL_DATA array not found in publish-cloudflare.sh');
+  const names = new Set();
+  for (let i = start + 1; i < lines.length; i += 1) {
+    if (/^\s*\)\s*$/.test(lines[i])) return names;   // closing paren on its own line
+    for (const token of lines[i].replace(/#.*$/, '').split(/\s+/)) {
+      if (token) names.add(token);
+    }
+  }
+  throw new Error('SMALL_DATA array is not terminated');
+})();
+
 // Files fetched through dataUrl() that are deliberately NOT shipped to the
 // site root. Each needs a reason -- this list is the escape hatch, so an
 // unexplained entry defeats the point of the test.
@@ -36,6 +59,12 @@ const KNOWN_UNSHIPPED = new Map([
   // Profile app-type breakdown. Same reasoning: a large cache behind one
   // optional widget that already handles absence.
   ['steam-type-cache.json', 'large cache behind an optional profile widget'],
+  // Shipped, just not via SMALL_DATA: preserve-cert-monitor.sh (invoked by
+  // publish-cloudflare.sh) carries these across the deploy because they
+  // accumulate history that a fresh pipeline output does not contain. Both
+  // verified serving application/json on prod.
+  ['cert-status.json', 'shipped by preserve-cert-monitor.sh, not SMALL_DATA'],
+  ['cert-history.json', 'shipped by preserve-cert-monitor.sh, not SMALL_DATA'],
 ]);
 
 function requestedDataFiles() {
@@ -70,16 +99,15 @@ describe('pipeline data files reach the deployed site', () => {
         expect(KNOWN_UNSHIPPED.get(file)).toBeTruthy();
         return;
       }
-      // Word-boundary match so 'game-images.json' does not satisfy
+      // Exact set membership, so 'game-images.json' cannot satisfy
       // 'game-images-cache.json'.
-      const listed = new RegExp(`(^|\\s)${file.replace(/[.]/g, '\\.')}(\\s|$)`, 'm').test(PUBLISH_SH);
-      expect(listed).toBe(true);
+      expect(SHIPPED.has(file)).toBe(true);
     },
   );
 
   test('the #246 files and the anti-cheat regression are covered', () => {
     for (const f of ['vr-index.json', 'vrdb.json', 'anti-cheat.json']) {
-      expect(PUBLISH_SH).toMatch(new RegExp(`(^|\\s)${f.replace(/[.]/g, '\\.')}(\\s|$)`, 'm'));
+      expect(SHIPPED.has(f)).toBe(true);
     }
   });
 
