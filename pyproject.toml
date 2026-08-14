@@ -7,6 +7,10 @@ requires-python = ">=3.12"
 dependencies = [
     "ijson>=3.5.0",
     "requests>=2.32.0",
+    # VRDB ingest (#246) parses YAML frontmatter out of the upstream markdown
+    # files. Runtime, not dev-only: scripts/pipeline/vrdb.py runs in the
+    # pipeline. Was already present as a dev dep for the workflow-gate tests.
+    "pyyaml>=6.0",
 ]
 
 [dependency-groups]

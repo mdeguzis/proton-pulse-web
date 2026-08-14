@@ -5,13 +5,13 @@ import {
   getProtonPulseUserIdFromSession, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows,
-} from '../utils.js?v=320d6b78';
+} from '../utils.js?v=0101ce5f';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   unpublishReport, republishReport,
 } from '../api/configs.js?v=2f08c67b';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
-import { getGamesByIds } from '../../app/api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../../app/api/search-games.js?v=0b6c4bb3';
 import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=79558c3c';
 
 /**

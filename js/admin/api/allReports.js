@@ -1,6 +1,6 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
 import { supabaseHeaders } from '../utils.js?v=2668b2f0';
-import { getGamesByIds } from '../../app/api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../../app/api/search-games.js?v=0b6c4bb3';
 
 // #48: flagged_reason on rows so the All Reports table can surface why a
 // row was flagged. flagged_at on detail to show when the flag landed.

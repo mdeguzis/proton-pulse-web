@@ -267,3 +267,68 @@ def test_merge_gog_creates_underscore_dir(tmp_path):
     assert reports == 1
     assert (tmp_path / "gog_1234567890" / "2025.json").exists()
     assert not (tmp_path / "gog:1234567890").exists()
+
+
+# ── _resolve_credentials: SUPABASE_URL normalisation ─────────────────────────
+
+def test_resolve_credentials_appends_rest_v1_when_bare_host(monkeypatch):
+    # A common misconfig: CI secret set to the bare Supabase host without
+    # /rest/v1. pulse.py used to append user_configs directly, which 404'd
+    # and silently disabled the pulse merge for every scheduled run.
+    monkeypatch.setenv("SUPABASE_URL", "https://example.supabase.co")
+    from scripts.pipeline.pulse import _resolve_credentials
+    url, _ = _resolve_credentials()
+    assert url == "https://example.supabase.co/rest/v1"
+
+
+def test_resolve_credentials_preserves_full_rest_url(monkeypatch):
+    monkeypatch.setenv("SUPABASE_URL", "https://example.supabase.co/rest/v1")
+    from scripts.pipeline.pulse import _resolve_credentials
+    url, _ = _resolve_credentials()
+    assert url == "https://example.supabase.co/rest/v1"
+
+
+def test_resolve_credentials_strips_trailing_slash(monkeypatch):
+    monkeypatch.setenv("SUPABASE_URL", "https://example.supabase.co/")
+    from scripts.pipeline.pulse import _resolve_credentials
+    url, _ = _resolve_credentials()
+    assert url == "https://example.supabase.co/rest/v1"
+
+
+# ── fetch_pulse_rows: failure MUST raise, not silently return [] ──────────────
+
+def test_fetch_pulse_rows_raises_on_http_error(monkeypatch):
+    # Silent return [] on a 4xx / 5xx was the pulse.py bug that silently
+    # republished stale search-index data for weeks. Test pins the fix.
+    from urllib.error import HTTPError
+    import io
+    def _raising_urlopen(*a, **kw):
+        raise HTTPError("http://fake", 404, "Not Found", {}, io.BytesIO(b""))
+    from scripts.pipeline import pulse
+    monkeypatch.setattr(pulse.urllib.request, "urlopen", _raising_urlopen)
+    import pytest
+    with pytest.raises(HTTPError):
+        pulse.fetch_pulse_rows()
+
+
+def test_fetch_pulse_rows_raises_on_url_error(monkeypatch):
+    from urllib.error import URLError
+    def _raising_urlopen(*a, **kw):
+        raise URLError("connection refused")
+    from scripts.pipeline import pulse
+    monkeypatch.setattr(pulse.urllib.request, "urlopen", _raising_urlopen)
+    import pytest
+    with pytest.raises(URLError):
+        pulse.fetch_pulse_rows()
+
+
+def test_fetch_pulse_rows_raises_on_bad_json(monkeypatch):
+    class _FakeResp:
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def read(self): return b"<html>not json</html>"
+    from scripts.pipeline import pulse
+    monkeypatch.setattr(pulse.urllib.request, "urlopen", lambda *a, **kw: _FakeResp())
+    import pytest
+    with pytest.raises(pulse.json.JSONDecodeError):
+        pulse.fetch_pulse_rows()

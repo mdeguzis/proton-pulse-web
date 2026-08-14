@@ -16,6 +16,7 @@ const { stripModuleSyntax } = require('./_esm-vm.js');
 const SCORING_SRC  = stripModuleSyntax(fs.readFileSync(path.join(__dirname, '..', 'js', 'shared', 'scoring.js'), 'utf8'));
 const GPU_ARCH_SRC = stripModuleSyntax(fs.readFileSync(path.join(__dirname, '..', 'js', 'lib', 'gpu-arch-detector.js'), 'utf8'));
 const RUN_TYPE_SRC = stripModuleSyntax(fs.readFileSync(path.join(__dirname, '..', 'js', 'shared', 'run-type.js'), 'utf8'));
+const VR_SRC       = stripModuleSyntax(fs.readFileSync(path.join(__dirname, '..', 'js', 'shared', 'vr.js'), 'utf8'));
 const SUBMIT_SRC   = stripModuleSyntax(fs.readFileSync(path.join(__dirname, '..', 'js', 'shared', 'submit.js'), 'utf8'));
 
 const SAFE_FETCH = { ok: false, status: 500, json: async () => [] };
@@ -95,6 +96,9 @@ function makeCtx(sessionOverride) {
   // run-type helpers must be evaluated before submit so normalizeRunType
   // is defined when the submitReport body references it.
   vm.runInContext(RUN_TYPE_SRC, ctx);
+  // vr helpers likewise: submitReport's payload calls vrFieldsFromForm, which
+  // references normalizePlayMode / normalizeVrRuntime (#246).
+  vm.runInContext(VR_SRC, ctx);
   // then submit (provides submitReport, parseSteamSystemInfo, etc)
   vm.runInContext(SUBMIT_SRC, ctx);
   return { ctx, fetchMock, SupaAuth };

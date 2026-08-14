@@ -41,8 +41,11 @@ def fetch_most_played(timeout: int = 30) -> list[dict]:
         with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
             payload = json.load(resp)
     except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, OSError) as exc:
-        log(f"[most-played] WARN: Steam most-played fetch failed: {exc}")
-        return []
+        # Raise so the pipeline fails visibly instead of publishing an empty
+        # most_played.json that blanks the homepage's 'Popular on Steam'
+        # section with no error surfaced. See no-silent-failures.md.
+        log(f"[most-played] Steam most-played fetch failed: {type(exc).__name__}: {exc}")
+        raise
     return payload.get("response", {}).get("ranks", [])
 
 

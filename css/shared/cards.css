@@ -181,6 +181,36 @@
   color: var(--delisted-chip-fg, #fff);
 }
 
+/* #246 VR chip. Same geometry as the delisted chip so the two stack cleanly
+   in the same strip. Two variants: "VR" (playable either way) stays quiet in
+   the Steam cyan family, "VR Only" is warmer because a headset requirement is
+   a hard gate for a flatscreen player, not a nice-to-have. */
+.game-card-vr-chip {
+  display: inline-block;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: 0.62em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.game-card-vr-chip--supported {
+  background: var(--vr-chip-bg, rgba(65, 122, 155, 0.92));
+  color: var(--vr-chip-fg, #fff);
+}
+.game-card-vr-chip--only {
+  background: var(--vr-only-chip-bg, rgba(150, 95, 175, 0.92));
+  color: var(--vr-only-chip-fg, #fff);
+}
+[data-theme="light"] .game-card-vr-chip--supported {
+  background: var(--vr-chip-bg, rgba(55, 105, 135, 0.95));
+}
+[data-theme="light"] .game-card-vr-chip--only {
+  background: var(--vr-only-chip-bg, rgba(130, 80, 155, 0.95));
+}
+
 /* Owner badges (Subaru "Badge of Ownership" style): dark chrome chips
    attached to the LEFT of the colored store pill. Each chip is its own
    small rounded rectangle with a white icon on a dark background, so the

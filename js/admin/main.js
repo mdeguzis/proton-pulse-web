@@ -24,7 +24,7 @@ import { renderApiExplorer } from './components/api-explorer.js?v=93bf51e6';
 import { renderGameManager } from './components/gameManager.js?v=74dfb888';
 import { renderLoggingTab } from './components/logging.js?v=ccf92cf8';
 import { renderDeploymentsTab } from './components/deployments.js?v=ce9fc002';
-import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=5d8cf789';
+import { renderAllReports, updateAllReportsRow, renderAllReportsDetail } from './components/allReports.js?v=ab94c2fa';
 import { patchReportFlags, fetchReportById } from './api/allReports.js?v=62a9ae9f';
 import { approveReport } from './api/pending.js?v=84292a58';
 

@@ -1,0 +1,128 @@
+name: VR Category Backfill
+
+# Ad-hoc drain of the Steam VR-category backlog (#246).
+#
+# The in-pipeline backfill is capped at ~200 apps per run so finalize stays
+# predictable, which means a cold backlog (~6k VRDB-tracked apps) takes weeks
+# of daily runs to clear and "VR Only" stays mostly empty in the meantime.
+# This workflow drains it on demand.
+#
+# It writes NOTHING to the site. The only output is the shared appdetails
+# cache (.cache/steam-content-descriptors-cache.json); the next finalize run
+# reads the filled-in VR answers and publishes them. That keeps this workflow
+# safe to run at any time -- it cannot race a deploy or half-publish data.
+
+on:
+  workflow_dispatch:
+    inputs:
+      total_cap:
+        description: "Max apps to probe across all passes. ~2000 takes about an hour with the default cooldown."
+        default: "2000"
+        required: false
+        type: string
+      pass_cap:
+        description: "Apps per pass before cooling down. 200 matches Steam's rolling ~200 req / 5 min window; raising it just triggers the throttle sooner."
+        default: "200"
+        required: false
+        type: string
+      cooldown:
+        description: "Seconds between passes so the rate-limit window clears. Below ~300 the next pass starts inside the same window and immediately bails."
+        default: "300"
+        required: false
+        type: string
+      request_delay:
+        description: "Seconds between individual requests. 2.0 is the shared pipeline value; going lower earned a rolling-window ban the last time it was tried."
+        default: "2.0"
+        required: false
+        type: string
+
+# One drain at a time. Two concurrent runs would share the rolling rate-limit
+# window and spend most of their budget failing, and both would race to write
+# the same cache entry.
+concurrency:
+  group: vr-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-24.04
+    # Generous: the point of this workflow is long throttled drains. A 2000-app
+    # run at 2s/request plus cooldowns lands near 90 minutes.
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Restore pipeline cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache
+          # Same key shape as update-data.yml so this drain reads the cache the
+          # pipeline wrote, and the pipeline reads what this drain fills in.
+          # Without the shared restore-keys prefix the two would each start
+          # cold and re-probe everything the other already answered.
+          key: pipeline-cache-${{ runner.os }}-update-data.yml-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-vrbackfill
+          restore-keys: |
+            pipeline-cache-${{ runner.os }}-update-data.yml-${{ github.ref_name }}-
+
+      - name: Drain VR category backlog
+        id: drain
+        # Inputs come in through env, NOT ${{ }} interpolation inside run:.
+        # Interpolation substitutes the value into the script text before the
+        # shell sees it, so a crafted input becomes executable code
+        # (semgrep yaml.github-actions.security.run-shell-injection). As env
+        # vars they are just strings, and argparse rejects anything non-numeric.
+        env:
+          TOTAL_CAP: ${{ inputs.total_cap }}
+          PASS_CAP: ${{ inputs.pass_cap }}
+          COOLDOWN: ${{ inputs.cooldown }}
+          REQUEST_DELAY: ${{ inputs.request_delay }}
+        run: |
+          set -euo pipefail
+          uv run python scripts/split_reports.py vr-backfill \
+            --total-cap "$TOTAL_CAP" \
+            --pass-cap "$PASS_CAP" \
+            --cooldown "$COOLDOWN" \
+            --request-delay "$REQUEST_DELAY" \
+            | tee /tmp/vr-backfill-summary.json
+
+      - name: Save pipeline cache
+        # always(): a drain that bails partway still filled in real answers for
+        # the apps it did reach. Dropping the cache would throw that away and
+        # make the next run redo the same requests.
+        if: always()
+        uses: actions/cache/save@v6
+        with:
+          path: .cache
+          key: pipeline-cache-${{ runner.os }}-update-data.yml-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-vrbackfill
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### VR category backfill"
+            echo
+            if [ -s /tmp/vr-backfill-summary.json ]; then
+              python3 - <<'PY'
+          import json
+          with open("/tmp/vr-backfill-summary.json") as fh:
+              s = json.load(fh)
+          print(f"- probed: **{s['probed']:,}** over {s['passes']} pass(es)")
+          print(f"- pending before: {s['pending_before']:,}")
+          print(f"- pending after: **{s['pending_after']:,}**")
+          print(f"- stopped because: {s['stopped']}")
+          print()
+          if s["pending_after"]:
+              print("Re-run this workflow to continue draining. The next finalize "
+                    "publishes whatever has been filled in so far.")
+          else:
+              print("Backlog clear. The next finalize publishes the full only/supported split.")
+          PY
+            else
+              echo "No summary produced -- the drain failed before writing one. Check the step log."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -123,12 +123,29 @@ def load_epic_catalog(
     try:
         catalog, covers, years, meta = _fetch_all_pages()
     except Exception as exc:
-        log(f"[epic-catalog] WARN: catalog fetch failed: {exc}; search index will lack Epic stubs")
-        _epic_catalog_cache = {}
-        _epic_covers_cache = {}
-        _epic_years_cache = {}
-        _epic_meta_cache = {}
-        return _epic_catalog_cache
+        # Silent empty here used to drop every Epic entry from the search
+        # index whenever store.epicgames.com hiccuped. Prefer the LAST
+        # KNOWN GOOD cache (even if past its TTL) over publishing nothing
+        # so the pipeline degrades visibly (log) without wiping the site.
+        # If there is no cache to fall back on, raise so the pipeline fails
+        # hard instead of shipping an empty catalog. See no-silent-failures.md.
+        log(f"[epic-catalog] catalog fetch failed: {type(exc).__name__}: {exc}")
+        if cache_path.exists():
+            try:
+                stale = json.loads(cache_path.read_text(encoding="utf-8"))
+                _epic_catalog_cache = stale.get("catalog", {}) or {}
+                _epic_covers_cache = stale.get("covers", {}) or {}
+                _epic_years_cache = stale.get("years", {}) or {}
+                _epic_meta_cache = stale.get("meta", {}) or {}
+                stale_age = time.time() - stale.get("_ts", 0)
+                log(
+                    f"[epic-catalog] degraded: reusing stale cache "
+                    f"({len(_epic_catalog_cache):,} entries, age {stale_age/3600:.1f}h)"
+                )
+                return _epic_catalog_cache
+            except (OSError, json.JSONDecodeError, KeyError) as cache_exc:
+                log(f"[epic-catalog] stale cache also unreadable: {type(cache_exc).__name__}: {cache_exc}")
+        raise
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(

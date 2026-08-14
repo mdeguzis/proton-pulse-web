@@ -4,7 +4,7 @@ import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../../shared/scoring.js?v=852c9d97';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
-import { getWebClientId } from '../../shared/submit.js?v=ba876a15';
+import { getWebClientId } from '../../shared/submit.js?v=5bf5d430';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
 import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/protondb.js?v=b7ff6a75';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
@@ -15,7 +15,7 @@ import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
 import { renderCard } from './report-card.js?v=5e25c644';
 import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
-import { getGamesByIds } from '../api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 import { computeWhatWorks } from '../lib/what-works.js?v=fc499ba6';
 
 // #437: the game page only ever needs ONE search-index row (the current game,
@@ -89,6 +89,8 @@ import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
+import { getVrdbForApp } from '../lib/vrdb.js?v=f7c0f65a';
+import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
 import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
 
 // Module-level filter cache (#415 slice 2b). SPA navigation between game
@@ -117,7 +119,7 @@ async function _fetchSteamCatalog() {
   return _steamCatalogCache;
 }
 
-const DISCORD_URL = 'https://discord.gg/UdPaEsMtd';
+const DISCORD_URL = 'https://discord.gg/3XskyBRswp';
 
 // Store label for the (parenthesised) tag next to the game title.
 // #434 followup: a pgwiki-source row that carries a delisted-steam
@@ -502,7 +504,7 @@ async function _openMetadataModal(appId) {
     return;
   }
 
-  const [meta, depotInfo, newsInfo, antiCheat, pgw] = await Promise.all([
+  const [meta, depotInfo, newsInfo, antiCheat, pgw, vrdb] = await Promise.all([
     fetchAppMetadata(appId).catch(() => null),
     // Depot info from the PICS pipeline (#215). Populated nightly; may
     // not exist for this app yet.
@@ -519,6 +521,9 @@ async function _openMetadataModal(appId) {
     // null when the game has no PGWiki entry. Attribution + source link
     // rendered inline; CC BY-NC-SA 3.0 requires it.
     getPCGamingWikiForApp(appId).catch(() => null),
+    // VR-on-Linux reports from VRDB (#246). Returns null when they have no
+    // reports for this app. Display-only -- never feeds tier / confidence.
+    getVrdbForApp(appId).catch(() => null),
   ]);
   const body = modal.querySelector('#game-metadata-body');
   if (!body) return;
@@ -687,9 +692,39 @@ async function _openMetadataModal(appId) {
     return `${osChips}${engineLine}${src}`;
   };
 
+  // VR-on-Linux block (#246). Only rendered when VRDB has reports for this
+  // app -- absence is NOT "VR is broken", it is "nobody reported". Their 1-5
+  // scale runs the opposite way to a Pulse tier (1 = Perfect), so every number
+  // is rendered with its own label rather than as a bare score.
+  const vrdbBlock = () => {
+    if (!vrdb) return '';
+    const runtimes = vrdb.runtimes && typeof vrdb.runtimes === 'object' ? vrdb.runtimes : {};
+    const entries = Object.entries(runtimes);
+    if (!entries.length) return '';
+    // Best rating first so the most promising runtime leads.
+    entries.sort((a, b) => (Number(a[1]?.best) || 9) - (Number(b[1]?.best) || 9));
+    const rows = entries.map(([runtime, stats]) => {
+      const best = Number(stats?.best);
+      const label = VRDB_RATINGS[best] || 'Unrated';
+      const count = Number(stats?.count) || 0;
+      return `<div class="gm-vr-row">
+        <span class="gm-vr-runtime">${esc(vrRuntimeLabel(runtime))}</span>
+        <span class="gm-vr-rating" style="background:${vrdbRatingColor(best)}">${esc(label)}</span>
+        <span class="gm-mute">${count} report${count === 1 ? '' : 's'}</span>
+      </div>`;
+    }).join('');
+    const devices = Array.isArray(vrdb.devices) && vrdb.devices.length
+      ? `<div class="gm-chips" style="margin-top:6px">${vrdb.devices.slice(0, 6).map(d => `<span class="gm-chip">${esc(d)}</span>`).join('')}</div>`
+      : '';
+    const latest = vrdb.latest ? ` \u00b7 latest ${esc(String(vrdb.latest))}` : '';
+    const src = `<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="https://db.vronlinux.org/" target="_blank" rel="noopener">VR on Linux DB</a> (MIT)${latest}. Separate methodology from Pulse scoring.</div>`;
+    return `${rows}${devices}${src}`;
+  };
+
   body.innerHTML = [
     section('Name',          meta.name ? `<strong>${esc(meta.name)}</strong>` : ''),
     section('Anti-cheat',    antiCheatBlock()),
+    section('VR on Linux',   vrdbBlock()),
     section('PCGamingWiki',  pcgamingwikiBlock()),
     section('App ID',        `<code>${esc(meta.appId)}</code>`),
     section('Type',          meta.type ? `<code>${esc(meta.type)}</code>` : ''),

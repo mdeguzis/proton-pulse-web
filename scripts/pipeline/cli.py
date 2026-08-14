@@ -129,6 +129,27 @@ def build_parser():
     )
     add_shared_output_arg(deck_status_parser)
 
+    vr_backfill_parser = subparsers.add_parser(
+        "vr-backfill",
+        help="Ad-hoc drain of the Steam VR-category backlog (#246)",
+    )
+    vr_backfill_parser.add_argument(
+        "--total-cap", type=int, default=2000,
+        help="Max apps to probe across all passes (default: 2000)",
+    )
+    vr_backfill_parser.add_argument(
+        "--pass-cap", type=int, default=200,
+        help="Max apps per pass before cooling down (default: 200, matches Steam's rolling window)",
+    )
+    vr_backfill_parser.add_argument(
+        "--cooldown", type=float, default=300.0,
+        help="Seconds to wait between passes so the rate-limit window clears (default: 300)",
+    )
+    vr_backfill_parser.add_argument(
+        "--request-delay", type=float, default=2.0,
+        help="Seconds between individual appdetails requests (default: 2.0)",
+    )
+
     run_parser = subparsers.add_parser("run", help="Run process, backfill, and finalize in sequence")
     run_parser.add_argument("input_dir", nargs="?", help="Local directory containing JSON/tar.gz report files")
     run_parser.add_argument("--url", help="Git repo URL to clone as data source (e.g. https://github.com/bdefore/protondb-data)")
@@ -188,6 +209,25 @@ def main():
 
     if command == "deck-status":
         build_deck_status(args.output_dir)
+        return
+
+    if command == "vr-backfill":
+        # Only touches the shared appdetails cache -- no site data is written
+        # here. The next finalize reads the filled-in VR answers and publishes
+        # them, so this workflow never needs a deploy step.
+        from .vrdb import (
+            build_vrdb_index, clone_or_update_vrdb, drain_vr_categories, vr_capable_app_ids,
+        )
+        repo = clone_or_update_vrdb()
+        summary = drain_vr_categories(
+            vr_capable_app_ids(repo),
+            priority_ids=set(build_vrdb_index(repo)),
+            total_cap=args.total_cap,
+            pass_cap=args.pass_cap,
+            cooldown_seconds=args.cooldown,
+            request_delay=args.request_delay,
+        )
+        print(json.dumps(summary))
         return
 
     if command == "probe-plan":

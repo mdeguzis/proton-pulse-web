@@ -36,14 +36,16 @@ from .common import log
 # Search-index row: [appId, title, tier, protondbCount, pulseCount,
 #                    source, releaseYear, delisted, adult, trend,
 #                    replacedBy, steamType, ac_status, ac_vendors,
-#                    pgw_os, pgw_engine]
+#                    pgw_os, pgw_engine, vr]
 # Postgres columns tracked here mirror the search_index migration; extras
 # (ac_status, ac_vendors, pgw_os, pgw_engine) stay out of FTS since search
-# doesn't need to match on them.
+# doesn't need to match on them. vr IS synced (#246) because the VR filter
+# runs server-side in the search-games edge fn like store / adult / delisted,
+# rather than client-side over the blob.
 COLUMNS = (
     "app_id", "title", "tier", "source",
     "protondb_count", "pulse_count", "release_year",
-    "delisted", "adult", "replaced_by", "steam_type", "trend",
+    "delisted", "adult", "replaced_by", "steam_type", "trend", "vr",
 )
 
 DEFAULT_URL = "https://ilsgdshkaocrmibwdezk.supabase.co"
@@ -92,7 +94,17 @@ def _row_to_dict(row: list) -> dict | None:
         "trend": (str(row[9] or "") or None) if len(row) > 9 else None,
         "replaced_by": (str(row[10] or "") or None) if len(row) > 10 else None,
         "steam_type": (str(row[11] or "") or None) if len(row) > 11 else None,
+        # Constrained to 'supported' / 'only' by search_index_vr_chk -- drop
+        # anything else rather than failing the whole batch upsert on one bad
+        # row from a hand-edited index.
+        "vr": _vr(row[16] if len(row) > 16 else None),
     }
+
+
+def _vr(value) -> str | None:
+    """Coerce the search-index VR column to the DB CHECK vocabulary."""
+    text = str(value or "").strip().lower()
+    return text if text in ("supported", "only") else None
 
 
 def _batched(seq: list, size: int) -> Iterable[list]:

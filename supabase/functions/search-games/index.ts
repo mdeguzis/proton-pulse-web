@@ -76,7 +76,7 @@ const MAX_LIMIT = 100;
 const MAX_IDS = 500;
 
 const SELECT_COLS =
-  "app_id,title,tier,source,protondb_count,pulse_count,release_year,delisted,adult,replaced_by,steam_type,trend";
+  "app_id,title,tier,source,protondb_count,pulse_count,release_year,delisted,adult,replaced_by,steam_type,trend,vr";
 
 // Browse ordering. popular (report count) is the default; alpha + year let the
 // browse grid offer the same sorts the old client-side index did.
@@ -112,6 +112,7 @@ interface Row {
   replaced_by: string | null;
   steam_type: string | null;
   trend: string | null;
+  vr: string | null;
 }
 
 function shapeRow(r: Row) {
@@ -128,7 +129,36 @@ function shapeRow(r: Row) {
     replacedBy: r.replaced_by,
     steamType: r.steam_type,
     trend: r.trend || "",
+    // #246: null when the game is not VR (or has not been checked yet).
+    // 'supported' | 'only' otherwise. Drives the card chip + the VR filter.
+    vr: r.vr || null,
   };
+}
+
+// #246 VR filter. Whitelisted against a fixed set rather than interpolated,
+// so a hostile ?vr= value cannot reach PostgREST as an operator.
+//   'any'  (default) no filter
+//   'vr'   any VR title (supported or only)
+//   'only' headset required
+//   'flat' exclude VR-only, keep flat-playable titles
+const VR_FILTERS = new Set(["any", "vr", "only", "flat"]);
+
+function applyVrFilter(url: URL, vrFilter: string): void {
+  switch (vrFilter) {
+    case "vr":
+      url.searchParams.set("vr", "not.is.null");
+      break;
+    case "only":
+      url.searchParams.set("vr", "eq.only");
+      break;
+    case "flat":
+      // Anything that is not VR-only is playable on a monitor, including
+      // rows where vr is null (not VR at all).
+      url.searchParams.set("or", "(vr.is.null,vr.eq.supported)");
+      break;
+    default:
+      break;
+  }
 }
 
 // Postgres full-text search via PostgREST's RPC or the raw table with
@@ -141,9 +171,10 @@ async function fetchMatches(
   includeDelisted: boolean,
   includeAdult: boolean,
   limit: number,
+  vrFilter: string,
 ): Promise<{ rows: Row[]; hiddenDelisted: number; hiddenAdult: number }> {
   const url = new URL(`${SB_URL}/rest/v1/search_index`);
-  url.searchParams.set("select", "app_id,title,tier,source,protondb_count,pulse_count,release_year,delisted,adult,replaced_by,steam_type");
+  url.searchParams.set("select", SELECT_COLS);
   // FTS: PostgREST's `fts` operator maps to `to_tsquery`, which requires
   // TS syntax (`half & life`) and 400s on plain input like "half life 2".
   // `plfts` maps to `plainto_tsquery`, which accepts free-form text and
@@ -159,6 +190,7 @@ async function fetchMatches(
   if (storeFilter !== "all") url.searchParams.set("source", `eq.${storeFilter}`);
   if (!includeDelisted) url.searchParams.set("delisted", "not.eq.true");
   if (!includeAdult) url.searchParams.set("adult", "not.eq.true");
+  applyVrFilter(url, vrFilter);
   url.searchParams.set("limit", String(limit));
   // Order: rank by a rough proxy -- more reports = more relevant. FTS
   // rank would be ideal but PostgREST needs a computed column for that;
@@ -238,12 +270,14 @@ async function fetchBrowse(
   includeAdult: boolean,
   limit: number,
   offset: number,
+  vrFilter: string,
 ): Promise<{ rows: Row[]; total: number }> {
   const url = new URL(`${SB_URL}/rest/v1/search_index`);
   url.searchParams.set("select", SELECT_COLS);
   if (storeFilter !== "all") url.searchParams.set("source", `eq.${storeFilter}`);
   if (!includeDelisted) url.searchParams.set("delisted", "not.eq.true");
   if (!includeAdult) url.searchParams.set("adult", "not.eq.true");
+  applyVrFilter(url, vrFilter);
   url.searchParams.set("order", orderClause(sort));
   url.searchParams.set("limit", String(limit));
   url.searchParams.set("offset", String(offset));
@@ -278,6 +312,10 @@ Deno.serve(async (req: Request) => {
   const store = (url.searchParams.get("store") || "all").toLowerCase();
   const includeDelisted = url.searchParams.get("include_delisted") === "true";
   const includeAdult = url.searchParams.get("include_adult") === "true";
+  // #246 VR filter, whitelisted. An unknown value falls back to 'any' rather
+  // than 400ing, so an old client passing junk still gets results.
+  const rawVr = (url.searchParams.get("vr") || "any").toLowerCase();
+  const vrFilter = VR_FILTERS.has(rawVr) ? rawVr : "any";
   const rawLimit = Number(url.searchParams.get("limit") || DEFAULT_LIMIT);
   const limit = Number.isFinite(rawLimit) ? Math.max(1, Math.min(MAX_LIMIT, Math.trunc(rawLimit))) : DEFAULT_LIMIT;
 
@@ -314,9 +352,9 @@ Deno.serve(async (req: Request) => {
     const rawOffset = Number(url.searchParams.get("offset") || 0);
     const offset = Number.isFinite(rawOffset) ? Math.max(0, Math.trunc(rawOffset)) : 0;
     try {
-      const { rows, total } = await fetchBrowse(store, sort, includeDelisted, includeAdult, limit, offset);
+      const { rows, total } = await fetchBrowse(store, sort, includeDelisted, includeAdult, limit, offset, vrFilter);
       const results = rows.map(shapeRow);
-      console.log(`[search-games] browse store=${store} sort=${sort} limit=${limit} offset=${offset} results=${results.length} total=${total} took=${Date.now() - started}ms`);
+      console.log(`[search-games] browse store=${store} sort=${sort} vr=${vrFilter} limit=${limit} offset=${offset} results=${results.length} total=${total} took=${Date.now() - started}ms`);
       return Response.json({ results, total, offset, limit, mode: "browse", took_ms: Date.now() - started }, { headers: corsHeaders });
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
@@ -350,7 +388,7 @@ Deno.serve(async (req: Request) => {
 
   try {
     const { rows, hiddenDelisted, hiddenAdult } = await fetchMatches(
-      q, store, includeDelisted, includeAdult, limit,
+      q, store, includeDelisted, includeAdult, limit, vrFilter,
     );
     const results = rows.map(shapeRow);
     const body = {

@@ -325,6 +325,7 @@ version = "0.2.0"
 source = { virtual = "." }
 dependencies = [
     { name = "ijson" },
+    { name = "pyyaml" },
     { name = "requests" },
 ]
 
@@ -340,6 +341,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "ijson", specifier = ">=3.5.0" },
+    { name = "pyyaml", specifier = ">=6.0" },
     { name = "requests", specifier = ">=2.32.0" },
 ]
 

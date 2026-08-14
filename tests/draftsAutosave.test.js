@@ -283,3 +283,47 @@ describe('makeAutoSaver debounces and reports status', () => {
     expect(ls._dump()['pp:draft:u-1:730']).toBeDefined();
   });
 });
+
+describe('draftStampSuffix', () => {
+  // The status line used to read "Auto-saved to this browser." with no time,
+  // so a save from 20 minutes ago looked identical to one from 2 seconds ago.
+  test('renders seconds-precision ISO 8601 UTC', () => {
+    const { ctx } = makeCtx();
+    expect(ctx.draftStampSuffix('2026-08-13T23:42:11.482Z')).toBe(' at 2026-08-13T23:42:11Z.');
+  });
+
+  test('normalizes a non-UTC offset to UTC', () => {
+    const { ctx } = makeCtx();
+    expect(ctx.draftStampSuffix('2026-08-13T19:42:11-04:00')).toBe(' at 2026-08-13T23:42:11Z.');
+  });
+
+  test('degrades to a bare period when the timestamp is missing', () => {
+    const { ctx } = makeCtx();
+    expect(ctx.draftStampSuffix(null)).toBe('.');
+    expect(ctx.draftStampSuffix(undefined)).toBe('.');
+    expect(ctx.draftStampSuffix('')).toBe('.');
+  });
+
+  test('degrades to a bare period on an unparseable timestamp', () => {
+    const { ctx } = makeCtx();
+    expect(ctx.draftStampSuffix('not-a-date')).toBe('.');
+  });
+
+  test('the autosaver hands renderDraftStatus a stamp it can format', async () => {
+    jest.useFakeTimers();
+    const statuses = [];
+    const { ctx } = makeCtx({ fetchMock: jest.fn() });
+    const saver = ctx.makeAutoSaver({
+      session: SESSION,
+      appId: '730',
+      snapshot: () => ({ values: { note: 'x' } }),
+      delayMs: 10,
+      onStatus: (info) => statuses.push(info),
+    });
+    saver.schedule();
+    await jest.advanceTimersByTimeAsync(10);
+    jest.useRealTimers();
+    const saved = statuses.find((s) => s.state === 'saved');
+    expect(ctx.draftStampSuffix(saved.updated_at)).toMatch(/^ at \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z\.$/);
+  });
+});

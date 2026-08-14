@@ -34,6 +34,16 @@ STEAM_DESCRIPTORS_NEGATIVE_TTL_SECONDS = 3 * 86400  # 3 days
 # adult-only categories. Genuine porn / hentai should carry one of these.
 ADULT_DESCRIPTOR_IDS = {3, 4}
 
+# Steam store category ids that mark VR support (#246). Captured from the same
+# appdetails response the descriptor fetch already pays for, so flagging VR
+# costs zero extra requests.
+#   54 = "VR Only"      -- headset required, the case a flatscreen player most
+#                          wants to filter OUT
+#   53 = "VR Supported" -- playable either way
+#   31 = "VR Support"   -- legacy marker, appears alongside both
+VR_ONLY_CATEGORY_ID = 54
+VR_SUPPORTED_CATEGORY_IDS = {53, 31}
+
 # In-memory Steam title cache (loaded once per run)
 _steam_title_cache: dict[str, dict] | None = None
 _steam_title_cache_dirty = False
@@ -279,7 +289,17 @@ def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) ->
             ids = [int(i) for i in raw_ids if isinstance(i, (int, float)) and not isinstance(i, bool)]
             # Definitive answer -- cache for the full TTL, even when empty
             # (a genuinely non-adult game legitimately has no descriptors).
-            cache[app_id] = {"ids": ids, "ts": now, "ok": True}
+            # VR categories ride along in the same entry (#246): the response is
+            # already paid for, so recording them here means the VR flag fills
+            # in gradually as entries expire rather than needing its own 47k-app
+            # crawl. Entries written before #246 simply have no "vr_cats" key;
+            # vr_support_cached treats that as unknown, not as "not VR".
+            cache[app_id] = {
+                "ids": ids,
+                "ts": now,
+                "ok": True,
+                "vr_cats": _vr_category_ids(app_data.get("data", {})),
+            }
             _steam_descriptors_cache_dirty = True
             return ids
         # success:false -- ambiguous (removed app OR transient rate-limit).
@@ -293,6 +313,50 @@ def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) ->
         # leaving it unset (or keeping any prior entry) means the next run
         # retries rather than poisoning the cache with a false negative.
         return []
+
+
+def _vr_category_ids(app_data: dict) -> list[int]:
+    """VR-related Steam category ids present on an appdetails payload.
+
+    Only the VR ids are kept -- storing every category would bloat a cache file
+    that already carries ~47k entries and nothing else reads them.
+    """
+    out = []
+    for category in (app_data or {}).get("categories") or []:
+        if not isinstance(category, dict):
+            continue
+        cid = category.get("id")
+        if not isinstance(cid, int) or isinstance(cid, bool):
+            continue
+        if cid == VR_ONLY_CATEGORY_ID or cid in VR_SUPPORTED_CATEGORY_IDS:
+            out.append(cid)
+    return out
+
+
+def vr_support_cached(app_id: str) -> str | None:
+    """VR capability for an app from the descriptors cache: 'only', 'supported', or None.
+
+    Read-only and cache-only by design (#246). A None return means "we have no
+    VR answer for this app", NOT "this app is not VR" -- entries written before
+    #246 carry no VR data at all, and the caller cross-checks the VRDB catalog
+    before concluding a game has no VR support. The distinction matters: 47k
+    apps predate this field and force-refreshing them all would mean a full
+    appdetails crawl, so the flag fills in as the 30-day TTL rolls over.
+    """
+    cache = _load_steam_descriptors_cache()
+    cached = cache.get(app_id)
+    if not isinstance(cached, dict):
+        return None
+    cats = cached.get("vr_cats")
+    if not isinstance(cats, list):
+        return None
+    if VR_ONLY_CATEGORY_ID in cats:
+        return "only"
+    if any(c in VR_SUPPORTED_CATEGORY_IDS for c in cats):
+        return "supported"
+    # Entry HAS been checked and carries no VR category -- a definitive "not
+    # VR", distinct from the missing-key case above.
+    return ""
 
 
 def is_adult_app(app_id: str, force_refresh: bool = False) -> bool:

@@ -36,6 +36,11 @@ DATA_FILES = [
     "gog-catalog.json",
     "epic-catalog.json",
     "scoring-info.json",
+    # #246: VR capability map + the VRDB compatibility panel data. Both are
+    # fetched through dataUrl(), so without an entry here they fall back to a
+    # bare filename and get served stale from CDN cache after a refresh.
+    "vr-index.json",
+    "vrdb.json",
     "version.json",
 ]
 

@@ -9,7 +9,7 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 // page's data loading so the two surfaces can never diverge again.
 import { computeConfidence } from '../lib/scoring/gameStats.js?v=6a63af50';
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
-import { getGamesByIds } from '../app/api/search-games.js?v=0e14d3ff';
+import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
 import { readProtonDbLiveCache } from '../app/api/protondb.js?v=b7ff6a75';
 import { fetchNativeReports } from '../app/api/supabase.js?v=3aeaaba2';
 import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
@@ -930,7 +930,14 @@ import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
         const r = await fetch(url);
         if (!r.ok) continue;
         const data = await r.json();
-        if (Array.isArray(data) && data.length) return data;
+        if (Array.isArray(data) && data.length) {
+          // Decoupled from ProtonDB (#474): same pulse-only filter that
+          // fetchCdn applies on the game page. Without this the confidence
+          // breakdown counts stale protondb-sourced rows the game page has
+          // already hidden -- e.g. "1 Gold, 1 Silver across 2 reports" on
+          // a game whose game page reads "1 report / silver".
+          return data.filter(row => row && (row.source || '').toLowerCase() === 'pulse');
+        }
       } catch { continue; }
     }
     return [];

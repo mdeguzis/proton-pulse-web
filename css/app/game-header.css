@@ -1559,6 +1559,27 @@
   font-size: 0.76rem;
   background: var(--s1);
 }
+/* #246 VR on Linux panel. One row per VR runtime: name, best rating as a
+   coloured pill, report count. The pill carries the rating LABEL rather than
+   the number because VRDB's scale runs 1 = best, the opposite of a Pulse
+   tier, and a bare "1" would read as a bad score here. */
+.gm-vr-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 3px 0;
+}
+.gm-vr-runtime { font-weight: 600; min-width: 5.5em; }
+.gm-vr-rating {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0a0c10;
+}
+
 .gm-platforms { display: flex; gap: 8px; flex-wrap: wrap; }
 .gm-plat {
   display: inline-flex;
