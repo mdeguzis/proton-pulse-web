@@ -391,6 +391,80 @@ def backfill_vr_categories(
     return fetched
 
 
+def drain_vr_categories(
+    vr_app_ids: set[str],
+    total_cap: int = 2000,
+    pass_cap: int = VR_PROBE_CAP,
+    cooldown_seconds: float = 300.0,
+    request_delay: float = VR_REQUEST_DELAY,
+    sleep=time.sleep,
+) -> dict:
+    """Drain the VR-category backlog over multiple passes. Returns a summary dict.
+
+    The in-pipeline backfill is deliberately capped at ~200 apps so finalize
+    stays predictable, which means a cold backlog (~6k apps) takes weeks of
+    daily runs to clear. This is the ad-hoc drain: run it from the
+    vr-backfill workflow to clear the backlog in one sitting.
+
+    Steam's throttle is a ROLLING window (~200 requests / 5 minutes), so the
+    fix for a rate-limit bail is to wait it out, not to slow the per-request
+    delay further. Each pass stops on its own consecutive-failure guard; we
+    then cool down past the window and try again. Passes that make no progress
+    at all end the drain -- that is a real outage or a bad token, not
+    throttling, and hammering it further will not help.
+    """
+    remaining_cap = max(0, int(total_cap))
+    summary = {"probed": 0, "passes": 0, "pending_before": 0, "pending_after": 0, "stopped": ""}
+    from .common import vr_support_cached
+
+    def _pending() -> int:
+        return sum(1 for a in vr_app_ids if a.isdigit() and vr_support_cached(a) is None)
+
+    summary["pending_before"] = _pending()
+    if not summary["pending_before"]:
+        summary["stopped"] = "nothing pending"
+        log("[vrdb] drain: nothing pending")
+        return summary
+
+    log(
+        f"[vrdb] drain starting: {summary['pending_before']:,} pending, "
+        f"total_cap={remaining_cap}, pass_cap={pass_cap}, cooldown={cooldown_seconds}s"
+    )
+    while remaining_cap > 0:
+        this_pass = min(pass_cap, remaining_cap)
+        probed = backfill_vr_categories(
+            vr_app_ids, probe_cap=this_pass, request_delay=request_delay
+        )
+        summary["passes"] += 1
+        summary["probed"] += probed
+        remaining_cap -= probed if probed else this_pass
+
+        pending = _pending()
+        if not pending:
+            summary["stopped"] = "backlog cleared"
+            break
+        if not probed:
+            # A pass that probed nothing is not throttling -- backfill only
+            # skips apps that already have data, and everything else counts as
+            # an attempt. Stop rather than spin.
+            summary["stopped"] = "a pass made no progress (upstream down?)"
+            break
+        if remaining_cap <= 0:
+            summary["stopped"] = "total cap reached"
+            break
+        log(f"[vrdb] drain: {pending:,} still pending, cooling down {cooldown_seconds}s for the rate-limit window")
+        sleep(cooldown_seconds)
+
+    summary["pending_after"] = _pending()
+    if not summary["stopped"]:
+        summary["stopped"] = "total cap reached"
+    log(
+        f"[vrdb] drain done: probed {summary['probed']:,} over {summary['passes']} pass(es), "
+        f"{summary['pending_after']:,} still pending ({summary['stopped']})"
+    )
+    return summary
+
+
 def enrich_search_index_with_vr(
     output_dir: Path,
     vr_app_ids: set[str] | None = None,

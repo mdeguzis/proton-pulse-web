@@ -14,6 +14,7 @@ import yaml
 
 from scripts.pipeline.vrdb import (
     clone_or_update_vrdb,
+    drain_vr_categories,
     backfill_vr_categories,
     VRDB_HEADSETS,
     VRDB_RATINGS,
@@ -520,3 +521,83 @@ def test_enrich_returns_zero_for_an_empty_index(tmp_path):
 def test_vr_capable_app_ids_raises_when_missing(tmp_path):
     with pytest.raises(FileNotFoundError):
         vr_capable_app_ids(tmp_path / "nope")
+
+
+# ── drain_vr_categories (ad-hoc backfill) ────────────────────────────────────
+
+def _drain_env(monkeypatch, answers):
+    """Wire a fake Steam: answers maps app_id -> the value it resolves to."""
+    resolved = {}
+    monkeypatch.setattr(
+        "scripts.pipeline.common.fetch_steam_content_descriptors",
+        lambda a, force_refresh=False: resolved.update({a: answers.get(a, "")}) or [],
+    )
+    monkeypatch.setattr(
+        "scripts.pipeline.common.vr_support_cached",
+        lambda a: resolved.get(a),
+    )
+    monkeypatch.setattr("scripts.pipeline.common.flush_steam_descriptors_cache", lambda: None)
+    return resolved
+
+
+def test_drain_is_a_noop_when_nothing_is_pending(monkeypatch):
+    monkeypatch.setattr("scripts.pipeline.common.vr_support_cached", lambda _a: "only")
+    out = drain_vr_categories({"620980"}, sleep=lambda _s: None)
+    assert out["probed"] == 0
+    assert out["stopped"] == "nothing pending"
+
+
+def test_drain_clears_the_backlog_over_multiple_passes(monkeypatch):
+    ids = {str(900000 + i) for i in range(5)}
+    _drain_env(monkeypatch, {})
+    slept = []
+    out = drain_vr_categories(ids, total_cap=100, pass_cap=2, cooldown_seconds=9,
+                              request_delay=0, sleep=slept.append)
+    assert out["pending_after"] == 0
+    assert out["stopped"] == "backlog cleared"
+    assert out["passes"] >= 3          # 5 apps at 2 per pass
+    assert slept == [9, 9]             # cooled down between passes, not after the last
+
+
+def test_drain_honours_the_total_cap(monkeypatch):
+    ids = {str(910000 + i) for i in range(50)}
+    _drain_env(monkeypatch, {})
+    out = drain_vr_categories(ids, total_cap=6, pass_cap=2, cooldown_seconds=0,
+                              request_delay=0, sleep=lambda _s: None)
+    assert out["probed"] == 6
+    assert out["stopped"] == "total cap reached"
+    assert out["pending_after"] == 44
+
+
+def test_drain_stops_when_a_pass_makes_no_progress(monkeypatch):
+    # A pass that probes nothing while apps are still pending means the
+    # upstream is down or the request is being rejected outright -- not
+    # throttling. Cooling down and retrying would just burn the job's wall
+    # clock, so the drain stops and says why.
+    ids = {str(920000 + i) for i in range(10)}
+    monkeypatch.setattr("scripts.pipeline.common.vr_support_cached", lambda _a: None)
+    monkeypatch.setattr("scripts.pipeline.vrdb.backfill_vr_categories",
+                        lambda *a, **k: 0)
+    out = drain_vr_categories(ids, total_cap=100, pass_cap=2, cooldown_seconds=0,
+                              request_delay=0, sleep=lambda _s: None)
+    assert out["passes"] == 1
+    assert out["probed"] == 0
+    assert "no progress" in out["stopped"]
+    assert out["pending_after"] == 10
+
+
+def test_drain_reports_a_summary_the_workflow_can_render(monkeypatch):
+    ids = {str(930000 + i) for i in range(4)}
+    _drain_env(monkeypatch, {})
+    out = drain_vr_categories(ids, total_cap=10, pass_cap=2, cooldown_seconds=0,
+                              request_delay=0, sleep=lambda _s: None)
+    assert set(out) == {"probed", "passes", "pending_before", "pending_after", "stopped"}
+    assert out["pending_before"] == 4
+    assert isinstance(out["stopped"], str) and out["stopped"]
+
+
+def test_drain_ignores_non_steam_ids_when_counting(monkeypatch):
+    _drain_env(monkeypatch, {})
+    out = drain_vr_categories({"gog:1", "epic:x"}, sleep=lambda _s: None)
+    assert out["pending_before"] == 0
+    assert out["stopped"] == "nothing pending"
