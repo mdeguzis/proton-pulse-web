@@ -1,6 +1,6 @@
 // deck-status (components) for the app page. Relocated from app.js.
 
-import { getDeckStatusForApp } from '../api/deck-status.js?v=0bbdc652';
+import { getDeckStatusForApp } from '../api/deck-status.js?v=c941cca9';
 import { esc } from '../utils.js?v=4630c3d5';
 
 export const DECK_STATUS_LABELS = {
@@ -118,17 +118,20 @@ const _DEVICE_SUMMARY = {
     playable:    'This game is <strong>Playable</strong> on Steam Deck. Functional, but may require extra effort to interact with or configure.',
     unsupported: 'This game is <strong>not supported</strong> on Steam Deck. Will not run, or critical features are unavailable.',
     unknown:     'Steam Deck compatibility is <strong>Unknown</strong>. Valve has not evaluated this title yet.',
+    nodata:      'We do not have a Steam Deck verdict for this title yet. Check the store page for Valve\'s current rating.',
   },
   machine: {
     verified:    'This game is <strong>Verified</strong> on Steam Machine. Fully functional out of the box.',
     playable:    'This game is <strong>Playable</strong> on Steam Machine. Functional, but may require some configuration.',
     unsupported: 'This game is <strong>not supported</strong> on Steam Machine.',
     unknown:     'Steam Machine compatibility is <strong>Unknown</strong>. Valve has not evaluated this title yet.',
+    nodata:      'We do not have a Steam Machine verdict for this title yet. Check the store page for Valve\'s current rating.',
   },
   steamos: {
     compatible:  'This game is <strong>Compatible</strong> with devices running SteamOS, based on Steam Deck verification results. Performance and input may vary by hardware.',
     unsupported: 'This game is <strong>not supported</strong> on SteamOS.',
     unknown:     'SteamOS compatibility is <strong>Unknown</strong>. Valve has not evaluated this title yet.',
+    nodata:      'We do not have a SteamOS verdict for this title yet. Check the store page for Valve\'s current rating.',
   },
 };
 
@@ -167,9 +170,13 @@ function _tabLabel(id, iconId, name, status) {
 // `[[display_type, short_token], ...]` arrays; we look up the token in
 // CRITERIA_TOKEN_LABELS and fall back to camelCase-to-prose conversion so a
 // new Valve token still reads reasonably even before we tune the label.
-function _devicePanel(kind, name, status, criteria, tokenizedCriteria) {
+function _devicePanel(kind, name, status, criteria, tokenizedCriteria, hasData = true) {
   const label = _statusLabel(kind, status);
-  const summary = (_DEVICE_SUMMARY[kind] || {})[status] || '';
+  // A missing entry is not a Valve verdict. Only claim Valve rated something
+  // Unknown when the fetch actually returned that; otherwise say we have no
+  // data and point at the store page.
+  const summaryKey = (!hasData && status === 'unknown') ? 'nodata' : status;
+  const summary = (_DEVICE_SUMMARY[kind] || {})[summaryKey] || '';
   let body = '';
   if (kind === 'deck' && Array.isArray(criteria)) {
     body = `<div class="deck-criteria-list">${criteria.map((pass, i) => {
@@ -182,7 +189,12 @@ function _devicePanel(kind, name, status, criteria, tokenizedCriteria) {
       return `<div class="deck-criterion"><span class="deck-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[iconKey]}</svg></span><span>${esc(_criterionLabel(tok))}</span></div>`;
     }).join('')}</div>`;
   } else {
-    body = `<p class="dt-source">${status === 'unknown' ? 'Valve has not published a verdict for this title yet.' : "Source: Valve's official compatibility report."}</p>`;
+    const sourceNote = status !== 'unknown'
+      ? "Source: Valve's official compatibility report."
+      : hasData
+        ? 'Valve has not published a verdict for this title yet.'
+        : 'Not yet fetched by our pipeline. This is not a statement about how the game runs.';
+    body = `<p class="dt-source">${sourceNote}</p>`;
   }
   return `
     <h3 style="margin:0 0 8px;font-size:0.95rem;color:var(--strong)">${esc(name)} Compatibility: <span class="deck-status-badge deck-status-${status}">${label}</span></h3>
@@ -208,9 +220,9 @@ export function renderDeckStatusModalContent(appId) {
         ${_tabLabel('machine', 'icon-steam-machine', 'Steam Machine', machineStatus)}
         ${_tabLabel('steamos', 'icon-steamos', 'SteamOS', osStatus)}
       </div>
-      <div class="dt-panel dt-panel-deck">${_devicePanel('deck', 'Steam Deck', deckStatus, d.criteria, null)}</div>
-      <div class="dt-panel dt-panel-machine">${_devicePanel('machine', 'Steam Machine', machineStatus, null, d.machine_criteria)}</div>
-      <div class="dt-panel dt-panel-steamos">${_devicePanel('steamos', 'SteamOS', osStatus, null, d.steamos_criteria)}</div>
+      <div class="dt-panel dt-panel-deck">${_devicePanel('deck', 'Steam Deck', deckStatus, d.criteria, null, d.hasData !== false)}</div>
+      <div class="dt-panel dt-panel-machine">${_devicePanel('machine', 'Steam Machine', machineStatus, null, d.machine_criteria, d.hasData !== false)}</div>
+      <div class="dt-panel dt-panel-steamos">${_devicePanel('steamos', 'SteamOS', osStatus, null, d.steamos_criteria, d.hasData !== false)}</div>
     </div>`;
 }
 

@@ -24,7 +24,7 @@ async function _tierRowsFor(view, appIds) {
 }
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=a75604f5';
 import { esc } from '../utils.js?v=4630c3d5';
-import { loadDeckStatusMap } from '../api/deck-status.js?v=0bbdc652';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=c941cca9';
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
 const TIER_LABEL = {
