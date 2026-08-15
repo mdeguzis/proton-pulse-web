@@ -722,12 +722,18 @@
 /* Light the active tab + reveal its panel off the matching checked radio. */
 #dt-deck:checked    ~ .dt-tabbar .dt-tab[for="dt-deck"],
 #dt-machine:checked ~ .dt-tabbar .dt-tab[for="dt-machine"],
-#dt-steamos:checked ~ .dt-tabbar .dt-tab[for="dt-steamos"] {
+#dt-steamos:checked ~ .dt-tabbar .dt-tab[for="dt-steamos"],
+#dt-vr:checked      ~ .dt-tabbar .dt-tab[for="dt-vr"] {
   background: var(--strong); color: var(--bg); border-color: var(--strong);
 }
 #dt-deck:checked    ~ .dt-panel-deck,
 #dt-machine:checked ~ .dt-panel-machine,
-#dt-steamos:checked ~ .dt-panel-steamos { display: block; }
+#dt-steamos:checked ~ .dt-panel-steamos,
+#dt-vr:checked      ~ .dt-panel-vr { display: block; }
+/* #246: the VR tab is hidden until fillVrOnLinuxTab confirms VRDB has reports
+   for this game, so most games keep three tabs rather than showing an empty
+   fourth. [hidden] needs the explicit none because .dt-tab sets display. */
+.dt-tab--vr[hidden] { display: none; }
 .dt-source { color: var(--muted); font-size: 0.72rem; margin: 0; font-style: italic; }
 @media (max-width: 480px) { .dt-tab-name { display: none; } }
 .deck-status-badge.deck-status-unknown {

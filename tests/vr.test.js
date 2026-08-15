@@ -365,3 +365,56 @@ describe('VR in the game-page tag row (#246 follow-up)', () => {
     expect(src).not.toMatch(/href="https:\/\/db\.vronlinux\.org\/"/);
   });
 });
+
+describe('VR on Linux as a compatibility tab (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const deck = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'deck-status.js'), 'utf8');
+  const page = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('the button says Compatibility, not Steam Deck', () => {
+    // The modal covers four surfaces; naming it after one tab undersells the
+    // rest and hides where the VR data lives.
+    expect(deck).toContain('<span>Compatibility</span>');
+    expect(deck).not.toContain('<span>Steam Deck</span>');
+  });
+
+  test('a fourth radio + panel exist for VR', () => {
+    expect(deck).toContain('id="dt-vr"');
+    expect(deck).toContain('dt-panel-vr');
+    expect(css).toContain('#dt-vr:checked      ~ .dt-panel-vr { display: block; }');
+  });
+
+  test('the VR tab starts hidden so non-VR games keep three tabs', () => {
+    expect(deck).toMatch(/id="dt-vr-tab" hidden/);
+    // .dt-tab sets display:inline-flex, so [hidden] needs an explicit rule.
+    expect(css).toContain('.dt-tab--vr[hidden] { display: none; }');
+  });
+
+  test('fillVrOnLinuxTab reveals the tab only when there are runtime reports', () => {
+    const fn = deck.slice(deck.indexOf('export function fillVrOnLinuxTab'));
+    expect(fn).toContain('if (!rows.length) return;');
+    expect(fn.indexOf('tab.hidden = false')).toBeGreaterThan(fn.indexOf('if (!rows.length) return;'));
+  });
+
+  test('the panel is filled async so the modal opens without waiting on vrdb.json', () => {
+    // renderDeckStatusModalContent is synchronous by design (renders off the
+    // in-memory deck cache); VRDB is a separate fetch.
+    expect(deck).toContain('export function fillVrOnLinuxTab');
+    expect(page).toContain('fillVrOnLinuxTab(');
+  });
+
+  test('both modal render paths refill the tab', () => {
+    // The deck fetch re-renders the modal body, which would wipe the tab.
+    const calls = page.match(/fillVrOnLinuxTab\(/g) || [];
+    expect(calls.length).toBeGreaterThanOrEqual(2);
+  });
+
+  test('the tab keeps the VRDB attribution and deep link', () => {
+    const fn = deck.slice(deck.indexOf('export function fillVrOnLinuxTab'));
+    expect(fn).toContain('db.vronlinux.org/games/');
+    expect(fn).toContain('(MIT)');
+    expect(fn).toMatch(/never mixed into our scoring|opposite way to a Pulse tier/);
+  });
+});

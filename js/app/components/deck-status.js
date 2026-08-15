@@ -2,6 +2,7 @@
 
 import { getDeckStatusForApp } from '../api/deck-status.js?v=c941cca9';
 import { esc } from '../utils.js?v=4630c3d5';
+import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
 
 export const DECK_STATUS_LABELS = {
   verified:    'Verified',
@@ -142,12 +143,14 @@ export function renderDeckStatusButton(appId) {
   // list - keep the button clickable so users still see the explanation, but
   // tag it visually so it reads as "definitively negative"
   const disabledClass = status === 'unsupported' ? ' deck-status-btn-unsupported' : '';
-  // Button label is just "Steam Deck" - the colored icon already encodes
-  // the status (green check, yellow i, red x, gray ?). Full "Steam Deck:
-  // Verified" string lives in the modal heading + the title-attr tooltip
-  return `<button class="info-btn info-btn-labeled deck-status-btn${disabledClass}" id="deck-status-btn" title="Steam Deck: ${label} (click for details)">
+  // Label is "Compatibility", not "Steam Deck": the modal behind it covers
+  // Steam Deck, Steam Machine, SteamOS and (when we have data) VR on Linux,
+  // so naming it after one tab undersells the other three. The coloured icon
+  // still encodes the DECK status, which is the headline verdict, and the
+  // title attribute spells it out.
+  return `<button class="info-btn info-btn-labeled deck-status-btn${disabledClass}" id="deck-status-btn" title="Steam Deck: ${label} (click for Deck, Machine, SteamOS and VR details)">
     <svg width="16" height="16" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[status] || DECK_STATUS_ICON_SVG.unknown}</svg>
-    <span>Steam Deck</span>
+    <span>Compatibility</span>
   </button>`;
 }
 
@@ -210,20 +213,78 @@ export function renderDeckStatusModalContent(appId) {
   const deckStatus = d.status || 'unknown';
   const machineStatus = d.machine || 'unknown';
   const osStatus = d.steamos || 'unknown';
+  // #246: VR on Linux joins the device tabs. It is the same question the other
+  // three answer ("will this run on my hardware"), and it was buried in the
+  // Metadata modal where nobody looking for compatibility would find it.
+  // The panel body fills in asynchronously -- vrdb.json is a separate fetch
+  // and the modal must not wait on it to open.
   return `
     <div class="deck-tabs">
       <input type="radio" name="devtab" id="dt-deck" class="dt-radio" checked>
       <input type="radio" name="devtab" id="dt-machine" class="dt-radio">
       <input type="radio" name="devtab" id="dt-steamos" class="dt-radio">
+      <input type="radio" name="devtab" id="dt-vr" class="dt-radio">
       <div class="dt-tabbar" role="tablist">
         ${_tabLabel('deck', 'icon-steam-deck', 'Steam Deck', deckStatus)}
         ${_tabLabel('machine', 'icon-steam-machine', 'Steam Machine', machineStatus)}
         ${_tabLabel('steamos', 'icon-steamos', 'SteamOS', osStatus)}
+        <label for="dt-vr" class="dt-tab dt-tab--vr" title="VR on Linux" id="dt-vr-tab" hidden>
+          <svg class="dt-tab-glyph" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 8h18a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-3.2a2 2 0 0 1-1.7-.9l-1.3-2a1 1 0 0 0-1.6 0l-1.3 2a2 2 0 0 1-1.7.9H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1z"/></svg>
+          <span class="dt-tab-name">VR on Linux</span>
+        </label>
       </div>
       <div class="dt-panel dt-panel-deck">${_devicePanel('deck', 'Steam Deck', deckStatus, d.criteria, null, d.hasData !== false)}</div>
       <div class="dt-panel dt-panel-machine">${_devicePanel('machine', 'Steam Machine', machineStatus, null, d.machine_criteria, d.hasData !== false)}</div>
       <div class="dt-panel dt-panel-steamos">${_devicePanel('steamos', 'SteamOS', osStatus, null, d.steamos_criteria, d.hasData !== false)}</div>
+      <div class="dt-panel dt-panel-vr" id="dt-panel-vr"></div>
     </div>`;
+}
+
+/**
+ * Fill the VR on Linux tab, and reveal it only when VRDB has reports.
+ *
+ * Kept out of renderDeckStatusModalContent because that function is
+ * synchronous (it renders off the in-memory deck cache so the modal opens
+ * instantly) while VRDB is a separate fetch. A game with no VRDB entry keeps
+ * three tabs rather than showing an empty fourth.
+ *
+ * @param {Element} root - The rendered modal content.
+ * @param {object|null} entry - VRDB game record, or null when we have none.
+ * @param {string|number} appId - Steam app id, for the deep link.
+ */
+export function fillVrOnLinuxTab(root, entry, appId) {
+  if (!root) return;
+  const tab = root.querySelector('#dt-vr-tab');
+  const panel = root.querySelector('#dt-panel-vr');
+  if (!tab || !panel) return;
+  const runtimes = entry && entry.runtimes && typeof entry.runtimes === 'object' ? entry.runtimes : null;
+  const rows = runtimes ? Object.entries(runtimes) : [];
+  if (!rows.length) return;   // no data: leave the tab hidden
+
+  // Best rating first so the most promising runtime leads.
+  rows.sort((a, b) => (Number(a[1]?.best) || 9) - (Number(b[1]?.best) || 9));
+  const body = rows.map(([runtime, stats]) => {
+    const best = Number(stats?.best);
+    const count = Number(stats?.count) || 0;
+    return `<div class="gm-vr-row">
+      <span class="gm-vr-runtime">${esc(vrRuntimeLabel(runtime))}</span>
+      <span class="gm-vr-rating" style="background:${vrdbRatingColor(best)}">${esc(VRDB_RATINGS[best] || 'Unrated')}</span>
+      <span class="gm-mute">${count} report${count === 1 ? '' : 's'}</span>
+    </div>`;
+  }).join('');
+  const devices = Array.isArray(entry.devices) && entry.devices.length
+    ? `<div class="gm-chips" style="margin-top:8px">${entry.devices.slice(0, 8).map(dv => `<span class="gm-chip">${esc(dv)}</span>`).join('')}</div>`
+    : '';
+  const latest = entry.latest ? ` \u00b7 latest ${esc(String(entry.latest))}` : '';
+  const url = `https://db.vronlinux.org/games/${encodeURIComponent(String(appId))}.html`;
+  panel.innerHTML = `
+    <h3 style="margin:0 0 8px;font-size:0.95rem;color:var(--strong)">VR on Linux</h3>
+    <p style="color:var(--muted);font-size:0.84rem;margin:0 0 12px;line-height:1.5">
+      Community reports per VR runtime. Their scale runs 1 = best, the opposite way to a Pulse tier, so it is shown with their own labels and never mixed into our scoring.
+    </p>
+    ${body}${devices}
+    <p class="dt-source" style="margin-top:8px">Source: <a href="${esc(url)}" target="_blank" rel="noopener">VR on Linux DB</a> (MIT)${latest}</p>`;
+  tab.hidden = false;
 }
 
 // - Author / signals / permalink helpers --------------

@@ -12,7 +12,7 @@ import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagRepor
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=e25d9716';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=01ba8999';
 import { renderCard } from './report-card.js?v=5e25c644';
 import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
@@ -2372,6 +2372,13 @@ export async function renderGamePage(appId) {
       if (!host) return;
       const parts = [];
 
+      // VR on Linux tab in the compatibility modal. Independent of the vr-index
+      // capability flag below: a game can have VRDB reports without Steam
+      // flagging it VR, and vice versa.
+      void getVrdbForApp(appId)
+        .then((e) => fillVrOnLinuxTab(el.querySelector('#deck-status-content'), e, appId))
+        .catch(() => {});
+
       const vr = vrForApp(await loadVrIndex().catch(() => ({})), appId);
       if (vr) {
         const only = vr === 'only';
@@ -2488,7 +2495,11 @@ export async function renderGamePage(appId) {
         deckBtn.title = `Steam Deck: ${lbl} (click for details)`;
       }
       const deckTip = el.querySelector('#deck-status-tip');
-      if (deckTip) deckTip.innerHTML = `<div class="info-tooltip-inner">${renderDeckStatusModalContent(appId)}</div>`;
+      if (deckTip) {
+        deckTip.innerHTML = `<div class="info-tooltip-inner">${renderDeckStatusModalContent(appId)}</div>`;
+        // Re-render wipes the VR tab, so refill it from the memoized payload.
+        void getVrdbForApp(appId).then((e) => fillVrOnLinuxTab(deckTip, e, appId)).catch(() => {});
+      }
 
       // fill min requirements panel
       const reqsEl = el.querySelector('#min-reqs-content');
