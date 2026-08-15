@@ -717,7 +717,12 @@ async function _openMetadataModal(appId) {
       ? `<div class="gm-chips" style="margin-top:6px">${vrdb.devices.slice(0, 6).map(d => `<span class="gm-chip">${esc(d)}</span>`).join('')}</div>`
       : '';
     const latest = vrdb.latest ? ` \u00b7 latest ${esc(String(vrdb.latest))}` : '';
-    const src = `<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="https://db.vronlinux.org/" target="_blank" rel="noopener">VR on Linux DB</a> (MIT)${latest}. Separate methodology from Pulse scoring.</div>`;
+    // Deep-link to this game's VRDB page rather than the site root: the
+    // reader is looking at one game's reports and wants the rest of them, not
+    // a search box. Their pages are keyed on the Steam appid, and this block
+    // only renders when we matched a VRDB entry for that id.
+    const vrdbUrl = `https://db.vronlinux.org/games/${encodeURIComponent(String(appId))}.html`;
+    const src = `<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="${esc(vrdbUrl)}" target="_blank" rel="noopener">VR on Linux DB</a> (MIT)${latest}. Separate methodology from Pulse scoring.</div>`;
     return `${rows}${devices}${src}`;
   };
 
@@ -1557,6 +1562,12 @@ export async function renderGamePage(appId) {
                 <span>Linux</span>
               </button>
             </div>
+            <!-- #246: VR sits beside the OS chips, not inside them. That
+                 container is aria-label="Supported operating systems" and VR
+                 is a capability, not an OS -- folding it in would make the
+                 label wrong for screen readers. Same .game-tag shape so it
+                 reads as part of the same row. -->
+            <div class="game-vr-strip" id="game-vr-strip" hidden aria-label="VR support"></div>
             <div class="game-type-strip" id="game-type-strip" hidden aria-label="App type"></div>
             <div class="game-user-tags" id="game-user-tags" aria-label="Your Steam context"></div>
           </div>
@@ -2397,9 +2408,26 @@ export async function renderGamePage(appId) {
         }
       } catch { /* signed out -- VR chip alone is still worth showing */ }
 
-      if (!parts.length) return;
-      host.innerHTML = parts.join('');
-      host.hidden = false;
+      if (parts.length) {
+        host.innerHTML = parts.join('');
+        host.hidden = false;
+      }
+
+      // Mirror VR into the tag row under the artwork, next to Win/macOS/Linux.
+      // The artwork badge is easy to miss against busy box art; this row is
+      // where people already look for what a game supports.
+      if (vr) {
+        const strip = el.querySelector('#game-vr-strip');
+        if (strip) {
+          const only = vr === 'only';
+          strip.innerHTML = `<span class="game-tag game-tag--vr" data-vr="${only ? 'only' : 'supported'}"`
+            + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}">`
+            + '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">'
+            + '<path d="M3 8h18a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-3.2a2 2 0 0 1-1.7-.9l-1.3-2a1 1 0 0 0-1.6 0l-1.3 2a2 2 0 0 1-1.7.9H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1z"/>'
+            + `</svg><span>${only ? 'VR Only' : 'VR'}</span></span>`;
+          strip.hidden = false;
+        }
+      }
     })();
 
     // fetch real Steam Deck compat + min requirements and patch the UI.

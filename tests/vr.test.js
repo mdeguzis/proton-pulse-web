@@ -327,3 +327,41 @@ describe('VR chip caps the badge strip (#246 follow-up)', () => {
     expect(combo).toContain('${vrChip}');
   });
 });
+
+describe('VR in the game-page tag row (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const src = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('VR gets its own strip, not folded into the OS chips', () => {
+    // .game-os-strip is aria-label="Supported operating systems"; VR is a
+    // capability, not an OS, so folding it in makes that label wrong.
+    expect(src).toContain('id="game-vr-strip"');
+    expect(src).toContain('aria-label="VR support"');
+    const osStrip = src.slice(src.indexOf('game-os-strip'), src.indexOf('game-vr-strip'));
+    expect(osStrip).not.toContain('game-tag--vr');
+  });
+
+  test('the strip stays hidden for non-VR games', () => {
+    expect(src).toMatch(/id="game-vr-strip" hidden/);
+    expect(css).toContain('.game-vr-strip[hidden] { display: none; }');
+  });
+
+  test('it reuses the OS chip shape and the card chip colour', () => {
+    expect(src).toContain('game-tag game-tag--vr');
+    const rule = css.match(/\.game-tag--vr\s*\{[^}]*\}/)[0];
+    expect(rule).toContain('--vr-chip-bg');
+  });
+
+  test('VR Only is filled, VR supported is outlined', () => {
+    // Same one-chip decision as the cards: the label carries the difference,
+    // reinforced by fill rather than a second hue.
+    expect(css).toMatch(/\.game-tag--vr\[data-vr="only"\]\s*\{[^}]*background/);
+  });
+
+  test('the VRDB source deep-links to the game, not the site root', () => {
+    expect(src).toContain('db.vronlinux.org/games/');
+    expect(src).not.toMatch(/href="https:\/\/db\.vronlinux\.org\/"/);
+  });
+});
