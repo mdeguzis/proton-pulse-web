@@ -213,11 +213,13 @@ describe('game page artwork badges (#246)', () => {
   test('VR renders for signed-out visitors; owner badges do not', () => {
     // VR capability is a property of the game, not the viewer. Gating it
     // behind a session would hide it from most visitors.
-    const block = src.slice(src.indexOf("el.querySelector('#game-art-badges')"));
-    const vrIdx = block.indexOf('vrForApp');
+    // VR is resolved before the artwork host is even looked up, and well
+    // before any session check, so a signed-out visitor still gets it.
+    const block = src.slice(src.indexOf('const vr = vrForApp('));
     const sessionIdx = block.indexOf('SupaAuth?.getSession');
-    expect(vrIdx).toBeGreaterThan(-1);
-    expect(sessionIdx).toBeGreaterThan(vrIdx);
+    const stripIdx = block.indexOf("game-vr-strip'");
+    expect(stripIdx).toBeGreaterThan(-1);
+    expect(sessionIdx).toBeGreaterThan(stripIdx);
   });
 
   test('the VR chip is sized to the 18px icon box, not the delisted chip em', () => {
@@ -354,10 +356,23 @@ describe('VR in the game-page tag row (#246 follow-up)', () => {
     expect(rule).toContain('--vr-chip-bg');
   });
 
-  test('VR Only is filled, VR supported is outlined', () => {
-    // Same one-chip decision as the cards: the label carries the difference,
-    // reinforced by fill rather than a second hue.
-    expect(css).toMatch(/\.game-tag--vr\[data-vr="only"\]\s*\{[^}]*background/);
+  test('the tag-row chip always reads VR, never VR Only', () => {
+    // Same call as the cards: "VR" means the game has VR. The headset
+    // requirement is the banner's job, not a second label in a row of
+    // platform chips.
+    const block = src.slice(src.indexOf("game-vr-strip'"), src.indexOf('#game-vr-banner'));
+    expect(block).toContain('<span>VR</span>');
+    expect(block).not.toContain('VR Only');
+    expect(css).not.toContain('.game-tag--vr[data-vr="only"]');
+  });
+
+  test('the tag-row chip is not gated on the artwork overlay', () => {
+    // These shared an `if (!host) return` guard, so a missing
+    // #game-art-badges silently took the tag-row chip down with it.
+    const stripIdx = src.indexOf("game-vr-strip'");
+    const guardIdx = src.indexOf("const host = el.querySelector('#game-art-badges')");
+    expect(stripIdx).toBeGreaterThan(-1);
+    expect(stripIdx).toBeLessThan(guardIdx);
   });
 
   test('the VRDB source deep-links to the game, not the site root', () => {

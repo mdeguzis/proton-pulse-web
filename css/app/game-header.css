@@ -561,10 +561,6 @@
   border-color: var(--vr-chip-bg, #e8a33d);
   color: var(--vr-chip-bg, #e8a33d);
 }
-.game-tag--vr[data-vr="only"] {
-  background: var(--vr-chip-bg, #e8a33d);
-  color: var(--vr-chip-fg, #16130c);
-}
 .game-type-strip { display: flex; flex-wrap: wrap; gap: 6px; }
 .game-type-strip[hidden] { display: none; }
 /* App type chip (mod / dlc / software) under the artwork. Same rounded-square

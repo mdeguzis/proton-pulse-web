@@ -2368,10 +2368,6 @@ export async function renderGamePage(appId) {
     // game, not of the viewer, so gating it behind sign-in would hide it from
     // most visitors. Owner badges still require a session.
     void (async () => {
-      const host = el.querySelector('#game-art-badges');
-      if (!host) return;
-      const parts = [];
-
       // VR on Linux tab in the compatibility modal. Independent of the vr-index
       // capability flag below: a game can have VRDB reports without Steam
       // flagging it VR, and vice versa.
@@ -2380,13 +2376,24 @@ export async function renderGamePage(appId) {
         .catch(() => {});
 
       const vr = vrForApp(await loadVrIndex().catch(() => ({})), appId);
+      const only = vr === 'only';
+
+      // Tag row chip first, and NOT gated on the artwork overlay existing.
+      // These used to share an `if (!host) return` guard, so a missing
+      // #game-art-badges silently took the tag-row chip down with it.
+      // One label: "VR" means the game has VR, full stop. VR-only is said in
+      // the banner, the same call as the cards -- a second label here would
+      // reintroduce the "different somehow" problem we removed there.
       if (vr) {
-        const only = vr === 'only';
-        parts.push(
-          '<span class="game-card-vr-chip"'
-          + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}"`
-          + ` aria-label="${only ? 'VR only' : 'VR supported'}">VR</span>`,
-        );
+        const strip = el.querySelector('#game-vr-strip');
+        if (strip) {
+          strip.innerHTML = '<span class="game-tag game-tag--vr"'
+            + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}">`
+            + '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">'
+            + '<path d="M3 8h18a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-3.2a2 2 0 0 1-1.7-.9l-1.3-2a1 1 0 0 0-1.6 0l-1.3 2a2 2 0 0 1-1.7.9H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1z"/>'
+            + '</svg><span>VR</span></span>';
+          strip.hidden = false;
+        }
         if (only) {
           const banner = el.querySelector('#game-vr-banner');
           if (banner) {
@@ -2396,6 +2403,17 @@ export async function renderGamePage(appId) {
             banner.hidden = false;
           }
         }
+      }
+
+      const host = el.querySelector('#game-art-badges');
+      if (!host) return;
+      const parts = [];
+      if (vr) {
+        parts.push(
+          '<span class="game-card-vr-chip"'
+          + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}"`
+          + ` aria-label="${only ? 'VR only' : 'VR supported'}">VR</span>`,
+        );
       }
 
       try {
@@ -2420,21 +2438,6 @@ export async function renderGamePage(appId) {
         host.hidden = false;
       }
 
-      // Mirror VR into the tag row under the artwork, next to Win/macOS/Linux.
-      // The artwork badge is easy to miss against busy box art; this row is
-      // where people already look for what a game supports.
-      if (vr) {
-        const strip = el.querySelector('#game-vr-strip');
-        if (strip) {
-          const only = vr === 'only';
-          strip.innerHTML = `<span class="game-tag game-tag--vr" data-vr="${only ? 'only' : 'supported'}"`
-            + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}">`
-            + '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">'
-            + '<path d="M3 8h18a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-3.2a2 2 0 0 1-1.7-.9l-1.3-2a1 1 0 0 0-1.6 0l-1.3 2a2 2 0 0 1-1.7.9H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1z"/>'
-            + `</svg><span>${only ? 'VR Only' : 'VR'}</span></span>`;
-          strip.hidden = false;
-        }
-      }
     })();
 
     // fetch real Steam Deck compat + min requirements and patch the UI.
