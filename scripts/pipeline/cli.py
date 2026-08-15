@@ -127,6 +127,17 @@ def build_parser():
         "deck-status",
         help="Build deck-status.json (Valve's per-game Steam Deck verdict, fetched server-side)",
     )
+    deck_status_parser.add_argument(
+        "--budget", type=int, default=None,
+        help="Max NEW verdict fetches this run (default: the pipeline's per-run budget). "
+             "Use a large value (or 0 for no cap) for an ad-hoc full fill.",
+    )
+    deck_status_parser.add_argument(
+        "--delay", type=float, default=0.35,
+        help="Seconds between requests (default: 0.35). Measured sustainable rate on this "
+             "endpoint is ~3 req/s with no throttling; it is a store widget, not the "
+             "appdetails API that caps at 200 per 5 minutes.",
+    )
     add_shared_output_arg(deck_status_parser)
 
     vr_backfill_parser = subparsers.add_parser(
@@ -208,7 +219,14 @@ def main():
         return
 
     if command == "deck-status":
-        build_deck_status(args.output_dir)
+        from .deck_status import steam_app_ids_for_deck_status
+        # budget=0 means "no cap" -- the full-fill path.
+        if args.budget is None:
+            ids = None
+        else:
+            budget = args.budget if args.budget > 0 else 10 ** 9
+            ids = steam_app_ids_for_deck_status(args.output_dir, budget=budget)
+        build_deck_status(args.output_dir, app_ids=ids, delay=args.delay)
         return
 
     if command == "vr-backfill":
