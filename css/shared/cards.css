@@ -194,7 +194,6 @@
   display: inline-flex;
   align-items: center;
   padding: 0 6px;
-  border-radius: 3px;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -203,6 +202,34 @@
   white-space: nowrap;
   background: var(--vr-chip-bg, #e8a33d);
   color: var(--vr-chip-fg, #16130c);
+  /* No radius of its own: the badge container's radius caps the strip (see
+     the bleed rules below), the same way .game-card-combo-tag already builds
+     its two-tone chip. A chip with its own corners sat as a square block
+     inside a curved badge and the leading end read as uncapped. */
+  border-radius: 0;
+}
+
+/* Bleed the leading chip out through the container's padding so it reaches
+   the edge, then let the container clip it to its own curve. Each badge
+   variant has different padding, so each declares its own bleed; the chip
+   rule above stays generic. Only :first-child bleeds -- when a Delisted chip
+   precedes it, that one owns the leading edge instead. */
+.game-card-store-tag,
+.game-card-store-pill,
+.game-card-corner-tag,
+.game-card-strip-store { overflow: hidden; }
+
+.game-card-vr-chip:first-child {
+  align-self: stretch;
+  margin-top: calc(-1 * var(--badge-pad-y, 0px));
+  margin-bottom: calc(-1 * var(--badge-pad-y, 0px));
+  margin-left: calc(-1 * var(--badge-pad-x, 0px));
+}
+.game-card-store-tag  { --badge-pad-y: 1px; --badge-pad-x: 5px; }
+.game-card-store-pill { --badge-pad-y: 4px; --badge-pad-x: 10px; }
+.game-card-corner-tag {
+  --badge-pad-y: calc(var(--owner-badge-size, 18px) * 0.12);
+  --badge-pad-x: calc(var(--owner-badge-size, 18px) * 0.42);
 }
 
 /* Owner badges (Subaru "Badge of Ownership" style): dark chrome chips

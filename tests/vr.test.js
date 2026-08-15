@@ -280,3 +280,50 @@ describe('VR chip is one variant, VR-only is a banner (#246 follow-up)', () => {
     expect(bannerIdx).toBeGreaterThan(onlyIdx);
   });
 });
+
+describe('VR chip caps the badge strip (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+  const chip = css.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+
+  test('the chip carries no radius of its own', () => {
+    // The container's radius caps the strip. A chip with its own corners sat
+    // as a square block inside a curved badge and the leading end looked
+    // uncapped where the badge curved away from it.
+    expect(chip).toMatch(/border-radius:\s*0/);
+  });
+
+  test('badge containers clip their contents', () => {
+    // Without overflow:hidden the bled chip escapes the rounded corner.
+    for (const sel of ['.game-card-store-tag', '.game-card-store-pill',
+                       '.game-card-corner-tag', '.game-card-strip-store']) {
+      const re = new RegExp(`${sel.replace('.', '\\.')}[^{]*\\{[^}]*overflow:\\s*hidden`);
+      expect(css).toMatch(re);
+    }
+  });
+
+  test('every container that clips also declares its bleed', () => {
+    // The chip bleeds out through the container padding by negative margin;
+    // each variant has different padding, so a container that clips without
+    // declaring --badge-pad-* leaves a gap at the leading edge.
+    for (const sel of ['.game-card-store-tag', '.game-card-store-pill', '.game-card-corner-tag']) {
+      const re = new RegExp(`${sel.replace('.', '\\.')}\\s*\\{[^}]*--badge-pad-x`);
+      expect(css).toMatch(re);
+    }
+  });
+
+  test('only the leading chip bleeds', () => {
+    // A Delisted chip renders before VR; when present it owns the leading
+    // edge, so VR must not pull itself out of the container there.
+    expect(css).toMatch(/\.game-card-vr-chip:first-child\s*\{/);
+  });
+
+  test('the combo layout still renders the chip', () => {
+    // combo hides store-tag / corner-tag / store-pill, so a chip that only
+    // lived in those would vanish entirely in that layout.
+    const cardSrc = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'lib', 'card.js'), 'utf8');
+    const combo = cardSrc.match(/game-card-combo-tag[\s\S]{0,400}/)[0];
+    expect(combo).toContain('${vrChip}');
+  });
+});
