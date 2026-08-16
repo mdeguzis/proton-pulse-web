@@ -90,6 +90,7 @@ import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
 import { getVrdbForApp } from '../lib/vrdb.js?v=f7c0f65a';
+import { loadVrIndex, vrForApp } from '../lib/vr-index.js?v=f094c84f';
 import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
 import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
 
@@ -1558,7 +1559,7 @@ export async function renderGamePage(appId) {
                 <span>macOS</span>
               </button>
               <button type="button" class="game-tag game-os-chip" data-os="linux" title="Linux">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2c-1.66 0-3 1.34-3 3v3.5c-1.5 1-3 2.5-3 5.5 0 2.5 1 4.5 2 5.5.5.5 1 1 1 2v.5h6V21c0-1 .5-1.5 1-2 1-1 2-3 2-5.5 0-3-1.5-4.5-3-5.5V5c0-1.66-1.34-3-3-3zm-1.5 5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 0c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM12 11l-1.5 2h3L12 11z"/></svg>
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 1.8c-2.3 0-4 1.8-4 4.1v2.4c0 .9-.4 1.6-1 2.4-1.2 1.5-2 3-2.4 4.6-.2.9.2 1.5 1 1.7.5.1 1 0 1.4-.3.2 1.6 1.2 2.7 2.6 3.2 1.6.6 3.3.6 4.9 0 1.4-.5 2.4-1.6 2.6-3.2.4.3.9.4 1.4.3.8-.2 1.2-.8 1-1.7-.4-1.6-1.2-3.1-2.4-4.6-.6-.8-1-1.5-1-2.4V5.9c0-2.3-1.8-4.1-4.1-4.1z"/><ellipse cx="12" cy="15.4" rx="3.1" ry="4" fill="#fff" opacity=".92"/><circle cx="10.4" cy="6.2" r="1.35" fill="#fff"/><circle cx="13.6" cy="6.2" r="1.35" fill="#fff"/><circle cx="10.6" cy="6.4" r=".62" fill="#0b0f14"/><circle cx="13.4" cy="6.4" r=".62" fill="#0b0f14"/><path fill="#f5a623" d="M12 7.5c.85 0 1.55.42 1.55.95 0 .52-.7.95-1.55.95s-1.55-.43-1.55-.95c0-.53.7-.95 1.55-.95z"/><path fill="#f5a623" d="M9.1 20.5c-.6.5-1.6.6-2 .1-.3-.4 0-.9.7-1.3l1.7-1zM14.9 20.5c.6.5 1.6.6 2 .1.3-.4 0-.9-.7-1.3l-1.7-1z"/></svg>
                 <span>Linux</span>
               </button>
             </div>
@@ -2437,8 +2438,12 @@ export async function renderGamePage(appId) {
         host.innerHTML = parts.join('');
         host.hidden = false;
       }
-
-    })();
+    })().catch((err) => {
+      // Without this the whole block is an unhandled rejection: a missing
+      // import took out the VR chip, the VR-only banner AND the artwork
+      // badges at once, with an empty console. Log loudly instead.
+      console.error('[game-page] VR / owner badge render failed', { appId, error: String(err) });
+    });
 
     // fetch real Steam Deck compat + min requirements and patch the UI.
     // Also probe platforms.linux via the same shared appdetails cache so
