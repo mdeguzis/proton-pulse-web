@@ -482,3 +482,33 @@ describe('tag row shows only what applies (#246 follow-up)', () => {
     expect(block.slice(0, stripIdx)).toContain('if (vr) {');
   });
 });
+
+describe('owner badge hover recolours the glyph', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const cards = fs.readFileSync(path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+  const topbar = fs.readFileSync(path.join(__dirname, '..', 'js', 'lib', 'topbar.js'), 'utf8');
+
+  test('the sprites use currentColor so outside CSS can reach them', () => {
+    // A <symbol fill="#fff"> sets fill on the symbol, so its children inherit
+    // white from INSIDE the shadow tree and no page rule can override it --
+    // the reason a hover rule on the badge did nothing to the icon.
+    const book = topbar.match(/<symbol id="icon-book-open"[^>]*>/)[0];
+    expect(book).toContain('fill="currentColor"');
+    const wish = topbar.slice(topbar.indexOf('<symbol id="icon-wishlist-heart"'));
+    expect(wish.slice(0, 200)).toContain('fill="currentColor"');
+  });
+
+  test('hover changes color, not the border or box-shadow', () => {
+    const rule = cards.match(/\.game-card-owner-badge:hover\s*\{[^}]*\}/)[0];
+    expect(rule).toContain('color');
+    expect(rule).not.toContain('box-shadow');
+    expect(rule).not.toContain('border');
+  });
+
+  test('the badges still default to white', () => {
+    // currentColor only helps if something sets it; .game-card-owner-badge
+    // already does, so every existing usage is unchanged.
+    expect(cards).toMatch(/\.game-card-owner-badge\s*\{[^}]*color:\s*#fff/);
+  });
+});

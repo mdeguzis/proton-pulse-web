@@ -521,18 +521,6 @@
   pointer-events: auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
 }
-/* Hover: these badges are the only thing on the artwork that means something
-   about YOU rather than the game, so they get an accent glow to read as
-   interactive/personal. transition on the shadow only -- animating transform
-   here nudges the badge over the box art and looks like a rendering glitch. */
-.game-header-art-badges > * {
-  transition: box-shadow 0.15s ease;
-}
-.game-header-art-badges > *:hover {
-  box-shadow: 0 0 0 1px var(--accent, #58a6ff),
-              0 0 12px 3px rgba(88, 166, 255, 0.55),
-              0 1px 3px rgba(0, 0, 0, 0.55);
-}
 
 /* Unified tag row under the artwork (#266 refinement): OS availability
    chips (Win / macOS / Linux) plus user-context tags (On wishlist / In

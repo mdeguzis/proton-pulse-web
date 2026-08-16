@@ -259,6 +259,11 @@
   height: var(--owner-badge-size, 18px);
   display: block;
 }
+/* Hover recolours the GLYPH, not the chip. Works because the sprites use
+   fill="currentColor" -- with the old fill="#fff" on the <symbol> the colour
+   was set inside the shadow tree and no outside rule could touch it. */
+.game-card-owner-badge { transition: color 0.15s ease; }
+.game-card-owner-badge:hover { color: var(--accent, #58a6ff); }
 /* Small gap before the store text so the icons read as attached but
    distinct decals rather than merging with the "STEAM" label. */
 .game-card-owner-badge:last-of-type { margin-right: 3px; }

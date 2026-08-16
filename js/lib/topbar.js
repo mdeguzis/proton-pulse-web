@@ -65,7 +65,7 @@
          store-pill color at 11-13px without the old white halo. Id kept for
          call-site stability (home.js references #icon-wishlist-heart). -->
     <symbol id="icon-wishlist-heart" viewBox="0 0 24 24">
-      <g fill="#fff" stroke="#000" stroke-width="1.2" stroke-linejoin="round">
+      <g fill="currentColor" stroke="#000" stroke-width="1.2" stroke-linejoin="round">
         <path d="M4.6 8.2h14.8v3.4H4.6z"/>
         <path d="M5.6 11.6h12.8v7a1.4 1.4 0 0 1-1.4 1.4H7a1.4 1.4 0 0 1-1.4-1.4z"/>
         <path d="M12 8.2C10.6 8.2 8 7.9 7.5 6.3 7.1 5.1 8.4 4.3 9.5 5 10.6 5.7 11.5 6.8 12 8.2z"/>
@@ -77,7 +77,7 @@
          white fill with no outline so it reads on any store-pill color at
          11-13px. Replaced the old 2x2 collection grid. Id kept for call-site
          stability (home.js references #icon-book-open). -->
-    <symbol id="icon-book-open" viewBox="0 0 24 24" fill="#fff">
+    <symbol id="icon-book-open" viewBox="0 0 24 24" fill="currentColor">
       <rect x="3.5" y="4.8"  width="17" height="3.6" rx="1.8"/>
       <rect x="3.5" y="10.2" width="17" height="3.6" rx="1.8"/>
       <rect x="3.5" y="15.6" width="17" height="3.6" rx="1.8"/>
