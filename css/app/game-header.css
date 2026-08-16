@@ -552,15 +552,6 @@
 .game-user-tags:empty { display: none; }
 .game-vr-strip { display: flex; flex-wrap: wrap; gap: 6px; }
 .game-vr-strip[hidden] { display: none; }
-/* #246: same .game-tag shape as the OS chips so the row reads as one strip,
-   but carrying the VR chip's amber so it ties back to the card badge. The
-   OS chips are deliberately muted; VR is the one thing in this row that is
-   a capability rather than a platform, and it is what a VR player is
-   scanning for. */
-.game-tag--vr {
-  border-color: var(--vr-chip-bg, #e8a33d);
-  color: var(--vr-chip-bg, #e8a33d);
-}
 .game-type-strip { display: flex; flex-wrap: wrap; gap: 6px; }
 .game-type-strip[hidden] { display: none; }
 /* App type chip (mod / dlc / software) under the artwork. Same rounded-square
@@ -614,7 +605,22 @@
 .game-tag svg { display: block; }
 /* OS chips: buttons -- clicking opens the metadata modal. Off state is
    muted; on state lights up green because Steam advertises the platform. */
+/* #246: same .game-tag shape as the OS chips so the row reads as one strip,
+   but in the VR chip's amber so it ties back to the card badge. Two-class
+   selector on purpose: a bare .game-tag--vr has the same specificity as
+   .game-tag and lost to its `color: var(--muted)`, which rendered the chip
+   grey and indistinguishable from an unsupported platform. It only renders
+   when the game HAS VR, so it is always the lit state. */
+.game-tag.game-tag--vr {
+  border-color: var(--vr-chip-bg, #e8a33d);
+  color: var(--vr-chip-bg, #e8a33d);
+  opacity: 1;
+}
+
 .game-os-chip { cursor: pointer; opacity: 0.55; }
+/* .game-tag sets display:inline-flex, so [hidden] alone does not hide a chip
+   the JS marks as not-applicable. */
+.game-tag[hidden] { display: none; }
 .game-os-chip:hover { border-color: var(--accent); }
 .game-os-chip--on {
   opacity: 1;

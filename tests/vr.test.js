@@ -204,10 +204,18 @@ describe('game page artwork badges (#246)', () => {
     expect(badgeRules.some((sel) => sel.includes('data-store-pill-pos'))).toBe(false);
   });
 
-  test('the overlay reuses the card badge classes so it matches browse', () => {
-    expect(src).toContain('game-card-vr-chip');
+  test('the overlay carries ownership only, not VR', () => {
+    // VR lives in the tag row under the artwork (and the banner when it is
+    // VR-only). A chip on the art as well was the same fact twice, competing
+    // with the box art.
+    const overlay = src.slice(src.indexOf("querySelector('#game-art-badges')"), src.indexOf('parts.length'));
+    expect(overlay).not.toContain('game-card-vr-chip');
     expect(src).toContain('game-card-owner-badge game-card-owner-badge--library');
     expect(src).toContain('game-card-owner-badge game-card-owner-badge--wishlist');
+  });
+
+  test('the library badge tooltip reads In Library', () => {
+    expect(src).toContain('title="In Library" aria-label="In Library"');
   });
 
   test('VR renders for signed-out visitors; owner badges do not', () => {
@@ -431,5 +439,41 @@ describe('VR on Linux as a compatibility tab (#246 follow-up)', () => {
     expect(fn).toContain('db.vronlinux.org/games/');
     expect(fn).toContain('(MIT)');
     expect(fn).toMatch(/never mixed into our scoring|opposite way to a Pulse tier/);
+  });
+});
+
+describe('tag row shows only what applies (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const src = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('unsupported OS chips are hidden, not greyed out', () => {
+    // A row of greyed chips for every OS the game does not support is noise;
+    // the reader wants to know where it runs.
+    expect(src).toContain('chip.hidden = !on;');
+  });
+
+  test('[hidden] actually hides a .game-tag', () => {
+    // .game-tag sets display:inline-flex, which defeats the hidden attribute.
+    expect(css).toContain('.game-tag[hidden] { display: none; }');
+  });
+
+  test('the VR chip beats .game-tag on specificity', () => {
+    // A bare .game-tag--vr ties with .game-tag and lost to its
+    // color: var(--muted), rendering the chip grey and indistinguishable
+    // from an unsupported platform.
+    expect(css).toContain('.game-tag.game-tag--vr');
+    expect(css).not.toMatch(/^\.game-tag--vr\s*\{/m);
+    const rule = css.match(/\.game-tag\.game-tag--vr\s*\{[^}]*\}/)[0];
+    expect(rule).toContain('opacity: 1');
+    expect(rule).toContain('--vr-chip-bg');
+  });
+
+  test('the VR chip only renders when the game has VR', () => {
+    // So it is always its lit state -- there is no dim VR variant.
+    const block = src.slice(src.indexOf('const vr = vrForApp('));
+    const stripIdx = block.indexOf("game-vr-strip'");
+    expect(block.slice(0, stripIdx)).toContain('if (vr) {');
   });
 });

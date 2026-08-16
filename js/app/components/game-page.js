@@ -2406,16 +2406,12 @@ export async function renderGamePage(appId) {
         }
       }
 
+      // Artwork overlay carries ownership only. VR lives in the tag row under
+      // the artwork (and the banner when it is VR-only); a chip on the art as
+      // well was the same fact twice, competing with the box art.
       const host = el.querySelector('#game-art-badges');
       if (!host) return;
       const parts = [];
-      if (vr) {
-        parts.push(
-          '<span class="game-card-vr-chip"'
-          + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}"`
-          + ` aria-label="${only ? 'VR only' : 'VR supported'}">VR</span>`,
-        );
-      }
 
       try {
         const session = await window.SupaAuth?.getSession?.();
@@ -2426,7 +2422,7 @@ export async function renderGamePage(appId) {
           ]);
           const numericId = Number(appId);
           if (libraryAppIds && libraryAppIds.has(numericId)) {
-            parts.push('<span class="game-card-owner-badge game-card-owner-badge--library" title="In your Steam library" aria-label="In library"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book-open"/></svg></span>');
+            parts.push('<span class="game-card-owner-badge game-card-owner-badge--library" title="In Library" aria-label="In Library"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book-open"/></svg></span>');
           }
           if (wishlistAppIds && wishlistAppIds.has(numericId)) {
             parts.push('<span class="game-card-owner-badge game-card-owner-badge--wishlist" title="On your Steam wishlist" aria-label="On wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wishlist-heart"/></svg></span>');
@@ -2470,6 +2466,11 @@ export async function renderGamePage(appId) {
           for (const chip of strip.querySelectorAll('.game-os-chip')) {
             const key = chip.dataset.os; // 'windows' | 'mac' | 'linux'
             const on = !!platforms[key];
+            // Show only what applies. A row of greyed-out chips for every OS
+            // the game does NOT support is noise: the reader wants to know
+            // where it runs, not where it does not. Same rule the VR chip
+            // already follows (it renders only when the game has VR).
+            chip.hidden = !on;
             chip.classList.toggle('game-os-chip--on', on);
             const label = { windows: 'Windows', mac: 'macOS', linux: 'Linux' }[key] || key;
             chip.title = on
