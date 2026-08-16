@@ -2359,9 +2359,11 @@ export async function renderGamePage(appId) {
       // Render each badge as a .game-tag pill so it matches the OS chips
       // in size + shape. Steam-blue background + white text keeps them
       // reading as "yours" without competing with the green OS chips.
-      host.innerHTML = badges.map((b) =>
-        `<span class="game-tag game-tag--user" data-badge="${b.key}" style="background:${b.color}">${b.label}</span>`,
-      ).join('');
+      // Ownership shows as an icon on the artwork overlay instead. Rendering
+      // it here too put "In library" in the platform row, which is answering
+      // a different question (where it runs) and made the row look like it
+      // held five unrelated facts.
+      host.innerHTML = '';
     })();
 
     // Artwork badge overlay (#246). Separate from the tag row above because

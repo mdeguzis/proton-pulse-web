@@ -521,6 +521,18 @@
   pointer-events: auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
 }
+/* Hover: these badges are the only thing on the artwork that means something
+   about YOU rather than the game, so they get an accent glow to read as
+   interactive/personal. transition on the shadow only -- animating transform
+   here nudges the badge over the box art and looks like a rendering glitch. */
+.game-header-art-badges > * {
+  transition: box-shadow 0.15s ease;
+}
+.game-header-art-badges > *:hover {
+  box-shadow: 0 0 0 1px var(--accent, #58a6ff),
+              0 0 12px 3px rgba(88, 166, 255, 0.55),
+              0 1px 3px rgba(0, 0, 0, 0.55);
+}
 
 /* Unified tag row under the artwork (#266 refinement): OS availability
    chips (Win / macOS / Linux) plus user-context tags (On wishlist / In
@@ -611,9 +623,14 @@
    .game-tag and lost to its `color: var(--muted)`, which rendered the chip
    grey and indistinguishable from an unsupported platform. It only renders
    when the game HAS VR, so it is always the lit state. */
+/* Same treatment as a supported OS chip: this row answers one question --
+   where does this game run -- so every chip in it reads the same. The amber
+   is the CARD badge's colour, where VR has to stand out against a store pill;
+   here it just made a five-chip row look like five unrelated things. */
 .game-tag.game-tag--vr {
-  border-color: var(--vr-chip-bg, #e8a33d);
-  color: var(--vr-chip-bg, #e8a33d);
+  color: var(--accent, #58a6ff);
+  border-color: rgba(88, 166, 255, 0.55);
+  background: rgba(88, 166, 255, 0.08);
   opacity: 1;
 }
 
@@ -624,9 +641,9 @@
 .game-os-chip:hover { border-color: var(--accent); }
 .game-os-chip--on {
   opacity: 1;
-  color: #7ed37a;
-  border-color: rgba(126,211,122,0.55);
-  background: rgba(126,211,122,0.08);
+  color: var(--accent, #58a6ff);
+  border-color: rgba(88, 166, 255, 0.55);
+  background: rgba(88, 166, 255, 0.08);
 }
 .game-os-chip--on:hover {
   border-color: rgba(126,211,122,0.9);

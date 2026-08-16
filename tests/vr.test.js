@@ -358,10 +358,15 @@ describe('VR in the game-page tag row (#246 follow-up)', () => {
     expect(css).toContain('.game-vr-strip[hidden] { display: none; }');
   });
 
-  test('it reuses the OS chip shape and the card chip colour', () => {
+  test('it reuses the OS chip shape AND colour so the row reads as one thing', () => {
+    // Deliberately NOT the card's amber: on a card the chip fights a store
+    // pill, but this row answers a single question and three colours made it
+    // look like three unrelated facts.
     expect(src).toContain('game-tag game-tag--vr');
-    const rule = css.match(/\.game-tag--vr\s*\{[^}]*\}/)[0];
-    expect(rule).toContain('--vr-chip-bg');
+    const rule = css.match(/\.game-tag\.game-tag--vr\s*\{[^}]*\}/)[0];
+    expect(rule).toContain('--accent');
+    const osRule = css.match(/\.game-os-chip--on\s*\{[^}]*\}/)[0];
+    expect(osRule).toContain('--accent');
   });
 
   test('the tag-row chip always reads VR, never VR Only', () => {
@@ -467,7 +472,7 @@ describe('tag row shows only what applies (#246 follow-up)', () => {
     expect(css).not.toMatch(/^\.game-tag--vr\s*\{/m);
     const rule = css.match(/\.game-tag\.game-tag--vr\s*\{[^}]*\}/)[0];
     expect(rule).toContain('opacity: 1');
-    expect(rule).toContain('--vr-chip-bg');
+    expect(rule).toContain('--accent');
   });
 
   test('the VR chip only renders when the game has VR', () => {
