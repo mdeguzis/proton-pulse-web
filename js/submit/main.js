@@ -1,6 +1,7 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=852c9d97';
-import { applyDraftSnapshot, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=5bf5d430';
+import { loadVrIndex, vrForApp } from '../app/lib/vr-index.js?v=f094c84f';
+import { applyDraftSnapshot, applyPlayModeDefault, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=dc1442eb';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=c941cca9';
 import {
   deleteDraft, deleteLocalDraft, draftStampSuffix as stampSuffix, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
@@ -190,6 +191,12 @@ import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
   const el = document.querySelector('.main-inner');
   try {
     await populateSubmitForm(el);
+    // Preselect Play Mode from the game's VR capability. VR-only games default
+    // to VR, non-VR games to Flatscreen, and games playable both ways are left
+    // blank so the reporter picks (see applyPlayModeDefault).
+    void loadVrIndex()
+      .then((map) => applyPlayModeDefault(el, vrForApp(map, appId)))
+      .catch((err) => console.debug('[submit] play mode default skipped', { appId, error: String(err) }));
   } catch (err) {
     console.error('[submit] populateSubmitForm failed:', err);
     document.getElementById('submit-form-content').innerHTML =
