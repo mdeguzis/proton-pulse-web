@@ -4,15 +4,15 @@ import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../../shared/scoring.js?v=852c9d97';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
-import { getWebClientId } from '../../shared/submit.js?v=5bf5d430';
-import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=0bbdc652';
+import { getWebClientId } from '../../shared/submit.js?v=dc1442eb';
+import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=c941cca9';
 import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/protondb.js?v=b7ff6a75';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=3aeaaba2';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=830efdfb';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=01ba8999';
 import { renderCard } from './report-card.js?v=5e25c644';
 import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
@@ -90,6 +90,7 @@ import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
 import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
 import { getVrdbForApp } from '../lib/vrdb.js?v=f7c0f65a';
+import { loadVrIndex, vrForApp } from '../lib/vr-index.js?v=f094c84f';
 import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
 import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
 
@@ -717,7 +718,12 @@ async function _openMetadataModal(appId) {
       ? `<div class="gm-chips" style="margin-top:6px">${vrdb.devices.slice(0, 6).map(d => `<span class="gm-chip">${esc(d)}</span>`).join('')}</div>`
       : '';
     const latest = vrdb.latest ? ` \u00b7 latest ${esc(String(vrdb.latest))}` : '';
-    const src = `<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="https://db.vronlinux.org/" target="_blank" rel="noopener">VR on Linux DB</a> (MIT)${latest}. Separate methodology from Pulse scoring.</div>`;
+    // Deep-link to this game's VRDB page rather than the site root: the
+    // reader is looking at one game's reports and wants the rest of them, not
+    // a search box. Their pages are keyed on the Steam appid, and this block
+    // only renders when we matched a VRDB entry for that id.
+    const vrdbUrl = `https://db.vronlinux.org/games/${encodeURIComponent(String(appId))}.html`;
+    const src = `<div class="gm-mute" style="margin-top:4px; font-size:0.75rem">Source: <a href="${esc(vrdbUrl)}" target="_blank" rel="noopener">VR on Linux DB</a> (MIT)${latest}. Separate methodology from Pulse scoring.</div>`;
     return `${rows}${devices}${src}`;
   };
 
@@ -1497,12 +1503,19 @@ export async function renderGamePage(appId) {
           Reports on this page cover the original build; if you meant to report on the current version, use the link above.
         </div>`
       : '';
+    // #246: VR-only games get a banner instead of a second chip variant. On a
+    // card there is room for one badge and "VR" is the useful bit; the
+    // headset REQUIREMENT is a detail-page concern, and a sentence says it
+    // unambiguously where a second colour of chip did not. Populated async
+    // below so a slow vr-index fetch never delays the header.
+    const vrOnlyBanner = '<div class="game-vr-banner" id="game-vr-banner" hidden></div>';
     const submitHref = `submit.html?app=${appId}&title=${encodeURIComponent(title)}`;
     const submitBtnTitle = '';
 
     el.innerHTML = `
       <div class="game-header">
         ${replacedBanner}
+        ${vrOnlyBanner}
         <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry originated from">(${esc(_titleStoreLabel(appId, replacedBy) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>
         <div class="game-header-grid">
           <div class="game-header-art-col">
@@ -1517,7 +1530,16 @@ export async function renderGamePage(appId) {
                  portrait cover is still shown when nothing better exists,
                  just never as the first-choice src that would flash a
                  broken image on load. #471. -->
-            <img class="game-header-art" src="${esc(sgdbCover || STEAM_IMG(appId))}" referrerpolicy="no-referrer" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+            <div class="game-header-art-wrap">
+              <img class="game-header-art" src="${esc(sgdbCover || STEAM_IMG(appId))}" referrerpolicy="no-referrer" data-appid="${appId}" alt="" onerror="window.__steamImgLoad(this)">
+              <!-- #246: the same badges the browse cards show (In library, On
+                   wishlist, VR), overlaid on the artwork. Pinned top-right
+                   regardless of the store-pill position preference: that pref
+                   moves the STORE pill around a grid of small cards, but on
+                   the detail page there is one large artwork and a single
+                   predictable corner is easier to read than a moving target. -->
+              <div class="game-header-art-badges" id="game-art-badges" hidden aria-label="Game badges"></div>
+            </div>
           </div>
           ${ratingPanel}
           <!-- Uniform tag row under the artwork: OS chips + user-context
@@ -1537,10 +1559,16 @@ export async function renderGamePage(appId) {
                 <span>macOS</span>
               </button>
               <button type="button" class="game-tag game-os-chip" data-os="linux" title="Linux">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2c-1.66 0-3 1.34-3 3v3.5c-1.5 1-3 2.5-3 5.5 0 2.5 1 4.5 2 5.5.5.5 1 1 1 2v.5h6V21c0-1 .5-1.5 1-2 1-1 2-3 2-5.5 0-3-1.5-4.5-3-5.5V5c0-1.66-1.34-3-3-3zm-1.5 5c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zm3 0c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM12 11l-1.5 2h3L12 11z"/></svg>
+                <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 1.8c-2.3 0-4 1.8-4 4.1v2.4c0 .9-.4 1.6-1 2.4-1.2 1.5-2 3-2.4 4.6-.2.9.2 1.5 1 1.7.5.1 1 0 1.4-.3.2 1.6 1.2 2.7 2.6 3.2 1.6.6 3.3.6 4.9 0 1.4-.5 2.4-1.6 2.6-3.2.4.3.9.4 1.4.3.8-.2 1.2-.8 1-1.7-.4-1.6-1.2-3.1-2.4-4.6-.6-.8-1-1.5-1-2.4V5.9c0-2.3-1.8-4.1-4.1-4.1z"/><ellipse cx="12" cy="15.4" rx="3.1" ry="4" fill="#fff" opacity=".92"/><circle cx="10.4" cy="6.2" r="1.35" fill="#fff"/><circle cx="13.6" cy="6.2" r="1.35" fill="#fff"/><circle cx="10.6" cy="6.4" r=".62" fill="#0b0f14"/><circle cx="13.4" cy="6.4" r=".62" fill="#0b0f14"/><path fill="#f5a623" d="M12 7.5c.85 0 1.55.42 1.55.95 0 .52-.7.95-1.55.95s-1.55-.43-1.55-.95c0-.53.7-.95 1.55-.95z"/><path fill="#f5a623" d="M9.1 20.5c-.6.5-1.6.6-2 .1-.3-.4 0-.9.7-1.3l1.7-1zM14.9 20.5c.6.5 1.6.6 2 .1.3-.4 0-.9-.7-1.3l-1.7-1z"/></svg>
                 <span>Linux</span>
               </button>
             </div>
+            <!-- #246: VR sits beside the OS chips, not inside them. That
+                 container is aria-label="Supported operating systems" and VR
+                 is a capability, not an OS -- folding it in would make the
+                 label wrong for screen readers. Same .game-tag shape so it
+                 reads as part of the same row. -->
+            <div class="game-vr-strip" id="game-vr-strip" hidden aria-label="VR support"></div>
             <div class="game-type-strip" id="game-type-strip" hidden aria-label="App type"></div>
             <div class="game-user-tags" id="game-user-tags" aria-label="Your Steam context"></div>
           </div>
@@ -2331,10 +2359,89 @@ export async function renderGamePage(appId) {
       // Render each badge as a .game-tag pill so it matches the OS chips
       // in size + shape. Steam-blue background + white text keeps them
       // reading as "yours" without competing with the green OS chips.
-      host.innerHTML = badges.map((b) =>
-        `<span class="game-tag game-tag--user" data-badge="${b.key}" style="background:${b.color}">${b.label}</span>`,
-      ).join('');
+      // Ownership shows as an icon on the artwork overlay instead. Rendering
+      // it here too put "In library" in the platform row, which is answering
+      // a different question (where it runs) and made the row look like it
+      // held five unrelated facts.
+      host.innerHTML = '';
     })();
+
+    // Artwork badge overlay (#246). Separate from the tag row above because
+    // it renders for signed-out users too: VR capability is a property of the
+    // game, not of the viewer, so gating it behind sign-in would hide it from
+    // most visitors. Owner badges still require a session.
+    void (async () => {
+      // VR on Linux tab in the compatibility modal. Independent of the vr-index
+      // capability flag below: a game can have VRDB reports without Steam
+      // flagging it VR, and vice versa.
+      void getVrdbForApp(appId)
+        .then((e) => fillVrOnLinuxTab(el.querySelector('#deck-status-content'), e, appId))
+        .catch(() => {});
+
+      const vr = vrForApp(await loadVrIndex().catch(() => ({})), appId);
+      const only = vr === 'only';
+
+      // Tag row chip first, and NOT gated on the artwork overlay existing.
+      // These used to share an `if (!host) return` guard, so a missing
+      // #game-art-badges silently took the tag-row chip down with it.
+      // One label: "VR" means the game has VR, full stop. VR-only is said in
+      // the banner, the same call as the cards -- a second label here would
+      // reintroduce the "different somehow" problem we removed there.
+      if (vr) {
+        const strip = el.querySelector('#game-vr-strip');
+        if (strip) {
+          strip.innerHTML = '<span class="game-tag game-tag--vr"'
+            + ` title="${only ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}">`
+            + '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">'
+            + '<path d="M3 8h18a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-3.2a2 2 0 0 1-1.7-.9l-1.3-2a1 1 0 0 0-1.6 0l-1.3 2a2 2 0 0 1-1.7.9H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1z"/>'
+            + '</svg><span>VR</span></span>';
+          strip.hidden = false;
+        }
+        if (only) {
+          const banner = el.querySelector('#game-vr-banner');
+          if (banner) {
+            banner.innerHTML = '<strong>This game is VR only.</strong> '
+              + 'It requires a VR headset and cannot be played on a monitor. '
+              + 'Reports here describe VR play.';
+            banner.hidden = false;
+          }
+        }
+      }
+
+      // Artwork overlay carries ownership only. VR lives in the tag row under
+      // the artwork (and the banner when it is VR-only); a chip on the art as
+      // well was the same fact twice, competing with the box art.
+      const host = el.querySelector('#game-art-badges');
+      if (!host) return;
+      const parts = [];
+
+      try {
+        const session = await window.SupaAuth?.getSession?.();
+        if (session && session.user) {
+          const [libraryAppIds, wishlistAppIds] = await Promise.all([
+            getMyLibraryAppIds().catch(() => new Set()),
+            getMyWishlistAppIds().catch(() => new Set()),
+          ]);
+          const numericId = Number(appId);
+          if (libraryAppIds && libraryAppIds.has(numericId)) {
+            parts.push('<span class="game-card-owner-badge game-card-owner-badge--library" title="In Library" aria-label="In Library"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book-open"/></svg></span>');
+          }
+          if (wishlistAppIds && wishlistAppIds.has(numericId)) {
+            parts.push('<span class="game-card-owner-badge game-card-owner-badge--wishlist" title="On your Steam wishlist" aria-label="On wishlist"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-wishlist-heart"/></svg></span>');
+          }
+        }
+      } catch { /* signed out -- VR chip alone is still worth showing */ }
+
+      if (parts.length) {
+        host.innerHTML = parts.join('');
+        host.hidden = false;
+      }
+    })().catch((err) => {
+      // Without this the whole block is an unhandled rejection: a missing
+      // import took out the VR chip, the VR-only banner AND the artwork
+      // badges at once, with an empty console. Log loudly instead.
+      console.error('[game-page] VR / owner badge render failed', { appId, error: String(err) });
+    });
 
     // fetch real Steam Deck compat + min requirements and patch the UI.
     // Also probe platforms.linux via the same shared appdetails cache so
@@ -2361,6 +2468,11 @@ export async function renderGamePage(appId) {
           for (const chip of strip.querySelectorAll('.game-os-chip')) {
             const key = chip.dataset.os; // 'windows' | 'mac' | 'linux'
             const on = !!platforms[key];
+            // Show only what applies. A row of greyed-out chips for every OS
+            // the game does NOT support is noise: the reader wants to know
+            // where it runs, not where it does not. Same rule the VR chip
+            // already follows (it renders only when the game has VR).
+            chip.hidden = !on;
             chip.classList.toggle('game-os-chip--on', on);
             const label = { windows: 'Windows', mac: 'macOS', linux: 'Linux' }[key] || key;
             chip.title = on
@@ -2394,7 +2506,11 @@ export async function renderGamePage(appId) {
         deckBtn.title = `Steam Deck: ${lbl} (click for details)`;
       }
       const deckTip = el.querySelector('#deck-status-tip');
-      if (deckTip) deckTip.innerHTML = `<div class="info-tooltip-inner">${renderDeckStatusModalContent(appId)}</div>`;
+      if (deckTip) {
+        deckTip.innerHTML = `<div class="info-tooltip-inner">${renderDeckStatusModalContent(appId)}</div>`;
+        // Re-render wipes the VR tab, so refill it from the memoized payload.
+        void getVrdbForApp(appId).then((e) => fillVrOnLinuxTab(deckTip, e, appId)).catch(() => {});
+      }
 
       // fill min requirements panel
       const reqsEl = el.querySelector('#min-reqs-content');

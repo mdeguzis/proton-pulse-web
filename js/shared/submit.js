@@ -739,7 +739,7 @@ export async function populateSubmitForm(el) {
       <div class="sf-row sf-row--play-mode">
         <label>Play Mode *</label>
         <div class="sf-yn" id="sf-play-mode">
-          <label class="sf-yn-btn"><input type="radio" name="playMode" value="flat" checked> Flatscreen</label>
+          <label class="sf-yn-btn"><input type="radio" name="playMode" value="flat"> Flatscreen</label>
           <label class="sf-yn-btn"><input type="radio" name="playMode" value="vr"> VR</label>
         </div>
       </div>
@@ -1258,6 +1258,39 @@ export function setRunTypeNativeAvailable(container, isAvailable) {
  * change of mind. Headset "Other" opens a free-text box.
  * @param {Element} container - The form container.
  */
+/**
+ * Preselect Play Mode from the game's VR capability (#246).
+ *
+ *   'only'      -> VR        (it cannot be played any other way)
+ *   null        -> Flatscreen (it has no VR mode at all)
+ *   'supported' -> neither, and the field becomes required
+ *
+ * The "supported" case is the whole point of not hardcoding a default: those
+ * games are genuinely playable both ways, and a preselected answer there is
+ * one the reporter never consciously made. Guessing wrong is worse than
+ * asking, because play mode changes what "runs well" even means.
+ *
+ * @param {Element} container - The form container.
+ * @param {string|null} vr - search_index.vr for this game.
+ * @returns {'flat'|'vr'|null} What was preselected, or null when left blank.
+ */
+export function applyPlayModeDefault(container, vr) {
+  if (!container) return null;
+  const radios = [...container.querySelectorAll('input[name="playMode"]')];
+  if (!radios.length) return null;
+  const want = vr === 'only' ? 'vr' : (vr ? null : 'flat');
+  for (const radio of radios) {
+    radio.checked = want != null && radio.value === want;
+    // Playable both ways: force a deliberate choice rather than shipping a
+    // default the reporter did not make.
+    radio.required = want == null;
+  }
+  // Programmatic .checked does not fire change, so the VR runtime + headset
+  // rows would stay hidden on a VR-only game without this.
+  if (want) radios.find((r) => r.value === want)?.dispatchEvent(new Event('change', { bubbles: true }));
+  return want;
+}
+
 function wirePlayModeToggle(container) {
   const radios = container.querySelectorAll('input[name="playMode"]');
   if (!radios.length) return;

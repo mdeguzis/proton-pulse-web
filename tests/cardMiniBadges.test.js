@@ -151,9 +151,15 @@ describe('game-page.js: unified tag row under the artwork', () => {
     expect(artColMatch).not.toBeNull();
   });
 
-  test('user tags use .game-tag + .game-tag--user; OS chips use .game-tag + .game-os-chip', () => {
-    expect(GAME_PAGE_SRC).toMatch(/class="game-tag game-tag--user"/);
+  test('OS chips use .game-tag + .game-os-chip', () => {
     expect(GAME_PAGE_SRC).toMatch(/class="game-tag game-os-chip"/);
+  });
+
+  test('ownership is no longer a pill in the platform row', () => {
+    // It renders as an icon on the artwork overlay instead. The platform row
+    // answers "where does this run"; "In library" is a different question and
+    // made the row read as five unrelated facts.
+    expect(GAME_PAGE_SRC).not.toMatch(/class="game-tag game-tag--user"/);
   });
 
   test('tag-row filler returns early when the user is signed out', () => {

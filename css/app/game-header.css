@@ -497,6 +497,31 @@
 }
 .game-header-art-col .game-header-art { width: 100%; height: auto; }
 
+/* #246: badge overlay on the detail-page artwork. The wrapper exists only to
+   give the absolutely-positioned badges a containing block; it must not add
+   layout of its own or the art column's flex gap doubles up. */
+.game-header-art-wrap { position: relative; display: block; min-width: 0; }
+/* Deliberately NOT driven by data-store-pill-pos. That preference shuffles the
+   store pill around a grid of small cards; here there is one large artwork, so
+   a fixed corner is easier to find than a badge that moves with a setting the
+   user last touched months ago. */
+.game-header-art-badges {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  pointer-events: none;   /* never swallow a click meant for the artwork */
+}
+/* The badges carry their own colors from cards.css; the shadow is what keeps
+   them legible over a bright or busy header image. */
+.game-header-art-badges > * {
+  pointer-events: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
 /* Unified tag row under the artwork (#266 refinement): OS availability
    chips (Win / macOS / Linux) plus user-context tags (On wishlist / In
    library) share one .game-tag rounded-square shape (matches the Submit
@@ -525,6 +550,8 @@
   gap: 6px;
 }
 .game-user-tags:empty { display: none; }
+.game-vr-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.game-vr-strip[hidden] { display: none; }
 .game-type-strip { display: flex; flex-wrap: wrap; gap: 6px; }
 .game-type-strip[hidden] { display: none; }
 /* App type chip (mod / dlc / software) under the artwork. Same rounded-square
@@ -578,13 +605,33 @@
 .game-tag svg { display: block; }
 /* OS chips: buttons -- clicking opens the metadata modal. Off state is
    muted; on state lights up green because Steam advertises the platform. */
+/* #246: same .game-tag shape as the OS chips so the row reads as one strip,
+   but in the VR chip's amber so it ties back to the card badge. Two-class
+   selector on purpose: a bare .game-tag--vr has the same specificity as
+   .game-tag and lost to its `color: var(--muted)`, which rendered the chip
+   grey and indistinguishable from an unsupported platform. It only renders
+   when the game HAS VR, so it is always the lit state. */
+/* Same treatment as a supported OS chip: this row answers one question --
+   where does this game run -- so every chip in it reads the same. The amber
+   is the CARD badge's colour, where VR has to stand out against a store pill;
+   here it just made a five-chip row look like five unrelated things. */
+.game-tag.game-tag--vr {
+  color: var(--accent, #58a6ff);
+  border-color: rgba(88, 166, 255, 0.55);
+  background: rgba(88, 166, 255, 0.08);
+  opacity: 1;
+}
+
 .game-os-chip { cursor: pointer; opacity: 0.55; }
+/* .game-tag sets display:inline-flex, so [hidden] alone does not hide a chip
+   the JS marks as not-applicable. */
+.game-tag[hidden] { display: none; }
 .game-os-chip:hover { border-color: var(--accent); }
 .game-os-chip--on {
   opacity: 1;
-  color: #7ed37a;
-  border-color: rgba(126,211,122,0.55);
-  background: rgba(126,211,122,0.08);
+  color: var(--accent, #58a6ff);
+  border-color: rgba(88, 166, 255, 0.55);
+  background: rgba(88, 166, 255, 0.08);
 }
 .game-os-chip--on:hover {
   border-color: rgba(126,211,122,0.9);
@@ -682,12 +729,18 @@
 /* Light the active tab + reveal its panel off the matching checked radio. */
 #dt-deck:checked    ~ .dt-tabbar .dt-tab[for="dt-deck"],
 #dt-machine:checked ~ .dt-tabbar .dt-tab[for="dt-machine"],
-#dt-steamos:checked ~ .dt-tabbar .dt-tab[for="dt-steamos"] {
+#dt-steamos:checked ~ .dt-tabbar .dt-tab[for="dt-steamos"],
+#dt-vr:checked      ~ .dt-tabbar .dt-tab[for="dt-vr"] {
   background: var(--strong); color: var(--bg); border-color: var(--strong);
 }
 #dt-deck:checked    ~ .dt-panel-deck,
 #dt-machine:checked ~ .dt-panel-machine,
-#dt-steamos:checked ~ .dt-panel-steamos { display: block; }
+#dt-steamos:checked ~ .dt-panel-steamos,
+#dt-vr:checked      ~ .dt-panel-vr { display: block; }
+/* #246: the VR tab is hidden until fillVrOnLinuxTab confirms VRDB has reports
+   for this game, so most games keep three tabs rather than showing an empty
+   fourth. [hidden] needs the explicit none because .dt-tab sets display. */
+.dt-tab--vr[hidden] { display: none; }
 .dt-source { color: var(--muted); font-size: 0.72rem; margin: 0; font-style: italic; }
 @media (max-width: 480px) { .dt-tab-name { display: none; } }
 .deck-status-badge.deck-status-unknown {
@@ -2049,6 +2102,21 @@ button.hub-link:disabled { opacity: 0.5; cursor: default; }
 .sf-draft-restore button:hover { background: rgba(102, 192, 244, 0.1); }
 
 /* Replaced-by banner + REPLACED pill on the game header (#199 follow-up) */
+/* #246: VR-only notice. Same shape as the replaced banner but in the VR
+   chip's colour family so the banner and the badge read as the same feature.
+   Informational, not a warning: VR-only is a fact about the game, not a
+   problem with it. */
+.game-vr-banner {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--vr-banner-border, rgba(232, 163, 61, 0.38));
+  background: var(--vr-banner-bg, rgba(232, 163, 61, 0.10));
+  color: var(--text);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
 .game-replaced-banner {
   margin-bottom: 12px;
   padding: 10px 14px;

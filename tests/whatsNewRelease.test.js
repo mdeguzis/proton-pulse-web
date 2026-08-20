@@ -27,9 +27,11 @@ describe("What's New -> GitHub releases", () => {
 describe('draft-release automation', () => {
   test('prod deploy targets call the draft script', () => {
     expect(MAKEFILE).toContain('draft-release:');
-    // Both prod paths (full pipeline + pages-only promote) leave a draft.
+    // The prod pipeline path leaves a draft. Was 3 when gh-pages-only also
+    // called it; that target is gone (the gh-pages deploy path was retired
+    // after #362 moved publishing to Cloudflare Pages).
     const calls = MAKEFILE.match(/bash scripts\/draft-release\.sh/g) || [];
-    expect(calls.length).toBeGreaterThanOrEqual(3); // gh-run, gh-pages-only, draft-release
+    expect(calls.length).toBeGreaterThanOrEqual(2); // gh-run, draft-release
   });
 
   test('the script only ever drafts -- publishing stays human', () => {

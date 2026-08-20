@@ -114,9 +114,12 @@ describe('vrFieldsFromForm', () => {
 describe('submit form markup', () => {
   const submitSrc = fs.readFileSync(path.join(__dirname, '..', 'js/shared/submit.js'), 'utf8');
 
-  test('renders the Play Mode radios with flatscreen preselected', () => {
-    expect(submitSrc).toContain('name="playMode" value="flat" checked');
+  test('renders the Play Mode radios with no hardcoded default', () => {
+    // The default now depends on the game: VR-only preselects VR, non-VR
+    // preselects Flatscreen, and playable-both is left blank on purpose.
+    expect(submitSrc).toContain('name="playMode" value="flat"');
     expect(submitSrc).toContain('name="playMode" value="vr"');
+    expect(submitSrc).not.toContain('value="flat" checked');
   });
 
   test('VR rows start hidden and are wired to the toggle', () => {
@@ -127,5 +130,86 @@ describe('submit form markup', () => {
 
   test('the payload includes the VR columns', () => {
     expect(submitSrc).toContain('...vrFieldsFromForm(form)');
+  });
+});
+
+describe('applyPlayModeDefault (#246)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const vm = require('vm');
+
+  function loadHelper() {
+    const src = fs.readFileSync(path.join(__dirname, '..', 'js/shared/submit.js'), 'utf8');
+    const start = src.indexOf('export function applyPlayModeDefault');
+    const end = src.indexOf('function wirePlayModeToggle');
+    const slice = src.slice(start, end).replace(/^export\s+function\s/gm, 'function ');
+    const sandbox = { Event, module: { exports: {} } };
+    vm.createContext(sandbox);
+    vm.runInContext(slice + '\nmodule.exports = applyPlayModeDefault;', sandbox);
+    return sandbox.module.exports;
+  }
+  const applyPlayModeDefault = loadHelper();
+
+  function makeContainer() {
+    const radios = ['flat', 'vr'].map((value) => ({
+      value, checked: false, required: false, events: [],
+      dispatchEvent(e) { this.events.push(e.type); return true; },
+    }));
+    return {
+      radios,
+      querySelectorAll: () => radios,
+    };
+  }
+
+  test('VR-only games preselect VR', () => {
+    const c = makeContainer();
+    expect(applyPlayModeDefault(c, 'only')).toBe('vr');
+    expect(c.radios.find((r) => r.value === 'vr').checked).toBe(true);
+    expect(c.radios.find((r) => r.value === 'flat').checked).toBe(false);
+  });
+
+  test('non-VR games preselect Flatscreen', () => {
+    const c = makeContainer();
+    expect(applyPlayModeDefault(c, null)).toBe('flat');
+    expect(c.radios.find((r) => r.value === 'flat').checked).toBe(true);
+  });
+
+  test('games playable both ways are left blank and become required', () => {
+    // A preselected answer here is one the reporter never consciously made,
+    // and play mode changes what "runs well" even means.
+    const c = makeContainer();
+    expect(applyPlayModeDefault(c, 'supported')).toBeNull();
+    expect(c.radios.some((r) => r.checked)).toBe(false);
+    expect(c.radios.every((r) => r.required)).toBe(true);
+  });
+
+  test('a preselected mode is not left required', () => {
+    const c = makeContainer();
+    applyPlayModeDefault(c, 'only');
+    expect(c.radios.every((r) => r.required === false)).toBe(true);
+  });
+
+  test('preselecting VR fires change so the runtime rows reveal', () => {
+    // Setting .checked programmatically does not fire change, so the VR
+    // runtime + headset rows would stay hidden on a VR-only game.
+    const c = makeContainer();
+    applyPlayModeDefault(c, 'only');
+    expect(c.radios.find((r) => r.value === 'vr').events).toContain('change');
+  });
+
+  test('the blank case fires no change event', () => {
+    const c = makeContainer();
+    applyPlayModeDefault(c, 'supported');
+    expect(c.radios.flatMap((r) => r.events)).toEqual([]);
+  });
+
+  test('survives a missing container or radios', () => {
+    expect(applyPlayModeDefault(null, 'only')).toBeNull();
+    expect(applyPlayModeDefault({ querySelectorAll: () => [] }, 'only')).toBeNull();
+  });
+
+  test('the markup no longer hardcodes a checked default', () => {
+    const src = fs.readFileSync(path.join(__dirname, '..', 'js/shared/submit.js'), 'utf8');
+    expect(src).not.toContain('name="playMode" value="flat" checked');
   });
 });
