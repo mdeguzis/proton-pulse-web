@@ -20,6 +20,24 @@ const path = require('path');
 
 const REPO = path.join(__dirname, '..');
 const PUBLISH_SH = fs.readFileSync(path.join(REPO, 'scripts', 'publish-cloudflare.sh'), 'utf8');
+const PUBLISH_SHELL_YML = fs.readFileSync(path.join(REPO, '.github', 'workflows', 'publish-shell.yml'), 'utf8');
+
+// publish-shell.yml keeps a SECOND list: the shell-only deploy re-fetches
+// these from the live site so a CSS-tweak deploy does not wipe pipeline data
+// it never built. A file in SMALL_DATA but missing here survives the pipeline
+// and then vanishes on the next shell deploy -- which is how vr-index.json,
+// vrdb.json and anti-cheat.json went missing while looking fine for hours.
+const PRESERVED = (() => {
+  const lines = PUBLISH_SHELL_YML.split('\n');
+  const start = lines.findIndex((l) => /^\s*FILES=\(/.test(l));
+  if (start === -1) throw new Error('FILES=( not found in publish-shell.yml');
+  const names = new Set();
+  for (let i = start + 1; i < lines.length; i += 1) {
+    if (/^\s*\)\s*$/.test(lines[i])) return names;
+    for (const t of lines[i].replace(/#.*$/, '').split(/\s+/)) if (t) names.add(t);
+  }
+  throw new Error('FILES=( is not terminated');
+})();
 
 // Parse the SMALL_DATA array into a set of filenames. Tokenizing beats
 // regex-matching the raw file on two counts: it checks the actual shipping
@@ -109,6 +127,14 @@ describe('pipeline data files reach the deployed site', () => {
     for (const f of ['vr-index.json', 'vrdb.json', 'anti-cheat.json']) {
       expect(SHIPPED.has(f)).toBe(true);
     }
+  });
+
+  test('every shipped data file is also preserved across shell deploys', () => {
+    // Otherwise the file ships on a pipeline run and disappears the next time
+    // someone deploys a CSS change, which reads as "it worked yesterday".
+    const jsonOnly = [...SHIPPED].filter((f) => f.endsWith('.json'));
+    const missing = jsonOnly.filter((f) => !PRESERVED.has(f));
+    expect(missing).toEqual([]);
   });
 
   test('data/ paths are exempt because they reroute to R2', () => {
