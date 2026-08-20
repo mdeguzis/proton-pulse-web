@@ -1,0 +1,124 @@
+name: Deck Verdict Backfill
+
+# Ad-hoc full fill of Valve's Deck / Machine / SteamOS verdicts.
+#
+# The pipeline's in-run budget only fetches a few hundred new verdicts so
+# finalize stays predictable, which leaves the long tail of the ~32k Steam
+# catalog uncovered for months. This drains it in one sitting.
+#
+# Rate: measured 80 consecutive requests at 0.15s spacing with zero failures
+# (~3.1 req/s). This is store.steampowered.com/saleaction/
+# ajaxgetdeckappcompatibilityreport -- a lightweight store widget, NOT the
+# appdetails API that soft-throttles at 200 requests / 5 minutes. Do not copy
+# the 2.0s spacing the appdetails enrichers use; it is the wrong endpoint's
+# limit and would turn a 3-hour job into 18.
+#
+# Writes NOTHING to the site. The only output is the verdict cache; the next
+# finalize publishes deck-status.json from it. Safe to run at any time -- it
+# cannot race a deploy or half-publish data.
+
+on:
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "Max NEW verdicts to fetch. 0 = no cap (full fill, ~3h for the whole catalog)."
+        default: "0"
+        required: false
+        type: string
+      delay:
+        description: "Seconds between requests. 0.35 is the default and leaves headroom under the measured ~3 req/s ceiling."
+        default: "0.35"
+        required: false
+        type: string
+
+concurrency:
+  group: deck-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-24.04
+    # A no-cap fill over ~32k rows at 0.35s is roughly 3 hours. The ceiling is
+    # generous so a slow upstream does not truncate the run; the cache is saved
+    # on always() regardless.
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Restore pipeline cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .cache
+          # Same key prefix as update-data.yml so this reads the verdict cache
+          # the pipeline wrote and the pipeline reads what this fills in. A
+          # mismatched prefix means both start cold and re-fetch each other's
+          # work.
+          key: pipeline-cache-${{ runner.os }}-update-data.yml-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-deckbackfill
+          restore-keys: |
+            pipeline-cache-${{ runner.os }}-update-data.yml-${{ github.ref_name }}-
+
+      # deck-status scopes itself from search-index.json. A fresh checkout has
+      # no pipeline output, so pull the published index rather than rebuilding
+      # it -- this job only needs the id list, not the data behind it.
+      - name: Fetch published search index
+        env:
+          DATA_BASE: ${{ github.ref_name == 'main' && 'https://www.proton-pulse.com' || 'https://staging.proton-pulse.com' }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/protondb-output
+          for f in search-index.json most_played.json recent-reports.json; do
+            # most_played / recent-reports are priority hints only; a miss is
+            # not fatal, deck-status treats them as absent.
+            curl -fsSL "$DATA_BASE/$f" -o "/tmp/protondb-output/$f" \
+              && echo "got $f" || echo "skip $f (optional)"
+          done
+          test -s /tmp/protondb-output/search-index.json
+
+      - name: Backfill Deck verdicts
+        env:
+          BUDGET: ${{ inputs.budget }}
+          DELAY: ${{ inputs.delay }}
+        run: |
+          set -euo pipefail
+          uv run python scripts/split_reports.py deck-status \
+            /tmp/protondb-output \
+            --budget "$BUDGET" \
+            --delay "$DELAY"
+
+      - name: Save pipeline cache
+        # always(): a run that times out mid-fill still fetched thousands of
+        # real verdicts. Dropping the cache would make the next run redo them.
+        if: always()
+        uses: actions/cache/save@v6
+        with:
+          path: .cache
+          key: pipeline-cache-${{ runner.os }}-update-data.yml-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-deckbackfill
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Deck verdict backfill"
+            echo
+            if [ -s /tmp/protondb-output/deck-status.json ]; then
+              python3 - <<'PY'
+          import json, collections
+          with open("/tmp/protondb-output/deck-status.json") as fh:
+              d = json.load(fh)
+          counts = collections.Counter(v.get("status") for v in d.values())
+          print(f"- verdicts in map: **{len(d):,}**")
+          for k, n in sorted(counts.items()):
+              print(f"  - {k}: {n:,}")
+          print()
+          print("The next finalize run publishes this map. Re-run if it timed out; "
+                "cached verdicts are skipped so it resumes where it stopped.")
+          PY
+            else
+              echo "No deck-status.json produced -- the run failed before writing one. Check the step log."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
