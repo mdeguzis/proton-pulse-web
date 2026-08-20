@@ -96,7 +96,13 @@ def _last_report_date(data_dir: Path, app_id: str) -> str | None:
 def build_most_played(
     output_dir,
     limit: int = 100,
-    unrated_limit: int = 50,
+    # Sized to cover Steam's whole chart (100 entries) on its own. It used to
+    # be 50, which worked while `limit` rated games carried the section and
+    # unrated ones were a supplement. #474 decoupled ProtonDB, every
+    # protondb_count went to 0 and nearly every tier became "pending", so the
+    # unrated bucket became the ENTIRE section and its supplementary cap
+    # silently truncated Steam's top 100 down to ~55.
+    unrated_limit: int = 100,
     catalog_limit: int = 20,
     ranks: list[dict] | None = None,
 ) -> list[dict]:

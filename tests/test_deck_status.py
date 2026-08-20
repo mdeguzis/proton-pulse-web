@@ -155,14 +155,25 @@ def test_network_error_does_not_poison_cache(tmp_path):
         assert m2.call_count == 1
 
 
-def test_steam_app_ids_with_reports_scopes_to_reported_steam_games(tmp_path):
+def test_steam_app_ids_scopes_to_steam_and_ranks_reported_first(tmp_path):
+    """Unreported Steam games are INCLUDED, just ranked lower.
+
+    This test used to assert that 0-report games were skipped. That was the
+    bug: the scope keyed off (protondb_count + pulse_count) > 0, so when #474
+    decoupled ProtonDB and zeroed every protondb_count, the fetch list
+    collapsed to a handful of games and Counter-Strike 2's page claimed Valve
+    had not evaluated it. Every catalog stub has a game page, so every Steam
+    row is in scope; the ordering decides who gets fetched first.
+    """
     rows = [
+        ["480", "No reports", "", 0, 0, "steam", None, None, False],
         ["1245620", "Elden Ring", "platinum", 100, 2, "steam", None, None, False],
-        ["480", "No reports", "", 0, 0, "steam", None, None, False],   # skipped: 0 reports
-        ["gog:123", "GOG game", "gold", 5, 0, "gog"],                    # skipped: not steam
+        ["gog:123", "GOG game", "gold", 5, 0, "gog"],   # still skipped: not Steam
     ]
     (tmp_path / "search-index.json").write_text(json.dumps(rows))
-    assert steam_app_ids_with_reports(tmp_path) == ["1245620"]
+    ids = steam_app_ids_with_reports(tmp_path)
+    assert ids == ["1245620", "480"]
+    assert "gog:123" not in ids
 
 
 def test_build_writes_only_evaluated_games(tmp_path):

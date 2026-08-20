@@ -1,4 +1,5 @@
 import json
+from unittest.mock import patch
 
 from scripts.pipeline.most_played import build_most_played
 
@@ -91,3 +92,25 @@ def test_handles_non_int_peak(tmp_path):
     assert out[0]["peak"] is None
     assert out[0]["rating"] == "gold"
     assert out[0]["protondbCount"] == 10
+
+
+def test_unrated_bucket_covers_the_whole_steam_chart(tmp_path):
+    """Regression for the #474 knock-on that truncated the popular section.
+
+    unrated_limit was 50, sized as a supplement to `limit` rated games. When
+    #474 decoupled ProtonDB, protondb_count went to 0 everywhere and almost
+    every tier became "pending", so the unrated bucket became the entire
+    section and its cap silently dropped 46 of Steam's top 100. Nothing
+    failed -- most_played.json wrote fine, just short.
+    """
+    ranks = [{"appid": 1000 + i, "peak_in_game": 5000 - i} for i in range(100)]
+    rows = [[str(1000 + i), f"Game {i}", "pending", 0, 0, "steam"] for i in range(100)]
+    (tmp_path / "search-index.json").write_text(json.dumps(rows), encoding="utf-8")
+    (tmp_path / "data").mkdir(exist_ok=True)
+
+    with patch("scripts.pipeline.most_played.is_adult_app", return_value=False):
+        out = build_most_played(tmp_path, ranks=ranks, catalog_limit=0)
+
+    # Every charting game we know about is published, not just the first 50.
+    assert len(out) == 100
+    assert all(r["rating"] == "pending" for r in out)
