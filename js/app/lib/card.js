@@ -71,12 +71,15 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const delistedChip = delisted
     ? `<span class="game-card-delisted-chip" title="${delistedTitle}" aria-label="Delisted">Delisted</span>`
     : '';
-  // #246: VR chip rides in the same strip as the delisted chip. "VR Only" is
-  // called out separately from "VR" because a headset requirement is the thing
-  // a flatscreen player needs to see before clicking through.
+  // #246: VR chip rides in the same strip as the delisted chip. ONE variant:
+  // a card has room for one badge and "VR" is the useful bit at a glance. The
+  // headset requirement is a detail-page concern, surfaced there as a banner
+  // -- a second chip colour said "this is different somehow" without saying
+  // how, and "VR ONLY" doubled the width of the strip on the S card size.
+  // The distinction still exists in the data and drives the VR Only filter.
   const vrKey = vr === 'only' || vr === 'supported' ? vr : '';
   const vrChip = vrKey
-    ? `<span class="game-card-vr-chip game-card-vr-chip--${vrKey}" title="${vrKey === 'only' ? 'Requires a VR headset' : 'Playable in VR or on a monitor'}" aria-label="${vrKey === 'only' ? 'VR only' : 'VR supported'}">${vrKey === 'only' ? 'VR Only' : 'VR'}</span>`
+    ? `<span class="game-card-vr-chip" title="${vrKey === 'only' ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}" aria-label="${vrKey === 'only' ? 'VR only' : 'VR supported'}">VR</span>`
     : '';
   // #431: owner badges (library / wishlist) live INSIDE every store-badge
   // variant so they always ride along with the store banner wherever the
