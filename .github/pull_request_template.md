@@ -15,7 +15,7 @@ Thanks for the PR! A few quick reminders:
 
 ## Verified on staging?
 
-- [ ] Ran `make gh-staging` and checked https://mdeguzis.github.io/proton-pulse-web-staging/
+- [ ] Ran `make cf-staging` and checked https://staging.proton-pulse.com/
 - [ ] Version + short SHA on the about page match what I expected
 - [ ] Screenshot / short GIF attached (for UI changes)
 

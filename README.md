@@ -120,7 +120,7 @@ Contributions welcome. Quick version:
 2. Fork the repo or grab a `feature/<short-name>` branch off `staging`.
 3. Run `make pre-push` before every commit that touches JS or CSS.
 4. Open the PR against **`staging`**, not `main`. `main` is production only.
-5. Run `make gh-staging` to preview at https://mdeguzis.github.io/proton-pulse-web-staging/ and confirm the About page shows your version + short SHA.
+5. Run `make cf-staging` to preview at https://staging.proton-pulse.com/ and confirm the About page shows your version + short SHA.
 
 The full flow (feature branches, pre-push gate, staging review, promote to prod) lives in the wiki:
 
