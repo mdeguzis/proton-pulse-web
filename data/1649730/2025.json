@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1649730",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.8.0-49-generic",
+    "notes": "Completely unplayable. Menus flicker in and out of existance, and sometimes just crash on click.",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1752818891,
+    "title": "",
+    "source": "protondb"
+  }
+]

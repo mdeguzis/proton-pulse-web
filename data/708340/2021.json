@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "708340",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "AMD BONAIRE (DRM 2.50.0, 5.10.36-2-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.5 Mesa 21.0.3",
+    "kernel": "5.10.36-2-MANJARO",
+    "notes": "Runs basically the same as it did on Windows. The game is poorly optimized, so it has some lag, but it's not a linux-only thing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1622047951,
+    "title": "Shark Simulator",
+    "source": "protondb"
+  }
+]

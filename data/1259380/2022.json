@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1259380",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.7-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-1-MANJARO",
+    "notes": "Stuttering gets annoying",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1664658885,
+    "title": "",
+    "source": "protondb"
+  }
+]

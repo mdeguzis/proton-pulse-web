@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "555920",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 15.0.0, DRM 3.47, 5.19.14-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "5.19.14-300.fc37.x86_64",
+    "notes": "Works without issues using launch option and GE proton",
+    "os": "Fedora Linux 37 (KDE Plasma Prerelease)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1665701150,
+    "title": "",
+    "source": "protondb"
+  }
+]

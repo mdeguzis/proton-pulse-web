@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1670810",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 13.0.0, DRM 3.35, 5.4.0-105-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0 - kisak-mesa PPA",
+    "kernel": "5.4.0-105-generic",
+    "notes": "very frequent crashes, no matter the proton version, with high inconsistency, sometimes crashing just after loading the main menu, sometimes a while after that.\nLoading into a game appears to work occasionally, with an immediate crash once fully loaded.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1702305561,
+    "title": "Life Not Supported",
+    "source": "protondb"
+  }
+]

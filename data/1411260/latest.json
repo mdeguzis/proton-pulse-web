@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1411260",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 (radeonsi, navi22, LLVM 17.0.6, DRM 3.49, 6.1.104_1)",
+    "gpuDriver": "4.6 Mesa 24.2.3 (git-b235da6781)",
+    "kernel": "6.1.104_1",
+    "notes": "Played the demo, it ran great with no issues whatsoever",
+    "os": "Void Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1727598953,
+    "title": "",
+    "source": "protondb"
+  }
+]

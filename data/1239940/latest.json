@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1239940",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.4-1-default",
+    "notes": "not connecting to servers",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627785456,
+    "title": "",
+    "source": "protondb"
+  }
+]

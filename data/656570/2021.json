@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "656570",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.14.9-lp153.2.g85f5318-default",
+    "notes": "Aside from the alt-tab issue the game is working just fine with Proton GE. GE is needed for videos to play",
+    "os": "openSUSE Leap 15.3",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1637915584,
+    "title": "",
+    "source": "protondb"
+  }
+]

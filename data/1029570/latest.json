@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1029570",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.4.0-4-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1623274512,
+    "title": "",
+    "source": "protondb"
+  }
+]

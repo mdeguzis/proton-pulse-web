@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1609570",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 14.0.5, DRM 3.47, 5.19.7-203.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.0-devel",
+    "kernel": "5.19.7-203.fsync.fc36.x86_64",
+    "notes": "No tweaking was required to get it to a playable state. Definitely give it a try. :)",
+    "os": "Nobara Linux 36 (Thirty Six)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1663684704,
+    "title": "Agonize",
+    "source": "protondb"
+  }
+]

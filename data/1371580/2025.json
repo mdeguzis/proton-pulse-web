@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1371580",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.54, 6.6.51-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 24.3.1 (git-c815d651b8)",
+    "kernel": "6.6.51-gentoo-dist",
+    "notes": "If you like ARK/ATLAS etc then you might enjoy this",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1744710474,
+    "title": "",
+    "source": "protondb"
+  }
+]

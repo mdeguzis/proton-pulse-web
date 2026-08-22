@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2445260",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.7-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch2.3",
+    "kernel": "6.19.7-1-cachyos",
+    "notes": "The game runs great for being this early in development",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1774793444,
+    "title": "",
+    "source": "protondb"
+  }
+]

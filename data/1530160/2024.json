@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1530160",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 555.52.04",
+    "kernel": "6.8.12-200.fsync.fc40.x86_64",
+    "notes": "Running on 555.52 on Wayland, works OOTB no issues. Added a DLL override to use BepInEx for some QOL mods.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1719983550,
+    "title": "",
+    "source": "protondb"
+  }
+]

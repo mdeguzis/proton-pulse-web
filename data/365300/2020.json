@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "365300",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-500842399a)",
+    "kernel": "5.5.10-arch1-1",
+    "notes": "Works with DXVK",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1584806892,
+    "title": "Transmissions: Element 120",
+    "source": "protondb"
+  }
+]

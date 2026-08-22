@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "257510",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.8",
+    "kernel": "5.8.10-arch1-1",
+    "notes": "Broken",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1600612453,
+    "title": "",
+    "source": "protondb"
+  }
+]

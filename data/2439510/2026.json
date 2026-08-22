@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2439510",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, ACO, DRM 3.64, 6.19.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch2.3",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "Spiel l\u00e4uft ohne Probleme. Auch nach l\u00e4ngerer Spielzeit am St\u00fcck gab es keine Abst\u00fcrze oder \u00e4hnliches.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1779057886,
+    "title": "",
+    "source": "protondb"
+  }
+]

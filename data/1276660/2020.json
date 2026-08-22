@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1276660",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.19-2-MANJARO",
+    "notes": "Tantalizingly unable to play",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1607021885,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1276660",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.19-2-MANJARO",
+    "notes": "Works reasonably well with specific Proton version",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607033504,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1276660",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-54-generic",
+    "notes": "",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607869309,
+    "title": "",
+    "source": "protondb"
+  }
+]

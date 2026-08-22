@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1452210",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 14.0.6, DRM 3.48, 6.0.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.6-arch1-1",
+    "notes": "The game seems to work straight out of the box no tinkering required to get this working just install, play and enjoy yourselves :3",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1677016023,
+    "title": "",
+    "source": "protondb"
+  }
+]

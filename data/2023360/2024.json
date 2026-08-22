@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2023360",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Not very enjoyable on Deck due to big performence issues",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1718615514,
+    "title": "The Last Case of Benedict Fox Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2023360",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 18.1.8, DRM 3.57, 6.9.9-chos1-chimeraos-1)",
+    "gpuDriver": "4.6 Mesa 24.1.3.chos1-1.1",
+    "kernel": "6.9.9-chos1-chimeraos-1",
+    "notes": "I guess not, since chaning the minimal clock of your gpu is not a common task",
+    "os": "ChimeraOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1734198761,
+    "title": "The Last Case of Benedict Fox Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2023360",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-48-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1734848885,
+    "title": "The Last Case of Benedict Fox Definitive Edition",
+    "source": "protondb"
+  }
+]

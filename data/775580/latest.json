@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "775580",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.12-300.fc37.x86_64",
+    "notes": "Runs perfectly out of the box with Proton",
+    "os": "Fedora Linux 37 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1699945855,
+    "title": "",
+    "source": "protondb"
+  }
+]

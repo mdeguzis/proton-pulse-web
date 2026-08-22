@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1284820",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.18-1-MANJARO",
+    "notes": "Game \"runs\" but nothing shows up",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1614951736,
+    "title": "Desktop Kanojo",
+    "source": "protondb"
+  },
+  {
+    "appId": "1284820",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.16-arch1-1",
+    "notes": "Game does not work as intended due to the black bacground",
+    "os": "Archcraft",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1636706928,
+    "title": "Desktop Kanojo",
+    "source": "protondb"
+  }
+]

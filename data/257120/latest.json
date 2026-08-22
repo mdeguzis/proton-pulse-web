@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "257120",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.8, DRM 3.64, 6.17.0-23-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-23-generic",
+    "notes": "Buggy native build - perfect with Proton",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1778425758,
+    "title": "",
+    "source": "protondb"
+  }
+]

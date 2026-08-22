@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1272010",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Its Early Acess, not complete, but was fun once I set the resolution to the point the graphics were acceptable and the FPS was high enough.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1664473485,
+    "title": "Destroyer: The U-Boat Hunter",
+    "source": "protondb"
+  },
+  {
+    "appId": "1272010",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game was enjoyable with no tweaking.  The only real issues were graphics glitches with the clouds and some limited keyboard inputs.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1664797563,
+    "title": "Destroyer: The U-Boat Hunter",
+    "source": "protondb"
+  }
+]

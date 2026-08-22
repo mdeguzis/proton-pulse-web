@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1614040",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.8.0-53-generic",
+    "notes": "The games is native on Linux, but at least for me running it natively is super slow. Running it with Proton 6.8 GE 2 is smooth.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1621462019,
+    "title": "How We Got Here",
+    "source": "protondb"
+  }
+]

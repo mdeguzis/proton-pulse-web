@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1910130",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-arch1-2",
+    "notes": "Wait until Proton is updated to supported that stack",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771225996,
+    "title": "",
+    "source": "protondb"
+  }
+]

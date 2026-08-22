@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3430470",
+    "cpu": "12th Gen Intel Core i5-1240P",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2050",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-zen1-1-zen",
+    "notes": "\uc70811\uc5d0\uc11c \ubcf4\uc774\ub358 \ubc84\uadf8, \uc2a4\ud130\ud130\ub9c1\uc774 \ubcf4\uc774\uc9c0 \uc54a\uc74c. \ubcf8\uc778\uc774 \ub9ac\ub205\uc2a4 \uc720\uc800\uace0 \ud50c\ub77c\ud2f0\ub098\ub7a9\uc744 \uc18c\uc720 \uc911\uc774\ub77c\uba74 \uc801\uadf9 \ucd94\ucc9c. (STOVE \uc720\uc800\uc77c \uacbd\uc6b0 wineprefix\uc5d0 webview2\ub098 \ud55c\uae00 \ud3f0\ud2b8 \ub4f1\uc744 \uc124\uce58\ud574\uc57c \ud558\ub294 \ubb38\uc81c\uac00 \uc788\uaca0\uc9c0\ub9cc, \uadf8\ub807\uac8c \uc5b4\ub835\uc9c0 \uc54a\uc74c)",
+    "os": "Arch Linux(64\ube44\ud2b8)",
+    "protonVersion": "10.0-3",
+    "ram": "15698Mb",
+    "rating": "gold",
+    "timestamp": 1768912165,
+    "title": "PLATiNA :: LAB",
+    "source": "protondb"
+  },
+  {
+    "appId": "3430470",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.6-arch1-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1769529151,
+    "title": "PLATiNA :: LAB",
+    "source": "protondb"
+  },
+  {
+    "appId": "3430470",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.4-2-cachyos-xenovia",
+    "notes": "Game works but may require PROTON_PREFER_SDL on some setups.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "96 GB",
+    "rating": "gold",
+    "timestamp": 1770377693,
+    "title": "PLATiNA :: LAB",
+    "source": "protondb"
+  }
+]

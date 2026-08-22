@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1777430",
+    "cpu": "12th Gen Intel Core i5-1240P",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.1.0-rc1-gff61e79b0171-dirty",
+    "notes": "Works well with GE-Proton",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1667133318,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1777430",
+    "cpu": "11th Gen Intel Core i7-11700 @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 14.0.6, DRM 3.46, 5.18.14-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.18.14-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1670593462,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1777430",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.11-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1670593682,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "918570",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "5.15.0-100-generic",
+    "notes": "Singleplayer Training Only, No Multiplayer Support due to \"Could not connect to server!\" Error",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1710515608,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "989750",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.7-arch1-1",
+    "notes": "Works without issues. It's a Unity game with a simple 2D setup after all, so not many issues were to be expected.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1668202833,
+    "title": "",
+    "source": "protondb"
+  }
+]

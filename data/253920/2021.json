@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "253920",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.40.0, 5.10.7-3-MANJARO, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.3",
+    "kernel": "5.10.7-3-MANJARO",
+    "notes": "Don't works",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1614380556,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "253920",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.5-50.fc33.x86_64, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.5-50.fc33.x86_64",
+    "notes": "It works (see below), although stretches screen wide.",
+    "os": "Linux 5.x",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1615469098,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "253920",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.40.0, 5.10.76-gentoo-r1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.7",
+    "kernel": "5.10.76-gentoo-r1",
+    "notes": "It doesn't work natively on Linux but works with forced compatibility",
+    "os": "Linux 5.10",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1636815726,
+    "title": "",
+    "source": "protondb"
+  }
+]

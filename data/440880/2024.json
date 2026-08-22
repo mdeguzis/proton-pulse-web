@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "440880",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-40-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3 Cinnamon",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1731891246,
+    "title": "",
+    "source": "protondb"
+  }
+]

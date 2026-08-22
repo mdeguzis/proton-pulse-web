@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2245750",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 6.17.7-ba28.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "The game runs... The gameplay is not great but that's just cause it never was.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774725044,
+    "title": "City Z",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1926680",
+    "cpu": "AMD Ryzen 7 7840U w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 17.0.6, DRM 3.57, 6.7.4-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.4-200.fc39.x86_64",
+    "notes": "Slava Ukraini, Heroyam Slava & Fuck Putin",
+    "os": "Fedora Linux 39 (Cinnamon)",
+    "protonVersion": "8.0-5",
+    "ram": "60 GB",
+    "rating": "gold",
+    "timestamp": 1709043510,
+    "title": "FUCK PUTIN",
+    "source": "protondb"
+  },
+  {
+    "appId": "1926680",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Almost Out Of The Box if the controller was correctly mapped",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1713401569,
+    "title": "FUCK PUTIN",
+    "source": "protondb"
+  }
+]

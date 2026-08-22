@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1049010",
+    "cpu": "AMD Phenom II X4 960T",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 630",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.9.0-1-amd64",
+    "notes": "(Report based on the demo version) Everything seems to be in order when it comes to graphics and sound, but controls ruin it.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1605748549,
+    "title": "Out of Frame / \u30ce\u30d9\u30eb\u30b2\u30fc\u30e0\u306e\u67a0\u7d44\u307f\u3092\u5909\u3048\u308b\u30ce\u30d9\u30eb\u30b2\u30fc\u30e0\u3002",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3218710",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.1-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "20 GB",
+    "rating": "platinum",
+    "timestamp": 1760911686,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12530",
+    "cpu": "Intel Celeron          540  @ 1.86GHz",
+    "duration": "severalHours",
+    "gpu": "Intel 965GM (CL)",
+    "gpuDriver": "2.1 Mesa 21.0.3",
+    "kernel": "5.11.0-34-generic",
+    "notes": "game ran very well and a little better than windows did with proton 3.7-8",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "2 GB",
+    "rating": "gold",
+    "timestamp": 1631891168,
+    "title": "Hunting Unlimited\u2122 2008",
+    "source": "protondb"
+  }
+]

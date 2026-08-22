@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "342560",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.8.8-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.8.8-300.fc40.x86_64",
+    "notes": "game cursu is not in the location of the real cusur meaning that you basicly can;t see where you are actuly clicking. baicly unplayable",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1714955833,
+    "title": "",
+    "source": "protondb"
+  }
+]

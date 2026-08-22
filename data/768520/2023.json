@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "768520",
+    "cpu": "Intel",
+    "duration": "underOneHour",
+    "gpu": "Mesa 15.0.5",
+    "gpuDriver": "4.5",
+    "kernel": "5.19.0-41-generic",
+    "notes": "When I launched the game I had an average of 18-24 FPS, unplayable",
+    "os": "Elementary os 7",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1683160052,
+    "title": "",
+    "source": "protondb"
+  }
+]

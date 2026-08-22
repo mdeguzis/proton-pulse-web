@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1058450",
+    "cpu": "11th Gen Intel Core i7-11700KF @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.12.12-207.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "%$s1 MB",
+    "rating": "silver",
+    "timestamp": 1740915144,
+    "title": "",
+    "source": "protondb"
+  }
+]

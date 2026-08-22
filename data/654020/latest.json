@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "654020",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.8.0-53-generic",
+    "notes": "No issues OOTB",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1621710763,
+    "title": "",
+    "source": "protondb"
+  }
+]

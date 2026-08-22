@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1241700",
+    "cpu": "AMD Athlon Gold 3150U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 3 (radeonsi, raven2, LLVM 18.1.6, DRM 3.57, 6.9.8-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.8-200.fc40.x86_64",
+    "notes": "Works perfectly",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1721062050,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1241700",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.9-200.fc40.x86_64",
+    "notes": "Amazing game, amazing support",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1727495403,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1241700",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.8, DRM 3.57, 6.10.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.1-arch1.1",
+    "kernel": "6.10.7-arch1-1",
+    "notes": "Just hit play",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1728394299,
+    "title": "",
+    "source": "protondb"
+  }
+]

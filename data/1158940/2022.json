@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1158940",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.11-2-MANJARO",
+    "notes": "It installed EAC and a loading bar appeared, but even when it showed full loading, still nothing happend. I had like 5 of those windows in my activity list, very weird. Never got passed it though.\nAlso didn't try any launching commands, as I don't know any, nor do I know where to find them.\n\nThis is my first report on this game, but it's not the first time I tried to run this game on Linux.\nFirst time I tried, it was on different hardware and a different distro (Arch at the time), Manjaro now, and back then I managed to launch the game, but couldn't get online to work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646962498,
+    "title": "Blazing Sails",
+    "source": "protondb"
+  }
+]

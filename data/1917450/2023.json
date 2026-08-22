@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1917450",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel (RPL-S)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.11-arch1-1",
+    "notes": "No issues under Proton 7.0-6",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1683452181,
+    "title": "fault - StP - LIGHTKRAVTE",
+    "source": "protondb"
+  }
+]

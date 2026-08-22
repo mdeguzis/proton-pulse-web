@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1186040",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.8, DRM 3.64, 6.18.7-1-default)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.18.7-1-default",
+    "notes": "Just works with Proton Experimental now!",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771279279,
+    "title": "",
+    "source": "protondb"
+  }
+]

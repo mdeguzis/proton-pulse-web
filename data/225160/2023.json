@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "225160",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.10-arch1-1",
+    "notes": "Works perfectly under Proton",
+    "os": "ArcoLinux",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1681225492,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "225160",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Flawless under Proton",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "7812M",
+    "rating": "gold",
+    "timestamp": 1681377125,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "225160",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great after changing Proton version",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1695612730,
+    "title": "",
+    "source": "protondb"
+  }
+]

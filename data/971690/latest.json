@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "971690",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 660M (radeonsi, rembrandt, LLVM 20.1.8, DRM 3.61, 6.12.41-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.12.41-1-MANJARO",
+    "notes": "Works flawlessly",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "platinum",
+    "timestamp": 1756356792,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "971690",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6500M (radeonsi, navi24, LLVM 21.1.4, DRM 3.64, 6.17.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.6-cachyos1.2",
+    "kernel": "6.17.6-2-cachyos",
+    "notes": "Works flawlessly",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "6 GB",
+    "rating": "platinum",
+    "timestamp": 1762044048,
+    "title": "",
+    "source": "protondb"
+  }
+]

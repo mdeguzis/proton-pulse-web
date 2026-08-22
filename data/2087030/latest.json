@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2087030",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 21.1.6, DRM 3.64, 6.18.8-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.8-3-cachyos",
+    "notes": "Not worth even installing, devs abandoned this game",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772577785,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3037180",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 21.1.5, DRM 3.49, 6.1.0-40-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.1.0-40-amd64",
+    "notes": "",
+    "os": "PeppermintOS_Bookworm12 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1763086867,
+    "title": "\u6df1\u7a7a\u4e03\u53f7 Deep Space 7",
+    "source": "protondb"
+  }
+]

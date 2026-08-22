@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2466240",
+    "cpu": "AMD Ryzen 5 PRO 5675U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 15.0.7, DRM 3.57, 6.8.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-36-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1719779636,
+    "title": "CosmoPirates",
+    "source": "protondb"
+  }
+]

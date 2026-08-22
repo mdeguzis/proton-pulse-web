@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "436280",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.18-1-MANJARO",
+    "notes": "Doesn't work",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1606085179,
+    "title": "Sudoku Quest",
+    "source": "protondb"
+  }
+]

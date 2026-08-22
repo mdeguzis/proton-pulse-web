@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1278210",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.26-xanmod1",
+    "notes": "Please make sure to use Proton Version 5.0-10 or the game won't launch.",
+    "os": "Freedesktop.org 20.08.6 (Flatpak runtime)",
+    "protonVersion": "5.13-6",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1616990963,
+    "title": "",
+    "source": "protondb"
+  }
+]

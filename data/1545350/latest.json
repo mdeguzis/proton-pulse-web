@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1545350",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "5.15.0-73-generic",
+    "notes": "When run, it shows a black screen and display a dialog which says \"Error Init Render\".",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1736208670,
+    "title": "Caribbean Jigsaw",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "427730",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "Delayed or ignored inputs makes game frustrating to play, could be system hardware",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1675907128,
+    "title": "Who's Your Daddy?!",
+    "source": "protondb"
+  }
+]

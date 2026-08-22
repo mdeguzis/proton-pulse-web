@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2717010",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.4-3",
+    "kernel": "6.12.12-amd64",
+    "notes": "The game runs with no major issues without any tinkering",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-4",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1740473443,
+    "title": "KALPA: Cosmic Symphony",
+    "source": "protondb"
+  }
+]

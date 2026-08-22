@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "463170",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.3",
+    "kernel": "6.3.9-arch1-1",
+    "notes": "Works fine with official Proton but without any movies. Use GE-Proton to fix that.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1689456164,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "463170",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.6.1-zen1-1-zen",
+    "notes": "Works out of the box, including videos with GE-Proton",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1700331316,
+    "title": "",
+    "source": "protondb"
+  }
+]

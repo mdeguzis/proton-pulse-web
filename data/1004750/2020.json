@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1004750",
+    "cpu": "Intel Core i7-8665U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "Doesn't run out of the box with steam play, crashed almost immediately as it loads. It shows the game crash report UI though",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1599573371,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1004750",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.1.8 - kisak-mesa PPA",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Crashes on start, no launcher options improve this.",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1600874376,
+    "title": "",
+    "source": "protondb"
+  }
+]

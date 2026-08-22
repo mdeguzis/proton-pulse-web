@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1356800",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "Menu mostly works, sliders for audio do nothing. When you try to launch the game it appears to crash",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1683351172,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2456080",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.8.0-45-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-45-generic",
+    "notes": "Playable but some delays to load games. Some minor graphic issues.",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1727459385,
+    "title": "",
+    "source": "protondb"
+  }
+]

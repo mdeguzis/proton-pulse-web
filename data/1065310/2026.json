@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1065310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "will have to tweak graphics settings in game to have a stable 30-60fps experience",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1771202284,
+    "title": "Evil West",
+    "source": "protondb"
+  },
+  {
+    "appId": "1065310",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Works well out of the box on CachyOS proton",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1772042094,
+    "title": "Evil West",
+    "source": "protondb"
+  },
+  {
+    "appId": "1065310",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.18-gentoo",
+    "notes": "works fine",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777847050,
+    "title": "Evil West",
+    "source": "protondb"
+  }
+]

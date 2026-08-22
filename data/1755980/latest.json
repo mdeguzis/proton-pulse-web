@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1755980",
+    "cpu": "Intel Core i7-3740QM @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.13.0-22-generic",
+    "notes": "the game starts but then there is a windows like dialog that prompts a low level crash on direct 3d and some more stuff...",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640140477,
+    "title": "Momentum",
+    "source": "protondb"
+  }
+]

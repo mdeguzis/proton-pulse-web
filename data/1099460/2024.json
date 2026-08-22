@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1099460",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.8.0-35-generic",
+    "notes": "Works fine in windowed mode",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1717862396,
+    "title": "",
+    "source": "protondb"
+  }
+]

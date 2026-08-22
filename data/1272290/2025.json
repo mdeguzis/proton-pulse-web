@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1272290",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "Works great using default compatability settings for steam.\nThe minor issues I encountered was not really that noticable while playing.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1761678233,
+    "title": "Space Chef",
+    "source": "protondb"
+  },
+  {
+    "appId": "1272290",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "The issues I found was minor and not really noticable unless you look for them.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1761685636,
+    "title": "Space Chef",
+    "source": "protondb"
+  },
+  {
+    "appId": "1272290",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.4-cachyos1.2",
+    "kernel": "6.14.3-2-cachyos",
+    "notes": "Works great out of the box without any tinkering at all. Love it",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1761742920,
+    "title": "Space Chef",
+    "source": "protondb"
+  }
+]

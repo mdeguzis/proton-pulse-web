@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3139620",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 17.0.4, DRM 3.54, 6.6.1-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.6.1-1-default",
+    "notes": "100% playable..",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1728920822,
+    "title": "Frontline Crisis",
+    "source": "protondb"
+  },
+  {
+    "appId": "3139620",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.11.3-200.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.3",
+    "kernel": "6.11.3-200.fsync.fc40.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "30 GB",
+    "rating": "gold",
+    "timestamp": 1729312396,
+    "title": "Frontline Crisis",
+    "source": "protondb"
+  },
+  {
+    "appId": "3139620",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.11.3-200.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.3",
+    "kernel": "6.11.3-200.fsync.fc40.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "30 GB",
+    "rating": "gold",
+    "timestamp": 1730168375,
+    "title": "Frontline Crisis",
+    "source": "protondb"
+  }
+]

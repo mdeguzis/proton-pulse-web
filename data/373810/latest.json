@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "373810",
+    "cpu": "AMD A10-6800K APU with Radeon HD Graphics",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "4.15.0-70-generic",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1576900606,
+    "title": "",
+    "source": "protondb"
+  }
+]

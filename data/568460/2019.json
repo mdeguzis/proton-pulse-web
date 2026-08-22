@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "568460",
+    "cpu": "Intel Core i5-4460  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.1.2 - padoka PPA",
+    "kernel": "5.3.0-23-generic",
+    "notes": "It works flawlessly.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575042776,
+    "title": "Ghostory",
+    "source": "protondb"
+  }
+]

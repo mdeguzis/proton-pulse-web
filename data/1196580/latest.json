@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1196580",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "5.3.11-arch1-1",
+    "notes": "",
+    "os": "Antergos Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602430202,
+    "title": "",
+    "source": "protondb"
+  }
+]

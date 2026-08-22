@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1025600",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-2-cachyos",
+    "notes": "It works it's just that the mouse stuttering means you'll be fighting the controls more than anything",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1770603083,
+    "title": "",
+    "source": "protondb"
+  }
+]

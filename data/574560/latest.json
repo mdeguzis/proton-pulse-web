@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574560",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.6, DRM 3.63, 6.15.7-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.7-200.fc42.x86_64",
+    "notes": "Works well OOTB front to end. all Achievments work aswell",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1753450813,
+    "title": "",
+    "source": "protondb"
+  }
+]

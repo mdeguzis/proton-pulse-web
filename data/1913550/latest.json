@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1913550",
+    "cpu": "Intel Core i7-5960X @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 470 (radeonsi, polaris10, LLVM 18.1.8, DRM 3.59, 6.12.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1771190380,
+    "title": "",
+    "source": "protondb"
+  }
+]

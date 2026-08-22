@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1598160",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Set to 45 fps and 45hz.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1675477639,
+    "title": "Bloodwash",
+    "source": "protondb"
+  },
+  {
+    "appId": "1598160",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1678787906,
+    "title": "Bloodwash",
+    "source": "protondb"
+  },
+  {
+    "appId": "1598160",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 16.0.1, DRM 3.52, 6.3.0-0.rc7.20230420gitcb0856346a60.59.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.3.0-0.rc7.20230420gitcb0856346a60.59.fc39.x86_64",
+    "notes": "Played through entire game without issues",
+    "os": "Fedora Linux 39 (KDE Plasma Prerelease)",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682280990,
+    "title": "Bloodwash",
+    "source": "protondb"
+  }
+]

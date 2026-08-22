@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1229260",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX550/550 (POLARIS12, DRM 3.40.0, 5.10.20-gentoo, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.20-gentoo",
+    "notes": "Game runs flawlessly using Proton 6.3-5",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1624670683,
+    "title": "",
+    "source": "protondb"
+  }
+]

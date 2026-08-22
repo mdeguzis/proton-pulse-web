@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2501650",
+    "cpu": "12th Gen Intel Core i9-12900",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.59, 6.12.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "Works out of box - no tinkering needed.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1734873340,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1281420",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.4.0-60-generic",
+    "notes": "Game crash",
+    "os": "Ubuntu 18.04.5 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1610108565,
+    "title": "",
+    "source": "protondb"
+  }
+]

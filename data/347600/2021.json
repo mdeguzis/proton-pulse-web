@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "347600",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-arch1-1",
+    "notes": "Loads to title screen, then freezes. Using Proton Experimental for latest improvements.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639200771,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "347600",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-arch1-1",
+    "notes": "Fails to install the .NET Framework it needs via protontricks.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639200835,
+    "title": "",
+    "source": "protondb"
+  }
+]

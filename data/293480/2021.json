@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "293480",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.11.0-37-lowlatency",
+    "notes": "Game was never properly finished. What is there works as well on Linux and it does on Windows.",
+    "os": "KDE neon User Edition 5.22",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640538920,
+    "title": "",
+    "source": "protondb"
+  }
+]

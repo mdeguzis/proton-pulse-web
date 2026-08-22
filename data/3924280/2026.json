@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3924280",
+    "cpu": "13th Gen Intel Core i7-13620H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 26.1.2-arch1.1",
+    "kernel": "7.0.11-arch1-1",
+    "notes": "Unless the developer cares about Linux support, this game will most likely never be playable on Linux.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1782430399,
+    "title": "Pat the Cat",
+    "source": "protondb"
+  },
+  {
+    "appId": "3924280",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.1.1-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.2-arch3.1",
+    "kernel": "7.1.1-2-cachyos",
+    "notes": "The game is installable, can be started but in the \"Main View\" its just a black background instead of a transparent one. Multiple Proton Versions didn't fix the issue.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1782764437,
+    "title": "Pat the Cat",
+    "source": "protondb"
+  }
+]

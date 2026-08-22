@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2350270",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1753854430,
+    "title": "Primal Planet",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350270",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u0417\u0430\u043f\u0443\u0441\u0442\u0438\u043b \u0438\u0433\u0440\u0430\u043b, \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u043f\u0440\u043e\u0431\u043b\u0435\u043c",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1762387205,
+    "title": "Primal Planet",
+    "source": "protondb"
+  },
+  {
+    "appId": "2350270",
+    "cpu": "13th Gen Intel Core i7-13620H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.12.57+deb13-amd64",
+    "notes": "Game works fine in general, but can't start dGPU with it",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1765924485,
+    "title": "Primal Planet",
+    "source": "protondb"
+  }
+]

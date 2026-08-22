@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1202540",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.10.52-gentoo",
+    "notes": "Works perfectly well with recent proton but install of plugins needed to see the videos (the videos are important !)",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627147422,
+    "title": "",
+    "source": "protondb"
+  }
+]

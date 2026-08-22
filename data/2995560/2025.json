@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2995560",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 570.86.15",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Runs perfectly fine",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1743484012,
+    "title": "",
+    "source": "protondb"
+  }
+]

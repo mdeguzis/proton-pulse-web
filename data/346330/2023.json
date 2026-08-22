@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "346330",
+    "cpu": "AMD Ryzen 3 5300U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (renoir, LLVM 16.0.6, DRM 3.54, 6.5.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.7-arch1.1",
+    "kernel": "6.5.2-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1694463975,
+    "title": "",
+    "source": "protondb"
+  }
+]

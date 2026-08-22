@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "415420",
+    "cpu": "Intel Core i9-14900HX",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (RPL-S)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.8-201.nobara.fc41.x86_64",
+    "notes": "It works very well.",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1743222206,
+    "title": "Nyan Cat: Lost In Space",
+    "source": "protondb"
+  }
+]

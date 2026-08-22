@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2182310",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Ryzen 7 7700X 8-Core Processor (radeonsi, raphael_mendocino, LLVM 21.1.8, DRM 3.64, 6.19.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "...but switching windows reveals that the game menu loads but is frozen completely. Running the game with the logging option on and feeding it into AI, I got the following findings:\n\nDriver Loading Failure: The game fails to load the winebth driver, which is responsible for Bluetooth functionality. The log records an err:ntoskrnl:ZwLoadDriver failed with error code c0000142.\n\nService Start Failure: Following the driver failure, the auto-start service for winebth also fails to start with error code 1114.\n\nInput Device Issues: There are multiple \"fixme\" warnings regarding HID (Human Interface Device) queries that are not implemented. Specifically, the system encounters an unhandled ID query type 0x5 for wineusb. Additionally, the system reports that device usage for a joystick/controller (ffc0:0001) is not implemented.\n\nContinuous Function Table Growth: The end of the log shows a massive, repetitive series of RtlGrowFunctionTable calls. This often indicates the application or its runtime (likely .NET/Mono, given the mscoree traces ) is stuck in a loop or struggling to manage dynamically generated code, which frequently leads to a freeze or \"hang.\"",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1774305995,
+    "title": "",
+    "source": "protondb"
+  }
+]

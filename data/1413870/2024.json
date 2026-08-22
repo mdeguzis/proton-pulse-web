@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1413870",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 15.0.7, DRM 3.54, 6.1.52-valve16-1-neptune-61)",
+    "gpuDriver": "4.6 Mesa 23.1.3 (git-87ebaf765d)",
+    "kernel": "6.1.52-valve16-1-neptune-61",
+    "notes": "Switch to Vulkan for better performance.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1710215016,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1413870",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game is fully playable and the verified status is correct",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1716384101,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1413870",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Performance on OLED is excellent, highly recommend the game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1730823845,
+    "title": "",
+    "source": "protondb"
+  }
+]

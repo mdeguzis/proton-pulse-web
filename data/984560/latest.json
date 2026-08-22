@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "984560",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.64, 6.17.13+deb14-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.8-2+b2",
+    "kernel": "6.17.13+deb14-amd64",
+    "notes": "I couldn't get the native port to launch, so I had to resort to Proton.",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1774857814,
+    "title": "HEARTBEAT",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1451740",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.4.0-65-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1613164976,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1451740",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.12.2-zen1-1-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0",
+    "kernel": "5.12.2-zen1-1-zen",
+    "notes": "works flawlessy",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627077578,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1451740",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Works fine.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627598949,
+    "title": "",
+    "source": "protondb"
+  }
+]

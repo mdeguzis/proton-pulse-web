@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1342490",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-20-generic",
+    "notes": "The game runs smoothly but seems to cause system crashes on my setup, sometimes 10 minutes in, sometimes 2 hours in.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776306349,
+    "title": "",
+    "source": "protondb"
+  }
+]

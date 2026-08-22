@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3582250",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, ACO, DRM 3.64, 7.0.9-1-cachyos-bore)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.9-1-cachyos-bore",
+    "notes": "Perfectly playable without any tinkering at all.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1779293821,
+    "title": "",
+    "source": "protondb"
+  }
+]

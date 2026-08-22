@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1574270",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.0-49-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.2",
+    "kernel": "6.8.0-49-generic",
+    "notes": "Runs perfectly.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1737789386,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1574270",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.7, DRM 3.58, 6.8.0-55-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel",
+    "kernel": "6.8.0-55-generic",
+    "notes": "Really enjoyable once launch options are set. Without doing so the game completely fails to launch",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1741615624,
+    "title": "",
+    "source": "protondb"
+  }
+]

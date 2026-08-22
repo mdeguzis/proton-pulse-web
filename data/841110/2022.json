@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "841110",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.41.0, 5.13.0-28-generic, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5 - kisak-mesa PPA",
+    "kernel": "5.13.0-28-generic",
+    "notes": "Everything on the tin is delivered!",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1647907063,
+    "title": "",
+    "source": "protondb"
+  }
+]

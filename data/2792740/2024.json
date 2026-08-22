@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2792740",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 17.0.6, DRM 3.57, 6.8.8-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.8.8-300.fc40.x86_64",
+    "notes": "\ud83d\ude2d Fute wifey runs on Linux \ud83d\ude2d",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "60 GB",
+    "rating": "platinum",
+    "timestamp": 1715050215,
+    "title": "",
+    "source": "protondb"
+  }
+]

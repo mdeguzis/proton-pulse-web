@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "388490",
+    "cpu": "Intel Core i7-7800X @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-66-generic",
+    "notes": "the native version doesn't work on Linux, the proton version work as expected tho!",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1573311742,
+    "title": "One Way To Die",
+    "source": "protondb"
+  }
+]

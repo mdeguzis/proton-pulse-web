@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1389610",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.10.15-120-tkg-bmq, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.15-120-tkg-bmq",
+    "notes": "Works out of the box - Ryzen 7 3700X, AMD Radeon RX 6800 XT, Valve Index.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613368558,
+    "title": "Hell Road VR",
+    "source": "protondb"
+  },
+  {
+    "appId": "1389610",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.14.8-zen1-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.8-zen1-1-zen",
+    "notes": "This game is running great out of the box with great performance!",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634269843,
+    "title": "Hell Road VR",
+    "source": "protondb"
+  }
+]

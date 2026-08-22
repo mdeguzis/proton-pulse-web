@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "711380",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6500 (radeonsi, navi24, LLVM 21.1.5, DRM 3.64, 6.18.6-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.6-200.fc43.x86_64",
+    "notes": "A poorly made Nintendo Switch port with visual elements that are prone to breaking",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1769420540,
+    "title": "Code of Princess EX",
+    "source": "protondb"
+  }
+]

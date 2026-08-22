@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1625960",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Game runs perfectly out of the box.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1626415562,
+    "title": "",
+    "source": "protondb"
+  }
+]

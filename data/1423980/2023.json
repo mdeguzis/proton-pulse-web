@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1423980",
+    "cpu": "Linux",
+    "duration": "unreported",
+    "gpu": "Realtek ALC293",
+    "gpuDriver": "Memory",
+    "kernel": "4.6",
+    "notes": "There is a brief flash of a small window, and then the \"play\" button reverts back to from \"stop\" to \"play\" as if the game launch was aborted.",
+    "os": "Intel Mesa Intel UHD Graphics (CML GT2)",
+    "protonVersion": "8.0-3",
+    "ram": "None detected",
+    "rating": "borked",
+    "timestamp": 1695501197,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3194140",
+    "cpu": "Genuine Intel 0000 @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.16.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.2-arch1.1",
+    "kernel": "6.16.5-arch1-1",
+    "notes": "Sudoku game",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768623705,
+    "title": "Cozy Sudoku",
+    "source": "protondb"
+  }
+]

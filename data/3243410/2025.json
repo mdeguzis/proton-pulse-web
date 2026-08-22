@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3243410",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "I ran into zero issues running this game, ran perfect.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1763846815,
+    "title": "",
+    "source": "protondb"
+  }
+]

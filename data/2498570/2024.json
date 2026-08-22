@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2498570",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.49, 6.1.0-17-amd64)",
+    "gpuDriver": "4.6 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "Prefectly fine",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1712928537,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2498570",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.8.8-1-default",
+    "notes": "Works OOB on Tumbleweed",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1722638410,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2498570",
+    "cpu": "13th Gen Intel Core i7-13700KF",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.11-200.fc40.x86_64",
+    "notes": "Works great",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727567807,
+    "title": "",
+    "source": "protondb"
+  }
+]

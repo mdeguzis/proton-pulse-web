@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1574910",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 555.58",
+    "kernel": "6.9.6-200.fc40.x86_64",
+    "notes": "Use the SWFs that the game installs in Ruffle (load it, right click, and then click play in the context menu)",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1719778294,
+    "title": "",
+    "source": "protondb"
+  }
+]

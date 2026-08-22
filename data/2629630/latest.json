@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2629630",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.6-200.fc40.x86_64",
+    "notes": "Demo worked, but only with 9.0.2",
+    "os": "Fedora Linux 40 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1726254044,
+    "title": "Chessire",
+    "source": "protondb"
+  }
+]

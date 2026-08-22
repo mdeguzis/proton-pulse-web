@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "364940",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-7642-generic",
+    "notes": "Runs without issues in windowed mode",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1586148628,
+    "title": "Pony World 3",
+    "source": "protondb"
+  }
+]

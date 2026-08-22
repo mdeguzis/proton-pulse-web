@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1121710",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.12-zen1-1-zen",
+    "notes": "\u0418\u0433\u0440\u0430 \u043e\u0442\u043a\u0440\u044b\u0432\u0430\u0435\u0442\u0441\u044f, \u043d\u043e \u043d\u0435 \u0437\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u0442\u0441\u044f. \u0411\u0435\u0441\u043a\u043e\u043d\u0435\u0447\u043d\u043e \u0432\u0438\u0441\u0438\u0442 \u044d\u043a\u0440\u0430\u043d \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438",
+    "os": "Arch Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1648078561,
+    "title": "",
+    "source": "protondb"
+  }
+]

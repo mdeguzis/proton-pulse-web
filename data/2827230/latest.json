@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2827230",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.16.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.2-arch1.2",
+    "kernel": "6.16.7-arch1-1",
+    "notes": "Works ok without proton, just needed it to fix somethings here and there.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "silver",
+    "timestamp": 1767894377,
+    "title": "",
+    "source": "protondb"
+  }
+]

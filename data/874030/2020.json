@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "874030",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.3.0-46-generic",
+    "notes": "rodou perfeitamente e dica set postprocessing = low",
+    "os": "KDE neon User Edition 5.18",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1586547011,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "874030",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.0-54-generic",
+    "notes": "",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1606408754,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "874030",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.4.0-54-generic",
+    "notes": "Roda bem, sem problemas.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1606409006,
+    "title": "",
+    "source": "protondb"
+  }
+]

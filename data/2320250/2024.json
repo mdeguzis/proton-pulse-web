@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2320250",
+    "cpu": "11th Gen Intel Core i5-11320H @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.6.62-1-lts",
+    "notes": "Doesn't work with DXVK, for some reason, you have to force the game to use wined3d instead. Also disabled fsync and esync",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1732311455,
+    "title": "",
+    "source": "protondb"
+  }
+]

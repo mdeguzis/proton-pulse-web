@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1015370",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 200 (HAWAII, DRM 3.40.0, 5.11.12-177.current, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.3",
+    "kernel": "5.11.12-177.current",
+    "notes": "Installs and runs to black box",
+    "os": "Solus",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1619168642,
+    "title": "",
+    "source": "protondb"
+  }
+]

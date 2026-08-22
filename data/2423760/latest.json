@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2423760",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "proton-cachyos-10.0-20260409",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777061149,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2423760",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "Press install, wait, press play. 165 FPS",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777061659,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2423760",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "7.0.1-1-cachyos",
+    "notes": "Can't really say much about it, my expierence was that in some instances i could get into the Game Menu were i tried diffrent resoulutions.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1777288988,
+    "title": "",
+    "source": "protondb"
+  }
+]

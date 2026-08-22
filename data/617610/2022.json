@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "617610",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.12-arch1-1",
+    "notes": "It doesn't detect the mouse clicks correctly, is unplayable.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1641163086,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "617610",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.10.96-1-MANJARO",
+    "notes": "Unplayable. Mouse clicks barely register, and there's repeated lag spikes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1663337912,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "593150",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "5.4.0-186-generic",
+    "notes": "Blank dark grey screen. Freezes whole system as well.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1737915166,
+    "title": "",
+    "source": "protondb"
+  }
+]

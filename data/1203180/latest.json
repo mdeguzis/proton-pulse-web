@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1203180",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.1, DRM 3.57, 6.8.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-58-generic",
+    "notes": "V-Sync set to 30 feels really good(at least it's stable). Give it shot.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1748098017,
+    "title": "",
+    "source": "protondb"
+  }
+]

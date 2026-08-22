@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1169200",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u0414\u043b\u044f \u043f\u0440\u043e\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f \u043f\u043e \u0441\u044e\u0436\u0435\u0442\u0443 \u0438\u0433\u0440\u044b \u043f\u0440\u0438\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u0432\u044b\u0437\u044b\u0432\u0430\u0442\u044c \u043e\u0447\u0435\u043d\u044c \u0447\u0430\u0441\u0442\u043e \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u0443\u044e \u043a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0443, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0435\u0440\u0435\u043a\u0440\u044b\u0432\u0430\u0435\u0442 \u0431\u043e\u043b\u044c\u0448\u0443\u044e \u0447\u0430\u0441\u0442\u044c \u044d\u043a\u0440\u0430\u043d\u0430.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1699604185,
+    "title": "",
+    "source": "protondb"
+  }
+]

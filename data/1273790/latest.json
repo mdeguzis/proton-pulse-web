@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1273790",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-39-generic",
+    "notes": "Successfully reproduced all the bugs present in the windows version.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1625069142,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "781280",
+    "cpu": "AMD Ryzen 9 3900XT 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "DOSBOX opens but freezes on a black screen",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1653340375,
+    "title": "",
+    "source": "protondb"
+  }
+]

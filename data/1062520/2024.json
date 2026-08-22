@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1062520",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1717024260,
+    "title": "Dinkum",
+    "source": "protondb"
+  },
+  {
+    "appId": "1062520",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "5.15.0-100-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1723242796,
+    "title": "Dinkum",
+    "source": "protondb"
+  },
+  {
+    "appId": "1062520",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.6, DRM 3.59, 6.12.6-1-default)",
+    "gpuDriver": "4.6 Mesa 24.3.1",
+    "kernel": "6.12.6-1-default",
+    "notes": "Runs perfectly on linux",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1735489237,
+    "title": "Dinkum",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2742010",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce 940M",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-99-generic",
+    "notes": "Switched to 4.11, didn't launch on 9.0-3",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1729421999,
+    "title": "Off-Road: Redneck Racing",
+    "source": "protondb"
+  }
+]

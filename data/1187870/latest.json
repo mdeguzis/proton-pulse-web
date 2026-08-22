@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1187870",
+    "cpu": "Intel Core Ultra 7 265K",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.1",
+    "kernel": "6.16.7-arch1-1",
+    "notes": "10th gen and later Intel CPU users currently must use the game's Beta branch on Steam to avoid crashing",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1758224316,
+    "title": "",
+    "source": "protondb"
+  }
+]

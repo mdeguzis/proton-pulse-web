@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "219890",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.7-arch1-1",
+    "notes": "Runs fine, parity with Windows when ran through Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1754292802,
+    "title": "Antichamber",
+    "source": "protondb"
+  }
+]

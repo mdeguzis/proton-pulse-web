@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2136950",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 16.0.6, DRM 3.54, 6.6.7-lqx1-1-lqx)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.7-lqx1-1-lqx",
+    "notes": "Works great",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1704233579,
+    "title": "Forklift Extreme: Deluxe Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2136950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Absolutely flawless out of the box.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1708908260,
+    "title": "Forklift Extreme: Deluxe Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2136950",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Works great",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1723996431,
+    "title": "Forklift Extreme: Deluxe Edition",
+    "source": "protondb"
+  }
+]

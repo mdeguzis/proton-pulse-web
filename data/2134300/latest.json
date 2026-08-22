@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2134300",
+    "cpu": "Intel Xeon E5-2680 v3 @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.8.0-57-generic",
+    "notes": "Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1744460122,
+    "title": "ParkTo",
+    "source": "protondb"
+  }
+]

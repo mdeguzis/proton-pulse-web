@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3831680",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-arch1-1",
+    "notes": "I finally got into the playtest of the game and was very happy that it worked VERY well on Linux with no issues besides the intial setup. Make sure to follow these steps as they lower the chances of getting a Memory Access Violation and can make the game perform I'd say at least 100x better than Windows.\n\nWithin dfVoodooCpl.exe (which can be opened with ProtonTricks, Wine, or Steam) you can select an antialisasing method. This is recommended since it is more faster and performant than the ingame antialiasing.\n\nFinally you can install mods like the FOV changer mod:\nhttps://www.moddb.com/mods/scp-containment-breach-field-of-view-fov-addon\nNote: make sure when downloading mods that you rename it to 'SCPCB.exe' and the original exe to 'SCPCB.exe.bak' in case you need to revert. Also make sure that any mod that requires a new options.ini folder to redo the previous steps on this report.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1779181966,
+    "title": "",
+    "source": "protondb"
+  }
+]

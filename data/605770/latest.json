@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "605770",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-29-generic",
+    "notes": "Run without issues",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1589303862,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "605770",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-29-generic",
+    "notes": "Run without any issues",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1589381042,
+    "title": "",
+    "source": "protondb"
+  }
+]

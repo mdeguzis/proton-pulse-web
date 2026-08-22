@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "671640",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, LLVM 15.0.7, DRM 3.57, 6.8.0-49-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0 - kisak-mesa PPA",
+    "kernel": "6.8.0-49-generic",
+    "notes": "Game fully playable with wined3d but lags on vulkan.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1732819910,
+    "title": "Deadburg",
+    "source": "protondb"
+  }
+]

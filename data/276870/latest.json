@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "276870",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.8-3-cachyos",
+    "notes": "I'm on CachyOS and had to switch to the standard Steam runtime Proton 10. Before switching the game didn't start.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1771875048,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3445830",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX330",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "The game is working properly by using default options through installation inside Heroic Game Launcher. Expected it to also work with Steam.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1773131788,
+    "title": "Return to Ash",
+    "source": "protondb"
+  }
+]

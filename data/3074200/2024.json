@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3074200",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.59, 6.11.3-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.2.4-arch1.1",
+    "kernel": "6.11.3-zen1-1-zen",
+    "notes": "With Proton-GE it starts but runs terribly. Native version (which seems to be unlisted) crashes at startup most of the time.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1728906659,
+    "title": "",
+    "source": "protondb"
+  }
+]

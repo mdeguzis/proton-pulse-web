@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1474200",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 19.1.5, DRM 3.59, 6.12.8-201.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.8-201.bazzite.fc41.x86_64",
+    "notes": "Just installed it with no tweaking and it worked. Too quite a while to launch for the first time though, but later it was fine.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1736605345,
+    "title": "",
+    "source": "protondb"
+  }
+]

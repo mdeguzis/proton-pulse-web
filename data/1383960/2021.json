@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1383960",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-47-generic",
+    "notes": "very good, it works",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1612374803,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1383960",
+    "cpu": "Intel Core i3-1005G1 @ 1.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel (git-2b977ad 2020-10-06 bionic-oibaf-ppa)",
+    "kernel": "5.4.0-77-generic",
+    "notes": "El juego va bien en mi i3 1005G1",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624673554,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1383960",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.14.14-1-default",
+    "notes": "Runs out of the box",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1636240041,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1693090",
+    "cpu": "13th Gen Intel Core i5-13400F",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.9-200.nobara.fc43.x86_64",
+    "notes": "(Just a guess) Game can't read GPU. Also there's no Native version, it's just an empty folder",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1782807722,
+    "title": "V.R.G.",
+    "source": "protondb"
+  }
+]

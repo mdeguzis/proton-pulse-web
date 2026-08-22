@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "570840",
+    "cpu": "AMD Ryzen 5 5600U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.52, 6.3.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.1-arch1-1",
+    "notes": "Nessun Problema",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1683536348,
+    "title": "\u5bb6\u6709\u5927\u8c93 Nekojishi",
+    "source": "protondb"
+  },
+  {
+    "appId": "570840",
+    "cpu": "Intel Core i5-4210M @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.3",
+    "kernel": "6.3.9-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-2",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1689922410,
+    "title": "\u5bb6\u6709\u5927\u8c93 Nekojishi",
+    "source": "protondb"
+  }
+]

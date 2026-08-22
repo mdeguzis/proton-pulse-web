@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1361350",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.12.15-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "I am able to reach the launcher but the launcher freezes while downloading files.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1625863566,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1361350",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.12.15-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "Borked. Reaches launcher and  begins downloading but hangs.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1628481562,
+    "title": "",
+    "source": "protondb"
+  }
+]

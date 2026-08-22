@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1943040",
+    "cpu": "AMD Ryzen 5 5600U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 15.0.7, DRM 3.54, 6.5.0-10027-tuxedo)",
+    "gpuDriver": "4.6 Mesa 24.0.4-0tux2",
+    "kernel": "6.5.0-10027-tuxedo",
+    "notes": "Game doesn't launch from Steam: \"An error occured while launching this game: Invalid game configuration\".\nGame launches when executed from file manager, but main menu doesn't appear and it freezes.",
+    "os": "TUXEDO OS 2",
+    "protonVersion": "8.0-5",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1713089110,
+    "title": "",
+    "source": "protondb"
+  }
+]

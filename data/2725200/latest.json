@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2725200",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.10.10-100.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.10.10-100.fc39.x86_64",
+    "notes": "This is all I get",
+    "os": "Fedora Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1727072487,
+    "title": "Prisoners",
+    "source": "protondb"
+  }
+]

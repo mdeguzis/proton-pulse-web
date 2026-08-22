@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3474450",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 570.86.15",
+    "kernel": "6.8.0-55-generic",
+    "notes": "Standard Unity affair, works out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1742677580,
+    "title": "Race Jam",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "826740",
+    "cpu": "AMD Ryzen 9 3900XT 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.10.0-3-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.0-3-amd64",
+    "notes": "",
+    "os": "SparkyLinux 6 (Po-Tolo)",
+    "protonVersion": "5.13-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1612754993,
+    "title": "Rise of the Slime",
+    "source": "protondb"
+  }
+]

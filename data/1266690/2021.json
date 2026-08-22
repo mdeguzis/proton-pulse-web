@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1266690",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 965M",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.0-3-amd64",
+    "notes": "Installed and ran perfectly using proton experimental, including Xbox One S Controller through Bluetooth",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613987176,
+    "title": "",
+    "source": "protondb"
+  }
+]

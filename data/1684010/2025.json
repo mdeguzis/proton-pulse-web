@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1684010",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 14.0.6, DRM 3.42, 5.15.76-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "5.15.76-1-MANJARO",
+    "notes": "Set OpenXR to SteamVR in the developer settings",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1742139059,
+    "title": "",
+    "source": "protondb"
+  }
+]

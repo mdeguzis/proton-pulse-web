@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1062830",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 470 (polaris10, LLVM 15.0.7, DRM 3.49, 6.2.9-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.9-1-MANJARO",
+    "notes": "For the most part it just works, a little slower than I'd like. Although as mentioned this is mostly a problem with the game itself.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1692422017,
+    "title": "Embr",
+    "source": "protondb"
+  }
+]

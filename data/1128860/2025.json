@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1128860",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.2, DRM 3.61, 6.14.0-29-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-29-generic",
+    "notes": "Unfortunately, the game doesn't run smoothly on native Linux. Proton has issues with HTML files for logging in. But with Bottles no problems",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1758545121,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1128860",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.8-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-273-tkg-eevdf",
+    "notes": "I've tried other solutions like GE-Proton but none worked. It seems that kron4ek-wine used via Bottles can run the game but I haven't tried that, it's too much.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1758954951,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1128860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works out of the box, native. I play with xReal AR glasses, so the small fonts didn't bother me.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1758989983,
+    "title": "",
+    "source": "protondb"
+  }
+]

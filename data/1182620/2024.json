@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1182620",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Native worked perfectly OotB",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714264225,
+    "title": "",
+    "source": "protondb"
+  }
+]

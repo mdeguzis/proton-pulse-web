@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2707940",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.11-200.fc37.x86_64",
+    "notes": "Game is still in beta and it shows. The controls is a bit difficult to handle (using an Xbox controller on a PC running fedora core 39.)",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1703776326,
+    "title": "",
+    "source": "protondb"
+  }
+]

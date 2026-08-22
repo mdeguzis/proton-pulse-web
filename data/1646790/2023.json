@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1646790",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 14.0.6, DRM 3.46, 5.18.19-3-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "5.18.19-3-MANJARO",
+    "notes": "Everything working fine, no issues.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1680502635,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "546080",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "Works absolutely fine out of the box!",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1595877901,
+    "title": "Coffin of Ashes",
+    "source": "protondb"
+  }
+]

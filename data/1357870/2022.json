@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1357870",
+    "cpu": "Intel Xeon E5-1620 0 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.4.0-123-lowlatency",
+    "notes": "",
+    "os": "Freedesktop.org 21.08.14 (Flatpak runtime) (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1659653693,
+    "title": "",
+    "source": "protondb"
+  }
+]

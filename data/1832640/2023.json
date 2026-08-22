@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1832640",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.6, DRM 3.47, 5.19.0-26-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.2 - kisak-mesa PPA",
+    "kernel": "5.19.0-26-generic",
+    "notes": "Works out of the box with Proton GE 7.46",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1674251005,
+    "title": "",
+    "source": "protondb"
+  }
+]

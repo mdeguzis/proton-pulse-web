@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "312630",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.6-113.bazzite.fc42.x86_64",
+    "notes": "",
+    "os": "Bazzite (FROM Fedora Atomic)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1756083263,
+    "title": "",
+    "source": "protondb"
+  }
+]

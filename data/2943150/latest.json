@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2943150",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "Without changing anything, the game just started a black window and had to be force closed. After changing to \"Latest Proton GE\" (Using ProtonPlus) it works butter smooth!",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1775848030,
+    "title": "",
+    "source": "protondb"
+  }
+]

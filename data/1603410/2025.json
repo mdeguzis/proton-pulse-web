@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1603410",
+    "cpu": "AMD A12-9700P RADEON R7, 10 COMPUTE CORES 4C+6G",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon R7 (radeonsi, carrizo, ACO, DRM 3.64, 6.16.9-pikaos)",
+    "gpuDriver": "4.6 Mesa 25.2.4 - PikaOS YellowBirb Mesa Stable (git-ab462ae6b7)",
+    "kernel": "6.16.9-pikaos",
+    "notes": "",
+    "os": "PikaOS 4",
+    "protonVersion": "9.0-4",
+    "ram": "11 GB",
+    "rating": "platinum",
+    "timestamp": 1759911826,
+    "title": "Lost Nova",
+    "source": "protondb"
+  }
+]

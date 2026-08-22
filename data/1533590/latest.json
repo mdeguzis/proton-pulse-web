@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1533590",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.7, DRM 3.42, 5.15.0-112-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-112-generic",
+    "notes": "When I first booted the game it gave me warnings about font loading errors. Then I went to the settings to enable full screen. After that the game crashes and now it crashes immediately after starting.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1719660609,
+    "title": "Three Fairies' Hoppin' Flappin' Great Journey!",
+    "source": "protondb"
+  }
+]

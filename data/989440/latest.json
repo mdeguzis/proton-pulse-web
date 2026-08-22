@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "989440",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc A770M (DG2)",
+    "gpuDriver": "4.6 Mesa 23.3.3",
+    "kernel": "6.7.0-204.fsync.fc39.x86_64",
+    "notes": "playing on Intel ARC770 on Nobara Linux. did work out of the box for me",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1706224838,
+    "title": "",
+    "source": "protondb"
+  }
+]

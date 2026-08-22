@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1262240",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.8-2-MANJARO",
+    "notes": "Anti-Cheat is not working",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1611264685,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1262240",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.4.0-81-generic",
+    "notes": "Easy Anti Cheat failed to start",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1630627483,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1262240",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.11.0-43-generic",
+    "notes": "Anticheat",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640809706,
+    "title": "",
+    "source": "protondb"
+  }
+]

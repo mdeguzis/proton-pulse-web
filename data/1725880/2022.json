@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1725880",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.4.0-97-generic",
+    "notes": "Only runs with Proton GE",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1644078276,
+    "title": "",
+    "source": "protondb"
+  }
+]

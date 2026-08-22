@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2758540",
+    "cpu": "Intel Core i7-8086K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.8-arch1-1",
+    "notes": "Crashed at start",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1705988380,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2758540",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 (radeonsi, navi10, LLVM 16.0.6, DRM 3.56, 6.7.0-arch3-1)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-arch3-1",
+    "notes": "\u6ca1\u4e8b\uff0c\u8fd8\u6709\u7f51\u9875\u7248\u5bf9\u5427(\u81ea\u6211\u50ac\u7720)",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1706043501,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2758540",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD HAINAN (LLVM 13.0.1, DRM 2.50, 5.15.0-47-generic)",
+    "gpuDriver": "4.5 Mesa 22.0.5",
+    "kernel": "5.15.0-47-generic",
+    "notes": "No window opens.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1706126713,
+    "title": "",
+    "source": "protondb"
+  }
+]

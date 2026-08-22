@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2783360",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.12-201.fc44.x86_64",
+    "notes": "It's a mobile game ported for PC",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1782318631,
+    "title": "Age of Empires Mobile: PC Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2783360",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.12-201.fc44.x86_64",
+    "notes": "Sometimes it works with one version and sometimes with the other.",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1782336736,
+    "title": "Age of Empires Mobile: PC Edition",
+    "source": "protondb"
+  }
+]

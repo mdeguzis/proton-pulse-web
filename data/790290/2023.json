@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "790290",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-84-generic",
+    "notes": "When I start the game that game won't open in proton experimental",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1695983798,
+    "title": "",
+    "source": "protondb"
+  }
+]

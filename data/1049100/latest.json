@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1049100",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA Quadro P620",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-21-generic",
+    "notes": "Need a \"older\" `WINEPREFIX` and a \"newer\" proton combined",
+    "os": "Ubuntu 21.10\uff0864 \u4f4d\uff09",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1637942059,
+    "title": "\u6ce1\u6cab\u51ac\u666f",
+    "source": "protondb"
+  }
+]

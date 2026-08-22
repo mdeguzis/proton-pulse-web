@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "248310",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.63, 6.15.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.15.9-arch1-1",
+    "notes": "game works if you switch to beta branch, meaning the issue has been fixed, but not pushed in an official release version",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "96 GB",
+    "rating": "borked",
+    "timestamp": 1756350708,
+    "title": "",
+    "source": "protondb"
+  }
+]

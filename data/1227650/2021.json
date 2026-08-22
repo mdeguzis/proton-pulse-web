@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1227650",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "The major problem are the lag spike that happen randomly.\n\nAside from that, the game run fine.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1615190726,
+    "title": "Bang-On Balls: Chronicles",
+    "source": "protondb"
+  },
+  {
+    "appId": "1227650",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.11.16-xanmod1-cacule-1-cacule",
+    "notes": "Works good",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1619472025,
+    "title": "Bang-On Balls: Chronicles",
+    "source": "protondb"
+  },
+  {
+    "appId": "1227650",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.42.01",
+    "kernel": "5.10.49-1-MANJARO",
+    "notes": "Works perfectly out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640559266,
+    "title": "Bang-On Balls: Chronicles",
+    "source": "protondb"
+  }
+]

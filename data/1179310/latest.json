@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1179310",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 18.1.8, DRM 3.59, 6.11.9-200.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.0",
+    "kernel": "6.11.9-200.fsync.fc40.x86_64",
+    "notes": "Tested with Proton-9, Proton Experimental and ProtonGE-9.26",
+    "os": "Nobara release 40 (Forty)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1741953993,
+    "title": "",
+    "source": "protondb"
+  }
+]

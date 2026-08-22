@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2022180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works perfectly out of the box. No tinkering needed!",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673379844,
+    "title": "Miss Neko 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "2022180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1673832855,
+    "title": "Miss Neko 3",
+    "source": "protondb"
+  },
+  {
+    "appId": "2022180",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.0, DRM 3.48, 6.0.10-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.10-300.fc37.x86_64",
+    "notes": "Works perfectly",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1681330718,
+    "title": "Miss Neko 3",
+    "source": "protondb"
+  }
+]

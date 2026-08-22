@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2356810",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.7, DRM 3.42, 5.15.0-102-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-102-generic",
+    "notes": "O jogo abre e funciona normalmente sem qualquer configura\u00e7\u00e3o adicional.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-2",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1719100609,
+    "title": "Tales Of Shadowland",
+    "source": "protondb"
+  }
+]

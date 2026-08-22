@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2004960",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.2 (git-15c8aeef1d)",
+    "kernel": "5.11.0-43-generic",
+    "notes": "",
+    "os": "Freedesktop.org 21.08.4 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1732119566,
+    "title": "Slam and Roll",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2209440",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "\u53ef\u4ee5\u67e5\u770b\u8bbe\u7f6e\uff08\u64cd\u4f5c\u8bf4\u660e\uff09\u3001\u5207\u6362\u6216\u79fb\u52a8\u89c6\u89d2\uff0c\u4f46\u8fde\u63a5\u670d\u52a1\u5668\u540e\u8fd8\u662f\u65e0\u6cd5\u70b9\u4eae\u76d1\u89c6\u5668\uff0c\u70b9\u51fb\u63d0\u793a\u4e5f\u53ea\u4f1a\u5f39\u51fa\u7a7a\u6c14\u6ce1",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)\uff0864 \u4f4d\uff09",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1680282097,
+    "title": "",
+    "source": "protondb"
+  }
+]

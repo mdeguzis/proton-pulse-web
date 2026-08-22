@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1189060",
+    "cpu": "Intel Core i5-8365U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.11.5-1-default",
+    "notes": "Could not start up the game. A little window popped up, but then the game crashed instantly after.",
+    "os": "openSUSE",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1730070848,
+    "title": "",
+    "source": "protondb"
+  }
+]

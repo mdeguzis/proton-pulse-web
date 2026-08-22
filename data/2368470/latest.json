@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2368470",
+    "cpu": "Intel Core i7-14650HX",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.8.0-87-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1763065673,
+    "title": "An Arcade Full of Cats",
+    "source": "protondb"
+  },
+  {
+    "appId": "2368470",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.44, 5.17.5-76051705-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "All good",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764579401,
+    "title": "An Arcade Full of Cats",
+    "source": "protondb"
+  }
+]

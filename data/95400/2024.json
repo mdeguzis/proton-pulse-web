@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "95400",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-38-generic",
+    "notes": "Almost Native",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1721568368,
+    "title": "ibb & obb",
+    "source": "protondb"
+  }
+]

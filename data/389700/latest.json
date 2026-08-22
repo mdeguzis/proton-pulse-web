@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "389700",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 17.0.6, DRM 3.57, 6.9.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.1",
+    "kernel": "6.9.6-arch1-1",
+    "notes": "Game just doesn't start, nothing shows up no matter what.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1720720353,
+    "title": "My Bones",
+    "source": "protondb"
+  }
+]

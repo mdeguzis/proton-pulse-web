@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1296560",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.18-xanmod1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3 - kisak-mesa PPA",
+    "kernel": "5.11.18-xanmod1",
+    "notes": "The game boots to a black screen",
+    "os": "Zorin OS 15.3",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1620933461,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1296560",
+    "cpu": "AMD Ryzen 3 PRO 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.40.0, 5.11.0-7620-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1626549313,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1296560",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-41-generic",
+    "notes": "Game runs great, with no noticeable issues with performance or graphics.",
+    "os": "Sussy Baka OS",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1639239133,
+    "title": "",
+    "source": "protondb"
+  }
+]

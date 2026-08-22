@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "797400",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.3linux-debug",
+    "notes": "Runs perfectly for me.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1634845575,
+    "title": "Railroad Corporation",
+    "source": "protondb"
+  }
+]

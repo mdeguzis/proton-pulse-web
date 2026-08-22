@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "485900",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-38-generic",
+    "notes": "Need to install Microsoft Media Feature Pack",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1721319785,
+    "title": "",
+    "source": "protondb"
+  }
+]

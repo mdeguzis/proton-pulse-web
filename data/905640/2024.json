@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "905640",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Initial boot with Proton 4 and then switch to 8. Changed controller settings. Runs well. Best played with M&K.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1721521803,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "905640",
+    "cpu": "Intel Xeon E5-2689 0 @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 18.1.8, DRM 3.57, 6.10.6-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.1.6-arch1.1",
+    "kernel": "6.10.6-zen1-1-zen",
+    "notes": "Used the same method as the classic one, changed to an old proton version (4.11) and after the error go back to the recent proton to make nprotect install, in this case the game opens on a black screen and not even using \"PROTON_USE_WINED3D=1\" can fix it, so it's borked for me.",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "4.11-13",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1727381506,
+    "title": "",
+    "source": "protondb"
+  }
+]

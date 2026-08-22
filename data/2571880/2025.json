@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2571880",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.6, DRM 3.63, 6.15.4-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.2",
+    "kernel": "6.15.4-zen2-1-zen",
+    "notes": "The game runs EPIC On linux!!! (it runs out of les box via proton)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1752683532,
+    "title": "",
+    "source": "protondb"
+  }
+]

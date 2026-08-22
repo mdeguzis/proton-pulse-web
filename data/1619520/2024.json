@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1619520",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 680MX",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.8.0-48-generic",
+    "notes": "I initially tried running the game with Proton 7.0-6. The game refused to open. I then attemped to run the game using newer versions of Proton (versions  8.0-5, 9.0-3, and Experimental) with \"PROTON_USE_WINED3D=1 %command%\" in the Launch Options. The game then opened but just shown a black screen with only the mouse cursor changed to the in game one.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1731361997,
+    "title": "",
+    "source": "protondb"
+  }
+]

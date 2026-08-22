@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "529060",
+    "cpu": "Intel Core i5-4440 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.18.0-25-generic",
+    "notes": "Menu works, game crashed with a log report after trying to launch into a mission.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-8",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1574217934,
+    "title": "Space Simulator",
+    "source": "protondb"
+  }
+]

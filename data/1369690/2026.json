@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1369690",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.6-76060406-generic",
+    "notes": "Works fine as long as you dont alt-tab",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1773629342,
+    "title": "",
+    "source": "protondb"
+  }
+]

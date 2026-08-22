@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "707320",
+    "cpu": "Intel Xeon E5-2620 v3 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 730",
+    "gpuDriver": "NVIDIA 390.151",
+    "kernel": "5.15.41-desktop-1.mga8",
+    "notes": "Works fine even without Vulkan. Likely to work on newer Proton versions.",
+    "os": "Mageia 8",
+    "protonVersion": "4.2-9",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1653987001,
+    "title": "Keatz: The Lonely Bird",
+    "source": "protondb"
+  }
+]

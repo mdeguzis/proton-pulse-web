@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1090630",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.11.22-2-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.2",
+    "kernel": "5.11.22-2-MANJARO",
+    "notes": "work fine in every aspect beside the opening movie.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1623992142,
+    "title": "",
+    "source": "protondb"
+  }
+]

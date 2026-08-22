@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1530140",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.9-arch1-1",
+    "notes": "Game starts unresponsive with a black screen and cannot go further.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1657370751,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3301740",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.12-200.fc43.x86_64",
+    "notes": "Overall the \"game\" runs perfectly fine.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1776935268,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3863600",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.17.0-23-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-23-generic",
+    "notes": "Doesn't run. Just flashes a black screen for half a second. Tried with multiple Proton versions including GE.",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1778407246,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3863600",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.6",
+    "kernel": "6.18.6-2-cachyos",
+    "notes": "Game will not launch with default installation. Tried dgVoodoo2 with launch options, no luck.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1778435594,
+    "title": "",
+    "source": "protondb"
+  }
+]

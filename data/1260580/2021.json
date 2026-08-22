@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1260580",
+    "cpu": "Intel Core i7         970  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Game runs, but lags to much to play",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1637568453,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2076850",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 14.0.6, DRM 3.48, 6.0.1-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.1-zen2-1-zen",
+    "notes": "Works fine",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1667598921,
+    "title": "",
+    "source": "protondb"
+  }
+]

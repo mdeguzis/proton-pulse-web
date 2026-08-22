@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "856890",
+    "cpu": "Intel Core i9-10900 @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.12.15-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "Fantastic game that plays perfectly on desktop and Steam Deck without tweaks",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1681736411,
+    "title": "",
+    "source": "protondb"
+  }
+]

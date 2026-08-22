@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3016090",
+    "cpu": "12th Gen Intel Core i9-12900H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-38-generic",
+    "notes": "Tried Proton 7.0, 8.0, 9.0 and Experimental, all unsuccessful",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1721748266,
+    "title": "Eternal Escape: castle of shadows",
+    "source": "protondb"
+  }
+]

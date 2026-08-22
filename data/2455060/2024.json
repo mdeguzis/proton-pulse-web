@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2455060",
+    "cpu": "AMD Ryzen 7 PRO 2700 Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.7, DRM 3.48, 6.0.9-060009-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "6.0.9-060009-generic",
+    "notes": "The game works perfectly with GE-Proton",
+    "os": "Ubuntu 22.04.3 LTS (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1705725429,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2455060",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 16.0.6, DRM 3.54, 6.6.25-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.0.2-manjaro1.1",
+    "kernel": "6.6.25-1-MANJARO",
+    "notes": "Runs perfectly fine",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1713237075,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2455060",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1734337788,
+    "title": "",
+    "source": "protondb"
+  }
+]

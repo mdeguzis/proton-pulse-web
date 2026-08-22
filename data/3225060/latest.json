@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3225060",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.19.8-1-cachyos",
+    "notes": "Works out of the box",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32GB 5600MHz",
+    "rating": "platinum",
+    "timestamp": 1774381740,
+    "title": "",
+    "source": "protondb"
+  }
+]

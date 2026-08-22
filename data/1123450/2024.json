@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1123450",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1716526422,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123450",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (radeonsi, polaris10, LLVM 16.0.6, DRM 3.54, 6.6.8-arch1-1)",
+    "gpuDriver": "amdgpu",
+    "kernel": "6.6.8-arch1-1",
+    "notes": "Worked out of the box perfectly.",
+    "os": "ArcoLinux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1726428143,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1123450",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.8.0-48-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1731534913,
+    "title": "",
+    "source": "protondb"
+  }
+]

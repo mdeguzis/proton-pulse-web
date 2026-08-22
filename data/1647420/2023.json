@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1647420",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.6-arch1-1",
+    "notes": "Runs great out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1686376072,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1647420",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.31-2-MANJARO",
+    "notes": "Worked as if I was playing the game on windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1689484201,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1647420",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.2.0-33-generic",
+    "notes": "Works correctly with no issues at all.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1701187584,
+    "title": "",
+    "source": "protondb"
+  }
+]

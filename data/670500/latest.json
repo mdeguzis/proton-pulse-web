@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "670500",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.4-arch1-1",
+    "notes": "Opens to compatibility error",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1643762801,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "670500",
+    "cpu": "DG1002FGF84HT",
+    "duration": "unreported",
+    "gpu": "AMD Liverpool (PS4) (LIVERPOOL, DRM 3.19.0, 4.14.93-g538e75632e3b-dirty, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel",
+    "kernel": "4.14.93-g538e75632e3b-dirty",
+    "notes": "",
+    "os": "Linux 4.14",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1644021839,
+    "title": "",
+    "source": "protondb"
+  }
+]

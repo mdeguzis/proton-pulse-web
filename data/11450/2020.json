@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "11450",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6.13568 Compatibility Profile Context",
+    "kernel": "5.3.0-59-generic",
+    "notes": "Aside from the control bug that happens sometimes, it runs fine and is playable.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1593824481,
+    "title": "Overlord\u2122",
+    "source": "protondb"
+  }
+]

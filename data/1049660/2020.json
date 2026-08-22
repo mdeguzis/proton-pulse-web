@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1049660",
+    "cpu": "Intel Pentium Silver N5000 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 605 (GLK 3)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1600212031,
+    "title": "stein.world",
+    "source": "protondb"
+  }
+]

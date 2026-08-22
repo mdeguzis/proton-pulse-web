@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "947890",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.14-arch1-1",
+    "notes": "It won't start.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1590565228,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "947890",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.14-arch1-1",
+    "notes": "It will not be launched in Proton in the future.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1590595547,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "947890",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.11-arch2-1",
+    "notes": "Won't start",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1609065084,
+    "title": "",
+    "source": "protondb"
+  }
+]

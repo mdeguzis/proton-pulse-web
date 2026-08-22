@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1200570",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 22.2.5-0ubuntu0.1~22.04.3",
+    "kernel": "5.15.0-75-generic",
+    "notes": "Works nicely on my system.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688075051,
+    "title": "",
+    "source": "protondb"
+  }
+]

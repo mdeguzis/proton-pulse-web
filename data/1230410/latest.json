@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1230410",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.0-47-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.2",
+    "kernel": "6.8.0-47-generic",
+    "notes": "Game runs perfectly",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1730552335,
+    "title": "",
+    "source": "protondb"
+  }
+]

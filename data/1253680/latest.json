@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1253680",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.0-38-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-38-generic",
+    "notes": "No issues. same performance as windows.",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1721861703,
+    "title": "",
+    "source": "protondb"
+  }
+]

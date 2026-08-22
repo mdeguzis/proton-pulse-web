@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1500740",
+    "cpu": "13th Gen Intel Core i7-13700H",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-zen2-1-zen",
+    "notes": "Works fine out of the box",
+    "os": "Garuda Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1744665490,
+    "title": "",
+    "source": "protondb"
+  }
+]

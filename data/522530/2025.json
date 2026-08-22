@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "522530",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.7-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.5 (git-7737614720)",
+    "kernel": "6.8.7-300.fc40.x86_64",
+    "notes": "Runs very fast on high refresh rate monitors. Use launch option to fix.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1736405211,
+    "title": "Revenant Saga",
+    "source": "protondb"
+  }
+]

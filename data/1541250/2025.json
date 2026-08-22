@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1541250",
+    "cpu": "13th Gen Intel Core i5-13450HX",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "gpuDriver": "NVIDIA 550.163.01",
+    "kernel": "6.8.0-64-generic",
+    "notes": "It workes perfectly fine for Linux, didn't have to do anything.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1753319737,
+    "title": "Super Raft Boat Classic",
+    "source": "protondb"
+  }
+]

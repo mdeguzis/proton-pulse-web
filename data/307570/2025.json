@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "307570",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-7-generic",
+    "notes": "The game is fully playable and runs fine, but mouse movement is extremely delayed. Not a great experience.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1764395711,
+    "title": "",
+    "source": "protondb"
+  }
+]

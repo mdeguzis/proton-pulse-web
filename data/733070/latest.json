@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "733070",
+    "cpu": "11th Gen Intel Core i7-11370H @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "RTX 3060 (Mesa llvmpipe)",
+    "gpuDriver": "575.64.03 (4.5 Mesa 25.1.5-arch1.1)",
+    "kernel": "6.15.6-arch1-1",
+    "notes": "Does not work",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1752350627,
+    "title": "",
+    "source": "protondb"
+  }
+]

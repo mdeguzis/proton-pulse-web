@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1864190",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-84-generic",
+    "notes": "O jogo funciona normalmente, sem mudan\u00e7as de Proton ou Op\u00e7\u00f5es de Inicializa\u00e7\u00e3o.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1709406655,
+    "title": "",
+    "source": "protondb"
+  }
+]

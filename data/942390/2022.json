@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "942390",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.44.0, 5.16.12-246-tkg-bmq, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.12-246-tkg-bmq",
+    "notes": "Opened a bug report at Valve's bugtracker https://github.com/ValveSoftware/Proton/issues/6413",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1671999598,
+    "title": "Captain ToonHead vs the Punks from Outer Space",
+    "source": "protondb"
+  }
+]

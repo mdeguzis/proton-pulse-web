@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2352050",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.2-zen1-1-zen",
+    "notes": "The game menu is reactive in the first few seconds after the game starts, then frozen forever and nonreactive to any input including window close.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1760550474,
+    "title": "SECTOR ZERO",
+    "source": "protondb"
+  }
+]

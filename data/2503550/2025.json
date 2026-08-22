@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2503550",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.12.28-1-lts)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.12.28-1-lts",
+    "notes": "works perfectly, audio issue only happens with specific hardware.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1758584863,
+    "title": "",
+    "source": "protondb"
+  }
+]

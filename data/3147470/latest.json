@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3147470",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc A750 (DG2)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.1",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Same as RoA2. Probably same UE4 bug",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1730604756,
+    "title": "",
+    "source": "protondb"
+  }
+]

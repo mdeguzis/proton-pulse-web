@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "257690",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "Native Linux-Version startet nicht, Windows-Version mit Proton ohne Probleme",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1584480081,
+    "title": "",
+    "source": "protondb"
+  }
+]

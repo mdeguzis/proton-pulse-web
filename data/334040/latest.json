@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "334040",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.10.69-1-lts",
+    "notes": "Game freezes in main menu",
+    "os": "Arch Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1633717157,
+    "title": "",
+    "source": "protondb"
+  }
+]

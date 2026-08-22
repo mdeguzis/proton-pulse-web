@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1557480",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.14-209-tkg-pds",
+    "notes": "Opens up, crashes after Login",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637422949,
+    "title": "",
+    "source": "protondb"
+  }
+]

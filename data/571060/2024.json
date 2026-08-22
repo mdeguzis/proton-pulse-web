@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "571060",
+    "cpu": "12th Gen Intel Core i5-12500",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.0-9-generic",
+    "notes": "Works great with ScummVM via Luxtorpeda",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1735169736,
+    "title": "Zork Nemesis: The Forbidden Lands",
+    "source": "protondb"
+  }
+]

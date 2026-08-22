@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2403830",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro RTX 4000",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.6-arch1-1",
+    "notes": "Game lauches, but crashes as soon as when loading in after starting the campaign",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1752930703,
+    "title": "",
+    "source": "protondb"
+  }
+]

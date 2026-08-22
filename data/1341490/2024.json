@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1341490",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.7-zen1-2-zen)",
+    "gpuDriver": "4.6 Mesa 24.0.6-arch1.1",
+    "kernel": "6.8.7-zen1-2-zen",
+    "notes": "From a short amount of testing, the game appears to work well.",
+    "os": "Artix Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714854529,
+    "title": "",
+    "source": "protondb"
+  }
+]

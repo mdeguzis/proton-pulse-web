@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1987120",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.11-300.fc36.x86_64",
+    "notes": "Game ran perfectly, same as Windows.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1654056058,
+    "title": "",
+    "source": "protondb"
+  }
+]

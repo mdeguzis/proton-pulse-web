@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1798020",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.216.01",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "Had to use GE-Proton to launch the game, standard proton versions (including hotfix & experimental) had the game crash on startup",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1747005874,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1798020",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.6, DRM 3.61, 6.14.6-109.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.14.6-109.bazzite.fc42.x86_64",
+    "notes": "the translation revision mod for BN4 does make it a lot more readable (its official translation is infamously bad)",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1751553086,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1798020",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.5, DRM 3.59, 6.12.12-207.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.3",
+    "kernel": "6.12.12-207.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "47 GB",
+    "rating": "gold",
+    "timestamp": 1763484489,
+    "title": "",
+    "source": "protondb"
+  }
+]

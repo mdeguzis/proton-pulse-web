@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4541690",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1779236698,
+    "title": "Disillusion",
+    "source": "protondb"
+  }
+]

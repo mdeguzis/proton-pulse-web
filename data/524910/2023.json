@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "524910",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "Works perfectly",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1677189009,
+    "title": "Hidden Through Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "524910",
+    "cpu": "11th Gen Intel Core i7-11700KF @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.4.0-273-tkg-bore",
+    "notes": "Works great!",
+    "os": "Arch Linux (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688736663,
+    "title": "Hidden Through Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "524910",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.6.4-100.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.6.4-100.fc38.x86_64",
+    "notes": "It works",
+    "os": "Fedora Linux 38 (Thirty Eight) (64bit)",
+    "protonVersion": "8.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1702163271,
+    "title": "Hidden Through Time",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2793460",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.1, DRM 3.57, 6.8.9-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.7",
+    "kernel": "6.8.9-300.fc40.x86_64",
+    "notes": "It's just a mobile port with auto-play, so play only if you like such things.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1719606693,
+    "title": "",
+    "source": "protondb"
+  }
+]

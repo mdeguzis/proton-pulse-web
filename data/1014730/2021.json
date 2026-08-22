@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1014730",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.11.13-zen1-1-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.11.13-zen1-1-zen",
+    "notes": "Runs flawless but very raw on performance demands.",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1618816776,
+    "title": "",
+    "source": "protondb"
+  }
+]

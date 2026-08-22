@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "553880",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.17.0-2-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.17.0-2-MANJARO",
+    "notes": "The game launch, I briefly see wands controllers, and then it crashes.",
+    "os": "Manjaro Linux (64\u00a0bits)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646425111,
+    "title": "Archangel: Hellfire - Enlist FREE",
+    "source": "protondb"
+  },
+  {
+    "appId": "553880",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "A main menu appears but the controller and touchscreen do nothing.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1659102881,
+    "title": "Archangel: Hellfire - Enlist FREE",
+    "source": "protondb"
+  }
+]

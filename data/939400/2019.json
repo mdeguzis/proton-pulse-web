@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "939400",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.1",
+    "kernel": "5.3.7-1-default",
+    "notes": "Run perfectly with defaults",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "4.11-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1572533799,
+    "title": "LoveChoice",
+    "source": "protondb"
+  }
+]

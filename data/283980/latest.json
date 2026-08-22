@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "283980",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Lancement natif",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1771697178,
+    "title": "",
+    "source": "protondb"
+  }
+]

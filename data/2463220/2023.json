@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2463220",
+    "cpu": "Intel Core i5-4590T @ 2.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-88-generic",
+    "notes": "Works as expected on Proton 7.0-6",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1701320560,
+    "title": "Lone Fungus: Melody of Spores",
+    "source": "protondb"
+  }
+]

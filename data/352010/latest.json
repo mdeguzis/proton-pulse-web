@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "352010",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.24-1-MANJARO",
+    "notes": "Used to be native on Linux. Run perfectly via proton through",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1588781683,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "352010",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.44-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593138464,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "352010",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.4-arch1-1",
+    "notes": "Funciona perfectamente.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1593605093,
+    "title": "",
+    "source": "protondb"
+  }
+]

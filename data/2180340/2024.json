@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2180340",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 550.107.02",
+    "kernel": "6.1.0-23-amd64",
+    "notes": "Game stutter after a while",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1723571678,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "625740",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.5-arch1-1",
+    "notes": "Linux native works, Proton does not.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593998112,
+    "title": "",
+    "source": "protondb"
+  }
+]

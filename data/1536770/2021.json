@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1536770",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.40.0, 5.12.17-xanmod1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4 - kisak-mesa PPA",
+    "kernel": "5.12.17-xanmod1",
+    "notes": "some terminal window pops up, prints something and closes too fast to read of screenshot anything",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1633042929,
+    "title": "Learn Programming: Python - Retro",
+    "source": "protondb"
+  },
+  {
+    "appId": "1536770",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.16-arch1-1",
+    "notes": "Was able to install the game but it does not launch.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636250844,
+    "title": "Learn Programming: Python - Retro",
+    "source": "protondb"
+  }
+]

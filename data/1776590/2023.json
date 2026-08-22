@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1776590",
+    "cpu": "AMD Ryzen 3 1200 Quad-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa AMD JUNIPER (DRM 2.50.0 / 6.1.0-13-amd64, LLVM 16.0.6)",
+    "gpuDriver": "4.5 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.1.0-13-amd64",
+    "notes": "The game don't run. I didn't test any lauch options",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1698496131,
+    "title": "",
+    "source": "protondb"
+  }
+]

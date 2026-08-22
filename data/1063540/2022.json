@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1063540",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.6-76060006-generic",
+    "notes": "Same error with Proton 7 (not GE)",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1670638399,
+    "title": "Space Wreck",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2553710",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 23.2.0-rc3",
+    "kernel": "6.1.41-gentoo-dist",
+    "notes": "Playable with Proton 7.0-6, but doesn't look very good and you have to skip the opening cinematic or else it crashes.",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-6",
+    "ram": "11 GB",
+    "rating": "borked",
+    "timestamp": 1696362782,
+    "title": "",
+    "source": "protondb"
+  }
+]

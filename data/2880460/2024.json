@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2880460",
+    "cpu": "Intel Core i3-1005G1 @ 1.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 24.2.6-arch1.1",
+    "kernel": "6.6.60-1-lts",
+    "notes": "trying to get it to start, anyway, no way, just a window that says \"Fatal error!\" comes up.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1731917453,
+    "title": "Terroro",
+    "source": "protondb"
+  }
+]

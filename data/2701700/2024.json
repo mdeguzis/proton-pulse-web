@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2701700",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Working so far out of the box.\nLeft click seams to be borked, have to test further to verify.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1733181590,
+    "title": "",
+    "source": "protondb"
+  }
+]

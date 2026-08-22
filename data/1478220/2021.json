@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1478220",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN (DRM 3.35.0, 5.4.0-58-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1 - kisak-mesa PPA",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Ran out of the box with no issues",
+    "os": "KDE neon User Edition 5.20 (64\u00a0bits)",
+    "protonVersion": "5.13-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1609970184,
+    "title": "Puzzle Together Multiplayer Jigsaw Puzzles",
+    "source": "protondb"
+  },
+  {
+    "appId": "1478220",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-59-generic",
+    "notes": "A very good game of puzzle with friends",
+    "os": "Ubuntu 20.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "6.3-5",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1625680483,
+    "title": "Puzzle Together Multiplayer Jigsaw Puzzles",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3564260",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 21.1.5, DRM 3.64, 6.18.3-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.3-200.fc43.x86_64",
+    "notes": "Runs out of the box - no issues",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768036122,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3564260",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 590.44.01",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768247784,
+    "title": "",
+    "source": "protondb"
+  }
+]

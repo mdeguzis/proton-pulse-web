@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4112420",
+    "cpu": "<superuser required>",
+    "duration": "oneToFourHours",
+    "gpu": "wayland",
+    "gpuDriver": "1.4",
+    "kernel": "3649",
+    "notes": "Simply need to choose the right Proton (newest GE probably) and it's plug and play",
+    "os": "enabled",
+    "protonVersion": "10.0-3",
+    "ram": "0 GB",
+    "rating": "platinum",
+    "timestamp": 1766933193,
+    "title": "",
+    "source": "protondb"
+  }
+]

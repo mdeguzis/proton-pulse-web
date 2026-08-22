@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1332720",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.13.5-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1741442395,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1332720",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.61, 6.12.48-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "Works but Resolution is quite bugged",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1760371982,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1332720",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-84-generic",
+    "notes": "Works without problems",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1761767880,
+    "title": "",
+    "source": "protondb"
+  }
+]

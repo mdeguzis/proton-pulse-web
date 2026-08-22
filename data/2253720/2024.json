@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2253720",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 15.0.6, DRM 3.56, 6.1.0-18-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "doesnt start, neither native nor experimental or other proton versions",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1710115154,
+    "title": "Sim Companies",
+    "source": "protondb"
+  }
+]

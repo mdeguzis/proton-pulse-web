@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1137110",
+    "cpu": "AMD Ryzen 3 1300X Quad-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-51-lowlatency",
+    "notes": "Works fine out of the box, no need to tinker with it!",
+    "os": "Freedesktop.org 19.08.9 (Flatpak runtime)",
+    "protonVersion": "5.0-7",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1588382296,
+    "title": "",
+    "source": "protondb"
+  }
+]

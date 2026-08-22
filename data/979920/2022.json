@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "979920",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.8 (git-813ee839be)",
+    "kernel": "5.16.17-1-t2",
+    "notes": "The web version is fine. Looking at the gamefiles, it seems to just be electron/chrome, so I'd expect it wouldn't be too hard for the devs to build for native linux.",
+    "os": "Freedesktop.org 21.08.12 (Flatpak runtime)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1650698320,
+    "title": "",
+    "source": "protondb"
+  }
+]

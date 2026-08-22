@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2738680",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 14.0.6, DRM 3.42, 5.15.86)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "5.15.86",
+    "notes": "Won't load the songs",
+    "os": "NixOS 22.11 (Raccoon)",
+    "protonVersion": "9.0-2",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1724763771,
+    "title": "Bass Invaders",
+    "source": "protondb"
+  }
+]

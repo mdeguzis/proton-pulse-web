@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "508760",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 14.0.6, DRM 3.48, 6.0.1-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.1-zen2-1-zen",
+    "notes": "It works with some strange quirks, unknown if this is a proton problem or a game issue",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1668036950,
+    "title": "",
+    "source": "protondb"
+  }
+]

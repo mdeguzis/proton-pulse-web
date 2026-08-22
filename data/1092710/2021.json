@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1092710",
+    "cpu": "Intel Xeon           X5675  @ 3.07GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon HD8800 (PITCAIRN, DRM 3.40.0, 5.10.12-artix1-1, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.12-artix1-1",
+    "notes": "Doesn't work at all. Doesn't launch at all.",
+    "os": "Artix Linux",
+    "protonVersion": "5.13-5",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1612612015,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1092710",
+    "cpu": "Intel Core i3-1005G1 @ 1.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel UHD (ICL GT1)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-87-generic",
+    "notes": "It can open and run, there are a couple of problems such as the game crashing on higher graphics or crashing every 30 minutes.",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1634584489,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1092710",
+    "cpu": "AMD Athlon 3000G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 560 (POLARIS11, DRM 3.35.0, 5.4.0-89-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-89-generic",
+    "notes": "This is  a bad game if you have a kid",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1636553429,
+    "title": "",
+    "source": "protondb"
+  }
+]

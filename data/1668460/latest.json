@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1668460",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 18.1.1, DRM 3.57, 6.8.10-301.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.8",
+    "kernel": "6.8.10-301.fsync.fc40.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 40.20240528.0 (Bazzite GNOME)",
+    "protonVersion": "9.0-4",
+    "ram": "13 GB",
+    "rating": "gold",
+    "timestamp": 1735878232,
+    "title": "The Fancy Pants Adventures: Classic Pack",
+    "source": "protondb"
+  }
+]

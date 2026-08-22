@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2902720",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.2, DRM 3.57, 6.8.3-pikaos)",
+    "gpuDriver": "4.6 Mesa 24.0.4 - PikaOS YellowBirb Mesa Stable (git-bb6a55b75b)",
+    "kernel": "6.8.3-pikaos",
+    "notes": "",
+    "os": "PikaOS Linux 3",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1727640148,
+    "title": "",
+    "source": "protondb"
+  }
+]

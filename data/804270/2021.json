@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "804270",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.0-1-amd64",
+    "notes": "Performance is just way too bad to be playable. In the end my kids asked for \"The old Chex Quest\".",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612462316,
+    "title": "Chex Quest HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "804270",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.12.11-300.fc34.x86_64",
+    "notes": "",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-4",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1624213375,
+    "title": "Chex Quest HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "804270",
+    "cpu": "AMD Phenom II X6 1090T",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R7 360/R9 270",
+    "gpuDriver": "4.5 Mesa 21.1.5",
+    "kernel": "5.10.42-1-MANJARO",
+    "notes": "Yes, I guess if you had enough of a powerful GPU, but...",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1628533049,
+    "title": "Chex Quest HD",
+    "source": "protondb"
+  }
+]

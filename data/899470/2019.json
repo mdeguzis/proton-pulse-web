@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "899470",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Opening logos display and custom mouse cursor is visible, but afterwards there's just a black screen with no way to proceed.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1572628310,
+    "title": "",
+    "source": "protondb"
+  }
+]

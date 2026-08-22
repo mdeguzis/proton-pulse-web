@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1098100",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 418.43",
+    "kernel": "5.0.0-acs-patch",
+    "notes": "Works right out of the box",
+    "os": "Ubuntu 18.10",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1577123378,
+    "title": "",
+    "source": "protondb"
+  }
+]

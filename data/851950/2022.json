@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "851950",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.17-201.fsync.fc36.x86_64",
+    "notes": "Works fine on Nobara with Proton 7.0-4",
+    "os": "Nobara Linux 36 (Thirty Six)",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1660693775,
+    "title": "",
+    "source": "protondb"
+  }
+]

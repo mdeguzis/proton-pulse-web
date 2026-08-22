@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1140620",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.62-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611204711,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1140620",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.10.8-200.fc33.x86_64, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.3",
+    "kernel": "5.10.8-200.fc33.x86_64",
+    "notes": "",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1611354687,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1140620",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.38.0, 5.8.0-3-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.8.0-3-amd64",
+    "notes": "The game is running smoothly, at least on my hardware, and worked very good when playing single player. The multiplayer didn't work at all.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1626526961,
+    "title": "",
+    "source": "protondb"
+  }
+]

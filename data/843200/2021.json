@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "843200",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.14.16-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.14.16-arch1-1",
+    "notes": "Terminates immediately",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636702839,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "843200",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.13-arch1-1",
+    "notes": "Game crashes immediately when starting",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636753448,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2652750",
+    "cpu": "Intel Core i7-7500U @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.5-arch1.1",
+    "kernel": "6.8.5-arch1-1",
+    "notes": "El juego se descarga pero al intentar abrir da error fatal",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1713136335,
+    "title": "",
+    "source": "protondb"
+  }
+]

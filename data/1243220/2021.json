@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1243220",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.62.02",
+    "kernel": "5.14.8-203-tkg-bmq",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1638011292,
+    "title": "",
+    "source": "protondb"
+  }
+]

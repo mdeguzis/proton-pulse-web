@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1126420",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.3 - kisak-mesa PPA",
+    "kernel": "5.4.0-21-generic",
+    "notes": "I tried the Demo. It fails to start with mesage: \"cannot load library nw_elf.dll\"",
+    "os": "Ubuntu Focal Fossa (development branch)",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1587164074,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1126420",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-28-generic",
+    "notes": "I tried the Demo. It fails to start with mesage: \"cannot load library nw_elf.dll\"",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1588273240,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1126420",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.2 - kisak-mesa PPA",
+    "kernel": "5.4.0-55-generic",
+    "notes": "Runs very well with latest Proton 5.13-2.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605876666,
+    "title": "",
+    "source": "protondb"
+  }
+]

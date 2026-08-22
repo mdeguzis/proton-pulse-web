@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1029210",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.4-152.current",
+    "notes": "Demo ran to main menu, but crashed after choosing the first level",
+    "os": "Solus",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592343622,
+    "title": "",
+    "source": "protondb"
+  }
+]

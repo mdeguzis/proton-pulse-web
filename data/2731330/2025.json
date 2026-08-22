@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2731330",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.6, DRM 3.61, 6.12.22+bpo-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.12.22+bpo-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1748775162,
+    "title": "TROLEU",
+    "source": "protondb"
+  },
+  {
+    "appId": "2731330",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.6, DRM 3.61, 6.12.22+bpo-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.12.22+bpo-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1748775853,
+    "title": "TROLEU",
+    "source": "protondb"
+  },
+  {
+    "appId": "2731330",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.1",
+    "kernel": "6.16.10-arch1-1",
+    "notes": "Works out of the box!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759768582,
+    "title": "TROLEU",
+    "source": "protondb"
+  }
+]

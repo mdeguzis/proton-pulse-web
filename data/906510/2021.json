@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "906510",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.12.12-300.fc34.x86_64, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4 (git-ac105a8e6e)",
+    "kernel": "5.12.12-300.fc34.x86_64",
+    "notes": "Game doesn't start",
+    "os": "Freedesktop.org 20.08.14 (Flatpak runtime)",
+    "protonVersion": "6.3-5",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1628510248,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "906510",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.11.0-38-generic",
+    "notes": "the game never start the interface",
+    "os": "Zorin OS 16",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636390638,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "906510",
+    "cpu": "Intel Core i7-4500U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.1",
+    "kernel": "5.10.60-1-MANJARO",
+    "notes": "It just closes immediately on Launching",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1637819406,
+    "title": "",
+    "source": "protondb"
+  }
+]

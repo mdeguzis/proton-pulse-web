@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3237920",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.2, DRM 3.64, 6.17.0-20-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-20-generic",
+    "notes": "Worked fine with zero extra tinkering on my end that I am aware of, no performance issues noted.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1775192216,
+    "title": "",
+    "source": "protondb"
+  }
+]

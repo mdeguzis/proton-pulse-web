@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "270830",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 11 (raven, LLVM 15.0.6, DRM 3.47, 5.19.0-38-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.19.0-38-generic",
+    "notes": "Still not launching on latest Proton versions, too bad.. \nAfter launch nothing is displayed and steam shows that the game ended its execution.",
+    "os": "Ubuntu 22.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "8.0-1",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1682454441,
+    "title": "",
+    "source": "protondb"
+  }
+]

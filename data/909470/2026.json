@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "909470",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.18-gentoo-dist)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.18.18-gentoo-dist",
+    "notes": "the pictures dont load. not sure if fixable, but by default all the graphics just show as black squares. you can still see text in the menu etc...",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776626348,
+    "title": "",
+    "source": "protondb"
+  }
+]

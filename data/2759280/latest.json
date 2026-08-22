@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2759280",
+    "cpu": "Intel Core i7-9700KF @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.14-arch1-1",
+    "notes": "Aside from small graphical artifact, the game is perfectly playable from start to finish. At least the only released first episde.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777830582,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2759280",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600M XT",
+    "gpuDriver": "4.6 Mesa 25.0.1-arch1.2",
+    "kernel": "6.13.6-arch1-1",
+    "notes": "Game runs flawlessly, make sure you swap to latest Proton (10.0-4) before playing",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1778001681,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2759280",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "A love letter to Danganronpa that runs well on the deck, but it could be better optimised given the graphical fidelity",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1778093119,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "401890",
+    "cpu": "Intel Core i9-10900 @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Cutscenes not playing and game being kind of sluggish",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1652008672,
+    "title": "",
+    "source": "protondb"
+  }
+]

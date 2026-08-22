@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2424490",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "There was some lag the first time the game started, but from the 2nd restart the game worked normally from start to finish.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1772708419,
+    "title": "",
+    "source": "protondb"
+  }
+]

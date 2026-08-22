@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1157220",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.10.109-1-MANJARO",
+    "notes": "Game runs flawlessly with its native Linux client.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1681699836,
+    "title": "Nebuchadnezzar",
+    "source": "protondb"
+  }
+]

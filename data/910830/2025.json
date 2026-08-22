@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "910830",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "underOneHour",
+    "gpu": "AMD Ryzen Z1 Extreme (radeonsi, phoenix, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Headline sais it all.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1766938828,
+    "title": "",
+    "source": "protondb"
+  }
+]

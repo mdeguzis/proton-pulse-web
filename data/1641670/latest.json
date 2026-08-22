@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1641670",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.16-1-MANJARO",
+    "notes": "Game ran great, didn't try default Proton, but had no problems with Glorious Eggroll.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1643504924,
+    "title": "",
+    "source": "protondb"
+  }
+]

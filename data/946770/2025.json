@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "946770",
+    "cpu": "AMD Ryzen 7 5700",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Runs Out of the Box",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1737009970,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "803850",
+    "cpu": "Intel Core i3-7100 @ 3.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-28-generic",
+    "notes": "The game won't start after .NET install.",
+    "os": "KDE neon User Edition 5.17",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1580251949,
+    "title": "Pixelpunk XL",
+    "source": "protondb"
+  }
+]

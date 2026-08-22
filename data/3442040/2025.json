@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3442040",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.12.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Game works, but the R18 patch needs tinkering",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1745329142,
+    "title": "Dream Life in the Country Side",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "625940",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-53-generic",
+    "notes": "Doesn't start",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606581562,
+    "title": "",
+    "source": "protondb"
+  }
+]

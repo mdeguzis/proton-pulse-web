@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1943030",
+    "cpu": "AMD Ryzen 7 7730U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.8.7-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.4",
+    "kernel": "6.8.7-200.fsync.fc39.x86_64",
+    "notes": "I don't think anyone should change a file using a hex editor to play any game, unless there can be a special fix for this obscure game",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1773177559,
+    "title": "",
+    "source": "protondb"
+  }
+]

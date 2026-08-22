@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1169100",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-7642-generic",
+    "notes": "A few layout issues, occasional audio distortion, and stubborn launching, but these problems don't make the game less enjoyable.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1584958704,
+    "title": "",
+    "source": "protondb"
+  }
+]

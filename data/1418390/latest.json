@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1418390",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.7-200.fc43.x86_64",
+    "notes": "Works flawlessly in proton 9.0.4",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771275772,
+    "title": "Antipaint",
+    "source": "protondb"
+  }
+]

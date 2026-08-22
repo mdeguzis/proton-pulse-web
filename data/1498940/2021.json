@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1498940",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.84",
+    "kernel": "5.8.0-55-generic",
+    "notes": "test for compatibility with developer. runs as intended",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1623593743,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1296340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u8fd9\u6e38\u620f\u5728linux\u73af\u5883\u4e0b\u53ef\u4ee5\u5b8c\u7f8e\u8fd0\u884c\u3002This game can run perfectly under most of linux proton/wine envionment",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1772354023,
+    "title": "",
+    "source": "protondb"
+  }
+]

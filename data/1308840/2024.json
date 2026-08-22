@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1308840",
+    "cpu": "AMD A8-6410 APU with AMD Radeon R5 Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD KABINI (, LLVM 15.0.6, DRM 2.50, 6.1.0-18-amd64)",
+    "gpuDriver": "4.5 Mesa 22.3.6",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "Game throws an error upon launching, usual tinkerings like changing proton version or disabling vulkan shaders didn't do the trick, error log shows the following:\n\nFATAL ERROR in Fragment Shader compilation\nShaderName: shdBktGlitch",
+    "os": "LMDE 6 (faye)",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1711829183,
+    "title": "",
+    "source": "protondb"
+  }
+]

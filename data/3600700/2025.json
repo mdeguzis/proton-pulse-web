@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3600700",
+    "cpu": "AMD Ryzen 5 8600G w/ Radeon 760M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.6, DRM 3.63, 6.15.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.1.5-cachyos1.3",
+    "kernel": "6.15.6-2-cachyos",
+    "notes": "Maybe, considering this game is niche entry and known for its \"hard\" difficulty, however the handling is solid and decent for average arcade",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1752898881,
+    "title": "",
+    "source": "protondb"
+  }
+]

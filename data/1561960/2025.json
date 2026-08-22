@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1561960",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "Works flawlessly after switching to Proton 9",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1755532057,
+    "title": "",
+    "source": "protondb"
+  }
+]

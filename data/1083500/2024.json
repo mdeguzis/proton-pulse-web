@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1083500",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 17.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.1.3 (git-0c49f54c76)",
+    "kernel": "6.1.0-23-amd64",
+    "notes": "I can play the live version fine, but every time i try the test version the launcher says `Insufficient storage. You need to free up 1GB of space where the game has been installed.` and refuses to start the game.  \ni have only one mounted drive with 670G of free space and according to protontricks `open explorer` this also exists within wine.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1732411231,
+    "title": "",
+    "source": "protondb"
+  }
+]

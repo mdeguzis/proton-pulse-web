@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "671970",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.17.1-arch1-1",
+    "notes": "Its still in \"Alpha\" and some ingame mechanics still need a good polishing",
+    "os": "ArcoLinux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1648928732,
+    "title": "Junkyard Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "671970",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.44.0, 5.16.20-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.8",
+    "kernel": "5.16.20-200.fc35.x86_64",
+    "notes": "Black screen, after few minutes force closing application as it's not going anywhere.",
+    "os": "Fedora Linux 35 (KDE Plasma)",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1650478506,
+    "title": "Junkyard Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "671970",
+    "cpu": "Intel Xeon E5-2697 v2 @ 2.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.15.0-41-generic",
+    "notes": "If the game worked properly, it'd probably be an interesting play",
+    "os": "KDE neon User - 5.25",
+    "protonVersion": "7.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1658062746,
+    "title": "Junkyard Simulator",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "918740",
+    "cpu": "Intel Celeron N3350 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 500 (APL 2)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.5-zen2-1-zen",
+    "notes": "black screen, music playing",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1632058936,
+    "title": "",
+    "source": "protondb"
+  }
+]

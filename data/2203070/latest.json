@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2203070",
+    "cpu": "Intel Core i7-14700KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "The game looked really good, no problem at launching but i can't login 'cause when they redirect to google/facebook login, it doesn't dial with the game saying it's good. So i never end up logged in and can't start.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1769941764,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2203070",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.11-pikaos)",
+    "gpuDriver": "4.6 Mesa 26.0.4 - PikaOS YellowBirb Mesa Stable (git-d9e5e36b19)",
+    "kernel": "6.19.11-pikaos",
+    "notes": "Unplayable",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1777204454,
+    "title": "",
+    "source": "protondb"
+  }
+]

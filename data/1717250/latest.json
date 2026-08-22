@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1717250",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.7, DRM 3.57, 6.8.0-86-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-86-generic",
+    "notes": "Buggy mess of a game",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1761653936,
+    "title": "",
+    "source": "protondb"
+  }
+]

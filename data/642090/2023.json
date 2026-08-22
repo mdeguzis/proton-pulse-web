@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "642090",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.6, DRM 3.47, 5.19.1-arch2-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.1-arch2-1",
+    "notes": "The Lord is watching",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1675619620,
+    "title": "",
+    "source": "protondb"
+  }
+]

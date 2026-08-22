@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2000770",
+    "cpu": "Intel Core i7-6600U @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-71-generic",
+    "notes": "Game runs out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1755336081,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2000770",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly, great game!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1755563784,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2000770",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 19.1.2, DRM 3.59, 6.8.0-60-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.8.0-60-generic",
+    "notes": "Works out of the box (but modloader recommended)",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1758473955,
+    "title": "",
+    "source": "protondb"
+  }
+]

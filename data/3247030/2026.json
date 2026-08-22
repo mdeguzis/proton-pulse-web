@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3247030",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.7, DRM 3.61, 6.12.63+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.12.63+deb13-amd64",
+    "notes": "The game feels very sluggish to play on my machine.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1772331540,
+    "title": "",
+    "source": "protondb"
+  }
+]

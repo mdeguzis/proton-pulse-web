@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3330250",
+    "cpu": "AMD Ryzen 7 5700X3D",
+    "duration": "oneToFourHours",
+    "gpu": "RX 9070",
+    "gpuDriver": "4.6 Mesa 25.1.4 (git-bcb723ed9e)",
+    "kernel": "6.15.3-pikaos",
+    "notes": "The timer doesn't work well when game's on background but besides that, it works well.",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1767391282,
+    "title": "Ithya: Magic Studies",
+    "source": "protondb"
+  }
+]

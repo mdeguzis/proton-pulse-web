@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "711810",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.9-16-tkg-pds",
+    "notes": "Although not native unlike the website says (only .exe available despite being Unity), runs perfectly fine under proton, simple game really.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600410040,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1455590",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Game does not work no matter what proton version you chose. Getting error:\n\n\n`Can't create a surface with either a width or height of 0 at gml_Object_obj_menu_video_control_Draw_64`\n\n\nLooking at the Steam discussion board, game is dead.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1773357009,
+    "title": "",
+    "source": "protondb"
+  }
+]

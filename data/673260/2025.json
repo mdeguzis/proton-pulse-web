@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "673260",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.17.3-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.2",
+    "kernel": "6.17.3-3-cachyos",
+    "notes": "Tried several proton versions. The older 3.x and 4.x versions got me a splash screen but stopped working there. Newer that that versions got me a black screen. Latest versions don't even start at all, the game immediately closes.\n\nIf you really want to play this, just play the web version at starblast.io.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1763016758,
+    "title": "Starblast",
+    "source": "protondb"
+  },
+  {
+    "appId": "673260",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 21.1.7, DRM 3.64, 6.17.12-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.12-200.fc42.x86_64",
+    "notes": "When I start the game I only see black screen, my cursor is changing to game cursor, I can here the music of the game and when I hover my mouse I can hear from the sound effect that I'm hovering my cursor onto the menu buttons, but the problem is that I can't see the screen. I tried different versions like: Steam Linux Runtime 1.0 (scout), Legacy runtime 1.0 and latest proton versions like Proton 9.0-4 none of them are working, but proton is better than the others because it's starting the game but I can't see the other ones like Legacy runtime 1.0 game is not even starting. When I used Steam Linux Runtime 1.0 (scout) the game open without blackscreen, but I got network error when my network was working correctly. I'm using Fedora Linux 42.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1766304971,
+    "title": "Starblast",
+    "source": "protondb"
+  }
+]

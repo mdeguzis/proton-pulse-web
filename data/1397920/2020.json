@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1397920",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-48-generic",
+    "notes": "excelente experiencia,funciona perfeitamente sem ter que configurar nada",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1602522020,
+    "title": "Mr.Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "1397920",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-54-generic",
+    "notes": "The game only runs stable as long as I don't use my computer for anything else which is a ridiculous for an idle game. Otherwise it crashes.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606926305,
+    "title": "Mr.Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "1397920",
+    "cpu": "Intel Core i3-8350K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.4.72-1-lts",
+    "notes": "Launches to a black screen",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1608755155,
+    "title": "Mr.Mine",
+    "source": "protondb"
+  }
+]

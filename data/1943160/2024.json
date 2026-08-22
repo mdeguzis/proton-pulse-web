@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1943160",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.9.10-x64v3-xanmod1",
+    "notes": "Works OTTB. No tinkering needed.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1721880026,
+    "title": "",
+    "source": "protondb"
+  }
+]

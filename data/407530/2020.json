@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "407530",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.9.1-arch1-1",
+    "notes": "Borked by Battleye DRM",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1604139618,
+    "title": "ARK: The Survival Of The Fittest",
+    "source": "protondb"
+  }
+]

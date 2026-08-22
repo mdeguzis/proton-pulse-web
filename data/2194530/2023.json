@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2194530",
+    "cpu": "Intel Core i3-4130 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.5.0-2-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1698375720,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4147820",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.9-205.fc44.x86_64",
+    "notes": "can't play, the character is in the middle and everything around is black",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1779854320,
+    "title": "",
+    "source": "protondb"
+  }
+]

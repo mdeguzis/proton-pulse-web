@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "217100",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 460",
+    "gpuDriver": "4.5 Mesa 19.3.3",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Game crashes and is unplayable for the moment.",
+    "os": "Freedesktop.org 19.08.8 (Flatpak runtime)",
+    "protonVersion": "5.0-4",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1584506723,
+    "title": "Dementium II HD",
+    "source": "protondb"
+  }
+]

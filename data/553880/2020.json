@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "553880",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 455.23.04",
+    "kernel": "5.8.12-20-tkg-bmq",
+    "notes": "Game starts, shows a black screen on the monitor, then crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1605096650,
+    "title": "Archangel: Hellfire - Enlist FREE",
+    "source": "protondb"
+  }
+]

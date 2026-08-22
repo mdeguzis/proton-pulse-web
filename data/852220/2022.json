@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "852220",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-lowlatency",
+    "notes": "The problems I have had (video and occasional crashes) are minor and do not happen during gameplay.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1649352387,
+    "title": "",
+    "source": "protondb"
+  }
+]

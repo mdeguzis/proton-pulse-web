@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2200190",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-300.fc43.x86_64",
+    "notes": "The text in the little intro sequence will show and be voiced out, but the game just freezes right after that. I think this is a problem with NVIDIA and not Linux. I also hear whine noises from my PC but I can't tell if it's the PSU or GPU. I've tried playing the game on i3, Plasma (Wayland and X11), and COSMIC, and I still get the same issue.",
+    "os": "Fedora Linux 43 (Forty Three)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766818958,
+    "title": "",
+    "source": "protondb"
+  }
+]

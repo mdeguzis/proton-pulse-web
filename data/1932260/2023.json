@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1932260",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.1.6",
+    "kernel": "6.4.11-arch2-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1692908272,
+    "title": "",
+    "source": "protondb"
+  }
+]

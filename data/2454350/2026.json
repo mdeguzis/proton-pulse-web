@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2454350",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1767587995,
+    "title": "",
+    "source": "protondb"
+  }
+]

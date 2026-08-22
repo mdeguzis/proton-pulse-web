@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1361000",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.3-1-MANJARO",
+    "notes": "Won't launch OOTB, makes it to an infinite loading screen using a funky launch option. Either way, unplayable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1643505427,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1361000",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.3-arch1-1",
+    "notes": "The game worked perfectly after a quick fix (proton experimental and custom launch option).",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1655097943,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1361000",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.18.0-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1658720194,
+    "title": "",
+    "source": "protondb"
+  }
+]

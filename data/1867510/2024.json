@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1867510",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1709133054,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1867510",
+    "cpu": "12th Gen Intel Core i7-12700F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.2-arch2-1",
+    "notes": "Worked out the box for me.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1711728815,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1867510",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.42, 5.15.0-119-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-119-generic",
+    "notes": "Recognizes my wireless xbox controller but no buttons actually work - confgure isnt working either.\n\nMy 8bitdo wireless gets the unsupported error as well. \n\nHavent been able to get any controllers to work at this point.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1731348248,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1946550",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, ACO, DRM 3.64, 7.0.0-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch2.2",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "Runs perfectly fine",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1776603043,
+    "title": "",
+    "source": "protondb"
+  }
+]

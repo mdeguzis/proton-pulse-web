@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "812870",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.19.85-1-MANJARO",
+    "notes": "It\u2019s a Unity game. It runs, not at best perf, but it\u2019s so far fully playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1587285923,
+    "title": "Sentinels of Freedom",
+    "source": "protondb"
+  }
+]

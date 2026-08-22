@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1550010",
+    "cpu": "AMD Ryzen Threadripper 1920X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.46, 5.18.10-76051810-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.18.10-76051810-generic",
+    "notes": "There seems to be some issues loading data but may be some other issues too",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1686348012,
+    "title": "The Witch of Fern Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "1550010",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.37",
+    "notes": "",
+    "os": "NixOS 23.05 (Stoat)",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688729490,
+    "title": "The Witch of Fern Island",
+    "source": "protondb"
+  },
+  {
+    "appId": "1550010",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.37",
+    "notes": "",
+    "os": "NixOS 23.05 (Stoat)",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688732379,
+    "title": "The Witch of Fern Island",
+    "source": "protondb"
+  }
+]

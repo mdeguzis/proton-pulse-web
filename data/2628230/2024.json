@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2628230",
+    "cpu": "AMD Phenom II X6 1100T",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.9.8-amd64)",
+    "gpuDriver": "4.6 Mesa 24.1.3-2",
+    "kernel": "6.9.8-amd64",
+    "notes": "Runs flawlessly without any issue (regarding proton)",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-2",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1726001431,
+    "title": "Arcane Blast",
+    "source": "protondb"
+  }
+]

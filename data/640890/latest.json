@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "640890",
+    "cpu": "AMD Ryzen 5 5500GT with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6400 (radeonsi, navi24, LLVM 17.0.6, DRM 3.54, 6.6.78-generic-2rosa2021.1-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.6.78-generic-2rosa2021.1-x86_64",
+    "notes": "Starts well",
+    "os": "ROSA Fresh Desktop 12.5.1, platform 2021.1 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1746282556,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "640890",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "ok",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1764193320,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "640890",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.4, DRM 3.61, 6.12.63_1)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.12.63_1",
+    "notes": "Runs perfectly out of the box",
+    "os": "Void Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1766268865,
+    "title": "",
+    "source": "protondb"
+  }
+]

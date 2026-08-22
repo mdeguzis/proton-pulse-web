@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1422130",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 450.119.03",
+    "kernel": "5.8.0-53-generic",
+    "notes": "The game is usable without any need of fixing libraries or linking. Maybe some problems can be explained through the game is still in beta.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1634125770,
+    "title": "SimRail - The Railway Simulator",
+    "source": "protondb"
+  }
+]

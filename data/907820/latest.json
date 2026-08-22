@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "907820",
+    "cpu": "AMD A6-7400K Radeon R5, 6 Compute Cores 2C+4G",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 19.1.6, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.2",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "Native does not run. Running the windows version through proton works perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1738713544,
+    "title": "",
+    "source": "protondb"
+  }
+]

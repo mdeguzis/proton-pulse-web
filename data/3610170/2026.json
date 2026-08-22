@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3610170",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-51-generic",
+    "notes": "J'ai essay\u00e9 aussi sous W10, le jeux fonctionne mais plante au bout de 10mn...",
+    "os": "Linux Mint 22",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1770151649,
+    "title": "",
+    "source": "protondb"
+  }
+]

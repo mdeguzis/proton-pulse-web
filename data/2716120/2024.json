@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2716120",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon R9 380 (tonga, LLVM 15.0.7, DRM 3.42, 5.15.0-128-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "5.15.0-128-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.5 LTS (64bit)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1735392596,
+    "title": "Kaetram",
+    "source": "protondb"
+  }
+]

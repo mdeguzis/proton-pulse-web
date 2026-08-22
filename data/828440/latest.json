@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "828440",
+    "cpu": "Intel Core i9-10900 @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.0-5-amd64",
+    "notes": "The game worked with Proton 6.3-1.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "6.3-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1617386412,
+    "title": "The Other Side Of The Screen",
+    "source": "protondb"
+  }
+]

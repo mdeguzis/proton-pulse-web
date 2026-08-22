@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "770070",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD VERDE (DRM 2.50.0, 5.10.16-200.fc33.x86_64, LLVM 11.1.0)",
+    "gpuDriver": "4.5 Mesa 20.3.4 (git-6d8c68603f)",
+    "kernel": "5.10.16-200.fc33.x86_64",
+    "notes": "After clicking start and the small steam popup window disappearing the game stops and I am able to click START again to no avail.",
+    "os": "Freedesktop.org 20.08.5 (Flatpak runtime)",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613906990,
+    "title": "",
+    "source": "protondb"
+  }
+]

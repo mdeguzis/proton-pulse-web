@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1374290",
+    "cpu": "Intel N95",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL-N)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-87-generic",
+    "notes": "Works like a charm using Proton 7.0.6",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1764808413,
+    "title": "Palindrome Syndrome: Escape Room",
+    "source": "protondb"
+  }
+]

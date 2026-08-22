@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "16620",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5-0ubuntu0.1~22.04.3",
+    "kernel": "5.15.0-78-lowlatency",
+    "notes": "Activation is broken, graphics also looks weird",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1690717797,
+    "title": "Monster Trucks Nitro",
+    "source": "protondb"
+  }
+]

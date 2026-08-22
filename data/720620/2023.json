@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "720620",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Works out of the box, with some possible issues (see notes)",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1673429616,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "720620",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "ATI Technologies Inc. Radeon RX 7900 XTX",
+    "gpuDriver": "4.6.0 Compatibility Profile Context 19.30.221207",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed",
+    "os": "Zorin OS 16.2",
+    "protonVersion": "7.0-5",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1675431947,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "720620",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.6, DRM 3.49, 6.1.11)",
+    "gpuDriver": "4.6 Mesa 23.1.0-devel (git-efcb639 2023-02-13 jammy-oibaf-ppa)",
+    "kernel": "6.1.11",
+    "notes": "Runs perfectly with no issues oob.",
+    "os": "Drauger OS 7.6 Strigoi",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1676752621,
+    "title": "",
+    "source": "protondb"
+  }
+]

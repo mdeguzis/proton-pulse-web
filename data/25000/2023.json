@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "25000",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.1.4-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1673374430,
+    "title": "Overgrowth",
+    "source": "protondb"
+  },
+  {
+    "appId": "25000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game runs perfectly out of the box with no tinkering needed.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1685977414,
+    "title": "Overgrowth",
+    "source": "protondb"
+  },
+  {
+    "appId": "25000",
+    "cpu": "12th Gen Intel Core i5-1235U",
+    "duration": "oneToFourHours",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 24.0.0-devel (git-4f892ecc1e)",
+    "kernel": "6.1.60-08585-g3c866855af53",
+    "notes": "Works perfectly.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "8.0-4",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1703881648,
+    "title": "Overgrowth",
+    "source": "protondb"
+  }
+]

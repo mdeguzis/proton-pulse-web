@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2125770",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "runs perfectly without any tinkering",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1666095440,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2125770",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-56-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Runs perfect.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1670125941,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2125770",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.9-arch1-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1670714988,
+    "title": "",
+    "source": "protondb"
+  }
+]

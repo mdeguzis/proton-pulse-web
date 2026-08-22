@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1777750",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 14.0.6, DRM 3.46, 5.18.10-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.3",
+    "kernel": "5.18.10-zen1-1-zen",
+    "notes": "Error message: Failed to call ConnectFilters( pSrc, pMPEG1Splitter ). : [0x80004005] Error: 0x80004005",
+    "os": "Arch Linux\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "7.0-3",
+    "ram": "31925Mb",
+    "rating": "borked",
+    "timestamp": 1657470625,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1777750",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Using winetricks the game will boot up and play just fine.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1662278746,
+    "title": "",
+    "source": "protondb"
+  }
+]

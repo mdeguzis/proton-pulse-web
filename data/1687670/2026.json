@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1687670",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "the game runs flawlessly, with proton cachyos, GE proton, and dw proton, haven't tried the proton from steam though",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "52 GB",
+    "rating": "platinum",
+    "timestamp": 1773063937,
+    "title": "",
+    "source": "protondb"
+  }
+]

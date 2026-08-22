@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3645670",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-arch1-1",
+    "notes": "The game runs in a Construct 3 windows wrapper, and under Steam's Proton sound doesn't work.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1760221781,
+    "title": "",
+    "source": "protondb"
+  }
+]

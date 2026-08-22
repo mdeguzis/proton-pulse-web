@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "378610",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.5-8-tkg-pds",
+    "notes": "The proton version runs a lot faster than the native one, but it's lot more unstable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1601258816,
+    "title": "Valley",
+    "source": "protondb"
+  },
+  {
+    "appId": "378610",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 455.26.02",
+    "kernel": "5.9.1-6-tkg-pds",
+    "notes": "Just found out that the instability i mentioned in my last report was a hardware failure, the proton layer is working perfect",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604208261,
+    "title": "Valley",
+    "source": "protondb"
+  },
+  {
+    "appId": "378610",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.6.19-159.current",
+    "notes": "",
+    "os": "Solus",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1605908499,
+    "title": "Valley",
+    "source": "protondb"
+  }
+]

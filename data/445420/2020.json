@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "445420",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.4",
+    "kernel": "5.4.59",
+    "notes": "Works with one protontricks modification",
+    "os": "NixOS 20.09 (Nightingale)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1598302823,
+    "title": "",
+    "source": "protondb"
+  }
+]

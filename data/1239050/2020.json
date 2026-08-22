@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1239050",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR",
+    "gpuDriver": "4.6 Mesa 20.1.5",
+    "kernel": "5.8.10-arch1-1",
+    "notes": "",
+    "os": "Freedesktop.org 20.08.0 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1600635915,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1239050",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.6 - kisak-mesa PPA",
+    "kernel": "5.4.0-51-generic",
+    "notes": "can't proceed after using VHS",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1603495530,
+    "title": "",
+    "source": "protondb"
+  }
+]

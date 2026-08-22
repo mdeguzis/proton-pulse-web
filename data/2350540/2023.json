@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2350540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.2-arch1-1",
+    "notes": "Tinkering notes: Selection menu loads fine. From the game setup menu, in graphical settings, tried every setting. Tried changing all settings, game would crash every time. Game would not boot into DOSBox. Will update post if I find a work around.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1687237919,
+    "title": "DeathKeep",
+    "source": "protondb"
+  }
+]

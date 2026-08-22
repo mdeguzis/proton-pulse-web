@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "428270",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.26-1-MANJARO",
+    "notes": "Game opens to a black screen. No audio can be heard.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1618310721,
+    "title": "Twilight City: Love as a Cure",
+    "source": "protondb"
+  }
+]

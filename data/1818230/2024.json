@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1818230",
+    "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-105-generic",
+    "notes": "Works out of the box with no customisations needed",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1715425262,
+    "title": "",
+    "source": "protondb"
+  }
+]

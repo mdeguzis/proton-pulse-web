@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2580020",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.9-arch1-1",
+    "notes": "Works perfectly right out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "96 GB",
+    "rating": "gold",
+    "timestamp": 1732245350,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2580020",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs and controls well after changes, runs hot and drains battery in ~2 hours.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1732339788,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2580020",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.0, DRM 3.54, 6.6.63-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.6.63-200.fc41.x86_64",
+    "notes": "Works out of the box without any issues",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733059355,
+    "title": "",
+    "source": "protondb"
+  }
+]

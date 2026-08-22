@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3238670",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.0, DRM 3.45, 5.13.0-valve24-1-neptune)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-a78cf1ae25)",
+    "kernel": "5.13.0-valve24-1-neptune",
+    "notes": "It worked right out of the box with no issues.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733803400,
+    "title": "",
+    "source": "protondb"
+  }
+]

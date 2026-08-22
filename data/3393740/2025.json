@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3393740",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Achievements are broken in the Linux version, and when I tried to force the Windows version, it didn't even start and instead gave me an error about being unable to load an icon (that's right there). Other than that, the Linux version works, except that the intro is in Chinese. The dev is currently trying to fix it, but it's been a week with little to no improvements.\n\nIt might be worth noting that the game has no cloud save, and the Linux version dumps a lot of files in a folder with the game's ID in .config, but I haven't been able to identify a savegame.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1755528043,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3393740",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.12.39-1-MANJARO",
+    "notes": "Linux version has been fixed and works well",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1758488955,
+    "title": "",
+    "source": "protondb"
+  }
+]

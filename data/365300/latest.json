@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "365300",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.5.13-4-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1705540893,
+    "title": "Transmissions: Element 120",
+    "source": "protondb"
+  },
+  {
+    "appId": "365300",
+    "cpu": "Intel Xeon X5680 @ 3.33GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 535.146.02",
+    "kernel": "6.6.8-200.fsync.fc38.x86_64",
+    "notes": "Really laggy but still playable",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1722185011,
+    "title": "Transmissions: Element 120",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1997040",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Ran right out of the box. Played several matches and had no issues.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737338771,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1997040",
+    "cpu": "12th Gen Intel Core i7-1260P",
+    "duration": "severalHours",
+    "gpu": "Mesa virgl (Mesa Intel (ADL GT2))",
+    "gpuDriver": "4.6 Mesa 24.1.0-devel (git-e1afffe7fa)",
+    "kernel": "6.1.81-13210-g8cf9f61fb96b",
+    "notes": "",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1752488244,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1997040",
+    "cpu": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "with the right proton and the command yes, out of the box it didnt work for me",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1766143196,
+    "title": "",
+    "source": "protondb"
+  }
+]

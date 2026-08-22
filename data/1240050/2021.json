@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1240050",
+    "cpu": "AMD Ryzen Threadripper 3960X 24-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.8.0-53-generic",
+    "notes": "Runs great but achievements were not awarded correctly; game seems to be abandoned by the developer",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "6.3-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1622791373,
+    "title": "",
+    "source": "protondb"
+  }
+]

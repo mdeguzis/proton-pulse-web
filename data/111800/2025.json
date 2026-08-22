@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "111800",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.5-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.17.5-200.fc42.x86_64",
+    "notes": "Works for me on i3wm when switching to proton 9",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1762549250,
+    "title": "Blocks That Matter",
+    "source": "protondb"
+  }
+]

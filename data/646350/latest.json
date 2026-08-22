@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "646350",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.6.8-200.fc39.x86_64",
+    "notes": "Text To Speech/Speech Recognition is Borked",
+    "os": "Fedora 39 | Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1704090752,
+    "title": "",
+    "source": "protondb"
+  }
+]

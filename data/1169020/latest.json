@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1169020",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.7, DRM 3.52, 6.3.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.4-arch1-1",
+    "notes": "GE required to have the ending videos play. Everything else is fine with either regular or GE.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1687862970,
+    "title": "",
+    "source": "protondb"
+  }
+]

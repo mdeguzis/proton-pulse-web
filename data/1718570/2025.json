@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1718570",
+    "cpu": "Intel Core i7-14700F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-107-generic",
+    "notes": "Had to force Proton 9.0-4 compatibility, but it worked fine after that.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1746672447,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1718570",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.12.29-1-lts",
+    "notes": "No issues with the game. Did a 100% run.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1759735398,
+    "title": "",
+    "source": "protondb"
+  }
+]

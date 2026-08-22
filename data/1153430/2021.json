@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1153430",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.9.0-0.bpo.2-amd64",
+    "notes": "Spiel startet, zeigt Unity Hinweis und dann ein kleines Fenster mit Fortschrittspunkten. Nach einigen Sekunden wird das Spiel beendet",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1609500569,
+    "title": "Love wish",
+    "source": "protondb"
+  },
+  {
+    "appId": "1153430",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.9.0-0.bpo.2-amd64",
+    "notes": "Musste \"Proton Experimental\" erzwingen, damit das Spiel l\u00e4uft.\nProton 5.13-4(defaul) beendet das Spiel VOR dem Men\u00fc!",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1609501589,
+    "title": "Love wish",
+    "source": "protondb"
+  }
+]

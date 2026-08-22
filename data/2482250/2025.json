@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2482250",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 21.1.4, DRM 3.64, 6.17.7-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.7-300.fc43.x86_64",
+    "notes": "Use \"Proton Experimental\" and the game runs without any issues.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1762466232,
+    "title": "Goblin Buster: Incremental Tower Defense",
+    "source": "protondb"
+  }
+]

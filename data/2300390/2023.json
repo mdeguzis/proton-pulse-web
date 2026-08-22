@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2300390",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 515.105.01",
+    "kernel": "5.4.0-150-generic",
+    "notes": "Works perfectly.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686857436,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2300390",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 16.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.2-arch1-1",
+    "notes": "Not playable.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1701479023,
+    "title": "",
+    "source": "protondb"
+  }
+]

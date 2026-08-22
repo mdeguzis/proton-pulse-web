@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "672430",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.4.23-1-MANJARO",
+    "notes": "The native install has no executable yet. It just goes to download and then nothing. Use proton to play the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1583372710,
+    "title": "Koe (\u58f0): Part 1",
+    "source": "protondb"
+  }
+]

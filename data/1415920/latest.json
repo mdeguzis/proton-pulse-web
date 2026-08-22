@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1415920",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.48.0, 6.0.0-0.deb11.6-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "6.0.0-0.deb11.6-amd64",
+    "notes": "The game worked great. Did not test multiplayer but steam remote play works. No framerate issues and stays at the weird 30 fps limit.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1674248554,
+    "title": "",
+    "source": "protondb"
+  }
+]

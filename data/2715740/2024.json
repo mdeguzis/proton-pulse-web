@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2715740",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "RELEASE; LLVM;",
+    "gpuDriver": "4.1 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Visual novel with animations runs with protontricks smoothly",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1715193219,
+    "title": "Tutor X Hypnosis",
+    "source": "protondb"
+  }
+]

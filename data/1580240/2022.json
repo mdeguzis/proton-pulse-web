@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1580240",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.13-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1642142289,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1580240",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1651425956,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1580240",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 13.0.1, DRM 3.44, 5.17.5-zen1-2-zen)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.17.5-zen1-2-zen",
+    "notes": "No problems to report",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1654995355,
+    "title": "",
+    "source": "protondb"
+  }
+]

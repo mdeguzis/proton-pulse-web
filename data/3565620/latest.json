@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3565620",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.5-3-cachyos",
+    "notes": "Runs perfectly out of the box",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774328738,
+    "title": "",
+    "source": "protondb"
+  }
+]

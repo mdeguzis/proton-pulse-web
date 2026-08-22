@@ -1,0 +1,285 @@
+{
+  "generated_at": "2026-08-22T00:57:56Z",
+  "total_reports": 26,
+  "total_games": 19,
+  "games_with_pulse": 19,
+  "by_source": {
+    "pulse": 26
+  },
+  "by_rating": {
+    "platinum": 16,
+    "gold": 5,
+    "silver": 1,
+    "borked": 4
+  },
+  "by_gpu_vendor": {
+    "amd": 18,
+    "nvidia": 7,
+    "intel": 1
+  },
+  "by_cpu_brand": {
+    "intel": 10,
+    "amd": 16
+  },
+  "by_os_family": {
+    "bazzite": 4,
+    "arch": 4,
+    "steamos": 15,
+    "ubuntu": 2,
+    "nixos": 1
+  },
+  "by_store": {
+    "steam": 26
+  },
+  "by_proton_type": {
+    "proton-experimental": 14,
+    "proton-stable": 9,
+    "ge-proton": 3
+  },
+  "by_device_family": {
+    "desktop": 15,
+    "steam-deck-lcd": 11
+  },
+  "by_year": {
+    "2026": 26
+  },
+  "by_year_source": {
+    "2026": {
+      "pulse": 26
+    }
+  },
+  "by_rating_x_gpu_vendor": {
+    "amd": {
+      "platinum": 13,
+      "silver": 1,
+      "borked": 1,
+      "gold": 3
+    },
+    "nvidia": {
+      "gold": 1,
+      "platinum": 3,
+      "borked": 3
+    },
+    "intel": {
+      "gold": 1
+    }
+  },
+  "by_rating_x_cpu_brand": {
+    "intel": {
+      "platinum": 6,
+      "gold": 3,
+      "borked": 1
+    },
+    "amd": {
+      "platinum": 10,
+      "silver": 1,
+      "borked": 3,
+      "gold": 2
+    }
+  },
+  "by_rating_x_os_family": {
+    "bazzite": {
+      "platinum": 3,
+      "gold": 1
+    },
+    "arch": {
+      "gold": 1,
+      "platinum": 2,
+      "borked": 1
+    },
+    "steamos": {
+      "platinum": 10,
+      "silver": 1,
+      "borked": 1,
+      "gold": 3
+    },
+    "ubuntu": {
+      "platinum": 1,
+      "borked": 1
+    },
+    "nixos": {
+      "borked": 1
+    }
+  },
+  "by_rating_x_source": {
+    "pulse": {
+      "platinum": 16,
+      "gold": 5,
+      "silver": 1,
+      "borked": 4
+    }
+  },
+  "by_rating_x_store": {
+    "steam": {
+      "platinum": 16,
+      "gold": 5,
+      "silver": 1,
+      "borked": 4
+    }
+  },
+  "by_rating_x_device_family": {
+    "desktop": {
+      "platinum": 9,
+      "gold": 3,
+      "borked": 3
+    },
+    "steam-deck-lcd": {
+      "platinum": 7,
+      "silver": 1,
+      "borked": 1,
+      "gold": 2
+    }
+  },
+  "by_year_rating": {
+    "2026": {
+      "platinum": 16,
+      "gold": 5,
+      "silver": 1,
+      "borked": 4
+    }
+  },
+  "stale_borked_count": 0,
+  "stale_borked_cutoff_year": 2024,
+  "worth_retesting": [],
+  "top_games": [
+    [
+      "2358720",
+      "Black Myth: Wukong",
+      5
+    ],
+    [
+      "1145350",
+      "Hades II",
+      3
+    ],
+    [
+      "21690",
+      "Resident Evil 5",
+      2
+    ],
+    [
+      "883710",
+      "Resident Evil 2",
+      1
+    ],
+    [
+      "219990",
+      "Grim Dawn",
+      1
+    ],
+    [
+      "1574480",
+      "Agent 64: Spies Never Die",
+      1
+    ],
+    [
+      "813780",
+      "Age of Empires II: Definitive Edition",
+      1
+    ],
+    [
+      "2059170",
+      "Quasimorph",
+      1
+    ],
+    [
+      "3321460",
+      "Crimson Desert",
+      1
+    ],
+    [
+      "99999999",
+      "Half-Life 4: Gabe's Revenge",
+      1
+    ],
+    [
+      "292030",
+      "The Witcher\u00ae 3: Wild Hunt",
+      1
+    ],
+    [
+      "8870",
+      "BioShock Infinite",
+      1
+    ],
+    [
+      "2561580",
+      "Horizon Zero Dawn\u2122 Remastered",
+      1
+    ],
+    [
+      "1196590",
+      "Resident Evil Village",
+      1
+    ],
+    [
+      "1671210",
+      "DELTARUNE",
+      1
+    ],
+    [
+      "2881370",
+      "Thank You For Your Application",
+      1
+    ],
+    [
+      "1882140",
+      "Decisive Campaigns: Ardennes Offensive",
+      1
+    ],
+    [
+      "2483190",
+      "Forza Horizon 6",
+      1
+    ],
+    [
+      "731490",
+      "Crash Bandicoot\u2122 N. Sane Trilogy",
+      1
+    ]
+  ],
+  "framegen_total_responses": 14,
+  "framegen_yes_count": 2,
+  "framegen_yes_rate_pct": 14.3,
+  "by_device_x_framegen": {
+    "desktop": {
+      "no": 8
+    },
+    "steam-deck-lcd": {
+      "no": 4,
+      "yes": 2
+    }
+  },
+  "by_gpu_x_framegen": {
+    "nvidia": {
+      "no": 3
+    },
+    "amd": {
+      "no": 8,
+      "yes": 2
+    },
+    "intel": {
+      "no": 1
+    }
+  },
+  "by_vram_x_framegen": {
+    "high": {
+      "no": 7
+    },
+    "unknown": {
+      "no": 5,
+      "yes": 2
+    }
+  },
+  "by_rating_x_framegen": {
+    "gold": {
+      "no": 3,
+      "yes": 1
+    },
+    "platinum": {
+      "no": 9,
+      "yes": 1
+    }
+  },
+  "top_games_needing_framegen": []
+}

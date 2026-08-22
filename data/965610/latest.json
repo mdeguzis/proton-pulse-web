@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "965610",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-101-generic",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590623870,
+    "title": "Reiner Knizia Yellow & Yangtze",
+    "source": "protondb"
+  },
+  {
+    "appId": "965610",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.6",
+    "kernel": "5.4.0-54-generic",
+    "notes": "I enable the Proton adds on Steam, but don't launch",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606268192,
+    "title": "Reiner Knizia Yellow & Yangtze",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3383430",
+    "cpu": "AMD FX-6350 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa AMD TURKS (DRM 2.50.0 / 6.8.0-52-generic, LLVM 15.0.7)",
+    "gpuDriver": "4.5 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-52-generic",
+    "notes": "steam tries to launch the game but it just goes back to saying it isnt running after a minute",
+    "os": "Zorin OS 17.3",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1746205717,
+    "title": "",
+    "source": "protondb"
+  }
+]

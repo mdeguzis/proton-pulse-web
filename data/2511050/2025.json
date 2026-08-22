@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2511050",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 19.1.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.3.4-arch1.1",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "Not playable, devs confirmed it's broken and stated that they are not planning on fixing it",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1738354355,
+    "title": "Brazen Blaze -3vs3 Brawl Arena-",
+    "source": "protondb"
+  },
+  {
+    "appId": "2511050",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.17.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.8-2-cachyos",
+    "notes": "Works okay, some more tinkering or changing the settings needed to fix the stutters.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1763587065,
+    "title": "Brazen Blaze -3vs3 Brawl Arena-",
+    "source": "protondb"
+  }
+]

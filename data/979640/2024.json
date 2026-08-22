@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "979640",
+    "cpu": "AMD Ryzen 9 5900HS with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "Game window flashed up for about half a second then closes immediately",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1705759448,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "926340",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "3.0 Mesa 20.1.2",
+    "kernel": "5.7.15_1",
+    "notes": "",
+    "os": "Void Linux with Freedesktop.org 19.08.12 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "12 GB",
+    "rating": "silver",
+    "timestamp": 1597329758,
+    "title": "",
+    "source": "protondb"
+  }
+]

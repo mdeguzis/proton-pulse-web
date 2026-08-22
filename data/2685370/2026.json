@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2685370",
+    "cpu": "Intel Core i9-9900KF @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.9-arch1-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1775236524,
+    "title": "",
+    "source": "protondb"
+  }
+]

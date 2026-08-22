@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "290650",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-40-generic",
+    "notes": "Seems to function well besides some minor performance issues",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1594262495,
+    "title": "",
+    "source": "protondb"
+  }
+]

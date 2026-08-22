@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1167380",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.42.0, 5.15.2-1-default, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-1-default",
+    "notes": "There is also a demo version. Tested first on demo then bought full. Works perfectly. Played on controllers xbox360 and steam",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "30 GB",
+    "rating": "gold",
+    "timestamp": 1641030688,
+    "title": "",
+    "source": "protondb"
+  }
+]

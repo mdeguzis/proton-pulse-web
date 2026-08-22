@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2162780",
+    "cpu": "AMD Ryzen 7 7735H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (rembrandt, LLVM 15.0.6, DRM 3.49, 6.1.0-17-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "\u4e0d\u517c\u5bb9",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1707234061,
+    "title": "E.E.R.I.E2",
+    "source": "protondb"
+  },
+  {
+    "appId": "2162780",
+    "cpu": "AMD Ryzen 7 7735H with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (rembrandt, LLVM 15.0.6, DRM 3.49, 6.1.0-17-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1710303614,
+    "title": "E.E.R.I.E2",
+    "source": "protondb"
+  }
+]

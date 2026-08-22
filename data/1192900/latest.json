@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1192900",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.11-100.fc42.x86_64",
+    "notes": "Works out of the box on Quest 3S (WiVRn wired)",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1776058747,
+    "title": "",
+    "source": "protondb"
+  }
+]

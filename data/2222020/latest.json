@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2222020",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-15-amd64",
+    "notes": "Game stuck at starting in steam.  No screen , does take display focus.  Also tried GE 9-5, and experimental",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1716244691,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2222020",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 17.0.6, DRM 3.49, 6.1.0-21-amd64)",
+    "gpuDriver": "4.6 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "6.1.0-21-amd64",
+    "notes": "It runs, but the framerate is just unacceptable",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1720301798,
+    "title": "",
+    "source": "protondb"
+  }
+]

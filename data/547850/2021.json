@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "547850",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "Works perfectly out of the box.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1616076608,
+    "title": "Trump Simulator VR",
+    "source": "protondb"
+  }
+]

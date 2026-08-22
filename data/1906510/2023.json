@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1906510",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.2-1-default",
+    "notes": "Bad performance",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1694628728,
+    "title": "Arto",
+    "source": "protondb"
+  }
+]

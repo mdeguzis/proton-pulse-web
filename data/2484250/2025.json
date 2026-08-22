@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2484250",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-55-generic",
+    "notes": "white screen nothing to let you login",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1742110839,
+    "title": "ASTRA: Knights of Veda",
+    "source": "protondb"
+  }
+]

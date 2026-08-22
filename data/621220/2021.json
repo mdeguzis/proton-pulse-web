@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "621220",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.35.0, 5.4.105-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.4.105-1-MANJARO",
+    "notes": "Just works, opposed to the native version.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1618232855,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "849100",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 570.172.08",
+    "kernel": "6.14.0-29-generic",
+    "notes": "Runs alright on my pretty beefy hardware after modifying that config file",
+    "os": "Ubuntu 25.04",
+    "protonVersion": "9.0-4",
+    "ram": "96 GB",
+    "rating": "silver",
+    "timestamp": 1758750423,
+    "title": "",
+    "source": "protondb"
+  }
+]

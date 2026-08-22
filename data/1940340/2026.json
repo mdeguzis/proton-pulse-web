@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1940340",
+    "cpu": "13th Gen Intel Core i9-13900H",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4050 Max-Q",
+    "gpuDriver": "nvidia-driver-580-open",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1767876132,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1940340",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.1-2-cachyos",
+    "notes": "I used to be able to run the game with no issues whatsoever until the last hotfix came up and it wont' even start anymore.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1777786127,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1940340",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.1-200.nobara.fc43.x86_64",
+    "notes": "i didnt even use steam recommended compatibility layers, ran out of the box",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1778280327,
+    "title": "",
+    "source": "protondb"
+  }
+]

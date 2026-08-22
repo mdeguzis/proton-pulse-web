@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2066550",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.57, 6.10.5-lqx1-1-lqx)",
+    "gpuDriver": "4.6 Mesa 24.1.6-arch1.1",
+    "kernel": "6.10.5-lqx1-1-lqx",
+    "notes": "Worked alright (last time I played)",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1724508423,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "419520",
+    "cpu": "04/19/2018",
+    "duration": "underOneHour",
+    "gpu": "8 GT/s",
+    "gpuDriver": "00.0",
+    "kernel": "3687",
+    "notes": "To many stutters. might be better with some tinkering.",
+    "os": "576 KiB",
+    "protonVersion": "10.0-3",
+    "ram": "1 GB",
+    "rating": "borked",
+    "timestamp": 1763160774,
+    "title": "Lifeless",
+    "source": "protondb"
+  }
+]

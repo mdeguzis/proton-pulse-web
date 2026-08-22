@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2137740",
+    "cpu": "12th Gen Intel Core i7-12650H",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "Works perfectly out of the box",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-5",
+    "ram": "40 GB",
+    "rating": "platinum",
+    "timestamp": 1706520283,
+    "title": "Forbidden Escape",
+    "source": "protondb"
+  }
+]

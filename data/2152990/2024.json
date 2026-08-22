@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2152990",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 14.0.6, DRM 3.49, 6.1.4-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.3.2",
+    "kernel": "6.1.4-zen2-1-zen",
+    "notes": "Tried all Proton versions (even GE) and none of them works.",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705346442,
+    "title": "Dinogen Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "2152990",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RX 7700S",
+    "gpuDriver": "4.6 Mesa 24.1.3 - kisak-mesa PPA",
+    "kernel": "6.9.1-060901-generic",
+    "notes": "It works, but not as good as you'd want it to, to enjoy playing it.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "28 GB",
+    "rating": "borked",
+    "timestamp": 1720958167,
+    "title": "Dinogen Online",
+    "source": "protondb"
+  }
+]

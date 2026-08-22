@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3207780",
+    "cpu": "11th Gen Intel Core i7-1185G7 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.25.04.2",
+    "kernel": "6.15.1-surface-2",
+    "notes": "It is mainly a visual novel so choppiness can be ignored, but because of the 3D models the drop in frame rate is noticable.",
+    "os": "Ubuntu 25.04",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1759212822,
+    "title": "Love Mansion",
+    "source": "protondb"
+  }
+]

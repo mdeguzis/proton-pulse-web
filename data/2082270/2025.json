@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2082270",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.1, DRM 3.57, 6.8.0-55-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-55-generic",
+    "notes": "Worked out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1741351130,
+    "title": "",
+    "source": "protondb"
+  }
+]

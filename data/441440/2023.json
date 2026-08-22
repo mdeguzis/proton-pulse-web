@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "441440",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 5500 XT",
+    "gpuDriver": "4.6 Mesa 20.2.4",
+    "kernel": "5.8.0-53-generic",
+    "notes": "A quick translation said I'm using the debugger...?",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1682013218,
+    "title": "",
+    "source": "protondb"
+  }
+]

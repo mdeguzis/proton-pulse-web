@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "20200",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.10-200.fc35.x86_64",
+    "notes": "Can get to menu, but crashes to desktop when selecting a character",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640214034,
+    "title": "Galactic Bowling",
+    "source": "protondb"
+  }
+]

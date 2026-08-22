@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "779700",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.19.0-9-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590151194,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "488770",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.19.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Plays fine either way",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771689480,
+    "title": "",
+    "source": "protondb"
+  }
+]

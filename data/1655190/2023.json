@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1655190",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.6, DRM 3.46, 5.18.16-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.18.16-arch1-1",
+    "notes": "Close to Perfect",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688419216,
+    "title": "",
+    "source": "protondb"
+  }
+]

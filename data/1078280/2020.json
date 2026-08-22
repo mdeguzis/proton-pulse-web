@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1078280",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-35961b10da)",
+    "kernel": "5.5.7-arch1-1",
+    "notes": "The game window appears with error message \"TypeError: Cannot read property 'blendModes' of undefined\". Nothing else happens.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1590955611,
+    "title": "",
+    "source": "protondb"
+  }
+]

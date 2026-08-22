@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2020630",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.8-200.fc36.x86_64",
+    "notes": "Simple unity game, no tinkering requierd",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1669201732,
+    "title": "",
+    "source": "protondb"
+  }
+]

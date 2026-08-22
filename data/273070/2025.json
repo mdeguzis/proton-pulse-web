@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "273070",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.8-arch1-1",
+    "notes": "Beware of the runtime, it no longer work on Arch rolling runtime",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1766131539,
+    "title": "",
+    "source": "protondb"
+  }
+]

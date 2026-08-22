@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2123530",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.8.0-53-generic",
+    "notes": "Use your windowmanager's fullscreen functionallity to set the game in fullscreen mode (window decorations was not removed in an older gnome)",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1720823785,
+    "title": "",
+    "source": "protondb"
+  }
+]

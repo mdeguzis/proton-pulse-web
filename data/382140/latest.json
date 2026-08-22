@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "382140",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, LLVM 19.1.7, DRM 3.59, 6.13.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.2-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1739364165,
+    "title": "SKYHILL",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1162650",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.1.62",
+    "notes": "It takes me a long time to figure it out. Steam for Linux never worked on this game.",
+    "os": "NixOS 23.11 (Tapir)\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "8.0-4",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1700855849,
+    "title": "Ken ga Kimi",
+    "source": "protondb"
+  }
+]

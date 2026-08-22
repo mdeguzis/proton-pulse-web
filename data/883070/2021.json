@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "883070",
+    "cpu": "Intel Core i3-4160 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.2.3 (git-8440307a61)",
+    "kernel": "5.4.0-58-generic",
+    "notes": "It's a very low-resource pixel-art game so once you get the right Proton version selected everything seems to work as in native windows.",
+    "os": "Freedesktop.org 20.08.2 (Flatpak runtime)",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1625893555,
+    "title": "",
+    "source": "protondb"
+  }
+]

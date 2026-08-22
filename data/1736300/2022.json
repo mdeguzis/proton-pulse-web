@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1736300",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.6, DRM 3.46, 5.18.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.3",
+    "kernel": "5.18.12-arch1-1",
+    "notes": "When it crashes, a Wine dialog saying \"Runtime error! Program: [path to Liblade.exe] abnormal program termination\" appears.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1658323742,
+    "title": "",
+    "source": "protondb"
+  }
+]

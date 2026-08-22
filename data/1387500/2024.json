@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1387500",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720315871,
+    "title": "Offroad Mechanic Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "1387500",
+    "cpu": "Linux",
+    "duration": "oneToFourHours",
+    "gpu": "ATI R6xx HDMI",
+    "gpuDriver": "Memory",
+    "kernel": "4.6",
+    "notes": "",
+    "os": "AMD AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.54, 6.5.0-44-generic)",
+    "protonVersion": "9.0-2",
+    "ram": "None detected",
+    "rating": "gold",
+    "timestamp": 1722275986,
+    "title": "Offroad Mechanic Simulator",
+    "source": "protondb"
+  }
+]

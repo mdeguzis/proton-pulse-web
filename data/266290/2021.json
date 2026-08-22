@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "266290",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 (SIENNA_CICHLID, DRM 3.40.0, 5.11.0-37-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3 - kisak-mesa PPA",
+    "kernel": "5.11.0-37-generic",
+    "notes": "See bugs.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1634665205,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "266290",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (DIMGREY_CAVEFISH, DRM 3.42.0, 5.15.2-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.2-arch1-1",
+    "notes": "Graphics and all works perfectly but when start to play u face instant crash - so unplayable",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1637214883,
+    "title": "",
+    "source": "protondb"
+  }
+]

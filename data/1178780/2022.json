@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1178780",
+    "cpu": "11th Gen Intel Core i7-1185G7 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.18.16-arch1-1",
+    "notes": "Campaign is not available.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1660282391,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1178780",
+    "cpu": "11th Gen Intel Core i7-1185G7 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.18.16-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1660284572,
+    "title": "",
+    "source": "protondb"
+  }
+]

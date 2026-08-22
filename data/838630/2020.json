@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "838630",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-47-generic",
+    "notes": "Since switching to MESA driver (from AMD-GPU-PRO ) no obvious issues anymore.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1599682263,
+    "title": "",
+    "source": "protondb"
+  }
+]

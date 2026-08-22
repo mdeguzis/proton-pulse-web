@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "987480",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u5c3d\u7ba1v\u793e\u8ba4\u4e3a\u662f\u53ef\u73a9\u7684\uff0c\u4f46\u5b9e\u9645\u4e0a\u6211\u6839\u672c\u8fdb\u4e0d\u53bb\u6e38\u620f\u3002\u4f1a\u5728\u52a0\u8f7d\u9875\u9762\u65e0\u9650\u8f6c\u5708\u5361\u4f4f\uff0c\u7136\u540e\u4f1a\u53d1\u73b0\u5373\u4f7f\u901a\u8fc7\u6309steam\u6309\u952e\u5f3a\u5236\u9000\u51fa\u6e38\u620f\u4e5f\u4f9d\u65e7\u5361\u4f4f\u3002\u4ece\u59cb\u81f3\u7ec8\u6211\u6839\u672c\u8fdb\u4e0d\u53bb\u6e38\u620f\uff0c\u4e3b\u9875\u9762\u90fd\u6ca1\u6709\u770b\u89c1\u8fc7\uff0c\u6240\u4ee5\u5c1d\u8bd5\u4e86\u5341\u6570\u6b21\u540e\u6211\u5378\u8f7d\u4e86\u8fd9\u4e2a\u6e38\u620f\u3002",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1673970571,
+    "title": "\u82b1\u843d\u51ac\u967d Snowdreams -lost in winter-",
+    "source": "protondb"
+  },
+  {
+    "appId": "987480",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1691911754,
+    "title": "\u82b1\u843d\u51ac\u967d Snowdreams -lost in winter-",
+    "source": "protondb"
+  },
+  {
+    "appId": "987480",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "5.0-10",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1691912945,
+    "title": "\u82b1\u843d\u51ac\u967d Snowdreams -lost in winter-",
+    "source": "protondb"
+  }
+]

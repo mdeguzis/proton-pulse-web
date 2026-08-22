@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "965030",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.16.4-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.16.4-2-MANJARO",
+    "notes": "The game works good, unfortunately.",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1763515849,
+    "title": "Run Naked Woman Run",
+    "source": "protondb"
+  }
+]

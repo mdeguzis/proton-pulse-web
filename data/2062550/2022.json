@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2062550",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.7-arch1-1",
+    "notes": "Works fine out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1663543162,
+    "title": "hololive ERROR",
+    "source": "protondb"
+  },
+  {
+    "appId": "2062550",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.9-zen1-1-zen",
+    "notes": "Works well out-of-the-box",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1663852114,
+    "title": "hololive ERROR",
+    "source": "protondb"
+  },
+  {
+    "appId": "2062550",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD GFX1036 (gfx1036, LLVM 14.0.0, DRM 3.48, 6.0.6-76060006-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.6-76060006-generic",
+    "notes": "Overall, smooth experience.  Slight screen tearing in fullscreen mode, but not enough to really complain about - no tearing in window'd mode",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1669617103,
+    "title": "hololive ERROR",
+    "source": "protondb"
+  }
+]

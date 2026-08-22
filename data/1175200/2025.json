@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1175200",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.9-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.16.9-200.fc42.x86_64",
+    "notes": "Works amazing without tinkering!",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759602152,
+    "title": "",
+    "source": "protondb"
+  }
+]

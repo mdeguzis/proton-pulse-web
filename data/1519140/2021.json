@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1519140",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 560 (POLARIS11, DRM 3.42.0, 5.15.6-arch2-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.6-arch2-1",
+    "notes": "Tried running with Experimental, 6.3-8 and 3.7-8",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1639310829,
+    "title": "",
+    "source": "protondb"
+  }
+]

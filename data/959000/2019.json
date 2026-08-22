@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "959000",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.14-300.fc31.x86_64",
+    "notes": "The game window appears completely black on launch, and has to be force killed.",
+    "os": "Unknown",
+    "protonVersion": "4.11-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1575970297,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "959000",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.15-1-MANJARO",
+    "notes": "If you see \"black screen\" after launch, just right click mouse. Worked for me.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-10",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1576614313,
+    "title": "",
+    "source": "protondb"
+  }
+]

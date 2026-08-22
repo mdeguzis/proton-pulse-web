@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "505740",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 20.0.4",
+    "kernel": "5.6.7-050607-generic",
+    "notes": "Black screen but no menu or anything.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-6",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1587871769,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "505740",
+    "cpu": "Intel Core i7-4800MQ @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD OLAND",
+    "gpuDriver": "4.5 Mesa 20.0.4",
+    "kernel": "5.6.7-050607-generic",
+    "notes": "Black screen but no menu or anything, if you delete the MP4 videos, you can get the logo, but still crashing.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-6",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1587931301,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "505740",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.7.1-050701-generic",
+    "notes": "Delete all the videos from folder: \"/steamapps/common/Eximius/ProjectCombine/Content/Movies\"",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1601188722,
+    "title": "",
+    "source": "protondb"
+  }
+]

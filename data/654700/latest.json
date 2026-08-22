@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "654700",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTS 450",
+    "gpuDriver": "NVIDIA 390.132",
+    "kernel": "5.5.11-151.current",
+    "notes": "Game is too laggy to be playable, but it may just be my hardware. Not sure",
+    "os": "Solus",
+    "protonVersion": "5.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1585849084,
+    "title": "",
+    "source": "protondb"
+  }
+]

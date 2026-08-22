@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1357210",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Everything worked great outside of the launcher, which can simply be skipped.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1756238004,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1357210",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.4, DRM 3.64, 6.17.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.6-cachyos1.2",
+    "kernel": "6.17.7-2-cachyos",
+    "notes": "worked pretty well, much faster than when i was on windows",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1765026337,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1508460",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD DIMGREY_CAVEFISH (LLVM 13.0.1, DRM 3.42, 5.15.32-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.0",
+    "kernel": "5.15.32-1-MANJARO",
+    "notes": "Runs identically to Windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1655679558,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1508460",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Nothing to note, runs well.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1655679670,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1357610",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 20.1.2, DRM 3.64, 6.17.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-19-generic",
+    "notes": "On launch the game gives an OS version error in a new window, not able to play the game at all.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1773992919,
+    "title": "",
+    "source": "protondb"
+  }
+]

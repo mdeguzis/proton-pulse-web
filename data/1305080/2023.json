@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1305080",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.52, 6.3.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.5-arch1-1",
+    "notes": "Works perfectly out of the box.",
+    "os": "EndeavourOS Linux (64\u00a0bits)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1699802254,
+    "title": "GearBlocks",
+    "source": "protondb"
+  },
+  {
+    "appId": "1305080",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-41-generic",
+    "notes": "",
+    "os": "Linux Mint 21",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1703647925,
+    "title": "GearBlocks",
+    "source": "protondb"
+  }
+]

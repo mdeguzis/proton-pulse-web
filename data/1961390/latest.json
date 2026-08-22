@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1961390",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 15.0.7, DRM 3.57, 6.8.0-76060800daily20240311-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "Game works just as fine, if not better than on Windows 11 both performance and stability wise",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1716585035,
+    "title": "",
+    "source": "protondb"
+  }
+]

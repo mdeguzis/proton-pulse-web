@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "654550",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 5500 (Broadwell GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.0-devel - padoka PPA",
+    "kernel": "4.19.9-041909-generic",
+    "notes": "Completed with no problems.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1593934892,
+    "title": "",
+    "source": "protondb"
+  }
+]

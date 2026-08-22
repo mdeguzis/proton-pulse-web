@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "290690",
+    "cpu": "Box86 on Cortex-A76 @2.40 GHz",
+    "duration": "underOneHour",
+    "gpu": "Broadcom V3D 7.1",
+    "gpuDriver": "3.1 Mesa 23.2.1-1~bpo12+rpt3",
+    "kernel": "6.6.64-v8+",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1734141036,
+    "title": "",
+    "source": "protondb"
+  }
+]

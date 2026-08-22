@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1252710",
+    "cpu": "13th Gen Intel Core i7-13700",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Crashes too much to be playable",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1725090478,
+    "title": "",
+    "source": "protondb"
+  }
+]

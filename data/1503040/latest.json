@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1503040",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.53-1-lts",
+    "notes": "Decent, slight input lag and lower fps",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1761372389,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1131450",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "Ran surprisingly smooth without any tinkering. The couple of issues I mention in my review, I am putting down to the game being early alpha.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1738464152,
+    "title": "",
+    "source": "protondb"
+  }
+]

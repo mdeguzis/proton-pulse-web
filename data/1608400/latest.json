@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1608400",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 20.1.6, DRM 3.63, 6.15.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.6-arch1.1",
+    "kernel": "6.15.7-arch1-1",
+    "notes": "Good support with current proton + alvr (quest 3)",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1753302219,
+    "title": "Vermillion - VR Painting",
+    "source": "protondb"
+  }
+]

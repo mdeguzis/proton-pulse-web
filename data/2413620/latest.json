@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2413620",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "5.15.0-94-generic",
+    "notes": "linux native version works perfectly",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1707958676,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2413620",
+    "cpu": "AMD Ryzen 3 3250U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 3 (raven2, LLVM 15.0.7, DRM 3.49, 6.2.6-76060206-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5 (git-6570a15662)",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Perfect",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1709567328,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2413620",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Great game honestly, fun for a few hours and always fun to come back to",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1721423088,
+    "title": "",
+    "source": "protondb"
+  }
+]

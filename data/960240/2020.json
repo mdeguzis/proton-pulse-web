@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "960240",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.15.0-96-generic",
+    "notes": "Never gets past the white loading screen",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1587944203,
+    "title": "",
+    "source": "protondb"
+  }
+]

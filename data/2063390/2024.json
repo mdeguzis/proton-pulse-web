@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2063390",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti Mobile",
+    "gpuDriver": "NVIDIA 550.67  CUDA 12.4",
+    "kernel": "6.8.2-arch2-1",
+    "notes": "Game is playable with minor flaws",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1712092883,
+    "title": "V.A Proxy",
+    "source": "protondb"
+  },
+  {
+    "appId": "2063390",
+    "cpu": "11th Gen Intel Core i7-11370H @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.2.0-26-generic",
+    "notes": "Es solo la demo,pero se muestra que estaba pensada para solo Windows por ahora.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-1",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1715108595,
+    "title": "V.A Proxy",
+    "source": "protondb"
+  },
+  {
+    "appId": "2063390",
+    "cpu": "AMD Ryzen 5 3600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Nvidia RTX 3070 Ti",
+    "gpuDriver": "Nvidia-open",
+    "kernel": "6.11.1-arch1-1",
+    "notes": "Very good game (even with only avaliable thing is the demo) It is very like an unknown type of feel. You dont know anything",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1729006847,
+    "title": "V.A Proxy",
+    "source": "protondb"
+  }
+]

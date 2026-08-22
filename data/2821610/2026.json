@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2821610",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.2, DRM 3.64, 6.17.0-14-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-14-generic",
+    "notes": "",
+    "os": "Zorin OS 18",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1772398895,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2821610",
+    "cpu": "13th Gen Intel Core i7-13700F",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.12-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.18.12-1-MANJARO",
+    "notes": "Perfect",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772750768,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2821610",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.7, DRM 3.64, 6.18.22)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.18.22",
+    "notes": "Works out the box",
+    "os": "GLF-OS (Phoenix_Pulsar) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777134866,
+    "title": "",
+    "source": "protondb"
+  }
+]

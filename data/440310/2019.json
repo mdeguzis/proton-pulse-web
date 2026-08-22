@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "440310",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.7-arch1-1-ARCH",
+    "notes": "Game overall works pretty well. Some of the songs are laggy but they are laggy on windows as well.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575620814,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "440310",
+    "cpu": "Intel Core i7-3537U @ 2.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 735M",
+    "gpuDriver": "NVIDIA 390.129",
+    "kernel": "5.3.0-24-generic",
+    "notes": "In my case it's not enjoyable at all because of the high requirements compared to graphical output.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-11",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1577633154,
+    "title": "",
+    "source": "protondb"
+  }
+]

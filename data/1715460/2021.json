@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1715460",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.10.60-amd64-desktop",
+    "notes": "Fails to start",
+    "os": "Deepin 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1640384307,
+    "title": "",
+    "source": "protondb"
+  }
+]

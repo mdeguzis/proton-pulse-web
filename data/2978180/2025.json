@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2978180",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.11.0-19-generic",
+    "notes": "Can load initial menu, but not able to click or select anything.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1742279412,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2978180",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "While technically playable, the main feature of the game (desktop overlay) is broken",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1765314106,
+    "title": "",
+    "source": "protondb"
+  }
+]

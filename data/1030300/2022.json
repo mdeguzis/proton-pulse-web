@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1030300",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.41.0, 5.13.14-200.fc34.x86_64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.7",
+    "kernel": "5.19.x86_64",
+    "notes": "I'm sure Cherry will still support a Native version.",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1642204817,
+    "title": "Hollow Knight: Silksong",
+    "source": "protondb"
+  }
+]

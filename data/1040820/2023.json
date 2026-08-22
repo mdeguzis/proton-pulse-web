@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1040820",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-88-generic",
+    "notes": "Forced to Proton",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703686135,
+    "title": "",
+    "source": "protondb"
+  }
+]

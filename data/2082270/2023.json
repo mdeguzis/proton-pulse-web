@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2082270",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.38-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.15.38-1-MANJARO",
+    "notes": "Depending on the version of proton used, the game will either crash instantly or say 'running' on steam indefinitely, but no window will ever open. I find this to be extremely strange behavior for a game coded in twine, something inherintly compatible with linux. Alas, they packaged the game inside an exe.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1682415994,
+    "title": "",
+    "source": "protondb"
+  }
+]

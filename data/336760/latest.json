@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "336760",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 15.0.7, DRM 3.49, 6.1.124-un-def-alt1)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.1.124-un-def-alt1",
+    "notes": "Works great!",
+    "os": "ALT Starterkit 10 (Hypericum) (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1738431107,
+    "title": "",
+    "source": "protondb"
+  }
+]

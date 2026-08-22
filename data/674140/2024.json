@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "674140",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 15.0.7, DRM 3.42, 5.15.0-101-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-101-generic",
+    "notes": "Works fine, mostly",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1711459859,
+    "title": "Bugsnax",
+    "source": "protondb"
+  },
+  {
+    "appId": "674140",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.12-zen1-1-zen",
+    "notes": "Works fine after a few tweaks",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1717119022,
+    "title": "Bugsnax",
+    "source": "protondb"
+  }
+]

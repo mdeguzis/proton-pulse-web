@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3070240",
+    "cpu": "AMD Ryzen 5 5560U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.9.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.1",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1723092855,
+    "title": "",
+    "source": "protondb"
+  }
+]

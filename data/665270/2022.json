@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "665270",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "3.0 Mesa 21.3.6 - kisak-mesa PPA",
+    "kernel": "4.15.0-169-generic",
+    "notes": "First launch game didn't start due to directX crashed, afterwards managed to run up to menu",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1657308198,
+    "title": "",
+    "source": "protondb"
+  }
+]

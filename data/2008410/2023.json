@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2008410",
+    "cpu": "13th Gen Intel Core i9-13900K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.2.0-76060200-generic",
+    "notes": "Nice little party game that I play with my 10 year old. Works great out of the box.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1679430969,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2008410",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Both the single player experience and Remote Play Together work on SD!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1700604566,
+    "title": "",
+    "source": "protondb"
+  }
+]

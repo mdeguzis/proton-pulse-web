@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "711810",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.5-arch1-1",
+    "notes": "Running with proton, I was able to use my max monitor refresh rate and resolution, along with everything working great.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1724001204,
+    "title": "",
+    "source": "protondb"
+  }
+]

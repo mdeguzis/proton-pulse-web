@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3278310",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.12.31_1",
+    "notes": "Attempted to use several different proton versions, including GE; Unreal Engine here seems to use(leak?) over 16 gigabytes of memory and will crash your system without a safety net like earlyoom. Further reading leads me to believe this was a problem several years ago with certain DX11 games, but attempting to play with PROTON_USE_WINED3D11=1 %command% slows the game's main menu to a crawl. Presumably an artifact of it being an unstable demo at time of writing, or a problem with this specific NVidia driver. It may be possible to get around with some tinkering.",
+    "os": "Void Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1749045565,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3278310",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.12.58-1-lts",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1763671377,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3278310",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.11-300.fc43.x86_64",
+    "notes": "Tinkered for an hour, the game will crash 100% of the time in its current state on all proton versions I tried when running in dx12, with the launch flag you can get the game to actually boot up and get to the menu on dx11 but it will crash before you can even click play and get in game.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1766600910,
+    "title": "",
+    "source": "protondb"
+  }
+]

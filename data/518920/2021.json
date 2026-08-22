@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "518920",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.4.72-1-lts",
+    "notes": "Game launched but doesn't appear in VR",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1619630350,
+    "title": "Surgeon Simulator: Experience Reality",
+    "source": "protondb"
+  }
+]

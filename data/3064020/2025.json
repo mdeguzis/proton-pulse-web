@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3064020",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.61, 6.13.8-201.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.2",
+    "kernel": "6.13.8-201.nobara.fc41.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1750757777,
+    "title": "",
+    "source": "protondb"
+  }
+]

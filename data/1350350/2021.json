@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1350350",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-25-generic",
+    "notes": "The game appears to be running according to Steam, but nothing appears even after a minute. No game window whatsoever.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1628798041,
+    "title": "",
+    "source": "protondb"
+  }
+]

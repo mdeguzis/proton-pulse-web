@@ -1,0 +1,22 @@
+{
+  "store": {
+    "developers": [
+      "Oleg Sergeev",
+      "Andrey Rumak"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Survival"
+    ],
+    "os": [
+      "windows",
+      "linux",
+      "osx"
+    ],
+    "publishers": [
+      "tinyBuild"
+    ],
+    "store_link": "https://www.gog.com/en/game/the_final_station"
+  }
+}

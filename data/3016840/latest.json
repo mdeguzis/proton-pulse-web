@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3016840",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.5",
+    "kernel": "6.18.5-2-cachyos",
+    "notes": "It has similar issues to Windows, however it is playable!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1768580446,
+    "title": "I Am Cat",
+    "source": "protondb"
+  }
+]

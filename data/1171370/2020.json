@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1171370",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.4.17-200.fc31.x86_64",
+    "notes": "Working perfect.",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1581387946,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1171370",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.3.2",
+    "kernel": "5.4.11-arch1-1",
+    "notes": "Works perfectly out of the box, nice short game!",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1581955818,
+    "title": "",
+    "source": "protondb"
+  }
+]

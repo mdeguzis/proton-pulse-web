@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3648730",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.5 (git-a89e404408)",
+    "kernel": "6.12.68-1-lts",
+    "notes": "Fun Game, Works Great! (Demo)",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770623028,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3648730",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.5 (git-a89e404408)",
+    "kernel": "6.12.68-1-lts",
+    "notes": "Fun Game, Works Great! (Demo)",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770624795,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3648730",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 21.1.6, DRM 3.64, 6.19.0-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.0-2-cachyos",
+    "notes": "Works out of box",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1771181265,
+    "title": "",
+    "source": "protondb"
+  }
+]

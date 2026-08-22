@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1096690",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.3-zen1-1-zen",
+    "notes": "No funciona. De la tienda Epic.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1701382055,
+    "title": "",
+    "source": "protondb"
+  }
+]

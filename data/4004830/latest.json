@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4004830",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.159.03",
+    "kernel": "6.17.0-35-generic",
+    "notes": "I am able to get to the main menu, but game freezes shortly after starting game.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1781634409,
+    "title": "",
+    "source": "protondb"
+  }
+]

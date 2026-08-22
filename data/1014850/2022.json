@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1014850",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.6, DRM 3.47, 5.19.0-1.1-liquorix-amd64)",
+    "gpuDriver": "4.6 Mesa 22.2.0-rc1",
+    "kernel": "5.19.0-1.1-liquorix-amd64",
+    "notes": "Error compiling shader \"data/shaders/sprite.ps\".data/shaders/sprite.ps:50:8:E5017: Aborting due to not yet implemented feature: Ternary operator.data/shaders/sprite.ps:50:1: E5005: Function \"clip\" is not defined.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1660566193,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "38100",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.1, DRM 3.44, 5.17.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.1-arch1-1",
+    "notes": "Runs great out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1649455700,
+    "title": "Build-A-Lot 3: Passport to Europe",
+    "source": "protondb"
+  }
+]

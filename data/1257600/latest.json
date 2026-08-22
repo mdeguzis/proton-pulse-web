@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1257600",
+    "cpu": "Intel Core i7-4710MQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Doesn't start at all",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1604857780,
+    "title": "",
+    "source": "protondb"
+  }
+]

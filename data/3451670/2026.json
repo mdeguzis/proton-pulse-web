@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3451670",
+    "cpu": "NAME=\"Freedesktop SDK\"",
+    "duration": "oneToFourHours",
+    "gpu": "lsusb -t",
+    "gpuDriver": "Dev 001, Class=root_hub, Driver=xhci_hcd/9p, 480M",
+    "kernel": "+-00.2  Advanced Micro Devices, Inc. [AMD] Starship/Matisse IOMMU",
+    "notes": "If this game is actually enjoyable is another topic, but it mostly works fine.",
+    "os": "lspci -tv",
+    "protonVersion": "10.0-3",
+    "ram": "wpctl status",
+    "rating": "gold",
+    "timestamp": 1775637351,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "313780",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon VII (VEGA20, DRM 3.40.0, 5.11.11-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.11-arch1-1",
+    "notes": "Works on Proton",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1617525973,
+    "title": "",
+    "source": "protondb"
+  }
+]

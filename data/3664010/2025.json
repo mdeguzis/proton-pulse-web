@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3664010",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.6-cachyos1.2",
+    "kernel": "6.17.7-5-cachyos",
+    "notes": "Totalmente jog\u00e1vel para quem curte.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1763250826,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3664010",
+    "cpu": "AMD Ryzen 3 PRO 3200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, ACO, DRM 3.64, 6.16.4-116.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Funcionou perfeitamente sem nenhum ajuste, apenas instalei e joguei. Talvez tenha rodado melhor que no Windows",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1765545886,
+    "title": "",
+    "source": "protondb"
+  }
+]

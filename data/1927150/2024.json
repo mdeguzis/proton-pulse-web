@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1927150",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 550.135",
+    "kernel": "6.11.10-2-MANJARO",
+    "notes": "works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1734832255,
+    "title": "Townframe",
+    "source": "protondb"
+  }
+]

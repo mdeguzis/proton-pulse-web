@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1307890",
+    "cpu": "AMD Ryzen 5 3500X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "I am using Ubuntu 22.10 with the last updated drivers and this game is not running even swapping Proton versions. I tried experimental, 7.0.5 and 6.3.8, but the game does not start.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1672964741,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1307890",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.19.13-1-MANJARO",
+    "notes": "Works perfectly out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1689039002,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1307890",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.4-76060504-generic",
+    "notes": "Game runs fine!",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1697314646,
+    "title": "",
+    "source": "protondb"
+  }
+]

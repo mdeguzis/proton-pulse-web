@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "501840",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6.13568 Compatibility Profile Context",
+    "kernel": "5.4.6-050406-generic",
+    "notes": "Launches with a black screen, music, nothing else",
+    "os": "Zorin OS 15.1",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577062756,
+    "title": "",
+    "source": "protondb"
+  }
+]

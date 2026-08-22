@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2858390",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Any attempts no matter the in-game settings would cause it to hang, and I would have to manually shut down my Deck and turn it back on.\nIn theory, So long as you had a computer that could run the game, you could launch it with Proton-GE and get farther than I did!\nThis is not a Compatibility issue in the case of proton (As far as I am aware), but it IS a hardware issue in the case of the Steam Deck and attempting to run a heavier weight game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1724483816,
+    "title": "The Veiled Ones",
+    "source": "protondb"
+  },
+  {
+    "appId": "2858390",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.11.3-200.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.3",
+    "kernel": "6.11.3-200.fsync.fc40.x86_64",
+    "notes": "Once I enabled ProtonGE, the game played effectively as it would have Native",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1729803243,
+    "title": "The Veiled Ones",
+    "source": "protondb"
+  }
+]

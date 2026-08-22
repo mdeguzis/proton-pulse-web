@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3436170",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 26.0.1-2~mx25ahs",
+    "kernel": "7.0.4+deb13-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1779225159,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1189730",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.1-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1665960840,
+    "title": "",
+    "source": "protondb"
+  }
+]

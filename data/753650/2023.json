@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "753650",
+    "cpu": "11th Gen Intel Core i5-11400 @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1690001439,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "753650",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.0-56-generic",
+    "notes": "The game seems cool. But, as it is curently \"dead\" (no one playing it), could not find any multiplayer game.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1690891972,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "753650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1691744895,
+    "title": "",
+    "source": "protondb"
+  }
+]

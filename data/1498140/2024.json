@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1498140",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-38-generic",
+    "notes": "",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726482740,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1498140",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.57, 6.9.9-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.1.3-arch1.1",
+    "kernel": "6.9.9-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1729659667,
+    "title": "",
+    "source": "protondb"
+  }
+]

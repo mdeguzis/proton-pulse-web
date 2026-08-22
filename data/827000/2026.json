@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "827000",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.4-4-cachyos",
+    "notes": "Missing audio is quite rough, maxes out at 1600 Res as well and won't window/fullscreen.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1774672523,
+    "title": "Celtic Kings: Rage of War",
+    "source": "protondb"
+  },
+  {
+    "appId": "827000",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.19.8-pikaos",
+    "notes": "",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1774725664,
+    "title": "Celtic Kings: Rage of War",
+    "source": "protondb"
+  }
+]

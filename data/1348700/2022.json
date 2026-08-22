@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1348700",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 13.0.1, DRM 3.46, 5.18.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.5-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1656256434,
+    "title": "",
+    "source": "protondb"
+  }
+]

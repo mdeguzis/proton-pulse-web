@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "622270",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.9-20-tkg-pds",
+    "notes": "Crashes at launch with 5.11-GE-2-MF",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1595537355,
+    "title": "",
+    "source": "protondb"
+  }
+]

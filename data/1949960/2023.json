@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1949960",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.42, 5.15.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-58-generic",
+    "notes": "Perfect! Was able to 100% without any issues.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1674716706,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1949960",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1688304492,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1949960",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "No issues",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1696787629,
+    "title": "",
+    "source": "protondb"
+  }
+]

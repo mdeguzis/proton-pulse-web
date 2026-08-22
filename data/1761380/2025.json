@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1761380",
+    "cpu": "Intel Pentium Gold G5400 @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.3-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.16.3-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1757753351,
+    "title": "Otherworld Legends",
+    "source": "protondb"
+  }
+]

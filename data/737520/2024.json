@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "737520",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.8-arch1-1",
+    "notes": "Completed without issues",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720765107,
+    "title": "",
+    "source": "protondb"
+  }
+]

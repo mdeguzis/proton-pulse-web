@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1323540",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-27-generic",
+    "notes": "Disabling 2nd display, starting game and reverting the graphics change puts the game on the monitor I prefer. Music great.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1643692851,
+    "title": "",
+    "source": "protondb"
+  }
+]

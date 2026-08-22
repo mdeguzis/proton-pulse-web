@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1905530",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs really well on Steam Deck hardware, no extra setup required.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1700768492,
+    "title": "Hammerwatch Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1905530",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Possibly my new favourite Steam Deck Game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1701028473,
+    "title": "Hammerwatch Anniversary Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1905530",
+    "cpu": "AMD Ryzen 9 3900XT 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.4.10-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-zen2-1-zen",
+    "notes": "Runs great, excellent game.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1701028570,
+    "title": "Hammerwatch Anniversary Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1066900",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.1.4-arch1-1",
+    "notes": "Great native game",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1675024456,
+    "title": "qomp",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "753610",
+    "cpu": "AMD FX-8300 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX TITAN",
+    "gpuDriver": "NVIDIA 470.94",
+    "kernel": "5.3.18-59.37-default",
+    "notes": "It takes a moment to load the assets, but aside from that it runs fine.",
+    "os": "openSUSE Leap 15.3",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641246837,
+    "title": "",
+    "source": "protondb"
+  }
+]

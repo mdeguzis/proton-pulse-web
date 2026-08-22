@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1127840",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.35.0, 5.4.0-122-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-122-generic",
+    "notes": "Too slow after recent update",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1662132508,
+    "title": "",
+    "source": "protondb"
+  }
+]

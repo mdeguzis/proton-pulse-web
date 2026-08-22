@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2852620",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.60, 6.12.15-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.12.15-200.fc41.x86_64",
+    "notes": "Runs great",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1740226830,
+    "title": "New Warfare",
+    "source": "protondb"
+  }
+]

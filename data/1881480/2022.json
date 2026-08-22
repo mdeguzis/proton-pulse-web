@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1881480",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.4-1-ck",
+    "notes": "The game is very laggy in a mid end PC",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1644956230,
+    "title": "",
+    "source": "protondb"
+  }
+]

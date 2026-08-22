@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3146270",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 21.1.8, DRM 3.64, 6.19.14-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.14-200.fc43.x86_64",
+    "notes": "Game works perfectly fine without any tinkering needed",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "%$s1 MB",
+    "rating": "gold",
+    "timestamp": 1778781851,
+    "title": "",
+    "source": "protondb"
+  }
+]

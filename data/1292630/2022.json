@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1292630",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.4.0-96-generic",
+    "notes": "Loading screen or just crash",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1642666048,
+    "title": "3on3 FreeStyle: Rebound",
+    "source": "protondb"
+  },
+  {
+    "appId": "1292630",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.13.0-35-generic",
+    "notes": "1645632810 proton-7.0-1b",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1647500438,
+    "title": "3on3 FreeStyle: Rebound",
+    "source": "protondb"
+  },
+  {
+    "appId": "1292630",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.13.0-35-generic",
+    "notes": "1646943044 experimental-7.0-20220310",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1647500910,
+    "title": "3on3 FreeStyle: Rebound",
+    "source": "protondb"
+  }
+]

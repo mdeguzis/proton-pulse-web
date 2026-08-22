@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2940990",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 15.0.7, DRM 3.59, 6.12.10-76061203-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1~bpo12+1pop1~1744225826~22.04~b077665",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1758207837,
+    "title": "",
+    "source": "protondb"
+  }
+]

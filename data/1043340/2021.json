@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1043340",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.40.0, 5.12.2-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.12.2-1-MANJARO",
+    "notes": "Max FPS you get if you're lucky is 50.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1622064100,
+    "title": "",
+    "source": "protondb"
+  }
+]

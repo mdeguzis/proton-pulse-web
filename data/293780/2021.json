@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "293780",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.14.12-300.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.14.12-300.fc35.x86_64",
+    "notes": "YES with a Caveat: Local play is great. Remote Play is a nightmare to get working",
+    "os": "Fedora Linux 35 (Workstation Edition)",
+    "protonVersion": "6.3-7",
+    "ram": "13 GB",
+    "rating": "gold",
+    "timestamp": 1634928480,
+    "title": "Crawl",
+    "source": "protondb"
+  }
+]

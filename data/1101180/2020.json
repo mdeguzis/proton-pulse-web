@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1101180",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-7629-generic",
+    "notes": "The game worked for me, I could play normaly.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1583933777,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1101180",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.10 (git-5fa3aae868)",
+    "kernel": "5.4.0-53-generic",
+    "notes": "Does not run",
+    "os": "Freedesktop.org 20.08.1.2 (Flatpak runtime) (64\u00a0bits)",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1605215648,
+    "title": "",
+    "source": "protondb"
+  }
+]

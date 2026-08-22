@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839200",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.10.89-1-lts",
+    "notes": "SpedV startet nicht",
+    "os": "Freedesktop.org 21.08.8 (Flatpak runtime)",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1641317476,
+    "title": "",
+    "source": "protondb"
+  }
+]

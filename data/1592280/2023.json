@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1592280",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.1.4",
+    "kernel": "6.3.12-244.current",
+    "notes": "[DEMO] I'm happy to report that the demo runs perfectly!",
+    "os": "Solus",
+    "protonVersion": "8.0-3",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1691233962,
+    "title": "",
+    "source": "protondb"
+  }
+]

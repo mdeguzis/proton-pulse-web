@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2181940",
+    "cpu": "AMD Ryzen 9 3900 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.6, DRM 3.49, 6.2.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.2.0-33-generic",
+    "notes": "The developer already knew the game wouldn't work in Proton before he gave me a key to tinker with; I'm reporting here so there's a least something about this game for others who might be interested.  I'll hopefully remember to add a new update once I either figure out how to get it to work or the developer makes some changes that cause it to start working.  The game appears to be using Electron, so I assume things will be much better once something is sorted out for the Steam sign-on step.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1699631559,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2181940",
+    "cpu": "AMD Ryzen 9 3900 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.6, DRM 3.49, 6.2.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.2.0-33-generic",
+    "notes": "Other than the patch needed to get into the game, the game seems to work fine given its pre-early-access playtesting state of development.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1700787734,
+    "title": "",
+    "source": "protondb"
+  }
+]

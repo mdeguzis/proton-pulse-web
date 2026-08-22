@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "897640",
+    "cpu": "AMD Ryzen 5 1600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.4",
+    "kernel": "5.3.11-arch1-1",
+    "notes": "Game seems to crash every time after a few minutes of gameplay.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1573966874,
+    "title": "",
+    "source": "protondb"
+  }
+]

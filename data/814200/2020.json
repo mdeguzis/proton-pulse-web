@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "814200",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "4.15.0-91-generic",
+    "notes": "",
+    "os": "elementary OS 5.1.2 Hera",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1586454175,
+    "title": "Simple Story - Alex",
+    "source": "protondb"
+  },
+  {
+    "appId": "814200",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.0-21-generic",
+    "notes": "",
+    "os": "Ubuntu Focal Fossa (development branch)",
+    "protonVersion": "5.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1587411107,
+    "title": "Simple Story - Alex",
+    "source": "protondb"
+  },
+  {
+    "appId": "814200",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "4.15.0-88-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1601353640,
+    "title": "Simple Story - Alex",
+    "source": "protondb"
+  }
+]

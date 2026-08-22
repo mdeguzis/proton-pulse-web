@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2633500",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Use Proton 6.3-8",
+    "os": "SteamOS Holo",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1704631846,
+    "title": "Dragon Throne: Battle of Red Cliffs",
+    "source": "protondb"
+  },
+  {
+    "appId": "2633500",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce 920M",
+    "gpuDriver": "NVIDIA 470.161.03",
+    "kernel": "5.15.85-1-lts",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1708786105,
+    "title": "Dragon Throne: Battle of Red Cliffs",
+    "source": "protondb"
+  }
+]

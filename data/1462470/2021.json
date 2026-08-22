@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1462470",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-8-amd64",
+    "notes": "This game is still in Alpha. It seems to work fine with Proton, however.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1629548834,
+    "title": "Vectorio Classic",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2658640",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 19.1.6, DRM 3.59, 6.12.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.2",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "Launching the game yields \"Error: Connect to GlobalUser failed.\" in the javascript version of steamwors.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1737580931,
+    "title": "",
+    "source": "protondb"
+  }
+]

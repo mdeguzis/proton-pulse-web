@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1133770",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Installs, but never starts. Just hangs.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-7",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1590259600,
+    "title": "",
+    "source": "protondb"
+  }
+]

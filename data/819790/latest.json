@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "819790",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.11-arch1-1",
+    "notes": "Game Launches as Empty White Window",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1585862021,
+    "title": "",
+    "source": "protondb"
+  }
+]

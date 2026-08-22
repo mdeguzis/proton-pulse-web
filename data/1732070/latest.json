@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1732070",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD GFX1100 (gfx1100, LLVM 15.0.7, DRM 3.54, 6.5.6-76060506-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1pop0~1699535617~22.04~6cd9a72",
+    "kernel": "6.5.6-76060506-generic",
+    "notes": "no issues at all, only using experimental because I set that as my default for games that don't have a proton version recommended by steam",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1702251964,
+    "title": "",
+    "source": "protondb"
+  }
+]

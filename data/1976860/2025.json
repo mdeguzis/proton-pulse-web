@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1976860",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.7, DRM 3.63, 6.15.1)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.15.1",
+    "notes": "Works fantastic out of the box",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1762988537,
+    "title": "",
+    "source": "protondb"
+  }
+]

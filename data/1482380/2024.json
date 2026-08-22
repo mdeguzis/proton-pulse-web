@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1482380",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "Nvidia 550.76",
+    "kernel": "6.1.0-20-amd64",
+    "notes": "Works perfectly out of the box with native Linux support!",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB 5600MHz (16x2)",
+    "rating": "gold",
+    "timestamp": 1714078335,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1482380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works as described no issues playing this on Linux with default Steam Compatibility Layer",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1721766196,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1482380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "game runs fine outta the box. its fun and has that \"one more run\" factor to it. easy to loose time with it. it was made for the Steamdeck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1721873956,
+    "title": "",
+    "source": "protondb"
+  }
+]

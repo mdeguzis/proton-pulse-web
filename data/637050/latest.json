@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "637050",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.4-arch1-1",
+    "notes": "The demo works well out of the box. Tried both on stable 6.3.5 and 6.12-GE.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626894236,
+    "title": "",
+    "source": "protondb"
+  }
+]

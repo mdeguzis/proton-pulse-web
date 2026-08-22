@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2644050",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.12.48+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.48+deb13-amd64",
+    "notes": "Game dev said they are focused on development for Win, but looking to make it compatible with Linux. The game is still is early stages.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1764276265,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1789470",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-52-generic",
+    "notes": "\"Win32 function failed: HRESULT: 0x887a0002 Call: at line 232 in file \\Graphics_DisplayM.Cpp",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1660755885,
+    "title": "Monster Girl's Labyrinth",
+    "source": "protondb"
+  }
+]

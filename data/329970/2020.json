@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "329970",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-31-generic",
+    "notes": "Native game, runs fine although game crashes when I tried to close it.",
+    "os": "Kubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590245861,
+    "title": "",
+    "source": "protondb"
+  }
+]

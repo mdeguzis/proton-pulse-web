@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2083540",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.4-arch2-1",
+    "notes": "Issues starting but nothing more",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1751332730,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1301950",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.17.0-1-MANJARO",
+    "notes": "runs out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1652757211,
+    "title": "Time Loader",
+    "source": "protondb"
+  }
+]

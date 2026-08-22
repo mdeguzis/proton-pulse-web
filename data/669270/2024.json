@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "669270",
+    "cpu": "Intel Core i5-7600 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.5.0-26-generic",
+    "notes": "",
+    "os": "Zorin OS 17.1",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1711739232,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "669270",
+    "cpu": "Intel Core i5-9400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 18.1.8, DRM 3.57, 6.10.3-zen1-2-zen)",
+    "gpuDriver": "4.6 Mesa 24.1.5-arch1.1",
+    "kernel": "6.10.3-zen1-2-zen",
+    "notes": "Game runs perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1723608379,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "669270",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Works great.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1735689198,
+    "title": "",
+    "source": "protondb"
+  }
+]

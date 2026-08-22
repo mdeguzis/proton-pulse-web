@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1205040",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.14.0-37-generic)",
+    "gpuDriver": "4.6 Mesa 25.3.0-devel",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Works out of the box",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768531322,
+    "title": "",
+    "source": "protondb"
+  }
+]

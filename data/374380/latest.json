@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "374380",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.8.0-88-generic",
+    "notes": "I havent ran a complete grand campaign yet, but with the correct proton version it seems to run fine.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "6.3-8",
+    "ram": "48 GB",
+    "rating": "bronze",
+    "timestamp": 1767752071,
+    "title": "Revolution Under Siege Gold",
+    "source": "protondb"
+  }
+]

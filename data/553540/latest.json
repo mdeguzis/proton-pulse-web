@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "553540",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, ACO, DRM 3.64, 6.19.9-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.9-1-cachyos",
+    "notes": "Best possible setup, click to play.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1774071563,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "553540",
+    "cpu": "Intel Core i5-14600K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "This game ran perfectly after a reboot from a previous OS version.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1775419981,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "553540",
+    "cpu": "12th Gen Intel Core i7-12700KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.19.9-1-cachyos",
+    "notes": "Works OOTB while using proton-cachyos-slr.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776826821,
+    "title": "",
+    "source": "protondb"
+  }
+]

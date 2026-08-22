@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1090670",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.0, DRM 3.48, 6.0.12-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.12-300.fc37.x86_64",
+    "notes": "Game displays 200+ FPS in the corner but the menu is stuttering at less than 1 fps, and none of the buttons can be reliably clicked. Additionally, the game forces itself onto my primary monitor and cannot be moved.",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1673014885,
+    "title": "",
+    "source": "protondb"
+  }
+]

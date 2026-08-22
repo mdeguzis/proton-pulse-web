@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "450120",
+    "cpu": "11th Gen Intel Core i3-1115G4 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa virgl (Mesa Intel UHD (TGL GT2))",
+    "gpuDriver": "4.6 Mesa 25.2.0-devel (git-453ecaddb5)",
+    "kernel": "6.1.129-17454-ge0cf3c31a0dd",
+    "notes": "Game boots but mouse is stuck in bottom-right corner. Detects keyboard and clicks, but yeah, can't move the mouse.",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1754158235,
+    "title": "",
+    "source": "protondb"
+  }
+]

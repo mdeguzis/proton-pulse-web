@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1092700",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.2-arch1-1",
+    "notes": "Well, the game works fine as windows... Just a little bit of tinkering into the game configuration file",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16GB",
+    "rating": "platinum",
+    "timestamp": 1687956842,
+    "title": "",
+    "source": "protondb"
+  }
+]

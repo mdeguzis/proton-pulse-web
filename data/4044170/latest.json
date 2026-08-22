@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4044170",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 21.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 26.0.4",
+    "kernel": "6.19.11-1-default",
+    "notes": "As or right now does not work as intended. Only shows game assets on top of a black screen instead of on the desktop.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1776285619,
+    "title": "",
+    "source": "protondb"
+  }
+]

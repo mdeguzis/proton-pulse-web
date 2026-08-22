@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1007400",
+    "cpu": "Intel Xeon E5-2680 0 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.60-gentoo",
+    "notes": "Shows a black screen and stops responding with 0% CPU",
+    "os": "Gentoo Linux",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1600074798,
+    "title": "",
+    "source": "protondb"
+  }
+]

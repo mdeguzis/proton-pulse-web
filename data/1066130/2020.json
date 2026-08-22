@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1066130",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.9.7-xanmod1",
+    "notes": "Looks like fun but I can't enjoy a driving game without the wheel working",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1605093706,
+    "title": "Truck Life",
+    "source": "protondb"
+  }
+]

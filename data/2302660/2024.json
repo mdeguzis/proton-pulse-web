@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2302660",
+    "cpu": "AMD Athlon Gold 3150U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Vega 3 (radeonsi, raven2, LLVM 17.0.6, DRM 3.57, 6.8.0-38-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.2",
+    "kernel": "6.8.0-38-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1732988415,
+    "title": "",
+    "source": "protondb"
+  }
+]

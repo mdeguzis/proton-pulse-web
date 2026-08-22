@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1059900",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.11-arch2-1",
+    "notes": "first person city builder and survivor.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1692967275,
+    "title": "Tribe: Primitive Builder",
+    "source": "protondb"
+  },
+  {
+    "appId": "1059900",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.35, 5.4.0-146-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.0 - kisak-mesa PPA",
+    "kernel": "5.4.0-146-generic",
+    "notes": "Unplayable",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1697324747,
+    "title": "Tribe: Primitive Builder",
+    "source": "protondb"
+  },
+  {
+    "appId": "1059900",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.39.0, 5.9.16-1-MANJARO, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "Game kept crashing or hanging on launch until I forced Proton Experimental.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1697353549,
+    "title": "Tribe: Primitive Builder",
+    "source": "protondb"
+  }
+]

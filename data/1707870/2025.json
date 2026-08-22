@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1707870",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (radeonsi, raven, LLVM 19.1.1, DRM 3.61, 6.11.0-26-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.11.0-26-generic",
+    "notes": "The Clips were not working at all, made it impossible to play, tried all of the proton but no luck",
+    "os": "Kubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "10 GB",
+    "rating": "borked",
+    "timestamp": 1749101732,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1058280",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.42.0, 5.14.21, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.14.21",
+    "notes": "Works fine out of the box, although I've only tried the first part of the main game so far.",
+    "os": "NixOS 22.05 (Quokka)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1638381823,
+    "title": "",
+    "source": "protondb"
+  }
+]

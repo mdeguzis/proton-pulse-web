@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "573070",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.19.0-32-generic",
+    "notes": "Does not work",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1735051684,
+    "title": "BAFL - Brakes Are For Losers",
+    "source": "protondb"
+  }
+]

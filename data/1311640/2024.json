@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1311640",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.52, 6.4.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.7-arch1.1",
+    "kernel": "6.4.12-arch1-1",
+    "notes": "Everything worked out of the box no tinkering needed to be done. It's stable and compared to windows even snappier for me.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704182305,
+    "title": "",
+    "source": "protondb"
+  }
+]

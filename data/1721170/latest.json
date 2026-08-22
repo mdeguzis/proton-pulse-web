@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1721170",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.8, DRM 3.64, 6.18.16-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.18.16-200.fc43.x86_64",
+    "notes": "Once the game starts, it will work. But it took me too long to get to that state",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1773258100,
+    "title": "",
+    "source": "protondb"
+  }
+]

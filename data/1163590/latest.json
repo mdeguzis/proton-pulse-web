@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1163590",
+    "cpu": "AMD Ryzen 7 5800U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.6, DRM 3.57, 6.9.10)",
+    "gpuDriver": "4.6 Mesa 24.3.1 (git-c815d651b8)",
+    "kernel": "6.9.10",
+    "notes": "I swear this game used to run under Proton 9.0.2 but I cannot get the game to run anymore",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1736733133,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1163590",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.1, DRM 3.57, 6.8.0-59-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-59-generic",
+    "notes": "Functions flawlessly",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1747070498,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1163590",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Game plays perfectly I played the entire main story on the Steam Deck, controller can be used in the secondary launcher with Xalia",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1757944179,
+    "title": "",
+    "source": "protondb"
+  }
+]

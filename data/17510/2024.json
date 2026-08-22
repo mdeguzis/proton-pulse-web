@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "17510",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.5.0-14-generic",
+    "notes": "When starting the the game, the opening video dose not display correctly. The menu dose not display at all. Starting the game crashes it.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1705535483,
+    "title": "Age of Chivalry",
+    "source": "protondb"
+  },
+  {
+    "appId": "17510",
+    "cpu": "11th Gen Intel Core i7-1185G7 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-78-generic",
+    "notes": "Borked",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1711945904,
+    "title": "Age of Chivalry",
+    "source": "protondb"
+  }
+]

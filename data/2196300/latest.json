@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2196300",
+    "cpu": "Intel Core i5-4570S @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.8.0-88-generic",
+    "notes": "I tried what I know how to to, used Proton Hotfix, Proton Experimental and Proton 9.0-4, could not open the game\n\nAlways getting the same error\n\nGrassGames Hearts - ERROR\n\nSystem.TypeInitializationException: The type initializer for 'Microsoft.Xna.Framework.Graphics.GraphicsAdapter' threw an exception. ---> SharpDX.SharpDXException: HRESULT: [0x80004005], Module: [General], ApiCode: [E_FAIL/Unspecified error], Message: Call failed.\n\n at SharpDX.Result.CheckError () [0x00014] in <7f4796577208434f8d35bcd50d9adfad>:0\n at SharpDX.DXGI.DXGI.CreateDXGIFactory1 (System.Guid riid, System.IntPtr&factoryOut) [0x00015] in <491162838d3c4297b61121c99eef1461>:0\n at SharpDX.DXGI.Factory1..ctor () [0x00016] in <491162838d3c4297661121c99eef1461>:0\n at Microsoft.Xna.Framework.Graphics.GraphicsAdapter.PlatformInitializeAdapters (System.Collections.ObjectModel.ReadOnlyCollection`1[Microsoft.Xna.Framework.Graphics.GraphicsAdapter]& adapters) [0x00000] in <115d97b957eb41cabade1b29d1e7edf4>:0\n at Microsoft.Xna.Framework.Graphics.GraphicsAdapter..cctor 0 [0x00027] in <115d97b957eb41cabade1b29d1e7edf4>:0\n --- End of inner exception stack trace ---\n at B.Ba.aK () [0x00447] in <c49f3760defc4bb0a239b6a4daa4e1d1>:0\n at B.Ba.A (B.Ba+b ) [0x00010] in <c49f3760defc4bb0a2391,6a4daa4e1d1>:0\n at d.dB..ctor (system.String[] , System.Boolean , System.Nullable`1[T] , System.String , System.String, System.Boolean , System.Nullable`1[T] , System.String , System.UInt32 , System.Boolean ) [0x0008f] in <c49f3760defc4bb0a239b6a4daa4e1d1>:0\n at c.cT.A (System.String[] ) [0x00034] in <c49f3760defc4bb0a239b6a4daa4e1d1>:0",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1764593242,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2196300",
+    "cpu": "Intel Core i5-4570S @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.8.0-88-generic",
+    "notes": "Works well with a startup command",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1764607020,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1520680",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "5.15.0-69-generic",
+    "notes": "Needed to use proton GE to fix the video playback problem, everything else works as it should.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1680078045,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1520680",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "5.15.0-69-generic",
+    "notes": "Tried again with latest proton patch, it works right out of the box",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1680302039,
+    "title": "",
+    "source": "protondb"
+  }
+]

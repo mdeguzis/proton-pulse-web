@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936490",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-26-generic",
+    "notes": "Main menu works, but black screen with in game cursor after clicking new game",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1579388439,
+    "title": "Counter Terrorist Agency",
+    "source": "protondb"
+  }
+]

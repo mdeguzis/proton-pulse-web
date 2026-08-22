@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2458310",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.59, 6.12.4-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.2.8-arch1.1",
+    "kernel": "6.12.4-1-MANJARO",
+    "notes": "Work as well on Manjaro Linux as Windows 11",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1737045830,
+    "title": "New Arc Line",
+    "source": "protondb"
+  },
+  {
+    "appId": "2458310",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.14.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.3-cachyos1.2",
+    "kernel": "6.14.2-2-cachyos",
+    "notes": "Crashes on Launch",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1748656891,
+    "title": "New Arc Line",
+    "source": "protondb"
+  },
+  {
+    "appId": "2458310",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, LLVM 20.1.6, DRM 3.61, 6.14.11-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.14.11-300.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "8.0-5",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1755333499,
+    "title": "New Arc Line",
+    "source": "protondb"
+  }
+]

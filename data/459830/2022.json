@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "459830",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RENOIR (LLVM 13.0.1, DRM 3.44, 5.17.4-arch1-g14-1)",
+    "gpuDriver": "4.6 Mesa 22.0.3",
+    "kernel": "5.17.4-arch1-g14-1",
+    "notes": "After enabling the recent proton (7.0) version, it went no problems :)",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1654548977,
+    "title": "",
+    "source": "protondb"
+  }
+]

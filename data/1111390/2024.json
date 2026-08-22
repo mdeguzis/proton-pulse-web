@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1111390",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD BEIGE_GOBY (DRM 3.42.0, 5.15.19, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.19",
+    "notes": "Run with the CoZ patch",
+    "os": "Slackware 15.0 x86_64",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1708204969,
+    "title": "",
+    "source": "protondb"
+  }
+]

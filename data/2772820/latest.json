@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2772820",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.2, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-100-generic",
+    "notes": "I have an Nvidia RTX 4090 with the latest Nvidia driver available, running on Linux Mint 22.3.  I tried the default version of Proton, GE-Proton9-27, GE-Proton10-3, Proton Experimental and Proton Hotfix.  The game would not launch with any version I tried.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1773419675,
+    "title": "",
+    "source": "protondb"
+  }
+]

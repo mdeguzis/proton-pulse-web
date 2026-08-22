@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2317510",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.16.5-1-MANJARO",
+    "notes": "Ran perfect OOTB",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1686593545,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2317510",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.3-cachyos",
+    "notes": "No issues",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1695413388,
+    "title": "",
+    "source": "protondb"
+  }
+]

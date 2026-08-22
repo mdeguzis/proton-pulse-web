@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1154040",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Tried Proton 5.13-1 and Proton 5.9-GE-8-ST. \nGame installs but does not launch.",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1604732848,
+    "title": "SpellForce 3 Fallen God",
+    "source": "protondb"
+  },
+  {
+    "appId": "1154040",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.12-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605805175,
+    "title": "SpellForce 3 Fallen God",
+    "source": "protondb"
+  },
+  {
+    "appId": "1154040",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-76-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607076716,
+    "title": "SpellForce 3 Fallen God",
+    "source": "protondb"
+  }
+]

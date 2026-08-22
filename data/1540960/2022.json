@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1540960",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.44.0, 5.16.14-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.14-200.fc35.x86_64",
+    "notes": "Works perfectly",
+    "os": "Fedora Linux 35 (Workstation Edition)",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1651341799,
+    "title": "Underworld Idle",
+    "source": "protondb"
+  }
+]

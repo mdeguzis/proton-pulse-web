@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1592740",
+    "cpu": "AMD Ryzen 5 7640U w/ Radeon 760M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 17.0.6, DRM 3.54, 6.6.8-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.8-200.fc39.x86_64",
+    "notes": "Works out of the box with very minor visual issues.",
+    "os": "Fedora Linux 39 (Cinnamon)",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1703868164,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1042780",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.12.9-zen1-1-zen, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.2",
+    "kernel": "5.12.9-zen1-1-zen",
+    "notes": "I have the EGS version from free weekend, via Heroic Launcher. Works perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624221199,
+    "title": "",
+    "source": "protondb"
+  }
+]

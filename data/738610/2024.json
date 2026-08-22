@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "738610",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.59, 6.12.0-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.0-arch1-1",
+    "notes": "by default, starts in windowed mode. not able to click anything properly. trying to click on the settings menu results in the load game UI instead.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "126 GB",
+    "rating": "borked",
+    "timestamp": 1733080554,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "738610",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.59, 6.12.0-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.0-arch1-1",
+    "notes": "proton 9 - works better than the native version",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "126 GB",
+    "rating": "gold",
+    "timestamp": 1733093461,
+    "title": "",
+    "source": "protondb"
+  }
+]

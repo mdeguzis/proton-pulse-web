@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "892910",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.3",
+    "kernel": "5.10.7-200.fc33.x86_64",
+    "notes": "Game loaded but any button on the menu frezzes it",
+    "os": "Linux 5.x",
+    "protonVersion": "5.13-5",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1611787465,
+    "title": "",
+    "source": "protondb"
+  }
+]

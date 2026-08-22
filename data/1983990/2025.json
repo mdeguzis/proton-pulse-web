@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1983990",
+    "cpu": "13th Gen Intel Core i7-13700KF",
+    "duration": "allTheTime",
+    "gpu": "Mesa llvmpipe (LLVM 19.1.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.5-arch1-1",
+    "notes": "All works OOTB. Multiplayer works",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764172597,
+    "title": "",
+    "source": "protondb"
+  }
+]

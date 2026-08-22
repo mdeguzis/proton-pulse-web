@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1342090",
+    "cpu": "Intel Core i9-10980XE @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.10-zen1-1-zen",
+    "notes": "The frequent soft-locking and spaced saves means you'll frequently lose progress which doesn't make for a great gaming experience.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1708131192,
+    "title": "",
+    "source": "protondb"
+  }
+]

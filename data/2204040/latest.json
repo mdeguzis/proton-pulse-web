@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2204040",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 14.0.6, DRM 3.48, 6.0.11-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.11-arch1-1",
+    "notes": "Works fine, extremely short game as of this report, get from start to finish in less than 20 minutes.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1670734703,
+    "title": "",
+    "source": "protondb"
+  }
+]

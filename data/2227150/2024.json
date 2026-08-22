@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2227150",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.9-201.fsync.fc38.x86_64",
+    "notes": "Game runs perfectly out of the box.",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1704232471,
+    "title": "Gwen The Hen 64",
+    "source": "protondb"
+  }
+]

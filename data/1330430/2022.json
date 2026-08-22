@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1330430",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.13.0-28-generic",
+    "notes": "Demo would not install",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645487160,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1330430",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (POLARIS10, DRM 3.42.0, 5.15.21-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.21-1-MANJARO",
+    "notes": "Won't even launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1645536656,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1330430",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.13-arch1-1",
+    "notes": "requests to be ran as normal (nonadmin) user",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1645596860,
+    "title": "",
+    "source": "protondb"
+  }
+]

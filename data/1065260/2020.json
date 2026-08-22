@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1065260",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.6-arch1-1",
+    "notes": "Will crash at the middle and end of campaign mode. Does not affect playability.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1593360305,
+    "title": "GENSOU Skydrift",
+    "source": "protondb"
+  }
+]

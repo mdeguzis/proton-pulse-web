@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "818210",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.5.5-arch1-1",
+    "notes": "Funciona muy bien. Casi perfecto.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589061341,
+    "title": "Indie Pogo",
+    "source": "protondb"
+  }
+]

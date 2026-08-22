@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3140180",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.19.12-arch1-1",
+    "notes": "Works great! Had to switch to proton hotfix to get audio working.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1773097701,
+    "title": "THYSIASTERY",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "233800",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.0-arch3-1",
+    "notes": "* When selecting the default \"Play Arma 3 Tools\" launch option, it should bring up the launcher with all the tools, but it just silently crashes instead.\n* The other launch options work and you can successfully start these tools:\n    * Addon Builder\n    * Object Bulder\n    * Publisher\n    * Terrain Builder\n* Terrain Builder throws an error about the `P:\\` drive not being mounted. I've not built terrains for Arma 3 so I'm not sure if that's actually required or not.\n* Not sure how to run the other tools (e.g. `CfgConvert`), but if I figure it out I'll post an update when time permits.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1705760701,
+    "title": "",
+    "source": "protondb"
+  }
+]

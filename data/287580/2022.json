@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "287580",
+    "cpu": "Intel Core i3         550  @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.6, DRM 3.48, 6.0.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.12-arch1-1",
+    "notes": "Forced the installation of the Windows version to give it a go and see how it performs in comparison with the native version.\n\nEven though the game installs fine and seems to run, it will crash randomly, sometimes even before showing the main menu, which renders it unusable in this state.\n\nThe native version worked perfectly in the same system.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1671382830,
+    "title": "",
+    "source": "protondb"
+  }
+]

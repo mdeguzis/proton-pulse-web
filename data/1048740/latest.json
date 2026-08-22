@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1048740",
+    "cpu": "Intel Xeon W-11855M @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "7.0.1-200.nobara.fc43.x86_64",
+    "notes": "Worked perfectly out of the box!",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1777521636,
+    "title": "",
+    "source": "protondb"
+  }
+]

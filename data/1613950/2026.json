@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1613950",
+    "cpu": "13th Gen Intel Core i7-1360P",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (RPL-P)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-12-generic",
+    "notes": "Runs fine on my laptop",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "13 GB",
+    "rating": "gold",
+    "timestamp": 1769906215,
+    "title": "Sovereign Tea",
+    "source": "protondb"
+  }
+]

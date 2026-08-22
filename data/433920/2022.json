@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "433920",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA 770",
+    "gpuDriver": "4.3 Mesa 22.1.3",
+    "kernel": "5.18.9-zen1-1-zen",
+    "notes": "Game is always the same resolution regardless of window size, occupying only the same square in the top right corner regardless of whether the window was smaller than it or much larger, even in fullscreen though it scaled to fill the screen the resolution did not change. The initial main menu displays fine, but as soon as you enter any other menu there is no text visible, though it otherwise appears functional. When you click start game from the initial menu a blank text box appears and as soon as you click to progress the game crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1657415440,
+    "title": "Aveyond 4: Shadow of the Mist",
+    "source": "protondb"
+  }
+]

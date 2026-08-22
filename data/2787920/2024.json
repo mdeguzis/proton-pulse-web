@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2787920",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 16.0.6, DRM 3.57, 6.7.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.7.3-arch1-1",
+    "notes": "Seeing as how Vermintide 2 needed a specific beta branch to enable a workaround, it's unlikely this will be fixed by anything other than a future Proton / WINE version or even linux support by the Webview2 developers (who have been aware of the issue since October).",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1708670529,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2787920",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 16.0.6, DRM 3.57, 6.7.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.7.3-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1708855393,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2787920",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 14.0.6, DRM 3.42, 5.15.0-53-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.2 - kisak-mesa PPA",
+    "kernel": "5.15.0-53-generic",
+    "notes": "Requires an Edge Webview component that won't install under any proton I've tried",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1715574351,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3080240",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 535.230.02",
+    "kernel": "5.15.0-143-generic",
+    "notes": "Works fine on GE Proton 9.26.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "platinum",
+    "timestamp": 1754236774,
+    "title": "",
+    "source": "protondb"
+  }
+]

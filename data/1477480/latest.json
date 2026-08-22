@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1477480",
+    "cpu": "AMD Ryzen 7 7840U w/ Radeon 780M Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.13.6-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.6-103.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1742390536,
+    "title": "",
+    "source": "protondb"
+  }
+]

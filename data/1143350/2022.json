@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1143350",
+    "cpu": "AMD Ryzen 3 3100 4-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.10.0-14-amd64",
+    "notes": "For the most part, this lightweight 2D game is one that demands performance from its tight controls and gameplay. Proton suits this need.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-2",
+    "ram": "40 GB",
+    "rating": "platinum",
+    "timestamp": 1653290858,
+    "title": "FLATLAND Vol.1",
+    "source": "protondb"
+  }
+]

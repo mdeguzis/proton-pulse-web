@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2967100",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 560.31.02",
+    "kernel": "6.10.3-201.fsync.fc40.x86_64",
+    "notes": "No immediate issues. Seems to run just fine.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "24 GB",
+    "rating": "platinum",
+    "timestamp": 1723568321,
+    "title": "",
+    "source": "protondb"
+  }
+]

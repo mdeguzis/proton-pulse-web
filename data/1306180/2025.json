@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1306180",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 19.1.1, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Armagetron Advanced is still alive and kicking. Native for Linux on Steam too!",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1739182774,
+    "title": "Retrocycles",
+    "source": "protondb"
+  },
+  {
+    "appId": "1306180",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1759397906,
+    "title": "Retrocycles",
+    "source": "protondb"
+  },
+  {
+    "appId": "1306180",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 19.1.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.3.4",
+    "kernel": "6.6.47-gentoo-dist",
+    "notes": "works straight out of the box and is pretty fun to play !",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1760192574,
+    "title": "Retrocycles",
+    "source": "protondb"
+  }
+]

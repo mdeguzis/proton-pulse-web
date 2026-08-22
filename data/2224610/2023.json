@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2224610",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.25-1-MANJARO",
+    "notes": "Working without problems with GEProton",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1695747776,
+    "title": "",
+    "source": "protondb"
+  }
+]

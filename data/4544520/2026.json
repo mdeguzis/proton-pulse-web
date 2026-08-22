@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4544520",
+    "cpu": "AMD BC-250 6 cores @ 3.6Ghz",
+    "duration": "underOneHour",
+    "gpu": "AMD BC-250 GFX1013 @ 2200Mhz",
+    "gpuDriver": "4.6 Mesa 26.2.0-devel (git-7f3900ed20)",
+    "kernel": "6.19.11-1-cachyos-deckify",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16Gb GDDR6",
+    "rating": "gold",
+    "timestamp": 1776757220,
+    "title": "R.E.C",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1347970",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.59, 6.12.11-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.12.11-200.fc41.x86_64",
+    "notes": "Works right out of the box",
+    "os": "Fedora Linux 41 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739512861,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1347970",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.12.29-1-lts",
+    "notes": "No issues. The game works fine out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1751236144,
+    "title": "",
+    "source": "protondb"
+  }
+]

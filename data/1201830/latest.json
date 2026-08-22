@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1201830",
+    "cpu": "03/12/2025",
+    "duration": "unreported",
+    "gpu": "DP-4, DP-5, DP-6, HDMI-A-2, Writeback-2",
+    "gpuDriver": "42.0 C",
+    "kernel": "4404",
+    "notes": "Starts and says Running the self closes without ever seeing a screen",
+    "os": "2",
+    "protonVersion": "6.3-8",
+    "ram": "720x400",
+    "rating": "borked",
+    "timestamp": 1765581894,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1159540",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.94",
+    "kernel": "5.16.1-1-default",
+    "notes": "Runs out of the box",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643399602,
+    "title": "Fear the Dark Unknown",
+    "source": "protondb"
+  }
+]

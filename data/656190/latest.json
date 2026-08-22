@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "656190",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.19.122-1-MANJARO",
+    "notes": "the path to the game has kanji characters, preventing the game from starting",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1591120562,
+    "title": "",
+    "source": "protondb"
+  }
+]

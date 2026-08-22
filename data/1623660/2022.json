@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1623660",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.15.0-2-amd64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-2-amd64",
+    "notes": "after intro video the game crashed",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1641056542,
+    "title": "MIR4",
+    "source": "protondb"
+  },
+  {
+    "appId": "1623660",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.23-76051523-generic",
+    "notes": "With Proton 7.0-1 and Experimental the game finally opens.\nBut during downloading of remained resouces to play the game freezes and i can't continue the update patch download.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1646502994,
+    "title": "MIR4",
+    "source": "protondb"
+  },
+  {
+    "appId": "1623660",
+    "cpu": "AMD Athlon 200GE with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 3 (raven, LLVM 14.0.6, DRM 3.48, 6.0.10-Xanmod-Custom-xanmod1)",
+    "gpuDriver": "4.6 Mesa 22.3.0",
+    "kernel": "6.0.10-Xanmod-Custom-xanmod1",
+    "notes": "se cierra al descargar los componentes del juego",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1670606719,
+    "title": "MIR4",
+    "source": "protondb"
+  }
+]

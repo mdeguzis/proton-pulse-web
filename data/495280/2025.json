@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "495280",
+    "cpu": "AMD Ryzen 9 5900XT 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.65.06",
+    "kernel": "6.16.4",
+    "notes": "Just use proton 7 and be happy with it.",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1760560484,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "495280",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.14.0-27-generic",
+    "notes": "Works perfectly out of the box",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1761858497,
+    "title": "",
+    "source": "protondb"
+  }
+]

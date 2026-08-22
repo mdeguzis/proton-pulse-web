@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2376750",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.59, 6.13.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.2-arch1-1",
+    "notes": "It just works!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1739824026,
+    "title": "Ancient Mind",
+    "source": "protondb"
+  }
+]

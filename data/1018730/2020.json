@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1018730",
+    "cpu": "AMD A4-6210 APU with AMD Radeon R3 Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 720",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "lagging",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-1",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1603998926,
+    "title": "",
+    "source": "protondb"
+  }
+]

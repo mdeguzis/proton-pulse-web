@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "758080",
+    "cpu": "AMD Ryzen 9 4900HS with Radeon Graphics         AuthenticAMD",
+    "duration": "severalHours",
+    "gpu": "AMD RENOIR (DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Works out of the box, performance is pretty much same as on Windows",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1620636284,
+    "title": "",
+    "source": "protondb"
+  }
+]

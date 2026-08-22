@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1671410",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 535.216.01",
+    "kernel": "6.1.0-30-amd64",
+    "notes": "Fonctionne tres bien",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737723156,
+    "title": "Somerville",
+    "source": "protondb"
+  },
+  {
+    "appId": "1671410",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.11-200.fc41.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 41 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739014756,
+    "title": "Somerville",
+    "source": "protondb"
+  }
+]

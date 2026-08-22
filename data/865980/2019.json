@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "865980",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Worked the same as when running in Windows 10, including bugs found in Windows due to the game's Early Access state.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1572749910,
+    "title": "",
+    "source": "protondb"
+  }
+]

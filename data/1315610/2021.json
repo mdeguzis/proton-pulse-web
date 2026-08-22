@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1315610",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-31-generic",
+    "notes": "Videos don't play using Proton Experimental. Flawless with GE.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633028397,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1315610",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.11-230-tkg-cacule, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.11-230-tkg-cacule",
+    "notes": "Use GE or you'll miss the opening video & playable intro.\nFull Ultrawide is supported",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640971103,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2456420",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.1-1-cachyos-bore)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch2.2",
+    "kernel": "7.0.1-1-cachyos-bore",
+    "notes": "Works Just as good as it does on windows",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "94 GB",
+    "rating": "platinum",
+    "timestamp": 1777338457,
+    "title": "",
+    "source": "protondb"
+  }
+]

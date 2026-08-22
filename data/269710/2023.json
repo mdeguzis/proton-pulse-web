@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "269710",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.8-200.fc38.x86_64",
+    "notes": "Crashes with the native build no matter what I do. Doesn't work on default proton, works with GE7-43",
+    "os": "Fedora Linux 38.20230624.0 (Silverblue)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1689534735,
+    "title": "",
+    "source": "protondb"
+  }
+]

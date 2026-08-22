@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "550320",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.2-180-tkg-pds, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.2-180-tkg-pds",
+    "notes": "Native version runs better for me",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1629039818,
+    "title": "art of rally",
+    "source": "protondb"
+  },
+  {
+    "appId": "550320",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Game got stuck loading the map on both Linux native and the Proton versions.  Unable to play.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1636305848,
+    "title": "art of rally",
+    "source": "protondb"
+  },
+  {
+    "appId": "550320",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GM107M [GeForce GTX 860M]",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "I couldn't get DRI_PRIME=1 to work with the native version. Ran with Proton and it worked perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640569323,
+    "title": "art of rally",
+    "source": "protondb"
+  }
+]

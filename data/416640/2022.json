@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "416640",
+    "cpu": "Intel Core m3-6Y30 @ 0.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 515 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.3.9 (git-78c96ae5b6)",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "Diabotical produces following error: The process \"Iass.exe\" is not trusted for the following reason(s). I can say what the reasons are but I cannot copy and paste the message so if I asked I will send a screen shot. The reasons are things like \"There is malware running\", \"We are running in a virutaled, sandboxed or emulated enviorment\", \"You were sold a fraudulent or pirated version of Microsoft Windows\". I have tried running Diabotical with just ge proton then tried using easyanticheat runtime and battle eye runtime. Followed by using GameMode and enabling EOS overlay. I did this all 1 by 1 then eventually all together",
+    "os": "Freedesktop.org 21.08.15 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1661313704,
+    "title": "Diabolical",
+    "source": "protondb"
+  }
+]

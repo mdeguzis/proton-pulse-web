@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "11450",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 15.0.7, DRM 3.54, 6.6.6-76060606-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.0-1pop0~1702935939~22.04~67e417a",
+    "kernel": "6.6.6-76060606-generic",
+    "notes": "Game runs great, no issues",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1704096680,
+    "title": "Overlord\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "11450",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.42, 5.15.0-97-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-97-generic",
+    "notes": "After forcing proton Experimental the game works great.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1709073588,
+    "title": "Overlord\u2122",
+    "source": "protondb"
+  },
+  {
+    "appId": "11450",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1734536333,
+    "title": "Overlord\u2122",
+    "source": "protondb"
+  }
+]

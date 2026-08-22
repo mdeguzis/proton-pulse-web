@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1200330",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.7-arch1-1",
+    "notes": "Cutscene videos do not play and the main screen has no proper background. Otherwise it works well!",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1632573014,
+    "title": "",
+    "source": "protondb"
+  }
+]

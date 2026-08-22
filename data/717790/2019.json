@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "717790",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel (git-57acf92 2019-11-11 eoan-oibaf-ppa)",
+    "kernel": "5.3.0-20-generic",
+    "notes": "Game launches but very poor performance and will lock up my computer.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1573702856,
+    "title": "",
+    "source": "protondb"
+  }
+]

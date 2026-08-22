@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1960590",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.12.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "Works great in Wayland",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1734406828,
+    "title": "",
+    "source": "protondb"
+  }
+]

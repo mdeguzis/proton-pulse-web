@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1201540",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-36-generic",
+    "notes": "Works great with both players on Linux PCs",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764524951,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "316610",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.10-200.fc42.x86_64",
+    "notes": "I was able to complete the game without any issues, controller works OOTB",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1759922916,
+    "title": "",
+    "source": "protondb"
+  }
+]

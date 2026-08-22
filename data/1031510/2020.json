@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1031510",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "5.3.0-29-generic",
+    "notes": "Good! Just Works!",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-12",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1580210843,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1031510",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 670",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.4.14-arch1-1",
+    "notes": "Used Proton-5.6-GE-2 but regular version should work too. Runs perfectly out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1588472192,
+    "title": "",
+    "source": "protondb"
+  }
+]

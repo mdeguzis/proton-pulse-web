@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3373000",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.13.5-100.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.13.5-100.bazzite.fc41.x86_64",
+    "notes": "Gamel launches just fine - opening multiple windows doesn't seem to be possible.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1740885116,
+    "title": "",
+    "source": "protondb"
+  }
+]

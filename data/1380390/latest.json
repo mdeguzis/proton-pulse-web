@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1380390",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 14.0.0, DRM 3.46, 5.18.5-201.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.0-git",
+    "kernel": "5.18.5-201.fsync.fc36.x86_64",
+    "notes": "A couple of videos are broken unless you use Experimental (bleeding edge) or GE",
+    "os": "Fedora release 36 (Thirty Six)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1656351736,
+    "title": "",
+    "source": "protondb"
+  }
+]

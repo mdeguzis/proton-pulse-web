@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1196080",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 535.146.02",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Black screen launches then immediatly crashes reports driver update needed",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705066791,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196080",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.56, 6.7.0-204.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.3",
+    "kernel": "6.7.0-204.fsync.fc39.x86_64",
+    "notes": "This was tested on the demo version of the game",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705809593,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196080",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.7, DRM 3.58, 6.8.0-41-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel",
+    "kernel": "6.8.0-41-generic",
+    "notes": "Terminal window opens, screen turns black and app crashes",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1725743062,
+    "title": "",
+    "source": "protondb"
+  }
+]

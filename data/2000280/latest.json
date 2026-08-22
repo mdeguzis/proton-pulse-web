@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2000280",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.54, 6.6.8-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.8-200.fc39.x86_64",
+    "notes": "You too can eat sushi on Linux!",
+    "os": "Fedora Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1705265755,
+    "title": "",
+    "source": "protondb"
+  }
+]

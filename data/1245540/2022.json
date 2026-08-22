@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1245540",
+    "cpu": "Intel Core2 Quad    Q8200  @ 2.33GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 13.0.1, 128 bits)",
+    "gpuDriver": "4.5 Mesa 22.0.1",
+    "kernel": "5.17.4-arch1-1",
+    "notes": "an error appears, the same error appears in steam proton\n\"Win32 function failed: HRESULT: 0x80004005 \nCall: at line 230 in file \\Graphics_displayM.cpp\"\nI'm buy the game, i think i will have to ask for a refund...",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1651470527,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1245540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Sadly borked and I do not know how I would fix it.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1669592871,
+    "title": "",
+    "source": "protondb"
+  }
+]

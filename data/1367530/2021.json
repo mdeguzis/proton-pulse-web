@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1367530",
+    "cpu": "AMD Phenom II X6 1075T",
+    "duration": "unreported",
+    "gpu": "AMD HAWAII (DRM 2.50.0, 5.10.0-10.2-liquorix-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.5 Mesa 21.1.0-devel (git-c196ffa 2021-01-25 groovy-oibaf-ppa)",
+    "kernel": "5.10.0-10.2-liquorix-amd64",
+    "notes": "So yes it was able to launch with wine 3d3 but it froze at the made by unity screen also i saw that it was quite dark.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612103562,
+    "title": "Rekt: Crash Test",
+    "source": "protondb"
+  }
+]

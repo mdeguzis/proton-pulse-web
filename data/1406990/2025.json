@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1406990",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.13.0-2-cachyos",
+    "notes": "Game runs just fine, missing Opening and Ending video, can be fixed with tinkering.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1737885011,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1406990",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-arch1-1",
+    "notes": "The game works out of the box, does need fixes for videos to play.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1738440875,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1406990",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.6, DRM 3.59, 6.11.10+bpo-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.11.10+bpo-amd64",
+    "notes": "Yay, French catgirls! (and same ol' video woes)",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1739073028,
+    "title": "",
+    "source": "protondb"
+  }
+]

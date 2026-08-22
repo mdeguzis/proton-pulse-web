@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2216830",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.6, DRM 3.54, 6.5.6-200.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.6-200.fsync.fc38.x86_64",
+    "notes": "The demo seems to work fine with a little tinkering",
+    "os": "Nobara Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1697089442,
+    "title": "",
+    "source": "protondb"
+  }
+]

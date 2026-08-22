@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1194700",
+    "cpu": "AMD Ryzen Threadripper 3960X 24-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.2.0-rc4 (git-b89a76b7ce)",
+    "kernel": "5.9.0-rc3-3-amd-staging-drm-next-git-00284-gbc32b65255ee",
+    "notes": "Works great, and the diegetic menu controls offer one of the better VR menu experiences that I've encountered",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1604605318,
+    "title": "",
+    "source": "protondb"
+  }
+]

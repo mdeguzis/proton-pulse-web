@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2892380",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.6-2-cachyos",
+    "notes": "Works with proton-9.0-4",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1773861447,
+    "title": "AI.VI",
+    "source": "protondb"
+  }
+]

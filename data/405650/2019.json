@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "405650",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.5 Mesa 19.3.0",
+    "kernel": "5.4.3-arch1-1",
+    "notes": "Borked",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-10",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1576621805,
+    "title": "Zero Reflex : Black Eye Edition",
+    "source": "protondb"
+  }
+]

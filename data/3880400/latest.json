@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3880400",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 750M",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.17.3-arch2-1",
+    "notes": "the loading window shows up, loads for a few seconds and dissapears. then the game just stops",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1766452115,
+    "title": "",
+    "source": "protondb"
+  }
+]

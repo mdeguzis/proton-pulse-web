@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2358050",
+    "cpu": "13th Gen Intel Core i9-13900HX",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "The game does not work out of the box right now on Pop!_OS 22.04 and probably other Ubuntu-based distros.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1721348434,
+    "title": "GraalOnline Era",
+    "source": "protondb"
+  },
+  {
+    "appId": "2358050",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.3-1-default",
+    "notes": "Only blackscreen on default settings",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1728582837,
+    "title": "GraalOnline Era",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1074770",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-58-generic",
+    "notes": "i found no difference between the windows playtrough and the gnu/linux playtrough",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1609438288,
+    "title": "The Rescue of Mermaids",
+    "source": "protondb"
+  }
+]

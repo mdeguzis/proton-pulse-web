@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2023920",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.57, 6.10.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.6-arch1.1",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Game works perfectly with older Proton version.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1737066166,
+    "title": "DYSCHRONIA:\u00a0Chronos Alternate - Dual Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2897240",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-S)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-40-generic",
+    "notes": "Works with launch options",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1748734776,
+    "title": "Puffin Planes",
+    "source": "protondb"
+  }
+]

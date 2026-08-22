@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "491000",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-29-generic",
+    "notes": "Game starts with a black screen and just audio",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1589233027,
+    "title": "",
+    "source": "protondb"
+  }
+]

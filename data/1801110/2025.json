@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1801110",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, navi32, LLVM 16.0.6, DRM 3.54, 6.5.9-200.fsync.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.0",
+    "kernel": "6.5.9-200.fsync.fc38.x86_64",
+    "notes": "It just works !",
+    "os": "Nobara Linux 38 (Thirty Eight)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737617201,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1801110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "completed a playthrough in two basically consecutive sittings (we just took a break at some point). zero issues.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1759772022,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1801110",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.51-1-lts",
+    "notes": "Played it with a windows friend and it works fine.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1761097501,
+    "title": "",
+    "source": "protondb"
+  }
+]

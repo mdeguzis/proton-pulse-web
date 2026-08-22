@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2507400",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.19.0-rc4-1-cachyos-rc)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.4",
+    "kernel": "6.19.0-rc4-1-cachyos-rc",
+    "notes": "Works out of the box, seriously, not a single issue.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1768021209,
+    "title": "Penny Blood: Hellbound",
+    "source": "protondb"
+  }
+]

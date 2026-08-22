@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2014550",
+    "cpu": "AMD Custom APU 0932",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, vangogh, LLVM 16.0.6, DRM 3.57, 6.5.0-valve23-1-neptune-65-g385b5e207ae2)",
+    "gpuDriver": "4.6 Mesa 24.0.5 (git-6c30d44613)",
+    "kernel": "6.5.0-valve23-1-neptune-65-g385b5e207ae2",
+    "notes": "Runs perfectly with high FPS on the Steam Deck, no tinkering required.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1743491848,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2014550",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.63, 6.15.8-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.0",
+    "kernel": "6.15.8-200.nobara.fc42.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1755514937,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2014550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1764688293,
+    "title": "",
+    "source": "protondb"
+  }
+]

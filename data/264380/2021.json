@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "264380",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 465.19.01",
+    "kernel": "5.12.4-2-default",
+    "notes": "Error: Ini file not found at ~/steamapps/common/narcissu2/activated.ini",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1622968303,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2678080",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.16.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.1",
+    "kernel": "6.16.10-arch1-1",
+    "notes": "Game works fine, occasional stutters and sloppy character animations (Most likely jsut because I played the demo build).",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1759549552,
+    "title": "",
+    "source": "protondb"
+  }
+]

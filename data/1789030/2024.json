@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1789030",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.7-201.fsync.fc40.x86_64",
+    "notes": "The white boxes covering the screen where different assets should be make it really hard to actually play the game.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1732330938,
+    "title": "Maid Cafe on Electric Street",
+    "source": "protondb"
+  },
+  {
+    "appId": "1789030",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs pefectly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1732454575,
+    "title": "Maid Cafe on Electric Street",
+    "source": "protondb"
+  }
+]

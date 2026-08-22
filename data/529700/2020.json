@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "529700",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "5.7.16-200.fc32.x86_64",
+    "notes": "Games runs stable after using protontricks to install require dependencies.",
+    "os": "Freedesktop.org 19.08.12 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598717904,
+    "title": "",
+    "source": "protondb"
+  }
+]

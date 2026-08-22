@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2274980",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.0-22-generic",
+    "notes": "\u756b\u9762\u6703\u5361\u5728\u4e0a\u4e00\u500b\u52d5\u4f5c\uff0c\u9020\u6210\u4e0d\u9069\u611f",
+    "os": "Ubuntu 26.04 LTS\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1780580154,
+    "title": "",
+    "source": "protondb"
+  }
+]

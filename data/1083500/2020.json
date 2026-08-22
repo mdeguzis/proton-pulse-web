@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1083500",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "Planetside Uses Battle Eye",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1585698179,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1083500",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-47-generic",
+    "notes": "It used battle eye",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1600882133,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1083500",
+    "cpu": "AMD Phenom II X4 940",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 650 Ti",
+    "gpuDriver": "NVIDIA 450.51.06",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Battleye issue",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1600947995,
+    "title": "",
+    "source": "protondb"
+  }
+]

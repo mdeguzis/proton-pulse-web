@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1372280",
+    "cpu": "AMD Ryzen 9 7900 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.8.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.3-arch1.1",
+    "kernel": "6.8.1-arch1-1",
+    "notes": "Crashed on newest proton. Works when using Proton 7.0-6",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1712436793,
+    "title": "MELTY BLOOD: TYPE LUMINA",
+    "source": "protondb"
+  },
+  {
+    "appId": "1372280",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Easy to get into but high skill cieling game.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1727957053,
+    "title": "MELTY BLOOD: TYPE LUMINA",
+    "source": "protondb"
+  }
+]

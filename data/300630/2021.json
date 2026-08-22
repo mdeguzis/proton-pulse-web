@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "300630",
+    "cpu": "AMD Ryzen 3 3250U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 3 (RAVEN2, DRM 3.35.0, 5.4.0-91-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.4.0-91-generic",
+    "notes": "Will not play on Proton 6.3-8 or earlier.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1638949102,
+    "title": "",
+    "source": "protondb"
+  }
+]

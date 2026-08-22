@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2663450",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.3.13_2",
+    "notes": "See the controller issue. It's not playable yet.",
+    "os": "Void Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705007859,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2663450",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 525.116.04",
+    "kernel": "6.3.13_2",
+    "notes": "The game is now playable via keyboard but the steering is too sensitive.",
+    "os": "Void Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1705850397,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2663450",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 17.0.6, DRM 3.57, 6.7.4-1-default)",
+    "gpuDriver": "4.6 Mesa 23.3.5",
+    "kernel": "6.7.4-1-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1708213416,
+    "title": "",
+    "source": "protondb"
+  }
+]

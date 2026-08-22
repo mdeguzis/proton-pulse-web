@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1562420",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, ACO, DRM 3.64, 6.18.26-1-cachyos-lts)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch2.2",
+    "kernel": "6.18.26-1-cachyos-lts",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1777820923,
+    "title": "",
+    "source": "protondb"
+  }
+]

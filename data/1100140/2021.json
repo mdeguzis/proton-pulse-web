@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1100140",
+    "cpu": "Intel Core i5-3320M @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.1",
+    "kernel": "5.13.12-arch1-1",
+    "notes": "The game works fine, just make sure to go into the Steam settings and enable \"Force the use of [Proton]\"",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1630111168,
+    "title": "",
+    "source": "protondb"
+  }
+]

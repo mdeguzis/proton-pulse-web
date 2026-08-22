@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2290490",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-46-generic",
+    "notes": "It says : \"Fatal Error\"",
+    "os": "Ubuntu 20.04.5 LTS (64\u00a0bits)",
+    "protonVersion": "8.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1683047733,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2290490",
+    "cpu": "Intel Core i5-7500 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-46-generic",
+    "notes": "It says also : \"Fatal Error\" after strating the game",
+    "os": "Ubuntu 20.04.5 LTS (64\u00a0bits)",
+    "protonVersion": "8.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1683047988,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2290490",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-59-generic",
+    "notes": "Un bon jeu si vous avez un bon pc",
+    "os": "Ubuntu 20.04.2 LTS (64\u00a0bits)",
+    "protonVersion": "8.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1687086671,
+    "title": "",
+    "source": "protondb"
+  }
+]

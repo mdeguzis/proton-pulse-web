@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2449430",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 560.35.05",
+    "kernel": "5.15.0-161-generic",
+    "notes": "Main Map allowing for factory components to be combined is blocked on linux.  Cannot access main gameplay functionality.  0% fun.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1771538879,
+    "title": "",
+    "source": "protondb"
+  }
+]

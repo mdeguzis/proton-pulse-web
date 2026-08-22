@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2516890",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-36-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1719657155,
+    "title": "",
+    "source": "protondb"
+  }
+]

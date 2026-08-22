@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "998740",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.1, DRM 3.57, 6.8.10-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.8",
+    "kernel": "6.8.10-300.fc40.x86_64",
+    "notes": "Runs great out of the box",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1717293400,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "998740",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 6700 XT",
+    "gpuDriver": "4.6.0 Compatibility Profile Context 23.10.230706",
+    "kernel": "6.2.0-31-generic",
+    "notes": "Ran great out of box.",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1722197629,
+    "title": "",
+    "source": "protondb"
+  }
+]

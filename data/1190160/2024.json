@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1190160",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Worked well after a wait",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1715390868,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1380150",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.19.0-2-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1710164087,
+    "title": "",
+    "source": "protondb"
+  }
+]

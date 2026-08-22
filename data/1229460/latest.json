@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1229460",
+    "cpu": "Intel Core2 Quad Q9550 @ 2.83GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 19.1.7, DRM 3.61, 6.12.44-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.1 (git-d6e3b017b2)",
+    "kernel": "6.12.44-2-MANJARO",
+    "notes": "They will have a good experience with the minimum hardware requirements. similar to steam deck requirements (AMD RDNA 2) and using commands",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1756674850,
+    "title": "",
+    "source": "protondb"
+  }
+]

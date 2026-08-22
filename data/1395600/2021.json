@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1395600",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.12.4-1-default",
+    "notes": "Platinum",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1622410497,
+    "title": "Party Parkade",
+    "source": "protondb"
+  },
+  {
+    "appId": "1395600",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.53-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627552214,
+    "title": "Party Parkade",
+    "source": "protondb"
+  },
+  {
+    "appId": "1395600",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.11-arch1-1",
+    "notes": "Works perfectly out of the box.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634789648,
+    "title": "Party Parkade",
+    "source": "protondb"
+  }
+]

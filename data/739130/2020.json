@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "739130",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 650",
+    "gpuDriver": "NVIDIA 418.152.00",
+    "kernel": "4.19.0-10-amd64",
+    "notes": "I tried many proton versions and no one of them does not work after i click \"new game\"",
+    "os": "Debian GNU/Linux 10 (buster) (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1599045284,
+    "title": "",
+    "source": "protondb"
+  }
+]

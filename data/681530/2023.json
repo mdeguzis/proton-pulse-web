@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "681530",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "5.15.0-73-generic",
+    "notes": "Game will not launch, even with disabling Steam Overlay as suggested. Tried several Proton versions but all the same.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1685575623,
+    "title": "",
+    "source": "protondb"
+  }
+]

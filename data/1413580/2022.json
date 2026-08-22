@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1413580",
+    "cpu": "12th Gen Intel Core i7-1280P",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Works out of the box, but I am unsute if the discreet or integrated GPU is being used.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1671006760,
+    "title": "",
+    "source": "protondb"
+  }
+]

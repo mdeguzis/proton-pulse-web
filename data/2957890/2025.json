@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2957890",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.8.0-39-generic",
+    "notes": "The hitbox vs mouse pointer mismatch is too much of a mindfuck. And playing in a small window otherwise is just annoying.",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1744998925,
+    "title": "",
+    "source": "protondb"
+  }
+]

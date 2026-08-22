@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1212940",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.10.1-103-tkg-bmq, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.1-103-tkg-bmq",
+    "notes": "Game starts, show the dialog with initial options on screen, then after it the game crashes",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1613206089,
+    "title": "Ayahuasca",
+    "source": "protondb"
+  }
+]

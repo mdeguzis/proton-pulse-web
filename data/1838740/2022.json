@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1838740",
+    "cpu": "Intel Core i5-8500 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-46-generic",
+    "notes": "Framerate was 10fps when the game was using proton 7.0. It was the same when I used the older versions too. Uninstalled and tried reinstalling and now I can't boot the game due to an error involving an unreal engine 4 runtime. For now the game is borked and I would wait until proton gets an update.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1661955911,
+    "title": "",
+    "source": "protondb"
+  }
+]

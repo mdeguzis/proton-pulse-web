@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1103210",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA Quadro P4200",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.8.1-arch1-1",
+    "notes": "Works great out of box",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1712846982,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1103210",
+    "cpu": "Dual Intel Xeon E5-2697 v4 @ 4.03GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-12-amd64",
+    "notes": "",
+    "os": "LMDE 6 (faye)",
+    "protonVersion": "9.0-1",
+    "ram": "2097 GB",
+    "rating": "gold",
+    "timestamp": 1716310051,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1103210",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1716861813,
+    "title": "",
+    "source": "protondb"
+  }
+]

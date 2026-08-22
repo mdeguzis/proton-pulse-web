@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2019300",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 16.0.6, DRM 3.54, 6.6.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.2-arch1.2",
+    "kernel": "6.6.9-arch1-1",
+    "notes": "Works out of the box, at least with GE Proton. Haven't tested official Proton",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1740993027,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2019300",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game plays perfectly on the Steam Deck, honestly it's awesome wish I bought it sooner.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1747851929,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2019300",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.5",
+    "kernel": "6.16.4-arch1-1",
+    "notes": "Works perfect out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1757698305,
+    "title": "",
+    "source": "protondb"
+  }
+]

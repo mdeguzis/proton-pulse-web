@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2673660",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.4, DRM 3.54, 6.6.63_1)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.6.63_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733600578,
+    "title": "",
+    "source": "protondb"
+  }
+]

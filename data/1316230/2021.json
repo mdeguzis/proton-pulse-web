@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1316230",
+    "cpu": "Intel Core i5-8600 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.8.0-44-generic",
+    "notes": "For now everything is fine",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1623705329,
+    "title": "",
+    "source": "protondb"
+  }
+]

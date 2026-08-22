@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3512750",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Iris Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "Native Linux doesn't work.\nProton hotfix launches into a menu but doesn't read controls.\nGE doesn't work.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1777681715,
+    "title": "Vampire's Veil",
+    "source": "protondb"
+  }
+]

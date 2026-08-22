@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1375930",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.8-arch1-1",
+    "notes": "Works great out of the box!",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1691288959,
+    "title": "Minesweeper: Collector",
+    "source": "protondb"
+  }
+]

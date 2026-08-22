@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1277510",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.8-300.fc43.x86_64",
+    "notes": "Worked flawlessly for me.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1764375514,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1277510",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-zen1-1-zen",
+    "notes": "Works without any issues using ProtonGE-10-25",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1764422277,
+    "title": "",
+    "source": "protondb"
+  }
+]

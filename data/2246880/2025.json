@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2246880",
+    "cpu": "AMD Ryzen 7 3700U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 10 (radeonsi, raven, LLVM 19.1.5, DRM 3.59, 6.12.12-203.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.3",
+    "kernel": "6.12.12-203.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "silver",
+    "timestamp": 1739670310,
+    "title": "STANDBOX",
+    "source": "protondb"
+  },
+  {
+    "appId": "2246880",
+    "cpu": "AMD Ryzen 7 5800X",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "570.153.02",
+    "kernel": "6.17.5-gnu",
+    "notes": "No issues, perfectly playable.",
+    "os": "Guix System",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1764822244,
+    "title": "STANDBOX",
+    "source": "protondb"
+  },
+  {
+    "appId": "2246880",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Runs with no issues at all!",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1765972166,
+    "title": "STANDBOX",
+    "source": "protondb"
+  }
+]

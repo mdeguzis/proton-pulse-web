@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3151230",
+    "cpu": "13th Gen Intel Core i7-1370P",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 24.2.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Failed to launch game on Hotfix, Experimental, and versions 9, 8 and 7.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1759429496,
+    "title": "",
+    "source": "protondb"
+  }
+]

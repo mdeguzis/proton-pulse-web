@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "281350",
+    "cpu": "Intel Core i5-3470S @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 15.0.7, DRM 3.40, 5.10.155-generic-1rosa2021.1-x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "5.10.155-generic-1rosa2021.1-x86_64",
+    "notes": "Tried with Proton 7.0-6 (dotnet install has no luck)\n\n```\n...\n8082.717:003c:0058:trace:loaddll:build_module Loaded L\"C:\\\\windows\\\\system32\\\\imm32.dll\" at 00000003AFD00000: builtin\n8082.722:0060:006c:trace:seh:dispatch_exception code=6ba flags=0 addr=000000007B01260E ip=000000007B01260E tid=006c\n8082.722:0060:006c:warn:seh:dispatch_exception unknown exception (code=6ba) raised\n8082.722:0060:006c:trace:seh:dispatch_exception  rax=000000007b0125c0 rbx=000000000106db78 rcx=000000000106d890 rdx=0000000000000000\n8082.722:0060:006c:trace:seh:dispatch_exception  rsi=00000000000000c8 rdi=0000000001750230 rbp=00000001c8e1a200 rsp=000000000106d870\n8082.722:0060:006c:trace:seh:dispatch_exception   r8=0000000000000000  r9=0000000000000000 r10=c33c3cc3c33c3cc3 r11=a55a5aa5a55a5aa5\n8082.722:0060:006c:trace:seh:dispatch_exception  r12=000000000106db78 r13=00000000011f0050 r14=0000000000000000 r15=00000000011f0050\n8082.722:0060:006c:trace:seh:call_vectored_handlers calling handler at 00000002279AD660 code=6ba flags=0\n8082.722:0060:006c:trace:seh:call_vectored_handlers handler at 00000002279AD660 returned 0\n8082.722:0060:006c:trace:unwind:RtlVirtualUnwind type 1 rip 000000007B01260E rsp 000000000106D870\n8082.722:0060:006c:trace:unwind:dump_unwind_info **** func 125c0-12647\n8082.722:0060:006c:trace:unwind:dump_unwind_info unwind info at 000000007B0A8480 flags 0 prolog 0x11 bytes function 000000007B0125C0\n-000000007B012647\n8082.722:0060:006c:trace:unwind:dump_unwind_info     0x11: subq $0xc8,%rsp\n8082.722:0060:006c:trace:unwind:dump_unwind_info     0xa: pushq %rsi\n8082.722:0060:006c:trace:unwind:dump_unwind_info     0x9: pushq %rdi\n8082.722:0060:006c:trace:unwind:RtlVirtualUnwind type 1 rip 0000000231B226C2 rsp 000000000106D950\n8082.722:0060:006c:trace:unwind:dump_unwind_info **** func 426b0-426f7\n8082.722:0060:006c:trace:unwind:dump_unwind_info unwind info at 0000000231B453C0 flags 0 prolog 0x4 bytes function 0000000231B226B0-\n0000000231B226F7\n8082.722:0060:006c:trace:unwind:dump_unwind_info     0x4: subq $0x28,%rsp\n8082.722:0060:006c:trace:unwind:RtlVirtualUnwind type 1 rip 0000000231AE9736 rsp 000000000106D980\n8082.722:0060:006c:trace:unwind:dump_unwind_info **** func 96b0-9737\n8082.722:0060:006c:trace:unwind:dump_unwind_info unwind info at 0000000231B4332C flags 0 prolog 0x7 bytes function 0000000231AE96B0-\n0000000231AE9737\n8082.722:0060:006c:trace:unwind:dump_unwind_info     0x7: subq $0x40,%rsp\n...\n8083.924:0134:0138:err:module:fixup_imports_ilonly mscoree.dll not found, IL-only binary L\"UAT.exe\" cannot be loaded\n8083.924:0134:0138:err:module:LdrInitializeThunk Importing dlls for L\"Z:\\\\---\\\\SteamLibrary\\\\steamapps\\\\common\\\\US an\nd THEM\\\\UAT.exe\" failed, status c0000135\npid 114885 != 114884, skipping destruction (fork without exec?)\n```",
+    "os": "ROSA Fresh Desktop 12.3, platform 2021.1 (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1677789982,
+    "title": "",
+    "source": "protondb"
+  }
+]

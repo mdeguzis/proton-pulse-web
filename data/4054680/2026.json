@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4054680",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.8-3-cachyos",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770341494,
+    "title": "",
+    "source": "protondb"
+  }
+]

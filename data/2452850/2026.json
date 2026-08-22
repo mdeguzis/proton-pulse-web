@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2452850",
+    "cpu": "Intel Celeron N3450 @ 1.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 500 (APL 2)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.6-300.fc39.x86_64",
+    "notes": "do not work (even with WINE3D)",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1775991820,
+    "title": "",
+    "source": "protondb"
+  }
+]

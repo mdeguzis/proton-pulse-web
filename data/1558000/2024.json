@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1558000",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-107-generic",
+    "notes": "works well out of the box, minus the lobby area which inexplicably has worse performance.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1717682459,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1558000",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 18.1.6, DRM 3.57, 6.9.12-205.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.6",
+    "kernel": "6.9.12-205.fsync.fc40.x86_64",
+    "notes": "",
+    "os": "Bazzite 40 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1725116032,
+    "title": "",
+    "source": "protondb"
+  }
+]

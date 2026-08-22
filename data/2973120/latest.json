@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2973120",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-ba14.fc43.x86_64",
+    "notes": "Works great once you nailed the exe. patch",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1768027560,
+    "title": "",
+    "source": "protondb"
+  }
+]

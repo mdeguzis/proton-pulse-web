@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "422110",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1765309921,
+    "title": "Wand Wars",
+    "source": "protondb"
+  }
+]

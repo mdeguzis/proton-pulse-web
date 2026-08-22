@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "574180",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "performance significantly affected.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1621631625,
+    "title": "Rem Survival",
+    "source": "protondb"
+  }
+]

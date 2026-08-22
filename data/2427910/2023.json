@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2427910",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.3-cachyos",
+    "notes": "No problems",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1695414394,
+    "title": "",
+    "source": "protondb"
+  }
+]

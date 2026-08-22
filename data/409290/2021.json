@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "409290",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.10.26-2fast2benjojo",
+    "notes": "Audio works, black screen on start, steam overlay works though",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-1",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1617392491,
+    "title": "Herding Dog",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "446620",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.1-arch2-1",
+    "notes": "Don't Recommend",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1671319116,
+    "title": "Zombie Training Simulator",
+    "source": "protondb"
+  }
+]

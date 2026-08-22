@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "750130",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD 620 (Kabylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.3.2",
+    "kernel": "5.4.13-1-ck",
+    "notes": "Game runs perfectly out-of-box.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1580153590,
+    "title": "",
+    "source": "protondb"
+  }
+]

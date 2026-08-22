@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1902850",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.1.0-18-amd64",
+    "notes": "Works perfectly out of the box",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1764203415,
+    "title": "Dreams in the Witch House",
+    "source": "protondb"
+  }
+]

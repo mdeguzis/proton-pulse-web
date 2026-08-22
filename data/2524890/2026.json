@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2524890",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.3)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.19.3",
+    "notes": "Works OOTB",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1776710238,
+    "title": "",
+    "source": "protondb"
+  }
+]

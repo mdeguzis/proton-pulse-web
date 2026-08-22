@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1588910",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Doesn't work out of the box, but switching to 1.0 runtime fixed it.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1727813322,
+    "title": "",
+    "source": "protondb"
+  }
+]

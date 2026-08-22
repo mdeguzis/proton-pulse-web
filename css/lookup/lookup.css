@@ -1,0 +1,244 @@
+/* Public profile lookup page (#299).
+   The chart itself pulls from css/app/home.css (.home-library-chart), so this
+   file only styles the input form, the profile card, and the private notice. */
+
+.lookup-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 18px 0 24px;
+}
+.lookup-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 8px;
+}
+.lookup-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lookup-input {
+  flex: 1 1 320px;
+  min-width: 0;
+  background: var(--s1);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--strong);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color .15s;
+}
+.lookup-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+.lookup-submit {
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  color: #0a0c10;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .1s;
+}
+.lookup-submit:hover:not(:disabled) { filter: brightness(1.08); }
+.lookup-submit:disabled { opacity: 0.55; cursor: default; }
+/* Secondary "Look up" button next to Save. Same shape, muted outline so the
+   Save primary reads as the default action. Mirrors ProtonDB's USE button
+   style while keeping Save distinguishable at a glance. */
+.lookup-submit--secondary {
+  background: transparent;
+  color: var(--strong);
+  border-color: var(--border);
+}
+.lookup-submit--secondary:hover:not(:disabled) {
+  filter: none;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Examples list under the input, matching ProtonDB's bullet layout. */
+.lookup-examples {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.lookup-examples li { list-style: disc; }
+.lookup-examples li:first-child {
+  list-style: none;
+  margin-left: -20px;
+  color: var(--strong);
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+.lookup-examples code {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text);
+  background: var(--s1);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Saved indicator + inline Clear link. Shown only when localStorage has a
+   value; hidden by default so first-time visitors see the plain form. */
+.lookup-saved-hint {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: rgba(102, 192, 244, 0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.lookup-clear {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0 0 0 6px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.lookup-clear:hover { color: var(--accent-hi); }
+.lookup-hint {
+  /* Extra top margin + top border so the "Not sure where to find yours?"
+     hint has visual breathing room from the Examples list above. Without
+     it the two blocks read as one wall of muted text. */
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.lookup-hint a { color: var(--accent); }
+.lookup-error {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-left: 3px solid #ff6b6b;
+  background: rgba(220, 70, 70, 0.10);
+  color: #ffb0b0;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+.lookup-loading {
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Profile card */
+.lookup-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.lookup-avatar {
+  border-radius: 8px;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.lookup-profile-body { flex: 1; min-width: 0; }
+.lookup-persona {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 2px;
+}
+.lookup-steamid {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+.lookup-steamlink {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+/* Private / empty notice reuses the same panel treatment as other callouts */
+.lookup-private {
+  background: rgba(217, 119, 6, 0.08);
+  border-left: 4px solid #d97706;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+.lookup-private-title {
+  font-weight: 700;
+  color: var(--strong);
+  margin-bottom: 6px;
+}
+.lookup-private p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.lookup-private a { color: var(--accent); }
+
+/* Reports list (#299 phase 3): compact rows so a lot of games fit without
+   another page. Each row links to the game details in a new tab. */
+.lookup-reports { margin-top: 24px; }
+.lookup-reports-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--strong);
+  margin: 0 0 10px;
+}
+.lookup-reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.lookup-report-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color .15s;
+}
+.lookup-report-row:hover { border-color: var(--accent); }
+.lookup-report-title { font-weight: 600; color: var(--strong); }
+.lookup-report-tier {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.lookup-report-date {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}

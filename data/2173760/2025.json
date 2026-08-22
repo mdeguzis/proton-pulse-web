@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2173760",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "Works out the box",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1765583828,
+    "title": "",
+    "source": "protondb"
+  }
+]

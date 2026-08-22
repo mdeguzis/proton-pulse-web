@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1048580",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-47-generic",
+    "notes": "Demo doesn't launch",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612802940,
+    "title": "",
+    "source": "protondb"
+  }
+]

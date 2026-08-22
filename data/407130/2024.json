@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "407130",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.7.9-arch1-1",
+    "notes": "It's fine if you can live with fps drops at some heavier loads.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1720692460,
+    "title": "Tank Mechanic Simulator",
+    "source": "protondb"
+  }
+]

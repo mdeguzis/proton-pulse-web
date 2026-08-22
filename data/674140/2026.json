@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "674140",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 7.0.2_1)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "7.0.2_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778971149,
+    "title": "Bugsnax",
+    "source": "protondb"
+  },
+  {
+    "appId": "674140",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "Mesa NV136",
+    "gpuDriver": "4.3 Mesa 26.0.6",
+    "kernel": "7.0.9-204.fc44.x86_64",
+    "notes": "Works out of the box. Use launch commands to bypass or protontricks DLL install to add DirectX 10/11 support",
+    "os": "Fedora Linux 44 (Forty Four)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1779506802,
+    "title": "Bugsnax",
+    "source": "protondb"
+  }
+]

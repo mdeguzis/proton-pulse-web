@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3531470",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.2",
+    "kernel": "5.18.4-1-default",
+    "notes": "It works, but it isn't smooth.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1763935763,
+    "title": "Driving Life",
+    "source": "protondb"
+  }
+]

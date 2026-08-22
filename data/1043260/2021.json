@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1043260",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.0-5mx-amd64",
+    "notes": "I was able to play in fullscreen and windowed mode without any issues.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1634183668,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1043260",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Worked great out of the box other than the minor cursor issue. There are other bugs unrelated to proton but the devs are aware of them.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634286870,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1043260",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.14.2-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.2-1-MANJARO",
+    "notes": "Works fine out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634295243,
+    "title": "",
+    "source": "protondb"
+  }
+]

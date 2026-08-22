@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1969150",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.5-200.fc40.x86_64",
+    "notes": "Funciona perfecto sin necesidad de tocar nada",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1719335134,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1969150",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 550.100",
+    "kernel": "6.10.5-1-default",
+    "notes": "It runs perfectly",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1724436409,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1969150",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1733777707,
+    "title": "",
+    "source": "protondb"
+  }
+]

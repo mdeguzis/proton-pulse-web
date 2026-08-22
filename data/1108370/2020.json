@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1108370",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "4.15.0-74-generic",
+    "notes": "Worked with most recent proton, no problems or fiddling.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1579114205,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1108370",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel (git-650c680 2020-01-28 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-76-generic",
+    "notes": "runs fine for me with following launch options: PROTON_USE_WINED3D=1 %command%",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1580237723,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1108370",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.10-arch1-1",
+    "notes": "Works perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1585545086,
+    "title": "",
+    "source": "protondb"
+  }
+]

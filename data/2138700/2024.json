@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2138700",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Mesa NV167",
+    "gpuDriver": "4.3 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.5.0-21-generic",
+    "notes": "Works well takes a while to launch (under 5 mins) but other then that works perfectly",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1709202295,
+    "title": "Crypt",
+    "source": "protondb"
+  }
+]

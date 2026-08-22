@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3898150",
+    "cpu": "AMD Ryzen AI 9 H 365 w/ Radeon 880M",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon 890M (radeonsi, gfx1150, LLVM 21.1.5, DRM 3.64, 6.17.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1764604711,
+    "title": "",
+    "source": "protondb"
+  }
+]

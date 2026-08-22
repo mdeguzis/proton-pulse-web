@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "280040",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 570.123.19",
+    "kernel": "6.15.6-321.current",
+    "notes": "Works fine after switching to Proton",
+    "os": "Solus 4.7 Endurance",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1754001319,
+    "title": "",
+    "source": "protondb"
+  }
+]

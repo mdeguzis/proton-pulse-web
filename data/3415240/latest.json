@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3415240",
+    "cpu": "Intel Xeon Silver 4416+",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-88-generic",
+    "notes": "",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "65 GB",
+    "rating": "silver",
+    "timestamp": 1782517741,
+    "title": "Cozy Organizer",
+    "source": "protondb"
+  }
+]

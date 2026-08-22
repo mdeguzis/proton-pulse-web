@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "885570",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.7, DRM 3.63, 6.15-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.5-2",
+    "kernel": "6.15-amd64",
+    "notes": "Non fonctionnel.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771170664,
+    "title": "",
+    "source": "protondb"
+  }
+]

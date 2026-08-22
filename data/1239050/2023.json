@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1239050",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.7-200.fc38.x86_64",
+    "notes": "Runs flowlessly with no thinkering",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1691516256,
+    "title": "",
+    "source": "protondb"
+  }
+]

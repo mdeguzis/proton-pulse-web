@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "367450",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.8, DRM 3.64, 6.17.0-8-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-8-generic",
+    "notes": "Native broken, works well with Proton",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1768149422,
+    "title": "Poly Bridge",
+    "source": "protondb"
+  },
+  {
+    "appId": "367450",
+    "cpu": "AMD Ryzen 5 5625U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.19.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "Use Glorious Eggroll and you should be fine launching and playing this games without any problem",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1774604934,
+    "title": "Poly Bridge",
+    "source": "protondb"
+  },
+  {
+    "appId": "367450",
+    "cpu": "13th Gen Intel Core i5-13420H",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-20-generic",
+    "notes": "Switch to Experimental Proton",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1778379008,
+    "title": "Poly Bridge",
+    "source": "protondb"
+  }
+]

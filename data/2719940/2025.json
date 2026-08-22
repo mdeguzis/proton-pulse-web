@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2719940",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 19.1.7, DRM 3.61, 6.13.5-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.0",
+    "kernel": "6.13.5-200.fc41.x86_64",
+    "notes": "It's a unity game. work as expected.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1741454675,
+    "title": "The Bonerooms",
+    "source": "protondb"
+  },
+  {
+    "appId": "2719940",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1744492243,
+    "title": "The Bonerooms",
+    "source": "protondb"
+  },
+  {
+    "appId": "2719940",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.15.0-2-cachyos",
+    "notes": "might work i'll try the next time it updates",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1750221195,
+    "title": "The Bonerooms",
+    "source": "protondb"
+  }
+]

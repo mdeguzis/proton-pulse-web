@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1570080",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.1.0-20-amd64",
+    "notes": "devuan / steam flatpak / with or without proton",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1714828213,
+    "title": "",
+    "source": "protondb"
+  }
+]

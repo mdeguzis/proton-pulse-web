@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "735290",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-48-lowlatency",
+    "notes": "Latest version of proton shows a blank screen (desktop before game launch visible). No sound.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616847375,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "735290",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.8.0-48-lowlatency",
+    "notes": "Bugs need fixing, but otherwise a wonderful experience.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1616858098,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "735290",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.12.13-arch1-2, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.3",
+    "kernel": "5.12.13-arch1-2",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1625043129,
+    "title": "",
+    "source": "protondb"
+  }
+]

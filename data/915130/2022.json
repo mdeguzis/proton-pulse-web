@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "915130",
+    "cpu": "AMD A10-7860K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "underOneHour",
+    "gpu": "AMD KAVERI (kaveri, LLVM 14.0.6, DRM 3.48, 6.0.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "6.0.6-arch1-1",
+    "notes": "Game works (You may need to install Chinese locale in your system)",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1667542752,
+    "title": "",
+    "source": "protondb"
+  }
+]

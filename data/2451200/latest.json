@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2451200",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "The game functions without tinkering, but tinkering to fix the audio was necessary for a comfortable experience.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "11 GB",
+    "rating": "silver",
+    "timestamp": 1710053711,
+    "title": "",
+    "source": "protondb"
+  }
+]

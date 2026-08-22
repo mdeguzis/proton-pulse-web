@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2855990",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.13-200.fc43.x86_64",
+    "notes": "After pressing play it goes to launching then after a few seconds just closes",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1773090828,
+    "title": "Hadley's Run: A Starship Saga",
+    "source": "protondb"
+  }
+]

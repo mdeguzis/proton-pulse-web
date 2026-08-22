@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "296050",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.18.18-200.fc36.x86_64",
+    "notes": "Black screen after start",
+    "os": "Freedesktop.org 21.08.15 (Flatpak runtime) (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1661730722,
+    "title": "",
+    "source": "protondb"
+  }
+]

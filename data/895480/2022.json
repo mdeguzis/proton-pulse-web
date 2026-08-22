@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "895480",
+    "cpu": "Intel Celeron  N3160  @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 400 (BSW)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "4.16.18-galliumos",
+    "notes": "The game crashes immediately after hitting the play button. Maybe it's my poor laptop (should be enough though) or it is an issue with Gallium OS since I couldn't find another person with the same problem. Using different Proton versions didn't help either unfortunately. \n\nHad quite some fun with the game on Windows though so no offense against the developer.",
+    "os": "GalliumOS 3.1",
+    "protonVersion": "7.0-2",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1654716694,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "895480",
+    "cpu": "Intel Celeron  N3160  @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel HD 400 (BSW)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "4.16.18-galliumos",
+    "notes": "The game works very well on my Chromebook when I select the stable_build_revert version in the betas tab.",
+    "os": "GalliumOS 3.1",
+    "protonVersion": "7.0-4",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1660819317,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "895480",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Plays without any problem",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1671787020,
+    "title": "",
+    "source": "protondb"
+  }
+]

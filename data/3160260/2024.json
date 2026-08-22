@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3160260",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 17.0.6, DRM 3.57, 6.5.0-44-generic)",
+    "gpuDriver": "4.6 Mesa 24.1.0-devel",
+    "kernel": "6.5.0-44-generic",
+    "notes": "Works straight out of the box",
+    "os": "Zorin OS 17.1",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1725303311,
+    "title": "",
+    "source": "protondb"
+  }
+]

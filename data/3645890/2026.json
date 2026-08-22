@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3645890",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.2.0-31-generic",
+    "notes": "The game can get running, you can play the tutorial, but once you try to play the actual game you can't get past creating a lobby. It will stay stuck saying \"creating lobby\" but never goes forward. Also will not show any already existing joinable lobbies. Tried many if not all Proton versions to no avail.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771689871,
+    "title": "",
+    "source": "protondb"
+  }
+]

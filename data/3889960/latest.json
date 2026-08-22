@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3889960",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.61, 6.14.0-27-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.1",
+    "kernel": "6.14.0-27-generic",
+    "notes": "Kernal level anticheat stops the game from working",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "borked",
+    "timestamp": 1781264635,
+    "title": "",
+    "source": "protondb"
+  }
+]

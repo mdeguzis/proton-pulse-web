@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1171240",
+    "cpu": "Intel Core i7-10700KF @ 3.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.13_p1-debian-sources",
+    "notes": "Runs well until you get hit with jump scares",
+    "os": "Freedesktop.org 20.08.5 (Flatpak runtime)",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1614207059,
+    "title": "",
+    "source": "protondb"
+  }
+]

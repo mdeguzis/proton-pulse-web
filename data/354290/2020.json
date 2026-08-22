@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "354290",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-ac1dbd5 2020-03-17 eoan-oibaf-ppa)",
+    "kernel": "5.6.0-050600rc5-generic",
+    "notes": "Game does not start, it uses nProtect GameGuard and it does not seem to work properly.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1586092321,
+    "title": "",
+    "source": "protondb"
+  }
+]

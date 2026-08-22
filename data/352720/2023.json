@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "352720",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "6.4.6-76060406-generic",
+    "notes": "You MUST use an older version of Proton though!",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1695463913,
+    "title": "",
+    "source": "protondb"
+  }
+]

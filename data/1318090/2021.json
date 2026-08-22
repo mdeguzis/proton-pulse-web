@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1318090",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.10.1-103-tkg-bmq, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.1-103-tkg-bmq",
+    "notes": "Works out of the box - Ryzen 7 3700X, AMD Radeon RX 6800 XT, Valve Index",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613365537,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1318090",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.10.1-103-tkg-bmq, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.10.1-103-tkg-bmq",
+    "notes": "Works out of the box - Ryzen 7 3700X, AMD Radeon RX 6800 XT, Valve Index",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613368425,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1318090",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.10.15-120-tkg-bmq, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.10.15-120-tkg-bmq",
+    "notes": "Works out of the box - Ryzen 7 3700X, AMD Radeon RX 6800 XT, Valve Index",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1613368500,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2796920",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.16-1-MANJARO",
+    "notes": "It works right on startup with Proton!",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1712477668,
+    "title": "",
+    "source": "protondb"
+  }
+]

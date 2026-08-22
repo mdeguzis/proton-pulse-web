@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1512940",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.141.03",
+    "kernel": "5.10.0-18-amd64",
+    "notes": "Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date",
+    "os": "Debian GNU/Linux 11 (bullseye) (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1665105969,
+    "title": "",
+    "source": "protondb"
+  }
+]

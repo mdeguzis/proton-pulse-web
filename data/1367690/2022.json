@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1367690",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.44.0, 5.16.0-5-amd64, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.0-5-amd64",
+    "notes": "Everything so far looks great other than in-game videos.",
+    "os": "Devuan GNU/Linux 5 (daedalus/ceres)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1653940920,
+    "title": "Tony Stewart's All-American Racing",
+    "source": "protondb"
+  }
+]

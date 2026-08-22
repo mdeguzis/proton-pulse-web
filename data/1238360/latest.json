@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1238360",
+    "cpu": "Intel Xeon E3-1240 v3 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.5-76051505-generic",
+    "notes": "Works out of the box as native!",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1638878113,
+    "title": "",
+    "source": "protondb"
+  }
+]

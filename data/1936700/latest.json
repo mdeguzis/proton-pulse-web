@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1936700",
+    "cpu": "Intel Core i7-9700F @ 3.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "5.15.0-79-generic",
+    "notes": "Really bad performance and stuck on fullscreen. Not very good",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1694426790,
+    "title": "",
+    "source": "protondb"
+  }
+]

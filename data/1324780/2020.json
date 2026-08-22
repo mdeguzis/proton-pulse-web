@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1324780",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.18-1-MANJARO",
+    "notes": "No audio and big water rendering problems, but playable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1605112127,
+    "title": "",
+    "source": "protondb"
+  }
+]

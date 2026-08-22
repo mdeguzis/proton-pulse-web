@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1126710",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.9.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.3-arch1-1",
+    "notes": "All three Hanaby games work. Just install and play.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1752719433,
+    "title": "",
+    "source": "protondb"
+  }
+]

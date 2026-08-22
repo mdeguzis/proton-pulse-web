@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "522230",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.7-3-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611889235,
+    "title": "The Fishing Club 3D: Co-op Sport Angling",
+    "source": "protondb"
+  },
+  {
+    "appId": "522230",
+    "cpu": "AMD A12-9800 RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-62-generic",
+    "notes": "I'm guessing the last update to proton fixed whatever issue my pc had, as the game now runs fine.",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1614584238,
+    "title": "The Fishing Club 3D: Co-op Sport Angling",
+    "source": "protondb"
+  }
+]

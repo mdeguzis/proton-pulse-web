@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "385600",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Undemanding game, so it hits 60 FPS at max settings",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1739515051,
+    "title": "Heavy Fire: Shattered Spear",
+    "source": "protondb"
+  },
+  {
+    "appId": "385600",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.5-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.13.5-200.fc41.x86_64",
+    "notes": "Works fine",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1742010032,
+    "title": "Heavy Fire: Shattered Spear",
+    "source": "protondb"
+  },
+  {
+    "appId": "385600",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6500 XT (radeonsi, navi24, LLVM 15.0.7, DRM 3.63, 6.15.4-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 25.0.5 - kisak-mesa PPA",
+    "kernel": "6.15.4-x64v3-xanmod1",
+    "notes": "\u0418\u0433\u0440\u0430 \u043f\u0440\u043e\u0439\u0434\u0435\u043d\u0430, \u043f\u0440\u043e\u0431\u043b\u0435\u043c \u043d\u0435 \u0431\u044b\u043b\u043e.",
+    "os": "Linux Mint 21.2 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1752158150,
+    "title": "Heavy Fire: Shattered Spear",
+    "source": "protondb"
+  }
+]

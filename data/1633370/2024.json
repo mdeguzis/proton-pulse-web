@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1633370",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.7.9-arch1-1",
+    "notes": "Ran like native. No noticeable performance problems or bugs. Currently at 178 minutes in my initial launch with zero issues.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1710457813,
+    "title": "",
+    "source": "protondb"
+  }
+]

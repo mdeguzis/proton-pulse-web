@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1091470",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD 630 (Coffeelake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.3.0-28-generic",
+    "notes": "I can't launch Put In Run Out game.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1581086382,
+    "title": "",
+    "source": "protondb"
+  }
+]

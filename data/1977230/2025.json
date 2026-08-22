@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1977230",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 20.1.6, DRM 3.63, 6.15.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.1",
+    "kernel": "6.15.3-arch1-1",
+    "notes": "Missing BGM makes it pretty unsuitable. Hoping for dev to fix this.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1752428760,
+    "title": "",
+    "source": "protondb"
+  }
+]

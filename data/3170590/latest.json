@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3170590",
+    "cpu": "Intel Xeon W-11855M @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.19.8-200.nobara.fc43.x86_64",
+    "notes": "Game run perfectly fine, as long as you are ok with the screen weirdness",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1777516081,
+    "title": "",
+    "source": "protondb"
+  }
+]

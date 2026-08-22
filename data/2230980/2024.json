@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2230980",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.6.13-amd64",
+    "notes": "Game is playable but game is crashing during land/ship combat, fps in cities is a little bit laggy 30-40 FPS on average,",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1707567865,
+    "title": "Caribbean Legend",
+    "source": "protondb"
+  },
+  {
+    "appId": "2230980",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.41.0, 5.13.0-41-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-41-generic",
+    "notes": "Played on Steam Deck - no issues, runs well. 45+ FPS at all times, no bugs specific to steamdeck and didn't have to make any tweaks.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1708111135,
+    "title": "Caribbean Legend",
+    "source": "protondb"
+  },
+  {
+    "appId": "2230980",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Played on Steam Deck - no issues, runs well. 45+ FPS at all times, no bugs specific to steamdeck and didn't have to make any tweaks.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1708111607,
+    "title": "Caribbean Legend",
+    "source": "protondb"
+  }
+]

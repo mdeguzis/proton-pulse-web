@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2289390",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 17.0.6, DRM 3.57, 6.9.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.5-arch1-1",
+    "notes": "Great game with CRABS!\nManage crab colony, worship crab god, advance on a \"roguelike tree map\"\nDev donates to nature preservation causes. :)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1718988483,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2289390",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 17.0.6, DRM 3.57, 6.9.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.5-arch1-1",
+    "notes": "Management game with CRABS!!! What is not to like??\nDev also donates to nature preserving causes.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1718989116,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2289390",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.9.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.5-arch1-1",
+    "notes": "Menus are visible, but game layer does not render on Proton 9.0-2. Dropped to 8.0-5 and am able to play",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1719001067,
+    "title": "",
+    "source": "protondb"
+  }
+]

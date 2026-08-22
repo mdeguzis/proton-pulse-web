@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "961510",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 470 (radeonsi, polaris10, LLVM 18.1.6, DRM 3.57, 6.9.5-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.5-200.fc40.x86_64",
+    "notes": "No issues at all",
+    "os": "Fedora Linux 40 (Budgie)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1719447490,
+    "title": "",
+    "source": "protondb"
+  }
+]

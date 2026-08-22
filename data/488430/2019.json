@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "488430",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-24-generic",
+    "notes": "The game installs fine and seems to actually run, but graphical performance is pretty bad.",
+    "os": "Ubuntu 19.10 (64 \u4f4d\u5143)",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577394719,
+    "title": "",
+    "source": "protondb"
+  }
+]

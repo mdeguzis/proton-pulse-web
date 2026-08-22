@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "289760",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "Some issues/instability with the native version since it's quite old. Use Proton!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1779437144,
+    "title": "ROCKETSROCKETSROCKETS",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2450400",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 16.0.6, DRM 3.54, 6.6.13-100.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.6.13-100.fc38.x86_64",
+    "notes": "Demo works fine",
+    "os": "Fedora Linux 38 (Thirty Eight)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1707206575,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2450400",
+    "cpu": "Intel Core i3-10105F @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 40 (GNOME Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1722962158,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2450400",
+    "cpu": "Intel Core i3-10105F @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "Game runs completely fine with GE-Proton9-10",
+    "os": "Nobara Linux 40 (GNOME Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1723060684,
+    "title": "",
+    "source": "protondb"
+  }
+]

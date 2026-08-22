@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1604000",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "Works OOTB",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1773135130,
+    "title": "Milk outside a bag of milk outside a bag of milk",
+    "source": "protondb"
+  },
+  {
+    "appId": "1604000",
+    "cpu": "AMD Ryzen 9 7845HX with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1774766105,
+    "title": "Milk outside a bag of milk outside a bag of milk",
+    "source": "protondb"
+  },
+  {
+    "appId": "1604000",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 21.1.8, DRM 3.64, 6.19.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "works ootb",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1776723930,
+    "title": "Milk outside a bag of milk outside a bag of milk",
+    "source": "protondb"
+  }
+]

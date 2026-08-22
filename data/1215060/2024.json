@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1215060",
+    "cpu": "12th Gen Intel Core i5-12450H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.1",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "Worked out of the box, however, I turned proton on as I started lagging when loading into a new place.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1720477996,
+    "title": "A.V.I",
+    "source": "protondb"
+  }
+]

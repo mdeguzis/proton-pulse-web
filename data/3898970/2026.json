@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3898970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "getting to the actual board is quite tricky",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1781829293,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3898970",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.12-1-cachyos",
+    "notes": "Both the Proton and the Linux Native build works flawlessly, but I recommend XWayland for Native",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1782220588,
+    "title": "",
+    "source": "protondb"
+  }
+]

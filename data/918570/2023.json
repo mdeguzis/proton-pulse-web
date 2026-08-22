@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "918570",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.6-2",
+    "kernel": "6.1.51-1-MANJARO",
+    "notes": "Very low FPS, at least in my case. It makes impossible to play and causes dizziness.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1696592630,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "918570",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.5.10-300.fc39.x86_64",
+    "notes": "The game launches fine and menus work fine. Playing the tutorial the game runs butter smooth. However, it's currently not possible to actually join a match. Matchmaking works, however while joining the match I get an error message that reads \"Could not connect to network!\" and I get dropped back to the main menu.\n\nMy best guess is EAC is currently not configured to allow linux players and is intervening.",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1699501453,
+    "title": "",
+    "source": "protondb"
+  }
+]

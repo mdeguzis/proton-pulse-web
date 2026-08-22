@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3107350",
+    "cpu": "Intel Core i5-4258U @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Iris 5100 (HSW GT3)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Ran basically like Native, did my entire playthrough on Proton",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1735448940,
+    "title": "PockeDate! - Pocket Dating Simulator",
+    "source": "protondb"
+  }
+]

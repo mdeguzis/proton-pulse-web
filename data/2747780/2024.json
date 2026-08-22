@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2747780",
+    "cpu": "Intel Xeon E3-1231 v3 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 18.1.1, DRM 3.57, 6.8.8-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.6",
+    "kernel": "6.8.8-300.fc40.x86_64",
+    "notes": "Works just as good as Windows",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1714921588,
+    "title": "Dishwashing Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2747780",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 18.1.8, DRM 3.57, 6.10.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.1-arch1.1",
+    "kernel": "6.10.7-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725386486,
+    "title": "Dishwashing Simulator",
+    "source": "protondb"
+  },
+  {
+    "appId": "2747780",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "No tinkering required",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1731128812,
+    "title": "Dishwashing Simulator",
+    "source": "protondb"
+  }
+]

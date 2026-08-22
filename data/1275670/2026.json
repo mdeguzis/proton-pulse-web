@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1275670",
+    "cpu": "Intel Core i3-6320 @ 3.90GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.64, 6.18.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.1",
+    "kernel": "6.18.4-arch1-1",
+    "notes": "its kind of more interesting to search for files manually and use them the same way but game forces fullscreen so second monitor recommended",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1768144928,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1275670",
+    "cpu": "AMD Ryzen 9 7845HX with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.13-200.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1773225989,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1275670",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "windows is necessary",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1779199119,
+    "title": "",
+    "source": "protondb"
+  }
+]

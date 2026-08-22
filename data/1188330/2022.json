@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1188330",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.13-arch1-1",
+    "notes": "Works Perfectly",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641735685,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1188330",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.13-arch1-1",
+    "notes": "Everything works perfectly, including save functionality.",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641751192,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1188330",
+    "cpu": "Intel Core i7-4870HQ @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Pro P5200 (HSW GT3)",
+    "gpuDriver": "3.1 Mesa 21.3.1",
+    "kernel": "5.15.6-200.fc35.x86_64",
+    "notes": "frequent crashing",
+    "os": "Linux 5.x",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1649470479,
+    "title": "",
+    "source": "protondb"
+  }
+]

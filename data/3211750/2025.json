@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3211750",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.13.9-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.3",
+    "kernel": "6.13.9-103.bazzite.fc41.x86_64",
+    "notes": "Placing new buildings is 90% of what you are doing in the game. When doing so, they can become extremely large, blocking your sight.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1746108464,
+    "title": "",
+    "source": "protondb"
+  }
+]

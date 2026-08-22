@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2963870",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1745746995,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2963870",
+    "cpu": "Intel Core Ultra 9 185H",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 25.1.6-cachyos1.2",
+    "kernel": "6.16.0-5-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1754134805,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2963870",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 18.1.7, DRM 3.59, 6.11.0-17-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel",
+    "kernel": "6.11.0-17-generic",
+    "notes": "Is playable. 60 fps stable.",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759952553,
+    "title": "",
+    "source": "protondb"
+  }
+]

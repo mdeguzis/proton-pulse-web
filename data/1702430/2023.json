@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1702430",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.9-arch2-1",
+    "notes": "runs well with somewhat of an unusal frametimes(monitored with mongoHUD) but stable 60fps nontheless",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1698856467,
+    "title": "",
+    "source": "protondb"
+  }
+]

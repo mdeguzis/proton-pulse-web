@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1213770",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Works out of the box with default Steam Play",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1611742788,
+    "title": "Blastboard",
+    "source": "protondb"
+  }
+]

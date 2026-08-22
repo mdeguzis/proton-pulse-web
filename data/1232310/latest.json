@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1232310",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "Can enter the menu in VR, but can't enter the main experience itself",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1627569191,
+    "title": "",
+    "source": "protondb"
+  }
+]

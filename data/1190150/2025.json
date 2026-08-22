@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1190150",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.1",
+    "kernel": "6.8.0-45-generic",
+    "notes": "Most textures missing, making the game unplayable",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1745172303,
+    "title": "",
+    "source": "protondb"
+  }
+]

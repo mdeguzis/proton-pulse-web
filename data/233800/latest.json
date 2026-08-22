@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "233800",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "*rolling release",
+    "notes": "Doesn't work",
+    "os": "Arch Linux (64 \u0431\u0456\u0442)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1778751507,
+    "title": "",
+    "source": "protondb"
+  }
+]

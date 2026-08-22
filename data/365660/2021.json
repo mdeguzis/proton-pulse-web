@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "365660",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-9-amd64",
+    "notes": "Linux version = gamepad broken. Proton version = Gamepad detected the first time.",
+    "os": "Freedesktop.org 21.08.5 (Flatpak runtime)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1638003982,
+    "title": "OlliOlli2: Welcome to Olliwood",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1268370",
+    "cpu": "Intel Core i5-8265U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel UHD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.0.8",
+    "kernel": "5.3.0-23-generic",
+    "notes": "zero issues. plays just as well as it would nativly",
+    "os": "Pop!_OS 18.04 LTS",
+    "protonVersion": "5.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1586837666,
+    "title": "",
+    "source": "protondb"
+  }
+]

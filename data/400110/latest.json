@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "400110",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.1-arch1-1",
+    "notes": "Runs great out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1741506147,
+    "title": "",
+    "source": "protondb"
+  }
+]

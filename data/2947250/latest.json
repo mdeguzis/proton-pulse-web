@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2947250",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u9700\u8981\u4e00\u4e9b\u8bbe\u7f6e\u540e\uff0c\u5373\u53ef\u6d41\u7545\u6e38\u73a9\u3002",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1731449183,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2947250",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u5411\u4e0a\u4e00\u4efd\u62a5\u544a\u8ffd\u52a0\u5185\u5bb9",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1731557872,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2947250",
+    "cpu": "AMD Ryzen 7 6800HS Creator Edition",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 17.0.6, DRM 3.54, 6.6.21-1-longterm)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.6.21-1-longterm",
+    "notes": "No issues. Works just fine on linux",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1734075677,
+    "title": "",
+    "source": "protondb"
+  }
+]

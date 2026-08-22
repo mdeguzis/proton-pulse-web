@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1262460",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 6900 XT",
+    "gpuDriver": "4.6.14739 Compatibility Profile Context",
+    "kernel": "5.13.0-27-generic",
+    "notes": "Version 10 and 11 running fine out of the box",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1644947694,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1262460",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.25-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1647202683,
+    "title": "",
+    "source": "protondb"
+  }
+]

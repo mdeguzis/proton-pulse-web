@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "809530",
+    "cpu": "AMD Ryzen Threadripper 3970X 32-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.7.1-050701-generic",
+    "notes": "Native version not working on Ubuntu 18.04",
+    "os": "Ubuntu 18.04.5 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.13-4",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1608706192,
+    "title": "Hypergate",
+    "source": "protondb"
+  }
+]

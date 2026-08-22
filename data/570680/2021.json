@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "570680",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "The game started up but the window was too small to play it.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1626560032,
+    "title": "Zork: Grand Inquisitor",
+    "source": "protondb"
+  },
+  {
+    "appId": "570680",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.0-7620-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Small Screen",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637644282,
+    "title": "Zork: Grand Inquisitor",
+    "source": "protondb"
+  }
+]

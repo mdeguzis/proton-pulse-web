@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1286710",
+    "cpu": "Intel Core i3-6100 @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.4-arch1-1",
+    "notes": "The game runs essentially perfect. Haven't tested gamepad support yet.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1592860511,
+    "title": "Hylics 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1286710",
+    "cpu": "Intel Core i7-3520M @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.1.2",
+    "kernel": "5.8.0-0.rc7.1.fc33.x86_64",
+    "notes": "I'm unsure. They need drivers that fully support Vulkan for an out of the box experience. The OpenGL tweak worked fine though.",
+    "os": "Freedesktop.org 19.08.12 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1596392787,
+    "title": "Hylics 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1286710",
+    "cpu": "Intel Core i7-1065G7 @ 1.30GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel Iris Plus (ICL GT2)",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Game runs perfectly! Never ran into any unexpected problems",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1596486581,
+    "title": "Hylics 2",
+    "source": "protondb"
+  }
+]

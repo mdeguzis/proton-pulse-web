@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "885810",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.11-arch1-1",
+    "notes": "Might not work well if you have a low end pc",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "experimental",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1634316474,
+    "title": "",
+    "source": "protondb"
+  }
+]

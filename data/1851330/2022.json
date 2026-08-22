@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1851330",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.74-3-MANJARO",
+    "notes": "the game starts insto a blackscreen and closes instantly. i tried to find out why but i am just not good enough with linux to interpret the log file. maybe someone else has more luck with it",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1668450416,
+    "title": "",
+    "source": "protondb"
+  }
+]

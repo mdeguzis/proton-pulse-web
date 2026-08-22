@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1640320",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.14.11-200.fc34.x86_64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.8",
+    "kernel": "5.14.11-200.fc34.x86_64",
+    "notes": "No audio",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1634592805,
+    "title": "",
+    "source": "protondb"
+  }
+]

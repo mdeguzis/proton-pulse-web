@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1245560",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.0-70-generic",
+    "notes": "The alpha is not available natively on Linux, but running it with a recent Proton works beautifully.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1618037439,
+    "title": "",
+    "source": "protondb"
+  }
+]

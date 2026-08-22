@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1193550",
+    "cpu": "Intel Core i7-3740QM @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.6",
+    "kernel": "5.3.12-1-MANJARO",
+    "notes": "Doesn't launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1575134629,
+    "title": "",
+    "source": "protondb"
+  }
+]

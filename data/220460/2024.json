@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "220460",
+    "cpu": "Intel Core i7-6820HQ @ 2.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 940MX",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.6.9-amd64",
+    "notes": "no sound, no fun",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1733264359,
+    "title": "",
+    "source": "protondb"
+  }
+]

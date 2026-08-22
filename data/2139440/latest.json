@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2139440",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 16.0.6, DRM 3.54, 6.5.7-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.7-gentoo-x86_64",
+    "notes": "",
+    "os": "Gentoo Linux",
+    "protonVersion": "6.3-8",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1703668397,
+    "title": "The Wall Mustn't Fall",
+    "source": "protondb"
+  }
+]

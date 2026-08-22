@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3521660",
+    "cpu": "AMD BC-250",
+    "duration": "underOneHour",
+    "gpu": "AMD BC-250 (radeonsi, gfx1013, LLVM 21.1.8, DRM 3.64, 6.17.1-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.17.1-300.fc43.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 43 (Cinnamon)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1770657367,
+    "title": "Blind Touch",
+    "source": "protondb"
+  }
+]

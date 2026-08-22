@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "877850",
+    "cpu": "AMD Ryzen Threadripper 3970X 32-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Blank window pops up, but crashes after a few seconds.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1620863086,
+    "title": "",
+    "source": "protondb"
+  }
+]

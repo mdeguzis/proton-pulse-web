@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1185520",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 5500 XT",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel (git-7fbded8b58)",
+    "kernel": "5.8.9-xanmod1-1",
+    "notes": "Work's flawlessly with proton GE. Default proton experimental and lastest (6.3-5) from steam worked but where just a tad stuttery.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627099418,
+    "title": "",
+    "source": "protondb"
+  }
+]

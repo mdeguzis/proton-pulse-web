@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2929040",
+    "cpu": "13th Gen Intel Core i7-1355U",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-U)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-60-generic",
+    "notes": "requires older proton version",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1749829074,
+    "title": "",
+    "source": "protondb"
+  }
+]

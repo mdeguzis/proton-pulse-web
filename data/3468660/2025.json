@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3468660",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.12.30",
+    "notes": "Works as expected",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1752751977,
+    "title": "Rugby League 26",
+    "source": "protondb"
+  }
+]

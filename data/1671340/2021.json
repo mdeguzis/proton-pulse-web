@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1671340",
+    "cpu": "Intel Core i3-4130T @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-77-generic",
+    "notes": "No problems occurred",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1626062892,
+    "title": "Fears to Fathom - Home Alone",
+    "source": "protondb"
+  },
+  {
+    "appId": "1671340",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT",
+    "gpuDriver": "4.6 Mesa 21.3.0-devel",
+    "kernel": "5.13.6-185-tkg-pds",
+    "notes": "Works fine with Proton GE",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1629648600,
+    "title": "Fears to Fathom - Home Alone",
+    "source": "protondb"
+  },
+  {
+    "appId": "1671340",
+    "cpu": "Intel Core i5-6200U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 21.1.1 - kisak-mesa PPA",
+    "kernel": "5.8.0-53-generic",
+    "notes": "Works like a charm",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1632242303,
+    "title": "Fears to Fathom - Home Alone",
+    "source": "protondb"
+  }
+]

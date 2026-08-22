@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "785790",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.5-200.fc34.x86_64",
+    "notes": "Better than the native version",
+    "os": "Linux 5.x (Fedora 34)",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627834893,
+    "title": "",
+    "source": "protondb"
+  }
+]

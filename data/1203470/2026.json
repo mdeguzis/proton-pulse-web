@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1203470",
+    "cpu": "AMD Ryzen 9 9950X3D 16/32 Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.3-3-cachyos",
+    "notes": "For some reason Proton-9.0-4 works.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1772185347,
+    "title": "",
+    "source": "protondb"
+  }
+]

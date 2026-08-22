@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "692200",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "5.6.19-300.fc32.x86_64",
+    "notes": "Simply not.",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-9",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1593472794,
+    "title": "aMAZE Dark Times",
+    "source": "protondb"
+  }
+]

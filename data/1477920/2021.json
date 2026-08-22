@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1477920",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.41.0, 5.13.4-1-default, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.4-1-default",
+    "notes": "Works perfectly with Proton GE",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627716905,
+    "title": "Night Book",
+    "source": "protondb"
+  }
+]

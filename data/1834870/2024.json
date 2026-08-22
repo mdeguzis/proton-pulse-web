@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1834870",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Crashes shortly after launch",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1727747784,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2838620",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 21.1.8, DRM 3.64, 6.19.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.5 (git-8418351c7c)",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "Problemsiz \u00e7al\u0131\u015f\u0131yor",
+    "os": "Fedora Linux 43 KDE Plasma Desktop Edition",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1780080130,
+    "title": "",
+    "source": "protondb"
+  }
+]

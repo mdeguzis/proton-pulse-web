@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3453470",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 20.1.6, DRM 3.63, 6.15.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.3-arch1.3",
+    "kernel": "6.15.2-arch1-1",
+    "notes": "\u5168\u5c4f\u5207\u6362\u7a97\u53e3\u5316\u6709\u95ee\u9898\uff0c\u7a97\u53e3\u5316\u540e\u6709\u9ed1\u8fb9\u9700\u8981\u81ea\u884c\u8c03\u6574\u4f7f\u9ed1\u8fb9\u4e0d\u53ef\u89c1\uff0c\u5176\u4ed6\u6b63\u5e38",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751439764,
+    "title": "\u604b\u7231\u6ce1\u998d\uff01\u9752\u6625\u8001\u9655\uff1aShannxi Love Story",
+    "source": "protondb"
+  },
+  {
+    "appId": "3453470",
+    "cpu": "13th Gen Intel Core i7-13700H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.9-201.fc42.x86_64",
+    "notes": "Run flawlessly",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1754630754,
+    "title": "\u604b\u7231\u6ce1\u998d\uff01\u9752\u6625\u8001\u9655\uff1aShannxi Love Story",
+    "source": "protondb"
+  }
+]

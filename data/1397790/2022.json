@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1397790",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 560 (POLARIS11, DRM 3.41.0, 5.13.19_1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.13.19_1",
+    "notes": "The game loads fine initially, but then suddenly crashes after ~20 seconds",
+    "os": "Void Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1641061794,
+    "title": "Samurai GUNN 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1397790",
+    "cpu": "Intel Core i7-7820X @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "Game seems to run, but controllers don't work.",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1642782385,
+    "title": "Samurai GUNN 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1397790",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "With my tinkering the game runs as good as it does on windows :)",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1663861069,
+    "title": "Samurai GUNN 2",
+    "source": "protondb"
+  }
+]

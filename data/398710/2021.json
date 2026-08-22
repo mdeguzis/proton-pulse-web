@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "398710",
+    "cpu": "Intel Core i5-2520M @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 21.2.1",
+    "kernel": "5.13.13-arch1-1",
+    "notes": "After running a game, screen flashes purple and game doesn't start",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1632043249,
+    "title": "Timberman",
+    "source": "protondb"
+  }
+]

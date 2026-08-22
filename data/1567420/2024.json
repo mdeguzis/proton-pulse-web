@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1567420",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 21.0.3",
+    "kernel": "5.11.0-41-generic",
+    "notes": "In all of Steam's default Steam Play choice, forcing Experimental, and forcing 8.0, attempting to start the game shows a dialog box reading:\n\nAnwendungsfehler\n\nException Exception in Modul DwaO.exe bei 00318F36.\nError : Unable to set SessionEnumerator Interface.\n\nand pressing the only button (\"OK\") in the dialog exits.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1708153574,
+    "title": "",
+    "source": "protondb"
+  }
+]

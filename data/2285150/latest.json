@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2285150",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 16.0.6, DRM 3.54, 6.6.8-gentoo)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.6.8-gentoo",
+    "notes": "works out of the box flawless since EAC update",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1706216761,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "575970",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-37-generic",
+    "notes": "Le jeu se lance et fonctionne bien. Il y a toutefois des ralentissements et gels sporadiques, m\u00eame en baissant les d\u00e9tails graphiques.",
+    "os": "Ubuntu 20.04 LTS (64\u00a0bits)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1592513848,
+    "title": "",
+    "source": "protondb"
+  }
+]

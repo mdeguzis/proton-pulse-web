@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1507630",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.108.03",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Launches on Experimental and GE but not on 7.0-5, 6.3-8 or older Proton versions. Using gamemoderun %command% makes no apparent difference. Mouse skin loads but no interaction is possible except Esc to close. White flash on some loads is promising but still leads to a black screen with music, a mouse and nothing else.",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1671551944,
+    "title": "",
+    "source": "protondb"
+  }
+]

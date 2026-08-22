@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2514400",
+    "cpu": "AMD Ryzen 9 3900 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 17.0.6, DRM 3.49, 6.2.0-36-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.4 (git-27405fd573)",
+    "kernel": "6.2.0-36-generic",
+    "notes": "Of the little I saw, everything seemed to work but the input from keyboard/mouse and thus the game was unplayable",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1707485203,
+    "title": "Servonauts",
+    "source": "protondb"
+  }
+]

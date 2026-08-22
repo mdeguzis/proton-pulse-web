@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1508430",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.0, DRM 3.46, 5.18.13-200.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.18.13-200.fc36.x86_64",
+    "notes": "Works fine with Proton Experimental",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1689912945,
+    "title": "",
+    "source": "protondb"
+  }
+]

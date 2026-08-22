@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3879850",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.16.5-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.2-cachyos1.2",
+    "kernel": "6.16.5-2-cachyos",
+    "notes": "Runs on Linux without any gamebreaking issues",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768324322,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1542390",
+    "cpu": "11th Gen Intel Core i7-11850H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "5.15.0-87-generic",
+    "notes": "Game shows Linux support but doesn't ship with linux binary or proton support",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1697924236,
+    "title": "Monolith",
+    "source": "protondb"
+  },
+  {
+    "appId": "1542390",
+    "cpu": "11th Gen Intel Core i7-11850H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "5.15.0-87-generic",
+    "notes": "Doesn't start, even with forced proton.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1698166794,
+    "title": "Monolith",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1265930",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.14.2)",
+    "gpuDriver": "4.6 Mesa 25.0.4",
+    "kernel": "6.14.2",
+    "notes": "Pressing a button on the gamepad only hides the mouse cursor and that's the end of it",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1750877699,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1265930",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs great on Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1756597363,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1265930",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-85-generic",
+    "notes": "Works fine for the most part, but there are some issues.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1764021913,
+    "title": "",
+    "source": "protondb"
+  }
+]

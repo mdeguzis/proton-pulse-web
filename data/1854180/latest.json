@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1854180",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.3, DRM 3.61, 6.14.8-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.6",
+    "kernel": "6.14.8-300.fc42.x86_64",
+    "notes": "Practically unplayable because you can't shoot enemies and they can't shoot you",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1748448613,
+    "title": "",
+    "source": "protondb"
+  }
+]

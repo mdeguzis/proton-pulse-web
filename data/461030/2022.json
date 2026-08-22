@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "461030",
+    "cpu": "Intel Core i5-9400 @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.15.0-56-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-56-generic",
+    "notes": "As it is, the game is playable, but no fun given the very slow movements of the character on screen.",
+    "os": "Linux Mint 20",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1671629681,
+    "title": "",
+    "source": "protondb"
+  }
+]

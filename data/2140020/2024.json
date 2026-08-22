@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2140020",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 16.0.6, DRM 3.57, 6.7.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.7.4-arch1-1",
+    "notes": "Nice rework",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1707343764,
+    "title": "Stronghold: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2140020",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 16.0.6, DRM 3.57, 6.7.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.7.4-arch1-1",
+    "notes": "Absolutely flawless - Just like in 2001. (Im sure I'm not exaggerating)",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1707958061,
+    "title": "Stronghold: Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2140020",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.10.42-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1724850031,
+    "title": "Stronghold: Definitive Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1401680",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "4.15.0-117-generic",
+    "notes": "Video trailer doesn't play after game end, but gameplay itself has no apparent issues",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1600583411,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1401680",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.38.0, 5.8.14-300.fc33.x86_64, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel",
+    "kernel": "5.8.14-300.fc33.x86_64",
+    "notes": "",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602844244,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1401680",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700",
+    "gpuDriver": "4.6 Mesa 20.1.8",
+    "kernel": "5.8.11-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1602884335,
+    "title": "",
+    "source": "protondb"
+  }
+]

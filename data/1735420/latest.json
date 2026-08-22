@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1735420",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-45-generic",
+    "notes": "Works great",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728267891,
+    "title": "",
+    "source": "protondb"
+  }
+]

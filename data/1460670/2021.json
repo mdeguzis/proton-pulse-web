@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1460670",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.15.10-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.10-200.fc35.x86_64",
+    "notes": "Runs perfectly",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1640351998,
+    "title": "Jungle Town: Birthday quest",
+    "source": "protondb"
+  }
+]

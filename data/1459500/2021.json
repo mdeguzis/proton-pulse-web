@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1459500",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "A simple yet enjoyable creative experience",
+    "os": "Zorin OS 15.3",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1619646361,
+    "title": "Atlas Architect",
+    "source": "protondb"
+  },
+  {
+    "appId": "1459500",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.12.2-1-MANJARO",
+    "notes": "just works without issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1622229525,
+    "title": "Atlas Architect",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1287260",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.6.19-2-MANJARO",
+    "notes": "Game is starting but screen stays black",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597696009,
+    "title": "Barn Finders: The Pilot",
+    "source": "protondb"
+  }
+]

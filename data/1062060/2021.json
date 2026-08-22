@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1062060",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.41.0, 5.13.7-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.7-arch1-1",
+    "notes": "The game has graphical bugs without the use of Proton GE",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "20 GB",
+    "rating": "borked",
+    "timestamp": 1628113244,
+    "title": "Rhome",
+    "source": "protondb"
+  }
+]

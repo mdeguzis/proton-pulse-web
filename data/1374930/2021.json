@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1374930",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 470 (POLARIS10, DRM 3.40.0, 5.12.15-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.12.15-arch1-1",
+    "notes": "Only played for 2 hours so far, but looking good.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1630091218,
+    "title": "Black Geyser: Couriers of Darkness",
+    "source": "protondb"
+  },
+  {
+    "appId": "1374930",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.4.0-70-generic",
+    "notes": "Except of the few broken spell visuals, it's pretty enjoyable in its current EA state.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1630167806,
+    "title": "Black Geyser: Couriers of Darkness",
+    "source": "protondb"
+  }
+]

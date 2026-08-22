@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1495860",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD RENOIR",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-53-generic",
+    "notes": "The game works fine mostly; only apparent issues are occasional video distortion and inability to skip instructions.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-5",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1626393971,
+    "title": "",
+    "source": "protondb"
+  }
+]

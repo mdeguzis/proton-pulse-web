@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "692030",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.0-0.bpo.2-amd64",
+    "notes": "Crashed after welcome screen",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1593119581,
+    "title": "Tennis World Tour",
+    "source": "protondb"
+  }
+]

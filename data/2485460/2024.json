@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2485460",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-107-generic",
+    "notes": "not started yet",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1716641703,
+    "title": "State of Survival",
+    "source": "protondb"
+  }
+]

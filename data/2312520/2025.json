@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2312520",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 19.1.2, DRM 3.59, 6.8.0-57-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.8.0-57-generic",
+    "notes": "Runs great with little to no tinkering just changed compatability to GE-Proton9-27",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1744443822,
+    "title": "",
+    "source": "protondb"
+  }
+]

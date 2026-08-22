@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1623390",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.8-arch1-1",
+    "notes": "Songs only work if reloaded several times and cutscenes are broken.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1639780980,
+    "title": "",
+    "source": "protondb"
+  }
+]

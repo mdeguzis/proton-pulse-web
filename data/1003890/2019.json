@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1003890",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 435.27.06",
+    "kernel": "5.0.0-36-generic",
+    "notes": "Works well for a little while, then fails completely.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1574027420,
+    "title": "",
+    "source": "protondb"
+  }
+]

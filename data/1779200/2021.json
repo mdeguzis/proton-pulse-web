@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1779200",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.15.4-101.fc34.x86_64",
+    "notes": "The native version works great. The same can be said for playing it using Proton-6.21-GE-2.",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639000864,
+    "title": "",
+    "source": "protondb"
+  }
+]

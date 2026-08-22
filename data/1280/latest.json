@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1280",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.0-2-cachyos",
+    "notes": "Once you fixed some stuff its absolutly perfect but you will need to tinker a bit.",
+    "os": "CachyOS",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1777629425,
+    "title": "Darkest Hour: Europe '44-'45",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "37210",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.5.0-0.bpo.2-amd64",
+    "notes": "The game, for all intents and purposes, appears to function; however, only the top-left quarter of the screen actually renders.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1594499357,
+    "title": "Chocolatier\u00ae: Decadence by Design\u2122",
+    "source": "protondb"
+  }
+]

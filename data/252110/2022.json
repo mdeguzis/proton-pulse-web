@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "252110",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.11-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.6",
+    "kernel": "5.16.11-200.fc35.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 35 (Workstation Edition)",
+    "protonVersion": "7.0-1",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1647084681,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  },
+  {
+    "appId": "252110",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-31-generic",
+    "notes": "Native version had no audio (running on pipewire-pulse), proton version worked perfectly",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1647886162,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  },
+  {
+    "appId": "252110",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.4-xanmod1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.4-xanmod1-1",
+    "notes": "Works out of the box without thinkering",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1656073861,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  }
+]

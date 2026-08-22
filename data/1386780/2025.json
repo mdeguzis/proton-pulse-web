@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1386780",
+    "cpu": "Intel Xeon E5-2680 v4 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, LLVM 15.0.7, DRM 3.59, 6.12.10-76061203-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1~bpo12+1pop1~1744225826~22.04~b077665",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1759954537,
+    "title": "City of Gangsters",
+    "source": "protondb"
+  },
+  {
+    "appId": "1386780",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 535.274.02",
+    "kernel": "6.14.0-35-generic",
+    "notes": "You need to use \"PROTON_USE_WINED3D=1 DXVK_STATE_CACHE=0 %command%\" as launch options in ubuntu to work.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1762688739,
+    "title": "City of Gangsters",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1709550",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.3-arch1-1",
+    "notes": "Game freezes while walking around",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1706981601,
+    "title": "",
+    "source": "protondb"
+  }
+]

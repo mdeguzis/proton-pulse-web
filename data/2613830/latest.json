@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2613830",
+    "cpu": "AMD Ryzen 5 4600H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (renoir, LLVM 16.0.6, DRM 3.54, 6.5.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.7-arch1.1",
+    "kernel": "6.5.3-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "5.13-6",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1697632678,
+    "title": "Install Fee Tycoon",
+    "source": "protondb"
+  }
+]

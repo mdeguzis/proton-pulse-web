@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1340120",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 13.0.1, DRM 3.44, 5.17.2-252-tkg-cacule)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.2-252-tkg-cacule",
+    "notes": "Save page's screenshot preview seems to work now (GE-Proton7-14)",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1650009789,
+    "title": "",
+    "source": "protondb"
+  }
+]

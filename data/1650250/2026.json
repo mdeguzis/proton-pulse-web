@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1650250",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "A roguelike horror game with randomly generated floors. You must find your girlfriend and escape the never-ending mansion together.",
+    "os": "Ubuntu 24.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1771705902,
+    "title": "",
+    "source": "protondb"
+  }
+]

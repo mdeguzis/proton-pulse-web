@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3037930",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 19.1.0, DRM 3.54, 6.6.63-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.6.63-200.fc41.x86_64",
+    "notes": "Works out of the box, completed a full playthrough without any issues",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1733421968,
+    "title": "[Bober Bros] The Hole",
+    "source": "protondb"
+  }
+]

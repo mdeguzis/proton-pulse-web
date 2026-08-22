@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1112620",
+    "cpu": "Intel Core i3-8100 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.2",
+    "kernel": "5.9.8-200.fc33.x86_64",
+    "notes": "Unfortunately, the game can't push more than 1FPS on the lowest settings no matter which version of Proton I used",
+    "os": "Fedora release 33 (Thirty Three)",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606109627,
+    "title": "",
+    "source": "protondb"
+  }
+]

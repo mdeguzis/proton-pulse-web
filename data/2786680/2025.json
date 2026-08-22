@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2786680",
+    "cpu": "AMD Ryzen 9 4900H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.1, DRM 3.57, 6.8.0-55-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-55-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.2 LTS (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1743016725,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2786680",
+    "cpu": "AMD Ryzen 7 H 255 w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.63, 6.15.3)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.3",
+    "notes": "The path being too deep issue essentially makes it unplayble",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1750848559,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2786680",
+    "cpu": "AMD Ryzen 7 H 255 w/ Radeon 780M Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.7, DRM 3.63, 6.15.3)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.3",
+    "notes": "GE-Proton is a must and the game runs perfectly with it",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1751039119,
+    "title": "",
+    "source": "protondb"
+  }
+]

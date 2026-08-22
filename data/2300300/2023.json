@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2300300",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 15.0.7, DRM 3.52, 6.3.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.2",
+    "kernel": "6.3.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1687451012,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2300300",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (ICL GT1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.9-arch2-1",
+    "notes": "and settings don't change no matter if done outside of game or inside, non working settings, only videos option is shown and that also doesn't do anything when changing options...",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1698781532,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2300300",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.11-300.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.11-300.fc39.x86_64",
+    "notes": "",
+    "os": "Fedora release 39 (Thirty Nine)",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1700143027,
+    "title": "",
+    "source": "protondb"
+  }
+]

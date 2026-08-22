@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "564310",
+    "cpu": "Intel Core i7-4720HQ @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.10.7-3-MANJARO",
+    "notes": "Game is either extremely laggy or stuttery on Nvidia optimus setup, so for fast FPS game it is a no-go.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1612040702,
+    "title": "Serious Sam Fusion 2017 (beta)",
+    "source": "protondb"
+  },
+  {
+    "appId": "564310",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 630 (CFL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.8-arch1-1",
+    "notes": "Proton seems not to work well with CroTeams-Engine. Native runs at an appropriate, enjoyable performance.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616683582,
+    "title": "Serious Sam Fusion 2017 (beta)",
+    "source": "protondb"
+  }
+]

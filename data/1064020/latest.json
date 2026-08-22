@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1064020",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.6 (git-0697ac0d75)",
+    "kernel": "6.5.3-arch1-1",
+    "notes": "Played start to finish on default setting without issue",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1694754966,
+    "title": "eMemories",
+    "source": "protondb"
+  }
+]

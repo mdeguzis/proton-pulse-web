@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1151530",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 11 (RAVEN, DRM 3.40.0, 5.10.70-xanmod1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.10.70-xanmod1",
+    "notes": "Outside the occasional crash at launch, which only seems to happen once a boot; the game plays like a dream.",
+    "os": "KDE neon User - 5.24",
+    "protonVersion": "7.0-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1651432265,
+    "title": "",
+    "source": "protondb"
+  }
+]

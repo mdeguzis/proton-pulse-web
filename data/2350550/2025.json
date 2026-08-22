@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2350550",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.17.3-1-cachyos-bore)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.2",
+    "kernel": "6.17.3-1-cachyos-bore",
+    "notes": "Unplayable",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1760832378,
+    "title": "Spelljammer: Pirates of Realmspace",
+    "source": "protondb"
+  }
+]

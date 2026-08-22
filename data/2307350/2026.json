@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2307350",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.8, DRM 3.59, 6.12.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.3-arch1.1",
+    "kernel": "6.12.8-arch1-1",
+    "notes": "My friend on Windows 11 is having all of the same issues, so if you enjopy it on Windows you'll have the same expeirence on Linux.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "silver",
+    "timestamp": 1777147910,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2307350",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 26.0.5-arch1.1",
+    "kernel": "6.19.13-arch1-1",
+    "notes": "Some crashes on area change, but nothing during active gameplay",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1777316526,
+    "title": "",
+    "source": "protondb"
+  }
+]

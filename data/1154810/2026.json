@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1154810",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.14-ogc1.1.fc44.x86_64",
+    "notes": "Just... worked.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1778399848,
+    "title": "Going Under",
+    "source": "protondb"
+  }
+]

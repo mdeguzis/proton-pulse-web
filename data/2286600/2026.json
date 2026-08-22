@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2286600",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "that actually runs smooth given its unity",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1771261326,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2286600",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.13-arch1-1",
+    "notes": "Missing audio and loading forever",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1772995312,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2286600",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "For a game that requires fast reflexes and skill, the varying framerate can alter some of the parry timings and attack combos.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1773173987,
+    "title": "",
+    "source": "protondb"
+  }
+]

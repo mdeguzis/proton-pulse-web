@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "932450",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Works fine, if you ignore the fullscreen setting",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714525288,
+    "title": "Blade of Acrimony",
+    "source": "protondb"
+  }
+]

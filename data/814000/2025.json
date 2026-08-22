@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "814000",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "Game works just fine, sounds are good, so are models and textures. If you like one piece and are on linux, have fun!",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1750302760,
+    "title": "ONE PIECE ODYSSEY",
+    "source": "protondb"
+  },
+  {
+    "appId": "814000",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Not a single issue, no tinkering needed, mods also easy to install.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1756888760,
+    "title": "ONE PIECE ODYSSEY",
+    "source": "protondb"
+  }
+]

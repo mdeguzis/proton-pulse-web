@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1365750",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.53-1-MANJARO",
+    "notes": "Provided that the PROTON_USE_WINED3D11=1 option is set, yes, it would be an enjoyable experience.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628200414,
+    "title": "",
+    "source": "protondb"
+  }
+]

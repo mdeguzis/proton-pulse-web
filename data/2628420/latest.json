@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2628420",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-48-generic",
+    "notes": "Works pretty nicely out of the box.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1739362953,
+    "title": "Croakoloco",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "598530",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.4-200.fc32.x86_64",
+    "notes": "This game has native support, however if running via proton is needed for some reason, it works well.",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598848863,
+    "title": "",
+    "source": "protondb"
+  }
+]

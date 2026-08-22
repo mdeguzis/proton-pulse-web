@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1269020",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1712215578,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1269020",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "This game is really good a run without any issues",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1712509785,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1269020",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.6.26-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1715386003,
+    "title": "",
+    "source": "protondb"
+  }
+]

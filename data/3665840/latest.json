@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3665840",
+    "cpu": "Intel Celeron N3160 @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 400 (BSW)",
+    "gpuDriver": "4.6 Mesa 25.1.5-1pop0~1753463422~24.04~8af185e",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "The game is a mixture of two popular game mechanics, MineSweeper and Tetris, and is mostly compatible with Linux with no bugs.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1766136126,
+    "title": "",
+    "source": "protondb"
+  }
+]

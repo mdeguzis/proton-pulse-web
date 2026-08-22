@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "332570",
+    "cpu": "12th Gen Intel Core i9-12900KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-45-generic",
+    "notes": "The game works perfectly with Proton GE or Experimental, no slowdowns or stutters caused by Linux itself.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1728225441,
+    "title": "",
+    "source": "protondb"
+  }
+]

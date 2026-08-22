@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1751630",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game boots and has audio but no picture.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1648700863,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1751630",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon HD 8800 (pitcairn, LLVM 13.0.0, DRM 3.35, 5.4.0-91-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-231ccb6 2021-12-10 focal-oibaf-ppa)",
+    "kernel": "5.4.0-91-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "4.11-13",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1661611619,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1751630",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (sienna_cichlid, LLVM 13.0.1, DRM 3.47, 5.19.0-76051900-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "On !Pop_OS It just worked, though on Steam Deck I am getting a \"Read\" error that appears after trying to start, Desktop is good, SteamOS = X",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1661694924,
+    "title": "",
+    "source": "protondb"
+  }
+]

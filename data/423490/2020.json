@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "423490",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.0-3-MANJARO",
+    "notes": "Instant Crash",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593066417,
+    "title": "Air Missions: HIND",
+    "source": "protondb"
+  },
+  {
+    "appId": "423490",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Menu works but with lags",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1603749560,
+    "title": "Air Missions: HIND",
+    "source": "protondb"
+  },
+  {
+    "appId": "423490",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-52-generic",
+    "notes": "Proton 5.13-1 + PROTON_USE_WINED3D11=1 %command% seems to make it work",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1603839455,
+    "title": "Air Missions: HIND",
+    "source": "protondb"
+  }
+]

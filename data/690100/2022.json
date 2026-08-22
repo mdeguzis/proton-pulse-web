@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "690100",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.18.9-200.fc36.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1657027879,
+    "title": "TwoKinds Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "690100",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.18.9-200.fc36.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1657123372,
+    "title": "TwoKinds Online",
+    "source": "protondb"
+  },
+  {
+    "appId": "690100",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.4.0-121-generic",
+    "notes": "This game, While Playable NEEDS a linux Native Port.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1657414193,
+    "title": "TwoKinds Online",
+    "source": "protondb"
+  }
+]

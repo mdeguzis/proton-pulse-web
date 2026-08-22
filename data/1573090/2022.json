@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1573090",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.0-47-generic",
+    "notes": "Works flawlessly. When comparing to playing the playtest version when I was running Windows months ago, no difference.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1670389834,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1573090",
+    "cpu": "Intel Core i7-8665U @ 1.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-19-amd64",
+    "notes": "Works Flawlessly in Proton",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1670429674,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1573090",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Plays great out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1671514172,
+    "title": "",
+    "source": "protondb"
+  }
+]

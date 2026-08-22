@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1306580",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "I tried different proton versions, but nothing worked. i launch it, wait for it to load and a small screen comes up and something starts to load, but it throws me out and closes the game.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1768003118,
+    "title": "Left on Read",
+    "source": "protondb"
+  }
+]

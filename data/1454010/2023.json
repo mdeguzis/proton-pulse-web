@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1454010",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.6.1-zen1-1-zen",
+    "notes": "Game doesn't even display a window, it hangs after launching.",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1700064698,
+    "title": "",
+    "source": "protondb"
+  }
+]

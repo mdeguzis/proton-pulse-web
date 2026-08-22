@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2832770",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.19.11-1-cachyos",
+    "notes": "Argebe works as well on Linux as it does on Windows, the game suffers no visual, audio or other forms of degradation and works as expected.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1775672273,
+    "title": "",
+    "source": "protondb"
+  }
+]

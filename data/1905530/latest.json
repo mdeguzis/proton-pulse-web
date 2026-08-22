@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1905530",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 20.1.2, DRM 3.57, 6.8.0-111-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-111-generic",
+    "notes": "Due to the frequent crashes, and then when it did run, the stuttering from saving? ehhhh i'd give it a 5/10 playability. its \"playable\"",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1778739804,
+    "title": "Hammerwatch Anniversary Edition",
+    "source": "protondb"
+  }
+]

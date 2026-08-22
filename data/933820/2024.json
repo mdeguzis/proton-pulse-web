@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "933820",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "allTheTime",
+    "gpu": "Radeon RX 7700S (radeonsi, gfx1103_r1, LLVM 17.0.6, DRM 3.57, 6.8.10-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.6 (git-c659c7e660)",
+    "kernel": "6.8.10-300.fc40.x86_64",
+    "notes": "Startet und l\u00e4uft ohne Probleme",
+    "os": "Fedora Linux 40 (Silverblue) (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1716638798,
+    "title": "Endzone - A World Apart",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3150720",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 19.1.4, DRM 3.64, 6.18.2_1)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.18.2_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1766585441,
+    "title": "",
+    "source": "protondb"
+  }
+]

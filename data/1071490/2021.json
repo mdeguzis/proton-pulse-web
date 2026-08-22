@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1071490",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.1.8",
+    "kernel": "5.8.11-1-MANJARO",
+    "notes": "Starts but only with sound and a black screen",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1618944398,
+    "title": "Miss Lisette's Assassin Maid",
+    "source": "protondb"
+  }
+]

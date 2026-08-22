@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "225160",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.49, 6.1.0-17-amd64)",
+    "gpuDriver": "4.6 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.1.0-17-amd64",
+    "notes": "Other than the crashing bugs I get 5 more fps than the Windows 10 in same device. It's playable.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-5",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1710442972,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2901140",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-55-generic",
+    "notes": "Works great!",
+    "os": "Kubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1742248611,
+    "title": "Stray Cats in Cozy Town",
+    "source": "protondb"
+  },
+  {
+    "appId": "2901140",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.2-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1746223166,
+    "title": "Stray Cats in Cozy Town",
+    "source": "protondb"
+  }
+]

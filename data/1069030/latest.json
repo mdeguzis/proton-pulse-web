@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1069030",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 17.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.0.3-arch1.1",
+    "kernel": "6.8.1-arch1-1",
+    "notes": "Works fine out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1767051905,
+    "title": "EarthX",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1724980",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch2.3",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "Only the prologue has missing textures, the rest of the game in untouched, very fun game :)",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "bronze",
+    "timestamp": 1772832659,
+    "title": "",
+    "source": "protondb"
+  }
+]

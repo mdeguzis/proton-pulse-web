@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1933680",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.12.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Indeed only happens on the English version, both as is and using the restoration patch.\n<br>\n<br>\n\n## launch options\n\n- The error dialog box is oddly in Japanese, all the Japanese characters won't display properly unless `LC_CTYPE` is set to `ja_JP.UTF-8`\n\n- `LANG`. `LC_ALL`, and using either or both with [the `locales/run.sh` script](https://gist.github.com/cfillion/4394c3b8cd051fb45721187053e92296?permalink_comment_id=4429775) did not work. Only `LC_CTYPE` shows all the characters (figured this out using `PROTON_LOG`).\n\n- I've tried  `PROTON_USE_SECCOMP=1`, same errors\n\n- I've tried  `PROTON_OLD_GL_STRING`, `PROTON_NO_XIM`, I've even tried `PROTON_USE_XALIA`, same errors.\n<br>\n<br>\n\n## errors\n\nIt gives two error pop ups, the second pops up after closing the first\n<br>\n\n- The error displayed I can't fully read (particularly the kanji). If I could, I wouldn't have to play the English version.\n<br>\n\nCKeyManager crash\n<br>\n<br>\n\nwindow title:\n<br>\n\n`CKeyManager crash`\n<br>\n\n(romaji) \n<br>\n\n`CKeyManager kurashi`\n<br>\n<br>\n\nwindow text:\n<br>\n\n`keyboard device's ... has ...`\n<br>\n\n(romaji) \n<br>\n`kiiboodo debaisu no ... ni ... shimashita.`\n<br>\n<br>\n\nSFA\n<br>\n<br>\n\nwindow title: \n<br>\n\n`SFA`\n<br>\n<br>\n\nwindow text:\n<br>\n\n`key manager class' ... has ...`\n<br>\n(romaji)\n<br>\n\n`kiimaneejaakurasu no ... ni ... shimashita.`",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1735401766,
+    "title": "",
+    "source": "protondb"
+  }
+]

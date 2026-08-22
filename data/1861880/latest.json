@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1861880",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (radeonsi, navi21, ACO, DRM 3.64, 6.19.6-1-default)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.19.6-1-default",
+    "notes": "Tried with multiple GE and official Versions, Starts and closes before entering the main menu",
+    "os": "openSUSE Tumbleweed-Slowroll",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1774307356,
+    "title": "",
+    "source": "protondb"
+  }
+]

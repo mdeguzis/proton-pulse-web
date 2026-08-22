@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "590670",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Desktop",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.3.0-40-generic",
+    "notes": "Runs perfectly on my Ubuntu computer and also my Ubuntu laptop.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1582641164,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "590670",
+    "cpu": "AMD FX-8320 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "After the tweaks, the game runs exactly as expected. Set it, forget it.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1583932582,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "590670",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "MTG type game for the n00bs at home. Bought the physical version of Epic Card Game off Amazon and will play on Steam to learn the rules.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1587623878,
+    "title": "",
+    "source": "protondb"
+  }
+]

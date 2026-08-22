@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1859860",
+    "cpu": "Intel Xeon E5520 @ 2.27GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 15.0.7, DRM 3.49, 5.14.21-150500.55.44-default)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "5.14.21-150500.55.44-default",
+    "notes": "Fully working except for my sound card. Perfect experience otherwise",
+    "os": "openSUSE Leap 15.5",
+    "protonVersion": "8.0-5",
+    "ram": "12 GB",
+    "rating": "silver",
+    "timestamp": 1707730206,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1859860",
+    "cpu": "AMD model unknown",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "5.4.0-173-generic",
+    "notes": "My test was performed on very low end hardware (AMD Ahtlon 64 x2 + newer GPU with vulkan) It's not an optimal experience, but works",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "6 GB",
+    "rating": "platinum",
+    "timestamp": 1709996330,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1859860",
+    "cpu": "Intel Xeon E5520 @ 2.27GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.9.1-artix1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.7 (git-cc175010c5)",
+    "kernel": "6.9.1-artix1-1",
+    "notes": "If installed from steam and Launched with lutris it will work perfectly.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1717185409,
+    "title": "",
+    "source": "protondb"
+  }
+]

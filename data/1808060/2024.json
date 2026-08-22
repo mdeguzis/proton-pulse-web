@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1808060",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (radeonsi, polaris10, LLVM 17.0.6, DRM 3.57, 6.8.9-AMD-znver3)",
+    "gpuDriver": "4.6 Mesa 24.0.7-arch1.3",
+    "kernel": "6.8.9-AMD-znver3",
+    "notes": "works flawlessly",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-1",
+    "ram": "40 GB",
+    "rating": "gold",
+    "timestamp": 1715896529,
+    "title": "Obama Maze",
+    "source": "protondb"
+  }
+]

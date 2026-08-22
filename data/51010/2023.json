@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "51010",
+    "cpu": "Intel Core i5-10600K @ 4.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.0-18-generic",
+    "notes": "You could probably fix this with some tinkering, but I didn't feel like it at the moment.",
+    "os": "Ubuntu Lunar Lobster (development branch)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1680363315,
+    "title": "My Tribe",
+    "source": "protondb"
+  }
+]

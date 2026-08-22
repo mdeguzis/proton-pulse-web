@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1267370",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.4.1-fritz",
+    "notes": "Crash before game menu",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1598319057,
+    "title": "",
+    "source": "protondb"
+  }
+]

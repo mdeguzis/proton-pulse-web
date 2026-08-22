@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1184770",
+    "cpu": "Intel Core i5-4300M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.3.4",
+    "kernel": "5.5.2-1-MANJARO",
+    "notes": "Playable. The font can be a bit hard to read for a long time, I couldn't stand it for more than 15 minutes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1581795182,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1184770",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.14-arch1-1",
+    "notes": "Runs fine with minor graphical issues",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590504776,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1184770",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-55-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605998130,
+    "title": "",
+    "source": "protondb"
+  }
+]

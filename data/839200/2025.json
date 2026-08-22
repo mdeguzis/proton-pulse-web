@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "839200",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 555.42.02",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "Fehlermeldung beim start\nTelemetry keine funktion\nsehr sehr langsam",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1747146396,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "839200",
+    "cpu": "Intel Core i3-10105F @ 3.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.16.3-201.nobara.fc42.x86_64",
+    "notes": "Without Windows Version it doesn't work and the Game need to be launched trough the Windows Version as well",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1756569295,
+    "title": "",
+    "source": "protondb"
+  }
+]

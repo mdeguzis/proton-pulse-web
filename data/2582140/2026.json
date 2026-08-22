@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2582140",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Frequent freezes made this unplayable for now",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1767325130,
+    "title": "",
+    "source": "protondb"
+  }
+]
