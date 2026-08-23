@@ -1,7 +1,7 @@
 // config-cards (components) for the app page. Relocated from app.js.
 
 import { getWebClientId } from '../../shared/submit.js?v=dc1442eb';
-import { isNonSteamAppId } from '../config.js?v=a75604f5';
+import { isNonSteamAppId } from '../config.js?v=7873e060';
 import { cfgNa, configKey, esc, utcStamp } from '../utils.js?v=4630c3d5';
 
 export const FORM_RESPONSE_LABELS = {

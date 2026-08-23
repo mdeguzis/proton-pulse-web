@@ -81,7 +81,7 @@ async function _sgdbCoverFor(appId) {
 }
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=a75604f5';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFileHref, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=7873e060';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=5adc7e54';
 import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=4630c3d5';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
@@ -556,9 +556,12 @@ async function _openMetadataModal(appId) {
       return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     };
     // #237: brown package icon that deep-links to the per-game depots.json
-    // we publish alongside latest.json. GitHub blob URL so users see the
-    // raw JSON with syntax highlighting + a "Raw" download button.
-    const DEPOT_FILE_URL = `https://github.com/mdeguzis/proton-pulse-web/blob/gh-pages/data/${esc(String(meta.appId))}/depots.json`;
+    // we publish alongside latest.json. Routed through dataFileHref so it
+    // hits the R2 data host the pipeline actually syncs to, and so non-Steam
+    // canonical ids get the colon -> underscore directory mapping. This was
+    // a hardcoded github.com/.../blob/gh-pages/... URL, which 404s: gh-pages
+    // is the branch #396 archives and it never carried depots.json.
+    const DEPOT_FILE_URL = dataFileHref(meta.appId, 'depots.json');
     const row = (key, label) => {
       const on = !!p[key];
       const cached = dOs[key];

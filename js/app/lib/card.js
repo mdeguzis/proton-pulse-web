@@ -1,6 +1,6 @@
 // Unified game card renderer. Single source of truth for the
 // thumbnail | title + sub | badge card layout used everywhere.
-import { STEAM_IMG } from '../config.js?v=a75604f5';
+import { STEAM_IMG } from '../config.js?v=7873e060';
 import { esc } from '../utils.js?v=4630c3d5';
 import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=5adc7e54';
 

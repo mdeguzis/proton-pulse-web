@@ -79,9 +79,13 @@ describe('#237: metadata modal wires tracked_since + depot file icon', () => {
     expect(COMP).toContain('Earliest observation date we recorded');
   });
 
-  test('brown package icon links to the gh-pages depots.json blob', () => {
+  test('brown package icon links to the published depots.json', () => {
     expect(COMP).toContain('gm-depot-file');
-    expect(COMP).toContain('/blob/gh-pages/data/${esc(String(meta.appId))}/depots.json');
+    // Built through dataFileHref so it resolves against the R2 data host the
+    // pipeline syncs to, with the appIdToDir mapping applied. It used to be a
+    // hardcoded gh-pages blob URL, which 404'd: that branch is the one #396
+    // archives and it never carried depots.json.
+    expect(COMP).toContain("dataFileHref(meta.appId, 'depots.json')");
     // Deep-links to the OS anchor so we can scroll to a specific block later.
     expect(COMP).toContain('#os=${esc(key)}');
     // Package icon markup lives in an inline SVG so we don't need a new asset.
