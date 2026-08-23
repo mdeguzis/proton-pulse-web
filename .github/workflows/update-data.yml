@@ -491,12 +491,27 @@ jobs:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
 
+      # Preserved unconditionally, before either deploy path runs: the
+      # gh-pages orphan deploy below (`git rm -rf .`) deletes every tracked
+      # file, backup-to-release.sh included, but the "Backup data to GitHub
+      # Release" step needs it afterward regardless of which deploy path ran.
+      - name: Preserve backup script
+        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
+        run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
+
       # Cloudflare target (#362): sync data/ to R2 + deploy the shell to Pages.
       # Runs instead of the gh-pages orphan deploy when deploy_target=cloudflare.
       # Must come BEFORE the orphan step, which wipes the working tree. Staging
       # runs target the staging Pages project; everything else targets prod.
+      #
+      # inputs.deploy_target falls back to 'cloudflare' with `||` because the
+      # `inputs` context (including declared `default:` values) is only
+      # populated for workflow_dispatch/workflow_call triggers -- the nightly
+      # `schedule:` trigger gets an empty inputs context, so without the
+      # fallback this always evaluated to false on cron runs and silently fell
+      # through to the legacy gh-pages orphan deploy below instead.
       - name: Deploy to Cloudflare (R2 + Pages)
-        if: inputs.deploy_target == 'cloudflare'
+        if: (inputs.deploy_target || 'cloudflare') == 'cloudflare'
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -521,7 +536,7 @@ jobs:
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
 
       - name: Deploy to gh-pages (orphan, no history)
-        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && inputs.deploy_target != 'cloudflare'
+        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && (inputs.deploy_target || 'cloudflare') != 'cloudflare'
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
@@ -693,7 +708,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          bash scripts/backup-to-release.sh /tmp/protondb-output
+          bash /tmp/backup-to-release.sh /tmp/protondb-output
 
   # ── Pages-only redeploy: refresh app/index shell files on gh-pages ─────────
   pages-only:
