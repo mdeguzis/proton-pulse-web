@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "781840",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.7.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1720693419,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "657690",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.4.0-97-generic",
+    "notes": "Overwhelmingly better resource consumption than native",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1646095826,
+    "title": "",
+    "source": "protondb"
+  }
+]

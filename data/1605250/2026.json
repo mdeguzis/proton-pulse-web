@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1605250",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-37-generic",
+    "notes": "FPS drops to mid 40's after playing for just a few minutes when expected FPS is 120. Severely hindered FPS will not be enjoyable to anyone.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "60 GB",
+    "rating": "borked",
+    "timestamp": 1768161631,
+    "title": "Moros Protocol",
+    "source": "protondb"
+  }
+]

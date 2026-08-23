@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1963210",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.1-arch1-1",
+    "notes": "Game launches and runs perfectly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1755622803,
+    "title": "",
+    "source": "protondb"
+  }
+]

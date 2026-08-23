@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "758690",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 20.1.2, DRM 3.64, 6.17.0-22-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.17.0-22-generic",
+    "notes": "Rodando perfeitamente no Zorin 18",
+    "os": "Zorin OS 18.1",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777159744,
+    "title": "",
+    "source": "protondb"
+  }
+]

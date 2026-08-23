@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1202540",
+    "cpu": "13th Gen Intel Core i7-13700H",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 25.3.2",
+    "kernel": "6.12.63",
+    "notes": "",
+    "os": "NixOS 26.05 (Yarara)\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1768604758,
+    "title": "",
+    "source": "protondb"
+  }
+]

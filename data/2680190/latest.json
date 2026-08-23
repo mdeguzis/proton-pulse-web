@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2680190",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.9-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.9-300.fc43.x86_64",
+    "notes": "Worked well out of the box. Crashed on the first load, but worked after. Stuck in low resolution, which is a limit of the game not linux.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1765667099,
+    "title": "",
+    "source": "protondb"
+  }
+]

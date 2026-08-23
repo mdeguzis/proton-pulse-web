@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "625960",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.6-xanmod2",
+    "notes": "No \"native cursor\" in Linux version",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1638876003,
+    "title": "",
+    "source": "protondb"
+  }
+]

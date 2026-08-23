@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "348360",
+    "cpu": "Intel Pentium G4560 @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.16.0-3.1-cachyos",
+    "notes": "Native crashes on launch. With proton everything works perfectly.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1755263058,
+    "title": "",
+    "source": "protondb"
+  }
+]

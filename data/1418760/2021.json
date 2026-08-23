@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1418760",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "proton-ge 6.15-ge-2",
+    "os": "Pop os 20.08.13",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1630114746,
+    "title": "Claire's Quest: GOLD",
+    "source": "protondb"
+  }
+]

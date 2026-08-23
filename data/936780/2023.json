@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "936780",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR (renoir, LLVM 15.0.7, DRM 3.42, 5.15.0-86-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-86-generic",
+    "notes": "Works perfectly natively",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1697180197,
+    "title": "Warplanes: WW2 Dogfight",
+    "source": "protondb"
+  }
+]

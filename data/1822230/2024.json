@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1822230",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 470 (radeonsi, polaris10, LLVM 18.1.6, DRM 3.57, 6.8.11-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.1",
+    "kernel": "6.8.11-300.fc40.x86_64",
+    "notes": "Played the Tutorial and it ran smoothly; just the minor issue below",
+    "os": "Fedora Linux 40 (Budgie)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1719444933,
+    "title": "",
+    "source": "protondb"
+  }
+]

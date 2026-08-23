@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1795470",
+    "cpu": "AMD Ryzen 5 4500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (LLVM 13.0.1, DRM 3.42, 5.15.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-40-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1657143627,
+    "title": "",
+    "source": "protondb"
+  }
+]

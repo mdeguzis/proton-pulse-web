@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1914750",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.10-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.10-273-tkg-bore",
+    "notes": "Game works perfectly via WiVRn, out of the box. Meta Quest 3 via WiVRn.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737940062,
+    "title": "Resist",
+    "source": "protondb"
+  },
+  {
+    "appId": "1914750",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.6, DRM 3.63, 6.15.3-3-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.1.4-cachyos1.2",
+    "kernel": "6.15.3-3-cachyos",
+    "notes": "Awsome little game where you can move like Spider-man and shoot drones.",
+    "os": "CachyOS",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1751215819,
+    "title": "Resist",
+    "source": "protondb"
+  },
+  {
+    "appId": "1914750",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.3-3-cachyos",
+    "notes": "Criminally slept on VR game that runs perfectly on Linux",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1761142827,
+    "title": "Resist",
+    "source": "protondb"
+  }
+]

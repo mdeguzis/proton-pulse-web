@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1985820",
+    "cpu": "AMD Ryzen 9 7900X3D 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Won't launch, and devs haven't fixed in over a year.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1766842103,
+    "title": "",
+    "source": "protondb"
+  }
+]

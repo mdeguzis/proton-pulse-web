@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1811260",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.61, 6.12.63+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.63+deb13-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1770008953,
+    "title": "EA SPORTS FIFA 23",
+    "source": "protondb"
+  },
+  {
+    "appId": "1811260",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "The game works flawlessly without any tinkering.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770588889,
+    "title": "EA SPORTS FIFA 23",
+    "source": "protondb"
+  },
+  {
+    "appId": "1811260",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.3-201.nobara.fc43.x86_64",
+    "notes": "When I try to launch the game it shows a message that Wine is not supported. This is so annoying since the game servers are down but I just want to play a match againts the AI.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1770881055,
+    "title": "EA SPORTS FIFA 23",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1198090",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800M (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.1)",
+    "gpuDriver": "4.6 Mesa 24.2.6",
+    "kernel": "6.12.1",
+    "notes": "Works just as well as Cold Steel III.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1734388883,
+    "title": "",
+    "source": "protondb"
+  }
+]

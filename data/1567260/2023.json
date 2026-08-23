@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1567260",
+    "cpu": "Intel Core i5         750  @ 2.67GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-84-generic",
+    "notes": "Change the proton to 4.11-13",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1684698868,
+    "title": "",
+    "source": "protondb"
+  }
+]

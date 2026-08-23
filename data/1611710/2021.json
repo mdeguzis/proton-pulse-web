@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1611710",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.8.0-53-generic",
+    "notes": "The game starts, but there is no sound or image, just a window",
+    "os": "Ubuntu 20.04.2 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1622285959,
+    "title": "Geadows",
+    "source": "protondb"
+  }
+]

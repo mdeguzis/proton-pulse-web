@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2467840",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.2.15-100.fc36.x86_64",
+    "notes": "Starting game pops up \"Error compiling shader. Check shader-error.txt for message\"\n\nThen the game shows just skybox and doesn't render the menu.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1690682514,
+    "title": "Artemis Cosmos",
+    "source": "protondb"
+  }
+]

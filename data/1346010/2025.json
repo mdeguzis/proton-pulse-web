@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1346010",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.4-zen2-1-zen",
+    "notes": "It works fine",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737059050,
+    "title": "",
+    "source": "protondb"
+  }
+]

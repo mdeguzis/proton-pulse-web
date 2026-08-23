@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1258080",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.4-arch1-2",
+    "notes": "Works Great",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1746628352,
+    "title": "Shop Titans",
+    "source": "protondb"
+  },
+  {
+    "appId": "1258080",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.10-200.fc42.x86_64",
+    "notes": "Runs without issues",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1758979563,
+    "title": "Shop Titans",
+    "source": "protondb"
+  },
+  {
+    "appId": "1258080",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 21.1.5, DRM 3.64, 6.17.7-5-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.7-5-cachyos",
+    "notes": "Game Works Out Of The Box",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1763173382,
+    "title": "Shop Titans",
+    "source": "protondb"
+  }
+]

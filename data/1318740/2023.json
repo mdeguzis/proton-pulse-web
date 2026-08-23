@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1318740",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs great without tinkering but no controller support",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1674379007,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1318740",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "5.19.0-29-generic",
+    "notes": "Played for a little while on Kubuntu 22.10. No issues, runs great.",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1674385542,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1318740",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs amazing on Steam Deck, works great with controller support, or trackpad",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1674519225,
+    "title": "",
+    "source": "protondb"
+  }
+]

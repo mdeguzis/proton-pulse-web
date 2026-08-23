@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1251750",
+    "cpu": "Intel Core i5-2430M @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.6",
+    "kernel": "5.5.19-1-MANJARO",
+    "notes": "I couldn't get the game to start with Proton 5.0-7 , but it seems run with Wine 5.0-484",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1589735063,
+    "title": "",
+    "source": "protondb"
+  }
+]

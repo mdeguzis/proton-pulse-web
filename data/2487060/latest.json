@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2487060",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "5.18.2-zen1-1-zen",
+    "notes": "Sackgassen sind nicht angenehm, wo man dann nur eventuell durch Reload den Bug behebt....und das gef\u00fchlt bei allen 2-3 Quests...",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1754388982,
+    "title": "Anonymous Hacker Simulator",
+    "source": "protondb"
+  }
+]

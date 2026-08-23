@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "270450",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 20.1.6, DRM 3.63, 6.15.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.5-arch1.1",
+    "kernel": "6.15.6-arch1-1",
+    "notes": "tried queueing for online but only got bots. likely cause nobody plays this game.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1752632475,
+    "title": "Robot Roller-Derby Disco Dodgeball",
+    "source": "protondb"
+  }
+]

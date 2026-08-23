@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1185160",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 7800",
+    "gpuDriver": "4.5 Mesa 19.2.6",
+    "kernel": "5.3.13-arch1-1",
+    "notes": "Less than 10fps",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1574787151,
+    "title": "",
+    "source": "protondb"
+  }
+]

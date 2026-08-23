@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "595740",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 15.0.7, DRM 3.57, 6.8.0-52-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.4 - kisak-mesa PPA",
+    "kernel": "6.8.0-52-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1739787404,
+    "title": "",
+    "source": "protondb"
+  }
+]

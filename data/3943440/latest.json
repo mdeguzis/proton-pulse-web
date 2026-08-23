@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3943440",
+    "cpu": "11th Gen Intel Core i5-11400 @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.11-zen1-1-zen",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1780852825,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3943440",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 7.0.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.6 (git-0e095aab43)",
+    "kernel": "7.0.12-arch1-1",
+    "notes": "Other than the issues mentioned, its run greatly",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1781922793,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3943440",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 7.0.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.8 (git-60e95b7878)",
+    "kernel": "7.0.12-arch1-1",
+    "notes": "The intro video runs with GE-Proton11-1, but wouldn't with older versions",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1782282390,
+    "title": "",
+    "source": "protondb"
+  }
+]

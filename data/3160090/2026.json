@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3160090",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 16.0.6, DRM 3.54, 6.6.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.3.1-arch1.1",
+    "kernel": "6.6.8-arch1-1",
+    "notes": "Godot game works great just as expected.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772286694,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2194730",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 580.76.05",
+    "kernel": "6.15.9-116.bazzite.fc42.x86_64",
+    "notes": "Worked without any Problems out of the Box",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1767881597,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2194730",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.2-1-cachyos-bore",
+    "notes": "No Problem at all, worked Out of the box",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1767882053,
+    "title": "",
+    "source": "protondb"
+  }
+]

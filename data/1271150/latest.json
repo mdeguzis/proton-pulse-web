@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1271150",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.17.1-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.17.1-200.nobara.fc42.x86_64",
+    "notes": "A little rocky on first startup, but flawless after that",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1762398689,
+    "title": "Elsewhere",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1674340",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.16.11-76051611-generic",
+    "notes": "Game works flawlessly once locale is set to zh_CN",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1648505377,
+    "title": "\u4ed9\u4fa0\u4e16\u754c2",
+    "source": "protondb"
+  }
+]

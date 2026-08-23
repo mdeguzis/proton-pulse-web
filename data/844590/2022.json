@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "844590",
+    "cpu": "Intel Core i7-2600 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.29",
+    "notes": "",
+    "os": "NixOS 21.05 (Okapi)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1645778922,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "844590",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works fine.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1648821241,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "844590",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1666682415,
+    "title": "",
+    "source": "protondb"
+  }
+]

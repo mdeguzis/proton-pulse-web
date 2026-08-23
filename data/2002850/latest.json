@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2002850",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 19.1.7, DRM 3.59, 6.13.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.2-arch1-1",
+    "notes": "Works out of the box. Proton version 9.0-4.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1739779145,
+    "title": "",
+    "source": "protondb"
+  }
+]

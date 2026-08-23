@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1599780",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.7-2-cachyos",
+    "notes": "The game runs incredibly well on Steam Deck and no adjustments were necessary",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1769840224,
+    "title": "Afterlove EP",
+    "source": "protondb"
+  }
+]

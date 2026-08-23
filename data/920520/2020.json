@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "920520",
+    "cpu": "Intel Core i5-4300U @ 1.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.1.0-devel (git-13ce637 2020-04-15 bionic-oibaf-ppa)",
+    "kernel": "5.3.0-46-generic",
+    "notes": "Failed to launch with \"abnormal termination\" error.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1589677373,
+    "title": "",
+    "source": "protondb"
+  }
+]

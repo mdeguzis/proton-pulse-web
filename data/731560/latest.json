@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "731560",
+    "cpu": "Intel Core i3-4130 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "4.15.0-88-generic",
+    "notes": "Runs fine",
+    "os": "Linux Mint 19.1 Tessa",
+    "protonVersion": "4.11-13",
+    "ram": "10 GB",
+    "rating": "borked",
+    "timestamp": 1583721111,
+    "title": "",
+    "source": "protondb"
+  }
+]

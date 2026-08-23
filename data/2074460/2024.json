@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2074460",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 18.1.6, DRM 3.57, 6.10.10-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.10.10-200.fc40.x86_64",
+    "notes": "Works perfectly on Linux",
+    "os": "Fedora Linux 40 (Forty)",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1728000571,
+    "title": "",
+    "source": "protondb"
+  }
+]

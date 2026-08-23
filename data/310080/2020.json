@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "310080",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD CYPRESS",
+    "gpuDriver": "3.1 Mesa 20.0.6",
+    "kernel": "5.6.7-arch1-1",
+    "notes": "Crush on start with and without Proton.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1588612991,
+    "title": "",
+    "source": "protondb"
+  }
+]

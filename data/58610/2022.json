@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "58610",
+    "cpu": "AMD Ryzen 7 5800X",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.4",
+    "notes": "Doesn't work under Proton",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1643994477,
+    "title": "Wargame: European Escalation",
+    "source": "protondb"
+  },
+  {
+    "appId": "58610",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.6, DRM 3.47, 5.19.13-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.13-zen1-1-zen",
+    "notes": "Since native version runs on OpenGL and the settings I got on autodect seemed fine, I got vertexes all over the place in game, not playable.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1665846889,
+    "title": "Wargame: European Escalation",
+    "source": "protondb"
+  }
+]

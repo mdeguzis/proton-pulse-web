@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1371500",
+    "cpu": "Intel Pentium G3420 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.15.0-123-generic",
+    "notes": "Tried with the demo, game does not start.",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1624314260,
+    "title": "",
+    "source": "protondb"
+  }
+]

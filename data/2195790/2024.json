@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2195790",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 16.0.6, DRM 3.54, 6.5.10_1)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.5.10_1",
+    "notes": "Just installed and clicked play! Works perfectly.",
+    "os": "Void Linux",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1714675987,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2195790",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.7-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.5 (git-7737614720)",
+    "kernel": "6.8.7-300.fc40.x86_64",
+    "notes": "I'm running the Flatpak version of Steam, which might be the cause.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1714698641,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2195790",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.7-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.5 (git-7737614720)",
+    "kernel": "6.8.7-300.fc40.x86_64",
+    "notes": "Running Steam Flatpak from terminal, I suspect this could be the error, or maybe just noise: \n\n```/usr/lib/i386-linux-gnu/GL/default/share/libdrm/amdgpu.ids: No such file or directory```\n\nThe first game, Class of Heroes Anniversary Edition, works perfectly on my system. If anyone else out there uses Steam Flatpak, any assitance would be appreciated: https://steamcommunity.com/app/2195790/discussions/0/4360124364782021617/",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1714891016,
+    "title": "",
+    "source": "protondb"
+  }
+]

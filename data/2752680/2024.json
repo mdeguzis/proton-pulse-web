@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2752680",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.59-1-MANJARO",
+    "notes": "\u0441\u043b\u0438\u0448\u043a\u043e\u043c \u043f\u043b\u043e\u0445\u0430\u044f \u043e\u043f\u0442\u0438\u043c\u0438\u0437\u0430\u0446\u0438\u044f",
+    "os": "Manjaro Linux (64-\u0440\u043e\u0437\u0440\u044f\u0434\u043d\u0430)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1730128722,
+    "title": "Adapta Solva Legacy",
+    "source": "protondb"
+  }
+]

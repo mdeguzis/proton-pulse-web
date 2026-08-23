@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2800450",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.59, 6.12.13-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 25.0.0 - kisak-mesa PPA",
+    "kernel": "6.12.13-x64v3-xanmod1",
+    "notes": "It runs fine on my rig. The GFX, the audio, and the controls are working well. It will be a good game when the bugs get fixed.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1741379809,
+    "title": "",
+    "source": "protondb"
+  }
+]

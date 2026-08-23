@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "890520",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 6800",
+    "gpuDriver": "4.6.14735 Compatibility Profile Context 21.10",
+    "kernel": "5.4.0-121-generic",
+    "notes": "KSP reborn.  Graphics simple but elegant at 4k.  Controls intuitive.  Early days but it is working for me on vanilla Proton without issues.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1656182517,
+    "title": "",
+    "source": "protondb"
+  }
+]

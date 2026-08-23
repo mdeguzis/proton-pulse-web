@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1149550",
+    "cpu": "AMD Ryzen 5 5600U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (LLVM 13.0.1, DRM 3.44, 5.17.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.17.3-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1650049097,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1149550",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.14-1-MANJARO",
+    "notes": "Working as intended",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1652824966,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1149550",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.1 Mesa 22.0.4",
+    "kernel": "5.10.117-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1653778193,
+    "title": "",
+    "source": "protondb"
+  }
+]

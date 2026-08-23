@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2079600",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6500 XT (navi24, LLVM 15.0.7, DRM 3.52, 6.4.0-4-amd64)",
+    "gpuDriver": "4.6 Mesa 23.1.7-1",
+    "kernel": "6.4.0-4-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1695180018,
+    "title": "",
+    "source": "protondb"
+  }
+]

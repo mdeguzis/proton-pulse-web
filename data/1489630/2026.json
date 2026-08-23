@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1489630",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7 (git-581a4f7e70)",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "Runs flawlessly after some trial and error on my system",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1767439043,
+    "title": "",
+    "source": "protondb"
+  }
+]

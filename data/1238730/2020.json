@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1238730",
+    "cpu": "Intel Core i3-3220 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.12-xanmod1",
+    "notes": "Just need to install a custom Proton version",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "10 GB",
+    "rating": "gold",
+    "timestamp": 1596992868,
+    "title": "",
+    "source": "protondb"
+  }
+]

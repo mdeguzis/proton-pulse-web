@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2200580",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6400 (navi24, LLVM 15.0.7, DRM 3.49, 6.1.13-0-lts)",
+    "gpuDriver": "4.6 Mesa 22.3.4 (git-a5ffb70f86)",
+    "kernel": "6.1.13-0-lts",
+    "notes": "Perfect",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1677278082,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2200580",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 14.0.6, DRM 3.48, 6.0.10-arch2-1)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "6.0.10-arch2-1",
+    "notes": "Runs great, and Natsume is amazing with their remakes. This is no exception",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1680331926,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2200580",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.4.0-91-generic",
+    "notes": "This is a fantastic Pocky & Rocky/Kiki Kaikai game, and is uncensored on Steam.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1699959793,
+    "title": "",
+    "source": "protondb"
+  }
+]

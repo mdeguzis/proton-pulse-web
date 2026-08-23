@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1610520",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.6-300.fc43.x86_64",
+    "notes": "Unplayable as game refused to run at more than 10fps, regardless of settings.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1762370403,
+    "title": "Serum: Toxic Survival",
+    "source": "protondb"
+  }
+]

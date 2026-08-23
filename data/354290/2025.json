@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "354290",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.11.0-26-generic",
+    "notes": "It made my fans do quite some noise while runing.",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1749076227,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "354290",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "Not working at the moment. Probably missing flags",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1764460283,
+    "title": "",
+    "source": "protondb"
+  }
+]

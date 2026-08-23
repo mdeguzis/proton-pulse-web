@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1896900",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5-200.fc38.x86_64",
+    "notes": "",
+    "os": "Fedora release 38 (Thirty Eight)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1696883339,
+    "title": "",
+    "source": "protondb"
+  }
+]

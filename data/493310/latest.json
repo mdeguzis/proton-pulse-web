@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "493310",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.13.8-200.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.8-200.fc41.x86_64",
+    "notes": "3dfx game, gamemode seems necessary.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1776898270,
+    "title": "",
+    "source": "protondb"
+  }
+]

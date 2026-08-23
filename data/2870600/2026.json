@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2870600",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.4",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "Works great",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1771147962,
+    "title": "Euro3v3",
+    "source": "protondb"
+  },
+  {
+    "appId": "2870600",
+    "cpu": "12th Gen Intel Core i5-1235U",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.17.0-20-generic",
+    "notes": "ran like a charm with proton hotfix",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1775775180,
+    "title": "Euro3v3",
+    "source": "protondb"
+  },
+  {
+    "appId": "2870600",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1778966352,
+    "title": "Euro3v3",
+    "source": "protondb"
+  }
+]

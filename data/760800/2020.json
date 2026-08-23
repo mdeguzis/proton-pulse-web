@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "760800",
+    "cpu": "Intel Xeon           X5460  @ 3.16GHz",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.4.64-1-MANJARO",
+    "notes": "launching out of the box",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1600533381,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "624320",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.13.0-7620-generic",
+    "notes": "Ocasional stuttering",
+    "os": "Freedesktop.org 21.08.4 (Flatpak runtime)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1637365937,
+    "title": "",
+    "source": "protondb"
+  }
+]

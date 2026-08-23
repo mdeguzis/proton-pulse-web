@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2080690",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.5, DRM 3.64, 6.18.7-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.7-200.fc43.x86_64",
+    "notes": "It ran fine until it didn't. I messed with the video settings but I was never able to remote the chop that appeared randomly",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1775882696,
+    "title": "",
+    "source": "protondb"
+  }
+]

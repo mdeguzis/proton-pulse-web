@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "459830",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.10.84-1-MANJARO",
+    "notes": "Crash Post Developer Splash Screen; multiple proton versions attempted.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1639891675,
+    "title": "",
+    "source": "protondb"
+  }
+]

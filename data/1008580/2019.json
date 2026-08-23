@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1008580",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.0.0-31-generic",
+    "notes": "I guess it works, but crashes and bugs beware (Early Access)",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1574447632,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1008580",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.12-arch1-1",
+    "notes": "can't play because your kicked from the game within a minuite",
+    "os": "ArcoLinuxD",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1574652208,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1008580",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "4.19.87",
+    "notes": "Early Access, Playable",
+    "os": "NixOS 19.09.1529.808d3c6d123 (Loris)",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1575865330,
+    "title": "",
+    "source": "protondb"
+  }
+]

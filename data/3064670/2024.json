@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3064670",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "5.15.0-102-generic",
+    "notes": "Game is in \"early release\" stage, but so far I'm impressed. And top of that it works in Linux out of the box.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727360424,
+    "title": "",
+    "source": "protondb"
+  }
+]

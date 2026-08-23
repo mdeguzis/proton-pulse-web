@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3288180",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 550.144.03",
+    "kernel": "6.11.0-26-generic",
+    "notes": "Proton 9.0-4: Slight slowdown during rainy scenes - great performance overall.",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1750822991,
+    "title": "",
+    "source": "protondb"
+  }
+]

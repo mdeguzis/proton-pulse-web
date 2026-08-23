@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3993770",
+    "cpu": "Intel Core i5-4570T @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.10-1-cachyos",
+    "notes": "not playebale, my hardware cant run dx12",
+    "os": "CachyOS",
+    "protonVersion": "9.0-3",
+    "ram": "5 GB",
+    "rating": "borked",
+    "timestamp": 1775330574,
+    "title": "",
+    "source": "protondb"
+  }
+]

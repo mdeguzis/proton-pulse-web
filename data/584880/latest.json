@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "584880",
+    "cpu": "Intel Xeon E31230 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 16.0.6, DRM 3.56, 6.7.0-zen3-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-zen3-1-zen",
+    "notes": "doesnt work borked",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-5",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1706004602,
+    "title": "",
+    "source": "protondb"
+  }
+]

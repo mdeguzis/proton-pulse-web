@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "865820",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works nice with the controllers and autoplay text.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1681247387,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "865820",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works flawlessly save for being unable to input a name at the start with the deck's keyboard",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1683295882,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "865820",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game ran smoothly on my Steamdeck. To bypass the keyboard issue at the beginning, just don't change the main character's name.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1700345291,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1520470",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 396.54",
+    "kernel": "4.15.0-33-generic",
+    "notes": "Unable to play multiplayer.",
+    "os": "Ubuntu 18.04.1 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1713615356,
+    "title": "",
+    "source": "protondb"
+  }
+]

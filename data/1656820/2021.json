@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1656820",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.4.0-91-generic",
+    "notes": "Being a shmup fan, I decided to give this a shot when it went on sale. Nothing happens when I try loading the game.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1640360945,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1656820",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.40.0, 5.11.0-43-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.11.0-43-generic",
+    "notes": "Fails to launch. Tested with Proton 6.3-8 through 3.7-8 and also 7.0rc2-GE-1.",
+    "os": "KDE neon User - Plasma 25th Anniversary Edition",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640546505,
+    "title": "",
+    "source": "protondb"
+  }
+]

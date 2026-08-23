@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1406020",
+    "cpu": "AMD Ryzen Threadripper 1900X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD VEGA20",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "5.9.0-0.bpo.2-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1610262004,
+    "title": "",
+    "source": "protondb"
+  }
+]

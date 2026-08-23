@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1329880",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 15.0.7, DRM 3.42, 5.15.0-79-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.15.0-79-generic",
+    "notes": "Early stage game, but runs fine compared to windows.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1693008994,
+    "title": "",
+    "source": "protondb"
+  }
+]

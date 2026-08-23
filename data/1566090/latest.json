@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1566090",
+    "cpu": "Intel Core i5-7600K @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.13.0-20-generic",
+    "notes": "Very frequent crashes",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1635568075,
+    "title": "",
+    "source": "protondb"
+  }
+]

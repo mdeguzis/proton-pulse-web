@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1109410",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.59, 6.12.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.7-arch1.1",
+    "kernel": "6.12.1-arch1-1",
+    "notes": "Game works as intended start to finish",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "7 GB",
+    "rating": "platinum",
+    "timestamp": 1732592871,
+    "title": "",
+    "source": "protondb"
+  }
+]

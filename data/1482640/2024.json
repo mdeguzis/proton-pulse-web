@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1482640",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 535.146.02",
+    "kernel": "6.6.9-200.fsync.fc39.x86_64",
+    "notes": "Runs just fine. Wasn't able to get an online match but it seems fine",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1706498543,
+    "title": "",
+    "source": "protondb"
+  }
+]

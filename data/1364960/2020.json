@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1364960",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 450.51",
+    "kernel": "5.7.8",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS 20.09 (Nightingale)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1595889898,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1364960",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.4.0-42-generic",
+    "notes": "The game started with the splash and crashed",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1598469144,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1364960",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "The game ran fine, 60-70 FPS but the audio did not work at all.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1598788547,
+    "title": "",
+    "source": "protondb"
+  }
+]

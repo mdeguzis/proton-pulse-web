@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1142070",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 2048SP",
+    "gpuDriver": "4.6 Mesa 20.2.0-devel (git-56f955e485)",
+    "kernel": "5.6.11-22-tkg-pds",
+    "notes": "Works, out of the box.",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1589358518,
+    "title": "",
+    "source": "protondb"
+  }
+]

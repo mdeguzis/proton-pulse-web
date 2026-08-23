@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "704000",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5-200.fc38.x86_64",
+    "notes": "[Demo] Works right out of the box",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1697291298,
+    "title": "GUNHEAD",
+    "source": "protondb"
+  },
+  {
+    "appId": "704000",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-26-amd64",
+    "notes": "Tried with different env combinations and also Proton 8.0-4 and GE-Proton7-55 with the same result.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1697754153,
+    "title": "GUNHEAD",
+    "source": "protondb"
+  },
+  {
+    "appId": "704000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works like a dream!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1702641904,
+    "title": "GUNHEAD",
+    "source": "protondb"
+  }
+]

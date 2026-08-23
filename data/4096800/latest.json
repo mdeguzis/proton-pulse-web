@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4096800",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.8-arch2-1",
+    "notes": "Could not find any issues.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1771001156,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "113020",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR (LLVM 14.0.6, DRM 3.42, 5.15.80-1-lts)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.15.80-1-lts",
+    "notes": "Good game, native mode does not work needs to force proton",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-5",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1673150449,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "113020",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "A great experience on the Steam Deck better than on pc, I switch between mouse & keyboard and SD controls, both are great.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1698726385,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "113020",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.5.9-1-default",
+    "notes": "Singleplayer works fine, multiplayer is finicky",
+    "os": "openSUSE Tumbleweed (64bit)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1699692906,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  }
+]

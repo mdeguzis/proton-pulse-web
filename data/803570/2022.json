@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "803570",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD DIMGREY_CAVEFISH (DRM 3.44.0, 5.16.0-5mx-amd64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.16.0-5mx-amd64",
+    "notes": "The game gives a constant stream of error windows as the menu and opening level load, only to crash to desktop midway through loading the level.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1656097224,
+    "title": "SOLAR BATTALION",
+    "source": "protondb"
+  }
+]

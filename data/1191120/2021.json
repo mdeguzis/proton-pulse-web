@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1191120",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.30-1-MANJARO",
+    "notes": "The demo I played did run flawlessly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1624474731,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1191120",
+    "cpu": "AMD Ryzen 7 1800X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Works with no weirdness",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1634703852,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1191120",
+    "cpu": "Intel Xeon E3-1240 v3 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 680",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "works just fine with proton experimental",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1635463940,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2201710",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.6, DRM 3.48, 6.0.15-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.15-300.fc37.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1706663725,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2201710",
+    "cpu": "Aspire ES1-572",
+    "duration": "underOneHour",
+    "gpu": "Windows 10 (64 bits)",
+    "gpuDriver": "compat\u00edvel",
+    "kernel": "0x6",
+    "notes": "",
+    "os": "GenuineIntel",
+    "protonVersion": "8.0-5",
+    "ram": "Alto-falantes (Realtek Audio)",
+    "rating": "platinum",
+    "timestamp": 1708750584,
+    "title": "",
+    "source": "protondb"
+  }
+]

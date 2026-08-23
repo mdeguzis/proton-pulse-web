@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1506760",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 21.1.6, DRM 3.64, 6.18.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.7-2-cachyos",
+    "notes": "Black screen, crashes.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1769726337,
+    "title": "",
+    "source": "protondb"
+  }
+]

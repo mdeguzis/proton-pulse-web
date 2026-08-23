@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "630060",
+    "cpu": "Intel Xeon E5-1650 0 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-2-MANJARO",
+    "notes": "Tested it with Proton Experimental and Proton-GE 7-29",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1660359499,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "253900",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.14.9-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.1 (git-7485541cc3)",
+    "kernel": "6.14.9-300.fc42.x86_64",
+    "notes": "Knights and Merchants is a classic medieval RTS with deep economy, city-building,and tactical combat perfect for fans of old-school strategy",
+    "os": "Fedora 42 KDE",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1749579237,
+    "title": "",
+    "source": "protondb"
+  }
+]

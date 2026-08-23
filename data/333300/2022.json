@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "333300",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.13.0-44-generic",
+    "notes": "Text is too traqnsparent and not legible in native version, but you can safely switch to any version of Proton.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1654325326,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "333300",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.13.0-44-generic",
+    "notes": "Native version displays too transparent text, you can safely play using Proton (I guess any version would be fine)",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1654326891,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "333300",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1664111308,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "620080",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.8.16-300.fc33.x86_64",
+    "notes": "Crashes to desktop",
+    "os": "Fedora 33",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1604298121,
+    "title": "",
+    "source": "protondb"
+  }
+]

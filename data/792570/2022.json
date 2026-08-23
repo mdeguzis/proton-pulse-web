@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "792570",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "I saw the game had Native support so I had high hopes it would work right out of the gate. I launched the game and it did display the BattleCon background in the very beginning which made me happy. But then it got to the loading screen, and just stopped, and exited out of the game entirely back to the Steam Library.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1653291819,
+    "title": "",
+    "source": "protondb"
+  }
+]

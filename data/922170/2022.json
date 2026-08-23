@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "922170",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (NAVI14, DRM 3.42.0, 5.15.12-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.12-1-MANJARO",
+    "notes": "Zero issues. All prior performance issues have been resolved by the dev",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1643485629,
+    "title": "",
+    "source": "protondb"
+  }
+]

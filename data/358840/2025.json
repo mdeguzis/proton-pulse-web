@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "358840",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.16.3-76061603-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.0-devel",
+    "kernel": "6.16.3-76061603-generic",
+    "notes": "CTD when switching levels",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1762830996,
+    "title": "",
+    "source": "protondb"
+  }
+]

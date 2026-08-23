@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "670260",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, ACO, DRM 3.64, 6.19.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch2.3",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "Utter trash game, with lots of weird bugs.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1779009040,
+    "title": "",
+    "source": "protondb"
+  }
+]

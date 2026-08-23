@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "469550",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.15-1-MANJARO",
+    "notes": "Trike install dx9 protontricks to push draw 3D graphics else You get almost blank screen on game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1598819673,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1762570",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.4.0-125-generic",
+    "notes": "Worked fine, nice developer too.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1686599851,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1762570",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.17.5-arch1-1",
+    "notes": "At this point the game i unfortunality not playable. \nNote this is the second day after ea release. So I hope it will get fixed.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1686656661,
+    "title": "",
+    "source": "protondb"
+  }
+]

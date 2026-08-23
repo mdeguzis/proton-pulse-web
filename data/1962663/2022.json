@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1962663",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.72-1-MANJARO",
+    "notes": "Game uses Ricochet Anti Cheat which runs as a Windows kernel mode service, since Wine isn't running a full Wndows kernel stack its likely all games using this AC will always be broken under any version of Wine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1668620392,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1962663",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.40.0, 5.11.0-38-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-38-generic",
+    "notes": "I doubt this game will work due to the use of anticheat software",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1670262610,
+    "title": "",
+    "source": "protondb"
+  }
+]

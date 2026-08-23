@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1216540",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Mesa/X.org llvmpipe (LLVM 13.0.1, 256 bits)",
+    "gpuDriver": "4.5 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Doesn't boot",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1672176081,
+    "title": "Fishy2",
+    "source": "protondb"
+  }
+]

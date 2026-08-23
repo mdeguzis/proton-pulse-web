@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2785810",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.4-arch1-1",
+    "notes": "fails to launch with \"you must install .NET Desktop Runtime\"",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1715343065,
+    "title": "",
+    "source": "protondb"
+  }
+]

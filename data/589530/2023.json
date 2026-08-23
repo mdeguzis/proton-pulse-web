@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "589530",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Since this game is a visual novel with voices, not being able to hear the characters doesn't make this game as enjoyable",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1687803025,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "589530",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1691447346,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "589530",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1700974494,
+    "title": "",
+    "source": "protondb"
+  }
+]

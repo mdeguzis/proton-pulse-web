@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3323590",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.5, DRM 3.59, 6.12.10-202.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.3",
+    "kernel": "6.12.10-202.bazzite.fc41.x86_64",
+    "notes": "Generates popup error saying that error was logged.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1738137621,
+    "title": "Draft Day Sports: Pro Football 2025",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "553540",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.11-2-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.11-2-MANJARO",
+    "notes": "Using Heroic Game Launcher and Wine - lutris-fshack-6.21-x86_64",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1646038679,
+    "title": "",
+    "source": "protondb"
+  }
+]

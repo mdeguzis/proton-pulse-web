@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1357610",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.6.86",
+    "notes": "Doesn't detect any screens so it opens up in a small window. The controls are weird, you have to use space to click, but hover seems okay. \nStill though, the game seems to be unplayable because the background doesn't appear to be interactable.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1747789513,
+    "title": "",
+    "source": "protondb"
+  }
+]

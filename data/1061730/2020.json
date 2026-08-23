@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1061730",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 560",
+    "gpuDriver": "4.5 Mesa 19.2.7",
+    "kernel": "5.4.2-arch1-1",
+    "notes": "Crashed immediately after startup",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1578956502,
+    "title": "Super Monkey Ball: Banana Blitz HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "1061730",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.5",
+    "kernel": "5.7.12-arch1-1",
+    "notes": "Very Likely. I did not try the multiplayer aspects and am sure it would run okay if there is no anticheat.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1596936118,
+    "title": "Super Monkey Ball: Banana Blitz HD",
+    "source": "protondb"
+  },
+  {
+    "appId": "1061730",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 550",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "instantly crashes, no window",
+    "os": "Devuan GNU/Linux 3 (beowulf)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1597935155,
+    "title": "Super Monkey Ball: Banana Blitz HD",
+    "source": "protondb"
+  }
+]

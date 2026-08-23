@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1157740",
+    "cpu": "Intel Core i3-5005U @ 2.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.8",
+    "kernel": "5.4.0-54-generic",
+    "notes": "Works like native (demo)",
+    "os": "Ubuntu 18.04.5 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1606448846,
+    "title": "Iron Meat",
+    "source": "protondb"
+  }
+]

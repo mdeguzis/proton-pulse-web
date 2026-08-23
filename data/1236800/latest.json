@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1236800",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro P2000",
+    "gpuDriver": "NVIDIA 550.76",
+    "kernel": "6.8.7-zen1-2-zen",
+    "notes": "",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1716313527,
+    "title": "",
+    "source": "protondb"
+  }
+]

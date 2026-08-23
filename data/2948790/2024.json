@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2948790",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 18.1.8, DRM 3.54, 6.6.54-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.0-devel",
+    "kernel": "6.6.54-200.fc40.x86_64",
+    "notes": "Game works out of the box, completed a full playthrough",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1730045674,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2948790",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1731074745,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2948790",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1735472699,
+    "title": "",
+    "source": "protondb"
+  }
+]

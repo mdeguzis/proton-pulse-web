@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "905640",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.10.2-2-MANJARO",
+    "notes": "Shows an error that I can't understand when trying to launch the game.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616707085,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "905640",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.10.60-1-MANJARO",
+    "notes": "EAC problem",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1631345313,
+    "title": "",
+    "source": "protondb"
+  }
+]

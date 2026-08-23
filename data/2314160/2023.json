@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2314160",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 16.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.3-arch1-1",
+    "notes": "Most likely the game is running but refusing to give any video output.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1701632099,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2314160",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 16.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.3-arch1-1",
+    "notes": "Took at least 10 minutes to open up",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1701632438,
+    "title": "",
+    "source": "protondb"
+  }
+]

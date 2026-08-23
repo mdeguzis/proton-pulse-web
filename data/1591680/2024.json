@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1591680",
+    "cpu": "Linux",
+    "duration": "oneToFourHours",
+    "gpu": "Realtek ALC897",
+    "gpuDriver": "Memory",
+    "kernel": "4.6",
+    "notes": "Game seems cool still in beta possibly alpha.  Never anyone on",
+    "os": "AMD AMD Radeon RX 580 2048SP (radeonsi, polaris10, LLVM 18.1.6, DRM 3.57, 6.8.12-200.fsync.fc40.x86_64)",
+    "protonVersion": "9.0-1",
+    "ram": "None detected",
+    "rating": "platinum",
+    "timestamp": 1717961025,
+    "title": "",
+    "source": "protondb"
+  }
+]

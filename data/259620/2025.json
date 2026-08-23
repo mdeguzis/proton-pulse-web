@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "259620",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.14.4-arch1-2)",
+    "gpuDriver": "4.6 Mesa 25.0.4-arch1.1",
+    "kernel": "6.14.4-arch1-2",
+    "notes": "Launch directly from game files; will not launch from steam.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1746757318,
+    "title": "",
+    "source": "protondb"
+  }
+]

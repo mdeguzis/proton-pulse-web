@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1175730",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.2.6",
+    "kernel": "5.3.13-arch1-1",
+    "notes": "Broken dll file: TosSteamClient.dll",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-9",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1575091853,
+    "title": "",
+    "source": "protondb"
+  }
+]

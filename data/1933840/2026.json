@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1933840",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.18.6-2-cachyos",
+    "notes": "The game runs mostly great and fast, even with old hardware.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1768760382,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1933840",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.12-1-cachyos",
+    "notes": "Runs great and fast even with old hardware",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1776281387,
+    "title": "",
+    "source": "protondb"
+  }
+]

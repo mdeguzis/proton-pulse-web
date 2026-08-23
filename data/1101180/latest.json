@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1101180",
+    "cpu": "Intel Core i7-4700MQ @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.12.59-1-lts",
+    "notes": "This game dont work on Thinkpad T440p",
+    "os": "Arch Linux (64bit)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1764411445,
+    "title": "",
+    "source": "protondb"
+  }
+]

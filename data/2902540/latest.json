@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2902540",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.63, 6.15.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.1",
+    "kernel": "6.15.3-arch1-1",
+    "notes": "Playable with minor inconveniences.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1752251959,
+    "title": "KUNKUN Defender",
+    "source": "protondb"
+  }
+]

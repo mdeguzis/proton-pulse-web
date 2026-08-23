@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1008020",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.14.17-301.fc35.x86_64",
+    "notes": "libEGL.dll Caused Black Screen",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-7",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1637383027,
+    "title": "",
+    "source": "protondb"
+  }
+]

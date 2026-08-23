@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1040490",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-70-generic",
+    "notes": "Crashed asking for my name",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1579977786,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1040490",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-70-generic",
+    "notes": "Crashed telling me about available features",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1579978023,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1040490",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Haswell Mobile",
+    "gpuDriver": "3.0 Mesa 19.1.2 - padoka PPA",
+    "kernel": "4.15.0-74-generic",
+    "notes": "Once the first three crashes are out of the way, game works like a charm.",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "4.11-12",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1580052824,
+    "title": "",
+    "source": "protondb"
+  }
+]

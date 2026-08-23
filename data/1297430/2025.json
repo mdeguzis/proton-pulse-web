@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1297430",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.5-arch1-1",
+    "notes": "Works great on Proton 9.0-4.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1764278248,
+    "title": "",
+    "source": "protondb"
+  }
+]

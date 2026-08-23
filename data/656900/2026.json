@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "656900",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 595.45.04",
+    "kernel": "6.19.9-1-cachyos",
+    "notes": "A slightly improved version of a 90s point and click game, running without any issues",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1775572344,
+    "title": "",
+    "source": "protondb"
+  }
+]

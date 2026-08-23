@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2290000",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.12.63",
+    "notes": "Works like a charm out of the box",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1767839874,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2290000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1768337785,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2290000",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.142",
+    "kernel": "6.19.9-201.nobara.fc43.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1777675675,
+    "title": "",
+    "source": "protondb"
+  }
+]

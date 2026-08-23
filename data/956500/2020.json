@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "956500",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel (git-9e440b8 2019-11-10 disco-oibaf-ppa)",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Black screen after loading screen",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "5.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1582992045,
+    "title": "Bow to Blood: Last Captain Standing",
+    "source": "protondb"
+  }
+]

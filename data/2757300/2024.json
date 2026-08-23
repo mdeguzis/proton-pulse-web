@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2757300",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "Mesa virgl (Mesa Intel Xe (TGL GT2))",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel (git-406dda70e7)",
+    "kernel": "6.1.90-14253-g12484fab6ffd",
+    "notes": "just works!",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-3",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1729273150,
+    "title": "",
+    "source": "protondb"
+  }
+]

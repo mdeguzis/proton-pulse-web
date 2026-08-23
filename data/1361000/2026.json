@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1361000",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 6.18.15)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.18.15",
+    "notes": "fonctionne bien",
+    "os": "GLF-OS (Phoenix) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772758013,
+    "title": "",
+    "source": "protondb"
+  }
+]

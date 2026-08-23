@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1206480",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.12_1",
+    "notes": "Will not work without vcrun2019; did not launch without forced experimental",
+    "os": "Void Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1690245047,
+    "title": "",
+    "source": "protondb"
+  }
+]

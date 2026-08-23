@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "887490",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.12.39-1-MANJARO",
+    "notes": "Game works perfectly with proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16gb",
+    "rating": "gold",
+    "timestamp": 1753984790,
+    "title": "",
+    "source": "protondb"
+  }
+]

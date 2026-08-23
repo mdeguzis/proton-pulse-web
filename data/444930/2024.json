@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "444930",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Crashes as soon as you pick a table. Steam reviews suggest it's an issue with AMD cards on Windows too and that the developers haven't been rushing to get it fixed (it's been broken for months).",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1706171080,
+    "title": "Zaccaria Pinball",
+    "source": "protondb"
+  },
+  {
+    "appId": "444930",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Launched fine with forced Proton Experimental. I also disabled the ray traced shadows in the options when I was troubleshooting.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1719541067,
+    "title": "Zaccaria Pinball",
+    "source": "protondb"
+  }
+]

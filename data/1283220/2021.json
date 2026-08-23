@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1283220",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN (DRM 3.35.0, 5.4.0-58-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1 - kisak-mesa PPA",
+    "kernel": "5.4.0-58-generic",
+    "notes": "If you somehow don't have any issues with this game, it's pretty good",
+    "os": "KDE neon User Edition 5.20 (64\u00a0bits)",
+    "protonVersion": "5.13-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1611802156,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1283220",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.14.2-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.2-1-MANJARO",
+    "notes": "Impossible to progress after 5 minutes of gameplay",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1632492155,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1283220",
+    "cpu": "AMD A10-7850K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1635494615,
+    "title": "",
+    "source": "protondb"
+  }
+]

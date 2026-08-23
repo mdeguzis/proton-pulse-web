@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1243960",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.0-19.1-liquorix-amd64",
+    "notes": "The game works great even with remote play together. Thigs get weird trying to close it.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592526358,
+    "title": "",
+    "source": "protondb"
+  }
+]

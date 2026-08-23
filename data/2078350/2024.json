@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2078350",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.1",
+    "kernel": "6.9.12-3-MANJARO",
+    "notes": "The game works correctly. Graphic errors occur in the same places both on Linux and on Windows. The PS4 controller is recognized by the game",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1728203899,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1390350",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.15-200.fc41.x86_64",
+    "notes": "Perfect",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1740705960,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390350",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 575.64.03",
+    "kernel": "6.15.6-arch1-1",
+    "notes": "\u0418\u0433\u0440\u0430 \u043e\u0442\u043b\u0438\u0447\u043d\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \"\u0438\u0437 \u043a\u043e\u0440\u043e\u0431\u043a\u0438\"",
+    "os": "Arch Linux (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1752598942,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1390350",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "Works great out of the box.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764591019,
+    "title": "",
+    "source": "protondb"
+  }
+]

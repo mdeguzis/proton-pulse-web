@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1276760",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "this games deserves the gold badge and playable status",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1756391926,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1276760",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.57, 6.8.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.3",
+    "kernel": "6.8.0-58-generic",
+    "notes": "Back when I started playing in Season 5, it worked perfectly on my Linux desktop. Then at the start of Season 6 it stopped being able to connect me to games with matchmaking on Linux. I've had some success playing it on Steam Deck, but as of now (the most recent patch) the game won't work on both my Linux Desktop and Steam Deck.",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1756521709,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1276760",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.6, DRM 3.49, 6.1.0-41-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-41-amd64",
+    "notes": "This game has a buggy matchmaking system but I'm convinced that the game doesn't work on Linux and optional online features like the account",
+    "os": "LMDE 6 (faye)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1763092841,
+    "title": "",
+    "source": "protondb"
+  }
+]

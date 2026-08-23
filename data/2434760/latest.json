@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2434760",
+    "cpu": "Intel Celeron N4020 @ 1.10GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa/X.org virgl (Mesa Intel UHD 600 (GLK 2))",
+    "gpuDriver": "4.3 Mesa 22.3.6",
+    "kernel": "6.6.17-01102-gd3cec3c11146",
+    "notes": "Functions normally, occasional slight frame drops",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-2",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1720305130,
+    "title": "",
+    "source": "protondb"
+  }
+]

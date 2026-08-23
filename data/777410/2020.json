@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "777410",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.18-200.fc31.x86_64",
+    "notes": "Seems to run just fine without any tweaks or issues",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592944896,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "777410",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Works out of the box",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1609185321,
+    "title": "",
+    "source": "protondb"
+  }
+]

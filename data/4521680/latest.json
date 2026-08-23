@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4521680",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.159.03",
+    "kernel": "7.0.11-76070011-generic",
+    "notes": "Works well out of the box. There is a light stutter every couple of minutes, but its nothing major.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1782552188,
+    "title": "Painting PC",
+    "source": "protondb"
+  }
+]

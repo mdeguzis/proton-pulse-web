@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4269360",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.3, DRM 3.61, 6.14.9-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.6",
+    "kernel": "6.14.9-300.fc42.x86_64",
+    "notes": "I am the developer. The game is built with linux in mind \ud83e\udd17",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1769528527,
+    "title": "",
+    "source": "protondb"
+  }
+]

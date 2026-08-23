@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "381640",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.15.11-gentoo-x86_64",
+    "notes": "Doesn't work. Probably because of \"MRAC\" anticheat system, which can't load",
+    "os": "Gentoo/Linux",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1647528583,
+    "title": "Allods Online RU",
+    "source": "protondb"
+  },
+  {
+    "appId": "381640",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-lqx1.0.fc36.x86_64",
+    "notes": "\"\u041e\u0431\u0449\u0430\u044f \u043e\u0448\u0438\u0431\u043a\u0430\" \u043f\u0440\u0438 \u0437\u0430\u043f\u0443\u0441\u043a\u0435 \u0447\u0435\u0440\u0435\u0437 My.games \u043b\u0430\u0443\u043d\u0447\u0435\u0440 \u0438\u0437-\u0437\u0430 \u0430\u043d\u0442\u0438\u0447\u0438\u0442\u0430 MRAC.",
+    "os": "Fedora release 36 (Thirty Six) (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1665861870,
+    "title": "Allods Online RU",
+    "source": "protondb"
+  }
+]

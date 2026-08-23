@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2330870",
+    "cpu": "Intel Core i7-10700 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "5.19.0-38-generic",
+    "notes": "Force using Proton 8.0-4 allows the game to launch",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1701732180,
+    "title": "",
+    "source": "protondb"
+  }
+]

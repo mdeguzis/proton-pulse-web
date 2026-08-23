@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "823500",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.7-200.fc40.x86_64",
+    "notes": "After a little proton config, this runs fantastic. Performance seems to be improved running in Linux vs. running in Windows.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720567017,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "823500",
+    "cpu": "Intel Core i5-6400 @ 2.70GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "6.5.5-zen1-1-zen",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "24 GB",
+    "rating": "silver",
+    "timestamp": 1725733891,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "823500",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 565.57.01",
+    "kernel": "6.11.7-300.fc41.x86_64",
+    "notes": "Works out of the box. Amazing game, top 10 best for sure. Amazing perf on Linux, better than Windows. I was able to run on max graphics.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1731499650,
+    "title": "",
+    "source": "protondb"
+  }
+]

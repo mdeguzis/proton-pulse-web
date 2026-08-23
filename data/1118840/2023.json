@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1118840",
+    "cpu": "13th Gen Intel Core i5-13600K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.19.0-35-generic",
+    "notes": "Just works",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1679423493,
+    "title": "",
+    "source": "protondb"
+  }
+]

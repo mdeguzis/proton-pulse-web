@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2633500",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 7.0.8-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.8-1-cachyos",
+    "notes": "Stable 25 FPS via cnc-ddraw tweak.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1778927002,
+    "title": "Dragon Throne: Battle of Red Cliffs",
+    "source": "protondb"
+  },
+  {
+    "appId": "2633500",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 7.0.8-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch2.1",
+    "kernel": "7.0.8-1-cachyos",
+    "notes": "Only for patient retro fans. Requires manual CPU underclocking and config tweaks to fix input/engine speed. Not a \"click-and-play\" experienc",
+    "os": "CachyOS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1779446225,
+    "title": "Dragon Throne: Battle of Red Cliffs",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1544740",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "6.0.0-5-amd64",
+    "notes": "the game does have a black screen on the game mode select menu like selecting MS-DOS or C64 does not show up correctly the game uses DOS-BOX to run the game emulated",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1671254884,
+    "title": "MicroProse\u2122 Soccer",
+    "source": "protondb"
+  }
+]

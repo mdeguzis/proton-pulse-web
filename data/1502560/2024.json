@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1502560",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.9.7)",
+    "gpuDriver": "4.6 Mesa 24.1.1",
+    "kernel": "6.9.7",
+    "notes": "If you can ignore the water not rendering correctly--which is noticable but ultimately not a huge visual degradation--it runs great.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720297727,
+    "title": "",
+    "source": "protondb"
+  }
+]

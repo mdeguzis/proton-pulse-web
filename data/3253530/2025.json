@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3253530",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.4",
+    "kernel": "6.17.4-2-cachyos-deckify",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1761268632,
+    "title": "",
+    "source": "protondb"
+  }
+]

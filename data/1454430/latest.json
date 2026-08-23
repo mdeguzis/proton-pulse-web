@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1454430",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.9.0-8.3-liquorix-amd64",
+    "notes": "Works perfectly. No fps drops with the latest proton. Didn't have to do anything with launch options all you have to do is click play!",
+    "os": "Zorin OS 15.3",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1605559051,
+    "title": "",
+    "source": "protondb"
+  }
+]

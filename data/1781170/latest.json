@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1781170",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.0-31-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-31-generic",
+    "notes": "Nativ - Works great!",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1716135744,
+    "title": "The Flow Experience",
+    "source": "protondb"
+  }
+]

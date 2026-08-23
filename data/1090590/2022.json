@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1090590",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.16.8-arch1-1",
+    "notes": "Works perfectly out of the box on Proton Experimental. No need for any custom run commands or installs.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1644943385,
+    "title": "",
+    "source": "protondb"
+  }
+]

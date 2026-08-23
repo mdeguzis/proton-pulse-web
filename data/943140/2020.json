@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "943140",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Ivybridge Mobile",
+    "gpuDriver": "3.0 Mesa 19.2.8",
+    "kernel": "5.3.0-45-generic",
+    "notes": "run smooth and no problem at all",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1586017629,
+    "title": "Sparklite",
+    "source": "protondb"
+  }
+]

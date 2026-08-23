@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "962970",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.3.2 - kisak-mesa PPA",
+    "kernel": "5.3.0-26-generic",
+    "notes": "No text, but seems to be next to playable if fixed",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1579361077,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "962970",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.5.6-201.fc31.x86_64",
+    "notes": "Fullscreen and windowed mode both have problems, it may be gnome acting up but it still is not great.",
+    "os": "Fedora 31",
+    "protonVersion": "5.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1583163444,
+    "title": "",
+    "source": "protondb"
+  }
+]

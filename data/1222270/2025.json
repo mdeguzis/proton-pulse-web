@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1222270",
+    "cpu": "AMD Ryzen 7 8700F 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.6, DRM 3.64, 6.18.1-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.3",
+    "kernel": "6.18.1-2-cachyos",
+    "notes": "No problems were found",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766548055,
+    "title": "Gunbrick: Reloaded",
+    "source": "protondb"
+  }
+]

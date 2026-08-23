@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3222640",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.54, 6.5.0-5-amd64)",
+    "gpuDriver": "4.6 Mesa 23.3.2 (git-527d45230f)",
+    "kernel": "6.5.0-5-amd64",
+    "notes": "runs perfectly (DEMO)",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772186320,
+    "title": "",
+    "source": "protondb"
+  }
+]

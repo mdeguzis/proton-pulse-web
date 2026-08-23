@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1744570",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 510.108.03",
+    "kernel": "6.1.7-x64v3-xanmod1",
+    "notes": "its playable, same as under Windows OS.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1674914421,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1744570",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Need to install d3dcompiler_47.dll for launch the game",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1682892462,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1744570",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Install d3dcompiler_47.dll to launch the game",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1689081995,
+    "title": "",
+    "source": "protondb"
+  }
+]

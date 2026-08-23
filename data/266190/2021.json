@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "266190",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.10.4",
+    "notes": "works out of the box, resolution was weird initially",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1610042381,
+    "title": "",
+    "source": "protondb"
+  }
+]

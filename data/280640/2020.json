@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "280640",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.0.0-38-generic",
+    "notes": "Black screen of nope",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1581962908,
+    "title": "",
+    "source": "protondb"
+  }
+]

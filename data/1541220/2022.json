@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1541220",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.44.0, 5.16.9-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.6",
+    "kernel": "5.16.9-200.fc35.x86_64",
+    "notes": "honestly works better on linux than on windows",
+    "os": "Fedora Linux 35 (Workstation Edition)",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1646517770,
+    "title": "Bouncy Goat Climb",
+    "source": "protondb"
+  }
+]

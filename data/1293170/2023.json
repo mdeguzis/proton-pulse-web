@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1293170",
+    "cpu": "11th Gen Intel Core i7-11700 @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "5.15.0-88-generic",
+    "notes": "Works out of the box",
+    "os": "Linux Mint 21.2 (64bit)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1699957713,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1293170",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 16.0.6, DRM 3.54, 6.5.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.7-arch1.1",
+    "kernel": "6.5.3-arch1-1",
+    "notes": "Works perfectly",
+    "os": "Arch Linux (64bit)",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1700073523,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1293170",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1701030264,
+    "title": "",
+    "source": "protondb"
+  }
+]

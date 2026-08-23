@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1191830",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.3-2-cachyos",
+    "notes": "Game is unplayable.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1771985370,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1191830",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, LLVM 21.1.7, DRM 3.64, 6.18.13)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.18.13",
+    "notes": "Le jeu se lance, mais au menu, les options et les autres \u00e9l\u00e9ments ne s\u2019affichent pas.\nJ\u2019ai test\u00e9 plusieurs versions de Proton (Steam, GE Proton, etc.), mais rien ne fonctionne.",
+    "os": "GLF-OS (Phoenix_Pulsar) 25.11",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772404785,
+    "title": "",
+    "source": "protondb"
+  }
+]

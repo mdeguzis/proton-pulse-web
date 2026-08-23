@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1158470",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.7-200.fc39.x86_64",
+    "notes": "Runs perfectly",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1716898927,
+    "title": "Voxelgram",
+    "source": "protondb"
+  }
+]

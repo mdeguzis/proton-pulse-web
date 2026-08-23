@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1112570",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Installed this game trough Heroic Games Launcher. All worked out of the box. Controls and sound flawless.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1737140356,
+    "title": "",
+    "source": "protondb"
+  }
+]

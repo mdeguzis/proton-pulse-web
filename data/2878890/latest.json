@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2878890",
+    "cpu": "Intel Xeon E5-2680 v4 @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.2-arch1-1",
+    "notes": "A lot of instability and performance problems so far.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1750123337,
+    "title": "soul Interface",
+    "source": "protondb"
+  }
+]

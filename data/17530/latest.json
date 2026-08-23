@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "17530",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.5-ba07.fc43.x86_64",
+    "notes": "it just works with proton ge",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1762143104,
+    "title": "D.I.P.R.I.P. Warm Up",
+    "source": "protondb"
+  }
+]

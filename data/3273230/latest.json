@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3273230",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.60, 6.13.4-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.0.0-cachyos1.1",
+    "kernel": "6.13.4-2-cachyos",
+    "notes": "Seems to work out of the box. I only played the first stage on itch, purchased the game on steam instantly, and it seems to run perfectly.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1752540505,
+    "title": "",
+    "source": "protondb"
+  }
+]

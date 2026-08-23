@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1775550",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.8.0-59-generic",
+    "notes": "Audio loop issue seems to be resolved with Proton 10, as far as I could tell. Though my game crashes if I reload any savegame.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1746809609,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1775550",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.195.03",
+    "kernel": "6.8.0-88-generic",
+    "notes": "runs well.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "silver",
+    "timestamp": 1765126925,
+    "title": "",
+    "source": "protondb"
+  }
+]

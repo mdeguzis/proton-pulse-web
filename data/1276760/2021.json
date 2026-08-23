@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1276760",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.11.0-41-generic",
+    "notes": "Crashes right after hitting play",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1638620010,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1276760",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.4.0-88-generic",
+    "notes": "Starts to black screen, can hear audio from intro, then crashes back to desktop.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1638632110,
+    "title": "",
+    "source": "protondb"
+  }
+]

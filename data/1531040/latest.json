@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1531040",
+    "cpu": "12th Gen Intel Core i5-12400",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.8, DRM 3.64, 6.16.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.16.3-arch1-1",
+    "notes": "Works great out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1756204159,
+    "title": "",
+    "source": "protondb"
+  }
+]

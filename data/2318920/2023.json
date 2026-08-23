@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2318920",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 525.78.01",
+    "kernel": "6.1.4-arch1-1",
+    "notes": "Game is largely unplayable due to frequent crashing.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1688339588,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2318920",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1688724507,
+    "title": "",
+    "source": "protondb"
+  }
+]

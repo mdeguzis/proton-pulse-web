@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1188540",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.41.0, 5.13.4-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.5",
+    "kernel": "5.13.4-arch1-1",
+    "notes": "Works great. No tweaks required.",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-7",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1635743152,
+    "title": "",
+    "source": "protondb"
+  }
+]

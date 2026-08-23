@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1629830",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "5.15.94-1-MANJARO",
+    "notes": "Worked perfectly out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1677534758,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1629830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Controller support has been added, works perfectly now",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1682542154,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1629830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Should at least have status \"playable\" by now",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1692733901,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "703200",
+    "cpu": "Intel Core i9-10900KF @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.15.57-2-MANJARO",
+    "notes": "The falling platforms bug out in anything more than 60fps.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1659841638,
+    "title": "Jumphobia Classic",
+    "source": "protondb"
+  }
+]

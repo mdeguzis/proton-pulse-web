@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1156590",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.36-1-MANJARO",
+    "notes": "Absolutely wowish.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1588913017,
+    "title": "Morels: The Hunt",
+    "source": "protondb"
+  },
+  {
+    "appId": "1156590",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "4.15.0-96-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1590093362,
+    "title": "Morels: The Hunt",
+    "source": "protondb"
+  },
+  {
+    "appId": "1156590",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "",
+    "os": "KDE neon User Edition 5.19",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1604274706,
+    "title": "Morels: The Hunt",
+    "source": "protondb"
+  }
+]

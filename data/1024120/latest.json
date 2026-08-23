@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1024120",
+    "cpu": "AMD FX-8370 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 535.288.01",
+    "kernel": "6.17.0-20-generic",
+    "notes": "The min sys req says d3d10, but game wants 11. Way too slow on my hardware, which exceeds minimum listed.",
+    "os": "Ubuntu 24.04.3 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1775749931,
+    "title": "T\u00faatha Echoes: The Village",
+    "source": "protondb"
+  }
+]

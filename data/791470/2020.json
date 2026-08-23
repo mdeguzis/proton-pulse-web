@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "791470",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.1.7",
+    "kernel": "5.8.13",
+    "notes": "No issues, indistinguishable from native",
+    "os": "NixOS 21.03 (Okapi)",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1603849668,
+    "title": "",
+    "source": "protondb"
+  }
+]

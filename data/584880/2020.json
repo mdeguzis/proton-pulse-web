@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "584880",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.8-arch1-1",
+    "notes": "Doesn't launch",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1603335370,
+    "title": "",
+    "source": "protondb"
+  }
+]

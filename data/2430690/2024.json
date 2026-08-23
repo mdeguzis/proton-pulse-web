@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2430690",
+    "cpu": "Intel Celeron N5095 @ 2.00GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (JSL)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.6.34-1-lts",
+    "notes": "Runs just fine, just keep in one screen state and save before alt tab is a reccomendation.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1718982029,
+    "title": "",
+    "source": "protondb"
+  }
+]

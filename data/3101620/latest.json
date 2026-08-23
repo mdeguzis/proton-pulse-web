@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3101620",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.2-200.fsync.fc40.x86_64",
+    "notes": "Controls are rubbish, but it works on Linux fine.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1729002244,
+    "title": "",
+    "source": "protondb"
+  }
+]

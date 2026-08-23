@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2565550",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.8, DRM 3.57, 6.10.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.3-arch1.1",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Works out of the box!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727247731,
+    "title": "",
+    "source": "protondb"
+  }
+]

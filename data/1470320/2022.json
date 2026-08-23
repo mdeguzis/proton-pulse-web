@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1470320",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.74",
+    "kernel": "5.14.14-arch1-1",
+    "notes": "Native runs fine after tweaks",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1656037738,
+    "title": "Malmyr",
+    "source": "protondb"
+  }
+]

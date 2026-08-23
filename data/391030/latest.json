@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "391030",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (polaris10, LLVM 14.0.6, DRM 3.48, 6.0.5-200.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "6.0.5-200.fc36.x86_64",
+    "notes": "",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1668059132,
+    "title": "Hard to Be a God",
+    "source": "protondb"
+  }
+]

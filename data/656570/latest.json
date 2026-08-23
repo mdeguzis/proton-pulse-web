@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "656570",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.6, DRM 3.49, 6.1.0-28-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-28-amd64",
+    "notes": "Using MX Linux, this just refuses to launch. I've used all of the known Proton presets, along with some GE presets. None of which worked. I must be missing some dependency, but I have no idea what that would be.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1757626328,
+    "title": "",
+    "source": "protondb"
+  }
+]

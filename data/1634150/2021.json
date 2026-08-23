@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1634150",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.12-200.fc34.x86_64",
+    "notes": "The game works fine. Movies didn't work with Proton 6.3-6 but do with Proton 6.15-GE-2.",
+    "os": "Linux 5.x",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1629905264,
+    "title": "",
+    "source": "protondb"
+  }
+]

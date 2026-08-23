@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1556870",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.11.0-7633-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-7633-generic",
+    "notes": "It works well enough, it has some minor slow downs compared with my experience on windows, but the game don't need super fast reactions.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631130191,
+    "title": "Golf Club Nostalgia",
+    "source": "protondb"
+  },
+  {
+    "appId": "1556870",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.14.2-arch1-2, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.2-arch1-2",
+    "notes": "Runs fantastic - Soundtrack is brilliant.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1631967488,
+    "title": "Golf Club Nostalgia",
+    "source": "protondb"
+  },
+  {
+    "appId": "1556870",
+    "cpu": "Intel Core i7-8550U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "The game works perfectly without problems, with a very suitable performance",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634870789,
+    "title": "Golf Club Nostalgia",
+    "source": "protondb"
+  }
+]

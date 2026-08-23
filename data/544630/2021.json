@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "544630",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 / 550 (POLARIS12, DRM 3.42.0, 5.15.7-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-1-MANJARO",
+    "notes": "Works out of the box. Crackling sound is the only thing to say.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1640032681,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1621310",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 18.1.8, DRM 3.59, 6.12.3-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.2",
+    "kernel": "6.12.3-zen1-1-zen",
+    "notes": "Tinkering is required, but with the right launch options it works perfectly.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1735831993,
+    "title": "",
+    "source": "protondb"
+  }
+]

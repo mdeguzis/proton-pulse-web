@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1019450",
+    "cpu": "Intel Core i5-3475S @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "Black screen after Unity splash screen",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-2",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1581790318,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1019450",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.5.2-1-MANJARO",
+    "notes": "Default proton versions didn't work. Tried GloriousEggroll 5.8 and worked instantly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1590204718,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1019450",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-33-generic",
+    "notes": "Game does not run out of the box. I had to deploy a GE build with MF. I suspect MF.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1590274652,
+    "title": "",
+    "source": "protondb"
+  }
+]

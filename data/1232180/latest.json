@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1232180",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.8, DRM 3.63, 6.15.6-105.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.6",
+    "kernel": "6.15.6-105.bazzite.fc42.x86_64",
+    "notes": "Fixed by going to \"/Sakuya Izayoi Gives You Advice And Dabs/renpy/main.py\" line 391 and lowercasing the \"N\" in \"None\"\n\nThis also works on CBT With Yuuka Kazami",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1753121269,
+    "title": "",
+    "source": "protondb"
+  }
+]

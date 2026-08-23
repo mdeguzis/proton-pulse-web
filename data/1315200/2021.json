@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1315200",
+    "cpu": "Intel Core i5-2500S @ 2.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 450.119.03",
+    "kernel": "5.8.0-53-generic",
+    "notes": "The game isn't running fine out of the box, so only purchase if you fancy a tinker or can tolerate these kinds of errors.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1622674814,
+    "title": "",
+    "source": "protondb"
+  }
+]

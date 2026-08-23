@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2023360",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "4.15.0-176-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.6 LTS",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682706231,
+    "title": "The Last Case of Benedict Fox Definitive Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "2023360",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game runs fine out the box!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1683069383,
+    "title": "The Last Case of Benedict Fox Definitive Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "769730",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.6.9-amd64",
+    "notes": "St\u00fcrzt lediglich beim Beenden ab.",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704623023,
+    "title": "",
+    "source": "protondb"
+  }
+]

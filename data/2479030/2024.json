@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2479030",
+    "cpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Ryzen Embedded R1606G with Radeon Vega Gfx (raven2, LLVM 15.0.7, DRM 3.42, 5.15.0-126-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-126-generic",
+    "notes": "Runs perfectly with Forced Proton Experimental; fun retro game with mixed features.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1733042389,
+    "title": "Goliath Depot",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3298460",
+    "cpu": "AMD Ryzen 7 4800HS with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.7.12-xanmod1)",
+    "gpuDriver": "4.6 Mesa 24.0.3",
+    "kernel": "6.7.12-xanmod1",
+    "notes": "Ran pretty consistently at only 6 FPS, even when I reduced the quality to \"Fastest\" and the resolution to 360x240.",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1744255804,
+    "title": "Pushing it! Together - Sisyphus Co-op",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1655960",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.40.0, 5.10.102, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.10.102",
+    "notes": "Works flawlessly with keyborad input. Didn't test controller input.",
+    "os": "NixOS 21.11 (Porcupine)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1671389842,
+    "title": "",
+    "source": "protondb"
+  }
+]

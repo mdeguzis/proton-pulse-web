@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "390100",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 16.0.6, DRM 3.56, 6.7.2-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.4-arch1.2",
+    "kernel": "6.7.2-zen1-1-zen",
+    "notes": "this is because of gameguard issue, unable to lauch, also it popups webview2 issue",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1706875359,
+    "title": "9Dragons",
+    "source": "protondb"
+  },
+  {
+    "appId": "390100",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 16.0.6, DRM 3.56, 6.7.2-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.4-arch1.2",
+    "kernel": "6.7.2-zen1-1-zen",
+    "notes": "Laucher open but can\u00b4t enter the game, gameguard issue, plus webview2 issue.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1706875456,
+    "title": "9Dragons",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1138440",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.0-26-generic",
+    "notes": "It is early access - but it worked for me.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1605041285,
+    "title": "",
+    "source": "protondb"
+  }
+]

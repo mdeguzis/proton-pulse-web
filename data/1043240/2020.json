@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1043240",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel UHD (Whiskey Lake 3x8 GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.1",
+    "kernel": "5.3.0-7625-generic",
+    "notes": "Game installed, launches, plays perfectly out of the box.",
+    "os": "Pop!_OS 19.10",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589824679,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1043240",
+    "cpu": "Intel Core i5-3317U @ 1.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 410.104",
+    "kernel": "5.0.0-32-generic",
+    "notes": "Game runs perfectly. After the initial setup, it ran fine for 3 hours without any bugs or crashes. This setup only needs to be done once.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-7",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1590954819,
+    "title": "",
+    "source": "protondb"
+  }
+]

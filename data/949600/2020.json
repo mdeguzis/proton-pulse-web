@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "949600",
+    "cpu": "Intel Core i3-3210 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-46-generic",
+    "notes": "The game runs perfectly fine using Proton",
+    "os": "Freedesktop.org 19.08.9 (Flatpak runtime)",
+    "protonVersion": "5.0-6",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1587717153,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "949600",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.4-152.current",
+    "notes": "",
+    "os": "Solus",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1588372783,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "949600",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-58-generic",
+    "notes": "Runs perfectly fine with Proton 5.0-10",
+    "os": "Kubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1608411217,
+    "title": "",
+    "source": "protondb"
+  }
+]

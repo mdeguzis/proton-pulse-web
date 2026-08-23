@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "444490",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Doesn't start.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1598465778,
+    "title": "",
+    "source": "protondb"
+  }
+]

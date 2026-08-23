@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1951410",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 535.216.03",
+    "kernel": "6.12.13-amd64",
+    "notes": "The game itself runs OK but the editor does not. You can install a fan patch with real life teams, leagues, & players using .exe installer.",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1739876195,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1951410",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.11.0-26-generic",
+    "notes": "Keine Startprobleme",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1753884268,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1951410",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.16.7-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.7",
+    "kernel": "6.16.7-200.fc42.x86_64",
+    "notes": "Despite the comments here, I did not get this to run. With default proton the game freezes and Fedora asks nicely if I want to quit the application or not. Switching to experimental helped me proceed after the initial loading screen and set up a season just to freeze on the player selection screen. Switching to ProtonGE 10-xx didn't help either.",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1758457558,
+    "title": "",
+    "source": "protondb"
+  }
+]

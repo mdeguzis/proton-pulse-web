@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "896220",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.15.0-43-generic",
+    "notes": "Black screen with the name of the black screen as the above",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1721155749,
+    "title": "",
+    "source": "protondb"
+  }
+]

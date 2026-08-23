@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "113020",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "nouveau NV117",
+    "gpuDriver": "4.3 Mesa 20.0.6",
+    "kernel": "5.6.11-1-MANJARO",
+    "notes": "The game doesn't launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1589658276,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "113020",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.38.0, 5.8.0-7630-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.1",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1609050458,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  },
+  {
+    "appId": "113020",
+    "cpu": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx",
+    "duration": "severalHours",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Playing the game with Proton went well, and is necessary since the native Linux version doesn't run.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "5.13-4",
+    "ram": "6 GB",
+    "rating": "silver",
+    "timestamp": 1609084047,
+    "title": "Monaco: What's Yours Is Mine",
+    "source": "protondb"
+  }
+]

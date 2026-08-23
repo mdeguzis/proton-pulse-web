@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3978250",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.13.6-2-cachyos",
+    "notes": "flawless",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1775527870,
+    "title": "",
+    "source": "protondb"
+  }
+]

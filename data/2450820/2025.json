@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2450820",
+    "cpu": "AMD Ryzen 5 3500 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GT 710",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.8.0-45-generic",
+    "notes": "By default the game boots to the title screen, but when I press a button it crashes. I tried using Experimental as well as several versions of Proton and GE. When I use those it gives me a \"failed to intitialize Direct X 9C\" error.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1739364189,
+    "title": "",
+    "source": "protondb"
+  }
+]

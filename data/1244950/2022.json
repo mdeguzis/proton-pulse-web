@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1244950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Cut scene visuals do not work on proton 7.0-2 or Experimental. They work on previous proton 6.3-8.",
+    "os": "SteamOS Holo",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1653298900,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1244950",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 14.0.6, DRM 3.47, 5.19.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.19.7-arch1-1",
+    "notes": "The game itself works perfectly but cutscenes between stages are missing. Some tinkering is needed if you want them.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1663130384,
+    "title": "",
+    "source": "protondb"
+  }
+]

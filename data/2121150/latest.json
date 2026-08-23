@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2121150",
+    "cpu": "AMD Ryzen 5 7530U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.17.2-arch1-1",
+    "notes": "Game spawns a loading widow with a progress bar and a red exclamation mark. after few seconds, window disapears and is hidden. I tried multiple versions of the Proton, none of them seemed to work",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "7 GB",
+    "rating": "borked",
+    "timestamp": 1760547485,
+    "title": "",
+    "source": "protondb"
+  }
+]

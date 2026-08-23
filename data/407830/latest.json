@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "407830",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.0, DRM 3.59, 6.11.9-303.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.11.9-303.bazzite.fc41.x86_64",
+    "notes": "I tested the game and it appears to function perfectly as it should on Windows.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1733818900,
+    "title": "Space Overlords",
+    "source": "protondb"
+  }
+]

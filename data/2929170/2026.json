@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2929170",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.12.47-gentoo-dist",
+    "notes": "",
+    "os": "Gentoo Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767403812,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2929170",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-8-generic",
+    "notes": "",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768386887,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2929170",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-8-generic",
+    "notes": "",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770119621,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "347940",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 440.95.01",
+    "kernel": "5.4.0-48-generic",
+    "notes": "Starts for a second then shows a black screen and then screen closes. Game remains open but can't be shown, or quit without kill the task.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602380859,
+    "title": "",
+    "source": "protondb"
+  }
+]

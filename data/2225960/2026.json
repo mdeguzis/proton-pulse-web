@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2225960",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "It gets stuck at 100% Loading and never moves on. Tried Proton GE, Experimental and Hotfix. Nothing works. Also, when it worked, it would crash randomly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1769254317,
+    "title": "Noobs Are Coming",
+    "source": "protondb"
+  },
+  {
+    "appId": "2225960",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1774175092,
+    "title": "Noobs Are Coming",
+    "source": "protondb"
+  },
+  {
+    "appId": "2225960",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.4, DRM 3.64, 6.17.4-4-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.5-cachyos1.5",
+    "kernel": "6.17.4-4-cachyos",
+    "notes": "Runs fine OOTB",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1776836611,
+    "title": "Noobs Are Coming",
+    "source": "protondb"
+  }
+]

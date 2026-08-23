@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1639530",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Trying to set a nickname gives a \"Something went Wrong\" message, cannot proceed to main menu.",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1627170313,
+    "title": "",
+    "source": "protondb"
+  }
+]

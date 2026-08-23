@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "754890",
+    "cpu": "Apple Firestorm (M1 Pro)",
+    "duration": "unreported",
+    "gpu": "Mesa Apple M1 Pro (G13S C0)",
+    "gpuDriver": "4.6 Mesa 25.0.0-asahi20241211",
+    "kernel": "6.6.59",
+    "notes": "(I tried DXVK_FEATURE_LEVEL=11_1 because my GPU driver is not yet fully DX12 compliant.)\nI am welcomed by a fatal popup window.\nUnhandled Exception: EXCEPTION_ACCESS_VIOLATION reading address 0x0000000000000010",
+    "os": "Fedora Linux Asahi Remix 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "25 GB",
+    "rating": "borked",
+    "timestamp": 1735852966,
+    "title": "",
+    "source": "protondb"
+  }
+]

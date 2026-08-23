@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2647960",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.4-200.fc41.x86_64",
+    "notes": "Stalls during loading, eats all your ram and swap.",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1735799174,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4851710",
+    "cpu": "AMD Ryzen 9 9950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.18.26-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 26.0.6-arch1.1",
+    "kernel": "6.18.26-1-MANJARO",
+    "notes": "Use proton experimental",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1782633389,
+    "title": "A Roguelike Tower Defense",
+    "source": "protondb"
+  }
+]

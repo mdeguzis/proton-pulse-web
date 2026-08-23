@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1280060",
+    "cpu": "AMD Ryzen 5 1500X Quad-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.8, DRM 3.57, 6.10.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.6-arch1.1",
+    "kernel": "6.10.5-arch1-1",
+    "notes": "Works flawlessly, ++",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1770293306,
+    "title": "",
+    "source": "protondb"
+  }
+]

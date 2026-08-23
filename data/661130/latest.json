@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "661130",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.13.6-arch1-1",
+    "notes": "Works on Linux but BEWARE",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1742648580,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2326770",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-21-amd64",
+    "notes": "Works perfectly!",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1717835561,
+    "title": "",
+    "source": "protondb"
+  }
+]

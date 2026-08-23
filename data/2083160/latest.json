@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2083160",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 Super",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.1-2-cachyos",
+    "notes": "Ran perfectly.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1772384083,
+    "title": "",
+    "source": "protondb"
+  }
+]

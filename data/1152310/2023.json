@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1152310",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 16.0.6, DRM 3.54, 6.5.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.8-arch1-1",
+    "notes": "The game crashed after selecting Escha or Logy. Runing the game in proton experimental, 8, 7 and 6 made no difference. Same goes for xorg and wayland.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1699011286,
+    "title": "Atelier Escha & Logy: Alchemists of the Dusk Sky DX",
+    "source": "protondb"
+  }
+]

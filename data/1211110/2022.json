@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1211110",
+    "cpu": "AMD Ryzen 3 3100 4-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.10.0-16-amd64",
+    "notes": "While the native release works just fine for me, issues launching without tinkering on a Steam Deck may render Proton the only solution.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "40 GB",
+    "rating": "platinum",
+    "timestamp": 1657765577,
+    "title": "Petal Crash",
+    "source": "protondb"
+  },
+  {
+    "appId": "1211110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1657810769,
+    "title": "Petal Crash",
+    "source": "protondb"
+  },
+  {
+    "appId": "1211110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Base game works out of the box. Petal Crash Online does not launch without switching to Proton.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1667068707,
+    "title": "Petal Crash",
+    "source": "protondb"
+  }
+]

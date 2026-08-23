@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "380110",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.10-arch1-1",
+    "notes": "Black screen untill you force close the application",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1629418406,
+    "title": "In The Black",
+    "source": "protondb"
+  },
+  {
+    "appId": "380110",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.41.0, 5.13.10-200.fc34.x86_64, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4 (git-ac105a8e6e)",
+    "kernel": "5.13.10-200.fc34.x86_64",
+    "notes": "Does not even start",
+    "os": "Fedora 34 - Gnome Wayland - Steam Flatpak",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1629552611,
+    "title": "In The Black",
+    "source": "protondb"
+  },
+  {
+    "appId": "380110",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.13.12-051312-generic",
+    "notes": "Game starts but gets stuck on a black screen.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1630037402,
+    "title": "In The Black",
+    "source": "protondb"
+  }
+]

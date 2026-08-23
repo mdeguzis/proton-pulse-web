@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1325860",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6750 XT (radeonsi, navi22, LLVM 19.1.5, DRM 3.59, 6.12.11-204.nobara.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.3.4",
+    "kernel": "6.12.11-204.nobara.fc41.x86_64",
+    "notes": "Webcam tracking requires a workaround, found on the VTube Studio GitHub.",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1739159987,
+    "title": "VTube Studio",
+    "source": "protondb"
+  },
+  {
+    "appId": "1325860",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works completely fine when connecting the Vtube Studio app.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1740141439,
+    "title": "VTube Studio",
+    "source": "protondb"
+  },
+  {
+    "appId": "1325860",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.14.2-arch1-1",
+    "notes": "Funciona bien pero tienes que hacer algunas cositas",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1744807301,
+    "title": "VTube Studio",
+    "source": "protondb"
+  }
+]

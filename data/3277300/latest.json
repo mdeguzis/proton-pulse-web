@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3277300",
+    "cpu": "AMD Ryzen 9 7950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, raphael_mendocino, LLVM 20.1.5, DRM 3.61, 6.14.9-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.14.9-300.fc42.x86_64",
+    "notes": "Runs perfectly",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1749830011,
+    "title": "",
+    "source": "protondb"
+  }
+]

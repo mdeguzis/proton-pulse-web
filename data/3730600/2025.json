@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3730600",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.7, DRM 3.59, 6.12.12-061212-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.3-1ubuntu2",
+    "kernel": "6.12.12-061212-generic",
+    "notes": "",
+    "os": "Rhino Linux 2025.2 (mainline)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1753879202,
+    "title": "",
+    "source": "protondb"
+  }
+]

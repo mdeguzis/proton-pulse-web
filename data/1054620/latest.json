@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1054620",
+    "cpu": "Intel Core i5-3210M @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "4.2 Mesa 22.1.2",
+    "kernel": "5.15.50-1-MANJARO",
+    "notes": "Black screen on startup, can hear the sound however.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1659958714,
+    "title": "Vengeful Bat Dungeon Crawler",
+    "source": "protondb"
+  }
+]

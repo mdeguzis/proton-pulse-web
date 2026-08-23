@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1584680",
+    "cpu": "Intel Core i3-4005U @ 1.70GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1765834903,
+    "title": "",
+    "source": "protondb"
+  }
+]

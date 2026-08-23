@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1161190",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.15.14-1-lts",
+    "notes": "Old game, borked engine, low res (1280x720). No fullscreen, no settings, etc.\nOnly gameplay, QS/QL, and mute switch work.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1642405402,
+    "title": "Natsu no Iro no Nostalgia",
+    "source": "protondb"
+  }
+]

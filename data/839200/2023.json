@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "839200",
+    "cpu": "Intel Core i5-3550 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.7-arch1-1",
+    "notes": "nach dem ladebilschirm der die libraries und microsoft zeug runterl\u00e4dt crasht es und dann startet es nicht mehr",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1674504116,
+    "title": "",
+    "source": "protondb"
+  }
+]

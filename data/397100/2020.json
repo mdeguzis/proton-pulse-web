@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "397100",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.3 Mesa 20.0.7 (Default uses 3.0 even though it supports 4.3. To fix, I added \"export MESA_GL_VERSION_OVERRIDE=4.3\" to my ~/.xprofile)",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "Game seems to run without any issues",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1594289714,
+    "title": "MachineCraft",
+    "source": "protondb"
+  }
+]

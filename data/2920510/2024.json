@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2920510",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 555.52.04",
+    "kernel": "6.8.12-200.fsync.fc40.x86_64",
+    "notes": "Game runs smoothly, no major bugs found",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1717691255,
+    "title": "",
+    "source": "protondb"
+  }
+]

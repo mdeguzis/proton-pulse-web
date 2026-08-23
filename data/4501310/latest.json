@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4501310",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600M XT (radeonsi, navi33, ACO, DRM 3.64, 6.19.14-ogc1.1.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "6.19.14-ogc1.1.fc44.x86_64",
+    "notes": "It works right out of the box, no problems at all.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1777936023,
+    "title": "8 Ball Pro Online",
+    "source": "protondb"
+  }
+]

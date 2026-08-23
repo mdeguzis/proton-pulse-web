@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2236070",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.6-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.6-zen1-1-zen",
+    "notes": "Game works the same as on windows",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1741701111,
+    "title": "Peaks of Yore",
+    "source": "protondb"
+  },
+  {
+    "appId": "2236070",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.4-4-cachyos",
+    "notes": "Runs flawlessly on GE-Proton10-21",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1761164912,
+    "title": "Peaks of Yore",
+    "source": "protondb"
+  }
+]

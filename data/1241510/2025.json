@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1241510",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.13.8-arch1-1",
+    "notes": "Works perfectly OotB",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743470155,
+    "title": "",
+    "source": "protondb"
+  }
+]

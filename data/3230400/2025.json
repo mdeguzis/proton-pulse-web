@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3230400",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 580.82.07",
+    "kernel": "6.16.5-2-cachyos",
+    "notes": "Does not launch at all with any proton options directly from steam. If EA App installed via non-steam game or via lutris, game can be downloaded through EA App but does not run due to \"Steamdeck and wine are not supported\".",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1757278910,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3230400",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "This game doesn't support Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1766792177,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2124440",
+    "cpu": "Intel Core i7-10875H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.28-1-lts",
+    "notes": "Tried a couple different versions of Proton with the same result.\nOn the other hand, it's a free game and can be played in online at https://jaredkrinke.itch.io/sic-1",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1674331464,
+    "title": "",
+    "source": "protondb"
+  }
+]

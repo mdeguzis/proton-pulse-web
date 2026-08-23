@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "9850",
+    "cpu": "AMD Ryzen 7 PRO 8840HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.2, DRM 3.61, 6.14.0-33-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-33-generic",
+    "notes": "It runs alright out of the box.",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1761906662,
+    "title": "Codename: Panzers - Cold War",
+    "source": "protondb"
+  }
+]

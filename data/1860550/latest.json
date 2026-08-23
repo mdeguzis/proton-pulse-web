@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1860550",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.44.0, 5.16.15-76051615-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.16.15-76051615-generic",
+    "notes": "Video/movies broken on Linux, but bugs exist on all platforms and aren't game-breaking",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1649709367,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "792120",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.4.0-65-generic",
+    "notes": "Will not start with any version or fork of Proton, no CLI errors given",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1688782003,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "792120",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.52, 6.4.4-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.4",
+    "kernel": "6.4.4-arch1-1",
+    "notes": "Game launches in a small window, shows 3fps for a moment, then the window closes and the game stops running",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1690222281,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "792120",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works flawlessly!",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1695282604,
+    "title": "",
+    "source": "protondb"
+  }
+]

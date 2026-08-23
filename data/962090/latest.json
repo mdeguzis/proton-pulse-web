@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "962090",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.17.4-200.fc35.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 35 (Workstation Edition)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1655388562,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "962090",
+    "cpu": "11th Gen Intel Core i5-11400 @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.15.0-52-generic",
+    "notes": "Training videos cause a fall",
+    "os": "Ubuntu 22.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1668410868,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "962090",
+    "cpu": "11th Gen Intel Core i5-11400 @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 515.76",
+    "kernel": "5.15.0-52-generic",
+    "notes": "In general, everything works.",
+    "os": "Ubuntu 22.04.1 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1668411563,
+    "title": "",
+    "source": "protondb"
+  }
+]

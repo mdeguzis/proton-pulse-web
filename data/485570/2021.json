@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "485570",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 470.42.01",
+    "kernel": "5.10.49-1-MANJARO",
+    "notes": "Game doesn't even start, no errors.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1633608250,
+    "title": "",
+    "source": "protondb"
+  }
+]

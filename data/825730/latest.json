@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "825730",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 570.181",
+    "kernel": "6.8.0-65-generic",
+    "notes": "Invalid TZAR configuration detected.",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1755420985,
+    "title": "Tzar: The Burden of the Crown",
+    "source": "protondb"
+  }
+]

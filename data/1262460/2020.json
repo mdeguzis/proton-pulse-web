@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1262460",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 418.74",
+    "kernel": "4.19.0-8-amd64",
+    "notes": "Works fine, usually around 60fps. No problems with audio or graphics except for game's own OS independent FPS bug, see note below.",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.0-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1589476466,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1084790",
+    "cpu": "Intel Core i5-9400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.6-zen1-1-zen",
+    "notes": "",
+    "os": "Garuda Linux Bird of Prey",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1719432390,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1084790",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 17.0.6, DRM 3.57, 6.10.4)",
+    "gpuDriver": "4.6 Mesa 24.0.7",
+    "kernel": "6.10.4",
+    "notes": "Works perfectly out of the box.",
+    "os": "NixOS 24.05 (Uakari)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725615421,
+    "title": "",
+    "source": "protondb"
+  }
+]

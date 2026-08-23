@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2250820",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 M360 (radeonsi, verde, LLVM 17.0.6, DRM 3.57, 6.7.10-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.7.10-200.fc39.x86_64",
+    "notes": "it can show the title screen but after that the game gets stuck in Now loading screen....",
+    "os": "Fedora Linux 39 (Xfce)",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1711925253,
+    "title": "Party Party Time",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1419060",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.35.0, 5.4.0-113-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.4.0-113-generic",
+    "notes": "Steam next fest demo worked with no issue on Proton 7.0-3.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1655740310,
+    "title": "Retchid",
+    "source": "protondb"
+  }
+]

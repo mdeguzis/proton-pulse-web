@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2070270",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.16.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.3-cachyos1.3",
+    "kernel": "6.16.8-2-cachyos",
+    "notes": "Runs all good OOTB (demo played)",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1769155865,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2070270",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.8-324.current",
+    "notes": "Great OOTB (This is the full game, not the demo.)",
+    "os": "Solus 4.8 Opportunity",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769387173,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2070270",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.1",
+    "kernel": "6.18.6-arch1-1",
+    "notes": "Runs perfectly on my PC.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769894315,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3264960",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.10-2-cachyos",
+    "notes": "Maybe some start lines are required?",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1780228079,
+    "title": "",
+    "source": "protondb"
+  }
+]

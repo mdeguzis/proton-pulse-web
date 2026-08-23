@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1343750",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.10-xanmod1-linux-xanmod-edge",
+    "notes": "I'm gonna try tinkering with it some other time, but as of right now it simply is unplayable for me with the default settings.\nI am using a Quest 2 and ALVR, if that makes any difference.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1672178615,
+    "title": "",
+    "source": "protondb"
+  }
+]

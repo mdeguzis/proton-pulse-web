@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "251510",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.10.76-gentoo-r1-x86_64",
+    "notes": "Crashes on start.",
+    "os": "Linux 5.10",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1637176240,
+    "title": "",
+    "source": "protondb"
+  }
+]

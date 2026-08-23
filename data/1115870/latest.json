@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1115870",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.7-arch1-1",
+    "notes": "Runs the same as on Windows. No tinkering required.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703363435,
+    "title": "",
+    "source": "protondb"
+  }
+]

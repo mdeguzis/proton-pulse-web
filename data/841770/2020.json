@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "841770",
+    "cpu": "Intel Core i7-6700HQ @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.4.23-1-MANJARO",
+    "notes": "A native linux title that doesn't properly load on my machine currently. It works perfectly under Proton.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1583317330,
+    "title": "",
+    "source": "protondb"
+  }
+]

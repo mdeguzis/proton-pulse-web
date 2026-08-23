@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1046300",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Works like charm out of the box",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737748962,
+    "title": "",
+    "source": "protondb"
+  }
+]

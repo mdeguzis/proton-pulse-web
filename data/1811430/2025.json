@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1811430",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 15.0.6, DRM 3.48, 6.0.10-gentoo)",
+    "gpuDriver": "4.6 Mesa 22.3.0",
+    "kernel": "6.0.10-gentoo",
+    "notes": "Other than the stability issues, the game worked fine.",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743390220,
+    "title": "Biters & Bullets: Prologue",
+    "source": "protondb"
+  }
+]

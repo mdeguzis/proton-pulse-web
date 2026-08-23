@@ -1,0 +1,21 @@
+{
+  "store": {
+    "developers": [
+      "Awesome Games Studio"
+    ],
+    "genres": [
+      "Action",
+      "Combat",
+      "Roguelike"
+    ],
+    "os": [
+      "windows",
+      "linux",
+      "osx"
+    ],
+    "publishers": [
+      "Awesome Games Studio"
+    ],
+    "store_link": "https://www.gog.com/en/game/fury_unleashed"
+  }
+}

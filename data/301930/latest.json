@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "301930",
+    "cpu": "AMD Athlon X4 860K Quad Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon HD 7900 (TAHITI, DRM 3.40.0, 5.10.59-1-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.10.59-1-MANJARO",
+    "notes": "Nearly unplayable, unless you are willing to wait a minute for each and every action to load.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1629613700,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2843540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.2-arch1-1",
+    "notes": "Works great, but make sure your GPU's powerful",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1720192570,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2843540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.2-arch1-1",
+    "notes": "Works great w/ Proton-GE",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1721080498,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2843540",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.2-arch1-1",
+    "notes": "Works great w/ Proton-GE",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1721080953,
+    "title": "",
+    "source": "protondb"
+  }
+]

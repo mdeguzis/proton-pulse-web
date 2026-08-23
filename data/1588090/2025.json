@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1588090",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.13.8-200.fc41.x86_64",
+    "notes": "Works perfect out of the box for my setup",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1742937700,
+    "title": "",
+    "source": "protondb"
+  }
+]

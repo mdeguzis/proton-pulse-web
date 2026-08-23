@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1597480",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6750 XT (navi22, LLVM 15.0.6, DRM 3.42, 5.15.80-gentoo)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.15.80-gentoo",
+    "notes": "Mauszeiger des spiels wird angezeigt",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1677332558,
+    "title": "Zombie Gunship Survival",
+    "source": "protondb"
+  }
+]

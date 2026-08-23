@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2424240",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "The game freezes if you die in the first bullet-heavy portion of the game.\nIf I run the game on SteamDeck with the game further along on another PC, it freezes at the action screen.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1698569573,
+    "title": "",
+    "source": "protondb"
+  }
+]

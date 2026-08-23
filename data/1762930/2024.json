@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1762930",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.0, DRM 3.59, 6.11.9-303.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.11.9-303.bazzite.fc41.x86_64",
+    "notes": "Nothing happens when pressing play. Eventully times out and the play button eventually turns back to green. Never actually launches.",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1733794861,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1762930",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.1-arch1.3",
+    "kernel": "6.12.4-arch1-1",
+    "notes": "works really well",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1734646579,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1762930",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Very playable and minimal tinkeing required",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1735113296,
+    "title": "",
+    "source": "protondb"
+  }
+]

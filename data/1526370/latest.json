@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1526370",
+    "cpu": "13th Gen Intel Core i7-1360P",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 24.1.5-arch1.1",
+    "kernel": "6.6.40-2-lts",
+    "notes": "No files are downloaded when installing normally. Entering compatibility mode with Proton Experimental seems to download the Windows build (as it downloads a .exe executable). When running this, Steam says it's running but no application actually loads.\n\nSwitching to Linux Runtime 1.0 (scout) as per the SteamOS & Linux requirements removes all files again.\n\nDiscussion thread here: https://steamcommunity.com/app/1526370/discussions/0/3196993949748958958/",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1723198511,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1526370",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.9-arch1-2",
+    "notes": "Neither GE-Proton nor vanilla Proton work, and the official Linux build doesn't actually download any files.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1729431256,
+    "title": "",
+    "source": "protondb"
+  }
+]

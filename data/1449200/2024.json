@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1449200",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works out of the box as it would on Windows",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1711815222,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1449200",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.6.47-1-MANJARO",
+    "notes": "\u9050\u5de5\u7db1\u90af\u30b5\u7da2\u5436\u3054\u95bc\u30a2\u30b5\u7db1\u30a3\u7e67\u30a6\u7e67\u30a6\u7da2\u5270\u5292\u8b92\u53e5\u30f6\u8373\u4e5f\u961c \u900f\u30e7\u9695\u58f9a\u7da2\u30a3\u30af\u8737\u5e43\u64e0\u873b\u3121\u7db1\u53d6\u753b\u9035\u6ebd\u708a\u7db1\u53d6\u6f14\u9ae2\u4e5d\u3053",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1729023100,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1449200",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.6.47-1-MANJARO",
+    "notes": "A perfect experience on both desktop and the Deck",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1729111835,
+    "title": "",
+    "source": "protondb"
+  }
+]

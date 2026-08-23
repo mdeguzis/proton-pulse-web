@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1599020",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Game ran perfectly at a locked 4K 120",
+    "os": "Bazzite (Steam Gaming Mode)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773014865,
+    "title": "Tinykin",
+    "source": "protondb"
+  }
+]

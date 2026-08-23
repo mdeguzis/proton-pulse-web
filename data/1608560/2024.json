@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1608560",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "Runs perfectly, however I premptively disabled steam input for my transmitter to be picked up.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1707423591,
+    "title": "AI Drone Simulator",
+    "source": "protondb"
+  }
+]

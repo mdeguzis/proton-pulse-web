@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "311690",
+    "cpu": "Intel Core i9-7900X @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.3.0-7642-generic",
+    "notes": "Runs perfectly",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1587498263,
+    "title": "Enter the Gungeon",
+    "source": "protondb"
+  }
+]

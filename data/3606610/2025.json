@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3606610",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.12.42)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.12.42",
+    "notes": "",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "96 GB",
+    "rating": "silver",
+    "timestamp": 1756416075,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3606610",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Arc A750 (DG2)",
+    "gpuDriver": "4.6 Mesa 25.2.1",
+    "kernel": "6.16.4-201.nobara.fc42.x86_64",
+    "notes": "Works flawlessly with SteamVR",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1756927389,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3606610",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.18.1-273-tkg-eevdf",
+    "notes": "Great game, works great with WiVRn, ALVR and Steam Link on the Meta Quest 3. Gameplay: https://youtu.be/GdmSqWDR0ho",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1767206338,
+    "title": "",
+    "source": "protondb"
+  }
+]

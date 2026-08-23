@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2630350",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Haven't really tried going online with this yet (and I generally assume that it won't work). Offline works fine otherwise.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "platinum",
+    "timestamp": 1769862383,
+    "title": "Yatagarasu Enter the Eastward",
+    "source": "protondb"
+  }
+]

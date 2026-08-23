@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3558190",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.2",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "Just doesn't launch even using a rolling distro with a bleeding edge kernel and GE.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1770008202,
+    "title": "",
+    "source": "protondb"
+  }
+]

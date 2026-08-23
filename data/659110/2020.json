@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "659110",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "4.15.0-118-generic",
+    "notes": "Clicking play goes to a  black screen and then crashes",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1601731790,
+    "title": "",
+    "source": "protondb"
+  }
+]

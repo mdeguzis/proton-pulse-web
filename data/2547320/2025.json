@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2547320",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX350",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.0-15-generic",
+    "notes": "Unfortunately, even if the game opens, it does not start and crashes.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1749659862,
+    "title": "",
+    "source": "protondb"
+  }
+]

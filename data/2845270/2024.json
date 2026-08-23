@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2845270",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.5-1ubuntu1",
+    "kernel": "6.8.0-35-generic",
+    "notes": "El juego es simple, lo que no note fallas o problemas de rendimiento",
+    "os": "Ubuntu 24.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1718504771,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2845270",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 200 (tonga, LLVM 15.0.7, DRM 3.54, 6.5.0-44-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1",
+    "kernel": "6.5.0-44-generic",
+    "notes": "",
+    "os": "Ubuntu 23.10",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1723293408,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2845270",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-arch1-1",
+    "notes": "Works perfectly OotB",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1724987702,
+    "title": "",
+    "source": "protondb"
+  }
+]

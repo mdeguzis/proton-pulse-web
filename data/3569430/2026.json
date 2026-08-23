@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3569430",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.2-arch2-1)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.1",
+    "kernel": "6.18.2-arch2-1",
+    "notes": "Works perfectly OOTB",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767371267,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3569430",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.7, DRM 3.64, 6.17.7-ba22.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.1",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "It just works",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1767914726,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3569430",
+    "cpu": "AMD Ryzen 9 7845HX with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "Just works.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1774955584,
+    "title": "",
+    "source": "protondb"
+  }
+]

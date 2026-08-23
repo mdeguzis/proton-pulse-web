@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1220140",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 13.0.0, DRM 3.35, 5.4.0-104-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.0 - kisak-mesa PPA",
+    "kernel": "5.4.0-104-generic",
+    "notes": "",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1672652558,
+    "title": "Cartel Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "1220140",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.2, DRM 3.47, 5.19.0-23-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.1",
+    "kernel": "5.19.0-23-generic",
+    "notes": "Great tycoon game that is actually decently hard. Love the genre.",
+    "os": "Ubuntu 22.10",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1694101360,
+    "title": "Cartel Tycoon",
+    "source": "protondb"
+  },
+  {
+    "appId": "1220140",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.4-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.1.8-arch1.1",
+    "kernel": "6.5.4-zen2-1-zen",
+    "notes": "It runs flawless out of the box.",
+    "os": "Garuda Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1699632860,
+    "title": "Cartel Tycoon",
+    "source": "protondb"
+  }
+]

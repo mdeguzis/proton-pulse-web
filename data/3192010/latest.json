@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3192010",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.6, DRM 3.49, 6.1.0-37-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-37-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1773010398,
+    "title": "",
+    "source": "protondb"
+  }
+]

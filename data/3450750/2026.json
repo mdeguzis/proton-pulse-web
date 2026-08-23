@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3450750",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.9-1-cachyos",
+    "notes": "Works straight out of the box without tinkering for most users",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779404523,
+    "title": "A Whole Wolfrush",
+    "source": "protondb"
+  }
+]

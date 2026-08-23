@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2214220",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 6.17.7-ba28.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.1",
+    "kernel": "6.17.7-ba28.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1774540240,
+    "title": "",
+    "source": "protondb"
+  }
+]

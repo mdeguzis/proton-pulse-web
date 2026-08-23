@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1766720",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.17.12-300.fc43.x86_64",
+    "notes": "Worked OOTB without issue.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1766533029,
+    "title": "",
+    "source": "protondb"
+  }
+]

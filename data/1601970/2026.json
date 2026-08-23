@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1601970",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, ACO, DRM 3.64, 6.19.12-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch2.2",
+    "kernel": "6.19.12-1-cachyos",
+    "notes": "It works well when forced to use DirectX 12",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1776067605,
+    "title": "Tunguska: The Visitation - Final Cut",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2823810",
+    "cpu": "13th Gen Intel Core i5-1340P",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 24.1.1-arch1.1",
+    "kernel": "6.9.5-arch1-1",
+    "notes": "After attempting to launch the Tilt Demo I simply get a pop-up with the text: \"Fatal error!\" and an OK button.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1718814903,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2823810",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.5-arch1-1",
+    "notes": "Runs fine with Proton GE and gamemoderun",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1719700642,
+    "title": "",
+    "source": "protondb"
+  }
+]

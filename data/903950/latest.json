@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "903950",
+    "cpu": "AMD Ryzen 7 9850X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1772873516,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1772894396,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "903950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "EAC Works now. Game is playable. Using Loseless Scaling performance can be significantly improved check out my full review for settings.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1779469994,
+    "title": "",
+    "source": "protondb"
+  }
+]

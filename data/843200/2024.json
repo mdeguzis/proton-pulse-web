@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "843200",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD TAHITI (radeonsi, , LLVM 17.0.6, DRM 2.50, 6.9.0-1-MANJARO)",
+    "gpuDriver": "4.5 Mesa 24.0.6-manjaro1.1",
+    "kernel": "6.9.0-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1722318832,
+    "title": "",
+    "source": "protondb"
+  }
+]

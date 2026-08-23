@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1008020",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.0-42-generic",
+    "notes": "Black screen with sound and keyboard input working",
+    "os": "elementary OS 5.1.2 Hera",
+    "protonVersion": "5.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1586100509,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1008020",
+    "cpu": "Intel Core i7-7740X @ 4.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-51-generic",
+    "notes": "Sadly, out of the box if you go ahead and run the game after installing, it will simply get you on to a blank screen.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1589330227,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1008020",
+    "cpu": "Intel Core i7-7740X @ 4.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 440.59",
+    "kernel": "5.3.0-51-generic",
+    "notes": "Sadly, running the game through the Steam launcher and with the latest Proton version 5.0-7 i tested at the time, gets you on a black screen",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-7",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1590013558,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1933650",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.3, DRM 3.52, 6.3.1-2-default)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.1-2-default",
+    "notes": "",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1684185986,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1933650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Very long hangs every time a resource gets loaded",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1698711319,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1933650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Decrypting game resources makes the game extremely smooth.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1699745092,
+    "title": "",
+    "source": "protondb"
+  }
+]

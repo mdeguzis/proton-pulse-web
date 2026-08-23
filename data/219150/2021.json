@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "219150",
+    "cpu": "Intel Core i7-5500U @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.0-25-generic",
+    "notes": "The native linux port of this game works great, but I experienced some heavy frame drops and bugs on proton.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1628289160,
+    "title": "Hotline Miami",
+    "source": "protondb"
+  }
+]

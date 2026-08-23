@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3350240",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-pikaos",
+    "notes": "Window interactions missing, you can't move or minimize the window, game crashes on occasion",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1781359181,
+    "title": "",
+    "source": "protondb"
+  }
+]

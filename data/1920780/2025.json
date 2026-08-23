@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1920780",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 570.124.04",
+    "kernel": "6.12.19-061219-generic",
+    "notes": "Tried the suggested launch options and Proton versions mentioned on this page, as well as several others.  With no tweaks, game launches to unresponsive black screen.  After launch options and Experimental or Hotfix Proton version, it reaches the main menu, but it's super laggy.  Crashes when I start a new game after sitting on the loading screen for a long time.\n\nLaunch options I tried:\nPROTON_USE_WINED3D=1 %command%",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1743625295,
+    "title": "Stray Gods: The Roleplaying Musical",
+    "source": "protondb"
+  },
+  {
+    "appId": "1920780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1758989030,
+    "title": "Stray Gods: The Roleplaying Musical",
+    "source": "protondb"
+  }
+]

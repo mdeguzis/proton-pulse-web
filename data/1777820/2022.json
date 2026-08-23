@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1777820",
+    "cpu": "Intel Core i9-9900K @ 5.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.15.60-1-MANJARO",
+    "notes": "Native version didn't work for me, but it worked without issues with Proton.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1663325631,
+    "title": "",
+    "source": "protondb"
+  }
+]

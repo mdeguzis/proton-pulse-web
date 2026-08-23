@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "456670",
+    "cpu": "Intel Core i7-9700 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.42.0, 5.15.7-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-arch1-1",
+    "notes": "The native build has it's graphics broken after alt+tab, this is fixed using Proton.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1639353205,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1732750",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 13.0.1, DRM 3.44, 5.16.0-5-amd64)",
+    "gpuDriver": "4.6 Mesa 22.0.0",
+    "kernel": "5.16.0-5-amd64",
+    "notes": "Starts up into white screen\n\nSome background music is heard, and then no progress can be made.\n\nNo reaction to user input, nothing seems to work,",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1705009999,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1732750",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.14-300.fc36.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 36 (MATE-Compiz)",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1713735820,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1732750",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Game is capped at 60fps but works fine",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1721386450,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1969870",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.3, DRM 3.49, 5.15.0-58-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.0-devel",
+    "kernel": "5.15.0-58-generic",
+    "notes": "unplayable",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1674060946,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1324150",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.6, DRM 3.49, 6.1.0-32-amd64)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.0-32-amd64",
+    "notes": "Tried every version of Proton. Game doesn't start. Borked.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1755319536,
+    "title": "",
+    "source": "protondb"
+  }
+]

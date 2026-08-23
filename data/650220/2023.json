@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "650220",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.8-arch1-1",
+    "notes": "The game played fine with either experimental or GE.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1684237786,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "650220",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 15.0.7, DRM 3.49, 6.1.31-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.4",
+    "kernel": "6.1.31-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1688996099,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "650220",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.4.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.5",
+    "kernel": "6.4.10-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1692981256,
+    "title": "",
+    "source": "protondb"
+  }
+]

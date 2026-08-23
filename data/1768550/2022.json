@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1768550",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 13.0.1, DRM 3.46, 5.18.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.1",
+    "kernel": "5.18.5-arch1-1",
+    "notes": "Decent game, the graphical issues aren't enough to ruin the experience",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1655625328,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1768550",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.23-76051523-generic",
+    "notes": "",
+    "os": "Freedesktop.org 21.08.10 (Flatpak runtime)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1655800539,
+    "title": "",
+    "source": "protondb"
+  }
+]

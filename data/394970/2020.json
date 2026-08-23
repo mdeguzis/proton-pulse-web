@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "394970",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 7900",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Proton performance is notably worse than native Linux performance.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1597681434,
+    "title": "DEADBOLT",
+    "source": "protondb"
+  }
+]

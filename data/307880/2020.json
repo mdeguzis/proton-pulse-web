@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "307880",
+    "cpu": "Intel Core i5-2500 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.6.3-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-6",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1587215973,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "307880",
+    "cpu": "AMD Ryzen 3 3200U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN2",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.6.13-1-ck-zen",
+    "notes": "Runs great with Proton 5.8 GE. The minor issues observed can be dismissed as a result of being early access.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "30 GB",
+    "rating": "bronze",
+    "timestamp": 1590314321,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "307880",
+    "cpu": "Intel Xeon E3-1240 V2 @ 3.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 450.57",
+    "kernel": "5.7.0-2-amd64",
+    "notes": "",
+    "os": "Freedesktop.org 19.08.12 (Flatpak runtime)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1598708203,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1058650",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 455.23.04",
+    "kernel": "5.8.0-23-generic",
+    "notes": "EasyAntiCheat error on start.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1603310104,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1058650",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.8.0-23-generic",
+    "notes": "EasyAntiCheat breaks the game.",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.13-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1603353357,
+    "title": "",
+    "source": "protondb"
+  }
+]

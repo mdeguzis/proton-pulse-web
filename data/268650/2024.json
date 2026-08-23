@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "268650",
+    "cpu": "AMD Ryzen 5 8500G w/ Radeon 740M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.7, DRM 3.42, 5.15.0-116-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-116-generic",
+    "notes": "Works without noticable error",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1722022750,
+    "title": "",
+    "source": "protondb"
+  }
+]

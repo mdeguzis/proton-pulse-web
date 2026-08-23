@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1379590",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.7-267.current",
+    "notes": "The game is borked for me. \nWhen I try to run it, it immediately complains about a missing exe and all which can be done is closing it. \n\nNote: Validation didn't help. Experimental Proton was auto-chosen as a fallback default (non tinkering)\n\nThe error:\n\"An error occured while launching the game : missing executable /home/<my profile>/.local/share/Steam/steamapps/common/AiM Windowsx86_64/Aim Windowsx86_64/Adventures in Morality An Interactive Case Study.exe\"\n[Close]",
+    "os": "Solus",
+    "protonVersion": "8.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1702932606,
+    "title": "",
+    "source": "protondb"
+  }
+]

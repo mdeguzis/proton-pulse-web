@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2173000",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 18.1.6, DRM 3.57, 6.9.7-200.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.7-200.fc40.x86_64",
+    "notes": "Works fine",
+    "os": "Fedora release 40 (Forty) (64bit)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720163378,
+    "title": "",
+    "source": "protondb"
+  }
+]

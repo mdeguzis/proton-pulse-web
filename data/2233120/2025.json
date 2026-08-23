@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2233120",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.5-1-default)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.13.5-1-default",
+    "notes": "NOT working",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1742032029,
+    "title": "A Quiet Place: The Road Ahead",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "252110",
+    "cpu": "Intel Core i5-4460 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1749570399,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  },
+  {
+    "appId": "252110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "I havent tried coop yet but so far it works pretty much perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1757605213,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  },
+  {
+    "appId": "252110",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.16.10-200.fc42.x86_64",
+    "notes": "Play and Install. Native Game",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1760630473,
+    "title": "Lovers in a Dangerous Spacetime",
+    "source": "protondb"
+  }
+]

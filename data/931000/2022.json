@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "931000",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.16.5-arch1-1",
+    "notes": "Didn't work out of the box but runs pretty well with GE.",
+    "os": "Archcraft",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1644081615,
+    "title": "",
+    "source": "protondb"
+  }
+]

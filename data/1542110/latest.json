@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1542110",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 16.0.6, DRM 3.57, 6.7.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.1-arch1.1",
+    "kernel": "6.7.6-arch1-1",
+    "notes": "Runs good even with raytracing.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1708886602,
+    "title": "Daydream: Forgotten Sorrow",
+    "source": "protondb"
+  }
+]

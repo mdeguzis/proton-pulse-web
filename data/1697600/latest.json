@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1697600",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.9.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.8-arch1.1",
+    "kernel": "6.9.2-arch1-1",
+    "notes": "Works out of the box aswell, have fun playing!",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1721737152,
+    "title": "",
+    "source": "protondb"
+  }
+]

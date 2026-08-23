@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "884260",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.7-arch1-1",
+    "notes": "Overall, a pretty bad native port in its current state. Needs attention from the devs.\nProton version is flawless.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1673468487,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1654660",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Linux Mint 22.3\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1776912640,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1654660",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "gpuDriver": "595.58.03",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "No problem found",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1777478338,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1654660",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 7.0.1-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "7.0.1-200.nobara.fc43.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1777717820,
+    "title": "",
+    "source": "protondb"
+  }
+]

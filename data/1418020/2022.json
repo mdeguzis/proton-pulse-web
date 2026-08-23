@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1418020",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 515.43.04",
+    "kernel": "5.15.41-1-lts",
+    "notes": "Error on launch\n\"Failed to initialize graphics.\nMake sure you have DirectX 11 installed, have up to date\ndrivers for your graphics card and have not disabled\n3D acceleration in display settings.\nInitializeEngineGraphics failed\"\n\nTried experimental, 7.0-2, and 6.3-8 versions of Proton.",
+    "os": "Garuda Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1653949228,
+    "title": "",
+    "source": "protondb"
+  }
+]

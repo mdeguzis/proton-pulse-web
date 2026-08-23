@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "710600",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, phoenix, LLVM 20.1.8, DRM 3.64, 6.16.8-2-cachyos-deckify)",
+    "gpuDriver": "4.6 Mesa 25.2.3-cachyos1.3",
+    "kernel": "6.16.8-2-cachyos-deckify",
+    "notes": "El juego est\u00e1 roto sin importar la versi\u00f3n de proton que se utilice",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1759192241,
+    "title": "Red Bow",
+    "source": "protondb"
+  }
+]

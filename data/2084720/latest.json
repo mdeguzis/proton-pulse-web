@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2084720",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319~dev",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1762662560,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1193040",
+    "cpu": "Intel Core i3-6006U @ 2.00GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 520 (Skylake GT2)",
+    "gpuDriver": "3.0 Mesa 19.2.2",
+    "kernel": "5.3.7-2-MANJARO",
+    "notes": "Doesn't even launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-12",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1581092364,
+    "title": "",
+    "source": "protondb"
+  }
+]

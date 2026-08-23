@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2740080",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800M (radeonsi, navi22, LLVM 18.1.8, DRM 3.59, 6.12.10)",
+    "gpuDriver": "4.6 Mesa 24.2.8",
+    "kernel": "6.12.10",
+    "notes": "Still far from perfect, but patch v1.01.03 brings welcome changes for Linux. It's not great but not terrible either.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1739178079,
+    "title": "Strategic Command WWII: War in the Pacific",
+    "source": "protondb"
+  },
+  {
+    "appId": "2740080",
+    "cpu": "Intel Core i5-8600 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.2 - kisak-mesa PPA",
+    "kernel": "6.8.0-51-generic",
+    "notes": "I asked for a refund as promised better Linux support by developer feels still bad.",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1745269219,
+    "title": "Strategic Command WWII: War in the Pacific",
+    "source": "protondb"
+  },
+  {
+    "appId": "2740080",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800M (radeonsi, navi22, LLVM 19.1.7, DRM 3.64, 6.16.7)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.16.7",
+    "notes": "With the latest fix I describe here, the game is in its best state yet.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1763935881,
+    "title": "Strategic Command WWII: War in the Pacific",
+    "source": "protondb"
+  }
+]

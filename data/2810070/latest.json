@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2810070",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.61, 6.14.0-37-generic)",
+    "gpuDriver": "4.6 Mesa 25.3.3 - kisak-mesa PPA",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1769331300,
+    "title": "",
+    "source": "protondb"
+  }
+]

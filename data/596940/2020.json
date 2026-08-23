@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "596940",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "underOneHour",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-40-generic",
+    "notes": "The game freeze after click on \"Search\" button.",
+    "os": "Ubuntu 20.04 LTS (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1593973518,
+    "title": "",
+    "source": "protondb"
+  }
+]

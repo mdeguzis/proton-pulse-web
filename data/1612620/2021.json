@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1612620",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.13-arch1-1",
+    "notes": "Works out of the box for me with the latest non-experimental proton (6.3-6)\nLiterally flawless",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631447321,
+    "title": "Never Return",
+    "source": "protondb"
+  },
+  {
+    "appId": "1612620",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 470.62.02",
+    "kernel": "5.10.63-1-MANJARO",
+    "notes": "Works perfectly",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1631968823,
+    "title": "Never Return",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "339720",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.4 (git-8b0202e4b4)",
+    "kernel": "6.4.12-arch1-1",
+    "notes": "Funktioniert einwandfrei!",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1693417336,
+    "title": "",
+    "source": "protondb"
+  }
+]

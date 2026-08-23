@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2237970",
+    "cpu": "AMD Ryzen 9 3900XT 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.7, DRM 3.42, 5.15.0-112-generic)",
+    "gpuDriver": "4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "5.15.0-112-generic",
+    "notes": "Working as intended",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1718975203,
+    "title": "Outpath",
+    "source": "protondb"
+  },
+  {
+    "appId": "2237970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works great out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1731056135,
+    "title": "Outpath",
+    "source": "protondb"
+  },
+  {
+    "appId": "2237970",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 19.1.5, DRM 3.49, 6.1.0-28-amd64)",
+    "gpuDriver": "4.6 Mesa 24.3.1 (git-c815d651b8)",
+    "kernel": "6.1.0-28-amd64",
+    "notes": "Works perfect!",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1734977163,
+    "title": "Outpath",
+    "source": "protondb"
+  }
+]

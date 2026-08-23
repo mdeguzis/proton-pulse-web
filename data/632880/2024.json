@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "632880",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "ATI Technologies Inc. AMD Radeon RX 6700 XT",
+    "gpuDriver": "4.6.0 Compatibility Profile Context .230706",
+    "kernel": "6.5.0-41-generic",
+    "notes": "Ran great out of box.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1722199710,
+    "title": "",
+    "source": "protondb"
+  }
+]

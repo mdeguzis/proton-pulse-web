@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "236090",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel (git-2cb9e3b 2020-12-17 focal-oibaf-ppa)",
+    "kernel": "5.4.0-58-generic",
+    "notes": "can not play on Linux native version. no se puede jugar en version nativa e Linux",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1608346111,
+    "title": "",
+    "source": "protondb"
+  }
+]

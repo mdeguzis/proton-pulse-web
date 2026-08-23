@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "370480",
+    "cpu": "Intel Core i5-10600KF @ 4.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.13.0-30-generic",
+    "notes": "Works perfectly",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1646138677,
+    "title": "Pixel Galaxy",
+    "source": "protondb"
+  }
+]

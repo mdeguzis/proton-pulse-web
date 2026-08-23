@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1446650",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX550/550 (POLARIS12, DRM 3.42.0, 5.15.29-0-lts, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.6 (git-fef2cdb0a5)",
+    "kernel": "5.15.29-0-lts",
+    "notes": "",
+    "os": "Freedesktop.org 21.08.11 (Flatpak runtime)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1647804566,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1446650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "BD2 runs really well by default on Steam Deck and is worth your attention!",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1658111292,
+    "title": "",
+    "source": "protondb"
+  }
+]

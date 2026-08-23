@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "565690",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.12-arch1-1",
+    "notes": "Game boots up to the menu, but none of the options is visible",
+    "os": "ArcoLinux",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1639649106,
+    "title": "",
+    "source": "protondb"
+  }
+]

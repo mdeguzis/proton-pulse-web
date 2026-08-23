@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1141120",
+    "cpu": "Intel Core i5-6300HQ @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960M",
+    "gpuDriver": "NVIDIA 510.85.02",
+    "kernel": "5.15.59-gentoo-dist",
+    "notes": "Runs like native.",
+    "os": "Gentoo Base System release 2.8",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1665245240,
+    "title": "",
+    "source": "protondb"
+  }
+]

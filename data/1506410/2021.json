@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1506410",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (DRM 3.40.0, 5.11.6-137-tkg-bmq, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 20.3.4",
+    "kernel": "5.11.6-137-tkg-bmq",
+    "notes": "Game works OK, the controls are wonky though. Valve Index.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1619233048,
+    "title": "",
+    "source": "protondb"
+  }
+]

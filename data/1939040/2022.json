@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1939040",
+    "cpu": "AMD Ryzen 7 PRO 5850U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (LLVM 14.0.6, DRM 3.47, 5.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.8-arch1-1",
+    "notes": "Log shows a bunch of what appears to be CPU exceptions",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "47 GB",
+    "rating": "borked",
+    "timestamp": 1664933159,
+    "title": "",
+    "source": "protondb"
+  }
+]

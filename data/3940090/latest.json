@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3940090",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.17.0-4-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.4-cachyos1.2",
+    "kernel": "6.17.0-4-cachyos",
+    "notes": "Played the Demo with Cachy Proton. Worked perfect OOTB",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1760470529,
+    "title": "",
+    "source": "protondb"
+  }
+]

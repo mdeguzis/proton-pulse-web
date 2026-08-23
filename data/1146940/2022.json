@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1146940",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.10.0-11-amd64",
+    "notes": "Works perfectly with Proton Experimental",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1645636152,
+    "title": "I will eat you",
+    "source": "protondb"
+  }
+]

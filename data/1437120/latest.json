@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1437120",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.2, DRM 3.61, 6.14.0-32-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.14.0-32-generic",
+    "notes": "Doesn`t start",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1759238717,
+    "title": "",
+    "source": "protondb"
+  }
+]

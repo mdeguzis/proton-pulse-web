@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "509610",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.2-arch1-1",
+    "notes": "Sound play, black screen",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1666161952,
+    "title": "",
+    "source": "protondb"
+  }
+]

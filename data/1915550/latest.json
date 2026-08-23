@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1915550",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.2-artix2-1)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.18.2-artix2-1",
+    "notes": "GE-Proton10-4 has the best game experience (at the moment)",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1769882945,
+    "title": "Nemesis: Lockdown",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "583950",
+    "cpu": "AMD Phenom II X4 965",
+    "duration": "unreported",
+    "gpu": "AMD BARTS",
+    "gpuDriver": "3.1 Mesa 21.2.6",
+    "kernel": "5.15.0-67-generic",
+    "notes": "Proton: 1603141982 proton-5.0-10b\n\nProton log: https://www.dropbox.com/s/1imu5hx60mdc448/steam-583950%20%28crash%20after%2030%20seconds%29.7z?dl=0",
+    "os": "Ubuntu 20.04.5 LTS",
+    "protonVersion": "5.0-10",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1680019833,
+    "title": "",
+    "source": "protondb"
+  }
+]

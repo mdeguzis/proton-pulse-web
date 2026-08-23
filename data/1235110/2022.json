@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1235110",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-301.fsync.fc36.x86_64",
+    "notes": "It works fine.",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1656909568,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1105460",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 460.80",
+    "kernel": "5.4.0-73-generic",
+    "notes": "Requires proton/winetricks dotnet40 to run. Need to force Proton because it thinks it's native. Hard to navigate menu; mostly invisible.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1621505100,
+    "title": "",
+    "source": "protondb"
+  }
+]

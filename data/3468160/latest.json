@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3468160",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX330",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Click play - Looks like you are the ball . tutorial button -  Nothing happens. settings after a game - reverts to default",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1772346040,
+    "title": "Soccer Field Pro 3D",
+    "source": "protondb"
+  },
+  {
+    "appId": "3468160",
+    "cpu": "Intel Core i5-1035G1 @ 1.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX330",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.17.0-14-generic",
+    "notes": "press play - looks like you are ball and player not visible. press tutorial button - nothing",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1772351185,
+    "title": "Soccer Field Pro 3D",
+    "source": "protondb"
+  }
+]

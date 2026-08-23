@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1541020",
+    "cpu": "Intel",
+    "duration": "unreported",
+    "gpu": "Nvidia Geforce 1050 Ti",
+    "gpuDriver": "525.105.17",
+    "kernel": "5.19.0-41-generic",
+    "notes": "Even if i've tried all the proton fixes, none of them worked. However the game work flawless if you download it from their website.",
+    "os": "Elementary os 7",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1683225967,
+    "title": "Kakele Online - MMORPG",
+    "source": "protondb"
+  }
+]

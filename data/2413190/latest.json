@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2413190",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "gpuDriver": "NVIDIA 550.144.03",
+    "kernel": "6.12.4-1-MANJARO",
+    "notes": "Game plays smoothly with occasional crashes only observed when turning in a job, but progress is not lost.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1737401262,
+    "title": "",
+    "source": "protondb"
+  }
+]

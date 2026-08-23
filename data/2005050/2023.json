@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2005050",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.5.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.5.7-arch1-1",
+    "notes": "Working perfectly with vive trackers",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1697977499,
+    "title": "Dance Dash",
+    "source": "protondb"
+  }
+]

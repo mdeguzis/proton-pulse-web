@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2377420",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 14.0.0, DRM 3.48, 6.0.12-76060006-generic)",
+    "gpuDriver": "4.6 Mesa 22.2.0",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "Would not launch consistantly on proton experimental. Switched to proton 6.3-8 and now its working.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1692604855,
+    "title": "Eris Dysnomia",
+    "source": "protondb"
+  },
+  {
+    "appId": "2377420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "works perfectly",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1693132473,
+    "title": "Eris Dysnomia",
+    "source": "protondb"
+  },
+  {
+    "appId": "2377420",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "aside from resolution fix, the game works perfectly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1698548343,
+    "title": "Eris Dysnomia",
+    "source": "protondb"
+  }
+]

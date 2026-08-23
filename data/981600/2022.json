@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "981600",
+    "cpu": "Intel Core i7       M 640  @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "AMD REDWOOD",
+    "gpuDriver": "3.0 Mesa 18.0.5",
+    "kernel": "4.15.0-133-generic",
+    "notes": "Eternium in Proton 4.2",
+    "os": "Linux Mint 18.3 Sylvia (64 \u4f4d\u5143)",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1641663163,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "981600",
+    "cpu": "Intel Pentium G3260 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R7 300 (bonaire, LLVM 13.0.1, DRM 3.44, 5.16.0-12.1-liquorix-amd64)",
+    "gpuDriver": "4.6 Mesa 22.1.0-devel (git-aaa25cd 2022-03-04 focal-oibaf-ppa)",
+    "kernel": "5.16.0-12.1-liquorix-amd64",
+    "notes": "Depends if they like this particular game genre.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1646430962,
+    "title": "",
+    "source": "protondb"
+  }
+]

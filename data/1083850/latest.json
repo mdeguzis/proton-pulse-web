@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1083850",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 780",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-70-generic",
+    "notes": "Steam says it launches, then nothing happens.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1577462621,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "402530",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 15.0.7, DRM 3.49, 6.2.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "Works out of the box, no tinkering!",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1680139800,
+    "title": "",
+    "source": "protondb"
+  }
+]

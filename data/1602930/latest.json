@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1602930",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 16.0.6, DRM 3.54, 6.6.8-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.6.8-2-MANJARO",
+    "notes": "Runs fine out of the Box",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1703283177,
+    "title": "Pedro's Adventures in Spanish [Learn Spanish]",
+    "source": "protondb"
+  }
+]

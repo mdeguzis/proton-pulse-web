@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1958020",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.9.12-x64v3-xanmod1",
+    "notes": "Technically, the native Linux port works. However, if you want to play with the controller, you need to run it under Proton.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1722294485,
+    "title": "",
+    "source": "protondb"
+  }
+]

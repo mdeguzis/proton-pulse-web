@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1714580",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.8-2-cachyos",
+    "notes": "Works out of the box",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1751895308,
+    "title": "",
+    "source": "protondb"
+  }
+]

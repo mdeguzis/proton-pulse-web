@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1710740",
+    "cpu": "Intel Core i5-14600K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.6-102.bazzite.fc42.x86_64",
+    "notes": "ill try again later but i can not get it to work.",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766088688,
+    "title": "",
+    "source": "protondb"
+  }
+]

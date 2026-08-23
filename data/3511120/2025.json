@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3511120",
+    "cpu": "13th Gen Intel Core i7-13700F",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.15.4-100.fc41.x86_64",
+    "notes": "Fedora 41\nProton 9.0-4",
+    "os": "Fedora Linux 41 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752265816,
+    "title": "Lost Lands X",
+    "source": "protondb"
+  }
+]

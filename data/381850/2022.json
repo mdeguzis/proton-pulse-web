@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "381850",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.25-1-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.15.25-1-MANJARO",
+    "notes": "Game plays but limited to small window.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1659664343,
+    "title": "My Paper Boat",
+    "source": "protondb"
+  }
+]

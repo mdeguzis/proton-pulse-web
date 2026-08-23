@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1066430",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.57, 6.8.0-76060800daily20240311-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "works ootb",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725725502,
+    "title": "Kwaidan \uff5eAzuma manor story\uff5e",
+    "source": "protondb"
+  }
+]

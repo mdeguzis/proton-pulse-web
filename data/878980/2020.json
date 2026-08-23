@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "878980",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 450.51",
+    "kernel": "5.7.8",
+    "notes": "Working perfectly out of the box.",
+    "os": "NixOS 20.09 (Nightingale)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1595092714,
+    "title": "",
+    "source": "protondb"
+  }
+]

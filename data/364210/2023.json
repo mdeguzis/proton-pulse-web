@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "364210",
+    "cpu": "Intel Core i7-10870H @ 2.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.3",
+    "kernel": "6.1.4-arch1-1.1",
+    "notes": "Frequent crashes",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1674099533,
+    "title": "",
+    "source": "protondb"
+  }
+]

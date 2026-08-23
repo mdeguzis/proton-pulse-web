@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2772560",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.56, 6.7.0-201.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.7.0-201.fsync.fc39.x86_64",
+    "notes": "Works perfectly",
+    "os": "Nobara Linux 39 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1710628931,
+    "title": "",
+    "source": "protondb"
+  }
+]

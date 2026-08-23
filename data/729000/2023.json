@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "729000",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.8.0-63-generic",
+    "notes": "Perfect out of the box",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1678229675,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "729000",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.6-arch1-1",
+    "notes": "It took me a bit to realize that the bottom right white animation on the black screen is actually supposed to animate, since it changed a bit after a minute.\n\nSurprised by nobody else having this issue when ti's the only game that does for me. Also tried with different Proton versions.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1699121740,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "729000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1702191563,
+    "title": "",
+    "source": "protondb"
+  }
+]

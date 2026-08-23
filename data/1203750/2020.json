@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1203750",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII (VEGA20, DRM 3.35.0, 5.4.67-86-tkg-pds, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.0-devel (git-a3543adc26)",
+    "kernel": "5.4.67-86-tkg-pds",
+    "notes": "Unplayable. Very buggy.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-10 RC3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1601564956,
+    "title": "",
+    "source": "protondb"
+  }
+]

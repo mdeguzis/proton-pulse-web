@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1259640",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 14.0.6, DRM 3.48, 6.0.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.12-arch1-1",
+    "notes": "with proton by default it still don't work",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1682534572,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1259640",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 14.0.6, DRM 3.48, 6.0.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.12-arch1-1",
+    "notes": "flawless work on latest GE (53)",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1682534714,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1259640",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 14.0.6, DRM 3.48, 6.0.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.12-arch1-1",
+    "notes": "on Proton 8.0-1 game can run but with fps cap on 16 for some reason",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1682534823,
+    "title": "",
+    "source": "protondb"
+  }
+]

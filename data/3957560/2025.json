@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3957560",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.16.8-2-cachyos",
+    "notes": "Currently, the FPS is too unstable, the GPU is loaded at 99% and the CPU at 90% with no background tasks.",
+    "os": "CachyOS (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1758961851,
+    "title": "",
+    "source": "protondb"
+  }
+]

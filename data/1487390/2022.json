@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1487390",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel NVIDIA GeForce RTX 2070 Mobile / Max-Q Refresh",
+    "gpuDriver": "510.54 (11.510.54)",
+    "kernel": "5.16.15-arch1-1",
+    "notes": "",
+    "os": "Archcraft",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1647945098,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1487390",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6900 XT (sienna_cichlid, LLVM 14.0.6, DRM 3.42, 5.15.57-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.1.4",
+    "kernel": "5.15.57-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1659911955,
+    "title": "",
+    "source": "protondb"
+  }
+]

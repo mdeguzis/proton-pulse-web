@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1356240",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD CEDAR",
+    "gpuDriver": "3.1 Mesa 20.0.8",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "Game crashes whilst playing",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1609060533,
+    "title": "",
+    "source": "protondb"
+  }
+]

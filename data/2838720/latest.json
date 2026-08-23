@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2838720",
+    "cpu": "AMD Ryzen 9 8945H w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "Nvidia RXT 4060 Max-Q, Mesa llvmpipe (LLVM 18.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.2.7-arch1.1",
+    "kernel": "6.11.5-arch1-1.1-g14",
+    "notes": "Perfect gameplay out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1734884764,
+    "title": "",
+    "source": "protondb"
+  }
+]

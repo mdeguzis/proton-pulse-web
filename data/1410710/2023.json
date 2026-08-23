@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1410710",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 15.0.7, DRM 3.49, 6.2.6-1-default)",
+    "gpuDriver": "4.6 Mesa 23.0.0",
+    "kernel": "6.2.6-1-default",
+    "notes": "Whitescreens on main menu in Proton 7 and GE, crashes immediatly on Proton 6 and before. No obvious errors in Log output. Tried disabling ESYNC, FSYNC and certain D3D versions, nothing worked.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1679158705,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1410710",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 12.0.1, DRM 3.49, 6.1.15_1)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.1.15_1",
+    "notes": "crashes before starting",
+    "os": "Void Linux",
+    "protonVersion": "8.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1685392015,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1410710",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "Mesa llvmpipe (LLVM 16.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.1.7-arch1.1",
+    "kernel": "6.5.3-arch1-1",
+    "notes": "Feels bad... Tried multiple proton versions including GE, 8, 7, 6, 5. None work with error of \"Failed to Initilise 3D Engine <PATH>\\app_game_cpp 406\"",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1696378624,
+    "title": "",
+    "source": "protondb"
+  }
+]

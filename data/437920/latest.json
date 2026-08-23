@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "437920",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-90-generic",
+    "notes": "You need to force proton because the native Linux version seems to be broken (blackscreen)",
+    "os": "Linux Lite 7.6",
+    "protonVersion": "10.0-3",
+    "ram": "94 GB",
+    "rating": "platinum",
+    "timestamp": 1770583189,
+    "title": "Tricky Towers",
+    "source": "protondb"
+  },
+  {
+    "appId": "437920",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.12.48-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771030001,
+    "title": "Tricky Towers",
+    "source": "protondb"
+  },
+  {
+    "appId": "437920",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.6-200.fc39.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773472630,
+    "title": "Tricky Towers",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1218740",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "4.15.0-96-generic",
+    "notes": "Game Does Not Launch",
+    "os": "Linux Mint 19 Tara",
+    "protonVersion": "5.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1587748799,
+    "title": "Rakion Chaos Force",
+    "source": "protondb"
+  },
+  {
+    "appId": "1218740",
+    "cpu": "Intel Core i5-3317U @ 1.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 630M",
+    "gpuDriver": "NVIDIA 390.132",
+    "kernel": "5.6.12-1-MANJARO",
+    "notes": "The xigncode3 anti-cheat didnt start. Seems to be the reason the game closes. If  it werent for the anti-cheat im pretty sure it work.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1590346345,
+    "title": "Rakion Chaos Force",
+    "source": "protondb"
+  }
+]

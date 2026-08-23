@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1272580",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 530 (SKL GT2)",
+    "gpuDriver": "3.0 Mesa 20.2.4",
+    "kernel": "5.4.72-gentoo",
+    "notes": "The game is complaining about missing media player and throws an exception",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1611591742,
+    "title": "Nine Witches: Family Disruption",
+    "source": "protondb"
+  },
+  {
+    "appId": "1272580",
+    "cpu": "Intel Core i7-4600U @ 2.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.1",
+    "kernel": "5.9.14-arch1-1",
+    "notes": "Opens up a window that doesn't show really anything. After a while does not show any error and the window just shuts down.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1611748663,
+    "title": "Nine Witches: Family Disruption",
+    "source": "protondb"
+  }
+]

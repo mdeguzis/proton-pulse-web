@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "219680",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-70-generic",
+    "notes": "Tried both with native and windows versions with proton 6.3-4, poor and jittery framerate despite an i9 and Radeon VII",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1621982562,
+    "title": "Proteus",
+    "source": "protondb"
+  }
+]

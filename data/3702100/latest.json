@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3702100",
+    "cpu": "AMD Ryzen Threadripper PRO 5955WX 16-Cores",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.17.0-6-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.3-1ubuntu1",
+    "kernel": "6.17.0-6-generic",
+    "notes": "Really need to find out why the audio is not operational though - tried several SDL_AUDIODRIVER options",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1764076244,
+    "title": "",
+    "source": "protondb"
+  }
+]

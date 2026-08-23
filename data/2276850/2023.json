@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2276850",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 560 (polaris11, LLVM 16.0.1, DRM 3.49, 6.2.14-300.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.14-300.fc38.x86_64",
+    "notes": "Runs fine, I have slow gpu so can't comment much on performance",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "8.0-2",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1684123404,
+    "title": "",
+    "source": "protondb"
+  }
+]

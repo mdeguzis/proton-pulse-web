@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1683310",
+    "cpu": "AMD Ryzen 5 2500U with Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 8 (raven, LLVM 13.0.1, DRM 3.42, 5.15.0-48-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-48-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "7 GB",
+    "rating": "platinum",
+    "timestamp": 1664987648,
+    "title": "Heartbeat: Regret",
+    "source": "protondb"
+  }
+]

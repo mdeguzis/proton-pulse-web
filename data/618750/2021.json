@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "618750",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.15.0-1-MANJARO",
+    "notes": "Seems to run, small window game, but can be full screened with Alt+Enter",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1636836150,
+    "title": "",
+    "source": "protondb"
+  }
+]

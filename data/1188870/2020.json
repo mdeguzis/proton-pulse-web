@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1188870",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.0.4",
+    "kernel": "5.4.0-37-generic",
+    "notes": "The Demo runs out of the Box!",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592379078,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1188870",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.0-3-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1592496788,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2420240",
+    "cpu": "Intel Xeon E5-2650 v4 @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 20.1.2, DRM 3.57, 6.8.0-88-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.7-0ubuntu0.24.04.2",
+    "kernel": "6.8.0-88-generic",
+    "notes": "",
+    "os": "Linux Mint 22.2",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1765334360,
+    "title": "",
+    "source": "protondb"
+  }
+]

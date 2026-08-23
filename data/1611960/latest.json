@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1611960",
+    "cpu": "AMD Ryzen 7 5700U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.57, 6.9.7-amd64)",
+    "gpuDriver": "4.6 Mesa 24.1.2-1",
+    "kernel": "6.9.7-amd64",
+    "notes": "It says it starts, and you can see the process running in Linux, but nothing is displayed on the screen (as if it never actually executed)",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1728432806,
+    "title": "Doomed Lands",
+    "source": "protondb"
+  },
+  {
+    "appId": "1611960",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.9.3-arch1-1",
+    "notes": "Tried proton stable, GE and experimental. Nothing works.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1731641964,
+    "title": "Doomed Lands",
+    "source": "protondb"
+  },
+  {
+    "appId": "1611960",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Wont even start.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1731715794,
+    "title": "Doomed Lands",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "762840",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.1-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1614719832,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "762840",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.9.11-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1614885279,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "762840",
+    "cpu": "AMD A10-7890K Radeon R7, 12 Compute Cores 4C+8G",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.4.0-66-generic",
+    "notes": "Played fine after buggy first launch.",
+    "os": "KDE neon User Edition 5.21",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1615014682,
+    "title": "",
+    "source": "protondb"
+  }
+]

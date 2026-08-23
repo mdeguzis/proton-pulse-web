@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "770100",
+    "cpu": "Intel Core i7-5650U @ 2.20GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 6000 (BDW GT3)",
+    "gpuDriver": "4.6 Mesa 26.0.0-1",
+    "kernel": "6.18.15+deb14-amd64",
+    "notes": "native version runs perfectly",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1773363836,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1294880",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (TGL GT1)",
+    "gpuDriver": "4.6 Mesa 24.0.4-arch1.2",
+    "kernel": "6.8.4-arch1-1",
+    "notes": "Works perfect with native Proton",
+    "os": "EndeavourOS Linux (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1712780582,
+    "title": "",
+    "source": "protondb"
+  }
+]

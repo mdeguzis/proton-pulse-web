@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2895440",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9060 XT (radeonsi, gfx1200, ACO, DRM 3.64, 6.19.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch1.1",
+    "kernel": "6.19.9-arch1-1",
+    "notes": "Ran fine with default settings",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1774386751,
+    "title": "Following Seas",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3211850",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.14.0-37-generic",
+    "notes": "",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1769869983,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3211850",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.2",
+    "kernel": "6.18.2-2-cachyos",
+    "notes": "Works flawlessly out the box!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770078268,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3211850",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1775499947,
+    "title": "",
+    "source": "protondb"
+  }
+]

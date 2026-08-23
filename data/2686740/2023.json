@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2686740",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.1.9",
+    "kernel": "6.5.9-200.fc38.x86_64",
+    "notes": "Works well enough, the slowness issues could be sorted with some tinkering.",
+    "os": "Fedora release 38 (Thirty Eight)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1702220202,
+    "title": "",
+    "source": "protondb"
+  }
+]

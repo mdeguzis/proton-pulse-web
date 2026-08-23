@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2355860",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.6-200.fc40.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1746904414,
+    "title": "Eggstraction",
+    "source": "protondb"
+  }
+]

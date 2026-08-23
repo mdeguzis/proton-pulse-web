@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1353950",
+    "cpu": "AMD Ryzen 7 8845HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 20.1.2, DRM 3.57, 6.8.0-117-lowlatency)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-117-lowlatency",
+    "notes": "Didn't find a way for the game not to freeze the computer after some seconds of play",
+    "os": "Slimbook OS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1779409268,
+    "title": "Ring of Fire: Prologue",
+    "source": "protondb"
+  }
+]

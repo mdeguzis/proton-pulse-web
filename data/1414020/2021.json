@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1414020",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-51-generic",
+    "notes": "The game worked immediately following the install. The game is Windows only and I ran it using Proton Experimental",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1609533490,
+    "title": "",
+    "source": "protondb"
+  }
+]

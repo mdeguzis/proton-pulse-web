@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2300160",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "5.15.0-100-generic",
+    "notes": "The game works fine for a while, but the FPS drops which occur after a while makes it unplayable, necessitating a reset of the mission.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1710048435,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2300160",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works out of the box, no issues whatsoever.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1724241081,
+    "title": "",
+    "source": "protondb"
+  }
+]

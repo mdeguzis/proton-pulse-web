@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "73190",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.15.19, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.5",
+    "kernel": "5.15.19",
+    "notes": "Sadly unplayable",
+    "os": "Slackware64",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1669568266,
+    "title": "Pride of Nations",
+    "source": "protondb"
+  }
+]

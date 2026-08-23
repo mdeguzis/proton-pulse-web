@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1552500",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.7, DRM 3.61, 6.13.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.6-arch1-1",
+    "notes": "Works fine, as far as I've seen. Enjoyable to play.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1741788979,
+    "title": "Slimekeep",
+    "source": "protondb"
+  }
+]

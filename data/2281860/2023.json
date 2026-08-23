@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2281860",
+    "cpu": "Intel Core i5-8300H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "6.1.11-200.fc37.x86_64",
+    "notes": "Good game, steam support is missing. Play on browser",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1677500542,
+    "title": "",
+    "source": "protondb"
+  }
+]

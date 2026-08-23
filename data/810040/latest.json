@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "810040",
+    "cpu": "AMD Ryzen 7 8700G w/ Radeon 780M Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.1-5-cachyos",
+    "notes": "Crashes when trying to start the game from the menu.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1749793119,
+    "title": "Swords 'n Magic and Stuff",
+    "source": "protondb"
+  },
+  {
+    "appId": "810040",
+    "cpu": "AMD Ryzen 7 8700G w/ Radeon 780M Graphics",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.15.1-5-cachyos",
+    "notes": "It just runs smoothly. Tried it for about 15 minutes so far, though.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1751234075,
+    "title": "Swords 'n Magic and Stuff",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "654100",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.5.3-chos1-chimeraos-1)",
+    "gpuDriver": "4.6 Mesa",
+    "kernel": "6.5.3-chos1-chimeraos-1",
+    "notes": "Works perfectly fine",
+    "os": "ChimeraOS 44 (c3670dd)",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1696281191,
+    "title": "",
+    "source": "protondb"
+  }
+]

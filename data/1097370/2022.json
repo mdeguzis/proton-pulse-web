@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1097370",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 13.0.1, DRM 3.46, 5.18.1-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 22.1.0",
+    "kernel": "5.18.1-zen1-1-zen",
+    "notes": "Game does start up and audio plays but the screen stays black.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1654350587,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1097370",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.14-arch1-1",
+    "notes": "Running with Proton 6.1-GE-2 made it worse: the game wants you to install through Steam.",
+    "os": "Archcraft",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1659113452,
+    "title": "",
+    "source": "protondb"
+  }
+]

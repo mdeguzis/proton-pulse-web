@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1421490",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.6-1-default",
+    "notes": "It works perfectly out of the box but needs tinkering to use your GPU on Nvidia Prime laptops.",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1690910182,
+    "title": "Rise of the Triad: Ludicrous Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1421490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs great out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1690918220,
+    "title": "Rise of the Triad: Ludicrous Edition",
+    "source": "protondb"
+  },
+  {
+    "appId": "1421490",
+    "cpu": "11th Gen Intel Core i5-1135G7 @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.19.0-41-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1690928550,
+    "title": "Rise of the Triad: Ludicrous Edition",
+    "source": "protondb"
+  }
+]

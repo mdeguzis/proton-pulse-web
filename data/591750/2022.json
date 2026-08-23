@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "591750",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 13.0.1, DRM 3.44, 5.17.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.0.2",
+    "kernel": "5.17.5-arch1-1",
+    "notes": "Everything works except the sound.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1651255861,
+    "title": "",
+    "source": "protondb"
+  }
+]

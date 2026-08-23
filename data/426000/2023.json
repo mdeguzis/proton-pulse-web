@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "426000",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.9-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1688183943,
+    "title": "HunieCam Studio",
+    "source": "protondb"
+  },
+  {
+    "appId": "426000",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.9-arch1-1",
+    "notes": "The game itself is perfectly stable once you have it running; startup and windowing have some issues, though.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "63 GB",
+    "rating": "silver",
+    "timestamp": 1688185761,
+    "title": "HunieCam Studio",
+    "source": "protondb"
+  }
+]

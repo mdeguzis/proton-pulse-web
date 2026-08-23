@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "893050",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-25-lowlatency",
+    "notes": "Single player works great, and online play is good so long as you get in quick.",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627604440,
+    "title": "",
+    "source": "protondb"
+  }
+]

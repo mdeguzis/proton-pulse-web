@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "310360",
+    "cpu": "Intel Core i7-4510U @ 2.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-25-generic",
+    "notes": "Native version caused system slowdowns. Proton version works flawlessly, and 07h mod works too.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628238061,
+    "title": "",
+    "source": "protondb"
+  }
+]

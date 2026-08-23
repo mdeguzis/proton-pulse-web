@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3748690",
+    "cpu": "Intel Core Ultra 7 155H",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc (MTL)",
+    "gpuDriver": "4.6 Mesa 25.1.5-1pop0~1753463422~24.04~8af185e",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1768090393,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3748690",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "just works",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1768408544,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3748690",
+    "cpu": "Intel Core i5-14600KF",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.18.9-zen1-2-zen)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.18.9-zen1-2-zen",
+    "notes": "Works 100% fine out of box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771844334,
+    "title": "",
+    "source": "protondb"
+  }
+]

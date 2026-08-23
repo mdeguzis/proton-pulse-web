@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2113900",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.7-200.nobara.fc41.x86_64",
+    "notes": "Works out of the box, but GE-Proton gives it a small performance boost",
+    "os": "Nobara Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1743225092,
+    "title": "",
+    "source": "protondb"
+  }
+]

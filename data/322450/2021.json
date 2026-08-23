@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "322450",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.42.0, 5.14.9-zen2-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.14.9-zen2-1-zen",
+    "notes": "Native works, proton does not.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1633430502,
+    "title": "",
+    "source": "protondb"
+  }
+]

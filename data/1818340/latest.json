@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1818340",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 19.1.7, DRM 3.63, 6.15.1)",
+    "gpuDriver": "4.6 Mesa 25.0.7",
+    "kernel": "6.15.1",
+    "notes": "Doesn't work. I tried most of the proton versions steam offers for both 1, 1 alternative launcher, and 2.",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1772733931,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1818340",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.19.12-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.19.12-200.fc43.x86_64",
+    "notes": "Like everyone else, I can install it, but I can't get it to run whatsoever. I am able to get it working in Windows, but Linux has so far been a nonstarter (literally).",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1776736203,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1818340",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "7.0.0-1-cachyos",
+    "notes": "Runs fine after tweaking.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1776978962,
+    "title": "",
+    "source": "protondb"
+  }
+]

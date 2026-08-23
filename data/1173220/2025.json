@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1173220",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.64, 6.17.8-pikaos)",
+    "gpuDriver": "4.6 Mesa 25.3.202512042.git.069f60a (git-069f60a4e7)",
+    "kernel": "6.17.8-pikaos",
+    "notes": "Runs smoothly",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764952069,
+    "title": "",
+    "source": "protondb"
+  }
+]

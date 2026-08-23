@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "845030",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.4.0-77-generic",
+    "notes": "Works perfectly on linux.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1626197846,
+    "title": "",
+    "source": "protondb"
+  }
+]

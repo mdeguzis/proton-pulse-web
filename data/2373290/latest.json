@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2373290",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.2.0-20-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.2.0-20-generic",
+    "notes": "Still too eraly with occassional crashes.",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1685787986,
+    "title": "The Game of Annie \u5b89\u59ae\u7684\u6e38\u620f",
+    "source": "protondb"
+  }
+]

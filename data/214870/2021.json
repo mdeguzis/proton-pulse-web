@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "214870",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.102.04",
+    "kernel": "5.8.0-38-generic",
+    "notes": "Runs great on Proton 5.13, some minor audio crackling but otherwise fine.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1615865045,
+    "title": "Painkiller Hell & Damnation",
+    "source": "protondb"
+  },
+  {
+    "appId": "214870",
+    "cpu": "Intel Core i5-8400 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.8.0-63-generic",
+    "notes": "The keyboard does not respond, only responds the mouse but very slowly",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1627695215,
+    "title": "Painkiller Hell & Damnation",
+    "source": "protondb"
+  },
+  {
+    "appId": "214870",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.41.0, 5.13.8-arch1-1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1628476030,
+    "title": "Painkiller Hell & Damnation",
+    "source": "protondb"
+  }
+]

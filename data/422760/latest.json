@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "422760",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-42-generic",
+    "notes": "",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1595722214,
+    "title": "Ocean Rift",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "382070",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 18.1.8, DRM 3.59, 6.12.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.6-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1735929609,
+    "title": "Neoncube",
+    "source": "protondb"
+  }
+]

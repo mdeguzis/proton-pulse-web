@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "961490",
+    "cpu": "Intel Xeon E5-2667 v3 @ 3.20GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 470 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "The Coffee & Doughnuts chapter won't start without Proton-GE",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1763832621,
+    "title": "",
+    "source": "protondb"
+  }
+]

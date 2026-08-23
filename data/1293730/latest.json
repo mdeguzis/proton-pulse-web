@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1293730",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 17.0.6, DRM 3.49, 6.1.0-21-amd64)",
+    "gpuDriver": "4.6 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "6.1.0-21-amd64",
+    "notes": "Works great out of the box",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1724365571,
+    "title": "",
+    "source": "protondb"
+  }
+]

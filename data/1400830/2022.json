@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1400830",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.42.0, 5.15.12-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.2",
+    "kernel": "5.15.12-1-MANJARO",
+    "notes": "(Demo) Needs Proton Experimental to load menu, can't load boss fight",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1642447029,
+    "title": "Billie Bust Up",
+    "source": "protondb"
+  }
+]

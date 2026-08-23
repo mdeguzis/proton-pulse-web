@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2165030",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.12.63",
+    "notes": "Everything worked as expected, but it is a GPU hog",
+    "os": "NixOS 26.05 (Yarara)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1768463490,
+    "title": "DEATHWATCH",
+    "source": "protondb"
+  }
+]

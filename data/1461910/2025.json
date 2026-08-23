@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1461910",
+    "cpu": "Intel Xeon E3-1275 V2 @ 3.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, ACO, DRM 3.61, 6.14.8-1-cachyos-bore)",
+    "gpuDriver": "4.6 Mesa 25.1.1-arch1.1",
+    "kernel": "6.14.8-1-cachyos-bore",
+    "notes": "Works well.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1748344094,
+    "title": "Rogue Command",
+    "source": "protondb"
+  }
+]

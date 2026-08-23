@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "978920",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 465.24.02",
+    "kernel": "5.11.14-zen1-1-zen",
+    "notes": "The game \"works\" but everything on screen is completely black.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1618672378,
+    "title": "",
+    "source": "protondb"
+  }
+]

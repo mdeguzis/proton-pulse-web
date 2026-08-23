@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1420300",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.14.15-xanmod1-cacule-custom",
+    "notes": "It runs fine as long as you are running in a window. Fullscreen does not work.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1635523019,
+    "title": "No More Heroes 2: Desperate Struggle",
+    "source": "protondb"
+  }
+]

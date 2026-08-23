@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2796550",
+    "cpu": "Intel Core i5-8365U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.7",
+    "kernel": "6.12.6-100.fc40.x86_64",
+    "notes": "Suffers from performance issues that may or may not be caused by Proton. Players on gaming PCs will probably not notice this.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1735994231,
+    "title": "",
+    "source": "protondb"
+  }
+]

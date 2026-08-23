@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2362420",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.7.5-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.6",
+    "kernel": "6.7.5-200.fc39.x86_64",
+    "notes": "Tried with different versions of proton, tried to run the exe from Lutris, none of that helped, it crashes after the EA launcher starts and very briefly showing the list of EA games.\nLogs shows a lot of error, not sure if they're the cause of the crash:\n\nFossilize ERROR: Cannot copy unknown pNext sType: 1000068000.\nFossilize WARN: Recording graphics pipeline failed, usually caused by unsupported pNext.",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1709582078,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2362420",
+    "cpu": "AMD FX-6200 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.10-1-MANJARO",
+    "notes": "When PhysX is installed the game runs fine.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1719672166,
+    "title": "",
+    "source": "protondb"
+  }
+]

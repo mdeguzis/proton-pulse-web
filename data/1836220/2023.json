@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1836220",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 17.0.1, DRM 3.54, 6.5.4-1-default)",
+    "gpuDriver": "4.6 Mesa 23.2.1",
+    "kernel": "6.5.4-1-default",
+    "notes": "Works flawlessly so far",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1696683900,
+    "title": "",
+    "source": "protondb"
+  }
+]

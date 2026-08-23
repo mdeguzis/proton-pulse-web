@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3675470",
+    "cpu": "12th Gen Intel Core i7-1255U",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Iris Xe (ADL GT2)",
+    "gpuDriver": "4.6 Mesa 26.0.5 (git-e4bd78e80a)",
+    "kernel": "6.19.8-3.surface.fc43.x86_64",
+    "notes": "Proton 9.0-4",
+    "os": "Fedora Linux 43  x86_64",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1779053032,
+    "title": "",
+    "source": "protondb"
+  }
+]

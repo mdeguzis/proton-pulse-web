@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2024230",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.54, 6.6.10-76060610-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.2 (git-a3df5eab6c)",
+    "kernel": "6.6.10",
+    "notes": "Runs as good if not better than on Windows, 240Hz with 240 FPS, no slowdowns, solid!",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1710751991,
+    "title": "Project Lazarus",
+    "source": "protondb"
+  }
+]

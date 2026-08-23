@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2333480",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 20.1.2, DRM 3.57, 6.8.0-87-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-87-generic",
+    "notes": "",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1778300742,
+    "title": "",
+    "source": "protondb"
+  }
+]

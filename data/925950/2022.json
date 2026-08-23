@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "925950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Perfect on deck!",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1652024896,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "925950",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Proton Latest, Experimental, 5.0, and GE 7-16 do not work, I would assume others do not either",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1670639598,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "925950",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.1.0-arch1-1",
+    "notes": "Finished game without issues",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1672049936,
+    "title": "",
+    "source": "protondb"
+  }
+]

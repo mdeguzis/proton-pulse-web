@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "545540",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.44.0, 5.16.0-5-amd64, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.8",
+    "kernel": "5.16.0-5-amd64",
+    "notes": "Did not get the game to work with any Proton version. Also tried mf-install without any positive outcome.\n\nThe native version crashes because of a segmentation fault.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1653156802,
+    "title": "The Infectious Madness of Doctor Dekker",
+    "source": "protondb"
+  },
+  {
+    "appId": "545540",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "This actually almost seems functional. Intro FMV plays fine. Sound is there and the main menu loads. Unfortunately I cannot get any input to register. I've tried a few options but no joy.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1666742012,
+    "title": "The Infectious Madness of Doctor Dekker",
+    "source": "protondb"
+  }
+]

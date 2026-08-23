@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "463460",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX TITAN X",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.2-arch1-1",
+    "notes": "Works fine with proton 4.11-13. Using any newer version of it results in a black screen.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643081620,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1528080",
+    "cpu": "Intel Core i7-2700K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.9.16-1-MANJARO",
+    "notes": "After I had changed graphics settings. It was totally playable and enjoyable.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1620486107,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1528080",
+    "cpu": "Intel Core i7-10510U @ 1.80GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce MX350",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.11-200.fc35.x86_64",
+    "notes": "",
+    "os": "Fedora release 35 (Thirty Five)",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1640757724,
+    "title": "",
+    "source": "protondb"
+  }
+]

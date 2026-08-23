@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2081080",
+    "cpu": "Intel Core i7-8700 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 19.1.1, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-59-generic",
+    "notes": "But it would not start.  I did later then try some Proton options which required reinstalling, and those all crash with an error.  Another waste of money on the roulette wheel of \"will this game work or not.\"",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1749572025,
+    "title": "",
+    "source": "protondb"
+  }
+]

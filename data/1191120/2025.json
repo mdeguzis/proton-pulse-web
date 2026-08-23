@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1191120",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, LLVM 21.1.2, DRM 3.64, 6.17.5-300.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.5",
+    "kernel": "6.17.5-300.fc43.x86_64",
+    "notes": "Nice little clicker game. Works perfect out of the box.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1762462849,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1140150",
+    "cpu": "AMD Ryzen 5 4600G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (renoir, LLVM 14.0.6, DRM 3.48, 6.0.15-hardened1-1-hardened)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.15-hardened1-1-hardened",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1672516639,
+    "title": "",
+    "source": "protondb"
+  }
+]

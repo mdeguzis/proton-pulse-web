@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1710930",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.2.2 - kisak-mesa PPA",
+    "kernel": "6.14.0-37-generic",
+    "notes": "Dont even apper a pop up or a window of the game.",
+    "os": "Ubuntu Core 24",
+    "protonVersion": "10.0-3",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1767815369,
+    "title": "",
+    "source": "protondb"
+  }
+]

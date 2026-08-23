@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1064950",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.0.7",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "Runs out of the box using proton, no tweaking required.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1594291453,
+    "title": "Fluid Lander - \u30d5\u30ea\u30e5\u30fc\u30c9\u30e9\u30f3\u30c0\u30fc",
+    "source": "protondb"
+  }
+]

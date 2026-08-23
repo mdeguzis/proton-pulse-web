@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "680360",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 20.1.8, DRM 3.64, 6.16.12-valve13-1-neptune-616-g324b4c971758)",
+    "gpuDriver": "4.6 Mesa 25.3.0 (git-59b552c765)",
+    "kernel": "6.16.12-valve13-1-neptune-616-g324b4c971758",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1779029031,
+    "title": "",
+    "source": "protondb"
+  }
+]

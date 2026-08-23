@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "961490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Should this really be platinum/deck verified?",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1658323317,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "961490",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "I swear this game worked fine in the past, but right now it seems to just freeze on a black screen upon starting up the game. Switching between Proton versions(including GE-Proton) did nothing to fix this.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1665245764,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "961490",
+    "cpu": "Intel Core i5-3450 @ 3.10GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.15.81-1-MANJARO",
+    "notes": "Works out of the box.",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1671038328,
+    "title": "",
+    "source": "protondb"
+  }
+]

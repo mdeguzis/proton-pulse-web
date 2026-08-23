@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "528550",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.3-arch1-1",
+    "notes": "Proton 8 and above all worked fine.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767761165,
+    "title": "Drunkn Bar Fight",
+    "source": "protondb"
+  }
+]

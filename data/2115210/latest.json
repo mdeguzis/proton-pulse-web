@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2115210",
+    "cpu": "Intel Core i5-4430S @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~23.04.1",
+    "kernel": "6.2.0-25-generic",
+    "notes": "",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1689441627,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2115210",
+    "cpu": "Intel Core i5-4430S @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~23.04.1",
+    "kernel": "6.2.0-25-generic",
+    "notes": "",
+    "os": "Ubuntu 23.04",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1689442295,
+    "title": "",
+    "source": "protondb"
+  }
+]

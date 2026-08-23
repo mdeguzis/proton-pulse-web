@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3538350",
+    "cpu": "AMD Ryzen 7 3800XT 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 19.1.7, DRM 3.61, 6.14.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.6-arch1-1",
+    "notes": "Initial menus and sound work fine, but the game never allows you to play, it winds up with just a white screen, the sounds of Air Force 1 in the background, and the HUD with some occassional subtitles from stuff in your environment I guess.\n\nTried with multiple Proton versions (Experimental, beta, 9.0-4), same results.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1747319748,
+    "title": "",
+    "source": "protondb"
+  }
+]

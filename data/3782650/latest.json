@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3782650",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.18.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.1",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "Lots of fun, runs great!",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1770672091,
+    "title": "",
+    "source": "protondb"
+  }
+]

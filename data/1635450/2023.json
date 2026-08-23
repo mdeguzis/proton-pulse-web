@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1635450",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Unable to join any server in server browser",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-5",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1673498257,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1635450",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.2.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "Used to work fine but I hadn't played it in a few months. Fired it up today and I'm unable to get past an error message reading \"A D3D11-compatible GPU (Feature Level 11.0, Shader Model 5.0) is required to run the engine.\"\n\nI've tried Proton Experimental, GE-Proton7-50, and Protons 7.0-6, 6.3-8, 5.0-10, all failing some with and some without the error message. Using the launch option to try and bypass D3D11 fails also. System is up to date, I reinstalled the game, and yes I have turned it off and on again thank you Roy.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1680346917,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1635450",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6650 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.2.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1680407965,
+    "title": "",
+    "source": "protondb"
+  }
+]

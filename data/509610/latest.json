@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "509610",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.11.11-valve19-1-neptune-611-g88b36d49a5e3)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-8d0948917e)",
+    "kernel": "6.11.11-valve19-1-neptune-611-g88b36d49a5e3",
+    "notes": "The game does load. No controller support for menu. In game UI does load and I'm able to fire, but the entire game is black except for the HUD.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1758190945,
+    "title": "",
+    "source": "protondb"
+  }
+]

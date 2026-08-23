@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1403310",
+    "cpu": "AMD Ryzen 5 5600U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD RENOIR (LLVM 14.0.6, DRM 3.44, 5.17.0-1017-oem)",
+    "gpuDriver": "4.6 Mesa 22.1.7 - kisak-mesa PPA",
+    "kernel": "5.17.0-1017-oem",
+    "notes": "Black screen. Later the game will time out and Linux reports it as not reponsive.\nFPS overlay and Steam overlay works in Game menu.\n\nAfter starting new or loading old game, the games loads, but shows a black screen.",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-4",
+    "ram": "14 GB",
+    "rating": "borked",
+    "timestamp": 1663313292,
+    "title": "",
+    "source": "protondb"
+  }
+]

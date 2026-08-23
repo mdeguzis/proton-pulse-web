@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2206350",
+    "cpu": "AMD Ryzen AI 7 350 w/ Radeon 860M",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon 860M (radeonsi, gfx1152, LLVM 21.1.5, DRM 3.64, 6.17.9-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.7-cachyos1.2",
+    "kernel": "6.17.9-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1764626085,
+    "title": "",
+    "source": "protondb"
+  }
+]

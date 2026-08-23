@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "384740",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750",
+    "gpuDriver": "NVIDIA 515.48.07",
+    "kernel": "5.18.3-arch1-1",
+    "notes": "Besides some extremely minor issues, it runs well on Linux with no modification",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1655499097,
+    "title": "CAT Interstellar",
+    "source": "protondb"
+  }
+]

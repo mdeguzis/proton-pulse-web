@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1375900",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.8, DRM 3.64, 6.18.13-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.6",
+    "kernel": "6.18.13-200.fc43.x86_64",
+    "notes": "You can enjoy it if fps drops don't bother you",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773866644,
+    "title": "Swarm Grinder",
+    "source": "protondb"
+  }
+]

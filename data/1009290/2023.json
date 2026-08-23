@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1009290",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.2-artix1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.2.2-artix1-1",
+    "notes": "If you can tolerate constant small artifacts then its playable aside from any multiplayer functionality.",
+    "os": "Artix Linux",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1678881776,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1009290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u0438\u0433\u0440\u0430 \u0441\u0443\u043f\u0435\u0440",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1689571371,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1009290",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1697811972,
+    "title": "",
+    "source": "protondb"
+  }
+]

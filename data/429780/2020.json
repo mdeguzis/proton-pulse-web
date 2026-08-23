@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "429780",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.7.5-arch1-1",
+    "notes": "Runs great, though at about 10-20 frames less. No other issues.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1593323233,
+    "title": "Bunny Hop League",
+    "source": "protondb"
+  }
+]

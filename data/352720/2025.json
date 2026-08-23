@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "352720",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 570.86.16",
+    "kernel": "6.13.5-100.bazzite.fc41.x86_64",
+    "notes": "Works fine with proton in window mode.",
+    "os": "Bazzite 41 (FROM Fedora Silverblue)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1743381586,
+    "title": "",
+    "source": "protondb"
+  }
+]

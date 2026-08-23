@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2057770",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 630 (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Originally a mobile game, so there is not much support for keyboard hotkey, but working fine to play with mouse.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1672400673,
+    "title": "Zold:out",
+    "source": "protondb"
+  }
+]

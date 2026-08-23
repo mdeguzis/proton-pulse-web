@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1444650",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.8.0-29-generic",
+    "notes": "Seems to run well, have only played through a few rooms so far.",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-2",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1606365742,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1444650",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.3",
+    "kernel": "5.8.18-1-MANJARO",
+    "notes": "runs great",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607415616,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1444650",
+    "cpu": "Intel Core i5-3470 @ 3.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.3.0-59-generic",
+    "notes": "So far it works well.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1608021828,
+    "title": "",
+    "source": "protondb"
+  }
+]

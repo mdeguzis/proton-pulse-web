@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1357830",
+    "cpu": "Intel Core i3-4005U @ 1.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce 920M",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-43-generic",
+    "notes": "No visuals. Black screen. Audio is present. Crashes after several clicks.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "4 GB",
+    "rating": "borked",
+    "timestamp": 1641232173,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1357830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1659703629,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1357830",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1661403769,
+    "title": "",
+    "source": "protondb"
+  }
+]

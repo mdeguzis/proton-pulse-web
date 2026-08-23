@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1345820",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.11.9-273-tkg-eevdf",
+    "notes": "I have the exact same setup with an AMD Radeon and there it works.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1737039599,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1345820",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-58-generic",
+    "notes": "",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1746147841,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1345820",
+    "cpu": "13th Gen Intel Core i5-13400F",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 20.1.6, DRM 3.63, 6.15.4-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.15.4-200.fc42.x86_64",
+    "notes": "game starts, can see the splash screen, but after that it just gives a black screen.",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1751806612,
+    "title": "",
+    "source": "protondb"
+  }
+]

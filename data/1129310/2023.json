@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1129310",
+    "cpu": "Intel Core i5-8600 @ 3.10GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.4.0-135-generic",
+    "notes": "native version has issues, but it runs well with any proton version i've tried, at a cost of some performance",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1672935582,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1129310",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.3-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1701756224,
+    "title": "",
+    "source": "protondb"
+  }
+]

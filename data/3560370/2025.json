@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3560370",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.0-3-cachyos",
+    "notes": "With tinkering the game runs perfectly, however there are issues by default.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1759398659,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3560370",
+    "cpu": "11th Gen Intel Core i7-1185G7 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX450",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.3-301.fc43.x86_64",
+    "notes": "Doesn't work at all with standard Proton, works poorly with custom Proton",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1762295597,
+    "title": "",
+    "source": "protondb"
+  }
+]

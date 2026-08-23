@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "12690",
+    "cpu": "Intel Core i5-3570K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon Pro WX 9100 (vega10, LLVM 15.0.7, DRM 3.54, 5.19.0-46-generic)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "5.19.0-46-generic",
+    "notes": "",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "4 GB",
+    "rating": "platinum",
+    "timestamp": 1697382454,
+    "title": "Hunting Unlimited 2010",
+    "source": "protondb"
+  }
+]

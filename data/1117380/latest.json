@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1117380",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX Vega (VEGA10, DRM 3.40.0, 5.10.0-16-amd64, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-16-amd64",
+    "notes": "All good;",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1659435144,
+    "title": "",
+    "source": "protondb"
+  }
+]

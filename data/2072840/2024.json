@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2072840",
+    "cpu": "Intel Core i5-10210U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Mesa virgl (Mesa Intel UHD (CML GT2))",
+    "gpuDriver": "4.6 Mesa 24.2.0-devel (git-406dda70e7)",
+    "kernel": "6.1.90-14253-g12484fab6ffd",
+    "notes": "Very playable, despite the slowdown",
+    "os": "ChromeOS - Borealis (Arch Linux)",
+    "protonVersion": "9.0-2",
+    "ram": "7 GB",
+    "rating": "gold",
+    "timestamp": 1722944114,
+    "title": "",
+    "source": "protondb"
+  }
+]

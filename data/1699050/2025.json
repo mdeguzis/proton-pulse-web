@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1699050",
+    "cpu": "AMD Ryzen 7 5700X3D",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "Unplayable with 320x200 resolution, but a permanent fix requires modding the game manually, which can be challenging to a novice.",
+    "os": "Bazzite (VM QEMU, KVM, GPU passthrough)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1764608709,
+    "title": "",
+    "source": "protondb"
+  }
+]

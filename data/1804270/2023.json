@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1804270",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "5.15.0-86-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.6 LTS",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1700492253,
+    "title": "",
+    "source": "protondb"
+  }
+]

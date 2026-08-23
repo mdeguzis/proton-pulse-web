@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1943730",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.4.0-107-generic",
+    "notes": "Prob work fine with recommend default proton, but I used GE v9 based on notes seen here.",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1742156558,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1943730",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 19.1.7, DRM 3.61, 6.13.7-cachyos1.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.7-cachyos1.fc41.x86_64",
+    "notes": "Runs fine.",
+    "os": "Fedora Linux 41 (KDE Plasma)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1742299869,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1943730",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Barely got past the menu",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1751859927,
+    "title": "",
+    "source": "protondb"
+  }
+]

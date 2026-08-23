@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1570850",
+    "cpu": "Intel Core i5-4570 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 950",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Native version does not work atm, Proton version has few issues",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1637004302,
+    "title": "",
+    "source": "protondb"
+  }
+]

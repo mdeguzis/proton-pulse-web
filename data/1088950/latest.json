@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1088950",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7700 XT (radeonsi, navi32, LLVM 19.1.7, DRM 3.61, 6.12.20-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.0.2-arch1.2",
+    "kernel": "6.12.20-2-MANJARO",
+    "notes": "Works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770887087,
+    "title": "",
+    "source": "protondb"
+  }
+]

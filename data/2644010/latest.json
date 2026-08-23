@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2644010",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 18.1.8, DRM 3.59, 6.12.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Game works oob",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1735426606,
+    "title": "",
+    "source": "protondb"
+  }
+]

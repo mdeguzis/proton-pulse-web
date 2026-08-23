@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1234940",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "When I first started I had a blank screen but had sound. Changes Proton versions and it worked",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1726160829,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1234940",
+    "cpu": "Intel Core i3-7020U @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2F)",
+    "gpuDriver": "4.6 Mesa 24.2.2 - kisak-mesa PPA",
+    "kernel": "6.8.0-44-generic",
+    "notes": "Very fun relaxing game. Can be played with one hand and while listening to or doing something else.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1726536490,
+    "title": "",
+    "source": "protondb"
+  }
+]

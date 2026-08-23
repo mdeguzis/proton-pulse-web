@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "976800",
+    "cpu": "Intel Pentium G4400 @ 3.30GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 510 (SKL GT1)",
+    "gpuDriver": "4.6 Mesa 20.0.6",
+    "kernel": "5.6.8-arch1-1",
+    "notes": "Can Create Character, Can't Play",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1588628261,
+    "title": "",
+    "source": "protondb"
+  }
+]

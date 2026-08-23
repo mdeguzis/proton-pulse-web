@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1359900",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.12.12-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.4",
+    "kernel": "5.12.12-arch1-1",
+    "notes": "Worked perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1625677142,
+    "title": "",
+    "source": "protondb"
+  }
+]

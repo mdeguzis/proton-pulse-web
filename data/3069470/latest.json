@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3069470",
+    "cpu": "AMD Ryzen 9 5900HX with Radeon Graphics",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 18.1.8, DRM 3.57, 6.9.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.4-arch1.2",
+    "kernel": "6.9.10-arch1-1",
+    "notes": "Works well on linux with no need to tinker",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1722128771,
+    "title": "",
+    "source": "protondb"
+  }
+]

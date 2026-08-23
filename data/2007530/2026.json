@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2007530",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 21.1.8, DRM 3.64, 6.18.12-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.5",
+    "kernel": "6.18.12-200.fc43.x86_64",
+    "notes": "Works flawlessly",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771900007,
+    "title": "",
+    "source": "protondb"
+  }
+]

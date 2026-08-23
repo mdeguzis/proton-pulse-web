@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1031480",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 XT (DIMGREY_CAVEFISH, DRM 3.42.0, 5.15.6-arch2-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.6-arch2-1",
+    "notes": "Needs some tweaks to work but is playable.",
+    "os": "EndeavourOS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639385038,
+    "title": "",
+    "source": "protondb"
+  }
+]

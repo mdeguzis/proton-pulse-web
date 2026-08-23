@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1348390",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.7, DRM 3.52, 6.3.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.6-arch1-1",
+    "notes": "Moving the mouse causes extreme frame drops; and game will randomly hang",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1686353016,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1348390",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.7, DRM 3.52, 6.3.6-arch1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.6-arch1-1",
+    "notes": "works fine on older version, but you can't alt tab (you can still access windows on second monitor)",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1690567110,
+    "title": "",
+    "source": "protondb"
+  }
+]

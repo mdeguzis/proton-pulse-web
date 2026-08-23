@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "555400",
+    "cpu": "Intel Core i7-3820 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.3.13-arch1-1",
+    "notes": "The games works out of the box with full settings. Just a few minor artifacts and mouse glitching. Fixable with tweaking settings.",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-9",
+    "ram": "20 GB",
+    "rating": "bronze",
+    "timestamp": 1575177704,
+    "title": "",
+    "source": "protondb"
+  }
+]

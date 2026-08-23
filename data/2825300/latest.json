@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2825300",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, ACO, DRM 3.64, 6.19.12-1-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.4-arch2.2",
+    "kernel": "6.19.12-1-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1776246672,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2064650",
+    "cpu": "12th Gen Intel Core i5-12600K",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, LLVM 15.0.7, DRM 3.54, 6.6.10-76060610-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.0-1pop0~1706872735~22.04~0fa430c",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "If you switch to Experimental, you're able to get the launcher going. You can even log in and everything seems like it's ready to launch. But when you actually launch the game, the launcher crashes and everything stops. Going to agree with others, the anti-cheat software blocking this game from Proton (for now) is really dumb. Why does an anime gacha need anti-cheat software?",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1712013938,
+    "title": "Tower of Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "2064650",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Abriu o launcher e logou.\nAo clicar em iniciar, fechou o jogo.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1724221492,
+    "title": "Tower of Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "2064650",
+    "cpu": "AMD Ryzen 9 4900HS with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.11-200.fc36.x86_64",
+    "notes": "https://areweanticheatyet.com/game/tower-of-fantasy : Anti cheat not compatible.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1725400670,
+    "title": "Tower of Fantasy",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3750430",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "\u7576\u6ed1\u9f20\u79fb\u52d5\u81f3\u6709\u201d\u63d0\u793aBox\u201c\u6642\uff0c\u904a\u6232\u5373\u6642\u5d29",
+    "os": "Bazzite\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "96 GB",
+    "rating": "borked",
+    "timestamp": 1765724312,
+    "title": "",
+    "source": "protondb"
+  }
+]

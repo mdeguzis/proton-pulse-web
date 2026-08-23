@@ -1,0 +1,634 @@
+/* Shared filter UI: toggle button, badge, and panel container.
+   Applied across index.html, app.html, and stats.html so all filter controls
+   share the same visual language and responsive behaviour.
+
+   Each page keeps its own scoped selectors for layout specifics (grid columns,
+   inner control types), but these base rules enforce the consistent shell. */
+
+/* ── Toggle button ────────────────────────────────────────────────────── */
+.filter-toggle-btn,
+.pg-filter-toggle-btn,
+.filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--s1);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.filter-toggle-btn:hover,
+.pg-filter-toggle-btn:hover,
+.filter-button:hover {
+  border-color: var(--accent);
+  color: var(--strong);
+}
+.filter-toggle-btn.has-filters,
+.filter-toggle-btn.is-active,
+.pg-filter-toggle-btn.has-filters,
+.filter-button.is-active {
+  color: var(--accent-hi);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 16px -6px var(--accent-glow);
+}
+
+/* ── Badge (count on button) ──────────────────────────────────────────── */
+.filter-badge,
+.pg-filter-badge,
+.filter-btn-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 5px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+/* ── Panel container ──────────────────────────────────────────────────── */
+/* app.html and stats.html use .filter-panel; index uses .pg-filter-panel.
+   Both are absolutely-positioned dropdowns anchored to their toggle button. */
+.filter-panel,
+.pg-filter-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 200;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  min-width: 260px;
+  max-width: 96vw;
+}
+
+/* ── Shared drawer animation (#417) ───────────────────────────────────────
+   ONE reveal contract for every filter surface: browse (.filter-panel--stack),
+   game-page (.filter-panel), index (.pg-filter-panel), and the stats dimension
+   dropdowns (.filter-dropdown .filter-panel). The panel stays in the DOM and is
+   hidden by clip-path + opacity, so opening/closing plays a downward drawer
+   reveal instead of a display:none pop. Panels are position:absolute so the
+   collapse never pushes siblings.
+
+   IMPORTANT: layout-defining properties (display, columns, width) must live on
+   the base panel selector on each page, never gated on .open / .is-open, or the
+   layout snaps mid-collapse -- that was the browse "narrow vertical" flash
+   (#415 slice 2b). This contract only animates clip-path / opacity / transform. */
+.filter-panel,
+.pg-filter-panel {
+  overflow: hidden;
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transform: translateY(-6px);
+  transform-origin: top center;
+  pointer-events: none;
+  transition:
+    clip-path 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Revealed state. The big panels flip .open on the panel itself (observed +
+   toggled per page); the stats dropdowns flip .is-open on the PARENT, which is
+   why stats never picks up the .open-scoped mobile-modal rules below and stays
+   a compact popover on phones (#417 decision). */
+.filter-panel.open,
+.pg-filter-panel.open,
+.filter-dropdown.is-open .filter-panel {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .filter-panel,
+  .pg-filter-panel { transition: none; }
+}
+
+/* Mobile filter modal (<=720px). The desktop dropdown behavior falls apart on
+   phones -- it collides with the fixed topbar, overflows off-screen, and never
+   feels native. So on mobile the open panel becomes a full-viewport modal with
+   a sticky header (title + close X), a scrollable body, and a sticky footer
+   with the existing action buttons. Same state, same JS wiring, mobile-only
+   markup: the .filter-panel-mobile-header + .filter-panel-close row is hidden
+   on desktop and rendered as the modal header on mobile. */
+@media (max-width: 720px) {
+  .filter-panel.open,
+  .pg-filter-panel.open,
+  .filter-panel--stack.open {
+    position: fixed;
+    /* Fill the viewport. Using inset:0 + dynamic viewport height so mobile
+       browser chrome (iOS URL bar, Android nav bar) hides/shows correctly. */
+    inset: 0;
+    z-index: 300;  /* above the fixed .topbar which sits at z-index: 200 */
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    max-height: none;
+    height: 100dvh;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    background: var(--bg-bot);
+    /* Force a scroll container even when content fits in one screen -- gives
+       users a consistent affordance and stops iOS from occasionally
+       collapsing overflow to visible. touch-action: pan-y locks the gesture
+       axis to vertical so accidental horizontal drags don't fight the
+       overflow-x: hidden rule below. */
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+  /* Force the group into a vertical stack on mobile: each label + its pills
+     on their own row, pills wrap within the row. The desktop masonry
+     column-count (below) is scoped to >720px so it can't override this. */
+  .filter-panel .pg-filter-group,
+  .pg-filter-panel .pg-filter-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Pills distribute across the row width so short groups (STORE 4-up)
+       don't cluster on the left with a big empty gap on the right. Short
+       trailing rows (e.g. BORKED alone after the tier wrap) stay
+       left-aligned since space-between only spreads within a filled row. */
+    justify-content: space-between;
+  }
+  /* .filter-panel--stack (browse page) normally lays groups side-by-side
+     via flex-direction: row on desktop. reports.css only overrides that at
+     max-width: 560px, so between 561px and 720px the pill groups overflow
+     horizontally inside the modal. Force plain block layout in the modal so
+     each group gets its own row, headers stick reliably, and touch-scroll
+     inside overflow:auto behaves like a normal document scroll -- flex
+     containers with overflow behave inconsistently for sticky descendants
+     on iOS Safari + Android WebView. */
+  .filter-panel--stack.open {
+    display: block !important;
+  }
+  .filter-panel--stack.open > * {
+    margin-bottom: 14px;
+  }
+  /* Guarantee vertical-only scroll: any child that tries to grow horizontally
+     (a long pill row that would push past the viewport) gets its own wrap. */
+  .filter-panel.open,
+  .pg-filter-panel.open,
+  .filter-panel--stack.open {
+    overflow-x: hidden;
+  }
+  .filter-panel .pg-filter-group,
+  .pg-filter-panel .pg-filter-group,
+  .filter-panel--stack .pg-filter-group {
+    max-width: 100%;
+    min-width: 0;
+  }
+  /* Body items get inline padding so pills don't sit flush against the edge.
+     Header + footer set their own padding so they can stretch full width. */
+  .filter-panel.open > *:not(.filter-panel-mobile-header):not(.filter-panel-footer):not(.filter-panel-footer--stack),
+  .pg-filter-panel.open > *:not(.filter-panel-mobile-header):not(.filter-panel-footer):not(.filter-panel-footer--stack),
+  .filter-panel--stack.open > *:not(.filter-panel-mobile-header):not(.filter-panel-footer):not(.filter-panel-footer--stack) {
+    margin-inline: 14px;
+  }
+  /* Give the first content row (usually "Search titles") a bit of breathing
+     room below the sticky mobile header, otherwise the label sits flush
+     against the header border. */
+  .filter-panel.open .filter-panel-mobile-header + *,
+  .pg-filter-panel.open .filter-panel-mobile-header + *,
+  .filter-panel--stack.open .filter-panel-mobile-header + * {
+    margin-top: 14px;
+  }
+  /* Mobile-only header: sticky bar at top with "Filters" title + close X.
+     .filter-panel-mobile-header is hidden by default (desktop rule below),
+     shown as a sticky header when the panel is open on mobile. width:100%
+     is explicit so the header is guaranteed to span edge-to-edge even
+     inside a flex column parent (.filter-panel--stack.open sets flex on
+     the panel; a flex item without width can size to content). */
+  .filter-panel.open .filter-panel-mobile-header,
+  .pg-filter-panel.open .filter-panel-mobile-header,
+  .filter-panel--stack.open .filter-panel-mobile-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: var(--s1);
+    border-bottom: 1px solid var(--border);
+    margin: 0;  /* override the body-inline-padding rule above */
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+  .filter-panel-mobile-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--strong);
+    /* margin-right: auto pushes the X to the far right without depending
+       on justify-content, so even if a stray flex-child slips into the row
+       the X stays glued to the right edge. */
+    margin-right: auto;
+  }
+  .filter-panel-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .filter-panel-close:hover { border-color: var(--accent); color: var(--accent); }
+  /* Footer: sticky at the bottom so Save / Clear stay in reach while the
+     body scrolls. Only affects the two panels that ship a footer (home,
+     game-page); the index panel has no footer and is unaffected. */
+  .filter-panel.open .filter-panel-footer,
+  .filter-panel--stack.open .filter-panel-footer--stack {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    padding: 12px 16px;
+    background: var(--s1);
+    border-top: 1px solid var(--border);
+    margin: 0;  /* override the body-inline-padding rule above */
+  }
+}
+/* Hide the mobile header on desktop -- markup lives in every panel but only
+   renders on viewports below 721px. */
+.filter-panel-mobile-header { display: none; }
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+/* Grow the panel with the viewport so pill rows stop wrapping into a tall
+   column on wide monitors. Cap only via the earlier 96vw so the panel
+   never hits the screen edge. Steps are chosen to hit common laptop
+   widths: 1440 (14" MacBook Air/Pro) and 1728 (16" MacBook) get the widest
+   variants so the pills fit on one or two rows instead of running long
+   vertically. */
+@media (min-width: 721px) {
+  .filter-panel:not(.filter-panel--stack) {
+    min-width: 480px;
+  }
+}
+@media (min-width: 900px) {
+  .filter-panel:not(.filter-panel--stack) {
+    min-width: 680px;
+  }
+}
+@media (min-width: 1200px) {
+  .filter-panel:not(.filter-panel--stack) {
+    min-width: 920px;
+  }
+}
+@media (min-width: 1440px) {
+  .filter-panel:not(.filter-panel--stack) {
+    min-width: 1120px;
+  }
+}
+@media (min-width: 1700px) {
+  .filter-panel:not(.filter-panel--stack) {
+    min-width: 1320px;
+  }
+}
+
+/* Stats page: per-dimension dropdown panels. width:max-content sizes each
+   dropdown to its own longest value ("DESKTOP / OTHER", "STEAM DECK OLED"...)
+   so nothing truncates, with a floor for the short dimensions and a cap so one
+   very long value can't blow the panel across the page (it ellipsises past the
+   cap instead). Single column -- these are vendor/family-level counters with
+   only a handful of values, so each dropdown stays short (#417 follow-up). */
+.filter-dropdown .filter-panel {
+  width: max-content;
+  min-width: 240px;
+  max-width: 500px;
+}
+/* Rows are flex (not the base grid) so width:max-content reliably grows the
+   panel to the longest value across browsers; the count sits flush right and
+   the label only ellipsises once a value passes the max-width cap. */
+.filter-dropdown .filter-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filter-dropdown .filter-check-label { min-width: 0; }
+.filter-dropdown .filter-check-count { margin-left: auto; padding-left: 14px; }
+
+/* Mobile fix for #426: on phones the compact popover positioned at left:0 of
+   its button overflows the right edge of the viewport when the button sits
+   past the horizontal midpoint (RATING on stats etc.). The overflow triggers
+   document-wide horizontal scroll which shifts the whole page off-screen.
+   Promote the open panel to position:fixed with viewport-relative left/right,
+   pinned vertically to just below the tapped button via --dropdown-top (set
+   by js/stats/main.js on open). Stats keeps its per-dimension compact-panel
+   feel -- the panel still opens right under the button -- but stays inside
+   the viewport instead of pushing the page. */
+@media (max-width: 720px) {
+  .filter-dropdown.is-open .filter-panel {
+    position: fixed;
+    top: var(--dropdown-top, 120px);
+    left: 8px;
+    right: 8px;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    max-height: calc(100dvh - var(--dropdown-top, 120px) - 8px);
+    overflow-y: auto;
+    /* Sit above the filter-row buttons + page content but below the mobile
+       full-viewport filter modal (which owns z-index 300). */
+    z-index: 250;
+  }
+}
+
+/* ── Pill filter group ────────────────────────────────────────────────────── */
+/* Shared across index.html, app.html (home), and stats.html. A group is a
+   label row followed by a horizontal row of pills that wraps on overflow. */
+.pg-filter-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.pg-filter-group-label {
+  flex-basis: 100%;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--strong);
+  margin-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.pg-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.pg-filter:hover { border-color: var(--accent); color: var(--strong); }
+/* Active chip is flat -- solid accent fill, no glow. Earlier version had
+   a 12px accent-color halo (box-shadow) that made adjacent chips read as
+   one blurry blob instead of distinct selections. */
+.pg-filter--active {
+  border-color: var(--accent);
+  color: #0a0c10;
+  background: var(--accent);
+  box-shadow: none;
+}
+.pg-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.pg-filter--active .pg-filter-count {
+  background: rgba(10,12,16,0.22);
+  color: #0a0c10;
+}
+
+/* ── Shared modal footer + buttons (#458) ─────────────────────────────────
+   The .filter-panel-footer / .filter-panel--stack layout + the Collapse /
+   Save / Clear button styling used to live in css/app/reports.css. Both
+   browse + game pages loaded reports.css so they inherited these rules.
+   Coverage now uses the same modal chrome but must not pull in the
+   app-page CSS -- so the truly shared bits moved here. Browse-specific
+   selectors (.home-filter-select, .home-filter-text, .filter-item--
+   mobile-only) stay in reports.css. */
+.filter-panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.filter-save-btn,
+.filter-clear-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border-width: 1.5px;
+  border-style: solid;
+  cursor: pointer;
+  transition: color .1s, border-color .1s, background .1s;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0a0c10;
+}
+.filter-save-btn:hover,
+.filter-clear-btn:hover { filter: brightness(1.08); }
+/* #415 slice 1: dirty state shows a bright accent fill (there is unsaved
+   change); clean state is a muted outline so a page whose filters already
+   match the persisted snapshot does not scream at the viewer. */
+.filter-save-btn.is-active,
+.filter-save-btn.is-dirty {
+  background: var(--accent-hi);
+  border-color: var(--accent-hi);
+  color: #0a0c10;
+}
+.filter-save-btn.is-clean {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted);
+}
+.filter-save-btn.is-clean:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  filter: none;
+}
+/* .filter-panel--stack drawer layout. Two regimes on desktop keep the pill
+   groups tidy at both narrow (single column) and wide (masonry) widths.
+   Content is clipped by the shared filter-panel opacity/clip-path when the
+   panel is closed; the layout stays put so a mid-collapse reflow does not
+   flash a stacked-block "portrait" flicker (#415 slice 2b). */
+.filter-panel--stack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px 24px;
+}
+@media (max-width: 720px) {
+  .filter-panel--stack { display: block; }
+}
+.filter-panel--stack .filter-item { gap: 4px; min-width: 130px; }
+.filter-panel--stack .pg-filter-group { min-width: 120px; }
+.filter-panel-footer--stack {
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 2px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  justify-content: flex-end;
+  gap: 8px;
+}
+@media (max-width: 720px) {
+  .filter-panel-footer,
+  .filter-panel-footer--stack {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
+/* Collapse button sits on the left of the footer while Save + Clear stay
+   on the right (justify-content:flex-end on the row + margin-right:auto on
+   the collapse pushes it to the opposite edge). Steam warm-orange fill so
+   Collapse reads as the primary "shrink this back down" action, distinct
+   from Save + Clear which are neutral accent-filled peers. */
+.filter-collapse-btn {
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid #d97706;
+  background: #d97706;
+  color: #0a0c10;
+  cursor: pointer;
+  transition: color .1s, border-color .1s, background .1s, filter .1s;
+}
+.filter-collapse-btn:hover { filter: brightness(1.08); }
+.filter-collapse-caret {
+  font-size: 0.72rem;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(-1px);
+}
+@media (max-width: 560px) {
+  .filter-panel--stack.open { flex-direction: column; gap: 14px; }
+}
+/* Desktop widening: >=900px lays the groups out as a balanced masonry
+   (CSS multi-column) so a wide monitor uses horizontal space instead of
+   scrolling a tall thin column. 561-899px is a single full-width column,
+   one group per row. Uses --content-pad + --content-max from base.css so
+   the panel width mirrors the page content width. */
+@media (min-width: 900px) {
+  .filter-panel--stack {
+    display: block;
+    columns: 5 200px;
+    column-gap: 26px;
+    width: min(calc(100vw - 2 * var(--content-pad)), calc(var(--content-max) - 2 * var(--content-pad)));
+    min-width: 0;
+    max-width: none;
+  }
+  .filter-panel--stack .filter-item,
+  .filter-panel--stack .pg-filter-group { break-inside: avoid; }
+  .filter-panel--stack .filter-panel-footer--stack { column-span: all; break-inside: avoid; }
+}
+@media (min-width: 561px) and (max-width: 899px) {
+  .filter-panel--stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(560px, calc(100vw - 2 * var(--content-pad)));
+    min-width: 0;
+    max-width: none;
+  }
+  .filter-panel--stack .filter-item,
+  .filter-panel--stack .pg-filter-group { width: 100%; }
+}
+@media (min-width: 561px) {
+  .filter-panel--stack .filter-item,
+  .filter-panel--stack .pg-filter-group { margin-bottom: 16px; min-width: 0; }
+  .filter-panel--stack .pg-filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-content: start;
+  }
+  .filter-panel--stack .pg-filter-group-label { flex-basis: 100%; }
+  .filter-panel--stack .filter-panel-footer--stack { margin: 4px 0 0; }
+}
+/* Squircle chips inside the .filter-panel--stack modal (browse pick over
+   the default pill shape). Scoped to the panel so other .pg-filter pills
+   elsewhere keep the pill look. */
+.filter-panel--stack .pg-filter { border-radius: 7px; }
+
+/* ── Range slider pair ────────────────────────────────────────────────────
+   Two stacked native <input type="range"> controls for numeric min/max
+   filters. Introduced for the game-page confidence filter (#445). Reuses
+   the shared filter variables so light + dark themes stay in sync; native
+   thumbs pick up --accent via `accent-color`. */
+.filter-range {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 0;
+}
+.filter-range-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.filter-range-row-label {
+  min-width: 32px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--strong);
+}
+.filter-range-input {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.filter-range-value {
+  min-width: 44px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--strong);
+  font-weight: 600;
+}

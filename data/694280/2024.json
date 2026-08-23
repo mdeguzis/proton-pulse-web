@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "694280",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD NAVY_FLOUNDER (DRM 3.40.0, 5.11.0-7614-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Played with full group of 4. Everything worked fine, with good framerate.",
+    "os": "Pop!_OS 22.04",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1708487010,
+    "title": "Zombie Army 4: Dead War",
+    "source": "protondb"
+  },
+  {
+    "appId": "694280",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 16.0.6, DRM 3.57, 6.7.4-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 23.3.5-arch1.1",
+    "kernel": "6.7.4-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1709506799,
+    "title": "Zombie Army 4: Dead War",
+    "source": "protondb"
+  },
+  {
+    "appId": "694280",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, LLVM 17.0.6, DRM 3.57, 6.8.12-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.7 (git-cc175010c5)",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "Works like a charm. In case of stuttering, try V-Sync.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1717871921,
+    "title": "Zombie Army 4: Dead War",
+    "source": "protondb"
+  }
+]

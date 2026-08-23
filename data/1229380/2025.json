@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1229380",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works perfectly out of the box!",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1735785650,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1229380",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-53-generic",
+    "notes": "",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1740425961,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1229380",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 18.1.8, DRM 3.54, 6.6.47-gentoo)",
+    "gpuDriver": "4.6 Mesa 24.1.6",
+    "kernel": "6.6.47-gentoo",
+    "notes": "",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1753061109,
+    "title": "",
+    "source": "protondb"
+  }
+]

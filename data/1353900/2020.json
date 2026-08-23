@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1353900",
+    "cpu": "AMD Ryzen 5 1400 Quad-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.9-200.fc32.x86_64",
+    "notes": "Game Briefly flashes, then crashes",
+    "os": "Fedora 32",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1601080515,
+    "title": "",
+    "source": "protondb"
+  }
+]

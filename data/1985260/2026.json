@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1985260",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 11",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.18.8-200.fc43.x86_64",
+    "notes": "movies do not play, but overall, a fairly seemless experience.",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1771018992,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2334320",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.129.03",
+    "kernel": "6.2.0-37-generic",
+    "notes": "Installs and runs withing problems out of the box.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1742224693,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2334320",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "Installs and runs without problems right out of the box.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "80 GB",
+    "rating": "gold",
+    "timestamp": 1745127009,
+    "title": "",
+    "source": "protondb"
+  }
+]

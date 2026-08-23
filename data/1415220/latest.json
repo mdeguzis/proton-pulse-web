@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1415220",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.1.90",
+    "notes": "Suspect this is an issue with cinematic camera.",
+    "os": "NixOS 23.11 (Tapir)",
+    "protonVersion": "9.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1729884676,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2088280",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 23.1.2",
+    "kernel": "6.3.7",
+    "notes": "Nothing else to say really, doesn't run. Seems similar to the RE4r demo so it may be driver related.",
+    "os": "Void Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1687094507,
+    "title": "",
+    "source": "protondb"
+  }
+]

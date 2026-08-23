@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "253960",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce 840M",
+    "gpuDriver": "NVIDIA 415.25",
+    "kernel": "4.15.0-58-generic",
+    "notes": "",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "5.0-6",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1588233679,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "253960",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.6-1-MANJARO",
+    "notes": "Runs pretty well, but some dialogues have missing voices.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1600966603,
+    "title": "",
+    "source": "protondb"
+  }
+]

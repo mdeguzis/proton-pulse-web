@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2215410",
+    "cpu": "Intel Xeon E5-2430 0 @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-51-generic",
+    "notes": "Just had to set it to Proton 7.0-6 and then the game started immediately without any Problems",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1734853533,
+    "title": "",
+    "source": "protondb"
+  }
+]

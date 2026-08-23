@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "659110",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.4.0-96-generic",
+    "notes": "Seems to all work fine without any noticable issues",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1649027868,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "659110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "works fine on SteamDeck",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1651737979,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "659110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "works really fine on a SteamDeck",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1651740039,
+    "title": "",
+    "source": "protondb"
+  }
+]

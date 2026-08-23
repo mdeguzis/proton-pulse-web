@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1778500",
+    "cpu": "Intel Xeon E5-2687W 0 @ 3.10GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.15.7-227-tkg-pds",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1641598227,
+    "title": "",
+    "source": "protondb"
+  }
+]

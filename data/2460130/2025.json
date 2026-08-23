@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2460130",
+    "cpu": "12th Gen Intel Core i7-12700",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 770 (ADL-S GT1)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.1",
+    "kernel": "6.18.2-arch2-1",
+    "notes": "works perfectly, only thing is that the intro cinematics show black screen",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1766774609,
+    "title": "Teenage Mutant Ninja Turtles: Mutants Unleashed",
+    "source": "protondb"
+  }
+]

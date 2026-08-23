@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "885000",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD NAVI10",
+    "gpuDriver": "4.5 Mesa 19.2.3",
+    "kernel": "5.3.0-1-amd64",
+    "notes": "Crashes after initial disclaimer text",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1573401387,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1735670",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 18.1.8, 256 bits)",
+    "gpuDriver": "4.5 Mesa 24.3.2-arch1.1",
+    "kernel": "6.12.7-arch1-1",
+    "notes": "Zero issues. It Just Works",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1738095110,
+    "title": "",
+    "source": "protondb"
+  }
+]

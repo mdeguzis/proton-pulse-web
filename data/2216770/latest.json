@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2216770",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 550.135",
+    "kernel": "6.11.10-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1737295406,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2216770",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 14.0.6, DRM 3.42, 5.15.81-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 22.2.4",
+    "kernel": "5.15.81-1-MANJARO",
+    "notes": "Runs well despite the fact that the game is inherently very buggy. Some challenges can not be completed at this time b/c of proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1742936414,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2216770",
+    "cpu": "AMD Ryzen 9 9950X3D 16-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.61, 6.13.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.0.2-arch1.2",
+    "kernel": "6.13.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "94 GB",
+    "rating": "gold",
+    "timestamp": 1743372435,
+    "title": "",
+    "source": "protondb"
+  }
+]

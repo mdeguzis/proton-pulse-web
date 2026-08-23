@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1367330",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-39-generic",
+    "notes": "Works ootb, no tweaks needed. Multiplayer is either hot seat or PBEM, and both should work fine (didn't test). Played 2 full missions.",
+    "os": "Ubuntu 20.04 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1644963121,
+    "title": "",
+    "source": "protondb"
+  }
+]

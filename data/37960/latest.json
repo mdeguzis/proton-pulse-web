@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "37960",
+    "cpu": "Intel Core i7-6600U @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 24.3.4-arch1.1",
+    "kernel": "6.13.2-arch1-1",
+    "notes": "Funciona perfecto, lo unico que no funciona es el modo ventana al menos para m\u00ed, uso proton experimental solo por costumbre, no lo ocupa",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1739422797,
+    "title": "Jewel Quest Pack",
+    "source": "protondb"
+  }
+]

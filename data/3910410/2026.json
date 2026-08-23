@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3910410",
+    "cpu": "Intel Core i5-4460 @ 3.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 570.211.01",
+    "kernel": "6.8.0-101-generic",
+    "notes": "Runs OOTB",
+    "os": "Ubuntu 22.04.5 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1777096470,
+    "title": "",
+    "source": "protondb"
+  }
+]

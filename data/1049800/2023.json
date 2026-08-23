@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1049800",
+    "cpu": "Intel Core i5         650  @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 525.89.02",
+    "kernel": "5.15.93-1-lts",
+    "notes": "Welp, the game didn't loaded properly, it says it's running but I'm not able to play. I tried to disable Easy Anti Cheat(EAC) too, seems not to be working, with -noeac. I tried to run the game through wine in steamlib folders, also didn't loaded properly.\n\nConclusion: The game does not work.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1676498644,
+    "title": "BLOCKADE",
+    "source": "protondb"
+  }
+]

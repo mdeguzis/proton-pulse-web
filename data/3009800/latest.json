@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3009800",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "So the whole \"gameplay\" of this game is to move objects to the correct position. The issue is that no matter how hard I tried, I was unable to move a single box or crate into the correct position. The game is also fundamentally broken with missing collision allowing you to easily go out of bounds.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1731533685,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3372530",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.17.3-201.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.5",
+    "kernel": "6.17.3-201.nobara.fc42.x86_64",
+    "notes": "Early demo from Steam Next Fest. Looks like it has since been taken down.",
+    "os": "Nobara Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1761022843,
+    "title": "",
+    "source": "protondb"
+  }
+]

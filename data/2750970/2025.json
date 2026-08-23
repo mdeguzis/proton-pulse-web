@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2750970",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.61, 6.12.52-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.2.4-arch1.2",
+    "kernel": "6.12.52-1-MANJARO",
+    "notes": "Works Great even with FSR Enabled",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1761448068,
+    "title": "Backrooms: Facility Unknown",
+    "source": "protondb"
+  }
+]

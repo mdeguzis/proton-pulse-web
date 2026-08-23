@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1161140",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 20.0.0-devel (git-9e440b8 2019-11-10 disco-oibaf-ppa)",
+    "kernel": "5.0.0-32-generic",
+    "notes": "No audio and borked full screen",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "5.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1581152888,
+    "title": "Speakerman 2",
+    "source": "protondb"
+  }
+]

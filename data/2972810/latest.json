@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2972810",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-3-cachyos",
+    "notes": "Ran OOTB perfectly",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1763692901,
+    "title": "",
+    "source": "protondb"
+  }
+]

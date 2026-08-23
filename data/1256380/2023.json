@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1256380",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (navi21, LLVM 15.0.6, DRM 3.49, 6.2.6-76060206-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.5",
+    "kernel": "6.2.6-76060206-generic",
+    "notes": "Still broken.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1692968077,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1256380",
+    "cpu": "12th Gen Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.5.3-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-3",
+    "ram": "40 GB",
+    "rating": "borked",
+    "timestamp": 1694794567,
+    "title": "",
+    "source": "protondb"
+  }
+]

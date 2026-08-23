@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1420540",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 455.38",
+    "kernel": "5.8.18-1-MANJARO",
+    "notes": "Works out of the box. Didn't have much time to test, but game works and achievements unlock.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1605789180,
+    "title": "CATch the Stars",
+    "source": "protondb"
+  }
+]

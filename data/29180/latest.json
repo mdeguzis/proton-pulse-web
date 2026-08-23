@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "29180",
+    "cpu": "AMD Ryzen 7 7840HS",
+    "duration": "severalHours",
+    "gpu": "Nvidia RTX 4060 8GB Laptop GPU",
+    "gpuDriver": "595.58.03",
+    "kernel": "6.19.14-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32GB",
+    "rating": "gold",
+    "timestamp": 1777419711,
+    "title": "Osmos",
+    "source": "protondb"
+  }
+]

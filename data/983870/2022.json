@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "983870",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.7-1-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1654969166,
+    "title": "FOUNDRY",
+    "source": "protondb"
+  },
+  {
+    "appId": "983870",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.0, DRM 3.47, 5.19.6-200.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.6-200.fc36.x86_64",
+    "notes": "Running it produced no useful error messages, or a cryptic 'Unable to initialize IL2CPP' and closed",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1662582993,
+    "title": "FOUNDRY",
+    "source": "protondb"
+  },
+  {
+    "appId": "983870",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 14.0.0, DRM 3.47, 5.19.6-200.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.6-200.fc36.x86_64",
+    "notes": "Apparently I had a corrupted download, worked fine after re-downloading",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1662647383,
+    "title": "FOUNDRY",
+    "source": "protondb"
+  }
+]

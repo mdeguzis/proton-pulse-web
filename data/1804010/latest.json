@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1804010",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "works perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772001256,
+    "title": "",
+    "source": "protondb"
+  }
+]

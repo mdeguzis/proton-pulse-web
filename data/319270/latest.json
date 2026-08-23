@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "319270",
+    "cpu": "AMD Ryzen 3 PRO 3300U w/ Radeon Vega Mobile Gfx",
+    "duration": "unreported",
+    "gpu": "AMD RAVEN",
+    "gpuDriver": "4.5 Mesa 19.2.8",
+    "kernel": "5.4.15-200.fc31.x86_64",
+    "notes": "Black screen with native version, Proton works perfectly, though.",
+    "os": "Fedora release 31 (Thirty One)",
+    "protonVersion": "5.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1583103458,
+    "title": "",
+    "source": "protondb"
+  }
+]

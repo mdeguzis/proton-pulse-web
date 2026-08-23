@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1171980",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 16.0.6, DRM 3.54, 6.6.8-2-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.6.8-2-MANJARO",
+    "notes": "Game stops responding when changing settings",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1704078343,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1610870",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "5.19.0-17.1-liquorix-amd64",
+    "notes": "Works perfectly",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1672249282,
+    "title": "Chair Simulator",
+    "source": "protondb"
+  }
+]

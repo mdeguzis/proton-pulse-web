@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2878420",
+    "cpu": "Intel Core i5-2435M @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 3000 (SNB GT2)",
+    "gpuDriver": "3.3 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-110-generic",
+    "notes": "Lack of modern GPU makes it unplayable.",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1776986934,
+    "title": "Old Market Simulator",
+    "source": "protondb"
+  }
+]

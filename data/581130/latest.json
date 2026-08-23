@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "581130",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA Quadro T1000",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.13.0-39-generic",
+    "notes": "",
+    "os": "Ubuntu 20.04.4 LTS(64\ube44\ud2b8)",
+    "protonVersion": "7.0-1",
+    "ram": "31818MB",
+    "rating": "silver",
+    "timestamp": 1648750890,
+    "title": "",
+    "source": "protondb"
+  }
+]

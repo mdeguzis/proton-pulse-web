@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "13000",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.7.0-3-MANJARO",
+    "notes": "I tried all version of Proton, nothing works",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1594059264,
+    "title": "Ninja Reflex: Steamworks Edition",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1150290",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-arch1-1",
+    "notes": "Game runs well no issues.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1762686775,
+    "title": "",
+    "source": "protondb"
+  }
+]

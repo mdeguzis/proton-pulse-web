@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1461130",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.6-105.bazzite.fc42.x86_64",
+    "notes": "",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1772988365,
+    "title": "LAVALAMP",
+    "source": "protondb"
+  }
+]

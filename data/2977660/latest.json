@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2977660",
+    "cpu": "11th Gen Intel Core i5-11300H @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.8.0-76060800daily20240311-generic",
+    "notes": "Launched perfectly right out of the box. Considering this is just a knockoff of that NFT banana game its not surprisng.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1718592894,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2977660",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1721244808,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2977660",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Work good native for Steam Deck",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1723845801,
+    "title": "",
+    "source": "protondb"
+  }
+]

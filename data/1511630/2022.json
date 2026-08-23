@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1511630",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 510.68.02",
+    "kernel": "5.17.5-76051705-generic",
+    "notes": "Worked staright out of the box for me. This is a new game that is currently under development and seems to be going places.",
+    "os": "Freedesktop.org 21.08.13 (Flatpak runtime)",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1653531754,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1511630",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.0-52-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-52-generic",
+    "notes": "tried experimental, butno luck. Best was half a loading bar with the win title \"Track Day R Unity 2021\"",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1658518009,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1511630",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.41.0, 5.13.0-52-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.13.0-52-generic",
+    "notes": "I wasnt able to play other games either. Update and restart fixed it and im in the menu. \n\nCant play, though, because there is no bike but it seems OS agnostic. Also neede to disable steam input like the other report",
+    "os": "Ubuntu 20.04.4 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1658591412,
+    "title": "",
+    "source": "protondb"
+  }
+]

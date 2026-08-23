@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "725330",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.0, DRM 3.58, 6.11.0-9-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.3-1ubuntu1",
+    "kernel": "6.11.0-9-generic",
+    "notes": "The game was playable though not perfect.",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1734792318,
+    "title": "",
+    "source": "protondb"
+  }
+]

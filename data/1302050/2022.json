@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1302050",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.4-arch1-1",
+    "notes": "Found no issues",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1644782547,
+    "title": "Milky Way Prince \u2013 The Vampire Star",
+    "source": "protondb"
+  },
+  {
+    "appId": "1302050",
+    "cpu": "Intel Core i5-4210U @ 1.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GT 740M",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.16.15-arch1-1",
+    "notes": "Works perfectly out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1647808278,
+    "title": "Milky Way Prince \u2013 The Vampire Star",
+    "source": "protondb"
+  },
+  {
+    "appId": "1302050",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Runs well out of the box",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663596906,
+    "title": "Milky Way Prince \u2013 The Vampire Star",
+    "source": "protondb"
+  }
+]

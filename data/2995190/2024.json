@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2995190",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.6-200.fc38.x86_64",
+    "notes": "Game appears to work largely normaly. The problems I experienced may not be global, or may even be cross-platform bugs.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1720408461,
+    "title": "",
+    "source": "protondb"
+  }
+]

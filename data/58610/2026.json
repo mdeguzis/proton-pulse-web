@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "58610",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.2.1-arch1.1",
+    "kernel": "6.16.3-arch1-1",
+    "notes": "very frequent artefacts on native",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1768605241,
+    "title": "Wargame: European Escalation",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "733510",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.12.65-1-lts",
+    "notes": "Works, but requires dependencies",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1768646766,
+    "title": "",
+    "source": "protondb"
+  }
+]

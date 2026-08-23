@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1157250",
+    "cpu": "Intel Core i5-2500K @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.4.0-21-generic",
+    "notes": "does nothing",
+    "os": "Ubuntu Focal Fossa (development branch)",
+    "protonVersion": "5.0-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1587412937,
+    "title": "Anomaly Zone",
+    "source": "protondb"
+  }
+]

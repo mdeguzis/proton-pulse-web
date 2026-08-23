@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3483820",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.8.0-90-generic",
+    "notes": "Demo version. Tried with several proton versions (hotfix, experimental. 10.3, 9.4, GE, nothing works). Didn't try any launch options",
+    "os": "Zorin OS 17.3 Core - Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1768771784,
+    "title": "",
+    "source": "protondb"
+  }
+]

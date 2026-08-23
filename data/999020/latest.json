@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "999020",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.18.2-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.3.2-arch1.1",
+    "kernel": "6.18.2-zen2-1-zen",
+    "notes": "Switch to GE-Proton",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1770415539,
+    "title": "Mega Man Zero/ZX Legacy Collection",
+    "source": "protondb"
+  }
+]

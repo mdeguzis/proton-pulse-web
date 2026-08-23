@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "985780",
+    "cpu": "AMD Athlon 3000G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 550 / 550 (polaris12, LLVM 13.0.1, DRM 3.42, 5.15.0-27-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.1",
+    "kernel": "5.15.0-27-generic",
+    "notes": "Worked perfectly",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1652106548,
+    "title": "Jack Axe",
+    "source": "protondb"
+  }
+]

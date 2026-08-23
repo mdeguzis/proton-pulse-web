@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1034910",
+    "cpu": "AMD Ryzen 7 1700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.0.8",
+    "kernel": "4.16.0-041600-generic",
+    "notes": "The controller doesn't work. If you don't mind using keyboard, it's perfect out of the box.",
+    "os": "KDE neon User Edition 5.17",
+    "protonVersion": "5.13-6",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1614990961,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1034910",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-70-generic",
+    "notes": "Game works near-perfectly with some minor issues.",
+    "os": "Linux Mint 20",
+    "protonVersion": "6.3-1",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1617368887,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1034910",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.42.0, 5.14.5-zen2-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.14.5-zen2-1-zen",
+    "notes": "Game works, but weird bug in menu",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1636321177,
+    "title": "",
+    "source": "protondb"
+  }
+]

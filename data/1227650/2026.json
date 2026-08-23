@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1227650",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 590.44.01",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "It works just fine. There's some small stutters when the game is loading entities, but those go away after the first ~2 minutes.",
+    "os": "Bazzite",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768691919,
+    "title": "Bang-On Balls: Chronicles",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1345890",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1201, ACO, DRM 3.61, 6.13.6-103.bazzite.fc41.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.6-103.bazzite.fc41.x86_64",
+    "notes": "",
+    "os": "Bazzite 41 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1744293056,
+    "title": "",
+    "source": "protondb"
+  }
+]

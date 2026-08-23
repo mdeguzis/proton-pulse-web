@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3645100",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 7.0.2-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.5 (git-e4bd78e80a)",
+    "kernel": "7.0.2-arch1-1",
+    "notes": "Won't launch.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1777567760,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2080820",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "plays well apart from minor issues",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1765383355,
+    "title": "",
+    "source": "protondb"
+  }
+]

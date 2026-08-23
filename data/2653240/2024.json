@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2653240",
+    "cpu": "Intel Core i5-9500F @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, LLVM 16.0.6, DRM 3.56, 6.7.0-arch3-1)",
+    "gpuDriver": "4.6 Mesa 23.3.3-arch1.1",
+    "kernel": "6.7.0-arch3-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1706010313,
+    "title": "",
+    "source": "protondb"
+  }
+]

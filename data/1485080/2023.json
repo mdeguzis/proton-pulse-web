@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1485080",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 570 (polaris10, LLVM 14.0.6, DRM 3.42, 5.15.86-1-lts)",
+    "gpuDriver": "4.6 Mesa 22.3.2",
+    "kernel": "5.15.86-1-lts",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1686600646,
+    "title": "",
+    "source": "protondb"
+  }
+]

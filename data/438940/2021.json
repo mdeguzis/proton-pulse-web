@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "438940",
+    "cpu": "AMD Athlon II X4 620",
+    "duration": "underOneHour",
+    "gpu": "AMD TURKS",
+    "gpuDriver": "3.1 Mesa 20.3.2",
+    "kernel": "5.8.0-7642-generic",
+    "notes": "The game runs smoothly until it freezes at the same part. \nA better verdict will be provided if we find a fix for this crash.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1616258805,
+    "title": "XBlaze Lost: Memories",
+    "source": "protondb"
+  }
+]

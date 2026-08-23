@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1397790",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.12.10-200.fc33.x86_64, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.12.10-200.fc33.x86_64",
+    "notes": "I used proton experimental and it just worked.",
+    "os": "Fedora Linux 33",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1627113805,
+    "title": "Samurai GUNN 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1397790",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.4-1-MANJARO",
+    "notes": "Works flawlessly with no tweaking.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1627474456,
+    "title": "Samurai GUNN 2",
+    "source": "protondb"
+  },
+  {
+    "appId": "1397790",
+    "cpu": "Intel Core i7         920  @ 2.67GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.2",
+    "kernel": "5.9.0-2-amd64",
+    "notes": "Fullscreen did not work, otherwise perfect.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "6.3-8",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1640291111,
+    "title": "Samurai GUNN 2",
+    "source": "protondb"
+  }
+]

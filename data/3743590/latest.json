@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3743590",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.9.10-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 24.1.1 (git-6c377358a5)",
+    "kernel": "6.9.10-1-MANJARO",
+    "notes": "early access game, a little rough around the edges still but no huge issues",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1760058493,
+    "title": "",
+    "source": "protondb"
+  }
+]

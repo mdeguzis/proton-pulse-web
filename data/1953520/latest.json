@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1953520",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 (polaris11, LLVM 15.0.7, DRM 3.49, 6.2.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.2.1-arch1-1",
+    "notes": "Playable, but performance could be a deal breaker",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1767392833,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1299480",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 15.0.7, DRM 3.52, 6.3.0-x64v1-xanmod1-1)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.3.0-x64v1-xanmod1-1",
+    "notes": "Almost flawless experience",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1683469236,
+    "title": "",
+    "source": "protondb"
+  }
+]

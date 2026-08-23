@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "453870",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.6, DRM 3.63, 6.15.6-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.1.5-arch1.1",
+    "kernel": "6.15.6-1-MANJARO",
+    "notes": "Playing offline i.e. tutorial/puzzles/local 1v1 work flawlessly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "128 GB",
+    "rating": "gold",
+    "timestamp": 1761796250,
+    "title": "",
+    "source": "protondb"
+  }
+]

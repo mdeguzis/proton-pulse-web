@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2392040",
+    "cpu": "Intel Celeron G3930 @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 610 (KBL GT1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.16.0-3.1-cachyos",
+    "notes": "Very well and it supports the custom proton-cachyos",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1754791444,
+    "title": "",
+    "source": "protondb"
+  }
+]

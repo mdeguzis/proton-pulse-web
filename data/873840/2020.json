@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "873840",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.4.0-42-generic",
+    "notes": "as long as your gfx setup is better than a 3gb 1060 you should be fine",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1596387590,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2339040",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 19.1.7, DRM 3.54, 6.6.90-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.6.90-1-MANJARO",
+    "notes": "Sem bugs, funciona perfeitamente.",
+    "os": "BigLinux (based in Manjaro)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752532058,
+    "title": "",
+    "source": "protondb"
+  }
+]

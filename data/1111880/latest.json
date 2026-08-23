@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1111880",
+    "cpu": "Intel Core i5-8490M @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "GeForce GTX 1050 Ti",
+    "gpuDriver": "4.2 Mesa 22.1.7",
+    "kernel": "6.0.12-200.fc36.x86_64",
+    "notes": "Immedietly crashes after selecting a menu option.",
+    "os": "Fedora Linux 36 (Workstation Edition)",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1674436525,
+    "title": "",
+    "source": "protondb"
+  }
+]

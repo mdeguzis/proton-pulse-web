@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1117160",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.125.06",
+    "kernel": "6.2.0-35-generic",
+    "notes": "I have not continued to check if multiplayer works, but essentially half of the game is not working as the game A.I. can't communicate with the computer if the port does not work. So if you want to learn the game and not join an MMO, then you can't using linux/proton experimental.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1699650720,
+    "title": "",
+    "source": "protondb"
+  }
+]

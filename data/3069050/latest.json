@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3069050",
+    "cpu": "AMD Ryzen 5 9600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.61, 6.12.90+deb13.1-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.90+deb13.1-amd64",
+    "notes": "Probably the smoothest experience on linux so far",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1780258305,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3069050",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 595.71.05",
+    "kernel": "7.0.9-arch2-1",
+    "notes": "Totally fine playing the game, it is somewhat punishing, but that is par for the course with these kinds of games.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1780273983,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3069050",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs great as-is but if you prefer higher frame rates without turning down graphics, just turn off \"Dynamic Sand\" in the video settings.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1780515522,
+    "title": "",
+    "source": "protondb"
+  }
+]

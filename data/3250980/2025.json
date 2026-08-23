@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3250980",
+    "cpu": "1.20",
+    "duration": "severalHours",
+    "gpu": "640x480",
+    "gpuDriver": "1",
+    "kernel": "800",
+    "notes": "",
+    "os": "MST AMCP",
+    "protonVersion": "9.0-4",
+    "ram": "kernel pcie",
+    "rating": "platinum",
+    "timestamp": 1760800423,
+    "title": "",
+    "source": "protondb"
+  }
+]

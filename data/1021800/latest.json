@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1021800",
+    "cpu": "Intel Core i5-8600K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.5.8-1-MANJARO",
+    "notes": "Crashes on launch",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1592866406,
+    "title": "",
+    "source": "protondb"
+  }
+]

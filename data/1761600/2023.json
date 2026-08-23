@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1761600",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.4",
+    "kernel": "6.1.0-3-amd64",
+    "notes": "",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1675259783,
+    "title": "JETT: The Far Shore + Given Time",
+    "source": "protondb"
+  },
+  {
+    "appId": "1761600",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.4",
+    "kernel": "6.1.0-3-amd64",
+    "notes": "Performance was flawless.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1675270988,
+    "title": "JETT: The Far Shore + Given Time",
+    "source": "protondb"
+  }
+]

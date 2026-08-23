@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1212850",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 470 (POLARIS10, DRM 3.41.0, 5.13.0-gentoo-r1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.0-gentoo-r1",
+    "notes": "Works perfectly fine out of the box.",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1630017432,
+    "title": "\u9ed8\u9014 Monobot",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1280780",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.8.5-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.5-arch1.1",
+    "kernel": "6.8.5-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1736076405,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "961490",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-3-amd64",
+    "notes": "300+ fps, apart from MF and render scale it works great.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1576983483,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "961490",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.15.0-72-generic",
+    "notes": "As long as the crashes don't occur, it runs near flawless",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1577020158,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "961490",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.15.0-72-generic",
+    "notes": "Works perfect with fixes applied, was able to beat the game",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-11",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1577711911,
+    "title": "",
+    "source": "protondb"
+  }
+]

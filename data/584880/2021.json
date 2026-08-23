@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "584880",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.13-arch1-1",
+    "notes": "Didn't launch with Proton 6.8-GE-2",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1631044536,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "584880",
+    "cpu": "Intel Core i5-3570 @ 3.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.14.10-1-MANJARO",
+    "notes": "Doesn't run on Linux",
+    "os": "Manjaro Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "6.3-7",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1634118618,
+    "title": "",
+    "source": "protondb"
+  }
+]

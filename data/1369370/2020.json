@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1369370",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 20.1.6",
+    "kernel": "5.7.17-2-MANJARO",
+    "notes": "Game does not start.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1598955177,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1369370",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.4-200.fc32.x86_64",
+    "notes": "Game crashes after pressing play in launcher.",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1598980099,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1369370",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-42-generic",
+    "notes": "Game complains (regardless of proton version) about missing language file, then crashes",
+    "os": "Linux Mint 20",
+    "protonVersion": "5.0-9",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1599118125,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1543790",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "Not bad, unsure how likely the crash I experienced is to affect others, or how frequent it would be.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1633194869,
+    "title": "The Last Friend: First Bite",
+    "source": "protondb"
+  }
+]

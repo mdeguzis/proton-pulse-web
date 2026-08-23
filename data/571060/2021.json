@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "571060",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 465.31",
+    "kernel": "5.11.0-7620-generic",
+    "notes": "It got stuck on the main menu and I could not click anything.",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1626561105,
+    "title": "Zork Nemesis: The Forbidden Lands",
+    "source": "protondb"
+  }
+]

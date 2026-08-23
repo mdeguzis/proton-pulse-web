@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "390940",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.17.4",
+    "notes": "Just works",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1650732822,
+    "title": "The Musketeers: Victoria's Quest",
+    "source": "protondb"
+  }
+]

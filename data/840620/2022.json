@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "840620",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.15.12-arch1-1, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.3",
+    "kernel": "5.15.12-arch1-1",
+    "notes": "Extreme framerate issues after starting the campaign (not a problem in the menu or tutorial) makes it unplayable",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1641681278,
+    "title": "",
+    "source": "protondb"
+  }
+]

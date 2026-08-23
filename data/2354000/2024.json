@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2354000",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT (radeonsi, navi10, LLVM 18.1.8, DRM 3.57, 6.10.10-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.2.2-arch1.1",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Works well on linux out of the box, no problems",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1726924437,
+    "title": "Slackers - Carts of Glory",
+    "source": "protondb"
+  },
+  {
+    "appId": "2354000",
+    "cpu": "AMD Ryzen 7 7700 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6750 XT",
+    "gpuDriver": "4.6 Mesa 24.2.3",
+    "kernel": "6.10.11-200.fc40.x86_64",
+    "notes": "Controller did not work, but if you are happy use keyboard then all good",
+    "os": "Fedora 40",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1728133132,
+    "title": "Slackers - Carts of Glory",
+    "source": "protondb"
+  },
+  {
+    "appId": "2354000",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Playing with all default settings. Graphics on Epic by default. Haven't experienced any issues.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1730410226,
+    "title": "Slackers - Carts of Glory",
+    "source": "protondb"
+  }
+]

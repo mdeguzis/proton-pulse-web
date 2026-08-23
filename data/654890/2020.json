@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "654890",
+    "cpu": "Intel Core i7-8750H @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-54-generic",
+    "notes": "Runs very poorly on Linux via Proton. Same machine on Windows runs the game well. Would not recommend for linux gamers.",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606859810,
+    "title": "",
+    "source": "protondb"
+  }
+]

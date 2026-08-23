@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1152320",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 (NAVI10, DRM 3.40.0, 5.10.3-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.0-devel (git-c57ef25342)",
+    "kernel": "5.10.3-arch1-1",
+    "notes": "Runs great, no issues.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1617344508,
+    "title": "Atelier Shallie: Alchemists of the Dusk Sea DX",
+    "source": "protondb"
+  }
+]

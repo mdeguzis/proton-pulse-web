@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1475180",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.19.0-32-generic",
+    "notes": "Game just crashes when I start a round.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1677179173,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1475180",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 200 (hawaii, LLVM 14.0.6, DRM 3.42, 5.15.0-47-generic)",
+    "gpuDriver": "4.6 Mesa 22.3.0-devel (git-9d3a5c9 2022-09-18 jammy-oibaf-ppa)",
+    "kernel": "5.15.0-47-generic",
+    "notes": "Game just crashes as soon as you hit play in the main menu",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1677964807,
+    "title": "",
+    "source": "protondb"
+  }
+]

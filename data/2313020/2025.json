@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2313020",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 780M (radeonsi, phoenix, LLVM 19.1.7, DRM 3.61, 6.12.34)",
+    "gpuDriver": "4.6 Mesa 25.1.4",
+    "kernel": "6.12.34",
+    "notes": "",
+    "os": "NixOS 25.11 (Xantusia)",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1752496493,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2313020",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7600 XT (radeonsi, navi33, LLVM 20.1.8, DRM 3.64, 6.16.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.16.1-arch1-1",
+    "notes": "Playable, no noticable issue",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1756654210,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2313020",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works out of the box, just need to switch language",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1759617654,
+    "title": "",
+    "source": "protondb"
+  }
+]

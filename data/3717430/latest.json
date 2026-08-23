@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3717430",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.10-76061203-generic",
+    "notes": "Bem tranquilo de se ajustar, bastou usar o Proton 9.0-4 sem outros ajustes.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1749166309,
+    "title": "",
+    "source": "protondb"
+  }
+]

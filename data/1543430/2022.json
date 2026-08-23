@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1543430",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1647676906,
+    "title": "Terrain of Magical Expertise",
+    "source": "protondb"
+  },
+  {
+    "appId": "1543430",
+    "cpu": "Intel Pentium Gold G5500 @ 3.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GT 1030",
+    "gpuDriver": "NVIDIA 470.129.06",
+    "kernel": "5.15.0-41-generic",
+    "notes": "If you like the youtube show TOME runs great",
+    "os": "Zorin OS 16.1",
+    "protonVersion": "7.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1659037382,
+    "title": "Terrain of Magical Expertise",
+    "source": "protondb"
+  }
+]

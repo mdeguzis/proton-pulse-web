@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1662080",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.3.1-zen2-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.1-zen2-1-zen",
+    "notes": "Runs perfectly out of the box.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1685472375,
+    "title": "Goonya Monster",
+    "source": "protondb"
+  }
+]

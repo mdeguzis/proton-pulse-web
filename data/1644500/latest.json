@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1644500",
+    "cpu": "AMD Ryzen 7 7735U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, rembrandt, LLVM 18.1.8, DRM 3.54, 6.6.58)",
+    "gpuDriver": "4.6 Mesa 24.2.4",
+    "kernel": "6.6.58",
+    "notes": "Runs solid",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-3",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1730575993,
+    "title": "",
+    "source": "protondb"
+  }
+]

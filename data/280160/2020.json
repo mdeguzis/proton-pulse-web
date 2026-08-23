@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "280160",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel (git-dd09f1d806)",
+    "kernel": "5.4.8-arch1-1",
+    "notes": "Works on Proton with DXVK",
+    "os": "Arch Linux",
+    "protonVersion": "4.11-11",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1578655479,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "280160",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 440.100",
+    "kernel": "5.6.19-2-MANJARO",
+    "notes": "",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1597149363,
+    "title": "",
+    "source": "protondb"
+  }
+]

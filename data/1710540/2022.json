@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1710540",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-40-generic",
+    "notes": "Fall of Porcupine prologue works perfectly using GE-proton",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1661679243,
+    "title": "",
+    "source": "protondb"
+  }
+]

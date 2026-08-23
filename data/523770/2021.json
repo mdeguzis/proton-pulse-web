@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "523770",
+    "cpu": "Intel Core i7-2700K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 460.73.01",
+    "kernel": "5.11.0-051100-lowlatency",
+    "notes": "As the game freezes, it's unplayable after first section/intro.",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1622973437,
+    "title": "Of Bird and Cage",
+    "source": "protondb"
+  },
+  {
+    "appId": "523770",
+    "cpu": "Intel Core i7-2700K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.4-051304-lowlatency",
+    "notes": "",
+    "os": "Ubuntu 21.04",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1631306803,
+    "title": "Of Bird and Cage",
+    "source": "protondb"
+  }
+]

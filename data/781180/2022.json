@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "781180",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (polaris10, LLVM 12.0.0, DRM 3.41, 5.13.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-rc1",
+    "kernel": "5.13.0-40-generic",
+    "notes": "When starting the game an error window occurs: \"Installation failed, please re-run installer as normal user, not Administrator\"; then exits",
+    "os": "KDE neon User - 5.24",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1650479928,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "781180",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 590 (polaris10, LLVM 12.0.0, DRM 3.41, 5.13.0-40-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-rc1",
+    "kernel": "5.13.0-40-generic",
+    "notes": "Playable with some small flaws",
+    "os": "KDE neon User - 5.24",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1663266701,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "781180",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663473313,
+    "title": "",
+    "source": "protondb"
+  }
+]

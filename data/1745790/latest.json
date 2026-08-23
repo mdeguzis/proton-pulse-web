@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1745790",
+    "cpu": "AMD Ryzen 3 2200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (radeonsi, polaris10, ACO, DRM 3.64, 6.16.4-116.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Playable with slight performance issues",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1761998964,
+    "title": "",
+    "source": "protondb"
+  }
+]

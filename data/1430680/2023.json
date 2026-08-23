@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1430680",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Great on Deck - but you should probably lower your visual settings to medium overall, with AA and draw distance kept high",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1678609801,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1430680",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel Arc A770 (DG2)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.1-arch1-1",
+    "notes": "Needs support for sparse residency to be able to run.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1683516471,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1430680",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.4.2-arch1-1",
+    "notes": "Flawless",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1688801266,
+    "title": "",
+    "source": "protondb"
+  }
+]

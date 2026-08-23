@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1511780",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Another interesting Zachtronics game, launches and plays without issue. Community controller for radial selection of Numbers and F keys.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1683057536,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1511780",
+    "cpu": "12th Gen Intel Core i7-12700H",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "5.15.0-84-generic",
+    "notes": "Works wonderfully out-of-the-box.",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1696203022,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1511780",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.5.3-chos1-chimeraos-1)",
+    "gpuDriver": "4.6 Mesa",
+    "kernel": "6.5.3-chos1-chimeraos-1",
+    "notes": "Works perfectly fine",
+    "os": "ChimeraOS 44 (c3670dd)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1702933090,
+    "title": "",
+    "source": "protondb"
+  }
+]

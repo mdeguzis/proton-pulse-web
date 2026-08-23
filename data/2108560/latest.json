@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2108560",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Ana few minute in the game will just freeze and i would have to force quit the game i have tried expermental, GE and hotfix but none work",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "12 GB",
+    "rating": "borked",
+    "timestamp": 1681604541,
+    "title": "",
+    "source": "protondb"
+  }
+]

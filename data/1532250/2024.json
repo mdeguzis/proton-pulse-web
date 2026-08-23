@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1532250",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.1-arch1-1",
+    "notes": "works great",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1722280699,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1508680",
+    "cpu": "AMD Ryzen 9 9900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.16.8-200.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.2 (git-22ded5f256)",
+    "kernel": "6.16.8-200.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "platinum",
+    "timestamp": 1758951578,
+    "title": "",
+    "source": "protondb"
+  }
+]

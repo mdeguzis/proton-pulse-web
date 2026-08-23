@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1210230",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 510.73.05",
+    "kernel": "5.15.0-40-generic",
+    "notes": "Does not launch without GE-Proton, works perfectly using GE-Proton, with some very minor issues that can easily be ignored",
+    "os": "Ubuntu 22.04 LTS",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1657824557,
+    "title": "Suits: Absolute Power",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1647550",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 660M (radeonsi, rembrandt, ACO, DRM 3.64, 6.19.11-ogc1.1.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "6.19.11-ogc1.1.fc44.x86_64",
+    "notes": "Runs perfectly, no problems",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1777693813,
+    "title": "NEO: The World Ends with You",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2093940",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.2-2-cachyos",
+    "notes": "Works out of the box!",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1771424464,
+    "title": "vivid/stasis",
+    "source": "protondb"
+  },
+  {
+    "appId": "2093940",
+    "cpu": "AMD Ryzen 5 5500",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.5-2-cachyos-bore",
+    "notes": "",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1775094559,
+    "title": "vivid/stasis",
+    "source": "protondb"
+  },
+  {
+    "appId": "2093940",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Perfomance drop in note-heavy charts, fixable issues in the story sections",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "bronze",
+    "timestamp": 1776107247,
+    "title": "vivid/stasis",
+    "source": "protondb"
+  }
+]

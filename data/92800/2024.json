@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "92800",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "5.15.120-1-MANJARO",
+    "notes": "Great out of the box, no tinkering required",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1714059559,
+    "title": "SpaceChem",
+    "source": "protondb"
+  },
+  {
+    "appId": "92800",
+    "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD RENOIR (DRM 3.44.0, 5.16.11-2-MANJARO, LLVM 13.0.1)",
+    "gpuDriver": "4.6 Mesa 21.3.7",
+    "kernel": "5.16.11-2-MANJARO",
+    "notes": "works just fine, as expected",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-1",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1717082494,
+    "title": "SpaceChem",
+    "source": "protondb"
+  },
+  {
+    "appId": "92800",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1728930409,
+    "title": "SpaceChem",
+    "source": "protondb"
+  }
+]

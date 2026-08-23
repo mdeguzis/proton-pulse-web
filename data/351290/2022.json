@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "351290",
+    "cpu": "Intel Core i5-9600K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 510.47.03",
+    "kernel": "5.4.0-99-generic",
+    "notes": "Das Spiel l\u00e4uft fl\u00fcssig aber die Steuerung in den Men\u00fcs macht gro\u00dfe Probleme. Insgesamt l\u00e4uft es aber teilweise mit Nerv-Faktor.",
+    "os": "Linux Mint 20.3",
+    "protonVersion": "7.0-1",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1645023171,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2849680",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.6, DRM 3.63, 6.15.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.4-arch1.1",
+    "kernel": "6.15.3-arch1-1",
+    "notes": "Works exactly as intended",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1751601118,
+    "title": "",
+    "source": "protondb"
+  }
+]

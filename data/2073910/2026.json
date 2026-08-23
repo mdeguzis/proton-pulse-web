@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2073910",
+    "cpu": "Intel Core i5-4200U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 4400 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.19.0-2-cachyos",
+    "notes": "The game runs pretty well without proton or any type.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1771348468,
+    "title": "",
+    "source": "protondb"
+  }
+]

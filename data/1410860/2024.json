@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1410860",
+    "cpu": "11th Gen Intel Core i5-1145G7 @ 2.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.4-0ubuntu1~22.04.1",
+    "kernel": "6.5.0-14-generic",
+    "notes": "Plays perfectly. Just install and play!",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1706581041,
+    "title": "",
+    "source": "protondb"
+  }
+]

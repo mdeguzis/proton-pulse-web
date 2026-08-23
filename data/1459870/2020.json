@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1459870",
+    "cpu": "Intel Core i7-2620M @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "Intel Sandybridge Mobile",
+    "gpuDriver": "3.0 Mesa 18.3.6",
+    "kernel": "4.19.0-12-amd64",
+    "notes": "Didn't try controller input; will update later",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1606053483,
+    "title": "King Pins",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1276790",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (gfx1100, LLVM 15.0.7, DRM 3.51, 5.19.0-46-generic)",
+    "gpuDriver": "4.6 Mesa 23.1.0-devel",
+    "kernel": "5.19.0-46-generic",
+    "notes": "Mouse and Keyboard could have problems sometimes. Cut scenes are not working.\nInstead of this it runs perfectly.",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "bronze",
+    "timestamp": 1709407350,
+    "title": "",
+    "source": "protondb"
+  }
+]

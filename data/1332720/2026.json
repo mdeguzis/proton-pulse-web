@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1332720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Maybe if you take the time to fix the controls",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1773465324,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1332720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Launches but stuck at 15% when starting a new game",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1776262804,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1332720",
+    "cpu": "AMD Ryzen 9 9900X3D 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, ACO, DRM 3.64, 7.0.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.1.0-arch1.1",
+    "kernel": "7.0.8-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1779056652,
+    "title": "",
+    "source": "protondb"
+  }
+]

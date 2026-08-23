@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3043740",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 760M",
+    "gpuDriver": "NVIDIA 470.256.02",
+    "kernel": "6.8.0-48-generic",
+    "notes": "Works well on older hardware. Makes laptop fan go full blast.",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-3",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1730551986,
+    "title": "Calculate It",
+    "source": "protondb"
+  }
+]

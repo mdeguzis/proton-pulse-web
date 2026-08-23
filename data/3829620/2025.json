@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3829620",
+    "cpu": "AMD Ryzen 7 3800XT 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.1-2-cachyos",
+    "notes": "it just works",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1766046520,
+    "title": "",
+    "source": "protondb"
+  }
+]

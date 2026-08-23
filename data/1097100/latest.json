@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1097100",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 595.58.03",
+    "kernel": "6.17.7-ba29.fc43.x86_64",
+    "notes": "Native version is broken, Proton works fine",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1780096962,
+    "title": "Please, Touch The Artwork",
+    "source": "protondb"
+  },
+  {
+    "appId": "1097100",
+    "cpu": "AMD Phenom II X6 1055T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 7.0.11-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 26.1.2-arch1.1",
+    "kernel": "7.0.11-zen1-1-zen",
+    "notes": "The game is stuck at the welcome screen, which doesn\u2019t work correctly. I can move around the in-game mouse cursor and even acccess the settings menu, but cannot exit the game from in-game (clicking \u201cExit\u201d doesn\u2019t do anything). The game is also not displayed at the correct resolution.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1781217779,
+    "title": "Please, Touch The Artwork",
+    "source": "protondb"
+  },
+  {
+    "appId": "1097100",
+    "cpu": "AMD Phenom II X6 1055T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, ACO, DRM 3.64, 7.0.11-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 26.1.2-arch1.1",
+    "kernel": "7.0.11-zen1-1-zen",
+    "notes": "Works with Proton",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1781219838,
+    "title": "Please, Touch The Artwork",
+    "source": "protondb"
+  }
+]

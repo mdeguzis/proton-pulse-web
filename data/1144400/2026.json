@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1144400",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, ACO, DRM 3.64, 6.17.10+kali-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.17.10+kali-amd64",
+    "notes": "\u76f4\u63a5\u8fd0\u884c\u7684\u60c5\u51b5\u4e0b\u6e38\u620f\u57fa\u672c\u529f\u80fd\u5747\u6b63\u5e38\uff0c\u4f46op\u548ced\u65e0\u6cd5\u6b63\u5e38\u7684\u64ad\u653e\uff0c\u4f7f\u7528protontricks\u5b89\u88c5wmp9\u548cdirectshow\u540e\uff0c\u89c6\u9891\u64ad\u653e\u6b63\u5e38\uff0c\u4f46\u4ecd\u7136\u6ca1\u6709\u58f0\u97f3",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1769576512,
+    "title": "Senren\uff0aBanka",
+    "source": "protondb"
+  },
+  {
+    "appId": "1144400",
+    "cpu": "AMD Ryzen 5 2400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon Vega 11",
+    "gpuDriver": "4.6 Mesa 25.3.5",
+    "kernel": "6.18.9-200.fc43.x86_64",
+    "notes": "have yet to read to a point in the story where a movie would play so i cannot say whether they will work or not. likely will be skipped.",
+    "os": "Fedora Linux 43 (Workstation Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1771537526,
+    "title": "Senren\uff0aBanka",
+    "source": "protondb"
+  },
+  {
+    "appId": "1144400",
+    "cpu": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, ACO, DRM 3.64, 6.19.8-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.2-arch1.1",
+    "kernel": "6.19.8-arch1-1",
+    "notes": "All works fine, unless video playback (Opening and Ending only, so you wont miss much really) For it to work use GE-Proton9-11",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1774298443,
+    "title": "Senren\uff0aBanka",
+    "source": "protondb"
+  }
+]

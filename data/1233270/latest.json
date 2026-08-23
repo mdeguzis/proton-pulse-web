@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1233270",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 470.103.01",
+    "kernel": "5.15.23-gentoo-dist",
+    "notes": "Works flawless out of the box!",
+    "os": "Gentoo",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1646615266,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1233270",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Can only quick save and load as you cannot get to the game menu in-game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1650858731,
+    "title": "",
+    "source": "protondb"
+  }
+]

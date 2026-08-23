@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1532510",
+    "cpu": "11th Gen Intel Core i5-11400F @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, LLVM 15.0.7, DRM 3.57, 6.8.0-31-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3 - kisak-mesa PPA",
+    "kernel": "6.8.0-31-generic",
+    "notes": "Worked perfectly out of box.",
+    "os": "Ubuntu Core 22",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1716737118,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2453640",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (radeonsi, vega10, ACO, DRM 3.64, 6.18.8-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.1",
+    "kernel": "6.18.8-1-MANJARO",
+    "notes": "Ran like it has offical support. Surprising amount of polish for an early access indie game at release.",
+    "os": "Manjaro Linux",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1777735015,
+    "title": "",
+    "source": "protondb"
+  }
+]

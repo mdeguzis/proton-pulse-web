@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3142400",
+    "cpu": "AMD Ryzen 5 7535HS with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 660M (radeonsi, rembrandt, LLVM 19.1.7, DRM 3.61, 6.12.69-bruno-custom)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.69-bruno-custom",
+    "notes": "Need some thinkering to avoid crashing",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1770980035,
+    "title": "Scourge Of War - Gettysburg",
+    "source": "protondb"
+  }
+]

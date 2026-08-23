@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "715350",
+    "cpu": "Intel Core i7-7700K @ 4.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.48.02",
+    "kernel": "5.3.0-26-generic",
+    "notes": "The native version didn't launch, with Proton it works perfectly out of the box (HTC Vive)",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1581169166,
+    "title": "",
+    "source": "protondb"
+  }
+]

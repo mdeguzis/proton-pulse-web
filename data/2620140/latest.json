@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2620140",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 535.113.01",
+    "kernel": "5.15.0-71-generic",
+    "notes": "It worked without any problems.",
+    "os": "Ubuntu 22.04.3 LTS\uff0864\u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1704370398,
+    "title": "AVARIS3",
+    "source": "protondb"
+  }
+]

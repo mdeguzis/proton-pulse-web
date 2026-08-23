@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2179490",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.4, DRM 3.64, 6.17.7-ba01.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6",
+    "kernel": "6.17.7-ba01.fc43.x86_64",
+    "notes": "Works fine.",
+    "os": "Bazzite",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1762441295,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1466640",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, ACO, DRM 3.64, 6.19.6-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch2.3",
+    "kernel": "6.19.6-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1773134097,
+    "title": "Road 96 \ud83d\udee3\ufe0f",
+    "source": "protondb"
+  },
+  {
+    "appId": "1466640",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, ACO, DRM 3.64, 6.19.10-1-cachyos-bore)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch2.2",
+    "kernel": "6.19.10-1-cachyos-bore",
+    "notes": "\u041f\u0440\u0438\u0454\u043c\u043d\u0430 \u0433\u0440\u0430",
+    "os": "CachyOS (64 \u0431\u0456\u0442)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1775737913,
+    "title": "Road 96 \ud83d\udee3\ufe0f",
+    "source": "protondb"
+  },
+  {
+    "appId": "1466640",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1778257141,
+    "title": "Road 96 \ud83d\udee3\ufe0f",
+    "source": "protondb"
+  }
+]

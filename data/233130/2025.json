@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "233130",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.13.0-2-cachyos",
+    "notes": "Disfrutable",
+    "os": "CachyOS (Hyprland)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1738291974,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "233130",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 19.1.7, DRM 3.57, 6.8.0-57-generic)",
+    "gpuDriver": "4.6 Mesa 24.3.4 (git-769e51468b)",
+    "kernel": "6.8.0-57-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1743994237,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "233130",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 19.1.7, DRM 3.59, 6.11.0-24-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.3 (git-c3afa2a74f)",
+    "kernel": "6.11.0-24-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1745279910,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2359470",
+    "cpu": "Linux",
+    "duration": "unreported",
+    "gpu": "ATI R6xx HDMI",
+    "gpuDriver": "\u041f\u0430\u043c\u044f\u0442\u044c",
+    "kernel": "4.6",
+    "notes": "To play the game you need virtual reality",
+    "os": "AMD AMD Radeon Graphics (radeonsi, gfx1103_r1, LLVM 16.0.6, DRM 3.54, 6.6.10-chos1-chimeraos-2)",
+    "protonVersion": "8.0-5",
+    "ram": "OculusMiramar (alvr_server)",
+    "rating": "gold",
+    "timestamp": 1711396937,
+    "title": "",
+    "source": "protondb"
+  }
+]

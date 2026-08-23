@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1812620",
+    "cpu": "AMD Ryzen 5 3600XT 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "6.1.11-200.fc37.x86_64",
+    "notes": "I hope the developers make a native app or somehow make this work in proton, this software is very useful and on Windows it was a great app.",
+    "os": "Fedora Linux 37 (Workstation Edition)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1678036321,
+    "title": "DSX",
+    "source": "protondb"
+  }
+]

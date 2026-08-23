@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1809540",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 15.0.7, DRM 3.49, 6.1.12-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.3.6",
+    "kernel": "6.1.12-arch1-1",
+    "notes": "Tried the demo, everything worked fine. Needed GE for cut-scenes.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1691433998,
+    "title": "Nine Sols",
+    "source": "protondb"
+  }
+]

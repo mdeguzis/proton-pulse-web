@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "231740",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.11.0-26-generic",
+    "notes": "Runs smoothly and perfectly well. Be it on Decky or Ubuntu, the ones that I tried.",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1767736776,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "231740",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Runs perfectly well on Deck, be it docked (then using mouse) or handheld (using the touch screen worked perfectly well too)",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1767737432,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "231740",
+    "cpu": "Intel Core i7-5650U @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel HD 6000 (BDW GT3)",
+    "gpuDriver": "4.6 Mesa 25.3.3-1",
+    "kernel": "6.18.5+deb14-amd64",
+    "notes": "No vsync option.",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1770713545,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,11 @@
+# Files intentionally not copied from main to gh-pages.
+# Format: <path> | <reason>
+#
+# This is published to the gh-pages root alongside gh-pages-manifest.txt so
+# missing files can be traced back to an explicit exclusion decision.
+
+gh-auth.js | helper script used in the source repo only; not referenced by the published static site shell
+workers/gh-token-proxy.js | worker source for development/integration work, not part of the GitHub Pages site payload
+tests/profileSystems.test.js | test file, source-only
+tests/submitReport.test.js | test file, source-only
+tests/pluginLinkPage.test.js | test file, source-only

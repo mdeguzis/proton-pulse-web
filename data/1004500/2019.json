@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1004500",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 440.36",
+    "kernel": "5.4.3",
+    "notes": "Borked.",
+    "os": "NixOS 20.03 (Markhor)",
+    "protonVersion": "4.11-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1576742860,
+    "title": "",
+    "source": "protondb"
+  }
+]

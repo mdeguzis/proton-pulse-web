@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "318440",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.15.23-76051523-generic",
+    "notes": "Works with Proton 7.0-1",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1645462128,
+    "title": "",
+    "source": "protondb"
+  }
+]

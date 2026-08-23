@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2427950",
+    "cpu": "Intel Core i5-10500H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "5.15.0-101-generic",
+    "notes": "It just works.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1711057587,
+    "title": "",
+    "source": "protondb"
+  }
+]

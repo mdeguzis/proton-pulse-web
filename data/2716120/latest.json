@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2716120",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 17.0.6, DRM 3.57, 6.9.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 24.1.2-arch1.1",
+    "kernel": "6.9.7-arch1-1",
+    "notes": "I works great.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1741715900,
+    "title": "Kaetram",
+    "source": "protondb"
+  },
+  {
+    "appId": "2716120",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.14.9-arch1-1",
+    "notes": "\u00d6ffnet ein schwarzes fenster und bricht nach ein paar sekunden ab. Das zum thema es l\u00e4uft Nativ",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1749910075,
+    "title": "Kaetram",
+    "source": "protondb"
+  },
+  {
+    "appId": "2716120",
+    "cpu": "AMD Ryzen 7 4700U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, ACO, DRM 3.64, 6.17.7-cachyos1.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.5",
+    "kernel": "6.17.7-cachyos1.fc43.x86_64",
+    "notes": "Runs great *on Proton*",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1762313953,
+    "title": "Kaetram",
+    "source": "protondb"
+  }
+]

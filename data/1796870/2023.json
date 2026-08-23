@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1796870",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6400 (navi24, LLVM 15.0.7, DRM 3.49, 6.1.29-0-lts)",
+    "gpuDriver": "4.6 Mesa 23.0.2 (git-4d5e73870e)",
+    "kernel": "6.1.29-0-lts",
+    "notes": "10/10",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1684966792,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1112240",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 440.44",
+    "kernel": "5.3.0-24-generic",
+    "notes": "Out of the box",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1615914877,
+    "title": "",
+    "source": "protondb"
+  }
+]

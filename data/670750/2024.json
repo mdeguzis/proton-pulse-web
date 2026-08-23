@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "670750",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 19.1.4, DRM 3.59, 6.11.10_1)",
+    "gpuDriver": "4.6 Mesa 24.2.7",
+    "kernel": "6.11.10_1",
+    "notes": "The native version is borked, but the Windows version works just fine.",
+    "os": "Void Linux",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "bronze",
+    "timestamp": 1733381457,
+    "title": "",
+    "source": "protondb"
+  }
+]

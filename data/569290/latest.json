@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "569290",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, gfx1200, ACO, DRM 3.64, 6.16.9+deb14-amd64)",
+    "gpuDriver": "4.6 Mesa 25.2.4-1",
+    "kernel": "6.16.9+deb14-amd64",
+    "notes": "sound is playing but there's only a black screen",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1766679987,
+    "title": "Metamorfose S",
+    "source": "protondb"
+  }
+]

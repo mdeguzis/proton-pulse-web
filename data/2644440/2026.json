@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2644440",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 21.1.6, DRM 3.64, 6.18.3-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.3-arch1.4",
+    "kernel": "6.18.3-2-cachyos",
+    "notes": "Tried with GE-Proton10-32 and didn't worked too. Not working out of the box. Although I haven't tried any fixes yet",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1774487175,
+    "title": "",
+    "source": "protondb"
+  }
+]

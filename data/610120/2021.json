@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "610120",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.40.0, 5.11.0-36-generic, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.8 - kisak-mesa PPA",
+    "kernel": "5.11.0-36-generic",
+    "notes": "All works perfect",
+    "os": "Ubuntu 21.04 (64-\u0440\u043e\u0437\u0440\u044f\u0434\u043d\u0430)",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1632768296,
+    "title": "",
+    "source": "protondb"
+  }
+]

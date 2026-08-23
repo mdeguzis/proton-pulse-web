@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "751250",
+    "cpu": "12th Gen Intel Core i9-12900KF",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 550.100",
+    "kernel": "6.6.40-1-MANJARO",
+    "notes": "Tried with multiple proton versions, no luck. Interestingly, it seems that the game is playable behind the black screen - it plays music, and audio cues suggest that you can interact with the menu buttons and start playing. So maybe it's perfect for blindfolded speedruns.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1724246231,
+    "title": "",
+    "source": "protondb"
+  }
+]

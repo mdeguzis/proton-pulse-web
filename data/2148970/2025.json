@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2148970",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 570.153.02",
+    "kernel": "6.12.34",
+    "notes": "plug n play",
+    "os": "NixOS 25.05 (Warbler)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1757452388,
+    "title": "Skygard Arena",
+    "source": "protondb"
+  }
+]

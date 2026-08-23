@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2192840",
+    "cpu": "AMD Ryzen 9 6900HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (rembrandt, LLVM 16.0.1, DRM 3.49, 6.2.14-300.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.2.14-300.fc38.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 38 (Workstation Edition)",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "bronze",
+    "timestamp": 1683994124,
+    "title": "",
+    "source": "protondb"
+  }
+]

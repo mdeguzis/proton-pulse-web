@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1080780",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "RELEASE;  LLVM;",
+    "gpuDriver": "2.1 Mesa 20.0.8",
+    "kernel": "5.4.0-58-generic",
+    "notes": "bug prevents payoff",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1609802681,
+    "title": "",
+    "source": "protondb"
+  }
+]

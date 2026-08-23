@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1670810",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.7-arch1-1",
+    "notes": "This game launches fine and has no signifigant issues for an Early Access game.  This is a \"Raft\" esque game.",
+    "os": "ArcoLinux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1712142729,
+    "title": "Life Not Supported",
+    "source": "protondb"
+  }
+]

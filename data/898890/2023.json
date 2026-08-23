@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "898890",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Yes, but the game is very heavy (which is really strange considering its graphic) and drains battery really fast",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1675705428,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "898890",
+    "cpu": "Intel Core i3-9100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.8.0-63-generic",
+    "notes": "Couldn't make it to the title screen",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1683645099,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "898890",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 15.0.7, DRM 3.54, 6.5.10-x64v3-xanmod1)",
+    "gpuDriver": "4.6 Mesa 23.2.1 - kisak-mesa PPA",
+    "kernel": "6.5.10-x64v3-xanmod1",
+    "notes": "Worked for me out of the box, although performance was worse than expected",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1700095970,
+    "title": "",
+    "source": "protondb"
+  }
+]

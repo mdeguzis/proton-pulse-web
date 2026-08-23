@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "774461",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.4-arch1-1",
+    "notes": "Fullscreen does not work, perfectly playable otherwise.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "5.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1582359850,
+    "title": "",
+    "source": "protondb"
+  }
+]

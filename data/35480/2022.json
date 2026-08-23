@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "35480",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Immediately exits on launch.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1662239286,
+    "title": "Dwarfs!?",
+    "source": "protondb"
+  },
+  {
+    "appId": "35480",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.15.72-1-MANJARO",
+    "notes": "Tried to launch on various versions of proton. On proton 6.3 stucks at \"Preparing to launch Dwarfs!?\" steam message. On 7.0 the game runs somewhere at the background (no window, no sound, just created a new process). On experimental version of proton game instantly crashes.",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1665518335,
+    "title": "Dwarfs!?",
+    "source": "protondb"
+  }
+]

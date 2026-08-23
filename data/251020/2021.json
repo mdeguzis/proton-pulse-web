@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "251020",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.11.0-41-generic",
+    "notes": "Won't boot",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1639358278,
+    "title": "",
+    "source": "protondb"
+  }
+]

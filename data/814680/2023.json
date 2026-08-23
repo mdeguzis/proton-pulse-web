@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "814680",
+    "cpu": "Intel Core i7-3740QM @ 2.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA Quadro K2000M",
+    "gpuDriver": "NVIDIA 470.199.02",
+    "kernel": "5.15.0-78-generic",
+    "notes": "I have theeses errors : \n\n```\nX Error of failed request:  BadDrawable (invalid Pixmap or Window parameter)\n...\n(process:17075): GLib-GObject-CRITICAL **: 17:38:43.320: g_object_unref: assertion 'G_IS_OBJECT (object)' failed\n```",
+    "os": "Ubuntu 22.04.3 LTS",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1691941444,
+    "title": "Unbound: Worlds Apart",
+    "source": "protondb"
+  }
+]

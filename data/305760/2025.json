@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "305760",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 17.0.6, DRM 3.57, 6.8.0-51-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.9-0ubuntu0.3",
+    "kernel": "6.8.0-51-generic",
+    "notes": "",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1737486719,
+    "title": "",
+    "source": "protondb"
+  }
+]

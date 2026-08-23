@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2329130",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 16.0.1, DRM 3.52, 6.3.0-0.rc7.20230420gitcb0856346a60.59.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "6.3.0-0.rc7.20230420gitcb0856346a60.59.fc39.x86_64",
+    "notes": "Completed game without any issues",
+    "os": "Fedora Linux 39 (KDE Plasma Prerelease)",
+    "protonVersion": "8.0-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682255436,
+    "title": "",
+    "source": "protondb"
+  }
+]

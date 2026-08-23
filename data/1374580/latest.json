@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1374580",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.42.0, 5.14.15-zen1, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.14.15-zen1",
+    "notes": "Game is in early access but seems to work as expected in Linux",
+    "os": "NixOS 21.11 (Porcupine)",
+    "protonVersion": "6.3-8",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1638079867,
+    "title": "Dirge",
+    "source": "protondb"
+  }
+]

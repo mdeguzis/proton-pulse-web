@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1335830",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.17.4-76061704-generic",
+    "notes": "It's a great game, and it runs nearly perfectly on Linux/Proton. The only problem is the sometimes extreme FPS drop in dungeons.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772565857,
+    "title": "",
+    "source": "protondb"
+  }
+]

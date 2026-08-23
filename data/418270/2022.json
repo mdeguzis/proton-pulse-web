@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "418270",
+    "cpu": "Intel Xeon E5-2650 v4 @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 13.0.1, DRM 3.41, 5.13.0-39-generic)",
+    "gpuDriver": "4.6 Mesa 22.1.0-devel (git-b7fbaf9 2022-03-16 focal-oibaf-ppa)",
+    "kernel": "5.13.0-39-generic",
+    "notes": "Worked flawlessly",
+    "os": "Ubuntu 21.10",
+    "protonVersion": "7.0-1",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1649008844,
+    "title": "Draw Slasher",
+    "source": "protondb"
+  }
+]

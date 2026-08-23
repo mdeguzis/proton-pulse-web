@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2050590",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 535.161.07",
+    "kernel": "5.15.0-101-generic",
+    "notes": "Ran perfectly out of box",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1712538753,
+    "title": "Fhtagn Simulator",
+    "source": "protondb"
+  }
+]

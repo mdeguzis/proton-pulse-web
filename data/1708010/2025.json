@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1708010",
+    "cpu": "Intel Core i9-9900KF @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.57, 6.5.0-41-generic)",
+    "gpuDriver": "4.6 Mesa 24.1.0-devel",
+    "kernel": "6.5.0-41-generic",
+    "notes": "The game feels too laggy, I would recomend playing it on windows.",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1736192225,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1708010",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "Plays well out of the box",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1765664551,
+    "title": "",
+    "source": "protondb"
+  }
+]

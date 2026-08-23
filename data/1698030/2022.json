@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1698030",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (dimgrey_cavefish, LLVM 14.0.6, DRM 3.47, 5.19.3-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.6",
+    "kernel": "5.19.3-arch1-1",
+    "notes": "Same thing with proton 5.0",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1661270295,
+    "title": "",
+    "source": "protondb"
+  }
+]

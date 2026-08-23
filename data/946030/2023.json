@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "946030",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-1",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1682452617,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "946030",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1688402129,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "946030",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 1070 Ti",
+    "gpuDriver": "NVIDIA 545.29.02",
+    "kernel": "6.6.1-zen1-1-zen",
+    "notes": "Native version runs perfectly. No compatability nor launch flags needed.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1703976043,
+    "title": "",
+    "source": "protondb"
+  }
+]

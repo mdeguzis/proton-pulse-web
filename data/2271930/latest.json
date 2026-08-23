@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2271930",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "If you can accept low graphic settings it's still playable.",
+    "os": "(Pop OS) Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1741018604,
+    "title": "",
+    "source": "protondb"
+  }
+]

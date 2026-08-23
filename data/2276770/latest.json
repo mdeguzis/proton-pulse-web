@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2276770",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.18.13-arch1-1)",
+    "gpuDriver": "4.6 Mesa 26.0.1-arch1.1",
+    "kernel": "6.18.13-arch1-1",
+    "notes": "FPS might be low in the demo but the game is still runs on linux through proton",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1772158100,
+    "title": "",
+    "source": "protondb"
+  }
+]

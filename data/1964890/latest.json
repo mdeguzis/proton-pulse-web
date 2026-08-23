@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1964890",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 17.0.6, DRM 3.54, 6.6.11-200.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.3",
+    "kernel": "6.6.11-200.fc39.x86_64",
+    "notes": "",
+    "os": "Fedora release 39 (Thirty Nine)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1705746879,
+    "title": "",
+    "source": "protondb"
+  }
+]

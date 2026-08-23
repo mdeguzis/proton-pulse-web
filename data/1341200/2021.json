@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1341200",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6800 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.7-1-MANJARO, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.5",
+    "kernel": "5.15.7-1-MANJARO",
+    "notes": "Game just worked straight away out the box with Proton Experimental and ran better then even the original dw9 on windows.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1640486244,
+    "title": "",
+    "source": "protondb"
+  }
+]

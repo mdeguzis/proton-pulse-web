@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1054690",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII",
+    "gpuDriver": "4.6 Mesa 20.1.0-devel (git-740cb3d193)",
+    "kernel": "5.5.5-arch1-1",
+    "notes": "Borked",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1582664857,
+    "title": "Dreadlands",
+    "source": "protondb"
+  },
+  {
+    "appId": "1054690",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 200",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.6-149.current",
+    "notes": "I have the beta version. It doesn't start.",
+    "os": "Solus",
+    "protonVersion": "5.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1583351971,
+    "title": "Dreadlands",
+    "source": "protondb"
+  },
+  {
+    "appId": "1054690",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 430.64",
+    "kernel": "4.19.85-1-MANJARO",
+    "notes": "Ne d\u00e9marre pas du tout. Does not start at all.",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-13",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1583867607,
+    "title": "Dreadlands",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "770500",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.16-arch1-1",
+    "notes": "Works out of the box with no issues",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1613474817,
+    "title": "",
+    "source": "protondb"
+  }
+]

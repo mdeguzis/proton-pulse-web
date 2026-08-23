@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3058890",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.6.74",
+    "notes": "The game is in a working state on Linux, and is a fine enough time as-is, as long as you don't mind a few missing videos and textures.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1738391117,
+    "title": "",
+    "source": "protondb"
+  }
+]

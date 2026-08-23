@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "412220",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-3-cachyos",
+    "notes": "WAYLAND: To set the aspect ratio to 4:3, you should only use gamescope. Other than that, there is no problem",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1771016898,
+    "title": "DDraceNetwork",
+    "source": "protondb"
+  },
+  {
+    "appId": "412220",
+    "cpu": "Intel Celeron N5095 @ 2.00GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (JSL)",
+    "gpuDriver": "4.6 Mesa 25.3.3 (git-a9c6420d8c)",
+    "kernel": "6.8.0-94-generic",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1771834640,
+    "title": "DDraceNetwork",
+    "source": "protondb"
+  },
+  {
+    "appId": "412220",
+    "cpu": "Intel Core i3-10110U @ 2.10GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "6.12.81_1",
+    "notes": "",
+    "os": "Void Linux",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1776286499,
+    "title": "DDraceNetwork",
+    "source": "protondb"
+  }
+]

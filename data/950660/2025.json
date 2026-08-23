@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "950660",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.1-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.16.1-arch1-1",
+    "notes": "Can't Join Official Server",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1755813558,
+    "title": "WRAITH OPS",
+    "source": "protondb"
+  }
+]

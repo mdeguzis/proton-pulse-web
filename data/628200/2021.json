@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "628200",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 455.28",
+    "kernel": "5.8.14-gentoo",
+    "notes": "",
+    "os": "Unknown",
+    "protonVersion": "6.3-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1620618359,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "628200",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.6-artix1-1",
+    "notes": "I use Proton-6.14-GE-2 currently but this game works with 6.13,6.12,6.10 too. No issues at all.",
+    "os": "Artix Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1628242133,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1157250",
+    "cpu": "AMD Ryzen 5 4600HS with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.11.0-27-generic",
+    "notes": "\u041d\u0435\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e \u043f\u0440\u043e\u0433\u0440\u0443\u0436\u0430\u044e\u0442\u0441\u044f \u0446\u0432\u0435\u0442\u0430 \u0438\u0437 \u0433\u043b\u0430\u0432\u043d\u043e\u0433\u043e \u043c\u0435\u043d\u044e (\u043a\u0440\u0430\u0441\u043d\u044b\u0439 \u043e\u0442\u0442\u0435\u043d\u043e\u043a)",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1641318622,
+    "title": "Anomaly Zone",
+    "source": "protondb"
+  }
+]

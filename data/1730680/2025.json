@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1730680",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.8.0-58-generic",
+    "notes": "FULLY PLAYABLE LET'S GOOOOOO",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "12 GB",
+    "rating": "gold",
+    "timestamp": 1751956999,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1730680",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.4-108.bazzite.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.1",
+    "kernel": "6.16.4-108.bazzite.fc42.x86_64",
+    "notes": "Works great out of the box, no complaints",
+    "os": "Bazzite",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1759458244,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1730680",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.17.0-4-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.4-cachyos1.2",
+    "kernel": "6.17.0-4-cachyos",
+    "notes": "Works perfect with CachyOS",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759746496,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "270210",
+    "cpu": "Intel Core i5-7200U @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 23.0.2",
+    "kernel": "5.15.108-1-MANJARO",
+    "notes": "The game does not launch, only a popup window indicating a path error.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-2",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1683447610,
+    "title": "",
+    "source": "protondb"
+  }
+]

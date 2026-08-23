@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1145950",
+    "cpu": "Intel Core i7-8565U @ 1.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 with Max-Q Design",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.8.0-44-generic",
+    "notes": "Using 6.3-4 fixed my issues. Seemingly made some improvements that have enabled the games to run correctly since my last report",
+    "os": "Ubuntu 20.04.2 LTS",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1621171053,
+    "title": "Vector Prospector",
+    "source": "protondb"
+  }
+]

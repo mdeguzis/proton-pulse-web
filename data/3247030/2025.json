@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3247030",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "duration": "unreported",
+    "gpu": "AMD Ryzen Z1 Extreme (radeonsi, phoenix, LLVM 21.1.6, DRM 3.64, 6.17.7-ba22.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.1-arch1.3",
+    "kernel": "6.17.7-ba22.fc43.x86_64",
+    "notes": "on latest demo version. Tried multiple proton versions, best I got was a white screen",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1765980444,
+    "title": "",
+    "source": "protondb"
+  }
+]

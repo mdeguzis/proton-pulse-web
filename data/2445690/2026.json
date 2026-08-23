@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2445690",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600 (radeonsi, navi33, ACO, DRM 3.64, 6.19.2-1-default)",
+    "gpuDriver": "4.6 Mesa 26.0.0",
+    "kernel": "6.19.2-1-default",
+    "notes": "No tinkering, install and play",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1771749411,
+    "title": "",
+    "source": "protondb"
+  }
+]

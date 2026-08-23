@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "532290",
+    "cpu": "Intel Core i5-10400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.2.0-25-generic",
+    "notes": "The game will only successfully display the language selection using flags and then its own logo, after that it's just a black screen.",
+    "os": "Ubuntu 23.04 (64bit)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1691950903,
+    "title": "",
+    "source": "protondb"
+  }
+]

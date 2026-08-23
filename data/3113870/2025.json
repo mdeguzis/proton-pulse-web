@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3113870",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.42, 5.15.0-136-generic)",
+    "gpuDriver": "4.6 Mesa 25.0.2 - kisak-mesa PPA",
+    "kernel": "5.15.0-136-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1744063854,
+    "title": "Hockey Legacy Manager 25",
+    "source": "protondb"
+  }
+]

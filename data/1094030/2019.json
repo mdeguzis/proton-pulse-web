@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1094030",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 440.31",
+    "kernel": "5.3.11-1-MANJARO",
+    "notes": "Crashes after 5-10 mins of playing",
+    "os": "Manjaro Linux",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1574088174,
+    "title": "",
+    "source": "protondb"
+  }
+]

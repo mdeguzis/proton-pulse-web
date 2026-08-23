@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "259530",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6600 XT (navi23, LLVM 16.0.6, DRM 3.54, 6.5.3-chos1-chimeraos-1)",
+    "gpuDriver": "4.6 Mesa",
+    "kernel": "6.5.3-chos1-chimeraos-1",
+    "notes": "Works perfectly fine.",
+    "os": "ChimeraOS 44 (c3670dd)",
+    "protonVersion": "8.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1698877330,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "259530",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1701175199,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "259530",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works Great Out Of The Box",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1704045888,
+    "title": "",
+    "source": "protondb"
+  }
+]

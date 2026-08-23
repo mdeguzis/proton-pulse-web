@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "846730",
+    "cpu": "Intel Core i7-3615QM @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "nouveau NVE7",
+    "gpuDriver": "4.3 Mesa 20.0.8",
+    "kernel": "5.4.0-54-generic",
+    "notes": "Music can be heard but image freezes before the menu",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1606427186,
+    "title": "",
+    "source": "protondb"
+  }
+]

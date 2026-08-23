@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1680550",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.6, DRM 3.47, 5.19.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 22.1.7",
+    "kernel": "5.19.7-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1662934403,
+    "title": "Impact Point",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1163490",
+    "cpu": "AMD A8-7600 Radeon R7, 10 Compute Cores 4C+6G",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 7700 (radeonsi, verde, ACO, DRM 3.61, 6.12.85+deb13-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.7-2",
+    "kernel": "6.12.85+deb13-amd64",
+    "notes": "The launcher appears, but game doesn't start. About a month ago it worked and I could play.",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1778591560,
+    "title": "Gangsters 1920",
+    "source": "protondb"
+  }
+]

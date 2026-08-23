@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4019090",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.0-19-generic",
+    "notes": "",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1771033596,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "4019090",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.0-19-generic",
+    "notes": "",
+    "os": "Ubuntu 24.10",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1772767472,
+    "title": "",
+    "source": "protondb"
+  }
+]

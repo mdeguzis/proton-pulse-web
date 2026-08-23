@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1443620",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (gfx1100, LLVM 15.0.7, DRM 3.49, 6.2.10-273-tkg-bore)",
+    "gpuDriver": "4.6 Mesa 23.0.1",
+    "kernel": "6.2.10-273-tkg-bore",
+    "notes": "Also tried proton 8.05 and WiVRn to no avail. Opened a bug report at https://github.com/ValveSoftware/Proton/issues/8457",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1739631017,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1443620",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.8-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.3-arch1.2",
+    "kernel": "6.16.8-273-tkg-eevdf",
+    "notes": "Due to new patches for the game, my proton build can now run the game flawlessly.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1762098819,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1443620",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.18.1-273-tkg-eevdf",
+    "notes": "Fixes were applied to regular Proton 10, it runs with WiVRn, ALVR and Steam Link on Meta Quest 3. Gameplay: https://youtu.be/TGT71f40dMg",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1767207466,
+    "title": "",
+    "source": "protondb"
+  }
+]

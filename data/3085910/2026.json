@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3085910",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6600 (radeonsi, navi23, LLVM 21.1.8, DRM 3.64, 6.18.7-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.4",
+    "kernel": "6.18.7-200.nobara.fc43.x86_64",
+    "notes": "Runs out of the box",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1770421662,
+    "title": "",
+    "source": "protondb"
+  }
+]

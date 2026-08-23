@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2353100",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works perfectly on my Deck without any manual configuration, just install and play.",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1767027032,
+    "title": "Ember the Werefox",
+    "source": "protondb"
+  },
+  {
+    "appId": "2353100",
+    "cpu": "Intel Core i7-14700K",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.11-300.fc43.x86_64",
+    "notes": "Works perfectly with my xbox controller on Fedora. Even on my 21:9 monitor.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1767027091,
+    "title": "Ember the Werefox",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3491230",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.9-2-cachyos",
+    "notes": "Absolutely zero issues. It's a pretty basic game so it should just work.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1774457038,
+    "title": "",
+    "source": "protondb"
+  }
+]

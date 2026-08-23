@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "569290",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.1.2",
+    "kernel": "5.7.0-1-amd64",
+    "notes": "Nothing appears on screen",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1593292735,
+    "title": "Metamorfose S",
+    "source": "protondb"
+  }
+]

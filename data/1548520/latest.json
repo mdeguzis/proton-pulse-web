@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1548520",
+    "cpu": "AMD BC-250 6-Core @ 3.6 GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD GFX1013 @ 2200Mhz",
+    "gpuDriver": "4.6 Mesa 26.1.0-devel (git-1e1d8931c7)",
+    "kernel": "6.19.5-3-cachyos-deckify",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "GDDR6 16 GB",
+    "rating": "gold",
+    "timestamp": 1775723620,
+    "title": "DARKEST DAYS",
+    "source": "protondb"
+  }
+]

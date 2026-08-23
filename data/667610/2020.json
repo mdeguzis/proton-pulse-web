@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "667610",
+    "cpu": "Intel Core i7-2600K @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.0-52-generic",
+    "notes": "I also tried a couple of Gloriuseggrolls custom protons v 5.9-GE-8-ST, and v 5.21-GE-1",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1608198013,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "667610",
+    "cpu": "Intel Core i5-6600K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.4.75-050475-generic",
+    "notes": "Shows crash window immediately after starting",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1608237676,
+    "title": "",
+    "source": "protondb"
+  }
+]

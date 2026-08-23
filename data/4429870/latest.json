@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "4429870",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, ACO, DRM 3.64, 7.0.10-201.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.2.0-devel",
+    "kernel": "7.0.10-201.fc44.x86_64",
+    "notes": "Works out of the box, completed the game without any issues",
+    "os": "Fedora Linux 44 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1780876939,
+    "title": "There's Nothing Down There",
+    "source": "protondb"
+  },
+  {
+    "appId": "4429870",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 610.43.02",
+    "kernel": "7.0.11-arch1-1",
+    "notes": "Worked great",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1780901170,
+    "title": "There's Nothing Down There",
+    "source": "protondb"
+  }
+]

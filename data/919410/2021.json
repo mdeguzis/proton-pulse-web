@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "919410",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon VII (VEGA20, DRM 3.40.0, 5.11.11-arch1-1, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.1",
+    "kernel": "5.11.11-arch1-1",
+    "notes": "Works",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-1",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1617527531,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "919410",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.32.03",
+    "kernel": "5.8.0-43-generic",
+    "notes": "The game does not start. Steam freezes and does not respond.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1619720953,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "919410",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (POLARIS10, DRM 3.42.0, 5.14.7-2-MANJARO, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.14.7-2-MANJARO",
+    "notes": "Didn't encounter crashes otherwise, but stopped playing once it was clear it crashed on the 2nd level I tried to load hardcore mode on.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633427453,
+    "title": "",
+    "source": "protondb"
+  }
+]

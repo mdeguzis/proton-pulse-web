@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "762220",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.13.0-27-generic",
+    "notes": "Works perfectly out of the box - just choose Proton",
+    "os": "Zorin OS 16",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1653335287,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "762220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "If you are playing with M&K as your input you should have no issues. On Deck with input tweaks it is more than playable",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1662957857,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "762220",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 (navi21, LLVM 15.0.5, DRM 3.42, 5.15.80-gentoo)",
+    "gpuDriver": "4.6 Mesa 22.2.3",
+    "kernel": "5.15.80-gentoo",
+    "notes": "Works without issues",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1672214246,
+    "title": "",
+    "source": "protondb"
+  }
+]

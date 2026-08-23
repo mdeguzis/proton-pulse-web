@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "671620",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "Works just as well on PopOS with slight performance loss",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1633898825,
+    "title": "Beast Battle Simulator",
+    "source": "protondb"
+  }
+]

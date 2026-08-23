@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1105670",
+    "cpu": "AMD Athlon II X4 645",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050",
+    "gpuDriver": "NVIDIA 418.56",
+    "kernel": "4.15.0-112-generic",
+    "notes": "There's some very slight input lag, but other than that the game runs fine.",
+    "os": "Linux Mint 18.3 Sylvia",
+    "protonVersion": "5.13-1",
+    "ram": "20 GB",
+    "rating": "gold",
+    "timestamp": 1604149143,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1105670",
+    "cpu": "Intel Core i7-4710HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970M",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "5.3.8-arch1-1",
+    "notes": "Runs fast, no problem detected, no lag during animations. Autosave working as expected. Have Fun !",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1607185788,
+    "title": "",
+    "source": "protondb"
+  }
+]

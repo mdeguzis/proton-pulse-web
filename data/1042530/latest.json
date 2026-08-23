@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1042530",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 with Max-Q Design",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.4.0-48-generic",
+    "notes": "It doesn't work with SteamPlay",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1607362791,
+    "title": "",
+    "source": "protondb"
+  }
+]

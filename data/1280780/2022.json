@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1280780",
+    "cpu": "Intel Core i7-12700K",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT",
+    "gpuDriver": "Mesa 22.1.7",
+    "kernel": "5.19.14-300.fc36.x86_64",
+    "notes": "Works out of the box.",
+    "os": "Freedesktop.org 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1665605141,
+    "title": "",
+    "source": "protondb"
+  }
+]

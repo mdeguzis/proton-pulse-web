@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1048660",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.38.0, 5.8.0-7630-generic, LLVM 11.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.0-devel (git-3f0da80 2020-12-10 focal-oibaf-ppa)",
+    "kernel": "5.8.0-7630-generic",
+    "notes": "Works out of the box. Can't tell the difference with the Windows version",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1618436373,
+    "title": "",
+    "source": "protondb"
+  }
+]

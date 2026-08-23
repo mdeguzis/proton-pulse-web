@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "754890",
+    "cpu": "12th Gen Intel Core i5-12500H",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.6.57-gentoo-dist",
+    "notes": "Proton 9.0-4 -- Game launches but freezes on black screen\n\nProton 8.0-5 and 7.0-6 -- Fatal error: [File:I:\\AltWorkspace\\Engine\\Source\\Runtime\\D3D12RHI\\Private\\D3D12Adapter.cpp] [Line: 917] \nMissing full support for Direct3D 12. Please update to the latest drivers.\n\nProton 6.3-8 -- Runs with 15 fps for some minutes, then same error as with 8.0-5 and 7.0-6\n\nProton 5.13-6 and lower -- Missing Microsoft Visual C++ Runtime; Setup failing with Invalid ACL\n\nSame issues with different proton-ge versions.",
+    "os": "Gentoo Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1734898425,
+    "title": "",
+    "source": "protondb"
+  }
+]

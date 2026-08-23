@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "463170",
+    "cpu": "Intel Core i5-4670 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "5.6.19-300.fc32.x86_64",
+    "notes": "Black screen after 'New Campaign'",
+    "os": "Fedora release 32 (Thirty Two)",
+    "protonVersion": "5.0-9",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1592883087,
+    "title": "",
+    "source": "protondb"
+  }
+]

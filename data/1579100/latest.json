@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1579100",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "links und rechts fehlt ein wenig vom Bild, da man die Aufl\u00f6sung im Spiel nicht \u00e4ndern kann. ( betrifft nur Handheld Modus )",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1685604485,
+    "title": "",
+    "source": "protondb"
+  }
+]

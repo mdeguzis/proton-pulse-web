@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2440510",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.0-14-generic",
+    "notes": "Poo",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1772065091,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2440510",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.5-200.fc43.x86_64",
+    "notes": "not running.",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "borked",
+    "timestamp": 1775756426,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2440510",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2080Ti",
+    "gpuDriver": "4.5 Mesa 26.0.5-arch1.1",
+    "kernel": "6.19.12-artix1-1",
+    "notes": "Instals fine, but when attempting to launch, it just complains about some Windows stuff. Can't be played on Linux... which is a huge dissapointment.",
+    "os": "Artix Linux",
+    "protonVersion": "10.0-3",
+    "ram": "129 GB",
+    "rating": "borked",
+    "timestamp": 1777184202,
+    "title": "",
+    "source": "protondb"
+  }
+]

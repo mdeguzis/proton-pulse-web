@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1608470",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 515.65.01",
+    "kernel": "5.19.0-arch1-1",
+    "notes": "Works without tinkering",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1660074611,
+    "title": "Warstride Challenges",
+    "source": "protondb"
+  }
+]

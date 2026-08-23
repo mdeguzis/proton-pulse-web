@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "370070",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.17.4-arch1-1",
+    "notes": "Seems to work great with proton",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1650797102,
+    "title": "Wyrmsun",
+    "source": "protondb"
+  }
+]

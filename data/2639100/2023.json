@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2639100",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.6, DRM 3.54, 6.5.2-1-rt8-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.1.9-manjaro1.1",
+    "kernel": "6.5.2-1-rt8-MANJARO",
+    "notes": "Nothing seemed wrong with a 2 1/2 hour session.",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1703839354,
+    "title": "",
+    "source": "protondb"
+  }
+]

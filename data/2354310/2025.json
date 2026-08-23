@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2354310",
+    "cpu": "AMD Ryzen 7 9700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.16.7-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.3-cachyos1.2",
+    "kernel": "6.16.7-2-cachyos",
+    "notes": "no window comes up, even when using different proton versions and different launch options",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1758221737,
+    "title": "Adventures of a snowboarder",
+    "source": "protondb"
+  }
+]

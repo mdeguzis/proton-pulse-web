@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "722960",
+    "cpu": "Intel Xeon           X5690  @ 4.39GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1060 3GB",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.15-1-MANJARO",
+    "notes": "game works out of the box",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "20 GB",
+    "rating": "silver",
+    "timestamp": 1632217716,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "722960",
+    "cpu": "Intel Core i5-2400 @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Game runs perfectly but you won't experience multiplayer but not because it's not working but because it's a dead game",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634461987,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "722960",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.10.70-1-MANJARO",
+    "notes": "works great but you can't even rebind the keys, you're stucked with wasq !",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1635004432,
+    "title": "",
+    "source": "protondb"
+  }
+]

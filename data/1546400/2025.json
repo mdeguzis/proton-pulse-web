@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1546400",
+    "cpu": "AMD Ryzen 9 PRO 6950H with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon 680M (radeonsi, rembrandt, LLVM 19.1.7, DRM 3.61, 6.13.7-1-default)",
+    "gpuDriver": "4.6 Mesa 25.0.1",
+    "kernel": "6.13.7-1-default",
+    "notes": "Great console-like experience with GMKtec M7 Pro",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1742824033,
+    "title": "GigaBash",
+    "source": "protondb"
+  }
+]

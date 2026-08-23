@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1297490",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "5.15.76-1-MANJARO",
+    "notes": "Runs well can play multiplayer. But proton GE is a must",
+    "os": "Manjaro Linux",
+    "protonVersion": "7.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1668376828,
+    "title": "",
+    "source": "protondb"
+  }
+]

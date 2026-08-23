@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "659900",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "Doesn't run with any of the Proton's that Steam supports.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-7",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1589425630,
+    "title": "",
+    "source": "protondb"
+  }
+]

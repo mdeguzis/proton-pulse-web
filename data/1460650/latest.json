@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1460650",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX Vega (vega10, LLVM 13.0.1, DRM 3.44, 5.16.14-1-default)",
+    "gpuDriver": "4.6 Mesa 22.0.0",
+    "kernel": "5.16.14-1-default",
+    "notes": "Works OK out of the box",
+    "os": "openSUSE Tumbleweed",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1659204661,
+    "title": "Lodestar",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1893810",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 18.1.8, DRM 3.59, 6.12.8-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 24.3.3-cachyos1.2",
+    "kernel": "6.12.8-2-cachyos",
+    "notes": "Ran without any issues at all.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "48 GB",
+    "rating": "gold",
+    "timestamp": 1736293781,
+    "title": "",
+    "source": "protondb"
+  }
+]

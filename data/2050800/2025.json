@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2050800",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "severalHours",
+    "gpu": "Mesa llvmpipe (LLVM 16.0.6, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.3-arch1-1",
+    "notes": "Works fully on install, great performance, great soundtrack, super fun game.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1763022573,
+    "title": "Let Them Come: Onslaught",
+    "source": "protondb"
+  }
+]

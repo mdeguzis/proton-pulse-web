@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2133830",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.5-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.7",
+    "kernel": "6.18.5-200.fc43.x86_64",
+    "notes": "Have to force game to use DX11 to get barely playable performance",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768600525,
+    "title": "BrokenLore: UNFOLLOW",
+    "source": "protondb"
+  }
+]

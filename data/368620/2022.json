@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "368620",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.40.0, 5.11.0-44-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-44-generic",
+    "notes": "Problema de mapeamento de controle n\u00e3o est\u00e1 perfeito, prejudica a experi\u00eancia",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-1",
+    "ram": "6 GB",
+    "rating": "gold",
+    "timestamp": 1649628409,
+    "title": "Timespinner",
+    "source": "protondb"
+  }
+]

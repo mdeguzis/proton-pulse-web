@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3381120",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "",
+    "os": "Pop!_OS",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1768145927,
+    "title": "",
+    "source": "protondb"
+  }
+]

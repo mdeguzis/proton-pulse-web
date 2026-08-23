@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2491200",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "Works without issues after switching to GE-Proton",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1771419499,
+    "title": "TOUHOU GENSOU MAHJONG",
+    "source": "protondb"
+  }
+]

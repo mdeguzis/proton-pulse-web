@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1364800",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 5500 XT",
+    "gpuDriver": "4.6 Mesa 20.2.1",
+    "kernel": "5.9.3-1-MANJARO",
+    "notes": "Black screen when loading, then crash: Fatal error!",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "5.0-10",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1605294206,
+    "title": "",
+    "source": "protondb"
+  }
+]

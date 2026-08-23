@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1910580",
+    "cpu": "Intel Core i3-8145U @ 2.10GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.15.0-67-generic",
+    "notes": "The exact same",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "7.0-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1679630310,
+    "title": "",
+    "source": "protondb"
+  }
+]

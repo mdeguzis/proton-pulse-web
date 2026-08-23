@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1151080",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.54, 6.6.28-2-lts)",
+    "gpuDriver": "4.6 Mesa 24.0.5-arch1.1",
+    "kernel": "6.6.28-2-lts",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1777729621,
+    "title": "",
+    "source": "protondb"
+  }
+]

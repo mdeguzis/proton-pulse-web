@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1833200",
+    "cpu": "Intel Core i7-6700 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.5-arch1-1",
+    "notes": "Flawless, zero issues thus far",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768796956,
+    "title": "",
+    "source": "protondb"
+  }
+]

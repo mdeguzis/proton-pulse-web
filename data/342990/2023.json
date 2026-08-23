@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "342990",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 495.29.05",
+    "kernel": "5.10.0-10-amd64",
+    "notes": "After thinkering it was smooth experience. By seeing reviews, I guess it runs better than on Windows.",
+    "os": "Debian GNU/Linux 11 (bullseye)",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1681152868,
+    "title": "",
+    "source": "protondb"
+  }
+]

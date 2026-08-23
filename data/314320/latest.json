@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314320",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.15.32-1-MANJARO",
+    "notes": "Unplayable.",
+    "os": "Manjaro Linux (64 \u0431\u0438\u0442)",
+    "protonVersion": "7.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1651860355,
+    "title": "",
+    "source": "protondb"
+  }
+]

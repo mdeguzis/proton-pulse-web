@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2336220",
+    "cpu": "13th Gen Intel Core i5-13500H",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel (RPL-P)",
+    "gpuDriver": "4.6 Mesa 23.2.1-arch1.2",
+    "kernel": "6.6.7-zen1-1-zen",
+    "notes": "\u5b83\u53ef\u4ee5\u8fd0\u884c\u5f97\u5f88\u597d\uff0c\u7231\u6765\u81eaproton experimental",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1709270126,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2336220",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Smooth running on Steamdeck",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1711323298,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2336220",
+    "cpu": "12th Gen Intel Core i7-12650H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.2-zen1-1-zen",
+    "notes": "Works out of box (using proton experimental)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1735560331,
+    "title": "",
+    "source": "protondb"
+  }
+]

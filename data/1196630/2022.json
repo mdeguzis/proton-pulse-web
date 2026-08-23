@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1196630",
+    "cpu": "Intel Core i7-10700K @ 3.80GHz",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.10.9-gentoo, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.7",
+    "kernel": "5.10.9-gentoo",
+    "notes": "Stable for an hour or two, never corrupts saves even on crash.",
+    "os": "Gentoo Base System release 2.7",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1642465345,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196630",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1663085724,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1196630",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "The game works out of the box with no issues. Encountered no major glitches or bugs during my full playthrough.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1668353539,
+    "title": "",
+    "source": "protondb"
+  }
+]

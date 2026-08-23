@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1740720",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "gpuDriver": "NVIDIA 580.119.02",
+    "kernel": "6.18.3-200.fc43.x86_64",
+    "notes": "Works Out of the Box",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1767898186,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1740720",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "alla prma interazione di dialogo o tutorial non \u00e9 possible avanzare nel testo",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1778281815,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1631500",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.18.7-76061807-generic",
+    "notes": "The game works without any problems once you select a working Proton version.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1774299914,
+    "title": "",
+    "source": "protondb"
+  }
+]

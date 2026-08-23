@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "648120",
+    "cpu": "Intel Celeron  N3160  @ 1.60GHz",
+    "duration": "severalHours",
+    "gpu": "Intel HD 400 (BSW)",
+    "gpuDriver": "3.0 Mesa 21.0.0",
+    "kernel": "5.11.0-7614-generic",
+    "notes": "Works fine, no bugs at all",
+    "os": "Pop!_OS 20.10",
+    "protonVersion": "6.3-4",
+    "ram": "4 GB",
+    "rating": "gold",
+    "timestamp": 1622044258,
+    "title": "",
+    "source": "protondb"
+  }
+]

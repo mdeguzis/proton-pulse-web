@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1328530",
+    "cpu": "Intel Core i5-4590 @ 3.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "4.19.0-13-amd64",
+    "notes": "Works without issues",
+    "os": "Debian GNU/Linux 10 (buster)",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1609882910,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1328530",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.52-1-MANJARO",
+    "notes": "Runs perfectly.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1627138613,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1328530",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-8",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1640942456,
+    "title": "",
+    "source": "protondb"
+  }
+]

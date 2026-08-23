@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1509730",
+    "cpu": "Intel Core i7-4770 @ 3.40GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 465.27",
+    "kernel": "5.12.4-arch1-2",
+    "notes": "UE4 Prereq crashing upon installation",
+    "os": "Arch Linux (64  \u0431\u0438\u0442\u0430)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1621282964,
+    "title": "",
+    "source": "protondb"
+  }
+]

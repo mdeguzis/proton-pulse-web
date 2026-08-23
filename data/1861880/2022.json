@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1861880",
+    "cpu": "11th Gen Intel Core i7-11700F @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 515.86.01",
+    "kernel": "5.15.0-56-generic",
+    "notes": "Works out of the box with forced experimental proton. Splashscreen only if suggested proton version is used.",
+    "os": "Ubuntu 22.04.1 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1671017681,
+    "title": "",
+    "source": "protondb"
+  }
+]

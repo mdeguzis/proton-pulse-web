@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1896160",
+    "cpu": "12th Gen Intel Core i5-12500",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 535.171.04",
+    "kernel": "6.5.0-28-generic",
+    "notes": "Runs great out of the box",
+    "os": "Ubuntu 22.04.4 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1714227200,
+    "title": "",
+    "source": "protondb"
+  }
+]

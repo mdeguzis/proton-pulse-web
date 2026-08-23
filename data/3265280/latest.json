@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3265280",
+    "cpu": "AMD Ryzen 5 8400F 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.64, 6.18.4-100.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.1.9",
+    "kernel": "6.18.4-100.fc42.x86_64",
+    "notes": "",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1769084122,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "979110",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 550.142",
+    "kernel": "6.12.8_1",
+    "notes": "Just works on my system",
+    "os": "Void Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1736631291,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "979110",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 19.1.1, DRM 3.61, 6.14.0-061400-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.14.0-061400-generic",
+    "notes": "It works great even on weak hardware.",
+    "os": "Linux Mint 22.1 (64-\u0440\u0430\u0437\u0440\u044f\u0434\u043d\u0430\u044f)",
+    "protonVersion": "9.0-4",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1744884263,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "979110",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 21.1.6, DRM 3.64, 6.17.7-ba20.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba20.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "62 GB",
+    "rating": "gold",
+    "timestamp": 1765833052,
+    "title": "",
+    "source": "protondb"
+  }
+]

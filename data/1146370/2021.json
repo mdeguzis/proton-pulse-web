@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1146370",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.35.0, 5.4.0-70-generic, LLVM 11.0.1)",
+    "gpuDriver": "4.6 Mesa 21.0.2 - kisak-mesa PPA",
+    "kernel": "5.4.0-70-generic",
+    "notes": "No bugs that aren't already present when running natively.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1618239667,
+    "title": "Master of Magic Classic",
+    "source": "protondb"
+  },
+  {
+    "appId": "1146370",
+    "cpu": "Intel Core i5-7300HQ @ 2.50GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 630 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.10.30-1-MANJARO",
+    "notes": "MoM for Windows",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-2",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1619187662,
+    "title": "Master of Magic Classic",
+    "source": "protondb"
+  }
+]

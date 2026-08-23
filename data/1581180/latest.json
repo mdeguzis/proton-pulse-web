@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1581180",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 535.54.03",
+    "kernel": "6.3.9-arch1-1",
+    "notes": "The gameplay itself is perfectly stable in windowed mode.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-2",
+    "ram": "63 GB",
+    "rating": "silver",
+    "timestamp": 1688183817,
+    "title": "",
+    "source": "protondb"
+  }
+]

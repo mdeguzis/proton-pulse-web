@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2565550",
+    "cpu": "Intel Core i9-14900K",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpuDriver": "NVIDIA 580.82.09",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "It works out of the box for the most part. Nothing that is game breaking to me.",
+    "os": "Pop!_OS 24.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "131 GB",
+    "rating": "bronze",
+    "timestamp": 1769323338,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2565550",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Works fine out of the box just play it on something with more power then a steam deck. \nMaybe the Steam machine will be perfect!!\ud83d\ude0e",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1769411309,
+    "title": "",
+    "source": "protondb"
+  }
+]

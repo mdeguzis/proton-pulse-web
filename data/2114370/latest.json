@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2114370",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel Mesa Intel UHD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5-0ubuntu0.1~22.04.3",
+    "kernel": "6.2.0-25-generic",
+    "notes": "Game won't launch. I tried with both Proton Experimental and GE",
+    "os": "Linux Mint 21.2",
+    "protonVersion": "8.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1691228808,
+    "title": "",
+    "source": "protondb"
+  }
+]

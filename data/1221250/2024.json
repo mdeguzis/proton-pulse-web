@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1221250",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6800 (radeonsi, navi21, LLVM 17.0.6, DRM 3.54, 6.6.13-gentoo)",
+    "gpuDriver": "4.6 Mesa 23.3.1",
+    "kernel": "6.6.13-gentoo",
+    "notes": "Runs perfectly",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1706907071,
+    "title": "NORCO",
+    "source": "protondb"
+  },
+  {
+    "appId": "1221250",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "ran fine",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1725917687,
+    "title": "NORCO",
+    "source": "protondb"
+  },
+  {
+    "appId": "1221250",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 15.0.7, DRM 3.57, 6.9.3-76060903-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3-1pop1~1711635559~22.04~7a9f319",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "runs fine",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1727669827,
+    "title": "NORCO",
+    "source": "protondb"
+  }
+]

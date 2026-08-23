@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1681970",
+    "cpu": "AMD Athlon X4 880K Quad Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 525.85.05",
+    "kernel": "5.15.88-gentoo-x86_64",
+    "notes": "Only Episode 1 was playable, there was a bug on Episode 2 where the game can't progress futher (hung).",
+    "os": "Gentoo Linux",
+    "protonVersion": "7.0-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1676502519,
+    "title": "\u795e\u90fd\u4e0d\u826f\u63a2 Underdog Detective",
+    "source": "protondb"
+  },
+  {
+    "appId": "1681970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Gamebreaking crashes",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1681062053,
+    "title": "\u795e\u90fd\u4e0d\u826f\u63a2 Underdog Detective",
+    "source": "protondb"
+  },
+  {
+    "appId": "1681970",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "\u4f7f\u7528GE\u517c\u5bb9\u5c42\u53ef\u4ee5\u6b63\u5e38\u73a9",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1689352617,
+    "title": "\u795e\u90fd\u4e0d\u826f\u63a2 Underdog Detective",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "354290",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce GTX 980 Ti",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.11-1-MANJARO",
+    "notes": "Installs but doesn't launch, has a required anti-cheat software that likely breaks it",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1629648414,
+    "title": "",
+    "source": "protondb"
+  }
+]

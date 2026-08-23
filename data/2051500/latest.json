@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2051500",
+    "cpu": "AMD Ryzen 7 5700X 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.8-arch1-1",
+    "notes": "No real tinkering required, just launch and play.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1720783766,
+    "title": "Soak & Splash",
+    "source": "protondb"
+  }
+]

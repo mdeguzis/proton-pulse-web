@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1376070",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.8.0-62-generic",
+    "notes": "Had to use proton experimental, after that, things just worked, and i could play with my friend.",
+    "os": "Linux Mint 22.1",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1752904160,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2303200",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 21.1.6, DRM 3.64, 6.19.2-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.2-2-cachyos",
+    "notes": "Runs perfectly, having no issues.",
+    "os": "CachyOS (64 \u0431\u0456\u0442)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1771536309,
+    "title": "",
+    "source": "protondb"
+  }
+]

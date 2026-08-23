@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1717850",
+    "cpu": "Intel Core i5-10400 @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.9-arch1-1",
+    "notes": "Controller support doesn't work but everything else seems to be working well",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1630093816,
+    "title": "",
+    "source": "protondb"
+  }
+]

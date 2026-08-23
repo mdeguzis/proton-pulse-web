@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1022480",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 515.57",
+    "kernel": "5.18.8-arch1-1",
+    "notes": "Finished game without issues",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1658389103,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1022480",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Got this game on the Switch when that console was new, loved it so much decided I had to get it for my Deck and I would say it felt the same",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1666760388,
+    "title": "",
+    "source": "protondb"
+  }
+]

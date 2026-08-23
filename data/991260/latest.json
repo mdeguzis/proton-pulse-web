@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "991260",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.5, DRM 3.64, 6.18.1-273-tkg-eevdf)",
+    "gpuDriver": "4.6 Mesa 25.2.7-arch1.1",
+    "kernel": "6.18.1-273-tkg-eevdf",
+    "notes": "Doesn't work with WiVRn due to mappings, works w/ALVR & Steam Link (Quest 3) if you follow the gameplay video: https://youtu.be/50Rfa-I3aKc",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1774194926,
+    "title": "",
+    "source": "protondb"
+  }
+]

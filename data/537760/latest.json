@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "537760",
+    "cpu": "Intel Core i5-4670K @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 495.46",
+    "kernel": "5.16.2-arch1-1",
+    "notes": "Worked fine from start to finish. No issues.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1643192294,
+    "title": "",
+    "source": "protondb"
+  }
+]

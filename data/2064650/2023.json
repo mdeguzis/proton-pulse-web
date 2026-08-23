@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2064650",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpuDriver": "NVIDIA 520.56.06",
+    "kernel": "6.0.9-201.fc36.x86_64",
+    "notes": "You won't be playing on Linux",
+    "os": "Nobara Linux 36 (Thirty Six)",
+    "protonVersion": "7.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1673380533,
+    "title": "Tower of Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "2064650",
+    "cpu": "Intel Core i5-10500 @ 3.10GHz",
+    "duration": "allTheTime",
+    "gpu": "Intel Mesa Intel UHD 630 (CML GT2)",
+    "gpuDriver": "4.6 Mesa 20.3.5",
+    "kernel": "5.10.0-23-amd64",
+    "notes": "Install this game and using Proton Experimental via steam.\nCan Open the launcher menu then login via Steam Account.\nBut unable to play with it: the game will force to close when you launch the game.\nI think it need open as admin privilage since in Windows you must open this game as admin. But I cannot figure out how to open it as admin with proton.",
+    "os": "LMDE 5 (elsie)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1690175317,
+    "title": "Tower of Fantasy",
+    "source": "protondb"
+  },
+  {
+    "appId": "2064650",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 535.86.05",
+    "kernel": "6.4.8-arch1-1",
+    "notes": "The launcher opens, but actually trying to launch the game just crashes the launcher entirely.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1691679412,
+    "title": "Tower of Fantasy",
+    "source": "protondb"
+  }
+]

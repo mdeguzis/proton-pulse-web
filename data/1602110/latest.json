@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1602110",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Setting quality to low is a must, and once you've got control you can't bring up menus to gracefully exit the game. Keymapping isn't obvious. Even on low game gets framerate in the teens. Dunno why ProtonDB doesn't think I own the game on Steam, but yes I do. Regretfully outside of refund period before testing this. Not playable until dev puts in work to make the game deck friendly.",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-2",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1685243021,
+    "title": "Kredolis",
+    "source": "protondb"
+  }
+]

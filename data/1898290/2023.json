@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1898290",
+    "cpu": "Intel Core i7-10700F @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5500 XT (navi14, LLVM 16.0.5, DRM 3.49, 6.1.31-gentoo-x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.1.31-gentoo-x86_64",
+    "notes": "Worked out of the box, no changes needed",
+    "os": "Gentoo Linux",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1690765581,
+    "title": "",
+    "source": "protondb"
+  }
+]

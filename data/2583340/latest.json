@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2583340",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.4.0-90-generic",
+    "notes": "I tried all versions of proton (e.g. Experimental, 9, 8, 6, GE) without success. Game is unable to start.",
+    "os": "Linux Mint 20.2",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1718540882,
+    "title": "",
+    "source": "protondb"
+  }
+]

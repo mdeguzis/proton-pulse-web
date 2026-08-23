@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1124160",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "I've tried proton, proton experimental, various version of GE and cannot get the game to not freeze upon attempting to start a game. If I find something that works I'll update my review.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1735673180,
+    "title": "",
+    "source": "protondb"
+  }
+]

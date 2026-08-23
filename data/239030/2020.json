@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "239030",
+    "cpu": "Intel Core i7-9750H @ 2.60GHz",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2070 with Max-Q Design",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "5.8.11_1",
+    "notes": "32-bit version is enjoyable, 64-bit version stutters.",
+    "os": "Void Linux",
+    "protonVersion": "5.13-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1606772223,
+    "title": "",
+    "source": "protondb"
+  }
+]

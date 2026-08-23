@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1949770",
+    "cpu": "Intel Core i7-8650U @ 1.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5500 XT (radeonsi, navi14, LLVM 21.1.8, DRM 3.64, 6.17.7-ba25.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.3",
+    "kernel": "6.17.7-ba25.fc43.x86_64",
+    "notes": "The game fails to start and throws an error: \"The following component(s) are required to run this game: Microsoft Visual C++ Runtime.\"\n\nI tried to install one of the many runtimes available through protontricks to no avail. Either the download or installation fails.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1769338080,
+    "title": "",
+    "source": "protondb"
+  }
+]

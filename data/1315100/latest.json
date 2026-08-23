@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1315100",
+    "cpu": "Intel Core i7-4790 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.10.23-1-lts",
+    "notes": "Everything worked like it should out of box, recommended",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1616157512,
+    "title": "",
+    "source": "protondb"
+  }
+]

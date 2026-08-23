@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2825860",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpuDriver": "NVIDIA 575.57.08",
+    "kernel": "6.14.6-106.bazzite.fc42.x86_64",
+    "notes": "Works flawlessly, added max fps setting as game would not cap it unless DLSS was being used.",
+    "os": "Bazzite 42 (FROM Fedora Kinoite)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1780847885,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2825860",
+    "cpu": "AMD Ryzen 7 3800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, ACO, DRM 3.64, 6.19.8-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 26.0.3-arch1.1",
+    "kernel": "6.19.8-zen1-1-zen",
+    "notes": "(Demo) Working flawlessly without any thinkering",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1781830148,
+    "title": "",
+    "source": "protondb"
+  }
+]

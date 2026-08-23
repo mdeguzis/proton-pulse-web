@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2236300",
+    "cpu": "AMD Ryzen 9 3950X 16-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 525.147.05",
+    "kernel": "6.1.0-21-amd64",
+    "notes": "runs good had to manually adjust graphics to Epic but was gettting a clean  120fps while playing no stuttering or tearing",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "7.0-6",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1716320391,
+    "title": "Grand Emprise: Time Travel Survival",
+    "source": "protondb"
+  }
+]

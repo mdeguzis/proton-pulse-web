@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2376280",
+    "cpu": "Intel Core i5-5200U @ 2.20GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 5500 (BDW GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.15.0-72-generic",
+    "notes": "Start music but no game image",
+    "os": "Linux Mint 21.1",
+    "protonVersion": "8.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1685052341,
+    "title": "Whisker Witchery",
+    "source": "protondb"
+  }
+]

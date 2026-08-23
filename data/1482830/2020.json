@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1482830",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 18.3.6",
+    "kernel": "4.19.0-12-amd64",
+    "notes": "It runs well out of the box",
+    "os": "BunsenLabs GNU/Linux 10.5 (Lithium)",
+    "protonVersion": "5.13-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1608347863,
+    "title": "",
+    "source": "protondb"
+  }
+]

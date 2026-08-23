@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1708460",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 570.133.07",
+    "kernel": "6.13.8-arch1-1",
+    "notes": "Get the above error on first start. Doesn't matter since the game is abandoned anyway.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1743420670,
+    "title": "",
+    "source": "protondb"
+  }
+]

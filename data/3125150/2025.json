@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3125150",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 21.1.2, DRM 3.64, 6.17.0-0.rc6.49.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.4",
+    "kernel": "6.17.0-0.rc6.49.fc43.x86_64",
+    "notes": "Currently unplayble past opening video.",
+    "os": "Fedora Linux 43.20250921.0 (Kinoite Prerelease)",
+    "protonVersion": "10.0-3",
+    "ram": "126 GB",
+    "rating": "borked",
+    "timestamp": 1766241751,
+    "title": "",
+    "source": "protondb"
+  }
+]

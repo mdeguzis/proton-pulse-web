@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1096710",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 470.82.00",
+    "kernel": "5.14.15-tkg-pds",
+    "notes": "The game runs smoothly. I even use GE proton. I usually enable gamemode for better performance.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1636108016,
+    "title": "",
+    "source": "protondb"
+  }
+]

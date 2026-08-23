@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1937070",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.63, 6.15)",
+    "gpuDriver": "4.6 Mesa 25.1.6",
+    "kernel": "6.18.10",
+    "notes": "functionally identical experience to playing on windows",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1772143877,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1937070",
+    "cpu": "Intel Core i7-14650HX",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 580.126.09",
+    "kernel": "6.19.5-200.nobara.fc43.x86_64",
+    "notes": "I can reach the menu with some combinations of launch options, others will boot to a white screen with sound, or crash on launch.",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1773008805,
+    "title": "",
+    "source": "protondb"
+  }
+]

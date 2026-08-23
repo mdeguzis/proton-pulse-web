@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2101800",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.4.4-artix1-1)",
+    "gpuDriver": "4.6 Mesa 23.1.4",
+    "kernel": "6.6.7-artix1-1",
+    "notes": "Runs perfect",
+    "os": "Artix Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1706904385,
+    "title": "",
+    "source": "protondb"
+  }
+]

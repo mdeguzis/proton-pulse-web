@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2929080",
+    "cpu": "Intel Core i7-9750HF @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "6.8.0-39-generic",
+    "notes": "Tutorial is very buggy",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1722695042,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2929080",
+    "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.8.0-109048-tuxedo",
+    "notes": "Game only starts once.",
+    "os": "Ubuntu 24.04.1 LTS",
+    "protonVersion": "9.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1731755077,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2929080",
+    "cpu": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.78",
+    "kernel": "6.1.92-1-MANJARO",
+    "notes": "Works only on Wine. Didn't work using any version of Proton.",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1732748967,
+    "title": "",
+    "source": "protondb"
+  }
+]

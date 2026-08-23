@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1361700",
+    "cpu": "Intel Core i7-5820K @ 3.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 440.82",
+    "kernel": "4.18.16-041816-generic",
+    "notes": "If you're okay with some weirdness on transitions and a few of the least important videos, you can still enjoy the content here.",
+    "os": "Kubuntu 18.04.4 LTS",
+    "protonVersion": "5.13-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1611451927,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1361700",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 2080 SUPER",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.13.4-arch1-1",
+    "notes": "Videos, some backgrounds and sounds do not play",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1627431494,
+    "title": "",
+    "source": "protondb"
+  }
+]

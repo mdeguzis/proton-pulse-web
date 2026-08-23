@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1232580",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 455.45.01",
+    "kernel": "5.9.13-arch1-1",
+    "notes": "Typical Unity 2D game, runs smoothly.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1607840206,
+    "title": "",
+    "source": "protondb"
+  }
+]

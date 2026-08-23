@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1288310",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "\u5207\u6362\u517c\u5bb9\u5c42\u4e0e\u5168\u5c4f\u6a21\u5f0f\u540e\u6ca1\u6709\u4efb\u4f55\u95ee\u9898",
+    "os": "SteamOS Holo",
+    "protonVersion": "4.11-13",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1730551324,
+    "title": "Firework",
+    "source": "protondb"
+  }
+]

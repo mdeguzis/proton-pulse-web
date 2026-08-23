@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1373750",
+    "cpu": "AMD Ryzen 5 5600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600M (radeonsi, navi23, LLVM 17.0.6, DRM 3.49, 6.2.0-39-generic)",
+    "gpuDriver": "4.6 Mesa 23.3.2 (git-527d45230f)",
+    "kernel": "6.2.0-39-generic",
+    "notes": "O jogo roda normalmente",
+    "os": "Zorin 17",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1708300492,
+    "title": "Super Box Land Demake",
+    "source": "protondb"
+  }
+]

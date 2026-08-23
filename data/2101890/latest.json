@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2101890",
+    "cpu": "Intel Core i7-4700HQ @ 2.40GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "4.6 Mesa 25.0.1-arch1.3",
+    "kernel": "6.13.7-2-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1742082433,
+    "title": "",
+    "source": "protondb"
+  }
+]

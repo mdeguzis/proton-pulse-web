@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1677570",
+    "cpu": "AMD Ryzen 5 8645HS w/ Radeon 760M Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA RTX 4060",
+    "gpuDriver": "580.76.05",
+    "kernel": "6.16.1-2-cachyos",
+    "notes": "works with no problems",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1755936541,
+    "title": "Vacuum Pilot",
+    "source": "protondb"
+  }
+]

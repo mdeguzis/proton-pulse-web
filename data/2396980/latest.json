@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2396980",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "good and fine to read while travelling",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1767912381,
+    "title": "Fate/stay night REMASTERED",
+    "source": "protondb"
+  },
+  {
+    "appId": "2396980",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "allTheTime",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1770000752,
+    "title": "Fate/stay night REMASTERED",
+    "source": "protondb"
+  },
+  {
+    "appId": "2396980",
+    "cpu": "AMD Ryzen 9 7900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 GRE (radeonsi, navi31, LLVM 21.1.8, DRM 3.64, 6.19.8-200.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.5 (git-8418351c7c)",
+    "kernel": "6.19.8-200.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1778683420,
+    "title": "Fate/stay night REMASTERED",
+    "source": "protondb"
+  }
+]

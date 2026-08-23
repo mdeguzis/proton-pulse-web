@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3728650",
+    "cpu": "AMD Ryzen 5 4500 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 550 / 550 (radeonsi, polaris12, ACO, DRM 3.64, 6.18.2-cachyos1.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.18.2-cachyos1.fc43.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1767983051,
+    "title": "",
+    "source": "protondb"
+  }
+]

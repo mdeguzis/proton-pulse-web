@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1306620",
+    "cpu": "12th Gen Intel Core i7-12700T",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 5700 (navi10, LLVM 14.0.0, DRM 3.44, 5.17.7-301.fsync.fc36.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.0.0-git",
+    "kernel": "5.17.7-301.fsync.fc36.x86_64",
+    "notes": "Game works without issues",
+    "os": "Fedora Linux 36 (KDE Plasma)",
+    "protonVersion": "7.0-2",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1653861886,
+    "title": "[Chilla's Art] Missing Children | \u884c\u65b9\u4e0d\u660e",
+    "source": "protondb"
+  }
+]

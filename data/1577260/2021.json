@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1577260",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 450.66",
+    "kernel": "4.15.0-112-generic",
+    "notes": "Need to use GE Proton, play in windowed fullscreen.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "6.3-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1622626311,
+    "title": "",
+    "source": "protondb"
+  }
+]

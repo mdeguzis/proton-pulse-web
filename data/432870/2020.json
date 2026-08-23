@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "432870",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "Intel HD 4600 (HSW GT2)",
+    "gpuDriver": "3.0 Mesa 20.0.7",
+    "kernel": "5.6.16-1-MANJARO",
+    "notes": "Upon startup, you see two bars. One white, one black. Can't proceed further.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1594426648,
+    "title": "Special Tactics",
+    "source": "protondb"
+  }
+]

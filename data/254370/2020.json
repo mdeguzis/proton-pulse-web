@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "254370",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.0",
+    "kernel": "5.8.14-arch1-1",
+    "notes": "The cutscenes can be found in\n~/.local/share/Steam/steamapps/common/Aquanox Deep Descent/ANX/Content/Movies\nas .mp4 files.",
+    "os": "Arch Linux",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602792343,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "254370",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 450.56.11",
+    "kernel": "5.8.6-9-tkg-pds",
+    "notes": "the game runs good, the few videos that are don't play can be found in the install folder.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602954165,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "254370",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1660 Ti",
+    "gpuDriver": "NVIDIA 450.56.11",
+    "kernel": "5.8.6-9-tkg-pds",
+    "notes": "game runs good",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-10 RC3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1602959229,
+    "title": "",
+    "source": "protondb"
+  }
+]

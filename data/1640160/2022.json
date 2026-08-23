@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1640160",
+    "cpu": "Intel Core i5-6600 @ 3.30GHz",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 550 / 550 (POLARIS12, DRM 3.44.0, 5.16.19-200.fc35.x86_64, LLVM 13.0.0)",
+    "gpuDriver": "4.6 Mesa 21.3.8",
+    "kernel": "5.16.19-200.fc35.x86_64",
+    "notes": "Game works amazing and as well as it does on PS4, game is capped to 60fps however, but using higher refresh rate monitor doesn't affect.",
+    "os": "Fedora Linux 35 (Workstation Edition)",
+    "protonVersion": "7.0-1",
+    "ram": "8 GB",
+    "rating": "platinum",
+    "timestamp": 1649973906,
+    "title": "",
+    "source": "protondb"
+  }
+]

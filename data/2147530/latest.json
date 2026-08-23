@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2147530",
+    "cpu": "Intel Core i9-10900 @ 5.20GHz",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT",
+    "gpuDriver": "4.6 Mesa 26.0.3",
+    "kernel": "7.0.8-pikaos",
+    "notes": "No issues whatsoever",
+    "os": "PikaOS 4",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1778752129,
+    "title": "",
+    "source": "protondb"
+  }
+]

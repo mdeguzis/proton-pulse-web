@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1264160",
+    "cpu": "Intel Core i7-4770K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 510.60.02",
+    "kernel": "5.17.3-arch1-1",
+    "notes": "Tested with Quest 2 trough ALVR",
+    "os": "Arch Linux (64\u00a0bits)",
+    "protonVersion": "7.0-3",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1656601401,
+    "title": "",
+    "source": "protondb"
+  }
+]

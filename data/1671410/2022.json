@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1671410",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Performance on steam deck is kind of acceptable for this type of game.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1668523418,
+    "title": "Somerville",
+    "source": "protondb"
+  },
+  {
+    "appId": "1671410",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 7800",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.7-150.current",
+    "notes": "Not really an option on \"minimum-spec\" computers",
+    "os": "Solus",
+    "protonVersion": "7.0-4",
+    "ram": "12 GB",
+    "rating": "silver",
+    "timestamp": 1668698614,
+    "title": "Somerville",
+    "source": "protondb"
+  },
+  {
+    "appId": "1671410",
+    "cpu": "Intel Core i7         950  @ 3.07GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon HD 7800",
+    "gpuDriver": "4.5 Mesa 19.3.4",
+    "kernel": "5.5.7-150.current",
+    "notes": "Runs well since the first patch",
+    "os": "Solus",
+    "protonVersion": "7.0-5",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1671111586,
+    "title": "Somerville",
+    "source": "protondb"
+  }
+]

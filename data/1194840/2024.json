@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1194840",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 16.0.6, DRM 3.57, 6.7.7-artix1-1)",
+    "gpuDriver": "4.6 Mesa 24.0.2-arch1.1",
+    "kernel": "6.7.7-artix1-1",
+    "notes": "Works the same as windows, once working.",
+    "os": "Artix Linux",
+    "protonVersion": "8.0-5",
+    "ram": "31 GB",
+    "rating": "platinum",
+    "timestamp": 1711994274,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1194840",
+    "cpu": "Intel Core i7-3770 @ 3.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 550.67",
+    "kernel": "6.9.3-76060903-generic",
+    "notes": "Perfect game for teaching the young 'uns math",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1720809716,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1812420",
+    "cpu": "Intel Core i5-6400T @ 2.20GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 535.183.01",
+    "kernel": "5.15.0-119-generic",
+    "notes": "Steam version works with Luxtorpeda using windowed mode.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-4",
+    "ram": "8 GB",
+    "rating": "silver",
+    "timestamp": 1748734383,
+    "title": "",
+    "source": "protondb"
+  }
+]

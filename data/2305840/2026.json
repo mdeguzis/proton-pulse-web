@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2305840",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "10.0-3",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1767902640,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2305840",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 21.1.6, DRM 3.64, 6.18.7-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.3.4-arch1.1",
+    "kernel": "6.18.7-arch1-1",
+    "notes": "Works out of the box",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1770054596,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2305840",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, LLVM 20.1.8, DRM 3.64, 6.17.0-19-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.8-0ubuntu0.25.10.1",
+    "kernel": "6.17.0-19-generic",
+    "notes": "Wouldnt launch under any proton version, adding launch option fixed issue",
+    "os": "Ubuntu 25.10",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1777894110,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1558990",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.41.0, 5.13.0-7614-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "Get black screen after selecting play on steam",
+    "os": "Pop!_OS 21.04",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1634577920,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1558990",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.42.0, 5.14.12-zen1-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.14.12-zen1-1-zen",
+    "notes": "Black screen after launcher",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1634718730,
+    "title": "",
+    "source": "protondb"
+  }
+]

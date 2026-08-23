@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1302570",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.40.0, 5.10.36-2-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.10.36-2-MANJARO",
+    "notes": "Aside from one minor flaw with KDE it's perfect",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1622141842,
+    "title": "Vampirem",
+    "source": "protondb"
+  }
+]

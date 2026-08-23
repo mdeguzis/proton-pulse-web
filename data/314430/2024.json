@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "314430",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1650 SUPER",
+    "gpuDriver": "NVIDIA 550.54.14",
+    "kernel": "6.8.1",
+    "notes": "another case of eac rendering a game completely unusable.",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1711446824,
+    "title": "",
+    "source": "protondb"
+  }
+]

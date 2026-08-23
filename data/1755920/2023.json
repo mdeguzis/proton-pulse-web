@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1755920",
+    "cpu": "AMD Ryzen 7 4700U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon (renoir, LLVM 16.0.6, DRM 3.54, 6.5.11-300.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.2.1 (git-49a47f187e)",
+    "kernel": "6.5.11-300.fc39.x86_64",
+    "notes": "You can hear the game launching but no visible graphics.",
+    "os": "Freedesktop.org SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1700743731,
+    "title": "Star Hunter - Infinite Lagrange",
+    "source": "protondb"
+  }
+]

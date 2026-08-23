@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1318820",
+    "cpu": "Intel Core i7-9850H @ 2.60GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA Quadro RTX 3000",
+    "gpuDriver": "NVIDIA 580.126.18",
+    "kernel": "6.19.7-200.fc43.x86_64",
+    "notes": "runs well with some small performance problems during bosses",
+    "os": "Fedora Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1773777831,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1077290",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.54, 6.6.10-76060610-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "6.6.10-76060610-generic",
+    "notes": "Works out of the box with Experimental",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "18 GB",
+    "rating": "platinum",
+    "timestamp": 1710868192,
+    "title": "",
+    "source": "protondb"
+  }
+]

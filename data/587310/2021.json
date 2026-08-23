@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "587310",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 470.57.02",
+    "kernel": "5.10.0-8parrot1-amd64",
+    "notes": "",
+    "os": "Parrot OS 5.0 (LTS)",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1637992625,
+    "title": "",
+    "source": "protondb"
+  }
+]

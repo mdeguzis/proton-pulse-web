@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1699660",
+    "cpu": "Intel Core i7-7600U @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel HD 620 (KBL GT2)",
+    "gpuDriver": "4.6 Mesa 23.3.2-arch1.2",
+    "kernel": "6.6.9-arch1-1",
+    "notes": "Its too laggy",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1704665489,
+    "title": "",
+    "source": "protondb"
+  }
+]

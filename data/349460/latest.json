@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "349460",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpuDriver": "NVIDIA 535.104.05",
+    "kernel": "6.4.12-arch1-1",
+    "notes": "Native version doesn't support achivements so I wanted to play with Proton. Game starts up and you can hear the sounds, but all it does it just put a transparent overlay over your screen and you can't interact with it.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1695071851,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "593640",
+    "cpu": "11th Gen Intel Core i7-1165G7 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel Xe (TGL GT2)",
+    "gpuDriver": "4.6 Mesa 21.2.2",
+    "kernel": "5.15.8-76051508-generic",
+    "notes": "From a brief look, it works perfectly",
+    "os": "Pop!_OS 21.10",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1641147625,
+    "title": "",
+    "source": "protondb"
+  }
+]

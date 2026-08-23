@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2447980",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.14.6-300.fc42.x86_64",
+    "notes": "",
+    "os": "Freedesktop SDK 24.08 (Flatpak runtime)",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1751053618,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2447980",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "gpuDriver": "NVIDIA 580.95.05",
+    "kernel": "6.16.4-116.bazzite.fc42.x86_64",
+    "notes": "Works out of the box.",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1766100642,
+    "title": "",
+    "source": "protondb"
+  }
+]

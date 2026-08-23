@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "948100",
+    "cpu": "AMD Ryzen 3 PRO 4350G with Radeon Graphics",
+    "duration": "severalHours",
+    "gpu": "AMD RENOIR (DRM 3.42.0, 5.15.0-56-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.6",
+    "kernel": "5.15.0-56-generic",
+    "notes": "PROTON_USE_WINED3D=1 %command% works fine.",
+    "os": "Ubuntu 20.04.5 LTS\uff0864 \u30d3\u30c3\u30c8\uff09",
+    "protonVersion": "7.0-5",
+    "ram": "30982Mb",
+    "rating": "gold",
+    "timestamp": 1670547909,
+    "title": "",
+    "source": "protondb"
+  }
+]

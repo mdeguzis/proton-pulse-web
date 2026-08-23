@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1424630",
+    "cpu": "Intel Core i3-10100F @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6400 (beige_goby, LLVM 14.0.6, DRM 3.42, 5.15.69-0-lts)",
+    "gpuDriver": "4.6 Mesa 22.1.7 (git-7a3414c4bd)",
+    "kernel": "5.15.69-0-lts",
+    "notes": "Won't even start using Proton 7.0-4 flatpak community build.",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1666659000,
+    "title": "",
+    "source": "protondb"
+  }
+]

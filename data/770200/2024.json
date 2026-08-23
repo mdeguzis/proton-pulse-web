@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "770200",
+    "cpu": "AMD Ryzen 3 3250U with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 3 (radeonsi, raven2, LLVM 18.1.8, DRM 3.54, 6.6.53)",
+    "gpuDriver": "4.6 Mesa 24.2.2",
+    "kernel": "6.6.53",
+    "notes": "It only needs some minor polishing, though considering it was made for Windows game hacking students, it's expected.",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-3",
+    "ram": "6 GB",
+    "rating": "silver",
+    "timestamp": 1730411766,
+    "title": "",
+    "source": "protondb"
+  }
+]

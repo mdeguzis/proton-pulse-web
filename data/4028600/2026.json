@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4028600",
+    "cpu": "Intel Core i7-3630QM @ 2.40GHz",
+    "duration": "underOneHour",
+    "gpu": "Mesa NVC1",
+    "gpuDriver": "4.3 Mesa 25.0.7-2",
+    "kernel": "6.12.74+deb13+1-amd64",
+    "notes": "On a hardware capable of Vulkan 1.3, use Proton Expermental then it should work...\nOn a hardware capable of Vulkan 1.1, then use Proton CachyOS with PROTON_DXVK_SAREK=1 %command% (You're warned that using dxvk sarek well cause ban in multiplayer games, not single player games...)\nUsed Proton CachyOS\nUsed the iGPU by adding \"DRI_PRIME=0\"(use gpu 0),\nMy gpu does not support Vulkan so I enabled wined3d (\"PROTON_USE_WINED3D=1\"), not needed for newer hardware...\nUsed DirectX11 (\"-dx11\") for compatibility, you don't need to if you got a newer hardware...\nAt last the main menu showed up glitchy in my computer cause of opengl and older hardware I got and it was pretty slow and unplayable...\nI used Wayland too (\"PROTON_ENABLE_WAYLAND=1\")...",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "protonVersion": "10.0-3",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1775475355,
+    "title": "",
+    "source": "protondb"
+  }
+]

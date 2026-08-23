@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "522210",
+    "cpu": "AMD Ryzen 5 7500F 6-Core",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel Arc B580 (BMG G21)",
+    "gpuDriver": "4.6 Mesa 25.3.3 - kisak-mesa PPA",
+    "kernel": "6.18.4-1-liquorix-amd64",
+    "notes": "",
+    "os": "Zorin OS 18",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1768178046,
+    "title": "Serial Cleaner",
+    "source": "protondb"
+  }
+]

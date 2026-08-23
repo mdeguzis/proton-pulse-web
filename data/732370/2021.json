@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "732370",
+    "cpu": "Intel Core i5-4690 @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpuDriver": "NVIDIA 460.67",
+    "kernel": "5.10.26-xanmod1",
+    "notes": "Runs great, got around 250 frames per second on my system.",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1617034169,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1299690",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 20.1.8, DRM 3.64, 6.17.0-4-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.4-cachyos1.2",
+    "kernel": "6.17.0-4-cachyos",
+    "notes": "Works perfectly.",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1759941704,
+    "title": "",
+    "source": "protondb"
+  }
+]

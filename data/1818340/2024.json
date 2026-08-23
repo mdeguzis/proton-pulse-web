@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1818340",
+    "cpu": "AMD Ryzen 5 5600X 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 16.0.6, DRM 3.56, 6.7.2-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 23.3.4-arch1.2",
+    "kernel": "6.7.2-zen1-1-zen",
+    "notes": "Tried both the GOG version and Steam, neither launch. Hardly supririsng considering it's tough to get working on any modern operating system.",
+    "os": "Arch Linux",
+    "protonVersion": "8.0-5",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1706902227,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1818340",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "If someone smarter than me finds a fix, let us know.",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-3",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1727600168,
+    "title": "",
+    "source": "protondb"
+  }
+]

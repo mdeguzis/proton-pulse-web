@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "839200",
+    "cpu": "AMD Ryzen 7 7700X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 21.1.6, DRM 3.64, 6.19.0-2-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.3.5-arch1.2",
+    "kernel": "6.19.0-2-cachyos",
+    "notes": "Error at startup\n\n```\nNlUnload assembly:<unknown assembly> type:<unknown type> member:(null)\n```\n\nUsing the menu in SpedV is very slow.\u00a0Telemetry can't be started. This is supposedly an issue with .NET not being available but I couldn't fix it using protontricks.",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1771523532,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "839200",
+    "cpu": "AMD Ryzen 9 3900X 12-Core",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.19.5-3-cachyos",
+    "notes": "SpedV runs with dotnet48 and corefonts",
+    "os": "CachyOS",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1772843024,
+    "title": "",
+    "source": "protondb"
+  }
+]

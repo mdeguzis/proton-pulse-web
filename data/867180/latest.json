@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "867180",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (polaris10, LLVM 14.0.5, DRM 3.47, 5.19.8-300.fc37.x86_64)",
+    "gpuDriver": "4.6 Mesa 22.2.0-rc3",
+    "kernel": "5.19.8-300.fc37.x86_64",
+    "notes": "This game tends to work flawlessly on the occasion that it does work, but it works so infrequently that I can't in good faith mark it as working. Whether on my computer or laptop, on any version of vanilla Proton or GE Proton, or whichever Linux distro and kernel I'm using, most of the time when I open it it'll say its running but no window will ever appear. The real kicker is it worked the other day when I opened it briefly just to check if it'd work, and now that I want to actually play it again I can't :(",
+    "os": "Fedora Linux 37 (Workstation Edition Prerelease)",
+    "protonVersion": "7.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1663325344,
+    "title": "",
+    "source": "protondb"
+  }
+]

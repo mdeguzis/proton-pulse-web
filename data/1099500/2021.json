@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1099500",
+    "cpu": "Intel Core i7-10700 @ 2.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 450.80.02",
+    "kernel": "5.9.0-4-amd64",
+    "notes": "The game ran smooth and didn't have any issues.",
+    "os": "Debian GNU/Linux bullseye/sid",
+    "protonVersion": "5.13-5",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1610997892,
+    "title": "",
+    "source": "protondb"
+  }
+]

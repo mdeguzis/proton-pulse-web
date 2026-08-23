@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2708450",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "severalHours",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 19.1.7, DRM 3.60, 6.12.16-amd64)",
+    "gpuDriver": "4.6 Mesa 25.0.0-1",
+    "kernel": "6.12.16-amd64",
+    "notes": "The game is certainly not without flaws, but it can be enjoyed with Proton.",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1740376036,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2708450",
+    "cpu": "Intel Core i7-4790K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1070",
+    "gpuDriver": "NVIDIA 535.216.03",
+    "kernel": "6.12.25-amd64",
+    "notes": "Runs fine after adding launching with dx11",
+    "os": "Debian GNU/Linux trixie/sid",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1746817620,
+    "title": "",
+    "source": "protondb"
+  }
+]

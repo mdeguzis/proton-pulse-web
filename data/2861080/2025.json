@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2861080",
+    "cpu": "Intel Core i5-9400F @ 2.90GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 XT (radeonsi, navi23, LLVM 21.1.6, DRM 3.64, 6.17.7-ba19.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.3.0",
+    "kernel": "6.17.7-ba19.fc43.x86_64",
+    "notes": "",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1765436382,
+    "title": "Haunted Paws",
+    "source": "protondb"
+  }
+]

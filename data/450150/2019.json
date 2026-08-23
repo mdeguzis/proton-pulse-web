@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "450150",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 430.50",
+    "kernel": "5.0.0-36-generic",
+    "notes": "Starts out fine, but crashes at the start of level 7 with \"Fatal error in gc: GetThreadContext failed.\"",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "4.11-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1575182891,
+    "title": "",
+    "source": "protondb"
+  }
+]

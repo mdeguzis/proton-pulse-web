@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "703970",
+    "cpu": "AMD Ryzen 5 2600X Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 660",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.13-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-6",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1631637659,
+    "title": "Protoball",
+    "source": "protondb"
+  }
+]

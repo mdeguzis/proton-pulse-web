@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "2305640",
+    "cpu": "Intel Core i9-10900 @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpuDriver": "NVIDIA 575.64",
+    "kernel": "6.12.35-1-lts",
+    "notes": "Launching does nothing. no initial screen no request to install libraries",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1751572897,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2305640",
+    "cpu": "13th Gen Intel Core i5-13600KF",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.7-ba10.fc43.x86_64",
+    "notes": "Hammer is not following the mouse",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1765404526,
+    "title": "",
+    "source": "protondb"
+  }
+]

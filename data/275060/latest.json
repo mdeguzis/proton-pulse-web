@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "275060",
+    "cpu": "AMD FX-4300 Quad-Core",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 435.21",
+    "kernel": "4.15.0-88-generic",
+    "notes": "Runs pretty well, but a bit slowly compared with Windows original run.",
+    "os": "Ubuntu 18.04.4 LTS",
+    "protonVersion": "5.0-4",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1584407722,
+    "title": "",
+    "source": "protondb"
+  }
+]

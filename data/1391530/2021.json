@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1391530",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.2-arch1-1",
+    "notes": "Free demo available right now works fine, no issues to report.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1637885529,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1391530",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 495.44",
+    "kernel": "5.15.2-arch1-1",
+    "notes": "Game launches and runs great. No issues to report for the full release.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1639094701,
+    "title": "",
+    "source": "protondb"
+  }
+]

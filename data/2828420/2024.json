@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2828420",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5600 XT (navi10, LLVM 15.0.7, DRM 3.52, 6.3.0-1-MANJARO)",
+    "gpuDriver": "4.6 Mesa 23.0.3",
+    "kernel": "6.3.0-1-MANJARO",
+    "notes": "It install, ans seems to launch, just to a blanck screen and it closes after a while",
+    "os": "Manjaro Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1734309000,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "515960",
+    "cpu": "Intel Xeon E5-2689 0 @ 2.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5+deb14-amd64",
+    "notes": "The game is simply unplayable; you experience significant frame rate drops, ruining the gaming experience.",
+    "os": "Debian GNU/Linux forky/sid",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1769269927,
+    "title": "Martha Is Dead",
+    "source": "protondb"
+  }
+]

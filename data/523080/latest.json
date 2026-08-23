@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "523080",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6600 (navi23, LLVM 15.0.5, DRM 3.48, 6.0.0-13.2-liquorix-amd64)",
+    "gpuDriver": "4.6 Mesa 23.0.0-devel (git-8b79e6f 2023-01-10 jammy-oibaf-ppa)",
+    "kernel": "6.0.0-13.2-liquorix-amd64",
+    "notes": "Runs like native without tweaks",
+    "os": "Linux Mint 21",
+    "protonVersion": "7.0-5",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1673459710,
+    "title": "Gamepad Controller Template",
+    "source": "protondb"
+  }
+]

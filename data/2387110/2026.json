@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2387110",
+    "cpu": "AMD Ryzen 9 7940HS w/ Radeon 780M Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7600M XT (radeonsi, navi33, ACO, DRM 3.64, 6.19.14-ogc1.1.fc44.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.0.5",
+    "kernel": "6.19.14-ogc1.1.fc44.x86_64",
+    "notes": "No issues installing, loading, playing this game, and it's pretty fun (short).",
+    "os": "Bazzite",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "gold",
+    "timestamp": 1778946128,
+    "title": "",
+    "source": "protondb"
+  }
+]

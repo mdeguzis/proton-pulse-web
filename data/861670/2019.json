@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "861670",
+    "cpu": "Intel Core i7-8700K @ 3.70GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpuDriver": "NVIDIA 440.26",
+    "kernel": "5.3.0-23-generic",
+    "notes": "Game Installs and Opens, But Screen is Cropped and Game Buttons Don't Work",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1574750491,
+    "title": "",
+    "source": "protondb"
+  }
+]

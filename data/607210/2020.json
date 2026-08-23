@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "607210",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 5700 XT",
+    "gpuDriver": "4.6 Mesa 20.1.10 (git-5fa3aae868)",
+    "kernel": "5.4.0-53-generic",
+    "notes": "A game that's so good it cant even run on windows. But, on linux, it can ?",
+    "os": "Freedesktop.org 20.08.1.2 (Flatpak runtime) (64\u00a0bits)",
+    "protonVersion": "5.0-10",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1605216325,
+    "title": "",
+    "source": "protondb"
+  }
+]

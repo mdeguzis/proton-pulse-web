@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1056720",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5700 XT (NAVI10, DRM 3.41.0, 5.13.8-zen1-1-zen, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.1.6",
+    "kernel": "5.13.8-zen1-1-zen",
+    "notes": "Had to install directx9 via protontricks to get the game working",
+    "os": "Salient OS",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1628224171,
+    "title": "",
+    "source": "protondb"
+  }
+]

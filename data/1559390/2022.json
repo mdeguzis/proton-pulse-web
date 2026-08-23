@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1559390",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "gpuDriver": "NVIDIA 510.54",
+    "kernel": "5.16.11-2-MANJARO",
+    "notes": "\u5982\u679c\u4f7f\u7528wine\u6253\u5f00\u6e38\u620f\uff0c\u4f1a\u51fa\u73b0\u5982\u4e0b\u62a5\u9519\u4fe1\u606f",
+    "os": "Manjaro Linux\uff0864 \u4f4d\uff09",
+    "protonVersion": "7.0-1",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1645999617,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1559390",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "underOneHour",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Crash \n\nUsing newest proton experiment bleeding edge",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1662952821,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1559390",
+    "cpu": "12th Gen Intel Core i9-12900H",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti Laptop GPU",
+    "gpuDriver": "NVIDIA 525.60.11",
+    "kernel": "6.0.12-76060006-generic",
+    "notes": "game doesnt start",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "7.0-5",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1672436415,
+    "title": "",
+    "source": "protondb"
+  }
+]

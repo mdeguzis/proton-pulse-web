@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "355430",
+    "cpu": "Intel Core i5-9300H @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 460.39",
+    "kernel": "5.10.16-arch1-1",
+    "notes": "Gets stuck to white screen while the main menu music plays in the background",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1613480302,
+    "title": "",
+    "source": "protondb"
+  }
+]

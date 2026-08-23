@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "3094150",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.120",
+    "kernel": "6.8.0-52-generic",
+    "notes": "Runs great out of the box. No tinkering required, just installed and clicked \"play\".",
+    "os": "Linux Mint 22",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1738626766,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1013320",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 590.48.01",
+    "kernel": "6.18.5-zen1-1-zen",
+    "notes": "Runs great on Hyprland with Gamescope. Needs EOS Overlay for shop. Beware of memory leaks in long sessions.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "silver",
+    "timestamp": 1775080892,
+    "title": "",
+    "source": "protondb"
+  }
+]

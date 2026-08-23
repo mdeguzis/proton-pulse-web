@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1046980",
+    "cpu": "AMD Ryzen 7 3700X 8-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 515.49.06",
+    "kernel": "5.18.9-263-tkg-tt",
+    "notes": "Game crashes on first logo.",
+    "os": "Arch Linux",
+    "protonVersion": "7.0-3",
+    "ram": "48 GB",
+    "rating": "borked",
+    "timestamp": 1657235743,
+    "title": "",
+    "source": "protondb"
+  }
+]

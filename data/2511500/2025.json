@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2511500",
+    "cpu": "Intel Core i9-9900K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 20.1.8, DRM 3.64, 6.16.0-5-cachyos)",
+    "gpuDriver": "4.6 Mesa 25.2.0-cachyos1.1",
+    "kernel": "6.16.0-5-cachyos",
+    "notes": "",
+    "os": "CachyOS",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1755355087,
+    "title": "Dominions 6 - Rise of the Pantokrator",
+    "source": "protondb"
+  }
+]

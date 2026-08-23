@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2471390",
+    "cpu": "Intel Core i9-10900K @ 3.70GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 18.1.6, DRM 3.57, 6.9.12-205.fsync.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.6",
+    "kernel": "6.9.12-205.fsync.fc40.x86_64",
+    "notes": "Game would not launch normally, insisting my GPU doesn't support the required Vulkan version. Stuttering and crashing.",
+    "os": "Bazzite 40 (FROM Fedora Kinoite)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1749731149,
+    "title": "",
+    "source": "protondb"
+  }
+]

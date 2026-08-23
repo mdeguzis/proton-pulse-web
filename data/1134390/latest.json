@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1134390",
+    "cpu": "Intel Core i5-8250U @ 1.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce MX150",
+    "gpuDriver": "NVIDIA 390.116",
+    "kernel": "5.0.0-36-generic",
+    "notes": "Does not work",
+    "os": "Ubuntu 19.04",
+    "protonVersion": "4.11-9",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1574943096,
+    "title": "",
+    "source": "protondb"
+  }
+]

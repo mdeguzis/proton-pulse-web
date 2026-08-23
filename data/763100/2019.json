@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "763100",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 380",
+    "gpuDriver": "4.6 Mesa 20.0.0-devel (git-1bf3837 2019-12-14 bionic-oibaf-ppa)",
+    "kernel": "4.15.0-72-generic",
+    "notes": "I couldn't detect any problems.  Ran as well as any other early access game I have tried.",
+    "os": "KDE neon User Edition 5.17",
+    "protonVersion": "4.11-10",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1576401283,
+    "title": "",
+    "source": "protondb"
+  }
+]

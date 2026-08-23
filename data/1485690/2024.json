@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1485690",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.6.11-200.fc39.x86_64",
+    "notes": "New game or tutorial do not show the backdrop of the environment.\nTutorial can't be finished, no character is even moving.",
+    "os": "Fedora Linux 39 (Workstation Edition)",
+    "protonVersion": "8.0-4",
+    "ram": "24 GB",
+    "rating": "borked",
+    "timestamp": 1705809528,
+    "title": "",
+    "source": "protondb"
+  }
+]

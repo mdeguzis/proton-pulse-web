@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "365330",
+    "cpu": "Intel Core i7-8809G @ 3.10GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD VEGAM",
+    "gpuDriver": "4.5 Mesa 19.1.5",
+    "kernel": "4.19.83",
+    "notes": "Perfect",
+    "os": "NixOS 19.09.git.65eafbf (Loris)",
+    "protonVersion": "5.0-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1581715817,
+    "title": "iaidoka_interlude",
+    "source": "protondb"
+  }
+]

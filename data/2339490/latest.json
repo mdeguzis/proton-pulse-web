@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2339490",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 9070 XT (radeonsi, gfx1201, ACO, DRM 3.64, 6.16.3-76061603-generic)",
+    "gpuDriver": "4.6 Mesa 25.2.2 (git-22ded5f256)",
+    "kernel": "6.16.3-76061603-generic",
+    "notes": "Strange performance issues which may be OS independent.",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1760540578,
+    "title": "",
+    "source": "protondb"
+  }
+]

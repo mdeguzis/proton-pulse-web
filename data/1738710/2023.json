@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1738710",
+    "cpu": "12th Gen Intel Core i3-12100F",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.3.2-arch1-1",
+    "notes": "Works great",
+    "os": "Freedesktop.org SDK 22.08 (Flatpak runtime)",
+    "protonVersion": "8.0-3",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1693318532,
+    "title": "",
+    "source": "protondb"
+  }
+]

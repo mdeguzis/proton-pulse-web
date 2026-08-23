@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1727000",
+    "cpu": "Intel Xeon E5-1680 v2 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.14.0-2-amd64, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.14.0-2-amd64",
+    "notes": "Severe rendering glitches when ingame, cannot see character, enemies, etc.",
+    "os": "Debian GNU/Linux bookworm/sid",
+    "protonVersion": "6.3-7",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1635744008,
+    "title": "",
+    "source": "protondb"
+  }
+]

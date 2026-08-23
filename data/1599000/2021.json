@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1599000",
+    "cpu": "AMD Ryzen 7 2700X Eight-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX Vega",
+    "gpuDriver": "4.6 Mesa 20.1.6",
+    "kernel": "5.4.0-59-generic",
+    "notes": "Got the demo to run but crashes after about 10 seconds into the main menu",
+    "os": "Ubuntu 20.04.1 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1635656578,
+    "title": "ARK and ADE",
+    "source": "protondb"
+  }
+]

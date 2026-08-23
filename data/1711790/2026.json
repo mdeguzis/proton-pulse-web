@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1711790",
+    "cpu": "AMD RYZEN AI MAX+ 395 w/ Radeon 8060S",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon 8060S (radeonsi, strix_halo, ACO, DRM 3.64, 6.19.8-xanmod1)",
+    "gpuDriver": "4.6 Mesa 26.0.2",
+    "kernel": "6.19.8-xanmod1",
+    "notes": "Works out of box",
+    "os": "NixOS 26.05 (Yarara)\uff0864 \u4f4d\u5143\uff09",
+    "protonVersion": "10.0-3",
+    "ram": "63 GB",
+    "rating": "gold",
+    "timestamp": 1775916377,
+    "title": "Knight of the Lions",
+    "source": "protondb"
+  }
+]

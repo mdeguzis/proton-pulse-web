@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1261520",
+    "cpu": "Intel Core i7-10750H @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 22.3.1",
+    "kernel": "6.0.5-2-rt14-MANJARO",
+    "notes": "the game freezes after the new game choice, the audio runs normally though",
+    "os": "Manjaro Linux",
+    "protonVersion": "8.0-1",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1682535980,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1261520",
+    "cpu": "AMD Ryzen 5 5500U with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon (radeonsi, renoir, LLVM 17.0.6, DRM 3.54, 6.6.2-201.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.3.0 (git-1fbdd37d4c)",
+    "kernel": "6.6.2-201.fc39.x86_64",
+    "notes": "No problem on AMD config except water texture missing.\nOn Intel, game menu is ok but game not launching, freeze in loading menu.",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "8.0-4",
+    "ram": "20 GB",
+    "rating": "silver",
+    "timestamp": 1701793055,
+    "title": "",
+    "source": "protondb"
+  }
+]

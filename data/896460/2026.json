@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "896460",
+    "cpu": "AMD Ryzen 9 6900HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6800M (radeonsi, navi22, LLVM 21.1.7, DRM 3.64, 6.16.0-eudaimonia-04)",
+    "gpuDriver": "4.6 Mesa 25.2.6 (git-3f12436d80)",
+    "kernel": "6.16.0-eudaimonia-04",
+    "notes": "works flawlessly with Proton Experimental. no extra config required.",
+    "os": "Freedesktop SDK 25.08 (Flatpak runtime)",
+    "protonVersion": "10.0-3",
+    "ram": "28 GB",
+    "rating": "platinum",
+    "timestamp": 1767397052,
+    "title": "",
+    "source": "protondb"
+  }
+]

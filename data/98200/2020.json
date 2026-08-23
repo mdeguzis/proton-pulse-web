@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "98200",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "Radeon RX 590",
+    "gpuDriver": "4.6 Mesa 20.1.9",
+    "kernel": "5.8.15-201.fc32.x86_64",
+    "notes": "Native version has a problem with audio",
+    "os": "Fedora 32",
+    "protonVersion": "5.13-1",
+    "ram": "14 GB",
+    "rating": "gold",
+    "timestamp": 1604256395,
+    "title": "Frozen Synapse",
+    "source": "protondb"
+  }
+]

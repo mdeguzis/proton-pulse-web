@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1219240",
+    "cpu": "AMD Ryzen 9 7945HX with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+    "gpuDriver": "NVIDIA 560.28.03",
+    "kernel": "6.10.0-1-mainline",
+    "notes": "Game crashes constantly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1722609752,
+    "title": "BioGun",
+    "source": "protondb"
+  },
+  {
+    "appId": "1219240",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "allTheTime",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.11.3-arch1-1",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1728677576,
+    "title": "BioGun",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "523760",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.7.8",
+    "notes": "Game starts into the main menu. But you cant interact and it closes/crashes after a short time.(~5-10 seconds).",
+    "os": "Drauger OS 7.6 Strigoi",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1712930202,
+    "title": "Loot or Die",
+    "source": "protondb"
+  }
+]

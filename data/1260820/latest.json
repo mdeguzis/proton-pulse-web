@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1260820",
+    "cpu": "13th Gen Intel Core i7-13700K",
+    "duration": "unreported",
+    "gpu": "Mesa llvmpipe (LLVM 20.1.2, 256 bits)",
+    "gpuDriver": "4.5 Mesa 25.2.8-0ubuntu0.24.04.1",
+    "kernel": "6.8.0-100-generic",
+    "notes": "I tried multiple versions of Proton listed in other comments (9.04, Default and Experimental), but the game wouldn't launch at all for me.  I'm using Linux Mint 22.3, X11 display manager, and an Nvidia RTX 4090 (hence why I'm using X11).",
+    "os": "Linux Mint 22.3",
+    "protonVersion": "10.0-3",
+    "ram": "64 GB",
+    "rating": "borked",
+    "timestamp": 1770662946,
+    "title": "",
+    "source": "protondb"
+  }
+]

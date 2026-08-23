@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "211180",
+    "cpu": "Intel Core i5-6300U @ 2.40GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel HD 520 (SKL GT2)",
+    "gpuDriver": "4.6 Mesa 22.2.5",
+    "kernel": "5.19.0-32-generic",
+    "notes": "Works nicely with proton if native fails",
+    "os": "Ubuntu 22.04.2 LTS",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1679754879,
+    "title": "Unmechanical",
+    "source": "protondb"
+  }
+]

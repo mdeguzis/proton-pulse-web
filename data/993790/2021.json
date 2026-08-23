@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "993790",
+    "cpu": "AMD Ryzen 7 PRO 3700 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 5600 XT (NAVI10, DRM 3.40.0, 5.11.20-300.fc34.x86_64, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.20-300.fc34.x86_64",
+    "notes": "all perfect. saves from old windows machine worked.",
+    "os": "Fedora release 34 (Thirty Four)",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1621440438,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "993790",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "allTheTime",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.41.0, 5.13.0-7614-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.2.1",
+    "kernel": "5.13.0-7614-generic",
+    "notes": "Worked perfectly",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "6.3-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1632529443,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "993790",
+    "cpu": "AMD FX-9800P RADEON R7, 12 COMPUTE CORES 4C+8G",
+    "duration": "oneToFourHours",
+    "gpu": "AMD ICELAND (DRM 3.40.0, 5.10.34-1-MANJARO, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.10.34-1-MANJARO",
+    "notes": "Works perfectly out of the box.",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1634921429,
+    "title": "",
+    "source": "protondb"
+  }
+]

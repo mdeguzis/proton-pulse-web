@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "235520",
+    "cpu": "AMD Ryzen 9 5950X 16-Core",
+    "duration": "underOneHour",
+    "gpu": "Radeon RX 580",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.4.0-71-generic",
+    "notes": "It runs well, as far as i can tell perfectly",
+    "os": "Linux Mint 20.1",
+    "protonVersion": "6.3-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1621416393,
+    "title": "",
+    "source": "protondb"
+  }
+]

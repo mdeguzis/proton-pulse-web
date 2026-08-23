@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2558570",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.9-76061709-generic)",
+    "gpuDriver": "4.6 Mesa 25.1.5-1pop0~1756399231~22.04~b84bab8",
+    "kernel": "6.17.9-76061709-generic",
+    "notes": "Works great out of the box",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "10.0-3",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1775939397,
+    "title": "",
+    "source": "protondb"
+  }
+]

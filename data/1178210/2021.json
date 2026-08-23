@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1178210",
+    "cpu": "Intel Core i5-3230M @ 2.60GHz",
+    "duration": "unreported",
+    "gpu": "Intel HD 4000 (IVB GT2)",
+    "gpuDriver": "3.0 Mesa 20.3.1",
+    "kernel": "5.4.0-58-generic",
+    "notes": "The game is impossible to play without a sight on the board. I don't know if it's due to my computer specs or to the proton conversion.",
+    "os": "Linux Mint 19.3 Tricia",
+    "protonVersion": "5.13-5",
+    "ram": "8 GB",
+    "rating": "borked",
+    "timestamp": 1612542681,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1178210",
+    "cpu": "Intel Core i7-9700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1080",
+    "gpuDriver": "NVIDIA 460.56",
+    "kernel": "5.11.2-arch1-1",
+    "notes": "Works just fine with Proton 5.13. If you aren't sure, they have a free demo, give it a try first.",
+    "os": "Arch Linux",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1614939485,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1178210",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon R9 Fury",
+    "gpuDriver": "4.6 Mesa 20.2.6",
+    "kernel": "5.8.0-44-generic",
+    "notes": "",
+    "os": "Ubuntu 20.10",
+    "protonVersion": "5.13-6",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1615454450,
+    "title": "",
+    "source": "protondb"
+  }
+]

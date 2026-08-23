@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1589120",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "Low fps",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-4",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1705858914,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1589120",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "works out of the box. Disable vsync to get stable 40fps",
+    "os": "SteamOS Holo",
+    "protonVersion": "8.0-5",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1708625805,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1589120",
+    "cpu": "AMD Ryzen 7 1700 Eight-Core",
+    "duration": "underOneHour",
+    "gpu": "Mesa llvmpipe (LLVM 15.0.7, 256 bits)",
+    "gpuDriver": "4.5 Mesa 23.1.9-0tux1",
+    "kernel": "6.5.0-10013-tuxedo",
+    "notes": "Shoddy sound",
+    "os": "TUXEDO OS 2",
+    "protonVersion": "7.0-6",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1709322048,
+    "title": "",
+    "source": "protondb"
+  }
+]

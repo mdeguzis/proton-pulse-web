@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "3106160",
+    "cpu": "13th Gen Intel Core i7-13700HX",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpuDriver": "NVIDIA 570.144",
+    "kernel": "6.14.4-arch1-2",
+    "notes": "Game has too many missing textures to really be enjoyable.",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1746278626,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "3106160",
+    "cpu": "AMD Ryzen 7 7800X3D 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7900 XTX (radeonsi, navi31, LLVM 20.1.8, DRM 3.63, 6.15.8-200.nobara.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.2.0",
+    "kernel": "6.15.8-200.nobara.fc42.x86_64",
+    "notes": "Works fine after fixing.",
+    "os": "Nobara Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "silver",
+    "timestamp": 1754843659,
+    "title": "",
+    "source": "protondb"
+  }
+]

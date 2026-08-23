@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "3021630",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 19.1.7, DRM 3.61, 6.14.4-arch1-2)",
+    "gpuDriver": "4.6 Mesa 25.0.5-arch1.1",
+    "kernel": "6.14.4-arch1-2",
+    "notes": "Fun rogue-like with progression like other similar games. Well polished and difficulty is reasonable.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "64 GB",
+    "rating": "gold",
+    "timestamp": 1746532209,
+    "title": "Savara",
+    "source": "protondb"
+  },
+  {
+    "appId": "3021630",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 14.0.6, DRM 3.45, 5.13.0-valve36-1-neptune)",
+    "gpuDriver": "4.6 (Compatibility Profile) Mesa 22.2.0 (git-17e5312102)",
+    "kernel": "5.13.0-valve36-1-neptune",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "silver",
+    "timestamp": 1746746819,
+    "title": "Savara",
+    "source": "protondb"
+  },
+  {
+    "appId": "3021630",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6650 XT (radeonsi, navi23, LLVM 20.1.2, DRM 3.61, 6.14.6-300.fc42.x86_64)",
+    "gpuDriver": "4.6 Mesa 25.0.4",
+    "kernel": "6.14.6-300.fc42.x86_64",
+    "notes": "Works well out of the box",
+    "os": "Fedora Linux 42 (Workstation Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1747407800,
+    "title": "Savara",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1158940",
+    "cpu": "Intel Core i5-6500 @ 3.20GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 960",
+    "gpuDriver": "NVIDIA 415.27",
+    "kernel": "4.15.0-72-generic",
+    "notes": "I get kicked in main menu every time after about 30 seconds ingame.",
+    "os": "Ubuntu 18.04.3 LTS",
+    "protonVersion": "6.3-2",
+    "ram": "Unknown",
+    "rating": "borked",
+    "timestamp": 1617919198,
+    "title": "Blazing Sails",
+    "source": "protondb"
+  }
+]

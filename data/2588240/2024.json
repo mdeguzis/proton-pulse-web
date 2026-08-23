@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2588240",
+    "cpu": "12th Gen Intel Core i7-12700F",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 17.0.6, DRM 3.57, 6.8.12-200.fsync.fc39.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.1.0",
+    "kernel": "6.8.12-200.fsync.fc39.x86_64",
+    "notes": "Ran pretty well out of the box, didn't notice any issues. Maybe native to Linux(?). Only played the demo though.",
+    "os": "Nobara Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1725827505,
+    "title": "Thunder Jumper",
+    "source": "protondb"
+  }
+]

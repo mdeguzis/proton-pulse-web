@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "869060",
+    "cpu": "AMD Ryzen 5 2600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1660",
+    "gpuDriver": "NVIDIA 470.63.01",
+    "kernel": "5.13.19-2-MANJARO",
+    "notes": "Booted up and Required no changes to function other than enabling proton",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1633818070,
+    "title": "",
+    "source": "protondb"
+  }
+]

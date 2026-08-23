@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1190110",
+    "cpu": "AMD Ryzen 5 1600 Six-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.11.0-46-generic",
+    "notes": "Runs Great in new Ubuntu versions and Nvidia new Drivers without problems",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "8 GB",
+    "rating": "gold",
+    "timestamp": 1641943570,
+    "title": "",
+    "source": "protondb"
+  }
+]

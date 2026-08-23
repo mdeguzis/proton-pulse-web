@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1075400",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2070",
+    "gpuDriver": "NVIDIA 545.29.06",
+    "kernel": "6.5.0-35-generic",
+    "notes": "No changes required.",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1717704590,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1075400",
+    "cpu": "11th Gen Intel Core i9-11900K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6950 XT (radeonsi, navi21, LLVM 18.1.8, DRM 3.57, 6.10.0-arch1-2)",
+    "gpuDriver": "4.6 Mesa 24.1.4-arch1.2",
+    "kernel": "6.10.0-arch1-2",
+    "notes": "Runs Flawlessly",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "129 GB",
+    "rating": "gold",
+    "timestamp": 1722916321,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1610350",
+    "cpu": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon Vega 8 (RAVEN, DRM 3.40.0, 5.11.0-44-generic, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.0.3",
+    "kernel": "5.11.0-44-generic",
+    "notes": "O problema com tecla \"ESC\" prejudica a experi\u00eancia de um jogo t\u00e1tico de RPG",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "7.0-2",
+    "ram": "6 GB",
+    "rating": "borked",
+    "timestamp": 1651519407,
+    "title": "Vanaris Tactics - Prologue",
+    "source": "protondb"
+  }
+]

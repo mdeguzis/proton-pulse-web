@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "583760",
+    "cpu": "AMD Ryzen 7 5800X 8-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "Au lancement, l'interface pour choisir sa r\u00e9solution se lance. J'ai essay\u00e9 plusieurs options, avec et sans plein \u00e9cran, mais rien ne semble fonctionner.\n\n\u00c0 chaque fois, une fen\u00eatre noire apparait, puis disparait au bout de quelques secondes.",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1768632031,
+    "title": "",
+    "source": "protondb"
+  }
+]

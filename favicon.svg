@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- Brand-color rounded background so search engines (Google, Bing) do
+       not wrap the icon in their own white chip on light search results. -->
+  <rect width="36" height="36" rx="6" ry="6" fill="#0b1116"/>
+  <ellipse cx="18" cy="18" rx="15" ry="5.5" stroke="#66c0f4" stroke-width="1.6"/>
+  <ellipse cx="18" cy="18" rx="15" ry="5.5" stroke="#66c0f4" stroke-width="1.6" transform="rotate(60 18 18)"/>
+  <ellipse cx="18" cy="18" rx="15" ry="5.5" stroke="#66c0f4" stroke-width="1.6" transform="rotate(-60 18 18)"/>
+  <circle cx="18" cy="18" r="3.4" fill="#66c0f4"/>
+</svg>

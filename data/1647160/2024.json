@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "1647160",
+    "cpu": "Intel Celeron 1005M @ 1.90GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel HD 2500 (IVB GT1)",
+    "gpuDriver": "4.2 Mesa 23.2.1-1ubuntu3.1~22.04.2",
+    "kernel": "6.5.0-28-generic",
+    "notes": "",
+    "os": "Linux Mint 21.3",
+    "protonVersion": "9.0-1",
+    "ram": "12 GB",
+    "rating": "platinum",
+    "timestamp": 1714987771,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1647160",
+    "cpu": "AMD Ryzen 5 7600X 6-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.10.0-arch1-2",
+    "notes": "Works out of the box.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1722620947,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1647160",
+    "cpu": "AMD Ryzen 5 5600G with Radeon Graphics",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpuDriver": "NVIDIA 560.35.03",
+    "kernel": "6.10.10-arch1-1",
+    "notes": "Runs perfectly as is (Proton Experimental)",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "28 GB",
+    "rating": "platinum",
+    "timestamp": 1727957641,
+    "title": "",
+    "source": "protondb"
+  }
+]

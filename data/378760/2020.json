@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "378760",
+    "cpu": "AMD Ryzen 5 3600X 6-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.6 Mesa 20.0.8",
+    "kernel": "5.4.0-7642-generic",
+    "notes": "Unplayable due to the game not detecting Steam Client.",
+    "os": "Pop!_OS 20.04 LTS",
+    "protonVersion": "5.0-9",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1602030861,
+    "title": "Pixel Starships",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1294220",
+    "cpu": "AMD FX-8350 Eight-Core",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 750 Ti",
+    "gpuDriver": "NVIDIA 440.64",
+    "kernel": "5.4.28-1-MANJARO",
+    "notes": "Used Pronton 5.9 GE to get it up and running, but now amount of mouse navigation works.",
+    "os": "Manjaro Linux",
+    "protonVersion": "5.0-9",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1597932337,
+    "title": "",
+    "source": "protondb"
+  }
+]

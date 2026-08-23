@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1211980",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7900 XT (radeonsi, navi31, LLVM 17.0.6, DRM 3.54, 6.5.0-26-generic)",
+    "gpuDriver": "4.6 Mesa 24.0.3 (git-c4d371fa7e)",
+    "kernel": "6.5.0-26-generic",
+    "notes": "low framerate but works mostly fine otherwise",
+    "os": "Freedesktop SDK 23.08 (Flatpak runtime)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1724083131,
+    "title": "Skopje '83",
+    "source": "protondb"
+  }
+]

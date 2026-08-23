@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1713730",
+    "cpu": "Intel Xeon E5-2650 v3 @ 2.30GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 2048SP (radeonsi, polaris10, LLVM 19.1.1, DRM 3.59, 6.11.0-17-generic)",
+    "gpuDriver": "4.6 Mesa 24.2.8-1ubuntu1~24.04.1",
+    "kernel": "6.11.0-17-generic",
+    "notes": "Game runs flawlessly",
+    "os": "Ubuntu 24.04.2 LTS",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1740717737,
+    "title": "",
+    "source": "protondb"
+  }
+]

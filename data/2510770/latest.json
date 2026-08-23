@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2510770",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "oneToFourHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.3-2",
+    "kernel": "6.6.15-amd64",
+    "notes": "\u80fd\u653e OP, \u8d62\uff01",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1751309938,
+    "title": "Stella of The End",
+    "source": "protondb"
+  },
+  {
+    "appId": "2510770",
+    "cpu": "Intel Core i5-10300H @ 2.50GHz",
+    "duration": "severalHours",
+    "gpu": "Intel Mesa Intel UHD (CML GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.3-2",
+    "kernel": "6.6.15-amd64",
+    "notes": "\u9664\u4e86 ED \u5728\u6211\u8bbe\u5907\u4e0a\u9700\u8981\u624b\u52a8\u5bfb\u627e\uff0c\u522b\u7684\u90fd\u633a\u597d\u3002",
+    "os": "Kali GNU/Linux Rolling",
+    "protonVersion": "9.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1751406157,
+    "title": "Stella of The End",
+    "source": "protondb"
+  },
+  {
+    "appId": "2510770",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Use GE-Proton10-13 to Fix OP/ED not playing",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1757122924,
+    "title": "Stella of The End",
+    "source": "protondb"
+  }
+]

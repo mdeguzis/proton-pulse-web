@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2347080",
+    "cpu": "Intel Core i7-14700F",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.8-arch1-2",
+    "notes": "Works as expected!",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1754079530,
+    "title": "Frosthaven",
+    "source": "protondb"
+  },
+  {
+    "appId": "2347080",
+    "cpu": "AMD Ryzen 7 5800X3D 8-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 575.64.05",
+    "kernel": "6.15.9-201.fc42.x86_64",
+    "notes": "Working right out of the box",
+    "os": "Fedora Linux 42 (KDE Plasma Desktop Edition)",
+    "protonVersion": "9.0-4",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1754668076,
+    "title": "Frosthaven",
+    "source": "protondb"
+  },
+  {
+    "appId": "2347080",
+    "cpu": "AMD Ryzen 5 7600 6-Core",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, LLVM 20.1.8, DRM 3.63, 6.15.9-arch1-1)",
+    "gpuDriver": "4.6 Mesa 25.1.7-arch1.1",
+    "kernel": "6.15.9-arch1-1",
+    "notes": "",
+    "os": "EndeavourOS Linux",
+    "protonVersion": "9.0-4",
+    "ram": "31 GB",
+    "rating": "gold",
+    "timestamp": 1755640388,
+    "title": "Frosthaven",
+    "source": "protondb"
+  }
+]

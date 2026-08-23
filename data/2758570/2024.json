@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2758570",
+    "cpu": "11th Gen Intel Core i7-11700K @ 3.60GHz",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6800 XT (radeonsi, navi21, LLVM 18.1.1, DRM 3.57, 6.8.7-300.fc40.x86_64)",
+    "gpuDriver": "4.6 Mesa 24.0.5",
+    "kernel": "6.8.7-300.fc40.x86_64",
+    "notes": "A very fun game, it works out of the box.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "8.0-5",
+    "ram": "64 GB",
+    "rating": "platinum",
+    "timestamp": 1713839437,
+    "title": "",
+    "source": "protondb"
+  }
+]

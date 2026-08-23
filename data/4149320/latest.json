@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "4149320",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 7800 XT (radeonsi, navi32, ACO, DRM 3.64, 7.0.9-200.nobara.fc43.x86_64)",
+    "gpuDriver": "4.6 Mesa 26.1.0",
+    "kernel": "7.0.9-200.nobara.fc43.x86_64",
+    "notes": "",
+    "os": "Nobara Linux 43 (KDE Plasma Desktop Edition)",
+    "protonVersion": "10.0-3",
+    "ram": "31 GB",
+    "rating": "borked",
+    "timestamp": 1781791938,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1096180",
+    "cpu": "AMD Ryzen 5 3400G with Radeon Vega Graphics",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 570 (POLARIS10, DRM 3.40.0, 5.12.14-arch1-1, LLVM 12.0.0)",
+    "gpuDriver": "4.6 Mesa 21.1.3",
+    "kernel": "5.12.14-arch1-1",
+    "notes": "Works straight out of the box, no tweaking needed. May have occasional crashes.",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-5",
+    "ram": "16 GB",
+    "rating": "silver",
+    "timestamp": 1625466468,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "1079200",
+    "cpu": "Intel Core i7-3770K @ 3.50GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 970",
+    "gpuDriver": "NVIDIA 460.91.03",
+    "kernel": "5.11.0-38-generic",
+    "notes": "cant get past tutorial, FPS slowly reduces to less than 1 as you move right. Game effectively slows to a halt.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-7",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1635901196,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "1079200",
+    "cpu": "AMD Ryzen 9 5900X 12-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6900 XT (SIENNA_CICHLID, DRM 3.42.0, 5.15.0-1-mainline, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.4",
+    "kernel": "5.15.0-1-mainline",
+    "notes": "Works out of the box on latest proton",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1636324398,
+    "title": "",
+    "source": "protondb"
+  }
+]

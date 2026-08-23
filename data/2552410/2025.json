@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2552410",
+    "cpu": "1.20",
+    "duration": "severalHours",
+    "gpu": "640x480",
+    "gpuDriver": "1",
+    "kernel": "800",
+    "notes": "it's an easy to lauch VN without tweaking, proton experimental works well for this game.",
+    "os": "MST AMCP",
+    "protonVersion": "9.0-4",
+    "ram": "kernel pcie",
+    "rating": "gold",
+    "timestamp": 1760799684,
+    "title": "",
+    "source": "protondb"
+  }
+]

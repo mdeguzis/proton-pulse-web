@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "865040",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "Radeon RX 570",
+    "gpuDriver": "4.5 Mesa 19.2.1",
+    "kernel": "5.3.0-23-generic",
+    "notes": "Works the same as the Native version",
+    "os": "Ubuntu 19.10",
+    "protonVersion": "5.0-4",
+    "ram": "24 GB",
+    "rating": "gold",
+    "timestamp": 1584447967,
+    "title": "",
+    "source": "protondb"
+  }
+]

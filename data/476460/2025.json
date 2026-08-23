@@ -1,0 +1,34 @@
+[
+  {
+    "appId": "476460",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "severalHours",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Works out of the box, but no controller input (must play with the touchscreen or mouse)",
+    "os": "SteamOS Holo",
+    "protonVersion": "9.0-4",
+    "ram": "15 GB",
+    "rating": "gold",
+    "timestamp": 1745336526,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "476460",
+    "cpu": "AMD Ryzen 7 2700 Eight-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 580 (radeonsi, polaris10, ACO, DRM 3.64, 6.17.5-zen1-1-zen)",
+    "gpuDriver": "4.6 Mesa 25.2.5-arch1.2",
+    "kernel": "6.17.5-zen1-1-zen",
+    "notes": "I can change the settings in the Unity options menu before fully launching the game however I like, no matter what it will always freeze after the initial logo splash.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-4",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1762008465,
+    "title": "",
+    "source": "protondb"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1476520",
+    "cpu": "AMD Ryzen 7 5700G with Radeon Graphics",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navy_flounder, LLVM 13.0.1, DRM 3.47, 5.19.0-76051900-generic)",
+    "gpuDriver": "4.6 Mesa 22.0.5",
+    "kernel": "5.19.0-76051900-generic",
+    "notes": "It works. I dont know why you want to play it but it does work",
+    "os": "Pop!_OS 22.04 LTS",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "bronze",
+    "timestamp": 1708043308,
+    "title": "",
+    "source": "protondb"
+  }
+]

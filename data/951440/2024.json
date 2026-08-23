@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "951440",
+    "cpu": "Intel Core i7-6700K @ 4.00GHz",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "gpuDriver": "NVIDIA 550.40.07",
+    "kernel": "6.6.15-272.current",
+    "notes": "Native version works out of the box",
+    "os": "Solus",
+    "protonVersion": "8.0-5",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1707355088,
+    "title": "Volcanoids",
+    "source": "protondb"
+  },
+  {
+    "appId": "951440",
+    "cpu": "11th Gen Intel Core i7-11800H @ 2.30GHz",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080 Laptop GPU",
+    "gpuDriver": "NVIDIA 550.90.07",
+    "kernel": "6.9.6-200.fc40.x86_64",
+    "notes": "A change to Proton version 9.0-2 was required",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "platinum",
+    "timestamp": 1719959470,
+    "title": "Volcanoids",
+    "source": "protondb"
+  },
+  {
+    "appId": "951440",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 2060 SUPER",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.6.47",
+    "notes": "Fulscreen/Audio issues",
+    "os": "NixOS 24.11 (Vicuna)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "silver",
+    "timestamp": 1725107843,
+    "title": "Volcanoids",
+    "source": "protondb"
+  }
+]

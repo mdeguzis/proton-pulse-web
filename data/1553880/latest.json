@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1553880",
+    "cpu": "Intel Core i7-7700HQ @ 2.80GHz",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "gpuDriver": "NVIDIA 470.86",
+    "kernel": "5.11.0-41-generic",
+    "notes": "Game ran fine and issue were most likely due to it being a demo and had nothing to do with using Proton.",
+    "os": "Ubuntu 20.04.3 LTS",
+    "protonVersion": "6.3-8",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1638894647,
+    "title": "Greats of the Gridiron",
+    "source": "protondb"
+  }
+]

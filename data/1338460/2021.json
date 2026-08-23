@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1338460",
+    "cpu": "Intel Core i5-7400 @ 3.00GHz",
+    "duration": "underOneHour",
+    "gpu": "AMD Radeon RX 480 (POLARIS10, DRM 3.40.0, 5.11.15-zen1-2-zen, LLVM 11.1.0)",
+    "gpuDriver": "4.6 Mesa 21.0.2",
+    "kernel": "5.11.15-zen1-2-zen",
+    "notes": "Works but some texture problems",
+    "os": "Garuda Linux",
+    "protonVersion": "6.3-2",
+    "ram": "16 GB",
+    "rating": "gold",
+    "timestamp": 1618787174,
+    "title": "",
+    "source": "protondb"
+  }
+]

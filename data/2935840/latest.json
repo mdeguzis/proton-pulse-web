@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2935840",
+    "cpu": "Intel Core i7-8665U @ 1.90GHz",
+    "duration": "unreported",
+    "gpu": "Intel Mesa Intel UHD 620 (WHL GT2)",
+    "gpuDriver": "4.6 Mesa 24.1.2",
+    "kernel": "6.9.5-200.fc40.x86_64",
+    "notes": "The game used to run fine when it first came out; since its first update it opens for a few seconds but after a few clicks it crashes the whole window manager. Seems from Steam discussions to have happened to others on Fedora with KWin and Wayland.",
+    "os": "Fedora Linux 40 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "32 GB",
+    "rating": "borked",
+    "timestamp": 1719686340,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2935840",
+    "cpu": "12th Gen Intel Core i5-12400F",
+    "duration": "oneToFourHours",
+    "gpu": "AMD Radeon RX 6700 XT (navi22, LLVM 16.0.4, DRM 3.52, 6.3.5-200.fc38.x86_64)",
+    "gpuDriver": "4.6 Mesa 23.1.1",
+    "kernel": "6.3.5-200.fc38.x86_64",
+    "notes": "runs fine now",
+    "os": "Fedora Linux 38 (KDE Plasma)",
+    "protonVersion": "9.0-2",
+    "ram": "16 GB",
+    "rating": "platinum",
+    "timestamp": 1720032609,
+    "title": "",
+    "source": "protondb"
+  },
+  {
+    "appId": "2935840",
+    "cpu": "AMD Ryzen Threadripper 1950X 16-Core",
+    "duration": "oneToFourHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 555.58.02",
+    "kernel": "6.9.8-2-cachyos",
+    "notes": "Game runs fine, didn't notice any problems whilst playing.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-2",
+    "ram": "129 GB",
+    "rating": "platinum",
+    "timestamp": 1720615010,
+    "title": "",
+    "source": "protondb"
+  }
+]

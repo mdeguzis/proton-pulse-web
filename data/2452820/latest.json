@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2452820",
+    "cpu": "13th Gen Intel Core i7-13700KF",
+    "duration": "severalHours",
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "gpuDriver": "NVIDIA 580.105.08",
+    "kernel": "6.17.9-arch1-1",
+    "notes": "No problems",
+    "os": "Arch Linux",
+    "protonVersion": "10.0-3",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1765388862,
+    "title": "",
+    "source": "protondb"
+  }
+]

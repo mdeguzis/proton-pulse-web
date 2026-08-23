@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "2820060",
+    "cpu": "AMD Ryzen 9 7950X3D 16-Core",
+    "duration": "underOneHour",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpuDriver": "NVIDIA 565.77",
+    "kernel": "6.12.3-arch1-1",
+    "notes": "This is only a technical demo, not a real game. I was able to load the world and walk around for a bit.",
+    "os": "Arch Linux",
+    "protonVersion": "9.0-3",
+    "ram": "63 GB",
+    "rating": "platinum",
+    "timestamp": 1748006903,
+    "title": "",
+    "source": "protondb"
+  }
+]

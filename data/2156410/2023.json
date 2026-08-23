@@ -1,0 +1,50 @@
+[
+  {
+    "appId": "2156410",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "Doesn't launch. Tried a couple of different Proton versions and no luck.",
+    "os": "SteamOS Holo",
+    "protonVersion": "7.0-6",
+    "ram": "15 GB",
+    "rating": "borked",
+    "timestamp": 1679263862,
+    "title": "Konkan Coast Pirate Solutions",
+    "source": "protondb"
+  },
+  {
+    "appId": "2156410",
+    "cpu": "12th Gen Intel Core i9-12900K",
+    "duration": "unreported",
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpuDriver": "NVIDIA 530.41.03",
+    "kernel": "6.1.23-1-MANJARO",
+    "notes": "Runs fine on Proton version 6.3-8",
+    "os": "Manjaro Linux",
+    "protonVersion": "6.3-8",
+    "ram": "32 GB",
+    "rating": "gold",
+    "timestamp": 1682372643,
+    "title": "Konkan Coast Pirate Solutions",
+    "source": "protondb"
+  },
+  {
+    "appId": "2156410",
+    "cpu": "AMD Custom APU 0405",
+    "duration": "unreported",
+    "gpu": "AMD Custom GPU 0405 (vangogh, LLVM 13.0.0, DRM 3.45, 5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb)",
+    "gpuDriver": "4.6 Mesa 22.0.0-devel (git-676ccacebc)",
+    "kernel": "5.13.0-valve10.1-1-neptune-02144-g7fffaf925dfb",
+    "notes": "",
+    "os": "SteamOS Holo",
+    "protonVersion": "6.3-8",
+    "ram": "15 GB",
+    "rating": "platinum",
+    "timestamp": 1682714759,
+    "title": "Konkan Coast Pirate Solutions",
+    "source": "protondb"
+  }
+]

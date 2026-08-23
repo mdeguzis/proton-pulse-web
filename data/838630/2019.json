@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "838630",
+    "cpu": "Intel Core i5-4690K @ 3.50GHz",
+    "duration": "underOneHour",
+    "gpu": "ATI Technologies Inc. Radeon RX 570",
+    "gpuDriver": "4.6.13572 Compatibility Profile Context 5.0.73",
+    "kernel": "5.0.0-36-generic",
+    "notes": "The way these graphical glitches are with the current version I wouldn't recommend playing it under Linux.",
+    "os": "Linux Mint 19.2 Tina",
+    "protonVersion": "4.11-8",
+    "ram": "16 GB",
+    "rating": "borked",
+    "timestamp": 1574203037,
+    "title": "",
+    "source": "protondb"
+  }
+]

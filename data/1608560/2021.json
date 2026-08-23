@@ -1,0 +1,18 @@
+[
+  {
+    "appId": "1608560",
+    "cpu": "AMD Ryzen 5 3600 6-Core",
+    "duration": "unreported",
+    "gpu": "AMD Radeon RX 6700 XT (NAVY_FLOUNDER, DRM 3.42.0, 5.15.0-rc5-1-mainline, LLVM 12.0.1)",
+    "gpuDriver": "4.6 Mesa 21.2.3",
+    "kernel": "5.15.0-rc5-1-mainline",
+    "notes": "",
+    "os": "Arch Linux",
+    "protonVersion": "6.3-7",
+    "ram": "48 GB",
+    "rating": "silver",
+    "timestamp": 1634571223,
+    "title": "AI Drone Simulator",
+    "source": "protondb"
+  }
+]
