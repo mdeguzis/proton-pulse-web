@@ -10,11 +10,15 @@
  *   BACKUP_TYPE               - schema | user_configs | author_avatars | site | all
  *   SITE_DIR                  - path to checked-out gh-pages files (for site type)
  *   OUT_DIR                   - directory to write .tar.gz files into
+ *
+ * Optional env vars:
+ *   MIGRATIONS_DIR            - DDL source bundled into the schema archive
+ *                               (default: supabase/migrations)
  */
 
 import { createHmac } from 'crypto';
 import { execSync } from 'child_process'; // nosemgrep: javascript.lang.security.detect-child-process.detect-child-process — Trusted CI script; commands from hardcoded constants, not user input
-import { mkdirSync, writeFileSync, readdirSync, statSync } from 'fs';
+import { mkdirSync, writeFileSync, readdirSync, readFileSync, statSync } from 'fs';
 import { join } from 'path';
 import { tmpdir } from 'os';
 
@@ -107,6 +111,57 @@ export function sanitizeAuthorAvatar(row, secret) {
   };
 }
 
+/**
+ * Flatten a PostgREST OpenAPI document into per-table column definitions.
+ *
+ * PostgREST describes each exposed table under `definitions` (Swagger 2) or
+ * `components.schemas` (OpenAPI 3), with a `properties` map carrying the
+ * column type, format (the underlying Postgres type) and a description that
+ * holds the PK/FK notes. That is everything the REST layer can tell us about
+ * structure -- pg_catalog is not reachable over REST, so RLS policies,
+ * triggers and functions do NOT appear here and come from the migrations.
+ */
+export function summarizeOpenApiSchema(spec) {
+  const defs = spec?.definitions || spec?.components?.schemas || {};
+  return Object.entries(defs)
+    .map(([table, def]) => ({
+      table,
+      required: def?.required || [],
+      columns: Object.entries(def?.properties || {}).map(([name, meta]) => ({
+        name,
+        type: meta?.type ?? null,
+        // `format` is the Postgres type (e.g. "timestamp with time zone"),
+        // which is what a restore actually needs -- `type` is only the JSON
+        // supertype and would collapse int/bigint/numeric into "number".
+        format: meta?.format ?? null,
+        description: meta?.description ?? null,
+      })),
+    }))
+    .sort((a, b) => a.table.localeCompare(b.table));
+}
+
+/** Render the introspected tables as readable SQL-ish reference text. */
+export function renderSchemaReference(tables, date) {
+  const lines = [
+    `-- Schema reference ${date}`,
+    '-- Generated from the PostgREST OpenAPI document (live introspection).',
+    '-- This is a REFERENCE, not restorable DDL. The restorable definition is',
+    '-- the migrations/ directory in this archive, replayed in filename order.',
+    '-- RLS policies, triggers and functions are not visible to introspection',
+    '-- and exist only in those migration files.',
+    '',
+  ];
+  for (const t of tables) {
+    lines.push(`-- Table: ${t.table} (${t.columns.length} columns)`);
+    for (const c of t.columns) {
+      const req = t.required.includes(c.name) ? ' NOT NULL' : '';
+      lines.push(`--   ${c.name} ${c.format || c.type || 'unknown'}${req}`);
+    }
+    lines.push('');
+  }
+  return lines.join('\n');
+}
+
 // ---------------------------------------------------------------------------
 // I/O (not exported; depends on env + network)
 // ---------------------------------------------------------------------------
@@ -127,41 +182,55 @@ async function fetchAll(table, select = '*', extraFilter = '', headers) {
   return rows;
 }
 
-async function fetchSchema(headers, date) {
-  const tables = ['user_configs', 'author_avatars', 'user_proton_configs', 'user_systems', 'admins', 'banned_users'];
-  const lines = [`-- Schema export ${date}\n`];
-  for (const table of tables) {
-    const res = await fetch(`${process.env.SUPABASE_URL}/rest/v1/${table}?limit=0`, { headers });
-    lines.push(`-- Table: ${table} (columns from API response headers)\n`);
-    lines.push(`-- Content-Range: ${res.headers.get('content-range') || 'n/a'}\n\n`);
+async function fetchSchema(headers, date, migrationsDir) {
+  // Live introspection. PostgREST serves an OpenAPI document at the API root
+  // describing every exposed table and column with its type -- this is the
+  // only structural view the service-role key can reach, since pg_catalog is
+  // not exposed over REST. Requires the secret key; the publishable key gets
+  // "Only secret API keys can be used for this endpoint".
+  const res = await fetch(`${process.env.SUPABASE_URL}/rest/v1/`, {
+    headers: { ...headers, Accept: 'application/openapi+json' },
+  });
+  if (!res.ok) {
+    throw new Error(`Schema introspection failed: ${res.status} ${await res.text()}`);
+  }
+  const spec = await res.json();
+  const tables = summarizeOpenApiSchema(spec);
+  // An empty result means the endpoint answered but told us nothing, which is
+  // what the previous implementation shipped for months. Treat it as failure.
+  if (!tables.length) {
+    throw new Error('Schema introspection returned no tables -- refusing to write an empty schema backup');
   }
 
-  const policyQuery = `
-    SELECT schemaname, tablename, policyname, cmd, qual, with_check
-    FROM pg_policies
-    WHERE schemaname = 'public'
-    ORDER BY tablename, policyname;
-  `;
-  const queryRes = await fetch(`${process.env.SUPABASE_URL}/rest/v1/rpc/query`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({ query: policyQuery }),
-  }).catch(() => null);
-
-  if (queryRes?.ok) {
-    const policies = await queryRes.json();
-    lines.push('-- RLS Policies\n');
-    lines.push(JSON.stringify(policies, null, 2));
+  // The DDL itself. Migrations are the authoritative definition of the schema
+  // (tables, RLS policies, triggers, functions) and replaying them in filename
+  // order reconstructs the database. Introspection cannot see any of that, so
+  // without these the backup is structurally useless.
+  const migrations = readMigrations(migrationsDir);
+  if (!migrations.length) {
+    throw new Error(`No migrations found in ${migrationsDir} -- refusing to write a schema backup with no DDL`);
   }
 
-  return lines.join('');
+  return { spec, tables, migrations };
+}
+
+// Read the migration files that define the schema. Sorted by filename, which
+// is the timestamp-prefixed order they must be replayed in.
+function readMigrations(dir) {
+  let names;
+  try {
+    names = readdirSync(dir).filter(f => f.endsWith('.sql')).sort();
+  } catch (err) {
+    throw new Error(`Cannot read migrations from ${dir}: ${err.message}`);
+  }
+  return names.map(name => ({ name, sql: readFileSync(join(dir, name), 'utf8') }));
 }
 
 function makeTarball(srcDir, outPath) {
   execSync(`tar -czf "${outPath}" -C "${srcDir}" .`, { stdio: 'inherit' }); // nosemgrep: javascript.lang.security.detect-child-process.detect-child-process — Trusted CI script; commands from hardcoded constants, not user input
 }
 
-async function run(type, { headers, date, outDir, siteDir, secret }) {
+async function run(type, { headers, date, outDir, siteDir, secret, migrationsDir }) {
   const workDir = join(tmpdir(), `backup-${date}-${type}`);
   mkdirSync(workDir, { recursive: true });
 
@@ -170,8 +239,22 @@ async function run(type, { headers, date, outDir, siteDir, secret }) {
   let rowCount = null;
 
   if (type === 'schema') {
-    const schema = await fetchSchema(headers, date);
-    writeFileSync(join(workDir, `schema-${date}.sql`), schema);
+    const { spec, tables, migrations } = await fetchSchema(headers, date, migrationsDir);
+
+    // Restorable DDL: the migrations, replayed in filename order. This is the
+    // part that actually rebuilds the database, RLS and triggers included.
+    const migDir = join(workDir, 'migrations');
+    mkdirSync(migDir, { recursive: true });
+    for (const m of migrations) writeFileSync(join(migDir, m.name), m.sql);
+
+    // Live introspection, kept alongside so a restore can be diffed against
+    // what prod actually had. Catches drift where the live schema and the
+    // migration history disagree.
+    writeFileSync(join(workDir, `schema-${date}.json`), JSON.stringify({ tables, openapi: spec }, null, 2));
+    writeFileSync(join(workDir, `schema-${date}.sql`), renderSchemaReference(tables, date));
+
+    rowCount = tables.length;
+    console.log(`[schema] introspected ${tables.length} tables, bundled ${migrations.length} migrations`);
   }
 
   if (type === 'user_configs') {
@@ -240,6 +323,8 @@ async function main() {
   const outDir = process.env.OUT_DIR || '.';
   const siteDir = process.env.SITE_DIR || '';
   const type = process.env.BACKUP_TYPE || 'all';
+  // Migrations are the authoritative DDL and ship inside the schema archive.
+  const migrationsDir = process.env.MIGRATIONS_DIR || 'supabase/migrations';
 
   mkdirSync(outDir, { recursive: true });
   const types = type === 'all'
@@ -248,7 +333,7 @@ async function main() {
 
   const results = [];
   for (const t of types) {
-    results.push(await run(t, { headers, date, outDir, siteDir, secret }));
+    results.push(await run(t, { headers, date, outDir, siteDir, secret, migrationsDir }));
   }
 
   // Write manifest for the workflow to append to backups.jsonl
