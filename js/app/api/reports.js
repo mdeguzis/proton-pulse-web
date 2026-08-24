@@ -1,6 +1,6 @@
 // reports (api) for the app page. Relocated from app.js.
 
-import { SB_KEY, SB_URL } from '../config.js?v=a75604f5';
+import { SB_KEY, SB_URL } from '../config.js?v=7873e060';
 import { latestPerApp } from '../utils.js?v=4630c3d5';
 
 /**
