@@ -14,7 +14,7 @@
 
 import { computeLibraryTierCounts } from '../app/components/home-library-chart.js?v=65bf9f7a';
 import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
-import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=a75604f5';
+import { RATING_COLORS, RATING_TEXT } from '../app/config.js?v=7873e060';
 import { esc } from '../app/utils.js?v=4630c3d5';
 // localStorage keys the /lookup page reads + writes are defined in the
 // shared module so the inline "Library" panel + the nav fallback + this

@@ -1,7 +1,7 @@
 // author (components) for the app page. Relocated from app.js.
 
 import { fetchAuthorAvatar, fetchAuthorStats, getAuthorIdentity } from '../api/author.js?v=0d33fd7b';
-import { CDN } from '../config.js?v=a75604f5';
+import { CDN } from '../config.js?v=7873e060';
 import { route } from '../router.js?v=cf79f6bc';
 import { esc } from '../utils.js?v=4630c3d5';
 

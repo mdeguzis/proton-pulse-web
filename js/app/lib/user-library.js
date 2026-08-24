@@ -1,7 +1,7 @@
 // Cached lookup of the signed-in user's Steam library appids, backed by the
 // user_steam_library Supabase table. Loaded once per page and shared across
 // components (home chart, ownership checks, etc.) (#199).
-import { SB_URL, SB_KEY } from '../config.js?v=a75604f5';
+import { SB_URL, SB_KEY } from '../config.js?v=7873e060';
 
 let _appIdsCache = null; // Set<number> | null
 

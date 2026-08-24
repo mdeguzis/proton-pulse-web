@@ -52,7 +52,15 @@ describe('dataFilesHref uses the shared appIdToDir (data-disconnect guard)', () 
   const CFG = fs.readFileSync(path.join(__dirname, '..', 'js/app/config.js'), 'utf8');
 
   test('routes through appIdToDir, never the raw canonical id', () => {
-    expect(CFG).toMatch(/dataFilesHref = appId => .*appIdToDir\(appId\)/);
+    // The mapping lives in dataFileHref now -- every per-game file link
+    // (latest.json, depots.json, year buckets) shares that one builder, so
+    // guarding it here covers all of them.
+    expect(CFG).toMatch(/dataFileHref = \(appId, file = 'latest\.json'\) =>/);
+    expect(CFG).toMatch(/appIdToDir\(appId\)/);
     expect(CFG).toMatch(/import \{ appIdToDir \} from '\.\.\/lib\/app-id\.js/);
+  });
+
+  test('dataFilesHref delegates rather than rebuilding the path', () => {
+    expect(CFG).toMatch(/dataFilesHref = appId => dataFileHref\(appId, 'latest\.json'\)/);
   });
 });

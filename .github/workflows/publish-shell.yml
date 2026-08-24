@@ -112,6 +112,14 @@ jobs:
             app-id-redirects.json pcgamingwiki.json pcgwiki-catalog.json
             pcgw-id-map.json flightless-benchmarks.json flightless-review-queue.json
             sgdb-covers.json
+            # This list is a FOURTH place a pipeline data file must be
+            # registered (after gh-pages-manifest.txt, the update-data.yml
+            # copy loops, and publish-cloudflare.sh SMALL_DATA). Miss it and
+            # the file survives a pipeline run but is dropped by the next
+            # shell deploy, so the site works until someone pushes a CSS
+            # tweak. vr-index.json + vrdb.json (#246) and anti-cheat.json
+            # were all lost this way.
+            vr-index.json vrdb.json anti-cheat.json
           )
           for f in "${FILES[@]}"; do
             if curl -sfL --max-time 30 "$LIVE_BASE/$f" -o "/tmp/shell-out/$f" \

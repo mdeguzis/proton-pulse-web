@@ -54,7 +54,15 @@ function _dataHost() {
 }
 // appIdToDir matches the pipeline's on-disk layout (colon -> underscore);
 // a raw canonical id 404s on R2 for gog:/epic:/pgwiki: entries.
-export const dataFilesHref = appId => `${_dataHost()}/data/${appIdToDir(appId)}/latest.json`;
+// Every per-game file the pipeline emits (latest.json, the year buckets,
+// votes.json, depots.json) lands in the same directory and syncs to the same
+// R2 bucket, so one builder covers all of them. Anything linking at a
+// per-game file must go through here: a hand-built GitHub blob URL pointed
+// at the gh-pages branch, which #396 archives, and skipped appIdToDir so
+// gog:/epic: ids 404'd on top of that.
+export const dataFileHref = (appId, file = 'latest.json') =>
+  `${_dataHost()}/data/${appIdToDir(appId)}/${file}`;
+export const dataFilesHref = appId => dataFileHref(appId, 'latest.json');
 
 // Fetch a pipeline data path from the current origin first; if it 404s,
 // retry once against production so a staging build that hasn't run the

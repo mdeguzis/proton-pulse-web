@@ -95,9 +95,23 @@ def test_main_most_played_with_limit(tmp_path):
 
 
 def test_main_deck_status(tmp_path):
+    # No --budget: keep the pipeline's own per-run scope (app_ids=None) so the
+    # in-pipeline call is unchanged by the ad-hoc backfill flags.
     with patch("scripts.pipeline.cli.build_deck_status") as mock_deck:
         _run_main("deck-status", str(tmp_path))
-        mock_deck.assert_called_once_with(str(tmp_path))
+        mock_deck.assert_called_once_with(str(tmp_path), app_ids=None, delay=0.35)
+
+
+def test_main_deck_status_full_fill(tmp_path):
+    # --budget 0 means "no cap": the ad-hoc full fill resolves the id list up
+    # front instead of deferring to the pipeline's budget.
+    with (
+        patch("scripts.pipeline.cli.build_deck_status") as mock_deck,
+        patch("scripts.pipeline.deck_status.steam_app_ids_for_deck_status", return_value=["730"]) as mock_scope,
+    ):
+        _run_main("deck-status", str(tmp_path), "--budget", "0", "--delay", "0.2")
+        assert mock_scope.call_args.kwargs["budget"] >= 10 ** 6
+        mock_deck.assert_called_once_with(str(tmp_path), app_ids=["730"], delay=0.2)
 
 
 def test_main_reindex(tmp_path):

@@ -3,8 +3,78 @@
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 
 export const DECK_CAT_MAP = { 0: 'unknown', 1: 'unsupported', 2: 'playable', 3: 'verified' };
+// Steam Machine shares Deck's scale; SteamOS only ever shows Compatible as the
+// positive verdict, so 2 and 3 both map there. Mirrors MACHINE_CAT_MAP /
+// STEAMOS_CAT_MAP in scripts/pipeline/deck_status.py -- the live fallback below
+// must agree with the published map or the same game reads differently
+// depending on whether the pipeline happened to cover it.
+export const MACHINE_CAT_MAP = DECK_CAT_MAP;
+export const STEAMOS_CAT_MAP = { 0: 'unknown', 1: 'unsupported', 2: 'compatible', 3: 'compatible' };
 // display_type in resolved_items: 2=fail, 3=info/caveat, 4=pass
 export const DECK_DISPLAY_MAP = { 4: true, 3: null, 2: false };
+
+const STEAM_EXPLORE_URL = 'https://ilsgdshkaocrmibwdezk.supabase.co/functions/v1/steam-explore';
+
+function _extractCriteria(items, prefix) {
+  if (!Array.isArray(items)) return [];
+  const out = [];
+  for (const it of items) {
+    if (!it || typeof it !== 'object') continue;
+    const tok = String(it.loc_token || '');
+    out.push([it.display_type, tok.startsWith(prefix) ? tok.slice(prefix.length) : tok]);
+  }
+  return out;
+}
+
+/**
+ * Live Deck verdict for one app via the public steam-explore proxy.
+ *
+ * Steam's endpoint is not CORS-enabled, hence the proxy. This is the on-demand
+ * path for games the pipeline has not covered: the published map is capped per
+ * run, so the long tail of catalog stubs would otherwise render "no data"
+ * forever even though a real verdict exists upstream.
+ *
+ * Returns null on any failure -- callers treat that as "no data", never as a
+ * verdict.
+ * @param {string|number} appId
+ * @returns {Promise<object|null>}
+ */
+export async function fetchLiveDeckStatus(appId) {
+  const id = String(appId == null ? '' : appId).trim();
+  if (!/^\d+$/.test(id)) return null;
+  try {
+    const res = await fetch(STEAM_EXPLORE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ endpoint: 'steam_deck', id }),
+    });
+    if (!res.ok) {
+      console.debug('[deck-status] live lookup non-2xx', { appId: id, status: res.status });
+      return null;
+    }
+    const body = await res.json();
+    const results = (body && body.data && body.data.results) || null;
+    if (!body?.ok || !results) return null;
+
+    const deckCat = Number(results.resolved_category) || 0;
+    const machineCat = Number(results.machine_resolved_category) || 0;
+    const steamosCat = Number(results.steamos_resolved_category) || 0;
+    // Nothing rated on any target: Valve genuinely has no verdict. That is a
+    // real answer, distinct from a failed lookup, so report it as data.
+    const items = Array.isArray(results.resolved_items) ? results.resolved_items : [];
+    return {
+      status: DECK_CAT_MAP[deckCat] || 'unknown',
+      criteria: items.length >= 4 ? items.slice(0, 4).map((i) => DECK_DISPLAY_MAP[i?.display_type]) : null,
+      machine: MACHINE_CAT_MAP[machineCat] || 'unknown',
+      steamos: STEAMOS_CAT_MAP[steamosCat] || 'unknown',
+      machine_criteria: _extractCriteria(results.machine_resolved_items, '#SteamMachine_TestResult_'),
+      steamos_criteria: _extractCriteria(results.steamos_resolved_items, '#SteamOS_TestResult_'),
+    };
+  } catch (err) {
+    console.debug('[deck-status] live lookup failed', { appId: id, error: String(err) });
+    return null;
+  }
+}
 
 // cache fetched deck compat so we dont re-fetch on every render
 export const _deckCache = {};
@@ -53,9 +123,26 @@ export async function fetchDeckStatusForApp(appId) {
         machine_criteria: Array.isArray(entry.machine_criteria) ? entry.machine_criteria : [],
         steamos_criteria: Array.isArray(entry.steamos_criteria) ? entry.steamos_criteria : [],
       }
-    : { status: 'unknown', criteria: null, machine: 'unknown', steamos: 'unknown', machine_criteria: [], steamos_criteria: [] };
-  _deckCache[appId] = ret;
-  return ret;
+    // hasData:false is NOT the same as Valve rating a game Unknown. The
+    // published map only covers what the pipeline has fetched so far, so a
+    // miss means "we have not asked yet". Rendering it as "Valve has not
+    // evaluated this title" asserted a fact about a third party we never
+    // checked -- CS2 read that way while the store page said Playable.
+    : null;
+  if (ret) {
+    ret.hasData = true;
+    _deckCache[appId] = ret;
+    return ret;
+  }
+  // Not in the published map. Ask upstream directly rather than telling the
+  // user Valve has no verdict -- the map only covers what the pipeline has
+  // fetched so far, and every catalog stub has a game page.
+  const live = await fetchLiveDeckStatus(appId);
+  const out = live
+    ? { ...live, hasData: true }
+    : { status: 'unknown', hasData: false, criteria: null, machine: 'unknown', steamos: 'unknown', machine_criteria: [], steamos_criteria: [] };
+  _deckCache[appId] = out;
+  return out;
 }
 
 // synchronous fallback used for initial render before the async fetch returns

@@ -181,34 +181,55 @@
   color: var(--delisted-chip-fg, #fff);
 }
 
-/* #246 VR chip. Same geometry as the delisted chip so the two stack cleanly
-   in the same strip. Two variants: "VR" (playable either way) stays quiet in
-   the Steam cyan family, "VR Only" is warmer because a headset requirement is
-   a hard gate for a flatscreen player, not a nice-to-have. */
+/* #246 VR chip. Sized to the 18px box the store icon and owner badges use.
+   Amber because the chip sits directly against the store pill, and every
+   store colour is in the blue/purple/grey family: Steam #1689d0, GOG #7a3fcf,
+   PCGWiki #4d5f9c, Epic #555. The first version was a muted blue and read as
+   part of the Steam pill rather than a separate badge. Amber is also unused
+   elsewhere in the card chrome and does not collide with any tier colour.
+   One variant only -- VR-only games say so in a banner on the detail page,
+   not with a second chip colour that says "different somehow" without
+   saying how. */
 .game-card-vr-chip {
-  display: inline-block;
-  padding: 0 5px;
-  border-radius: 3px;
-  font-size: 0.62em;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 6px;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1.5;
+  line-height: 18px;
   white-space: nowrap;
+  background: var(--vr-chip-bg, #e8a33d);
+  color: var(--vr-chip-fg, #16130c);
+  /* No radius of its own: the badge container's radius caps the strip (see
+     the bleed rules below), the same way .game-card-combo-tag already builds
+     its two-tone chip. A chip with its own corners sat as a square block
+     inside a curved badge and the leading end read as uncapped. */
+  border-radius: 0;
 }
-.game-card-vr-chip--supported {
-  background: var(--vr-chip-bg, rgba(65, 122, 155, 0.92));
-  color: var(--vr-chip-fg, #fff);
+
+/* Bleed the leading chip out through the container's padding so it reaches
+   the edge, then let the container clip it to its own curve. Each badge
+   variant has different padding, so each declares its own bleed; the chip
+   rule above stays generic. Only :first-child bleeds -- when a Delisted chip
+   precedes it, that one owns the leading edge instead. */
+.game-card-store-tag,
+.game-card-store-pill,
+.game-card-corner-tag,
+.game-card-strip-store { overflow: hidden; }
+
+.game-card-vr-chip:first-child {
+  align-self: stretch;
+  margin-top: calc(-1 * var(--badge-pad-y, 0px));
+  margin-bottom: calc(-1 * var(--badge-pad-y, 0px));
+  margin-left: calc(-1 * var(--badge-pad-x, 0px));
 }
-.game-card-vr-chip--only {
-  background: var(--vr-only-chip-bg, rgba(150, 95, 175, 0.92));
-  color: var(--vr-only-chip-fg, #fff);
-}
-[data-theme="light"] .game-card-vr-chip--supported {
-  background: var(--vr-chip-bg, rgba(55, 105, 135, 0.95));
-}
-[data-theme="light"] .game-card-vr-chip--only {
-  background: var(--vr-only-chip-bg, rgba(130, 80, 155, 0.95));
+.game-card-store-tag  { --badge-pad-y: 1px; --badge-pad-x: 5px; }
+.game-card-store-pill { --badge-pad-y: 4px; --badge-pad-x: 10px; }
+.game-card-corner-tag {
+  --badge-pad-y: calc(var(--owner-badge-size, 18px) * 0.12);
+  --badge-pad-x: calc(var(--owner-badge-size, 18px) * 0.42);
 }
 
 /* Owner badges (Subaru "Badge of Ownership" style): dark chrome chips
@@ -238,6 +259,11 @@
   height: var(--owner-badge-size, 18px);
   display: block;
 }
+/* Hover recolours the GLYPH, not the chip. Works because the sprites use
+   fill="currentColor" -- with the old fill="#fff" on the <symbol> the colour
+   was set inside the shadow tree and no outside rule could touch it. */
+.game-card-owner-badge { transition: color 0.15s ease; }
+.game-card-owner-badge:hover { color: var(--accent, #58a6ff); }
 /* Small gap before the store text so the icons read as attached but
    distinct decals rather than merging with the "STEAM" label. */
 .game-card-owner-badge:last-of-type { margin-right: 3px; }

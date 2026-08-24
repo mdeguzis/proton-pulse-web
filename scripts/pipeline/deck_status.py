@@ -178,25 +178,96 @@ def fetch_deck_compat(app_id):
     return val
 
 
-def steam_app_ids_with_reports(output_dir):
-    """Steam app ids from search-index.json that have at least one report.
+# Per-run budget for NEW Deck verdict fetches. Cached ids cost nothing (30-day
+# TTL), so the map accumulates across runs rather than re-fetching the catalog.
+DECK_FETCH_BUDGET = 400
 
-    Scopes the fetch to games users actually inspect (they have a real game
-    page), instead of every catalog stub. search-index row shape:
-    [app_id, title, tier, protondb_count, pulse_count, app_type, ...].
+
+def _json_or_empty(path):
+    """Read a pipeline JSON side-file, or return None when it is absent.
+
+    These are optional inputs: on a finalize-only run most_played.json may not
+    have been regenerated. Missing means "no priority hint", not an error.
     """
-    rows = json.loads((Path(output_dir) / "search-index.json").read_text(encoding="utf-8"))
-    ids = []
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def steam_app_ids_for_deck_status(output_dir, budget=DECK_FETCH_BUDGET):
+    """Steam app ids to fetch Deck verdicts for, most-visible first.
+
+    Deliberately NOT gated on report counts. It used to be
+    `(protondb_count + pulse_count) > 0`, which was fine while ProtonDB counts
+    populated the index -- then #474 decoupled ProtonDB, every protondb_count
+    went to 0, and the scope silently collapsed from thousands of games to 17.
+    Nothing failed: the file wrote successfully and the log reported the new
+    count as if it were normal. Counter-Strike 2 showed "Valve has not
+    evaluated this title yet" while the store page said Playable.
+
+    Priority order, because the budget cannot cover 32k Steam rows in one run:
+      1. games with Pulse reports      (someone cared enough to report)
+      2. Steam's most-played chart     (what the home page shows)
+      3. recently reported games       (the other home section)
+      4. everything else in the index  (fills the remaining budget)
+
+    Ids already in the verdict cache are returned too and cost no request, so
+    the published map keeps growing instead of churning.
+    """
+    out = Path(output_dir)
+    rows = json.loads((out / "search-index.json").read_text(encoding="utf-8"))
+
+    steam_ids, reported = [], []
     for row in rows:
         if not isinstance(row, list) or len(row) < 6:
             continue
         app_id = str(row[0])
-        app_type = row[5] or "steam"
-        pdb = row[3] or 0
-        pulse = row[4] or 0
-        if app_type == "steam" and app_id.isdigit() and (pdb + pulse) > 0:
-            ids.append(app_id)
-    return ids
+        if (row[5] or "steam") != "steam" or not app_id.isdigit():
+            continue
+        steam_ids.append(app_id)
+        if (row[3] or 0) + (row[4] or 0) > 0:
+            reported.append(app_id)
+
+    def _ids_from(payload, keys=("appId", "appid", "app_id", "id")):
+        found = []
+        for entry in payload or []:
+            if not isinstance(entry, dict):
+                continue
+            for key in keys:
+                val = entry.get(key)
+                if val is not None:
+                    found.append(str(val))
+                    break
+        return found
+
+    ordered, seen = [], set()
+    for group in (
+        reported,
+        _ids_from(_json_or_empty(out / "most_played.json")),
+        _ids_from(_json_or_empty(out / "recent-reports.json")),
+        steam_ids,
+    ):
+        for app_id in group:
+            if app_id.isdigit() and app_id not in seen:
+                seen.add(app_id)
+                ordered.append(app_id)
+
+    # Everything already cached rides along for free; the budget only limits
+    # ids that would cost a request.
+    cache = _load_cache()
+    cached_ids = [a for a in ordered if a in cache]
+    fresh = [a for a in ordered if a not in cache][:budget]
+    log(
+        f"[deck-status] scope: {len(ordered):,} steam apps, {len(cached_ids):,} already cached, "
+        f"fetching up to {len(fresh):,} new (budget {budget})"
+    )
+    return cached_ids + fresh
+
+
+# Back-compat alias: the old name said "with reports", which is exactly the
+# assumption that broke. Kept so any external caller keeps working.
+steam_app_ids_with_reports = steam_app_ids_for_deck_status
 
 
 def build_deck_status(output_dir, app_ids=None, delay=0.0):
@@ -205,7 +276,7 @@ def build_deck_status(output_dir, app_ids=None, delay=0.0):
     Returns the ``{app_id: {status, criteria}}`` map that was written.
     """
     out_dir = Path(output_dir)
-    ids = app_ids if app_ids is not None else steam_app_ids_with_reports(out_dir)
+    ids = app_ids if app_ids is not None else steam_app_ids_for_deck_status(out_dir)
     result = {}
     for app_id in ids:
         val = fetch_deck_compat(app_id)

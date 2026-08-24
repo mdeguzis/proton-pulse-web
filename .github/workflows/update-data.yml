@@ -535,6 +535,21 @@ jobs:
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
 
+      # The backup step at the end of this job runs `bash <script>` from the
+      # workspace, but the gh-pages orphan deploy below does `git rm -rf .`
+      # first, which deletes every tracked file including that script. Every
+      # scheduled run from 2026-08-19 onward failed here with
+      # "scripts/backup-to-release.sh: No such file or directory", so the
+      # nightly data backup silently stopped for five days.
+      #
+      # Same hazard the preserve-* scripts already work around, but staged in
+      # its own step rather than inside the orphan step: the backup runs on
+      # both deploy targets, and on deploy_target=cloudflare the orphan step
+      # is skipped entirely, so a cp living inside it would never happen.
+      - name: Stage the backup script out of the workspace
+        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
+        run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
+
       - name: Deploy to gh-pages (orphan, no history)
         if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && (inputs.deploy_target || 'cloudflare') != 'cloudflare'
         run: |

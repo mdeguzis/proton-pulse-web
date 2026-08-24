@@ -224,17 +224,13 @@ gh-run: gh-check check-staging-sync
 draft-release:
 	@bash scripts/draft-release.sh
 
-gh-pages-only: gh-check check-staging-sync
-	gh workflow run $(GITHUB_WORKFLOW) --field pages_only=true
-	@bash scripts/draft-release.sh
-	@echo "Triggered $(GITHUB_WORKFLOW) with pages_only=true"
-	@echo "NOTE: this promotes shell files to the OLD gh-pages branch (rollback path only per #362). For prod CF Pages (www.proton-pulse.com) use \`make cf-prod\` -- but ideally you do not need to, since publish-shell.yml auto-deploys on every push to main."
-
-gh-staging: gh-check
-	@bash scripts/wait-for-remote.sh
-	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_only=true
-	@echo "Triggered $(GITHUB_WORKFLOW) with staging_only=true -- preview at https://mdeguzis.github.io/proton-pulse-web-staging/"
-	@echo "NOTE: this deploys to the OLD gh-pages staging repo (kept as rollback per #362). For the live CF Pages staging site (staging.proton-pulse.com) use \`make cf-staging\`."
+# The gh-pages deploy targets (gh-pages-only, gh-staging) were removed: they
+# pushed to the old gh-pages branch + staging repo, which #362 replaced with
+# Cloudflare Pages. They stayed around as a rollback path long enough to be a
+# footgun -- `make gh-staging` looks like the obvious way to preview staging
+# and silently deploys somewhere nobody looks. Use cf-staging / cf-prod below.
+# The gh-* PIPELINE targets (gh-run, gh-staging-finalize, ...) are unrelated
+# and still current; they dispatch update-data.yml, they do not touch gh-pages.
 
 # ── Cloudflare Pages shell deploys (#362 follow-up) ────────────────────
 #

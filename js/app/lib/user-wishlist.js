@@ -6,7 +6,7 @@
 // way profile.html auto-syncs the library on first visit): try to read the
 // cached row; if it doesn't exist, POST to the sync-steam-wishlist edge
 // function once, then re-read. Only fires when the user is signed in.
-import { SB_URL, SB_KEY } from '../config.js?v=a75604f5';
+import { SB_URL, SB_KEY } from '../config.js?v=7873e060';
 
 let _appIdsCache = null; // Set<number> | null
 

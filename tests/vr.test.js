@@ -173,3 +173,342 @@ describe('matchesVrFilter', () => {
     expect(matchesVrFilter('only', 'bogus')).toBe(true);
   });
 });
+
+describe('game page artwork badges (#246)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const src = fs.readFileSync(
+    path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(
+    path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('the overlay lives inside a positioned wrapper on the artwork', () => {
+    expect(src).toContain('game-header-art-wrap');
+    expect(src).toContain('id="game-art-badges"');
+    expect(css).toMatch(/\.game-header-art-wrap\s*\{[^}]*position:\s*relative/);
+  });
+
+  test('badges pin top-right and are not driven by the store-pill preference', () => {
+    const block = css.match(/\.game-header-art-badges\s*\{[^}]*\}/)[0];
+    expect(block).toMatch(/position:\s*absolute/);
+    expect(block).toMatch(/top:\s*8px/);
+    expect(block).toMatch(/right:\s*8px/);
+    // The pref moves the store pill around browse cards; the detail page keeps
+    // one predictable corner. Strip comments before checking -- the comment
+    // above the rule names the attribute precisely to say it is NOT used, and
+    // a raw scan matches that prose instead of a real selector.
+    const noComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
+    const rules = noComments.match(/[^{}]+(?=\{)/g) || [];
+    const badgeRules = rules.filter((sel) => sel.includes('.game-header-art-badges'));
+    expect(badgeRules.length).toBeGreaterThan(0);
+    expect(badgeRules.some((sel) => sel.includes('data-store-pill-pos'))).toBe(false);
+  });
+
+  test('the overlay carries ownership only, not VR', () => {
+    // VR lives in the tag row under the artwork (and the banner when it is
+    // VR-only). A chip on the art as well was the same fact twice, competing
+    // with the box art.
+    const overlay = src.slice(src.indexOf("querySelector('#game-art-badges')"), src.indexOf('parts.length'));
+    expect(overlay).not.toContain('game-card-vr-chip');
+    expect(src).toContain('game-card-owner-badge game-card-owner-badge--library');
+    expect(src).toContain('game-card-owner-badge game-card-owner-badge--wishlist');
+  });
+
+  test('the library badge tooltip reads In Library', () => {
+    expect(src).toContain('title="In Library" aria-label="In Library"');
+  });
+
+  test('VR renders for signed-out visitors; owner badges do not', () => {
+    // VR capability is a property of the game, not the viewer. Gating it
+    // behind a session would hide it from most visitors.
+    // VR is resolved before the artwork host is even looked up, and well
+    // before any session check, so a signed-out visitor still gets it.
+    const block = src.slice(src.indexOf('const vr = vrForApp('));
+    const sessionIdx = block.indexOf('SupaAuth?.getSession');
+    const stripIdx = block.indexOf("game-vr-strip'");
+    expect(stripIdx).toBeGreaterThan(-1);
+    expect(sessionIdx).toBeGreaterThan(stripIdx);
+  });
+
+  test('the VR chip is sized to the 18px icon box, not the delisted chip em', () => {
+    const cards = fs.readFileSync(
+      path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+    const chip = cards.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+    // 0.62em resolved against the store pill's 0.7rem rendered at ~0.43rem,
+    // which read as a footnote next to the 18px icons beside it.
+    expect(chip).not.toMatch(/font-size:\s*0\.62em/);
+    expect(chip).toMatch(/line-height:\s*18px/);
+  });
+});
+
+describe('VR chip is one variant, VR-only is a banner (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const cardSrc = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'lib', 'card.js'), 'utf8');
+  const pageSrc = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const cardsCss = fs.readFileSync(path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+
+  test('cards render a single VR label, never VR Only', () => {
+    // One badge fits a card, and "VR ONLY" doubled the strip width at the S
+    // size. The requirement is stated on the detail page instead.
+    expect(cardSrc).not.toContain('VR Only<');
+    expect(cardSrc).toMatch(/>VR<\/span>/);
+  });
+
+  test('the only/supported distinction survives in the tooltip and the data', () => {
+    // Dropping the second chip must not drop the information: the filter and
+    // the banner both still depend on vr === 'only'.
+    expect(cardSrc).toContain("vrKey === 'only' ? 'VR only: requires a headset'");
+    expect(cardSrc).toContain("vr === 'only' || vr === 'supported'");
+  });
+
+  test('no VR chip colour variants remain in CSS', () => {
+    expect(cardsCss).not.toContain('.game-card-vr-chip--only');
+    expect(cardsCss).not.toContain('.game-card-vr-chip--supported');
+  });
+
+  test('the chip is amber so it does not merge with the store pill', () => {
+    // Every store colour is blue/purple/grey: Steam #1689d0, GOG #7a3fcf,
+    // PCGWiki #4d5f9c, Epic #555. The first version was a muted blue against
+    // the Steam pill.
+    const chip = cardsCss.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+    expect(chip).toMatch(/#e8a33d/i);
+  });
+
+  test('the game page carries a VR-only banner element', () => {
+    expect(pageSrc).toContain('id="game-vr-banner"');
+    expect(pageSrc).toContain('This game is VR only.');
+    // Hidden by default so a non-VR game never renders an empty banner.
+    expect(pageSrc).toMatch(/id="game-vr-banner" hidden/);
+  });
+
+  test('the banner only fires for VR-only games', () => {
+    const block = pageSrc.slice(pageSrc.indexOf("const vr = vrForApp("));
+    const onlyIdx = block.indexOf('if (only) {');
+    const bannerIdx = block.indexOf("#game-vr-banner");
+    expect(onlyIdx).toBeGreaterThan(-1);
+    expect(bannerIdx).toBeGreaterThan(onlyIdx);
+  });
+});
+
+describe('VR chip caps the badge strip (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+  const chip = css.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+
+  test('the chip carries no radius of its own', () => {
+    // The container's radius caps the strip. A chip with its own corners sat
+    // as a square block inside a curved badge and the leading end looked
+    // uncapped where the badge curved away from it.
+    expect(chip).toMatch(/border-radius:\s*0/);
+  });
+
+  test('badge containers clip their contents', () => {
+    // Without overflow:hidden the bled chip escapes the rounded corner.
+    for (const sel of ['.game-card-store-tag', '.game-card-store-pill',
+                       '.game-card-corner-tag', '.game-card-strip-store']) {
+      const re = new RegExp(`${sel.replace('.', '\\.')}[^{]*\\{[^}]*overflow:\\s*hidden`);
+      expect(css).toMatch(re);
+    }
+  });
+
+  test('every container that clips also declares its bleed', () => {
+    // The chip bleeds out through the container padding by negative margin;
+    // each variant has different padding, so a container that clips without
+    // declaring --badge-pad-* leaves a gap at the leading edge.
+    for (const sel of ['.game-card-store-tag', '.game-card-store-pill', '.game-card-corner-tag']) {
+      const re = new RegExp(`${sel.replace('.', '\\.')}\\s*\\{[^}]*--badge-pad-x`);
+      expect(css).toMatch(re);
+    }
+  });
+
+  test('only the leading chip bleeds', () => {
+    // A Delisted chip renders before VR; when present it owns the leading
+    // edge, so VR must not pull itself out of the container there.
+    expect(css).toMatch(/\.game-card-vr-chip:first-child\s*\{/);
+  });
+
+  test('the combo layout still renders the chip', () => {
+    // combo hides store-tag / corner-tag / store-pill, so a chip that only
+    // lived in those would vanish entirely in that layout.
+    const cardSrc = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'lib', 'card.js'), 'utf8');
+    const combo = cardSrc.match(/game-card-combo-tag[\s\S]{0,400}/)[0];
+    expect(combo).toContain('${vrChip}');
+  });
+});
+
+describe('VR in the game-page tag row (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const src = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('VR gets its own strip, not folded into the OS chips', () => {
+    // .game-os-strip is aria-label="Supported operating systems"; VR is a
+    // capability, not an OS, so folding it in makes that label wrong.
+    expect(src).toContain('id="game-vr-strip"');
+    expect(src).toContain('aria-label="VR support"');
+    const osStrip = src.slice(src.indexOf('game-os-strip'), src.indexOf('game-vr-strip'));
+    expect(osStrip).not.toContain('game-tag--vr');
+  });
+
+  test('the strip stays hidden for non-VR games', () => {
+    expect(src).toMatch(/id="game-vr-strip" hidden/);
+    expect(css).toContain('.game-vr-strip[hidden] { display: none; }');
+  });
+
+  test('it reuses the OS chip shape AND colour so the row reads as one thing', () => {
+    // Deliberately NOT the card's amber: on a card the chip fights a store
+    // pill, but this row answers a single question and three colours made it
+    // look like three unrelated facts.
+    expect(src).toContain('game-tag game-tag--vr');
+    const rule = css.match(/\.game-tag\.game-tag--vr\s*\{[^}]*\}/)[0];
+    expect(rule).toContain('--accent');
+    const osRule = css.match(/\.game-os-chip--on\s*\{[^}]*\}/)[0];
+    expect(osRule).toContain('--accent');
+  });
+
+  test('the tag-row chip always reads VR, never VR Only', () => {
+    // Same call as the cards: "VR" means the game has VR. The headset
+    // requirement is the banner's job, not a second label in a row of
+    // platform chips.
+    const block = src.slice(src.indexOf("game-vr-strip'"), src.indexOf('#game-vr-banner'));
+    expect(block).toContain('<span>VR</span>');
+    expect(block).not.toContain('VR Only');
+    expect(css).not.toContain('.game-tag--vr[data-vr="only"]');
+  });
+
+  test('the tag-row chip is not gated on the artwork overlay', () => {
+    // These shared an `if (!host) return` guard, so a missing
+    // #game-art-badges silently took the tag-row chip down with it.
+    const stripIdx = src.indexOf("game-vr-strip'");
+    const guardIdx = src.indexOf("const host = el.querySelector('#game-art-badges')");
+    expect(stripIdx).toBeGreaterThan(-1);
+    expect(stripIdx).toBeLessThan(guardIdx);
+  });
+
+  test('the VRDB source deep-links to the game, not the site root', () => {
+    expect(src).toContain('db.vronlinux.org/games/');
+    expect(src).not.toMatch(/href="https:\/\/db\.vronlinux\.org\/"/);
+  });
+});
+
+describe('VR on Linux as a compatibility tab (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const deck = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'deck-status.js'), 'utf8');
+  const page = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('the button says Compatibility, not Steam Deck', () => {
+    // The modal covers four surfaces; naming it after one tab undersells the
+    // rest and hides where the VR data lives.
+    expect(deck).toContain('<span>Compatibility</span>');
+    expect(deck).not.toContain('<span>Steam Deck</span>');
+  });
+
+  test('a fourth radio + panel exist for VR', () => {
+    expect(deck).toContain('id="dt-vr"');
+    expect(deck).toContain('dt-panel-vr');
+    expect(css).toContain('#dt-vr:checked      ~ .dt-panel-vr { display: block; }');
+  });
+
+  test('the VR tab starts hidden so non-VR games keep three tabs', () => {
+    expect(deck).toMatch(/id="dt-vr-tab" hidden/);
+    // .dt-tab sets display:inline-flex, so [hidden] needs an explicit rule.
+    expect(css).toContain('.dt-tab--vr[hidden] { display: none; }');
+  });
+
+  test('fillVrOnLinuxTab reveals the tab only when there are runtime reports', () => {
+    const fn = deck.slice(deck.indexOf('export function fillVrOnLinuxTab'));
+    expect(fn).toContain('if (!rows.length) return;');
+    expect(fn.indexOf('tab.hidden = false')).toBeGreaterThan(fn.indexOf('if (!rows.length) return;'));
+  });
+
+  test('the panel is filled async so the modal opens without waiting on vrdb.json', () => {
+    // renderDeckStatusModalContent is synchronous by design (renders off the
+    // in-memory deck cache); VRDB is a separate fetch.
+    expect(deck).toContain('export function fillVrOnLinuxTab');
+    expect(page).toContain('fillVrOnLinuxTab(');
+  });
+
+  test('both modal render paths refill the tab', () => {
+    // The deck fetch re-renders the modal body, which would wipe the tab.
+    const calls = page.match(/fillVrOnLinuxTab\(/g) || [];
+    expect(calls.length).toBeGreaterThanOrEqual(2);
+  });
+
+  test('the tab keeps the VRDB attribution and deep link', () => {
+    const fn = deck.slice(deck.indexOf('export function fillVrOnLinuxTab'));
+    expect(fn).toContain('db.vronlinux.org/games/');
+    expect(fn).toContain('(MIT)');
+    expect(fn).toMatch(/never mixed into our scoring|opposite way to a Pulse tier/);
+  });
+});
+
+describe('tag row shows only what applies (#246 follow-up)', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const src = fs.readFileSync(path.join(__dirname, '..', 'js', 'app', 'components', 'game-page.js'), 'utf8');
+  const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'app', 'game-header.css'), 'utf8');
+
+  test('unsupported OS chips are hidden, not greyed out', () => {
+    // A row of greyed chips for every OS the game does not support is noise;
+    // the reader wants to know where it runs.
+    expect(src).toContain('chip.hidden = !on;');
+  });
+
+  test('[hidden] actually hides a .game-tag', () => {
+    // .game-tag sets display:inline-flex, which defeats the hidden attribute.
+    expect(css).toContain('.game-tag[hidden] { display: none; }');
+  });
+
+  test('the VR chip beats .game-tag on specificity', () => {
+    // A bare .game-tag--vr ties with .game-tag and lost to its
+    // color: var(--muted), rendering the chip grey and indistinguishable
+    // from an unsupported platform.
+    expect(css).toContain('.game-tag.game-tag--vr');
+    expect(css).not.toMatch(/^\.game-tag--vr\s*\{/m);
+    const rule = css.match(/\.game-tag\.game-tag--vr\s*\{[^}]*\}/)[0];
+    expect(rule).toContain('opacity: 1');
+    expect(rule).toContain('--accent');
+  });
+
+  test('the VR chip only renders when the game has VR', () => {
+    // So it is always its lit state -- there is no dim VR variant.
+    const block = src.slice(src.indexOf('const vr = vrForApp('));
+    const stripIdx = block.indexOf("game-vr-strip'");
+    expect(block.slice(0, stripIdx)).toContain('if (vr) {');
+  });
+});
+
+describe('owner badge hover recolours the glyph', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const cards = fs.readFileSync(path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
+  const topbar = fs.readFileSync(path.join(__dirname, '..', 'js', 'lib', 'topbar.js'), 'utf8');
+
+  test('the sprites use currentColor so outside CSS can reach them', () => {
+    // A <symbol fill="#fff"> sets fill on the symbol, so its children inherit
+    // white from INSIDE the shadow tree and no page rule can override it --
+    // the reason a hover rule on the badge did nothing to the icon.
+    const book = topbar.match(/<symbol id="icon-book-open"[^>]*>/)[0];
+    expect(book).toContain('fill="currentColor"');
+    const wish = topbar.slice(topbar.indexOf('<symbol id="icon-wishlist-heart"'));
+    expect(wish.slice(0, 200)).toContain('fill="currentColor"');
+  });
+
+  test('hover changes color, not the border or box-shadow', () => {
+    const rule = cards.match(/\.game-card-owner-badge:hover\s*\{[^}]*\}/)[0];
+    expect(rule).toContain('color');
+    expect(rule).not.toContain('box-shadow');
+    expect(rule).not.toContain('border');
+  });
+
+  test('the badges still default to white', () => {
+    // currentColor only helps if something sets it; .game-card-owner-badge
+    // already does, so every existing usage is unchanged.
+    expect(cards).toMatch(/\.game-card-owner-badge\s*\{[^}]*color:\s*#fff/);
+  });
+});
