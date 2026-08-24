@@ -312,16 +312,20 @@ export function isSteamDeckHardware(r) {
 }
 
 // Steam Machine detection (#255 Phase 2). Valve's late-2025 SFF SteamOS box.
-// Hardware signatures are not confirmed until devices are in reviewers' hands
-// so the regex is intentionally empty for now -- Phase 2 will fill it in with
-// the real APU / GPU strings. Keeping the API shape stable so callers do not
-// have to change once detection lights up. The web-source dropdown in the
-// submit form also flags Steam Machine explicitly, and that string surfaces
-// here as a fallback detection channel.
-export const _MACHINE_APU_RE = /\bsteam[\s_-]*machine\b/i;
+// Uses _STEAM_MACHINE_RE above -- the same pattern game-page.js filters on and
+// the mirror of _STEAM_MACHINE in scripts/pipeline/stats.py, so all three
+// surfaces answer this question identically (#496).
+//
+// This used to test a separate _MACHINE_APU_RE that matched only the literal
+// words "steam machine", against a haystack that included `r.webSource`. Real
+// APU strings do not contain those words -- a Deck reports "AMD Custom APU
+// 0405", not "Steam Deck" -- and nothing ever set webSource: no column, no
+// pipeline write, no submit-form dropdown, despite a comment here claiming
+// one existed. So it could not return true for any real report, while the
+// game page and the pipeline were already matching the RDNA 3 signature.
 export function isSteamMachineHardware(r) {
-  const haystack = `${r.cpu || ''} ${r.gpu || ''} ${r.webSource || ''}`;
-  return _MACHINE_APU_RE.test(haystack);
+  const haystack = `${r.cpu || ''} ${r.gpu || ''}`;
+  return _STEAM_MACHINE_RE.test(haystack);
 }
 
 // SVG path data for each signal icon. Drawn at 24x24 viewBox. Currentcolor
