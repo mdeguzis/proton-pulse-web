@@ -495,6 +495,15 @@ jobs:
       # gh-pages orphan deploy below (`git rm -rf .`) deletes every tracked
       # file, backup-to-release.sh included, but the "Backup data to GitHub
       # Release" step needs it afterward regardless of which deploy path ran.
+      #
+      # Not hypothetical: every scheduled run from 2026-08-19 through 08-23
+      # died here with "scripts/backup-to-release.sh: No such file or
+      # directory" and the nightly data backup stopped for five days (#494).
+      # It read as intermittent because cloudflare-target runs skip the orphan
+      # step and so never hit the wipe. That is also why this cannot move
+      # inside the orphan step next to the preserve-* copies -- the backup
+      # runs on both targets, so a cp nested there would never fire on
+      # cloudflare and would only relocate the failure.
       - name: Preserve backup script
         if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
         run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
@@ -534,21 +543,6 @@ jobs:
           R2_DELTA_SYNC: ${{ vars.R2_DELTA_SYNC || '0' }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
-
-      # The backup step at the end of this job runs `bash <script>` from the
-      # workspace, but the gh-pages orphan deploy below does `git rm -rf .`
-      # first, which deletes every tracked file including that script. Every
-      # scheduled run from 2026-08-19 onward failed here with
-      # "scripts/backup-to-release.sh: No such file or directory", so the
-      # nightly data backup silently stopped for five days.
-      #
-      # Same hazard the preserve-* scripts already work around, but staged in
-      # its own step rather than inside the orphan step: the backup runs on
-      # both deploy targets, and on deploy_target=cloudflare the orphan step
-      # is skipped entirely, so a cp living inside it would never happen.
-      - name: Stage the backup script out of the workspace
-        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
-        run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
 
       - name: Deploy to gh-pages (orphan, no history)
         if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && (inputs.deploy_target || 'cloudflare') != 'cloudflare'
