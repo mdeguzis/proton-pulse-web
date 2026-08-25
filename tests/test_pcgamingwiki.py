@@ -606,3 +606,61 @@ def test_enricher_skips_empty_rows(tmp_path):
     assert written[0] == []
     # Non-empty row padded + enriched.
     assert written[1][15] == "Unity"
+
+
+# ---- #497: query-level errors arrive with HTTP 200 -------------------------
+#
+# MediaWiki reports query errors in the response body, not the status line, so
+# a 200 says nothing about whether the query ran. _cargo_get used to return the
+# payload anyway; callers then read the missing `cargoquery` key as an empty
+# result set and an empty catalog was written over the real one.
+
+
+def test_cargo_get_returns_none_on_permissiondenied():
+    """The exact response PCGW now sends after restricting Cargo access."""
+    payload = json.dumps({"error": {
+        "code": "permissiondenied",
+        "info": "You don't have permission to run arbitrary Cargo queries.",
+    }})
+    opener, patcher = _mock_session(lambda _u: payload)
+    with patcher:
+        result = _cargo_get({"action": "cargoquery"})
+    # None, not {} -- callers distinguish "failed" from "no rows" on this.
+    assert result is None
+
+
+def test_cargo_get_returns_none_on_any_query_error():
+    """Not special-cased to one code: any error means we got no rows."""
+    for code in ("badvalue", "invalidtable", "readapidenied", "unknown_error"):
+        payload = json.dumps({"error": {"code": code, "info": "nope"}})
+        opener, patcher = _mock_session(lambda _u, p=payload: p)
+        with patcher:
+            assert _cargo_get({"action": "cargoquery"}) is None, code
+
+
+def test_cargo_get_treats_maxlag_as_failure_too():
+    """maxlag was logged and the payload returned anyway, which on a busy
+    server produced the same empty-catalog outcome as a rejected query.
+    """
+    payload = json.dumps({"error": {"code": "maxlag", "info": "Waiting for a database server"}})
+    opener, patcher = _mock_session(lambda _u: payload)
+    with patcher:
+        assert _cargo_get({"action": "cargoquery"}) is None
+
+
+def test_paginate_stops_and_reports_when_page_zero_is_rejected():
+    """A rejected first page must not look like a successfully empty table."""
+    payload = json.dumps({"error": {"code": "permissiondenied", "info": "no"}})
+    opener, patcher = _mock_session(lambda _u: payload)
+    with patcher:
+        rows = _paginate_cargo("Infobox_game", "f", "w")
+    assert rows == []
+    # One attempt, no pagination loop against a dead endpoint.
+    assert len(opener.calls) == 1
+
+
+def test_successful_empty_result_is_still_distinguishable():
+    """A genuine empty result set keeps returning a dict, not None."""
+    opener, patcher = _mock_session(lambda _u: '{"cargoquery": []}')
+    with patcher:
+        assert _cargo_get({"action": "cargoquery"}) == {"cargoquery": []}

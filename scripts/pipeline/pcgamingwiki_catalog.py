@@ -403,10 +403,28 @@ def refresh_catalog(output_dir: Path, force: bool = False) -> dict[str, dict]:
     log("[pcgwiki-catalog] refreshing from cargo API")
     rows = _fetch_all_pages()
     if rows is None:
-        log(f"[pcgwiki-catalog] cargo unreachable; using {len(cache['entries'])} cached entries")
+        # None covers both a dead endpoint and a query the server rejected
+        # with a 200 (#497) -- either way we have no rows and must not treat
+        # that as an empty catalog.
+        log(f"[pcgwiki-catalog] cargo fetch failed; using {len(cache['entries'])} cached entries")
         return cache["entries"]
 
     entries = _build_entries(rows)
+
+    # An empty result must never replace a catalog we already have. _cargo_get
+    # returns None for a rejected query now (#497), so reaching here with zero
+    # rows should mean PCGW genuinely has no Windows games -- which is never
+    # true. Treating it as real is what emptied the published catalog: the run
+    # logged "cached 0 entries" like a normal day and wrote {} over thousands
+    # of entries, and every later run repeated it from the now-empty cache.
+    if not entries and cache.get("entries"):
+        log(
+            f"[pcgwiki-catalog] ERROR: refresh produced 0 entries but cache holds "
+            f"{len(cache['entries'])}; keeping the cache. Upstream query returned "
+            f"no rows without reporting an error."
+        )
+        return cache["entries"]
+
     cache = {"fetched_at": now, "entries": entries}
     _save_cache(cache_path, cache)
     log(f"[pcgwiki-catalog] cached {len(entries)} entries (of {len(rows)} candidate rows)")

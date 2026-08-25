@@ -265,12 +265,27 @@ def _cargo_get(params: dict) -> dict | None:
         return None
     if not isinstance(data, dict):
         return None
-    # MediaWiki signals lag pressure via `error: {code: "maxlag", ...}` with a
-    # 200 HTTP status. Surface it clearly instead of failing silently -- the
-    # caller's retry loop can back off.
+    # MediaWiki reports query-level errors in the body with a 200 status, so a
+    # successful HTTP response says nothing about whether the query ran. Any
+    # `error` key means we got no rows, and it must be reported as failure:
+    # callers read a payload without `cargoquery` as an empty result set, which
+    # is indistinguishable from "no games matched" and lets a rejected query
+    # overwrite a good cache with nothing.
+    #
+    # This is how the PCGW ingest died silently (#497). PCGW restricted Cargo:
+    #   HTTP 200 {"error":{"code":"permissiondenied",
+    #             "info":"You don't have permission to run arbitrary Cargo queries."}}
+    # maxlag used to be logged here and the payload returned anyway, which had
+    # the same effect on a busy server -- a warning nobody saw, then an empty
+    # catalog written over the real one.
     err = data.get("error")
-    if isinstance(err, dict) and err.get("code") == "maxlag":
-        log(f"[pcgamingwiki] WARN: server maxlag pressure -- {err.get('info', '')}")
+    if isinstance(err, dict):
+        code = err.get("code") or "unknown"
+        if code == "maxlag":
+            log(f"[pcgamingwiki] WARN: server maxlag pressure -- {err.get('info', '')}")
+        else:
+            log(f"[pcgamingwiki] ERROR: cargo query rejected: {code} -- {err.get('info', '')}")
+        return None
     return data
 
 

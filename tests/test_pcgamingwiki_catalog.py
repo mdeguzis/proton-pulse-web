@@ -478,3 +478,83 @@ def test_common_recognizes_pgwiki_prefix():
     assert app_type_from_id("gog:12345") == "gog"
     assert app_type_from_id("epic:foo") == "epic"
     assert app_type_from_id("220") == "steam"
+
+
+# ---------------------------------------------------------------------------
+# #497: a rejected Cargo query must not be read as an empty catalog
+# ---------------------------------------------------------------------------
+#
+# PCGW restricted Cargo and now answers HTTP 200 with an error body:
+#   {"error":{"code":"permissiondenied",
+#             "info":"You don't have permission to run arbitrary Cargo queries."}}
+# There is no `cargoquery` key, so _fetch_all_pages saw an empty page and
+# returned [], refresh_catalog read that as a successful empty result, and
+# _save_cache wrote {} over the real catalog. Every run after that repeated it
+# from the now-empty cache, logging "cached 0 entries" like a normal day.
+
+
+def _seeded_cache(tmp_path, n=3):
+    """Write a cache that looks like a healthy previous run."""
+    entries = {f"pw_test{i:04d}": {"name": f"Game {i}", "steam_app_id": str(i)} for i in range(n)}
+    (tmp_path / CACHE_FILENAME).write_text(
+        json.dumps({"fetched_at": 0, "entries": entries}), encoding="utf-8"
+    )
+    return entries
+
+
+def test_rejected_query_keeps_the_existing_catalog(tmp_path):
+    """A permissiondenied response must leave the cached catalog intact."""
+    seeded = _seeded_cache(tmp_path)
+    # _cargo_get returns None for an error payload, so pagination reports the
+    # unreachable path and refresh_catalog falls back to disk.
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None):
+        out = refresh_catalog(tmp_path, force=True)
+    assert out == seeded
+    on_disk = json.loads((tmp_path / CACHE_FILENAME).read_text())
+    assert on_disk["entries"] == seeded, "cache was overwritten despite the query failing"
+
+
+def test_empty_result_does_not_wipe_a_populated_cache(tmp_path):
+    """Even a 'successful' empty row list must not replace a real catalog.
+
+    Belt and braces for the case where some future upstream change returns an
+    empty page without an error key. PCGW having zero Windows games is not a
+    real state, so an empty refresh is always a bug somewhere.
+    """
+    seeded = _seeded_cache(tmp_path)
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[]):
+        out = refresh_catalog(tmp_path, force=True)
+    assert out == seeded
+    on_disk = json.loads((tmp_path / CACHE_FILENAME).read_text())
+    assert on_disk["entries"] == seeded
+
+
+def test_empty_result_is_still_written_on_a_cold_cache(tmp_path):
+    """With nothing cached there is nothing to protect, so don't block a write.
+
+    Keeps first-run behaviour unchanged -- the guard is about not destroying
+    known-good data, not about refusing to ever store an empty result.
+    """
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[]):
+        out = refresh_catalog(tmp_path, force=True)
+    assert out == {}
+
+
+def test_real_rows_still_replace_the_cache(tmp_path):
+    """The guard must not freeze the catalog once it is populated."""
+    _seeded_cache(tmp_path)
+    rows = [{
+        "page": "Half-Life 2",
+        "appId": "220",
+        "gogId": "",
+        "engines": "Source",
+        "available": "Windows",
+        "relWin": "2004-11-16",
+        "developers": "Valve",
+        "publishers": "Valve",
+        "coverUrl": "https://images.pcgamingwiki.com/x/hl2.jpg",
+    }]
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=rows):
+        out = refresh_catalog(tmp_path, force=True)
+    assert len(out) == 1
+    assert any(e["name"] == "Half-Life 2" for e in out.values())
