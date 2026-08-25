@@ -1128,30 +1128,44 @@ export async function renderGamePage(appId) {
     if (Array.isArray(v)) return v.filter(Boolean)[0] || '';
     return v || '';
   }
+  function _restoreAllowed(v, allowedSet) {
+    const x = _restoreScalar(v);
+    return allowedSet.has(x) ? x : '';
+  }
+  function _restoreAllowedNumber(v, allowedSet, fallback) {
+    const n = Number(v);
+    return Number.isFinite(n) && allowedSet.has(n) ? n : fallback;
+  }
+  function _clampInt(v, min, max, fallback) {
+    const n = Number(v);
+    if (!Number.isFinite(n)) return fallback;
+    return Math.min(max, Math.max(min, Math.round(n)));
+  }
   // Fields that also live in the shared-across-site key (#415 slice 2)
   // fall back to it when the per-page snapshot is empty. Per-page wins
   // whenever it has a value, so a game where you deliberately narrowed
   // to bronze does not get overwritten by a site-wide rating=platinum.
   const _sharedRating = readSharedField('rating')[0] || '';
   const _sharedSource = readSharedField('source')[0] || '';
-  let filterGpu    = _restoreScalar(persistedFilters.gpu);
+  let filterGpu    = _restoreAllowed(persistedFilters.gpu, new Set(['', 'nvidia', 'amd', 'intel']));
   let filterArch   = _restoreScalar(persistedFilters.arch);
   let filterOs     = _restoreScalar(persistedFilters.os);
-  let filterRating = _restoreScalar(persistedFilters.rating) || _sharedRating;
+  let filterRating = _restoreAllowed(_restoreScalar(persistedFilters.rating) || _sharedRating, new Set(['', 'platinum', 'gold', 'silver', 'bronze', 'borked']));
   // Native vs Proton (or a specific proton wrapper). '' == any. Reports
   // without a run_type value are treated as unknown so they never
   // accidentally match a specific selection.
-  let filterRunType = _restoreScalar(persistedFilters.runType);
+  let filterRunType = _restoreAllowed(persistedFilters.runType, new Set(['', 'native', 'proton', 'proton-experimental', 'proton-ge', 'proton-cachyos', 'proton-tkg', 'proton-lsfg']));
   // 'deck-lcd' / 'deck-oled' / 'deck-any' / 'desktop' / ''
-  let filterDevice = _restoreScalar(persistedFilters.device);
+  let filterDevice = _restoreAllowed(persistedFilters.device, new Set(['', 'deck-any', 'deck-lcd', 'deck-oled', 'steam-machine', 'desktop']));
   // Minimum reporter playtime in minutes (0 = any). Useful to skip "launched
   // it once" reports that don't reflect real-use compatibility
-  let filterMinPlaytime = persistedFilters.minPlaytime || 0;
+  let filterMinPlaytime = _restoreAllowedNumber(persistedFilters.minPlaytime, new Set([0, 60, 120, 240, 600]), 0);
   // Confidence range 0-100 (#445). Defaults 0/100 = no filter. When narrowed
   // (min>0 or max<100) the filter step drops configs entirely, matching how
   // filterRating drops non-report rows -- configs carry no score.
-  let filterConfidenceMin = Number.isFinite(persistedFilters.confidenceMin) ? persistedFilters.confidenceMin : 0;
-  let filterConfidenceMax = Number.isFinite(persistedFilters.confidenceMax) ? persistedFilters.confidenceMax : 100;
+  let filterConfidenceMin = _clampInt(persistedFilters.confidenceMin, 0, 100, 0);
+  let filterConfidenceMax = _clampInt(persistedFilters.confidenceMax, 0, 100, 100);
+  if (filterConfidenceMin > filterConfidenceMax) filterConfidenceMin = filterConfidenceMax;
   let filterMine = false;
 
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
