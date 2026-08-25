@@ -1646,7 +1646,7 @@ export async function renderGamePage(appId) {
               <label class="home-filter-label" for="fGpu">GPU</label>
               <select id="fGpu" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
-                ${availGpus.map(v => `<option value="${v}" ${filterGpu===v?'selected':''}>${GPU_LABEL[v]||v}</option>`).join('')}
+                ${availGpus.map(v => `<option value="${esc(v)}" ${filterGpu===v?'selected':''}>${esc(GPU_LABEL[v]||v)}</option>`).join('')}
               </select>
             </div>` : '';
           const archSel = availArchs.length > 1 ? `
@@ -1670,7 +1670,7 @@ export async function renderGamePage(appId) {
               <label class="home-filter-label" for="fRating">Rating</label>
               <select id="fRating" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
-                ${availRatings.map(v => `<option value="${v}" ${filterRating===v?'selected':''}>${RATING_LABEL[v]||v}</option>`).join('')}
+                ${availRatings.map(v => `<option value="${esc(v)}" ${filterRating===v?'selected':''}>${esc(RATING_LABEL[v]||v)}</option>`).join('')}
               </select>
             </div>` : '';
           // Run-type filter: only show when this game has at least one report
@@ -1691,7 +1691,7 @@ export async function renderGamePage(appId) {
               <label class="home-filter-label" for="fRunType">Runtime Type</label>
               <select id="fRunType" class="home-filter-select" autocomplete="off">
                 <option value="">Any</option>
-                ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${RUN_TYPE_LABEL[v]||v}</option>`).join('')}
+                ${availRunTypes.map(v => `<option value="${esc(v)}" ${filterRunType===v?'selected':''}>${esc(RUN_TYPE_LABEL[v]||v)}</option>`).join('')}
               </select>
             </div>` : '';
           const srcSel = `
