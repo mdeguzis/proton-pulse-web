@@ -379,8 +379,8 @@ jobs:
       - name: Seed store catalog caches from gh-pages
         run: |
           mkdir -p .cache
-          cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
+          bash scripts/seed-catalog-cache.sh gh-pages-data .cache \
+            gog-catalog-cache.json epic-catalog-cache.json
 
       # #89: log which caches survived the restore, their sizes + ages,
       # so the workflow output tells us at a glance whether the two cache
@@ -844,8 +844,8 @@ jobs:
             mkdir -p /tmp/protondb-output/data
           fi
           mkdir -p repo/.cache
-          cp gh-pages-data/gog-catalog-cache.json repo/.cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json repo/.cache/ 2>/dev/null || true
+          bash repo/scripts/seed-catalog-cache.sh gh-pages-data repo/.cache \
+            gog-catalog-cache.json epic-catalog-cache.json
 
       - name: Repair official dump provenance metadata
         working-directory: repo
@@ -1067,8 +1067,8 @@ jobs:
             mkdir -p /tmp/protondb-output/data
           fi
           mkdir -p repo/.cache
-          cp gh-pages-data/gog-catalog-cache.json repo/.cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json repo/.cache/ 2>/dev/null || true
+          bash repo/scripts/seed-catalog-cache.sh gh-pages-data repo/.cache \
+            gog-catalog-cache.json epic-catalog-cache.json
 
       - name: Repair official dump provenance metadata
         working-directory: repo

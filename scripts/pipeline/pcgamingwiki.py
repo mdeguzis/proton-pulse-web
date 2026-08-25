@@ -59,6 +59,11 @@ USER_AGENT = (
 )
 
 CACHE_FILENAME = "pcgamingwiki-cache.json"
+# Same persistence fix as the catalog cache (#497): .cache/ is what the
+# pipeline's Actions cache carries between runs. Writing this into the pipeline
+# output dir meant /tmp on a runner, and the gh-pages copy loop that used to
+# rescue it stopped running when #362 made cloudflare the deploy target.
+DEFAULT_ENRICHER_CACHE_PATH = Path(__file__).resolve().parents[2] / ".cache" / CACHE_FILENAME
 
 # Fresh cadence: weekly. PCGW is community-edited and moves slowly enough
 # that a daily fetch wastes their capacity for zero benefit.
@@ -445,7 +450,7 @@ def _first_engine(field) -> str | None:
     return None
 
 
-def refresh_cache(output_dir: Path, force: bool = False) -> dict[str, dict]:
+def refresh_cache(output_dir: Path, force: bool = False, cache_path: Path | None = None) -> dict[str, dict]:
     """Load or refresh the PCGW cache. Returns `{appid: {os, engine}}`.
 
     Refreshes when the cache is missing, stale, or `force` (or the
@@ -455,7 +460,8 @@ def refresh_cache(output_dir: Path, force: bool = False) -> dict[str, dict]:
     """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    cache_path = output_dir / CACHE_FILENAME
+    cache_path = Path(cache_path) if cache_path else DEFAULT_ENRICHER_CACHE_PATH
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache = _load_cache(cache_path)
 
     now = int(time.time())
@@ -483,7 +489,7 @@ def refresh_cache(output_dir: Path, force: bool = False) -> dict[str, dict]:
     return by_appid
 
 
-def enrich_search_index_with_pcgamingwiki(output_dir: Path) -> None:
+def enrich_search_index_with_pcgamingwiki(output_dir: Path, cache_path: Path | None = None) -> None:
     """Merge PCGW OS + engine into search-index cols 14 + 15.
 
     Pads shorter rows with None so both columns land at the expected
@@ -505,7 +511,7 @@ def enrich_search_index_with_pcgamingwiki(output_dir: Path) -> None:
     if not isinstance(entries, list) or not entries:
         return
 
-    by_appid = refresh_cache(output_dir)
+    by_appid = refresh_cache(output_dir, cache_path=cache_path)
 
     hits = 0
     for row in entries:
