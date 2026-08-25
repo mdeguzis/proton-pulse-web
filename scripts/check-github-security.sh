@@ -56,6 +56,7 @@ NORMALIZED="$(jq -n \
   ($dep  | map({
     source: "dependabot",
     severity: (.security_advisory.severity // "unknown"),
+    rule_severity: null,
     title:    (.security_advisory.summary  // "(no summary)"),
     location: (.dependency.package.name    // "?"),
     url:      .html_url,
@@ -63,7 +64,16 @@ NORMALIZED="$(jq -n \
   })) +
   ($cs   | map({
     source: "code-scanning",
-    severity: (.rule.severity // "unknown"),
+    # security_severity_level (critical/high/medium/low), NOT rule.severity.
+    # rule.severity is the ANALYSIS severity -- note/warning/error -- which
+    # shares no vocabulary with the fail list, so every code-scanning alert
+    # landed in no bucket and the summary read "High: 0" next to a total of 1.
+    # A high-severity XSS therefore did not trip the gate built to catch it
+    # (alert 60, js/xss-through-dom, issue #502). Rules with no security
+    # severity (pure quality rules) keep their analysis severity, which
+    # deliberately still matches nothing in the fail list.
+    severity: (.rule.security_severity_level // .rule.severity // "unknown"),
+    rule_severity: (.rule.severity // "unknown"),
     title:    (.rule.description // .rule.id // "(no description)"),
     location: ((.most_recent_instance.location.path // "?") + ":" + ((.most_recent_instance.location.start_line // 0) | tostring)),
     url:      .html_url,
@@ -72,6 +82,7 @@ NORMALIZED="$(jq -n \
   ($ss   | map({
     source: "secret-scanning",
     severity: "critical",
+    rule_severity: null,
     title:    (.secret_type_display_name // .secret_type // "(secret)"),
     location: ((.locations[0].details.path // "?") + " commit " + ((.locations[0].details.commit_sha // "?") | .[0:7])),
     url:      .html_url,
@@ -100,7 +111,8 @@ else
   if [[ "${TOTAL}" -gt 0 ]]; then
     echo "${NORMALIZED}" | jq -r '
       # Sort so critical + high float to the top
-      def sev_rank: {critical: 0, high: 1, medium: 2, low: 3, unknown: 4}[.] // 5;
+      def sev_rank: {critical: 0, high: 1, medium: 2, low: 3,
+                     error: 4, warning: 5, note: 6, unknown: 7}[.] // 8;
       sort_by(.severity | sev_rank)
       | .[]
       | "  [\(.severity | ascii_upcase)] \(.source): \(.title)\n    \(.location)\n    \(.url)"
