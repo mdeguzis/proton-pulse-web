@@ -541,6 +541,10 @@ jobs:
           # bucket (staging/prod, split in #380) keeps its own manifest, so
           # the two targets delta independently.
           R2_DELTA_SYNC: ${{ vars.R2_DELTA_SYNC || '0' }}
+          # Escape hatch for the R2 sync fan-out. Unset falls through to the
+          # script's default (32). Set the repo variable to dial back without a
+          # code change if R2 starts returning ServiceUnavailable at volume.
+          R2_SYNC_CONCURRENCY: ${{ vars.R2_SYNC_CONCURRENCY || '' }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
 

@@ -65,3 +65,40 @@ def test_scheduled_catalog_refresh_does_not_ask_the_cache_for_permission():
     for name in ("update-gog-catalog.yml", "update-epic-catalog.yml"):
         wf = (REPO_ROOT / ".github/workflows" / name).read_text(encoding="utf-8")
         assert "github.event_name == 'schedule'" in wf, f"{name} scheduled run does not force a refresh"
+
+
+# ---------------------------------------------------------------------------
+# R2 sync fan-out (cherry-picked from feature/finalize-progress-logging)
+# ---------------------------------------------------------------------------
+
+
+def test_r2_sync_concurrency_is_not_pinned_low():
+    """Concurrency 4 made a ~187k-object sync crawl for ~40 minutes.
+
+    It was set as an over-correction to the #379 transient errors: R2's ~1/sec
+    write limit is per object KEY, not a cap across distinct keys, so it never
+    applied to this fan-out. Pinning it back to a literal would silently
+    restore the 40-minute sync.
+    """
+    sh = (REPO_ROOT / "scripts/publish-cloudflare.sh").read_text(encoding="utf-8")
+    assert "max_concurrent_requests 4" not in sh
+    assert 'max_concurrent_requests "${R2_SYNC_CONCURRENCY:-32}"' in sh
+
+
+def test_r2_sync_concurrency_has_a_working_escape_hatch():
+    """The comment promises a dial, so the dial has to be plumbed.
+
+    A knob documented in a comment but not wired into the workflow is the same
+    trap as the submit-form dropdown that isSteamMachineHardware claimed to
+    read from (#496) -- it reads as available and silently is not.
+    """
+    wf = (REPO_ROOT / ".github/workflows/update-data.yml").read_text(encoding="utf-8")
+    assert "R2_SYNC_CONCURRENCY:" in wf, "no workflow env plumbs the override"
+    assert "vars.R2_SYNC_CONCURRENCY" in wf, "override is not settable as a repo variable"
+
+
+def test_r2_sync_keeps_the_retry_backstops_the_higher_concurrency_relies_on():
+    """Running wide is only safe because these two catch transient failures."""
+    sh = (REPO_ROOT / "scripts/publish-cloudflare.sh").read_text(encoding="utf-8")
+    assert "AWS_RETRY_MODE=adaptive" in sh, "adaptive retry gone"
+    assert "retry" in sh.lower()
