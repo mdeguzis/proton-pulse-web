@@ -463,8 +463,21 @@ describe('game-page confidence range filter (#445)', () => {
   });
 
   test('defaults are 0 (min) and 100 (max) so the filter is a no-op on load', () => {
-    expect(gamePageSrc).toMatch(/filterConfidenceMin\s*=\s*Number\.isFinite\(persistedFilters\.confidenceMin\)\s*\?\s*persistedFilters\.confidenceMin\s*:\s*0/);
-    expect(gamePageSrc).toMatch(/filterConfidenceMax\s*=\s*Number\.isFinite\(persistedFilters\.confidenceMax\)\s*\?\s*persistedFilters\.confidenceMax\s*:\s*100/);
+    // Pinned on the defaults, not on one particular expression. The restore
+    // was rewritten to coerce-and-clamp for CodeQL alert 60 (#502), and a test
+    // pinned to the literal old text failed for a change that preserved the
+    // behaviour it was meant to protect.
+    expect(gamePageSrc).toMatch(/filterConfidenceMin\s*=\s*_clampPercent\(persistedFilters\.confidenceMin,\s*0\)/);
+    expect(gamePageSrc).toMatch(/filterConfidenceMax\s*=\s*_clampPercent\(persistedFilters\.confidenceMax,\s*100\)/);
+  });
+
+  test('the confidence restore coerces to a number rather than only guarding', () => {
+    // These are the only filter values interpolated into innerHTML as content
+    // rather than compared, and they come from a range input's .value. The
+    // clamp must always produce a number so no DOM string can reach HTML.
+    expect(gamePageSrc).toMatch(/const _clampPercent = \(v, fallback\) => \{/);
+    expect(gamePageSrc).toContain('const n = Number(v);');
+    expect(gamePageSrc).toContain('Math.min(100, Math.max(0, Math.round(n)))');
   });
 
   test('filter step is a no-op until the range is narrowed (min>0 OR max<100)', () => {

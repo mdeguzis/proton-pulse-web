@@ -1150,8 +1150,21 @@ export async function renderGamePage(appId) {
   // Confidence range 0-100 (#445). Defaults 0/100 = no filter. When narrowed
   // (min>0 or max<100) the filter step drops configs entirely, matching how
   // filterRating drops non-report rows -- configs carry no score.
-  let filterConfidenceMin = Number.isFinite(persistedFilters.confidenceMin) ? persistedFilters.confidenceMin : 0;
-  let filterConfidenceMax = Number.isFinite(persistedFilters.confidenceMax) ? persistedFilters.confidenceMax : 100;
+  // Coerced to a number and clamped, not merely checked with Number.isFinite.
+  // These two are the only filter values interpolated into innerHTML as
+  // CONTENT rather than compared, and they originate in a range input's
+  // .value -- DOM text. `Number.isFinite(x) ? x : 0` is behaviourally safe
+  // but reads as a guard rather than a conversion, so taint tracking still
+  // sees a DOM string reaching HTML (CodeQL alert 60, js/xss-through-dom).
+  // Number() + clamp always yields a number, which is both provably safe and
+  // legible as a sanitiser. Defaults stay 0 and 100 so the filter is still a
+  // no-op on load.
+  const _clampPercent = (v, fallback) => {
+    const n = Number(v);
+    return Number.isFinite(n) ? Math.min(100, Math.max(0, Math.round(n))) : fallback;
+  };
+  let filterConfidenceMin = _clampPercent(persistedFilters.confidenceMin, 0);
+  let filterConfidenceMax = _clampPercent(persistedFilters.confidenceMax, 100);
   let filterMine = false;
 
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
