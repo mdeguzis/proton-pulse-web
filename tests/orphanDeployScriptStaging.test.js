@@ -58,6 +58,15 @@ describe('gh-pages orphan wipe does not strip scripts later steps need', () => {
     expect(backup.run).not.toMatch(/scripts\/backup-to-release\.sh/);
   });
 
+  test('exactly one step stages the backup script', () => {
+    // #488 merged two independent fixes for #494, leaving two identical cp
+    // steps. Harmless (the copy is idempotent) but the next reader cannot tell
+    // which one is load-bearing, and deleting "the redundant one" is how the
+    // bug comes back.
+    const stagers = FINALIZE.steps.filter(s => (s.run || '').includes('cp scripts/backup-to-release.sh /tmp/'));
+    expect(stagers).toHaveLength(1);
+  });
+
   test('the staging copy happens before the wipe, on every deploy target', () => {
     const stageIdx = stepIndex(s => (s.run || '').includes('cp scripts/backup-to-release.sh /tmp/'));
     expect(stageIdx).toBeGreaterThan(-1);

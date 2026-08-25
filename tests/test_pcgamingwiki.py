@@ -166,7 +166,7 @@ def test_refresh_cache_uses_disk_when_fresh(tmp_path):
         "by_appid": {"1": {"os": ["linux"], "engine": "Godot"}},
     }))
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows") as m_infobox:
-        result = refresh_cache(tmp_path)
+        result = refresh_cache(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert result == {"1": {"os": ["linux"], "engine": "Godot"}}
     m_infobox.assert_not_called()
 
@@ -178,14 +178,14 @@ def test_refresh_cache_falls_back_to_disk_on_network_failure(tmp_path):
         "by_appid": {"9": {"os": ["windows"], "engine": None}},
     }))
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=None):
-        result = refresh_cache(tmp_path)
+        result = refresh_cache(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert result == {"9": {"os": ["windows"], "engine": None}}
 
 
 def test_refresh_cache_persists_new_data(tmp_path):
     infobox = [_row("Foo", "7", engines="Engine:Godot", available="Linux")]
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=infobox):
-        result = refresh_cache(tmp_path, force=True)
+        result = refresh_cache(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
     assert result == {"7": {"os": ["linux"], "engine": "Godot"}}
     written = json.loads((tmp_path / CACHE_FILENAME).read_text())
     assert written["by_appid"] == result
@@ -204,7 +204,7 @@ def test_enricher_writes_columns_14_and_15(tmp_path):
     ])
     infobox = [_row("Foo", "100", engines="Engine:Unity", available="Windows,Linux")]
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=infobox):
-        enrich_search_index_with_pcgamingwiki(tmp_path)
+        enrich_search_index_with_pcgamingwiki(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     # Row 0: previous enrichers preserved, PGW at 14 + 15.
     assert written[0][10] == "300"
@@ -222,7 +222,7 @@ def test_enricher_publishes_data_pcgamingwiki_json(tmp_path):
     _write_index(tmp_path, [["100", "Foo", "gold", 0, 0, "steam", None, None, False, ""]])
     infobox = [_row("Foo", "100", engines="Engine:Godot", available="Linux")]
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=infobox):
-        enrich_search_index_with_pcgamingwiki(tmp_path)
+        enrich_search_index_with_pcgamingwiki(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     published = json.loads((tmp_path / "pcgamingwiki.json").read_text())
     assert published == {"100": {"os": ["linux"], "engine": "Godot"}}
 
@@ -234,7 +234,7 @@ def test_enricher_pads_short_rows_before_writing(tmp_path):
     _write_index(tmp_path, [["100", "Foo", "gold", 5, 2, "steam"]])
     infobox = [_row("Foo", "100", engines="Engine:Unity")]
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=infobox):
-        enrich_search_index_with_pcgamingwiki(tmp_path)
+        enrich_search_index_with_pcgamingwiki(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     assert len(written[0]) == 16
     assert written[0][10] is None
@@ -247,7 +247,7 @@ def test_enricher_pads_short_rows_before_writing(tmp_path):
 
 
 def test_enricher_no_op_when_index_missing(tmp_path):
-    enrich_search_index_with_pcgamingwiki(tmp_path)
+    enrich_search_index_with_pcgamingwiki(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert not (tmp_path / "search-index.json").exists()
 
 
@@ -256,7 +256,7 @@ def test_enricher_no_op_on_malformed_index(tmp_path):
     idx = tmp_path / "search-index.json"
     idx.write_text('{"not": "a list"}', encoding="utf-8")
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=[]):
-        enrich_search_index_with_pcgamingwiki(tmp_path)
+        enrich_search_index_with_pcgamingwiki(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     # File left untouched.
     assert json.loads(idx.read_text()) == {"not": "a list"}
 
@@ -575,13 +575,13 @@ def test_fetch_infobox_paginates_past_first_page():
 def test_load_cache_ignores_non_dict_on_disk(tmp_path):
     (tmp_path / CACHE_FILENAME).write_text("[1, 2, 3]")
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=None):
-        assert refresh_cache(tmp_path) == {}
+        assert refresh_cache(tmp_path, cache_path=tmp_path / CACHE_FILENAME) == {}
 
 
 def test_load_cache_ignores_unreadable_file(tmp_path):
     (tmp_path / CACHE_FILENAME).write_text("not json {[")
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=None):
-        assert refresh_cache(tmp_path) == {}
+        assert refresh_cache(tmp_path, cache_path=tmp_path / CACHE_FILENAME) == {}
 
 
 # ---- enrich unhappy paths --------------------------------------------------
@@ -591,7 +591,7 @@ def test_enricher_no_op_on_unreadable_index(tmp_path):
     idx = tmp_path / "search-index.json"
     idx.write_text("this is not json")
     with patch("scripts.pipeline.pcgamingwiki.refresh_cache") as m:
-        enrich_search_index_with_pcgamingwiki(tmp_path)
+        enrich_search_index_with_pcgamingwiki(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     m.assert_not_called()
 
 
@@ -600,9 +600,67 @@ def test_enricher_skips_empty_rows(tmp_path):
     _write_index(tmp_path, [[], ["100", "Foo", "gold", 0, 0, "steam"]])
     infobox = [_row("Foo", "100", engines="Engine:Unity")]
     with patch("scripts.pipeline.pcgamingwiki._fetch_infobox_rows", return_value=infobox):
-        enrich_search_index_with_pcgamingwiki(tmp_path)
+        enrich_search_index_with_pcgamingwiki(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     # Empty row untouched.
     assert written[0] == []
     # Non-empty row padded + enriched.
     assert written[1][15] == "Unity"
+
+
+# ---- #497: query-level errors arrive with HTTP 200 -------------------------
+#
+# MediaWiki reports query errors in the response body, not the status line, so
+# a 200 says nothing about whether the query ran. _cargo_get used to return the
+# payload anyway; callers then read the missing `cargoquery` key as an empty
+# result set and an empty catalog was written over the real one.
+
+
+def test_cargo_get_returns_none_on_permissiondenied():
+    """The exact response PCGW now sends after restricting Cargo access."""
+    payload = json.dumps({"error": {
+        "code": "permissiondenied",
+        "info": "You don't have permission to run arbitrary Cargo queries.",
+    }})
+    opener, patcher = _mock_session(lambda _u: payload)
+    with patcher:
+        result = _cargo_get({"action": "cargoquery"})
+    # None, not {} -- callers distinguish "failed" from "no rows" on this.
+    assert result is None
+
+
+def test_cargo_get_returns_none_on_any_query_error():
+    """Not special-cased to one code: any error means we got no rows."""
+    for code in ("badvalue", "invalidtable", "readapidenied", "unknown_error"):
+        payload = json.dumps({"error": {"code": code, "info": "nope"}})
+        opener, patcher = _mock_session(lambda _u, p=payload: p)
+        with patcher:
+            assert _cargo_get({"action": "cargoquery"}) is None, code
+
+
+def test_cargo_get_treats_maxlag_as_failure_too():
+    """maxlag was logged and the payload returned anyway, which on a busy
+    server produced the same empty-catalog outcome as a rejected query.
+    """
+    payload = json.dumps({"error": {"code": "maxlag", "info": "Waiting for a database server"}})
+    opener, patcher = _mock_session(lambda _u: payload)
+    with patcher:
+        assert _cargo_get({"action": "cargoquery"}) is None
+
+
+def test_paginate_stops_and_reports_when_page_zero_is_rejected():
+    """A rejected first page must not look like a successfully empty table."""
+    payload = json.dumps({"error": {"code": "permissiondenied", "info": "no"}})
+    opener, patcher = _mock_session(lambda _u: payload)
+    with patcher:
+        rows = _paginate_cargo("Infobox_game", "f", "w")
+    assert rows == []
+    # One attempt, no pagination loop against a dead endpoint.
+    assert len(opener.calls) == 1
+
+
+def test_successful_empty_result_is_still_distinguishable():
+    """A genuine empty result set keeps returning a dict, not None."""
+    opener, patcher = _mock_session(lambda _u: '{"cargoquery": []}')
+    with patcher:
+        assert _cargo_get({"action": "cargoquery"}) == {"cargoquery": []}

@@ -42,7 +42,7 @@ jobs:
       - name: Seed catalog cache from gh-pages
         run: |
           mkdir -p .cache
-          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
+          bash scripts/seed-catalog-cache.sh gh-pages-data .cache epic-catalog-cache.json
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -55,7 +55,16 @@ jobs:
       - name: Fetch Epic catalog
         run: uv run python scripts/fetch_epic_catalog.py
         env:
-          FORCE_REFRESH: ${{ inputs.force_refresh }}
+          # A scheduled run exists to refresh the catalog, so it must not
+          # ask the cache for permission. The cron cadence (weekly) equals
+          # GOG/Epic CATALOG_CACHE_MAX_AGE (7 days), so the scheduled run kept
+          # finding the cache a few hours short of expiry and doing nothing:
+          #   [gog-catalog] loaded 8,053 entries from cache (age 147.1h)
+          #   Cache unchanged, nothing to commit
+          # The copy on gh-pages then went stale ~a day later and stayed that
+          # way until the next weekly run, so every finalize in between paid
+          # the full re-fetch (~134s GOG, ~140s Epic) and threw it away.
+          FORCE_REFRESH: ${{ inputs.force_refresh == true || github.event_name == 'schedule' }}
 
       - name: Commit catalog cache to gh-pages
         if: inputs.dry_run != true

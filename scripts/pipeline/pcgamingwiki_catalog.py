@@ -76,6 +76,16 @@ from .pcgamingwiki import (
 )
 
 CACHE_FILENAME = "pcgwiki-catalog-cache.json"
+# Cache lives in .cache/ alongside the GOG and Epic catalog caches, which is
+# the directory the pipeline's Actions cache persists between runs (#497).
+#
+# It used to be written into the pipeline OUTPUT dir, which is /tmp on a
+# runner. The only thing that copied it anywhere durable was the gh-pages
+# deploy loop, and #362 made cloudflare the deploy target, so that loop stopped
+# running -- the cache has been written and discarded on every run since. That
+# left refresh_catalog's disk-fallback unable to ever engage in CI: there was
+# never a cache on disk to fall back to when PCGW started rejecting queries.
+DEFAULT_CATALOG_CACHE_PATH = Path(__file__).resolve().parents[2] / ".cache" / CACHE_FILENAME
 OUTPUT_FILENAME = "pcgwiki-catalog.json"
 ID_MAP_FILENAME = "pcgw-id-map.json"
 
@@ -383,7 +393,7 @@ def _clean_cover_url(value) -> str | None:
     return text
 
 
-def refresh_catalog(output_dir: Path, force: bool = False) -> dict[str, dict]:
+def refresh_catalog(output_dir: Path, force: bool = False, cache_path: Path | None = None) -> dict[str, dict]:
     """Load or refresh the catalog cache. Returns `{pw_<hash>: entry}`.
 
     Falls back to the on-disk cache when the network is down so a broken
@@ -391,7 +401,10 @@ def refresh_catalog(output_dir: Path, force: bool = False) -> dict[str, dict]:
     """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    cache_path = output_dir / CACHE_FILENAME
+    # output_dir is where published artifacts go; the cache is separate so it
+    # can live somewhere that survives the run.
+    cache_path = Path(cache_path) if cache_path else DEFAULT_CATALOG_CACHE_PATH
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache = _load_cache(cache_path)
 
     now = int(time.time())
@@ -403,17 +416,35 @@ def refresh_catalog(output_dir: Path, force: bool = False) -> dict[str, dict]:
     log("[pcgwiki-catalog] refreshing from cargo API")
     rows = _fetch_all_pages()
     if rows is None:
-        log(f"[pcgwiki-catalog] cargo unreachable; using {len(cache['entries'])} cached entries")
+        # None covers both a dead endpoint and a query the server rejected
+        # with a 200 (#497) -- either way we have no rows and must not treat
+        # that as an empty catalog.
+        log(f"[pcgwiki-catalog] cargo fetch failed; using {len(cache['entries'])} cached entries")
         return cache["entries"]
 
     entries = _build_entries(rows)
+
+    # An empty result must never replace a catalog we already have. _cargo_get
+    # returns None for a rejected query now (#497), so reaching here with zero
+    # rows should mean PCGW genuinely has no Windows games -- which is never
+    # true. Treating it as real is what emptied the published catalog: the run
+    # logged "cached 0 entries" like a normal day and wrote {} over thousands
+    # of entries, and every later run repeated it from the now-empty cache.
+    if not entries and cache.get("entries"):
+        log(
+            f"[pcgwiki-catalog] ERROR: refresh produced 0 entries but cache holds "
+            f"{len(cache['entries'])}; keeping the cache. Upstream query returned "
+            f"no rows without reporting an error."
+        )
+        return cache["entries"]
+
     cache = {"fetched_at": now, "entries": entries}
     _save_cache(cache_path, cache)
     log(f"[pcgwiki-catalog] cached {len(entries)} entries (of {len(rows)} candidate rows)")
     return entries
 
 
-def merge_catalog_into_search_index(output_dir: Path) -> None:
+def merge_catalog_into_search_index(output_dir: Path, cache_path: Path | None = None) -> None:
     """Add one row per PCGWiki-only entry to `search-index.json`.
 
     Rows carry the same 16-column shape the enrichers write, filled with
@@ -446,7 +477,7 @@ def merge_catalog_into_search_index(output_dir: Path) -> None:
     if not isinstance(entries_index, list):
         return
 
-    catalog = refresh_catalog(output_dir)
+    catalog = refresh_catalog(output_dir, cache_path=cache_path)
     if not catalog:
         log("[pcgwiki-catalog] catalog empty; nothing to merge")
         return

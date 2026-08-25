@@ -176,7 +176,7 @@ def test_refresh_catalog_uses_disk_when_fresh(tmp_path):
         "entries": {"pw_abcdefgh": {"name": "Foo", "slug": "Foo"}},
     }))
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages") as m:
-        result = refresh_catalog(tmp_path)
+        result = refresh_catalog(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert result == {"pw_abcdefgh": {"name": "Foo", "slug": "Foo"}}
     m.assert_not_called()
 
@@ -191,7 +191,7 @@ def test_refresh_catalog_migrates_legacy_pgwiki_cache_and_forces_refetch(tmp_pat
     }))
     rows = [_row("Foo", available="Windows"), _row("Bar", available="Windows")]
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=rows):
-        result = refresh_catalog(tmp_path)
+        result = refresh_catalog(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert slug_to_pw_id("Foo") in result
     assert slug_to_pw_id("Bar") in result
     assert not any(k.startswith("pgwiki:") for k in result)
@@ -203,14 +203,14 @@ def test_refresh_catalog_falls_back_to_disk_on_network_failure(tmp_path):
         "entries": {"pw_fallback": {"name": "Fallback", "slug": "Fallback"}},
     }))
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None):
-        result = refresh_catalog(tmp_path)
+        result = refresh_catalog(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert result == {"pw_fallback": {"name": "Fallback", "slug": "Fallback"}}
 
 
 def test_refresh_catalog_persists_new_data(tmp_path):
     rows = [_row("Foo", engines="Engine:Bar", available="Windows", relWin="2010")]
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=rows):
-        result = refresh_catalog(tmp_path, force=True)
+        result = refresh_catalog(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
     assert slug_to_pw_id("Foo") in result
     written = json.loads((tmp_path / CACHE_FILENAME).read_text())
     assert written["entries"] == result
@@ -233,7 +233,7 @@ def test_merge_appends_new_stub_rows_with_correct_shape(tmp_path):
         publishers="Company:Sierra Entertainment",
     )
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[riddick]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     assert len(written) == 2
     stub = written[1]
@@ -254,7 +254,7 @@ def test_merge_skips_ids_already_in_index(tmp_path):
     ])
     row = _row("Existing", available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     assert len(written) == 1
 
@@ -268,7 +268,7 @@ def test_merge_drops_legacy_pgwiki_rows_and_rekeys(tmp_path):
     ])
     row = _row("Existing", available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     ids = [r[0] for r in written]
     assert ids == ["220", slug_to_pw_id("Existing")]
@@ -278,7 +278,7 @@ def test_merge_publishes_catalog_json(tmp_path):
     _write_index(tmp_path, [])
     row = _row("Foo", engines="Engine:Bar", available="Windows", relWin="2010")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     published = json.loads((tmp_path / OUTPUT_FILENAME).read_text())
     foo_id = slug_to_pw_id("Foo")
     assert foo_id in published
@@ -290,14 +290,14 @@ def test_merge_publishes_catalog_json(tmp_path):
 
 
 def test_merge_no_op_when_index_missing(tmp_path):
-    merge_catalog_into_search_index(tmp_path)
+    merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert not (tmp_path / "search-index.json").exists()
 
 
 def test_merge_no_op_on_empty_catalog(tmp_path):
     _write_index(tmp_path, [["100", "Foo", "gold", 1, 0, "steam"]])
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     assert len(written) == 1
 
@@ -306,7 +306,7 @@ def test_merge_no_op_on_malformed_index(tmp_path):
     idx = tmp_path / "search-index.json"
     idx.write_text('{"not": "a list"}', encoding="utf-8")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     assert json.loads(idx.read_text()) == {"not": "a list"}
 
 
@@ -314,7 +314,7 @@ def test_merge_no_op_on_unreadable_index(tmp_path):
     idx = tmp_path / "search-index.json"
     idx.write_text("this is not json")
     with patch("scripts.pipeline.pcgamingwiki_catalog.refresh_catalog") as m:
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     m.assert_not_called()
 
 
@@ -368,7 +368,7 @@ def test_merge_flags_rule_a_when_steam_appid_absent(tmp_path):
     _write_index(tmp_path, [])  # zero Steam rows -> every appid is absent
     row = _row("Ghost Game", appid="9999999", available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     stub = written[0]
     assert stub[5] == "pgwiki"
@@ -388,7 +388,7 @@ def test_merge_flags_rule_b_when_steam_title_diverged(tmp_path):
     ])
     row = _row("Solo Leveling: Arise", appid="2373990", available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     assert len(written) == 2  # steam row stays + pw_ stub gets added
     stub = next(r for r in written if r[5] == "pgwiki")
@@ -411,7 +411,7 @@ def test_merge_leaves_active_pcgw_entries_alone(tmp_path):
     ])
     row = _row("Half-Life 2", appid="220", available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     stub = next(r for r in written if r[5] == "pgwiki")
     assert stub[7] is None                    # not delisted
@@ -436,7 +436,7 @@ def test_merge_updates_existing_pw_row_delisted_flag_in_place(tmp_path):
     ])
     row = _row("Solo Leveling: Arise", appid="2373990", available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     # Still exactly 2 rows -- no duplicate appended.
     assert len(written) == 2
@@ -457,7 +457,7 @@ def test_merge_no_steam_appid_never_delists(tmp_path):
     _write_index(tmp_path, [])
     row = _row("Physical Only Game", appid=None, available="Windows")
     with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[row]):
-        merge_catalog_into_search_index(tmp_path)
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
     written = json.loads((tmp_path / "search-index.json").read_text())
     stub = written[0]
     assert stub[7] is None
@@ -478,3 +478,83 @@ def test_common_recognizes_pgwiki_prefix():
     assert app_type_from_id("gog:12345") == "gog"
     assert app_type_from_id("epic:foo") == "epic"
     assert app_type_from_id("220") == "steam"
+
+
+# ---------------------------------------------------------------------------
+# #497: a rejected Cargo query must not be read as an empty catalog
+# ---------------------------------------------------------------------------
+#
+# PCGW restricted Cargo and now answers HTTP 200 with an error body:
+#   {"error":{"code":"permissiondenied",
+#             "info":"You don't have permission to run arbitrary Cargo queries."}}
+# There is no `cargoquery` key, so _fetch_all_pages saw an empty page and
+# returned [], refresh_catalog read that as a successful empty result, and
+# _save_cache wrote {} over the real catalog. Every run after that repeated it
+# from the now-empty cache, logging "cached 0 entries" like a normal day.
+
+
+def _seeded_cache(tmp_path, n=3):
+    """Write a cache that looks like a healthy previous run."""
+    entries = {f"pw_test{i:04d}": {"name": f"Game {i}", "steam_app_id": str(i)} for i in range(n)}
+    (tmp_path / CACHE_FILENAME).write_text(
+        json.dumps({"fetched_at": 0, "entries": entries}), encoding="utf-8"
+    )
+    return entries
+
+
+def test_rejected_query_keeps_the_existing_catalog(tmp_path):
+    """A permissiondenied response must leave the cached catalog intact."""
+    seeded = _seeded_cache(tmp_path)
+    # _cargo_get returns None for an error payload, so pagination reports the
+    # unreachable path and refresh_catalog falls back to disk.
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None):
+        out = refresh_catalog(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
+    assert out == seeded
+    on_disk = json.loads((tmp_path / CACHE_FILENAME).read_text())
+    assert on_disk["entries"] == seeded, "cache was overwritten despite the query failing"
+
+
+def test_empty_result_does_not_wipe_a_populated_cache(tmp_path):
+    """Even a 'successful' empty row list must not replace a real catalog.
+
+    Belt and braces for the case where some future upstream change returns an
+    empty page without an error key. PCGW having zero Windows games is not a
+    real state, so an empty refresh is always a bug somewhere.
+    """
+    seeded = _seeded_cache(tmp_path)
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[]):
+        out = refresh_catalog(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
+    assert out == seeded
+    on_disk = json.loads((tmp_path / CACHE_FILENAME).read_text())
+    assert on_disk["entries"] == seeded
+
+
+def test_empty_result_is_still_written_on_a_cold_cache(tmp_path):
+    """With nothing cached there is nothing to protect, so don't block a write.
+
+    Keeps first-run behaviour unchanged -- the guard is about not destroying
+    known-good data, not about refusing to ever store an empty result.
+    """
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=[]):
+        out = refresh_catalog(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
+    assert out == {}
+
+
+def test_real_rows_still_replace_the_cache(tmp_path):
+    """The guard must not freeze the catalog once it is populated."""
+    _seeded_cache(tmp_path)
+    rows = [{
+        "page": "Half-Life 2",
+        "appId": "220",
+        "gogId": "",
+        "engines": "Source",
+        "available": "Windows",
+        "relWin": "2004-11-16",
+        "developers": "Valve",
+        "publishers": "Valve",
+        "coverUrl": "https://images.pcgamingwiki.com/x/hl2.jpg",
+    }]
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=rows):
+        out = refresh_catalog(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
+    assert len(out) == 1
+    assert any(e["name"] == "Half-Life 2" for e in out.values())

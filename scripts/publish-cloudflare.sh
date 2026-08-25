@@ -98,9 +98,20 @@ elif [ -d "$OUTPUT_DIR/data" ]; then
   : "${R2_ACCESS_KEY_ID:?R2_ACCESS_KEY_ID required for R2 sync}"
   : "${R2_SECRET_ACCESS_KEY:?R2_SECRET_ACCESS_KEY required for R2 sync}"
 
-  # Throttle concurrency so parallel PUTs do not trip R2's per-object write
-  # limit (#379); pairs with the adaptive retry mode set in r2aws().
-  aws configure set default.s3.max_concurrent_requests 4
+  # Concurrency for the fan-out, with adaptive retry so a transient R2
+  # ServiceUnavailable does not fail the whole run (#379).
+  #
+  # The 4 here was an over-correction. R2's ~1/sec write limit is PER OBJECT
+  # KEY -- the same key written repeatedly -- not a cap across distinct keys.
+  # This sync writes ~187k DISTINCT keys, so the limit does not apply to
+  # fan-out and 4 concurrent PUTs just made a full sync crawl for ~40 minutes.
+  # It was also set before the outer retry loop further down existed; with that
+  # loop plus adaptive backoff (exponential + jitter, reads throttling metadata)
+  # as backstops, running wide is safe.
+  #
+  # R2_SYNC_CONCURRENCY lets a workflow dial this back without a code change if
+  # R2 ever pushes back.
+  aws configure set default.s3.max_concurrent_requests "${R2_SYNC_CONCURRENCY:-32}"
 
   # Cleaned up by the shared EXIT trap set in section 2 (a second `trap EXIT`
   # would replace this one, so both temp dirs share a single trap).

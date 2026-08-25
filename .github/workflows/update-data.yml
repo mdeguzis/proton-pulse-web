@@ -379,8 +379,8 @@ jobs:
       - name: Seed store catalog caches from gh-pages
         run: |
           mkdir -p .cache
-          cp gh-pages-data/gog-catalog-cache.json .cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json .cache/ 2>/dev/null || true
+          bash scripts/seed-catalog-cache.sh gh-pages-data .cache \
+            gog-catalog-cache.json epic-catalog-cache.json
 
       # #89: log which caches survived the restore, their sizes + ages,
       # so the workflow output tells us at a glance whether the two cache
@@ -495,6 +495,15 @@ jobs:
       # gh-pages orphan deploy below (`git rm -rf .`) deletes every tracked
       # file, backup-to-release.sh included, but the "Backup data to GitHub
       # Release" step needs it afterward regardless of which deploy path ran.
+      #
+      # Not hypothetical: every scheduled run from 2026-08-19 through 08-23
+      # died here with "scripts/backup-to-release.sh: No such file or
+      # directory" and the nightly data backup stopped for five days (#494).
+      # It read as intermittent because cloudflare-target runs skip the orphan
+      # step and so never hit the wipe. That is also why this cannot move
+      # inside the orphan step next to the preserve-* copies -- the backup
+      # runs on both targets, so a cp nested there would never fire on
+      # cloudflare and would only relocate the failure.
       - name: Preserve backup script
         if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
         run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
@@ -532,23 +541,12 @@ jobs:
           # bucket (staging/prod, split in #380) keeps its own manifest, so
           # the two targets delta independently.
           R2_DELTA_SYNC: ${{ vars.R2_DELTA_SYNC || '0' }}
+          # Escape hatch for the R2 sync fan-out. Unset falls through to the
+          # script's default (32). Set the repo variable to dial back without a
+          # code change if R2 starts returning ServiceUnavailable at volume.
+          R2_SYNC_CONCURRENCY: ${{ vars.R2_SYNC_CONCURRENCY || '' }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
-
-      # The backup step at the end of this job runs `bash <script>` from the
-      # workspace, but the gh-pages orphan deploy below does `git rm -rf .`
-      # first, which deletes every tracked file including that script. Every
-      # scheduled run from 2026-08-19 onward failed here with
-      # "scripts/backup-to-release.sh: No such file or directory", so the
-      # nightly data backup silently stopped for five days.
-      #
-      # Same hazard the preserve-* scripts already work around, but staged in
-      # its own step rather than inside the orphan step: the backup runs on
-      # both deploy targets, and on deploy_target=cloudflare the orphan step
-      # is skipped entirely, so a cp living inside it would never happen.
-      - name: Stage the backup script out of the workspace
-        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
-        run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
 
       - name: Deploy to gh-pages (orphan, no history)
         if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && (inputs.deploy_target || 'cloudflare') != 'cloudflare'
@@ -850,8 +848,8 @@ jobs:
             mkdir -p /tmp/protondb-output/data
           fi
           mkdir -p repo/.cache
-          cp gh-pages-data/gog-catalog-cache.json repo/.cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json repo/.cache/ 2>/dev/null || true
+          bash repo/scripts/seed-catalog-cache.sh gh-pages-data repo/.cache \
+            gog-catalog-cache.json epic-catalog-cache.json
 
       - name: Repair official dump provenance metadata
         working-directory: repo
@@ -1073,8 +1071,8 @@ jobs:
             mkdir -p /tmp/protondb-output/data
           fi
           mkdir -p repo/.cache
-          cp gh-pages-data/gog-catalog-cache.json repo/.cache/ 2>/dev/null || true
-          cp gh-pages-data/epic-catalog-cache.json repo/.cache/ 2>/dev/null || true
+          bash repo/scripts/seed-catalog-cache.sh gh-pages-data repo/.cache \
+            gog-catalog-cache.json epic-catalog-cache.json
 
       - name: Repair official dump provenance metadata
         working-directory: repo
