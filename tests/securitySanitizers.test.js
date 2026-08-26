@@ -73,3 +73,53 @@ describe('boxart admin refetch host allowlist', () => {
     expect(SRC).not.toContain(".includes('shared.fastly.steamstatic.com')");
   });
 });
+
+describe('game page filter dropdowns (#502, CodeQL alert 60)', () => {
+  const SRC = read('js/app/components/game-page.js');
+
+  // Every filter <option> is built the same way from report data:
+  //   availX.map(v => `<option value="${v}" ...>${LABEL[v] || v}</option>`)
+  // Three of them escaped and three did not. availGpus and availRunTypes are
+  // built from r.gpu / r.runType, i.e. fields a submitted report controls, and
+  // the `LABEL[v] || v` fallback renders the RAW value whenever the label map
+  // has no entry -- so markup in a report's GPU string reached innerHTML.
+  const OPTION_BUILDERS = SRC
+    .split('\n')
+    .map((line, i) => ({ line: line.trim(), n: i + 1 }))
+    .filter(({ line }) => line.includes('.map(v => `<option'));
+
+  test('the dropdowns are still built the way this guard assumes', () => {
+    // If this fails the render was refactored and the assertions below are
+    // no longer checking anything real.
+    expect(OPTION_BUILDERS.length).toBeGreaterThanOrEqual(5);
+  });
+
+  test.each([
+    ['availGpus'],
+    ['availArchs'],
+    ['availOs'],
+    ['availRatings'],
+    ['availRunTypes'],
+  ])('%s escapes both the option value and its label', (name) => {
+    const builder = OPTION_BUILDERS.find(({ line }) => line.includes(`${name}.map(`));
+    expect(builder).toBeDefined();
+    // value="..." must go through esc()
+    expect(builder.line).toContain('value="${esc(v)}"');
+    // Scan the INNER <option> template only. A naive scan of the whole line
+    // trips over the nested template literal: the outer ${availX.map(...)}
+    // is closed by the first brace inside it.
+    const inner = builder.line.match(/`(<option[\s\S]*?<\/option>)`/);
+    expect(inner).not.toBeNull();
+    // Nothing may be interpolated bare -- catches `${v}` and the
+    // `${LABEL[v]||v}` fallback that was the actual sink.
+    const bare = [...inner[1].matchAll(/\$\{([^}]*)\}/g)]
+      .map((m) => m[1].trim())
+      .filter((e) => !e.startsWith('esc(') && !e.includes('==='));
+    expect(bare).toEqual([]);
+  });
+
+  test('no option builder interpolates a LABEL fallback unescaped', () => {
+    // The specific shape that produced the alert.
+    expect(SRC).not.toMatch(/\$\{[A-Z_]+_LABEL\[v\]\s*\|\|\s*v\}/);
+  });
+});
