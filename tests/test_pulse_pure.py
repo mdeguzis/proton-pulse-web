@@ -249,6 +249,90 @@ def test_merge_handles_corrupt_year_file(tmp_path):
         apps, reports = merge_pulse_into_data_dir(tmp_path)
     assert reports == 1
 
+def test_merge_drops_deleted_row_from_touched_bucket(tmp_path):
+    # #476: a bucket that still has one live report must not keep a second,
+    # now-deleted report just because its pulseId never matched an incoming id.
+    app_dir = tmp_path / "730"
+    app_dir.mkdir()
+    year_file = app_dir / "2025.json"
+    existing = [
+        {"source": "pulse", "pulseId": 1, "rating": "gold"},
+        {"source": "pulse", "pulseId": 999, "rating": "bronze"},  # deleted upstream
+    ]
+    year_file.write_text(json.dumps(existing))
+
+    with patch("scripts.pipeline.pulse.fetch_pulse_rows", return_value=_make_pulse_rows()):
+        merge_pulse_into_data_dir(tmp_path)
+
+    written = json.loads(year_file.read_text())
+    ids = {r.get("pulseId") for r in written}
+    assert ids == {1}
+
+
+def test_merge_reconciles_bucket_with_no_remaining_live_rows(tmp_path):
+    # #476: the last live report for a bucket gets deleted, so it drops out of
+    # `buckets` entirely on the next run and nothing else would ever revisit
+    # it. The touched-buckets state file must catch this and strip it anyway.
+    app_dir = tmp_path / "730"
+    app_dir.mkdir()
+    year_file = app_dir / "2025.json"
+    year_file.write_text(json.dumps([{"source": "pulse", "pulseId": 1, "rating": "gold"}]))
+    from scripts.pipeline.pulse import TOUCHED_BUCKETS_FILENAME
+    (tmp_path / TOUCHED_BUCKETS_FILENAME).write_text(json.dumps({"buckets": ["730/2025"]}))
+
+    with patch("scripts.pipeline.pulse.fetch_pulse_rows", return_value=[]):
+        apps, reports = merge_pulse_into_data_dir(tmp_path)
+
+    assert apps == 0
+    assert reports == 0
+    written = json.loads(year_file.read_text())
+    assert written == []
+
+
+def test_merge_reconcile_preserves_protondb_rows(tmp_path):
+    app_dir = tmp_path / "730"
+    app_dir.mkdir()
+    year_file = app_dir / "2025.json"
+    year_file.write_text(json.dumps([
+        {"source": "pulse", "pulseId": 1, "rating": "gold"},
+        {"source": "protondb", "rating": "silver", "timestamp": 111},
+    ]))
+    from scripts.pipeline.pulse import TOUCHED_BUCKETS_FILENAME
+    (tmp_path / TOUCHED_BUCKETS_FILENAME).write_text(json.dumps({"buckets": ["730/2025"]}))
+
+    with patch("scripts.pipeline.pulse.fetch_pulse_rows", return_value=[]):
+        merge_pulse_into_data_dir(tmp_path)
+
+    written = json.loads(year_file.read_text())
+    assert written == [{"source": "protondb", "rating": "silver", "timestamp": 111}]
+
+
+def test_merge_writes_touched_buckets_state(tmp_path):
+    from scripts.pipeline.pulse import TOUCHED_BUCKETS_FILENAME
+    with patch("scripts.pipeline.pulse.fetch_pulse_rows", return_value=_make_pulse_rows()):
+        merge_pulse_into_data_dir(tmp_path)
+
+    state = json.loads((tmp_path / TOUCHED_BUCKETS_FILENAME).read_text())
+    assert state["buckets"] == ["730/2025"]
+
+
+def test_merge_state_drops_bucket_once_reconciled(tmp_path):
+    # After a bucket is reconciled away, it should not still show up in the
+    # persisted state -- otherwise every future run keeps re-checking a file
+    # that is already clean.
+    from scripts.pipeline.pulse import TOUCHED_BUCKETS_FILENAME
+    app_dir = tmp_path / "730"
+    app_dir.mkdir()
+    (app_dir / "2025.json").write_text(json.dumps([{"source": "pulse", "pulseId": 1}]))
+    (tmp_path / TOUCHED_BUCKETS_FILENAME).write_text(json.dumps({"buckets": ["730/2025"]}))
+
+    with patch("scripts.pipeline.pulse.fetch_pulse_rows", return_value=[]):
+        merge_pulse_into_data_dir(tmp_path)
+
+    state = json.loads((tmp_path / TOUCHED_BUCKETS_FILENAME).read_text())
+    assert state["buckets"] == []
+
+
 def test_merge_gog_creates_underscore_dir(tmp_path):
     rows = [{
         "id": 10,
