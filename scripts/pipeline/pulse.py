@@ -7,6 +7,24 @@ the static JSON so consumers don't have to fetch from two places.
 
 Dedupe key: the Supabase row id. We store it as pulseId on the report so
 re-runs replace stale records rather than duplicating them.
+
+Deletion handling (#476): fetch_pulse_rows returns every LIVE row, not a
+delta, so a deleted user_configs row is simply absent from it. Two things
+follow from that:
+
+  - A bucket ((app_id, year)) we DO revisit this run gets every one of its
+    old pulse-tagged records dropped and replaced with the fresh live set,
+    rather than only the ones whose id happens to still be live. That closes
+    the partial case: one of two reports for the same game+year gets deleted,
+    the bucket still gets touched because the other report is live, but the
+    deleted one used to survive because it never matched an incoming id.
+  - A bucket that had its LAST live row deleted disappears from `buckets`
+    entirely and is never opened by the loop above, so nothing rewrites it.
+    A tiny state file (`.pulse-touched-buckets.json` in data_output_path)
+    tracks which (app_id, year) buckets currently carry live pulse data;
+    any bucket that drops out between runs gets its year file opened once
+    and stripped of pulse rows. This bounds the reconcile work to buckets
+    that have ever actually had a pulse report, not every app dir on disk.
 """
 
 from __future__ import annotations
@@ -144,20 +162,68 @@ def _bucket_by_app_year(rows: list[dict]) -> dict[tuple[str, str], list[dict]]:
     return buckets
 
 
+TOUCHED_BUCKETS_FILENAME = ".pulse-touched-buckets.json"
+
+
+def _bucket_key(app_id: str, year: str) -> str:
+    return f"{app_id}/{year}"
+
+
+def _load_touched_buckets(state_path: Path) -> set[str]:
+    if not state_path.exists():
+        return set()
+    try:
+        data = json.loads(state_path.read_text())
+    except (json.JSONDecodeError, OSError) as exc:
+        log(f"[pulse] {state_path} unreadable, treating as empty: {exc}")
+        return set()
+    buckets = data.get("buckets") if isinstance(data, dict) else None
+    return set(buckets) if isinstance(buckets, list) else set()
+
+
+def _save_touched_buckets(state_path: Path, keys: set[str]) -> None:
+    state_path.write_text(json.dumps({"buckets": sorted(keys)}, indent=2))
+
+
+def _strip_pulse_rows(year_file: Path) -> bool:
+    """Remove every source == 'pulse' record from a year file in place.
+
+    Returns True if the file changed (and was rewritten). Used to reconcile
+    a bucket whose last live pulse row was deleted since the prior run --
+    it has dropped out of the current bucket set, so nothing else visits it.
+    """
+    if not year_file.exists():
+        return False
+    try:
+        existing = json.loads(year_file.read_text())
+    except (json.JSONDecodeError, OSError) as exc:
+        log(f"[pulse] {year_file} unreadable during reconcile, skipping: {exc}")
+        return False
+    if not isinstance(existing, list):
+        return False
+    filtered = [r for r in existing if not (isinstance(r, dict) and r.get("source") == "pulse")]
+    if len(filtered) == len(existing):
+        return False
+    year_file.write_text(json.dumps(filtered, indent=2))
+    return True
+
+
 def merge_pulse_into_data_dir(data_output_path: Path) -> tuple[int, int]:
     """Pull Pulse reports from Supabase and merge them into the appropriate
     year.json files. Returns (apps_touched, reports_merged) for logging.
 
-    Dedup by pulseId: any existing record with the same pulseId is replaced
-    by the fresh Supabase version, so users can edit their submissions and
-    have the static snapshot reflect the latest state on the next pipeline run.
+    Dedup by pulseId: every old pulse-tagged record in a touched bucket is
+    dropped and replaced by the fresh Supabase set, so users can edit their
+    submissions (or have one deleted) and have the static snapshot reflect
+    the latest live state on the next pipeline run.
     """
     rows = fetch_pulse_rows()
-    if not rows:
-        log("[pulse] No Pulse reports to merge (Supabase returned 0 rows)")
-        return 0, 0
+    buckets = _bucket_by_app_year(rows) if rows else {}
 
-    buckets = _bucket_by_app_year(rows)
+    state_path = data_output_path / TOUCHED_BUCKETS_FILENAME
+    prior_keys = _load_touched_buckets(state_path)
+    current_keys = {_bucket_key(app_id, year) for app_id, year in buckets}
+
     apps_touched: set[str] = set()
     reports_merged = 0
 
@@ -176,16 +242,11 @@ def merge_pulse_into_data_dir(data_output_path: Path) -> tuple[int, int]:
         if not isinstance(existing, list):
             existing = []
 
-        # drop any old pulse records with ids we're about to re-add (covers edits)
-        incoming_ids = {p["pulseId"] for p in pulse_reports if p.get("pulseId") is not None}
-        filtered = [
-            r for r in existing
-            if not (
-                isinstance(r, dict)
-                and r.get("source") == "pulse"
-                and r.get("pulseId") in incoming_ids
-            )
-        ]
+        # Drop every existing pulse-tagged record for this bucket -- pulse_reports
+        # below is the complete, current, live set for this (app_id, year), so
+        # keeping only ids that happen to match it would leave deleted rows
+        # behind whenever another report for the same bucket is still live.
+        filtered = [r for r in existing if not (isinstance(r, dict) and r.get("source") == "pulse")]
 
         # backfill source on legacy protondb records that haven't been re-tagged yet.
         # Also lowercase any surviving Capitalized rating so a merge touching this
@@ -203,7 +264,24 @@ def merge_pulse_into_data_dir(data_output_path: Path) -> tuple[int, int]:
         apps_touched.add(app_id)
         reports_merged += len(pulse_reports)
 
+    # Reconcile buckets whose last live row was deleted since the prior run
+    # (#476): they've dropped out of `buckets` entirely, so the loop above
+    # never opens their year file. Bounded to buckets that have ever held a
+    # live pulse row, via the state file, rather than every app dir on disk.
+    reconciled = 0
+    for key in prior_keys - current_keys:
+        app_id, _, year = key.rpartition("/")
+        year_file = data_output_path / app_id_to_dir(app_id) / f"{year}.json"
+        if _strip_pulse_rows(year_file):
+            reconciled += 1
+
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    _save_touched_buckets(state_path, current_keys)
+
+    if not rows:
+        log("[pulse] No Pulse reports to merge (Supabase returned 0 rows)")
     log(
         f"[pulse] Merged {reports_merged} Pulse report(s) across {len(apps_touched)} app(s)"
+        + (f"; reconciled {reconciled} bucket(s) with no remaining live rows" if reconciled else "")
     )
     return len(apps_touched), reports_merged
