@@ -5,6 +5,12 @@
  * Primary scan (with auto-remediation):
  *   - user_configs.notes / title / launch_options / form_responses
  *     Hits are auto-flagged: is_flagged=true, is_hidden=true, flagged_reason set.
+ *     Every row processed (flagged, clean, or empty) is stamped with
+ *     last_moderated_at (#257): the query below also always includes rows
+ *     where that column is still NULL, so a row that lands during a
+ *     scanner outage or otherwise falls outside every scheduled lookback
+ *     window still gets caught on the next run instead of being skipped
+ *     forever. See supabase/migrations/20260905000000_add_user_configs_moderation_cursor.sql.
  *
  * Aux scans (alert-only, no auto-remediation):
  *   - user_proton_configs.app_name    (#331)
@@ -329,7 +335,9 @@ async function fetchRecentRows() {
   const since = new Date(Date.now() - LOOKBACK_H * 3600 * 1000).toISOString();
   const url = `${SUPABASE_URL}/rest/v1/user_configs`
     + `?select=id,notes,title,launch_options,form_responses,proton_pulse_user_id,client_id`
-    + `&or=(created_at.gte.${since},updated_at.gte.${since})`
+    // #257: last_moderated_at.is.null catches rows never actually scanned,
+    // regardless of how old they are -- not just ones that changed recently.
+    + `&or=(created_at.gte.${since},updated_at.gte.${since},last_moderated_at.is.null)`
     + `&is_hidden=eq.false`
     + `&order=id.asc`
     + (APP_IDS.length === 1 ? `&app_id=eq.${encodeURIComponent(APP_IDS[0])}`
@@ -354,6 +362,7 @@ async function flagRow(id, reason) {
     is_hidden: true,
     flagged_reason: reason,
     flagged_at: new Date().toISOString(),
+    last_moderated_at: new Date().toISOString(),
   };
 
   if (DRY_RUN) {
@@ -372,6 +381,25 @@ async function flagRow(id, reason) {
 
   log(`Supabase PATCH response`, { id, status: res.status });
   if (!res.ok) throw new Error(`Supabase PATCH failed for id=${id}: ${res.status} ${await res.text()}`);
+}
+
+// #257: stamp the moderation cursor on a row that was scanned and found
+// clean (or had no text fields), so the "never scanned" branch of the
+// fetchRecentRows query stops matching it until it changes again.
+async function markScanned(id) {
+  if (DRY_RUN) {
+    log(`[DRY RUN] would mark row scanned`, { id });
+    return;
+  }
+
+  const url = `${SUPABASE_URL}/rest/v1/user_configs?id=eq.${id}`;
+  const res = await fetch(url, {
+    method: 'PATCH',
+    headers: SUPABASE_HEADERS,
+    body: JSON.stringify({ last_moderated_at: new Date().toISOString() }),
+  });
+
+  if (!res.ok) throw new Error(`Supabase PATCH (markScanned) failed for id=${id}: ${res.status} ${await res.text()}`);
 }
 
 // ---------------------------------------------------------------------------
@@ -576,6 +604,7 @@ async function main() {
     if (fields.length === 0) {
       log(`Row ${row.id}: no text fields, skipping.`);
       scanned++;
+      await markScanned(row.id);
       continue;
     }
 
@@ -637,6 +666,7 @@ async function main() {
       flaggedCount++;
     } else {
       log(`Row ${row.id}: clean.`);
+      await markScanned(row.id);
     }
   }
 
