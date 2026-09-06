@@ -1,7 +1,7 @@
 // router (entry) for the app page. Relocated from app.js.
 
 import { pcgwSlugToPwId } from '../lib/app-id.js?v=6159afa9';
-import { renderGamePage } from './components/game-page.js?v=baeecb0a';
+import { renderGamePage } from './components/game-page.js?v=0c1eb15e';
 import { renderHomePage } from './components/home.js?v=183b5b8f';
 import { renderSearchPage } from './components/search.js?v=091f940b';
 

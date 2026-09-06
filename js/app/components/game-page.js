@@ -1173,7 +1173,14 @@ export async function renderGamePage(appId) {
   let filterConfidenceMin = _clampInt(persistedFilters.confidenceMin, 0, 100, 0);
   let filterConfidenceMax = _clampInt(persistedFilters.confidenceMax, 0, 100, 100);
   if (filterConfidenceMin > filterConfidenceMax) filterConfidenceMin = filterConfidenceMax;
-  let filterMine = false;
+  // #390: signed-out visitors have no "me" to filter by -- the chip is
+  // hidden entirely for them (see the sort-bar template below), and the
+  // persisted value is dropped rather than honoured so it can't silently
+  // filter everything out if they save while signed in, sign out, then
+  // come back later. window._ppMyUserId is resolved (awaited) before this
+  // component's render() runs, so it's already final here.
+  const _signedIn = !!window._ppMyUserId;
+  let filterMine = _signedIn && !!persistedFilters.mine;
 
   // Unified source filter across configs + reports: 'pulse-config', 'pulse-report',
   // 'protondb', or '' for any. Falls back to the shared-across-site value
@@ -1197,6 +1204,10 @@ export async function renderGamePage(appId) {
       runType: filterRunType, device: filterDevice,
       minPlaytime: filterMinPlaytime, source: filterSource,
       confidenceMin: filterConfidenceMin, confidenceMax: filterConfidenceMax,
+      // #390: filterMine can only be true while _signedIn (the toggle is
+      // hidden otherwise), so this never saves a mine=true snapshot under
+      // the wrong identity.
+      mine: filterMine,
     };
   }
 
@@ -1803,7 +1814,7 @@ export async function renderGamePage(appId) {
         <div class="sort-bar">
           <button class="${sortMode==='recent'?'active':''}" data-sort="recent">Recent</button>
           <button class="${sortMode==='votes'?'active':''}" data-sort="votes">Top Voted</button>
-          <button class="sort-mine-btn${filterMine?' active':''}" data-action="toggle-mine">Mine</button>
+          ${_signedIn ? `<button class="sort-mine-btn${filterMine?' active':''}" data-action="toggle-mine">Mine</button>` : ''}
         </div>
       </div>
 
@@ -1833,6 +1844,11 @@ export async function renderGamePage(appId) {
     );
     el.querySelector('.sort-mine-btn')?.addEventListener('click', () => {
       filterMine = !filterMine;
+      // #390: persist the same way the other filter chips do -- cache into
+      // the session snapshot immediately (survives SPA nav) and mark the
+      // Save button dirty; nothing lands in localStorage until Save.
+      _cacheField('mine', filterMine);
+      _updateSaveButtonState();
       refreshReports();
     });
 
