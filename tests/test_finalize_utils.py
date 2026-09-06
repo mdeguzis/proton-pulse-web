@@ -439,6 +439,25 @@ def test_generate_search_index_basic(tmp_path):
     assert len(index[0]) >= 10
     assert index[0][9] == ""
 
+def test_generate_search_index_logs_timing_breakdown(tmp_path, capsys):
+    # #258: the per-app loop is the single longest phase of finalize and its
+    # wall-clock cost has grown nonlinearly across a run with no identified
+    # cause. This breakdown is what lets the next slow run answer that
+    # directly from the log instead of requiring a cancel-and-inspect pass.
+    app_dir = tmp_path / "730"
+    app_dir.mkdir()
+    (app_dir / "2023.json").write_text(json.dumps([{"rating": "gold", "source": "pulse", "title": "CS2"}]))
+    (app_dir / "latest.json").write_text(json.dumps([{"title": "CS2"}]))
+
+    keys = {("730", "2023")}
+    generate_search_index(keys, tmp_path, tmp_path)
+
+    err = capsys.readouterr().err
+    assert "[search-index] loop complete:" in err
+    assert "title+summary=" in err
+    assert "adult-check=" in err
+    assert "total=" in err
+
 def test_generate_search_index_gog_stub_from_catalog(tmp_path):
     keys = set()
     gog_catalog = {"1234567890": "Swat 4"}
