@@ -1057,14 +1057,29 @@ def generate_search_index(
     total_apps = len(app_ids)
     log(f"[search-index] summarizing {total_apps:,} reported apps (tier + counts + trend per app)")
     now_ts = time.time()
+    # #258: this loop's wall-clock cost grew nonlinearly across a run (5k
+    # apps in 65s, the next 5k in 209s) with no clear cause identified from
+    # the plain per-app work alone. Split the two per-app costs so the next
+    # slow run's log answers the question directly instead of requiring
+    # another cancel-and-read-the-log investigation.
+    title_summary_elapsed = 0.0
+    adult_check_elapsed = 0.0
+    loop_started = time.perf_counter()
     for processed, app_id in enumerate(app_ids, start=1):
         if processed % PROGRESS_EVERY == 0:
-            log(f"[search-index] progress: {processed:,}/{total_apps:,}")
+            log(
+                f"[search-index] progress: {processed:,}/{total_apps:,} "
+                f"(title+summary={title_summary_elapsed:.1f}s, adult-check={adult_check_elapsed:.1f}s, "
+                f"elapsed={time.perf_counter() - loop_started:.1f}s)"
+            )
+        t0 = time.perf_counter()
         app_dir = data_output_path / app_id_to_dir(app_id)
         title = _extract_title(app_dir)
         if not title:
+            title_summary_elapsed += time.perf_counter() - t0
             continue
         tier, pdb_count, pulse_count, trend = _compute_game_summary(app_dir, now_ts=now_ts)
+        title_summary_elapsed += time.perf_counter() - t0
         app_type = app_type_from_id(app_id)
         # Adult flag lives at column 8. Steam descriptors are the source
         # of truth; GOG / Epic entries stay unflagged (no equivalent
@@ -1077,16 +1092,22 @@ def generate_search_index(
         # Reported game: descriptor-check Steam apps. Force a fresh fetch when
         # the title hints adult so a poisoned empty cache entry (#185) heals
         # instead of leaking the game into browse views.
+        t1 = time.perf_counter()
         adult = (
             is_adult_app(app_id, force_refresh=bool(ADULT_TITLE_HINT_RE.search(title)))
             if app_type == "steam"
             else False
         )
+        adult_check_elapsed += time.perf_counter() - t1
         # Column 9 is the compatibility trend direction: 'improving',
         # 'declining', or '' (stable / insufficient sample). Cards read it via
         # renderGameCard's `trend` option to draw the up/down arrow.
         entries.append([app_id, title, tier, pdb_count, pulse_count, app_type, None, None, adult, trend])
         seen_ids.add(app_id)
+    log(
+        f"[search-index] loop complete: title+summary={title_summary_elapsed:.1f}s, "
+        f"adult-check={adult_check_elapsed:.1f}s, total={time.perf_counter() - loop_started:.1f}s"
+    )
 
     # Demo dedup for catalog stubs: GOG/Epic list demos as separate products
     # ("Coffee Noir DEMO" next to "Coffee Noir"). A demo stub with zero
