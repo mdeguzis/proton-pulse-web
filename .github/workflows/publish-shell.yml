@@ -106,7 +106,7 @@ jobs:
           FILES=(
             search-index.json search-index-steam-extended.json most_played.json
             recent-reports.json stats.json coverage-summary.json data-versions.json
-            game-images.json game-images-skip.json nonsteam-images.json nonsteam-metadata.json
+            game-images.json game-images-skip.json image-fallback-stats.json nonsteam-images.json nonsteam-metadata.json
             deck-status.json proton-versions.json steam-catalog.json
             hardware-suggestions.json scoring-info.json form-schema.json
             app-id-redirects.json pcgamingwiki.json pcgwiki-catalog.json

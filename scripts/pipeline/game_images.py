@@ -606,13 +606,16 @@ def build_game_images(output_dir) -> dict[str, str]:
         standard_url = _standard_header_url(app_id)
         if _url_is_ok(standard_url):
             log(f"[game-images] {app_id}: standard URL ok", debug=True)
-            cache[app_id] = {"status": "ok", "probed_at": today}
+            # #25: cdn records which CDN actually served the header so the
+            # fallback-tier breakdown (image-fallback-stats.json) can tell
+            # akamai from fastly instead of collapsing both into "ok".
+            cache[app_id] = {"status": "ok", "cdn": "akamai", "probed_at": today}
         elif _url_is_ok(_fastly_header_url(app_id)):
             # #348: same store_item_assets path, different CDN. When Akamai
             # 404s but Fastly 200s, cache it as ok so the frontend picks
             # up the fastly URL via its own probe order.
             log(f"[game-images] {app_id}: fastly URL ok (akamai 404)")
-            cache[app_id] = {"status": "ok", "probed_at": today}
+            cache[app_id] = {"status": "ok", "cdn": "fastly", "probed_at": today}
         else:
             log(f"[game-images] {app_id}: standard + fastly URLs 404, fetching from Steam API")
             real_url, status = _fetch_steam_header(app_id, store_up=store_up)
@@ -694,7 +697,44 @@ def build_game_images(output_dir) -> dict[str, str]:
     replaced_ct = sum(1 for e in cache.values() if isinstance(e, dict) and e.get("replaced_by"))
     log(f"[game-images] wrote {len(frontend)} URL(s) to {frontend_path.name} ({override_ct} override, {hashed_ct} hashed, {sgdb_ct} sgdb, {replaced_ct} replaced-inherit)")
 
+    # #25: aggregate, per-game breakdown of which image-fallback tier resolved
+    # each app, in place of the client-side GA4 event tracking that issue
+    # originally proposed. The pipeline already walks this exact chain here,
+    # so counting it once per run needs no client beacon and no CSP change --
+    # only per-game granularity, not per-visitor, which is the tradeoff #25
+    # accepted in favor of not widening the CSP.
+    fallback_stats = _compute_fallback_tier_stats(cache, all_ids)
+    stats_path = output_dir / "image-fallback-stats.json"
+    stats_path.write_text(json.dumps(fallback_stats, indent=2) + "\n", encoding="utf-8")
+    log(f"[game-images] wrote fallback-tier breakdown to {stats_path.name}: {fallback_stats}")
+
     return frontend
+
+
+def _compute_fallback_tier_stats(cache: dict, all_ids: list[str]) -> dict[str, int]:
+    """Tally which image-fallback tier currently resolves each known app.
+
+    Tiers mirror the client's own fallback order in steam-img.js: standard
+    CDN (akamai), the fastly mirror, then the game-images.json override map
+    (hashed / sgdb / admin override). unprobed apps exist in data/ but have
+    never gone through this pipeline's probe chain -- the client still tries
+    live at request time for them, tier unknown from here.
+    """
+    counts = {
+        "akamai": 0, "fastly": 0, "override": 0, "hashed": 0,
+        "sgdb": 0, "delisted": 0, "missing": 0, "unprobed": 0,
+    }
+    for app_id in all_ids:
+        entry = cache.get(app_id)
+        if not isinstance(entry, dict):
+            counts["unprobed"] += 1
+            continue
+        status = entry.get("status")
+        if status == "ok":
+            counts[entry.get("cdn") or "akamai"] += 1
+        elif status in counts:
+            counts[status] += 1
+    return counts
 
 
 def enrich_search_index_with_delisted(output_dir) -> None:
