@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts.pipeline.game_images import build_game_images, _collect_all_app_ids
+from scripts.pipeline.game_images import build_game_images, _collect_all_app_ids, _compute_fallback_tier_stats
 
 
 def _make_data_dir(tmp_path, app_ids):
@@ -271,3 +271,63 @@ def test_build_override_replaces_previous_hashed_status(tmp_path):
     assert result["777"] == override_url
     cache = json.loads((tmp_path / "game-images-cache.json").read_text(encoding="utf-8"))
     assert cache["777"]["status"] == "override"
+
+
+# ── image-fallback-stats.json (#25) ────────────────────────────────────────
+# Per-game, per-run breakdown of which CDN tier resolved each app's header,
+# replacing the client-side GA4 event tracking #25 originally proposed --
+# the pipeline already walks this exact fallback chain, so no client beacon
+# or CSP change is needed to see the breakdown.
+
+def test_build_records_cdn_akamai_on_standard_ok(tmp_path):
+    _make_data_dir(tmp_path, ["730"])
+    with patch("scripts.pipeline.game_images._url_is_ok", return_value=True):
+        build_game_images(tmp_path)
+    cache = json.loads((tmp_path / "game-images-cache.json").read_text(encoding="utf-8"))
+    assert cache["730"]["cdn"] == "akamai"
+
+
+def test_build_records_cdn_fastly_when_akamai_404s(tmp_path):
+    _make_data_dir(tmp_path, ["12321"])
+
+    def fake_url_ok(url, timeout=8):
+        return "fastly" in url  # only the fastly mirror is ok
+
+    with patch("scripts.pipeline.game_images._url_is_ok", side_effect=fake_url_ok):
+        build_game_images(tmp_path)
+
+    cache = json.loads((tmp_path / "game-images-cache.json").read_text(encoding="utf-8"))
+    assert cache["12321"]["status"] == "ok"
+    assert cache["12321"]["cdn"] == "fastly"
+
+
+def test_build_writes_fallback_stats_file(tmp_path):
+    _make_data_dir(tmp_path, ["730"])
+    with patch("scripts.pipeline.game_images._url_is_ok", return_value=True):
+        build_game_images(tmp_path)
+
+    stats = json.loads((tmp_path / "image-fallback-stats.json").read_text(encoding="utf-8"))
+    assert stats["akamai"] == 1
+    assert stats["fastly"] == 0
+    assert stats["unprobed"] == 0
+
+
+def test_compute_fallback_tier_stats_tallies_every_bucket():
+    cache = {
+        "1": {"status": "ok", "cdn": "akamai"},
+        "2": {"status": "ok", "cdn": "fastly"},
+        "3": {"status": "ok"},  # legacy pre-#25 entry, no cdn field -- counts as akamai
+        "4": {"status": "override"},
+        "5": {"status": "hashed"},
+        "6": {"status": "sgdb"},
+        "7": {"status": "delisted"},
+        "8": {"status": "missing"},
+    }
+    all_ids = list(cache.keys()) + ["9"]  # "9" was never probed
+
+    stats = _compute_fallback_tier_stats(cache, all_ids)
+
+    assert stats == {
+        "akamai": 2, "fastly": 1, "override": 1, "hashed": 1,
+        "sgdb": 1, "delisted": 1, "missing": 1, "unprobed": 1,
+    }
