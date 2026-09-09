@@ -12,7 +12,7 @@ import { renderAdmins, renderNewAdminEditor } from './components/admins.js?v=04c
 import { fetchBannedPhrases, addBannedPhrase, removeBannedPhrase, toggleBannedPhrase } from './api/phrases.js?v=ac74cb89';
 import { renderPhrases } from './components/phrases.js?v=5fb05dc2';
 import { loadWordlist, checkAgainstWordlist } from './api/wordlist.js?v=51c55965';
-import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=28cb08af';
+import { fetchUserReports, fetchUserActivity } from './api/userDetail.js?v=0ce9df96';
 import { renderUserDetail } from './components/userDetail.js?v=5ff164c0';
 import { fetchAnalytics } from './api/analytics.js?v=2f32672f';
 import { renderSearchAnalytics } from './components/search-analytics.js?v=5f4fd969';
@@ -381,7 +381,7 @@ async function loadUserDetail(user) {
     const uid = user.proton_pulse_user_id || null;
     const [reports, authEvents, avatarRows, authRows] = await Promise.all([
       fetchUserReports(currentSession, { userId: uid, clientId: user.client_id || null }),
-      fetchUserActivity(currentSession, { userId: uid }),
+      fetchUserActivity(currentSession, { userId: uid, clientId: user.client_id || null }),
       uid ? fetch(`${SUPABASE_URL}/rest/v1/author_avatars?proton_pulse_user_id=eq.${encodeURIComponent(uid)}&select=last_seen_at`, { headers: supabaseHeaders(currentSession) }).then(r => r.ok ? r.json() : []).catch(() => []) : Promise.resolve([]),
       uid ? fetch(`${SUPABASE_URL}/rest/v1/rpc/admin_list_users`, { method: 'POST', headers: { ...supabaseHeaders(currentSession), 'Content-Type': 'application/json' }, body: '{}' }).then(r => r.ok ? r.json() : []).catch(() => []) : Promise.resolve([]),
     ]);
