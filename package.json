@@ -12,7 +12,7 @@
     "@babel/core": "^8.0.1",
     "@babel/preset-env": "^8.0.2",
     "babel-jest": "^30.5.0",
-    "fast-check": "^4.9.0",
+    "fast-check": "^4.10.0",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
     "js-yaml": "^5.4.1",
