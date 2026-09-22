@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@babel/core": "^8.0.1",
-    "@babel/preset-env": "^8.0.2",
+    "@babel/preset-env": "^8.0.6",
     "babel-jest": "^30.5.0",
     "fast-check": "^4.9.0",
     "jest": "^30.4.2",
