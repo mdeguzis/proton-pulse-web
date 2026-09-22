@@ -9,7 +9,7 @@
     "naughty-words": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^8.0.1",
+    "@babel/core": "^8.0.6",
     "@babel/preset-env": "^8.0.2",
     "babel-jest": "^30.5.0",
     "fast-check": "^4.9.0",
