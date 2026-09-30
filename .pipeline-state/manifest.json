@@ -175,7 +175,15 @@
       "run_attempt": 1,
       "run_id": "36660060795",
       "status": "completed"
+    },
+    "23": {
+      "app_count": 2,
+      "completed_at": "2026-09-30T10:52:38Z",
+      "input_sha": "3b3c31391fee",
+      "run_attempt": 1,
+      "run_id": "36660060795",
+      "status": "completed"
     }
   },
-  "updated_at": "2026-09-30T10:13:16Z"
+  "updated_at": "2026-09-30T10:52:38Z"
 }
