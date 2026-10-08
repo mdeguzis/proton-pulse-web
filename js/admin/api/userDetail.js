@@ -66,16 +66,29 @@ export async function eraseUser(session, userId, clientId) {
   return json;
 }
 
-export async function fetchUserActivity(session, { userId }) {
-  if (!userId) return [];
+export async function fetchUserActivity(session, { userId, clientId }) {
+  // #34: mirror fetchUserReports' id-fallback pattern above -- anonymous
+  // users have a client_id but no userId, and their site_events activity
+  // was previously invisible because this only ever queried by userId.
+  let filter;
+  if (userId) {
+    filter = `proton_pulse_user_id=eq.${encodeURIComponent(userId)}`;
+  } else if (clientId) {
+    filter = `client_id=eq.${encodeURIComponent(clientId)}`;
+  } else {
+    // Neither id present is a caller bug, not "no activity recorded" --
+    // every real user row has one or the other. Raising here keeps that
+    // distinguishable instead of rendering a confident (0) in the UI.
+    throw new Error('fetchUserActivity requires a userId or clientId');
+  }
   const select = 'id,event_type,page,metadata,created_at';
-  const url = `${SUPABASE_URL}/rest/v1/site_events?proton_pulse_user_id=eq.${encodeURIComponent(userId)}&select=${select}&order=created_at.desc&limit=200`;
+  const url = `${SUPABASE_URL}/rest/v1/site_events?${filter}&select=${select}&order=created_at.desc&limit=200`;
   const res = await fetch(url, { headers: supabaseHeaders(session) });
   if (!res.ok) {
     const text = await res.text().catch(() => res.status);
     throw new Error(`fetchUserActivity failed (${res.status}): ${text}`);
   }
   const rows = await res.json();
-  console.debug('[userDetail] fetchUserActivity', { userId, count: rows.length, source: 'site_events' });
+  console.debug('[userDetail] fetchUserActivity', { userId, clientId, count: rows.length, source: 'site_events', filter });
   return rows;
 }
