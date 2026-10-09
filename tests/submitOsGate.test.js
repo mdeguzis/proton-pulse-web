@@ -92,7 +92,7 @@ describe('isLinuxOs()', () => {
     });
 
     test.each([
-      'iOS', 'iOS 17', 'Android', 'Android 14',
+      'iOS', 'iOS 17',
     ])('%s rejected (mobile)', (os) => {
       expect(isLinuxOs(os)).toBe(false);
     });
@@ -101,7 +101,17 @@ describe('isLinuxOs()', () => {
       expect(isLinuxOs('WINDOWS 11')).toBe(false);
       expect(isLinuxOs('windows')).toBe(false);
       expect(isLinuxOs('MAC OS X')).toBe(false);
-      expect(isLinuxOs('android')).toBe(false);
+    });
+  });
+
+  describe('accepts Android (#544)', () => {
+    // DroidDeck runs real ARM64 Proton directly on stock Android -- a
+    // legitimate report source, not noise. iOS has no equivalent and
+    // stays rejected above.
+    test.each([
+      'Android', 'Android 14', 'android', 'ANDROID',
+    ])('%s passes', (os) => {
+      expect(isLinuxOs(os)).toBe(true);
     });
   });
 });
