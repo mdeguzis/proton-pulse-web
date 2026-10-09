@@ -1,119 +1,119 @@
 {
-  "updated_at": "2026-10-08T20:28:05Z",
+  "updated_at": "2026-10-09T00:34:11Z",
   "overall": "operational",
-  "run_url": "https://github.com/mdeguzis/proton-pulse-web/actions/runs/37839587432",
+  "run_url": "https://github.com/mdeguzis/proton-pulse-web/actions/runs/37865396499",
   "services": [
     {
       "name": "image-refetch",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 642,
-      "checked_at": "2026-10-08T20:28:01Z"
+      "latency_ms": 299,
+      "checked_at": "2026-10-09T00:34:08Z"
     },
     {
       "name": "plugin-link-complete",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 240,
-      "checked_at": "2026-10-08T20:28:01Z"
+      "latency_ms": 176,
+      "checked_at": "2026-10-09T00:34:08Z"
     },
     {
       "name": "plugin-link-remove",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 211,
-      "checked_at": "2026-10-08T20:28:01Z"
+      "latency_ms": 223,
+      "checked_at": "2026-10-09T00:34:08Z"
     },
     {
       "name": "plugin-link-start",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 473,
-      "checked_at": "2026-10-08T20:28:02Z"
+      "latency_ms": 225,
+      "checked_at": "2026-10-09T00:34:08Z"
     },
     {
       "name": "plugin-link-status",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 203,
-      "checked_at": "2026-10-08T20:28:02Z"
+      "latency_ms": 188,
+      "checked_at": "2026-10-09T00:34:08Z"
     },
     {
       "name": "plugin-link-unlink",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 202,
-      "checked_at": "2026-10-08T20:28:02Z"
+      "latency_ms": 186,
+      "checked_at": "2026-10-09T00:34:09Z"
     },
     {
       "name": "plugin-links-list",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 221,
-      "checked_at": "2026-10-08T20:28:02Z"
+      "latency_ms": 233,
+      "checked_at": "2026-10-09T00:34:09Z"
     },
     {
       "name": "protondb-summary",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 218,
-      "checked_at": "2026-10-08T20:28:02Z"
+      "latency_ms": 199,
+      "checked_at": "2026-10-09T00:34:09Z"
     },
     {
       "name": "steam-appdetails",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 157,
-      "checked_at": "2026-10-08T20:28:03Z"
+      "latency_ms": 169,
+      "checked_at": "2026-10-09T00:34:09Z"
     },
     {
       "name": "steam-callback",
       "status": "operational",
       "http_status": 401,
-      "latency_ms": 518,
-      "checked_at": "2026-10-08T20:28:03Z"
+      "latency_ms": 305,
+      "checked_at": "2026-10-09T00:34:10Z"
     },
     {
       "name": "steam-depot-info",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 258,
-      "checked_at": "2026-10-08T20:28:03Z"
+      "latency_ms": 162,
+      "checked_at": "2026-10-09T00:34:10Z"
     },
     {
       "name": "steam-explore",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 156,
-      "checked_at": "2026-10-08T20:28:04Z"
+      "latency_ms": 150,
+      "checked_at": "2026-10-09T00:34:10Z"
     },
     {
       "name": "steam-library-lookup",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 221,
-      "checked_at": "2026-10-08T20:28:04Z"
+      "latency_ms": 234,
+      "checked_at": "2026-10-09T00:34:10Z"
     },
     {
       "name": "steam-news",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 183,
-      "checked_at": "2026-10-08T20:28:04Z"
+      "latency_ms": 176,
+      "checked_at": "2026-10-09T00:34:10Z"
     },
     {
       "name": "sync-steam-library",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 275,
-      "checked_at": "2026-10-08T20:28:04Z"
+      "latency_ms": 192,
+      "checked_at": "2026-10-09T00:34:11Z"
     },
     {
       "name": "user-system-upload",
       "status": "operational",
       "http_status": 200,
-      "latency_ms": 206,
-      "checked_at": "2026-10-08T20:28:05Z"
+      "latency_ms": 176,
+      "checked_at": "2026-10-09T00:34:11Z"
     }
   ]
 }
