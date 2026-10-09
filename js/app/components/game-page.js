@@ -12,7 +12,7 @@ import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagRepor
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=4604c78e';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, _ANDROID_HANDHELD_OS_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3202bacc';
 import { renderCard } from './report-card.js?v=5e25c644';
 import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
@@ -1156,7 +1156,7 @@ export async function renderGamePage(appId) {
   // accidentally match a specific selection.
   let filterRunType = _restoreAllowed(persistedFilters.runType, new Set(['', 'native', 'proton', 'proton-experimental', 'proton-ge', 'proton-cachyos', 'proton-tkg', 'proton-lsfg']));
   // 'deck-lcd' / 'deck-oled' / 'deck-any' / 'desktop' / ''
-  let filterDevice = _restoreAllowed(persistedFilters.device, new Set(['', 'deck-any', 'deck-lcd', 'deck-oled', 'steam-machine', 'desktop']));
+  let filterDevice = _restoreAllowed(persistedFilters.device, new Set(['', 'deck-any', 'deck-lcd', 'deck-oled', 'steam-machine', 'android-handheld', 'desktop']));
   // Minimum reporter playtime in minutes (0 = any). Useful to skip "launched
   // it once" reports that don't reflect real-use compatibility
   let filterMinPlaytime = _restoreAllowedNumber(persistedFilters.minPlaytime, new Set([0, 60, 120, 240, 600]), 0);
@@ -1318,11 +1318,13 @@ export async function renderGamePage(appId) {
         const isLcd  = _DECK_LCD_RE.test(haystack);
         const isOled = _DECK_OLED_RE.test(haystack);
         const isMachine = _STEAM_MACHINE_RE.test(haystack);
+        const isAndroidHandheld = _ANDROID_HANDHELD_OS_RE.test(r.os || '');
         if (filterDevice === 'deck-lcd')  return isLcd;
         if (filterDevice === 'deck-oled') return isOled;
         if (filterDevice === 'deck-any')  return isLcd || isOled;
         if (filterDevice === 'steam-machine') return isMachine;
-        if (filterDevice === 'desktop')   return !isLcd && !isOled && !isMachine;
+        if (filterDevice === 'android-handheld') return isAndroidHandheld;
+        if (filterDevice === 'desktop')   return !isLcd && !isOled && !isMachine && !isAndroidHandheld;
         return true;
       });
     }
@@ -1748,6 +1750,7 @@ export async function renderGamePage(appId) {
                 <option value="deck-lcd"  ${filterDevice==='deck-lcd'?'selected':''}>Steam Deck LCD</option>
                 <option value="deck-oled" ${filterDevice==='deck-oled'?'selected':''}>Steam Deck OLED</option>
                 <option value="steam-machine" ${filterDevice==='steam-machine'?'selected':''}>Steam Machine</option>
+                <option value="android-handheld" ${filterDevice==='android-handheld'?'selected':''}>Android handheld (Armada / Pocknix)</option>
                 <option value="desktop"   ${filterDevice==='desktop'?'selected':''}>Desktop / other</option>
               </select>
             </div>` : '';

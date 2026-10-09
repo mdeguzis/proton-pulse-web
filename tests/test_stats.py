@@ -196,6 +196,22 @@ def test_device_desktop():
 def test_device_unknown_empty():
     assert normalize_device_family({}) == "unknown"
 
+def test_device_android_handheld_armada():
+    r = {"cpu": "Qualcomm Snapdragon 8 Gen 2", "gpu": "Adreno 740", "os": "Armada"}
+    assert normalize_device_family(r) == "android-handheld"
+
+def test_device_android_handheld_pocknix():
+    r = {"cpu": "Qualcomm Snapdragon 8 Gen 2", "gpu": "Adreno 740", "os": "Pocknix 0.2.0"}
+    assert normalize_device_family(r) == "android-handheld"
+
+def test_device_snapdragon_without_handheld_os_is_desktop():
+    # Same SoC family as the handhelds above, but a desktop distro in the os
+    # field -- must not be miscategorised just because it shares a chipset
+    # with an Android-origin handheld. This is exactly why detection is
+    # keyed on os rather than cpu/gpu like the Deck/Machine detectors.
+    r = {"cpu": "Qualcomm Snapdragon 8cx Gen 3", "gpu": "Adreno 690", "os": "Arch Linux"}
+    assert normalize_device_family(r) == "desktop"
+
 
 # ── normalize_rating ──────────────────────────────────────────────────────────
 

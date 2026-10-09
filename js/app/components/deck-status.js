@@ -328,5 +328,21 @@ export function isSteamMachineHardware(r) {
   return _STEAM_MACHINE_RE.test(haystack);
 }
 
+// Android-origin handheld detection (#544): Retroid Pocket / AYN Odin /
+// AyaNeo Pocket DS running Armada or Pocknix in place of stock Android.
+// Keyed on the os field rather than cpu/gpu like the Deck/Machine
+// detectors above -- these devices use ordinary Qualcomm Snapdragon SoCs
+// (Adreno GPU) that are not unique to gaming handhelds the way "AMD
+// Custom APU 0405" is unique to Steam Deck, so a hardware fingerprint
+// would false-positive on any ARM laptop or phone. The os field is a
+// fixed dropdown value (see decky-proton-pulse's VALID_OS / this repo's
+// form-schema.json validOs), so an anchored prefix match is exact.
+// Mirrors _ANDROID_HANDHELD_OS_RE in scripts/pipeline/stats.py -- keep
+// in sync.
+export const _ANDROID_HANDHELD_OS_RE = /^(armada|pocknix)\b/i;
+export function isAndroidHandheldOS(r) {
+  return _ANDROID_HANDHELD_OS_RE.test(r.os || '');
+}
+
 // SVG path data for each signal icon. Drawn at 24x24 viewBox. Currentcolor
 // fills/strokes so we don't have to define per-icon color.

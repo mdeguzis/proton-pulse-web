@@ -130,11 +130,20 @@ _STEAM_MACHINE = re.compile(
     r"\bsteam\s+machine\b|amd\s+custom\s+(apu|gpu).*rdna\s*3",
     re.IGNORECASE,
 )
+# Android-origin handhelds (#544): Retroid Pocket / AYN Odin / AyaNeo Pocket
+# DS running Armada or Pocknix instead of stock Android. Keyed on the os
+# field rather than cpu/gpu like the detectors above -- these devices use
+# ordinary Qualcomm Snapdragon SoCs that aren't unique to gaming handhelds,
+# so a hardware fingerprint would false-positive on any ARM laptop or phone.
+# os is a fixed dropdown value, so an anchored prefix match is exact.
+# Mirrors _ANDROID_HANDHELD_OS_RE in js/app/components/deck-status.js -- keep
+# in sync.
+_ANDROID_HANDHELD_OS = re.compile(r"^(armada|pocknix)\b", re.IGNORECASE)
 
 
 def normalize_device_family(report: dict) -> str:
-    """Detect Steam Deck (LCD/OLED), Steam Machine, and similar devices vs a
-    generic desktop.
+    """Detect Steam Deck (LCD/OLED), Steam Machine, Android handhelds, and
+    similar devices vs a generic desktop.
 
     Matches against both CPU and GPU strings since either field may carry the
     device-identifying APU/GPU revision. Conservative - only flags devices with
@@ -149,6 +158,8 @@ def normalize_device_family(report: dict) -> str:
         return "steam-deck-lcd"
     if _STEAM_MACHINE.search(haystack):
         return "steam-machine"
+    if _ANDROID_HANDHELD_OS.search(report.get("os") or ""):
+        return "android-handheld"
     if not cpu and not gpu:
         return "unknown"
     return "desktop"
