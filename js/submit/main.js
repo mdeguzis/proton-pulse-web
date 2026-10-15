@@ -1,7 +1,7 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=852c9d97';
 import { loadVrIndex, vrForApp } from '../app/lib/vr-index.js?v=f094c84f';
-import { applyDraftSnapshot, applyPlayModeDefault, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=dc1442eb';
+import { applyDraftSnapshot, applyPlayModeDefault, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=8fbb6b17';
 import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=c941cca9';
 import {
   deleteDraft, deleteLocalDraft, draftStampSuffix as stampSuffix, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
