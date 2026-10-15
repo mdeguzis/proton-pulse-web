@@ -1,6 +1,7 @@
 """Tests for scripts/pipeline/nonsteam_images_probe.py (#203)."""
 
 import json
+import time
 from unittest.mock import MagicMock, patch
 
 from scripts.pipeline import nonsteam_images_probe as nip
@@ -162,7 +163,90 @@ def test_missing_retries_jump_the_backlog_queue(tmp_path, monkeypatch):
         "gog:333": "https://cdn/b.png",
     }
     result = probe_mod.probe_nonsteam_images(tmp_path, catalog)
-    # the missing retry was probed first, within the cap
-    assert probed_order[0] == "https://cdn/m.png"
+    # the missing retry took one of the two cap slots ahead of the backlog.
+    # Probes run concurrently, so this checks selection, not execution order.
+    assert len(probed_order) == 2
+    assert "https://cdn/m.png" in probed_order
     # and having succeeded, its cover is back in the frontend map
     assert result["gog:111"] == "https://cdn/m.png"
+
+
+# ---- concurrent probing (#258) ---------------------------------------------
+# HEAD probes run on a bounded pool. These pin that the pool really overlaps
+# requests, never exceeds PROBE_WORKERS in flight, and still records each
+# result against the right id.
+
+def _concurrency_harness(monkeypatch, workers, fail_ids=()):
+    import threading
+    import scripts.pipeline.nonsteam_images_probe as probe_mod
+    state = {"in_flight": 0, "peak": 0}
+    lock = threading.Lock()
+
+    def slow_check(url, timeout=8):
+        with lock:
+            state["in_flight"] += 1
+            state["peak"] = max(state["peak"], state["in_flight"])
+        time.sleep(0.02)
+        with lock:
+            state["in_flight"] -= 1
+        return not any(url.endswith(f"/{i}.png") for i in fail_ids)
+
+    monkeypatch.setattr(probe_mod, "_url_is_ok", slow_check)
+    monkeypatch.setattr(probe_mod, "_hot_ids", lambda _out: set())
+    monkeypatch.setattr(probe_mod, "REQUEST_DELAY", 0)
+    monkeypatch.setattr(probe_mod, "PROBE_WORKERS", workers)
+    return probe_mod, state
+
+
+def test_probes_overlap_but_stay_within_worker_limit(tmp_path, monkeypatch):
+    probe_mod, state = _concurrency_harness(monkeypatch, workers=4)
+    catalog = {f"gog:{i}": f"https://gog.example/{i}.png" for i in range(20)}
+    probe_mod.probe_nonsteam_images(tmp_path, catalog)
+    assert state["peak"] > 1
+    assert state["peak"] <= 4
+
+
+def test_concurrent_results_land_on_the_right_ids(tmp_path, monkeypatch):
+    probe_mod, _ = _concurrency_harness(monkeypatch, workers=8, fail_ids=(3, 7, 11))
+    catalog = {f"gog:{i}": f"https://gog.example/{i}.png" for i in range(16)}
+    result = probe_mod.probe_nonsteam_images(tmp_path, catalog)
+    cache = json.loads((tmp_path / "nonsteam-images-cache.json").read_text())
+    for i in range(16):
+        expected = "missing" if i in (3, 7, 11) else "ok"
+        assert cache[f"gog:{i}"]["status"] == expected
+        assert cache[f"gog:{i}"]["url"] == f"https://gog.example/{i}.png"
+    assert set(result) == {f"gog:{i}" for i in range(16)} - {"gog:3", "gog:7", "gog:11"}
+
+
+def test_single_worker_still_probes_everything(tmp_path, monkeypatch):
+    probe_mod, state = _concurrency_harness(monkeypatch, workers=1)
+    catalog = {f"gog:{i}": f"https://gog.example/{i}.png" for i in range(5)}
+    probe_mod.probe_nonsteam_images(tmp_path, catalog)
+    assert state["peak"] == 1
+    cache = json.loads((tmp_path / "nonsteam-images-cache.json").read_text())
+    assert len(cache) == 5
+
+
+# ---- defensive paths --------------------------------------------------------
+
+def test_corrupt_cache_file_starts_fresh(tmp_path):
+    (tmp_path / "nonsteam-images-cache.json").write_text("{not json")
+    assert nip._load_cache(tmp_path) == {}
+
+
+def test_entry_without_valid_probe_date_is_stale():
+    assert nip._is_stale({"status": "ok", "probed_at": "yesterday"}) is True
+    assert nip._is_stale({"status": "ok"}) is True
+
+
+def test_hot_ids_reads_non_steam_ids_from_both_files(tmp_path):
+    (tmp_path / "recent-reports.json").write_text(json.dumps(
+        [{"appId": "gog:1"}, {"appId": "440"}, {"app_id": "epic:abc"}]))
+    (tmp_path / "most_played.json").write_text(json.dumps([{"appId": "epic:def"}]))
+    assert nip._hot_ids(tmp_path) == {"gog:1", "epic:abc", "epic:def"}
+
+
+def test_hot_ids_skips_unreadable_file(tmp_path):
+    (tmp_path / "recent-reports.json").write_text("{broken")
+    (tmp_path / "most_played.json").write_text(json.dumps([{"appId": "gog:9"}]))
+    assert nip._hot_ids(tmp_path) == {"gog:9"}
