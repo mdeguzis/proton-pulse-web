@@ -357,6 +357,14 @@ jobs:
           restore-keys: |
             pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-
 
+      # The gh-pages seed above is frozen at 2026-08-23 since the Cloudflare
+      # deploy stopped writing back to gh-pages (#258). Overlay the previous
+      # run's probe caches from the Actions cache so they are not re-probed
+      # from scratch every night. Falls back to the gh-pages seed if the
+      # Actions cache was evicted.
+      - name: Restore probe caches from previous run
+        run: bash scripts/probe-cache-sync.sh restore .cache /tmp/protondb-output
+
       # Phase 2 of #171: source the probe cache from durable gh-pages state
       # instead of the ephemeral actions cache. Overwrites .cache/protondb-
       # summary-probe-cache.json with the last chunk's snapshot. Aborts loud
@@ -483,6 +491,10 @@ jobs:
         run: |
           cp .cache/gog-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
           cp .cache/epic-catalog-cache.json /tmp/protondb-output/ 2>/dev/null || true
+
+      - name: Persist probe caches for the next run
+        if: always()
+        run: bash scripts/probe-cache-sync.sh save .cache /tmp/protondb-output
 
       - name: Save pipeline cache
         if: always()
