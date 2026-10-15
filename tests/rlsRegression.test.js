@@ -31,12 +31,21 @@ const MGMT_QUERY_URL = PROJECT_REF
   ? `https://api.supabase.com/v1/projects/${PROJECT_REF}/database/query`
   : null;
 
-// Throwaway user UUIDs inserted into auth.users by the top-level
-// beforeAll. Suffix chosen so ci-rls leftovers are easy to grep for.
-const USER_A = '00000000-0000-0000-0000-0000000000aa';
-const USER_B = '00000000-0000-0000-0000-0000000000bb';
+// Every fixture key is unique to this run (#543). The suite runs against
+// the live project, and when several CI runs overlap, fixed ids let one
+// run's cleanup delete another run's users and seed rows mid-test. That
+// showed up as FK violations on whichever table was running at the time.
+// The users and seed keys below are what each run creates and cleans up;
+// emails keep a ci-rls- prefix so leftovers from crashed runs are easy to
+// find and are swept by the top-level beforeAll.
+const RUN_ID = globalThis.crypto.randomUUID().slice(0, 8);
+const USER_A = globalThis.crypto.randomUUID();
+const USER_B = globalThis.crypto.randomUUID();
+const seedKey = (name) => `ci-rls-${name}-${RUN_ID}`;
 
-async function queryDB(sql, retries = 2) {
+// 5xx and 429 are retried. 429 is the Management API's rate limiter, which
+// overlapping CI runs trip easily since each run makes ~40 queries (#543).
+async function queryDB(sql, retries = 5) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     const res = await fetch(MGMT_QUERY_URL, {
       method: 'POST',
@@ -48,8 +57,11 @@ async function queryDB(sql, retries = 2) {
     });
     if (res.ok) return res.json();
     const body = await res.text();
-    if (res.status >= 500 && attempt < retries) {
-      await new Promise(r => setTimeout(r, 3000 * attempt));
+    const transient = res.status >= 500 || res.status === 429;
+    if (transient && attempt < retries) {
+      const retryAfter = Number(res.headers.get('retry-after'));
+      const waitMs = retryAfter > 0 ? retryAfter * 1000 : 3000 * attempt;
+      await new Promise(r => setTimeout(r, waitMs));
       continue;
     }
     throw new Error(`Management API error: ${res.status} ${body}`);
@@ -82,28 +94,35 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
     // Throwaway users. Several user-scoped tables FK to auth.users so
     // we need real rows there; the Management API runs as the service
     // role so a direct auth.users insert is allowed.
+    // Sweep users left behind by runs that crashed before afterAll. The
+    // one-hour cutoff keeps this from touching a run that is still going.
+    await cleanup(`
+      DELETE FROM auth.users
+      WHERE email LIKE 'ci-rls-%@example.invalid'
+        AND created_at < now() - interval '1 hour';
+    `);
     await cleanup(`
       INSERT INTO auth.users (id, instance_id, aud, role, email, encrypted_password, created_at, updated_at)
       VALUES
         ('${USER_A}', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated',
-         'ci-rls-a@example.invalid', 'noop', now(), now()),
+         'ci-rls-a-${RUN_ID}@example.invalid', 'noop', now(), now()),
         ('${USER_B}', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated',
-         'ci-rls-b@example.invalid', 'noop', now(), now())
+         'ci-rls-b-${RUN_ID}@example.invalid', 'noop', now(), now())
       ON CONFLICT (id) DO NOTHING;
     `);
-  }, 30000);
+  }, 90000);
 
   afterAll(async () => {
     // ON DELETE CASCADE on the FK columns cleans dependent rows.
     await cleanup(`
       DELETE FROM auth.users WHERE id IN ('${USER_A}', '${USER_B}');
     `);
-  }, 30000);
+  }, 90000);
 
   // ---- user_configs (public read, owner-only DELETE) --------------------
 
   describe('user_configs', () => {
-    const seedAppId = 'ci-rls-uc';
+    const seedAppId = seedKey('uc');
 
     beforeAll(async () => {
       await cleanup(`DELETE FROM public.user_configs WHERE app_id = '${seedAppId}';`);
@@ -119,11 +138,11 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
           'ci', 'gold', '', 'other', ''
         );
       `);
-    }, 30000);
+    }, 90000);
 
     afterAll(async () => {
       await cleanup(`DELETE FROM public.user_configs WHERE app_id = '${seedAppId}';`);
-    }, 30000);
+    }, 90000);
 
     test('USER_B DELETE affects 0 rows (owner-only DELETE policy)', async () => {
       const rows = await asUser(USER_B, `
@@ -135,14 +154,15 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
       // Verify the seed still exists via service role.
       const verify = await cleanup(`SELECT id FROM public.user_configs WHERE app_id = '${seedAppId}';`);
       expect(verify).toHaveLength(1);
-    }, 30000);
+    }, 90000);
   });
 
   // ---- user_proton_configs (public read, owner-only DELETE via UUID) ----
 
   describe('user_proton_configs', () => {
-    const seedApp = 987654321;
-    const seedVoter = 'ci-rls-upc';
+    // app_id is an integer here, so derive a per-run number instead.
+    const seedApp = 900000000 + parseInt(RUN_ID.slice(0, 7), 16) % 100000000;
+    const seedVoter = seedKey('upc');
 
     beforeAll(async () => {
       await cleanup(`
@@ -153,14 +173,14 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         INSERT INTO public.user_proton_configs (voter_id, proton_pulse_user_id, app_id, app_name, config)
         VALUES ('${seedVoter}', '${USER_A}', ${seedApp}, 'CI RLS', '{}'::jsonb);
       `);
-    }, 30000);
+    }, 90000);
 
     afterAll(async () => {
       await cleanup(`
         DELETE FROM public.user_proton_configs
         WHERE voter_id = '${seedVoter}' AND app_id = ${seedApp};
       `);
-    }, 30000);
+    }, 90000);
 
     test('USER_B DELETE affects 0 rows (owner-only DELETE via UUID)', async () => {
       const rows = await asUser(USER_B, `
@@ -171,14 +191,14 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
       expect(rows).toHaveLength(0);
       const verify = await cleanup(`SELECT app_id FROM public.user_proton_configs WHERE app_id = ${seedApp};`);
       expect(verify).toHaveLength(1);
-    }, 30000);
+    }, 90000);
   });
 
   // ---- user_systems (fully owner-scoped) --------------------------------
 
   describe('user_systems', () => {
-    const seedLabel = 'ci-rls-user_systems';
-    const seedDevice = 'ci-rls-device';
+    const seedLabel = seedKey('user_systems');
+    const seedDevice = seedKey('device');
 
     beforeAll(async () => {
       await cleanup(`DELETE FROM public.user_systems WHERE label = '${seedLabel}';`);
@@ -186,11 +206,11 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         INSERT INTO public.user_systems (proton_pulse_user_id, device_id, label, sysinfo_text)
         VALUES ('${USER_A}', '${seedDevice}', '${seedLabel}', 'ci sysinfo');
       `);
-    }, 30000);
+    }, 90000);
 
     afterAll(async () => {
       await cleanup(`DELETE FROM public.user_systems WHERE label = '${seedLabel}';`);
-    }, 30000);
+    }, 90000);
 
     test('USER_B cannot SELECT USER_A row', async () => {
       const rows = await asUser(USER_B, `
@@ -198,7 +218,7 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         WHERE label = '${seedLabel}';
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
 
     test('USER_B DELETE affects 0 rows', async () => {
       const rows = await asUser(USER_B, `
@@ -207,13 +227,13 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         RETURNING proton_pulse_user_id;
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
   });
 
   // ---- user_report_drafts (fully owner-scoped) --------------------------
 
   describe('user_report_drafts', () => {
-    const seedApp = 'ci-rls-drafts';
+    const seedApp = seedKey('drafts');
 
     beforeAll(async () => {
       await cleanup(`
@@ -224,14 +244,14 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         INSERT INTO public.user_report_drafts (user_id, app_id, form_data)
         VALUES ('${USER_A}', '${seedApp}', '{"note":"ci"}'::jsonb);
       `);
-    }, 30000);
+    }, 90000);
 
     afterAll(async () => {
       await cleanup(`
         DELETE FROM public.user_report_drafts
         WHERE user_id = '${USER_A}' AND app_id = '${seedApp}';
       `);
-    }, 30000);
+    }, 90000);
 
     test('USER_B cannot SELECT USER_A row', async () => {
       const rows = await asUser(USER_B, `
@@ -239,7 +259,7 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         WHERE app_id = '${seedApp}';
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
 
     test('USER_B UPDATE affects 0 rows', async () => {
       const rows = await asUser(USER_B, `
@@ -248,7 +268,7 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         RETURNING user_id;
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
 
     test('USER_B DELETE affects 0 rows', async () => {
       const rows = await asUser(USER_B, `
@@ -257,7 +277,7 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         RETURNING user_id;
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
   });
 
   // ---- user_steam_library / user_steam_wishlist (SELECT owner-only) -----
@@ -269,11 +289,11 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         INSERT INTO public.user_steam_library (user_id, steam_id, game_count, appids)
         VALUES ('${USER_A}', '76561000000000000', 3, '[1,2,3]'::jsonb);
       `);
-    }, 30000);
+    }, 90000);
 
     afterAll(async () => {
       await cleanup(`DELETE FROM public.user_steam_library WHERE user_id = '${USER_A}';`);
-    }, 30000);
+    }, 90000);
 
     test('USER_B cannot SELECT USER_A row', async () => {
       const rows = await asUser(USER_B, `
@@ -281,7 +301,7 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         WHERE user_id = '${USER_A}';
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
   });
 
   describe('user_steam_wishlist', () => {
@@ -291,11 +311,11 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         INSERT INTO public.user_steam_wishlist (user_id, steam_id, item_count, appids)
         VALUES ('${USER_A}', '76561000000000000', 3, ARRAY[10,20,30]);
       `);
-    }, 30000);
+    }, 90000);
 
     afterAll(async () => {
       await cleanup(`DELETE FROM public.user_steam_wishlist WHERE user_id = '${USER_A}';`);
-    }, 30000);
+    }, 90000);
 
     test('USER_B cannot SELECT USER_A row', async () => {
       const rows = await asUser(USER_B, `
@@ -303,7 +323,7 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         WHERE user_id = '${USER_A}';
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
 
     test('USER_B DELETE affects 0 rows', async () => {
       const rows = await asUser(USER_B, `
@@ -312,6 +332,6 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
         RETURNING user_id;
       `);
       expect(rows).toHaveLength(0);
-    }, 30000);
+    }, 90000);
   });
 });
