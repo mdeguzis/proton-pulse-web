@@ -1,11 +1,20 @@
-[![CI](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/mdeguzis/proton-pulse-web/graph/badge.svg)](https://codecov.io/gh/mdeguzis/proton-pulse-web) [![Build Site Data](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml) [![Content Moderation](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/content-moderation.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/content-moderation.yml) [![pages-build-deployment](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/pages/pages-build-deployment) [![Sync staging repo](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/sync-staging-main.yml/badge.svg)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/sync-staging-main.yml)
-
 # proton-pulse-web
 
 > Website: **<https://www.proton-pulse.com/>** - the site and JSON data are now served from this custom domain. Old `mdeguzis.github.io/proton-pulse-web/*` URLs still redirect, but please update bookmarks and any automation to the new host.
 
 Monthly GitHub Pages mirror for ProtonDB per-game community reports.
 It is used by the [decky-proton-pulse](https://github.com/mdeguzis/decky-proton-pulse) plugin.
+
+## Build status
+
+| | main (prod) | staging |
+|---|---|---|
+| [Tests](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml) | [![main](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml?query=branch%3Amain) | [![staging](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml/badge.svg?branch=staging)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/ci.yml?query=branch%3Astaging) |
+| [CodeQL](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/codeql.yml) | [![main](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/codeql.yml?query=branch%3Amain) | [![staging](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/codeql.yml/badge.svg?branch=staging)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/codeql.yml?query=branch%3Astaging) |
+| [Deploy](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/publish-shell.yml) | [![main](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/publish-shell.yml/badge.svg?branch=main)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/publish-shell.yml?query=branch%3Amain) | [![staging](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/publish-shell.yml/badge.svg?branch=staging)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/publish-shell.yml?query=branch%3Astaging) |
+| [Nightly data](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml) | [![main](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml/badge.svg?branch=main)](https://github.com/mdeguzis/proton-pulse-web/actions/workflows/update-data.yml?query=branch%3Amain) | n/a |
+
+[![codecov](https://codecov.io/gh/mdeguzis/proton-pulse-web/graph/badge.svg)](https://codecov.io/gh/mdeguzis/proton-pulse-web)
 
 ## Endpoints
 
