@@ -257,3 +257,66 @@ def test_sgdb_request_surfaces_401_immediately(monkeypatch):
     body, err = _gi._sgdb_request("https://sgdb.example/test")
     assert body is None
     assert err == "http_401"
+
+
+def _seed_cache(tmp_path, entries):
+    (tmp_path / "sgdb-covers-cache.json").write_text(json.dumps(entries))
+
+
+def _days_ago(n):
+    from datetime import date, timedelta
+    return (date.today() - timedelta(days=n)).isoformat()
+
+
+def test_never_probed_games_go_ahead_of_stale_refreshes(tmp_path, monkeypatch):
+    """#258: in plain sorted order the first batch goes stale after
+    STALE_DAYS and wins the cap every night, so coverage stalled near
+    3,100 of 15,384 games. A never-probed game must beat a stale one even
+    when the stale one sorts first, and the stale cover keeps shipping."""
+    monkeypatch.setattr("scripts.pipeline.game_images.SGDB_API_KEY", "test-key")
+    monkeypatch.setattr("scripts.pipeline.game_images.SGDB_PROBE_CAP", 1)
+    (tmp_path / "data").mkdir()
+    _seed_cache(tmp_path, {
+        "gog:1": {"url": "https://sgdb.example/old.png", "probed_at": _days_ago(400),
+                  "name": "A", "last_error": None},
+    })
+    with patch("scripts.pipeline.game_images._fetch_sgdb_by_name", side_effect=_fake_ok) as m:
+        _finalize.generate_sgdb_covers(
+            tmp_path, tmp_path / "data",
+            gog_catalog={"1": "A", "2": "B"},
+        )
+    m.assert_called_once_with("B")
+    covers = json.loads((tmp_path / "sgdb-covers.json").read_text())
+    assert covers["gog:1"] == "https://sgdb.example/old.png"
+    assert covers["gog:2"] == "https://sgdb.example/B.png"
+
+
+def test_rate_limited_retry_goes_ahead_of_stale_refresh(tmp_path, monkeypatch):
+    monkeypatch.setattr("scripts.pipeline.game_images.SGDB_API_KEY", "test-key")
+    monkeypatch.setattr("scripts.pipeline.game_images.SGDB_PROBE_CAP", 1)
+    (tmp_path / "data").mkdir()
+    _seed_cache(tmp_path, {
+        "gog:1": {"url": None, "probed_at": _days_ago(400), "name": "A", "last_error": "no_grids"},
+        "gog:2": {"url": None, "probed_at": _days_ago(0), "name": "B", "last_error": "http_429_gave_up"},
+    })
+    with patch("scripts.pipeline.game_images._fetch_sgdb_by_name", side_effect=_fake_ok) as m:
+        _finalize.generate_sgdb_covers(
+            tmp_path, tmp_path / "data",
+            gog_catalog={"1": "A", "2": "B"},
+        )
+    m.assert_called_once_with("B")
+
+
+def test_stale_entries_refresh_once_everything_has_been_tried(tmp_path, monkeypatch):
+    monkeypatch.setattr("scripts.pipeline.game_images.SGDB_API_KEY", "test-key")
+    monkeypatch.setattr("scripts.pipeline.game_images.SGDB_PROBE_CAP", 5)
+    (tmp_path / "data").mkdir()
+    _seed_cache(tmp_path, {
+        "gog:1": {"url": None, "probed_at": _days_ago(400), "name": "A", "last_error": "no_grids"},
+    })
+    with patch("scripts.pipeline.game_images._fetch_sgdb_by_name", side_effect=_fake_ok) as m:
+        _finalize.generate_sgdb_covers(
+            tmp_path, tmp_path / "data",
+            gog_catalog={"1": "A", "2": "B"},
+        )
+    assert [c.args[0] for c in m.call_args_list] == ["B", "A"]
