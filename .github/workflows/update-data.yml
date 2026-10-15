@@ -508,6 +508,14 @@ jobs:
         if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
         run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
 
+      # form-schema.json + scoring-info.json come from the plugin repo, not
+      # the pipeline. Without them in /tmp/protondb-output the CF deploy below
+      # ships prod without either file and the submit form breaks (#546). The
+      # gh-pages curls further down only feed the legacy orphan deploy.
+      - name: Fetch plugin-sourced data files
+        if: (inputs.deploy_target || 'cloudflare') == 'cloudflare'
+        run: bash scripts/fetch-plugin-data.sh /tmp/protondb-output
+
       # Cloudflare target (#362): sync data/ to R2 + deploy the shell to Pages.
       # Runs instead of the gh-pages orphan deploy when deploy_target=cloudflare.
       # Must come BEFORE the orphan step, which wipes the working tree. Staging

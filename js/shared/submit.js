@@ -279,7 +279,9 @@ const _NON_LINUX_OS_PATTERNS = [
   /^windows/i, /^win\s/i, /^win\d/i,
   /^mac\s?os/i, /^os\s?x/i, /^darwin/i,
   /^freebsd/i, /^openbsd/i, /^netbsd/i, /^dragonfly/i,
-  /^ios(\s|$)/i, /^android/i,
+  /^ios(\s|$)/i,
+  // #544: Android allowed through (DroidDeck runs real ARM64 Proton directly
+  // on stock Android). iOS has no equivalent and stays blocked.
 ];
 export function isLinuxOs(os) {
   const s = String(os || '').trim();
