@@ -35,6 +35,7 @@ from .common import (
     LIVE_COUNTS_URL,
     app_id_to_dir,
     app_type_from_id,
+    appdetails_breaker_state,
     count_year_bucket_files,
     dir_to_app_id,
     fetch_json,
@@ -1108,6 +1109,12 @@ def generate_search_index(
         f"[search-index] loop complete: title+summary={title_summary_elapsed:.1f}s, "
         f"adult-check={adult_check_elapsed:.1f}s, total={time.perf_counter() - loop_started:.1f}s"
     )
+    breaker = appdetails_breaker_state()
+    if breaker["open"]:
+        log(
+            f"[search-index] WARNING: appdetails circuit breaker opened; {breaker['skipped']:,} "
+            "adult checks skipped this run (treated as not adult, retried next run)"
+        )
 
     # Demo dedup for catalog stubs: GOG/Epic list demos as separate products
     # ("Coffee Noir DEMO" next to "Coffee Noir"). A demo stub with zero
