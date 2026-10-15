@@ -22,6 +22,7 @@ CACHE_FILES = [
     "release-years-cache.json",
     "app-id-validation-cache.json",
     "steam-type-cache.json",
+    "sgdb-covers-cache.json",
 ]
 
 
