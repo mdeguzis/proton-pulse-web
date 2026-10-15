@@ -25,8 +25,10 @@ the pipeline confirmed as broken, not just the client-reported ones.
 """
 
 import json
+import os
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
@@ -41,6 +43,11 @@ STALE_DAYS = 30           # re-probe OK cache entries older than this
 # frontend hid its cover for weeks). Failures are cheap to re-check and
 # false negatives are user-visible, so retry them every run + 3 days.
 MISSING_RETRY_DAYS = 3
+# HEAD probes run on a small pool (#258). Serially, ~500 due re-checks a night
+# at ~0.65s each cost 5+ minutes of finalize. Each worker still sleeps
+# REQUEST_DELAY between its own requests, so the CDNs see at most
+# PROBE_WORKERS requests in flight.
+PROBE_WORKERS = int(os.environ.get("NONSTEAM_PROBE_WORKERS", "8"))
 
 
 def _url_is_ok(url: str, timeout: int = 8) -> bool:
@@ -134,28 +141,37 @@ def probe_nonsteam_images(output_dir: Path, catalog_urls: dict[str, str]) -> dic
         f"hot {len(hot_to_probe)} to probe | backlog {len(backlog_to_probe)} (cap {PROBE_CAP})"
     )
 
-    backlog_done = 0
-    ok_count = 0
-    miss_count = 0
-    for aid in hot_to_probe + backlog_to_probe:
-        if aid not in hot:
-            if backlog_done >= PROBE_CAP:
-                log(f"[nonsteam-images-probe] hit backlog cap ({PROBE_CAP}), deferring {len(backlog_to_probe) - backlog_done}")
-                break
-            backlog_done += 1
+    # Selection stays sequential and deterministic: hot ids are uncapped,
+    # then missing retries, then the rest of the backlog up to PROBE_CAP.
+    # Only the network calls below run concurrently.
+    selected = hot_to_probe + backlog_to_probe[:PROBE_CAP]
+    if len(backlog_to_probe) > PROBE_CAP:
+        log(f"[nonsteam-images-probe] hit backlog cap ({PROBE_CAP}), deferring {len(backlog_to_probe) - PROBE_CAP}")
+
+    def _probe(aid: str) -> tuple[str, str, bool]:
         url = catalog_urls[aid]
         ok = _url_is_ok(url)
-        cache[aid] = {
-            "url": url,
-            "status": "ok" if ok else "missing",
-            "probed_at": today,
-        }
-        if ok:
-            ok_count += 1
-        else:
-            miss_count += 1
-            log(f"[nonsteam-images-probe] {aid}: URL 404/error -> {url}")
         time.sleep(REQUEST_DELAY)
+        return aid, url, ok
+
+    started = time.monotonic()
+    ok_count = 0
+    miss_count = 0
+    # Results are applied on this thread, in submission order, so the cache
+    # dict is never written concurrently.
+    with ThreadPoolExecutor(max_workers=max(1, PROBE_WORKERS)) as pool:
+        for aid, url, ok in pool.map(_probe, selected):
+            cache[aid] = {
+                "url": url,
+                "status": "ok" if ok else "missing",
+                "probed_at": today,
+            }
+            if ok:
+                ok_count += 1
+            else:
+                miss_count += 1
+                log(f"[nonsteam-images-probe] {aid}: URL 404/error -> {url}")
+    elapsed = time.monotonic() - started
 
     # Purge cache entries that are no longer in the catalog. Left alone the
     # cache would grow forever with stale gog:/epic: ids that were delisted
@@ -168,7 +184,8 @@ def probe_nonsteam_images(output_dir: Path, catalog_urls: dict[str, str]) -> dic
     cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
     log(
         f"[nonsteam-images-probe] probed {ok_count + miss_count} URLs "
-        f"({ok_count} ok, {miss_count} missing), cache size {len(cache)}"
+        f"({ok_count} ok, {miss_count} missing) in {elapsed:.1f}s with "
+        f"{PROBE_WORKERS} workers, cache size {len(cache)}"
     )
 
     # Filtered frontend map: only entries known to work. Anything missing or
