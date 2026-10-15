@@ -28,6 +28,7 @@ def _reset_descriptor_cache(tmp_path, monkeypatch):
     """Isolate each test with a fresh cache path + in-memory state."""
     common_module._steam_descriptors_cache = None
     common_module._steam_descriptors_cache_dirty = False
+    common_module.reset_appdetails_breaker()
     cache = tmp_path / "steam-content-descriptors-cache.json"
     monkeypatch.setattr(
         common_module,
@@ -37,6 +38,7 @@ def _reset_descriptor_cache(tmp_path, monkeypatch):
     yield cache
     common_module._steam_descriptors_cache = None
     common_module._steam_descriptors_cache_dirty = False
+    common_module.reset_appdetails_breaker()
 
 
 def test_adult_descriptor_ids_covers_the_three_relevant_flags():
@@ -266,3 +268,71 @@ def test_is_adult_app_cached_treats_stale_negative_as_miss():
     common_module._load_steam_descriptors_cache()
     common_module._steam_descriptors_cache["999"] = {"ids": [], "ts": old_ts, "ok": False}
     assert is_adult_app_cached("999") is None
+
+
+# ---- appdetails circuit breaker (#258) -------------------------------------
+# Under Steam rate limiting every call failed after its retries and the
+# search-index loop kept going: 3,627s for 545 failed lookups on one staging
+# run. After APPDETAILS_FAILURE_LIMIT consecutive failures the rest of the run
+# skips the network, without caching anything, so the next run retries.
+
+def _fail(*_a, **_k):
+    raise OSError("HTTP Error 403: Forbidden")
+
+
+def test_breaker_opens_after_consecutive_failures_and_stops_calling_steam():
+    limit = common_module.APPDETAILS_FAILURE_LIMIT
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail) as m:
+        for i in range(limit):
+            assert fetch_steam_content_descriptors(str(1000 + i)) == []
+        assert m.call_count == limit
+        assert common_module.appdetails_breaker_state()["open"] is True
+        for i in range(25):
+            assert fetch_steam_content_descriptors(str(2000 + i)) == []
+        assert m.call_count == limit  # no further network calls
+    assert common_module.appdetails_breaker_state()["skipped"] == 25
+
+
+def test_breaker_skips_do_not_poison_the_cache(_reset_descriptor_cache):
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        for i in range(common_module.APPDETAILS_FAILURE_LIMIT + 5):
+            fetch_steam_content_descriptors(str(3000 + i))
+    flush_steam_descriptors_cache()
+    cache = _reset_descriptor_cache
+    assert not cache.exists() or json.loads(cache.read_text()) == {}
+    assert is_adult_app_cached("3000") is None
+
+
+def test_a_success_resets_the_failure_count():
+    limit = common_module.APPDETAILS_FAILURE_LIMIT
+    ok = {"1": {"success": True, "data": {"content_descriptors": {"ids": []}}}}
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        for i in range(limit - 1):
+            fetch_steam_content_descriptors(str(4000 + i))
+    with patch("scripts.pipeline.common.fetch_json", return_value=ok):
+        fetch_steam_content_descriptors("1")
+    assert common_module.appdetails_breaker_state()["consecutive"] == 0
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        for i in range(limit - 1):
+            fetch_steam_content_descriptors(str(5000 + i))
+    assert common_module.appdetails_breaker_state()["open"] is False
+
+
+def test_cached_answers_still_served_while_breaker_is_open():
+    ok = {"77": {"success": True, "data": {"content_descriptors": {"ids": [3]}}}}
+    with patch("scripts.pipeline.common.fetch_json", return_value=ok):
+        assert is_adult_app("77") is True
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        for i in range(common_module.APPDETAILS_FAILURE_LIMIT):
+            fetch_steam_content_descriptors(str(6000 + i))
+    assert common_module.appdetails_breaker_state()["open"] is True
+    assert is_adult_app("77") is True
+
+
+def test_fetch_json_passes_a_timeout():
+    from unittest.mock import MagicMock
+    resp = MagicMock()
+    resp.__enter__.return_value.read.return_value = b"{}"
+    with patch("scripts.pipeline.common.request.urlopen", return_value=resp) as m:
+        common_module.fetch_json("https://example.invalid/x")
+    assert m.call_args.kwargs.get("timeout") == 15

@@ -77,3 +77,23 @@ def _no_network_in_finalize():
         for name, value in stubs.items():
             stack.enter_context(patch(f"scripts.pipeline.finalize.{name}", return_value=value))
         yield
+
+@pytest.fixture(autouse=True)
+def _isolate_steam_descriptors_cache(tmp_path, monkeypatch):
+    """Point the Steam content-descriptor cache at a per-test temp file.
+
+    Pipeline code under test flushes this cache, and before #258 its path was
+    bound as a def-time default, so tests read and wrote the developer's real
+    .cache/steam-content-descriptors-cache.json and could pass or fail on
+    whatever happened to be in it.
+    """
+    import scripts.pipeline.common as common
+    monkeypatch.setattr(
+        common, "DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH",
+        tmp_path / "steam-content-descriptors-cache.json",
+    )
+    monkeypatch.setattr(common, "_steam_descriptors_cache", None)
+    monkeypatch.setattr(common, "_steam_descriptors_cache_dirty", False)
+    common.reset_appdetails_breaker()
+    yield
+    common.reset_appdetails_breaker()
