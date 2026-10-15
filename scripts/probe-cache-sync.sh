@@ -31,6 +31,7 @@ FILES=(
   nonsteam-images-cache.json
   release-years-cache.json
   app-id-validation-cache.json
+  steam-type-cache.json
 )
 
 is_json() {

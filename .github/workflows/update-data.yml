@@ -348,6 +348,12 @@ jobs:
           cp gh-pages-data/nonsteam-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/release-years-cache.json /tmp/protondb-output/ 2>/dev/null || true
           cp gh-pages-data/app-id-validation-cache.json /tmp/protondb-output/ 2>/dev/null || true
+          # steam-type-cache.json was never seeded here, only merged in at the
+          # gh-pages deploy by preserve-steam-type-cache.sh. Once the
+          # Cloudflare path skipped that, every run started empty, re-fetched
+          # the same first 200 app ids and left column 11 (steamType) unset on
+          # all but ~190 rows (#258).
+          cp gh-pages-data/steam-type-cache.json /tmp/protondb-output/ 2>/dev/null || true
 
       - name: Restore pipeline cache
         uses: actions/cache/restore@v6
