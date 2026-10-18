@@ -263,11 +263,27 @@ def flush_steam_descriptors_cache(
 # the rest of the run skips the network. Skipped apps are handled exactly like
 # a failed fetch: nothing is cached, so the next run retries them.
 APPDETAILS_FAILURE_LIMIT = 10
-_appdetails_breaker = {"consecutive": 0, "open": False, "skipped": 0}
+_appdetails_breaker = {"consecutive": 0, "open": False, "skipped": 0, "stale_served": 0}
+
+
+def _last_confirmed_ids(entry) -> list[int] | None:
+    """The descriptor ids from a cache entry Steam actually confirmed, even if
+    it has expired. Used when a refresh fails (stale-if-error, #258): an
+    expired adult flag beats publishing a known-adult game as "no flags".
+    Unconfirmed negatives are not trusted, since they may themselves be a
+    rate-limit false negative."""
+    if not isinstance(entry, dict):
+        return None
+    ids = entry.get("ids")
+    ids = ids if isinstance(ids, list) else []
+    ok = entry.get("ok")
+    if ok is None:
+        ok = bool(ids)  # legacy entries: non-empty means it came from a success
+    return list(ids) if ok else None
 
 
 def reset_appdetails_breaker() -> None:
-    _appdetails_breaker.update(consecutive=0, open=False, skipped=0)
+    _appdetails_breaker.update(consecutive=0, open=False, skipped=0, stale_served=0)
 
 
 def appdetails_breaker_state() -> dict:
@@ -309,6 +325,10 @@ def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) ->
 
     if _appdetails_breaker["open"]:
         _appdetails_breaker["skipped"] += 1
+        stale = _last_confirmed_ids(cache.get(app_id))
+        if stale is not None:
+            _appdetails_breaker["stale_served"] += 1
+            return stale
         return []
 
     try:
@@ -352,6 +372,10 @@ def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) ->
                 f"appdetails failures (last: app {app_id}, {type(exc).__name__}: {exc}); "
                 "assuming Steam rate limiting, skipping appdetails for the rest of this run"
             )
+        stale = _last_confirmed_ids(cache.get(app_id))
+        if stale is not None:
+            _appdetails_breaker["stale_served"] += 1
+            return stale
         return []
 
 

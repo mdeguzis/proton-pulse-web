@@ -1113,7 +1113,8 @@ def generate_search_index(
     if breaker["open"]:
         log(
             f"[search-index] WARNING: appdetails circuit breaker opened; {breaker['skipped']:,} "
-            "adult checks skipped this run (treated as not adult, retried next run)"
+            f"adult checks skipped this run ({breaker['stale_served']:,} answered from the last "
+            "confirmed descriptors, the rest treated as not adult; all retried next run)"
         )
 
     # Demo dedup for catalog stubs: GOG/Epic list demos as separate products

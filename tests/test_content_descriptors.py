@@ -336,3 +336,65 @@ def test_fetch_json_passes_a_timeout():
     with patch("scripts.pipeline.common.request.urlopen", return_value=resp) as m:
         common_module.fetch_json("https://example.invalid/x")
     assert m.call_args.kwargs.get("timeout") == 15
+
+
+# ---- stale-if-error (#258) --------------------------------------------------
+# A failed refresh used to return [] even when the cache held a confirmed
+# answer that had just expired, so a known-adult game published unflagged
+# for that run. The last confirmed answer now wins over "no flags".
+
+def _seed(cache_path, entries):
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(entries))
+
+
+def _expired():
+    return int(time.time()) - common_module.STEAM_DESCRIPTORS_CACHE_MAX_AGE_SECONDS - 60
+
+
+def test_failed_refresh_keeps_expired_confirmed_adult_flag(_reset_descriptor_cache):
+    _seed(_reset_descriptor_cache, {"500": {"ids": [3], "ts": _expired(), "ok": True}})
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        assert is_adult_app("500") is True
+    assert common_module.appdetails_breaker_state()["stale_served"] == 1
+
+
+def test_failed_refresh_does_not_rewrite_the_stale_entry(_reset_descriptor_cache):
+    ts = _expired()
+    _seed(_reset_descriptor_cache, {"501": {"ids": [3], "ts": ts, "ok": True}})
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        fetch_steam_content_descriptors("501")
+    assert common_module._load_steam_descriptors_cache()["501"]["ts"] == ts
+
+
+def test_unconfirmed_negative_is_not_trusted_on_failure(_reset_descriptor_cache):
+    _seed(_reset_descriptor_cache, {"502": {"ids": [], "ts": _expired(), "ok": False}})
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        assert fetch_steam_content_descriptors("502") == []
+    assert common_module.appdetails_breaker_state()["stale_served"] == 0
+
+
+def test_legacy_nonempty_entry_is_served_on_failure(_reset_descriptor_cache):
+    _seed(_reset_descriptor_cache, {"503": {"ids": [4], "ts": _expired()}})
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        assert fetch_steam_content_descriptors("503") == [4]
+
+
+def test_breaker_open_serves_last_confirmed_answer(_reset_descriptor_cache):
+    _seed(_reset_descriptor_cache, {"504": {"ids": [3], "ts": _expired(), "ok": True}})
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail) as m:
+        for i in range(common_module.APPDETAILS_FAILURE_LIMIT):
+            fetch_steam_content_descriptors(str(7000 + i))
+        calls = m.call_count
+        assert is_adult_app("504") is True
+        assert m.call_count == calls  # served without touching the network
+    state = common_module.appdetails_breaker_state()
+    assert state["open"] is True and state["stale_served"] == 1
+
+
+def test_force_refresh_failure_still_falls_back(_reset_descriptor_cache):
+    # force_refresh skips the cache READ for the fresh path, but a failed
+    # refresh should still not throw away a confirmed answer.
+    _seed(_reset_descriptor_cache, {"505": {"ids": [3], "ts": int(time.time()), "ok": True}})
+    with patch("scripts.pipeline.common.fetch_json", side_effect=_fail):
+        assert fetch_steam_content_descriptors("505", force_refresh=True) == [3]
