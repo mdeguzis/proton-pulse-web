@@ -355,12 +355,19 @@ jobs:
           # all but ~190 rows (#258).
           cp gh-pages-data/steam-type-cache.json /tmp/protondb-output/ 2>/dev/null || true
 
+      # main's cache is tried first (#258). On main that is the same prefix
+      # as before. On staging it means previews start from prod's warm caches
+      # (~30k Steam descriptors, every probe cache) instead of staging's own
+      # cold one, which re-fetched tens of thousands of apps per run, got
+      # Steam-rate-limited, ran 45-90 min and published adult games unflagged.
+      # Other branches can read main's caches but never write them.
       - name: Restore pipeline cache
         uses: actions/cache/restore@v6
         with:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
           restore-keys: |
+            pipeline-cache-${{ runner.os }}-${{ github.workflow }}-main-
             pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-
 
       # The gh-pages seed above is frozen at 2026-08-23 since the Cloudflare

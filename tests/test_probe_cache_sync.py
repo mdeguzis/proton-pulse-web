@@ -123,3 +123,18 @@ def test_script_carries_every_cache_seeded_from_gh_pages():
     seeded = set(re.findall(r"gh-pages-data/([\w.-]+(?:-cache|-skip)\.json)", seed))
     assert seeded, "expected the seed step to restore at least one cache"
     assert seeded <= set(CACHE_FILES), f"not carried forward: {seeded - set(CACHE_FILES)}"
+
+
+def test_finalize_restores_mains_cache_before_the_branchs_own():
+    # #258: staging previews must start from prod's warm caches. With the
+    # branch prefix first they restored staging's cold cache and spent the
+    # run re-fetching from a rate-limited Steam.
+    step = next(s for s in WORKFLOW["jobs"]["finalize"]["steps"]
+                if s.get("name") == "Restore pipeline cache")
+    keys = [k.strip() for k in step["with"]["restore-keys"].strip().splitlines()]
+    assert keys[0].endswith("-main-")
+    assert keys[1].endswith("${{ github.ref_name }}-")
+    # The save key stays branch-scoped so staging never writes main's cache.
+    save = next(s for s in WORKFLOW["jobs"]["finalize"]["steps"]
+                if s.get("name") == "Save pipeline cache")
+    assert "${{ github.ref_name }}" in save["with"]["key"]
