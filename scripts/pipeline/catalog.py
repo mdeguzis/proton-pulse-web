@@ -300,22 +300,25 @@ def fetch_steam_game_catalog(
 
 
 def read_cached_steam_game_catalog(
-    cache_path: Path = DEFAULT_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = STEAM_CATALOG_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, str] | None:
+    cache_path = cache_path or DEFAULT_CACHE_PATH
     return _read_cached_catalog(cache_path, max_age_seconds, "steam-catalog")
 
 
-def write_cached_steam_game_catalog(catalog: dict[str, str], cache_path: Path = DEFAULT_CACHE_PATH) -> None:
+def write_cached_steam_game_catalog(catalog: dict[str, str], cache_path: Path | None = None) -> None:
+    cache_path = cache_path or DEFAULT_CACHE_PATH
     _write_cached_catalog(catalog, cache_path)
 
 
 def load_steam_game_catalog(
     api_key: str,
-    cache_path: Path = DEFAULT_CACHE_PATH,
+    cache_path: Path | None = None,
     max_results: int = STEAM_APP_LIST_PAGE_SIZE,
     scraper_module=None,
 ) -> dict[str, str]:
+    cache_path = cache_path or DEFAULT_CACHE_PATH
     global _steam_catalog_memo
     if _steam_catalog_memo is not None:
         return _steam_catalog_memo
@@ -358,23 +361,26 @@ def fetch_protondb_signal_catalog(fetch_json_impl=fetch_json) -> dict[str, str]:
 
 
 def read_cached_protondb_signal_catalog(
-    cache_path: Path = DEFAULT_PROTONDB_SIGNAL_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = PROTONDB_SIGNAL_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, str] | None:
+    cache_path = cache_path or DEFAULT_PROTONDB_SIGNAL_CACHE_PATH
     return _read_cached_catalog(cache_path, max_age_seconds, "protondb-signal")
 
 
 def write_cached_protondb_signal_catalog(
     catalog: dict[str, str],
-    cache_path: Path = DEFAULT_PROTONDB_SIGNAL_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> None:
+    cache_path = cache_path or DEFAULT_PROTONDB_SIGNAL_CACHE_PATH
     _write_cached_catalog(catalog, cache_path)
 
 
 def load_protondb_signal_catalog(
     fetch_json_impl=fetch_json,
-    cache_path: Path = DEFAULT_PROTONDB_SIGNAL_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> dict[str, str]:
+    cache_path = cache_path or DEFAULT_PROTONDB_SIGNAL_CACHE_PATH
     global _signal_catalog_memo
     if _signal_catalog_memo is not None:
         return _signal_catalog_memo
@@ -391,9 +397,10 @@ def load_protondb_signal_catalog(
 
 
 def read_protondb_probe_cache(
-    cache_path: Path = DEFAULT_PROTONDB_PROBE_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = PROTONDB_PROBE_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, dict]:
+    cache_path = cache_path or DEFAULT_PROTONDB_PROBE_CACHE_PATH
     if not cache_path.exists():
         return {}
 
@@ -429,7 +436,8 @@ def read_protondb_probe_cache(
     return filtered
 
 
-def write_protondb_probe_cache(cache: dict[str, dict], cache_path: Path = DEFAULT_PROTONDB_PROBE_CACHE_PATH) -> None:
+def write_protondb_probe_cache(cache: dict[str, dict], cache_path: Path | None = None) -> None:
+    cache_path = cache_path or DEFAULT_PROTONDB_PROBE_CACHE_PATH
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "fetched_at": int(time.time()),
@@ -471,10 +479,11 @@ def probe_protondb_app_ids(
     fetch_json_impl=fetch_json,
     limit: int = 0,
     log_every: int = PROTONDB_PROBE_LOG_EVERY,
-    cache_path: Path = DEFAULT_PROTONDB_PROBE_CACHE_PATH,
+    cache_path: Path | None = None,
     flush_every: int | None = None,
     write_cache_impl=write_protondb_probe_cache,
 ) -> tuple[dict[str, dict], dict[str, str]]:
+    cache_path = cache_path or DEFAULT_PROTONDB_PROBE_CACHE_PATH
     cache = dict(existing_cache or {})
     tracked_catalog: dict[str, str] = {
         app_id: str(entry.get("title", "")).strip()

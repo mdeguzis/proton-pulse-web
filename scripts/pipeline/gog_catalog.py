@@ -51,7 +51,7 @@ _gog_meta_cache: dict[str, dict] | None = None
 
 
 def load_gog_catalog(
-    cache_path: Path = DEFAULT_GOG_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = GOG_CATALOG_CACHE_MAX_AGE_SECONDS,
     force_refresh: bool = False,
 ) -> dict[str, str]:
@@ -62,6 +62,7 @@ def load_gog_catalog(
     URLs and release years are loaded into parallel caches; use
     load_gog_covers() and load_gog_release_years() to read them.
     """
+    cache_path = cache_path or DEFAULT_GOG_CATALOG_CACHE_PATH
     global _gog_catalog_cache, _gog_covers_cache, _gog_years_cache, _gog_meta_cache
     if _gog_catalog_cache is not None and not force_refresh:
         return _gog_catalog_cache
@@ -131,13 +132,14 @@ def load_gog_catalog(
 
 
 def load_gog_covers(
-    cache_path: Path = DEFAULT_GOG_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = GOG_CATALOG_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, str]:
     """Return {str(product_id): cover_image_url} for GOG games.
 
     Triggers a catalog load if needed so the covers cache is populated.
     """
+    cache_path = cache_path or DEFAULT_GOG_CATALOG_CACHE_PATH
     global _gog_covers_cache
     if _gog_covers_cache is None:
         load_gog_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
@@ -145,7 +147,7 @@ def load_gog_covers(
 
 
 def load_gog_release_years(
-    cache_path: Path = DEFAULT_GOG_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = GOG_CATALOG_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, int]:
     """Return {str(product_id): year} for GOG games (#112).
@@ -155,6 +157,7 @@ def load_gog_release_years(
     the 7-day TTL populates it automatically. Callers should treat missing
     entries as "no year available" (leave column 6 null).
     """
+    cache_path = cache_path or DEFAULT_GOG_CATALOG_CACHE_PATH
     global _gog_years_cache
     if _gog_years_cache is None:
         load_gog_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
@@ -162,7 +165,7 @@ def load_gog_release_years(
 
 
 def load_gog_meta(
-    cache_path: Path = DEFAULT_GOG_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = GOG_CATALOG_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, dict]:
     """Return {str(product_id): {genres, developers, publishers, os,
@@ -171,6 +174,7 @@ def load_gog_meta(
     Same forward-compat contract as load_gog_release_years: empty dict when
     the cached catalog predates #400; the next fetch after the TTL fills it.
     """
+    cache_path = cache_path or DEFAULT_GOG_CATALOG_CACHE_PATH
     global _gog_meta_cache
     if _gog_meta_cache is None:
         load_gog_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)

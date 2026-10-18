@@ -1,5 +1,6 @@
 """Stub out optional heavy deps so tests can import pipeline modules without them."""
 import sys
+from pathlib import Path
 from contextlib import ExitStack
 from unittest.mock import MagicMock, patch
 
@@ -78,22 +79,73 @@ def _no_network_in_finalize():
             stack.enter_context(patch(f"scripts.pipeline.finalize.{name}", return_value=value))
         yield
 
-@pytest.fixture(autouse=True)
-def _isolate_steam_descriptors_cache(tmp_path, monkeypatch):
-    """Point the Steam content-descriptor cache at a per-test temp file.
+_REPO_CACHE = Path(__file__).resolve().parent.parent / ".cache"
 
-    Pipeline code under test flushes this cache, and before #258 its path was
-    bound as a def-time default, so tests read and wrote the developer's real
-    .cache/steam-content-descriptors-cache.json and could pass or fail on
-    whatever happened to be in it.
+# Every module-level DEFAULT_*CACHE_PATH that points into the repo's .cache.
+# Paths are resolved at call time (#555), so patching these constants is
+# enough to keep a test off the developer's real cache files.
+_CACHE_PATH_CONSTANTS = {
+    "scripts.pipeline.common": [
+        "DEFAULT_STEAM_TITLE_CACHE_PATH",
+        "DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH",
+    ],
+    "scripts.pipeline.catalog": [
+        "DEFAULT_CACHE_PATH",
+        "DEFAULT_PROTONDB_SIGNAL_CACHE_PATH",
+        "DEFAULT_PROTONDB_PROBE_CACHE_PATH",
+    ],
+    "scripts.pipeline.gog_catalog": ["DEFAULT_GOG_CATALOG_CACHE_PATH"],
+    "scripts.pipeline.epic_catalog": ["DEFAULT_EPIC_CATALOG_CACHE_PATH"],
+}
+
+
+@pytest.fixture(autouse=True)
+def _isolate_pipeline_caches(tmp_path, monkeypatch):
+    """Point every pipeline cache at a per-test temp dir (#258, #555).
+
+    Their paths used to be bound as def-time defaults, so tests read and
+    wrote the developer's real .cache and could pass or fail on whatever an
+    earlier run left there.
     """
+    import importlib
+    cache_dir = tmp_path / "pipeline-cache"
+    for mod_name, constants in _CACHE_PATH_CONSTANTS.items():
+        mod = importlib.import_module(mod_name)
+        for const in constants:
+            original = getattr(mod, const)
+            monkeypatch.setattr(mod, const, cache_dir / original.name)
     import scripts.pipeline.common as common
-    monkeypatch.setattr(
-        common, "DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH",
-        tmp_path / "steam-content-descriptors-cache.json",
-    )
+    monkeypatch.setattr(common, "_steam_title_cache", None)
+    monkeypatch.setattr(common, "_steam_title_cache_dirty", False)
     monkeypatch.setattr(common, "_steam_descriptors_cache", None)
     monkeypatch.setattr(common, "_steam_descriptors_cache_dirty", False)
     common.reset_appdetails_breaker()
     yield
     common.reset_appdetails_breaker()
+
+
+def _cache_snapshot() -> dict[str, tuple[int, int]]:
+    if not _REPO_CACHE.is_dir():
+        return {}
+    return {
+        str(p.relative_to(_REPO_CACHE)): (p.stat().st_mtime_ns, p.stat().st_size)
+        for p in _REPO_CACHE.rglob("*") if p.is_file()
+    }
+
+
+@pytest.fixture(scope="session", autouse=True)
+def _guard_real_cache_untouched():
+    """Fail the run if any test created or modified a file in the repo .cache.
+
+    Catches the next def-time default path (or a new cache that nobody added
+    to _CACHE_PATH_CONSTANTS) instead of letting it silently pollute.
+    """
+    before = _cache_snapshot()
+    yield
+    after = _cache_snapshot()
+    changed = sorted(k for k in after if before.get(k) != after[k])
+    if changed:
+        pytest.fail(
+            "tests wrote to the real .cache (isolate them via "
+            f"_CACHE_PATH_CONSTANTS in tests/conftest.py): {changed}"
+        )

@@ -127,9 +127,10 @@ def _scrape_steam_store_title(app_id: str) -> str:
 
 
 def _load_steam_title_cache(
-    cache_path: Path = DEFAULT_STEAM_TITLE_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> dict[str, dict]:
     """Load the persistent Steam title cache from disk."""
+    cache_path = cache_path or DEFAULT_STEAM_TITLE_CACHE_PATH
     global _steam_title_cache
     if _steam_title_cache is not None:
         return _steam_title_cache
@@ -147,9 +148,10 @@ def _load_steam_title_cache(
 
 
 def _save_steam_title_cache(
-    cache_path: Path = DEFAULT_STEAM_TITLE_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> None:
     """Persist the Steam title cache to disk if dirty."""
+    cache_path = cache_path or DEFAULT_STEAM_TITLE_CACHE_PATH
     global _steam_title_cache_dirty
     if not _steam_title_cache_dirty or _steam_title_cache is None:
         return
@@ -160,9 +162,10 @@ def _save_steam_title_cache(
 
 
 def flush_steam_title_cache(
-    cache_path: Path = DEFAULT_STEAM_TITLE_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> None:
     """Public flush for callers to persist cache at end of pipeline."""
+    cache_path = cache_path or DEFAULT_STEAM_TITLE_CACHE_PATH
     _save_steam_title_cache(cache_path)
 
 
