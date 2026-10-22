@@ -14,7 +14,7 @@ import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, _ANDROID_HANDHELD_OS_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3202bacc';
 import { renderCard } from './report-card.js?v=5e25c644';
-import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=091f940b';
+import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=c2871c46';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 import { computeWhatWorks } from '../lib/what-works.js?v=fc499ba6';
 
@@ -88,7 +88,7 @@ import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
-import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus } from '../lib/anti-cheat.js?v=34f8a0a7';
+import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus, antiCheatNotice, renderAntiCheatLine } from '../lib/anti-cheat.js?v=99c0f9d3';
 import { getVrdbForApp } from '../lib/vrdb.js?v=f7c0f65a';
 import { loadVrIndex, vrForApp } from '../lib/vr-index.js?v=f094c84f';
 import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
@@ -1515,6 +1515,7 @@ export async function renderGamePage(appId) {
           <div class="grp-conf">${overallTileSummary}${_confWhy}</div>
           <div class="grp-meta">${_metaBits}</div>
         </div>
+        <div id="game-ac-line" hidden></div>
       </div>`;
 
     // Flag button target: the Game Report GitHub issue template, prefilled with
@@ -2407,6 +2408,20 @@ export async function renderGamePage(appId) {
       // a different question (where it runs) and made the row look like it
       // held five unrelated facts.
       host.innerHTML = '';
+    })();
+
+    // Anti-cheat line under the rating (#556). The rating says how well the
+    // game runs; anti-cheat decides whether online play works on Linux at
+    // all, and ProtonDB does not show it. Filled async so a slow
+    // anti-cheat.json fetch never delays the header.
+    void (async () => {
+      const slot = el.querySelector('#game-ac-line');
+      if (!slot) return;
+      const entry = await getAntiCheatForApp(appId).catch(() => null);
+      const html = renderAntiCheatLine(antiCheatNotice(entry));
+      if (!html) return;
+      slot.innerHTML = html;
+      slot.hidden = false;
     })();
 
     // Artwork badge overlay (#246). Separate from the tag row above because

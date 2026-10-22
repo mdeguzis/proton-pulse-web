@@ -1,9 +1,9 @@
 // router (entry) for the app page. Relocated from app.js.
 
 import { pcgwSlugToPwId } from '../lib/app-id.js?v=6159afa9';
-import { renderGamePage } from './components/game-page.js?v=9c11381c';
-import { renderHomePage } from './components/home.js?v=183b5b8f';
-import { renderSearchPage } from './components/search.js?v=091f940b';
+import { renderGamePage } from './components/game-page.js?v=fd81485d';
+import { renderHomePage } from './components/home.js?v=c65b5c7c';
+import { renderSearchPage } from './components/search.js?v=c2871c46';
 
 export function getRoute() {
   const h = location.hash.replace(/^#\/?/, '');

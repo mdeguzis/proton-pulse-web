@@ -5,7 +5,7 @@ import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
 import { browseGames, getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=7873e060';
 import { daysAgo, latestPerApp } from '../utils.js?v=4630c3d5';
-import { renderGameCard } from '../lib/card.js?v=bdeb653b';
+import { renderGameCard } from '../lib/card.js?v=7b739064';
 import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport } from '../../lib/tile-pad.js?v=ad4b114d';
 import { getEffectivePageSize, isAutoLoadEnabled } from '../../lib/pagination-prefs.js?v=15d0747d';
@@ -19,6 +19,7 @@ import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLookup } from '../lib/saved-lookup.js?v=7c45ae8b';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=c941cca9';
 import { loadVrIndex, matchesVrFilter, vrForApp } from '../lib/vr-index.js?v=f094c84f';
+import { loadAntiCheatMap } from '../lib/anti-cheat.js?v=99c0f9d3';
 import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=09b673c8';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
@@ -292,10 +293,14 @@ function _addEnrichmentRows(rows) {
 }
 async function _loadEnrichment(appIds) {
   const ids = [...new Set((appIds || []).filter(v => v != null).map(String))];
+  // #556: card AC chips read the memoized anti-cheat map, so load it in
+  // parallel with the batch rows.
+  const acReady = loadAntiCheatMap();
   for (let i = 0; i < ids.length; i += 500) {
     const byId = await getGamesByIds(ids.slice(i, i + 500));
     _addEnrichmentRows([...byId.values()]);
   }
+  await acReady;
 }
 
 // Delisted flag lookup by appId. Search-index column 7. Used to tag
@@ -1542,6 +1547,7 @@ export async function renderHomeFallback() {
   const [pulseReports, byId] = await Promise.all([
     fetchRecentPulseReports(),
     getGamesByIds(popularIds),
+    loadAntiCheatMap(), // #556 card AC chips
   ]);
   _resetEnrichment();
   _addEnrichmentRows([...byId.values()]);

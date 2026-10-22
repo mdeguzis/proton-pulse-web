@@ -3,6 +3,7 @@
 import { STEAM_IMG } from '../config.js?v=7873e060';
 import { esc } from '../utils.js?v=4630c3d5';
 import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=5adc7e54';
+import { antiCheatForAppSync, antiCheatBlocksLinux } from './anti-cheat.js?v=99c0f9d3';
 
 const TIER_COLORS = {
   platinum: { bg: '#b4c7dc', color: '#0a0c10' },
@@ -12,7 +13,9 @@ const TIER_COLORS = {
   borked:   { bg: '#c85050', color: '#fff' },
 };
 
-// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges }
+// opts: { href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges, antiCheat }
+// antiCheat: anti-cheat.json entry ({status, vendors}) or null. Omitted means
+//   look it up in the loaded anti-cheat map (#556).
 // ownerBadges: pre-rendered HTML (usually two <span class="game-card-owner-badge">
 //   elements) that clip onto the left side of the store corner tag on the
 //   thumbnail. Currently: "In library" (open book) + "On wishlist" (list + heart).
@@ -34,7 +37,7 @@ const TIER_COLORS = {
 //   Anything other than "game" renders a small corner tag on the thumbnail so
 //   users scanning a library grid can pick out the DLC bundles and mods at a
 //   glance. Empty / "game" render no tag.
-export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges, delisted, delistedSteamAppId, vr }) {
+export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, badgeColor, imgUrl, sourceLabel, storePill, trend, replacedBy, steamType, ownerBadges, delisted, delistedSteamAppId, vr, antiCheat }) {
   const primarySrc = imgUrl || (appId ? STEAM_IMG(appId) : '');
   const aid = appId != null ? String(appId) : '';
   const thumbInner = primarySrc
@@ -81,6 +84,19 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const vrChip = vrKey
     ? `<span class="game-card-vr-chip" title="${vrKey === 'only' ? 'VR only: requires a headset' : 'Playable in VR or on a monitor'}" aria-label="${vrKey === 'only' ? 'VR only' : 'VR supported'}">VR</span>`
     : '';
+  // #556: anti-cheat chip, only for Blocked / Denied. That is the case that
+  // contradicts a good rating (Gold single player, no online on Linux), so it
+  // has to be visible before clicking in. Supported / Running stay quiet on
+  // cards and are spelled out on the game page. Looked up from the memoized
+  // anti-cheat map unless the caller passes an entry; pages load the map
+  // alongside their own data before rendering.
+  const acEntry = antiCheat !== undefined ? antiCheat : antiCheatForAppSync(appId);
+  const acTitle = acEntry && acEntry.status === 'denied'
+    ? "Anti-cheat denied by the developer. Online play won't work on Linux."
+    : "Anti-cheat blocked on Linux. Online play probably won't work.";
+  const acChip = antiCheatBlocksLinux(acEntry)
+    ? `<span class="game-card-ac-chip" title="${acTitle}" aria-label="${acTitle}">AC</span>`
+    : '';
   // #431: owner badges (library / wishlist) live INSIDE every store-badge
   // variant so they always ride along with the store banner wherever the
   // user placed it. Only one variant renders visibly at a time (per
@@ -88,7 +104,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // way to guarantee they show up next to the store icon in every layout,
   // whether the pill is text + icon or icon-only.
   const storeTag = storePill
-    ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-store-tag game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${acChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Steam-side appid replacement (e.g. 5488 -> 45700). Small tag over the
   // thumbnail so browse lists visually mark the old entry.
@@ -113,7 +129,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   }
   const badgeHtml = `<span class="game-card-badge${isNoRating ? ' game-card-badge--unrated' : ''}" ${badgeStyle}>${esc(label)}</span>`;
   const storePillHtml = storePill
-    ? `<span class="game-card-store-pill game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-store-pill game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${acChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Trend arrow. Only 'improving' and 'declining' render; stable and
   // insufficient are absent by design so a card stays quiet when nothing has
@@ -157,7 +173,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // 'bar-segment' (last 1/4 of the bar in the store color, two-tone with
   // the tier).
   const stripStoreHtml = storePill
-    ? `<span class="game-card-strip-store store-icon store-icon--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg><span class="store-text">${esc(storePill)}</span></span>`
+    ? `<span class="game-card-strip-store store-icon store-icon--${storeKey}">${delistedChip}${vrChip}${acChip}${ownerBadgesHtml}<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-store-${storeKey}"/></svg><span class="store-text">${esc(storePill)}</span></span>`
     : '';
   // The trend arrow rides INSIDE the tier label in the strip. The pills-row
   // copy above only shows in the 'right' card layout; in strip layout (the
@@ -172,7 +188,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   // data-store-pill-pos="art-corner". Owner badges embedded so they ride
   // along with the store banner (#431).
   const cornerTagHtml = storePill
-    ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
+    ? `<span class="game-card-corner-tag game-card-store-pill--${storeKey}">${delistedChip}${vrChip}${acChip}${ownerBadgesHtml}<span class="store-text">${esc(storePill)}</span>${storeIcon}</span>`
     : '';
   // Combined corner chip for the 'combo' card layout. Two-tone pill at the
   // top-right edge of the card with the tier on the left and the store on
@@ -181,7 +197,7 @@ export function renderGameCard({ href, appId, title, sub, tier, badge, badgeBg, 
   const comboTier = tier ? String(tier).toLowerCase() : '';
   const comboTierLabel = tier ? tier.toUpperCase() : (badge || 'NO RATING');
   const comboTagHtml = (storePill || tier || badge)
-    ? `<span class="game-card-combo-tag" data-tier="${esc(comboTier)}" data-store="${storeKey}"><span class="combo-tier">${esc(comboTierLabel)}</span>${storePill ? `<span class="combo-store">${delistedChip}${vrChip}${ownerBadgesHtml}${esc(storePill)}</span>` : ''}</span>`
+    ? `<span class="game-card-combo-tag" data-tier="${esc(comboTier)}" data-store="${storeKey}"><span class="combo-tier">${esc(comboTierLabel)}</span>${storePill ? `<span class="combo-store">${delistedChip}${vrChip}${acChip}${ownerBadgesHtml}${esc(storePill)}</span>` : ''}</span>`
     : '';
   // Strip is a sibling of the row (not inside the body) so it can extend
   // the full card width including under the thumbnail when strip mode is on.

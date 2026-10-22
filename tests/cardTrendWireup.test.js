@@ -58,7 +58,7 @@ describe('index/main.js (browse) forwards trend into pgCardHtml', () => {
   test('Steam trend is batched from most_played appids before first paint (#437)', () => {
     // Awaited after most_played resolves (its appids feed the batch), so the
     // first paint still has arrows in Steam-only mode without loading the blob.
-    expect(INDEX_JS).toMatch(/await _loadSteamTrend\(games\.map\(g => g\.appId\)\)/);
+    expect(INDEX_JS).toMatch(/await (?:Promise\.all\(\[)?_loadSteamTrend\(games\.map\(g => g\.appId\)\)/);
     expect(INDEX_JS).not.toMatch(/loadSearchIndex/);
   });
 });

@@ -233,7 +233,7 @@ describe('game page artwork badges (#246)', () => {
   test('the VR chip is sized to the 18px icon box, not the delisted chip em', () => {
     const cards = fs.readFileSync(
       path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
-    const chip = cards.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+    const chip = cards.match(/\.game-card-vr-chip(?:,\s*\.game-card-ac-chip)?\s*\{[^}]*\}/)[0];
     // 0.62em resolved against the store pill's 0.7rem rendered at ~0.43rem,
     // which read as a footnote next to the 18px icons beside it.
     expect(chip).not.toMatch(/font-size:\s*0\.62em/);
@@ -271,7 +271,7 @@ describe('VR chip is one variant, VR-only is a banner (#246 follow-up)', () => {
     // Every store colour is blue/purple/grey: Steam #1689d0, GOG #7a3fcf,
     // PCGWiki #4d5f9c, Epic #555. The first version was a muted blue against
     // the Steam pill.
-    const chip = cardsCss.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+    const chip = cardsCss.match(/\.game-card-vr-chip(?:,\s*\.game-card-ac-chip)?\s*\{[^}]*\}/)[0];
     expect(chip).toMatch(/#e8a33d/i);
   });
 
@@ -295,7 +295,7 @@ describe('VR chip caps the badge strip (#246 follow-up)', () => {
   const fs = require('fs');
   const path = require('path');
   const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'shared', 'cards.css'), 'utf8');
-  const chip = css.match(/\.game-card-vr-chip\s*\{[^}]*\}/)[0];
+  const chip = css.match(/\.game-card-vr-chip(?:,\s*\.game-card-ac-chip)?\s*\{[^}]*\}/)[0];
 
   test('the chip carries no radius of its own', () => {
     // The container's radius caps the strip. A chip with its own corners sat
@@ -326,7 +326,7 @@ describe('VR chip caps the badge strip (#246 follow-up)', () => {
   test('only the leading chip bleeds', () => {
     // A Delisted chip renders before VR; when present it owns the leading
     // edge, so VR must not pull itself out of the container there.
-    expect(css).toMatch(/\.game-card-vr-chip:first-child\s*\{/);
+    expect(css).toMatch(/\.game-card-vr-chip:first-child(?:,\s*\.game-card-ac-chip:first-child)?\s*\{/);
   });
 
   test('the combo layout still renders the chip', () => {
