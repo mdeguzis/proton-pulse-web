@@ -6,7 +6,7 @@ import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
 import { filterDelisted } from '../lib/delisted-filter.js?v=42858e22';
 import { renderGameCard } from '../app/lib/card.js?v=7b739064';
 import { browseGames, getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
-import { loadAntiCheatMap } from '../app/lib/anti-cheat.js?v=99c0f9d3';
+import { loadAntiCheatMap } from '../app/lib/anti-cheat.js?v=1ec01d8a';
 import { initCardSizeToggle, setCardSizeButtonsEnabled } from '../lib/card-size.js?v=3402f405';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,

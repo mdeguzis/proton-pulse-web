@@ -12,7 +12,7 @@ import { filterDelistedEntries, countHiddenDelisted, showDelistedAllowed } from 
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
 import { searchGames } from '../api/search-games.js?v=0b6c4bb3';
-import { loadAntiCheatMap } from '../lib/anti-cheat.js?v=99c0f9d3';
+import { loadAntiCheatMap } from '../lib/anti-cheat.js?v=1ec01d8a';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its exports

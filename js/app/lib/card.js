@@ -3,7 +3,7 @@
 import { STEAM_IMG } from '../config.js?v=7873e060';
 import { esc } from '../utils.js?v=4630c3d5';
 import { loadSteamImg as _loadSteamImg } from './steam-img.js?v=5adc7e54';
-import { antiCheatForAppSync, antiCheatBlocksLinux } from './anti-cheat.js?v=99c0f9d3';
+import { antiCheatForAppSync, antiCheatBlocksLinux } from './anti-cheat.js?v=1ec01d8a';
 
 const TIER_COLORS = {
   platinum: { bg: '#b4c7dc', color: '#0a0c10' },

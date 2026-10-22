@@ -176,3 +176,49 @@ export function renderAntiCheatLine(notice) {
     + `<div class="grp-ac-note">The rating covers how the game runs. Anti-cheat is a separate check. ${source}</div>`
     + '</div>';
 }
+
+// #242 home filter. Four keys, multi-select like the Deck chips, so "hide
+// blocked games" is works + unknown + none rather than its own option:
+//   works    Supported or Running
+//   blocked  Broken or Denied
+//   unknown  Planned, or a vendor detected with no Linux verdict yet
+//   none     no entry: no anti-cheat, or not tracked by AreWeAntiCheatYet.
+//            Absence is not proof of no anti-cheat, hence "Not listed".
+export const ANTI_CHEAT_FILTER_KEYS = ['works', 'blocked', 'unknown', 'none'];
+
+/**
+ * Filter bucket for one anti-cheat.json entry (or null).
+ * @param {{status?: string|null, vendors?: string[]|null}|null} entry
+ * @returns {'works'|'blocked'|'unknown'|'none'}
+ */
+export function antiCheatFilterKey(entry) {
+  if (!entry) return 'none';
+  const vendors = Array.isArray(entry.vendors) ? entry.vendors.filter(Boolean) : [];
+  if (!entry.status && !vendors.length) return 'none';
+  const bucket = bucketAntiCheatStatus(entry.status);
+  return bucket === 'broken' ? 'blocked' : bucket;
+}
+
+/**
+ * Does an entry pass the selected filter keys? An empty selection, or one
+ * containing 'all', passes everything.
+ * @param {{status?: string|null, vendors?: string[]|null}|null} entry
+ * @param {Set<string>} sel
+ */
+export function matchesAntiCheatFilter(entry, sel) {
+  if (!sel || sel.size === 0 || sel.has('all')) return true;
+  return sel.has(antiCheatFilterKey(entry));
+}
+
+/**
+ * Steam appids from a loaded map whose bucket is in sel. Feeds the home
+ * browse pool so "Works on Linux" lists the whole catalog slice instead of
+ * whichever of those games happen to be in the top-55 chart.
+ * @param {Record<string, object>} map
+ * @param {Set<string>} sel
+ * @returns {string[]}
+ */
+export function antiCheatAppIdsMatching(map, sel) {
+  if (!map || !sel || sel.size === 0 || sel.has('all')) return [];
+  return Object.keys(map).filter((id) => /^\d+$/.test(id) && sel.has(antiCheatFilterKey(map[id])));
+}

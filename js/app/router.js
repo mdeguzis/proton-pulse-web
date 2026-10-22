@@ -2,7 +2,7 @@
 
 import { pcgwSlugToPwId } from '../lib/app-id.js?v=6159afa9';
 import { renderGamePage } from './components/game-page.js?v=fd81485d';
-import { renderHomePage } from './components/home.js?v=c65b5c7c';
+import { renderHomePage } from './components/home.js?v=41722a8a';
 import { renderSearchPage } from './components/search.js?v=c2871c46';
 
 export function getRoute() {

@@ -19,7 +19,7 @@ import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLookup } from '../lib/saved-lookup.js?v=7c45ae8b';
 import { loadDeckStatusMap } from '../api/deck-status.js?v=c941cca9';
 import { loadVrIndex, matchesVrFilter, vrForApp } from '../lib/vr-index.js?v=f094c84f';
-import { loadAntiCheatMap } from '../lib/anti-cheat.js?v=99c0f9d3';
+import { loadAntiCheatMap, matchesAntiCheatFilter, antiCheatAppIdsMatching } from '../lib/anti-cheat.js?v=1ec01d8a';
 import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=09b673c8';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
@@ -220,6 +220,18 @@ function _filterByVr(reports, sel, map) {
     if (!/^\d+$/.test(id)) return true;
     return matchesVrFilter(vrForApp(map, id), filter);
   });
+}
+
+// Anti-cheat filter (#242). Multi-select over works / blocked / unknown /
+// none (see antiCheatFilterKey). Non-Steam ids have no AreWeAntiCheatYet
+// entry, so they land in 'none' ("Not listed") rather than always showing:
+// a GOG row under "Works on Linux" would claim something we do not know.
+// A null map (still loading, or the fetch failed) means no filtering rather
+// than an empty grid.
+function _filterByAntiCheat(reports, sel, map) {
+  if (!sel || sel.size === 0 || sel.has('all')) return reports;
+  if (!map) return reports;
+  return reports.filter(r => matchesAntiCheatFilter(map[String(r.appId)] || null, sel));
 }
 
 // Text filter: case-insensitive substring match on the game title. Empty/blank
@@ -600,6 +612,14 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="only" title="Requires a VR headset">VR Only</button>
               <button class="pg-filter" type="button" data-value="flat" title="Playable on a monitor: hides VR-only games">Flatscreen</button>
             </div>
+            <div class="pg-filter-group" id="home-ac-checks" title="Filter by whether the game's anti-cheat allows online play on Linux (AreWeAntiCheatYet). Separate from the rating.">
+              <span class="pg-filter-group-label">Anti-cheat</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="works" title="Supported, or running unofficially">Works on Linux</button>
+              <button class="pg-filter" type="button" data-value="blocked" title="Broken on Linux or denied by the developer">Blocked</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Linux support planned, or anti-cheat detected with no verdict yet">No verdict</button>
+              <button class="pg-filter" type="button" data-value="none" title="Not in the anti-cheat list. Usually means no anti-cheat, but not always.">Not listed</button>
+            </div>
             <div class="filter-panel-footer filter-panel-footer--stack">
               <button class="filter-collapse-btn" id="home-filter-collapse" type="button" aria-label="Collapse filters">
                 <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
@@ -694,6 +714,8 @@ export async function renderHomePage() {
     let kindSel = new Set();   // Steam app kind ('game'/'dlc'/'mod'/'demo'/'software'); empty => all (#250)
     let vrSel = new Set();     // empty => all; 'vr'/'only'/'flat' => VR capability (#246)
     let vrMap = null;          // cached {appId: 'supported'|'only'}; lazily loaded on first VR chip use
+    let acSel = new Set();     // empty => all; 'works'/'blocked'/'unknown'/'none' => anti-cheat on Linux (#242)
+    let acMap = null;          // cached anti-cheat.json; lazily loaded on first anti-cheat chip use
     let currentLayout = 'grid';
 
     // #437: non-Steam browse rows (GOG / Epic / PCGamingWiki) for the Popular
@@ -758,6 +780,41 @@ export async function renderHomePage() {
       _homeVrFetched.add(filter);
     }
 
+    // #242: anti-cheat browse pool, same reasoning as the VR pool above. The
+    // anti-cheat catalog is ~780 Steam games and the chart is ~55, so "Works
+    // on Linux" would otherwise list a handful. The appids come straight from
+    // anti-cheat.json; getGamesByIds fills in titles + tiers. Only used when
+    // 'none' is not selected: "Not listed" is everything else in the chart,
+    // which the chart path already covers.
+    let _homeAcRows = [];
+    let _homeAcKey = '';
+    async function _ensureHomeAc(sel) {
+      const key = [...sel].sort().join(',');
+      if (key === _homeAcKey) return;
+      const ids = antiCheatAppIdsMatching(acMap, sel);
+      const rows = [];
+      for (let i = 0; i < ids.length; i += 500) {
+        const byId = await getGamesByIds(ids.slice(i, i + 500));
+        for (const r of byId.values()) {
+          const t = String(r.tier || '').toLowerCase();
+          rows.push({
+            appId: r.appId, title: r.title,
+            tier: KNOWN_TIERS.has(t) ? t : 'pending',
+            protondbCount: r.protondbCount || 0, pulseCount: r.pulseCount || 0,
+            appType: r.source, delisted: r.delisted === true,
+          });
+        }
+        _addEnrichmentRows([...byId.values()]);
+      }
+      // Most-reported first, then title, so the slice reads like a browse
+      // view rather than appid order.
+      rows.sort((a, b) => ((b.protondbCount + b.pulseCount) - (a.protondbCount + a.pulseCount))
+        || String(a.title || '').localeCompare(String(b.title || '')));
+      _homeAcRows = rows;
+      _homeAcKey = key;
+    }
+    const _acBrowseActive = () => acSel.size > 0 && !acSel.has('all') && !acSel.has('none');
+
     // The previous super-condensed list-row renderer is gone -- the two
     // layouts now are 'list' (horizontal cards from _recentCardHtml /
     // popular item) and 'grid' (the same cards re-flowed into Steam-
@@ -813,8 +870,12 @@ export async function renderHomePage() {
         // no-op on these rows (they already match), which keeps the chain
         // uniform and still filters the chart rows when the fetch failed.
         const vrFilterActive = vrSel.size > 0 && !vrSel.has('all');
+        // #242: the anti-cheat pool takes over the same way when VR is off.
+        // With both on, the VR pool wins and _filterByAntiCheat narrows it.
         const pool = vrFilterActive && _homeVrRows.length
           ? _homeVrRows
+          : _acBrowseActive() && _homeAcRows.length
+          ? _homeAcRows
           : [
             ...(onlyUnrated ? [] : ratedGames),
             ...(wantUnrated ? unratedGames : []),
@@ -827,7 +888,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending', delisted: g.delisted === true || _isDelisted(g.appId) };
         });
       }
-      const filtered = filterDelisted(filterAdult(_filterByText(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), textFilter)));
+      const filtered = filterDelisted(filterAdult(_filterByText(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), textFilter)));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -966,7 +1027,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterDelisted(filterAdult(_filterByText(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), textFilter)));
+      const filtered = filterDelisted(filterAdult(_filterByText(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), textFilter)));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
@@ -1103,7 +1164,7 @@ export async function renderHomePage() {
           sort: currentSort, text: textFilter,
           tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
           library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel],
-          machine: [...machineSel], steamos: [...steamosSel], kind: [...kindSel], vr: [...vrSel],
+          machine: [...machineSel], steamos: [...steamosSel], kind: [...kindSel], vr: [...vrSel], ac: [...acSel],
         }));
       } catch { /* ignore */ }
     }
@@ -1154,6 +1215,7 @@ export async function renderHomePage() {
       steamosSel = new Set(saved.steamos || []);
       kindSel = new Set(saved.kind || []);
       vrSel = new Set(saved.vr || []);
+      acSel = new Set(saved.ac || []);
       _applyPillSelection(tierGroup, saved.tier);
       _applyPillSelection(sourceGroup, saved.source);
       _applyPillSelection(storeGroup, saved.store);
@@ -1164,6 +1226,8 @@ export async function renderHomePage() {
       _applyPillSelection(machineGroup, saved.machine);
       _applyPillSelection(steamosGroup, saved.steamos);
       _applyPillSelection(kindGroup, saved.kind);
+      _applyPillSelection(vrGroup, saved.vr);
+      _applyPillSelection(acGroup, saved.ac);
       updateFilterBadge();
       console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kinds: [...kindSel], text: textFilter });
       return true;
@@ -1229,7 +1293,7 @@ export async function renderHomePage() {
 
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + (textFilter.trim() ? 1 : 0);
+      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + (textFilter.trim() ? 1 : 0);
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -1246,6 +1310,7 @@ export async function renderHomePage() {
     const steamosGroup = document.getElementById('home-steamos-checks');
     const kindGroup = document.getElementById('home-kind-checks');
     const vrGroup = document.getElementById('home-vr-checks');
+    const acGroup = document.getElementById('home-ac-checks');
     if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
@@ -1317,10 +1382,24 @@ export async function renderHomePage() {
       if (needMap) await _ensureHomeVr([...sel][0]).catch(() => {});
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
+    // Anti-cheat chips (#242): same lazy map load, plus the browse pool so
+    // "Works on Linux" covers the whole anti-cheat catalog. A failed browse
+    // leaves _homeAcRows empty and the chart-filter path takes over.
+    if (acGroup) _wirePillGroup(acGroup, { onChange: async sel => {
+      acSel = sel;
+      const needMap = sel && sel.size > 0 && !sel.has('all');
+      if (needMap && !acMap) acMap = await loadAntiCheatMap();
+      if (_acBrowseActive()) {
+        await _ensureHomeAc(sel).catch((err) => {
+          console.warn('[home] anti-cheat browse failed, filtering the chart instead', { error: String(err), sel: [...sel] });
+        });
+      }
+      updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+    }});
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, steamosGroup, kindGroup, vrGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, steamosGroup, kindGroup, vrGroup, acGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');
@@ -1344,6 +1423,7 @@ export async function renderHomePage() {
       steamosSel = new Set();
       kindSel = new Set();
       vrSel = new Set();
+      acSel = new Set();
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
@@ -1499,8 +1579,24 @@ export async function renderHomePage() {
     // deckStatusMap is lazy-loaded on the first pill click. When a device
     // filter is seeded from the URL we have to load it up front, otherwise
     // every appId reads as 'unknown' and the filter matches nothing.
-    if ((_urlDeck || _urlMachine || _urlSteamos) && !deckStatusMap) {
+    // Same for saved filters: _restoreFilters only sets the selections, so a
+    // restored Deck / Machine / SteamOS / VR / anti-cheat chip used to show
+    // as active while filtering nothing until it was clicked again.
+    const _active = (sel) => sel.size > 0 && !sel.has('all');
+    if ((_urlDeck || _urlMachine || _urlSteamos || _active(deckSel) || _active(machineSel) || _active(steamosSel)) && !deckStatusMap) {
       deckStatusMap = await loadDeckStatusMap().catch(() => ({}));
+    }
+    if (_active(vrSel)) {
+      if (!vrMap) vrMap = await loadVrIndex().catch(() => ({}));
+      await _ensureHomeVr([...vrSel][0]).catch(() => {});
+    }
+    if (_active(acSel)) {
+      if (!acMap) acMap = await loadAntiCheatMap();
+      if (_acBrowseActive()) {
+        await _ensureHomeAc(acSel).catch((err) => {
+          console.warn('[home] anti-cheat browse failed on restore, filtering the chart instead', { error: String(err), sel: [...acSel] });
+        });
+      }
     }
     if (_urlTier || _urlDeck || _urlMachine || _urlSteamos) {
       updateFilterBadge();
