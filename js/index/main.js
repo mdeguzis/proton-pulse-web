@@ -4,8 +4,9 @@ import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { padTileRows, watchTileRerender, pageSizeForFullRows, targetRowsForViewport, currentColCount } from '../lib/tile-pad.js?v=ad4b114d';
 import { filterAdult } from '../lib/adult-filter.js?v=e4e9d845';
 import { filterDelisted } from '../lib/delisted-filter.js?v=42858e22';
-import { renderGameCard } from '../app/lib/card.js?v=bdeb653b';
+import { renderGameCard } from '../app/lib/card.js?v=7b739064';
 import { browseGames, getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
+import { loadAntiCheatMap } from '../app/lib/anti-cheat.js?v=1ec01d8a';
 import { initCardSizeToggle, setCardSizeButtonsEnabled } from '../lib/card-size.js?v=3402f405';
 
 // Homepage-only logic. Universal nav chrome (banner, nav row, mobile drawer,
@@ -193,7 +194,8 @@ import { initCardSizeToggle, setCardSizeButtonsEnabled } from '../lib/card-size.
     // #437: trend arrows for the Steam cards via the batch API, and the
     // non-Steam slice if a non-Steam store is already selected. Awaited so the
     // first paint has arrows + counts, matching the old parallel-blob timing.
-    await _loadSteamTrend(games.map(g => g.appId));
+    // #556: anti-cheat map loads alongside so the first paint has the AC chip.
+    await Promise.all([_loadSteamTrend(games.map(g => g.appId)), loadAntiCheatMap()]);
     await _ensureNonSteamData(effectiveStores());
 
     section.hidden = false;

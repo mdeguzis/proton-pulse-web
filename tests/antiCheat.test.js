@@ -32,8 +32,10 @@ describe('anti-cheat lib', () => {
     // Cached at module scope so subsequent callers await the same fetch.
     expect(LIB_SRC).toMatch(/let _cache = null/);
     expect(LIB_SRC).toMatch(/let _pending = null/);
-    // Error-tolerant: return {} on any failure so callers can stay optimistic.
-    expect(LIB_SRC).toMatch(/catch \{\s*return \{\}/);
+    // Error-tolerant: return {} on any failure so callers can stay optimistic,
+    // but log the failure so an empty map is not silent (see
+    // antiCheatNotice.test.js for the behavioural version).
+    expect(LIB_SRC).toMatch(/catch \(err\) \{\s*console\.warn\('\[anti-cheat\] load failed'[\s\S]{0,120}return \{\}/);
   });
 
   test('humanAntiCheatStatus covers every upstream status value', () => {

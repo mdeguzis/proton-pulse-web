@@ -147,7 +147,7 @@ describe('home page browse -- text filter box', () => {
     // end in `..., textFilter)`. The intermediate filters are exercised in
     // dedicated deck/wishlist/library tests -- here we just pin the outer
     // shape (text is outermost, then vr, and inside those kind wraps the trio).
-    const matches = homeSrc.match(/_filterByText\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\([^]*?, textFilter\)/g) || [];
+    const matches = homeSrc.match(/_filterByText\(_filterByAntiCheat\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\([^]*?, textFilter\)/g) || [];
     expect(matches.length).toBe(2);
   });
 
@@ -164,7 +164,7 @@ describe('home page browse -- text filter box', () => {
     // query. Wishlist (#266 Phase 1) + Deck (#266 Phase 2) both slot in
     // ahead of kind; VR (#246) sits after it. Pin the outer shape rather
     // than the exact chain.
-    expect(homeSrc).toContain('deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + (textFilter.trim() ? 1 : 0)');
+    expect(homeSrc).toContain('deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + (textFilter.trim() ? 1 : 0)');
   });
 
   test('clear filters resets BOTH the desktop and mobile inputs', () => {
@@ -335,7 +335,7 @@ describe('home page browse -- text filter searches all titles', () => {
     // AFTER the deck/wishlist/library trio -- the exact intermediate filters
     // between kind and library keep growing (#266 added Wishlist + Deck,
     // #246 added VR), so we pin the two edges instead of the whole chain.
-    expect(homeSrc).toMatch(/_filterByText\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\(/);
+    expect(homeSrc).toMatch(/_filterByText\(_filterByAntiCheat\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\(/);
     expect(homeSrc).toMatch(/_filterByWishlist\(_filterByLibrary\(/);
     // Placeholder wording matches the actual behavior (previous text
     // "Filter loaded list" implied only visible items).
@@ -469,7 +469,7 @@ describe('#290 clickable chart rows: URL-param prefilter', () => {
   });
 
   test('device URL params trigger deckStatusMap load up front (otherwise every appId is "unknown" and the filter matches nothing)', () => {
-    expect(homeSrc).toMatch(/if \(\(_urlDeck \|\| _urlMachine \|\| _urlSteamos\) && !deckStatusMap\)\s*\{\s*deckStatusMap = await loadDeckStatusMap/);
+    expect(homeSrc).toMatch(/if \(\(_urlDeck \|\| _urlMachine \|\| _urlSteamos[^)]*\)[^)]*\)[^)]*\)[^)]*\) && !deckStatusMap\)\s*\{\s*deckStatusMap = await loadDeckStatusMap/);
   });
 
   test('respects ?view= when picking the chart chip so Deck/Machine/SteamOS/Wishlist do not reset to Library', () => {
@@ -499,7 +499,7 @@ describe('home page browse -- VR filter (#246)', () => {
 
   test('clear filters resets the VR selection and its chip group', () => {
     expect(homeSrc).toContain('vrSel = new Set();');
-    expect(homeSrc).toContain('kindGroup, vrGroup].forEach');
+    expect(homeSrc).toMatch(/kindGroup, vrGroup(, acGroup)?\]\.forEach/);
   });
 
   test('VR selection is persisted alongside the other saved filters', () => {

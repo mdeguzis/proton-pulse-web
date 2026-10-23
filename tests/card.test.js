@@ -12,6 +12,9 @@ function loadCard() {
     STEAM_IMG: (id) => `https://img/${id}/header.jpg`,
     esc: (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'),
     _loadSteamImg: () => {},
+    // #556: no anti-cheat data in these tests; antiCheatNotice.test.js covers the chip.
+    antiCheatForAppSync: () => null,
+    antiCheatBlocksLinux: () => false,
   });
   return ctx.renderGameCard;
 }

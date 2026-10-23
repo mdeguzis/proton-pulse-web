@@ -35,6 +35,7 @@ from .common import (
     LIVE_COUNTS_URL,
     app_id_to_dir,
     app_type_from_id,
+    appdetails_breaker_state,
     count_year_bucket_files,
     dir_to_app_id,
     fetch_json,
@@ -1108,6 +1109,13 @@ def generate_search_index(
         f"[search-index] loop complete: title+summary={title_summary_elapsed:.1f}s, "
         f"adult-check={adult_check_elapsed:.1f}s, total={time.perf_counter() - loop_started:.1f}s"
     )
+    breaker = appdetails_breaker_state()
+    if breaker["open"]:
+        log(
+            f"[search-index] WARNING: appdetails circuit breaker opened; {breaker['skipped']:,} "
+            f"adult checks skipped this run ({breaker['stale_served']:,} answered from the last "
+            "confirmed descriptors, the rest treated as not adult; all retried next run)"
+        )
 
     # Demo dedup for catalog stubs: GOG/Epic list demos as separate products
     # ("Coffee Noir DEMO" next to "Coffee Noir"). A demo stub with zero
@@ -1611,7 +1619,18 @@ def generate_sgdb_covers(
 
     hot = sorted(cid for cid in targets if _has_data(cid))
     cold = sorted(cid for cid in targets if not _has_data(cid))
-    ordered = hot + cold
+    # Never-probed ids (and 429 give-ups, which are meant to retry) go ahead
+    # of stale refreshes, keeping hot-before-cold inside each group (#258).
+    # In plain sorted order the first ~3,000 ids go stale after STALE_DAYS
+    # and win the cap again every night, so coverage stalled near 3,100 of
+    # 15,384 games instead of working through the whole catalog.
+    def _needs_first_probe(cid: str) -> bool:
+        entry = cache.get(cid)
+        return entry is None or entry.get("last_error") == "http_429_gave_up"
+
+    ranked = hot + cold
+    ordered = [c for c in ranked if _needs_first_probe(c)] + \
+              [c for c in ranked if not _needs_first_probe(c)]
 
     log(
         f"[sgdb-covers] {len(targets):,} candidates ({len(hot):,} hot / "

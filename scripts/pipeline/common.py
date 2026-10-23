@@ -86,11 +86,12 @@ def clone_repo(url, target_dir):
     log("[clone] Clone complete.", debug=True)
 
 
-def fetch_json(url: str, retries: int = 3):
+def fetch_json(url: str, retries: int = 3, timeout: float = 15):
+    # timeout: without one, a stalled connection blocks the pipeline forever.
     for attempt in range(retries):
         try:
             # URL from hardcoded Steam API / ProtonDB constants
-            with request.urlopen(url) as response:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+            with request.urlopen(url, timeout=timeout) as response:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
                 data = response.read()
                 return json.loads(data)
         except Exception:
@@ -126,9 +127,10 @@ def _scrape_steam_store_title(app_id: str) -> str:
 
 
 def _load_steam_title_cache(
-    cache_path: Path = DEFAULT_STEAM_TITLE_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> dict[str, dict]:
     """Load the persistent Steam title cache from disk."""
+    cache_path = cache_path or DEFAULT_STEAM_TITLE_CACHE_PATH
     global _steam_title_cache
     if _steam_title_cache is not None:
         return _steam_title_cache
@@ -146,9 +148,10 @@ def _load_steam_title_cache(
 
 
 def _save_steam_title_cache(
-    cache_path: Path = DEFAULT_STEAM_TITLE_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> None:
     """Persist the Steam title cache to disk if dirty."""
+    cache_path = cache_path or DEFAULT_STEAM_TITLE_CACHE_PATH
     global _steam_title_cache_dirty
     if not _steam_title_cache_dirty or _steam_title_cache is None:
         return
@@ -159,9 +162,10 @@ def _save_steam_title_cache(
 
 
 def flush_steam_title_cache(
-    cache_path: Path = DEFAULT_STEAM_TITLE_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> None:
     """Public flush for callers to persist cache at end of pipeline."""
+    cache_path = cache_path or DEFAULT_STEAM_TITLE_CACHE_PATH
     _save_steam_title_cache(cache_path)
 
 
@@ -210,10 +214,14 @@ def fetch_steam_title_with_source(app_id: str) -> tuple[str, str]:
 
 
 def _load_steam_descriptors_cache(
-    cache_path: Path = DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> dict[str, dict]:
     """Load the persistent Steam content-descriptor cache from disk."""
     global _steam_descriptors_cache
+    # Resolved at call time, not as a default argument, so tests that
+    # monkeypatch DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH really are isolated.
+    # A def-time default made them read and write the developer's .cache.
+    cache_path = cache_path or DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH
     if _steam_descriptors_cache is not None:
         return _steam_descriptors_cache
     if cache_path.exists():
@@ -230,11 +238,12 @@ def _load_steam_descriptors_cache(
 
 
 def _save_steam_descriptors_cache(
-    cache_path: Path = DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> None:
     global _steam_descriptors_cache_dirty
     if not _steam_descriptors_cache_dirty or _steam_descriptors_cache is None:
         return
+    cache_path = cache_path or DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(json.dumps(_steam_descriptors_cache))
     _steam_descriptors_cache_dirty = False
@@ -242,9 +251,43 @@ def _save_steam_descriptors_cache(
 
 
 def flush_steam_descriptors_cache(
-    cache_path: Path = DEFAULT_STEAM_DESCRIPTORS_CACHE_PATH,
+    cache_path: Path | None = None,
 ) -> None:
     _save_steam_descriptors_cache(cache_path)
+
+
+# Circuit breaker for the appdetails calls behind the adult check (#258).
+# Under Steam rate limiting every call fails after ~6.6s of retries, and the
+# search-index loop kept making them: a staging finalize spent 3,627s on 545
+# failed lookups (445 x 403, 100 x 429). After this many consecutive failures
+# the rest of the run skips the network. Skipped apps are handled exactly like
+# a failed fetch: nothing is cached, so the next run retries them.
+APPDETAILS_FAILURE_LIMIT = 10
+_appdetails_breaker = {"consecutive": 0, "open": False, "skipped": 0, "stale_served": 0}
+
+
+def _last_confirmed_ids(entry) -> list[int] | None:
+    """The descriptor ids from a cache entry Steam actually confirmed, even if
+    it has expired. Used when a refresh fails (stale-if-error, #258): an
+    expired adult flag beats publishing a known-adult game as "no flags".
+    Unconfirmed negatives are not trusted, since they may themselves be a
+    rate-limit false negative."""
+    if not isinstance(entry, dict):
+        return None
+    ids = entry.get("ids")
+    ids = ids if isinstance(ids, list) else []
+    ok = entry.get("ok")
+    if ok is None:
+        ok = bool(ids)  # legacy entries: non-empty means it came from a success
+    return list(ids) if ok else None
+
+
+def reset_appdetails_breaker() -> None:
+    _appdetails_breaker.update(consecutive=0, open=False, skipped=0, stale_served=0)
+
+
+def appdetails_breaker_state() -> dict:
+    return dict(_appdetails_breaker)
 
 
 def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) -> list[int]:
@@ -280,8 +323,17 @@ def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) ->
             ids = cached.get("ids", [])
             return list(ids) if isinstance(ids, list) else []
 
+    if _appdetails_breaker["open"]:
+        _appdetails_breaker["skipped"] += 1
+        stale = _last_confirmed_ids(cache.get(app_id))
+        if stale is not None:
+            _appdetails_breaker["stale_served"] += 1
+            return stale
+        return []
+
     try:
         data = fetch_json(STEAM_APP_DETAILS_URL.format(app_id=app_id))
+        _appdetails_breaker["consecutive"] = 0
         app_data = (data or {}).get(str(app_id), {})
         if app_data.get("success"):
             descriptors = app_data.get("data", {}).get("content_descriptors", {}) or {}
@@ -308,10 +360,22 @@ def fetch_steam_content_descriptors(app_id: str, force_refresh: bool = False) ->
         cache[app_id] = {"ids": [], "ts": now, "ok": False}
         _steam_descriptors_cache_dirty = True
         return []
-    except Exception:
+    except Exception as exc:
         # Network error / HTTP 429 rate limit. Do NOT write a cache entry:
         # leaving it unset (or keeping any prior entry) means the next run
         # retries rather than poisoning the cache with a false negative.
+        _appdetails_breaker["consecutive"] += 1
+        if _appdetails_breaker["consecutive"] >= APPDETAILS_FAILURE_LIMIT:
+            _appdetails_breaker["open"] = True
+            log(
+                f"[steam-descriptors] WARNING: {_appdetails_breaker['consecutive']} consecutive "
+                f"appdetails failures (last: app {app_id}, {type(exc).__name__}: {exc}); "
+                "assuming Steam rate limiting, skipping appdetails for the rest of this run"
+            )
+        stale = _last_confirmed_ids(cache.get(app_id))
+        if stale is not None:
+            _appdetails_breaker["stale_served"] += 1
+            return stale
         return []
 
 

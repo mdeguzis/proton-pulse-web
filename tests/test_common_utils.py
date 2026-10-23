@@ -268,7 +268,7 @@ def test_fetch_json_retries_on_failure():
     call_count = 0
     payload = b'{"ok": true}'
 
-    def fake_urlopen(url):
+    def fake_urlopen(url, timeout=None):
         nonlocal call_count
         call_count += 1
         if call_count < 2:

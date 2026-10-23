@@ -84,7 +84,7 @@ _EPIC_COVER_TYPES = ("DieselStoreFrontWide", "OfferImageWide", "Featured", "Dies
 
 
 def load_epic_catalog(
-    cache_path: Path = DEFAULT_EPIC_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = EPIC_CATALOG_CACHE_MAX_AGE_SECONDS,
     force_refresh: bool = False,
 ) -> dict[str, str]:
@@ -94,6 +94,7 @@ def load_epic_catalog(
     Returns empty dict on failure so callers degrade gracefully. Cover image
     URLs load into a parallel cache; read them via load_epic_covers().
     """
+    cache_path = cache_path or DEFAULT_EPIC_CATALOG_CACHE_PATH
     global _epic_catalog_cache, _epic_covers_cache, _epic_years_cache, _epic_meta_cache
     if _epic_catalog_cache is not None and not force_refresh:
         return _epic_catalog_cache
@@ -164,10 +165,11 @@ def load_epic_catalog(
 
 
 def load_epic_covers(
-    cache_path: Path = DEFAULT_EPIC_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = EPIC_CATALOG_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, str]:
     """Return {namespace: cover_image_url} for Epic games."""
+    cache_path = cache_path or DEFAULT_EPIC_CATALOG_CACHE_PATH
     global _epic_covers_cache
     if _epic_covers_cache is None:
         load_epic_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
@@ -175,7 +177,7 @@ def load_epic_covers(
 
 
 def load_epic_release_years(
-    cache_path: Path = DEFAULT_EPIC_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = EPIC_CATALOG_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, int]:
     """Return {namespace: year} for Epic games (#112).
@@ -183,6 +185,7 @@ def load_epic_release_years(
     Empty dict if the cached catalog predates #112 -- next fetch after
     the 7-day TTL populates it.
     """
+    cache_path = cache_path or DEFAULT_EPIC_CATALOG_CACHE_PATH
     global _epic_years_cache
     if _epic_years_cache is None:
         load_epic_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
@@ -190,7 +193,7 @@ def load_epic_release_years(
 
 
 def load_epic_meta(
-    cache_path: Path = DEFAULT_EPIC_CATALOG_CACHE_PATH,
+    cache_path: Path | None = None,
     max_age_seconds: int = EPIC_CATALOG_CACHE_MAX_AGE_SECONDS,
 ) -> dict[str, dict]:
     """Return {namespace: {genres, developers, publishers, store_link}} (#400).
@@ -198,6 +201,7 @@ def load_epic_meta(
     Empty dict when the cached catalog predates #400; the next fetch after
     the TTL fills it.
     """
+    cache_path = cache_path or DEFAULT_EPIC_CATALOG_CACHE_PATH
     global _epic_meta_cache
     if _epic_meta_cache is None:
         load_epic_catalog(cache_path=cache_path, max_age_seconds=max_age_seconds)
