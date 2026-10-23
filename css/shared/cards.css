@@ -190,7 +190,8 @@
    One variant only -- VR-only games say so in a banner on the detail page,
    not with a second chip colour that says "different somehow" without
    saying how. */
-.game-card-vr-chip {
+.game-card-vr-chip,
+.game-card-ac-chip {
   display: inline-flex;
   align-items: center;
   padding: 0 6px;
@@ -219,7 +220,17 @@
 .game-card-corner-tag,
 .game-card-strip-store { overflow: hidden; }
 
-.game-card-vr-chip:first-child {
+/* #556 anti-cheat chip: same box as the VR chip, only rendered when the
+   anti-cheat blocks Linux. Deep red so it is distinct from the lighter
+   Delisted red and from the BORKED tier colour; white text holds contrast
+   in both themes. */
+.game-card-ac-chip {
+  background: var(--ac-chip-bg, #8e1f2c);
+  color: var(--ac-chip-fg, #fff);
+}
+
+.game-card-vr-chip:first-child,
+.game-card-ac-chip:first-child {
   align-self: stretch;
   margin-top: calc(-1 * var(--badge-pad-y, 0px));
   margin-bottom: calc(-1 * var(--badge-pad-y, 0px));

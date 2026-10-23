@@ -406,6 +406,28 @@
 .grp-why { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-weight: 700; margin-left: 4px; }
 .grp-why:hover { color: var(--accent-hi); }
 
+/* #556 anti-cheat line at the foot of the rating panel. Tone is carried by
+   the left border + a light tint so text stays var(--text) and reads in both
+   themes. Separate block from .grp-foot because it answers a different
+   question (can I play online) than the rating (how well it runs). */
+.grp-ac {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--ac-tone, var(--border));
+  border-radius: 4px;
+  background: var(--ac-tint, transparent);
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.grp-ac--broken  { --ac-tone: #d0505a; --ac-tint: rgba(208, 80, 90, 0.10); }
+.grp-ac--works   { --ac-tone: #5fb85a; --ac-tint: rgba(95, 184, 90, 0.08); }
+.grp-ac--unknown { --ac-tone: #e8a33d; --ac-tint: rgba(232, 163, 61, 0.08); }
+.grp-ac-head strong { color: var(--strong, var(--text)); font-weight: 700; }
+.grp-ac-detail { margin-top: 2px; }
+.grp-ac-note { margin-top: 4px; font-size: 0.74rem; color: var(--muted); }
+.grp-ac-note a { color: var(--accent); }
+
 /* Small inline ProtonDB tier chip that rides inside the confidence line so
    the panel keeps its original height. Tier color is applied to the chip
    background, monospaced text so PLATINUM / BORKED don't jump around. */
