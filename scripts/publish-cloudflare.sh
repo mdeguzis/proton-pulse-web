@@ -297,6 +297,13 @@ fi
 # 2c. The dual-target routing config: data/ served from R2 on Cloudflare.
 printf '{"dataBase":"%s","target":"cloudflare"}\n' "$DATA_BASE" > "$DEPLOY/data-config.json"
 
+# 2c.i. On the Pages host /data/... has no files, so it falls through to the
+# SPA shell (HTML, 200). Plugin builds up to v1.15.0 fetch per-game reports
+# from www.proton-pulse.com/data/ (decky-proton-pulse#131) and read that HTML
+# as "no data". Send them to the R2 host instead. 302 so the target can move.
+printf '/data/* %s/data/:splat 302\n' "$DATA_BASE" > "$DEPLOY/_redirects"
+log "wrote _redirects: /data/* -> $DATA_BASE/data/"
+
 # 2d. version.json for the About page (version from package.json, sha from git).
 # commit_time (committer date, UTC) feeds the version guard below: deploys
 # are ordered by the COMMIT being deployed, not by when a runner happened to
