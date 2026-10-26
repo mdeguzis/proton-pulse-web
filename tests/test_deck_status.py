@@ -218,3 +218,71 @@ def test_build_survives_verdict_reassignment_bug(tmp_path):
     assert set(written.keys()) == {"1", "2", "3"}
     for entry in written.values():
         assert entry["status"] == "verified"
+
+
+# --- #258: expired entries are refreshed under a budget, not all at once ---
+
+def _seed_cache(entries):
+    """Write the on-disk cache: {app_id: (val, ts, ok)}."""
+    deck.CACHE_PATH.write_text(json.dumps({k: {"val": v, "ts": ts, "ok": ok} for k, (v, ts, ok) in entries.items()}))
+    deck._cache = None
+
+
+def _verdict():
+    return {"status": "verified", "criteria": [True, True, True, True], "machine": "unknown",
+            "steamos": "unknown", "machine_criteria": [], "steamos_criteria": []}
+
+
+def test_expired_entries_over_budget_keep_their_cached_verdict(tmp_path):
+    # Regression: every expired entry was refetched with no limit, so a wave
+    # of expiries (the 3-day negative TTL) cost 23 minutes on one night.
+    long_ago = int(time.time()) - deck.CACHE_MAX_AGE_SECONDS - 60
+    _seed_cache({str(i): (_verdict(), long_ago, True) for i in range(1, 6)})
+    with patch.object(deck, "_fetch_raw", return_value=_verified_payload()) as fetch:
+        result = build_deck_status(tmp_path, app_ids=[str(i) for i in range(1, 6)], refresh_budget=2)
+    assert fetch.call_count == 2
+    # All five still published: two refreshed, three served from cache.
+    assert sorted(result) == ["1", "2", "3", "4", "5"]
+
+
+def test_fresh_entries_cost_no_fetch_and_new_ids_ignore_the_refresh_budget(tmp_path):
+    now = int(time.time())
+    _seed_cache({"1": (_verdict(), now, True)})
+    with patch.object(deck, "_fetch_raw", return_value=_verified_payload()) as fetch:
+        result = build_deck_status(tmp_path, app_ids=["1", "2", "3"], refresh_budget=0)
+    # "1" is fresh (no fetch); "2" and "3" are missing, which the scope's own
+    # DECK_FETCH_BUDGET already caps, so the refresh budget does not apply.
+    assert fetch.call_count == 2
+    assert sorted(result) == ["1", "2", "3"]
+
+
+def test_failed_refresh_keeps_the_stale_verdict(tmp_path):
+    import urllib.error
+    long_ago = int(time.time()) - deck.CACHE_MAX_AGE_SECONDS - 60
+    _seed_cache({"1": (_verdict(), long_ago, True)})
+    with patch.object(deck, "_fetch_raw", side_effect=urllib.error.URLError("timeout")):
+        result = build_deck_status(tmp_path, app_ids=["1"])
+    # Before, a failed refresh dropped the app from deck-status.json for the run.
+    assert result["1"]["status"] == "verified"
+
+
+def test_build_logs_a_cache_summary(tmp_path):
+    long_ago = int(time.time()) - deck.CACHE_NEGATIVE_TTL_SECONDS - 60
+    _seed_cache({"1": (None, long_ago, False), "2": (None, long_ago, False)})
+    with patch.object(deck, "_fetch_raw", return_value={"success": 1, "results": {"resolved_category": 0}}), \
+         patch.object(deck, "log") as log:
+        build_deck_status(tmp_path, app_ids=["1", "2", "3"], refresh_budget=1)
+    summary = [c.args[0] for c in log.call_args_list if "[deck-status] cache:" in c.args[0]]
+    assert len(summary) == 1
+    assert "1 new fetched" in summary[0]
+    assert "1 expired refreshed (budget 1)" in summary[0]
+    assert "1 expired still served" in summary[0]
+
+
+def test_delay_only_applies_to_actual_fetches(tmp_path):
+    now = int(time.time())
+    _seed_cache({str(i): (_verdict(), now, True) for i in range(1, 4)})
+    with patch.object(deck, "_fetch_raw", return_value=_verified_payload()), \
+         patch.object(deck.time, "sleep") as sleep:
+        build_deck_status(tmp_path, app_ids=["1", "2", "3", "4"], delay=0.5)
+    sleep.assert_called_once_with(0.5)
