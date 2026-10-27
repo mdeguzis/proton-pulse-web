@@ -74,9 +74,6 @@ const KNOWN_UNSHIPPED = new Map([
   // of cache to every visitor to serve one admin screen is the wrong trade.
   ['game-images-cache.json', 'admin-only probe cache, too large to ship'],
   ['nonsteam-images-cache.json', 'admin-only probe cache, too large to ship'],
-  // Profile app-type breakdown. Same reasoning: a large cache behind one
-  // optional widget that already handles absence.
-  ['steam-type-cache.json', 'large cache behind an optional profile widget'],
   // Shipped, just not via SMALL_DATA: preserve-cert-monitor.sh (invoked by
   // publish-cloudflare.sh) carries these across the deploy because they
   // accumulate history that a fresh pipeline output does not contain. Both

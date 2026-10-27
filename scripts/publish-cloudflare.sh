@@ -61,6 +61,11 @@ SMALL_DATA=(
   sgdb-covers.json
   # #246 VR capability map + VRDB compatibility panel data.
   vr-index.json vrdb.json
+  # #569: the profile Library/Wishlist type breakdown (#266) and the My
+  # Library Type column (#251) read this. It was left out as "large", but it
+  # is ~660 KB raw / ~110 KB gzipped, and without it Pages serves the SPA
+  # HTML so every app showed as "not yet cached".
+  steam-type-cache.json
   # anti-cheat.json was missed when #362 moved publishing to Cloudflare: the
   # pipeline writes it, nothing shipped it, and Pages answers the request with
   # the SPA fallback -- HTML with a 200. loadAntiCheatMap() treats any bad

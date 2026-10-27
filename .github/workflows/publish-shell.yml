@@ -119,7 +119,7 @@ jobs:
             # shell deploy, so the site works until someone pushes a CSS
             # tweak. vr-index.json + vrdb.json (#246) and anti-cheat.json
             # were all lost this way.
-            vr-index.json vrdb.json anti-cheat.json
+            vr-index.json vrdb.json anti-cheat.json steam-type-cache.json
           )
           for f in "${FILES[@]}"; do
             if curl -sfL --max-time 30 "$LIVE_BASE/$f" -o "/tmp/shell-out/$f" \

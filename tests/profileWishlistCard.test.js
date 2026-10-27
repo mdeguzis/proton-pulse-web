@@ -130,12 +130,30 @@ describe('computeTypeBreakdown', () => {
     expect(r.order).toEqual([]);
   });
 
-  test('cache miss (non-ok response) buckets everything as unknown', async () => {
+  test('a non-ok response rejects instead of showing everything as unknown (#569)', async () => {
     const fetchImpl = jest.fn().mockResolvedValue({ ok: false, status: 404 });
     const { computeTypeBreakdown } = loadBreakdown({ fetchImpl });
-    const r = await computeTypeBreakdown([10, 100, 999]);
-    expect(r.counts.unknown).toBe(3);
-    expect(r.cached).toBe(0);
+    await expect(computeTypeBreakdown([10, 100, 999])).rejects.toThrow(/HTTP 404/);
+  });
+
+  test('the Pages HTML fallback (200 text/html) rejects too (#569)', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({
+      ok: true, status: 200,
+      headers: { get: () => 'text/html; charset=utf-8' },
+      json: () => Promise.reject(new SyntaxError('Unexpected token <')),
+    });
+    const { steamTypesFor } = loadBreakdown({ fetchImpl });
+    await expect(steamTypesFor([10])).rejects.toThrow(/returned HTML/);
+  });
+
+  test('a malformed payload rejects, and a failed load is retried next call', async () => {
+    const fetchImpl = jest.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([1, 2]) })
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({ 10: 'game' }) });
+    const { steamTypesFor } = loadBreakdown({ fetchImpl });
+    await expect(steamTypesFor([10])).rejects.toThrow(/not an object map/);
+    await expect(steamTypesFor([10])).resolves.toEqual({ 10: 'game' });
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 
   test('caches the type map so repeat calls skip the fetch', async () => {

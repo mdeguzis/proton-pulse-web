@@ -9,7 +9,7 @@ import { SupaAuth } from '../config.js?v=87cd0f3d';
 import { formatSystemUpdated, escapeHtml } from '../utils.js?v=0101ce5f';
 import { fetchMyLibraryRow, syncMyLibrary } from '../api/steam-library.js?v=d03f2631';
 import { fetchMyWishlistRow, syncMyWishlist } from '../api/steam-wishlist.js?v=989d8088';
-import { computeTypeBreakdown } from '../lib/steam-type-breakdown.js?v=b80f6094';
+import { computeTypeBreakdown } from '../lib/steam-type-breakdown.js?v=1473af06';
 
 function _renderTypesLine(el, breakdown) {
   if (!el) return;
@@ -59,7 +59,7 @@ export function initLibrary(ctx) {
         const breakdown = await computeTypeBreakdown(appids);
         _renderTypesLine(libraryTypes, breakdown);
       } catch (e) {
-        console.debug('[profile] library type breakdown failed', { error: e?.message });
+        console.warn('[profile] library type breakdown failed, hiding the type line', { error: e?.message });
       }
     }
   }
@@ -126,7 +126,7 @@ export function initLibrary(ctx) {
         const breakdown = await computeTypeBreakdown(appids);
         _renderTypesLine(wishlistTypes, breakdown);
       } catch (e) {
-        console.debug('[profile] wishlist type breakdown failed', { error: e?.message });
+        console.warn('[profile] wishlist type breakdown failed, hiding the type line', { error: e?.message });
       }
     }
   }
