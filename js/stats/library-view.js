@@ -11,6 +11,7 @@
 import { OPTIMIZATION_PATTERNS } from '../shared/analytics-patterns.js?v=c119f011';
 import { aggregateLibraryPatterns } from '../shared/library-correlations.js?v=b7a81edf';
 import { renderPurposeChart } from '../shared/purpose-charts.js?v=d383b3bd';
+import { steamTypesFor } from '../profile/lib/steam-type-breakdown.js?v=b80f6094';
 
 const REPORT_FETCH_CHUNK = 100;   // Steam libraries can be hundreds of games
 const MAX_REPORTS         = 500;  // per fetch, we don't need every row
@@ -147,6 +148,14 @@ export async function renderLibraryTab(host) {
 
   const topPatterns = agg.perPattern.slice(0, 5);
   const topGames    = agg.perGame.slice(0, 8);
+  // #251: tag each row with its Steam type (game / dlc / mod / ...) so a
+  // library scan shows what each entry is. Unknown types render blank.
+  let types = {};
+  try {
+    types = await steamTypesFor(topGames.map(g => g.appId));
+  } catch (e) {
+    console.warn('[library-view] steam type lookup failed, rendering without types', { error: e?.message });
+  }
   const hwLabel = hardware ? _esc(hardware) : 'all hardware';
 
   host.innerHTML = `
@@ -162,12 +171,13 @@ export async function renderLibraryTab(host) {
       </div>
       <table class="library-recs">
         <thead>
-          <tr><th>App ID</th><th>Reports</th><th>Top optimization</th></tr>
+          <tr><th>App ID</th><th>Type</th><th>Reports</th><th>Top optimization</th></tr>
         </thead>
         <tbody>
           ${topGames.map(g => `
             <tr>
               <td><a href="app.html#/app/${_esc(g.appId)}">${_esc(g.appId)}</a></td>
+              <td>${types[String(g.appId)] ? `<span class="steam-type-tag">${_esc(types[String(g.appId)])}</span>` : ''}</td>
               <td>${g.reportCount}</td>
               <td>${_esc(topPatterns.find(p => p.key === g.topPattern)?.label || g.topPattern)}</td>
             </tr>

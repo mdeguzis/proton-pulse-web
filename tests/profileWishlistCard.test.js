@@ -186,3 +186,35 @@ describe('profile.html markup + main.js wiring', () => {
     expect(LIBRARY_COMPONENT).toContain('computeTypeBreakdown(appids)');
   });
 });
+
+describe('steamTypesFor (#251)', () => {
+  const cache = { '10': 'game', '100': 'dlc', '300': 'mod' };
+
+  test('returns the raw type per known appid and leaves unknown ones out', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(cache) });
+    const { steamTypesFor } = loadBreakdown({ fetchImpl });
+    expect(await steamTypesFor([10, '100', 300, 999])).toEqual({ 10: 'game', 100: 'dlc', 300: 'mod' });
+    expect(await steamTypesFor([])).toEqual({});
+  });
+
+  test('shares one cache load with computeTypeBreakdown', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(cache) });
+    const { steamTypesFor, computeTypeBreakdown } = loadBreakdown({ fetchImpl });
+    await computeTypeBreakdown([10]);
+    await steamTypesFor([10]);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('stats My Library table shows the type (#251)', () => {
+  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'js/stats/library-view.js'), 'utf8');
+  test('has a Type column filled from steamTypesFor, escaped', () => {
+    expect(src).toMatch(/import \{ steamTypesFor \} from '\.\.\/profile\/lib\/steam-type-breakdown\.js/);
+    expect(src).toMatch(/<th>Type<\/th>/);
+    expect(src).toMatch(/<span class="steam-type-tag">\$\{_esc\(types\[String\(g\.appId\)\]\)\}<\/span>/);
+  });
+  test('a failed type lookup still renders the table', () => {
+    expect(src).toMatch(/catch \(e\) \{\s*console\.warn\('\[library-view\] steam type lookup failed/);
+  });
+});
+

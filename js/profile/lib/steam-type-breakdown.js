@@ -57,5 +57,22 @@ export async function computeTypeBreakdown(appIds) {
   return { total, cached, uncached: total - cached, counts, order };
 }
 
+/**
+ * Per-app Steam type for a list of appids (#251), from the same cached
+ * steam-type-cache.json the breakdown uses. Returns { "<appId>": type } with
+ * only the appids the cache knows; callers show nothing for the rest rather
+ * than guessing. Note "mod" is the raw Steam type: total conversions such as
+ * Black Mesa are games in practice, so show it as a label, not a verdict.
+ */
+export async function steamTypesFor(appIds) {
+  const cache = await _loadTypeCache();
+  const out = {};
+  for (const id of appIds || []) {
+    const t = cache[String(id)];
+    if (t) out[String(id)] = t;
+  }
+  return out;
+}
+
 // Escape hatch for tests / debug tools that want to inspect the raw map.
 export function _peekCache() { return _cache; }

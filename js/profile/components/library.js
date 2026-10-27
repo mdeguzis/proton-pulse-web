@@ -9,7 +9,7 @@ import { SupaAuth } from '../config.js?v=87cd0f3d';
 import { formatSystemUpdated, escapeHtml } from '../utils.js?v=0101ce5f';
 import { fetchMyLibraryRow, syncMyLibrary } from '../api/steam-library.js?v=d03f2631';
 import { fetchMyWishlistRow, syncMyWishlist } from '../api/steam-wishlist.js?v=989d8088';
-import { computeTypeBreakdown } from '../lib/steam-type-breakdown.js?v=c6959bfe';
+import { computeTypeBreakdown } from '../lib/steam-type-breakdown.js?v=b80f6094';
 
 function _renderTypesLine(el, breakdown) {
   if (!el) return;
