@@ -74,6 +74,8 @@ SMALL_DATA=(
   # THIRD registration point for pipeline data (gh-pages-manifest.txt and the
   # update-data.yml copy loops are the others); missing this one fails silently.
   anti-cheat.json
+  # #241 home "Exclude native" filter (scripts/pipeline/steam_platforms.py).
+  native-linux.json
 )
 
 log() { echo "[publish-cloudflare] $*"; }
