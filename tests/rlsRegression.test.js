@@ -335,3 +335,41 @@ describeIfCreds('RLS: user-scoped tables (per-user boundary)', () => {
     }, 90000);
   });
 });
+
+// #570: game_hides / game_remaps are publicly readable (the frontend filters
+// hides and follows remaps without a session), but the admin user id columns
+// are not. Column grants, not RLS, enforce this, so query as anon directly.
+describeIfCreds('Column grants: admin ids on game_hides / game_remaps (#570)', () => {
+  async function asAnon(sql) {
+    return queryDB(`SET LOCAL ROLE anon; ${sql}`);
+  }
+
+  test('anon can read the public columns', async () => {
+    await expect(asAnon('SELECT app_id, reason, hidden_at FROM public.game_hides LIMIT 1;')).resolves.toBeDefined();
+    await expect(asAnon('SELECT from_app_id, to_app_id, reason, created_at, updated_at FROM public.game_remaps LIMIT 1;')).resolves.toBeDefined();
+  }, 90000);
+
+  test('anon cannot read hidden_by or remapped_by', async () => {
+    await expect(asAnon('SELECT hidden_by FROM public.game_hides LIMIT 1;')).rejects.toThrow(/permission denied/);
+    await expect(asAnon('SELECT remapped_by FROM public.game_remaps LIMIT 1;')).rejects.toThrow(/permission denied/);
+  }, 90000);
+
+  test('a signed-in user cannot read the id columns either', async () => {
+    await expect(asUser(USER_A, 'SELECT hidden_by FROM public.game_hides LIMIT 1;')).rejects.toThrow(/permission denied/);
+  }, 90000);
+
+  test('clients cannot write the id columns; the server fills them', async () => {
+    await expect(asUser(USER_A, `
+      INSERT INTO public.game_hides (app_id, reason, hidden_by)
+      VALUES ('${seedKey('hide')}', 'probe', '${USER_A}');
+    `)).rejects.toThrow(/permission denied/);
+    const defaults = await queryDB(`
+      SELECT column_name, column_default FROM information_schema.columns
+      WHERE table_schema = 'public'
+        AND ((table_name = 'game_hides' AND column_name = 'hidden_by')
+          OR (table_name = 'game_remaps' AND column_name = 'remapped_by'))
+      ORDER BY column_name;
+    `);
+    expect(defaults.map((r) => r.column_default)).toEqual(['auth.uid()', 'auth.uid()']);
+  }, 90000);
+});
