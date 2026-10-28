@@ -1,5 +1,5 @@
 // Entry module for confidence.html. Migrated from the page's inline script.
-import { estimateScoreBreakdown, loadScoringInfo, ratingMix } from '../shared/scoring.js?v=852c9d97';
+import { estimateScoreBreakdown, loadScoringInfo, pulseTierDerivation, ratingMixSummary, TIER_THRESHOLDS } from '../shared/scoring.js?v=467474be';
 import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhanceHardwareBanner } from '../shared/hardware.js?v=f7bfd747';
 import { attachChartHover } from '../shared/chart-interactions.js?v=6b608095';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
@@ -702,59 +702,27 @@ import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
 
     // Full "why this tier" breakdown with the recency-weighted derivation table
     const whyRating = overallTier && n > 0 ? (() => {
-      const SCORE_MAP = { platinum: 1.0, gold: 0.8, silver: 0.6, bronze: 0.4, borked: 0.0 };
-      const THRESHOLDS = [
-        { tier: 'platinum', min: 0.85 }, { tier: 'gold', min: 0.65 },
-        { tier: 'silver', min: 0.40 }, { tier: 'bronze', min: 0.15 }, { tier: 'borked', min: 0.00 },
-      ];
-      const RECENCY = [
-        { max: 30, weight: 1.0, label: '<30d' }, { max: 90, weight: 0.85, label: '30-90d' },
-        { max: 180, weight: 0.65, label: '90-180d' }, { max: 365, weight: 0.40, label: '180d-1y' },
-        { max: 730, weight: 0.20, label: '1-2y' }, { max: 1095, weight: 0.10, label: '2-3y' },
-        { max: 1825, weight: 0.05, label: '3-5y' }, { max: Infinity, weight: 0.02, label: '5y+' },
-      ];
-      const nowSec = Date.now() / 1000;
-      let wSum = 0, wTotal = 0;
-      const perRep = [];
-      for (const r of reports) {
-        const days = Math.round((nowSec - (r.timestamp || 0)) / 86400);
-        const bucket = RECENCY.find(b => days < b.max) || RECENCY[RECENCY.length - 1];
-        // #427: normalize rating case so ProtonDB CDN's Capitalized ratings
-        // ("Borked") hit the lowercase SCORE_MAP keys. Without this every
-        // report defaults to 0.5 and the whyRating panel derives silver
-        // regardless of the true mix -- matching the same bug that made
-        // the game page badge disagree with cards + search.
-        const normRating = String(r.rating || '').toLowerCase();
-        const sc = SCORE_MAP[normRating] ?? 0.5;
-        const w = sc * bucket.weight;
-        wSum += w; wTotal += bucket.weight;
-        perRep.push({ rating: normRating, days, recencyWeight: bucket.weight, score: sc, weighted: w, recencyLabel: bucket.label });
-      }
-      const avg = wTotal > 0 ? wSum / wTotal : 0;
-      const tiers = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
-      const tierRows = tiers.map(t => {
-        const reps = perRep.filter(r => r.rating === t);
-        if (!reps.length) return '';
-        const tWSum = reps.reduce((s, r) => s + r.weighted, 0);
-        const tWTotal = reps.reduce((s, r) => s + r.recencyWeight, 0);
-        return `<tr><td><strong style="color:${RATING_COLORS[t]}">${t.toUpperCase()}</strong></td><td style="text-align:right">${reps.length}</td><td style="text-align:right">${SCORE_MAP[t].toFixed(1)}</td><td style="text-align:right">${tWTotal.toFixed(2)}</td><td style="text-align:right">${tWSum.toFixed(2)}</td></tr>`;
-      }).filter(Boolean).join('');
+      // #193: one derivation shared with pulseTierFromReports, so this panel
+      // explains the exact numbers behind the tier instead of a local copy.
+      const d = pulseTierDerivation(reports);
+      const { avg, wSum, wTotal, perReport: perRep } = d;
+      const tierRows = d.perTier.map(t =>
+        `<tr><td><strong style="color:${RATING_COLORS[t.tier]}">${t.tier.toUpperCase()}</strong></td><td style="text-align:right">${t.count}</td><td style="text-align:right">${t.score.toFixed(1)}</td><td style="text-align:right">${t.weightTotal.toFixed(2)}</td><td style="text-align:right">${t.weightedSum.toFixed(2)}</td></tr>`,
+      ).join('');
       const TIER_TEXT = { platinum: '#0a0c10', gold: '#0a0c10', silver: '#0a0c10', bronze: '#0a0c10', borked: '#fff' };
-      const threshChips = THRESHOLDS.map(t => {
+      const threshChips = TIER_THRESHOLDS.map(t => {
         const active = overallTier === t.tier;
         const opacity = active ? '1' : '0.55';
         return `<span style="display:inline-block;padding:4px 10px;margin:2px 4px 2px 0;border-radius:4px;font-size:0.76rem;font-family:var(--mono);font-weight:700;background:${RATING_COLORS[t.tier]};color:${TIER_TEXT[t.tier] || '#fff'};opacity:${opacity}${active ? ';outline:2px solid var(--text);outline-offset:1px' : ''}">${t.tier} &ge; ${t.min}</span>`;
       }).join('');
-      const recencyChips = RECENCY.map(b => {
-        const cnt = perRep.filter(r => r.recencyLabel === b.label).length;
-        if (!cnt) return '';
-        return `<span style="font-family:var(--mono);font-size:0.76rem;color:var(--muted)">${b.label}: <strong style="color:var(--text)">${b.weight}x</strong> (${cnt})</span>`;
-      }).filter(Boolean).join(' ');
-      const mixParts = tiers.filter(t => perRep.some(r => r.rating === t))
-        .map(t => `<strong style="color:${RATING_COLORS[t]}">${perRep.filter(r => r.rating === t).length}</strong> ${TIER_LBL[t]}`);
+      const recencyChips = d.perRecency.map(b =>
+        `<span style="font-family:var(--mono);font-size:0.76rem;color:var(--muted)">${b.label}: <strong style="color:var(--text)">${b.weight}x</strong> (${b.count})</span>`,
+      ).join(' ');
+      const mixParts = ratingMixSummary(reports, TIER_LBL).parts
+        .map(p => `<strong style="color:${RATING_COLORS[p.tier]}">${p.count}</strong> ${TIER_LBL[p.tier]}`);
       // Per-source
-      const pdb = perRep.filter((_, i) => (reports[i].source || '').toLowerCase() === 'protondb');
-      const pulse = perRep.filter((_, i) => (reports[i].source || '').toLowerCase() !== 'protondb');
+      const pdb = perRep.filter(r => r.source === 'protondb');
+      const pulse = perRep.filter(r => r.source !== 'protondb');
       const srcBits = [];
       if (pdb.length) srcBits.push(`ProtonDB: <strong>${pdb.length}</strong> reports`);
       if (pulse.length) srcBits.push(`Pulse: <strong>${pulse.length}</strong> reports`);

@@ -227,34 +227,97 @@ export function pulseTierFromReports(reports, protonDbCount = 0) {  // eslint-di
   if (!reports.length) {
     return { tier: 'pending', count: 0 };
   }
-  const SCORE = { platinum: 1.0, gold: 0.8, silver: 0.6, bronze: 0.4, borked: 0.0 };
-  const now = Date.now() / 1000;
+  return { tier: pulseTierDerivation(reports).tier, count: reports.length };
+}
+
+// --- Tier derivation (#193) ---
+// The constants and the per-report working behind pulseTierFromReports, so
+// the confidence page's "Why <tier>?" panel explains the exact calculation
+// the site uses instead of keeping its own copy of the numbers.
+
+/** Score per rating. Unknown ratings fall back to RATING_SCORE_FALLBACK. */
+export const RATING_SCORE = { platinum: 1.0, gold: 0.8, silver: 0.6, bronze: 0.4, borked: 0.0 };
+export const RATING_SCORE_FALLBACK = 0.5;
+
+/** Weighted-average cutoffs, highest first: avg >= min gives tier. */
+export const TIER_THRESHOLDS = [
+  { tier: 'platinum', min: 0.85 }, { tier: 'gold', min: 0.65 },
+  { tier: 'silver', min: 0.40 }, { tier: 'bronze', min: 0.15 }, { tier: 'borked', min: 0.00 },
+];
+
+/** Recency weight by report age in days: the first bucket with days < max. */
+export const RECENCY_BUCKETS = [
+  { max: 30, weight: 1.0, label: '<30d' }, { max: 90, weight: 0.85, label: '30-90d' },
+  { max: 180, weight: 0.65, label: '90-180d' }, { max: 365, weight: 0.40, label: '180d-1y' },
+  { max: 730, weight: 0.20, label: '1-2y' }, { max: 1095, weight: 0.10, label: '2-3y' },
+  { max: 1825, weight: 0.05, label: '3-5y' }, { max: Infinity, weight: 0.02, label: '5y+' },
+];
+
+export function recencyBucket(days) {
+  return RECENCY_BUCKETS.find((b) => days < b.max) || RECENCY_BUCKETS[RECENCY_BUCKETS.length - 1];
+}
+
+export function tierForAverage(avg) {
+  return (TIER_THRESHOLDS.find((t) => avg >= t.min) || TIER_THRESHOLDS[TIER_THRESHOLDS.length - 1]).tier;
+}
+
+/**
+ * The full working behind the recency-weighted tier. Each report adds
+ * score x recency_weight; the weighted average maps to a tier through
+ * TIER_THRESHOLDS. Bucketing uses the exact age (not rounded), so the
+ * breakdown matches the tier; `days` is rounded for display only.
+ * @param {Array<{rating: string, timestamp: number}>} reports
+ * @param {number} [nowSec] - epoch seconds, for tests
+ */
+export function pulseTierDerivation(reports, nowSec = Date.now() / 1000) {
   let wSum = 0, wTotal = 0;
-  for (const r of reports) {
-    const days = (now - (r.timestamp || 0)) / 86400;
-    const recency = days < 30 ? 1.0
-      : days < 90 ? 0.85
-      : days < 180 ? 0.65
-      : days < 365 ? 0.40
-      : days < 730 ? 0.20
-      : days < 1095 ? 0.10
-      : days < 1825 ? 0.05
-      : 0.02;
-    // ProtonDB CDN emits Capitalized ratings; Supabase emits lowercase.
-    // Normalize at lookup or every CDN report falls through to the 0.5
-    // fallback, which averages to 0.5 = silver regardless of true rating
-    // mix. That was the 203140 (Hitman: Absolution) game page bug (#427):
-    // 14 Borked + 2 Gold from ~7yr ago should compute to borked (avg 0.10)
-    // but rendered as silver (fallback avg 0.50) on the game page badge
-    // while cards + confidence page correctly showed borked.
-    const key = String(r.rating || '').toLowerCase();
-    const s = SCORE[key] ?? 0.5;
-    wSum += s * recency;
-    wTotal += recency;
+  const perReport = [];
+  for (const r of reports || []) {
+    const ageDays = (nowSec - (r.timestamp || 0)) / 86400;
+    const bucket = recencyBucket(ageDays);
+    // #427: ProtonDB CDN ratings are Capitalized; normalize before lookup.
+    const rating = String(r.rating || '').toLowerCase();
+    const score = RATING_SCORE[rating] ?? RATING_SCORE_FALLBACK;
+    const weighted = score * bucket.weight;
+    wSum += weighted;
+    wTotal += bucket.weight;
+    perReport.push({
+      rating, days: Math.round(ageDays), score, weighted,
+      recencyWeight: bucket.weight, recencyLabel: bucket.label,
+      source: String(r.source || '').toLowerCase() === 'protondb' ? 'protondb' : 'pulse',
+    });
   }
   const avg = wTotal > 0 ? wSum / wTotal : 0;
-  const tier = avg >= 0.85 ? 'platinum' : avg >= 0.65 ? 'gold' : avg >= 0.40 ? 'silver' : avg >= 0.15 ? 'bronze' : 'borked';
-  return { tier, count: reports.length };
+  const perTier = RATING_TIER_ORDER
+    .map((tier) => {
+      const reps = perReport.filter((p) => p.rating === tier);
+      return {
+        tier, count: reps.length, score: RATING_SCORE[tier],
+        weightTotal: reps.reduce((n, p) => n + p.recencyWeight, 0),
+        weightedSum: reps.reduce((n, p) => n + p.weighted, 0),
+      };
+    })
+    .filter((t) => t.count > 0);
+  const perRecency = RECENCY_BUCKETS
+    .map((b) => ({ label: b.label, weight: b.weight, count: perReport.filter((p) => p.recencyLabel === b.label).length }))
+    .filter((b) => b.count > 0);
+  return { tier: tierForAverage(avg), avg, wSum, wTotal, perReport, perTier, perRecency };
+}
+
+/**
+ * Plain-language report mix for "why this rating" (#193):
+ * { parts: [{tier, count}], total, sentence: "3 Gold, 1 Silver across 4 reports" }.
+ * labels maps a tier to its display name (defaults to the capitalized tier).
+ */
+export function ratingMixSummary(reports, labels = {}) {
+  const parts = ratingMix(reports);
+  const total = (reports || []).length;
+  const name = (t) => labels[t] || (t.charAt(0).toUpperCase() + t.slice(1));
+  const mix = parts.map((p) => `${p.count} ${name(p.tier)}`).join(', ');
+  const sentence = total === 0
+    ? 'No reports yet'
+    : `${mix || 'No rated reports'} across ${total} report${total === 1 ? '' : 's'}`;
+  return { parts, total, sentence };
 }
 
 // --- estimateScore ---
