@@ -1,7 +1,7 @@
 // home (components) for the app page. Relocated from app.js.
 
 import { fetchRecentPulseReports } from '../api/reports.js?v=003f23c0';
-import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
+import { loadGameHides } from '../lib/game-hides.js?v=6a2a7468';
 import { browseGames, getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 import { SB_KEY, SB_URL, isNonSteamAppId, appTypeFromAppId, storeLabel } from '../config.js?v=7873e060';
 import { daysAgo, latestPerApp } from '../utils.js?v=4630c3d5';

@@ -113,33 +113,54 @@ def fetch_deck_compat(app_id):
     ``criteria`` is a list of four True/False/None values from the first four
     resolved_items, or ``None`` when fewer than four are present.
     """
+    state, cval = _cache_state(app_id)
+    if state == "fresh":
+        return cval
+    val, _failed = _fetch_and_cache(app_id)
+    return val
+
+
+def _cache_state(app_id):
+    """Return ``(state, cached_val)``: state is "fresh", "stale" or "missing".
+
+    "stale" covers both an expired TTL and an old-schema positive entry that
+    lacks machine/steamos or the per-criterion arrays (refetched to enrich).
+    """
+    cache = _load_cache()
+    cached = cache.get(str(app_id))
+    if not isinstance(cached, dict):
+        return "missing", None
+    cval = cached.get("val")
+    stale_schema = isinstance(cval, dict) and (
+        "machine" not in cval or "machine_criteria" not in cval
+    )
+    ok = cached.get("ok")
+    if ok is None:  # legacy entries: a stored verdict implies a confirmed fetch
+        ok = bool(cval)
+    ttl = CACHE_MAX_AGE_SECONDS if ok else CACHE_NEGATIVE_TTL_SECONDS
+    if not stale_schema and int(time.time()) - cached.get("ts", 0) < ttl:
+        return "fresh", cval
+    return "stale", cval
+
+
+def _fetch_and_cache(app_id):
+    """Fetch one app's Deck verdict from Steam and cache it.
+
+    Returns ``(val, failed)``. ``failed`` is True for a network or parse
+    failure (nothing cached, so it is retried next run); a successful fetch
+    with no verdict returns ``(None, False)``.
+    """
     global _cache_dirty
     cache = _load_cache()
     now = int(time.time())
     key = str(app_id)
-
-    cached = cache.get(key)
-    if isinstance(cached, dict):
-        cval = cached.get("val")
-        # Old-schema positive entries lack machine/steamos or the per-criterion
-        # arrays -- force a refetch so they get enriched. Negative (None)
-        # entries have nothing to enrich, so honor their TTL as before.
-        stale_schema = isinstance(cval, dict) and (
-            "machine" not in cval or "machine_criteria" not in cval
-        )
-        ok = cached.get("ok")
-        if ok is None:  # legacy entries: a stored verdict implies a confirmed fetch
-            ok = bool(cval)
-        ttl = CACHE_MAX_AGE_SECONDS if ok else CACHE_NEGATIVE_TTL_SECONDS
-        if not stale_schema and now - cached.get("ts", 0) < ttl:
-            return cval
 
     try:
         data = _fetch_raw(app_id)
     except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, OSError) as exc:
         # Network error / rate limit: do NOT poison the cache -- retry next run.
         log(f"[deck-status] WARN: fetch failed for {app_id}: {exc}")
-        return None
+        return None, True
 
     results = (data or {}).get("results") or {}
     deck_cat = int(results.get("resolved_category") or 0)
@@ -150,7 +171,7 @@ def fetch_deck_compat(app_id):
         # a throttled response is retried; an evaluated-as-unknown app is omitted.
         cache[key] = {"val": None, "ts": now, "ok": False}
         _cache_dirty = True
-        return None
+        return None, False
 
     items = results.get("resolved_items") or []
     criteria = (
@@ -175,12 +196,21 @@ def fetch_deck_compat(app_id):
     }
     cache[key] = {"val": val, "ts": now, "ok": True}
     _cache_dirty = True
-    return val
+    return val, False
 
 
 # Per-run budget for NEW Deck verdict fetches. Cached ids cost nothing (30-day
 # TTL), so the map accumulates across runs rather than re-fetching the catalog.
 DECK_FETCH_BUDGET = 400
+
+# Per-run budget for REFRESHING expired cache entries (#258). Expired entries
+# used to be refetched without any limit, and the cache expires in waves (the
+# 3-day negative TTL covers ~13k unrated apps cached together), so one night
+# silently spent 23 minutes refetching. Over budget, an expired entry keeps
+# serving its cached verdict until a later run refreshes it; refreshed entries
+# get new timestamps, which spreads future expiry across nights. 1,500 a night
+# cycles the 33k catalog in about 22 nights, inside the 30-day verdict TTL.
+DECK_REFRESH_BUDGET = 1500
 
 
 def _json_or_empty(path):
@@ -270,16 +300,40 @@ def steam_app_ids_for_deck_status(output_dir, budget=DECK_FETCH_BUDGET):
 steam_app_ids_with_reports = steam_app_ids_for_deck_status
 
 
-def build_deck_status(output_dir, app_ids=None, delay=0.0):
+def build_deck_status(output_dir, app_ids=None, delay=0.0, refresh_budget=DECK_REFRESH_BUDGET):
     """Fetch Deck compat for the scoped Steam apps and write deck-status.json.
+
+    Fresh cache entries cost nothing, apps missing from the cache are fetched
+    (the scope already caps them at DECK_FETCH_BUDGET), and expired entries
+    are refreshed up to ``refresh_budget``; the rest keep their cached
+    verdict this run. A failed refresh also keeps the cached verdict.
 
     Returns the ``{app_id: {status, criteria}}`` map that was written.
     """
     out_dir = Path(output_dir)
     ids = app_ids if app_ids is not None else steam_app_ids_for_deck_status(out_dir)
     result = {}
+    stats = {"fresh": 0, "fetched_new": 0, "refreshed": 0, "stale_served": 0, "failed": 0}
+    started = time.time()
     for app_id in ids:
-        val = fetch_deck_compat(app_id)
+        state, cval = _cache_state(app_id)
+        fetched = False
+        if state == "fresh":
+            val = cval
+            stats["fresh"] += 1
+        elif state == "stale" and stats["refreshed"] >= refresh_budget:
+            val = cval
+            stats["stale_served"] += 1
+        else:
+            fetched = True
+            val, failed = _fetch_and_cache(app_id)
+            if failed:
+                stats["failed"] += 1
+                val = cval  # keep the stale verdict rather than dropping the app
+            elif state == "stale":
+                stats["refreshed"] += 1
+            else:
+                stats["fetched_new"] += 1
         if val:
             # Keep the published map lean: only carry machine/steamos when
             # rated (the UI treats a missing field as "not rated").
@@ -297,9 +351,15 @@ def build_deck_status(output_dir, app_ids=None, delay=0.0):
             if val.get("steamos_criteria"):
                 entry["steamos_criteria"] = val["steamos_criteria"]
             result[app_id] = entry
-        if delay:
+        if delay and fetched:
             time.sleep(delay)
     flush_deck_compat_cache()
+    log(
+        f"[deck-status] cache: {stats['fresh']:,} fresh, {stats['fetched_new']:,} new fetched, "
+        f"{stats['refreshed']:,} expired refreshed (budget {refresh_budget:,}), "
+        f"{stats['stale_served']:,} expired still served, {stats['failed']:,} failed, "
+        f"{time.time() - started:.1f}s"
+    )
     path = out_dir / "deck-status.json"
     path.write_text(json.dumps(result, separators=(",", ":")), encoding="utf-8")
     log(f"[deck-status] Wrote {len(result)} Deck verdicts for {len(ids)} Steam apps to {path}")

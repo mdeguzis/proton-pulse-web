@@ -1,15 +1,15 @@
 name: Edge Function Health
 
-# Cron-driven ping of every Supabase edge function this site uses. Writes
-# edge-status.json to gh-pages so the /status.html page and the topbar
-# indicator can render an up-to-date view without hitting the functions
-# themselves from every visitor. See #254.
+# Manual ping of every Supabase edge function this site uses (#254).
+#
+# The 15-minute schedule was removed (#519): the pp-edge-status Cloudflare
+# Worker (workers/edge-status, 15-min Cron Trigger) serves the live status to
+# /status.html and the topbar, and nothing reads the gh-pages
+# edge-status.json this job writes any more (the status page's static
+# fallback was dropped in the same change). Kept as workflow_dispatch for
+# debugging the check script by hand.
 
 on:
-  schedule:
-    # Every 15 minutes. Cheap enough (~15 sec per run) that we can afford
-    # the frequency, and freshness matters more here than cost.
-    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:

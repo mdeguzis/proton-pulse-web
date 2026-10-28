@@ -194,7 +194,7 @@ describe('worker POST path is super-admin gated', () => {
   });
 });
 
-describe('status page reads the worker endpoint with a static fallback', () => {
+describe('status page reads the worker endpoint', () => {
   const MAIN = fs.readFileSync(
     path.join(__dirname, '..', 'js', 'status', 'main.js'),
     'utf8',
@@ -204,10 +204,12 @@ describe('status page reads the worker endpoint with a static fallback', () => {
     expect(MAIN).toContain('EDGE_STATUS_ENDPOINT');
   });
 
-  test('tries the worker first, then falls back to the static edge-status.json', () => {
+  test('reads the worker only; the static edge-status.json fallback is gone (#519)', () => {
+    // Since the Cloudflare Pages move the static path answers with the SPA
+    // HTML, so the fallback could only fail. See tests/statusWorkerOnly.test.js.
     expect(MAIN).toContain('fetchStatusPayload');
-    expect(MAIN).toMatch(/if\s*\(EDGE_STATUS_ENDPOINT\)/);
-    expect(MAIN).toContain("dataUrl('edge-status.json')");
+    expect(MAIN).toContain('fetch(EDGE_STATUS_ENDPOINT');
+    expect(MAIN).not.toContain("dataUrl('edge-status.json')");
   });
 
   test('"Check now" button is gated on super-admin only', () => {

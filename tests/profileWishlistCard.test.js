@@ -130,12 +130,30 @@ describe('computeTypeBreakdown', () => {
     expect(r.order).toEqual([]);
   });
 
-  test('cache miss (non-ok response) buckets everything as unknown', async () => {
+  test('a non-ok response rejects instead of showing everything as unknown (#569)', async () => {
     const fetchImpl = jest.fn().mockResolvedValue({ ok: false, status: 404 });
     const { computeTypeBreakdown } = loadBreakdown({ fetchImpl });
-    const r = await computeTypeBreakdown([10, 100, 999]);
-    expect(r.counts.unknown).toBe(3);
-    expect(r.cached).toBe(0);
+    await expect(computeTypeBreakdown([10, 100, 999])).rejects.toThrow(/HTTP 404/);
+  });
+
+  test('the Pages HTML fallback (200 text/html) rejects too (#569)', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({
+      ok: true, status: 200,
+      headers: { get: () => 'text/html; charset=utf-8' },
+      json: () => Promise.reject(new SyntaxError('Unexpected token <')),
+    });
+    const { steamTypesFor } = loadBreakdown({ fetchImpl });
+    await expect(steamTypesFor([10])).rejects.toThrow(/returned HTML/);
+  });
+
+  test('a malformed payload rejects, and a failed load is retried next call', async () => {
+    const fetchImpl = jest.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([1, 2]) })
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({ 10: 'game' }) });
+    const { steamTypesFor } = loadBreakdown({ fetchImpl });
+    await expect(steamTypesFor([10])).rejects.toThrow(/not an object map/);
+    await expect(steamTypesFor([10])).resolves.toEqual({ 10: 'game' });
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 
   test('caches the type map so repeat calls skip the fetch', async () => {
@@ -186,3 +204,35 @@ describe('profile.html markup + main.js wiring', () => {
     expect(LIBRARY_COMPONENT).toContain('computeTypeBreakdown(appids)');
   });
 });
+
+describe('steamTypesFor (#251)', () => {
+  const cache = { '10': 'game', '100': 'dlc', '300': 'mod' };
+
+  test('returns the raw type per known appid and leaves unknown ones out', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(cache) });
+    const { steamTypesFor } = loadBreakdown({ fetchImpl });
+    expect(await steamTypesFor([10, '100', 300, 999])).toEqual({ 10: 'game', 100: 'dlc', 300: 'mod' });
+    expect(await steamTypesFor([])).toEqual({});
+  });
+
+  test('shares one cache load with computeTypeBreakdown', async () => {
+    const fetchImpl = jest.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(cache) });
+    const { steamTypesFor, computeTypeBreakdown } = loadBreakdown({ fetchImpl });
+    await computeTypeBreakdown([10]);
+    await steamTypesFor([10]);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('stats My Library table shows the type (#251)', () => {
+  const src = require('fs').readFileSync(require('path').join(__dirname, '..', 'js/stats/library-view.js'), 'utf8');
+  test('has a Type column filled from steamTypesFor, escaped', () => {
+    expect(src).toMatch(/import \{ steamTypesFor \} from '\.\.\/profile\/lib\/steam-type-breakdown\.js/);
+    expect(src).toMatch(/<th>Type<\/th>/);
+    expect(src).toMatch(/<span class="steam-type-tag">\$\{_esc\(types\[String\(g\.appId\)\]\)\}<\/span>/);
+  });
+  test('a failed type lookup still renders the table', () => {
+    expect(src).toMatch(/catch \(e\) \{\s*console\.warn\('\[library-view\] steam type lookup failed/);
+  });
+});
+

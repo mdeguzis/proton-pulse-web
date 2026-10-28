@@ -492,7 +492,21 @@ async function createModerationIssue(title, body) {
   }
 }
 
-async function checkTextAgainstAllLayers(text, rowLabel) {
+// Game titles are routinely violent (HITMAN, DOOM, Killing Floor), so for
+// user_proton_configs.app_name the OpenAI "violence" category on its own is
+// not a signal (#545: "HITMAN World of Assassination" opened a review
+// issue). app_name is still user text for non-Steam shortcuts, so the
+// banned-phrase and wordlist layers and every other OpenAI category
+// (hate, harassment, sexual, self-harm, violence/graphic) still apply.
+export const APP_NAME_IGNORED_OPENAI_CATEGORIES = ['violence'];
+
+// OpenAI categories that still count once the ignored ones are removed.
+export function effectiveOpenAICategories(categories, ignored = []) {
+  const skip = new Set(ignored);
+  return (categories || []).filter((c) => !skip.has(c));
+}
+
+async function checkTextAgainstAllLayers(text, rowLabel, { ignoreOpenAICategories = [] } = {}) {
   const banHit = bannedPhrasesFilter.check(text);
   if (banHit.flagged) return { layer: 'banned_phrase', term: banHit.term };
   const wordHit = wordlistFilter.check(text);
@@ -500,7 +514,13 @@ async function checkTextAgainstAllLayers(text, rowLabel) {
   if (OPENAI_KEY) {
     try {
       const result = await moderateWithOpenAI(text, rowLabel);
-      if (result.flagged) return { layer: 'openai', term: result.categories.join(',') };
+      const counted = effectiveOpenAICategories(result.categories, ignoreOpenAICategories);
+      if (result.flagged && counted.length > 0) return { layer: 'openai', term: counted.join(',') };
+      if (result.flagged) {
+        log(`Aux row ${rowLabel}: OpenAI flag ignored for this field`, {
+          categories: result.categories, ignored: ignoreOpenAICategories,
+        });
+      }
       // Same rate-limit spacing as the user_configs loop.
       await new Promise(r => setTimeout(r, 1050));
     } catch (e) {
@@ -521,7 +541,7 @@ async function checkTextAgainstAllLayers(text, rowLabel) {
  * @param {(row: object) => string} config.rowLabel  Human-readable row identifier for logs + issue title.
  * @returns {Promise<{scanned: number, hits: number, hitIds: string[]}>}
  */
-async function scanAuxTable({ table, selectCols, timeCol, textCol, rowLabel }) {
+async function scanAuxTable({ table, selectCols, timeCol, textCol, rowLabel, ignoreOpenAICategories = [] }) {
   const since = new Date(Date.now() - LOOKBACK_H * 3600 * 1000).toISOString();
   const url = `${SUPABASE_URL}/rest/v1/${table}`
     + `?select=${selectCols}`
@@ -543,7 +563,7 @@ async function scanAuxTable({ table, selectCols, timeCol, textCol, rowLabel }) {
     const text = row[textCol];
     if (!text || typeof text !== 'string' || !text.trim()) continue;
     const label = rowLabel(row);
-    const hit = await checkTextAgainstAllLayers(text, `${table}:${label}`);
+    const hit = await checkTextAgainstAllLayers(text, `${table}:${label}`, { ignoreOpenAICategories });
     if (!hit) {
       log(`Aux row clean`, { table, label });
       continue;
@@ -681,6 +701,7 @@ async function main() {
     timeCol: 'updated_at',
     textCol: 'app_name',
     rowLabel: (r) => `${r.voter_id}:${r.app_id}`,
+    ignoreOpenAICategories: APP_NAME_IGNORED_OPENAI_CATEGORIES,
   });
   auxResults.user_systems_label = await scanAuxTable({
     table: 'user_systems',

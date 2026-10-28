@@ -1,8 +1,7 @@
-// Entry module for status.html (#254). Loads edge-status.json (written to
-// gh-pages every 15 min by .github/workflows/edge-fn-health.yml) and
-// renders a per-service card with a status pill, latency, HTTP code, and
-// last-checked timestamp. Auto-refreshes every 60 s so the page stays
-// live if the reader leaves it open.
+// Entry module for status.html (#254). Loads the edge-function health payload
+// from the pp-edge-status Cloudflare Worker and renders a per-service card
+// with a status pill, latency, HTTP code, and last-checked timestamp.
+// Auto-refreshes every 60 s so the page stays live if the reader leaves it open.
 
 import { dataUrl } from '../lib/data-url.js?v=0de73aed';
 import { fetchVendorStatuses, VENDOR_REFRESH_MS } from './vendor-status.js?v=f161798f';
@@ -15,11 +14,11 @@ import {
 const REFRESH_MS = 60 * 1000;
 
 // Live status endpoint served by the pp-edge-status Cloudflare Worker (#275).
-// The worker runs a true 15-min Cron Trigger and serves the same payload shape
-// as the old edge-status.json, from one CORS endpoint that both prod and
-// staging read. Leave '' until the worker is deployed; until then the page
-// falls back to the static edge-status.json on gh-pages. Paste the deployed
-// worker URL here (e.g. https://pp-edge-status.<subdomain>.workers.dev).
+// The worker runs a true 15-min Cron Trigger and serves the payload from one
+// CORS endpoint that both prod and staging read. It is the only source: the
+// old static edge-status.json fallback was removed (#519) because since the
+// Cloudflare Pages move that path answers with the SPA HTML (200, text/html),
+// so the fallback could only ever fail with a JSON parse error.
 const EDGE_STATUS_ENDPOINT = 'https://pp-edge-status.mdeguzis.workers.dev';
 
 // Supabase globals exposed by js/lib/supabase-client.js (loaded as a plain
@@ -93,25 +92,22 @@ async function checkServiceNow(svcName, btn, statusEl) {
   }
 }
 
-// Fetch the live payload: try the worker first, fall back to the static file
-// written by the (soon-retired) GitHub Actions workflow so the page still
-// renders if the worker is unreachable or not yet deployed.
+// Fetch the live payload from the worker. Failures throw with a reason the
+// error state shows as-is ("status service unreachable"), instead of a JSON
+// parse error from the dead static fallback (#519).
 async function fetchStatusPayload() {
-  if (EDGE_STATUS_ENDPOINT) {
-    try {
-      const res = await fetch(EDGE_STATUS_ENDPOINT, { cache: 'no-store' });
-      if (res.ok) {
-        console.debug('[status] loaded from worker endpoint', { source: 'worker', url: EDGE_STATUS_ENDPOINT });
-        return await res.json();
-      }
-      console.warn('[status] worker endpoint non-ok, falling back to static file', { source: 'worker', status: res.status });
-    } catch (err) {
-      console.warn('[status] worker endpoint fetch failed, falling back to static file', { source: 'worker', error: String(err && err.message || err) });
-    }
+  let res;
+  try {
+    res = await fetch(EDGE_STATUS_ENDPOINT, { cache: 'no-store' });
+  } catch (err) {
+    console.warn('[status] worker endpoint fetch failed', { source: 'worker', url: EDGE_STATUS_ENDPOINT, error: String(err && err.message || err) });
+    throw new Error('Status service unreachable');
   }
-  const res = await fetch(await dataUrl('edge-status.json'), { cache: 'no-store' });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  console.debug('[status] loaded from static file', { source: 'gh-pages', file: 'edge-status.json' });
+  if (!res.ok) {
+    console.warn('[status] worker endpoint non-ok', { source: 'worker', url: EDGE_STATUS_ENDPOINT, status: res.status });
+    throw new Error(`Status service unreachable (HTTP ${res.status})`);
+  }
+  console.debug('[status] loaded from worker endpoint', { source: 'worker', url: EDGE_STATUS_ENDPOINT });
   return await res.json();
 }
 

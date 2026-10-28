@@ -44,28 +44,29 @@ describe('moderation layer 3: VirusTotal URL scan wiring (#378)', () => {
 
 describe('URL extraction helper', () => {
   // The .mjs exports extractUrls/vtUrlId; pull them via dynamic import.
-  let extractUrls, vtUrlId;
-  beforeAll(async () => {
-    const mod = await import(path.join(ROOT, '.github/scripts/moderate-content.mjs')).catch(() => null);
-    // moderate-content.mjs exits early without SUPABASE env; guard so the
-    // import failure surfaces as skipped assertions, not a crash.
-    if (mod) ({ extractUrls, vtUrlId } = mod);
-  });
+  // Jest here has no ESM transform, so import() of the .mjs throws. This used
+  // to be caught and every test below returned early, passing without a
+  // single assertion. Evaluate the real helpers from the source instead.
+  const urlRe = SRC.match(/const URL_RE = [^;]+;/)[0];
+  const fnSrc = (name) => {
+    const start = SRC.indexOf(`export function ${name}`);
+    return SRC.slice(start, SRC.indexOf('\n}\n', start) + 2).replace('export ', '');
+  };
+  // eslint-disable-next-line no-new-func
+  const { extractUrls, vtUrlId } = new Function('Buffer',
+    `${urlRe}\n${fnSrc('extractUrls')}\n${fnSrc('vtUrlId')}\nreturn { extractUrls, vtUrlId };`)(Buffer);
 
   test('extracts and dedupes http(s) URLs, strips trailing punctuation', () => {
-    if (!extractUrls) return; // env-gated import; contract pins above still ran
     const urls = extractUrls('check https://evil.example/mal.exe, and http://ok.example/x. Also https://evil.example/mal.exe again');
     expect(urls).toEqual(['https://evil.example/mal.exe', 'http://ok.example/x']);
   });
 
   test('ignores non-URL text and other schemes', () => {
-    if (!extractUrls) return;
     expect(extractUrls('gamemoderun %command% -novid')).toEqual([]);
     expect(extractUrls('steam://run/730 file:///etc/passwd')).toEqual([]);
   });
 
   test('vtUrlId is url-safe base64 without padding', () => {
-    if (!vtUrlId) return;
     const id = vtUrlId('http://example.com/a?b=c');
     expect(id).not.toMatch(/[+/=]/);
     expect(Buffer.from(id.replace(/-/g, '+').replace(/_/g, '/'), 'base64').toString()).toBe('http://example.com/a?b=c');

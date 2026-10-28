@@ -30,13 +30,6 @@ dev = [
 # fresh `uv sync` before supply-chain scanners flag it. Exact key Semgrep's
 # uv-missing-dependency-cooldown rule looks for. Requires uv >= 0.9.17.
 exclude-newer = "7 days"
-# Security exception to the cooldown, one package, fixed date: certifi
-# 2026.10.19 removes the emSign roots whose intermediate keys were
-# compromised (GHSA-6q48-6c7w-9gw2, critical). It was 3 days old when the
-# advisory landed, so the 7-day window hid the fix. The cutoff admits
-# 2026.10.19 but not anything newer. Delete this line after 2026-10-27,
-# when the normal window covers it.
-exclude-newer-package = { certifi = "2026-10-21T00:00:00Z" }
 default-groups = ["dev"]
 
 [tool.pytest.ini_options]
