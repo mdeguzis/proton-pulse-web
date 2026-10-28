@@ -21,13 +21,14 @@ async function _authedHeaders() {
 
 /**
  * List every game hide, newest first. Returns an array of
- * { app_id, reason, hidden_by, hidden_at } rows (empty on error).
+ * { app_id, reason, hidden_at } rows (empty on error). hidden_by is not
+ * readable by clients (#570).
  */
 export async function listGameHides() {
   try {
     const headers = await _authedHeaders();
     const res = await fetch(
-      `${SB}/game_hides?select=app_id,reason,hidden_by,hidden_at&order=hidden_at.desc`,
+      `${SB}/game_hides?select=app_id,reason,hidden_at&order=hidden_at.desc`,
       { headers, cache: 'no-store' },
     );
     if (!res.ok) return [];
@@ -53,10 +54,11 @@ export async function upsertGameHide(appId, reason) {
   const body = JSON.stringify([{
     app_id:    String(appId),
     reason:    reason.trim(),
-    hidden_by: session?.user?.id || null,
+    // hidden_by is set server-side (DEFAULT auth.uid(), #570); clients have
+    // no grant on it, so sending it would fail the upsert.
   }]);
   try {
-    const res = await fetch(`${SB}/game_hides?on_conflict=app_id`, {
+    const res = await fetch(`${SB}/game_hides?on_conflict=app_id&select=app_id,reason,hidden_at`, {
       method: 'POST', headers, body, cache: 'no-store',
     });
     if (!res.ok) return { ok: false, error: `HTTP ${res.status}`, status: res.status };
@@ -83,13 +85,14 @@ export async function deleteGameHide(appId) {
 
 /**
  * List every remap, newest first. Returns an array of
- * { from_app_id, to_app_id, reason, remapped_by, created_at, updated_at } rows.
+ * { from_app_id, to_app_id, reason, created_at, updated_at } rows. remapped_by
+ * is not readable by clients (#570).
  */
 export async function listGameRemaps() {
   try {
     const headers = await _authedHeaders();
     const res = await fetch(
-      `${SB}/game_remaps?select=from_app_id,to_app_id,reason,remapped_by,created_at,updated_at&order=updated_at.desc`,
+      `${SB}/game_remaps?select=from_app_id,to_app_id,reason,created_at,updated_at&order=updated_at.desc`,
       { headers, cache: 'no-store' },
     );
     if (!res.ok) return [];
@@ -119,10 +122,10 @@ export async function upsertGameRemap(fromAppId, toAppId, reason) {
     from_app_id: String(fromAppId),
     to_app_id:   String(toAppId),
     reason:      reason.trim(),
-    remapped_by: session?.user?.id || null,
+    // remapped_by is set server-side (DEFAULT auth.uid(), #570).
   }]);
   try {
-    const res = await fetch(`${SB}/game_remaps?on_conflict=from_app_id`, {
+    const res = await fetch(`${SB}/game_remaps?on_conflict=from_app_id&select=from_app_id,to_app_id,reason,created_at,updated_at`, {
       method: 'POST', headers, body, cache: 'no-store',
     });
     if (!res.ok) return { ok: false, error: `HTTP ${res.status}`, status: res.status };

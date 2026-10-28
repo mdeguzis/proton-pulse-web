@@ -17,7 +17,7 @@ import {
   CONTROLLER_PATTERNS, ONLINE_NET_PATTERNS,
 } from '../shared/analytics-patterns.js?v=c119f011';
 import { renderPurposeChart, crossTabToCorrelation } from '../shared/purpose-charts.js?v=d383b3bd';
-import { renderLibraryTab } from './library-view.js?v=5881023e';
+import { renderLibraryTab } from './library-view.js?v=07f3f2e5';
 
 // #417: stats dropdown open/close is a class toggle on the persistent
 // .filter-dropdown node (NOT a full re-render) so the shared clip-path drawer

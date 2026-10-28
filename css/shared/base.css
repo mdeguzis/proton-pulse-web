@@ -476,3 +476,17 @@ img.boxart-portrait {
   object-fit: contain;
   background: var(--s2, #16202c);
 }
+
+/* #251: raw Steam app type next to a library row (GAME, DLC, MOD, ...). */
+.steam-type-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
