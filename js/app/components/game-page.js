@@ -14,7 +14,7 @@ import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, _ANDROID_HANDHELD_OS_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3202bacc';
 import { renderCard } from './report-card.js?v=5e25c644';
-import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=c2871c46';
+import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=ba0dacd4';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 import { computeWhatWorks } from '../lib/what-works.js?v=fc499ba6';
 
@@ -80,7 +80,7 @@ async function _sgdbCoverFor(appId) {
   return map?.[String(appId)] || null;
 }
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
-import { loadGameHides } from '../lib/game-hides.js?v=2d7d7afe';
+import { loadGameHides, loadGameRemaps, resolveRemap } from '../lib/game-hides.js?v=6a2a7468';
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFileHref, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=7873e060';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=5adc7e54';
 import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=4630c3d5';
@@ -852,6 +852,21 @@ export async function renderGamePage(appId) {
     }
   } catch { /* if the fetch fails, fall through and render normally */ }
 
+  // Admin remap (#238): game_remaps says this app id now lives elsewhere.
+  // Follow it (resolveRemap caps hops and refuses loops) and leave a note
+  // so the target page can say where the user came from.
+  try {
+    const hit = resolveRemap(appId, await loadGameRemaps());
+    if (hit) {
+      console.debug('[game-page] following admin remap', { from: String(appId), to: hit.target, hops: hit.hops, source: 'game_remaps' });
+      window._ppRemapNotice = { from: String(appId), to: hit.target, reason: hit.reason };
+      window.location.replace(`#/app/${hit.target}`);
+      return;
+    }
+  } catch (e) {
+    console.warn('[game-page] remap check failed, rendering this app id', { appId: String(appId), error: e?.message });
+  }
+
   // Adult-content gate: if the search-index flags this appId as adult
   // and the "Show adult games" preference is off, render a block page
   // instead of loading reports. The block page offers a one-click
@@ -1533,6 +1548,16 @@ export async function renderGamePage(appId) {
     // they are playing SLA (the old build), so their report lands here.
     // The banner offers the new-app link inline for users who realize
     // they meant to be on the replacement.
+    // #238: arrived here through an admin remap. Shown once, then cleared.
+    const remapNotice = window._ppRemapNotice && window._ppRemapNotice.to === String(appId)
+      ? window._ppRemapNotice : null;
+    window._ppRemapNotice = null;
+    const remapBanner = remapNotice
+      ? `<div class="game-replaced-banner">
+          <strong>Moved here.</strong>
+          App id <code>${esc(remapNotice.from)}</code> now points to this page${remapNotice.reason ? `: ${esc(remapNotice.reason)}` : '.'}
+        </div>`
+      : '';
     const replacedBanner = replacedBy
       ? `<div class="game-replaced-banner">
           <strong>This app has been replaced.</strong>
@@ -1552,6 +1577,7 @@ export async function renderGamePage(appId) {
 
     el.innerHTML = `
       <div class="game-header">
+        ${remapBanner}
         ${replacedBanner}
         ${vrOnlyBanner}
         <div class="game-title">${esc(title)} <span class="game-title-store" title="Storefront this entry originated from">(${esc(_titleStoreLabel(appId, replacedBy) || 'Steam')})</span>${isDelisted ? ' <span class="game-detail-delisted" title="Removed from the Steam store. Reports still apply -- people still own this via family share, backups, or regional accounts.">DELISTED</span>' : ''}${/\bdemo\b/i.test(title) ? ' <span class="game-title-demo-pill" title="This entry looks like a demo based on the title. Reports may not reflect the full game.">DEMO</span>' : ''}</div>

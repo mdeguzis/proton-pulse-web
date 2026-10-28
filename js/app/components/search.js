@@ -2,7 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=852c9d97';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=003f23c0';
-import { renderGamePage } from './game-page.js?v=fd81485d';
+import { renderGamePage } from './game-page.js?v=f632d61e';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=7873e060';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=4630c3d5';
 import { renderGameCard } from '../lib/card.js?v=7b739064';
@@ -13,6 +13,7 @@ import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
 import { searchGames } from '../api/search-games.js?v=0b6c4bb3';
 import { loadAntiCheatMap } from '../lib/anti-cheat.js?v=1ec01d8a';
+import { loadGameHides, withoutHidden } from '../lib/game-hides.js?v=6a2a7468';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its exports
@@ -177,12 +178,14 @@ export async function renderSearchPage(query) {
   // ~2KB per query instead of the pre-#434 12MB blob download. Extended
   // Steam index no longer needed -- the API queries the full Postgres
   // catalog directly. Fires in parallel with the User Configs lookup.
-  const [pulseResults, apiResp] = await Promise.all([
+  const [pulseResultsAll, apiResp, hides] = await Promise.all([
     withTimeout(fetchMatchingPulseConfigs(q), 2500, []),
     searchGamesAPI(q, { limit: 48 }),
+    loadGameHides(), // #238 admin-hidden games stay out of search
     loadAntiCheatMap(), // #556 card AC chips
   ]);
-  const indexResults = apiResp.rows;
+  const pulseResults = withoutHidden(pulseResultsAll, hides, (r) => r.appId);
+  const indexResults = withoutHidden(apiResp.rows, hides, (row) => row[0]);
   const hiddenAdultCount = apiResp.hiddenAdult;
   const hiddenDelistedCount = apiResp.hiddenDelisted;
   // Disambiguate same-name games (e.g. Prey 2006 vs Prey 2017) with a "(YEAR)"
@@ -373,14 +376,17 @@ export async function onSearchInput() {
     if (err && err.name === 'AbortError') return; // superseded, drop silently
     console.warn('[search] dropdown API failed:', err);
   }
-  const matches = apiRows.map((r) => [
+  const [pulseResultsAll, pulseReportAppIdsAll, hides] = await Promise.all([
+    withTimeout(fetchMatchingPulseConfigs(q), 1500, []),
+    withTimeout(fetchMatchingPulseReportAppIds(q), 1500, new Set()),
+    loadGameHides(), // #238 admin-hidden games stay out of the dropdown
+  ]);
+  const matches = withoutHidden(apiRows, hides, (r) => r.appId).map((r) => [
     r.appId, r.title, r.tier, r.protondbCount, r.pulseCount, r.source,
     r.releaseYear, r.delisted, r.adult, '', r.replacedBy, r.steamType,
   ]);
-  const [pulseResults, pulseReportAppIds] = await Promise.all([
-    withTimeout(fetchMatchingPulseConfigs(q), 1500, []),
-    withTimeout(fetchMatchingPulseReportAppIds(q), 1500, new Set()),
-  ]);
+  const pulseResults = withoutHidden(pulseResultsAll, hides, (r) => r.appId);
+  const pulseReportAppIds = [...pulseReportAppIdsAll].filter((id) => !hides.has(String(id)));
   const pulseAppIds = new Set([
     ...pulseResults.map(r => String(r.appId)),
     ...pulseReportAppIds,
