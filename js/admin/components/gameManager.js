@@ -21,7 +21,7 @@ import {
   listGameHides, upsertGameHide, deleteGameHide,
   listGameRemaps, upsertGameRemap, deleteGameRemap,
   loadPipelineSuspects,
-} from '../api/gameManager.js?v=596babe0';
+} from '../api/gameManager.js?v=b21e352a';
 
 // Title lookup for the ids actually shown in the panel (hide / remap / suspect
 // rows). #437: batch just those ids through the search-games API instead of
