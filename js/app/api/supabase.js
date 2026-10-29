@@ -170,16 +170,12 @@ export async function flagReport({ reportId, appId, reportKey, source, reasonCat
       p_reporter_client_id: reporterClientId || null,
     }),
   });
-  // Best-effort: mark the underlying Pulse report flagged. Only the owner can
-  // do this under RLS, so a failure here must not fail the flag itself -- the
-  // flagged_reports row is the source of truth for moderation.
-  if (reportId != null) {
-    fetch(`${SB_URL}/user_configs?id=eq.${reportId}`, {
-      method: 'PATCH',
-      headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-      body: JSON.stringify({ is_flagged: true }),
-    }).catch(() => {});
-  }
+  // No direct user_configs write here. submit_flag's flagged_reports row is
+  // the source of truth, and the trg_sync_user_configs_is_flagged trigger
+  // (SECURITY DEFINER) sets user_configs.is_flagged from it. A client PATCH
+  // used to follow this, under a comment claiming only the owner could do it;
+  // in fact an "Anyone can flag a report" policy let any caller rewrite any
+  // report's columns, and that policy was dropped (migration 20261029230000).
   return flagRes.ok;
 }
 

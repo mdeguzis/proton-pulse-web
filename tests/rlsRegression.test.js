@@ -373,3 +373,40 @@ describeIfCreds('Column grants: admin ids on game_hides / game_remaps (#570)', (
     expect(defaults.map((r) => r.column_default)).toEqual(['auth.uid()', 'auth.uid()']);
   }, 90000);
 });
+
+// Security fix 2026-10-29: user_configs had an UPDATE policy "Anyone can flag
+// a report" with USING (true) / WITH CHECK (is_flagged = true), so any anon
+// caller could rewrite every column of any report while setting is_flagged.
+// Dropped in 20261029230000; flagging goes through submit_flag + a trigger.
+describeIfCreds('RLS: reports cannot be rewritten by other callers', () => {
+  test('anon cannot update another report, even while setting is_flagged', async () => {
+    const rows = await queryDB(`
+      SET LOCAL ROLE anon;
+      SET LOCAL "request.jwt.claims" = '{"role":"anon"}';
+      UPDATE public.user_configs SET notes = notes, is_flagged = true
+      WHERE id = (SELECT min(id) FROM public.user_configs)
+      RETURNING id;
+    `);
+    expect(rows).toHaveLength(0);
+  }, 90000);
+
+  test('a signed-in non-owner cannot update another report either', async () => {
+    const rows = await asUser(USER_B, `
+      UPDATE public.user_configs SET is_flagged = true
+      WHERE id = (SELECT min(id) FROM public.user_configs)
+        AND proton_pulse_user_id IS DISTINCT FROM '${USER_B}'
+      RETURNING id;
+    `);
+    expect(rows).toHaveLength(0);
+  }, 90000);
+
+  test('the permissive flag UPDATE policy is gone from user_configs', async () => {
+    const rows = await queryDB(`
+      SELECT policyname FROM pg_policies
+      WHERE schemaname = 'public' AND tablename = 'user_configs'
+        AND cmd = 'UPDATE' AND qual = 'true';
+    `);
+    expect(rows).toEqual([]);
+  }, 90000);
+});
+
