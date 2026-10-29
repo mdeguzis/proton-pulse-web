@@ -263,3 +263,123 @@ def test_incremental_cache_survives_mid_run_bail(tmp_path, monkeypatch):
     assert cache.get("100") == "game"
     assert cache.get("200") == "dlc"
     assert "500" not in cache
+
+
+# --- #261: GetItems sweep is the main source --------------------------------
+
+def _sweep(items):
+    return {"items": items, "checked": len(items), "unknown": 0, "failed_batches": 0, "error": None}
+
+
+def test_sweep_adds_reclassifies_and_fills_cached_nulls(tmp_path, monkeypatch):
+    import json as _json
+    from scripts.pipeline import steam_type as st
+    (tmp_path / "search-index.json").write_text(_json.dumps([["10", "a"], ["20", "b"], ["30", "c"], ["gog:1", "d"]]))
+    (tmp_path / st.CACHE_FILENAME).write_text(_json.dumps({"20": "game", "30": None}))
+    probes = []
+    monkeypatch.setattr(st, "_fetch_type", lambda app_id, timeout=6: (probes.append(app_id), ("game", True))[1])
+    monkeypatch.setattr(st.time, "sleep", lambda s: None)
+    st.enrich_search_index_with_steam_type(tmp_path, sweep=_sweep({
+        "10": {"type": "dlc", "native": False},        # new
+        "20": {"type": "software", "native": False},   # reclassified
+        "30": {"type": "game", "native": True},        # cached null now answered
+        "999": {"type": "game", "native": False},      # not in the index: ignored
+    }))
+    cache = _json.loads((tmp_path / st.CACHE_FILENAME).read_text())
+    assert cache == {"10": "dlc", "20": "software", "30": "game"}
+    assert probes == []  # everything answered by the sweep, no appdetails calls
+    rows = {r[0]: r for r in _json.loads((tmp_path / "search-index.json").read_text())}
+    assert rows["10"][11] == "dlc" and rows["20"][11] == "software"
+
+
+def test_unanswered_apps_fall_back_to_appdetails_but_cached_nulls_are_not_reprobed(tmp_path, monkeypatch):
+    import json as _json
+    from scripts.pipeline import steam_type as st
+    (tmp_path / "search-index.json").write_text(_json.dumps([["10", "a"], ["40", "b"], ["50", "c"]]))
+    (tmp_path / st.CACHE_FILENAME).write_text(_json.dumps({"50": None}))
+    probes = []
+    monkeypatch.setattr(st, "_fetch_type", lambda app_id, timeout=6: (probes.append(app_id), ("demo", True))[1])
+    monkeypatch.setattr(st.time, "sleep", lambda s: None)
+    st.enrich_search_index_with_steam_type(tmp_path, sweep=_sweep({"10": {"type": "game", "native": False}}))
+    assert probes == ["40"]  # 10 came from the sweep, 50 is a cached negative
+    assert _json.loads((tmp_path / st.CACHE_FILENAME).read_text()) == {"10": "game", "40": "demo", "50": None}
+
+
+def test_a_sweep_type_of_none_is_skipped(tmp_path):
+    from scripts.pipeline import steam_type as st
+    cache = {"10": "game"}
+    assert st._apply_sweep(cache, _sweep({"10": {"type": None, "native": False}}), {"10"}) == (0, 0)
+    assert st._apply_sweep(cache, None, {"10"}) == (0, 0)
+    assert cache == {"10": "game"}
+
+
+def test_a_sweep_type_matching_the_cache_is_not_counted():
+    from scripts.pipeline import steam_type as st
+    cache = {"10": "game"}
+    assert st._apply_sweep(cache, _sweep({"10": {"type": "game", "native": False}}), {"10"}) == (0, 0)
+
+
+class _R:
+    def __init__(self, body):
+        self.body = body
+    def __enter__(self):
+        return self
+    def __exit__(self, *a):
+        return False
+    def read(self):
+        return self.body
+
+
+def test_fetch_type_parses_success_delisted_and_errors(monkeypatch):
+    import json as _json
+    from scripts.pipeline import steam_type as st
+    monkeypatch.setattr(st.urllib.request, "urlopen",
+                        lambda req, timeout: _R(_json.dumps({"10": {"success": True, "data": {"type": " DLC "}}}).encode()))
+    assert st._fetch_type("10") == ("dlc", True)
+    monkeypatch.setattr(st.urllib.request, "urlopen",
+                        lambda req, timeout: _R(_json.dumps({"10": {"success": False}}).encode()))
+    assert st._fetch_type("10") == (None, True)
+    monkeypatch.setattr(st.urllib.request, "urlopen",
+                        lambda req, timeout: _R(_json.dumps({"10": {"success": True, "data": {}}}).encode()))
+    assert st._fetch_type("10") == (None, True)
+
+    def boom(req, timeout):
+        raise OSError("403")
+    monkeypatch.setattr(st.urllib.request, "urlopen", boom)
+    assert st._fetch_type("10") == (None, False)
+
+
+def test_unreadable_cache_and_index_are_tolerated(tmp_path):
+    from scripts.pipeline import steam_type as st
+    (tmp_path / st.CACHE_FILENAME).write_text("{not json")
+    assert st._load_cache(tmp_path / st.CACHE_FILENAME) == {}
+    (tmp_path / "search-index.json").write_text("{not json")
+    st.enrich_search_index_with_steam_type(tmp_path)  # logs and returns
+    (tmp_path / "search-index.json").write_text("[]")
+    st.enrich_search_index_with_steam_type(tmp_path)  # empty index is a no-op
+
+
+def test_malformed_index_rows_are_skipped(tmp_path, monkeypatch):
+    import json as _json
+    from scripts.pipeline import steam_type as st
+    (tmp_path / "search-index.json").write_text(_json.dumps([[], "junk", ["10", "a"]]))
+    st.enrich_search_index_with_steam_type(tmp_path, sweep=_sweep({"10": {"type": "game", "native": False}}))
+    rows = _json.loads((tmp_path / "search-index.json").read_text())
+    assert rows[2][11] == "game"
+
+
+def test_sweep_advertising_is_never_taken(tmp_path, monkeypatch):
+    """Retired real games (CoD MW2 10190, Crysis Warhead 17340) come back as
+    store type 14 'advertising'; keep the cached type, appdetails for new."""
+    import json as _json
+    from scripts.pipeline import steam_type as st
+    (tmp_path / "search-index.json").write_text(_json.dumps([["10190", "a"], ["17340", "b"], ["555", "c"]]))
+    (tmp_path / st.CACHE_FILENAME).write_text(_json.dumps({"10190": "game", "17340": "game"}))
+    probes = []
+    monkeypatch.setattr(st, "_fetch_type", lambda app_id, timeout=6: (probes.append(app_id), ("game", True))[1])
+    monkeypatch.setattr(st.time, "sleep", lambda s: None)
+    adv = {"type": "advertising", "native": False}
+    st.enrich_search_index_with_steam_type(tmp_path, sweep=_sweep({"10190": adv, "17340": adv, "555": adv}))
+    cache = _json.loads((tmp_path / st.CACHE_FILENAME).read_text())
+    assert cache == {"10190": "game", "17340": "game", "555": "game"}
+    assert probes == ["555"]  # new app: appdetails decides
