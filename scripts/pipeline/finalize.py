@@ -58,6 +58,7 @@ from .release_years import enrich_search_index_with_release_years
 from .steam_type import enrich_search_index_with_steam_type
 from .anti_cheat import enrich_search_index_with_anti_cheat
 from .steam_platforms import build_native_linux
+from .game_hides import apply_game_hides
 from .flightless_benchmarks import run_flightless_benchmarks
 from .pcgamingwiki import enrich_search_index_with_pcgamingwiki
 from .pcgamingwiki_catalog import merge_catalog_into_search_index as merge_pcgwiki_catalog
@@ -2657,6 +2658,12 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # primary id set we read back is the final one.
     phase("Extended Steam index")
     generate_extended_steam_index(output_path, steam_catalog=steam_catalog)
+    # #571: drop admin-hidden games (game_hides) from both indexes. After the
+    # extended index (it lists Steam apps NOT in the primary, so a game
+    # removed from the primary would otherwise resurface there) and before
+    # the Postgres sync, which then deletes them from search_index too.
+    phase("Admin hides")
+    apply_game_hides(output_path)
     # #434 search API: mirror the finalized search-index.json into the
     # Supabase `search_index` Postgres table so supabase/functions/
     # search-games/ can serve queries without shipping the 12MB blob
