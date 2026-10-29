@@ -76,6 +76,9 @@ SMALL_DATA=(
   anti-cheat.json
   # #241 home "Exclude native" filter (scripts/pipeline/steam_platforms.py).
   native-linux.json
+  # #564 which PROTON_* switches each Proton build reads; from the plugin repo
+  # via fetch-plugin-data.sh (optional until it reaches plugin main).
+  proton-env-support.json
 )
 
 log() { echo "[publish-cloudflare] $*"; }

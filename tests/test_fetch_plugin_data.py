@@ -77,3 +77,36 @@ def test_fetch_step_targets_deploy_dir_and_cloudflare_gate():
     assert "fetch-plugin-data.sh /tmp/protondb-output" in fetch["run"]
     assert "/tmp/protondb-output" in deploy["run"]
     assert fetch["if"] == deploy["if"]
+
+
+# --- #564: proton-env-support.json is optional ------------------------------
+
+def test_optional_file_is_fetched_when_present(tmp_path):
+    src = tmp_path / "src"
+    _seed(src, **{"form-schema.json": "{}", "scoring-info.json": "{}",
+                  "proton-env-support.json": json.dumps({"tools": {}, "switches": {}})})
+    out = tmp_path / "out"
+    r = _run(src, out)
+    assert r.returncode == 0, r.stderr
+    assert json.loads((out / "proton-env-support.json").read_text()) == {"tools": {}, "switches": {}}
+
+
+def test_missing_optional_file_warns_but_does_not_fail(tmp_path):
+    src = tmp_path / "src"
+    _seed(src, **{"form-schema.json": "{}", "scoring-info.json": "{}"})
+    out = tmp_path / "out"
+    r = _run(src, out)
+    assert r.returncode == 0, r.stderr
+    assert "WARNING: optional proton-env-support.json unavailable" in r.stderr
+    assert not (out / "proton-env-support.json").exists()
+
+
+def test_html_optional_file_is_dropped_not_published(tmp_path):
+    src = tmp_path / "src"
+    _seed(src, **{"form-schema.json": "{}", "scoring-info.json": "{}",
+                  "proton-env-support.json": "<!DOCTYPE html>"})
+    out = tmp_path / "out"
+    r = _run(src, out)
+    assert r.returncode == 0
+    assert not (out / "proton-env-support.json").exists()
+
