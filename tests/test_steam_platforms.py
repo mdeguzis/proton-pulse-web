@@ -123,3 +123,45 @@ def test_build_still_writes_the_file_when_steam_answers_nothing(tmp_path):
     assert payload["checked"] == 0 and payload["native"] == []
     assert "OSError" in payload["error"]
     assert (tmp_path / "native-linux.json").exists()
+
+
+# --- #261: one sweep feeds type and platforms -----------------------------
+
+def _typed(appid, type_num, native=False):
+    item = _item(appid, native=native)
+    item["type"] = type_num
+    return item
+
+
+def test_store_sweep_maps_store_types_and_native():
+    r = sp.store_sweep([570, 431960, 1675200, 99],
+                       fetch=lambda b: [_typed(570, 0, True), _typed(431960, 6), _typed(1675200, 10), _typed(99, 77)],
+                       sleep=lambda s: None)
+    assert r["items"] == {
+        "570": {"type": "game", "native": True},
+        "431960": {"type": "software", "native": False},
+        "1675200": {"type": "hardware", "native": False},
+        "99": {"type": None, "native": False},  # unknown store type number
+    }
+    assert r["checked"] == 4 and r["unknown"] == 0
+
+
+def test_native_flags_and_build_reuse_a_given_sweep(tmp_path):
+    def no_fetch(batch):
+        raise AssertionError("must not call Steam when a sweep is passed in")
+
+    sweep = {"items": {"570": {"type": "game", "native": True}, "730": {"type": "game", "native": False}},
+             "checked": 2, "unknown": 1, "failed_batches": 0, "error": None}
+    r = sp.native_flags([570, 730, 1], fetch=no_fetch, sweep=sweep)
+    assert r["native"] == {"570"} and r["unknown"] == 1
+    _write_index(tmp_path, ["570", "730", "1"])
+    payload = sp.build_native_linux(tmp_path, fetch=no_fetch, sweep=sweep)
+    assert payload["native"] == ["570"]
+
+
+def test_finalize_sweeps_once_and_passes_it_to_both_steps():
+    src = (Path(__file__).resolve().parents[1] / "scripts/pipeline/finalize.py").read_text()
+    assert src.count("store_sweep(") == 1
+    sweep_at = src.index("store_items = store_sweep(steam_ids_in_index(output_path))")
+    assert sweep_at < src.index("enrich_search_index_with_steam_type(output_path, sweep=store_items)")
+    assert "build_native_linux(output_path, sweep=store_items)" in src

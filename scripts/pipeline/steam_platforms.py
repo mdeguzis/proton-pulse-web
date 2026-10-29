@@ -16,6 +16,10 @@ type enricher calls) leaves platforms out, so there was no cache to reuse.
 200 ids per request keeps the GET under Steam's URL limit (300 returned
 414). ~33k Steam ids is ~170 requests, about a minute.
 
+The same request carries each app's store type, so one sweep
+(store_sweep) feeds both this file and the steam_type enricher (#261):
+finalize runs it once and hands the result to both steps.
+
 Failures degrade visibly: a batch that still fails after retries leaves its
 games unknown (never hidden), counted in "unknown" and logged. If every
 batch fails the file is still written with checked = 0 and an "error", so
@@ -67,61 +71,101 @@ def _fetch_batch(app_ids: list[int], opener: Callable = urllib.request.urlopen) 
     return items
 
 
-def native_flags(
+# EStoreAppType from Steam's store protobufs, mapped to the strings the
+# steam-type cache already uses (appdetails' `type` vocabulary). Verified
+# 2026-10-29 against 2,144 cached apps: 99.5% agree with appdetails; the rest
+# were tools appdetails labels "game" that GetItems calls software (e.g.
+# Wallpaper Engine) and one advertising entry.
+STORE_APP_TYPES = {
+    0: "game", 1: "demo", 2: "mod", 3: "movie", 4: "dlc", 5: "guide",
+    6: "software", 7: "video", 8: "series", 9: "episode", 10: "hardware",
+    11: "music", 12: "beta", 13: "tool", 14: "advertising",
+}
+
+
+def store_sweep(
     app_ids: Iterable[int],
     fetch: Callable[[list[int]], list[dict]] = _fetch_batch,
     sleep: Callable[[float], None] = time.sleep,
 ) -> dict:
-    """Ask Steam which app ids are native Linux.
+    """One GetItems pass over app_ids.
 
-    Returns {"native": set[str], "checked": int, "unknown": int,
-    "failed_batches": int, "error": str | None}. checked counts ids Steam
-    answered for (success == 1); everything else is unknown.
+    Returns {"items": {appid: {"type": str | None, "native": bool}},
+    "checked": int, "unknown": int, "failed_batches": int, "error": str | None}.
+    items only holds apps Steam answered for (success == 1); everything else
+    is unknown. A type number outside STORE_APP_TYPES maps to None.
     """
     ids = sorted({int(i) for i in app_ids})
-    native: set[str] = set()
-    checked = 0
+    items: dict[str, dict] = {}
     failed_batches = 0
     last_error: str | None = None
     for start in range(0, len(ids), BATCH_SIZE):
         batch = ids[start:start + BATCH_SIZE]
-        items = None
+        got = None
         for attempt in range(RETRIES + 1):
             try:
-                items = fetch(batch)
+                got = fetch(batch)
                 break
             except (urllib.error.URLError, OSError, ValueError, json.JSONDecodeError) as exc:
                 last_error = f"{type(exc).__name__}: {exc}"
                 if attempt < RETRIES:
                     sleep(2 ** attempt)
-        if items is None:
+        if got is None:
             failed_batches += 1
             log(f"[steam-platforms] WARN: batch at {start} failed after {RETRIES + 1} tries ({last_error}); "
                 f"{len(batch)} apps left unknown")
             continue
-        for item in items:
+        for item in got:
             if item.get("success") != 1 or item.get("appid") is None:
                 continue
-            checked += 1
-            if (item.get("platforms") or {}).get("steamos_linux") is True:
-                native.add(str(item["appid"]))
+            items[str(item["appid"])] = {
+                "type": STORE_APP_TYPES.get(item.get("type")),
+                "native": (item.get("platforms") or {}).get("steamos_linux") is True,
+            }
         sleep(REQUEST_DELAY_SEC)
     return {
-        "native": native,
-        "checked": checked,
-        "unknown": len(ids) - checked,
+        "items": items,
+        "checked": len(items),
+        "unknown": len(ids) - len(items),
         "failed_batches": failed_batches,
         "error": last_error if failed_batches else None,
     }
 
 
+def native_flags(
+    app_ids: Iterable[int],
+    fetch: Callable[[list[int]], list[dict]] = _fetch_batch,
+    sleep: Callable[[float], None] = time.sleep,
+    sweep: dict | None = None,
+) -> dict:
+    """Which app ids are native Linux, from a sweep (run one if not given).
+
+    Returns {"native": set[str], "checked", "unknown", "failed_batches", "error"}.
+    """
+    result = sweep if sweep is not None else store_sweep(app_ids, fetch=fetch, sleep=sleep)
+    return {
+        "native": {appid for appid, item in result["items"].items() if item["native"]},
+        "checked": result["checked"],
+        "unknown": result["unknown"],
+        "failed_batches": result["failed_batches"],
+        "error": result["error"],
+    }
+
+
+def steam_ids_in_index(output_dir: Path) -> list[int]:
+    """Numeric Steam app ids in search-index.json."""
+    rows = json.loads((output_dir / "search-index.json").read_text(encoding="utf-8"))
+    return [int(r[0]) for r in rows if r and str(r[0]).isdigit()]
+
+
 def build_native_linux(output_dir: Path, fetch: Callable[[list[int]], list[dict]] = _fetch_batch,
-                       sleep: Callable[[float], None] = time.sleep) -> dict:
-    """Write native-linux.json for every Steam app id in search-index.json."""
-    index_path = output_dir / "search-index.json"
-    rows = json.loads(index_path.read_text(encoding="utf-8"))
-    steam_ids = [int(r[0]) for r in rows if r and str(r[0]).isdigit()]
-    result = native_flags(steam_ids, fetch=fetch, sleep=sleep)
+                       sleep: Callable[[float], None] = time.sleep, sweep: dict | None = None) -> dict:
+    """Write native-linux.json for every Steam app id in search-index.json.
+
+    Pass the finalize-wide store_sweep result to avoid a second GetItems pass.
+    """
+    steam_ids = steam_ids_in_index(output_dir)
+    result = native_flags(steam_ids, fetch=fetch, sleep=sleep, sweep=sweep)
     payload = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source": SOURCE_LABEL,

@@ -57,7 +57,7 @@ from .most_played import build_most_played
 from .release_years import enrich_search_index_with_release_years
 from .steam_type import enrich_search_index_with_steam_type
 from .anti_cheat import enrich_search_index_with_anti_cheat
-from .steam_platforms import build_native_linux
+from .steam_platforms import build_native_linux, steam_ids_in_index, store_sweep
 from .game_hides import apply_game_hides
 from .flightless_benchmarks import run_flightless_benchmarks
 from .pcgamingwiki import enrich_search_index_with_pcgamingwiki
@@ -2588,8 +2588,13 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # budget, and writes column 11 to disk before returning -- so putting it
     # first guarantees the DLC / Mod / Software filter always has fresh data
     # even when the rest of finalize has a rough day.
+    # #261: one GetItems sweep (200 apps per request) gives every Steam app's
+    # store type and native-Linux flag. The type enricher and the native
+    # step below both use it, so finalize asks Steam once.
+    phase("Steam store sweep (GetItems: type + platforms)")
+    store_items = store_sweep(steam_ids_in_index(output_path))
     phase("Steam type enrichment")
-    enrich_search_index_with_steam_type(output_path)
+    enrich_search_index_with_steam_type(output_path, sweep=store_items)
     phase("Game images (Steam CDN probing; slow under 403s)")
     overrides = build_game_images(output_path)
     # Game-images probing now knows which Steam IDs returned success=false from
@@ -2603,11 +2608,11 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # placement that was overwriting replaced_by + steam_type.
     phase("Anti-cheat enrichment")
     enrich_search_index_with_anti_cheat(output_path)
-    # #241: native-linux.json for the home "Exclude native" filter, from
-    # Steam's batched GetItems (~170 requests). A failed batch leaves its
-    # games unknown and is logged; it never fails finalize.
+    # #241: native-linux.json for the home "Exclude native" filter, from the
+    # store sweep above (no second pass). A failed batch leaves its games
+    # unknown and is logged; it never fails finalize.
     phase("Native Linux flags")
-    build_native_linux(output_path)
+    build_native_linux(output_path, sweep=store_items)
     # #377 slice 1: merge PCGamingWiki OS support + engine into cols 14 + 15
     # so the frontend can drive a "not Windows-only" filter and show engine
     # metadata without a per-game fetch. Cached weekly, falls back to disk
