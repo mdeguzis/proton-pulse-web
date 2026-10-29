@@ -121,7 +121,7 @@ describe('home panel wiring', () => {
     expect(homeSrc).toContain('acSel = new Set(saved.ac || [])');
     expect(homeSrc).toContain('_applyPillSelection(acGroup, saved.ac)');
     expect(homeSrc).toContain('vrSel.size + acSel.size');
-    expect(homeSrc).toMatch(/vrGroup, acGroup\]\.forEach/);
+    expect(homeSrc).toMatch(/vrGroup, acGroup(, nativeGroup)?\]\.forEach/);
     expect(homeSrc).toMatch(/vrSel = new Set\(\);\s*acSel = new Set\(\);/);
   });
 });

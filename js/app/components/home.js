@@ -20,6 +20,7 @@ import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLook
 import { loadDeckStatusMap } from '../api/deck-status.js?v=c941cca9';
 import { loadVrIndex, matchesVrFilter, vrForApp } from '../lib/vr-index.js?v=f094c84f';
 import { loadAntiCheatMap, matchesAntiCheatFilter, antiCheatAppIdsMatching } from '../lib/anti-cheat.js?v=1ec01d8a';
+import { loadNativeLinux, filterByNative } from '../lib/native-linux.js?v=4c9e09da';
 import { readShowOwnerBadgesLocal, pullShowOwnerBadges } from '../../lib/user-prefs.js?v=09b673c8';
 import { pageNavHtml, wirePageNav } from '../lib/page-nav.js?v=2cdc55e4';
 import { synthesizeMyLibrary } from '../lib/my-library-synth.js?v=58a32db3';
@@ -620,6 +621,11 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="unknown" title="Linux support planned, or anti-cheat detected with no verdict yet">No verdict</button>
               <button class="pg-filter" type="button" data-value="none" title="Not in the anti-cheat list. Usually means no anti-cheat, but not always.">Not listed</button>
             </div>
+            <div class="pg-filter-group" id="home-native-checks" title="Games with a native Linux build on Steam. Exclude them to see only what runs through Proton.">
+              <span class="pg-filter-group-label">Native Linux</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="exclude" title="Hide games that ship a native Linux build">Exclude native</button>
+            </div>
             <div class="filter-panel-footer filter-panel-footer--stack">
               <button class="filter-collapse-btn" id="home-filter-collapse" type="button" aria-label="Collapse filters">
                 <span class="filter-collapse-caret" aria-hidden="true">&#x25B2;</span>
@@ -716,6 +722,8 @@ export async function renderHomePage() {
     let vrMap = null;          // cached {appId: 'supported'|'only'}; lazily loaded on first VR chip use
     let acSel = new Set();     // empty => all; 'works'/'blocked'/'unknown'/'none' => anti-cheat on Linux (#242)
     let acMap = null;          // cached anti-cheat.json; lazily loaded on first anti-cheat chip use
+    let nativeSel = new Set(); // empty / 'all' => everything; 'exclude' => drop native Linux games (#241)
+    let nativeSet = null;      // Set from native-linux.json; loaded on first use
     let currentLayout = 'grid';
 
     // #437: non-Steam browse rows (GOG / Epic / PCGamingWiki) for the Popular
@@ -888,7 +896,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending', delisted: g.delisted === true || _isDelisted(g.appId) };
         });
       }
-      const filtered = filterDelisted(filterAdult(_filterByText(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), textFilter)));
+      const filtered = filterDelisted(filterAdult(_filterByText(filterByNative(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), nativeSel, nativeSet), textFilter)));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -1027,7 +1035,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterDelisted(filterAdult(_filterByText(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), textFilter)));
+      const filtered = filterDelisted(filterAdult(_filterByText(filterByNative(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), nativeSel, nativeSet), textFilter)));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
@@ -1164,7 +1172,7 @@ export async function renderHomePage() {
           sort: currentSort, text: textFilter,
           tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
           library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel],
-          machine: [...machineSel], steamos: [...steamosSel], kind: [...kindSel], vr: [...vrSel], ac: [...acSel],
+          machine: [...machineSel], steamos: [...steamosSel], kind: [...kindSel], vr: [...vrSel], ac: [...acSel], native: [...nativeSel],
         }));
       } catch { /* ignore */ }
     }
@@ -1216,6 +1224,7 @@ export async function renderHomePage() {
       kindSel = new Set(saved.kind || []);
       vrSel = new Set(saved.vr || []);
       acSel = new Set(saved.ac || []);
+      nativeSel = new Set(saved.native || []);
       _applyPillSelection(tierGroup, saved.tier);
       _applyPillSelection(sourceGroup, saved.source);
       _applyPillSelection(storeGroup, saved.store);
@@ -1228,6 +1237,7 @@ export async function renderHomePage() {
       _applyPillSelection(kindGroup, saved.kind);
       _applyPillSelection(vrGroup, saved.vr);
       _applyPillSelection(acGroup, saved.ac);
+      _applyPillSelection(nativeGroup, saved.native);
       updateFilterBadge();
       console.debug('[browse-filters] restored saved filters', { source: FILTERS_KEY, sort: currentSort, tiers: [...tierSel], sources: [...sourceSel], stores: [...storeSel], library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel], kinds: [...kindSel], text: textFilter });
       return true;
@@ -1293,7 +1303,7 @@ export async function renderHomePage() {
 
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + (textFilter.trim() ? 1 : 0);
+      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + nativeSel.size + (textFilter.trim() ? 1 : 0);
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -1311,6 +1321,7 @@ export async function renderHomePage() {
     const kindGroup = document.getElementById('home-kind-checks');
     const vrGroup = document.getElementById('home-vr-checks');
     const acGroup = document.getElementById('home-ac-checks');
+    const nativeGroup = document.getElementById('home-native-checks');
     if (tierGroup) _wirePillGroup(tierGroup, { onChange: sel => {
       tierSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
@@ -1397,9 +1408,30 @@ export async function renderHomePage() {
       updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
     }});
 
+    // Native Linux chip (#241). An unusable native-linux.json (missing, HTML,
+    // or checked 0) hides the group and resets the selection, so the filter
+    // never quietly does nothing.
+    async function _ensureNativeSet() {
+      if (nativeSet) return true;
+      try {
+        nativeSet = await loadNativeLinux();
+        return true;
+      } catch (err) {
+        console.warn('[home] native-linux.json unavailable, hiding the Native Linux filter', { error: String(err?.message || err) });
+        nativeSel = new Set();
+        if (nativeGroup) nativeGroup.hidden = true;
+        return false;
+      }
+    }
+    if (nativeGroup) _wirePillGroup(nativeGroup, { onChange: async sel => {
+      nativeSel = sel;
+      if (sel && sel.has('exclude')) await _ensureNativeSet();
+      updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
+    }});
+
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, steamosGroup, kindGroup, vrGroup, acGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, steamosGroup, kindGroup, vrGroup, acGroup, nativeGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');
@@ -1424,6 +1456,7 @@ export async function renderHomePage() {
       kindSel = new Set();
       vrSel = new Set();
       acSel = new Set();
+      nativeSel = new Set();
       updateFilterBadge();
       applyRecentFilters();
       applyPopularFilters();
@@ -1590,6 +1623,7 @@ export async function renderHomePage() {
       if (!vrMap) vrMap = await loadVrIndex().catch(() => ({}));
       await _ensureHomeVr([...vrSel][0]).catch(() => {});
     }
+    if (_active(nativeSel)) await _ensureNativeSet(); // #241 restored chip must filter
     if (_active(acSel)) {
       if (!acMap) acMap = await loadAntiCheatMap();
       if (_acBrowseActive()) {
