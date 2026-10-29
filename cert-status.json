@@ -1,11 +1,11 @@
 {
   "ok": true,
   "domain": "www.proton-pulse.com",
-  "checked_at": "2026-10-29T12:28:09Z",
+  "checked_at": "2026-10-29T22:31:42Z",
   "edge": {
     "reachable": true,
-    "subject": "CN = www.proton-pulse.com",
-    "issuer": "C = US, O = Google Trust Services, CN = WE1",
+    "subject": "CN=www.proton-pulse.com",
+    "issuer": "C=US, O=Google Trust Services, CN=WE1",
     "san": [
       "www.proton-pulse.com"
     ],
