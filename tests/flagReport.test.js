@@ -40,12 +40,18 @@ describe('flagReport', () => {
     expect(calls.some(c => /\/flagged_reports(\?|$)/.test(c.url))).toBe(false);
   });
 
-  test('a failed is_flagged PATCH does not fail the flag (RLS owner-only)', async () => {
-    const { mod } = loadApi((url) =>
-      url.includes('/rpc/submit_flag')
-        ? Promise.resolve({ ok: true, status: 204 })
-        : Promise.resolve({ ok: false, status: 403 }));
+  test('never writes user_configs directly; the trigger sets is_flagged', async () => {
+    // A client PATCH of user_configs.is_flagged used to follow the RPC. The
+    // policy that allowed it let anyone rewrite any report, and was dropped.
+    const { mod, calls } = loadApi(() => Promise.resolve({ ok: true, status: 204 }));
     const ok = await mod.flagReport({ reportId: 5, appId: '730', reportKey: 'k', source: 'pulse' });
     expect(ok).toBe(true);
+    expect(calls.some(c => c.url.includes('/user_configs'))).toBe(false);
+    expect(calls).toHaveLength(1);
+  });
+
+  test('a failed RPC reports failure', async () => {
+    const { mod } = loadApi(() => Promise.resolve({ ok: false, status: 500 }));
+    expect(await mod.flagReport({ reportId: 5, appId: '730', reportKey: 'k', source: 'pulse' })).toBe(false);
   });
 });

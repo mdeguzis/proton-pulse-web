@@ -1,0 +1,21 @@
+-- Security fix: anyone could rewrite any report.
+--
+-- The UPDATE policy "Anyone can flag a report" on user_configs had
+-- USING (true) and WITH CHECK (is_flagged = true). Any caller with the
+-- public anon key could therefore update EVERY column of ANY report
+-- (rating, notes, launch options, ...) as long as the new row also had
+-- is_flagged = true. Confirmed live on 2026-10-29 in a rolled-back
+-- transaction.
+--
+-- Flagging does not need it: the flag button calls the submit_flag RPC
+-- (SECURITY DEFINER), which writes flagged_reports, and the
+-- trg_sync_user_configs_is_flagged trigger (SECURITY DEFINER) sets
+-- user_configs.is_flagged from that. Verified with the policy dropped: an
+-- anon submit_flag still marks the report flagged, and an anon UPDATE of
+-- another report affects 0 rows.
+--
+-- The same-named INSERT policy on flagged_reports is a different policy and
+-- stays. Remaining anonymous-write gaps (votes, uploaded configs, x-client-id
+-- report edits) are tracked in a private security advisory.
+
+DROP POLICY IF EXISTS "Anyone can flag a report" ON public.user_configs;
