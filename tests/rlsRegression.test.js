@@ -410,3 +410,53 @@ describeIfCreds('RLS: reports cannot be rewritten by other callers', () => {
   }, 90000);
 });
 
+
+// Security fix 2026-10-30: report_approvals had "Service role can manage
+// approvals" FOR ALL TO public USING (true) WITH CHECK (true), so anyone with
+// the anon key could approve their own report and skip moderation. Replaced
+// in 20261030010000: manage_reports writes, the signed-in report owner may
+// delete (edit re-review), anon has no write grant. The UPDATEs below set a
+// column to itself, so a regression cannot change data.
+describeIfCreds('RLS: report_approvals writes are moderator-only', () => {
+  test('anon has no write grant on report_approvals', async () => {
+    await expect(queryDB(`
+      SET LOCAL ROLE anon;
+      SET LOCAL "request.jwt.claims" = '{"role":"anon"}';
+      UPDATE public.report_approvals SET approved_by = approved_by RETURNING report_id;
+    `)).rejects.toThrow(/permission denied/);
+  }, 90000);
+
+  test('anon can still read approvals (pending badges)', async () => {
+    const rows = await queryDB(`
+      SET LOCAL ROLE anon;
+      SELECT count(*)::int AS n FROM public.report_approvals;
+    `);
+    expect(rows[0].n).toBeGreaterThanOrEqual(0);
+  }, 90000);
+
+  test('a signed-in non-moderator updates and deletes nothing', async () => {
+    const updated = await asUser(USER_B, `
+      UPDATE public.report_approvals SET approved_by = approved_by RETURNING report_id;
+    `);
+    expect(updated).toHaveLength(0);
+    // Rolled back so a regression cannot delete real approvals.
+    const deleted = await queryDB(`
+      BEGIN;
+      SET LOCAL ROLE authenticated;
+      SET LOCAL "request.jwt.claims" = '${jwtClaims(USER_B)}';
+      WITH d AS (DELETE FROM public.report_approvals RETURNING report_id)
+      SELECT count(*)::int AS n FROM d;
+      ROLLBACK;
+    `);
+    expect(deleted[0].n).toBe(0);
+  }, 90000);
+
+  test('no permissive write policy remains on report_approvals', async () => {
+    const rows = await queryDB(`
+      SELECT policyname FROM pg_policies
+      WHERE schemaname = 'public' AND tablename = 'report_approvals'
+        AND cmd <> 'SELECT' AND (qual = 'true' OR with_check = 'true');
+    `);
+    expect(rows).toEqual([]);
+  }, 90000);
+});
