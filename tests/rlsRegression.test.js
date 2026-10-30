@@ -460,3 +460,196 @@ describeIfCreds('RLS: report_approvals writes are moderator-only', () => {
     expect(rows).toEqual([]);
   }, 90000);
 });
+
+// #62: anonymous writers prove ownership with a per-client secret (hash in
+// client_secrets) through the client_* RPCs, which also enforce bans.
+// Migration 20261030020000. Every case runs in a transaction that is rolled
+// back, so nothing persists.
+describeIfCreds('Client secret RPCs (anon writers)', () => {
+  const CLIENT = `ci-rls-client-${RUN_ID}`;
+  const SECRET = `ci-secret-${'a'.repeat(32)}`;
+  const OTHER_SECRET = `ci-secret-${'b'.repeat(32)}`;
+  const anonTx = (sql) => queryDB(`
+    BEGIN;
+    SET LOCAL ROLE anon;
+    SET LOCAL "request.jwt.claims" = '{"role":"anon"}';
+    ${sql};
+    ROLLBACK;
+  `);
+  const vote = (secret, v = 1) =>
+    `SELECT public.client_cast_vote('${CLIENT}', '${secret}', '730', 'ci-key', ${v}::smallint)`;
+
+  test('first call registers the secret and the vote lands', async () => {
+    const rows = await anonTx(`${vote(SECRET)};
+      SELECT count(*)::int AS n FROM public.report_votes WHERE voter_id = '${CLIENT}'`);
+    expect(rows[0].n).toBe(1);
+  }, 90000);
+
+  test('a different secret for the same client id is refused', async () => {
+    await expect(anonTx(`${vote(SECRET)}; ${vote(OTHER_SECRET, -1)}`))
+      .rejects.toThrow(/client secret mismatch/);
+  }, 90000);
+
+  test('a voter id used by a linked install cannot be claimed with another secret', async () => {
+    const linked = await queryDB(`
+      SELECT upc.voter_id FROM public.plugin_links pl
+      JOIN public.user_proton_configs upc ON upc.installation_id = pl.installation_id
+      WHERE pl.installation_secret_hash IS NOT NULL LIMIT 1;
+    `);
+    if (!linked.length) return; // no linked installs in this project
+    await expect(anonTx(
+      `SELECT public.client_cast_vote('${linked[0].voter_id}', '${OTHER_SECRET}', '730', 'ci-key', 1::smallint)`,
+    )).rejects.toThrow(/client secret mismatch/);
+  }, 90000);
+
+  test('a banned client is refused, an expired timed ban is not', async () => {
+    await expect(queryDB(`
+      BEGIN;
+      INSERT INTO public.banned_users (client_id, banned_reason) VALUES ('${CLIENT}', 'ci');
+      SET LOCAL ROLE anon;
+      ${vote(SECRET)};
+      ROLLBACK;
+    `)).rejects.toThrow(/client is banned/);
+    const rows = await queryDB(`
+      BEGIN;
+      INSERT INTO public.banned_users (client_id, banned_reason, banned_until)
+        VALUES ('${CLIENT}', 'ci', now() - interval '1 day');
+      SET LOCAL ROLE anon;
+      ${vote(SECRET)};
+      SELECT count(*)::int AS n FROM public.report_votes WHERE voter_id = '${CLIENT}';
+      ROLLBACK;
+    `);
+    expect(rows[0].n).toBe(1);
+  }, 90000);
+
+  test('anon cannot call the helpers or read client_secrets', async () => {
+    await expect(anonTx(`SELECT public.client_verify('${CLIENT}', '${SECRET}')`))
+      .rejects.toThrow(/permission denied/);
+    await expect(anonTx('SELECT count(*) FROM public.client_secrets'))
+      .rejects.toThrow(/permission denied/);
+  }, 90000);
+
+  test('submit_report ignores ownership and moderation fields from the caller', async () => {
+    const report = JSON.stringify({
+      app_id: '999999', title: 't', cpu: 'c', gpu: 'g', ram: '16', os: 'SteamOS',
+      proton_version: '9', rating: 'gold',
+      client_id: 'someone-else', proton_pulse_user_id: USER_A,
+      is_hidden: true, is_flagged: true, owner_verified: true,
+    });
+    const rows = await anonTx(`
+      SELECT public.client_submit_report('${CLIENT}', '${SECRET}', NULL, '${report}'::jsonb);
+      RESET ROLE;
+      SELECT client_id, proton_pulse_user_id, is_hidden, is_flagged, owner_verified
+      FROM public.user_configs WHERE client_id IN ('${CLIENT}', 'someone-else')`);
+    expect(rows).toEqual([{
+      client_id: CLIENT, proton_pulse_user_id: null,
+      is_hidden: false, is_flagged: false, owner_verified: false,
+    }]);
+  }, 90000);
+
+  test('cloud configs and plugin settings round-trip only for the owner', async () => {
+    const rows = await anonTx(`
+      SELECT public.client_save_cloud_config('${CLIENT}', '${SECRET}', NULL, 730, 'CS', '', '{"a":1}'::jsonb);
+      SELECT public.client_save_plugin_settings('${CLIENT}', '${SECRET}', 'ci', '{"x":1}'::jsonb);
+      SELECT (SELECT count(*)::int FROM public.client_my_cloud_configs('${CLIENT}', '${SECRET}', NULL)) AS configs,
+             (SELECT count(*)::int FROM public.client_my_plugin_settings('${CLIENT}', '${SECRET}', 'ci')) AS settings`);
+    expect(rows[0]).toEqual({ configs: 1, settings: 1 });
+    await expect(anonTx(`
+      SELECT public.client_save_cloud_config('${CLIENT}', '${SECRET}', NULL, 730, 'CS', '', '{}'::jsonb);
+      SELECT * FROM public.client_my_cloud_configs('${CLIENT}', '${OTHER_SECRET}', NULL)`))
+      .rejects.toThrow(/client secret mismatch/);
+  }, 90000);
+
+  test('finish_playtime only closes sessions this client started', async () => {
+    const rows = await anonTx(`
+      SELECT public.client_finish_playtime('${CLIENT}', '${SECRET}',
+        public.client_start_playtime('${CLIENT}', '${SECRET}', '730', 'ck', '9', 'pulse', now()),
+        now(), 5) AS mine,
+      public.client_finish_playtime('${CLIENT}', '${SECRET}',
+        (SELECT min(id) FROM public.config_playtime WHERE voter_id <> '${CLIENT}'), now(), 5) AS theirs`);
+    expect(rows[0]).toEqual({ mine: true, theirs: false });
+  }, 90000);
+});
+
+// #62: the web client's signed writes. client-write (edge fn) verifies the
+// ECDSA signature, then calls client_web_key / client_web_write with the
+// service role. Migration 20261031010000. Rolled back, nothing persists.
+describeIfCreds('Web client signed writes (service-role functions)', () => {
+  const CLIENT = `ci-rls-web-${RUN_ID}`;
+  const KEY = '{"kty":"EC","crv":"P-256","x":"ci-x","y":"ci-y"}';
+  const asService = (sql) => queryDB(`BEGIN; SET LOCAL ROLE service_role; ${sql}; ROLLBACK;`);
+  const write = (ts, vote = 1) =>
+    `SELECT public.client_web_write('${CLIENT}', ${ts}, 'cast_vote', '{"app_id":"730","report_key":"ci","vote":${vote}}'::jsonb)`;
+
+  test('registers a key on first use and writes the vote', async () => {
+    const rows = await asService(`
+      SELECT public.client_web_key('${CLIENT}', '${KEY}'::jsonb);
+      ${write(100)};
+      SELECT count(*)::int AS n FROM public.report_votes WHERE voter_id = '${CLIENT}'`);
+    expect(rows[0].n).toBe(1);
+  }, 90000);
+
+  test('a replayed or older timestamp is refused', async () => {
+    await expect(asService(`
+      SELECT public.client_web_key('${CLIENT}', '${KEY}'::jsonb);
+      ${write(100)}; ${write(100, -1)}`)).rejects.toThrow(/stale or replayed/);
+  }, 90000);
+
+  test('a JWK carrying a private part is refused', async () => {
+    await expect(asService(`SELECT public.client_web_key('${CLIENT}',
+      '{"kty":"EC","crv":"P-256","x":"a","y":"b","d":"secret"}'::jsonb)`)).rejects.toThrow(/public key is required/);
+  }, 90000);
+
+  test('a plugin client id cannot be claimed as a web key', async () => {
+    const plugin = await queryDB('SELECT voter_id FROM public.user_proton_configs LIMIT 1;');
+    if (!plugin.length) return;
+    await expect(asService(`SELECT public.client_web_key('${plugin[0].voter_id}', '${KEY}'::jsonb)`))
+      .rejects.toThrow(/not available for a web key/);
+  }, 90000);
+
+  test('the secret RPCs refuse an id that holds a web key', async () => {
+    await expect(queryDB(`
+      BEGIN;
+      SET LOCAL ROLE service_role;
+      SELECT public.client_web_key('${CLIENT}', '${KEY}'::jsonb);
+      SET LOCAL ROLE anon;
+      SELECT public.client_cast_vote('${CLIENT}', 'ci-secret-${'a'.repeat(32)}', '730', 'ci', 1::smallint);
+      ROLLBACK;
+    `)).rejects.toThrow(/client secret mismatch/);
+  }, 90000);
+
+  test('a banned web client is refused', async () => {
+    await expect(queryDB(`
+      BEGIN;
+      INSERT INTO public.banned_users (client_id, banned_reason) VALUES ('${CLIENT}', 'ci');
+      SET LOCAL ROLE service_role;
+      SELECT public.client_web_key('${CLIENT}', '${KEY}'::jsonb);
+      ${write(5)};
+      ROLLBACK;
+    `)).rejects.toThrow(/client is banned/);
+  }, 90000);
+
+  test('anon and signed-in users cannot call the service-role functions', async () => {
+    await expect(queryDB(`BEGIN; SET LOCAL ROLE anon; SELECT public.client_web_key('${CLIENT}', '${KEY}'::jsonb); ROLLBACK;`))
+      .rejects.toThrow(/permission denied/);
+    await expect(asUser(USER_B, `${write(1)}`)).rejects.toThrow(/permission denied/);
+  }, 90000);
+
+  test('admin_erase_user removes the client secret and web key for the erased client id', async () => {
+    const admin = await queryDB("SELECT proton_pulse_user_id FROM public.admins WHERE role = 'super_admin' LIMIT 1;");
+    if (!admin.length) return;
+    const rows = await queryDB(`
+      BEGIN;
+      INSERT INTO public.client_secrets (client_id, secret_hash) VALUES ('${CLIENT}', 'ci');
+      INSERT INTO public.client_public_keys (client_id, public_key) VALUES ('${CLIENT}', '${KEY}'::jsonb);
+      SET LOCAL ROLE authenticated;
+      SET LOCAL "request.jwt.claims" = '${jwtClaims(admin[0].proton_pulse_user_id)}';
+      SELECT public.admin_erase_user('${globalThis.crypto.randomUUID()}', '${CLIENT}');
+      RESET ROLE;
+      SELECT (SELECT count(*)::int FROM public.client_secrets WHERE client_id = '${CLIENT}') AS secrets,
+             (SELECT count(*)::int FROM public.client_public_keys WHERE client_id = '${CLIENT}') AS keys;
+      ROLLBACK;
+    `);
+    expect(rows[0]).toEqual({ secrets: 0, keys: 0 });
+  }, 90000);
+});

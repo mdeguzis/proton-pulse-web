@@ -61,3 +61,6 @@ verify_jwt = false
 # so clients no longer download the 12MB search-index.json blob. Per-IP
 # rate limit inside the function protects against scrape abuse.
 verify_jwt = false
+
+[functions.client-write]
+verify_jwt = false

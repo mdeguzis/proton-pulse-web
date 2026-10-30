@@ -542,7 +542,6 @@ export async function submitReport(appId, title, form, editReportId = null) {
       apikey: SB_KEY,
       Authorization: `Bearer ${session.access_token}`,
       'Content-Type': 'application/json',
-      'x-client-id': body.client_id,
       Prefer: isEdit ? 'return=minimal' : 'resolution=merge-duplicates,return=minimal',
     },
     body: JSON.stringify(body),
