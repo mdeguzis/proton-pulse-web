@@ -13,7 +13,7 @@
 // "Probe all (filtered)" walks every row that matches the current
 // filters in bounded batches so the browser stays responsive.
 
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { dataUrl, readDataJson } from '../../lib/data-url.js?v=9ba434e3';
 import { escapeHtml } from '../utils.js?v=2668b2f0';
 import {
   probeImageUrl,
@@ -104,10 +104,23 @@ async function _loadIndexes() {
     // manager labeled every PGWiki title 'missing' even when a cover exists.
     fetch(await dataUrl('pcgwiki-catalog.json')).catch(() => null),
   ]);
-  const searchIndex = (siRes && siRes.ok) ? await siRes.json().catch(() => []) : [];
-  const extendedIndex = (extRes && extRes.ok) ? await extRes.json().catch(() => []) : [];
-  const gameImages  = (giRes && giRes.ok) ? await giRes.json().catch(() => ({})) : {};
-  const nonSteam    = (nsRes && nsRes.ok) ? await nsRes.json().catch(() => ({})) : {};
+  // #587: a file Cloudflare never deployed comes back as the SPA's HTML with
+  // a 200, and the old `.json().catch(() => ({}))` turned that into an empty
+  // map with no trace. Collect every file that failed so the page can say the
+  // statuses are incomplete instead of quietly showing fewer missing covers.
+  const unavailable = [];
+  const read = async (res, name, fallback) => {
+    const { data, error } = await readDataJson(res, name);
+    if (error) {
+      unavailable.push(error);
+      return fallback;
+    }
+    return data;
+  };
+  const searchIndex   = await read(siRes, 'search-index.json', []);
+  const extendedIndex = await read(extRes, 'search-index-steam-extended.json', []);
+  const gameImages    = await read(giRes, 'game-images.json', {});
+  const nonSteam      = await read(nsRes, 'nonsteam-images.json', {});
   // Fold PGWiki cover_urls into the non-Steam URL map under their pgwiki:
   // ids so _deriveStatus and the details preview see them like any other
   // non-Steam cached URL. nonsteam-images.json entries (if any) win.
@@ -117,14 +130,14 @@ async function _loadIndexes() {
   // probes (curl, edge fn HEAD) are separately bot-fingerprint-blocked and
   // always 403 -- browser <img> loads are the only trustworthy signal for
   // this host.
-  const pgwCatalog = (pgwRes && pgwRes.ok) ? await pgwRes.json().catch(() => ({})) : {};
+  const pgwCatalog = await read(pgwRes, 'pcgwiki-catalog.json', {});
   for (const [aid, entry] of Object.entries(pgwCatalog)) {
     if (!nonSteam[aid] && entry && typeof entry === 'object' && entry.cover_url) {
       nonSteam[aid] = String(entry.cover_url);
     }
   }
-  const cacheRaw    = (gcRes && gcRes.ok) ? await gcRes.json().catch(() => ({})) : {};
-  const nsCacheRaw  = (nscRes && nscRes.ok) ? await nscRes.json().catch(() => ({})) : {};
+  const cacheRaw    = await read(gcRes, 'game-images-cache.json', {});
+  const nsCacheRaw  = await read(nscRes, 'nonsteam-images-cache.json', {});
   // game-images-cache.json is the pipeline's authoritative status per Steam
   // appid. status "missing" and "delisted" both mean the standard Steam CDN
   // has nothing usable AND we couldn't find a fallback -- these are the games
@@ -191,7 +204,10 @@ async function _loadIndexes() {
     knownMissingSteam.delete(aid);
     knownMissingNonSteam.delete(aid);
   }
-  _cache = { searchIndex, extendedIndex, gameImages, nonSteam, pgwCatalog, overrideMap, knownMissingSteam, knownMissingNonSteam, confirmedOk };
+  if (unavailable.length) {
+    console.warn('[boxart] data files unavailable, statuses are incomplete', { unavailable, source: '_loadIndexes' });
+  }
+  _cache = { searchIndex, extendedIndex, gameImages, nonSteam, pgwCatalog, overrideMap, knownMissingSteam, knownMissingNonSteam, confirmedOk, unavailable };
   return _cache;
 }
 
@@ -352,6 +368,7 @@ function _renderShell() {
     </p>
     <!-- Modal + file input live in admin.html so both list + detail views share them. -->
     <div id="boxart-loading" class="admin-loading">Loading indexes...</div>
+    <p id="boxart-unavailable" class="admin-error" hidden></p>
     <div id="boxart-batch-progress" class="admin-counts" hidden></div>
     <div id="boxart-count" class="admin-counts" hidden></div>
     <div class="admin-table-scroll">
@@ -575,6 +592,11 @@ export async function renderBoxartAdmin() {
     return;
   }
   document.getElementById('boxart-loading').hidden = true;
+  const unavailableEl = document.getElementById('boxart-unavailable');
+  if (unavailableEl && indexes.unavailable.length) {
+    unavailableEl.innerHTML = `Some data files did not load, so the Missing filters can undercount: ${indexes.unavailable.map(escapeHtml).join('; ')}`;
+    unavailableEl.hidden = false;
+  }
 
   // Filter state loaded from URL query params so refresh + browser back
   // both restore whatever was last active (user request: retain filters

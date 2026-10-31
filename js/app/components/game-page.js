@@ -84,7 +84,7 @@ import { loadGameHides, loadGameRemaps, resolveRemap } from '../lib/game-hides.j
 import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFileHref, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=7873e060';
 import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=5adc7e54';
 import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=4630c3d5';
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
