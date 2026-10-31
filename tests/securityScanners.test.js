@@ -95,10 +95,11 @@ describe('Quarterly restore drill reminder workflow (#322)', () => {
   test('body links to the Restore-Runbook wiki + covers every checklist step', () => {
     expect(YAML).toContain('wiki/Restore-Runbook');
     for (const step of [
-      'Pull the latest backup tarball',
-      'Verify HMAC signature',
+      // #580: the drill restores the encrypted full backup. BACKUP_HMAC_SECRET
+      // only pseudonymizes the public export; it never signed anything.
+      'db/latest.tar.gz.age',
       'Spin a scratch Supabase project',
-      'Restore schema + data',
+      'scripts.restore_db',
       'Deploy every edge function',
       'Tear down the scratch project',
     ]) {
