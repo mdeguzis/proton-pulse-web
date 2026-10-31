@@ -7,8 +7,7 @@
  *   SUPABASE_SERVICE_ROLE_KEY - bypasses RLS
  *   BACKUP_HMAC_SECRET        - consistent pseudonymization key
  *   BACKUP_DATE               - YYYY-MM-DD (set by workflow)
- *   BACKUP_TYPE               - schema | user_configs | author_avatars | site | all
- *   SITE_DIR                  - path to checked-out gh-pages files (for site type)
+ *   BACKUP_TYPE               - schema | user_configs | author_avatars | all
  *   OUT_DIR                   - directory to write .tar.gz files into
  *
  * Optional env vars:
@@ -230,7 +229,7 @@ function makeTarball(srcDir, outPath) {
   execSync(`tar -czf "${outPath}" -C "${srcDir}" .`, { stdio: 'inherit' }); // nosemgrep: javascript.lang.security.detect-child-process.detect-child-process — Trusted CI script; commands from hardcoded constants, not user input
 }
 
-async function run(type, { headers, date, outDir, siteDir, secret, migrationsDir }) {
+async function run(type, { headers, date, outDir, secret, migrationsDir }) {
   const workDir = join(tmpdir(), `backup-${date}-${type}`);
   mkdirSync(workDir, { recursive: true });
 
@@ -273,23 +272,9 @@ async function run(type, { headers, date, outDir, siteDir, secret, migrationsDir
     console.log(`[author_avatars] exported ${sanitized.length} rows`);
   }
 
-  if (type === 'site') {
-    if (!siteDir) throw new Error('SITE_DIR is required for site backup');
-    const siteOut = join(workDir, 'site');
-    mkdirSync(siteOut, { recursive: true });
-    const allowed = ['.html', '.js', '.css', '.svg', '.png', '.ico'];
-    let fileCount = 0;
-    for (const f of readdirSync(siteDir)) {
-      if (allowed.some(ext => f.endsWith(ext))) {
-        const src = join(siteDir, f);
-        if (statSync(src).isFile()) {
-          execSync(`cp "${src}" "${siteOut}/"`); // nosemgrep: javascript.lang.security.detect-child-process.detect-child-process — Trusted CI script; commands from hardcoded constants, not user input
-          fileCount++;
-        }
-      }
-    }
-    rowCount = fileCount;
-  }
+  // No 'site' type (#31). It tarred the gh-pages branch, frozen since the
+  // Cloudflare cutover; the shell is in git and the per-game data is in the
+  // nightly-backup release.
 
   const outPath = join(outDir, `backup-${date}-${type}.tar.gz`);
   makeTarball(workDir, outPath);
@@ -321,19 +306,18 @@ async function main() {
   };
   const date = process.env.BACKUP_DATE;
   const outDir = process.env.OUT_DIR || '.';
-  const siteDir = process.env.SITE_DIR || '';
   const type = process.env.BACKUP_TYPE || 'all';
   // Migrations are the authoritative DDL and ship inside the schema archive.
   const migrationsDir = process.env.MIGRATIONS_DIR || 'supabase/migrations';
 
   mkdirSync(outDir, { recursive: true });
   const types = type === 'all'
-    ? ['schema', 'user_configs', 'author_avatars', 'site']
+    ? ['schema', 'user_configs', 'author_avatars']
     : [type];
 
   const results = [];
   for (const t of types) {
-    results.push(await run(t, { headers, date, outDir, siteDir, secret, migrationsDir }));
+    results.push(await run(t, { headers, date, outDir, secret, migrationsDir }));
   }
 
   // Write manifest for the workflow to append to backups.jsonl

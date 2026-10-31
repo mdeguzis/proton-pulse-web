@@ -182,7 +182,6 @@ def stage_import(ctx: Ctx) -> None:
         "latest-schema.tar.gz": "pg schema (skip if migrations already applied)",
         "latest-user_configs.tar.gz": "user_configs table dump (psql COPY)",
         "latest-author_avatars.tar.gz": "storage bucket dump (supabase storage cp)",
-        "latest-site.tar.gz": "gh-pages snapshot (git checkout --orphan + tar + push)",
     }
     for f, note in known.items():
         path = ctx.backup_dir / f
