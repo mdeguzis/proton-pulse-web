@@ -76,6 +76,12 @@ SMALL_DATA=(
   anti-cheat.json
   # #241 home "Exclude native" filter (scripts/pipeline/steam_platforms.py).
   native-linux.json
+  # #587: the admin Box Art Manager reads both for the pipeline's missing-cover
+  # verdicts. Excluded at the cutover as "too large", but they are ~2.6 MB
+  # and ~3.1 MB and Pages only serves a file when something asks for it, so
+  # no visitor ever downloads them. Without them the manager read the SPA
+  # HTML as an empty cache and undercounted missing covers.
+  game-images-cache.json nonsteam-images-cache.json
   # #564 which PROTON_* switches each Proton build reads; from the plugin repo
   # via fetch-plugin-data.sh (optional until it reaches plugin main).
   proton-env-support.json

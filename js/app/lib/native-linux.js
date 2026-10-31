@@ -9,7 +9,7 @@
 // native games" would make the filter silently do nothing. A file where Steam
 // answered for no apps (checked 0, written when every batch failed) is
 // unusable too. Both reject, and the caller hides the filter.
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 
 let _promise = null;
 

@@ -1,6 +1,6 @@
 // deck-status (api) for the app page. Relocated from app.js.
 
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 
 export const DECK_CAT_MAP = { 0: 'unknown', 1: 'unsupported', 2: 'playable', 3: 'verified' };
 // Steam Machine shares Deck's scale; SteamOS only ever shows Compatible as the

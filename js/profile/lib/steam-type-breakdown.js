@@ -7,7 +7,7 @@
 // bucket into "unknown" so a partial cache degrades gracefully -- the
 // enricher is still filling in ~35k apps as of writing (#258 / #261).
 // A missing or unreadable cache file is an error, not an empty cache.
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 
 const KNOWN_TYPES = ['game', 'dlc', 'demo', 'mod', 'software', 'advertising', 'video'];
 

@@ -2,7 +2,7 @@
 // chart rendering by delegating to utils, filters, and charts modules.
 
 import { FILTER_DIMS, dimDef, label, fmt } from './utils.js?v=df6f5f18';
-import { dataUrl } from '../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../lib/data-url.js?v=9ba434e3';
 import {
   applyFilter, getFilter, getOpenDropdown, setOpenDropdown,
   renderDropdownButton, toggleFilterValue, clearFilter,

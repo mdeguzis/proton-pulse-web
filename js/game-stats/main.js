@@ -6,7 +6,7 @@ import { isPreviewHardware, loadMyHardware, renderPreviewHardwareBanner, enhance
 import { attachChartHover, attachClickToFilter, dispatchFilter, onFilterChange } from '../shared/chart-interactions.js?v=6b608095';
 import { loadSteamImg as _loadSteamImg } from '../app/lib/steam-img.js?v=5adc7e54';
 import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
-import { dataUrl } from '../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../lib/data-url.js?v=9ba434e3';
 import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
 import { detectGpuArch } from '../lib/gpu-arch-detector.js?v=b4fbb7ef';
 

@@ -3,7 +3,7 @@
 // with a status pill, latency, HTTP code, and last-checked timestamp.
 // Auto-refreshes every 60 s so the page stays live if the reader leaves it open.
 
-import { dataUrl } from '../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../lib/data-url.js?v=9ba434e3';
 import { fetchVendorStatuses, VENDOR_REFRESH_MS } from './vendor-status.js?v=f161798f';
 import {
   certStateForCert, certStateLabel, certStateDot,

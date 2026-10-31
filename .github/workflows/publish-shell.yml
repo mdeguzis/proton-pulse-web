@@ -120,6 +120,8 @@ jobs:
             # tweak. vr-index.json + vrdb.json (#246) and anti-cheat.json
             # were all lost this way.
             vr-index.json vrdb.json anti-cheat.json steam-type-cache.json native-linux.json proton-env-support.json
+            # #587 admin Box Art Manager probe caches.
+            game-images-cache.json nonsteam-images-cache.json
           )
           for f in "${FILES[@]}"; do
             if curl -sfL --max-time 30 "$LIVE_BASE/$f" -o "/tmp/shell-out/$f" \
