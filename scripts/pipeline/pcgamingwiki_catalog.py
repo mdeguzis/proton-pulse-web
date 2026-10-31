@@ -58,11 +58,14 @@ import hashlib
 import json
 import re
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
+from typing import Callable
 
 from .common import log
+from .pulse import _resolve_credentials
 from .pcgamingwiki import (
     CARGO_DELAY_SEC,
     CARGO_LIMIT,
@@ -393,6 +396,99 @@ def _clean_cover_url(value) -> str | None:
     return text
 
 
+# Page size for the search_index recovery read. PostgREST caps a response at
+# max_rows (1000 on this project), so asking for more just truncates.
+RECOVERY_PAGE_SIZE = 1000
+
+
+def fetch_catalog_rows_from_search_index(opener: Callable = urllib.request.urlopen) -> list[dict]:
+    """Every pgwiki row in the Postgres search_index, keyset-paged on app_id.
+
+    search_index is the one place the catalog survived the #497 wipe: the
+    sync upserts each run's rows, and its stale delete never reached these
+    (#578). Uses the anon credentials the pulse merge uses (search_index is
+    publicly readable). Raises on network, HTTP or parse errors.
+    """
+    base, key = _resolve_credentials()
+    rows: list[dict] = []
+    last: str | None = None
+    while True:
+        query = (
+            "select=app_id,title,release_year,delisted,replaced_by"
+            f"&source=eq.pgwiki&order=app_id.asc&limit={RECOVERY_PAGE_SIZE}"
+        )
+        if last is not None:
+            query += f"&app_id=gt.{urllib.parse.quote(last, safe='')}"
+        req = urllib.request.Request(f"{base}/search_index?{query}", headers={
+            "apikey": key, "Authorization": f"Bearer {key}", "Accept": "application/json",
+        })
+        # URL from the configured Supabase base + a static REST path.
+        with opener(req, timeout=60) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+            page = json.loads(resp.read().decode("utf-8"))
+        if not isinstance(page, list):
+            raise ValueError(f"search_index returned {type(page).__name__}, expected a list")
+        rows.extend(r for r in page if isinstance(r, dict))
+        if len(page) < RECOVERY_PAGE_SIZE:
+            return rows
+        last = str(page[-1]["app_id"])
+
+
+def recover_entries_from_search_index(rows: list[dict]) -> dict[str, dict]:
+    """Rebuild catalog entries from search_index rows.
+
+    The page name is the row title, and it must hash back to the row's
+    pw_ id, so a recovered id is exactly the id Cargo would produce. Fields
+    search_index never stored (engine, companies, cover, gog_id, the full OS
+    list) come back empty. A delisted row's replaced_by holds its Steam appid,
+    which keeps the delisted cross-check working on recovered entries.
+    """
+    out: dict[str, dict] = {}
+    mismatched = 0
+    for row in rows:
+        app_id = str(row.get("app_id") or "")
+        page = str(row.get("title") or "").strip()
+        if not app_id or not page:
+            continue
+        slug = _slugify_page_name(page)
+        if slug_to_pw_id(slug) != app_id:
+            mismatched += 1
+            continue
+        replaced_by = str(row.get("replaced_by") or "")
+        steam_app_id = replaced_by.removeprefix("steam:") if replaced_by.startswith("steam:") else ""
+        out[app_id] = {
+            "name": page,
+            "slug": slug,
+            "engine": None,
+            "developers": [],
+            "publishers": [],
+            "release_year": row.get("release_year"),
+            "os": ["windows"],
+            "wiki_url": f"https://www.pcgamingwiki.com/wiki/{urllib.parse.quote(slug)}",
+            "cover_url": None,
+            "steam_app_id": steam_app_id or None,
+            "gog_id": None,
+        }
+    if mismatched:
+        log(f"[pcgwiki-catalog] WARN: recovery skipped {mismatched} rows whose title does not hash to their pw_ id")
+    return out
+
+
+def _recover_from_search_index() -> dict[str, dict]:
+    """Best-effort catalog rebuild for a cold cache while Cargo is refused.
+
+    Logs at ERROR and returns {} when Postgres can't be read; the caller
+    then has no catalog either way and says so.
+    """
+    try:
+        rows = fetch_catalog_rows_from_search_index()
+    except (urllib.error.URLError, OSError, ValueError, KeyError) as exc:
+        log(f"[pcgwiki-catalog] ERROR: recovery from search_index failed ({type(exc).__name__}: {exc})")
+        return {}
+    entries = recover_entries_from_search_index(rows)
+    log(f"[pcgwiki-catalog] recovered {len(entries)} entries from {len(rows)} search_index rows")
+    return entries
+
+
 def refresh_catalog(output_dir: Path, force: bool = False, cache_path: Path | None = None) -> dict[str, dict]:
     """Load or refresh the catalog cache. Returns `{pw_<hash>: entry}`.
 
@@ -419,8 +515,20 @@ def refresh_catalog(output_dir: Path, force: bool = False, cache_path: Path | No
         # None covers both a dead endpoint and a query the server rejected
         # with a 200 (#497) -- either way we have no rows and must not treat
         # that as an empty catalog.
-        log(f"[pcgwiki-catalog] cargo fetch failed; using {len(cache['entries'])} cached entries")
-        return cache["entries"]
+        if cache["entries"]:
+            log(f"[pcgwiki-catalog] cargo fetch failed; using {len(cache['entries'])} cached entries")
+            return cache["entries"]
+        # Cold cache too. Rebuild from the copy the search API still holds,
+        # and save it so later runs fall back to disk. fetched_at stays 0 so
+        # every run keeps trying Cargo for the full fields.
+        log("[pcgwiki-catalog] cargo fetch failed and the cache is empty; recovering from search_index")
+        recovered = _recover_from_search_index()
+        if recovered:
+            _save_cache(cache_path, {
+                "fetched_at": 0, "entries": recovered,
+                "recovered_from": "search_index", "recovered_at": now,
+            })
+        return recovered
 
     entries = _build_entries(rows)
 

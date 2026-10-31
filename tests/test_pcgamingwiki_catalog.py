@@ -558,3 +558,150 @@ def test_real_rows_still_replace_the_cache(tmp_path):
         out = refresh_catalog(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
     assert len(out) == 1
     assert any(e["name"] == "Half-Life 2" for e in out.values())
+
+
+# ── #578: recover a wiped catalog from Postgres search_index ────────────────
+#
+# The #497 wipe left no copy of the catalog anywhere except the search API's
+# Postgres table, where the broken stale delete (#578) never removed the
+# pgwiki rows. A cold cache plus a refused Cargo query rebuilds from there.
+
+import io
+
+from scripts.pipeline import pcgamingwiki_catalog as catalog_mod
+from scripts.pipeline.pcgamingwiki_catalog import (
+    _recover_from_search_index as real_recover,
+    fetch_catalog_rows_from_search_index,
+    recover_entries_from_search_index,
+)
+
+
+def _pg_row(title, **extra):
+    return {"app_id": slug_to_pw_id(_slugify_page_name(title)), "title": title,
+            "release_year": None, "delisted": False, "replaced_by": None, **extra}
+
+
+class _Resp(io.BytesIO):
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        return False
+
+
+def _opener_for(pages):
+    calls = []
+
+    def opener(req, timeout=None):
+        calls.append(req.full_url)
+        return _Resp(json.dumps(pages[len(calls) - 1]).encode())
+    return opener, calls
+
+
+def test_recover_rebuilds_entries_whose_title_hashes_to_the_id():
+    row = _pg_row("Shadow Complex Remastered", release_year=2015)
+    out = recover_entries_from_search_index([row])
+    entry = out[row["app_id"]]
+    assert entry["name"] == "Shadow Complex Remastered"
+    assert entry["slug"] == "Shadow_Complex_Remastered"
+    assert entry["release_year"] == 2015
+    assert entry["wiki_url"] == "https://www.pcgamingwiki.com/wiki/Shadow_Complex_Remastered"
+    assert entry["os"] == ["windows"]
+    assert entry["steam_app_id"] is None
+
+
+def test_recover_takes_the_steam_appid_from_replaced_by():
+    # Delisted rows carry steam:<appid>; keeping it lets the merge's delisted
+    # cross-check flag the recovered entry again instead of clearing it.
+    row = _pg_row("Solo Leveling: Arise", delisted=True, replaced_by="steam:2373990")
+    assert recover_entries_from_search_index([row])[row["app_id"]]["steam_app_id"] == "2373990"
+
+
+def test_recover_skips_rows_whose_title_does_not_hash_to_the_id():
+    # A title truncated or edited in Postgres would mint a different pw_ id.
+    good = _pg_row("Half-Life 2")
+    bad = {**_pg_row("Portal"), "title": "Portal (edited)"}
+    out = recover_entries_from_search_index([good, bad, {"app_id": "", "title": "x"}])
+    assert list(out) == [good["app_id"]]
+
+
+def test_fetch_rows_pages_by_app_id(monkeypatch):
+    monkeypatch.setattr(catalog_mod, "RECOVERY_PAGE_SIZE", 2)
+    a, b, c = _pg_row("A"), _pg_row("B"), _pg_row("C")
+    first, second = sorted([a, b], key=lambda r: r["app_id"]), [c]
+    opener, calls = _opener_for([first, second])
+    rows = fetch_catalog_rows_from_search_index(opener=opener)
+    assert rows == first + second
+    assert "source=eq.pgwiki" in calls[0] and "order=app_id.asc" in calls[0]
+    assert "app_id=gt." not in calls[0]
+    assert calls[1].endswith(f"app_id=gt.{first[-1]['app_id']}")
+
+
+def test_fetch_rows_raises_on_a_non_list_body():
+    opener, _ = _opener_for([{"message": "permission denied"}])
+    try:
+        fetch_catalog_rows_from_search_index(opener=opener)
+    except ValueError:
+        return
+    raise AssertionError("expected ValueError")
+
+
+def test_recover_hook_logs_and_returns_empty_when_postgres_is_down(capsys):
+    from urllib.error import URLError
+    with patch.object(catalog_mod, "fetch_catalog_rows_from_search_index", side_effect=URLError("down")):
+        assert real_recover() == {}
+    assert "ERROR: recovery from search_index failed (URLError" in capsys.readouterr().err
+
+
+def test_recover_hook_returns_rebuilt_entries():
+    row = _pg_row("Half-Life 2")
+    with patch.object(catalog_mod, "fetch_catalog_rows_from_search_index", return_value=[row]):
+        assert list(real_recover()) == [row["app_id"]]
+
+
+def test_cold_cache_and_refused_query_recovers_and_persists(tmp_path):
+    cache_path = tmp_path / CACHE_FILENAME
+    recovered = recover_entries_from_search_index([_pg_row("Half-Life 2")])
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None), \
+         patch("scripts.pipeline.pcgamingwiki_catalog._recover_from_search_index", return_value=recovered):
+        out = refresh_catalog(tmp_path, force=True, cache_path=cache_path)
+    assert out == recovered
+    on_disk = json.loads(cache_path.read_text())
+    assert on_disk["entries"] == recovered
+    assert on_disk["recovered_from"] == "search_index"
+    # fetched_at 0 keeps the cache stale, so the next run still tries Cargo.
+    assert on_disk["fetched_at"] == 0
+
+
+def test_populated_cache_never_triggers_recovery(tmp_path):
+    seeded = _seeded_cache(tmp_path)
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None), \
+         patch("scripts.pipeline.pcgamingwiki_catalog._recover_from_search_index") as rec:
+        out = refresh_catalog(tmp_path, force=True, cache_path=tmp_path / CACHE_FILENAME)
+    assert out == seeded
+    rec.assert_not_called()
+
+
+def test_failed_recovery_leaves_no_cache_file(tmp_path):
+    cache_path = tmp_path / CACHE_FILENAME
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None):
+        out = refresh_catalog(tmp_path, force=True, cache_path=cache_path)  # conftest hook returns {}
+    assert out == {}
+    assert not cache_path.exists()
+
+
+def test_recovered_cache_feeds_the_merge(tmp_path):
+    # End to end: the recovered entries become pw_ stub rows in the index,
+    # with the delisted flag re-derived from the recovered Steam appid.
+    index = tmp_path / "search-index.json"
+    index.write_text(json.dumps([["220", "Half-Life 2", "gold", 5, 0, "steam"]]))
+    live = _pg_row("Half-Life 2")
+    gone = _pg_row("Old Game", delisted=True, replaced_by="steam:999999")
+    recovered = recover_entries_from_search_index([live, gone])
+    with patch("scripts.pipeline.pcgamingwiki_catalog._fetch_all_pages", return_value=None), \
+         patch("scripts.pipeline.pcgamingwiki_catalog._recover_from_search_index", return_value=recovered):
+        merge_catalog_into_search_index(tmp_path, cache_path=tmp_path / CACHE_FILENAME)
+    rows = {r[0]: r for r in json.loads(index.read_text())}
+    assert rows[live["app_id"]][5] == "pgwiki"
+    assert rows[gone["app_id"]][7] is True
+    assert rows[gone["app_id"]][10] == "steam:999999"
