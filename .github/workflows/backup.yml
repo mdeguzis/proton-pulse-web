@@ -19,7 +19,6 @@ on:
           - schema
           - user_configs
           - author_avatars
-          - site
       # Standardized inputs (#218). backup doesn't take app_ids.
       issue_id:
         description: "GitHub issue to comment run summary back on (leave blank to skip)"
@@ -47,12 +46,6 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v7
 
-      - name: Checkout gh-pages (for site backup)
-        uses: actions/checkout@v7
-        with:
-          ref: gh-pages
-          path: gh-pages-site
-
       - name: Set up Node
         uses: actions/setup-node@v7
         with:
@@ -71,7 +64,6 @@ jobs:
           BACKUP_HMAC_SECRET: ${{ secrets.BACKUP_HMAC_SECRET }}
           BACKUP_DATE: ${{ steps.date.outputs.date }}
           BACKUP_TYPE: ${{ inputs.type || 'all' }}
-          SITE_DIR: gh-pages-site
           OUT_DIR: backup-out
         run: node .github/scripts/backup.mjs
 
@@ -134,6 +126,10 @@ jobs:
 
           # Overwrite latest/ with the current tarballs (stable filenames, always current)
           mkdir -p backup-repo/latest
+          # The site type was dropped (#31): it re-saved the gh-pages branch,
+          # frozen since the Cloudflare cutover. Don't leave its last copy
+          # looking current.
+          rm -f backup-repo/latest/latest-site.tar.gz
           for f in backup-out/*.tar.gz; do
             base="${f##*backup-out/backup-${DATE}-}"   # strip prefix → e.g. schema.tar.gz
             cp "$f" "backup-repo/latest/latest-${base}"
