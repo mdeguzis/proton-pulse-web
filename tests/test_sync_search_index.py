@@ -20,6 +20,7 @@ from scripts.pipeline.sync_search_index import (
     VALID_SOURCES,
     _batched,
     _delete_stale,
+    _list_existing,
     _post_batch,
     _row_to_dict,
     sync_search_index,
@@ -166,40 +167,145 @@ def test_post_batch_raises_on_4xx():
             _post_batch("https://sb.example", "svc_key", [{"app_id": "220"}])
 
 
-# ---- _delete_stale -------------------------------------------------------
+# ---- _list_existing + _delete_stale -------------------------------------
 
 
-def test_delete_stale_no_diff():
-    # Everything in DB is also in live_ids -> no DELETE fired.
-    list_resp = MagicMock()
-    list_resp.__enter__ = lambda self: self
-    list_resp.__exit__ = lambda self, *a: None
-    list_resp.read.return_value = json.dumps([{"app_id": "220"}, {"app_id": "440"}]).encode()
+def _json_response(payload):
+    resp = MagicMock()
+    resp.__enter__ = lambda self: self
+    resp.__exit__ = lambda self, *a: None
+    resp.read.return_value = json.dumps(payload).encode()
+    return resp
 
+
+@pytest.fixture
+def no_floor(monkeypatch):
+    # Most delete tests use a handful of rows; the real floor is 10k.
+    monkeypatch.setattr("scripts.pipeline.sync_search_index.MIN_LIVE_ROWS", 0)
+
+
+def test_list_existing_pages_past_the_postgrest_row_cap(monkeypatch):
+    # #578: PostgREST returns at most max_rows per request. A full page means
+    # there may be more, so the listing must continue from the last app_id.
+    monkeypatch.setattr("scripts.pipeline.sync_search_index.LIST_PAGE_SIZE", 2)
+    pages = [
+        _json_response([{"app_id": "1", "source": "steam"}, {"app_id": "2", "source": "steam"}]),
+        _json_response([{"app_id": "gog:3", "source": "gog"}, {"app_id": "pw_a", "source": "pgwiki"}]),
+        _json_response([{"app_id": "pw_b", "source": "pgwiki"}]),
+    ]
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen", side_effect=pages) as m:
+        out = _list_existing("https://sb.example", "svc_key")
+    assert out == {"1": "steam", "2": "steam", "gog:3": "gog", "pw_a": "pgwiki", "pw_b": "pgwiki"}
+    urls = [c[0][0].full_url for c in m.call_args_list]
+    assert "app_id=gt." not in urls[0]
+    assert "order=app_id.asc" in urls[0]
+    assert urls[1].endswith("app_id=gt.2")
+    # The cursor is URL-quoted, so a gog: id cannot break the query string.
+    assert urls[2].endswith("app_id=gt.pw_a")
+
+
+def test_list_existing_quotes_the_cursor(monkeypatch):
+    monkeypatch.setattr("scripts.pipeline.sync_search_index.LIST_PAGE_SIZE", 1)
+    pages = [_json_response([{"app_id": "gog:3", "source": "gog"}]), _json_response([])]
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen", side_effect=pages) as m:
+        _list_existing("https://sb.example", "svc_key")
+    assert m.call_args_list[1][0][0].full_url.endswith("app_id=gt.gog%3A3")
+
+
+def test_list_existing_raises_on_a_non_list_body():
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen",
+               return_value=_json_response({"message": "nope"})):
+        with pytest.raises(ValueError):
+            _list_existing("https://sb.example", "svc_key")
+
+
+def test_delete_stale_no_diff(no_floor):
+    # Everything in DB is also live -> no DELETE fired.
     with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
-        m.side_effect = [list_resp]
-        deleted = _delete_stale("https://sb.example", "svc_key", {"220", "440"})
+        m.side_effect = [_json_response([{"app_id": "220", "source": "steam"}, {"app_id": "440", "source": "steam"}])]
+        deleted = _delete_stale("https://sb.example", "svc_key", {"220": "steam", "440": "steam"})
     assert deleted == 0
-    assert m.call_count == 1  # only the initial list call
+    assert m.call_count == 1  # only the listing
 
 
-def test_delete_stale_batches_the_diff():
+def test_delete_stale_batches_the_diff(no_floor):
     # DB has 220 + 440 + 999; live has 220 + 440 -> delete 999.
-    list_resp = MagicMock()
-    list_resp.__enter__ = lambda self: self
-    list_resp.__exit__ = lambda self, *a: None
-    list_resp.read.return_value = json.dumps(
-        [{"app_id": "220"}, {"app_id": "440"}, {"app_id": "999"}]
-    ).encode()
-    del_resp = _fake_response(204)
-
+    listing = _json_response([
+        {"app_id": "220", "source": "steam"}, {"app_id": "440", "source": "steam"},
+        {"app_id": "999", "source": "steam"},
+    ])
     with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
-        m.side_effect = [list_resp, del_resp]
-        deleted = _delete_stale("https://sb.example", "svc_key", {"220", "440"})
+        m.side_effect = [listing, _fake_response(204)]
+        deleted = _delete_stale("https://sb.example", "svc_key", {"220": "steam", "440": "steam"})
     assert deleted == 1
-    delete_call = m.call_args_list[1]
-    assert "in.(" in delete_call[0][0].full_url
-    assert "999" in delete_call[0][0].full_url
+    delete_req = m.call_args_list[1][0][0]
+    assert delete_req.method == "DELETE"
+    assert 'in.("999")' in delete_req.full_url
+
+
+def test_delete_stale_sees_rows_beyond_the_first_page(no_floor, monkeypatch):
+    # The #578 regression: the stale row sits on page 2. The old single
+    # request never saw it.
+    monkeypatch.setattr("scripts.pipeline.sync_search_index.LIST_PAGE_SIZE", 2)
+    pages = [
+        _json_response([{"app_id": "1", "source": "steam"}, {"app_id": "2", "source": "steam"}]),
+        _json_response([{"app_id": "43129", "source": "steam"}]),
+    ]
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
+        m.side_effect = pages + [_fake_response(204)]
+        deleted = _delete_stale("https://sb.example", "svc_key", {"1": "steam", "2": "steam"})
+    assert deleted == 1
+    assert "43129" in m.call_args_list[2][0][0].full_url
+
+
+def test_delete_stale_refuses_below_the_live_floor(monkeypatch):
+    # A broken run that produced a tiny index must not empty the search API.
+    monkeypatch.setattr("scripts.pipeline.sync_search_index.MIN_LIVE_ROWS", 3)
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
+        deleted = _delete_stale("https://sb.example", "svc_key", {"1": "steam", "2": "steam"})
+    assert deleted == 0
+    m.assert_not_called()
+
+
+def test_delete_stale_keeps_a_source_that_vanished(no_floor, monkeypatch, capsys):
+    # #497 shape: PCGW stops answering, the catalog comes back empty, and
+    # every pgwiki row disappears from the live index at once. Those rows are
+    # kept; ordinary stale rows from other sources are still deleted.
+    monkeypatch.setattr("scripts.pipeline.sync_search_index.MIN_SOURCE_ROWS", 2)
+    listing = _json_response([
+        {"app_id": "1", "source": "steam"}, {"app_id": "629", "source": "steam"},
+        {"app_id": "pw_a", "source": "pgwiki"}, {"app_id": "pw_b", "source": "pgwiki"},
+    ])
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
+        m.side_effect = [listing, _fake_response(204)]
+        deleted = _delete_stale("https://sb.example", "svc_key", {"1": "steam"})
+    assert deleted == 1
+    url = m.call_args_list[1][0][0].full_url
+    assert "629" in url and "pw_" not in url
+    assert "source 'pgwiki' has 2 rows" in capsys.readouterr().err
+
+
+def test_delete_stale_still_prunes_a_source_that_only_shrank(no_floor, monkeypatch):
+    # One pgwiki row left live means the source is up; its other rows are
+    # genuinely stale.
+    monkeypatch.setattr("scripts.pipeline.sync_search_index.MIN_SOURCE_ROWS", 2)
+    listing = _json_response([
+        {"app_id": "pw_a", "source": "pgwiki"}, {"app_id": "pw_b", "source": "pgwiki"},
+        {"app_id": "pw_c", "source": "pgwiki"},
+    ])
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
+        m.side_effect = [listing, _fake_response(204)]
+        deleted = _delete_stale("https://sb.example", "svc_key", {"pw_a": "pgwiki"})
+    assert deleted == 2
+
+
+def test_delete_stale_raises_on_a_failed_delete(no_floor):
+    from urllib.error import HTTPError
+    listing = _json_response([{"app_id": "1", "source": "steam"}, {"app_id": "2", "source": "steam"}])
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
+        m.side_effect = [listing, _fake_response(500)]
+        with pytest.raises(HTTPError):
+            _delete_stale("https://sb.example", "svc_key", {"1": "steam"})
 
 
 # ---- sync_search_index (end-to-end with mocks) ---------------------------
@@ -238,7 +344,7 @@ def test_sync_non_list_root_returns_early(tmp_path, monkeypatch):
     m.assert_not_called()
 
 
-def test_sync_happy_path_upserts_and_deletes_stale(tmp_path, monkeypatch):
+def test_sync_happy_path_upserts_and_deletes_stale(tmp_path, monkeypatch, no_floor):
     monkeypatch.setenv("SUPABASE_SERVICE_KEY", "svc_key")
     monkeypatch.setenv("SEARCH_INDEX_SYNC_BATCH", "50")
     (tmp_path / "search-index.json").write_text(json.dumps([
@@ -253,9 +359,10 @@ def test_sync_happy_path_upserts_and_deletes_stale(tmp_path, monkeypatch):
     list_resp.__enter__ = lambda self: self
     list_resp.__exit__ = lambda self, *a: None
     # DB has one extra stale row that the pipeline dropped.
-    list_resp.read.return_value = json.dumps(
-        [{"app_id": "220"}, {"app_id": "10"}, {"app_id": "stale-1"}]
-    ).encode()
+    list_resp.read.return_value = json.dumps([
+        {"app_id": "220", "source": "steam"}, {"app_id": "10", "source": "steam"},
+        {"app_id": "stale-1", "source": "steam"},
+    ]).encode()
     delete_resp = _fake_response(204)
 
     with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
@@ -287,20 +394,32 @@ def test_sync_upsert_failure_halts_before_delete(tmp_path, monkeypatch):
     assert m.call_count == 1
 
 
-def test_sync_stale_delete_failure_is_non_fatal(tmp_path, monkeypatch):
+def test_sync_stale_delete_failure_is_non_fatal(tmp_path, monkeypatch, no_floor, capsys):
+    from urllib.error import URLError
     monkeypatch.setenv("SUPABASE_SERVICE_KEY", "svc_key")
     (tmp_path / "search-index.json").write_text(json.dumps([
         ["220", "Half-Life 2", "gold", 5, 2, "steam"],
     ]))
     upsert_resp = _fake_response(201)
 
-    def fail_list_get(*args, **kwargs):
-        raise Exception("connection reset")
-
     with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
         # First call (upsert) succeeds; second call (list for diff-delete) throws.
-        m.side_effect = [upsert_resp, Exception("connection reset")]
+        m.side_effect = [upsert_resp, URLError("connection reset")]
         sync_search_index(tmp_path)  # must NOT raise
+    assert "ERROR: stale delete failed (URLError" in capsys.readouterr().err
+
+
+def test_sync_logs_a_zero_delete(tmp_path, monkeypatch, no_floor, capsys):
+    # #578 hid for months partly because a 0-row delete printed nothing.
+    monkeypatch.setenv("SUPABASE_SERVICE_KEY", "svc_key")
+    (tmp_path / "search-index.json").write_text(json.dumps([
+        ["220", "Half-Life 2", "gold", 5, 2, "steam"],
+    ]))
+    listing = _json_response([{"app_id": "220", "source": "steam"}])
+    with patch("scripts.pipeline.sync_search_index.urllib.request.urlopen") as m:
+        m.side_effect = [_fake_response(201), listing]
+        sync_search_index(tmp_path)
+    assert "deleted 0 stale rows" in capsys.readouterr().err
 
 
 # ── VR column (#246) ─────────────────────────────────────────────────────────

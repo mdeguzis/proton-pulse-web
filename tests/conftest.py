@@ -79,6 +79,17 @@ def _no_network_in_finalize():
             stack.enter_context(patch(f"scripts.pipeline.finalize.{name}", return_value=value))
         yield
 
+
+@pytest.fixture(autouse=True)
+def _no_pcgw_recovery_network():
+    """refresh_catalog falls back to reading Postgres search_index when Cargo
+    fails on a cold cache (#578). Every test that feeds _fetch_all_pages None
+    would otherwise page the live table. Tests for the recovery itself call
+    fetch_catalog_rows_from_search_index with an injected opener, or re-patch
+    this hook inside the test (inner patch wins)."""
+    with patch("scripts.pipeline.pcgamingwiki_catalog._recover_from_search_index", return_value={}):
+        yield
+
 _REPO_CACHE = Path(__file__).resolve().parent.parent / ".cache"
 
 # Every module-level DEFAULT_*CACHE_PATH that points into the repo's .cache.
