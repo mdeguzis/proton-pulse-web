@@ -10,7 +10,7 @@
 // most_played.json / recent-reports.json, and those carry no VR field. Same
 // shape and memoization as anti-cheat.js.
 
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 
 let _cache = null;
 let _pending = null;

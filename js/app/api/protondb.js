@@ -1,7 +1,7 @@
 // protondb (api) for the app page. Relocated from app.js.
 
 import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
-import { dataUrl } from '../../lib/data-url.js?v=0de73aed';
+import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 
 /**
  * Fetch the latest CDN report bundle for a game.

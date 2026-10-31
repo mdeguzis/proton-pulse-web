@@ -88,6 +88,31 @@ export async function dataUrl(name) {
 }
 
 /**
+ * Read a fetched data file as JSON, telling "not available" apart from
+ * "empty" (#587). Cloudflare Pages answers a path it does not have with the
+ * SPA fallback, HTML with a 200, so `res.ok` alone cannot detect a file that
+ * was never deployed.
+ *
+ * @param {Response|null} res - fetch() result, or null when fetch rejected.
+ * @param {string} name - Filename, for the error message.
+ * @returns {Promise<{data: any, error: string|null}>} data is null whenever
+ *   error is set, so callers pick their own fallback and can still report it.
+ */
+export async function readDataJson(res, name) {
+  if (!res) return { data: null, error: `${name}: network error` };
+  if (!res.ok) return { data: null, error: `${name}: HTTP ${res.status}` };
+  const type = (res.headers && res.headers.get('content-type')) || '';
+  if (type.includes('text/html')) {
+    return { data: null, error: `${name}: served HTML, file is not deployed` };
+  }
+  try {
+    return { data: await res.json(), error: null };
+  } catch (e) {
+    return { data: null, error: `${name}: invalid JSON (${e && e.message ? e.message : e})` };
+  }
+}
+
+/**
  * Synchronous version that returns the bare name immediately. Useful for code
  * paths that cannot easily await -- they lose the cache-bust but never break.
  * Prefer dataUrl() when possible.

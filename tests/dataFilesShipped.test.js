@@ -69,11 +69,6 @@ const KNOWN_UNSHIPPED = new Map([
   // Served by the pp-edge-status Worker, not the pipeline (see the CSP
   // connect-src entry on status.html), so there is no artifact to publish.
   ['edge-status.json', 'served by the edge-status Worker, not the pipeline'],
-  // Admin-only box-art tooling. These are large probe caches; the admin page
-  // degrades to "no cache data" rather than breaking, and shipping tens of MB
-  // of cache to every visitor to serve one admin screen is the wrong trade.
-  ['game-images-cache.json', 'admin-only probe cache, too large to ship'],
-  ['nonsteam-images-cache.json', 'admin-only probe cache, too large to ship'],
   // Shipped, just not via SMALL_DATA: preserve-cert-monitor.sh (invoked by
   // publish-cloudflare.sh) carries these across the deploy because they
   // accumulate history that a fresh pipeline output does not contain. Both
@@ -120,8 +115,14 @@ describe('pipeline data files reach the deployed site', () => {
     },
   );
 
-  test('the #246 files and the anti-cheat regression are covered', () => {
-    for (const f of ['vr-index.json', 'vrdb.json', 'anti-cheat.json']) {
+  test('the #246 files, the anti-cheat regression and the #587 caches are covered', () => {
+    // #587: the box-art probe caches were once listed here as "too large to
+    // ship". They are ~3 MB each and Pages only serves a file on request, so
+    // the exclusion cost nothing to remove and hid every pipeline verdict.
+    expect(KNOWN_UNSHIPPED.has('game-images-cache.json')).toBe(false);
+    expect(KNOWN_UNSHIPPED.has('nonsteam-images-cache.json')).toBe(false);
+    for (const f of ['vr-index.json', 'vrdb.json', 'anti-cheat.json',
+      'game-images-cache.json', 'nonsteam-images-cache.json']) {
       expect(SHIPPED.has(f)).toBe(true);
     }
   });
