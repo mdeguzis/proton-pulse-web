@@ -38,7 +38,7 @@ REQUIRED_SECRETS = [
     ("SUPABASE_ANON_KEY", "Supabase console -> Project Settings -> API"),
     ("SUPABASE_SERVICE_ROLE_KEY", "Supabase console -> Project Settings -> API"),
     ("SUPABASE_TOKEN", "Supabase Account -> Access Tokens"),
-    ("BACKUP_HMAC_SECRET", "generate: openssl rand -hex 32"),
+    ("BACKUP_HMAC_SECRET", "generate: openssl rand -hex 32 (pseudonymizes ids in the public backup.yml export)"),
     ("BACKUP_REPO_TOKEN", "GitHub fine-grained PAT (Contents R/W on backup repo)"),
     ("STAGING_DEPLOY_TOKEN", "GitHub fine-grained PAT (Contents R/W on staging repo)"),
     ("DISCORD_WEBHOOK_ANNOUNCE", "Discord server integrations"),
@@ -188,6 +188,14 @@ def stage_import(ctx: Ctx) -> None:
         path = ctx.backup_dir / f
         status = "found" if path.exists() else "MISSING"
         print(f"  {status:8}  {f}  -- {note}")
+    print()
+    print("Database: restore from the encrypted full backup (#580), not the files above.")
+    print("The latest-user_configs export hashes owner ids, so it cannot reconnect reports to accounts.")
+    print("  1. Download db/latest.tar.gz.age from the proton-pulse-data-backups R2 bucket")
+    print("  2. Apply every migration to the new project (stage 'supabase')")
+    print("  3. SUPABASE_TOKEN=... python3 -m scripts.restore_db --project-ref <new-ref> \\")
+    print("       --backup latest.tar.gz.age --identity <offline age key>")
+    print("  The age private key is held offline by the owner. Without it the backup cannot be read.")
     print()
     print("Import steps are documented in the Restore-Runbook Phase 3 wiki page.")
     print("This script does not automate destructive imports -- read the wiki + run each command manually.")
