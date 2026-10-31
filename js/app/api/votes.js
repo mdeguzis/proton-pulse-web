@@ -1,6 +1,7 @@
 // votes (api) for the app page. Relocated from app.js.
 
-import { getWebClientId } from '../../shared/submit.js?v=8fbb6b17';
+import { getWebClientId } from '../../shared/submit.js?v=0c76eadb';
+import { clientWrite } from '../../shared/client-key.js?v=2d558d2f';
 import { SB_KEY, SB_URL } from '../config.js?v=7873e060';
 
 export async function fetchVotes(appId) {
@@ -36,7 +37,6 @@ export async function fetchUserVotes(appId) {
 }
 
 export async function castVote(appId, rKey, vote, upBtn, dnBtn) {
-  const voterId = getWebClientId();
   const wasUp = upBtn.classList.contains('active');
   const wasDn = dnBtn.classList.contains('active');
   const upCount = upBtn.querySelector('.vote-count');
@@ -52,12 +52,7 @@ export async function castVote(appId, rKey, vote, upBtn, dnBtn) {
   if (isUndo) {
     if (vote === 1) upCount.textContent = Math.max(0, up - 1);
     else dnCount.textContent = Math.max(0, dn - 1);
-    try {
-      await fetch(`${SB_URL}/report_votes?voter_id=eq.${voterId}&app_id=eq.${String(appId)}&report_key=eq.${encodeURIComponent(rKey)}`, {
-        method: 'DELETE',
-        headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, Prefer: 'return=minimal' },
-      });
-    } catch { window.ppToast?.error('Could not update your vote. Check your connection.'); }
+    await saveVote(appId, rKey, 0, 'Could not update your vote.');
     return;
   }
 
@@ -71,22 +66,24 @@ export async function castVote(appId, rKey, vote, upBtn, dnBtn) {
     if (wasUp) upCount.textContent = Math.max(0, up - 1);
   }
 
+  await saveVote(appId, rKey, vote, 'Could not save your vote.');
+}
+
+// Votes are signed with this browser's non-extractable key and sent to the
+// client-write edge function (#62). 1 / -1 sets the vote, 0 clears it.
+async function saveVote(appId, rKey, vote, failMsg) {
   try {
-    const existing = wasUp ? 1 : wasDn ? -1 : null;
-    if (existing === null) {
-      await fetch(`${SB_URL}/report_votes?on_conflict=voter_id,app_id,report_key`, {
-        method: 'POST',
-        headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal' },
-        body: JSON.stringify({ voter_id: voterId, app_id: String(appId), report_key: rKey, vote }),
-      });
-    } else {
-      await fetch(`${SB_URL}/report_votes?voter_id=eq.${voterId}&app_id=eq.${String(appId)}&report_key=eq.${encodeURIComponent(rKey)}`, {
-        method: 'PATCH',
-        headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-        body: JSON.stringify({ vote }),
-      });
+    const r = await clientWrite(SB_URL, SB_KEY, getWebClientId(), 'cast_vote', {
+      app_id: String(appId), report_key: rKey, vote,
+    });
+    if (!r.ok) {
+      console.warn('[castVote] client-write cast_vote failed', { appId: String(appId), rKey, vote, status: r.status, error: r.data?.error });
+      window.ppToast?.error(`${failMsg} Try again later.`);
     }
-  } catch { window.ppToast?.error('Could not save your vote. Check your connection.'); }
+  } catch (err) {
+    console.warn('[castVote] client-write network error', { appId: String(appId), rKey, vote, error: String(err) });
+    window.ppToast?.error(`${failMsg} Check your connection.`);
+  }
 }
 
 // - Helpers ------------------------------------------

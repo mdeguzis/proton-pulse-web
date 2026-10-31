@@ -4,12 +4,12 @@ import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../../shared/scoring.js?v=467474be';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
-import { getWebClientId } from '../../shared/submit.js?v=8fbb6b17';
+import { getWebClientId } from '../../shared/submit.js?v=0c76eadb';
 import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=c941cca9';
 import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/protondb.js?v=b7ff6a75';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
-import { fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=1acdb79a';
-import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=aba6619f';
+import { deleteOwnCloudConfig, fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0824948f';
+import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=448af04b';
 import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
 import { renderConfigCard } from './config-cards.js?v=c67740f8';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, _ANDROID_HANDHELD_OS_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=3202bacc';
@@ -2095,14 +2095,7 @@ export async function renderGamePage(appId) {
         b.addEventListener('click', async ev => {
           ev.stopPropagation();
           if (!confirm('Delete your Proton config for this game?')) return;
-          const voterId  = b.dataset.voterId;
-          const cfgAppId = b.dataset.appId;
-          const cfgHdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
-          cfgHdrs['x-client-id'] = voterId;
-          const r = await fetch(
-            `${SB_URL}/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
-            { method: 'DELETE', headers: cfgHdrs }
-          );
+          const r = await deleteOwnCloudConfig(b.dataset.appId);
           if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
           else { b.textContent = 'Failed'; }
         });
@@ -2388,15 +2381,7 @@ export async function renderGamePage(appId) {
       b.addEventListener('click', async e => {
         e.stopPropagation();
         if (!confirm('Delete your Proton config for this game?')) return;
-        const voterId  = b.dataset.voterId;
-        const cfgAppId = b.dataset.appId;
-        const cfgHdrs = window.SupaAuth ? await window.SupaAuth.authHeaders() : { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Content-Type': 'application/json' };
-        cfgHdrs['x-client-id'] = voterId;
-        const r = await fetch(
-          `${SB_URL}/user_proton_configs?voter_id=eq.${voterId}&app_id=eq.${cfgAppId}`,
-          { method: 'DELETE', headers: cfgHdrs }
-        );
-        console.log('[delete-cfg]', r.status, voterId, cfgAppId);
+        const r = await deleteOwnCloudConfig(b.dataset.appId);
         if (r.ok) { b.textContent = 'Deleted'; setTimeout(render, 1000); }
         else { b.textContent = 'Failed'; }
       });
