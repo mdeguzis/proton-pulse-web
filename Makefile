@@ -10,7 +10,7 @@ WATCH_ALL_WORKFLOWS ?= true
 STAGING_VERSION_URL ?= https://staging.proton-pulse.com/version.json
 FORCE_DEPLOY ?=
 
-.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert r2-canary supabase-canary \
+.PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert r2-canary supabase-canary secrets-canary \
 	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
 	cf-staging cf-prod security-check \
 	build serve smoke smoke-live pre-push coverage deploy-worker
@@ -57,6 +57,9 @@ r2-canary:
 
 supabase-canary:
 	@bash scripts/supabase-canary.sh
+
+secrets-canary:
+	@bash scripts/secrets-canary.sh
 
 # Same harness pointed at the production site -- skips the local staging
 # step (so no error-catcher injection; DOM-state assertions only) and
