@@ -62,4 +62,4 @@ jobs:
             "$STATUS" "$WF_CONCLUSION" "$WF_BRANCH" "$SHORT_SHA" "$COMMIT_URL" "$TRIGGER" "$WF_URL")
 
           jq -n --arg content "$MSG" '{content: $content}' \
-            | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
+            | curl -sS --fail-with-body --retry 3 -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"

@@ -22,4 +22,4 @@ jobs:
         run: |
           MSG=$(printf '**Issue %s: #%s**\n%s\n%s\n_by %s_' "$EVENT_ACTION" "$ISSUE_NUMBER" "$ISSUE_TITLE" "$ISSUE_URL" "$SENDER")
           jq -n --arg content "$MSG" '{content: $content}' \
-          | curl -s -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
+          | curl -sS --fail-with-body --retry 3 -H "Content-Type: application/json" -d @- "$WEBHOOK_URL"
