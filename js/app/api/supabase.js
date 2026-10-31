@@ -1,6 +1,8 @@
 // supabase (api) for the app page. Relocated from app.js.
 
 import { SB_KEY, SB_URL } from '../config.js?v=7873e060';
+import { getWebClientId } from '../../shared/submit.js?v=0c76eadb';
+import { clientWrite } from '../../shared/client-key.js?v=2d558d2f';
 import { configKey, latestPerClient } from '../utils.js?v=4630c3d5';
 
 export async function fetchSupabase(appId) {
@@ -198,4 +200,25 @@ export async function fetchConfigPlaytimeTotals(appId) {
     if (!r.ok) return [];
     return await r.json();
   } catch { return []; }
+}
+
+// Deletes this browser's own cloud config for appId with a signed
+// client-write request (#62). The Delete button only renders when the
+// config's voter_id is this browser's client id. Resolves { ok, deleted }.
+export async function deleteOwnCloudConfig(appId) {
+  try {
+    const r = await clientWrite(SB_URL, SB_KEY, getWebClientId(), 'delete_cloud_config', {
+      app_id: String(appId), profile_name: null,
+    });
+    if (!r.ok) {
+      console.warn('[deleteOwnCloudConfig] client-write failed', { appId, status: r.status, error: r.data?.error });
+      return { ok: false, deleted: 0 };
+    }
+    const deleted = Number(r.data?.deleted ?? 0);
+    console.debug('[deleteOwnCloudConfig] done', { appId, deleted, source: 'functions/client-write' });
+    return { ok: deleted > 0, deleted };
+  } catch (err) {
+    console.warn('[deleteOwnCloudConfig] network error', { appId, error: String(err) });
+    return { ok: false, deleted: 0 };
+  }
 }

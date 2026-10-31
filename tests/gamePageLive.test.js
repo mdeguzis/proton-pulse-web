@@ -76,9 +76,12 @@ describe('game page: ProtonDB live-only handling', () => {
     // 404ed. Config's SB_URL already ends in /rest/v1 -- appending it again
     // anywhere in this module is always a bug.
     expect(src).not.toContain('${SB_URL}/rest/v1/');
-    // The repaired delete-config call sites still target the right table.
+    // Delete-config goes through client_delete_cloud_config via
+    // deleteOwnCloudConfig (#62), never a raw table DELETE.
     // (The user_configs delete moved to the profile page entirely, #405.)
-    expect(src).toContain('`${SB_URL}/user_proton_configs?voter_id=eq.');
+    expect(src).toContain('deleteOwnCloudConfig(b.dataset.appId)');
+    expect(src).not.toContain('/user_proton_configs?voter_id=eq.');
+    expect(src).not.toContain("'x-client-id'");
   });
 
   test('submit links use the ?app= param submit.html expects', () => {
