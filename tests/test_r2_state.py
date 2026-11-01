@@ -363,3 +363,84 @@ def test_edge_fn_health_no_longer_writes_gh_pages():
     assert doc["permissions"] == {"contents": "read"}
     assert "ref: gh-pages" not in raw
     assert "git push" not in raw
+
+
+# --- publish-cloudflare.sh coverage rows + Pages size preflight (#592) -------
+
+def _publish_env(r2, tmp_path):
+    """Run publish-cloudflare.sh end to end with fake aws + npx, against a
+    project name with no live domain so the version guard never curls."""
+    root, env = r2
+    npx = tmp_path / "bin" / "npx"
+    npx.write_text(f'#!{BASH}\necho "$*" >> "$FAKE_R2/npx.log"\n')
+    npx.chmod(0o755)
+    env = {
+        **env,
+        "PAGES_PROJECT": "proton-pulse-web-test",
+        "DATA_BASE": "https://data.example.invalid",
+        "CERT_STATE_BASE": "http://127.0.0.1:9/_state",
+    }
+    out = tmp_path / "out"
+    out.mkdir()
+    return root, env, out
+
+
+def test_publish_uploads_coverage_rows_before_pages(r2, tmp_path):
+    root, env, out = _publish_env(r2, tmp_path)
+    (out / "coverage.html").write_text("<html></html>")
+    (out / "coverage-rows.json").write_text('{"rows": [["730"]]}\n')
+    r = _run(SCRIPTS / "publish-cloudflare.sh", out, ROOT, env=env)
+    assert r.returncode == 0, r.stdout + r.stderr
+    uploaded = root / "proton-pulse-data" / "reports" / "coverage-rows.json"
+    assert uploaded.read_text() == '{"rows": [["730"]]}\n'
+    calls = (root / "calls.log").read_text()
+    assert "--content-type application/json" in calls
+    assert "--cache-control public, max-age=300" in calls
+    assert "coverage rows uploaded: r2://proton-pulse-data/reports/coverage-rows.json" in r.stdout
+    assert "pages deploy" in (root / "npx.log").read_text()
+
+
+def test_publish_shell_only_skips_coverage_rows(r2, tmp_path):
+    root, env, out = _publish_env(r2, tmp_path)
+    (out / "coverage.html").write_text("<html></html>")
+    r = _run(SCRIPTS / "publish-cloudflare.sh", out, ROOT, env={**env, "SKIP_R2_SYNC": "1"})
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "coverage rows not uploaded" in r.stdout
+    assert not (root / "calls.log").exists()
+
+
+def test_publish_refuses_coverage_page_without_rows(r2, tmp_path):
+    root, env, out = _publish_env(r2, tmp_path)
+    (out / "coverage.html").write_text("<html></html>")
+    (out / "data" / "730").mkdir(parents=True)
+    r = _run(SCRIPTS / "publish-cloudflare.sh", out, ROOT, env=env)
+    assert r.returncode == 1
+    assert "coverage-rows.json is not" in r.stdout
+    assert "R2 and Pages are unchanged" in r.stdout
+    assert not (root / "calls.log").exists()
+    assert not (root / "npx.log").exists()
+
+
+def test_publish_refuses_oversize_pages_file_before_r2(r2, tmp_path):
+    """Tonight's failure mode: R2 synced, then wrangler rejected a 26 MiB
+    coverage.html. The preflight must stop before any R2 call."""
+    root, env, out = _publish_env(r2, tmp_path)
+    (out / "data" / "730").mkdir(parents=True)
+    (out / "data" / "730" / "latest.json").write_text("[]")
+    (out / "coverage-rows.json").write_text("{}")
+    with open(out / "coverage.html", "wb") as fh:
+        fh.truncate(25 * 1024 * 1024 + 1)
+    r = _run(SCRIPTS / "publish-cloudflare.sh", out, ROOT, env=env)
+    assert r.returncode == 1
+    assert "coverage.html is 26214401 bytes, over the Cloudflare Pages 25 MiB file limit" in r.stdout
+    assert not (root / "calls.log").exists()
+    assert not (root / "npx.log").exists()
+
+
+def test_publish_allows_file_at_exactly_the_pages_limit(r2, tmp_path):
+    root, env, out = _publish_env(r2, tmp_path)
+    with open(out / "search-index.json", "wb") as fh:
+        fh.truncate(25 * 1024 * 1024)
+    r = _run(SCRIPTS / "publish-cloudflare.sh", out, ROOT, env={**env, "SKIP_R2_SYNC": "1"})
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "over the Cloudflare Pages" not in r.stdout

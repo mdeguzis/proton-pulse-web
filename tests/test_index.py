@@ -434,6 +434,12 @@ def test_build_probe_chunk_plan_uses_remaining_uncached_count(monkeypatch):
     assert plan["chunks"] == ["01", "02"]
 
 
+def _coverage_rows(output_dir):
+    """Rows coverage.html fetches from R2 (#592)."""
+    body = json.loads((output_dir / "coverage-rows.json").read_text())
+    return body["rows"]
+
+
 def test_generate_coverage_report_includes_all_steam_game_app_ids(tmp_path):
     data_dir = tmp_path / "data"
     data_dir.mkdir()
@@ -447,11 +453,12 @@ def test_generate_coverage_report_includes_all_steam_game_app_ids(tmp_path):
         protondb_signal_catalog={"730": "Counter-Strike 2"},
     )
 
-    html = (tmp_path / "coverage.html").read_text()
-    assert "730" in html
+    rows = _coverage_rows(tmp_path)
+    ids = {r[0] for r in rows}
+    assert "730" in ids
     # All Steam game app IDs must appear in coverage, even without ProtonDB data
-    assert "999" in html
-    assert "Noise Game" in html
+    assert "999" in ids
+    assert ["999", "Noise Game"] == [r[0] for r in rows if r[0] == "999"] + [r[2] for r in rows if r[0] == "999"]
 
 
 def test_generate_coverage_report_shows_protondb_counts(tmp_path):
@@ -535,7 +542,10 @@ def test_generate_coverage_report_uses_persisted_metadata_for_provenance(tmp_pat
     # Schema updated in #450: store field added at index 1, flags gain a
     # store-<name> prefix so the store filter chips can key on the same row
     # payload the source filter uses.
-    assert '"steam","Counter-Strike 2","indexed-data",1,1,1,1,"store-steam official backfill protondb-signal steam-catalog",1' in html
+    assert _coverage_rows(tmp_path) == [[
+        "730", "steam", "Counter-Strike 2", "indexed-data", 1, 1, 1, 1,
+        "store-steam official backfill protondb-signal steam-catalog", 1,
+    ]]
 
 
 def test_generate_coverage_report_includes_no_data_filter_and_flag(tmp_path):
@@ -555,7 +565,10 @@ def test_generate_coverage_report_includes_no_data_filter_and_flag(tmp_path):
     assert 'data-src="no-data"' in html
     assert ">No data<" in html
     # Schema updated in #450: store field + store-<name> flag prefix.
-    assert '"steam","Steam-only Game","steam-catalog",0,0,0,1,"store-steam steam-catalog no-data",0' in html
+    assert _coverage_rows(tmp_path) == [[
+        "396420", "steam", "Steam-only Game", "steam-catalog", 0, 0, 0, 1,
+        "store-steam steam-catalog no-data", 0,
+    ]]
 
 
 def test_generate_coverage_report_persists_filter_state_in_url(tmp_path):
@@ -669,8 +682,9 @@ def test_generate_coverage_report_bad_app_id_flag(tmp_path):
         output_path=tmp_path,
         protondb_signal_catalog={"not-a-number": "Bad Game"},
     )
-    out = (tmp_path / "coverage.html").read_text()
-    assert "bad-appid" in out
+    (row,) = _coverage_rows(tmp_path)
+    assert row[1] == "other"
+    assert "bad-appid" in row[8].split()
 
 
 # #450 -- coverage now spans all stores + uses shared filter pills
@@ -690,15 +704,15 @@ def test_generate_coverage_report_includes_gog_epic_pcgwiki_rows(tmp_path):
         epic_catalog={"fortnite": "Fortnite"},
         pcgwiki_catalog={"pgwiki:half-life-2": "Half-Life 2"},
     )
-    html = (tmp_path / "coverage.html").read_text()
-    # Each store's canonical id shape appears somewhere in the emitted DATA array.
-    assert '"gog:1207658691"' in html
-    assert '"epic:fortnite"' in html
-    assert '"pgwiki:half-life-2"' in html
+    by_id = {r[0]: r for r in _coverage_rows(tmp_path)}
+    # Each store's canonical id shape lands in the rows file with its store.
+    assert by_id["gog:1207658691"][1] == "gog"
+    assert by_id["epic:fortnite"][1] == "epic"
+    assert by_id["pgwiki:half-life-2"][1] == "pgwiki"
     # Catalog titles carry through so the store rows are readable, not opaque.
-    assert "Witcher 3" in html
-    assert "Fortnite" in html
-    assert "Half-Life 2" in html
+    assert by_id["gog:1207658691"][2] == "Witcher 3"
+    assert by_id["epic:fortnite"][2] == "Fortnite"
+    assert by_id["pgwiki:half-life-2"][2] == "Half-Life 2"
 
 
 def test_generate_coverage_report_tags_each_row_with_a_store(tmp_path):
@@ -714,18 +728,15 @@ def test_generate_coverage_report_tags_each_row_with_a_store(tmp_path):
         steam_catalog={"730": "CS2"},
         gog_catalog={"1207658691": "Witcher 3"},
     )
-    html = (tmp_path / "coverage.html").read_text()
+    by_id = {r[0]: r for r in _coverage_rows(tmp_path)}
     # Row payload includes the store literal right after the id.
-    assert '["730","steam"' in html
-    assert '["gog:1207658691","gog"' in html
+    assert by_id["730"][1] == "steam"
+    assert by_id["gog:1207658691"][1] == "gog"
     # Flag string carries the store-<name> prefix used by the store filter chip.
-    assert 'store-steam' in html
-    assert 'store-gog' in html
+    assert "store-steam" in by_id["730"][8].split()
+    assert "store-gog" in by_id["gog:1207658691"][8].split()
     # gog:/epic:/pgwiki: are LEGIT ids -- they must not be flagged bad-appid.
-    row_start = html.index('["gog:1207658691","gog"')
-    row_end = html.index(']', row_start)
-    gog_row = html[row_start:row_end + 1]
-    assert 'bad-appid' not in gog_row
+    assert "bad-appid" not in by_id["gog:1207658691"][8].split()
 
 
 def test_generate_coverage_report_uses_shared_filter_panel_modal(tmp_path):
@@ -835,7 +846,7 @@ def test_generate_coverage_report_indexed_link_routes_via_data_index(tmp_path):
         steam_catalog={"730": "CS2"},
     )
     html = (tmp_path / "coverage.html").read_text()
-    assert 'data-index.html#/${id}' in html
+    assert 'data-index.html#/${eid}' in html
     assert '`<a href="data/${id}/">index</a>`' not in html
 
 
@@ -859,3 +870,86 @@ def test_generate_coverage_report_store_column_and_labels(tmp_path):
     assert 'STORE_LABELS' in html
     for label in ('"Steam"', '"GOG"', '"Epic"', '"PCGamingWiki"'):
         assert label in html
+
+
+# #592 -- coverage rows moved out of the HTML (Cloudflare Pages 25 MiB limit)
+
+def test_generate_coverage_report_keeps_rows_out_of_the_html(tmp_path):
+    """The page must not inline the row array: 267k rows made coverage.html
+    26.2 MiB and Pages rejected the whole deploy. Rows go to a JSON file that
+    publish-cloudflare.sh uploads to R2, and the page fetches it by key with
+    a content hash so a cached copy of the previous run is never used."""
+    import hashlib
+    (tmp_path / "data").mkdir()
+    steam = {str(i): f"Game {i} " + "x" * 80 for i in range(1, 3001)}
+    generate_coverage_report(
+        index_keys=set(), backfilled_keys=set(),
+        data_output_path=tmp_path / "data", output_path=tmp_path,
+        steam_catalog=steam,
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    rows_bytes = (tmp_path / "coverage-rows.json").read_bytes()
+    assert "Game 2999" not in html
+    assert "const DATA=[" not in html
+    assert len(_coverage_rows(tmp_path)) == 3000
+    # Page size no longer scales with the catalog.
+    assert len(html) < 60_000 < len(rows_bytes)
+    version = hashlib.sha256(rows_bytes.rstrip(b"\n")).hexdigest()[:12]
+    assert f'const ROWS_KEY="reports/coverage-rows.json";' in html
+    assert f'const ROWS_VERSION="{version}";' in html
+    # Host comes from data-config.json so staging reads the staging bucket.
+    assert 'fetch("data-config.json",{cache:"no-store"})' in html
+    assert 'base?base+"/"+ROWS_KEY' in html
+
+
+def test_generate_coverage_report_shows_a_load_error_instead_of_an_empty_table(tmp_path):
+    """A failed rows fetch must say so on the page, not render "0 of 0"."""
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(), backfilled_keys=set(),
+        data_output_path=tmp_path / "data", output_path=tmp_path,
+        steam_catalog={"730": "CS2"},
+    )
+    html = (tmp_path / "coverage.html").read_text()
+    assert 'id="coverage-status">Loading coverage rows' in html
+    assert 'if(!r.ok)throw new Error("HTTP "+r.status+" from "+url);' in html
+    assert 'showLoadError("Could not load coverage rows: "+err.message)' in html
+
+
+def test_generate_coverage_report_escapes_titles_at_render(tmp_path):
+    """Titles come from third-party catalogs (Steam, GOG, PCGW). The rows file
+    keeps them raw, and render() escapes them before innerHTML."""
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(), backfilled_keys=set(),
+        data_output_path=tmp_path / "data", output_path=tmp_path,
+        steam_catalog={"730": '<img src=x onerror=alert(1)> "CS2"'},
+    )
+    (row,) = _coverage_rows(tmp_path)
+    assert row[2] == '<img src=x onerror=alert(1)> "CS2"'
+    html = (tmp_path / "coverage.html").read_text()
+    assert "function esc(s)" in html
+    assert "const eid=esc(id),et=esc(t||\"\");" in html
+    assert "${t}" not in html
+
+
+def test_generate_coverage_report_maps_pw_ids_to_pcgwiki_with_titles(tmp_path):
+    """The PCGW catalog keys entries by pw_<hash> with dict values. Those rows
+    used to land in store "other" with no title and a bad-appid flag."""
+    (tmp_path / "data").mkdir()
+    generate_coverage_report(
+        index_keys=set(), backfilled_keys=set(),
+        data_output_path=tmp_path / "data", output_path=tmp_path,
+        pcgwiki_catalog={
+            "pw_xd71ad9b": {"name": "Half-Life 2", "slug": "half-life-2"},
+            "pw_00000000": {"slug": "no-name"},
+        },
+    )
+    by_id = {r[0]: r for r in _coverage_rows(tmp_path)}
+    named = by_id["pw_xd71ad9b"]
+    assert named[1:4] == ["pgwiki", "Half-Life 2", "pcgwiki-catalog"]
+    assert "store-pgwiki" in named[8].split()
+    assert "bad-appid" not in named[8].split()
+    assert "missing-title" in by_id["pw_00000000"][8].split()
+    html = (tmp_path / "coverage.html").read_text()
+    assert 'data-src="store-pgwiki">PCGWiki (2)' in html

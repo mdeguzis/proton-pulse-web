@@ -123,6 +123,33 @@ r2aws() {
   aws "$@" --endpoint-url "https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com"
 }
 
+# --- 0. Refuse oversize Pages files before touching R2 (#592) -----------------
+# Pages rejects any single file over 25 MiB, but only at the wrangler step at
+# the very end. By then R2 and Postgres have already moved on, so the site
+# ships half a deploy: new per-game data, yesterday's top-level files. Check
+# the files this script ships to Pages first and stop while nothing changed.
+PAGES_MAX_BYTES=$((25 * 1024 * 1024))
+preflight_failed=0
+for f in "${SMALL_DATA[@]}"; do
+  [ -f "$OUTPUT_DIR/$f" ] || continue
+  size=$(wc -c < "$OUTPUT_DIR/$f")
+  if [ "$size" -gt "$PAGES_MAX_BYTES" ]; then
+    log "ERROR: $f is $size bytes, over the Cloudflare Pages 25 MiB file limit ($PAGES_MAX_BYTES). Move it to R2 (see coverage-rows.json, #592)."
+    preflight_failed=1
+  fi
+done
+# A pipeline coverage.html without its rows file would deploy a page that can
+# only show its load error.
+if [ "${SKIP_R2_SYNC:-0}" != "1" ] && [ -f "$OUTPUT_DIR/coverage.html" ] \
+   && [ ! -f "$OUTPUT_DIR/coverage-rows.json" ]; then
+  log "ERROR: coverage.html is in the output but coverage-rows.json is not; the page would ship with no rows"
+  preflight_failed=1
+fi
+if [ "$preflight_failed" = 1 ]; then
+  log "ERROR: preflight failed; not deploying, R2 and Pages are unchanged"
+  exit 1
+fi
+
 # --- 1. Sync data/ to R2 (S3 API; only changed objects are uploaded) ----------
 if [ "${SKIP_R2_SYNC:-0}" = "1" ]; then
   log "SKIP_R2_SYNC=1 -- skipping data/ sync to R2"
@@ -285,6 +312,25 @@ PYEOF
   fi
 else
   log "WARNING: $OUTPUT_DIR/data not found -- skipping R2 sync"
+fi
+
+# --- 1b. Coverage report rows (#592) -----------------------------------------
+# coverage.html fetches its rows from <data host>/reports/coverage-rows.json
+# because inlined they pushed the page past the Pages file limit. Uploaded
+# here, before the Pages deploy, so a new page never asks for rows R2 does not
+# have yet. The page adds ?v=<hash>, so the short max-age only matters for a
+# hand-typed URL. Shell-only deploys (SKIP_R2_SYNC=1) re-ship the live
+# coverage.html, whose rows are already in R2.
+COVERAGE_ROWS_KEY="reports/coverage-rows.json"
+if [ "${SKIP_R2_SYNC:-0}" = "1" ]; then
+  log "SKIP_R2_SYNC=1 -- coverage rows not uploaded"
+elif [ -f "$OUTPUT_DIR/coverage-rows.json" ]; then
+  : "${CLOUDFLARE_ACCOUNT_ID:?CLOUDFLARE_ACCOUNT_ID required for the coverage rows upload}"
+  : "${R2_ACCESS_KEY_ID:?R2_ACCESS_KEY_ID required for the coverage rows upload}"
+  : "${R2_SECRET_ACCESS_KEY:?R2_SECRET_ACCESS_KEY required for the coverage rows upload}"
+  r2aws s3 cp "$OUTPUT_DIR/coverage-rows.json" "s3://$R2_BUCKET/$COVERAGE_ROWS_KEY" \
+    --content-type application/json --cache-control "public, max-age=300" --no-progress
+  log "coverage rows uploaded: r2://$R2_BUCKET/$COVERAGE_ROWS_KEY ($(wc -c < "$OUTPUT_DIR/coverage-rows.json") bytes)"
 fi
 
 # --- 2. Assemble the Pages deploy directory -----------------------------------
