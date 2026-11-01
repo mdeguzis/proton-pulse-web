@@ -1,3 +1,4 @@
+import hashlib
 import json
 import math
 import os
@@ -1699,9 +1700,11 @@ def generate_sgdb_covers(
 def _coverage_store_for(app_id: str) -> str:
     """Bucket a coverage-report app id into a store label.
 
-    Steam ids are numeric, non-Steam ids are namespaced 'gog:'/'epic:'/'pgwiki:'.
+    Steam ids are numeric, non-Steam ids are namespaced 'gog:'/'epic:'. The
+    PCGamingWiki catalog keys rows by 'pw_<8 base36>' (pcgamingwiki_catalog.py);
+    'pgwiki:<slug>' is the older form and still maps to the same store.
     Anything unrecognized falls back to 'other' so a stray id never crashes
-    the store filter chip. #450.
+    the store filter chip. #450, #592.
     """
     if app_id.isdigit():
         return "steam"
@@ -1709,9 +1712,28 @@ def _coverage_store_for(app_id: str) -> str:
         return "gog"
     if app_id.startswith("epic:"):
         return "epic"
-    if app_id.startswith("pgwiki:"):
+    if app_id.startswith("pw_") or app_id.startswith("pgwiki:"):
         return "pgwiki"
     return "other"
+
+
+# coverage.html used to inline every row as a JS array. With the PCGW catalog
+# back (51k rows, #578) the page reached 26.2 MiB and Cloudflare Pages rejects
+# any file over 25 MiB, which failed the whole nightly deploy (#592). The rows
+# now go to R2 under this key (uploaded by scripts/publish-cloudflare.sh) and
+# the page fetches them from the env's data host.
+COVERAGE_ROWS_FILE = "coverage-rows.json"
+COVERAGE_ROWS_KEY = "reports/coverage-rows.json"
+
+
+def _pcgwiki_title(entry) -> str:
+    """Title for a PCGW catalog value: entries are dicts ({"name": ...}), an
+    older shape was a bare title string."""
+    if isinstance(entry, dict):
+        return str(entry.get("name") or "").strip()
+    if isinstance(entry, str):
+        return entry.strip()
+    return ""
 
 
 def generate_coverage_report(
@@ -1739,7 +1761,7 @@ def generate_coverage_report(
     # #450: coverage was Steam-only until this change.
     gog_app_ids = {f"gog:{pid}" for pid in (gog_catalog or {}).keys()}
     epic_app_ids = {f"epic:{ns}" for ns in (epic_catalog or {}).keys()}
-    pcgwiki_app_ids = set((pcgwiki_catalog or {}).keys())  # already carry the pgwiki: prefix
+    pcgwiki_app_ids = set((pcgwiki_catalog or {}).keys())  # already namespaced (pw_<hash>)
 
     if steam_catalog:
         all_app_ids.update(steam_catalog.keys())
@@ -1771,8 +1793,8 @@ def generate_coverage_report(
             return (gog_catalog or {}).get(app_id[4:], ""), "gog-catalog"
         if app_id.startswith("epic:"):
             return (epic_catalog or {}).get(app_id[5:], ""), "epic-catalog"
-        if app_id.startswith("pgwiki:"):
-            return (pcgwiki_catalog or {}).get(app_id, ""), "pcgwiki-catalog"
+        if app_id.startswith("pw_") or app_id.startswith("pgwiki:"):
+            return _pcgwiki_title((pcgwiki_catalog or {}).get(app_id)), "pcgwiki-catalog"
         return "", "none"
 
     rows = []
@@ -1818,14 +1840,13 @@ def generate_coverage_report(
     for row in rows:
         store_counts[row[1]] = store_counts.get(row[1], 0) + 1
 
-    # Build JS data array. The store field is index 1 so it drives the store
-    # filter chip without a second lookup. bad-appid used to key on "not
-    # numeric" which now matches every legitimate non-Steam id -- switched
-    # to detecting truly malformed values (empty, whitespace, unrecognised
-    # namespace) so gog:/epic:/pgwiki: rows do NOT get flagged.
+    # Row payload, fetched by coverage.html from R2 (#592). The store field is
+    # index 1 so it drives the store filter chip without a second lookup.
+    # bad-appid flags truly malformed values (empty, unrecognised namespace),
+    # so gog:/epic:/pw_ rows are NOT flagged.
     # Format:
     # [appId, store, title, titleSource, official, backfill, protondbSignal, steamCatalog, "flags", indexed]
-    js_rows = []
+    payload_rows = []
     for app_id, store, title, title_source, official, backfill, protondb_signal, steam_catalog_hit, indexed in rows:
         flags = [f"store-{store}"]
         if official:
@@ -1842,14 +1863,25 @@ def generate_coverage_report(
             flags.append("bad-appid")
         if not official and not backfill and not indexed:
             flags.append("no-data")
-        # Escape for JS string
-        safe_title = title.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
-        safe_title_source = title_source.replace("\\", "\\\\").replace('"', '\\"')
-        js_rows.append(
-            f'["{app_id}","{store}","{safe_title}","{safe_title_source}",'
-            f'{1 if official else 0},{1 if backfill else 0},{1 if protondb_signal else 0},'
-            f'{1 if steam_catalog_hit else 0},"{" ".join(flags)}",{1 if indexed else 0}]'
-        )
+        payload_rows.append([
+            app_id, store, title.replace("\n", " "), title_source,
+            1 if official else 0, 1 if backfill else 0, 1 if protondb_signal else 0,
+            1 if steam_catalog_hit else 0, " ".join(flags), 1 if indexed else 0,
+        ])
+    rows_body = json.dumps(
+        {"generated_at": now, "rows": payload_rows},
+        ensure_ascii=False, separators=(",", ":"),
+    ).encode("utf-8")
+    rows_file = output_path / COVERAGE_ROWS_FILE
+    rows_file.write_bytes(rows_body + b"\n")
+    # The page asks for ?v=<hash> so a new run never renders against a cached
+    # copy of the previous rows.
+    rows_version = hashlib.sha256(rows_body).hexdigest()[:12]
+    log(
+        f"[coverage] Written: {rows_file} ({len(payload_rows):,} rows, "
+        f"{len(rows_body) / 1048576:.1f} MiB, v={rows_version}, R2 key={COVERAGE_ROWS_KEY}); "
+        f"stores={store_counts}"
+    )
 
     coverage_style = """
 /* coverage page only - table + stats layout that lives below the shared topbar */
@@ -1979,7 +2011,7 @@ tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
 <th onclick="doSort(7)">Seen in Steam Catalog</th>
 <th>Indexed</th>
 </tr></thead>
-<tbody id="tbody"></tbody>
+<tbody id="tbody"><tr><td colspan="9" id="coverage-status">Loading coverage rows&hellip;</td></tr></tbody>
 </table>
 <div class="pager">
 <button onclick="goPage(-1)">&larr; Prev</button>
@@ -1987,9 +2019,16 @@ tr:nth-child(odd) { background: rgba(0,0,0,0.1); }
 <button onclick="goPage(1)">Next &rarr;</button>
 </div>
 <script>
-const DATA=[
-{",".join(js_rows)}
-];
+// Rows live on the env's data host (R2), not inline: the inline array pushed
+// this page past Cloudflare Pages' 25 MiB file limit (#592). data-config.json
+// carries the host (prod or staging bucket); with no host configured the rows
+// are read same-origin.
+const ROWS_KEY="{COVERAGE_ROWS_KEY}";
+const ROWS_VERSION="{rows_version}";
+let DATA=[];
+function esc(s){{
+  return String(s).replace(/[&<>"']/g,c=>({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}})[c]);
+}}
 const PAGE=300;
 let filtered=DATA.slice();
 let page=0;
@@ -2176,19 +2215,22 @@ function render(){{
     // protondbSignal, steamCatalog, flags, indexed]
     const id=r[0],store=r[1],t=r[2],ts=r[3],o=r[4],b=r[5],ps=r[6],sc=r[7],ix=r[9];
     const isSteam=store==="steam";
-    const ac=isSteam?`<a href="https://store.steampowered.com/app/${{id}}">${{id}}</a>`:id;
-    const tc=isSteam&&t?`<a href="https://www.protondb.com/app/${{id}}">${{t}}</a>`:(t||"");
-    const sl=STORE_LABELS[store]||store;
+    // Titles come from third-party catalogs; escape everything that reaches
+    // innerHTML.
+    const eid=esc(id),et=esc(t||"");
+    const ac=isSteam?`<a href="https://store.steampowered.com/app/${{eid}}">${{eid}}</a>`:eid;
+    const tc=isSteam&&t?`<a href="https://www.protondb.com/app/${{eid}}">${{et}}</a>`:et;
+    const sl=esc(STORE_LABELS[store]||store);
     const oc=o?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const bc=b?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const psc=ps?'<span class="yes">yes</span>':'<span class="no">no</span>';
     const scc=sc?'<span class="yes">yes</span>':'<span class="no">no</span>';
-    const tsc=TITLE_SOURCE_LABELS[ts]||ts.replace(/-/g,' ');
+    const tsc=esc(TITLE_SOURCE_LABELS[ts]||ts.replace(/-/g,' '));
     // Route Indexed clicks through data-index.html's master/detail view --
     // linking to a raw data/{id}/ path 404s on CF Pages because per-game
     // data lives on R2, not on Pages, and R2 does not auto-serve directory
     // indexes anyway. #451.
-    const ixc=ix?`<a href="data-index.html#/${{id}}">index</a>`:'<span class="no">\u2014</span>';
+    const ixc=ix?`<a href="data-index.html#/${{eid}}">index</a>`:'<span class="no">\u2014</span>';
     h.push(`<tr><td>${{ac}}</td><td>${{sl}}</td><td>${{tc}}</td><td>${{tsc}}</td><td>${{oc}}</td><td>${{bc}}</td><td>${{psc}}</td><td>${{scc}}</td><td>${{ixc}}</td></tr>`);
   }}
   tb.innerHTML=h.join("");
@@ -2201,8 +2243,29 @@ sortCol=initialState.sort;
 sortAsc=initialState.dir;
 page=initialState.page;
 document.querySelectorAll(".pg-filter").forEach(b=>b.classList.toggle("pg-filter--active",activeSrc.has(b.dataset.src)));
-apply(false);
 updateSortIndicator();
+function showLoadError(msg){{
+  const cell=document.getElementById("coverage-status");
+  if(cell)cell.textContent=msg;
+  console.error("[coverage] "+msg);
+}}
+fetch("data-config.json",{{cache:"no-store"}})
+  .then(r=>r.ok?r.json():{{}})
+  .catch(()=>({{}}))
+  .then(cfg=>{{
+    const base=(cfg&&cfg.dataBase)?String(cfg.dataBase).replace(/\\/$/,""):"";
+    const url=(base?base+"/"+ROWS_KEY:"{COVERAGE_ROWS_FILE}")+"?v="+ROWS_VERSION;
+    return fetch(url).then(r=>{{
+      if(!r.ok)throw new Error("HTTP "+r.status+" from "+url);
+      return r.json();
+    }});
+  }})
+  .then(body=>{{
+    if(!body||!Array.isArray(body.rows))throw new Error("rows file has no rows array");
+    DATA=body.rows;
+    apply(false);
+  }})
+  .catch(err=>showLoadError("Could not load coverage rows: "+err.message));
 </script>
 </div></div>
 {scripts_html}
