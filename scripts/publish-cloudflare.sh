@@ -89,6 +89,23 @@ SMALL_DATA=(
 
 log() { echo "[publish-cloudflare] $*"; }
 
+# Each env has its own bucket and data host (#380). A staging project paired
+# with the prod data host makes staging read prod's per-game data, which is
+# what every staging shell push did until #590 because publish-shell.yml never
+# set DATA_BASE. Refuse the mismatch in both directions rather than deploy it.
+case "$PAGES_PROJECT" in
+  proton-pulse-web-staging)
+    if [ "$DATA_BASE" != "https://staging-data.proton-pulse.com" ]; then
+      log "ERROR: staging project with DATA_BASE=$DATA_BASE; staging must use https://staging-data.proton-pulse.com (#590)"
+      exit 1
+    fi ;;
+  proton-pulse-web)
+    if [ "$DATA_BASE" != "https://data.proton-pulse.com" ]; then
+      log "ERROR: prod project with DATA_BASE=$DATA_BASE; prod must use https://data.proton-pulse.com (#590)"
+      exit 1
+    fi ;;
+esac
+
 # The bucket-state manifest lives OUTSIDE data/ so the data sync never touches
 # it and the frontend host never serves it by accident. Dated copies keep an
 # audit trail of what each deploy shipped (#392).
