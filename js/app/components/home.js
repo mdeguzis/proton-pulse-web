@@ -13,11 +13,11 @@ import { filterAdult } from '../../lib/adult-filter.js?v=e4e9d845';
 import { filterDelisted } from '../../lib/delisted-filter.js?v=42858e22';
 import { readActive as _readPillGroup, wireGroup as _wirePillGroup } from '../lib/filter-group.js?v=dc2c1e0a';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
-import { renderHomeLibraryChart } from './home-library-chart.js?v=65bf9f7a';
+import { renderHomeLibraryChart } from './home-library-chart.js?v=41d5a250';
 import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
 import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
 import { getSavedLookupLibraryAppIds, getSavedLookupWishlistAppIds, hasSavedLookup } from '../lib/saved-lookup.js?v=7c45ae8b';
-import { loadDeckStatusMap } from '../api/deck-status.js?v=c941cca9';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=89ab9c39';
 import { loadVrIndex, matchesVrFilter, vrForApp } from '../lib/vr-index.js?v=f094c84f';
 import { loadAntiCheatMap, matchesAntiCheatFilter, antiCheatAppIdsMatching } from '../lib/anti-cheat.js?v=1ec01d8a';
 import { loadNativeLinux, filterByNative } from '../lib/native-linux.js?v=4c9e09da';
@@ -185,6 +185,10 @@ function _filterByDeviceField(reports, sel, deckStatusMap, field) {
 }
 function _filterByMachine(reports, sel, deckStatusMap) {
   return _filterByDeviceField(reports, sel, deckStatusMap, 'machine');
+}
+// Steam Frame (#594): same scale as Machine, `frame` field.
+function _filterByFrame(reports, sel, deckStatusMap) {
+  return _filterByDeviceField(reports, sel, deckStatusMap, 'frame');
 }
 function _filterBySteamOS(reports, sel, deckStatusMap) {
   return _filterByDeviceField(reports, sel, deckStatusMap, 'steamos');
@@ -590,6 +594,14 @@ export async function renderHomePage() {
               <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on Steam Machine">Unsupported</button>
               <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game yet">Unknown</button>
             </div>
+            <div class="pg-filter-group" id="home-frame-checks" title="Filter by Valve's official Steam Frame compatibility rating">
+              <span class="pg-filter-group-label">Frame</span>
+              <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
+              <button class="pg-filter" type="button" data-value="verified" title="Fully verified on Steam Frame">Verified</button>
+              <button class="pg-filter" type="button" data-value="playable" title="Playable with some caveats">Playable</button>
+              <button class="pg-filter" type="button" data-value="unsupported" title="Does not run on Steam Frame">Unsupported</button>
+              <button class="pg-filter" type="button" data-value="unknown" title="Valve has not rated this game for Steam Frame yet">Unknown</button>
+            </div>
             <div class="pg-filter-group" id="home-steamos-checks" title="Filter by Valve's official SteamOS compatibility rating">
               <span class="pg-filter-group-label">SteamOS</span>
               <button class="pg-filter pg-filter--active" type="button" data-value="all">All</button>
@@ -715,8 +727,9 @@ export async function renderHomePage() {
     let wishlistAppIds = null;   // cached Set<number>; lazily loaded on first "wishlist" use
     let deckSel = new Set();   // empty => all; 'verified'/'playable'/'unsupported'/'unknown' => Valve's Deck rating (#266 Phase 2)
     let machineSel = new Set(); // empty => all; Valve's Steam Machine rating (#273)
+    let frameSel = new Set();   // empty => all; Valve's Steam Frame rating (#594)
     let steamosSel = new Set(); // empty => all; 'compatible'/'unsupported'/'unknown' => Valve's SteamOS rating (#273)
-    let deckStatusMap = null;  // cached map<appIdStr, {status, criteria, machine, steamos}>; shared by Deck/Machine/SteamOS chips
+    let deckStatusMap = null;  // cached map<appIdStr, {status, criteria, machine, steamos}>; shared by Deck/Machine/Frame/SteamOS chips
     let kindSel = new Set();   // Steam app kind ('game'/'dlc'/'mod'/'demo'/'software'); empty => all (#250)
     let vrSel = new Set();     // empty => all; 'vr'/'only'/'flat' => VR capability (#246)
     let vrMap = null;          // cached {appId: 'supported'|'only'}; lazily loaded on first VR chip use
@@ -896,7 +909,7 @@ export async function renderHomePage() {
           return { ...g, tier: KNOWN_TIERS.has(t) ? t : 'pending', delisted: g.delisted === true || _isDelisted(g.appId) };
         });
       }
-      const filtered = filterDelisted(filterAdult(_filterByText(filterByNative(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), nativeSel, nativeSet), textFilter)));
+      const filtered = filterDelisted(filterAdult(_filterByText(filterByNative(_filterByAntiCheat(_filterByVr(_filterByKind(_filterByFrame(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(asReports, tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), frameSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), nativeSel, nativeSet), textFilter)));
       const cardsEl = document.getElementById('cards-popular');
       const loadMoreEl = document.getElementById('load-more-popular');
       if (!cardsEl) return;
@@ -1035,7 +1048,7 @@ export async function renderHomePage() {
     }
 
     function applyRecentFilters() {
-      const filtered = filterDelisted(filterAdult(_filterByText(filterByNative(_filterByAntiCheat(_filterByVr(_filterByKind(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), nativeSel, nativeSet), textFilter)));
+      const filtered = filterDelisted(filterAdult(_filterByText(filterByNative(_filterByAntiCheat(_filterByVr(_filterByKind(_filterByFrame(_filterBySteamOS(_filterByMachine(_filterByDeck(_filterByWishlist(_filterByLibrary(_filterByStore(_filterByType(_filterByTier(_sortReports(allRecentReports, currentSort), tierSel), sourceSel), storeSel), librarySel, libraryAppIds), wishlistSel, wishlistAppIds), deckSel, deckStatusMap), machineSel, deckStatusMap), steamosSel, deckStatusMap), frameSel, deckStatusMap), kindSel), vrSel, vrMap), acSel, acMap), nativeSel, nativeSet), textFilter)));
       const sectionEl = document.getElementById('recent-section');
       const cardsEl = document.getElementById('cards-recent');
       const loadMoreEl = document.getElementById('load-more-recent');
@@ -1172,7 +1185,7 @@ export async function renderHomePage() {
           sort: currentSort, text: textFilter,
           tier: [...tierSel], source: [...sourceSel], store: [...storeSel],
           library: [...librarySel], wishlist: [...wishlistSel], deck: [...deckSel],
-          machine: [...machineSel], steamos: [...steamosSel], kind: [...kindSel], vr: [...vrSel], ac: [...acSel], native: [...nativeSel],
+          machine: [...machineSel], frame: [...frameSel], steamos: [...steamosSel], kind: [...kindSel], vr: [...vrSel], ac: [...acSel], native: [...nativeSel],
         }));
       } catch { /* ignore */ }
     }
@@ -1220,6 +1233,7 @@ export async function renderHomePage() {
       wishlistSel = new Set(saved.wishlist || []);
       deckSel = new Set(saved.deck || []);
       machineSel = new Set(saved.machine || []);
+      frameSel = new Set(saved.frame || []);
       steamosSel = new Set(saved.steamos || []);
       kindSel = new Set(saved.kind || []);
       vrSel = new Set(saved.vr || []);
@@ -1233,6 +1247,7 @@ export async function renderHomePage() {
       _applyPillSelection(libraryGroup, [...(saved.library || []), ...(saved.wishlist || [])]);
       _applyPillSelection(deckGroup, saved.deck);
       _applyPillSelection(machineGroup, saved.machine);
+      _applyPillSelection(frameGroup, saved.frame);
       _applyPillSelection(steamosGroup, saved.steamos);
       _applyPillSelection(kindGroup, saved.kind);
       _applyPillSelection(vrGroup, saved.vr);
@@ -1303,7 +1318,7 @@ export async function renderHomePage() {
 
     // Active-filter badge: count specific tier + source + store selections.
     function updateFilterBadge() {
-      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + nativeSel.size + (textFilter.trim() ? 1 : 0);
+      const n = tierSel.size + sourceSel.size + storeSel.size + librarySel.size + wishlistSel.size + deckSel.size + machineSel.size + frameSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + nativeSel.size + (textFilter.trim() ? 1 : 0);
       filterToggle?.classList.toggle('has-filters', n > 0);
       if (filterBadge) {
         filterBadge.textContent = String(n);
@@ -1317,6 +1332,7 @@ export async function renderHomePage() {
     const libraryGroup = document.getElementById('home-library-checks');
     const deckGroup = document.getElementById('home-deck-checks');
     const machineGroup = document.getElementById('home-machine-checks');
+    const frameGroup = document.getElementById('home-frame-checks');
     const steamosGroup = document.getElementById('home-steamos-checks');
     const kindGroup = document.getElementById('home-kind-checks');
     const vrGroup = document.getElementById('home-vr-checks');
@@ -1377,6 +1393,7 @@ export async function renderHomePage() {
       }});
     };
     _wireDeviceGroup(machineGroup, sel => { machineSel = sel; });
+    _wireDeviceGroup(frameGroup, sel => { frameSel = sel; });
     _wireDeviceGroup(steamosGroup, sel => { steamosSel = sel; });
     if (kindGroup) _wirePillGroup(kindGroup, { onChange: sel => {
       kindSel = sel; updateFilterBadge(); applyRecentFilters(); applyPopularFilters(); _saveFiltersIfEnabled();
@@ -1431,7 +1448,7 @@ export async function renderHomePage() {
 
     // Clear filters: reset every group back to "All", sort back to Recent.
     document.getElementById('home-filter-clear')?.addEventListener('click', () => {
-      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, steamosGroup, kindGroup, vrGroup, acGroup, nativeGroup].forEach(g => {
+      [tierGroup, sourceGroup, storeGroup, libraryGroup, deckGroup, machineGroup, frameGroup, steamosGroup, kindGroup, vrGroup, acGroup, nativeGroup].forEach(g => {
         if (!g) return;
         g.querySelectorAll('.pg-filter').forEach(b => b.classList.remove('pg-filter--active'));
         const allBtn = g.querySelector('.pg-filter[data-value="all"]');
@@ -1452,6 +1469,7 @@ export async function renderHomePage() {
       wishlistSel = new Set();
       deckSel = new Set();
       machineSel = new Set();
+      frameSel = new Set();
       steamosSel = new Set();
       kindSel = new Set();
       vrSel = new Set();
@@ -1580,7 +1598,7 @@ export async function renderHomePage() {
     }
 
     // #290: chart rows on the home page deep-link into the browse view with
-    // ?tier=/&deck=/&machine=/&steamos= to pre-apply the corresponding pill.
+    // ?tier=/&deck=/&machine=/&frame=/&steamos= to pre-apply the corresponding pill.
     // Only accept known values so a hand-rolled URL cannot inject arbitrary
     // strings into the Sets. The filter count badge next to FILTERS ticks up
     // per active filter, so no extra prefilter banner is needed.
@@ -1588,10 +1606,12 @@ export async function renderHomePage() {
     const VALID_TIERS = new Set(['platinum', 'gold', 'silver', 'bronze', 'borked', 'unrated']);
     const VALID_DECK = new Set(['verified', 'playable', 'unsupported', 'unknown']);
     const VALID_MACHINE = new Set(['verified', 'playable', 'unsupported', 'unknown']);
+    const VALID_FRAME = new Set(['verified', 'playable', 'unsupported', 'unknown']);
     const VALID_STEAMOS = new Set(['compatible', 'unsupported', 'unknown']);
     const _urlTier = _urlParams.get('tier');
     const _urlDeck = _urlParams.get('deck');
     const _urlMachine = _urlParams.get('machine');
+    const _urlFrame = _urlParams.get('frame');
     const _urlSteamos = _urlParams.get('steamos');
     if (_urlTier && VALID_TIERS.has(_urlTier)) {
       tierSel = new Set([_urlTier]);
@@ -1605,6 +1625,10 @@ export async function renderHomePage() {
       machineSel = new Set([_urlMachine]);
       _applyPillSelection(machineGroup, [_urlMachine]);
     }
+    if (_urlFrame && VALID_FRAME.has(_urlFrame)) {
+      frameSel = new Set([_urlFrame]);
+      _applyPillSelection(frameGroup, [_urlFrame]);
+    }
     if (_urlSteamos && VALID_STEAMOS.has(_urlSteamos)) {
       steamosSel = new Set([_urlSteamos]);
       _applyPillSelection(steamosGroup, [_urlSteamos]);
@@ -1616,7 +1640,7 @@ export async function renderHomePage() {
     // restored Deck / Machine / SteamOS / VR / anti-cheat chip used to show
     // as active while filtering nothing until it was clicked again.
     const _active = (sel) => sel.size > 0 && !sel.has('all');
-    if ((_urlDeck || _urlMachine || _urlSteamos || _active(deckSel) || _active(machineSel) || _active(steamosSel)) && !deckStatusMap) {
+    if ((_urlDeck || _urlMachine || _urlFrame || _urlSteamos || _active(deckSel) || _active(machineSel) || _active(frameSel) || _active(steamosSel)) && !deckStatusMap) {
       deckStatusMap = await loadDeckStatusMap().catch(() => ({}));
     }
     if (_active(vrSel)) {
@@ -1632,7 +1656,7 @@ export async function renderHomePage() {
         });
       }
     }
-    if (_urlTier || _urlDeck || _urlMachine || _urlSteamos) {
+    if (_urlTier || _urlDeck || _urlMachine || _urlFrame || _urlSteamos) {
       updateFilterBadge();
       _saveFiltersIfEnabled();
     }
@@ -1655,7 +1679,7 @@ export async function renderHomePage() {
     // from the browse view. Without it, ?filter=mine would always force the
     // chart chip back to Library.
     const _urlView = _urlParams.get('view');
-    const VALID_CHART_VIEWS = new Set(['library', 'wishlist', 'deck', 'machine', 'steamos']);
+    const VALID_CHART_VIEWS = new Set(['library', 'wishlist', 'deck', 'machine', 'frame', 'steamos']);
     const _chartPref = _urlView && VALID_CHART_VIEWS.has(_urlView)
       ? _urlView
       : _isMyLibrary ? 'library'

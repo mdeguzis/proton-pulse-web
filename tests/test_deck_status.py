@@ -55,6 +55,8 @@ def test_verified_game_maps_category_and_criteria():
             "steamos": "unknown",
             "machine_criteria": [],
             "steamos_criteria": [],
+            "frame": "unknown",
+            "frame_criteria": [],
         }
         # second call is served from cache -- no re-fetch
         assert fetch_deck_compat("1245620") == out
@@ -230,7 +232,8 @@ def _seed_cache(entries):
 
 def _verdict():
     return {"status": "verified", "criteria": [True, True, True, True], "machine": "unknown",
-            "steamos": "unknown", "machine_criteria": [], "steamos_criteria": []}
+            "steamos": "unknown", "machine_criteria": [], "steamos_criteria": [],
+            "frame": "unknown", "frame_criteria": []}
 
 
 def test_expired_entries_over_budget_keep_their_cached_verdict(tmp_path):
@@ -286,3 +289,73 @@ def test_delay_only_applies_to_actual_fetches(tmp_path):
          patch.object(deck.time, "sleep") as sleep:
         build_deck_status(tmp_path, app_ids=["1", "2", "3", "4"], delay=0.5)
     sleep.assert_called_once_with(0.5)
+
+
+# --- #594: Steam Frame ratings -----------------------------------------------
+
+def _frame_payload(frame_cat=2, frame_items=True):
+    """Cyberpunk-2077-shape payload (1091500, checked live 2026-11-01): Deck 3,
+    Frame 2 with "default configuration is not performant"."""
+    results = {
+        "resolved_category": 3,
+        "resolved_items": _verified_payload()["results"]["resolved_items"],
+        "machine_resolved_category": 3,
+        "frame_resolved_category": frame_cat,
+    }
+    if frame_items:
+        results["frame_resolved_items"] = [
+            {"display_type": 3, "loc_token": "#SteamFrame_TestResult_DefaultConfigurationIsNotPerformant"},
+            {"display_type": 4, "loc_token": "#SteamFrame_TestResult_ControllerGlyphsMatchDevice"},
+        ]
+    return {"success": 1, "results": results}
+
+
+def test_frame_category_and_criteria_captured():
+    with patch.object(deck, "_fetch_raw", return_value=_frame_payload()):
+        out = fetch_deck_compat("1091500")
+    assert out["frame"] == "playable"
+    assert out["frame_criteria"] == [
+        [3, "DefaultConfigurationIsNotPerformant"],
+        [4, "ControllerGlyphsMatchDevice"],
+    ]
+
+
+def test_frame_null_from_valve_reads_unknown_and_is_not_published(tmp_path):
+    """Valve sends frame_resolved_category: null for titles it has not rated
+    for Frame (Elden Ring, Stardew Valley). That is unknown, not unsupported."""
+    payload = _frame_payload(frame_cat=None, frame_items=False)
+    with patch.object(deck, "_fetch_raw", return_value=payload):
+        result = build_deck_status(tmp_path, app_ids=["1245620"])
+    entry = result["1245620"]
+    assert "frame" not in entry and "frame_criteria" not in entry
+    assert entry["machine"] == "verified"
+
+
+def test_frame_rating_published_in_deck_status_json(tmp_path):
+    with patch.object(deck, "_fetch_raw", return_value=_frame_payload(frame_cat=1)):
+        build_deck_status(tmp_path, app_ids=["1091500"])
+    published = json.loads((tmp_path / "deck-status.json").read_text())
+    assert published["1091500"]["frame"] == "unsupported"
+    assert published["1091500"]["frame_criteria"][0] == [3, "DefaultConfigurationIsNotPerformant"]
+
+
+def test_frame_only_rating_is_not_treated_as_no_verdict():
+    payload = {"success": 1, "results": {"resolved_category": 0, "frame_resolved_category": 3}}
+    with patch.object(deck, "_fetch_raw", return_value=payload):
+        out = fetch_deck_compat("999001")
+    assert out is not None
+    assert out["frame"] == "verified"
+    assert out["status"] == "unknown"
+
+
+def test_cached_entries_without_frame_refresh_inside_the_budget(tmp_path):
+    """Entries cached before #594 have no "frame" key. They count as stale so
+    Frame fills in, but only refresh_budget of them per run (#258)."""
+    now = int(time.time())
+    old_schema = {k: v for k, v in _verdict().items() if not k.startswith("frame")}
+    _seed_cache({str(i): (old_schema, now, True) for i in range(1, 5)})
+    with patch.object(deck, "_fetch_raw", return_value=_frame_payload()) as fetch:
+        result = build_deck_status(tmp_path, app_ids=["1", "2", "3", "4"], refresh_budget=2)
+    assert fetch.call_count == 2
+    assert sorted(result) == ["1", "2", "3", "4"]
+    assert sum(1 for e in result.values() if e.get("frame") == "playable") == 2

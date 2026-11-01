@@ -34,6 +34,10 @@ STEAM_DECK_COMPAT_URL = (
 DECK_CAT_MAP = {0: "unknown", 1: "unsupported", 2: "playable", 3: "verified"}
 # Steam Machine uses the same Verified / Playable / Unsupported scale as Deck.
 MACHINE_CAT_MAP = DECK_CAT_MAP
+# Steam Frame (#594) too: `frame_resolved_category` uses the same 0-3 scale
+# (verified on Hades 1145360 = 3, Cyberpunk 2077 1091500 = 2). Valve returns
+# null rather than 0 for titles it has not rated for Frame yet.
+FRAME_CAT_MAP = DECK_CAT_MAP
 # SteamOS has a simpler scale: unsupported vs "Compatible" (the store modal only
 # ever shows "Compatible" as the positive verdict). Both 2 and 3 read as
 # compatible. #273 -- keep in sync with STEAMOS_CAT_MAP in deck-status.js.
@@ -42,9 +46,10 @@ STEAMOS_CAT_MAP = {0: "unknown", 1: "unsupported", 2: "compatible", 3: "compatib
 DECK_DISPLAY_MAP = {4: True, 3: None, 2: False}
 
 def _extract_criteria(items, prefix):
-    """Compact machine/steamos resolved_items into [[display_type, short_token], ...].
+    """Compact machine/steamos/frame resolved_items into [[display_type, short_token], ...].
 
-    Strips the `#SteamMachine_TestResult_` / `#SteamOS_TestResult_` prefix from
+    Strips the `#SteamMachine_TestResult_` / `#SteamOS_TestResult_` /
+    `#SteamFrame_TestResult_` prefix from
     each loc_token so the JSON stays small. Returns an empty list when the
     upstream array is empty or missing so the frontend can distinguish
     "evaluated with no notes" from an "unknown" verdict.
@@ -124,7 +129,11 @@ def _cache_state(app_id):
     """Return ``(state, cached_val)``: state is "fresh", "stale" or "missing".
 
     "stale" covers both an expired TTL and an old-schema positive entry that
-    lacks machine/steamos or the per-criterion arrays (refetched to enrich).
+    lacks machine/steamos/frame or the per-criterion arrays (refetched to
+    enrich). Entries cached before #594 have no "frame" key; they refresh
+    inside the normal per-run refresh budget, so Frame ratings fill in over
+    about two weeks of nightlies (~20k rated entries at 1,500 a night, sharing
+    the budget with TTL expiries) instead of in one long run.
     """
     cache = _load_cache()
     cached = cache.get(str(app_id))
@@ -132,7 +141,7 @@ def _cache_state(app_id):
         return "missing", None
     cval = cached.get("val")
     stale_schema = isinstance(cval, dict) and (
-        "machine" not in cval or "machine_criteria" not in cval
+        "machine" not in cval or "machine_criteria" not in cval or "frame" not in cval
     )
     ok = cached.get("ok")
     if ok is None:  # legacy entries: a stored verdict implies a confirmed fetch
@@ -166,7 +175,8 @@ def _fetch_and_cache(app_id):
     deck_cat = int(results.get("resolved_category") or 0)
     machine_cat = int(results.get("machine_resolved_category") or 0)
     steamos_cat = int(results.get("steamos_resolved_category") or 0)
-    if not data.get("success") or not (deck_cat or machine_cat or steamos_cat):
+    frame_cat = int(results.get("frame_resolved_category") or 0)
+    if not data.get("success") or not (deck_cat or machine_cat or steamos_cat or frame_cat):
         # success:false or nothing rated on any target. Short-lived negative so
         # a throttled response is retried; an evaluated-as-unknown app is omitted.
         cache[key] = {"val": None, "ts": now, "ok": False}
@@ -186,6 +196,7 @@ def _fetch_and_cache(app_id):
     # with the `#Device_TestResult_` prefix stripped to keep the file small.
     machine_criteria = _extract_criteria(results.get("machine_resolved_items"), "#SteamMachine_TestResult_")
     steamos_criteria = _extract_criteria(results.get("steamos_resolved_items"), "#SteamOS_TestResult_")
+    frame_criteria = _extract_criteria(results.get("frame_resolved_items"), "#SteamFrame_TestResult_")
     val = {
         "status": DECK_CAT_MAP.get(deck_cat, "unknown"),
         "criteria": criteria,
@@ -193,6 +204,8 @@ def _fetch_and_cache(app_id):
         "steamos": STEAMOS_CAT_MAP.get(steamos_cat, "unknown"),
         "machine_criteria": machine_criteria,
         "steamos_criteria": steamos_criteria,
+        "frame": FRAME_CAT_MAP.get(frame_cat, "unknown"),
+        "frame_criteria": frame_criteria,
     }
     cache[key] = {"val": val, "ts": now, "ok": True}
     _cache_dirty = True
@@ -342,6 +355,8 @@ def build_deck_status(output_dir, app_ids=None, delay=0.0, refresh_budget=DECK_R
                 entry["machine"] = val["machine"]
             if val.get("steamos") and val["steamos"] != "unknown":
                 entry["steamos"] = val["steamos"]
+            if val.get("frame") and val["frame"] != "unknown":
+                entry["frame"] = val["frame"]
             # Only carry the per-criterion arrays when non-empty. A rated
             # machine/steamos with zero items is possible (Valve caveat-free
             # game) but rare -- the frontend treats a missing key the same as
@@ -350,6 +365,8 @@ def build_deck_status(output_dir, app_ids=None, delay=0.0, refresh_budget=DECK_R
                 entry["machine_criteria"] = val["machine_criteria"]
             if val.get("steamos_criteria"):
                 entry["steamos_criteria"] = val["steamos_criteria"]
+            if val.get("frame_criteria"):
+                entry["frame_criteria"] = val["frame_criteria"]
             result[app_id] = entry
         if delay and fetched:
             time.sleep(delay)

@@ -1,6 +1,6 @@
 // deck-status (components) for the app page. Relocated from app.js.
 
-import { getDeckStatusForApp } from '../api/deck-status.js?v=c941cca9';
+import { getDeckStatusForApp } from '../api/deck-status.js?v=89ab9c39';
 import { esc } from '../utils.js?v=4630c3d5';
 import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
 
@@ -50,7 +50,17 @@ export function _tokenToProse(tok) {
   return words.charAt(0).toUpperCase() + words.slice(1);
 }
 
-export function _criterionLabel(tok) {
+// Steam Frame (#594) sends the same tokens as Steam Machine, but three of the
+// Machine labels name the device. Frame-specific wording wins for those;
+// everything else falls through to the shared map.
+export const FRAME_CRITERIA_TOKEN_LABELS = {
+  ControllerGlyphsMatchDevice: 'This game shows Steam Frame controller icons',
+  DefaultConfigurationIsPerformant: "This game's default graphics configuration performs well on Steam Frame",
+  DefaultConfigurationIsNotPerformant: "This game's default graphics configuration does not perform well on Steam Frame",
+};
+
+export function _criterionLabel(tok, kind) {
+  if (kind === 'frame' && FRAME_CRITERIA_TOKEN_LABELS[tok]) return FRAME_CRITERIA_TOKEN_LABELS[tok];
   return CRITERIA_TOKEN_LABELS[tok] || _tokenToProse(tok);
 }
 
@@ -128,6 +138,13 @@ const _DEVICE_SUMMARY = {
     unknown:     'Steam Machine compatibility is <strong>Unknown</strong>. Valve has not evaluated this title yet.',
     nodata:      'We do not have a Steam Machine verdict for this title yet. Check the store page for Valve\'s current rating.',
   },
+  frame: {
+    verified:    'This game is <strong>Verified</strong> on Steam Frame. Fully functional out of the box.',
+    playable:    'This game is <strong>Playable</strong> on Steam Frame. Functional, but may require some configuration.',
+    unsupported: 'This game is <strong>not supported</strong> on Steam Frame.',
+    unknown:     'Steam Frame compatibility is <strong>Unknown</strong>. Valve has not evaluated this title for Steam Frame yet.',
+    nodata:      'We do not have a Steam Frame verdict for this title yet. Check the store page for Valve\'s current rating.',
+  },
   steamos: {
     compatible:  'This game is <strong>Compatible</strong> with devices running SteamOS, based on Steam Deck verification results. Performance and input may vary by hardware.',
     unsupported: 'This game is <strong>not supported</strong> on SteamOS.',
@@ -148,7 +165,7 @@ export function renderDeckStatusButton(appId) {
   // so naming it after one tab undersells the other three. The coloured icon
   // still encodes the DECK status, which is the headline verdict, and the
   // title attribute spells it out.
-  return `<button class="info-btn info-btn-labeled deck-status-btn${disabledClass}" id="deck-status-btn" title="Steam Deck: ${label} (click for Deck, Machine, SteamOS and VR details)">
+  return `<button class="info-btn info-btn-labeled deck-status-btn${disabledClass}" id="deck-status-btn" title="Steam Deck: ${label} (click for Deck, Machine, Frame, SteamOS and VR details)">
     <svg width="16" height="16" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[status] || DECK_STATUS_ICON_SVG.unknown}</svg>
     <span>Compatibility</span>
   </button>`;
@@ -186,10 +203,10 @@ function _devicePanel(kind, name, status, criteria, tokenizedCriteria, hasData =
       const iconKey = pass === true ? 'verified' : pass === false ? 'unsupported' : 'playable';
       return `<div class="deck-criterion"><span class="deck-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[iconKey]}</svg></span><span>${esc(DECK_CRITERIA_LABELS[i])}</span></div>`;
     }).join('')}</div>`;
-  } else if ((kind === 'machine' || kind === 'steamos') && Array.isArray(tokenizedCriteria) && tokenizedCriteria.length) {
+  } else if ((kind === 'machine' || kind === 'steamos' || kind === 'frame') && Array.isArray(tokenizedCriteria) && tokenizedCriteria.length) {
     body = `<div class="deck-criteria-list">${tokenizedCriteria.map(([dt, tok]) => {
       const iconKey = _iconKeyForCriterion(dt, tok);
-      return `<div class="deck-criterion"><span class="deck-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[iconKey]}</svg></span><span>${esc(_criterionLabel(tok))}</span></div>`;
+      return `<div class="deck-criterion"><span class="deck-criterion-icon"><svg width="18" height="18" viewBox="0 0 24 24">${DECK_STATUS_ICON_SVG[iconKey]}</svg></span><span>${esc(_criterionLabel(tok, kind))}</span></div>`;
     }).join('')}</div>`;
   } else {
     const sourceNote = status !== 'unknown'
@@ -212,6 +229,7 @@ export function renderDeckStatusModalContent(appId) {
   const d = getDeckStatusForApp(appId);
   const deckStatus = d.status || 'unknown';
   const machineStatus = d.machine || 'unknown';
+  const frameStatus = d.frame || 'unknown';
   const osStatus = d.steamos || 'unknown';
   // #246: VR on Linux joins the device tabs. It is the same question the other
   // three answer ("will this run on my hardware"), and it was buried in the
@@ -222,11 +240,13 @@ export function renderDeckStatusModalContent(appId) {
     <div class="deck-tabs">
       <input type="radio" name="devtab" id="dt-deck" class="dt-radio" checked>
       <input type="radio" name="devtab" id="dt-machine" class="dt-radio">
+      <input type="radio" name="devtab" id="dt-frame" class="dt-radio">
       <input type="radio" name="devtab" id="dt-steamos" class="dt-radio">
       <input type="radio" name="devtab" id="dt-vr" class="dt-radio">
       <div class="dt-tabbar" role="tablist">
         ${_tabLabel('deck', 'icon-steam-deck', 'Steam Deck', deckStatus)}
         ${_tabLabel('machine', 'icon-steam-machine', 'Steam Machine', machineStatus)}
+        ${_tabLabel('frame', 'icon-steam-frame', 'Steam Frame', frameStatus)}
         ${_tabLabel('steamos', 'icon-steamos', 'SteamOS', osStatus)}
         <label for="dt-vr" class="dt-tab dt-tab--vr" title="VR on Linux" id="dt-vr-tab" hidden>
           <svg class="dt-tab-glyph" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 8h18a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-3.2a2 2 0 0 1-1.7-.9l-1.3-2a1 1 0 0 0-1.6 0l-1.3 2a2 2 0 0 1-1.7.9H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1z"/></svg>
@@ -235,6 +255,7 @@ export function renderDeckStatusModalContent(appId) {
       </div>
       <div class="dt-panel dt-panel-deck">${_devicePanel('deck', 'Steam Deck', deckStatus, d.criteria, null, d.hasData !== false)}</div>
       <div class="dt-panel dt-panel-machine">${_devicePanel('machine', 'Steam Machine', machineStatus, null, d.machine_criteria, d.hasData !== false)}</div>
+      <div class="dt-panel dt-panel-frame">${_devicePanel('frame', 'Steam Frame', frameStatus, null, d.frame_criteria, d.hasData !== false)}</div>
       <div class="dt-panel dt-panel-steamos">${_devicePanel('steamos', 'SteamOS', osStatus, null, d.steamos_criteria, d.hasData !== false)}</div>
       <div class="dt-panel dt-panel-vr" id="dt-panel-vr"></div>
     </div>`;

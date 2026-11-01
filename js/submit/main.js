@@ -2,7 +2,7 @@
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=467474be';
 import { loadVrIndex, vrForApp } from '../app/lib/vr-index.js?v=f094c84f';
 import { applyDraftSnapshot, applyPlayModeDefault, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=0c76eadb';
-import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=c941cca9';
+import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=89ab9c39';
 import {
   deleteDraft, deleteLocalDraft, draftStampSuffix as stampSuffix, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
 } from '../shared/drafts.js?v=9f4cdcaf';
