@@ -31,6 +31,7 @@ from .catalog import (
     read_protondb_probe_cache,
     write_protondb_probe_cache,
 )
+from . import http_client
 from .common import (
     LIVE_COUNTS_URL,
     app_id_to_dir,
@@ -2595,6 +2596,9 @@ def finalize_output(output_dir, skip_probe: bool = False):
     store_items = store_sweep(steam_ids_in_index(output_path))
     phase("Steam type enrichment")
     enrich_search_index_with_steam_type(output_path, sweep=store_items)
+    # #411: per-host totals from the shared client (requests, retries,
+    # failures, breaker trips, status counts) for the appdetails callers so far.
+    http_client.default_client().log_summary()
     phase("Game images (Steam CDN probing; slow under 403s)")
     overrides = build_game_images(output_path)
     # Game-images probing now knows which Steam IDs returned success=false from

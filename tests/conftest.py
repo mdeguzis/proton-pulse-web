@@ -111,6 +111,22 @@ _CACHE_PATH_CONSTANTS = {
 
 
 @pytest.fixture(autouse=True)
+def _fresh_http_client():
+    """A fresh shared HTTP client per test (#411), with sleeping disabled.
+
+    The process-wide client keeps per-host pacing and breaker state. Without
+    a reset, one test that opens the Steam breaker would fail every later
+    test that touches appdetails, and the 2s Steam pacing would add real
+    seconds to every test that makes two requests. Tests of the client
+    itself build their own HttpClient with fake clocks.
+    """
+    from scripts.pipeline import http_client
+    http_client.reset_default_client(http_client.HttpClient(sleep=lambda s: None))
+    yield
+    http_client.reset_default_client()
+
+
+@pytest.fixture(autouse=True)
 def _isolate_pipeline_caches(tmp_path, monkeypatch):
     """Point every pipeline cache at a per-test temp dir (#258, #555).
 

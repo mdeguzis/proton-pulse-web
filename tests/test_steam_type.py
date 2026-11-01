@@ -332,20 +332,28 @@ class _R:
 
 def test_fetch_type_parses_success_delisted_and_errors(monkeypatch):
     import json as _json
+    import urllib.request
     from scripts.pipeline import steam_type as st
-    monkeypatch.setattr(st.urllib.request, "urlopen",
+    monkeypatch.setattr(urllib.request, "urlopen",
                         lambda req, timeout: _R(_json.dumps({"10": {"success": True, "data": {"type": " DLC "}}}).encode()))
     assert st._fetch_type("10") == ("dlc", True)
-    monkeypatch.setattr(st.urllib.request, "urlopen",
+    monkeypatch.setattr(urllib.request, "urlopen",
                         lambda req, timeout: _R(_json.dumps({"10": {"success": False}}).encode()))
     assert st._fetch_type("10") == (None, True)
-    monkeypatch.setattr(st.urllib.request, "urlopen",
+    monkeypatch.setattr(urllib.request, "urlopen",
                         lambda req, timeout: _R(_json.dumps({"10": {"success": True, "data": {}}}).encode()))
     assert st._fetch_type("10") == (None, True)
 
     def boom(req, timeout):
         raise OSError("403")
-    monkeypatch.setattr(st.urllib.request, "urlopen", boom)
+    monkeypatch.setattr(urllib.request, "urlopen", boom)
+    assert st._fetch_type("10") == (None, False)
+
+    # #411: a 200 carrying HTML (a CDN error page) or a JSON non-object is a
+    # failed fetch, not a valid "delisted" answer that would be cached.
+    monkeypatch.setattr(urllib.request, "urlopen", lambda req, timeout: _R(b"<html>busy</html>"))
+    assert st._fetch_type("10") == (None, False)
+    monkeypatch.setattr(urllib.request, "urlopen", lambda req, timeout: _R(b"[]"))
     assert st._fetch_type("10") == (None, False)
 
 

@@ -17,14 +17,16 @@ Strategy:
 import json
 import re
 import time
-import urllib.request
 from collections import defaultdict
 from pathlib import Path
 
+from . import http_client
 from .common import log
 
 STEAM_APPDETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={appid}"
-REQUEST_DELAY = 0.3
+# Pacing lives in http_client.PROFILES["store.steampowered.com"] (#411).
+# This module used to sleep 0.3s between requests to the same endpoint
+# steam_type.py had measured 0.3s as getting banned within seconds on.
 # Steam soft-throttles appdetails at ~200 req / 5min. game_images.py and
 # common.py::fetch_steam_content_descriptors also hit this endpoint in the
 # same finalize job -- combined cold-start burst can push over the limit
@@ -70,15 +72,18 @@ def _extract_year(release_date: dict | None) -> int | None:
 # response that lacked a parseable year. Mirrors steam_type._fetch_type.
 def _fetch_year(app_id: str, timeout: int = 6) -> tuple[int | None, bool]:
     url = STEAM_APPDETAILS_URL.format(appid=app_id)
-    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+    # The shared client paces store.steampowered.com for every module in
+    # finalize, retries a 429 once and opens a breaker after repeated
+    # 403s, so this module no longer sleeps or retries on its own (#411).
     try:
-        # URL from hardcoded STEAM_APPDETAILS_URL + validated app_id
-        with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
-            data = json.loads(resp.read().decode("utf-8"))
-    except Exception as exc:
+        data = http_client.default_client().get_json(url, timeout=timeout)
+    except http_client.HttpError as exc:
         log(f"[release-years] WARN: Steam appdetails fetch failed for {app_id}: {exc}")
         return None, False
-    app_data = data.get(str(app_id), {})
+    if not isinstance(data, dict):
+        log(f"[release-years] WARN: Steam appdetails for {app_id} was not an object: {type(data).__name__}")
+        return None, False
+    app_data = data.get(str(app_id)) or {}
     if not app_data.get("success"):
         return None, True  # valid response, app is delisted / TBD
     return _extract_year(app_data.get("data", {}).get("release_date")), True
@@ -171,7 +176,6 @@ def enrich_search_index_with_release_years(output_dir: Path) -> None:
             log(f"[release-years] {app_id} -> {year}")
         if fetched % CACHE_SAVE_EVERY == 0:
             cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
-        time.sleep(REQUEST_DELAY)
 
     if bail_reason:
         log(f"[release-years] bailing early: {bail_reason} (probed {fetched} of {min(len(needs_fetch), PROBE_CAP)})")

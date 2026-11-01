@@ -29,18 +29,16 @@ from __future__ import annotations
 
 import json
 import time
-import urllib.request
 from pathlib import Path
 
+from . import http_client
 from .common import log
 
 STEAM_APPDETAILS_URL = "https://store.steampowered.com/api/appdetails?appids={appid}&filters=basic"
-# Steam's soft throttle is ~200 requests / 5 minutes -- so at least 1.5s
-# per request. At 0.3s we tripped the rolling-window ban within seconds
-# and every subsequent probe returned 403 until the whole cycle bailed.
-# 2.0s keeps us comfortably under the limit so each cycle finishes with
-# real cache writes instead of a wall of failures.
-REQUEST_DELAY = 2.0
+# Pacing lives in http_client.PROFILES["store.steampowered.com"] (#411),
+# shared with every other appdetails caller in finalize. The 2.0s spacing
+# measured here (0.3s tripped the rolling-window ban within seconds) is
+# the profile's min_interval.
 # Shared budget with the other appdetails-fetching modules (release_years,
 # game_images). Steam soft-throttles at ~200 req / 5 min. If we ever
 # want faster than the throttle, batched appids (#261) is the fix, not
@@ -74,15 +72,18 @@ NON_GAME_TYPES = frozenset({"movie", "music", "series", "episode", "hardware"})
 # short-circuit only on real failures.
 def _fetch_type(app_id: str, timeout: int = 6) -> tuple[str | None, bool]:
     url = STEAM_APPDETAILS_URL.format(appid=app_id)
-    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+    # The shared client paces store.steampowered.com for every module in
+    # finalize, retries a 429 once and opens a breaker after repeated
+    # 403s, so this module no longer sleeps or retries on its own (#411).
     try:
-        # URL from hardcoded STEAM_APPDETAILS_URL + validated app_id
-        with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
-            data = json.loads(resp.read().decode("utf-8"))
-    except Exception as exc:
+        data = http_client.default_client().get_json(url, timeout=timeout)
+    except http_client.HttpError as exc:
         log(f"[steam-type] WARN: Steam appdetails fetch failed for {app_id}: {exc}")
         return None, False
-    app_data = data.get(str(app_id), {})
+    if not isinstance(data, dict):
+        log(f"[steam-type] WARN: Steam appdetails for {app_id} was not an object: {type(data).__name__}")
+        return None, False
+    app_data = data.get(str(app_id)) or {}
     if not app_data.get("success"):
         return None, True  # valid response, app is delisted or region-locked
     t = app_data.get("data", {}).get("type")
@@ -206,7 +207,6 @@ def enrich_search_index_with_steam_type(output_dir: Path, sweep: dict | None = N
         # everything we just fetched.
         if fetched % CACHE_SAVE_EVERY == 0:
             cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
-        time.sleep(REQUEST_DELAY)
 
     if bail_reason:
         log(f"[steam-type] bailing early: {bail_reason} (probed {fetched} of {min(len(needs_fetch), PROBE_CAP)})")
