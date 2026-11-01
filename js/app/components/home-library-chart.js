@@ -2,8 +2,8 @@
 // breakdown across the user's cached Steam library (#199) or wishlist (#266).
 // Chips next to the title swap the view. Device views (#273) show Steam Deck /
 // Steam Machine / Steam Frame (#594) / SteamOS compatibility breakdowns of the library.
-import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
-import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
+import { getMyLibraryAppIds } from '../lib/user-library.js?v=8a932f81';
+import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=d4222409';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 
 // #437: tier rows for just the owned / wishlist ids via the batch API, in
@@ -22,9 +22,9 @@ async function _tierRowsFor(view, appIds) {
   }
   return rows;
 }
-import { RATING_COLORS, RATING_TEXT } from '../config.js?v=7873e060';
+import { RATING_COLORS, RATING_TEXT } from '../config.js?v=3c5c74a2';
 import { esc } from '../utils.js?v=4630c3d5';
-import { loadDeckStatusMap } from '../api/deck-status.js?v=89ab9c39';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=3e0e2702';
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
 const TIER_LABEL = {
@@ -251,7 +251,7 @@ async function _fetchAppIds(view, { useSavedLookup = false } = {}) {
   // public-steam-profile edge fn (via saved-lookup.js) so the chart still
   // renders their library / wishlist tier breakdown.
   if (useSavedLookup) {
-    const mod = await import('../lib/saved-lookup.js?v=dfbf2fe7');
+    const mod = await import('../lib/saved-lookup.js?v=fefd7d44');
     if (view === 'wishlist') return mod.getSavedLookupWishlistAppIds().catch(() => new Set());
     return mod.getSavedLookupLibraryAppIds().catch(() => new Set());
   }
@@ -268,7 +268,7 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
   // saved lookup.
   let useSavedLookup = false;
   if (!session?.user) {
-    const savedMod = await import('../lib/saved-lookup.js?v=dfbf2fe7');
+    const savedMod = await import('../lib/saved-lookup.js?v=fefd7d44');
     if (!savedMod.hasSavedLookup()) {
       mountEl.innerHTML = '';
       return;

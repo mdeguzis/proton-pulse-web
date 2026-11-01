@@ -5,14 +5,14 @@ import {
   getProtonPulseUserIdFromSession, escapeHtml, formatSystemUpdated,
   getWebClientIdProfile, getMyReportBadges, flaggedMessageHtml,
   mergeMyReportRows,
-} from '../utils.js?v=0101ce5f';
+} from '../utils.js?v=5ddf0128';
 import {
   fetchMyUserConfigs, fetchMyCloudConfigs, deleteMyReportsEverywhere,
   unpublishReport, republishReport,
-} from '../api/configs.js?v=2f08c67b';
+} from '../api/configs.js?v=d9258d46';
 import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 import { getGamesByIds } from '../../app/api/search-games.js?v=0b6c4bb3';
-import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=79558c3c';
+import { showEditCloudConfigModal, showEditReportModal } from './edit-modals.js?v=6ed2d37f';
 
 /**
  * Initialise the My Reports pane. Call once after DOM is ready.

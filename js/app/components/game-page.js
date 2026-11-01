@@ -4,17 +4,17 @@ import { appIdToDir } from '../../lib/app-id.js?v=6159afa9';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
 import { populateScoringTooltip, pulseTierFromReports, estimateScore } from '../../shared/scoring.js?v=467474be';
 import { computeCompatTrend, computeConfidence, RECENT_DAYS, PRIOR_WINDOW_DAYS } from '../../lib/scoring/gameStats.js?v=6a63af50';
-import { getWebClientId } from '../../shared/submit.js?v=0c76eadb';
-import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=89ab9c39';
-import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/protondb.js?v=b7ff6a75';
+import { getWebClientId } from '../../shared/submit.js?v=edfffbb2';
+import { fetchAppDepotInfo, fetchAppMetadata, fetchAppNews, fetchDeckStatusForApp, fetchMinRequirements, fetchLinuxNativeSupport } from '../api/deck-status.js?v=3e0e2702';
+import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/protondb.js?v=9189f364';
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
-import { deleteOwnCloudConfig, fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=0824948f';
-import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=448af04b';
-import { enhanceAuthorBlocks } from './author.js?v=3a8cb3c7';
-import { renderConfigCard } from './config-cards.js?v=c67740f8';
-import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, _ANDROID_HANDHELD_OS_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=c4df739c';
-import { renderCard } from './report-card.js?v=5e25c644';
-import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=ba0dacd4';
+import { deleteOwnCloudConfig, fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=09ab4d70';
+import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=2ba4697b';
+import { enhanceAuthorBlocks } from './author.js?v=d857af96';
+import { renderConfigCard } from './config-cards.js?v=ef72f5bb';
+import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, _ANDROID_HANDHELD_OS_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=692e1266';
+import { renderCard } from './report-card.js?v=ee3ff50a';
+import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=f2358fd8';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 import { computeWhatWorks } from '../lib/what-works.js?v=fc499ba6';
 
@@ -80,19 +80,19 @@ async function _sgdbCoverFor(appId) {
   return map?.[String(appId)] || null;
 }
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
-import { loadGameHides, loadGameRemaps, resolveRemap } from '../lib/game-hides.js?v=6a2a7468';
-import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFileHref, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=7873e060';
-import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=5adc7e54';
+import { loadGameHides, loadGameRemaps, resolveRemap } from '../lib/game-hides.js?v=a88970d7';
+import { CDN, RATING_COLORS, RATING_TEXT, SB_KEY, SB_URL, SITE_ROOT, STEAM_IMG, appTypeFromAppId, dataFileHref, dataFilesHref, storeLabel, storeLabelFromAppId } from '../config.js?v=3c5c74a2';
+import { loadSteamImg as _loadSteamImg } from '../lib/steam-img.js?v=b7d09c84';
 import { configKey, daysAgo, downloadJson, esc, mergeReportsById, reportKey } from '../utils.js?v=4630c3d5';
 import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
-import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
-import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
+import { getMyLibraryAppIds } from '../lib/user-library.js?v=8a932f81';
+import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=d4222409';
 import { computeBadgesForAppId } from '../../lib/card-badges.js?v=5b71af11';
-import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus, antiCheatNotice, renderAntiCheatLine } from '../lib/anti-cheat.js?v=1ec01d8a';
-import { getVrdbForApp } from '../lib/vrdb.js?v=f7c0f65a';
-import { loadVrIndex, vrForApp } from '../lib/vr-index.js?v=f094c84f';
+import { getAntiCheatForApp, bucketAntiCheatStatus, humanAntiCheatStatus, antiCheatNotice, renderAntiCheatLine } from '../lib/anti-cheat.js?v=73b1e687';
+import { getVrdbForApp } from '../lib/vrdb.js?v=029b6941';
+import { loadVrIndex, vrForApp } from '../lib/vr-index.js?v=2e04e7b8';
 import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
-import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=50ac9a1a';
+import { getPCGamingWikiForApp, humanPCGamingWikiOs, pcgamingwikiSearchUrl } from '../lib/pcgamingwiki.js?v=749dad26';
 
 // Module-level filter cache (#415 slice 2b). SPA navigation between game
 // pages does not reload this module, so a shared object here survives

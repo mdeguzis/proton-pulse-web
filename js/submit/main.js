@@ -1,8 +1,8 @@
 // Entry module for submit.html. Migrated from the page's inline script.
 import { FAULT_KEYS_WEB } from '../shared/scoring.js?v=467474be';
-import { loadVrIndex, vrForApp } from '../app/lib/vr-index.js?v=f094c84f';
-import { applyDraftSnapshot, applyPlayModeDefault, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=0c76eadb';
-import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=89ab9c39';
+import { loadVrIndex, vrForApp } from '../app/lib/vr-index.js?v=2e04e7b8';
+import { applyDraftSnapshot, applyPlayModeDefault, populateSubmitForm, prefillSubmitFormFromMyHardware, renderVerifiedOwnerStatus, setRunTypeNativeAvailable, submitReport } from '../shared/submit.js?v=edfffbb2';
+import { fetchLinuxNativeSupport } from '../app/api/deck-status.js?v=3e0e2702';
 import {
   deleteDraft, deleteLocalDraft, draftStampSuffix as stampSuffix, snapshotFormData, saveDraft, loadBestDraft, makeAutoSaver,
 } from '../shared/drafts.js?v=9f4cdcaf';
@@ -177,7 +177,7 @@ import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
     // #323 followup: mount the inline Library panel as a peer of the
     // auth-gate card so signed-out visitors have an alternative path.
     try {
-      const mod = await import('../shared/profile-lookup-inline.js?v=00000001');
+      const mod = await import('../shared/profile-lookup-inline.js?v=d073b6ba');
       mod.mountInlineProfileLookup('profile-lookup-inline-mount');
     } catch (err) {
       console.warn('[submit] inline lookup mount failed', err);

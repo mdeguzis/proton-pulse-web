@@ -6,10 +6,10 @@
 // steam-type-cache.json so users can see what's actually in their
 // collection at a glance.
 import { SupaAuth } from '../config.js?v=87cd0f3d';
-import { formatSystemUpdated, escapeHtml } from '../utils.js?v=0101ce5f';
-import { fetchMyLibraryRow, syncMyLibrary } from '../api/steam-library.js?v=d03f2631';
-import { fetchMyWishlistRow, syncMyWishlist } from '../api/steam-wishlist.js?v=989d8088';
-import { computeTypeBreakdown } from '../lib/steam-type-breakdown.js?v=1473af06';
+import { formatSystemUpdated, escapeHtml } from '../utils.js?v=5ddf0128';
+import { fetchMyLibraryRow, syncMyLibrary } from '../api/steam-library.js?v=ea73820f';
+import { fetchMyWishlistRow, syncMyWishlist } from '../api/steam-wishlist.js?v=98d4c7ee';
+import { computeTypeBreakdown } from '../lib/steam-type-breakdown.js?v=b8ff6fe4';
 
 function _renderTypesLine(el, breakdown) {
   if (!el) return;

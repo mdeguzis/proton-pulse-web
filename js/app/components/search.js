@@ -1,19 +1,19 @@
 // search (components) for the app page. Relocated from app.js/app-search.js.
 
 import { estimateScore } from '../../shared/scoring.js?v=467474be';
-import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=003f23c0';
-import { renderGamePage } from './game-page.js?v=02fa2248';
-import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=7873e060';
+import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=5bf065cc';
+import { renderGamePage } from './game-page.js?v=4e36a93f';
+import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=3c5c74a2';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=4630c3d5';
-import { renderGameCard } from '../lib/card.js?v=7b739064';
+import { renderGameCard } from '../lib/card.js?v=ecf16dff';
 import { dataUrl } from '../../lib/data-url.js?v=9ba434e3';
 import { filterAdultEntries, isAdultEntry } from '../../lib/adult-filter.js?v=e4e9d845';
 import { filterDelistedEntries, countHiddenDelisted, showDelistedAllowed } from '../../lib/delisted-filter.js?v=42858e22';
 import { showAdultAllowed } from '../../lib/adult-filter.js?v=e4e9d845';
 import { matchEntries } from '../lib/search-match.js?v=dd1b70b2';
 import { searchGames } from '../api/search-games.js?v=0b6c4bb3';
-import { loadAntiCheatMap } from '../lib/anti-cheat.js?v=1ec01d8a';
-import { loadGameHides, withoutHidden } from '../lib/game-hides.js?v=6a2a7468';
+import { loadAntiCheatMap } from '../lib/anti-cheat.js?v=73b1e687';
+import { loadGameHides, withoutHidden } from '../lib/game-hides.js?v=a88970d7';
 
 // Search index + results UX -- factored out of app.js.
 // Loaded as a classic script BEFORE app.js so its exports

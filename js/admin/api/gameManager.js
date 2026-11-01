@@ -8,7 +8,7 @@
 // send the Authorization header so the RLS check has an authenticated caller.
 
 import { SupaAuth, SUPABASE_URL, SUPABASE_ANON_KEY } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=2668b2f0';
+import { supabaseHeaders } from '../utils.js?v=7a6b6e8d';
 
 const SB = `${SUPABASE_URL}/rest/v1`;
 

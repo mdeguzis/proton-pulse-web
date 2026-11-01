@@ -1,7 +1,7 @@
 // userDetail (component) for the admin page - renders the full user detail screen.
 
-import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=2668b2f0';
-import { deleteUserReport, hideUserReport, editUserReport, eraseUser } from '../api/userDetail.js?v=0ce9df96';
+import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=7a6b6e8d';
+import { deleteUserReport, hideUserReport, editUserReport, eraseUser } from '../api/userDetail.js?v=e2fdf11b';
 
 function idRow(label, value) {
   if (!value) {

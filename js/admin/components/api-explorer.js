@@ -9,9 +9,9 @@
 // CORS-blocked from the browser.
 
 import { searchGames } from '../../app/api/search-games.js?v=0b6c4bb3';
-import { escapeHtml } from '../utils.js?v=2668b2f0';
-import { exploreStore } from '../api/steam-explore.js?v=17281b89';
-import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=748599e3';
+import { escapeHtml } from '../utils.js?v=7a6b6e8d';
+import { exploreStore } from '../api/steam-explore.js?v=23476917';
+import { isLibraryEndpoint, lookupLibrary } from '../api/steam-library-lookup.js?v=85bafdcf';
 import { exploreCargoPCGamingWiki } from '../api/pcgamingwiki-explore.js?v=49d016c5';
 
 // Store -> endpoints. `arg` is 'id' (numeric app/product id, name-resolvable)

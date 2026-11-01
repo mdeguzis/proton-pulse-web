@@ -1,6 +1,6 @@
 // deck-status (components) for the app page. Relocated from app.js.
 
-import { getDeckStatusForApp } from '../api/deck-status.js?v=89ab9c39';
+import { getDeckStatusForApp } from '../api/deck-status.js?v=3e0e2702';
 import { esc } from '../utils.js?v=4630c3d5';
 import { VRDB_RATINGS, vrRuntimeLabel, vrdbRatingColor } from '../../shared/vr.js?v=8759ee7d';
 

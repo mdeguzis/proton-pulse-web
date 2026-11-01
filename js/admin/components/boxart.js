@@ -14,13 +14,13 @@
 // filters in bounded batches so the browser stays responsive.
 
 import { dataUrl, readDataJson } from '../../lib/data-url.js?v=9ba434e3';
-import { escapeHtml } from '../utils.js?v=2668b2f0';
+import { escapeHtml } from '../utils.js?v=7a6b6e8d';
 import {
   probeImageUrl,
   probeSteamHeader, refetchSteamHeader, refetchNonSteamHeader, refetchSgdbHeader, searchSgdb,
   confirmBoxArtOk, listBoxArtConfirmations,
   setBoxArtOverride, uploadBoxArtOverride, clearBoxArtOverride, listBoxArtOverrides,
-} from '../api/boxart.js?v=d0ed4be0';
+} from '../api/boxart.js?v=29381004';
 
 // Verify a URL actually loads in the browser via <img>. Refetch (#351)
 // uses this to catch the case where Steam appdetails returns a URL that

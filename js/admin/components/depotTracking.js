@@ -3,7 +3,7 @@
 // only for the MVP; workflow-dispatch + cache invalidation actions land in
 // a follow-up so the UI can ship without a new signed-in-admin edge fn.
 
-import { fetchDepotTrackingDossier, summarizeApps } from '../api/depotTracking.js?v=4b0f8cc0';
+import { fetchDepotTrackingDossier, summarizeApps } from '../api/depotTracking.js?v=6c1bd1ed';
 
 function esc(s) {
   return String(s == null ? '' : s).replace(/[<>&"]/g, c =>

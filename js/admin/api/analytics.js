@@ -1,5 +1,5 @@
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=2668b2f0';
+import { supabaseHeaders } from '../utils.js?v=7a6b6e8d';
 import { classifyReportSource } from '../lib/reportSource.js?v=c366fc24';
 
 export async function fetchAnalytics(session, { daysBack = 30 } = {}) {

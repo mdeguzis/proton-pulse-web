@@ -12,8 +12,8 @@
 //
 // Data source: fetchSearchAnalytics() -> admin_search_analytics RPC.
 
-import { escapeHtml } from '../utils.js?v=2668b2f0';
-import { fetchSearchAnalytics } from '../api/search-analytics.js?v=8393e332';
+import { escapeHtml } from '../utils.js?v=7a6b6e8d';
+import { fetchSearchAnalytics } from '../api/search-analytics.js?v=3ec642c3';
 
 function _num(n) { return Number.isFinite(Number(n)) ? Number(n).toLocaleString() : '0'; }
 function _ms(n) { return Number.isFinite(Number(n)) ? `${Number(n).toFixed(0)}ms` : '-'; }

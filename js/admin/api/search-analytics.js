@@ -3,7 +3,7 @@
 // key on the client. Retention is 30 days server-side.
 
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=2668b2f0';
+import { supabaseHeaders } from '../utils.js?v=7a6b6e8d';
 
 export async function fetchSearchAnalytics(session, { daysBack = 7 } = {}) {
   const url = `${SUPABASE_URL}/rest/v1/rpc/admin_search_analytics`;

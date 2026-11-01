@@ -10,8 +10,8 @@ import { appIdToDir } from '../lib/app-id.js?v=6159afa9';
 import { computeConfidence } from '../lib/scoring/gameStats.js?v=6a63af50';
 import { dataUrl } from '../lib/data-url.js?v=9ba434e3';
 import { getGamesByIds } from '../app/api/search-games.js?v=0b6c4bb3';
-import { readProtonDbLiveCache } from '../app/api/protondb.js?v=b7ff6a75';
-import { fetchNativeReports } from '../app/api/supabase.js?v=0824948f';
+import { readProtonDbLiveCache } from '../app/api/protondb.js?v=9189f364';
+import { fetchNativeReports } from '../app/api/supabase.js?v=09ab4d70';
 import { mergeReportsById } from '../app/utils.js?v=4630c3d5';
 
 (function () {

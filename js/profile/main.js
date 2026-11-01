@@ -9,18 +9,18 @@ import {
   getProtonPulseUserIdFromSession, getShowUsername, setShowUsername,
   escapeHtml, formatSystemUpdated, getWebClientIdProfile,
   getPluginLinkCodeFromLocation, getSteamIdFromSession,
-} from './utils.js?v=0101ce5f';
+} from './utils.js?v=5ddf0128';
 import {
   deleteAllMyData, fetchAllMyData, checkMyDataExists,
-} from './api/configs.js?v=2f08c67b';
+} from './api/configs.js?v=d9258d46';
 import {
   listLinkedPlugins, completePluginLink, removePluginLink,
-} from './api/plugin-links.js?v=05003ae3';
+} from './api/plugin-links.js?v=6f628dfe';
 import { setShowAdult, pullShowAdult, readShowAdultLocal } from '../lib/user-prefs.js?v=09b673c8';
-import { initMyHardware } from './components/my-hardware.js?v=34fd810c';
-import { initSystems } from './components/systems.js?v=382fb770';
-import { initMyReports } from './components/my-reports.js?v=3114bc40';
-import { initLibrary } from './components/library.js?v=b501b4f1';
+import { initMyHardware } from './components/my-hardware.js?v=5c9d9793';
+import { initSystems } from './components/systems.js?v=57f033d5';
+import { initMyReports } from './components/my-reports.js?v=50f8bf23';
+import { initLibrary } from './components/library.js?v=912c0047';
 
 (async function () {
   // ── DOM refs ──────────────────────────────────────────────────────────────
@@ -246,7 +246,7 @@ import { initLibrary } from './components/library.js?v=b501b4f1';
 
   async function _mountInlineLookup() {
     try {
-      const mod = await import('../shared/profile-lookup-inline.js?v=00000001');
+      const mod = await import('../shared/profile-lookup-inline.js?v=d073b6ba');
       mod.mountInlineProfileLookup('profile-lookup-inline-mount');
     } catch (err) {
       console.warn('[profile] inline lookup mount failed', err);

@@ -3,9 +3,9 @@ import {
   getProtonPulseUserIdFromSession, parseSteamSystemInfo, inferGpuVendor, inferCpuVendor,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel, escapeHtml,
   validateSysinfoText, validateDeviceId,
-} from './utils.js?v=0101ce5f';
-import { supabaseHeaders } from './api/supabase.js?v=4889c5e6';
-import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=770d14b7';
+} from './utils.js?v=5ddf0128';
+import { supabaseHeaders } from './api/supabase.js?v=775b7c81';
+import { supabaseUserSystemsUrl, listUserSystems, updateSystem } from './api/systems.js?v=592f1a8c';
 
 function loadHardwareSuggestions() {
   fetch('hardware-suggestions.json', { cache: 'no-store' })
