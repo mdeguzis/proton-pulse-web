@@ -56,8 +56,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v7
         with:
-          # Full history so publish-cloudflare.sh can compute VERSION + SHA
-          # and preserve-cert-monitor.sh can git-show from origin/gh-pages.
+          # Full history so publish-cloudflare.sh can compute VERSION + SHA.
           fetch-depth: 0
 
       - uses: actions/setup-node@v4
@@ -78,9 +77,11 @@ jobs:
           if [ "$REF_NAME" = "staging" ]; then
             echo "project=proton-pulse-web-staging" >> "$GITHUB_OUTPUT"
             echo "branch=staging" >> "$GITHUB_OUTPUT"
+            echo "data_base=https://staging-data.proton-pulse.com" >> "$GITHUB_OUTPUT"
           else
             echo "project=proton-pulse-web" >> "$GITHUB_OUTPUT"
             echo "branch=main" >> "$GITHUB_OUTPUT"
+            echo "data_base=https://data.proton-pulse.com" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Preserve top-level data files from the live target site
@@ -178,5 +179,9 @@ jobs:
           SKIP_R2_SYNC: '1'
           PAGES_PROJECT: ${{ steps.target.outputs.project }}
           PAGES_BRANCH: ${{ steps.target.outputs.branch }}
+          # Per-env data host (#380). Left unset, publish-cloudflare.sh used
+          # its prod default and every staging shell push pointed staging's
+          # data-config.json at the prod bucket (#590).
+          DATA_BASE: ${{ steps.target.outputs.data_base }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/shell-out "$GITHUB_WORKSPACE"

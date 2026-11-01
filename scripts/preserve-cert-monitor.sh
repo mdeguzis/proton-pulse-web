@@ -1,45 +1,45 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Preserve the cert monitor's files across the orphan-history gh-pages deploy (#359).
+# Copy the cert monitor's files into a Pages deploy directory (#359, #396).
 #
-# The finalize deploy step in .github/workflows/update-data.yml recreates
-# gh-pages as an orphan branch every pipeline run (git checkout --orphan +
-# git rm -rf . + force-push). That wipes anything the standalone cert-monitor
-# workflow committed between pipeline runs: cert-status.json and, critically,
-# cert-history.json -- the append-only burndown series that cannot be
-# regenerated. cert-status.json alone would be recreated within 6h by the next
-# cert-monitor run, but the history would be lost for good.
+# cert-monitor.yml writes cert-status.json + cert-history.json to R2 state
+# (`_state/` in the prod data bucket) every 6h. The status page reads them
+# same-origin, so every shell deploy has to carry the latest copies. They used
+# to be read from origin/gh-pages; that branch is being archived (#396).
 #
-# This helper reads the CURRENT gh-pages branch and copies both files into the
-# fresh deploy directory. Called BEFORE `git add` in the deploy step so the
-# orphan commit ships with them intact. Mirrors preserve-steam-type-cache.sh.
+# Read over the public data host, so the shell deploy needs no R2 keys. The
+# objects are uploaded with Cache-Control: no-store, so this is never a stale
+# edge copy. The cert checked is prod's, so staging deploys show prod's cert
+# too, same as before.
 #
-# Usage: preserve-cert-monitor.sh <deploy_dir> [remote_ref]
-#   deploy_dir  -- the fresh orphan checkout directory to copy the files into.
-#   remote_ref  -- git ref to read from (default: gh-pages).
+# Best-effort by design: a missing file leaves the status page on its "not run
+# yet" empty state, which is better than failing a shell deploy. Every outcome
+# is logged with the HTTP status so a broken read is visible in the run.
+#
+# Usage: preserve-cert-monitor.sh <deploy_dir>
+# Env:   CERT_STATE_BASE  default https://data.proton-pulse.com/_state
 
 DEPLOY_DIR="${1:?deploy_dir required}"
-REMOTE_REF="${2:-gh-pages}"
-REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-
-cd "$REPO_ROOT"
-if ! git fetch --depth 1 origin "$REMOTE_REF" 2>/dev/null; then
-  echo "[preserve-cert] could not fetch origin/$REMOTE_REF -- skipping"
-  exit 0
-fi
+BASE="${CERT_STATE_BASE:-https://data.proton-pulse.com/_state}"
 
 preserved=0
 for f in cert-status.json cert-history.json; do
-  if git show "origin/$REMOTE_REF:$f" > "$DEPLOY_DIR/$f" 2>/dev/null && [ -s "$DEPLOY_DIR/$f" ]; then
-    echo "[preserve-cert] preserved $f from origin/$REMOTE_REF"
+  tmp="$(mktemp)"
+  code="$(curl -sS -o "$tmp" -w '%{http_code}' --max-time 20 "$BASE/$f" 2>/dev/null || echo 000)"
+  if [ "$code" = 200 ] && python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$tmp" 2>/dev/null; then
+    mv "$tmp" "$DEPLOY_DIR/$f"
+    echo "[preserve-cert] preserved $f from $BASE"
     preserved=$((preserved + 1))
   else
-    # Nothing to preserve (first deploy, or the monitor has not run yet). Remove
-    # the empty file the failed `git show` may have created so we do not commit
-    # a zero-byte file.
-    rm -f "$DEPLOY_DIR/$f"
+    rm -f "$tmp"
+    if [ "$code" = 200 ]; then
+      echo "[preserve-cert] WARNING: $BASE/$f is not valid JSON; not shipped"
+    elif [ "$code" = 404 ]; then
+      echo "[preserve-cert] $f not in R2 state yet (404); status page shows its empty state"
+    else
+      echo "[preserve-cert] WARNING: could not read $BASE/$f (HTTP $code); not shipped"
+    fi
   fi
 done
-
 echo "[preserve-cert] done ($preserved file(s) preserved)"

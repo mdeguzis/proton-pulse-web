@@ -95,10 +95,11 @@ describe('concurrency serializes CF Pages deploys across workflows', () => {
 describe('publish job wires the deploy correctly', () => {
   const steps = DOC.jobs.publish.steps;
 
-  test('checkout uses fetch-depth 0 so git-show from origin/gh-pages works', () => {
-    // preserve-cert-monitor.sh + the "Pull top-level data" step both need
-    // to git show from origin/gh-pages. Shallow clone breaks that with a
-    // silent empty file.
+  test('checkout uses fetch-depth 0 so the version guard sees commit history', () => {
+    // publish-cloudflare.sh reads the commit time and short SHA for
+    // version.json and the "never deploy backwards" guard. (It used to also
+    // let preserve-cert-monitor.sh git-show from origin/gh-pages; that now
+    // reads R2 state over HTTP, #396.)
     const checkout = steps.find((s) => (s.uses || '').startsWith('actions/checkout'));
     expect(checkout).toBeTruthy();
     expect(checkout.with['fetch-depth']).toBe(0);
@@ -178,6 +179,16 @@ describe('publish job wires the deploy correctly', () => {
     expect(RAW).toContain('SKIP_R2_SYNC:');
     expect(RAW).toMatch(/SKIP_R2_SYNC:\s*['"]1['"]/);
     expect(RAW).toContain('scripts/publish-cloudflare.sh');
+  });
+
+  test('passes the per-env data host so staging never reads prod data (#590)', () => {
+    // Unset, publish-cloudflare.sh fell back to the prod host and every
+    // staging shell push wrote a data-config.json pointing at prod's bucket.
+    const target = steps.find((s) => s.id === 'target');
+    expect(target.run).toContain('data_base=https://staging-data.proton-pulse.com');
+    expect(target.run).toContain('data_base=https://data.proton-pulse.com');
+    const deploy = steps.find((s) => (s.run || '').includes('bash scripts/publish-cloudflare.sh'));
+    expect(deploy.env.DATA_BASE).toBe('${{ steps.target.outputs.data_base }}');
   });
 
   test('passes both required Cloudflare secrets as env vars', () => {
