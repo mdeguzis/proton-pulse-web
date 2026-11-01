@@ -70,9 +70,8 @@ const KNOWN_UNSHIPPED = new Map([
   // connect-src entry on status.html), so there is no artifact to publish.
   ['edge-status.json', 'served by the edge-status Worker, not the pipeline'],
   // Shipped, just not via SMALL_DATA: preserve-cert-monitor.sh (invoked by
-  // publish-cloudflare.sh) carries these across the deploy because they
-  // accumulate history that a fresh pipeline output does not contain. Both
-  // verified serving application/json on prod.
+  // publish-cloudflare.sh) copies them from R2 state into every deploy,
+  // because cert-monitor.yml writes them there, not the pipeline (#396).
   ['cert-status.json', 'shipped by preserve-cert-monitor.sh, not SMALL_DATA'],
   ['cert-history.json', 'shipped by preserve-cert-monitor.sh, not SMALL_DATA'],
 ]);

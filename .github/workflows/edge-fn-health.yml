@@ -4,16 +4,17 @@ name: Edge Function Health
 #
 # The 15-minute schedule was removed (#519): the pp-edge-status Cloudflare
 # Worker (workers/edge-status, 15-min Cron Trigger) serves the live status to
-# /status.html and the topbar, and nothing reads the gh-pages
-# edge-status.json this job writes any more (the status page's static
-# fallback was dropped in the same change). Kept as workflow_dispatch for
-# debugging the check script by hand.
+# /status.html and the topbar, and nothing reads a static edge-status.json any
+# more (the status page's static fallback was dropped in the same change).
+# Kept as workflow_dispatch for debugging the check script by hand. The result
+# is printed to the log and nowhere else; it stopped being committed to
+# gh-pages in #396.
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: edge-fn-health
@@ -26,15 +27,7 @@ jobs:
       - name: Checkout repo (for the script)
         uses: actions/checkout@v7
         with:
-          path: repo
           persist-credentials: false
-
-      - name: Checkout gh-pages (destination)
-        uses: actions/checkout@v7
-        with:
-          ref: gh-pages
-          path: gh-pages
-          persist-credentials: true
 
       - name: Ping every edge function
         env:
@@ -42,21 +35,5 @@ jobs:
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          bash repo/scripts/check-edge-fn-health.sh gh-pages/edge-status.json
-          cat gh-pages/edge-status.json
-
-      - name: Commit + push if changed
-        working-directory: gh-pages
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Stage first so a brand-new file (untracked) shows up in the diff.
-          # `git diff --quiet` alone silently succeeds for untracked files,
-          # which was skipping the initial write of edge-status.json.
-          git add edge-status.json
-          if git diff --cached --quiet edge-status.json; then
-            echo "no change, skipping push"
-            exit 0
-          fi
-          git commit -m "chore(status): refresh edge-status.json"
-          git push origin gh-pages
+          bash scripts/check-edge-fn-health.sh "$RUNNER_TEMP/edge-status.json"
+          cat "$RUNNER_TEMP/edge-status.json"
