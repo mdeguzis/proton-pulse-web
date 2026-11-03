@@ -16,12 +16,12 @@
 // gives moderators the write path.
 
 import { getGamesByIds } from '../../app/api/search-games.js?v=0b6c4bb3';
-import { escapeHtml } from '../utils.js?v=2668b2f0';
+import { escapeHtml } from '../utils.js?v=7a6b6e8d';
 import {
   listGameHides, upsertGameHide, deleteGameHide,
   listGameRemaps, upsertGameRemap, deleteGameRemap,
   loadPipelineSuspects,
-} from '../api/gameManager.js?v=b21e352a';
+} from '../api/gameManager.js?v=937f8336';
 
 // Title lookup for the ids actually shown in the panel (hide / remap / suspect
 // rows). #437: batch just those ids through the search-games API instead of

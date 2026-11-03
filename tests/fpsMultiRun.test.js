@@ -28,7 +28,8 @@ describe('MangoHud multi-run upload wiring (#410)', () => {
   });
 
   test('ZIP members route through the zip-csv extractor', () => {
-    expect(SUBMIT_SRC).toContain("await import('../shared/zip-csv.js')");
+    // cache-bust versions dynamic imports too (#595), so allow a ?v= suffix.
+    expect(SUBMIT_SRC).toMatch(/await import\('\.\.\/shared\/zip-csv\.js(\?v=[a-f0-9]{8})?'\)/);
     expect(SUBMIT_SRC).toContain('extractCsvsFromZip');
   });
 

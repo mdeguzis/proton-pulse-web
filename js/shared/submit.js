@@ -1515,14 +1515,14 @@ function wireFpsCsvUpload(container) {
     const problems = [];
     try {
       // Lazy-load parsers -- only relevant when someone actually uploads.
-      const { parseMangohudCsv } = await import('../shared/mangohud-csv.js');
+      const { parseMangohudCsv } = await import('../shared/mangohud-csv.js?v=e600c97a');
       // Expand ZIPs (FlightlessSomething benchmark downloads are ZIPs of
       // per-run CSVs) into their member CSV texts; plain CSVs pass through.
       const csvs = [];
       for (const file of files) {
         if (/\.zip$/i.test(file.name)) {
           try {
-            const { extractCsvsFromZip } = await import('../shared/zip-csv.js');
+            const { extractCsvsFromZip } = await import('../shared/zip-csv.js?v=c1eb8b3b');
             const { files: members, skipped } = await extractCsvsFromZip(await file.arrayBuffer());
             if (!members.length) problems.push(`${file.name}: no CSV files inside`);
             csvs.push(...members);

@@ -1,9 +1,9 @@
 // Signed-in-only home page section: horizontal bar chart of the rating
 // breakdown across the user's cached Steam library (#199) or wishlist (#266).
 // Chips next to the title swap the view. Device views (#273) show Steam Deck /
-// Steam Machine / SteamOS compatibility breakdowns of the library.
-import { getMyLibraryAppIds } from '../lib/user-library.js?v=1d8e72df';
-import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=9c88bc65';
+// Steam Machine / Steam Frame (#594) / SteamOS compatibility breakdowns of the library.
+import { getMyLibraryAppIds } from '../lib/user-library.js?v=8a932f81';
+import { getMyWishlistAppIds } from '../lib/user-wishlist.js?v=d4222409';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 
 // #437: tier rows for just the owned / wishlist ids via the batch API, in
@@ -22,9 +22,9 @@ async function _tierRowsFor(view, appIds) {
   }
   return rows;
 }
-import { RATING_COLORS, RATING_TEXT } from '../config.js?v=7873e060';
+import { RATING_COLORS, RATING_TEXT } from '../config.js?v=3c5c74a2';
 import { esc } from '../utils.js?v=4630c3d5';
-import { loadDeckStatusMap } from '../api/deck-status.js?v=c941cca9';
+import { loadDeckStatusMap } from '../api/deck-status.js?v=3e0e2702';
 
 const TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze', 'borked'];
 const TIER_LABEL = {
@@ -55,6 +55,14 @@ const DEVICE = {
     order: ['verified', 'playable', 'unsupported', 'unknown'],
     label: { verified: 'Verified', playable: 'Playable', unsupported: 'Unsupported', unknown: 'Not rated' },
     title: "Your Library's compatibility with the Steam Machine", chip: 'Steam Machine', icon: 'icon-steam-machine',
+  },
+  // #594. Same scale as Machine. Valve has rated far fewer games for Frame so
+  // far, so expect a large "Not rated" bar for a while.
+  frame: {
+    field: 'frame',
+    order: ['verified', 'playable', 'unsupported', 'unknown'],
+    label: { verified: 'Verified', playable: 'Playable', unsupported: 'Unsupported', unknown: 'Not rated' },
+    title: "Your Library's compatibility with the Steam Frame", chip: 'Steam Frame', icon: 'icon-steam-frame',
   },
   steamos: {
     field: 'steamos',
@@ -127,7 +135,7 @@ function _renderChipsHtml(view) {
     <div class="hlc-chips" role="tablist" aria-label="Chart view">
       <button type="button" class="hlc-chip${view === 'library'  ? ' hlc-chip--active' : ''}" data-view="library"  role="tab" aria-selected="${view === 'library'}">Library</button>
       <button type="button" class="hlc-chip${view === 'wishlist' ? ' hlc-chip--active' : ''}" data-view="wishlist" role="tab" aria-selected="${view === 'wishlist'}">Wishlist</button>
-      ${deviceChip('deck')}${deviceChip('machine')}${deviceChip('steamos')}
+      ${deviceChip('deck')}${deviceChip('machine')}${deviceChip('frame')}${deviceChip('steamos')}
     </div>`;
 }
 
@@ -225,7 +233,7 @@ function _renderChartHtml(view, appIds, deckMap, tierRows) {
 }
 
 const HLC_VIEW_KEY = 'pp:hlc-view';
-const VALID_VIEWS = new Set(['library', 'wishlist', 'deck', 'machine', 'steamos']);
+const VALID_VIEWS = new Set(['library', 'wishlist', 'deck', 'machine', 'frame', 'steamos']);
 function _readView() {
   try {
     const v = localStorage.getItem(HLC_VIEW_KEY);
@@ -243,7 +251,7 @@ async function _fetchAppIds(view, { useSavedLookup = false } = {}) {
   // public-steam-profile edge fn (via saved-lookup.js) so the chart still
   // renders their library / wishlist tier breakdown.
   if (useSavedLookup) {
-    const mod = await import('../lib/saved-lookup.js?v=dfbf2fe7');
+    const mod = await import('../lib/saved-lookup.js?v=fefd7d44');
     if (view === 'wishlist') return mod.getSavedLookupWishlistAppIds().catch(() => new Set());
     return mod.getSavedLookupLibraryAppIds().catch(() => new Set());
   }
@@ -260,7 +268,7 @@ export async function renderHomeLibraryChart(mountEl, { preferredSource } = {}) 
   // saved lookup.
   let useSavedLookup = false;
   if (!session?.user) {
-    const savedMod = await import('../lib/saved-lookup.js?v=dfbf2fe7');
+    const savedMod = await import('../lib/saved-lookup.js?v=fefd7d44');
     if (!savedMod.hasSavedLookup()) {
       mountEl.innerHTML = '';
       return;

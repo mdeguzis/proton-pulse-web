@@ -1,7 +1,7 @@
 // Steam library helpers: read the cached row from user_steam_library and
 // trigger a fresh sync via the sync-steam-library edge function (#199).
 import { SUPABASE_URL } from '../config.js?v=87cd0f3d';
-import { supabaseHeaders } from './supabase.js?v=4889c5e6';
+import { supabaseHeaders } from './supabase.js?v=775b7c81';
 
 export async function fetchMyLibraryRow(session) {
   if (!session?.access_token) return null;

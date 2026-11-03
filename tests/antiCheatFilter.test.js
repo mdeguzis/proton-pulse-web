@@ -134,7 +134,7 @@ describe('restored filters load their data before first render', () => {
     expect(homeSrc).toMatch(/if \(_active\(vrSel\)\) \{\s*if \(!vrMap\) vrMap = await loadVrIndex\(\)/);
   });
   test('saved device chips load the deck-status map, not only URL-seeded ones', () => {
-    expect(homeSrc).toMatch(/_urlSteamos \|\| _active\(deckSel\) \|\| _active\(machineSel\) \|\| _active\(steamosSel\)\) && !deckStatusMap/);
+    expect(homeSrc).toMatch(/_urlSteamos \|\| _active\(deckSel\) \|\| _active\(machineSel\) \|\| _active\(frameSel\) \|\| _active\(steamosSel\)\) && !deckStatusMap/);
   });
   test('saved anti-cheat chips load the map and the browse pool', () => {
     expect(homeSrc).toMatch(/if \(_active\(acSel\)\) \{\s*if \(!acMap\) acMap = await loadAntiCheatMap\(\);/);

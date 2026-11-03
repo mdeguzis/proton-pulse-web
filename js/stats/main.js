@@ -7,17 +7,17 @@ import {
   applyFilter, getFilter, getOpenDropdown, setOpenDropdown,
   renderDropdownButton, toggleFilterValue, clearFilter,
   setFilterChangeCallback, restoreFilterFromUrl,
-} from './filters.js?v=d6061857';
+} from './filters.js?v=3a896f72';
 import {
   renderBars, renderFreshness, renderFramegen, renderDonut,
   renderSparkline, renderTopGames, renderRatingsTrend,
-} from './charts.js?v=dc8913d0';
+} from './charts.js?v=e68afb4f';
 import {
   OPTIMIZATION_PATTERNS, FAULT_PATTERNS, TINKERING_PATTERNS,
   CONTROLLER_PATTERNS, ONLINE_NET_PATTERNS,
 } from '../shared/analytics-patterns.js?v=c119f011';
 import { renderPurposeChart, crossTabToCorrelation } from '../shared/purpose-charts.js?v=d383b3bd';
-import { renderLibraryTab } from './library-view.js?v=07f3f2e5';
+import { renderLibraryTab } from './library-view.js?v=392ab4ab';
 
 // #417: stats dropdown open/close is a class toggle on the persistent
 // .filter-dropdown node (NOT a full re-render) so the shared clip-path drawer

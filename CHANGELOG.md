@@ -2,6 +2,10 @@
 
 All notable changes to Proton Pulse (web) should be recorded here.
 
+## v1.14.0
+
+- Steam Frame joins Steam Deck, Steam Machine and SteamOS. Valve now rates games for the Frame, and those ratings show up in three places: a Frame filter group in the browse panel (Verified / Playable / Unsupported / Unknown), a Steam Frame chip on the signed-in library chart, and a Steam Frame tab in the game page's Compatibility modal with Valve's checklist for that device. Valve has rated far fewer games for Frame than for the other devices so far, so most games read Unknown for now. Coverage grows as Valve rates more titles and as the nightly pipeline refreshes its cache, which takes about two weeks. (#594)
+
 ## v1.13.0
 
 - Staging and production now read from separate data buckets so a staging pipeline can no longer overwrite prod mid-flight. Prod stays on `data.proton-pulse.com`; staging reads from `staging-data.proton-pulse.com`. Frontend picks the host based on origin, and the pipeline sets the R2 target per environment.

@@ -147,7 +147,7 @@ describe('home page browse -- text filter box', () => {
     // end in `..., textFilter)`. The intermediate filters are exercised in
     // dedicated deck/wishlist/library tests -- here we just pin the outer
     // shape (text is outermost, then vr, and inside those kind wraps the trio).
-    const matches = homeSrc.match(/_filterByText\(filterByNative\(_filterByAntiCheat\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\([^]*?, textFilter\)/g) || [];
+    const matches = homeSrc.match(/_filterByText\(filterByNative\(_filterByAntiCheat\(_filterByVr\(_filterByKind\(_filterByFrame\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\([^]*?, textFilter\)/g) || [];
     expect(matches.length).toBe(2);
   });
 
@@ -164,7 +164,7 @@ describe('home page browse -- text filter box', () => {
     // query. Wishlist (#266 Phase 1) + Deck (#266 Phase 2) both slot in
     // ahead of kind; VR (#246) sits after it. Pin the outer shape rather
     // than the exact chain.
-    expect(homeSrc).toContain('deckSel.size + machineSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + nativeSel.size + (textFilter.trim() ? 1 : 0)');
+    expect(homeSrc).toContain('deckSel.size + machineSel.size + frameSel.size + steamosSel.size + kindSel.size + vrSel.size + acSel.size + nativeSel.size + (textFilter.trim() ? 1 : 0)');
   });
 
   test('clear filters resets BOTH the desktop and mobile inputs', () => {
@@ -335,7 +335,7 @@ describe('home page browse -- text filter searches all titles', () => {
     // AFTER the deck/wishlist/library trio -- the exact intermediate filters
     // between kind and library keep growing (#266 added Wishlist + Deck,
     // #246 added VR), so we pin the two edges instead of the whole chain.
-    expect(homeSrc).toMatch(/_filterByText\(filterByNative\(_filterByAntiCheat\(_filterByVr\(_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\(/);
+    expect(homeSrc).toMatch(/_filterByText\(filterByNative\(_filterByAntiCheat\(_filterByVr\(_filterByKind\(_filterByFrame\(_filterBySteamOS\(_filterByMachine\(_filterByDeck\(/);
     expect(homeSrc).toMatch(/_filterByWishlist\(_filterByLibrary\(/);
     // Placeholder wording matches the actual behavior (previous text
     // "Filter loaded list" implied only visible items).
@@ -373,7 +373,7 @@ describe('home page browse -- Type filter (#250)', () => {
     // Both filter chains (recent + popular) call it, so we expect two
     // occurrences. Pinning to `_filterByKind\(_filterByDeck` since #266
     // Phase 2 slotted deck between kind and wishlist.
-    const inRecent  = homeSrc.match(/_filterByKind\(_filterBySteamOS\(_filterByMachine\(_filterByDeck/g) || [];
+    const inRecent  = homeSrc.match(/_filterByKind\(_filterByFrame\(_filterBySteamOS\(_filterByMachine\(_filterByDeck/g) || [];
     expect(inRecent.length).toBeGreaterThanOrEqual(2);
   });
 
@@ -431,10 +431,10 @@ describe('home page browse -- Steam Machine + SteamOS filters (#273)', () => {
   });
 
   test('machineSel / steamosSel slot into save, restore, badge, and clear', () => {
-    expect(homeSrc).toContain('machine: [...machineSel], steamos: [...steamosSel]');
+    expect(homeSrc).toContain('machine: [...machineSel], frame: [...frameSel], steamos: [...steamosSel]');
     expect(homeSrc).toContain('machineSel = new Set(saved.machine || [])');
     expect(homeSrc).toContain('steamosSel = new Set(saved.steamos || [])');
-    expect(homeSrc).toContain('machineSel.size + steamosSel.size');
+    expect(homeSrc).toContain('machineSel.size + frameSel.size + steamosSel.size');
   });
 });
 
@@ -465,16 +465,16 @@ describe('#290 clickable chart rows: URL-param prefilter', () => {
   });
 
   test('refreshes the filter badge and persists once a URL param seeds a filter', () => {
-    expect(homeSrc).toMatch(/if \(_urlTier \|\| _urlDeck \|\| _urlMachine \|\| _urlSteamos\)/);
+    expect(homeSrc).toMatch(/if \(_urlTier \|\| _urlDeck \|\| _urlMachine \|\| _urlFrame \|\| _urlSteamos\)/);
   });
 
   test('device URL params trigger deckStatusMap load up front (otherwise every appId is "unknown" and the filter matches nothing)', () => {
-    expect(homeSrc).toMatch(/if \(\(_urlDeck \|\| _urlMachine \|\| _urlSteamos[^)]*\)[^)]*\)[^)]*\)[^)]*\) && !deckStatusMap\)\s*\{\s*deckStatusMap = await loadDeckStatusMap/);
+    expect(homeSrc).toMatch(/if \(\(_urlDeck \|\| _urlMachine \|\| _urlFrame \|\| _urlSteamos[^)]*\)[^)]*\)[^)]*\)[^)]*\)[^)]*\) && !deckStatusMap\)\s*\{\s*deckStatusMap = await loadDeckStatusMap/);
   });
 
   test('respects ?view= when picking the chart chip so Deck/Machine/SteamOS/Wishlist do not reset to Library', () => {
     expect(homeSrc).toContain("_urlParams.get('view')");
-    expect(homeSrc).toMatch(/VALID_CHART_VIEWS\s*=\s*new Set\(\['library', 'wishlist', 'deck', 'machine', 'steamos'\]\)/);
+    expect(homeSrc).toMatch(/VALID_CHART_VIEWS\s*=\s*new Set\(\['library', 'wishlist', 'deck', 'machine', 'frame', 'steamos'\]\)/);
     expect(homeSrc).toContain('_urlView && VALID_CHART_VIEWS.has(_urlView)');
   });
 });

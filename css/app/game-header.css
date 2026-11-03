@@ -732,7 +732,8 @@
 .deck-status-badge.deck-status-compatible  { background: #3a7fc8; color: #fff; }
 .deck-status-badge.deck-status-unsupported { background: #c84a4a; color: #fff; }
 
-/* Three-tab compatibility modal: Deck / Machine / SteamOS (#273). Pure CSS
+/* Device tabs in the compatibility modal: Deck / Machine / Frame (#594) /
+   SteamOS (#273), plus VR when VRDB has reports. Pure CSS
    tabs -- radios are visually hidden and the :checked sibling shows its panel
    and lights its tab, so the modal needs no JS. */
 .deck-tabs .dt-radio { position: absolute; opacity: 0; pointer-events: none; }
@@ -751,17 +752,19 @@
 /* Light the active tab + reveal its panel off the matching checked radio. */
 #dt-deck:checked    ~ .dt-tabbar .dt-tab[for="dt-deck"],
 #dt-machine:checked ~ .dt-tabbar .dt-tab[for="dt-machine"],
+#dt-frame:checked   ~ .dt-tabbar .dt-tab[for="dt-frame"],
 #dt-steamos:checked ~ .dt-tabbar .dt-tab[for="dt-steamos"],
 #dt-vr:checked      ~ .dt-tabbar .dt-tab[for="dt-vr"] {
   background: var(--strong); color: var(--bg); border-color: var(--strong);
 }
 #dt-deck:checked    ~ .dt-panel-deck,
 #dt-machine:checked ~ .dt-panel-machine,
+#dt-frame:checked   ~ .dt-panel-frame,
 #dt-steamos:checked ~ .dt-panel-steamos,
 #dt-vr:checked      ~ .dt-panel-vr { display: block; }
 /* #246: the VR tab is hidden until fillVrOnLinuxTab confirms VRDB has reports
-   for this game, so most games keep three tabs rather than showing an empty
-   fourth. [hidden] needs the explicit none because .dt-tab sets display. */
+   for this game, so most games keep their device tabs rather than showing an
+   empty VR one. [hidden] needs the explicit none because .dt-tab sets display. */
 .dt-tab--vr[hidden] { display: none; }
 .dt-source { color: var(--muted); font-size: 0.72rem; margin: 0; font-style: italic; }
 @media (max-width: 480px) { .dt-tab-name { display: none; } }

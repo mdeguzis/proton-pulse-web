@@ -5,13 +5,13 @@ import {
   escapeHtml, formatSystemUpdated, enabledVarsToText, textToEnabledVars,
   parseUploadedSystem, isGenericSystemLabel, inferSystemLabel,
   validateSysinfoText, validateDeviceId,
-} from '../utils.js?v=0101ce5f';
+} from '../utils.js?v=5ddf0128';
 import {
   fetchCloudConfig, patchCloudConfig, fetchFullUserConfig,
   fetchReportHistory, patchUserConfig,
-} from '../api/configs.js?v=2f08c67b';
-import { updateSystem } from '../api/systems.js?v=770d14b7';
-import { notesFormattingHelpHtml } from '../../shared/submit.js?v=0c76eadb';
+} from '../api/configs.js?v=d9258d46';
+import { updateSystem } from '../api/systems.js?v=592f1a8c';
+import { notesFormattingHelpHtml } from '../../shared/submit.js?v=edfffbb2';
 
 export let _cloudEditModal = null;
 export function getCloudEditModal() {

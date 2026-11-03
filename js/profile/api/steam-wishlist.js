@@ -2,7 +2,7 @@
 // trigger a fresh sync via the sync-steam-wishlist edge function (#266).
 // Mirrors steam-library.js so both cards behave the same on profile.html.
 import { SUPABASE_URL } from '../config.js?v=87cd0f3d';
-import { supabaseHeaders } from './supabase.js?v=4889c5e6';
+import { supabaseHeaders } from './supabase.js?v=775b7c81';
 
 export async function fetchMyWishlistRow(session) {
   if (!session?.access_token) return null;

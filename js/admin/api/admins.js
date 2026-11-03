@@ -1,7 +1,7 @@
 // admins (api) for the admin page.
 
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=2668b2f0';
+import { supabaseHeaders } from '../utils.js?v=7a6b6e8d';
 
 export async function fetchAdmins(session) {
   const url = `${SUPABASE_URL}/rest/v1/admins?select=proton_pulse_user_id,steam_username,role,permissions,added_at&order=added_at.asc`;

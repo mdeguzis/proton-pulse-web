@@ -9,6 +9,9 @@ export const DECK_CAT_MAP = { 0: 'unknown', 1: 'unsupported', 2: 'playable', 3: 
 // must agree with the published map or the same game reads differently
 // depending on whether the pipeline happened to cover it.
 export const MACHINE_CAT_MAP = DECK_CAT_MAP;
+// Steam Frame (#594) uses the same scale too. Mirrors FRAME_CAT_MAP in the
+// pipeline. Valve sends null (not 0) for titles not yet rated for Frame.
+export const FRAME_CAT_MAP = DECK_CAT_MAP;
 export const STEAMOS_CAT_MAP = { 0: 'unknown', 1: 'unsupported', 2: 'compatible', 3: 'compatible' };
 // display_type in resolved_items: 2=fail, 3=info/caveat, 4=pass
 export const DECK_DISPLAY_MAP = { 4: true, 3: null, 2: false };
@@ -59,6 +62,7 @@ export async function fetchLiveDeckStatus(appId) {
     const deckCat = Number(results.resolved_category) || 0;
     const machineCat = Number(results.machine_resolved_category) || 0;
     const steamosCat = Number(results.steamos_resolved_category) || 0;
+    const frameCat = Number(results.frame_resolved_category) || 0;
     // Nothing rated on any target: Valve genuinely has no verdict. That is a
     // real answer, distinct from a failed lookup, so report it as data.
     const items = Array.isArray(results.resolved_items) ? results.resolved_items : [];
@@ -67,8 +71,10 @@ export async function fetchLiveDeckStatus(appId) {
       criteria: items.length >= 4 ? items.slice(0, 4).map((i) => DECK_DISPLAY_MAP[i?.display_type]) : null,
       machine: MACHINE_CAT_MAP[machineCat] || 'unknown',
       steamos: STEAMOS_CAT_MAP[steamosCat] || 'unknown',
+      frame: FRAME_CAT_MAP[frameCat] || 'unknown',
       machine_criteria: _extractCriteria(results.machine_resolved_items, '#SteamMachine_TestResult_'),
       steamos_criteria: _extractCriteria(results.steamos_resolved_items, '#SteamOS_TestResult_'),
+      frame_criteria: _extractCriteria(results.frame_resolved_items, '#SteamFrame_TestResult_'),
     };
   } catch (err) {
     console.debug('[deck-status] live lookup failed', { appId: id, error: String(err) });
@@ -116,12 +122,14 @@ export async function fetchDeckStatusForApp(appId) {
         criteria: entry.criteria || null,
         machine: entry.machine || 'unknown',
         steamos: entry.steamos || 'unknown',
-        // Per-criterion arrays for the Machine + SteamOS tabs, published by
+        frame: entry.frame || 'unknown',
+        // Per-criterion arrays for the Machine / SteamOS / Frame tabs, published by
         // the pipeline as [[display_type, short_token], ...]. Missing key ==
         // no items, so default to []; the frontend treats an empty array as
         // "no notes to show" rather than "unknown verdict".
         machine_criteria: Array.isArray(entry.machine_criteria) ? entry.machine_criteria : [],
         steamos_criteria: Array.isArray(entry.steamos_criteria) ? entry.steamos_criteria : [],
+        frame_criteria: Array.isArray(entry.frame_criteria) ? entry.frame_criteria : [],
       }
     // hasData:false is NOT the same as Valve rating a game Unknown. The
     // published map only covers what the pipeline has fetched so far, so a
@@ -140,7 +148,7 @@ export async function fetchDeckStatusForApp(appId) {
   const live = await fetchLiveDeckStatus(appId);
   const out = live
     ? { ...live, hasData: true }
-    : { status: 'unknown', hasData: false, criteria: null, machine: 'unknown', steamos: 'unknown', machine_criteria: [], steamos_criteria: [] };
+    : { status: 'unknown', hasData: false, criteria: null, machine: 'unknown', steamos: 'unknown', frame: 'unknown', machine_criteria: [], steamos_criteria: [], frame_criteria: [] };
   _deckCache[appId] = out;
   return out;
 }
@@ -155,8 +163,8 @@ export async function fetchDeckStatusForApp(appId) {
 export function getDeckStatusForApp(appId) {
   return _deckCache[appId] || {
     status: 'unknown', criteria: null,
-    machine: 'unknown', steamos: 'unknown',
-    machine_criteria: [], steamos_criteria: [],
+    machine: 'unknown', steamos: 'unknown', frame: 'unknown',
+    machine_criteria: [], steamos_criteria: [], frame_criteria: [],
   };
 }
 
