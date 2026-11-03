@@ -1,6 +1,6 @@
 // phrases (components) for the admin page.
 
-import { escapeHtml, fmtDateTime } from '../utils.js?v=2668b2f0';
+import { escapeHtml, fmtDateTime } from '../utils.js?v=7a6b6e8d';
 
 export function renderPhrases(rows) {
   const loading = document.getElementById('phrases-loading');

@@ -1,4 +1,4 @@
-import { escapeHtml } from '../utils.js?v=2668b2f0';
+import { escapeHtml } from '../utils.js?v=7a6b6e8d';
 
 let chartInstance = null;
 let reportsChartInstance = null;

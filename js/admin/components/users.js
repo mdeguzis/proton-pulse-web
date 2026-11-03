@@ -1,6 +1,6 @@
 // users (components) for the admin page.
 
-import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=2668b2f0';
+import { escapeHtml, fmtDateTime, ROLE_LABELS, roleLabel } from '../utils.js?v=7a6b6e8d';
 
 export function renderUsers(rows, { currentUserId, counts, canBan = true } = {}) {
   const loading = document.getElementById('users-loading');

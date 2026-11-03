@@ -1,7 +1,7 @@
 // userDetail (api) for the admin page - fetches and manages a single user's data.
 
 import { SUPABASE_URL } from '../config.js?v=ffed3d84';
-import { supabaseHeaders } from '../utils.js?v=2668b2f0';
+import { supabaseHeaders } from '../utils.js?v=7a6b6e8d';
 
 export async function fetchUserReports(session, { userId, clientId }) {
   // #150: unify columns with the All Reports table -- need app_type +
