@@ -2587,11 +2587,6 @@ def finalize_output(output_dir, skip_probe: bool = False):
         protondb_known_app_ids=protondb_known_app_ids,
         protondb_signal_titles=protondb_signal_catalog,
     )
-    # Fill in releaseYear column on same-name collisions (e.g. Prey 2006 vs
-    # Prey 2017). Runs against the freshly written search-index.json so it can
-    # detect collisions before the file is consumed by the homepage / app page.
-    phase("Release-year enrichment")
-    enrich_search_index_with_release_years(output_path)
     phase("Non-Steam box art probe")
     generate_nonsteam_images(output_path)
     phase("Init non-Steam stub dirs (empty latest.json)")
@@ -2659,6 +2654,11 @@ def finalize_output(output_dir, skip_probe: bool = False):
     store_items = store_sweep(steam_ids_in_index(output_path))
     phase("Steam type enrichment")
     enrich_search_index_with_steam_type(output_path, sweep=store_items)
+    # Fill in releaseYear column on same-name collisions (e.g. Prey 2006 vs
+    # Prey 2017). Reads years from the same sweep (#411) and only falls back
+    # to appdetails for ids GetItems did not answer, so it runs after it.
+    phase("Release-year enrichment")
+    enrich_search_index_with_release_years(output_path, sweep=store_items)
     # #411: per-host totals from the shared client (requests, retries,
     # failures, breaker trips, status counts) for the appdetails callers so far.
     http_client.default_client().log_summary()

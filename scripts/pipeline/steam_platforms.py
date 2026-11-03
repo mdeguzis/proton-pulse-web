@@ -52,7 +52,9 @@ def _getitems_url(app_ids: list[int]) -> str:
     payload = {
         "ids": [{"appid": i} for i in app_ids],
         "context": {"language": "english", "country_code": "US"},
-        "data_request": {"include_platforms": True},
+        # include_release feeds release_years (#411): appdetails 403s from
+        # Actions runner IPs, GetItems on api.steampowered.com does not.
+        "data_request": {"include_platforms": True, "include_release": True},
     }
     query = urllib.parse.quote(json.dumps(payload, separators=(",", ":")))
     return f"{GETITEMS_URL}?input_json={query}"
@@ -83,6 +85,32 @@ STORE_APP_TYPES = {
 }
 
 
+# Valve's timestamps are Pacific time. The year boundary is always in PST
+# (UTC-8), so shifting by 8h before taking the year gives the calendar year
+# the store page shows, including a release late on Dec 31 Pacific that is
+# already Jan 1 in UTC.
+_PACIFIC_YEAR_SHIFT_SEC = 8 * 3600
+
+
+def release_year(release: dict | None) -> int | None:
+    """Store-page release year from a GetItems `release` object.
+
+    Uses `steam_release_date`, which is the date the store page shows: the
+    full release for games that left early access (Hades 1145360 gives 2020,
+    while its 2019 early-access start is `original_steam_release_date`), and
+    the planned date for upcoming games with a full / month / quarter / year
+    date. "To be announced" and "Coming soon" carry no timestamp, so None.
+    Verified 2026-11-03: 344/344 cached appdetails years agree once the two
+    stale early-access entries are re-read.
+    """
+    if not isinstance(release, dict):
+        return None
+    ts = release.get("steam_release_date")
+    if not isinstance(ts, int) or ts <= 0:
+        return None
+    return datetime.fromtimestamp(ts - _PACIFIC_YEAR_SHIFT_SEC, tz=timezone.utc).year
+
+
 def store_sweep(
     app_ids: Iterable[int],
     fetch: Callable[[list[int]], list[dict]] = _fetch_batch,
@@ -90,7 +118,8 @@ def store_sweep(
 ) -> dict:
     """One GetItems pass over app_ids.
 
-    Returns {"items": {appid: {"type": str | None, "native": bool}},
+    Returns {"items": {appid: {"type": str | None, "native": bool,
+    "release_year": int | None}},
     "checked": int, "unknown": int, "failed_batches": int, "error": str | None}.
     items only holds apps Steam answered for (success == 1); everything else
     is unknown. A type number outside STORE_APP_TYPES maps to None.
@@ -121,6 +150,7 @@ def store_sweep(
             items[str(item["appid"])] = {
                 "type": STORE_APP_TYPES.get(item.get("type")),
                 "native": (item.get("platforms") or {}).get("steamos_linux") is True,
+                "release_year": release_year(item.get("release")),
             }
         sleep(REQUEST_DELAY_SEC)
     return {

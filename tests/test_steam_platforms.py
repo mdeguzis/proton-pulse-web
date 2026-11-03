@@ -20,7 +20,7 @@ def test_url_carries_ids_and_platform_request():
     assert url.startswith(sp.GETITEMS_URL + "?input_json=")
     decoded = json.loads(sp.urllib.parse.unquote(url.split("input_json=", 1)[1]))
     assert decoded["ids"] == [{"appid": 570}, {"appid": 730}]
-    assert decoded["data_request"] == {"include_platforms": True}
+    assert decoded["data_request"] == {"include_platforms": True, "include_release": True}
 
 
 def test_url_for_a_full_batch_stays_under_steams_limit():
@@ -138,10 +138,10 @@ def test_store_sweep_maps_store_types_and_native():
                        fetch=lambda b: [_typed(570, 0, True), _typed(431960, 6), _typed(1675200, 10), _typed(99, 77)],
                        sleep=lambda s: None)
     assert r["items"] == {
-        "570": {"type": "game", "native": True},
-        "431960": {"type": "software", "native": False},
-        "1675200": {"type": "hardware", "native": False},
-        "99": {"type": None, "native": False},  # unknown store type number
+        "570": {"type": "game", "native": True, "release_year": None},
+        "431960": {"type": "software", "native": False, "release_year": None},
+        "1675200": {"type": "hardware", "native": False, "release_year": None},
+        "99": {"type": None, "native": False, "release_year": None},  # unknown store type number
     }
     assert r["checked"] == 4 and r["unknown"] == 0
 
@@ -165,3 +165,34 @@ def test_finalize_sweeps_once_and_passes_it_to_both_steps():
     sweep_at = src.index("store_items = store_sweep(steam_ids_in_index(output_path))")
     assert sweep_at < src.index("enrich_search_index_with_steam_type(output_path, sweep=store_items)")
     assert "build_native_linux(output_path, sweep=store_items)" in src
+
+
+# --- #411: release years come from the same sweep ---------------------------
+
+@pytest.mark.parametrize("release,year", [
+    # Hades (1145360), live 2026-11-03: store page shows the 1.0 date, the
+    # 2019 early-access start is a separate field.
+    ({"steam_release_date": 1600353507, "original_steam_release_date": 1575997560}, 2020),
+    # Portal 2 (620)
+    ({"steam_release_date": 1303186800}, 2011),
+    # Upcoming with a year-only date: Valve stores Dec 31 00:00 Pacific.
+    ({"steam_release_date": 1798704000, "is_coming_soon": True, "coming_soon_display": "date_year"}, 2026),
+    # 2027-01-01 00:00 PST is 08:00 UTC; 2027-01-01 03:00 UTC is still 2026 in Pacific.
+    ({"steam_release_date": 1798790400}, 2027),
+    ({"steam_release_date": 1798772400}, 2026),
+    ({"is_coming_soon": True, "custom_release_date_message": "To be announced", "coming_soon_display": "text_tba"}, None),
+    ({"is_coming_soon": True, "custom_release_date_message": "Coming soon", "coming_soon_display": "text_comingsoon"}, None),
+    ({}, None),
+    (None, None),
+    ({"steam_release_date": 0}, None),
+    ({"steam_release_date": "1303186800"}, None),
+])
+def test_release_year_from_getitems(release, year):
+    assert sp.release_year(release) == year
+
+
+def test_store_sweep_carries_release_year():
+    item = _typed(620, 0)
+    item["release"] = {"steam_release_date": 1303186800}
+    r = sp.store_sweep([620], fetch=lambda b: [item], sleep=lambda s: None)
+    assert r["items"]["620"]["release_year"] == 2011

@@ -2,16 +2,25 @@
 
 A small but high-value enrichment: most games have unique titles, but when two
 or more (e.g. Prey 2006 vs Prey 2017) share an exact name, the storefront badge
-alone is not enough for users to tell them apart. Steam's appdetails endpoint
-returns release_date, which we cache and write back into search-index column 7.
+alone is not enough for users to tell them apart. We cache the year and write
+it back into search-index column 7.
+
+Source (#411): the finalize store sweep (IStoreBrowseService/GetItems on
+api.steampowered.com, 200 apps per call, already run for steam_type and
+native-linux). It answers every Steam id in the index each night, so a sweep
+year always wins over the cache. That also corrects years cached while a game
+was still in early access. appdetails on store.steampowered.com is only a
+fallback for colliding ids the sweep did not answer, because it 403s or 429s
+from Actions runner IPs (2026-11-02: 8 of 8 requests 403'd on the first try).
 
 Strategy:
-  - Only fetch for Steam numeric app IDs (GOG/Epic ids are skipped; their
-    catalogs already encode store + slug).
-  - Only fetch for apps whose normalized title appears two or more times in the
-    current search-index.
-  - Cap fetches per run with PROBE_CAP so a cold start does not hammer Steam.
-  - Cache forever -- release dates do not change.
+  - Only Steam numeric app IDs (GOG/Epic ids are skipped; their catalogs
+    already encode store + slug).
+  - Only apps whose normalized title appears two or more times in the current
+    search-index.
+  - Sweep says "no date" ("To be announced", "Coming soon"): not cached, so
+    the next night's sweep picks the date up once Valve sets one.
+  - appdetails fallback is capped per run with PROBE_CAP and cached forever.
 """
 
 import json
@@ -99,9 +108,13 @@ def _load_cache(path: Path) -> dict[str, int | None]:
         return {}
 
 
-def enrich_search_index_with_release_years(output_dir: Path) -> None:
-    """Detect colliding titles in search-index.json, fetch missing years, write
+def enrich_search_index_with_release_years(output_dir: Path, sweep: dict | None = None) -> None:
+    """Detect colliding titles in search-index.json, fill their years, write
     the year as column 7 of each entry that has one.
+
+    `sweep` is the finalize store_sweep result. Years come from it first; only
+    colliding ids it did not answer go to appdetails. Without a sweep every
+    uncached id goes to appdetails, the pre-#411 behaviour.
 
     No-op when no collisions exist. Re-emits search-index.json in-place. Reads
     and writes release-years-cache.json next to it.
@@ -138,17 +151,34 @@ def enrich_search_index_with_release_years(output_dir: Path) -> None:
     cache_path = output_dir / CACHE_FILENAME
     cache = _load_cache(cache_path)
 
+    swept = (sweep or {}).get("items") or {}
+    from_sweep = corrected = undated = 0
+    cache_changed = False
     needs_fetch: list[str] = []
     for i in colliding_idxs:
         app_id = str(entries[i][0])
         if not app_id.isdigit():
-            continue  # GOG/Epic stubs skip appdetails
+            continue  # GOG/Epic stubs have no Steam release date
+        item = swept.get(app_id)
+        if item is not None:
+            year = item.get("release_year")
+            if year:
+                if app_id in cache and cache[app_id] != year:
+                    corrected += 1
+                if cache.get(app_id) != year:
+                    cache[app_id] = year
+                    cache_changed = True
+                from_sweep += 1
+            else:
+                undated += 1  # answered, no date yet: re-check next night
+            continue
         if app_id not in cache:
             needs_fetch.append(app_id)
 
     log(
-        f"[release-years] {len(colliding_idxs)} colliding entries, "
-        f"{len(needs_fetch)} need fetch (cap {PROBE_CAP})"
+        f"[release-years] {len(colliding_idxs)} colliding entries: {from_sweep} years from the "
+        f"GetItems sweep ({corrected} corrected a cached year), {undated} with no date yet, "
+        f"{len(needs_fetch)} not in the sweep need appdetails (cap {PROBE_CAP})"
     )
 
     fetched = 0
@@ -180,7 +210,7 @@ def enrich_search_index_with_release_years(output_dir: Path) -> None:
     if bail_reason:
         log(f"[release-years] bailing early: {bail_reason} (probed {fetched} of {min(len(needs_fetch), PROBE_CAP)})")
 
-    if fetched:
+    if fetched or cache_changed:
         cache_path.write_text(json.dumps(cache, indent=2) + "\n", encoding="utf-8")
         log(f"[release-years] wrote cache ({len(cache)} entries) to {cache_path.name}")
 
