@@ -26,7 +26,10 @@ BASE="${CERT_STATE_BASE:-https://data.proton-pulse.com/_state}"
 preserved=0
 for f in cert-status.json cert-history.json; do
   tmp="$(mktemp)"
-  code="$(curl -sS -o "$tmp" -w '%{http_code}' --max-time 20 "$BASE/$f" 2>/dev/null || echo 000)"
+  # curl prints 000 via -w on a transport failure AND exits non-zero, so an
+  # `|| echo 000` fallback logged "HTTP 000000". Keep what -w printed.
+  code="$(curl -sS -o "$tmp" -w '%{http_code}' --max-time 20 "$BASE/$f" 2>/dev/null)" || true
+  code="${code:-000}"
   if [ "$code" = 200 ] && python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$tmp" 2>/dev/null; then
     mv "$tmp" "$DEPLOY_DIR/$f"
     echo "[preserve-cert] preserved $f from $BASE"

@@ -22,25 +22,28 @@ on:
 jobs:
   update-gog-catalog:
     runs-on: ubuntu-24.04
+    # The cache lives in R2 state now (#396), so no gh-pages push and no
+    # contents: write. issues: write is for the back-comment step. The R2
+    # keys are set only on the pull and push steps, so uv sync and the
+    # catalog fetch never see them.
     permissions:
-      contents: write
+      contents: read
       issues: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v7
-
-      - name: Checkout gh-pages for existing catalog cache
-        uses: actions/checkout@v7
         with:
-          ref: gh-pages
-          path: gh-pages-data
-          fetch-depth: 1
-        continue-on-error: true
+          persist-credentials: false
 
-      - name: Seed catalog cache from gh-pages
-        run: |
-          mkdir -p .cache
-          bash scripts/seed-catalog-cache.sh gh-pages-data .cache gog-catalog-cache.json
+      - name: Pull catalog cache from R2 state
+        run: bash scripts/catalog-state.sh pull .cache gog-catalog-cache.json
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          # The catalog is the same for every environment; prod's bucket
+          # holds it and staging finalize reads it over the public data host.
+          R2_BUCKET: proton-pulse-data
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
@@ -64,17 +67,16 @@ jobs:
           # the full re-fetch (~134s GOG, ~140s Epic) and threw it away.
           FORCE_REFRESH: ${{ inputs.force_refresh == true || github.event_name == 'schedule' }}
 
-      - name: Commit catalog cache to gh-pages
+      - name: Push catalog cache to R2 state
         if: inputs.dry_run != true
-        run: |
-          cd gh-pages-data
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git pull --rebase origin gh-pages
-          cp ../.cache/gog-catalog-cache.json .
-          git add gog-catalog-cache.json
-          git diff --cached --quiet && echo "Cache unchanged, nothing to commit" || git commit -m "chore: refresh GOG catalog cache $(date +%F)"
-          git push origin gh-pages
+        run: bash scripts/catalog-state.sh push .cache gog-catalog-cache.json
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          # The catalog is the same for every environment; prod's bucket
+          # holds it and staging finalize reads it over the public data host.
+          R2_BUCKET: proton-pulse-data
 
       - name: Back-comment run summary on issue
         if: always()
