@@ -152,7 +152,9 @@ def enrich_search_index_with_release_years(output_dir: Path, sweep: dict | None 
     cache = _load_cache(cache_path)
 
     swept = (sweep or {}).get("items") or {}
-    from_sweep = corrected = undated = 0
+    # filled: no year cached before (missing, or an appdetails "no date").
+    # changed: a cached year that differs, e.g. one cached during early access.
+    from_sweep = filled = changed = undated = 0
     cache_changed = False
     needs_fetch: list[str] = []
     for i in colliding_idxs:
@@ -163,9 +165,12 @@ def enrich_search_index_with_release_years(output_dir: Path, sweep: dict | None 
         if item is not None:
             year = item.get("release_year")
             if year:
-                if app_id in cache and cache[app_id] != year:
-                    corrected += 1
-                if cache.get(app_id) != year:
+                old = cache.get(app_id)
+                if old != year:
+                    if old:
+                        changed += 1
+                    else:
+                        filled += 1
                     cache[app_id] = year
                     cache_changed = True
                 from_sweep += 1
@@ -177,7 +182,7 @@ def enrich_search_index_with_release_years(output_dir: Path, sweep: dict | None 
 
     log(
         f"[release-years] {len(colliding_idxs)} colliding entries: {from_sweep} years from the "
-        f"GetItems sweep ({corrected} corrected a cached year), {undated} with no date yet, "
+        f"GetItems sweep ({filled} newly filled, {changed} changed a cached year), {undated} with no date yet, "
         f"{len(needs_fetch)} not in the sweep need appdetails (cap {PROBE_CAP})"
     )
 
