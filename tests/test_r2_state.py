@@ -444,3 +444,24 @@ def test_publish_allows_file_at_exactly_the_pages_limit(r2, tmp_path):
     r = _run(SCRIPTS / "publish-cloudflare.sh", out, ROOT, env={**env, "SKIP_R2_SYNC": "1"})
     assert r.returncode == 0, r.stdout + r.stderr
     assert "over the Cloudflare Pages" not in r.stdout
+
+
+# --- #396: steam-type-cache needs no gh-pages writer -------------------------
+
+def test_enrich_steam_types_workflow_is_retired():
+    """It re-typed gh-pages/search-index.json via appdetails every 6h. Nothing
+    live reads gh-pages since #362, the nightly GetItems sweep types every
+    Steam app (#261), and its runs logged "0 need fetch" every cycle."""
+    assert not (ROOT / ".github" / "workflows" / "enrich-steam-types.yml").exists()
+    for wf in (ROOT / ".github" / "workflows").glob("*.yml"):
+        assert "enrich_search_index_with_steam_type(Path(" not in wf.read_text(), wf.name
+
+
+def test_finalize_still_persists_the_steam_type_cache_without_gh_pages():
+    sync = (SCRIPTS / "probe-cache-sync.sh").read_text()
+    assert "steam-type-cache.json" in sync
+    raw, _ = _wf("update-data.yml")
+    restore = raw.index("bash scripts/probe-cache-sync.sh restore")
+    seed = raw.index("cp gh-pages-data/steam-type-cache.json")
+    # The frozen gh-pages copy is seeded first and the Actions-cache copy wins.
+    assert seed < restore
