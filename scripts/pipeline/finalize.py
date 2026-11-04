@@ -2587,11 +2587,6 @@ def finalize_output(output_dir, skip_probe: bool = False):
         protondb_known_app_ids=protondb_known_app_ids,
         protondb_signal_titles=protondb_signal_catalog,
     )
-    # Fill in releaseYear column on same-name collisions (e.g. Prey 2006 vs
-    # Prey 2017). Runs against the freshly written search-index.json so it can
-    # detect collisions before the file is consumed by the homepage / app page.
-    phase("Release-year enrichment")
-    enrich_search_index_with_release_years(output_path)
     phase("Non-Steam box art probe")
     generate_nonsteam_images(output_path)
     phase("Init non-Steam stub dirs (empty latest.json)")
@@ -2659,9 +2654,6 @@ def finalize_output(output_dir, skip_probe: bool = False):
     store_items = store_sweep(steam_ids_in_index(output_path))
     phase("Steam type enrichment")
     enrich_search_index_with_steam_type(output_path, sweep=store_items)
-    # #411: per-host totals from the shared client (requests, retries,
-    # failures, breaker trips, status counts) for the appdetails callers so far.
-    http_client.default_client().log_summary()
     phase("Game images (Steam CDN probing; slow under 403s)")
     overrides = build_game_images(output_path)
     # Game-images probing now knows which Steam IDs returned success=false from
@@ -2692,6 +2684,17 @@ def finalize_output(output_dir, skip_probe: bool = False):
     # same Cargo TTL if both are refreshing on the same run.
     phase("PCGamingWiki catalog stubs")
     merge_pcgwiki_catalog(output_path)
+    # Fill in releaseYear column on same-name collisions (e.g. Prey 2006 vs
+    # Prey 2017). Reads years from the store sweep (#411) and only falls back
+    # to appdetails for ids GetItems did not answer. Runs after the PCGW stubs
+    # are merged so a Steam game whose only same-name twin is a PCGW entry
+    # (Tomb Raider 203160) counts as a collision too; the stubs carry their own
+    # year in column 6 and are left alone.
+    phase("Release-year enrichment")
+    enrich_search_index_with_release_years(output_path, sweep=store_items)
+    # #411: per-host totals from the shared client (requests, retries,
+    # failures, breaker trips, status counts) for the appdetails callers so far.
+    http_client.default_client().log_summary()
     # #246: VR capability column + the VRDB compatibility panel data. Runs
     # after the catalog stubs so every row that could be flagged exists. The
     # VRDB half is display-only context with its own 1-5 scale (lower is

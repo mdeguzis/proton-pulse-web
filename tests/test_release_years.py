@@ -237,3 +237,104 @@ def test_malformed_index_rows_are_skipped(tmp_path):
     _write_index(tmp_path, [[], "junk", ["570", "Dota 2", "gold", 1, 0, "steam"]])
     enrich_search_index_with_release_years(tmp_path)   # no collisions among real rows
     assert not (tmp_path / "release-years-cache.json").exists()
+
+
+# --- #411: years from the GetItems sweep, appdetails only as a fallback -----
+
+from scripts.pipeline import release_years as ry  # noqa: E402
+
+
+def _sweep(**years):
+    return {"items": {k.lstrip("_"): {"type": "game", "native": False, "release_year": v} for k, v in years.items()},
+            "checked": len(years), "unknown": 0, "failed_batches": 0, "error": None}
+
+
+def _collide(tmp_path, *ids):
+    rows = [[i, "Prey", "gold", 1, 0, "steam"] for i in ids]
+    (tmp_path / "search-index.json").write_text(json.dumps(rows))
+
+
+def test_sweep_years_fill_collisions_without_touching_appdetails(tmp_path, monkeypatch):
+    _collide(tmp_path, "6910", "480490")
+    monkeypatch.setattr(ry, "_fetch_year", lambda app_id: (_ for _ in ()).throw(AssertionError("appdetails called")))
+    enrich_search_index_with_release_years(tmp_path, sweep=_sweep(_6910=2006, _480490=2017))
+    rows = {r[0]: r for r in json.loads((tmp_path / "search-index.json").read_text())}
+    assert rows["6910"][6] == 2006 and rows["480490"][6] == 2017
+    assert json.loads((tmp_path / ry.CACHE_FILENAME).read_text()) == {"6910": 2006, "480490": 2017}
+
+
+def test_sweep_year_corrects_a_stale_cached_year(tmp_path, monkeypatch):
+    """Craftomation 101 (1724140) was cached as 2024 during early access;
+    the store page and GetItems now say 2026."""
+    _collide(tmp_path, "1724140", "999")
+    (tmp_path / ry.CACHE_FILENAME).write_text(json.dumps({"1724140": 2024, "999": 2020}))
+    monkeypatch.setattr(ry, "_fetch_year", lambda app_id: (_ for _ in ()).throw(AssertionError("appdetails called")))
+    logs = []
+    monkeypatch.setattr(ry, "log", logs.append)
+    enrich_search_index_with_release_years(tmp_path, sweep=_sweep(_1724140=2026, _999=2020))
+    assert json.loads((tmp_path / ry.CACHE_FILENAME).read_text())["1724140"] == 2026
+    assert any("0 newly filled, 1 changed a cached year" in m for m in logs)
+
+
+def test_filling_a_no_year_cache_entry_is_not_counted_as_a_change(tmp_path, monkeypatch):
+    """The old cache held 813 None entries (appdetails "no date" answers).
+    Giving those a year is a fill, not a correction."""
+    _collide(tmp_path, "100", "200", "300")
+    (tmp_path / ry.CACHE_FILENAME).write_text(json.dumps({"100": None, "300": 2001}))
+    logs = []
+    monkeypatch.setattr(ry, "log", logs.append)
+    enrich_search_index_with_release_years(tmp_path, sweep=_sweep(_100=2010, _200=2012, _300=2001))
+    assert any("3 years from the GetItems sweep (2 newly filled, 0 changed a cached year)" in m for m in logs)
+
+
+def test_undated_sweep_entries_are_not_cached_and_not_fetched(tmp_path, monkeypatch):
+    _collide(tmp_path, "100", "200")
+    calls = []
+    monkeypatch.setattr(ry, "_fetch_year", lambda app_id: (calls.append(app_id), (2001, True))[1])
+    enrich_search_index_with_release_years(tmp_path, sweep=_sweep(_100=None, _200=2019))
+    assert calls == []  # answered by the sweep, just no date yet
+    assert json.loads((tmp_path / ry.CACHE_FILENAME).read_text()) == {"200": 2019}
+
+
+def test_only_ids_missing_from_the_sweep_fall_back_to_appdetails(tmp_path, monkeypatch):
+    _collide(tmp_path, "100", "200", "300")
+    (tmp_path / ry.CACHE_FILENAME).write_text(json.dumps({"300": 1999}))
+    calls = []
+    monkeypatch.setattr(ry, "_fetch_year", lambda app_id: (calls.append(app_id), (2005, True))[1])
+    enrich_search_index_with_release_years(tmp_path, sweep=_sweep(_100=2010))
+    # 100 from the sweep, 300 already cached, only 200 goes to appdetails.
+    assert calls == ["200"]
+    rows = {r[0]: r for r in json.loads((tmp_path / "search-index.json").read_text())}
+    assert (rows["100"][6], rows["200"][6], rows["300"][6]) == (2010, 2005, 1999)
+
+
+def test_no_sweep_keeps_the_appdetails_path(tmp_path, monkeypatch):
+    _collide(tmp_path, "100", "200")
+    calls = []
+    monkeypatch.setattr(ry, "_fetch_year", lambda app_id: (calls.append(app_id), (2005, True))[1])
+    enrich_search_index_with_release_years(tmp_path)
+    assert sorted(calls) == ["100", "200"]
+
+
+def test_finalize_runs_release_years_after_the_sweep_and_passes_it():
+    src = (Path(__file__).resolve().parents[1] / "scripts/pipeline/finalize.py").read_text()
+    call = "enrich_search_index_with_release_years(output_path, sweep=store_items)"
+    assert src.count("enrich_search_index_with_release_years(") == 1
+    assert src.index("store_items = store_sweep(steam_ids_in_index(output_path))") < src.index(call)
+    # The #411 per-host summary still comes after every appdetails caller.
+    assert src.index(call) < src.index("http_client.default_client().log_summary()")
+    # After the PCGW stub merge, so Steam rows whose only twin is a stub collide.
+    assert src.index("merge_pcgwiki_catalog(output_path)") < src.index(call)
+
+
+def test_steam_row_colliding_only_with_a_pcgw_stub_gets_its_year(tmp_path, monkeypatch):
+    """Tomb Raider (203160) only shares its title with a PCGW stub. The stub
+    keeps its own column-6 year; the Steam row gets the sweep's."""
+    rows = [["203160", "Tomb Raider", "gold", 1, 0, "steam"],
+            ["pw_abc12345", "Tomb Raider", "pending", 0, 0, "pcgwiki", 1996]]
+    (tmp_path / "search-index.json").write_text(json.dumps(rows))
+    monkeypatch.setattr(ry, "_fetch_year", lambda app_id: (_ for _ in ()).throw(AssertionError("appdetails called")))
+    enrich_search_index_with_release_years(tmp_path, sweep=_sweep(_203160=2013))
+    out = {r[0]: r for r in json.loads((tmp_path / "search-index.json").read_text())}
+    assert out["203160"][6] == 2013
+    assert out["pw_abc12345"][6] == 1996
