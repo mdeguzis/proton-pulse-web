@@ -7,7 +7,9 @@ set -euo pipefail
 # gh-pages as an orphan branch every run. That wipes anything the standalone
 # enrich-steam-types workflow committed between pipeline runs -- specifically
 # steam-type-cache.json plus the column 11 (Steam type) entries in
-# search-index.json.
+# search-index.json. That workflow is retired (#396): the nightly GetItems
+# sweep types every Steam app (#261), so it found nothing to do. This script
+# still runs in the remaining gh-pages deploy paths and goes when they do.
 #
 # This helper reads the CURRENT gh-pages branch (which still has the enricher
 # state), pulls steam-type-cache.json out, and re-applies each cached type to

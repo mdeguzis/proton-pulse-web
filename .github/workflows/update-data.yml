@@ -353,6 +353,10 @@ jobs:
           # Cloudflare path skipped that, every run started empty, re-fetched
           # the same first 200 app ids and left column 11 (steamType) unset on
           # all but ~190 rows (#258).
+          # #396: enrich-steam-types.yml, the only writer of this gh-pages
+          # copy, is retired, so it is frozen. It is a cold-start fallback
+          # only: the probe-cache restore below overwrites it, and the GetItems
+          # sweep re-types every Steam app each night anyway (#261).
           cp gh-pages-data/steam-type-cache.json /tmp/protondb-output/ 2>/dev/null || true
 
       # main's cache is tried first (#258). On main that is the same prefix
@@ -392,15 +396,21 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bash scripts/restore-chunk-state.sh '${{ needs.build.outputs.expected_matrix }}'
 
-      # Seed the store catalog caches from gh-pages AFTER restoring the pipeline
-      # cache, so the freshly rebuilt catalog (pushed by the dedicated GOG/Epic
+      # Seed the store catalog caches AFTER restoring the pipeline cache, so
+      # the freshly rebuilt catalog (pushed by the dedicated GOG/Epic
       # workflows) wins over a stale copy carried in the actions cache. Doing
       # this before the restore let the old catalog clobber the new one, which
       # silently froze the GOG/Epic search-index stubs at an outdated count.
-      - name: Seed store catalog caches from gh-pages
+      # #396: the weekly workflows push to R2 state now. Read it over the
+      # public data host (no keys, same for staging), fall back to the
+      # gh-pages copy until the first weekly run has filled R2, then let
+      # seed-catalog-cache.sh keep whichever copy has the newer _ts.
+      - name: Seed store catalog caches from R2 state
         run: |
           mkdir -p .cache
-          bash scripts/seed-catalog-cache.sh gh-pages-data .cache \
+          bash scripts/fetch-public-state.sh "$RUNNER_TEMP/catalog-state" gh-pages-data \
+            gog-catalog-cache.json epic-catalog-cache.json
+          bash scripts/seed-catalog-cache.sh "$RUNNER_TEMP/catalog-state" .cache \
             gog-catalog-cache.json epic-catalog-cache.json
 
       # #89: log which caches survived the restore, their sizes + ages,

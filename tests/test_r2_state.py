@@ -193,13 +193,14 @@ def repo(tmp_path):
     pages.mkdir()
     git("init", "-q", "-b", "gh-pages", cwd=pages)
     (pages / "cert-history.json").write_text(json.dumps([{"t": 1}, {"t": 2}]))
+    (pages / "gog-catalog-cache.json").write_text(json.dumps({"_ts": 100, "catalog": {"1": "Witcher"}}))
     git("add", ".", cwd=pages)
     git("-c", "user.name=t", "-c", "user.email=t@t", "commit", "-q", "-m", "x", cwd=pages)
     git("push", "-q", str(remote), "gh-pages", cwd=pages)
 
     work = tmp_path / "repo"
     (work / "scripts").mkdir(parents=True)
-    for s in ("r2-state.sh", "cert-monitor-state.sh"):
+    for s in ("r2-state.sh", "cert-monitor-state.sh", "catalog-state.sh"):
         shutil.copy(SCRIPTS / s, work / "scripts" / s)
     git("init", "-q", cwd=work)
     git("remote", "add", "origin", str(remote), cwd=work)
@@ -312,10 +313,12 @@ def test_preserve_skips_404_and_bad_json_without_failing(served, tmp_path):
     assert list((tmp_path / "d").iterdir()) == []
 
 
-def test_preserve_unreachable_host_is_logged(tmp_path):
+def test_preserve_unreachable_host_logs_http_000_once(tmp_path):
     r = _preserve("http://127.0.0.1:9", tmp_path / "d")
     assert r.returncode == 0
     assert "could not read" in r.stdout
+    # Not "HTTP 000000": curl's -w output and an `|| echo 000` both landed.
+    assert "(HTTP 000)" in r.stdout and "000000" not in r.stdout
     assert "0 file(s) preserved" in r.stdout
 
 
@@ -444,3 +447,162 @@ def test_publish_allows_file_at_exactly_the_pages_limit(r2, tmp_path):
     r = _run(SCRIPTS / "publish-cloudflare.sh", out, ROOT, env={**env, "SKIP_R2_SYNC": "1"})
     assert r.returncode == 0, r.stdout + r.stderr
     assert "over the Cloudflare Pages" not in r.stdout
+
+
+# --- #396: steam-type-cache needs no gh-pages writer -------------------------
+
+def test_enrich_steam_types_workflow_is_retired():
+    """It re-typed gh-pages/search-index.json via appdetails every 6h. Nothing
+    live reads gh-pages since #362, the nightly GetItems sweep types every
+    Steam app (#261), and its runs logged "0 need fetch" every cycle."""
+    assert not (ROOT / ".github" / "workflows" / "enrich-steam-types.yml").exists()
+    for wf in (ROOT / ".github" / "workflows").glob("*.yml"):
+        assert "enrich_search_index_with_steam_type(Path(" not in wf.read_text(), wf.name
+
+
+def test_finalize_still_persists_the_steam_type_cache_without_gh_pages():
+    sync = (SCRIPTS / "probe-cache-sync.sh").read_text()
+    assert "steam-type-cache.json" in sync
+    raw, _ = _wf("update-data.yml")
+    restore = raw.index("bash scripts/probe-cache-sync.sh restore")
+    seed = raw.index("cp gh-pages-data/steam-type-cache.json")
+    # The frozen gh-pages copy is seeded first and the Actions-cache copy wins.
+    assert seed < restore
+
+
+
+# --- #396: GOG / Epic catalog caches in R2 state ------------------------------
+
+GOG = "gog-catalog-cache.json"
+
+
+def _catalog(path, n, ts=200):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"_ts": ts, "catalog": {str(i): f"G{i}" for i in range(n)}}))
+
+
+def _cat(work, *args, env):
+    return _run(work / "scripts" / "catalog-state.sh", *args, env=env)
+
+
+def test_catalog_pull_uses_r2_copy(r2, repo, tmp_path):
+    root, env = r2
+    work, _ = repo
+    _catalog(_state(root, GOG), 3)
+    r = _cat(work, "pull", tmp_path / "c", GOG, env=env)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "pulled from R2 (3 entries)" in r.stdout
+    assert len(json.loads((tmp_path / "c" / GOG).read_text())["catalog"]) == 3
+
+
+def test_catalog_pull_seeds_once_from_gh_pages(r2, repo, tmp_path):
+    _, env = r2
+    work, _ = repo
+    r = _cat(work, "pull", tmp_path / "c", GOG, env=env)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "seeded gog-catalog-cache.json from gh-pages (1 entries)" in r.stdout
+
+
+def test_catalog_pull_with_nothing_anywhere_continues_to_a_full_fetch(r2, repo, tmp_path):
+    _, env = r2
+    work, _ = repo
+    r = _cat(work, "pull", tmp_path / "c", "epic-catalog-cache.json", env=env)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "the fetch will do a full refresh" in r.stdout
+    assert not (tmp_path / "c" / "epic-catalog-cache.json").exists()
+
+
+def test_catalog_pull_r2_error_is_logged_and_does_not_block_the_refresh(r2, repo, tmp_path):
+    """Unlike cert history, a catalog can always be rebuilt from the store API."""
+    _, env = r2
+    work, _ = repo
+    r = _cat(work, "pull", tmp_path / "c", GOG, env={**env, "FAKE_AWS_FAIL": "1"})
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "WARNING: could not read gog-catalog-cache.json from R2 (rc=1)" in r.stdout
+
+
+def test_catalog_push_uploads(r2, repo, tmp_path):
+    root, env = r2
+    work, _ = repo
+    _catalog(tmp_path / "c" / GOG, 5)
+    r = _cat(work, "push", tmp_path / "c", GOG, env=env)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert len(json.loads(_state(root, GOG).read_text())["catalog"]) == 5
+    assert "--cache-control no-store" in (root / "calls.log").read_text()
+
+
+@pytest.mark.parametrize("body", [None, json.dumps({"_ts": 1, "catalog": {}}), json.dumps({"_ts": 1})])
+def test_catalog_push_refuses_missing_or_empty_catalog(r2, repo, tmp_path, body):
+    root, env = r2
+    work, _ = repo
+    _catalog(_state(root, GOG), 4)
+    if body is not None:
+        (tmp_path / "c").mkdir()
+        (tmp_path / "c" / GOG).write_text(body)
+    r = _cat(work, "push", tmp_path / "c", GOG, env=env)
+    assert r.returncode == 1
+    # The good copy in R2 is untouched.
+    assert len(json.loads(_state(root, GOG).read_text())["catalog"]) == 4
+
+
+def _public(base, dest, fallback, *files):
+    return _run(SCRIPTS / "fetch-public-state.sh", dest, fallback, *files,
+                env={**os.environ, "STATE_BASE": base})
+
+
+def test_public_state_prefers_r2_then_falls_back_then_skips(served, tmp_path):
+    docroot, base = served
+    _catalog(docroot / GOG, 2)
+    (docroot / "bad.json").write_text("{not json")
+    fb = tmp_path / "gh-pages-data"
+    _catalog(fb / "epic-catalog-cache.json", 7)
+    _catalog(fb / "bad.json", 1)
+    dest = tmp_path / "st"
+    r = _public(base, dest, fb, GOG, "epic-catalog-cache.json", "bad.json", "none.json")
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert len(json.loads((dest / GOG).read_text())["catalog"]) == 2
+    assert "epic-catalog-cache.json: not in R2 state yet (404); using the" in r.stdout
+    assert len(json.loads((dest / "epic-catalog-cache.json").read_text())["catalog"]) == 7
+    assert "bad.json: not valid JSON; using the" in r.stdout
+    assert "WARNING: none.json: not in R2 state yet (404) and no fallback; skipped" in r.stdout
+    assert not (dest / "none.json").exists()
+
+
+def test_public_state_without_fallback_and_unreachable_host(tmp_path):
+    r = _public("http://127.0.0.1:9/_state", tmp_path / "st", "-", GOG)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "WARNING: gog-catalog-cache.json: HTTP 000 and no fallback; skipped" in r.stdout
+
+
+@pytest.mark.parametrize("store", ["gog", "epic"])
+def test_weekly_catalog_workflows_use_r2_state_not_gh_pages(store):
+    raw, doc = _wf(f"update-{store}-catalog.yml")
+    job = doc["jobs"][f"update-{store}-catalog"]
+    assert job["permissions"] == {"contents": "read", "issues": "write"}
+    assert "ref: gh-pages" not in raw
+    assert "seed-catalog-cache.sh gh-pages-data" not in raw
+    assert "git push" not in raw
+    assert "env" not in job or "R2_SECRET_ACCESS_KEY" not in job.get("env", {})
+    steps = job["steps"]
+    f = f"{store}-catalog-cache.json"
+    names = [s.get("run", "") for s in steps]
+    pull = names.index(f"bash scripts/catalog-state.sh pull .cache {f}")
+    fetch = next(i for i, n in enumerate(names) if "fetch_" in n and "_catalog.py" in n)
+    push = names.index(f"bash scripts/catalog-state.sh push .cache {f}")
+    assert pull < fetch < push
+    # Only the R2 steps get the keys; uv sync and the fetch never see them.
+    for i, s in enumerate(steps):
+        has_key = "R2_SECRET_ACCESS_KEY" in (s.get("env") or {})
+        assert has_key == (i in (pull, push)), s.get("name")
+        if has_key:
+            assert s["env"]["R2_BUCKET"] == "proton-pulse-data"
+    assert steps[push].get("if") == "inputs.dry_run != true"
+
+
+def test_finalize_seeds_catalogs_from_r2_state_with_gh_pages_fallback():
+    raw, _ = _wf("update-data.yml")
+    assert 'bash scripts/fetch-public-state.sh "$RUNNER_TEMP/catalog-state" gh-pages-data' in raw
+    assert 'bash scripts/seed-catalog-cache.sh "$RUNNER_TEMP/catalog-state" .cache' in raw
+    assert "bash scripts/seed-catalog-cache.sh gh-pages-data .cache" not in raw
+    # Still after the Actions-cache restore, so a real rebuild wins.
+    assert raw.index("bash scripts/probe-cache-sync.sh restore") < raw.index("fetch-public-state.sh")
