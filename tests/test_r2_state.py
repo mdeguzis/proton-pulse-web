@@ -464,10 +464,10 @@ def test_finalize_still_persists_the_steam_type_cache_without_gh_pages():
     sync = (SCRIPTS / "probe-cache-sync.sh").read_text()
     assert "steam-type-cache.json" in sync
     raw, _ = _wf("update-data.yml")
-    restore = raw.index("bash scripts/probe-cache-sync.sh restore")
-    seed = raw.index("cp gh-pages-data/steam-type-cache.json")
-    # The frozen gh-pages copy is seeded first and the Actions-cache copy wins.
-    assert seed < restore
+    assert "bash scripts/probe-cache-sync.sh restore" in raw
+    # The frozen gh-pages copy is no longer seeded at all (#396 seeds slice):
+    # the Actions probe cache and the nightly GetItems sweep cover it.
+    assert "cp gh-pages-data/steam-type-cache.json" not in raw
 
 
 
@@ -606,3 +606,139 @@ def test_finalize_seeds_catalogs_from_r2_state_with_gh_pages_fallback():
     assert "bash scripts/seed-catalog-cache.sh gh-pages-data .cache" not in raw
     # Still after the Actions-cache restore, so a real rebuild wins.
     assert raw.index("bash scripts/probe-cache-sync.sh restore") < raw.index("fetch-public-state.sh")
+
+
+# --- #396: data/ snapshot replaces the frozen gh-pages data/ base -------------
+
+SNAP = "data-snapshot.tar.zst"
+
+
+def _app(root, app_id, body):
+    d = root / "data" / app_id
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "latest.json").write_text(body)
+
+
+def _snap(*args, env):
+    return _run(SCRIPTS / "data-snapshot.sh", *args, env=env)
+
+
+def _snapshot_from(tmp_path, apps):
+    """Build a real snapshot archive the way push does."""
+    src = tmp_path / "snapsrc"
+    for app_id, body in apps.items():
+        _app(src, app_id, body)
+    out = tmp_path / SNAP
+    subprocess.run(["tar", "-C", str(src), "--zstd", "-cf", str(out), "data"], check=True)
+    return out
+
+
+def test_snapshot_pull_extracts_and_the_artifact_wins(served, tmp_path):
+    docroot, base = served
+    shutil.copy(_snapshot_from(tmp_path, {"10": "old-10", "20": "old-20"}), docroot / SNAP)
+    out = tmp_path / "out"
+    _app(out, "10", "fresh-10")  # the artifact already has app 10
+    count = tmp_path / "count"
+    r = _snap("pull", out, env={**os.environ, "STATE_BASE": base, "SNAPSHOT_COUNT_FILE": str(count)})
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert (out / "data" / "10" / "latest.json").read_text() == "fresh-10"
+    assert (out / "data" / "20" / "latest.json").read_text() == "old-20"
+    assert "1 app dirs from the artifact, 2 after merge" in r.stdout
+    assert count.read_text().strip() == "2"
+
+
+def test_snapshot_pull_404_falls_back_to_gh_pages(served, tmp_path):
+    _, base = served
+    fb = tmp_path / "gh-pages-data"
+    _app(fb, "30", "pages-30")
+    out = tmp_path / "out"
+    _app(out, "30", "fresh-30")
+    _app(out, "40", "fresh-40")
+    r = _snap("pull", out, fb, env={**os.environ, "STATE_BASE": base})
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "no snapshot in R2 state yet (404); used" in r.stdout
+    assert (out / "data" / "30" / "latest.json").read_text() == "fresh-30"
+
+
+@pytest.mark.parametrize("bad", ["corrupt", "unreachable"])
+def test_snapshot_pull_bad_download_falls_back(served, tmp_path, bad):
+    docroot, base = served
+    if bad == "corrupt":
+        (docroot / SNAP).write_bytes(b"not a zstd archive")
+    else:
+        base = "http://127.0.0.1:9/_state"
+    fb = tmp_path / "gh-pages-data"
+    _app(fb, "50", "pages-50")
+    out = tmp_path / "out"
+    r = _snap("pull", out, fb, env={**os.environ, "STATE_BASE": base})
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert ("corrupt" in r.stdout) if bad == "corrupt" else ("HTTP 000)" in r.stdout)
+    assert (out / "data" / "50" / "latest.json").read_text() == "pages-50"
+
+
+def test_snapshot_pull_with_no_snapshot_and_no_fallback_fails(served, tmp_path):
+    _, base = served
+    r = _snap("pull", tmp_path / "out", tmp_path / "nothing", env={**os.environ, "STATE_BASE": base})
+    assert r.returncode == 1
+    assert "refusing to build on an empty base" in r.stdout
+
+
+def test_snapshot_push_uploads_and_round_trips(r2, served, tmp_path):
+    root, env = r2
+    out = tmp_path / "out"
+    for i in range(5):
+        _app(out, str(i), f"body-{i}")
+    r = _snap("push", out, env=env)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "archived 5 app dirs" in r.stdout
+    uploaded = _state(root, SNAP)
+    assert uploaded.exists()
+    # The uploaded archive is a valid base for the next pull.
+    docroot, base = served
+    shutil.copy(uploaded, docroot / SNAP)
+    nxt = tmp_path / "next"
+    r = _snap("pull", nxt, env={**os.environ, "STATE_BASE": base})
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert sorted(p.name for p in (nxt / "data").iterdir()) == ["0", "1", "2", "3", "4"]
+
+
+@pytest.mark.parametrize("base_n,now,ok", [(10, 9, True), (10, 8, False), (100, 89, False)])
+def test_snapshot_push_refuses_a_shrunken_data_dir(r2, tmp_path, base_n, now, ok):
+    root, env = r2
+    out = tmp_path / "out"
+    for i in range(now):
+        _app(out, str(i), "x")
+    count = tmp_path / "count"
+    count.write_text(f"{base_n}\n")
+    r = _snap("push", out, env={**env, "SNAPSHOT_COUNT_FILE": str(count)})
+    assert (r.returncode == 0) is ok, r.stdout + r.stderr
+    assert _state(root, SNAP).exists() is ok
+    if not ok:
+        assert f"under 0.9 of the {base_n} this run started from" in r.stdout
+
+
+def test_snapshot_push_refuses_missing_data(r2, tmp_path):
+    _, env = r2
+    r = _snap("push", tmp_path / "empty", env=env)
+    assert r.returncode == 1
+    assert "is missing; not uploading" in r.stdout
+
+
+def test_finalize_uses_the_snapshot_and_dropped_the_cache_copies():
+    raw, doc = _wf("update-data.yml")
+    steps = doc["jobs"]["finalize"]["steps"]
+    runs = [s.get("run") or "" for s in steps]
+    pull = runs.index("bash scripts/data-snapshot.sh pull /tmp/protondb-output gh-pages-data")
+    push = runs.index("bash scripts/data-snapshot.sh push /tmp/protondb-output")
+    deploy = next(i for i, r in enumerate(runs) if "bash scripts/publish-cloudflare.sh /tmp/protondb-output" in r)
+    restore = next(i for i, r in enumerate(runs) if "probe-cache-sync.sh restore" in r)
+    assert pull < restore < deploy < push
+    # Push goes to the bucket the deploy used, so staging never writes prod's.
+    assert steps[push]["env"]["R2_BUCKET"] == steps[deploy]["env"]["R2_BUCKET"]
+    assert steps[push]["if"] == steps[deploy]["if"]
+    assert steps[pull]["env"]["SNAPSHOT_COUNT_FILE"] == steps[push]["env"]["SNAPSHOT_COUNT_FILE"]
+    for f in ("game-images.json", "game-images-skip.json", "game-images-cache.json",
+              "nonsteam-images-cache.json", "release-years-cache.json",
+              "app-id-validation-cache.json", "steam-type-cache.json"):
+        assert f"cp gh-pages-data/{f}" not in raw
+    assert "cp -rn gh-pages-data/data/." not in raw

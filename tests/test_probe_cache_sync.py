@@ -101,8 +101,8 @@ def test_restore_runs_after_actions_cache_restore_and_before_finalize():
     restore_cache = names.index("Restore pipeline cache")
     restore_probe = names.index("Restore probe caches from previous run")
     assert restore_cache < restore_probe
-    # The gh-pages seed must already be in place so the overlay wins over it.
-    assert names.index("Merge gh-pages data into probe input") < restore_probe
+    # The data/ base merge comes first so the probe-cache overlay wins over it.
+    assert names.index("Merge the previous data/ snapshot into probe input") < restore_probe
 
 
 def test_save_runs_always_and_before_actions_cache_save():
@@ -114,15 +114,17 @@ def test_save_runs_always_and_before_actions_cache_save():
     assert names.index("Persist probe caches for the next run") < names.index("Save pipeline cache")
 
 
-def test_script_carries_every_cache_seeded_from_gh_pages():
-    # Anything finalize seeds from gh-pages-data is frozen at the Cloudflare
-    # cutover unless this script also carries it forward run to run.
+def test_finalize_seeds_no_probe_cache_from_gh_pages():
+    # #396: gh-pages has been frozen since the Cloudflare cutover, so a cache
+    # copied from it can only be stale. The probe caches come from this
+    # script alone; the merge step only brings in the data/ base.
     import re
-    seed = next(s for s in WORKFLOW["jobs"]["finalize"]["steps"]
-                if s.get("name") == "Merge gh-pages data into probe input")["run"]
-    seeded = set(re.findall(r"gh-pages-data/([\w.-]+(?:-cache|-skip)\.json)", seed))
-    assert seeded, "expected the seed step to restore at least one cache"
-    assert seeded <= set(CACHE_FILES), f"not carried forward: {seeded - set(CACHE_FILES)}"
+    finalize = "\n".join((s.get("run") or "") for s in WORKFLOW["jobs"]["finalize"]["steps"])
+    seeded = set(re.findall(r"cp gh-pages-data/([\w.-]+\.json)", finalize))
+    assert not seeded, f"still copied from gh-pages: {seeded}"
+    assert set(CACHE_FILES) >= {"game-images-cache.json", "release-years-cache.json",
+                                "app-id-validation-cache.json", "steam-type-cache.json",
+                                "nonsteam-images-cache.json"}
 
 
 def test_finalize_restores_mains_cache_before_the_branchs_own():

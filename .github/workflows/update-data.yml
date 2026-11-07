@@ -310,13 +310,22 @@ jobs:
           name: probe-input
           path: /tmp/protondb-output
 
-      # Pull existing gh-pages data so probe-backfill can skip apps that were
-      # already covered in prior runs. Without this, the artifact only carries
-      # the small dump+manifest set (~8K apps), so the ~21K apps that were
-      # probe-backfilled in previous runs look "missing" and get re-fetched
-      # every single time (4+ hour stall). See wiki Data-Pipeline.md
-      # "Known Issue" for full background.
-      - name: Checkout current gh-pages for data merge
+      # Start from the previous run's data/ so probe-backfill can skip apps
+      # that were already covered. Without it the artifact only carries the
+      # small dump+manifest set (~8K apps), so every app probe-backfilled in
+      # earlier runs looks "missing" and gets re-fetched (4+ hour stall). See
+      # wiki Data-Pipeline.md "Known Issue".
+      #
+      # #396: the base is now data-snapshot.tar.zst in R2 state, pushed after
+      # every Cloudflare deploy below. It used to be gh-pages' data/, which
+      # nothing has written since the Cloudflare move (last change
+      # 2026-09-20), so every nightly rebuilt from that stale copy. gh-pages
+      # stays checked out only as the fallback until the first snapshot
+      # exists. The seven cache copies that used to follow were dropped: the
+      # Actions probe-cache restore below overwrites every one of them, and
+      # game-images.json / game-images-skip.json are only read by a one-time
+      # legacy migration when the image cache is empty.
+      - name: Checkout current gh-pages (fallback base, chunk state)
         uses: actions/checkout@v7
         with:
           ref: gh-pages
@@ -324,40 +333,10 @@ jobs:
           fetch-depth: 1
         continue-on-error: true
 
-      - name: Merge gh-pages data into probe input
-        run: |
-          if [ -d gh-pages-data/data ]; then
-            mkdir -p /tmp/protondb-output/data
-            # -rn: recursive, no-clobber. Artifact wins on overlap (it's the
-            # freshest dump from Stage 1), gh-pages fills the historical gaps
-            # for probe-backfilled apps not in the artifact.
-            cp -rn gh-pages-data/data/. /tmp/protondb-output/data/ || true
-            ARTIFACT_COUNT=$(ls /tmp/protondb-output/data 2>/dev/null | wc -l)
-            GHPAGES_COUNT=$(ls gh-pages-data/data 2>/dev/null | wc -l)
-            echo "Merged data: artifact had ~${ARTIFACT_COUNT} app dirs after gh-pages merge (gh-pages had ${GHPAGES_COUNT})"
-          else
-            echo "No gh-pages data branch to merge (first run or branch absent)"
-          fi
-          # Seed image caches so daily runs only probe new/uncached app IDs.
-          # release-years-cache.json (#109) restored the same way -- release
-          # dates never change, so once the cache accumulates the 200/run
-          # probe cap stays untouched on subsequent runs.
-          cp gh-pages-data/game-images.json /tmp/protondb-output/ 2>/dev/null || true
-          cp gh-pages-data/game-images-skip.json /tmp/protondb-output/ 2>/dev/null || true
-          cp gh-pages-data/game-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
-          cp gh-pages-data/nonsteam-images-cache.json /tmp/protondb-output/ 2>/dev/null || true
-          cp gh-pages-data/release-years-cache.json /tmp/protondb-output/ 2>/dev/null || true
-          cp gh-pages-data/app-id-validation-cache.json /tmp/protondb-output/ 2>/dev/null || true
-          # steam-type-cache.json was never seeded here, only merged in at the
-          # gh-pages deploy by preserve-steam-type-cache.sh. Once the
-          # Cloudflare path skipped that, every run started empty, re-fetched
-          # the same first 200 app ids and left column 11 (steamType) unset on
-          # all but ~190 rows (#258).
-          # #396: enrich-steam-types.yml, the only writer of this gh-pages
-          # copy, is retired, so it is frozen. It is a cold-start fallback
-          # only: the probe-cache restore below overwrites it, and the GetItems
-          # sweep re-types every Steam app each night anyway (#261).
-          cp gh-pages-data/steam-type-cache.json /tmp/protondb-output/ 2>/dev/null || true
+      - name: Merge the previous data/ snapshot into probe input
+        env:
+          SNAPSHOT_COUNT_FILE: ${{ runner.temp }}/data-snapshot-count
+        run: bash scripts/data-snapshot.sh pull /tmp/protondb-output gh-pages-data
 
       # main's cache is tried first (#258). On main that is the same prefix
       # as before. On staging it means previews start from prod's warm caches
@@ -590,6 +569,21 @@ jobs:
           R2_SYNC_CONCURRENCY: ${{ vars.R2_SYNC_CONCURRENCY || '' }}
         run: |
           bash scripts/publish-cloudflare.sh /tmp/protondb-output "$GITHUB_WORKSPACE"
+
+      # #396: save this run's data/ as the next run's base. Only after a
+      # successful Cloudflare deploy, into the same bucket the deploy used,
+      # so a staging run never touches prod's snapshot. data-snapshot.sh
+      # refuses to upload a data/ that shrank below 90% of the base it
+      # started from.
+      - name: Push data/ snapshot to R2 state
+        if: (inputs.deploy_target || 'cloudflare') == 'cloudflare'
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-data-staging' || 'proton-pulse-data' }}
+          SNAPSHOT_COUNT_FILE: ${{ runner.temp }}/data-snapshot-count
+        run: bash scripts/data-snapshot.sh push /tmp/protondb-output
 
       - name: Deploy to gh-pages (orphan, no history)
         if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && (inputs.deploy_target || 'cloudflare') != 'cloudflare'
