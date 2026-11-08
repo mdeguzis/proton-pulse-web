@@ -1709,7 +1709,7 @@ export async function renderHomeFallback() {
   const popularCards = popularIds
     .map((appId) => ({ appId, title: titleById.get(appId) || `App ${appId}` }))
     .filter((row) => row.title)
-    .map((row) => renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.title, sub: 'ProtonDB data available', trend: _lookupTrend(row.appId) }))
+    .map((row) => renderGameCard({ href: `#/app/${row.appId}`, appId: row.appId, title: row.title, sub: 'Popular on Steam', trend: _lookupTrend(row.appId) }))
     .join('');
 
   const pulseCards = renderPulseReportCards(pulseReports);
