@@ -2,7 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=467474be';
 import { detectGpuArch } from '../../lib/gpu-arch-detector.js?v=b4fbb7ef';
-import { renderAuthorBlock } from './author.js?v=d857af96';
+import { renderAuthorBlock } from './author.js?v=afb6eaea';
 import { buildFormRows } from './config-cards.js?v=ef72f5bb';
 import { renderSignalStrip } from './signals.js?v=70b8f6c2';
 import { RATING_COLORS, RATING_TEXT } from '../config.js?v=3c5c74a2';

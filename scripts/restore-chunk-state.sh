@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-# Restore probe-chunk state from gh-pages/.pipeline-state/ into the
-# local pipeline cache. Phase 2 of #171: finalize now sources probe
-# results from durable persistence instead of relying on the ephemeral
-# actions cache alone. If any expected chunk is missing from the
-# manifest, aborts with a clear error naming the chunk + last-updated
-# timestamp so the operator knows exactly what to resume.
+# Restore probe-chunk state from R2 state (_state/pipeline-state/, #396) into
+# the local pipeline cache. Phase 2 of #171: finalize sources probe results
+# from durable state instead of relying on the ephemeral Actions cache alone.
+# If any expected chunk is missing from the manifest, aborts with a clear
+# error naming the chunk so the operator knows exactly what to resume.
 #
 # Args:
 #   $1  JSON array of expected chunk ids (e.g. '["01","02","03"]').
@@ -12,91 +11,91 @@
 #       Empty string / omitted = finalize_only mode: use whatever's in
 #       the manifest as the expected set. #171 Phase 3.
 #
+# Env:
+#   STATE_BASE  public read base. Staging finalize-only runs point it at
+#               prod's state on purpose; staging pipeline runs at their own.
+#
 # Behavior:
-#   - manifest missing         -> WARN + exit 0 (first run after Phase 1
-#                                 shipped, before any chunks persisted)
-#   - empty expected + manifest -> use manifest's completed chunks as the
-#                                 authoritative set (finalize_only path)
-#   - manifest has all chunks  -> gunzip highest-numbered chunk snapshot
-#                                 into .cache/protondb-summary-probe-cache.json
-#   - manifest has a gap       -> EXIT 1 with clear "chunk NN missing" msg
+#   - manifest unreadable        -> EXIT 1
+#   - no manifest, finalize_only -> WARN + exit 0 (keep the Actions cache copy)
+#   - no manifest, chunks ran    -> EXIT 1 (persist should have written one)
+#   - empty expected + manifest  -> use manifest's completed chunks as the
+#                                   authoritative set (finalize_only path)
+#   - manifest has all chunks    -> gunzip highest-numbered chunk snapshot
+#                                   into .cache/protondb-summary-probe-cache.json
+#   - manifest has a gap         -> EXIT 1 with clear "chunk NN missing" msg
 set -euo pipefail
 
+HERE="$(cd "$(dirname "$0")" && pwd)"
 EXPECTED_CHUNKS_JSON="${1:-}"
-STATE_ROOT="/tmp/pipeline-state-restore"
-BRANCH="gh-pages"
 CACHE_FILE=".cache/protondb-summary-probe-cache.json"
+log() { echo "[restore-chunk-state] $*"; }
 
-echo "[restore-chunk-state] expected chunks: $EXPECTED_CHUNKS_JSON"
+log "expected chunks: ${EXPECTED_CHUNKS_JSON:-<finalize_only: the manifest completed set>} from ${STATE_BASE:-https://data.proton-pulse.com/_state}"
 
-rm -rf "$STATE_ROOT"
-git clone --depth 1 --branch "$BRANCH" \
-  "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-  "$STATE_ROOT" 2>/dev/null || {
-    echo "[restore-chunk-state] gh-pages clone failed -- likely first run, no state to restore"
+work="$(mktemp -d)"
+trap 'rm -rf "$work"' EXIT
+
+set +e
+bash "$HERE/public-state-get.sh" pipeline-state/manifest.json "$work/manifest.json"
+rc=$?
+set -e
+if [ "$rc" = 3 ]; then
+  if [ -z "$EXPECTED_CHUNKS_JSON" ]; then
+    log "WARNING: no chunk-state manifest in R2 state; finalizing on the Actions cache copy"
     exit 0
-}
-
-MANIFEST_PATH="$STATE_ROOT/.pipeline-state/manifest.json"
-if [ ! -f "$MANIFEST_PATH" ]; then
-  echo "[restore-chunk-state] manifest.json not on gh-pages yet -- Phase 1 not run against this ref"
-  exit 0
+  fi
+  log "ERROR: this run probed chunks but R2 state has no manifest; persist-chunk-state did not record them"
+  exit 1
+elif [ "$rc" != 0 ]; then
+  log "ERROR: could not read the chunk-state manifest (rc=$rc)"
+  exit 1
 fi
 
-# Verify every expected chunk is marked completed + has its snapshot.
-# python handles the JSON parsing so we don't shell-parse; also emits
-# the highest-numbered chunk id back so we know which snapshot to load.
-# Empty EXPECTED_CHUNKS_JSON = finalize_only mode: use whatever's in
-# the manifest's completed set as the expected list.
-LATEST_CHUNK=$(python3 - "$MANIFEST_PATH" "$EXPECTED_CHUNKS_JSON" "$STATE_ROOT/.pipeline-state/chunks" <<'PY'
-import json, sys, os
-manifest_path, expected_json, chunks_dir = sys.argv[1:]
+# Verify every expected chunk is marked completed. python handles the JSON
+# and prints the highest-numbered chunk id, whose snapshot is the full cache.
+LATEST_CHUNK=$(python3 - "$work/manifest.json" "$EXPECTED_CHUNKS_JSON" <<'PY'
+import json, sys
+manifest_path, expected_json = sys.argv[1:]
 manifest = json.load(open(manifest_path))
 chunks = manifest.get("chunks", {})
+where = f"plan run {manifest.get('plan_run_id') or '?'}"
 
 if not expected_json:
-    # finalize_only: expected set IS whatever manifest says is completed.
-    expected = sorted([c for c, e in chunks.items() if e.get("status") == "completed"])
+    expected = sorted(c for c, e in chunks.items() if e.get("status") == "completed")
     if not expected:
-        print("[restore-chunk-state] finalize_only: manifest has no completed chunks", file=sys.stderr)
+        print(f"[restore-chunk-state] finalize_only: manifest ({where}) has no completed chunks", file=sys.stderr)
         sys.exit(1)
-    print(f"[restore-chunk-state] finalize_only: manifest completed set = {expected}", file=sys.stderr)
+    print(f"[restore-chunk-state] finalize_only: manifest ({where}) completed set = {expected}", file=sys.stderr)
 else:
     expected = json.loads(expected_json)
 
-missing = []
-for cid in expected:
-    entry = chunks.get(cid)
-    snap = os.path.join(chunks_dir, f"chunk-{cid}.json.gz")
-    if not entry or entry.get("status") != "completed":
-        missing.append((cid, entry.get("completed_at") if entry else "never"))
-    elif not os.path.exists(snap):
-        missing.append((cid, f"manifest OK but snapshot missing (last completed {entry.get('completed_at')})"))
-
+missing = [c for c in expected if (chunks.get(c) or {}).get("status") != "completed"]
 if missing:
-    updated = manifest.get("updated_at", "unknown")
-    print("MISSING", file=sys.stderr)
-    print(f"[restore-chunk-state] manifest last updated: {updated}", file=sys.stderr)
-    for cid, when in missing:
-        print(f"[restore-chunk-state]   chunk {cid} missing since {when}", file=sys.stderr)
+    print(f"[restore-chunk-state] manifest ({where}) last updated: {manifest.get('updated_at', 'unknown')}", file=sys.stderr)
+    for cid in missing:
+        print(f"[restore-chunk-state]   chunk {cid} missing; run `make gh-resume`", file=sys.stderr)
     sys.exit(1)
 
-# Success: return the numerically highest chunk id -- its snapshot IS
-# the canonical full-cache state (each chunk snapshots the whole cache
-# after it ran, so the last one has everything).
-latest = max(expected, key=lambda c: int(c))
-print(latest)
+print(max(expected, key=int))
 PY
 )
 
 if [ -z "$LATEST_CHUNK" ]; then
-  echo "[restore-chunk-state] no snapshot to load (verification failed above)"
+  log "no snapshot to load (verification failed above)"
   exit 1
 fi
 
-SNAP_PATH="$STATE_ROOT/.pipeline-state/chunks/chunk-${LATEST_CHUNK}.json.gz"
-mkdir -p "$(dirname "$CACHE_FILE")"
-gunzip -c "$SNAP_PATH" > "$CACHE_FILE"
+set +e
+bash "$HERE/public-state-get.sh" "pipeline-state/chunks/chunk-${LATEST_CHUNK}.json.gz" "$work/chunk.json.gz"
+rc=$?
+set -e
+if [ "$rc" != 0 ]; then
+  log "ERROR: manifest says chunk $LATEST_CHUNK completed but its snapshot could not be read (rc=$rc)"
+  exit 1
+fi
 
-APP_COUNT=$(python3 -c "import json; print(len(json.load(open('$CACHE_FILE'))))" 2>/dev/null || echo "?")
-echo "[restore-chunk-state] restored from chunk $LATEST_CHUNK ($APP_COUNT apps)"
+mkdir -p "$(dirname "$CACHE_FILE")"
+gunzip -c "$work/chunk.json.gz" > "$CACHE_FILE"
+APP_COUNT=$(python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(len(d.get('apps', d)))" "$CACHE_FILE")
+log "restored from chunk $LATEST_CHUNK ($APP_COUNT apps)"

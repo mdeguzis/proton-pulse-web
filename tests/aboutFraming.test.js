@@ -1,5 +1,7 @@
 /**
  * #324: About page framing -- Proton Pulse is NOT just a ProtonDB frontend.
+ * Since #474 ProtonDB is not an input at all: reports and tiers are Proton
+ * Pulse's own, and ProtonDB only appears through the on-demand live lookup.
  *
  * Locks in the language change so a well-meaning copy edit does not
  * accidentally re-frame the site as "a ProtonDB frontend". The signal
@@ -26,10 +28,10 @@ describe('about.html framing (#324)', () => {
     expect(body).toMatch(/moderation/i);
     expect(body).toMatch(/(scoring|score)/i);
     expect(body).toMatch(/Steam Deck/i);
-    // Must explicitly frame ProtonDB as one input among several.
-    // Allow any whitespace (including newlines) between "one of" and "several"
-    // since the HTML source may wrap the sentence across lines.
-    expect(body).toMatch(/one of\s+several/i);
+    // #474: reports and tiers come from Proton Pulse users, and the opening
+    // must not claim ProtonDB feeds the site.
+    expect(body).toMatch(/Reports and tiers come from\s+Proton Pulse users/i);
+    expect(body).not.toMatch(/ProtonDB/);
   });
 
   test('jump-to-section navigation reaches "Where the data comes from" so readers find the source list', () => {
@@ -64,7 +66,7 @@ describe('about.html framing (#324)', () => {
     expect(section).toBeTruthy();
     const body = section[0];
     for (const label of [
-      'ProtonDB reports',
+      'ProtonDB lookup',
       'Pulse Reports',
       'Steam Web API',
       'Deck / Machine / SteamOS verification',
@@ -75,9 +77,11 @@ describe('about.html framing (#324)', () => {
     }
   });
 
-  test('ProtonDB card explicitly frames it as one input, not the whole site', () => {
+  test('ProtonDB card says it is an on-demand lookup that never feeds tiers (#474)', () => {
     // Otherwise a reader can still walk away thinking we are a frontend.
-    expect(ABOUT).toMatch(/One of several inputs, not the whole site/i);
+    expect(ABOUT).toMatch(/Check ProtonDB Live button/);
+    expect(ABOUT).toMatch(/never feeds our tiers or report counts/i);
+    expect(ABOUT).not.toMatch(/ProtonDB reports<\/div>/);
   });
 
   test('the Proton Pulse vs ProtonDB comparison table remains reachable', () => {

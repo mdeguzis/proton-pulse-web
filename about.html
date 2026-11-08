@@ -34,10 +34,9 @@
         Linux and Steam Deck. It runs its own report submission, moderation,
         and audit pipeline; scores every report against your hardware; syncs
         configs across devices; and ships a Steam Deck plugin that writes
-        launch options directly from Gaming Mode. ProtonDB reports are one of
-        several inputs that feed the site, alongside Steam Web API data,
-        native Pulse Reports, and Deck / Machine / SteamOS verification
-        metadata. Everything on top of that is Proton Pulse.
+        launch options directly from Gaming Mode. Reports and tiers come from
+        Proton Pulse users. Steam Web API data and Valve's Deck, Steam Machine
+        and SteamOS verification fill in the details for each game.
       </p>
       <p>
         The main pages stay focused on finding a game and reading its
@@ -94,9 +93,9 @@
     </p>
     <div class="explore-grid">
       <a class="explore-item" href="https://www.protondb.com" target="_blank" rel="noopener">
-        <div class="ei-title">ProtonDB reports</div>
-        <div class="ei-desc">Community reports pulled nightly and normalized into a hardware-aware schema. One of several inputs, not the whole site.</div>
-        <div class="ei-tag">Ingest</div>
+        <div class="ei-title">ProtonDB lookup</div>
+        <div class="ei-desc">The Check ProtonDB Live button on a game page fetches ProtonDB's public summary for that game and shows it labelled as theirs. It never feeds our tiers or report counts.</div>
+        <div class="ei-tag">On demand</div>
       </a>
       <a class="explore-item" href="app.html">
         <div class="ei-title">Pulse Reports</div>
