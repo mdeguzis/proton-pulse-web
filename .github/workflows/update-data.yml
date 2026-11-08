@@ -44,12 +44,12 @@ on:
         default: false
         type: boolean
       resume:
-        description: "Only re-run chunks marked incomplete in gh-pages/.pipeline-state/manifest.json. Rescue path for a partial run (e.g. chunk 8 stalled while 1-7 + 9-10 completed) -- avoids re-doing the successful work. #171 Phase 3."
+        description: "Only re-run chunks marked incomplete in the R2 state chunk manifest (_state/pipeline-state/manifest.json). Rescue path for a partial run (e.g. chunk 8 stalled while 1-7 + 9-10 completed) -- avoids re-doing the successful work. #171 Phase 3."
         required: false
         default: false
         type: boolean
       finalize_only:
-        description: "Skip probing entirely and re-run finalize against whatever chunk state is already in gh-pages/.pipeline-state/. Use when a finalize-side bug needs a fix but the probe cache is fine. #171 Phase 3."
+        description: "Skip probing entirely and re-run finalize against whatever chunk state is already in R2 state (_state/pipeline-state/). Use when a finalize-side bug needs a fix but the probe cache is fine. #171 Phase 3."
         required: false
         default: false
         type: boolean
@@ -86,7 +86,7 @@ jobs:
   # ── Stage 1: process reports, backfill, compute probe plan ─────────
   build:
     # finalize_only skips build entirely -- we're re-running the finalize
-    # stage against gh-pages state as-is, no need to re-shard/re-probe.
+    # stage against the R2 chunk state as-is, no need to re-shard/re-probe.
     if: inputs.pages_only != true && inputs.staging_only != true && inputs.backfill_app_ids == '' && inputs.coverage_backfill_issue_type == '' && inputs.finalize_only != true && inputs.staging_with_finalize != true
     runs-on: ubuntu-24.04
     permissions:
@@ -151,11 +151,18 @@ jobs:
           uv run python scripts/split_reports.py backfill \
             /tmp/protondb-output
 
+      # Also starts this run's chunk-state manifest in the env's R2 state
+      # (#171, #396). The R2 keys are scoped to this step.
       - name: Build probe chunk plan
         id: plan
         env:
           RESUME_MODE: ${{ inputs.resume }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_ID: ${{ github.run_id }}
+          STATE_BASE: ${{ inputs.staging_with_pipeline == true && 'https://staging-data.proton-pulse.com/_state' || 'https://data.proton-pulse.com/_state' }}
+          R2_BUCKET: ${{ inputs.staging_with_pipeline == true && 'proton-pulse-data-staging' || 'proton-pulse-data' }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: |
           uv run python scripts/split_reports.py probe-plan /tmp/protondb-output > /tmp/probe-plan.json
           bash scripts/probe-plan-emit.sh /tmp/probe-plan.json
@@ -181,9 +188,8 @@ jobs:
     if: needs.build.outputs.chunk_count != '0'
     runs-on: ubuntu-24.04
     permissions:
-      # write access needed to push each chunk's snapshot + manifest entry
-      # to gh-pages/.pipeline-state/ for durable recovery (#171).
-      contents: write
+      # Chunk state goes to R2 now (#396), so no write access to the repo.
+      contents: read
     strategy:
       fail-fast: false
       max-parallel: 1
@@ -231,7 +237,7 @@ jobs:
       - name: Idempotent check (#171 Phase 4)
         id: idem
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATE_BASE: ${{ inputs.staging_with_pipeline == true && 'https://staging-data.proton-pulse.com/_state' || 'https://data.proton-pulse.com/_state' }}
         run: bash scripts/probe-idempotent-check.sh "${{ matrix.chunk }}"
 
       - name: Probe ProtonDB summary chunk ${{ matrix.chunk }}
@@ -240,14 +246,18 @@ jobs:
           uv run python scripts/split_reports.py probe /tmp/protondb-output
 
       # Phase 1 of #171: durable chunk-state persistence. Snapshot the probe
-      # cache + a manifest entry to gh-pages/.pipeline-state/ so a cancelled
-      # run (chunk timeout, runner starvation, git-pages incident) doesn't
-      # throw away the successful chunks' work. Skipped when the idempotent
-      # check fired -- nothing changed, nothing to persist.
-      - name: Persist chunk state to gh-pages (#171)
-        if: always() && steps.idem.outputs.skip != 'true'
+      # cache + a manifest entry to the env's R2 state (#396) so a cancelled
+      # run (chunk timeout, runner starvation) doesn't throw away the
+      # successful chunks' work. Only after a successful probe: under
+      # always() a failed probe was recorded as completed, and a resume then
+      # skipped it. Skipped when the idempotent check fired, nothing changed.
+      - name: Persist chunk state to R2 (#171)
+        if: steps.idem.outputs.skip != 'true'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          R2_BUCKET: ${{ inputs.staging_with_pipeline == true && 'proton-pulse-data-staging' || 'proton-pulse-data' }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: bash scripts/persist-chunk-state.sh "${{ matrix.chunk }}" "${{ github.run_id }}" "${{ github.run_attempt }}"
 
       - name: Save pipeline cache
@@ -361,18 +371,20 @@ jobs:
       - name: Restore probe caches from previous run
         run: bash scripts/probe-cache-sync.sh restore .cache /tmp/protondb-output
 
-      # Phase 2 of #171: source the probe cache from durable gh-pages state
-      # instead of the ephemeral actions cache. Overwrites .cache/protondb-
+      # Phase 2 of #171: source the probe cache from durable R2 state (#396)
+      # instead of the ephemeral actions cache. Read keyless over the data
+      # host: staging finalize-only runs read prod's state on purpose, staging
+      # pipeline runs read the staging state their own chunks wrote. Overwrites .cache/protondb-
       # summary-probe-cache.json with the last chunk's snapshot. Aborts loud
       # if any chunk in the FULL plan (expected_matrix) is missing so a
       # runner starvation event surfaces here instead of silently finalizing
       # on stale data. In finalize_only mode build was skipped so the script
       # falls back to whatever's in manifest.json (empty arg triggers that
       # branch). Skipped if the full plan is empty (chunk_count == 0).
-      - name: Restore chunk state from gh-pages (#171)
+      - name: Restore chunk state from R2 (#171)
         if: inputs.finalize_only == true || inputs.staging_with_finalize == true || needs.build.outputs.chunk_count != '0'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATE_BASE: ${{ inputs.staging_with_pipeline == true && 'https://staging-data.proton-pulse.com/_state' || 'https://data.proton-pulse.com/_state' }}
         run: bash scripts/restore-chunk-state.sh '${{ needs.build.outputs.expected_matrix }}'
 
       # Seed the store catalog caches AFTER restoring the pipeline cache, so

@@ -281,9 +281,9 @@ gh-staging-finalize: gh-check
 	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_finalize=true --field deploy_target=cloudflare
 	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_finalize=true + deploy_target=cloudflare -- finalize + stats only against prod chunk state, deploy to CF Pages staging (~5 min). Preview at https://staging.proton-pulse.com/."
 
-# Resume a partial run (#171 Phase 3). Reads gh-pages/.pipeline-state/
-# manifest.json, subtracts chunks marked completed, and re-runs only the
-# missing ones. Use after a chunk stalls or times out mid-pipeline. Save
+# Resume a partial run (#171 Phase 3). Reads the R2 state chunk manifest
+# (_state/pipeline-state/manifest.json), subtracts chunks marked completed,
+# and re-runs only the missing ones. Use after a chunk stalls or times out mid-pipeline. Save
 # vs a fresh dispatch: chunks that already succeeded stay cached, so a
 # 1-chunk rescue takes ~10 min instead of 30+.
 gh-resume: gh-check
@@ -291,7 +291,7 @@ gh-resume: gh-check
 	@echo "Triggered $(GITHUB_WORKFLOW) with resume=true -- only missing chunks will re-run (#171)"
 
 # Re-run finalize alone (#171 Phase 3). Skips build + probe-chunks entirely;
-# reads chunk state from gh-pages manifest as-is and rebuilds the site
+# reads chunk state from the R2 manifest as-is and rebuilds the site
 # outputs. Use after a finalize-side bug fix when the probe cache is fine.
 gh-finalize-only: gh-check
 	gh workflow run $(GITHUB_WORKFLOW) --field finalize_only=true

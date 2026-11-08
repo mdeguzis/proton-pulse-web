@@ -6,6 +6,11 @@
 # data tree (already on disk at the end of the pipeline run) and attach it to
 # a rolling pre-release. The backup lives on GitHub, off Cloudflare.
 #
+# The ProtonDB probe cache rides along as a second asset. It is the one
+# derived file that is slow to rebuild (a cold re-probe of every game into
+# ProtonDB and Steam rate limits), and its working copy now lives in R2 state
+# (#396), so this keeps a copy off Cloudflare.
+#
 # Usage: scripts/backup-to-release.sh <data_dir>
 #   data_dir -- path containing the pipeline's per-game data/ tree
 #
@@ -15,12 +20,14 @@
 # Env (optional):
 #   RELEASE_TAG  default: nightly-backup
 #   REPO         default: mdeguzis/proton-pulse-web
+#   PROBE_CACHE  default: .cache/protondb-summary-probe-cache.json
 
 set -euo pipefail
 
 DATA_DIR="${1:?data_dir required (path to pipeline output with data/)}"
 RELEASE_TAG="${RELEASE_TAG:-nightly-backup}"
 REPO="${REPO:-mdeguzis/proton-pulse-web}"
+PROBE_CACHE="${PROBE_CACHE:-.cache/protondb-summary-probe-cache.json}"
 
 log() { echo "[backup-to-release] $*"; }
 
@@ -33,6 +40,7 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
 TARBALL="$WORK/proton-pulse-data-snapshot.tar.gz"
+PROBE_ASSET="$WORK/protondb-probe-cache.json.gz"
 DATE_UTC="$(date -u +%Y-%m-%d)"
 
 # 1. Create the tarball from the local pipeline output.
@@ -52,9 +60,18 @@ if ! gh release view "$RELEASE_TAG" --repo "$REPO" > /dev/null 2>&1; then
     --prerelease
 fi
 
-# 3. Upload the tarball, overwriting the previous asset.
-log "uploading to release $RELEASE_TAG ..."
-gh release upload "$RELEASE_TAG" "$TARBALL" \
+# 3. Upload the tarball (and the probe cache), overwriting the previous assets.
+assets=("$TARBALL")
+probe_note="not included (no probe cache in this run)"
+if [ -s "$PROBE_CACHE" ]; then
+  gzip -c "$PROBE_CACHE" > "$PROBE_ASSET"
+  assets+=("$PROBE_ASSET")
+  probe_note="$(du -h "$PROBE_ASSET" | awk '{print $1}') (protondb-probe-cache.json.gz)"
+else
+  log "WARNING: $PROBE_CACHE missing or empty; backing up data/ without the probe cache"
+fi
+log "uploading ${#assets[@]} asset(s) to release $RELEASE_TAG ..."
+gh release upload "$RELEASE_TAG" "${assets[@]}" \
   --repo "$REPO" \
   --clobber
 
@@ -67,7 +84,8 @@ gh release edit "$RELEASE_TAG" \
 Last updated: $DATE_UTC
 Objects: $file_count
 Tarball size: $tarball_size
+Probe cache: $probe_note
 
 Restore: \`gh release download $RELEASE_TAG --repo $REPO && tar xzf proton-pulse-data-snapshot.tar.gz -C /tmp/restore\`"
 
-log "done ($DATE_UTC, $file_count objects, $tarball_size)"
+log "done ($DATE_UTC, $file_count objects, $tarball_size, probe cache $probe_note)"
