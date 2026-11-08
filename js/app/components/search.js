@@ -2,7 +2,7 @@
 
 import { estimateScore } from '../../shared/scoring.js?v=467474be';
 import { fetchMatchingPulseConfigs, fetchMatchingPulseReportAppIds } from '../api/reports.js?v=5bf065cc';
-import { renderGamePage } from './game-page.js?v=4e36a93f';
+import { renderGamePage } from './game-page.js?v=a538498f';
 import { STEAM_IMG, SITE_ROOT, USES_PROD_DATA, storeLabelFromAppId, fetchDataWithProdFallback } from '../config.js?v=3c5c74a2';
 import { daysAgo, esc, withTimeout } from '../utils.js?v=4630c3d5';
 import { renderGameCard } from '../lib/card.js?v=ecf16dff';
@@ -111,8 +111,8 @@ export function renderIndexSearchResult(entry, displayTitleOverride) {
   const meta = counts.length
     ? counts.join(' + ') + ' report' + ((protondbCount + pulseCount) === 1 ? '' : 's')
     : delisted
-      ? `Delisted from Steam${delistedSteamAppId ? ` (was app ${esc(delistedSteamAppId)})` : ''} - no ProtonDB reports.`
-      : `ProtonDB data indexed for app ${esc(appId)}.`;
+      ? `Delisted from Steam${delistedSteamAppId ? ` (was app ${esc(delistedSteamAppId)})` : ''} - no reports yet.`
+      : `No reports yet for app ${esc(appId)}.`;
   // #434 followup: a pgwiki-source row that carries a delisted-steam
   // appid was ORIGINALLY a Steam listing; PCGWiki is just where the
   // metadata came from. Show STEAM as the store tag so the card reads

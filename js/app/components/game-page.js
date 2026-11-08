@@ -10,11 +10,11 @@ import { fetchCdn, fetchProtonDbLive, readProtonDbLiveCache } from '../api/proto
 import { readSharedField, writeShared, clearShared, isEnabled as isSharedEnabled } from '../../shared/filters-shared.js?v=2d441093';
 import { deleteOwnCloudConfig, fetchConfigPlaytimeTotals, fetchNativeReports, fetchSupabase, flagReport } from '../api/supabase.js?v=09ab4d70';
 import { castVote, fetchUserVotes, fetchVotes } from '../api/votes.js?v=2ba4697b';
-import { enhanceAuthorBlocks } from './author.js?v=d857af96';
+import { enhanceAuthorBlocks } from './author.js?v=afb6eaea';
 import { renderConfigCard } from './config-cards.js?v=ef72f5bb';
 import { DECK_STATUS_ICON_SVG, DECK_STATUS_LABELS, _DECK_LCD_RE, _DECK_OLED_RE, _STEAM_MACHINE_RE, _ANDROID_HANDHELD_OS_RE, fillVrOnLinuxTab, renderDeckStatusButton, renderDeckStatusModalContent } from './deck-status.js?v=692e1266';
-import { renderCard } from './report-card.js?v=ee3ff50a';
-import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=f2358fd8';
+import { renderCard } from './report-card.js?v=9d10a1ab';
+import { loadExtendedSteamIndex, extendedSteamIndex } from './search.js?v=1f8c31b3';
 import { getGamesByIds } from '../api/search-games.js?v=0b6c4bb3';
 import { computeWhatWorks } from '../lib/what-works.js?v=fc499ba6';
 
