@@ -2,16 +2,13 @@
 
 UV_CACHE_DIR ?= /tmp/uv-cache
 GITHUB_WORKFLOW ?= update-data.yml
-BACKFILL_APP_IDS ?=
-COVERAGE_BACKFILL_ISSUE_TYPE ?=
-COVERAGE_BACKFILL_LIMIT ?= 0
 WATCH_INTERVAL ?= 10
 WATCH_ALL_WORKFLOWS ?= true
 STAGING_VERSION_URL ?= https://staging.proton-pulse.com/version.json
 FORCE_DEPLOY ?=
 
 .PHONY: help setup install install-pg test test-js lint lint-py lint-pylint lint-sh test-py init-submodules fetch-steam-catalog backup-supabase install-docker check-cert r2-canary supabase-canary secrets-canary \
-	gh-run gh-pages-only gh-staging gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-backfill-apps gh-coverage-backfill gh-run-watch gh-check check-staging-sync \
+	gh-run gh-staging-pipeline gh-staging-finalize gh-resume gh-finalize-only gh-run-watch gh-check check-staging-sync \
 	cf-staging cf-prod security-check \
 	build serve smoke smoke-live pre-push coverage deploy-worker
 
@@ -104,10 +101,6 @@ help:
 	@echo "  cf-prod             Force a shell-only CF Pages production deploy (~1-2 min). Every push to main auto-triggers this via publish-shell.yml."
 	@echo "  gh-resume           Re-run only chunks marked incomplete in the manifest (#171)"
 	@echo "  gh-finalize-only    Skip probing, re-run finalize against current manifest state (#171)"
-	@echo "  gh-backfill-apps    Trigger targeted app backfill"
-	@echo "                      Usage: make gh-backfill-apps BACKFILL_APP_IDS=1145350,2358720"
-	@echo "  gh-coverage-backfill Trigger coverage-based backfill"
-	@echo "                      Usage: make gh-coverage-backfill COVERAGE_BACKFILL_ISSUE_TYPE=no-titles COVERAGE_BACKFILL_LIMIT=50"
 	@echo "  gh-run-watch        Poll active GitHub Actions runs until they finish"
 	@echo "                      Optional: WATCH_INTERVAL=5 make gh-run-watch"
 	@echo "                      Optional: WATCH_ALL_WORKFLOWS=false make gh-run-watch"
@@ -297,25 +290,7 @@ gh-finalize-only: gh-check
 	gh workflow run $(GITHUB_WORKFLOW) --field finalize_only=true
 	@echo "Triggered $(GITHUB_WORKFLOW) with finalize_only=true -- probes skipped, finalize only (#171)"
 
-gh-backfill-apps: gh-check
-	@if [ -z "$(BACKFILL_APP_IDS)" ]; then \
-		echo "error: BACKFILL_APP_IDS is required." >&2; \
-		echo "usage: make gh-backfill-apps BACKFILL_APP_IDS=1145350,2358720" >&2; \
-		exit 1; \
-	fi
-	gh workflow run $(GITHUB_WORKFLOW) --field backfill_app_ids="$(BACKFILL_APP_IDS)"
-	@echo "Triggered $(GITHUB_WORKFLOW) with backfill_app_ids=$(BACKFILL_APP_IDS)"
 
-gh-coverage-backfill: gh-check
-	@if [ -z "$(COVERAGE_BACKFILL_ISSUE_TYPE)" ]; then \
-		echo "error: COVERAGE_BACKFILL_ISSUE_TYPE is required." >&2; \
-		echo "usage: make gh-coverage-backfill COVERAGE_BACKFILL_ISSUE_TYPE=no-titles COVERAGE_BACKFILL_LIMIT=50" >&2; \
-		exit 1; \
-	fi
-	gh workflow run $(GITHUB_WORKFLOW) \
-		--field coverage_backfill_issue_type="$(COVERAGE_BACKFILL_ISSUE_TYPE)" \
-		--field coverage_backfill_limit="$(COVERAGE_BACKFILL_LIMIT)"
-	@echo "Triggered $(GITHUB_WORKFLOW) with coverage_backfill_issue_type=$(COVERAGE_BACKFILL_ISSUE_TYPE) coverage_backfill_limit=$(COVERAGE_BACKFILL_LIMIT)"
 
 gh-run-watch: gh-check
 	@while true; do \

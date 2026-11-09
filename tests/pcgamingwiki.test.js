@@ -93,9 +93,11 @@ describe('manifest + publish', () => {
   });
 
   test('pcgamingwiki cache files are committed to gh-pages by update-data workflow', () => {
-    // Four optional-files loops (staging/prod + pages_only/full); each must
-    // include the cache so the enricher's TTL survives across runs.
+    // Two optional-files loops remain in finalize's gh-pages rollback deploys
+    // (prod + staging); the pages_only and backfill jobs that held the other
+    // two were retired (#396). Each must include the cache so the enricher's
+    // TTL survives across runs.
     const matches = WORKFLOW.match(/pcgamingwiki\.json pcgamingwiki-cache\.json/g) || [];
-    expect(matches.length).toBe(4);
+    expect(matches.length).toBe(2);
   });
 });

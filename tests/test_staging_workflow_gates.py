@@ -11,8 +11,9 @@ from pathlib import Path
 import yaml
 
 
+ROOT = Path(__file__).resolve().parent.parent
 WORKFLOW = yaml.safe_load(
-    (Path(__file__).resolve().parent.parent / ".github" / "workflows" / "update-data.yml").read_text()
+    (ROOT / ".github" / "workflows" / "update-data.yml").read_text()
 )
 
 
@@ -27,9 +28,8 @@ def _step(job_name, step_name):
     raise AssertionError(f"step {step_name!r} not found in job {job_name!r}")
 
 
-def test_all_three_staging_inputs_declared():
+def test_staging_inputs_declared():
     inputs = WORKFLOW[True]["workflow_dispatch"]["inputs"]  # `on` parses as True in YAML 1.1
-    assert "staging_only" in inputs
     assert "staging_with_pipeline" in inputs
     assert "staging_with_finalize" in inputs
 
@@ -37,11 +37,24 @@ def test_all_three_staging_inputs_declared():
 def test_build_stage_skips_all_finalize_only_modes():
     # Build (probe planning + report processing) is the expensive stage. It
     # must skip whenever we're in any mode that reuses prod chunk state:
-    # pages_only, staging_only, finalize_only, staging_with_finalize.
+    # finalize_only, staging_with_finalize.
     gate = _job("build")["if"]
     assert "inputs.finalize_only != true" in gate
     assert "inputs.staging_with_finalize != true" in gate
-    assert "inputs.staging_only != true" in gate
+
+
+def test_gh_pages_shell_and_backfill_modes_are_retired():
+    # #396: pages_only, staging_only and the two backfill modes deployed to
+    # gh-pages (or the retired staging repo), which nothing reads since the
+    # Cloudflare move. publish-shell.yml owns shell deploys now.
+    inputs = WORKFLOW[True]["workflow_dispatch"]["inputs"]
+    for gone in ("pages_only", "staging_only", "backfill_app_ids",
+                 "coverage_backfill_issue_type", "coverage_backfill_limit"):
+        assert gone not in inputs, gone
+    assert set(WORKFLOW["jobs"]) == {"build", "probe-chunks", "finalize", "report-build-status"}
+    assert not (ROOT / ".github" / "workflows" / "deploy-on-merge.yml").exists()
+    make = (ROOT / "Makefile").read_text()
+    assert "gh-backfill-apps" not in make and "gh-coverage-backfill" not in make
 
 
 def test_finalize_stage_runs_for_both_finalize_modes():
