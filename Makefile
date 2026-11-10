@@ -92,9 +92,7 @@ help:
 	@echo "  gh-check            Verify gh is installed and authenticated"
 	@echo "  check-staging-sync  Verify staging SHA matches HEAD before a prod deploy (auto-runs)"
 	@echo "  gh-run              Trigger the full GitHub Actions update-data workflow via gh"
-	@echo "  gh-pages-only       Promote current main to production (requires staging to be in sync)"
 	@echo "  draft-release       Create/refresh a DRAFT GitHub release pre-filled with commits (auto-runs on prod deploys)"
-	@echo "  gh-staging          Deploy shell files to staging only (no prod deploy) for preview"
 	@echo "  gh-staging-pipeline Run FULL pipeline against staging + deploy data to staging (#117, ~30 min)"
 	@echo "  gh-staging-finalize Skip probe/build, re-run finalize + stats against prod state, deploy to staging (#196, ~5 min)"
 	@echo "  cf-staging          Force a shell-only CF Pages staging deploy (~1-2 min). Every push to staging auto-triggers this via publish-shell.yml."
@@ -114,7 +112,7 @@ install:
 
 # Pull scoring-info.json and form-schema.json from the decky-proton-pulse repo
 # so scoring.html and the submit form can render locally. These files live in
-# the plugin repo and are normally pulled by the gh-pages deploy workflow; for
+# the plugin repo and are pulled by scripts/fetch-plugin-data.sh in CI; for
 # local dev we grab them from a sibling checkout if present, else from GitHub.
 PLUGIN_REPO ?= ../decky-proton-pulse
 sync-runtime:
@@ -229,7 +227,8 @@ draft-release:
 # footgun -- `make gh-staging` looks like the obvious way to preview staging
 # and silently deploys somewhere nobody looks. Use cf-staging / cf-prod below.
 # The gh-* PIPELINE targets (gh-run, gh-staging-finalize, ...) are unrelated
-# and still current; they dispatch update-data.yml, they do not touch gh-pages.
+# and still current; they dispatch update-data.yml, which deploys to
+# Cloudflare only since the gh-pages rollback was retired (#396).
 
 # ── Cloudflare Pages shell deploys (#362 follow-up) ────────────────────
 #
@@ -255,24 +254,20 @@ cf-prod: gh-check
 # staging project + staging R2 bucket. Slow (30+ min); only needed when a
 # pipeline-data change needs end-to-end verification before promoting to
 # prod. Regular UI-only changes should keep using `make cf-staging`.
-#
-# deploy_target=cloudflare is the workflow default but pass it explicitly
-# so a future default change cannot silently start double-pushing to the
-# retired gh-pages staging preview.
 gh-staging-pipeline: gh-check
 	@bash scripts/wait-for-remote.sh
-	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_pipeline=true --field deploy_target=cloudflare
-	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_pipeline=true + deploy_target=cloudflare -- full pipeline against staging, ~30 min. Preview at https://staging.proton-pulse.com/ (data via https://staging-data.proton-pulse.com)."
+	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_pipeline=true
+	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_pipeline=true -- full pipeline against staging, ~30 min. Preview at https://staging.proton-pulse.com/ (data via https://staging-data.proton-pulse.com)."
 
 # Fast staging deploy for finalize-only changes (#196). Skips build + probe
-# entirely; restores prod chunk state from gh-pages, reruns only finalize +
+# entirely; restores prod chunk state from R2, reruns only finalize +
 # stats against it, and deploys to CF Pages staging. Use for changes that
 # touch finalize.py or search-index shape without needing new probe data --
 # e.g. adding a column to search-index.json. Wall time: ~5 min instead of 30.
 gh-staging-finalize: gh-check
 	@bash scripts/wait-for-remote.sh
-	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_finalize=true --field deploy_target=cloudflare
-	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_finalize=true + deploy_target=cloudflare -- finalize + stats only against prod chunk state, deploy to CF Pages staging (~5 min). Preview at https://staging.proton-pulse.com/."
+	gh workflow run $(GITHUB_WORKFLOW) --ref staging --field staging_with_finalize=true
+	@echo "Triggered $(GITHUB_WORKFLOW) with staging_with_finalize=true -- finalize + stats only against prod chunk state, deploy to CF Pages staging (~5 min). Preview at https://staging.proton-pulse.com/."
 
 # Resume a partial run (#171 Phase 3). Reads the R2 state chunk manifest
 # (_state/pipeline-state/manifest.json), subtracts chunks marked completed,

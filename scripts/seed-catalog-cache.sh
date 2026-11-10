@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Seed a store catalog cache from gh-pages, but only when it is actually newer.
+# Seed a store catalog cache from R2 state, but only when it is actually newer.
 #
 # The pipeline restores .cache/ from the Actions cache first, then seeds these
-# two files from gh-pages so a catalog rebuilt by the dedicated weekly
+# two files from the R2 state copy (fetched by fetch-public-state.sh) so a catalog rebuilt by the dedicated weekly
 # workflows wins over a stale copy carried in the Actions cache.
 #
-# That assumed gh-pages is the fresher of the two. It was not. The weekly
+# That once assumed the published copy (gh-pages, before #396) is the fresher
+# of the two. It was not. The weekly
 # workflow only refreshed when the cache had already expired, and its cadence
 # equals the TTL, so it kept no-opping and gh-pages froze -- while finalize
 # re-fetched the catalog in-line and saved a genuinely fresh copy to the
@@ -14,10 +15,10 @@
 #
 # Comparing `_ts` keeps the intent (a real rebuild wins) without the inversion.
 #
-# Usage: seed-catalog-cache.sh <gh-pages-dir> <cache-dir> <file>...
+# Usage: seed-catalog-cache.sh <state-dir> <cache-dir> <file>...
 set -euo pipefail
 
-SRC_DIR="${1:?gh-pages dir required}"; shift
+SRC_DIR="${1:?state dir required}"; shift
 DST_DIR="${1:?cache dir required}"; shift
 
 mkdir -p "$DST_DIR"
@@ -37,19 +38,19 @@ for f in "$@"; do
   src="$SRC_DIR/$f"
   dst="$DST_DIR/$f"
   if [ ! -f "$src" ]; then
-    echo "[seed-catalog] $f: not on gh-pages, keeping whatever the Actions cache had"
+    echo "[seed-catalog] $f: no R2 state copy, keeping whatever the Actions cache had"
     continue
   fi
   if [ ! -f "$dst" ]; then
     cp "$src" "$dst"
-    echo "[seed-catalog] $f: seeded from gh-pages (no local copy)"
+    echo "[seed-catalog] $f: seeded from R2 state (no local copy)"
     continue
   fi
   src_ts="$(cache_ts "$src")"
   dst_ts="$(cache_ts "$dst")"
   if [ "$src_ts" -gt "$dst_ts" ]; then
     cp "$src" "$dst"
-    echo "[seed-catalog] $f: gh-pages is newer (${src_ts} > ${dst_ts}), seeded"
+    echo "[seed-catalog] $f: R2 state copy is newer (${src_ts} > ${dst_ts}), seeded"
   else
     echo "[seed-catalog] $f: local cache is newer or equal (${dst_ts} >= ${src_ts}), kept"
   fi

@@ -64,13 +64,18 @@ def test_finalize_stage_runs_for_both_finalize_modes():
 
 
 def test_prod_deploy_gated_off_for_every_staging_mode():
-    # If either staging flag is on, the prod deploy step must be skipped.
-    # Missing either check is the exact bug that force-pushed prod's
-    # frontend over a staging preview last time.
-    step = _step("finalize", "Deploy to gh-pages (orphan, no history)")
-    gate = step["if"]
-    assert "inputs.staging_with_pipeline != true" in gate
-    assert "inputs.staging_with_finalize != true" in gate
+    # If either staging flag is on, the one deploy step must target staging's
+    # Pages project and bucket. Missing either check is the exact bug that
+    # force-pushed prod's frontend over a staging preview once.
+    env = _step("finalize", "Deploy to Cloudflare (R2 + Pages)")["env"]
+    for key, staging in (("PAGES_PROJECT", "'proton-pulse-web-staging'"),
+                         ("PAGES_BRANCH", "'staging'"),
+                         ("R2_BUCKET", "'proton-pulse-data-staging'"),
+                         ("DATA_BASE", "'https://staging-data.proton-pulse.com'")):
+        expr = env[key]
+        assert "inputs.staging_with_pipeline == true" in expr, key
+        assert "inputs.staging_with_finalize == true" in expr, key
+        assert f"&& {staging} ||" in expr, key
 
 
 def test_staging_runs_never_push_to_the_retired_staging_repo():
@@ -86,16 +91,19 @@ def test_staging_runs_never_push_to_the_retired_staging_repo():
         assert "STAGING_DEPLOY_TOKEN" not in text, wf.name
 
 
-def test_staging_ghpages_dispatch_fails_fast():
-    # Without the staging repo step, staging + ghpages would build for 30 min
-    # and publish nothing. The guard has to be finalize's first step.
-    first = WORKFLOW["jobs"]["finalize"]["steps"][0]
-    assert first["name"] == "Refuse ghpages for staging runs"
-    gate = first["if"]
-    assert "inputs.staging_with_pipeline == true" in gate
-    assert "inputs.staging_with_finalize == true" in gate
-    assert "inputs.deploy_target == 'ghpages'" in gate
-    assert "exit 1" in first["run"]
+def test_gh_pages_rollback_and_fallbacks_are_retired():
+    # #396: Cloudflare is the only deploy target. No deploy_target input, no
+    # orphan gh-pages deploy, no gh-pages checkout feeding fallbacks.
+    assert "deploy_target" not in WORKFLOW[True]["workflow_dispatch"]["inputs"]
+    raw = (ROOT / ".github" / "workflows" / "update-data.yml").read_text()
+    for gone in ("deploy_target", "ref: gh-pages", "gh-pages-data", "git rm -rf",
+                 "origin gh-pages", "/tmp/backup-to-release.sh", "/tmp/preserve-"):
+        assert gone not in raw, gone
+    backup = _step("finalize", "Backup data to GitHub Release")
+    assert "bash scripts/backup-to-release.sh /tmp/protondb-output" in backup["run"]
+    for wf in ("retry-pages-build.yml",):
+        assert not (ROOT / ".github" / "workflows" / wf).exists()
+    assert not (ROOT / "scripts" / "preserve-steam-type-cache.sh").exists()
 
 
 def test_probe_artifact_download_skipped_when_build_skipped():

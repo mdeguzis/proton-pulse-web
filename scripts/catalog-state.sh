@@ -11,10 +11,8 @@ set -euo pipefail
 #
 # A catalog can always be rebuilt from the store API, so a failed pull is
 # logged and the run continues with whatever is in <cache_dir>; the fetch
-# then does a full refresh and push saves it. When R2 has no copy yet (first
-# run after the move off gh-pages), pull seeds once from origin/gh-pages so
-# the first run does not pay a full re-fetch. That fallback goes when the
-# branch is archived.
+# then does a full refresh and push saves it. The one-time gh-pages seed for
+# the first run after the move went with the branch (#396).
 #
 # push refuses a catalog with no entries, so an upstream bug that returns
 # zero pages without raising can never overwrite the good copy.
@@ -40,18 +38,7 @@ case "$cmd" in
     set -e
     case "$rc" in
       0) log "$file pulled from R2 ($(entries "$dir/$file") entries)" ;;
-      3)
-        log "$file not in R2 yet; seeding once from origin/gh-pages (#396 migration)"
-        if git -C "$HERE/.." fetch -q --depth 1 origin gh-pages \
-           && git -C "$HERE/.." show "origin/gh-pages:$file" > "$dir/$file.tmp" \
-           && python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$dir/$file.tmp" 2>/dev/null; then
-          mv "$dir/$file.tmp" "$dir/$file"
-          log "seeded $file from gh-pages ($(entries "$dir/$file") entries)"
-        else
-          rm -f "$dir/$file.tmp"
-          log "gh-pages has no usable $file either; the fetch will do a full refresh"
-        fi
-        ;;
+      3) log "WARNING: $file is not in R2 state; the fetch will do a full refresh" ;;
       *)
         log "WARNING: could not read $file from R2 (rc=$rc); continuing, the fetch will do a full refresh"
         ;;

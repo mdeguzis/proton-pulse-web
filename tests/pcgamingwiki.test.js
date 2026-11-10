@@ -92,12 +92,12 @@ describe('manifest + publish', () => {
     expect(PUBLISH_SH).toContain('pcgamingwiki.json');
   });
 
-  test('pcgamingwiki cache files are committed to gh-pages by update-data workflow', () => {
-    // One optional-files loop remains, in finalize's prod gh-pages rollback
-    // deploy. The pages_only, backfill and staging-repo deploys that held the
-    // other three were retired (#396). It must include the cache so the
-    // enricher's TTL survives across runs.
-    const matches = WORKFLOW.match(/pcgamingwiki\.json pcgamingwiki-cache\.json/g) || [];
-    expect(matches.length).toBe(1);
+  test('pcgamingwiki cache persists in .cache, not on gh-pages', () => {
+    // The enricher's TTL survives across runs through the Actions-cached
+    // .cache/ dir (#497). The gh-pages deploys that also committed it were
+    // all retired (#396), so the workflow must not list it any more.
+    const ENRICHER = fs.readFileSync(path.join(__dirname, '..', 'scripts/pipeline/pcgamingwiki.py'), 'utf8');
+    expect(ENRICHER).toMatch(/"\.cache" \/ CACHE_FILENAME/);
+    expect(WORKFLOW).not.toMatch(/pcgamingwiki-cache\.json/);
   });
 });

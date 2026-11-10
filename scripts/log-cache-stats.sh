@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Report cache state at a workflow boundary (#89).
 #
-# Called from the pipeline after the gh-pages restore + actions/cache
+# Called from the pipeline after the data/ snapshot pull + actions/cache
 # restore steps so the log tells us exactly what state the pipeline was
 # given before real work started: which caches exist, how old they are,
 # and how many entries they carry. Makes it easy to tell whether the
@@ -12,7 +12,7 @@
 #   $1  label (e.g. "post-restore", "final") - printed in log lines
 #
 # Reads from the current working directory. Both actions/cache-restored
-# .cache/ files and gh-pages-restored /tmp/protondb-output/ files are
+# .cache/ files and probe-cache-sync-restored /tmp/protondb-output/ files are
 # covered so one call at a boundary shows both layers.
 set -euo pipefail
 
@@ -27,8 +27,8 @@ declare -A CACHES=(
   ["actions/steam-content-descriptors-cache"]=".cache/steam-content-descriptors-cache.json"
   ["actions/gog-catalog-cache"]=".cache/gog-catalog-cache.json"
   ["actions/epic-catalog-cache"]=".cache/epic-catalog-cache.json"
-  ["gh-pages/game-images-cache"]="/tmp/protondb-output/game-images-cache.json"
-  ["gh-pages/release-years-cache"]="/tmp/protondb-output/release-years-cache.json"
+  ["output/game-images-cache"]="/tmp/protondb-output/game-images-cache.json"
+  ["output/release-years-cache"]="/tmp/protondb-output/release-years-cache.json"
 )
 
 echo "[cache-stats:$LABEL] --------------------------------"

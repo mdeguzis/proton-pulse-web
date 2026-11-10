@@ -4,7 +4,7 @@ Full-restore automation for Proton Pulse (#265).
 
 Interactive-friendly script that walks a new maintainer through a fresh
 recovery of the whole stack: Supabase schema + edge fns, GitHub secrets,
-gh-pages seed, backup import, wiki restore, verification checklist.
+backup import, wiki restore, verification checklist.
 
 Usage:
     scripts/restore.py --stage all

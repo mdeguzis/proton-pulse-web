@@ -70,13 +70,14 @@ def test_fetch_step_runs_before_cloudflare_deploy():
     assert fetch < deploy
 
 
-def test_fetch_step_targets_deploy_dir_and_cloudflare_gate():
+def test_fetch_step_targets_deploy_dir_and_runs_ungated():
     steps = {s.get("name"): s for s in WORKFLOW["jobs"]["finalize"]["steps"]}
     fetch = steps["Fetch plugin-sourced data files"]
     deploy = steps["Deploy to Cloudflare (R2 + Pages)"]
     assert "fetch-plugin-data.sh /tmp/protondb-output" in fetch["run"]
     assert "/tmp/protondb-output" in deploy["run"]
-    assert fetch["if"] == deploy["if"]
+    # Both run on every finalize since the gh-pages target was retired (#396).
+    assert "if" not in fetch and "if" not in deploy
 
 
 # --- #564: proton-env-support.json is optional ------------------------------

@@ -10,14 +10,14 @@ set -euo pipefail
 # base. Now each successful Cloudflare deploy pushes data/ as one archive,
 # and the next run starts from it.
 #
-#   data-snapshot.sh pull <output_dir> [fallback_dir]
+#   data-snapshot.sh pull <output_dir>
 #       Download <STATE_BASE>/data-snapshot.tar.zst over the public data host
 #       and extract it into <output_dir>/data without overwriting files that
 #       are already there (the artifact wins, same as the old `cp -rn`).
-#       A missing (404), unreachable or corrupt snapshot falls back to
-#       <fallback_dir>/data (the gh-pages checkout, until it is archived).
-#       With neither, it exits 1: building on an empty base would publish a
-#       search index missing most games.
+#       A missing (404), unreachable or corrupt snapshot exits 1: building on
+#       an empty base would publish a search index missing most games. The
+#       gh-pages data/ fallback went with the branch (#396); a lost snapshot
+#       is restored from the nightly-backup release (Restore-Runbook).
 #   data-snapshot.sh push <output_dir>
 #       Archive <output_dir>/data and upload it with r2-state.sh (needs the
 #       R2 env). Refuses when data/ is missing, or has fewer than
@@ -26,7 +26,7 @@ set -euo pipefail
 #
 # Env:
 #   STATE_BASE           pull source, default https://data.proton-pulse.com/_state
-#                        (prod's, for staging runs too: that is what gh-pages was)
+#                        (prod's, for staging runs too)
 #   SNAPSHOT_COUNT_FILE  pull writes the base's app-dir count here, push reads it
 #   SNAPSHOT_MIN_RATIO   default 0.9
 
@@ -47,22 +47,13 @@ record_count() {
   fi
 }
 
-fallback() {
-  local fb="${1:-}" why="$2"
-  if [ -n "$fb" ] && [ -d "$fb/data" ]; then
-    mkdir -p "$out/data"
-    cp -rn "$fb/data/." "$out/data/"
-    log "$why; used $fb/data instead ($(app_dirs "$fb/data") app dirs there, $(app_dirs "$out/data") after merge)"
-    record_count
-    return 0
-  fi
-  log "ERROR: $why and no fallback data at '${fb:-<none>}'; refusing to build on an empty base"
+fail_pull() {
+  log "ERROR: $1; refusing to build on an empty base (restore the snapshot from the nightly-backup release, see Restore-Runbook)"
   exit 1
 }
 
 case "$cmd" in
   pull)
-    fb="${3:-}"
     base="${STATE_BASE:-https://data.proton-pulse.com/_state}"
     tmp="$(mktemp)"; hdr="$(mktemp)"
     trap 'rm -f "$tmp" "$hdr"' EXIT
@@ -70,12 +61,10 @@ case "$cmd" in
     code="$(curl -sS -D "$hdr" -o "$tmp" -w '%{http_code}' --max-time 600 "$base/$NAME" 2>/dev/null)" || true
     code="${code:-000}"
     if [ "$code" != 200 ]; then
-      if [ "$code" = 404 ]; then fallback "$fb" "no snapshot in R2 state yet (404)"; else fallback "$fb" "snapshot download failed (HTTP $code)"; fi
-      exit 0
+      if [ "$code" = 404 ]; then fail_pull "no snapshot at $base/$NAME (404)"; else fail_pull "snapshot download failed (HTTP $code)"; fi
     fi
     if ! zstd -q -t "$tmp" 2>/dev/null; then
-      fallback "$fb" "snapshot is corrupt (zstd -t failed, $(wc -c < "$tmp") bytes)"
-      exit 0
+      fail_pull "snapshot is corrupt (zstd -t failed, $(wc -c < "$tmp") bytes)"
     fi
     modified="$(grep -i '^last-modified:' "$hdr" | cut -d' ' -f2- | tr -d '\r' || true)"
     before="$(app_dirs "$out/data")"
