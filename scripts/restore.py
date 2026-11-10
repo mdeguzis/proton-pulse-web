@@ -40,7 +40,6 @@ REQUIRED_SECRETS = [
     ("SUPABASE_TOKEN", "Supabase Account -> Access Tokens"),
     ("BACKUP_HMAC_SECRET", "generate: openssl rand -hex 32 (pseudonymizes ids in the public backup.yml export)"),
     ("BACKUP_REPO_TOKEN", "GitHub fine-grained PAT (Contents R/W on backup repo)"),
-    ("STAGING_DEPLOY_TOKEN", "GitHub fine-grained PAT (Contents R/W on staging repo)"),
     ("DISCORD_WEBHOOK_ANNOUNCE", "Discord server integrations"),
     ("DISCORD_WEBHOOK_BACKUPS", "Discord server integrations"),
     ("DISCORD_WEBHOOK_BUILDS", "Discord server integrations"),

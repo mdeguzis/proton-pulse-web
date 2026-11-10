@@ -16,8 +16,6 @@ on:
       - Supabase Canary
       - Secrets Canary
       - Database Backup (encrypted)
-      - Deploy on merge to main
-      - Sync staging repo
       - Update Epic Catalog
       - Update GOG Catalog
     types: [completed]

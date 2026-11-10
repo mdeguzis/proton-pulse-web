@@ -23,7 +23,7 @@ const WORKFLOWS_DIR = path.join(ROOT, '.github', 'workflows');
 
 // Workflows where standardization applies. Deploy/webhook/CI helpers that
 // exist purely to reflect other events (retry-pages-build, discord-*,
-// sync-staging-main, deploy-on-merge) don't take app_id / issue_id inputs and
+// publish-shell) don't take app_id / issue_id inputs and
 // wouldn't benefit from the back-comment -- explicitly excluded so this test
 // doesn't false-positive on infrastructure workflows.
 const PIPELINE_WORKFLOWS = [

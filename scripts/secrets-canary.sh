@@ -12,7 +12,6 @@ set -uo pipefail
 #                          is never printed.
 #   STEAM_API_KEY          ISteamWebAPIUtil/GetSupportedAPIList answers 200
 #   SGDB_API_KEY           SteamGridDB game lookup answers 200
-#   STAGING_DEPLOY_TOKEN   can read mdeguzis/proton-pulse-web-staging
 #   BACKUP_REPO_TOKEN      can read mdeguzis/proton-pulse-data-backup
 #   OPENAI_API_KEY, VT_API_KEY   optional integrations, checked when set
 #
@@ -77,7 +76,7 @@ else
   missing "SGDB_API_KEY"
 fi
 
-# GitHub PATs used by the staging sync and the backup export. Reading the
+# GitHub PAT used by the backup export. Reading the
 # repo proves the token is alive and scoped to it; write access can't be
 # checked without writing.
 gh_repo_check() {
@@ -88,7 +87,6 @@ gh_repo_check() {
   [ "$code" = 200 ] && pass "$name reads $repo" \
     || fail "$name got HTTP $code reading $repo (expired PAT?)"
 }
-gh_repo_check STAGING_DEPLOY_TOKEN mdeguzis/proton-pulse-web-staging
 gh_repo_check BACKUP_REPO_TOKEN mdeguzis/proton-pulse-data-backup
 
 # Optional integrations: the workflows degrade without them, so unset is fine.

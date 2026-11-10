@@ -73,11 +73,29 @@ def test_prod_deploy_gated_off_for_every_staging_mode():
     assert "inputs.staging_with_finalize != true" in gate
 
 
-def test_staging_deploy_gated_on_for_both_staging_finalize_modes():
-    step = _step("finalize", "Deploy pipeline output to staging repo")
-    gate = step["if"]
+def test_staging_runs_never_push_to_the_retired_staging_repo():
+    # #396: staging runs deploy to Cloudflare only. The old gh-pages step for
+    # them force-pushed to mdeguzis/proton-pulse-web-staging, and
+    # sync-staging-main.yml mirrored main there on every push.
+    names = [s.get("name", "") for s in WORKFLOW["jobs"]["finalize"]["steps"]]
+    assert "Deploy pipeline output to staging repo" not in names
+    assert not (ROOT / ".github" / "workflows" / "sync-staging-main.yml").exists()
+    for wf in (ROOT / ".github" / "workflows").glob("*.yml"):
+        text = wf.read_text()
+        assert "proton-pulse-web-staging.git" not in text, wf.name
+        assert "STAGING_DEPLOY_TOKEN" not in text, wf.name
+
+
+def test_staging_ghpages_dispatch_fails_fast():
+    # Without the staging repo step, staging + ghpages would build for 30 min
+    # and publish nothing. The guard has to be finalize's first step.
+    first = WORKFLOW["jobs"]["finalize"]["steps"][0]
+    assert first["name"] == "Refuse ghpages for staging runs"
+    gate = first["if"]
     assert "inputs.staging_with_pipeline == true" in gate
     assert "inputs.staging_with_finalize == true" in gate
+    assert "inputs.deploy_target == 'ghpages'" in gate
+    assert "exit 1" in first["run"]
 
 
 def test_probe_artifact_download_skipped_when_build_skipped():
