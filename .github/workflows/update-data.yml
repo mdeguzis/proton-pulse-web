@@ -6,12 +6,12 @@ on:
   workflow_dispatch:
     inputs:
       staging_with_pipeline:
-        description: "Run the FULL pipeline against the staging branch and deploy data + shell to the staging repo. Slow (30+ min). Use when a pipeline-data change needs end-to-end verification before promoting to prod (#117)."
+        description: "Run the FULL pipeline against the staging branch and deploy data + shell to staging.proton-pulse.com. Slow (30+ min). Use when a pipeline-data change needs end-to-end verification before promoting to prod (#117)."
         required: false
         default: false
         type: boolean
       staging_with_finalize:
-        description: "Skip probe + build, restore prod chunk state from gh-pages, re-run only finalize + stats, push to the staging repo. Fast (~5 min) verification path for changes that only touch finalize.py or search-index shape (#196)."
+        description: "Skip probe + build, restore prod chunk state from R2, re-run only finalize + stats, deploy to staging.proton-pulse.com. Fast (~5 min) verification path for changes that only touch finalize.py or search-index shape (#196)."
         required: false
         default: false
         type: boolean
@@ -36,7 +36,7 @@ on:
         type: boolean
         default: false
       deploy_target:
-        description: "Where to publish the built site. 'cloudflare' (default) syncs data/ to R2 and deploys the shell to Cloudflare Pages. 'ghpages' is retained as a rollback path only -- the origin cert saga and 20k-file Pages cap made it obsolete (#362)."
+        description: "Where to publish the built site. 'cloudflare' (default) syncs data/ to R2 and deploys the shell to Cloudflare Pages. 'ghpages' is retained as a prod-only rollback path -- the origin cert saga and 20k-file Pages cap made it obsolete (#362)."
         required: false
         default: "cloudflare"
         type: choice
@@ -261,6 +261,15 @@ jobs:
     permissions:
       contents: write
     steps:
+      # Staging runs deploy to Cloudflare only. The gh-pages path for them
+      # pushed to the retired proton-pulse-web-staging repo (#396), so a
+      # staging + ghpages dispatch would build everything and publish nothing.
+      - name: Refuse ghpages for staging runs
+        if: (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && inputs.deploy_target == 'ghpages'
+        run: |
+          echo "::error::deploy_target=ghpages is prod-only. Staging runs deploy to Cloudflare (staging.proton-pulse.com)."
+          exit 1
+
       - name: Checkout repo
         uses: actions/checkout@v7
         with:
@@ -649,76 +658,6 @@ jobs:
           git add version.json
           git commit -m "Deploy: $(date +%F)"
           git push origin gh-pages-new:gh-pages --force
-
-      # Staging deploy mode (#117 + #196): same finalize output as the prod
-      # deploy step above, but pushed to the staging repo's gh-pages instead
-      # of origin/gh-pages. Reads version/SHA from HEAD (staging branch) so
-      # the About page reflects what's actually being tested. The prod and
-      # staging deploy steps are mutually exclusive via the `if:` gates --
-      # prod runs when neither staging flag is set; this step runs when
-      # either staging_with_pipeline (full pipeline, 30 min) or
-      # staging_with_finalize (finalize + stats only, ~5 min) is on.
-      - name: Deploy pipeline output to staging repo
-        if: (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && inputs.deploy_target != 'cloudflare'
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git checkout --orphan staging-pipeline-deploy
-          git rm -rf .
-          cp -r /tmp/protondb-output/data .
-          cp /tmp/protondb-output/data-index.html .
-          cp /tmp/protondb-output/coverage.html .
-          cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
-          cp /tmp/protondb-output/search-index-steam-extended.json . 2>/dev/null || true
-          cp /tmp/protondb-output/coverage-summary.json . 2>/dev/null || true
-          cp /tmp/protondb-output/stats.json . 2>/dev/null || true
-          cp /tmp/protondb-output/recent-reports.json . 2>/dev/null || true
-          cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
-          cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
-          cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/nonsteam-images-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/release-years-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
-          cp /tmp/protondb-output/deck-status.json . 2>/dev/null || true
-          cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
-          cp /tmp/protondb-output/nonsteam-metadata.json . 2>/dev/null || true
-          cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
-          cp /tmp/protondb-output/data-versions.json . 2>/dev/null || true
-          cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
-          cp /tmp/protondb-output/hardware-suggestions.json . 2>/dev/null || true
-          # Read shell files from HEAD (staging branch) so JS/CSS/HTML
-          # match the code being tested, not whatever's on main.
-          git show HEAD:gh-pages-manifest.txt > gh-pages-manifest.txt
-          while IFS= read -r path; do
-            [ -z "$path" ] && continue
-            case "$path" in \#*) continue ;; esac
-            mkdir -p "$(dirname "$path")"
-            git show HEAD:"$path" > "$path" 2>/dev/null || true
-          done < gh-pages-manifest.txt
-          curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
-          curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
-          # Preserve steam-type-cache.json + column 11 across the force-push (#263).
-          # Staging repo's gh-pages holds its own copy; falls back to the prod
-          # cache if staging has none yet.
-          bash /tmp/preserve-steam-type-cache.sh "$(pwd)" gh-pages || true
-          git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json image-fallback-stats.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json nonsteam-metadata.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json pcgw-id-map.json flightless-benchmarks.json flightless-review-queue.json flightless-benchmarks-cache.json vrdb.json vr-index.json; do
-            [ -f "$f" ] && git add "$f"
-          done
-          while IFS= read -r path; do
-            [ -z "$path" ] && continue
-            case "$path" in \#*) continue ;; esac
-            git add "$path"
-          done < gh-pages-manifest.txt
-          VERSION=$(git show HEAD:package.json | python3 -c "import json,sys; print(json.load(sys.stdin).get('version','0.0.0'))")
-          SHA=$(git rev-parse --short HEAD)
-          printf '{"version":"%s","sha":"%s","deployed_at":"%s","repo":"mdeguzis/proton-pulse-web"}\n' "$VERSION" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > version.json
-          git add version.json
-          git commit -m "Staging pipeline: $(date +%F)"
-          git remote add staging https://x-access-token:${{ secrets.STAGING_DEPLOY_TOKEN }}@github.com/mdeguzis/proton-pulse-web-staging.git
-          git push staging staging-pipeline-deploy:gh-pages --force
 
       # NOTE: the production pipeline must NOT push to the staging site. Doing so
       # once force-pushed main's frontend over an in-review staging preview.

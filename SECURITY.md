@@ -43,7 +43,7 @@ data in your report; anonymize identifiers before sharing.
 **In scope:**
 
 - <https://www.proton-pulse.com> and the staging preview at
-  <https://mdeguzis.github.io/proton-pulse-web-staging/>
+  <https://staging.proton-pulse.com>
 - Supabase edge functions under `supabase/functions/`
 - Data pipeline scripts under `scripts/pipeline/`
 - GitHub Actions workflows under `.github/workflows/`
