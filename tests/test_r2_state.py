@@ -183,7 +183,8 @@ def test_unknown_command_fails(r2):
 
 @pytest.fixture
 def repo(tmp_path):
-    """A repo copy whose origin has a gh-pages branch, for the one-time seed."""
+    """A repo copy whose origin still has a gh-pages branch with both files,
+    to prove the scripts no longer read it (#396)."""
     def git(*a, cwd):
         subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True)
 
@@ -207,6 +208,13 @@ def repo(tmp_path):
     return work, pages
 
 
+def test_state_scripts_never_touch_gh_pages():
+    for s in ("cert-monitor-state.sh", "catalog-state.sh", "data-snapshot.sh",
+              "fetch-public-state.sh"):
+        body = (SCRIPTS / s).read_text()
+        assert "origin/gh-pages" not in body and "git -C" not in body, s
+
+
 def test_pull_uses_r2_history(r2, repo, tmp_path):
     root, env = r2
     work, _ = repo
@@ -217,21 +225,21 @@ def test_pull_uses_r2_history(r2, repo, tmp_path):
     assert "1 points" in r.stdout
 
 
-def test_pull_seeds_once_from_gh_pages_when_r2_is_empty(r2, repo, tmp_path):
+def test_pull_404_stops_instead_of_starting_over(r2, repo, tmp_path):
+    # gh-pages still has a history in the fixture; it must not be used.
     _, env = r2
     work, _ = repo
     r = _run(work / "scripts" / "cert-monitor-state.sh", "pull", tmp_path / "st", env=env)
-    assert r.returncode == 0, r.stdout + r.stderr
-    assert "seeding once from origin/gh-pages" in r.stdout
-    assert json.loads((tmp_path / "st" / "cert-history.json").read_text()) == [{"t": 1}, {"t": 2}]
+    assert r.returncode == 1, r.stdout + r.stderr
+    assert "not in R2 state (404); not starting over" in r.stdout
+    assert not (tmp_path / "st" / "cert-history.json").exists()
 
 
-def test_pull_starts_fresh_when_neither_has_history(r2, repo, tmp_path):
+def test_pull_404_starts_fresh_only_when_asked(r2, repo, tmp_path):
     _, env = r2
-    work, pages = repo
-    subprocess.run(["git", "remote", "set-url", "origin", str(tmp_path / "missing.git")],
-                   cwd=work, check=True)
-    r = _run(work / "scripts" / "cert-monitor-state.sh", "pull", tmp_path / "st", env=env)
+    work, _ = repo
+    r = _run(work / "scripts" / "cert-monitor-state.sh", "pull", tmp_path / "st",
+             env={**env, "CERT_HISTORY_START_FRESH": "1"})
     assert r.returncode == 0, r.stdout + r.stderr
     assert "starting a new history" in r.stdout
     assert not (tmp_path / "st" / "cert-history.json").exists()
@@ -495,21 +503,15 @@ def test_catalog_pull_uses_r2_copy(r2, repo, tmp_path):
     assert len(json.loads((tmp_path / "c" / GOG).read_text())["catalog"]) == 3
 
 
-def test_catalog_pull_seeds_once_from_gh_pages(r2, repo, tmp_path):
+@pytest.mark.parametrize("f", [GOG, "epic-catalog-cache.json"])
+def test_catalog_pull_404_continues_to_a_full_fetch(r2, repo, tmp_path, f):
+    # The fixture's gh-pages has a GOG catalog; it must not be seeded from.
     _, env = r2
     work, _ = repo
-    r = _cat(work, "pull", tmp_path / "c", GOG, env=env)
+    r = _cat(work, "pull", tmp_path / "c", f, env=env)
     assert r.returncode == 0, r.stdout + r.stderr
-    assert "seeded gog-catalog-cache.json from gh-pages (1 entries)" in r.stdout
-
-
-def test_catalog_pull_with_nothing_anywhere_continues_to_a_full_fetch(r2, repo, tmp_path):
-    _, env = r2
-    work, _ = repo
-    r = _cat(work, "pull", tmp_path / "c", "epic-catalog-cache.json", env=env)
-    assert r.returncode == 0, r.stdout + r.stderr
-    assert "the fetch will do a full refresh" in r.stdout
-    assert not (tmp_path / "c" / "epic-catalog-cache.json").exists()
+    assert "WARNING: " + f + " is not in R2 state; the fetch will do a full refresh" in r.stdout
+    assert not (tmp_path / "c" / f).exists()
 
 
 def test_catalog_pull_r2_error_is_logged_and_does_not_block_the_refresh(r2, repo, tmp_path):
@@ -545,33 +547,29 @@ def test_catalog_push_refuses_missing_or_empty_catalog(r2, repo, tmp_path, body)
     assert len(json.loads(_state(root, GOG).read_text())["catalog"]) == 4
 
 
-def _public(base, dest, fallback, *files):
-    return _run(SCRIPTS / "fetch-public-state.sh", dest, fallback, *files,
+def _public(base, dest, *files):
+    return _run(SCRIPTS / "fetch-public-state.sh", dest, *files,
                 env={**os.environ, "STATE_BASE": base})
 
 
-def test_public_state_prefers_r2_then_falls_back_then_skips(served, tmp_path):
+def test_public_state_fetches_r2_and_skips_missing_or_bad(served, tmp_path):
     docroot, base = served
     _catalog(docroot / GOG, 2)
     (docroot / "bad.json").write_text("{not json")
-    fb = tmp_path / "gh-pages-data"
-    _catalog(fb / "epic-catalog-cache.json", 7)
-    _catalog(fb / "bad.json", 1)
     dest = tmp_path / "st"
-    r = _public(base, dest, fb, GOG, "epic-catalog-cache.json", "bad.json", "none.json")
+    r = _public(base, dest, GOG, "bad.json", "none.json")
     assert r.returncode == 0, r.stdout + r.stderr
     assert len(json.loads((dest / GOG).read_text())["catalog"]) == 2
-    assert "epic-catalog-cache.json: not in R2 state yet (404); using the" in r.stdout
-    assert len(json.loads((dest / "epic-catalog-cache.json").read_text())["catalog"]) == 7
-    assert "bad.json: not valid JSON; using the" in r.stdout
-    assert "WARNING: none.json: not in R2 state yet (404) and no fallback; skipped" in r.stdout
+    assert "WARNING: bad.json: not valid JSON; skipped, keeping any cached copy" in r.stdout
+    assert "WARNING: none.json: not in R2 state yet (404); skipped" in r.stdout
+    assert not (dest / "bad.json").exists()
     assert not (dest / "none.json").exists()
 
 
-def test_public_state_without_fallback_and_unreachable_host(tmp_path):
-    r = _public("http://127.0.0.1:9/_state", tmp_path / "st", "-", GOG)
+def test_public_state_unreachable_host_skips(tmp_path):
+    r = _public("http://127.0.0.1:9/_state", tmp_path / "st", GOG)
     assert r.returncode == 0, r.stdout + r.stderr
-    assert "WARNING: gog-catalog-cache.json: HTTP 000 and no fallback; skipped" in r.stdout
+    assert "WARNING: gog-catalog-cache.json: HTTP 000; skipped" in r.stdout
 
 
 @pytest.mark.parametrize("store", ["gog", "epic"])
@@ -599,9 +597,10 @@ def test_weekly_catalog_workflows_use_r2_state_not_gh_pages(store):
     assert steps[push].get("if") == "inputs.dry_run != true"
 
 
-def test_finalize_seeds_catalogs_from_r2_state_with_gh_pages_fallback():
+def test_finalize_seeds_catalogs_from_r2_state_only():
     raw, _ = _wf("update-data.yml")
-    assert 'bash scripts/fetch-public-state.sh "$RUNNER_TEMP/catalog-state" gh-pages-data' in raw
+    assert 'bash scripts/fetch-public-state.sh "$RUNNER_TEMP/catalog-state" \\\n            gog-catalog-cache.json' in raw
+    assert "gh-pages-data" not in raw
     assert 'bash scripts/seed-catalog-cache.sh "$RUNNER_TEMP/catalog-state" .cache' in raw
     assert "bash scripts/seed-catalog-cache.sh gh-pages-data .cache" not in raw
     # Still after the Actions-cache restore, so a real rebuild wins.
@@ -647,40 +646,23 @@ def test_snapshot_pull_extracts_and_the_artifact_wins(served, tmp_path):
     assert count.read_text().strip() == "2"
 
 
-def test_snapshot_pull_404_falls_back_to_gh_pages(served, tmp_path):
-    _, base = served
-    fb = tmp_path / "gh-pages-data"
-    _app(fb, "30", "pages-30")
-    out = tmp_path / "out"
-    _app(out, "30", "fresh-30")
-    _app(out, "40", "fresh-40")
-    r = _snap("pull", out, fb, env={**os.environ, "STATE_BASE": base})
-    assert r.returncode == 0, r.stdout + r.stderr
-    assert "no snapshot in R2 state yet (404); used" in r.stdout
-    assert (out / "data" / "30" / "latest.json").read_text() == "fresh-30"
-
-
-@pytest.mark.parametrize("bad", ["corrupt", "unreachable"])
-def test_snapshot_pull_bad_download_falls_back(served, tmp_path, bad):
+@pytest.mark.parametrize("bad", ["missing", "corrupt", "unreachable"])
+def test_snapshot_pull_fails_without_a_good_snapshot(served, tmp_path, bad):
+    # #396: no gh-pages data/ fallback any more. A run without its base must
+    # stop, not publish a search index missing most games.
     docroot, base = served
     if bad == "corrupt":
         (docroot / SNAP).write_bytes(b"not a zstd archive")
-    else:
+    elif bad == "unreachable":
         base = "http://127.0.0.1:9/_state"
-    fb = tmp_path / "gh-pages-data"
-    _app(fb, "50", "pages-50")
     out = tmp_path / "out"
-    r = _snap("pull", out, fb, env={**os.environ, "STATE_BASE": base})
-    assert r.returncode == 0, r.stdout + r.stderr
-    assert ("corrupt" in r.stdout) if bad == "corrupt" else ("HTTP 000)" in r.stdout)
-    assert (out / "data" / "50" / "latest.json").read_text() == "pages-50"
-
-
-def test_snapshot_pull_with_no_snapshot_and_no_fallback_fails(served, tmp_path):
-    _, base = served
-    r = _snap("pull", tmp_path / "out", tmp_path / "nothing", env={**os.environ, "STATE_BASE": base})
-    assert r.returncode == 1
+    _app(out, "50", "fresh-50")
+    r = _snap("pull", out, env={**os.environ, "STATE_BASE": base})
+    assert r.returncode == 1, r.stdout + r.stderr
     assert "refusing to build on an empty base" in r.stdout
+    assert "nightly-backup release" in r.stdout
+    expect = {"missing": "(404)", "corrupt": "corrupt", "unreachable": "HTTP 000"}[bad]
+    assert expect in r.stdout
 
 
 def test_snapshot_push_uploads_and_round_trips(r2, served, tmp_path):
@@ -728,14 +710,14 @@ def test_finalize_uses_the_snapshot_and_dropped_the_cache_copies():
     raw, doc = _wf("update-data.yml")
     steps = doc["jobs"]["finalize"]["steps"]
     runs = [s.get("run") or "" for s in steps]
-    pull = runs.index("bash scripts/data-snapshot.sh pull /tmp/protondb-output gh-pages-data")
+    pull = runs.index("bash scripts/data-snapshot.sh pull /tmp/protondb-output")
     push = runs.index("bash scripts/data-snapshot.sh push /tmp/protondb-output")
     deploy = next(i for i, r in enumerate(runs) if "bash scripts/publish-cloudflare.sh /tmp/protondb-output" in r)
     restore = next(i for i, r in enumerate(runs) if "probe-cache-sync.sh restore" in r)
     assert pull < restore < deploy < push
     # Push goes to the bucket the deploy used, so staging never writes prod's.
     assert steps[push]["env"]["R2_BUCKET"] == steps[deploy]["env"]["R2_BUCKET"]
-    assert steps[push]["if"] == steps[deploy]["if"]
+    assert "if" not in steps[push] and "if" not in steps[deploy]
     assert steps[pull]["env"]["SNAPSHOT_COUNT_FILE"] == steps[push]["env"]["SNAPSHOT_COUNT_FILE"]
     for f in ("game-images.json", "game-images-skip.json", "game-images-cache.json",
               "nonsteam-images-cache.json", "release-years-cache.json",

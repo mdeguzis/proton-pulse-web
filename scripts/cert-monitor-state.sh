@@ -10,9 +10,10 @@ set -euo pipefail
 # cert-history.json is the append-only burndown series and cannot be
 # regenerated, so pull fails on any read error rather than letting
 # cert-monitor.sh start a fresh history that push would then save over the
-# real one. When R2 has no copy yet (first run after the move off gh-pages),
-# it is seeded once from origin/gh-pages. That fallback goes away when the
-# branch is archived.
+# real one. A missing history (404) stops the run too: since the one-time
+# gh-pages seed went with the branch (#396), a 404 means the R2 copy was lost,
+# and starting over would bury that. Set CERT_HISTORY_START_FRESH=1 to begin
+# a new series on purpose.
 #
 # cert-status.json is a snapshot that cert-monitor.sh rewrites every run, so
 # it is never pulled.
@@ -34,14 +35,12 @@ case "$cmd" in
     case "$rc" in
       0) log "history pulled from R2 ($(python3 -c 'import json,sys; print(len(json.load(open(sys.argv[1]))))' "$dir/cert-history.json") points)" ;;
       3)
-        log "no history in R2 yet; seeding once from origin/gh-pages (#396 migration)"
-        if git -C "$HERE/.." fetch -q --depth 1 origin gh-pages \
-           && git -C "$HERE/.." show origin/gh-pages:cert-history.json > "$dir/cert-history.json" \
-           && [ -s "$dir/cert-history.json" ]; then
-          log "seeded $(python3 -c 'import json,sys; print(len(json.load(open(sys.argv[1]))))' "$dir/cert-history.json") points from gh-pages"
+        rm -f "$dir/cert-history.json"
+        if [ "${CERT_HISTORY_START_FRESH:-0}" = 1 ]; then
+          log "no history in R2; CERT_HISTORY_START_FRESH=1, starting a new history"
         else
-          rm -f "$dir/cert-history.json"
-          log "gh-pages has no cert-history.json either; starting a new history"
+          log "ERROR: cert-history.json is not in R2 state (404); not starting over. Restore it, or set CERT_HISTORY_START_FRESH=1 for a new series"
+          exit 1
         fi
         ;;
       *)

@@ -6,7 +6,7 @@ name: Cert Monitor
 # burndown graph on the status page is fed from these files.
 #
 # Where the files live: R2 state, `_state/` in the prod data bucket (#396).
-# They used to be committed to gh-pages, which is being archived. The shell
+# They used to be committed to gh-pages, retired in #396. The shell
 # deploy (publish-cloudflare.sh, via preserve-cert-monitor.sh) copies them from
 # there into the Pages deploy, because the status page reads them same-origin.
 #

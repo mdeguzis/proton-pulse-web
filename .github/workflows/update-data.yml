@@ -35,14 +35,6 @@ on:
         description: "Preview: run stages that read but skip commits + Supabase writes (best-effort per stage)"
         type: boolean
         default: false
-      deploy_target:
-        description: "Where to publish the built site. 'cloudflare' (default) syncs data/ to R2 and deploys the shell to Cloudflare Pages. 'ghpages' is retained as a prod-only rollback path -- the origin cert saga and 20k-file Pages cap made it obsolete (#362)."
-        required: false
-        default: "cloudflare"
-        type: choice
-        options:
-          - cloudflare
-          - ghpages
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -237,7 +229,7 @@ jobs:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-chunk-${{ matrix.chunk }}
 
-  # ── Stage 3: finalize, build site, deploy to gh-pages ──────────────
+  # ── Stage 3: finalize, build site, deploy to Cloudflare ────────────
   finalize:
     needs: [build, probe-chunks]
     if: |
@@ -261,15 +253,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      # Staging runs deploy to Cloudflare only. The gh-pages path for them
-      # pushed to the retired proton-pulse-web-staging repo (#396), so a
-      # staging + ghpages dispatch would build everything and publish nothing.
-      - name: Refuse ghpages for staging runs
-        if: (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && inputs.deploy_target == 'ghpages'
-        run: |
-          echo "::error::deploy_target=ghpages is prod-only. Staging runs deploy to Cloudflare (staging.proton-pulse.com)."
-          exit 1
-
       - name: Checkout repo
         uses: actions/checkout@v7
         with:
@@ -285,7 +268,7 @@ jobs:
 
       # finalize_only + staging_with_finalize both skip the build stage, so no
       # fresh artifact exists on this run. Skip the download in those modes and
-      # let the gh-pages merge step below seed /tmp/protondb-output entirely
+      # let the data/ snapshot pull below seed /tmp/protondb-output entirely
       # from the durable prod state -- exactly what we want when we're only
       # verifying a finalize / search-index shape change.
       - name: Download probe input artifact
@@ -304,24 +287,16 @@ jobs:
       # #396: the base is now data-snapshot.tar.zst in R2 state, pushed after
       # every Cloudflare deploy below. It used to be gh-pages' data/, which
       # nothing has written since the Cloudflare move (last change
-      # 2026-09-20), so every nightly rebuilt from that stale copy. gh-pages
-      # stays checked out only as the fallback until the first snapshot
-      # exists. The seven cache copies that used to follow were dropped: the
+      # 2026-09-20), so every nightly rebuilt from that stale copy. A missing
+      # snapshot now fails the run; restore it from the nightly-backup release
+      # (Restore-Runbook). The seven cache copies that used to follow were dropped: the
       # Actions probe-cache restore below overwrites every one of them, and
       # game-images.json / game-images-skip.json are only read by a one-time
       # legacy migration when the image cache is empty.
-      - name: Checkout current gh-pages (fallback base, chunk state)
-        uses: actions/checkout@v7
-        with:
-          ref: gh-pages
-          path: gh-pages-data
-          fetch-depth: 1
-        continue-on-error: true
-
       - name: Merge the previous data/ snapshot into probe input
         env:
           SNAPSHOT_COUNT_FILE: ${{ runner.temp }}/data-snapshot-count
-        run: bash scripts/data-snapshot.sh pull /tmp/protondb-output gh-pages-data
+        run: bash scripts/data-snapshot.sh pull /tmp/protondb-output
 
       # main's cache is tried first (#258). On main that is the same prefix
       # as before. On staging it means previews start from prod's warm caches
@@ -338,11 +313,9 @@ jobs:
             pipeline-cache-${{ runner.os }}-${{ github.workflow }}-main-
             pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-
 
-      # The gh-pages seed above is frozen at 2026-08-23 since the Cloudflare
-      # deploy stopped writing back to gh-pages (#258). Overlay the previous
-      # run's probe caches from the Actions cache so they are not re-probed
-      # from scratch every night. Falls back to the gh-pages seed if the
-      # Actions cache was evicted.
+      # Overlay the previous run's probe caches from the Actions cache so they
+      # are not re-probed from scratch every night (#258). If the Actions cache
+      # was evicted, the enrichers start cold and refill them.
       - name: Restore probe caches from previous run
         run: bash scripts/probe-cache-sync.sh restore .cache /tmp/protondb-output
 
@@ -368,13 +341,12 @@ jobs:
       # this before the restore let the old catalog clobber the new one, which
       # silently froze the GOG/Epic search-index stubs at an outdated count.
       # #396: the weekly workflows push to R2 state now. Read it over the
-      # public data host (no keys, same for staging), fall back to the
-      # gh-pages copy until the first weekly run has filled R2, then let
+      # public data host (no keys, same for staging), then let
       # seed-catalog-cache.sh keep whichever copy has the newer _ts.
       - name: Seed store catalog caches from R2 state
         run: |
           mkdir -p .cache
-          bash scripts/fetch-public-state.sh "$RUNNER_TEMP/catalog-state" gh-pages-data \
+          bash scripts/fetch-public-state.sh "$RUNNER_TEMP/catalog-state" \
             gog-catalog-cache.json epic-catalog-cache.json
           bash scripts/seed-catalog-cache.sh "$RUNNER_TEMP/catalog-state" .cache \
             gog-catalog-cache.json epic-catalog-cache.json
@@ -492,44 +464,16 @@ jobs:
           path: .cache
           key: pipeline-cache-${{ runner.os }}-${{ github.workflow }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}-final
 
-      # Preserved unconditionally, before either deploy path runs: the
-      # gh-pages orphan deploy below (`git rm -rf .`) deletes every tracked
-      # file, backup-to-release.sh included, but the "Backup data to GitHub
-      # Release" step needs it afterward regardless of which deploy path ran.
-      #
-      # Not hypothetical: every scheduled run from 2026-08-19 through 08-23
-      # died here with "scripts/backup-to-release.sh: No such file or
-      # directory" and the nightly data backup stopped for five days (#494).
-      # It read as intermittent because cloudflare-target runs skip the orphan
-      # step and so never hit the wipe. That is also why this cannot move
-      # inside the orphan step next to the preserve-* copies -- the backup
-      # runs on both targets, so a cp nested there would never fire on
-      # cloudflare and would only relocate the failure.
-      - name: Preserve backup script
-        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true
-        run: cp scripts/backup-to-release.sh /tmp/backup-to-release.sh
-
       # form-schema.json + scoring-info.json come from the plugin repo, not
       # the pipeline. Without them in /tmp/protondb-output the CF deploy below
-      # ships prod without either file and the submit form breaks (#546). The
-      # gh-pages curls further down only feed the legacy orphan deploy.
+      # ships prod without either file and the submit form breaks (#546).
       - name: Fetch plugin-sourced data files
-        if: (inputs.deploy_target || 'cloudflare') == 'cloudflare'
         run: bash scripts/fetch-plugin-data.sh /tmp/protondb-output
 
-      # Cloudflare target (#362): sync data/ to R2 + deploy the shell to Pages.
-      # Runs instead of the gh-pages orphan deploy when deploy_target=cloudflare.
-      # Must come BEFORE the orphan step, which wipes the working tree. Staging
-      # runs target the staging Pages project; everything else targets prod.
-      #
-      # inputs.deploy_target falls back to 'cloudflare' with `||` because the
-      # `inputs` context (including declared `default:` values) is only
-      # populated for workflow_dispatch/workflow_call triggers -- the nightly
-      # `schedule:` trigger gets an empty inputs context, so without the
-      # fallback this always evaluated to false on cron runs and silently fell
-      # through to the legacy gh-pages orphan deploy below instead.
+      # Cloudflare (#362): sync data/ to R2 + deploy the shell to Pages.
+      # Staging runs target the staging Pages project; everything else
+      # targets prod. The gh-pages rollback deploy was retired in #396.
       - name: Deploy to Cloudflare (R2 + Pages)
-        if: (inputs.deploy_target || 'cloudflare') == 'cloudflare'
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -563,7 +507,6 @@ jobs:
       # refuses to upload a data/ that shrank below 90% of the base it
       # started from.
       - name: Push data/ snapshot to R2 state
-        if: (inputs.deploy_target || 'cloudflare') == 'cloudflare'
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -571,93 +514,6 @@ jobs:
           R2_BUCKET: ${{ (inputs.staging_with_pipeline == true || inputs.staging_with_finalize == true) && 'proton-pulse-data-staging' || 'proton-pulse-data' }}
           SNAPSHOT_COUNT_FILE: ${{ runner.temp }}/data-snapshot-count
         run: bash scripts/data-snapshot.sh push /tmp/protondb-output
-
-      - name: Deploy to gh-pages (orphan, no history)
-        if: inputs.staging_with_pipeline != true && inputs.staging_with_finalize != true && (inputs.deploy_target || 'cloudflare') != 'cloudflare'
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          # Copy pipeline-helper scripts out of the workspace BEFORE the
-          # `git rm -rf .` below wipes them. `git rm -rf .` deletes every
-          # tracked file, including scripts/preserve-steam-type-cache.sh
-          # which the deploy step needs to run later. Introduced by #263.
-          cp scripts/preserve-steam-type-cache.sh /tmp/preserve-steam-type-cache.sh
-          # Same reason: the cert monitor (#359) commits cert-status.json +
-          # cert-history.json to gh-pages between pipeline runs. The orphan
-          # rebuild would wipe them, losing the append-only burndown history.
-          cp scripts/preserve-cert-monitor.sh /tmp/preserve-cert-monitor.sh
-          git checkout --orphan gh-pages-new
-          git rm -rf .
-          cp -r /tmp/protondb-output/data .
-          cp /tmp/protondb-output/data-index.html .
-          cp /tmp/protondb-output/coverage.html .
-          cp /tmp/protondb-output/search-index.json . 2>/dev/null || true
-          cp /tmp/protondb-output/search-index-steam-extended.json . 2>/dev/null || true
-          cp /tmp/protondb-output/coverage-summary.json . 2>/dev/null || true
-          cp /tmp/protondb-output/stats.json . 2>/dev/null || true
-          cp /tmp/protondb-output/recent-reports.json . 2>/dev/null || true
-          cp /tmp/protondb-output/game-images.json . 2>/dev/null || true
-          cp /tmp/protondb-output/game-images-skip.json . 2>/dev/null || true
-          cp /tmp/protondb-output/game-images-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/nonsteam-images-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/release-years-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/gog-catalog-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/epic-catalog-cache.json . 2>/dev/null || true
-          cp /tmp/protondb-output/most_played.json . 2>/dev/null || true
-          cp /tmp/protondb-output/deck-status.json . 2>/dev/null || true
-          cp /tmp/protondb-output/nonsteam-images.json . 2>/dev/null || true
-          cp /tmp/protondb-output/nonsteam-metadata.json . 2>/dev/null || true
-          cp /tmp/protondb-output/proton-versions.json . 2>/dev/null || true
-          cp /tmp/protondb-output/data-versions.json . 2>/dev/null || true
-          cp /tmp/protondb-output/steam-catalog.json . 2>/dev/null || true
-          cp /tmp/protondb-output/hardware-suggestions.json . 2>/dev/null || true
-          git show main:gh-pages-manifest.txt > gh-pages-manifest.txt
-          while IFS= read -r path; do
-            [ -z "$path" ] && continue
-            case "$path" in \#*) continue ;; esac
-            mkdir -p "$(dirname "$path")"
-            git show main:"$path" > "$path" 2>/dev/null || true
-          done < gh-pages-manifest.txt
-          curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/scoring-info.json -o scoring-info.json
-          curl -sL https://raw.githubusercontent.com/mdeguzis/decky-proton-pulse/main/src/data/form-schema.json -o form-schema.json
-          mkdir -p badges
-          # Fetch Pulse count from Supabase (hardcoded URL + fixed field read).
-          # Download to a temp file first, then parse -- avoids the curl|python3
-          # pipe pattern that Semgrep's gha-curl-pipe-shell rule flags.
-          curl -sf \
-            -H "apikey: sb_publishable_3Oqhm4JneafJNQw9BuUaxw_L9qZa-5V" \
-            -H "Prefer: count=exact" \
-            "https://ilsgdshkaocrmibwdezk.supabase.co/rest/v1/user_configs?select=count" \
-            > /tmp/pulse-count.json 2>/dev/null || echo '[{"count":0}]' > /tmp/pulse-count.json
-          PULSE_COUNT=$(python3 -c "import json; print(json.load(open('/tmp/pulse-count.json'))[0]['count'])" 2>/dev/null || echo "0")
-          printf '{"schemaVersion":1,"label":"Pulse reports","message":"%s","color":"informational"}\n' "$PULSE_COUNT" > badges/pulse-reports.json
-          # Preserve steam-type-cache.json + column 11 across the force-push
-          # (#263). Reads the current origin/gh-pages, copies the cache in,
-          # and re-applies its types to the fresh search-index.json before
-          # we commit. Silent no-op on first ever deploy.
-          bash /tmp/preserve-steam-type-cache.sh "$(pwd)"
-          # Carry the cert monitor's files (#359) over from the old gh-pages so
-          # the orphan force-push does not drop the burndown history.
-          bash /tmp/preserve-cert-monitor.sh "$(pwd)"
-          [ -f cert-status.json ] && git add cert-status.json || true
-          [ -f cert-history.json ] && git add cert-history.json || true
-          git add data/ data-index.html coverage.html search-index.json scoring-info.json form-schema.json badges/
-          # add optional pipeline outputs (skip silently if a fresh checkout
-          # didn't have them yet, e.g. first run after introducing the file)
-          for f in coverage-summary.json stats.json recent-reports.json game-images.json game-images-skip.json game-images-cache.json image-fallback-stats.json nonsteam-images-cache.json release-years-cache.json gog-catalog-cache.json epic-catalog-cache.json most_played.json deck-status.json proton-versions.json steam-catalog.json hardware-suggestions.json nonsteam-images.json nonsteam-metadata.json data-versions.json search-index-steam-extended.json app-id-redirects.json app-id-validation-cache.json steam-type-cache.json pcgamingwiki.json pcgamingwiki-cache.json pcgwiki-catalog.json pcgwiki-catalog-cache.json pcgw-id-map.json flightless-benchmarks.json flightless-review-queue.json flightless-benchmarks-cache.json vrdb.json vr-index.json; do
-            [ -f "$f" ] && git add "$f"
-          done
-          while IFS= read -r path; do
-            [ -z "$path" ] && continue
-            case "$path" in \#*) continue ;; esac
-            git add "$path"
-          done < gh-pages-manifest.txt
-          VERSION=$(git show main:package.json | python3 -c "import json,sys; print(json.load(sys.stdin).get('version','0.0.0'))")
-          SHA=$(git rev-parse --short main)
-          printf '{"version":"%s","sha":"%s","deployed_at":"%s","repo":"mdeguzis/proton-pulse-web"}\n' "$VERSION" "$SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > version.json
-          git add version.json
-          git commit -m "Deploy: $(date +%F)"
-          git push origin gh-pages-new:gh-pages --force
 
       # NOTE: the production pipeline must NOT push to the staging site. Doing so
       # once force-pushed main's frontend over an in-review staging preview.
@@ -672,7 +528,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          bash /tmp/backup-to-release.sh /tmp/protondb-output
+          bash scripts/backup-to-release.sh /tmp/protondb-output
 
   # ── Status report (runs even on failure) ───────────────────────────
   report-build-status:

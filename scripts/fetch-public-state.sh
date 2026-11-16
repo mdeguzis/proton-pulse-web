@@ -5,16 +5,15 @@ set -euo pipefail
 # Read-only and keyless, so any job can use it: finalize uses it for the store
 # catalog caches the weekly GOG / Epic workflows push to prod's `_state/`.
 #
-# A file that is missing (404) or unreadable falls back to <fallback_dir>/<file>
-# when one is given (the gh-pages checkout, until the branch is archived), and
-# is otherwise skipped. Callers treat a skipped file as "keep what you have",
-# so this never fails the job; every outcome is logged with the HTTP status.
+# A file that is missing (404) or unreadable is skipped with a WARNING. Callers
+# treat a skipped file as "keep what you have" (the Actions cache copy), so
+# this never fails the job; every outcome is logged with the HTTP status. The
+# gh-pages fallback copy went with the branch (#396).
 #
-# Usage: fetch-public-state.sh <dest_dir> <fallback_dir|-> <file>...
+# Usage: fetch-public-state.sh <dest_dir> <file>...
 # Env:   STATE_BASE  default https://data.proton-pulse.com/_state
 
 DEST="${1:?dest dir required}"; shift
-FALLBACK="${1:?fallback dir (or -) required}"; shift
 BASE="${STATE_BASE:-https://data.proton-pulse.com/_state}"
 mkdir -p "$DEST"
 
@@ -37,10 +36,5 @@ for f in "$@"; do
   else
     why="HTTP $code"
   fi
-  if [ "$FALLBACK" != "-" ] && [ -f "$FALLBACK/$f" ]; then
-    cp "$FALLBACK/$f" "$DEST/$f"
-    echo "[public-state] $f: $why; using the $FALLBACK copy"
-  else
-    echo "[public-state] WARNING: $f: $why and no fallback; skipped"
-  fi
+  echo "[public-state] WARNING: $f: $why; skipped, keeping any cached copy"
 done

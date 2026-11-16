@@ -71,8 +71,8 @@ SMALL_DATA=(
   # the SPA fallback -- HTML with a 200. loadAntiCheatMap() treats any bad
   # response as {} and renders no panel, so the game page has been quietly
   # showing no anti-cheat data on prod ever since. Adding a file here is the
-  # THIRD registration point for pipeline data (gh-pages-manifest.txt and the
-  # update-data.yml copy loops are the others); missing this one fails silently.
+  # registration point for pipeline data that gets missed (the gh-pages deploy's
+  # copy loops used to be another, until #396); missing it fails silently.
   anti-cheat.json
   # #241 home "Exclude native" filter (scripts/pipeline/steam_platforms.py).
   native-linux.json
@@ -358,8 +358,8 @@ log "copied $shell_count shell files from the manifest"
 for f in "${SMALL_DATA[@]}"; do
   [ -f "$OUTPUT_DIR/$f" ] && cp "$OUTPUT_DIR/$f" "$DEPLOY/$f"
 done
-# scoring-info + form-schema come from the plugin repo in the gh-pages deploy;
-# copy them if the pipeline placed them in the output dir (already covered above).
+# scoring-info + form-schema come from the plugin repo via fetch-plugin-data.sh,
+# which puts them in the output dir (already covered above).
 
 # 2b.i. Ship the cert monitor's output. cert-monitor.yml writes
 # cert-status.json + cert-history.json to R2 state every 6h (#396), and the

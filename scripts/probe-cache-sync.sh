@@ -8,7 +8,7 @@
 # spent its whole probe cap re-checking them, and thrown the results away.
 #
 #   restore  overlay <cache_dir>/probe-caches/*.json onto <output_dir>, so the
-#            last run's results win over the gh-pages seed already there
+#            last run's results are what the enrichers start from
 #   save     copy <output_dir>'s caches into <cache_dir>/probe-caches/ before
 #            the Actions cache is saved
 #
